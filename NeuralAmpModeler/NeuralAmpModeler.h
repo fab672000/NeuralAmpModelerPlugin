@@ -10,9 +10,10 @@
 #include "IPlug_include_in_plug_hdr.h"
 #include "ISender.h"
 
-const int kNumPresets = 1;
+const int kNumPresets = 128;
 // The plugin is mono inside
 constexpr size_t kNumChannelsInternal = 1;
+
 
 class NAMSender : public iplug::IPeakAvgSender<>
 {
@@ -73,6 +74,10 @@ class NeuralAmpModeler final : public iplug::Plugin
 public:
   NeuralAmpModeler(const iplug::InstanceInfo& info);
   ~NeuralAmpModeler();
+
+#if 1 // defined APP_API
+  bool ProcessApplicationParameters(const iplug::InstanceInfo& info);
+#endif
 
   void ProcessBlock(iplug::sample** inputs, iplug::sample** outputs, int nFrames) override;
   void OnReset() override;

@@ -12,9 +12,12 @@
 #include "NeuralAmpModeler.h"
 #include "IPlug_include_in_plug_src.h"
 // clang-format on
+#include <strstream>
+
 #include "architecture.hpp"
 
 #include "NeuralAmpModelerControls.h"
+#include "projects/StringUtils.h"
 
 using namespace iplug;
 using namespace igraphics;
@@ -51,10 +54,16 @@ const IVStyle style =
 const IVStyle titleStyle =
   DEFAULT_STYLE.WithValueText(IText(30, COLOR_WHITE, "Michroma-Regular")).WithDrawFrame(false).WithShadowOffset(2.f);
 
+static std::vector<std::string> preset_names(1024);
+
 NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
 : Plugin(info, MakeConfig(kNumParams, kNumPresets))
 {
+#if defined APP_API
+  ProcessApplicationParameters(info);
+#endif
   activations::Activation::enable_fast_tanh();
+
   GetParam(kInputLevel)->InitGain("Input", 0.0, -20.0, 20.0, 0.1);
   GetParam(kToneBass)->InitDouble("Bass", 5.0, 0.0, 10.0, 0.1);
   GetParam(kToneMid)->InitDouble("Middle", 5.0, 0.0, 10.0, 0.1);
@@ -65,6 +74,18 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
   GetParam(kEQActive)->InitBool("ToneStack", true);
   GetParam(kOutNorm)->InitBool("OutNorm", false);
   GetParam(kIRToggle)->InitBool("IRToggle", true);
+
+  #ifdef VST3_PRESET_LIST
+
+  for (int i=0; i< kNumPresets;i++)
+  {
+    std::stringstream ss;
+    ss << "User Preset " << i;
+    preset_names[i] = ss.str();
+    MakePreset(preset_names[i].c_str(), 0);
+  }
+
+  #endif
 
   mNoiseGateTrigger.AddListener(&mNoiseGateGain);
 
@@ -251,6 +272,47 @@ NeuralAmpModeler::~NeuralAmpModeler()
 {
   _DeallocateIOPointers();
 }
+#if 1 // defined APP_API
+bool NeuralAmpModeler::ProcessApplicationParameters(const ::InstanceInfo& info)
+{
+  std::vector<std::string> commandLine;
+#if defined OS_WIN
+  const auto szCommandLine = GetCommandLine();
+  int nArgs;
+  auto parameters = StringUtils::CommandLineToArgs(szCommandLine, &nArgs);
+  if( parameters.size()<2 ) return true;
+  std::string ampModel;
+  std::string ampIR;
+  for(int i=0; i< parameters.size(); i++)
+  {
+    auto data = parameters[i];
+    std::transform(data.begin(), data.end(), data.begin(), [](unsigned char c){ return std::tolower(c); });
+    switch (i)
+    {
+      case 0: 
+          break;
+      case 1:
+      case 2:
+          if (data.find(".nam")>0) ampModel = parameters[i];
+          else if (data.find(".wav")) ampIR = parameters[i];
+      break;
+          ampIR = parameters[i];
+      break;
+      default:
+          break;
+    }
+  }
+  printf(ampModel.c_str());
+  printf(ampIR.c_str());
+#elif defined OS_MAC
+  // TODO implement mac version
+#elif defined OS_LINUX
+    // TODO implement linux version
+#endif
+
+  return true;
+}
+#endif
 
 void NeuralAmpModeler::ProcessBlock(iplug::sample** inputs, iplug::sample** outputs, int nFrames)
 {
