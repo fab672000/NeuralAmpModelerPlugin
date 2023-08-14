@@ -193,6 +193,23 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
       }
     };
 
+    auto loadPresetCompletionHandler = [&](const WDL_String& fileName, const WDL_String& path) {
+      if (fileName.GetLength())
+      {
+        // Sets mNAMPath and mStagedNAM
+        
+        const std::string msg = LoadPreset(fileName);
+        // TODO error messages like the IR loader.
+        if (msg.size())
+        {
+          std::stringstream ss;
+          ss << "Failed to load NAM model. Message:\n\n" << msg;
+          GetUI()->ShowMessageBox(ss.str().c_str(), "Failed to load model!", kMB_OK);
+        }
+        std::cout << "Loaded: " << fileName.Get() << std::endl;
+      }
+    };
+
     pGraphics->AttachBackground(BACKGROUND_FN);
     pGraphics->AttachControl(new IBitmapControl(b, linesBitmap));
     pGraphics->AttachControl(new IVLabelControl(titleArea, "NEURAL AMP MODELER", titleStyle));
@@ -208,7 +225,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
 #endif
     pGraphics->AttachControl(new ISVGControl(presetIconArea, modelIconSVG));
     pGraphics->AttachControl(
-      new NAMFileBrowserControl(presetArea, kMsgTagClearModel, defaultPresetFileString.c_str(),"nps", loadModelCompletionHandler, style, 
+      new NAMFileBrowserControl(presetArea, kMsgTagClearModel, defaultPresetFileString.c_str(),"nps", loadPresetCompletionHandler, style, 
                                 fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
       kCtrlTagPresetFileBrowser);
 
@@ -635,22 +652,59 @@ void NeuralAmpModeler::_ResampleModelAndIR()
   }
 }
 
+std::string NeuralAmpModeler::SavePreset(const WDL_String& presetPath)
+{
+  try
+  {
+    std::string errorMessage;
+    // DEBUG only save current preset using the NeuralAmpModelerPreset::Serialize method
+    std::vector<float> params;
+    // get all parameters from this iPlug2 plugin instance and store them to params
+    for(int i=0; i < NParams(); i++)
+    {
+      params.push_back(GetParam(i)->Value());
+    }
+    NeuralAmpModelerPreset preset("Preset 1", "Test preset for NAM", mNAMPath.Get(), mIRPath.Get(), GetParam(kIRToggle)->Value() == 0.0, params);
+    // Save preset using the NeuralAmpModelerPreset::Serialize method to presetPath location:
+    bool saveSuccess = preset.Serialize(presetPath, preset, errorMessage);
+
+    auto result = NeuralAmpModelerPreset::Serialize(presetPath, preset, errorMessage);
+    if (!result)
+    {
+      return errorMessage;
+    }
+    return "";
+  }
+  catch (const std::exception& e)
+  {
+    return e.what();
+  }
+}
+
 std::string NeuralAmpModeler::LoadPreset(const WDL_String& presetPath)
 {
   std::string errorMessage;
   try
   {
-    auto result = NeuralAmpModelerPreset::LoadFrom(presetPath, errorMessage);
+    // DEBUG only save current preset using the NeuralAmpModelerPreset::Serialize method
+    //SavePreset(presetPath);
+
+    auto result = NeuralAmpModelerPreset::Deserialize(presetPath, errorMessage);
     if(result != nullptr)
     {
       WDL_String ampPath(result->AmpPath().c_str());
       WDL_String irPath(result->IrPath().c_str());
 
       if (std::filesystem::exists(result->AmpPath())) _StageModel(ampPath);
-      if (std::filesystem::exists(result->IrPath()))  _StageModel(irPath);
+      if (std::filesystem::exists(result->IrPath()))  _StageIR(irPath);
       if (result->Params().size()>0)
       {
-        // TODO update params: all floats and bool generalized to a vector of floats
+        for(int i=0; i < NParams(); i++)
+        {
+        // update params: all floats and bool generalized to a vector of floats
+          GetParam(i)->Set(result->Params()[i]);
+          OnParamChangeUI(i, kHost);
+        }
       }
     }
   }

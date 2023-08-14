@@ -129,6 +129,7 @@ private:
                       const size_t nChansOut);
   // Checks the loaded model and IR against the current sample rate and resamples them if needed
   void _ResampleModelAndIR();
+  std::string SavePreset(const WDL_String& presetPath);
   std::string LoadPreset(const WDL_String& presetPath);
 
   // Update level meters
