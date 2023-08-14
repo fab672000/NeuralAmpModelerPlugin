@@ -15,6 +15,7 @@
 #include "architecture.hpp"
 
 #include "NeuralAmpModelerControls.h"
+#include "NeuralAmpModelerPreset.h"
 
 using namespace iplug;
 using namespace igraphics;
@@ -135,10 +136,18 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
     // Areas for model and IR
     const auto fileWidth = 200.0f;
     const auto fileHeight = 30.0f;
-    const auto irYOffset = 38.0f;
-    const auto modelArea =
-      contentArea.GetFromBottom((2.0f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
+    const auto irYOffset = 32.0f;
+    //const auto modelArea =
+    //  contentArea.GetFromBottom((2.0f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
+    //const auto modelIconArea = modelArea.GetFromLeft(30).GetTranslated(-40, 10);
+ 
+    const auto presetArea =
+      contentArea.GetFromBottom((4.0f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
+    const auto presetIconArea = presetArea.GetFromLeft(30).GetTranslated(-40, 10);
+
+    const auto modelArea = presetArea.GetVShifted(irYOffset);
     const auto modelIconArea = modelArea.GetFromLeft(30).GetTranslated(-40, 10);
+
     const auto irArea = modelArea.GetVShifted(irYOffset);
     const auto irSwitchArea = irArea.GetFromLeft(30).GetHShifted(-40).GetScaledAboutCentre(0.6);
 
@@ -187,24 +196,34 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
     pGraphics->AttachBackground(BACKGROUND_FN);
     pGraphics->AttachControl(new IBitmapControl(b, linesBitmap));
     pGraphics->AttachControl(new IVLabelControl(titleArea, "NEURAL AMP MODELER", titleStyle));
-    pGraphics->AttachControl(new ISVGControl(modelIconArea, modelIconSVG));
 
 #ifdef NAM_PICK_DIRECTORY
+    const std::string defaultPresetFileString = "Select Preset directory...";
     const std::string defaultNamFileString = "Select model directory...";
     const std::string defaultIRString = "Select IR directory...";
 #else
+    const std::string defaultPresetFileString = "Select Preset...";
     const std::string defaultNamFileString = "Select model...";
     const std::string defaultIRString = "Select IR...";
 #endif
-    pGraphics->AttachControl(new NAMFileBrowserControl(modelArea, kMsgTagClearModel, defaultNamFileString.c_str(),
-                                                       "nam", loadModelCompletionHandler, style, fileSVG, crossSVG,
-                                                       leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
-                             kCtrlTagModelFileBrowser);
+    pGraphics->AttachControl(new ISVGControl(presetIconArea, modelIconSVG));
+    pGraphics->AttachControl(
+      new NAMFileBrowserControl(presetArea, kMsgTagClearModel, defaultPresetFileString.c_str(),"nps", loadModelCompletionHandler, style, 
+                                fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
+      kCtrlTagPresetFileBrowser);
+
+    pGraphics->AttachControl(new ISVGControl(modelIconArea, modelIconSVG));
+    pGraphics->AttachControl(
+      new NAMFileBrowserControl(modelArea, kMsgTagClearModel, defaultNamFileString.c_str(),"nam", loadModelCompletionHandler, style, 
+                                fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
+      kCtrlTagModelFileBrowser);
+
     pGraphics->AttachControl(new ISVGSwitchControl(irSwitchArea, {irIconOffSVG, irIconOnSVG}, kIRToggle));
     pGraphics->AttachControl(
       new NAMFileBrowserControl(irArea, kMsgTagClearIR, defaultIRString.c_str(), "wav", loadIRCompletionHandler, style,
                                 fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
       kCtrlTagIRFileBrowser);
+
     pGraphics->AttachControl(new NAMSwitchControl(ngToggleArea, kNoiseGateActive, " ", style, switchHandleBitmap));
     pGraphics->AttachControl(new NAMSwitchControl(eqToggleArea, kEQActive, "EQ", style, switchHandleBitmap));
     pGraphics->AttachControl(
@@ -593,6 +612,32 @@ void NeuralAmpModeler::_ResampleModelAndIR()
       mStagedIR = std::make_unique<dsp::ImpulseResponse>(irData, sampleRate);
     }
   }
+}
+
+std::string NeuralAmpModeler::LoadPreset(const WDL_String& presetPath)
+{
+  std::string errorMessage;
+  try
+  {
+    auto result = NeuralAmpModelerPreset::LoadFrom(presetPath, errorMessage);
+    if(result != nullptr)
+    {
+      WDL_String ampPath(result->AmpPath().c_str());
+      WDL_String irPath(result->IrPath().c_str());
+
+      if (std::filesystem::exists(result->AmpPath())) _StageModel(ampPath);
+      if (std::filesystem::exists(result->IrPath()))  _StageModel(irPath);
+      if (result->Params().size()>0)
+      {
+        // TODO update params: all floats and bool generalized to a vector of floats
+      }
+    }
+  }
+  catch (std::exception& e)
+  {
+    return e.what();
+  }
+  return errorMessage;
 }
 
 std::string NeuralAmpModeler::_StageModel(const WDL_String& modelPath)

@@ -10,7 +10,7 @@
 #include "IPlug_include_in_plug_hdr.h"
 #include "ISender.h"
 
-const int kNumPresets = 1;
+const int kNumPresets = 16;
 // The plugin is mono inside
 constexpr size_t kNumChannelsInternal = 1;
 
@@ -52,7 +52,8 @@ enum ECtrlTags
   kCtrlTagAboutBox,
   kCtrlTagOutNorm,
   kCtrlTagSampleRateWarning,
-  kNumCtrlTags
+  kCtrlTagPresetFileBrowser,
+  kNumCtrlTags,
 };
 
 enum EMsgTags
@@ -128,6 +129,7 @@ private:
                       const size_t nChansOut);
   // Checks the loaded model and IR against the current sample rate and resamples them if needed
   void _ResampleModelAndIR();
+  std::string LoadPreset(const WDL_String& presetPath);
 
   // Update level meters
   // Called within ProcessBlock().
