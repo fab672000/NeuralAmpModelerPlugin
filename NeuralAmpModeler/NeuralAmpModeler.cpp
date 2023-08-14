@@ -140,12 +140,9 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
     const auto fileWidth = 200.0f;
     const auto fileHeight = 30.0f;
     const auto irYOffset = 32.0f;
-    //const auto modelArea =
-    //  contentArea.GetFromBottom((2.0f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
-    //const auto modelIconArea = modelArea.GetFromLeft(30).GetTranslated(-40, 10);
- 
+
     const auto presetArea =
-      contentArea.GetFromBottom((4.0f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
+      contentArea.GetFromBottom((2.5f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
     const auto presetIconArea = presetArea.GetFromLeft(30).GetTranslated(-40, 10);
 
     const auto modelArea = presetArea.GetVShifted(irYOffset);
