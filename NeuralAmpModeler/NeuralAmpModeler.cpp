@@ -197,7 +197,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
       if (fileName.GetLength())
       {
         // Sets mNAMPath and mStagedNAM
-        
+
         const std::string msg = LoadPreset(fileName);
         // TODO error messages like the IR loader.
         if (msg.size())
@@ -224,18 +224,18 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
     const std::string defaultIRString = "Select IR...";
 #endif
     pGraphics->AttachControl(new ISVGControl(presetIconArea, modelIconSVG));
-    pGraphics->AttachControl(
-      new NAMFileBrowserControl(presetArea, kMsgTagClearModel, defaultPresetFileString.c_str(),"nps", loadPresetCompletionHandler, style, 
-                                fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
-      kCtrlTagPresetFileBrowser);
+    pGraphics->AttachControl(new NAMFileBrowserControl(presetArea, kMsgTagClearModel, defaultPresetFileString.c_str(),
+                                                       "nps", loadPresetCompletionHandler, style, fileSVG, crossSVG,
+                                                       leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
+                             kCtrlTagPresetFileBrowser);
 
     pGraphics->AttachControl(new ISVGControl(modelIconArea, modelIconSVG));
-    pGraphics->AttachControl(
-      new NAMFileBrowserControl(modelArea, kMsgTagClearModel, defaultNamFileString.c_str(),"nam", loadModelCompletionHandler, style, 
-                                fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
-      kCtrlTagModelFileBrowser);
+    pGraphics->AttachControl(new NAMFileBrowserControl(modelArea, kMsgTagClearModel, defaultNamFileString.c_str(),
+                                                       "nam", loadModelCompletionHandler, style, fileSVG, crossSVG,
+                                                       leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
+                             kCtrlTagModelFileBrowser);
 
-    pGraphics->AttachControl(new ISVGSwitchControl(irSwitchArea, {irIconOffSVG, irIconOnSVG}, kIRToggle));
+    pGraphics->AttachControl(new ISVGSwitchControl(irSwitchArea, {irIconOffSVG, irIconOnSVG}, kIRToggle), kCtrlIRToggle);
     pGraphics->AttachControl(
       new NAMFileBrowserControl(irArea, kMsgTagClearIR, defaultIRString.c_str(), "wav", loadIRCompletionHandler, style,
                                 fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
@@ -376,7 +376,7 @@ void NeuralAmpModeler::ProcessBlock(iplug::sample** inputs, iplug::sample** outp
   }
 
   sample** irPointers = toneStackOutPointers;
-  if (mIR != nullptr && GetParam(kIRToggle)->Value())
+  if (mIR != nullptr && GetParam(kIRToggle)->Bool())
     irPointers = mIR->Process(toneStackOutPointers, numChannelsInternal, numFrames);
 
   // And the HPF for DC offset (Issue 271)
@@ -660,11 +660,12 @@ std::string NeuralAmpModeler::SavePreset(const WDL_String& presetPath)
     // DEBUG only save current preset using the NeuralAmpModelerPreset::Serialize method
     std::vector<float> params;
     // get all parameters from this iPlug2 plugin instance and store them to params
-    for(int i=0; i < NParams(); i++)
+    for (int i = 0; i < NParams(); i++)
     {
       params.push_back(GetParam(i)->Value());
     }
-    NeuralAmpModelerPreset preset("Preset 1", "Test preset for NAM", mNAMPath.Get(), mIRPath.Get(), GetParam(kIRToggle)->Value() == 0.0, params);
+    NeuralAmpModelerPreset preset(
+      "Preset 1", "Test preset for NAM", mNAMPath.Get(), mIRPath.Get(), params);
     // Save preset using the NeuralAmpModelerPreset::Serialize method to presetPath location:
     bool saveSuccess = preset.Serialize(presetPath, preset, errorMessage);
 
@@ -686,27 +687,47 @@ std::string NeuralAmpModeler::LoadPreset(const WDL_String& presetPath)
   std::string errorMessage;
   try
   {
-    // DEBUG only save current preset using the NeuralAmpModelerPreset::Serialize method
-    //SavePreset(presetPath);
+    // SavePreset(presetPath); // DEBUG only
 
     auto result = NeuralAmpModelerPreset::Deserialize(presetPath, errorMessage);
-    if(result != nullptr)
+    if (result != nullptr)
     {
       WDL_String ampPath(result->AmpPath().c_str());
       WDL_String irPath(result->IrPath().c_str());
 
-      if (std::filesystem::exists(result->AmpPath())) _StageModel(ampPath);
-      if (std::filesystem::exists(result->IrPath()))  _StageIR(irPath);
-      if (result->Params().size()>0)
+      if (std::filesystem::exists(result->AmpPath()))
+        _StageModel(ampPath);
+      if (std::filesystem::exists(result->IrPath()))
+        _StageIR(irPath);
+
+      if (result->Params().size() > 0)
       {
-        for(int i=0; i < NParams(); i++)
+
+        for (int i = 0; i < NParams(); i++)
         {
-        // update params: all floats and bool generalized to a vector of floats
-          GetParam(i)->Set(result->Params()[i]);
+          // update params: all floats and bool generalized to a vector of floats
+          auto currentParam = result->Params()[i];
+          GetParam(i)->Set(currentParam);
+          OnParamChange(i, kHost);
           OnParamChangeUI(i, kHost);
+
+          // Also handle custom UI controls appearance (iPlug2 bug?)
+          switch (i)
+          {
+            case kIRToggle:
+            {
+              auto ctrl = GetUI()->GetControlWithTag(kCtrlIRToggle);
+              ctrl->SetValue(currentParam);
+            }
+            break;
+            default: break;
+          }
+          
         }
       }
     }
+
+    // SavePreset(presetPath); // DEBUG only
   }
   catch (std::exception& e)
   {

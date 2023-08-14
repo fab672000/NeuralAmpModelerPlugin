@@ -53,6 +53,7 @@ enum ECtrlTags
   kCtrlTagOutNorm,
   kCtrlTagSampleRateWarning,
   kCtrlTagPresetFileBrowser,
+  kCtrlIRToggle,
   kNumCtrlTags,
 };
 
