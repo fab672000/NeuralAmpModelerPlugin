@@ -202,18 +202,19 @@ class NAMFileBrowserControl : public IDirBrowseControlBase
 {
 public:
   NAMFileBrowserControl(const IRECT& bounds, int clearMsgTag, const char* labelStr, const char* fileExtension,
-                        IFileDialogCompletionHandlerFunc ch, const IVStyle& style, const ISVG& loadSVG,
-                        const ISVG& clearSVG, const ISVG& leftSVG, const ISVG& rightSVG, const IBitmap& bitmap)
+                        IFileDialogCompletionHandlerFunc ch, const IVStyle& style, const ISVG& loadSaveSVG,
+                        const ISVG& clearSVG, const ISVG& leftSVG, const ISVG& rightSVG, const IBitmap& bitmap, bool wantSave=false)
   : IDirBrowseControlBase(bounds, fileExtension, false, false)
   , mClearMsgTag(clearMsgTag)
   , mDefaultLabelStr(labelStr)
   , mCompletionHandlerFunc(ch)
   , mStyle(style.WithColor(kFG, COLOR_TRANSPARENT).WithDrawFrame(false))
   , mBitmap(bitmap)
-  , mLoadSVG(loadSVG)
+  , mLoadSaveSVG(loadSaveSVG)
   , mClearSVG(clearSVG)
   , mLeftSVG(leftSVG)
   , mRightSVG(rightSVG)
+  , mWantSave(wantSave)
   {
     mIgnoreMouse = true;
   }
@@ -229,7 +230,7 @@ public:
       if (pItem)
       {
         mSelectedIndex = mItems.Find(pItem);
-        LoadFileAtCurrentIndex();
+        CompletionActionOnFileAtCurrentIndex();
       }
     }
   }
@@ -245,7 +246,7 @@ public:
       if (mSelectedIndex < 0)
         mSelectedIndex = nItems - 1;
 
-      LoadFileAtCurrentIndex();
+      CompletionActionOnFileAtCurrentIndex();
     };
 
     auto nextFileFunc = [&](IControl* pCaller) {
@@ -257,7 +258,7 @@ public:
       if (mSelectedIndex >= nItems)
         mSelectedIndex = 0;
 
-      LoadFileAtCurrentIndex();
+      CompletionActionOnFileAtCurrentIndex();
     };
 
     auto loadFileFunc = [&](IControl* pCaller) {
@@ -272,19 +273,20 @@ public:
           AddPath(path.Get(), "");
           SetupMenu();
           SelectFirstFile();
-          LoadFileAtCurrentIndex();
+          CompletionActionOnFileAtCurrentIndex();
         }
       });
 #else
       pCaller->GetUI()->PromptForFile(
-        fileName, path, EFileAction::Open, mExtension.Get(), [&](const WDL_String& fileName, const WDL_String& path) {
+        fileName, path, mWantSave ? EFileAction::Save : EFileAction::Open, mExtension.Get(), 
+          [&](const WDL_String& fileName, const WDL_String& path) {
           if (fileName.GetLength())
           {
             ClearPathList();
             AddPath(path.Get(), "");
             SetupMenu();
             SetSelectedFile(fileName.Get());
-            LoadFileAtCurrentIndex();
+            CompletionActionOnFileAtCurrentIndex();
           }
         });
 #endif
@@ -317,7 +319,7 @@ public:
     const auto rightButtonBounds = padded.ReduceFromLeft(buttonWidth);
     const auto fileNameButtonBounds = padded;
 
-    AddChildControl(new NAMSquareButtonControl(loadFileButtonBounds, DefaultClickActionFunc, mLoadSVG))
+    AddChildControl(new NAMSquareButtonControl(loadFileButtonBounds, DefaultClickActionFunc, mLoadSaveSVG))
       ->SetAnimationEndActionFunction(loadFileFunc);
     AddChildControl(new NAMSquareButtonControl(leftButtonBounds, DefaultClickActionFunc, mLeftSVG))
       ->SetAnimationEndActionFunction(prevFileFunc);
@@ -331,7 +333,7 @@ public:
     mFileNameControl->SetLabelAndTooltip(mDefaultLabelStr.Get());
   }
 
-  void LoadFileAtCurrentIndex()
+  void CompletionActionOnFileAtCurrentIndex()
   {
     if (mSelectedIndex > -1 && mSelectedIndex < NItems())
     {
@@ -387,8 +389,9 @@ private:
   NAMFileNameControl* mFileNameControl = nullptr;
   IVStyle mStyle;
   IBitmap mBitmap;
-  ISVG mLoadSVG, mClearSVG, mLeftSVG, mRightSVG;
+  ISVG mLoadSaveSVG, mClearSVG, mLeftSVG, mRightSVG;
   int mClearMsgTag;
+  bool mWantSave;
 };
 
 class NAMMeterControl : public IVPeakAvgMeterControl<>, public IBitmapBase

@@ -94,6 +94,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
 
     const auto helpSVG = pGraphics->LoadSVG(HELP_FN);
     const auto fileSVG = pGraphics->LoadSVG(FILE_FN);
+    const auto fileSaveSVG = pGraphics->LoadSVG(FILE_SAVE_FN);
     const auto crossSVG = pGraphics->LoadSVG(CLOSE_BUTTON_FN);
     const auto rightArrowSVG = pGraphics->LoadSVG(RIGHT_ARROW_FN);
     const auto leftArrowSVG = pGraphics->LoadSVG(LEFT_ARROW_FN);
@@ -144,6 +145,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
     const auto presetArea =
       contentArea.GetFromBottom((2.5f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
     const auto presetIconArea = presetArea.GetFromLeft(30).GetTranslated(-40, 10);
+    const auto presetSaveIconArea = presetArea.GetFromRight(30).GetTranslated(30, 0).GetScaledAboutCentre(0.7);
 
     const auto modelArea = presetArea.GetVShifted(irYOffset);
     const auto modelIconArea = modelArea.GetFromLeft(30).GetTranslated(-40, 10);
@@ -229,13 +231,19 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
                                                        leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
                              kCtrlTagPresetFileBrowser);
 
+    auto savePresetCompletionHandler = [&](IControl* ctrl) {
+        SavePreset(mNAMPath);
+        };
+
+    pGraphics->AttachControl(new ISVGButtonControl(presetSaveIconArea, savePresetCompletionHandler, fileSaveSVG, fileSaveSVG));
+
     pGraphics->AttachControl(new ISVGControl(modelIconArea, modelIconSVG));
     pGraphics->AttachControl(new NAMFileBrowserControl(modelArea, kMsgTagClearModel, defaultNamFileString.c_str(),
                                                        "nam", loadModelCompletionHandler, style, fileSVG, crossSVG,
                                                        leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
                              kCtrlTagModelFileBrowser);
 
-    pGraphics->AttachControl(new ISVGSwitchControl(irSwitchArea, {irIconOffSVG, irIconOnSVG}, kIRToggle), kCtrlIRToggle);
+    pGraphics->AttachControl(new ISVGSwitchControl(irSwitchArea, {irIconOffSVG, irIconOnSVG}, kIRToggle), kCtrlTagIRToggle);
     pGraphics->AttachControl(
       new NAMFileBrowserControl(irArea, kMsgTagClearIR, defaultIRString.c_str(), "wav", loadIRCompletionHandler, style,
                                 fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
@@ -716,7 +724,7 @@ std::string NeuralAmpModeler::LoadPreset(const WDL_String& presetPath)
           {
             case kIRToggle:
             {
-              auto ctrl = GetUI()->GetControlWithTag(kCtrlIRToggle);
+              auto ctrl = GetUI()->GetControlWithTag(kCtrlTagIRToggle);
               ctrl->SetValue(currentParam);
             }
             break;

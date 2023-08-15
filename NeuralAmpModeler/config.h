@@ -61,6 +61,8 @@
 
 #define HELP_FN "Help.svg"
 #define FILE_FN "File.svg"
+// TODO: create save file icon paths
+#define FILE_SAVE_FN "FileSave.svg"
 #define CLOSE_BUTTON_FN "Cross.svg"
 #define LEFT_ARROW_FN "ArrowLeft.svg"
 #define RIGHT_ARROW_FN "ArrowRight.svg"
