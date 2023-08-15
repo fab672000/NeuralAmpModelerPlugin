@@ -67,7 +67,6 @@ bool NeuralAmpModelerPreset::Serialize(const WDL_String& presetPath, const Neura
   try
   {
     auto path = std::filesystem::u8path(presetPath.Get());
-    path = "F:\\new.nps";
     // force extension of presetPath to be ".nps"
     if (path.extension() != ".nps") path.replace_extension(".nps");
     auto pathDirectory = path.parent_path();
