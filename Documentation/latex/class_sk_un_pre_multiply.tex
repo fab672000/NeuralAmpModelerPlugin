@@ -1,0 +1,43 @@
+\hypertarget{class_sk_un_pre_multiply}{}\doxysection{Sk\+Un\+Pre\+Multiply Class Reference}
+\label{class_sk_un_pre_multiply}\index{SkUnPreMultiply@{SkUnPreMultiply}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_un_pre_multiply_a69e0563b4da06d6e30451077d0fd8ab8}\label{class_sk_un_pre_multiply_a69e0563b4da06d6e30451077d0fd8ab8}} 
+typedef uint32\+\_\+t {\bfseries Scale}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_un_pre_multiply_a4f47df0bbb9480dd989f7c2e870179e1}\label{class_sk_un_pre_multiply_a4f47df0bbb9480dd989f7c2e870179e1}} 
+static const Scale $\ast$ {\bfseries Get\+Scale\+Table} ()
+\item 
+\mbox{\Hypertarget{class_sk_un_pre_multiply_a795a489e1344a72194f38816f46c0321}\label{class_sk_un_pre_multiply_a795a489e1344a72194f38816f46c0321}} 
+static Scale {\bfseries Get\+Scale} (\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} alpha)
+\item 
+static \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} \mbox{\hyperlink{class_sk_un_pre_multiply_a53b3494c8520ac7e968045e73d367384}{Apply\+Scale}} (Scale scale, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} component)
+\item 
+\mbox{\Hypertarget{class_sk_un_pre_multiply_adc57f3e9d265962f120f9cc3627a33cd}\label{class_sk_un_pre_multiply_adc57f3e9d265962f120f9cc3627a33cd}} 
+static \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} {\bfseries P\+M\+Color\+To\+Color} (\mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_un_pre_multiply_a53b3494c8520ac7e968045e73d367384}\label{class_sk_un_pre_multiply_a53b3494c8520ac7e968045e73d367384}} 
+\index{SkUnPreMultiply@{SkUnPreMultiply}!ApplyScale@{ApplyScale}}
+\index{ApplyScale@{ApplyScale}!SkUnPreMultiply@{SkUnPreMultiply}}
+\doxysubsubsection{\texorpdfstring{ApplyScale()}{ApplyScale()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} Sk\+Un\+Pre\+Multiply\+::\+Apply\+Scale (\begin{DoxyParamCaption}\item[{Scale}]{scale,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Usage\+:
+
+const Scale$\ast$ table = Sk\+Un\+Pre\+Multiply\+::\+Get\+Scale\+Table();
+
+for (...) \{ unsigned a = ... Sk\+Un\+Pre\+Multiply\+::\+Scale scale = table\mbox{[}a\mbox{]};
+
+red = Sk\+Un\+Pre\+Multiply\+::\+Apply\+Scale(scale, red); ... now red is unpremultiplied \} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Un\+Pre\+Multiply.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Un\+Pre\+Multiply.\+cpp\end{DoxyCompactItemize}

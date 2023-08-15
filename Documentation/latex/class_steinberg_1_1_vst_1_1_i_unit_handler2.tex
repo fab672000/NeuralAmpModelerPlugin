@@ -1,0 +1,57 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler2}{}\doxysection{Steinberg\+::Vst\+::I\+Unit\+Handler2 Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_unit_handler2}\index{Steinberg::Vst::IUnitHandler2@{Steinberg::Vst::IUnitHandler2}}
+
+
+{\ttfamily \#include $<$ivstunits.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Unit\+Handler2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_unit_handler2}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler2_af6ac0b1a6258d6634f710fc61286478a}{notify\+Unit\+By\+Bus\+Change}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler2_aa88c29517cd3a3e24619c575a69e26cc}\label{class_steinberg_1_1_vst_1_1_i_unit_handler2_aa88c29517cd3a3e24619c575a69e26cc}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Host callback for extended unit support\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler2}{Vst\+::\+I\+Unit\+Handler2}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler}{I\+Unit\+Handler}}\mbox{]}
+\item \mbox{[}released\+: 3.\+6.\+5\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+Host callback interface, used with \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_info}{I\+Unit\+Info}}. Retrieve via query\+Interface from \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler}{I\+Component\+Handler}}.
+
+The plug-\/in has the possibility to inform the host with notify\+Unit\+By\+Bus\+Change that something has changed in the bus -\/ unit assignment, the host then has to recall \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_info_a04ae52c1818a597dc87c712a901f34a0}{I\+Unit\+Info\+::get\+Unit\+By\+Bus}} in order to get the new relations between busses and unit.
+
+\begin{DoxySeeAlso}{See also}
+vst3\+Units, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler}{I\+Unit\+Handler}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler2_af6ac0b1a6258d6634f710fc61286478a}\label{class_steinberg_1_1_vst_1_1_i_unit_handler2_af6ac0b1a6258d6634f710fc61286478a}} 
+\index{Steinberg::Vst::IUnitHandler2@{Steinberg::Vst::IUnitHandler2}!notifyUnitByBusChange@{notifyUnitByBusChange}}
+\index{notifyUnitByBusChange@{notifyUnitByBusChange}!Steinberg::Vst::IUnitHandler2@{Steinberg::Vst::IUnitHandler2}}
+\doxysubsubsection{\texorpdfstring{notifyUnitByBusChange()}{notifyUnitByBusChange()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Unit\+Handler2\+::notify\+Unit\+By\+Bus\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Tell host that assignment Unit-\/\+Bus defined by \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_info_a04ae52c1818a597dc87c712a901f34a0}{I\+Unit\+Info\+::get\+Unit\+By\+Bus}} has changed. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstunits.\+h\end{DoxyCompactItemize}

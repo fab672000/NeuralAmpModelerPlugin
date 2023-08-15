@@ -1,0 +1,198 @@
+\hypertarget{class_soundfile_reader}{}\doxysection{Soundfile\+Reader Class Reference}
+\label{class_soundfile_reader}\index{SoundfileReader@{SoundfileReader}}
+Inheritance diagram for Soundfile\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_soundfile_reader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_aa61b814724b0ae1a9bdf28b732dc92f0}\label{class_soundfile_reader_aa61b814724b0ae1a9bdf28b732dc92f0}} 
+void {\bfseries set\+Sample\+Rate} (int sample\+\_\+rate)
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_a72394044e02d43e4741ace9a61dd7781}\label{class_soundfile_reader_a72394044e02d43e4741ace9a61dd7781}} 
+\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$ {\bfseries create\+Soundfile} (const std\+::vector$<$ std\+::string $>$ \&path\+\_\+name\+\_\+list, int max\+\_\+chan)
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_a3b0ec4702ad042a5a2c6238382dccfb0}\label{class_soundfile_reader_a3b0ec4702ad042a5a2c6238382dccfb0}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries check\+Files} (const std\+::vector$<$ std\+::string $>$ \&sound\+\_\+directories, const std\+::vector$<$ std\+::string $>$ \&file\+\_\+name\+\_\+list)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_ac1a3857fb89b193b5fc167ef98673a6a}\label{class_soundfile_reader_ac1a3857fb89b193b5fc167ef98673a6a}} 
+void {\bfseries empty\+File} (\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$soundfile, int part, int \&offset)
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_a740a3e216349067d78672c616526259f}\label{class_soundfile_reader_a740a3e216349067d78672c616526259f}} 
+\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$ {\bfseries create\+Soundfile} (int cur\+\_\+chan, int length, int max\+\_\+chan)
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_ae38a6d76a9634738e59dd983628542a6}\label{class_soundfile_reader_ae38a6d76a9634738e59dd983628542a6}} 
+void {\bfseries get\+Buffers\+Offset} (\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$soundfile, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$buffers, int offset)
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_ad2c631cc62483010e1751e1826d0bce3}\label{class_soundfile_reader_ad2c631cc62483010e1751e1826d0bce3}} 
+std\+::string {\bfseries check\+File} (const std\+::vector$<$ std\+::string $>$ \&sound\+\_\+directories, const std\+::string \&file\+\_\+name)
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_a2c706fbdd0e113537984a315aa4288f0}\label{class_soundfile_reader_a2c706fbdd0e113537984a315aa4288f0}} 
+bool {\bfseries is\+Resampling} (int sample\+\_\+rate)
+\item 
+virtual bool \mbox{\hyperlink{class_soundfile_reader_a4b4b0911849d9b34b0a4982d10ac2ab8}{check\+File}} (const std\+::string \&path\+\_\+name)=0
+\item 
+virtual bool \mbox{\hyperlink{class_soundfile_reader_a19545eb617e752d539b40e3579853f99}{check\+File}} (unsigned char $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t length)
+\item 
+virtual void \mbox{\hyperlink{class_soundfile_reader_a3da61bb7d5a0995a40bdf0d001e12726}{get\+Params\+File}} (const std\+::string \&path\+\_\+name, int \&\mbox{\hyperlink{classchannels}{channels}}, int \&length)=0
+\item 
+virtual void \mbox{\hyperlink{class_soundfile_reader_a892e3464dc27c83f5fa22f240eb05841}{get\+Params\+File}} (unsigned char $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t size, int \&\mbox{\hyperlink{classchannels}{channels}}, int \&length)
+\item 
+virtual void \mbox{\hyperlink{class_soundfile_reader_a798737d8c006689627c258a133c9b674}{read\+File}} (\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$soundfile, const std\+::string \&path\+\_\+name, int part, int \&offset, int max\+\_\+chan)=0
+\item 
+virtual void \mbox{\hyperlink{class_soundfile_reader_a1c499c85a674658cf9410d47b0b1043d}{read\+File}} (\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$soundfile, unsigned char $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t length, int part, int \&offset, int max\+\_\+chan)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_soundfile_reader_a48bf223e16339d36a4e7f4ef8eb075c8}\label{class_soundfile_reader_a48bf223e16339d36a4e7f4ef8eb075c8}} 
+int {\bfseries f\+Driver\+SR}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_soundfile_reader_a4b4b0911849d9b34b0a4982d10ac2ab8}\label{class_soundfile_reader_a4b4b0911849d9b34b0a4982d10ac2ab8}} 
+\index{SoundfileReader@{SoundfileReader}!checkFile@{checkFile}}
+\index{checkFile@{checkFile}!SoundfileReader@{SoundfileReader}}
+\doxysubsubsection{\texorpdfstring{checkFile()}{checkFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Soundfile\+Reader\+::check\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Check the availability of a sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the sound resource is available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{struct_wave_reader_a794f2989ca85621df92223964ddc6cfc}{Wave\+Reader}}, \mbox{\hyperlink{struct_libsndfile_reader_a913c895918b696a62fb92aa118bb54fe}{Libsndfile\+Reader}}, \mbox{\hyperlink{struct_juce_reader_adf515da745c2ec6faaa7129e9139eb97}{Juce\+Reader}}, and \mbox{\hyperlink{struct_memory_reader_a0f61d787fe10a17f8445ed2c16f41d7f}{Memory\+Reader}}.
+
+\mbox{\Hypertarget{class_soundfile_reader_a19545eb617e752d539b40e3579853f99}\label{class_soundfile_reader_a19545eb617e752d539b40e3579853f99}} 
+\index{SoundfileReader@{SoundfileReader}!checkFile@{checkFile}}
+\index{checkFile@{checkFile}!SoundfileReader@{SoundfileReader}}
+\doxysubsubsection{\texorpdfstring{checkFile()}{checkFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Soundfile\+Reader\+::check\+File (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Check the availability of a sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ the sound buffer \\
+\hline
+{\em buffer} & -\/ the sound buffer length\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the sound resource is available, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{struct_libsndfile_reader_a56250914362eb057189bd2f18f525b2a}{Libsndfile\+Reader}}.
+
+\mbox{\Hypertarget{class_soundfile_reader_a3da61bb7d5a0995a40bdf0d001e12726}\label{class_soundfile_reader_a3da61bb7d5a0995a40bdf0d001e12726}} 
+\index{SoundfileReader@{SoundfileReader}!getParamsFile@{getParamsFile}}
+\index{getParamsFile@{getParamsFile}!SoundfileReader@{SoundfileReader}}
+\doxysubsubsection{\texorpdfstring{getParamsFile()}{getParamsFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Soundfile\+Reader\+::get\+Params\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+name,  }\item[{int \&}]{channels,  }\item[{int \&}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Get the channels and length values of the given sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way \\
+\hline
+{\em channels} & -\/ the channels value to be filled with the sound resource number of channels \\
+\hline
+{\em length} & -\/ the length value to be filled with the sound resource length in frames \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{struct_wave_reader_ad0c63aadba68233e2efec40135066312}{Wave\+Reader}}, \mbox{\hyperlink{struct_libsndfile_reader_a4f84d81ff9a99aa48aa0028fd691e7f2}{Libsndfile\+Reader}}, \mbox{\hyperlink{struct_juce_reader_a3ffb1855e17e08184c3fca1298296643}{Juce\+Reader}}, and \mbox{\hyperlink{struct_memory_reader_a1ea26c93555f0e426916a60b319d75c8}{Memory\+Reader}}.
+
+\mbox{\Hypertarget{class_soundfile_reader_a892e3464dc27c83f5fa22f240eb05841}\label{class_soundfile_reader_a892e3464dc27c83f5fa22f240eb05841}} 
+\index{SoundfileReader@{SoundfileReader}!getParamsFile@{getParamsFile}}
+\index{getParamsFile@{getParamsFile}!SoundfileReader@{SoundfileReader}}
+\doxysubsubsection{\texorpdfstring{getParamsFile()}{getParamsFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Soundfile\+Reader\+::get\+Params\+File (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size,  }\item[{int \&}]{channels,  }\item[{int \&}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Get the channels and length values of the given sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ the sound buffer \\
+\hline
+{\em buffer} & -\/ the sound buffer length \\
+\hline
+{\em channels} & -\/ the channels value to be filled with the sound resource number of channels \\
+\hline
+{\em length} & -\/ the length value to be filled with the sound resource length in frames \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{struct_libsndfile_reader_a9c67dd8b7bfd5119ca945ba91d0e0dd4}{Libsndfile\+Reader}}.
+
+\mbox{\Hypertarget{class_soundfile_reader_a798737d8c006689627c258a133c9b674}\label{class_soundfile_reader_a798737d8c006689627c258a133c9b674}} 
+\index{SoundfileReader@{SoundfileReader}!readFile@{readFile}}
+\index{readFile@{readFile}!SoundfileReader@{SoundfileReader}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Soundfile\+Reader\+::read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$}]{soundfile,  }\item[{const std\+::string \&}]{path\+\_\+name,  }\item[{int}]{part,  }\item[{int \&}]{offset,  }\item[{int}]{max\+\_\+chan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Read one sound resource and fill the \textquotesingle{}soundfile\textquotesingle{} structure accordingly
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way \\
+\hline
+{\em part} & -\/ the part number to be filled in the soundfile \\
+\hline
+{\em offset} & -\/ the offset value to be incremented with the actual sound resource length in frames \\
+\hline
+{\em max\+\_\+chan} & -\/ the maximum number of mono channels to fill \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{struct_wave_reader_acd96ee427cb6ce5b7a7a3f3f420b1d62}{Wave\+Reader}}, \mbox{\hyperlink{struct_libsndfile_reader_afc5b3f54bdd9934ce85b33f43d24156b}{Libsndfile\+Reader}}, \mbox{\hyperlink{struct_juce_reader_ae7f52c1de4574a72818191263dc40e88}{Juce\+Reader}}, and \mbox{\hyperlink{struct_memory_reader_a5b8f2cc553a6b44aa08d5f5916d7ca7d}{Memory\+Reader}}.
+
+\mbox{\Hypertarget{class_soundfile_reader_a1c499c85a674658cf9410d47b0b1043d}\label{class_soundfile_reader_a1c499c85a674658cf9410d47b0b1043d}} 
+\index{SoundfileReader@{SoundfileReader}!readFile@{readFile}}
+\index{readFile@{readFile}!SoundfileReader@{SoundfileReader}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Soundfile\+Reader\+::read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$}]{soundfile,  }\item[{unsigned char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length,  }\item[{int}]{part,  }\item[{int \&}]{offset,  }\item[{int}]{max\+\_\+chan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Read one sound resource and fill the \textquotesingle{}soundfile\textquotesingle{} structure accordingly
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ the sound buffer \\
+\hline
+{\em buffer} & -\/ the sound buffer length \\
+\hline
+{\em part} & -\/ the part number to be filled in the soundfile \\
+\hline
+{\em offset} & -\/ the offset value to be incremented with the actual sound resource length in frames \\
+\hline
+{\em max\+\_\+chan} & -\/ the maximum number of mono channels to fill \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{struct_libsndfile_reader_a56ae70fec964241016ff60d101437702}{Libsndfile\+Reader}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Soundfile.\+h\end{DoxyCompactItemize}

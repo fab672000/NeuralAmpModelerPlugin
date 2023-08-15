@@ -1,0 +1,157 @@
+\hypertarget{class_sk_block_memory_stream}{}\doxysection{Sk\+Block\+Memory\+Stream Class Reference}
+\label{class_sk_block_memory_stream}\index{SkBlockMemoryStream@{SkBlockMemoryStream}}
+Inheritance diagram for Sk\+Block\+Memory\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_sk_block_memory_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_block_memory_stream_a72d065b1ec431fda2f86cca81c198461}\label{class_sk_block_memory_stream_a72d065b1ec431fda2f86cca81c198461}} 
+{\bfseries Sk\+Block\+Memory\+Stream} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_block_memory_ref_cnt}{Sk\+Block\+Memory\+Ref\+Cnt}} $>$ head\+Ref, size\+\_\+t size)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_block_memory_stream_aa202671b29aecabbd79bcde62e4904fd}{read}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t raw\+Count) override
+\item 
+bool \mbox{\hyperlink{class_sk_block_memory_stream_a80c319094f0e904598a576ce50b8a862}{is\+At\+End}} () const override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_block_memory_stream_a6ffc7a93e7eb45c1024987e38cc2d191}{peek}} (void $\ast$buff, size\+\_\+t bytes\+To\+Peek) const override
+\item 
+bool \mbox{\hyperlink{class_sk_block_memory_stream_ad6d0dc8a972d48c0a7e2c2f9da39b29b}{rewind}} () override
+\item 
+\mbox{\Hypertarget{class_sk_block_memory_stream_aa89ee72291781ebe4dfac0419737aa79}\label{class_sk_block_memory_stream_aa89ee72291781ebe4dfac0419737aa79}} 
+\mbox{\hyperlink{class_sk_block_memory_stream}{Sk\+Block\+Memory\+Stream}} $\ast$ {\bfseries on\+Duplicate} () const override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_block_memory_stream_a63b262e123f7b9992148c03900c37577}{get\+Position}} () const override
+\item 
+bool \mbox{\hyperlink{class_sk_block_memory_stream_aa0861bb924540923f4ee16bcee2ab6ba}{seek}} (size\+\_\+t position) override
+\item 
+bool \mbox{\hyperlink{class_sk_block_memory_stream_ac824b1158c9fdb5af37196a67db81c15}{move}} (long offset) override
+\item 
+\mbox{\Hypertarget{class_sk_block_memory_stream_ad2fc3adaf4e13f8a2e5042643c550a82}\label{class_sk_block_memory_stream_ad2fc3adaf4e13f8a2e5042643c550a82}} 
+\mbox{\hyperlink{class_sk_block_memory_stream}{Sk\+Block\+Memory\+Stream}} $\ast$ {\bfseries on\+Fork} () const override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_block_memory_stream_a38bc537890c4dcca2ca7d7f7878ebd68}{get\+Length}} () const override
+\item 
+const void $\ast$ \mbox{\hyperlink{class_sk_block_memory_stream_a6bf3dbafab7017f145bc4634c1a44ba1}{get\+Memory\+Base}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_block_memory_stream_a38bc537890c4dcca2ca7d7f7878ebd68}\label{class_sk_block_memory_stream_a38bc537890c4dcca2ca7d7f7878ebd68}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!getLength@{getLength}}
+\index{getLength@{getLength}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Block\+Memory\+Stream\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the total length of the stream. If this cannot be done, returns 0. 
+
+Implements \mbox{\hyperlink{class_sk_stream_asset_a851c77ed60fe7b44ee8665f9f0705b39}{Sk\+Stream\+Asset}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_a6bf3dbafab7017f145bc4634c1a44ba1}\label{class_sk_block_memory_stream_a6bf3dbafab7017f145bc4634c1a44ba1}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!getMemoryBase@{getMemoryBase}}
+\index{getMemoryBase@{getMemoryBase}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{getMemoryBase()}{getMemoryBase()}}
+{\footnotesize\ttfamily const void$\ast$ Sk\+Block\+Memory\+Stream\+::get\+Memory\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the starting address for the data. If this cannot be done, returns N\+U\+LL. 
+
+Reimplemented from \mbox{\hyperlink{class_sk_stream_a584dce4c2f1af230c1951b5d90da52e8}{Sk\+Stream}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_a63b262e123f7b9992148c03900c37577}\label{class_sk_block_memory_stream_a63b262e123f7b9992148c03900c37577}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Block\+Memory\+Stream\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the current position in the stream. If this cannot be done, returns 0. 
+
+Implements \mbox{\hyperlink{class_sk_stream_seekable_a323e9685ee929a25326daecd39936455}{Sk\+Stream\+Seekable}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_a80c319094f0e904598a576ce50b8a862}\label{class_sk_block_memory_stream_a80c319094f0e904598a576ce50b8a862}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!isAtEnd@{isAtEnd}}
+\index{isAtEnd@{isAtEnd}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{isAtEnd()}{isAtEnd()}}
+{\footnotesize\ttfamily bool Sk\+Block\+Memory\+Stream\+::is\+At\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns true when all the bytes in the stream have been read. This may return true early (when there are no more bytes to be read) or late (after the first unsuccessful read). 
+
+Implements \mbox{\hyperlink{class_sk_stream_ace38a1d71e27e451439e8cec7a46ae59}{Sk\+Stream}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_ac824b1158c9fdb5af37196a67db81c15}\label{class_sk_block_memory_stream_ac824b1158c9fdb5af37196a67db81c15}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!move@{move}}
+\index{move@{move}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily bool Sk\+Block\+Memory\+Stream\+::move (\begin{DoxyParamCaption}\item[{long}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Seeks to an relative offset in the stream. If this cannot be done, returns false. If an attempt is made to move to a position outside the stream, the position will be set to the closest point within the stream (beginning or end). 
+
+Implements \mbox{\hyperlink{class_sk_stream_seekable_a7c5879ed6fff584b5114343b8106e64c}{Sk\+Stream\+Seekable}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_a6ffc7a93e7eb45c1024987e38cc2d191}\label{class_sk_block_memory_stream_a6ffc7a93e7eb45c1024987e38cc2d191}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!peek@{peek}}
+\index{peek@{peek}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Block\+Memory\+Stream\+::peek (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{size\+\_\+t}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Attempt to peek at size bytes. If this stream supports peeking, copy min(size, peekable bytes) into buffer, and return the number of bytes copied. If the stream does not support peeking, or cannot peek any bytes, return 0 and leave buffer unchanged. The stream is guaranteed to be in the same visible state after this call, regardless of success or failure. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Must not be N\+U\+LL, and must be at least size bytes. Destination to copy bytes. \\
+\hline
+{\em size} & Number of bytes to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes peeked/copied. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_sk_stream_a7f5351e567f5e03d5017d1218e74f3b2}{Sk\+Stream}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_aa202671b29aecabbd79bcde62e4904fd}\label{class_sk_block_memory_stream_aa202671b29aecabbd79bcde62e4904fd}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!read@{read}}
+\index{read@{read}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Block\+Memory\+Stream\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reads or skips size number of bytes. If buffer == N\+U\+LL, skip size bytes, return how many were skipped. If buffer != N\+U\+LL, copy size bytes into buffer, return how many were copied. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & when N\+U\+LL skip size bytes, otherwise copy size bytes into buffer \\
+\hline
+{\em size} & the number of bytes to skip or copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes actually read. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_sk_stream_afae3344ee277d55aec3a4fa5fead387a}{Sk\+Stream}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_ad6d0dc8a972d48c0a7e2c2f9da39b29b}\label{class_sk_block_memory_stream_ad6d0dc8a972d48c0a7e2c2f9da39b29b}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!rewind@{rewind}}
+\index{rewind@{rewind}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{rewind()}{rewind()}}
+{\footnotesize\ttfamily bool Sk\+Block\+Memory\+Stream\+::rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Rewinds to the beginning of the stream. Returns true if the stream is known to be at the beginning after this call returns. 
+
+Implements \mbox{\hyperlink{class_sk_stream_rewindable_a1d5cf8ea1a99531884ddee0e4e5bb9b6}{Sk\+Stream\+Rewindable}}.
+
+\mbox{\Hypertarget{class_sk_block_memory_stream_aa0861bb924540923f4ee16bcee2ab6ba}\label{class_sk_block_memory_stream_aa0861bb924540923f4ee16bcee2ab6ba}} 
+\index{SkBlockMemoryStream@{SkBlockMemoryStream}!seek@{seek}}
+\index{seek@{seek}!SkBlockMemoryStream@{SkBlockMemoryStream}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily bool Sk\+Block\+Memory\+Stream\+::seek (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Seeks to an absolute position in the stream. If this cannot be done, returns false. If an attempt is made to seek past the end of the stream, the position will be set to the end of the stream. 
+
+Implements \mbox{\hyperlink{class_sk_stream_seekable_a9ae44f1687305ae7e3afb4bc26398916}{Sk\+Stream\+Seekable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Stream.\+cpp\end{DoxyCompactItemize}

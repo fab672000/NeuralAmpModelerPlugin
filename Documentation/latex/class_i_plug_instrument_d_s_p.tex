@@ -1,0 +1,51 @@
+\hypertarget{class_i_plug_instrument_d_s_p}{}\doxysection{I\+Plug\+Instrument\+D\+SP$<$ T $>$ Class Template Reference}
+\label{class_i_plug_instrument_d_s_p}\index{IPlugInstrumentDSP$<$ T $>$@{IPlugInstrumentDSP$<$ T $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice}{Voice}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a53608fa9597e35160436f18485bbe5c9}\label{class_i_plug_instrument_d_s_p_a53608fa9597e35160436f18485bbe5c9}} 
+{\bfseries I\+Plug\+Instrument\+D\+SP} (int n\+Voices)
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a622ca3591cc68a14d1cd34c28f3fc853}\label{class_i_plug_instrument_d_s_p_a622ca3591cc68a14d1cd34c28f3fc853}} 
+void {\bfseries Process\+Block} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$$\ast$inputs, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$$\ast$outputs, int n\+Outputs, int n\+Frames, double qn\+Pos=0., bool transport\+Is\+Running=false, double tempo=120.)
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_ad17cd6dd2d781c9f3a8468baa7b1e665}\label{class_i_plug_instrument_d_s_p_ad17cd6dd2d781c9f3a8468baa7b1e665}} 
+void {\bfseries Reset} (double sample\+Rate, int block\+Size)
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a994b4547c6d66be9113dc29af404ee42}\label{class_i_plug_instrument_d_s_p_a994b4547c6d66be9113dc29af404ee42}} 
+void {\bfseries Process\+Midi\+Msg} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a378b40b5bd0174f89bd5652929fdaf51}\label{class_i_plug_instrument_d_s_p_a378b40b5bd0174f89bd5652929fdaf51}} 
+void {\bfseries Set\+Param} (int param\+Idx, double value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a050ed05cb97817ec4a622ff94ecaf302}\label{class_i_plug_instrument_d_s_p_a050ed05cb97817ec4a622ff94ecaf302}} 
+\mbox{\hyperlink{class_midi_synth}{Midi\+Synth}} {\bfseries m\+Synth} \{ Voice\+Allocator\+::k\+Poly\+Mode\+Poly, \mbox{\hyperlink{class_midi_synth_aafea610fcc68ee3e4edb0c3cda082e3d}{Midi\+Synth\+::k\+Default\+Block\+Size}} \}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_ac70e66cc7f74947d1dedf1328ae15dad}\label{class_i_plug_instrument_d_s_p_ac70e66cc7f74947d1dedf1328ae15dad}} 
+\mbox{\hyperlink{class_w_d_l___typed_buf}{W\+D\+L\+\_\+\+Typed\+Buf}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ {\bfseries m\+Modulations\+Data}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a1f75afc64dcda5731494f328c0cf9473}\label{class_i_plug_instrument_d_s_p_a1f75afc64dcda5731494f328c0cf9473}} 
+\mbox{\hyperlink{class_w_d_l___ptr_list}{W\+D\+L\+\_\+\+Ptr\+List}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ {\bfseries m\+Modulations}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_aba34c180c9ea63f4d2994209b3fa64e5}\label{class_i_plug_instrument_d_s_p_aba34c180c9ea63f4d2994209b3fa64e5}} 
+\mbox{\hyperlink{class_log_param_smooth}{Log\+Param\+Smooth}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}}, k\+Num\+Modulations $>$ {\bfseries m\+Param\+Smoother}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a12764603af04a585cd2d9b596130e863}\label{class_i_plug_instrument_d_s_p_a12764603af04a585cd2d9b596130e863}} 
+sample {\bfseries m\+Params\+To\+Smooth} \mbox{[}k\+Num\+Modulations\mbox{]}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_a19aa7037ba65866028949a6a7033fe00}\label{class_i_plug_instrument_d_s_p_a19aa7037ba65866028949a6a7033fe00}} 
+\mbox{\hyperlink{class_l_f_o}{L\+FO}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ {\bfseries m\+L\+FO}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Examples/\+I\+Plug\+Instrument/I\+Plug\+Instrument\+\_\+\+D\+S\+P.\+h\end{DoxyCompactItemize}

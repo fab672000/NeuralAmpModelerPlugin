@@ -1,0 +1,73 @@
+\hypertarget{struct_eigen_1_1internal_1_1visit__impl}{}\doxysection{Eigen\+::internal\+::visit\+\_\+impl$<$ Derived, Visitor, Short\+Circuit\+Evaulation $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1visit__impl}\index{Eigen::internal::visit\_impl$<$ Derived, Visitor, ShortCircuitEvaulation $>$@{Eigen::internal::visit\_impl$<$ Derived, Visitor, ShortCircuitEvaulation $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a29892e530c7f777f7949b35fc5fa8cb8}\label{struct_eigen_1_1internal_1_1visit__impl_a29892e530c7f777f7949b35fc5fa8cb8}} 
+using {\bfseries Evaluator} = \mbox{\hyperlink{class_eigen_1_1internal_1_1visitor__evaluator}{visitor\+\_\+evaluator}}$<$ Derived $>$
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a7020683cd8262c00186cd42359863e62}\label{struct_eigen_1_1internal_1_1visit__impl_a7020683cd8262c00186cd42359863e62}} 
+using {\bfseries Scalar} = typename \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Derived $>$\+::Scalar
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_abf9cc140a26b492b0e220e972e72c515}\label{struct_eigen_1_1internal_1_1visit__impl_abf9cc140a26b492b0e220e972e72c515}} 
+using {\bfseries impl} = \mbox{\hyperlink{struct_eigen_1_1internal_1_1visitor__impl}{visitor\+\_\+impl}}$<$ Visitor, \mbox{\hyperlink{class_eigen_1_1internal_1_1visitor__evaluator}{Evaluator}}, Unroll\+Count, Vectorize, Linear\+Access, Short\+Circuit\+Evaulation $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a6e51621112a50b189ced15f4465fa272}\label{struct_eigen_1_1internal_1_1visit__impl_a6e51621112a50b189ced15f4465fa272}} 
+static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries run} (const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Derived $>$ \&mat, Visitor \&visitor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_aeb8f008b72b27f9750c23668358c9807}\label{struct_eigen_1_1internal_1_1visit__impl_aeb8f008b72b27f9750c23668358c9807}} 
+static constexpr bool {\bfseries Is\+Row\+Major} = \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$Derived$>$\+::Is\+Row\+Major
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_ad6cb3d137eb72626bc712ae743071239}\label{struct_eigen_1_1internal_1_1visit__impl_ad6cb3d137eb72626bc712ae743071239}} 
+static constexpr int {\bfseries Size\+At\+Compile\+Time} = \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$Derived$>$\+::Size\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a88a0ee6d44d6a2ff0ea4aa5dd8f20119}\label{struct_eigen_1_1internal_1_1visit__impl_a88a0ee6d44d6a2ff0ea4aa5dd8f20119}} 
+static constexpr int {\bfseries Rows\+At\+Compile\+Time} = \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$Derived$>$\+::Rows\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a37a541dd6a8aa22c7f4f36961765ec78}\label{struct_eigen_1_1internal_1_1visit__impl_a37a541dd6a8aa22c7f4f36961765ec78}} 
+static constexpr int {\bfseries Cols\+At\+Compile\+Time} = \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$Derived$>$\+::Cols\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_ac35d858ee0d80f21ad6a869953a018ce}\label{struct_eigen_1_1internal_1_1visit__impl_ac35d858ee0d80f21ad6a869953a018ce}} 
+static constexpr int {\bfseries Inner\+Size\+At\+Compile\+Time} = Is\+Row\+Major ? Cols\+At\+Compile\+Time \+: Rows\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a6cf6f72ee625f6389800e1b9d7816421}\label{struct_eigen_1_1internal_1_1visit__impl_a6cf6f72ee625f6389800e1b9d7816421}} 
+static constexpr int {\bfseries Outer\+Size\+At\+Compile\+Time} = Is\+Row\+Major ? Rows\+At\+Compile\+Time \+: Cols\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a7e41c965a21870e37610b065d4fcaf30}\label{struct_eigen_1_1internal_1_1visit__impl_a7e41c965a21870e37610b065d4fcaf30}} 
+static constexpr bool {\bfseries Linear\+Access} = Evaluator\+::\+Linear\+Access \&\& static\+\_\+cast$<$bool$>$(\mbox{\hyperlink{struct_eigen_1_1internal_1_1functor__traits}{functor\+\_\+traits}}$<$Visitor$>$\+::Linear\+Access)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a6746cb221e03baa95938ce4d7bf99000}\label{struct_eigen_1_1internal_1_1visit__impl_a6746cb221e03baa95938ce4d7bf99000}} 
+static constexpr bool {\bfseries Vectorize} = Evaluator\+::\+Packet\+Access \&\& static\+\_\+cast$<$bool$>$(\mbox{\hyperlink{struct_eigen_1_1internal_1_1functor__traits}{functor\+\_\+traits}}$<$Visitor$>$\+::Packet\+Access)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a2bacac4bc1dc2357e597dcf4087df6e4}\label{struct_eigen_1_1internal_1_1visit__impl_a2bacac4bc1dc2357e597dcf4087df6e4}} 
+static constexpr int {\bfseries Packet\+Size} = \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{packet\+\_\+traits}}$<$Scalar$>$\+::size
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_ae42197aed385ec2b67659c008b54ef5b}\label{struct_eigen_1_1internal_1_1visit__impl_ae42197aed385ec2b67659c008b54ef5b}} 
+static constexpr int {\bfseries Vector\+Ops} = Vectorize ? (Linear\+Access ? (Size\+At\+Compile\+Time / Packet\+Size) \+: (Outer\+Size\+At\+Compile\+Time $\ast$ (Inner\+Size\+At\+Compile\+Time / Packet\+Size))) \+: 0
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a4f240e628ededfcdf73119729df46d99}\label{struct_eigen_1_1internal_1_1visit__impl_a4f240e628ededfcdf73119729df46d99}} 
+static constexpr int {\bfseries Scalar\+Ops} = Size\+At\+Compile\+Time -\/ (Vector\+Ops $\ast$ Packet\+Size)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_ac0551732abfdc904fa94055dc8242685}\label{struct_eigen_1_1internal_1_1visit__impl_ac0551732abfdc904fa94055dc8242685}} 
+static constexpr int {\bfseries Total\+Ops} = Vector\+Ops + Scalar\+Ops
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a40e572370fe7553c26fa48932b178d3f}\label{struct_eigen_1_1internal_1_1visit__impl_a40e572370fe7553c26fa48932b178d3f}} 
+static constexpr int {\bfseries Unroll\+Cost} = int(Evaluator\+::\+Coeff\+Read\+Cost) + int(\mbox{\hyperlink{struct_eigen_1_1internal_1_1functor__traits}{functor\+\_\+traits}}$<$Visitor$>$\+::Cost)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_a02c57adaffc6232036899ba03766689e}\label{struct_eigen_1_1internal_1_1visit__impl_a02c57adaffc6232036899ba03766689e}} 
+static constexpr bool {\bfseries Unroll} = (Size\+At\+Compile\+Time != \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}) \&\& ((Total\+Ops $\ast$ Unroll\+Cost) $<$= E\+I\+G\+E\+N\+\_\+\+U\+N\+R\+O\+L\+L\+I\+N\+G\+\_\+\+L\+I\+M\+IT)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visit__impl_ac364284d81c8dea17e7427b72f52c481}\label{struct_eigen_1_1internal_1_1visit__impl_ac364284d81c8dea17e7427b72f52c481}} 
+static constexpr int {\bfseries Unroll\+Count} = Unroll ? int(Size\+At\+Compile\+Time) \+: \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/\+Neural\+Amp\+Modeler\+Core/\+Dependencies/eigen/\+Eigen/src/\+Core/Visitor.\+h\end{DoxyCompactItemize}

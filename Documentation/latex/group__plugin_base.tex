@@ -1,0 +1,88 @@
+\hypertarget{group__plugin_base}{}\doxysection{Basic Interfaces}
+\label{group__plugin_base}\index{Basic Interfaces@{Basic Interfaces}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{Steinberg\+::\+F\+U\+ID}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_f_unknown}{Steinberg\+::\+F\+Unknown}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_f_variant}{Steinberg\+::\+F\+Variant}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_b_stream}{Steinberg\+::\+I\+B\+Stream}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_sizeable_stream}{Steinberg\+::\+I\+Sizeable\+Stream}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base}{Steinberg\+::\+I\+Plugin\+Base}}
+\item 
+struct \mbox{\hyperlink{struct_steinberg_1_1_p_factory_info}{Steinberg\+::\+P\+Factory\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_steinberg_1_1_p_class_info}{Steinberg\+::\+P\+Class\+Info}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{Steinberg\+::\+I\+Plugin\+Factory}}
+\item 
+struct \mbox{\hyperlink{struct_steinberg_1_1_p_class_info2}{Steinberg\+::\+P\+Class\+Info2}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory2}{Steinberg\+::\+I\+Plugin\+Factory2}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory3}{Steinberg\+::\+I\+Plugin\+Factory3}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_i_ptr}{Steinberg\+::\+I\+Ptr$<$ I $>$}}
+\item 
+class \mbox{\hyperlink{class_steinberg_1_1_o_ptr}{Steinberg\+::\+O\+Ptr$<$ I $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\+M\+T\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+S\+Y\+M\+B\+OL \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{Steinberg\+::\+I\+Plugin\+Factory}} $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}{Get\+Plugin\+Factory}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}\label{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}} 
+\index{Basic Interfaces@{Basic Interfaces}!GetPluginFactory@{GetPluginFactory}}
+\index{GetPluginFactory@{GetPluginFactory}!Basic Interfaces@{Basic Interfaces}}
+\doxysubsubsection{\texorpdfstring{GetPluginFactory()}{GetPluginFactory()}}
+{\footnotesize\ttfamily S\+M\+T\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+S\+Y\+M\+B\+OL \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{Steinberg\+::\+I\+Plugin\+Factory}}$\ast$ P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Get\+Plugin\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Plug-\/in entry point.
+
+Any plug-\/in must define and export this function. ~\newline
+A typical implementation of Get\+Plugin\+Factory looks like this 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SMTG\_EXPORT\_SYMBOL IPluginFactory* PLUGIN\_API \mbox{\hyperlink{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}{GetPluginFactory}} ()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!gPluginFactory)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keyword}{static} PFactoryInfo factoryInfo =}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{stringliteral}{"My Company Name"},}
+\DoxyCodeLine{            \textcolor{stringliteral}{"http://www.mywebpage.com"},}
+\DoxyCodeLine{            \textcolor{stringliteral}{"mailto:myemail@address.com"},}
+\DoxyCodeLine{            PFactoryInfo::kNoFlags}
+\DoxyCodeLine{        \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        gPluginFactory = \textcolor{keyword}{new} CPluginFactory (factoryInfo);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keyword}{static} PClassInfo componentClass =}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            INLINE\_UID (0x00000000, 0x00000000, 0x00000000, 0x00000000), \textcolor{comment}{// replace by a valid uid}}
+\DoxyCodeLine{            1,}
+\DoxyCodeLine{            \textcolor{stringliteral}{"Service"},    \textcolor{comment}{// category}}
+\DoxyCodeLine{            \textcolor{stringliteral}{"Name"}}
+\DoxyCodeLine{        \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        gPluginFactory-\/>\mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory_af111a95bec8fd3e354ca210c0a82f297}{registerClass}} (\&componentClass, MyComponentClass::newInstance);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{else}}
+\DoxyCodeLine{        gPluginFactory-\/>\mbox{\hyperlink{class_steinberg_1_1_f_unknown_a318d18517e98fd8115b66b9c64096b75}{addRef}} ();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} gPluginFactory;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{load_plugin}{How the host will load a plug-\/in}} 
+\end{DoxySeeAlso}

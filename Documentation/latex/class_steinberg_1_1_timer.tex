@@ -1,0 +1,81 @@
+\hypertarget{class_steinberg_1_1_timer}{}\doxysection{Steinberg\+::Timer Class Reference}
+\label{class_steinberg_1_1_timer}\index{Steinberg::Timer@{Steinberg::Timer}}
+
+
+{\ttfamily \#include $<$timer.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Timer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_steinberg_1_1_timer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_timer_a626d2e7d40c2e74230879de4bb6d94d1}\label{class_steinberg_1_1_timer_a626d2e7d40c2e74230879de4bb6d94d1}} 
+virtual void \mbox{\hyperlink{class_steinberg_1_1_timer_a626d2e7d40c2e74230879de4bb6d94d1}{stop}} ()=0
+\begin{DoxyCompactList}\small\item\em Stop the timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_steinberg_1_1_timer}{Timer}} $\ast$ \mbox{\hyperlink{class_steinberg_1_1_timer_a2bd4d31e247051c2ff6b9c1dacd3bb39}{create}} (\mbox{\hyperlink{class_steinberg_1_1_i_timer_callback}{I\+Timer\+Callback}} $\ast$callback, uint32 interval\+Milliseconds)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_steinberg_1_1_timer}{Timer}} is a class that allows you to receive triggers at regular intervals. Note\+: The timer class is an abstract base class with (hidden) platform specific subclasses.
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }TimerReceiver : \textcolor{keyword}{public} \mbox{\hyperlink{class_steinberg_1_1_f_object_a1c73e0006f03c2828ae37dae1ce8139d}{FObject}}, \textcolor{keyword}{public} ITimerCallback}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} onTimer (\mbox{\hyperlink{struct_timer}{Timer}}* timer)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{comment}{// do stuff}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{TimerReceiver* receiver =  \textcolor{keyword}{new} TimerReceiver ();}
+\DoxyCodeLine{\mbox{\hyperlink{struct_timer}{Timer}}* myTimer = \mbox{\hyperlink{class_steinberg_1_1_timer_a2bd4d31e247051c2ff6b9c1dacd3bb39}{Timer::create}} (receiver, 100); \textcolor{comment}{// interval: every 100ms}}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (myTimer)}
+\DoxyCodeLine{    myTimer-\/>release ();}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (receiver)}
+\DoxyCodeLine{    receiver-\/>release ();}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_i_timer_callback}{I\+Timer\+Callback}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_timer_a2bd4d31e247051c2ff6b9c1dacd3bb39}\label{class_steinberg_1_1_timer_a2bd4d31e247051c2ff6b9c1dacd3bb39}} 
+\index{Steinberg::Timer@{Steinberg::Timer}!create@{create}}
+\index{create@{create}!Steinberg::Timer@{Steinberg::Timer}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_steinberg_1_1_timer}{Timer}}$\ast$ Steinberg\+::\+Timer\+::create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_i_timer_callback}{I\+Timer\+Callback}} $\ast$}]{callback,  }\item[{uint32}]{interval\+Milliseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a timer with a given interval 
+\begin{DoxyParams}{Parameters}
+{\em callback} & The receiver of the timer calls. \\
+\hline
+{\em interval\+Milliseconds} & The timer interval in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created timer if any, callers owns the timer. The timer starts immediately. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/timer.\+h\end{DoxyCompactItemize}

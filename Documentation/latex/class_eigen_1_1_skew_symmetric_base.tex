@@ -1,0 +1,563 @@
+\hypertarget{class_eigen_1_1_skew_symmetric_base}{}\doxysection{Eigen\+::Skew\+Symmetric\+Base$<$ Derived $>$ Class Template Reference}
+\label{class_eigen_1_1_skew_symmetric_base}\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+
+
+Base class for skew symmetric matrices and expressions.  
+
+
+
+
+{\ttfamily \#include $<$Skew\+Symmetric\+Matrix3.\+h$>$}
+
+Inheritance diagram for Eigen\+::Skew\+Symmetric\+Base$<$ Derived $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eigen_1_1_skew_symmetric_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ac5657d9340dec838a3570eaf947e704f}\label{class_eigen_1_1_skew_symmetric_base_ac5657d9340dec838a3570eaf947e704f}} 
+enum \{ \newline
+{\bfseries Rows\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Size\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Size\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Max\+Size\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Max\+Size\+At\+Compile\+Time, 
+\newline
+{\bfseries Is\+Vector\+At\+Compile\+Time} = 0, 
+{\bfseries Flags} = No\+Preferred\+Storage\+Order\+Bit
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_aa44a3424179f1ee298de4a3bd5c252ea}\label{class_eigen_1_1_skew_symmetric_base_aa44a3424179f1ee298de4a3bd5c252ea}} 
+enum \{ \newline
+{\bfseries Rows\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Size\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Size\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Max\+Size\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Skew\+Symmetric\+Vector\+Type\+::Max\+Size\+At\+Compile\+Time, 
+\newline
+{\bfseries Is\+Vector\+At\+Compile\+Time} = 0, 
+{\bfseries Flags} = No\+Preferred\+Storage\+Order\+Bit
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a9a74569cbdb733c56debfd0ffe884fb8}\label{class_eigen_1_1_skew_symmetric_base_a9a74569cbdb733c56debfd0ffe884fb8}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Skew\+Symmetric\+Vector\+Type {\bfseries Skew\+Symmetric\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ac8eb63d6e197c06092ac70bd66fbae1e}\label{class_eigen_1_1_skew_symmetric_base_ac8eb63d6e197c06092ac70bd66fbae1e}} 
+typedef Skew\+Symmetric\+Vector\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a094243c3e379ffa269f91418ceb2b391}\label{class_eigen_1_1_skew_symmetric_base_a094243c3e379ffa269f91418ceb2b391}} 
+typedef Skew\+Symmetric\+Vector\+Type\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ad6056c15b1647b4be196b16f5023582f}\label{class_eigen_1_1_skew_symmetric_base_ad6056c15b1647b4be196b16f5023582f}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a97411d2b8d4fd3eeb647133e197db7ce}\label{class_eigen_1_1_skew_symmetric_base_a97411d2b8d4fd3eeb647133e197db7ce}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_af6022cb141c475760e1f359512895802}\label{class_eigen_1_1_skew_symmetric_base_af6022cb141c475760e1f359512895802}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, Rows\+At\+Compile\+Time, Cols\+At\+Compile\+Time, 0, Max\+Rows\+At\+Compile\+Time, Max\+Cols\+At\+Compile\+Time $>$ {\bfseries Dense\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8dd1f121289190b46e02514ac83cae56}\label{class_eigen_1_1_skew_symmetric_base_a8dd1f121289190b46e02514ac83cae56}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} {\bfseries Dense\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_adf0a421845637a2ee94df29b2c034e98}\label{class_eigen_1_1_skew_symmetric_base_adf0a421845637a2ee94df29b2c034e98}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Skew\+Symmetric\+Matrix3}}$<$ Scalar $>$ {\bfseries Plain\+Object}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8c4d04f7f8157904af9aa6c9985137e1}\label{class_eigen_1_1_skew_symmetric_base_a8c4d04f7f8157904af9aa6c9985137e1}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\using {\bfseries Skew\+Symmetric\+Product\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+C\+W\+I\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, typename Other\+Derived\+::\+Skew\+Symmetric\+Vector\+Type, product)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a7c79726eb46d39170ffcc8fed4db2425}\label{class_eigen_1_1_skew_symmetric_base_a7c79726eb46d39170ffcc8fed4db2425}} 
+using {\bfseries Skew\+Symmetric\+Scale\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+E\+X\+P\+R\+\_\+\+B\+I\+N\+A\+R\+Y\+O\+P\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, Scalar, product)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a677f60db3cd579af1684b48cf6ded978}\label{class_eigen_1_1_skew_symmetric_base_a677f60db3cd579af1684b48cf6ded978}} 
+using {\bfseries Scale\+Skew\+Symmetric\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+B\+I\+N\+A\+R\+Y\+O\+P\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Scalar, Skew\+Symmetric\+Vector\+Type, product)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8954eb373d69c2607544fc27bae6df0b}\label{class_eigen_1_1_skew_symmetric_base_a8954eb373d69c2607544fc27bae6df0b}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\using {\bfseries Skew\+Symmetric\+Sum\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+C\+W\+I\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, typename Other\+Derived\+::\+Skew\+Symmetric\+Vector\+Type, sum)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_af5cdd4970ee0186dd150384c3b3921d7}\label{class_eigen_1_1_skew_symmetric_base_af5cdd4970ee0186dd150384c3b3921d7}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\using {\bfseries Skew\+Symmetric\+Difference\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+C\+W\+I\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, typename Other\+Derived\+::\+Skew\+Symmetric\+Vector\+Type, difference)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a9a74569cbdb733c56debfd0ffe884fb8}\label{class_eigen_1_1_skew_symmetric_base_a9a74569cbdb733c56debfd0ffe884fb8}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Skew\+Symmetric\+Vector\+Type {\bfseries Skew\+Symmetric\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ac8eb63d6e197c06092ac70bd66fbae1e}\label{class_eigen_1_1_skew_symmetric_base_ac8eb63d6e197c06092ac70bd66fbae1e}} 
+typedef Skew\+Symmetric\+Vector\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a094243c3e379ffa269f91418ceb2b391}\label{class_eigen_1_1_skew_symmetric_base_a094243c3e379ffa269f91418ceb2b391}} 
+typedef Skew\+Symmetric\+Vector\+Type\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ad6056c15b1647b4be196b16f5023582f}\label{class_eigen_1_1_skew_symmetric_base_ad6056c15b1647b4be196b16f5023582f}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a97411d2b8d4fd3eeb647133e197db7ce}\label{class_eigen_1_1_skew_symmetric_base_a97411d2b8d4fd3eeb647133e197db7ce}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_af6022cb141c475760e1f359512895802}\label{class_eigen_1_1_skew_symmetric_base_af6022cb141c475760e1f359512895802}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, Rows\+At\+Compile\+Time, Cols\+At\+Compile\+Time, 0, Max\+Rows\+At\+Compile\+Time, Max\+Cols\+At\+Compile\+Time $>$ {\bfseries Dense\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8dd1f121289190b46e02514ac83cae56}\label{class_eigen_1_1_skew_symmetric_base_a8dd1f121289190b46e02514ac83cae56}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} {\bfseries Dense\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_adf0a421845637a2ee94df29b2c034e98}\label{class_eigen_1_1_skew_symmetric_base_adf0a421845637a2ee94df29b2c034e98}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Skew\+Symmetric\+Matrix3}}$<$ Scalar $>$ {\bfseries Plain\+Object}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8c4d04f7f8157904af9aa6c9985137e1}\label{class_eigen_1_1_skew_symmetric_base_a8c4d04f7f8157904af9aa6c9985137e1}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\using {\bfseries Skew\+Symmetric\+Product\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+C\+W\+I\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, typename Other\+Derived\+::\+Skew\+Symmetric\+Vector\+Type, product)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a7c79726eb46d39170ffcc8fed4db2425}\label{class_eigen_1_1_skew_symmetric_base_a7c79726eb46d39170ffcc8fed4db2425}} 
+using {\bfseries Skew\+Symmetric\+Scale\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+E\+X\+P\+R\+\_\+\+B\+I\+N\+A\+R\+Y\+O\+P\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, Scalar, product)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a677f60db3cd579af1684b48cf6ded978}\label{class_eigen_1_1_skew_symmetric_base_a677f60db3cd579af1684b48cf6ded978}} 
+using {\bfseries Scale\+Skew\+Symmetric\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+B\+I\+N\+A\+R\+Y\+O\+P\+\_\+\+E\+X\+P\+R\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Scalar, Skew\+Symmetric\+Vector\+Type, product)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8954eb373d69c2607544fc27bae6df0b}\label{class_eigen_1_1_skew_symmetric_base_a8954eb373d69c2607544fc27bae6df0b}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\using {\bfseries Skew\+Symmetric\+Sum\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+C\+W\+I\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, typename Other\+Derived\+::\+Skew\+Symmetric\+Vector\+Type, sum)$>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_af5cdd4970ee0186dd150384c3b3921d7}\label{class_eigen_1_1_skew_symmetric_base_af5cdd4970ee0186dd150384c3b3921d7}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\using {\bfseries Skew\+Symmetric\+Difference\+Return\+Type} = \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}$<$ const E\+I\+G\+E\+N\+\_\+\+C\+W\+I\+S\+E\+\_\+\+B\+I\+N\+A\+R\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+\_\+\+T\+Y\+PE(Skew\+Symmetric\+Vector\+Type, typename Other\+Derived\+::\+Skew\+Symmetric\+Vector\+Type, difference)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a891ea4021c194195f07a39c3a4e95cec}{derived}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a7aa068e89b737aaf8188e2d554859686}{derived}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a16f722721739531346afe42b3ba93d6f}{to\+Dense\+Matrix}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Scalar \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_aad173e005bb6d0e9d7503ba98620f095}{determinant}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Plain\+Object}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a258b307faf004b2b239575525e2de3eb}{transpose}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_ab8c52365693323878b02481c1fbb831e}{exponential}} () const
+\item 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_afb64b84710d4eba31cf95a4775205e88}{vector}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_acd65941aa2176a91be94626db818c749}{vector}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a672219d60aed93c68aad7d63e6c1d8e9}{rows}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a42d6ad60e1f957e75bd70167cd7572b3}{cols}} () const
+\item 
+{\footnotesize template$<$typename Matrix\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Matrix\+Derived, Lazy\+Product $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a35a66203b26ce36f24c14fb18356b0fa}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Matrix\+Derived $>$ \&matrix) const
+\item 
+{\footnotesize template$<$typename Matrix\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Matrix\+Derived, Lazy\+Product $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a3dc893ceb2978cc555f05739d6e8723e}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Matrix\+Derived $>$ \&matrix) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Product\+Return\+Type}}$<$ Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_af0e36e1d46f58c06d68013321cdd650d}{wedge}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Scale\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a190d7f8246ff0e32ef98aaf1c2d8f46e}{operator$\ast$}} (const Scalar \&scalar) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Sum\+Return\+Type}}$<$ Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a530b3cfa32aafc9218bd23e7573f8483}{operator+}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Difference\+Return\+Type}}$<$ Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a76ecc84bf59b8b6cd727aaacfabc8955}{operator-\/}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a891ea4021c194195f07a39c3a4e95cec}{derived}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a7aa068e89b737aaf8188e2d554859686}{derived}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a16f722721739531346afe42b3ba93d6f}{to\+Dense\+Matrix}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Scalar \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_aad173e005bb6d0e9d7503ba98620f095}{determinant}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Plain\+Object}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a258b307faf004b2b239575525e2de3eb}{transpose}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_ab8c52365693323878b02481c1fbb831e}{exponential}} () const
+\item 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_afb64b84710d4eba31cf95a4775205e88}{vector}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type \& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_acd65941aa2176a91be94626db818c749}{vector}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a672219d60aed93c68aad7d63e6c1d8e9}{rows}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a42d6ad60e1f957e75bd70167cd7572b3}{cols}} () const
+\item 
+{\footnotesize template$<$typename Matrix\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Matrix\+Derived, Lazy\+Product $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a35a66203b26ce36f24c14fb18356b0fa}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Matrix\+Derived $>$ \&matrix) const
+\item 
+{\footnotesize template$<$typename Matrix\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Matrix\+Derived, Lazy\+Product $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a3dc893ceb2978cc555f05739d6e8723e}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Matrix\+Derived $>$ \&matrix) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Product\+Return\+Type}}$<$ Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_af0e36e1d46f58c06d68013321cdd650d}{wedge}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Scale\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a190d7f8246ff0e32ef98aaf1c2d8f46e}{operator$\ast$}} (const Scalar \&scalar) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Sum\+Return\+Type}}$<$ Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a530b3cfa32aafc9218bd23e7573f8483}{operator+}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Difference\+Return\+Type}}$<$ Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a76ecc84bf59b8b6cd727aaacfabc8955}{operator-\/}} (const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC friend \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Scale\+Skew\+Symmetric\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a8ef263f9e4c6c7da59e5f51a6433c6ec}{operator$\ast$}} (const Scalar \&scalar, const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}} \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC friend \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Scale\+Skew\+Symmetric\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base_a8ef263f9e4c6c7da59e5f51a6433c6ec}{operator$\ast$}} (const Scalar \&scalar, const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}} \&other)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Derived$>$\newline
+class Eigen\+::\+Skew\+Symmetric\+Base$<$ Derived $>$}
+
+Base class for skew symmetric matrices and expressions. 
+
+This is the base class that is inherited by \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Skew\+Symmetric\+Matrix3}} and related expression types, which internally use a three vector for storing the entries. Skew\+Symmetric types always represent square three times three matrices.
+
+This implementations follows class \mbox{\hyperlink{class_eigen_1_1_diagonal_matrix}{Diagonal\+Matrix}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Derived} & is the derived type, a \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Skew\+Symmetric\+Matrix3}} or \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}}.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+class \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Skew\+Symmetric\+Matrix3}}, class \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Wrapper}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a42d6ad60e1f957e75bd70167cd7572b3}\label{class_eigen_1_1_skew_symmetric_base_a42d6ad60e1f957e75bd70167cd7572b3}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!cols@{cols}}
+\index{cols@{cols}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a42d6ad60e1f957e75bd70167cd7572b3}\label{class_eigen_1_1_skew_symmetric_base_a42d6ad60e1f957e75bd70167cd7572b3}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!cols@{cols}}
+\index{cols@{cols}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of columns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a7aa068e89b737aaf8188e2d554859686}\label{class_eigen_1_1_skew_symmetric_base_a7aa068e89b737aaf8188e2d554859686}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!derived@{derived}}
+\index{derived@{derived}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{derived()}{derived()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::derived (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a const reference to the derived object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a7aa068e89b737aaf8188e2d554859686}\label{class_eigen_1_1_skew_symmetric_base_a7aa068e89b737aaf8188e2d554859686}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!derived@{derived}}
+\index{derived@{derived}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{derived()}{derived()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::derived (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a const reference to the derived object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a891ea4021c194195f07a39c3a4e95cec}\label{class_eigen_1_1_skew_symmetric_base_a891ea4021c194195f07a39c3a4e95cec}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!derived@{derived}}
+\index{derived@{derived}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{derived()}{derived()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::derived (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a reference to the derived object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a891ea4021c194195f07a39c3a4e95cec}\label{class_eigen_1_1_skew_symmetric_base_a891ea4021c194195f07a39c3a4e95cec}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!derived@{derived}}
+\index{derived@{derived}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{derived()}{derived()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::derived (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a reference to the derived object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_aad173e005bb6d0e9d7503ba98620f095}\label{class_eigen_1_1_skew_symmetric_base_aad173e005bb6d0e9d7503ba98620f095}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Scalar \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determinant vanishes \mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_aad173e005bb6d0e9d7503ba98620f095}\label{class_eigen_1_1_skew_symmetric_base_aad173e005bb6d0e9d7503ba98620f095}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Scalar \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Determinant vanishes \mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ab8c52365693323878b02481c1fbb831e}\label{class_eigen_1_1_skew_symmetric_base_ab8c52365693323878b02481c1fbb831e}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!exponential@{exponential}}
+\index{exponential@{exponential}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{exponential()}{exponential()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::exponential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the exponential of this matrix using Rodrigues’ formula 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_ab8c52365693323878b02481c1fbb831e}\label{class_eigen_1_1_skew_symmetric_base_ab8c52365693323878b02481c1fbb831e}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!exponential@{exponential}}
+\index{exponential@{exponential}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{exponential()}{exponential()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::exponential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the exponential of this matrix using Rodrigues’ formula 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a35a66203b26ce36f24c14fb18356b0fa}\label{class_eigen_1_1_skew_symmetric_base_a35a66203b26ce36f24c14fb18356b0fa}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Matrix\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$Derived,Matrix\+Derived,Lazy\+Product$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Matrix\+Derived $>$ \&}]{matrix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the matrix product of {\ttfamily $\ast$this} by the dense matrix, {\itshape matrix} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a35a66203b26ce36f24c14fb18356b0fa}\label{class_eigen_1_1_skew_symmetric_base_a35a66203b26ce36f24c14fb18356b0fa}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Matrix\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$Derived,Matrix\+Derived,Lazy\+Product$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Matrix\+Derived $>$ \&}]{matrix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the matrix product of {\ttfamily $\ast$this} by the dense matrix, {\itshape matrix} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a190d7f8246ff0e32ef98aaf1c2d8f46e}\label{class_eigen_1_1_skew_symmetric_base_a190d7f8246ff0e32ef98aaf1c2d8f46e}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Scale\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Scalar \&}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the product of {\ttfamily $\ast$this} by the scalar {\itshape scalar} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a190d7f8246ff0e32ef98aaf1c2d8f46e}\label{class_eigen_1_1_skew_symmetric_base_a190d7f8246ff0e32ef98aaf1c2d8f46e}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Scale\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Scalar \&}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the product of {\ttfamily $\ast$this} by the scalar {\itshape scalar} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a3dc893ceb2978cc555f05739d6e8723e}\label{class_eigen_1_1_skew_symmetric_base_a3dc893ceb2978cc555f05739d6e8723e}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Matrix\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$Derived,Matrix\+Derived,Lazy\+Product$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Matrix\+Derived $>$ \&}]{matrix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the matrix product of {\ttfamily $\ast$this} by the skew symmetric matrix, {\itshape matrix} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a3dc893ceb2978cc555f05739d6e8723e}\label{class_eigen_1_1_skew_symmetric_base_a3dc893ceb2978cc555f05739d6e8723e}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Matrix\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$Derived,Matrix\+Derived,Lazy\+Product$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Matrix\+Derived $>$ \&}]{matrix }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the matrix product of {\ttfamily $\ast$this} by the skew symmetric matrix, {\itshape matrix} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a530b3cfa32aafc9218bd23e7573f8483}\label{class_eigen_1_1_skew_symmetric_base_a530b3cfa32aafc9218bd23e7573f8483}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Sum\+Return\+Type}}$<$Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the sum of {\ttfamily $\ast$this} and the skew symmetric matrix {\itshape other} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a530b3cfa32aafc9218bd23e7573f8483}\label{class_eigen_1_1_skew_symmetric_base_a530b3cfa32aafc9218bd23e7573f8483}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Sum\+Return\+Type}}$<$Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the sum of {\ttfamily $\ast$this} and the skew symmetric matrix {\itshape other} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a76ecc84bf59b8b6cd727aaacfabc8955}\label{class_eigen_1_1_skew_symmetric_base_a76ecc84bf59b8b6cd727aaacfabc8955}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Difference\+Return\+Type}}$<$Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the difference of {\ttfamily $\ast$this} and the skew symmetric matrix {\itshape other} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a76ecc84bf59b8b6cd727aaacfabc8955}\label{class_eigen_1_1_skew_symmetric_base_a76ecc84bf59b8b6cd727aaacfabc8955}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Difference\+Return\+Type}}$<$Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the difference of {\ttfamily $\ast$this} and the skew symmetric matrix {\itshape other} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a672219d60aed93c68aad7d63e6c1d8e9}\label{class_eigen_1_1_skew_symmetric_base_a672219d60aed93c68aad7d63e6c1d8e9}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!rows@{rows}}
+\index{rows@{rows}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a672219d60aed93c68aad7d63e6c1d8e9}\label{class_eigen_1_1_skew_symmetric_base_a672219d60aed93c68aad7d63e6c1d8e9}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!rows@{rows}}
+\index{rows@{rows}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of rows. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a16f722721739531346afe42b3ba93d6f}\label{class_eigen_1_1_skew_symmetric_base_a16f722721739531346afe42b3ba93d6f}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!toDenseMatrix@{toDenseMatrix}}
+\index{toDenseMatrix@{toDenseMatrix}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{toDenseMatrix()}{toDenseMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::to\+Dense\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a dense matrix from {\ttfamily $\ast$this}. Note, this directly returns a dense matrix type, not an expression. \begin{DoxyReturn}{Returns}
+A dense matrix, with its entries set from the the derived object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a16f722721739531346afe42b3ba93d6f}\label{class_eigen_1_1_skew_symmetric_base_a16f722721739531346afe42b3ba93d6f}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!toDenseMatrix@{toDenseMatrix}}
+\index{toDenseMatrix@{toDenseMatrix}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{toDenseMatrix()}{toDenseMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix\+Type}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::to\+Dense\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a dense matrix from {\ttfamily $\ast$this}. Note, this directly returns a dense matrix type, not an expression. \begin{DoxyReturn}{Returns}
+A dense matrix, with its entries set from the the derived object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a258b307faf004b2b239575525e2de3eb}\label{class_eigen_1_1_skew_symmetric_base_a258b307faf004b2b239575525e2de3eb}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Plain\+Object}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A.\+transpose() = -\/A \mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a258b307faf004b2b239575525e2de3eb}\label{class_eigen_1_1_skew_symmetric_base_a258b307faf004b2b239575525e2de3eb}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_matrix3}{Plain\+Object}} \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+A.\+transpose() = -\/A \mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_acd65941aa2176a91be94626db818c749}\label{class_eigen_1_1_skew_symmetric_base_acd65941aa2176a91be94626db818c749}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!vector@{vector}}
+\index{vector@{vector}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a const reference to the derived object\textquotesingle{}s vector of coefficients. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_acd65941aa2176a91be94626db818c749}\label{class_eigen_1_1_skew_symmetric_base_acd65941aa2176a91be94626db818c749}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!vector@{vector}}
+\index{vector@{vector}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a const reference to the derived object\textquotesingle{}s vector of coefficients. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_afb64b84710d4eba31cf95a4775205e88}\label{class_eigen_1_1_skew_symmetric_base_afb64b84710d4eba31cf95a4775205e88}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!vector@{vector}}
+\index{vector@{vector}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a reference to the derived object\textquotesingle{}s vector of coefficients. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_afb64b84710d4eba31cf95a4775205e88}\label{class_eigen_1_1_skew_symmetric_base_afb64b84710d4eba31cf95a4775205e88}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!vector@{vector}}
+\index{vector@{vector}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{vector()}{vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Skew\+Symmetric\+Vector\+Type\& \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a reference to the derived object\textquotesingle{}s vector of coefficients. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_af0e36e1d46f58c06d68013321cdd650d}\label{class_eigen_1_1_skew_symmetric_base_af0e36e1d46f58c06d68013321cdd650d}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!wedge@{wedge}}
+\index{wedge@{wedge}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{wedge()}{wedge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Product\+Return\+Type}}$<$Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::wedge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the wedge product of {\ttfamily $\ast$this} by the skew symmetric matrix {\itshape other} A wedge B = AB -\/ BA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_af0e36e1d46f58c06d68013321cdd650d}\label{class_eigen_1_1_skew_symmetric_base_af0e36e1d46f58c06d68013321cdd650d}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!wedge@{wedge}}
+\index{wedge@{wedge}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{wedge()}{wedge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Skew\+Symmetric\+Product\+Return\+Type}}$<$Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Eigen\+::\+Skew\+Symmetric\+Base}}$<$ Derived $>$\+::wedge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the wedge product of {\ttfamily $\ast$this} by the skew symmetric matrix {\itshape other} A wedge B = AB -\/ BA 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8ef263f9e4c6c7da59e5f51a6433c6ec}\label{class_eigen_1_1_skew_symmetric_base_a8ef263f9e4c6c7da59e5f51a6433c6ec}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC friend \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Scale\+Skew\+Symmetric\+Return\+Type}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const Scalar \&}]{scalar,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Derived $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+the product of a scalar and the skew symmetric matrix {\itshape other} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_skew_symmetric_base_a8ef263f9e4c6c7da59e5f51a6433c6ec}\label{class_eigen_1_1_skew_symmetric_base_a8ef263f9e4c6c7da59e5f51a6433c6ec}} 
+\index{Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SkewSymmetricBase$<$ Derived $>$@{Eigen::SkewSymmetricBase$<$ Derived $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC friend \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_wrapper}{Scale\+Skew\+Symmetric\+Return\+Type}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const Scalar \&}]{scalar,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_skew_symmetric_base}{Skew\+Symmetric\+Base}}$<$ Derived $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\begin{DoxyReturn}{Returns}
+the product of a scalar and the skew symmetric matrix {\itshape other} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Skew\+Symmetric\+Matrix3.\+h\end{DoxyCompactItemize}

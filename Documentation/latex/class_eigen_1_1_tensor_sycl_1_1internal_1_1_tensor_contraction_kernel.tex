@@ -1,0 +1,359 @@
+\hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::Tensor\+Contraction\+Kernel$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$ Class Template Reference}
+\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+
+
+\mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Tensor\+Contraction\+Kernel}} is a template class that provides \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} -\/\mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} contraction operation.  
+
+
+
+
+{\ttfamily \#include $<$Tensor\+Contraction\+Sycl.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_mem_holder}{Mem\+Holder}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_mem_holder}{Mem\+Holder}} this is a place holder struct for creating memory hierarchy in S\+Y\+CL. Inside S\+Y\+CL kernel it is not allowed to have dynamic memory allocation. While the local memory is created outside of the kernel and passed to the kernel as an accessor, the private memory can only allowed to be allocated statically. Since we are abstracting the \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_tiled_memory}{Tiled\+Memory}} for both local and private memory, the \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_mem_holder}{Mem\+Holder}} structs is used as a helper to abstract out different type of memory needed when local/no\+\_\+local memory computation is called. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_mem_holder_3_01contraacbceb3f177887a48bb900a2960a37e5}{Mem\+Holder$<$ contraction\+\_\+type\+::no\+\_\+local, Mem\+Size $>$}}
+\begin{DoxyCompactList}\small\item\em specialization of mem\+Holder class when no local memory kernel is used. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_tiled_memory}{Tiled\+Memory}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_tiled_memory}{Tiled\+Memory}}\+: contains required memory pointer for loading each tile of the \mbox{\hyperlink{class_tensor_contraction}{Tensor\+Contraction}} panel from global memory to local/private memory when local/no\+\_\+local algorithm used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ae394dc73d11e78c45bfb0301a90378cd}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ae394dc73d11e78c45bfb0301a90378cd}} 
+typedef Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Vectorise$<$ Out\+Scalar, Eigen\+::\+Sycl\+Device, Vectorizable $>$\+::Packet\+Return\+Type {\bfseries Packet\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4bd481fb700bcd85763d8149f5c3239d}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4bd481fb700bcd85763d8149f5c3239d}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{Block\+Properties}}$<$ is\+\_\+lhs\+\_\+transposed, false, input\+\_\+mapper\+\_\+properties\+::is\+\_\+lhs\+\_\+matrix \&\&Vectorizable, Packet\+Return\+Type $>$ {\bfseries L\+H\+S\+Block\+Properties}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a1d69656ea007cda631a9a4847e7f6290}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a1d69656ea007cda631a9a4847e7f6290}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{Block\+Properties}}$<$ is\+\_\+rhs\+\_\+transposed, true, input\+\_\+mapper\+\_\+properties\+::is\+\_\+rhs\+\_\+matrix \&\&Vectorizable, Packet\+Return\+Type $>$ {\bfseries R\+H\+S\+Block\+Properties}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad66c385454cfc2563ce85a2b4949b66c}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad66c385454cfc2563ce85a2b4949b66c}} 
+typedef cl\+::sycl\+::accessor$<$ Out\+Scalar, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Scratch}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_addd360659b2833e82fbbf4309058ce60}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_addd360659b2833e82fbbf4309058ce60}} 
+typedef cl\+::sycl\+::multi\+\_\+ptr$<$ Out\+Scalar, cl\+::sycl\+::access\+::address\+\_\+space\+::local\+\_\+space $>$ {\bfseries local\+\_\+ptr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_abffe12526e8b50b2b3fd28b02295204d}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_abffe12526e8b50b2b3fd28b02295204d}} 
+typedef Out\+Scalar $\ast$ {\bfseries private\+\_\+ptr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a69475d497a1f369718080844748774cd}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a69475d497a1f369718080844748774cd}} 
+typedef std\+::conditional\+\_\+t$<$ contraction\+\_\+tp==contraction\+\_\+type\+::local, local\+\_\+ptr, private\+\_\+ptr $>$ {\bfseries tile\+\_\+ptr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ae394dc73d11e78c45bfb0301a90378cd}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ae394dc73d11e78c45bfb0301a90378cd}} 
+typedef Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Vectorise$<$ Out\+Scalar, Eigen\+::\+Sycl\+Device, Vectorizable $>$\+::Packet\+Return\+Type {\bfseries Packet\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4bd481fb700bcd85763d8149f5c3239d}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4bd481fb700bcd85763d8149f5c3239d}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{Block\+Properties}}$<$ is\+\_\+lhs\+\_\+transposed, false, input\+\_\+mapper\+\_\+properties\+::is\+\_\+lhs\+\_\+matrix \&\&Vectorizable, Packet\+Return\+Type $>$ {\bfseries L\+H\+S\+Block\+Properties}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a1d69656ea007cda631a9a4847e7f6290}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a1d69656ea007cda631a9a4847e7f6290}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{Block\+Properties}}$<$ is\+\_\+rhs\+\_\+transposed, true, input\+\_\+mapper\+\_\+properties\+::is\+\_\+rhs\+\_\+matrix \&\&Vectorizable, Packet\+Return\+Type $>$ {\bfseries R\+H\+S\+Block\+Properties}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad66c385454cfc2563ce85a2b4949b66c}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad66c385454cfc2563ce85a2b4949b66c}} 
+typedef cl\+::sycl\+::accessor$<$ Out\+Scalar, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Scratch}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_addd360659b2833e82fbbf4309058ce60}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_addd360659b2833e82fbbf4309058ce60}} 
+typedef cl\+::sycl\+::multi\+\_\+ptr$<$ Out\+Scalar, cl\+::sycl\+::access\+::address\+\_\+space\+::local\+\_\+space $>$ {\bfseries local\+\_\+ptr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_abffe12526e8b50b2b3fd28b02295204d}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_abffe12526e8b50b2b3fd28b02295204d}} 
+typedef Out\+Scalar $\ast$ {\bfseries private\+\_\+ptr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a69475d497a1f369718080844748774cd}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a69475d497a1f369718080844748774cd}} 
+typedef std\+::conditional\+\_\+t$<$ contraction\+\_\+tp==contraction\+\_\+type\+::local, local\+\_\+ptr, private\+\_\+ptr $>$ {\bfseries tile\+\_\+ptr}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a52195231424f7ce54327bb78949d3199}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a52195231424f7ce54327bb78949d3199}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Contraction\+Kernel} (Scratch scratch\+\_\+, const Lhs\+Mapper lhs\+\_\+, const Rhs\+Mapper rhs\+\_\+, Out\+Accessor out\+\_\+res\+\_\+, const Storage\+Index group\+Size\+M\+\_\+, const Storage\+Index group\+Size\+N\+\_\+, const Storage\+Index num\+Tiles\+\_\+, const Triple\+Dim triple\+\_\+dim\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a13b11b0aa7be85f764acc1ae033436f5}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a13b11b0aa7be85f764acc1ae033436f5}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Contraction\+Kernel} (Scratch scratch\+\_\+, const Lhs\+Mapper lhs\+\_\+, const Rhs\+Mapper rhs\+\_\+, Out\+Accessor out\+\_\+res\+\_\+, const Storage\+Index group\+Size\+M\+\_\+, const Storage\+Index num\+Tiles\+\_\+, const Triple\+Dim triple\+\_\+dim\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aff938847a25a84d5c5b9d5059fec5878}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aff938847a25a84d5c5b9d5059fec5878}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4dab5db8ade549a9c350b82e549f48c9}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4dab5db8ade549a9c350b82e549f48c9}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries compute\+\_\+block\+\_\+per\+\_\+tile} (Out\+Scalar $\ast$lhs\+\_\+block\+\_\+ptr, Out\+Scalar $\ast$rhs\+\_\+block\+\_\+ptr, Packet\+Return\+Type $\ast$private\+Res)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4a0b0c042e3126b9d5ca36ec000db8c1}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a4a0b0c042e3126b9d5ca36ec000db8c1}} 
+{\footnotesize template$<$bool is\+\_\+internal\+\_\+block, Storage\+Index Private\+N\+Stride, typename Out\+Ptr $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries store} (Out\+Ptr $\ast$out\+\_\+ptr, Packet\+Return\+Type $\ast$private\+Res, Storage\+Index m\+Global\+Offset, Storage\+Index n\+Global\+Offset)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a60343ae77c44b3d3ab26f2145a958668}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a60343ae77c44b3d3ab26f2145a958668}} 
+{\footnotesize template$<$typename Input\+Block\+Properties , bool is\+\_\+internal\+\_\+block, typename Input , typename Private\+Reg , contraction\+\_\+type contract\+\_\+tp = contraction\+\_\+tp$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ contract\+\_\+tp==contraction\+\_\+type\+::no\+\_\+local $>$ {\bfseries extract\+\_\+block} (const Input \&inpt, Private\+Reg private\+\_\+ptr, const std\+::pair$<$ Storage\+Index, Storage\+Index $>$ \&, const Storage\+Index \&nc\+Offset, const Storage\+Index c\+Offset)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a3c773242711bc9d7ccf157d8accf16f1}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a3c773242711bc9d7ccf157d8accf16f1}} 
+{\footnotesize template$<$bool is\+\_\+internal\+\_\+block$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries compute\+\_\+tile\+\_\+per\+\_\+panel} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID, \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_thread_properties}{Thread\+Properties}}$<$ Storage\+Index $>$ \&thread\+\_\+properties, \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_tiled_memory}{Tiled\+Memory}} \&tiled\+\_\+input\+\_\+block, Packet\+Return\+Type $\ast$private\+Res, bool \&db\+\_\+offset)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad8e5160f49b2a9fbf153d88d91bdddc5}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad8e5160f49b2a9fbf153d88d91bdddc5}} 
+{\footnotesize template$<$bool is\+\_\+internal\+\_\+block, typename Out\+Ptr $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries compute\+\_\+panel} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID, \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_thread_properties}{Thread\+Properties}}$<$ Storage\+Index $>$ \&thread\+\_\+properties, Out\+Ptr out\+\_\+ptr)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad0a313eaa5007a1552afb63c30f3da3b}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad0a313eaa5007a1552afb63c30f3da3b}} 
+{\footnotesize template$<$typename Input\+Block\+Properties , bool is\+\_\+internal\+\_\+block, typename Input , typename Local , contraction\+\_\+type contract\+\_\+tp = contraction\+\_\+tp$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ contract\+\_\+tp==contraction\+\_\+type\+::local $>$ {\bfseries extract\+\_\+block} (const Input \&inpt, Local local\+\_\+ptr, const std\+::pair$<$ Storage\+Index, Storage\+Index $>$ \&local\+\_\+index, const Storage\+Index \&nc\+Offset, const Storage\+Index c\+Offset)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a52195231424f7ce54327bb78949d3199}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a52195231424f7ce54327bb78949d3199}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Contraction\+Kernel} (Scratch scratch\+\_\+, const Lhs\+Mapper lhs\+\_\+, const Rhs\+Mapper rhs\+\_\+, Out\+Accessor out\+\_\+res\+\_\+, const Storage\+Index group\+Size\+M\+\_\+, const Storage\+Index group\+Size\+N\+\_\+, const Storage\+Index num\+Tiles\+\_\+, const Triple\+Dim triple\+\_\+dim\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a13b11b0aa7be85f764acc1ae033436f5}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a13b11b0aa7be85f764acc1ae033436f5}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Contraction\+Kernel} (Scratch scratch\+\_\+, const Lhs\+Mapper lhs\+\_\+, const Rhs\+Mapper rhs\+\_\+, Out\+Accessor out\+\_\+res\+\_\+, const Storage\+Index group\+Size\+M\+\_\+, const Storage\+Index num\+Tiles\+\_\+, const Triple\+Dim triple\+\_\+dim\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aae2f6c5088ef6ae72ad4e807d5d24593}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aae2f6c5088ef6ae72ad4e807d5d24593}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af46a2002de0cd1b09167982078ed9efb}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af46a2002de0cd1b09167982078ed9efb}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries compute\+\_\+block\+\_\+per\+\_\+tile} (Out\+Scalar $\ast$lhs\+\_\+block\+\_\+ptr, Out\+Scalar $\ast$rhs\+\_\+block\+\_\+ptr, Packet\+Return\+Type $\ast$private\+Res) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a85966b9c2ac116e0cfce33a9006afb6d}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a85966b9c2ac116e0cfce33a9006afb6d}} 
+{\footnotesize template$<$bool is\+\_\+internal\+\_\+block, Storage\+Index Private\+N\+Stride, typename Out\+Ptr $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries store} (Out\+Ptr $\ast$out\+\_\+ptr, Packet\+Return\+Type $\ast$private\+Res, Storage\+Index m\+Global\+Offset, Storage\+Index n\+Global\+Offset) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a5b022875cc5d9696ce56965d83a46cbc}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a5b022875cc5d9696ce56965d83a46cbc}} 
+{\footnotesize template$<$typename Input\+Block\+Properties , bool is\+\_\+internal\+\_\+block, typename Input , typename Private\+Reg , contraction\+\_\+type contract\+\_\+tp = contraction\+\_\+tp$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ contract\+\_\+tp==contraction\+\_\+type\+::no\+\_\+local $>$ {\bfseries extract\+\_\+block} (const Input \&inpt, Private\+Reg private\+\_\+ptr, const std\+::pair$<$ Storage\+Index, Storage\+Index $>$ \&, const Storage\+Index \&nc\+Offset, const Storage\+Index c\+Offset) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a7c38531efcec31e26e72045f073cfd32}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a7c38531efcec31e26e72045f073cfd32}} 
+{\footnotesize template$<$bool is\+\_\+internal\+\_\+block$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries compute\+\_\+tile\+\_\+per\+\_\+panel} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID, \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_thread_properties}{Thread\+Properties}}$<$ Storage\+Index $>$ \&thread\+\_\+properties, \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_1_1_tiled_memory}{Tiled\+Memory}} \&tiled\+\_\+input\+\_\+block, Packet\+Return\+Type $\ast$private\+Res, bool \&db\+\_\+offset) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a95afa53e9c524ae5bd8cca6559ec11a8}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a95afa53e9c524ae5bd8cca6559ec11a8}} 
+{\footnotesize template$<$bool is\+\_\+internal\+\_\+block, typename Out\+Ptr $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries compute\+\_\+panel} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID, \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_thread_properties}{Thread\+Properties}}$<$ Storage\+Index $>$ \&thread\+\_\+properties, Out\+Ptr out\+\_\+ptr) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a24bfb497911b47ee856aa0d38a302af9}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a24bfb497911b47ee856aa0d38a302af9}} 
+{\footnotesize template$<$typename Input\+Block\+Properties , bool is\+\_\+internal\+\_\+block, typename Input , typename Local , contraction\+\_\+type contract\+\_\+tp = contraction\+\_\+tp$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ contract\+\_\+tp==contraction\+\_\+type\+::local $>$ {\bfseries extract\+\_\+block} (const Input \&inpt, Local local\+\_\+ptr, const std\+::pair$<$ Storage\+Index, Storage\+Index $>$ \&local\+\_\+index, const Storage\+Index \&nc\+Offset, const Storage\+Index c\+Offset) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac25498e16047c06b7e3846d17874fa99}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac25498e16047c06b7e3846d17874fa99}} 
+{\footnotesize template$<$typename Input\+Block\+Properties , Storage\+Index Tile\+Size\+Dim\+NC$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::pair$<$ Storage\+Index, Storage\+Index $>$ {\bfseries local\+\_\+id\+\_\+extract} (const Storage\+Index \&linear\+Local\+Thread\+Id)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a0c655aa6705fce2de00daa19d051d4c8}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a0c655aa6705fce2de00daa19d051d4c8}} 
+{\footnotesize template$<$bool db = Properties\+::\+Double\+Buffer, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ db \&\&ctp==contraction\+\_\+type\+::local $>$ {\bfseries sync\+\_\+mem} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&, bool \&db\+\_\+offset) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af6cea53524f7228e11325187d00a937e}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af6cea53524f7228e11325187d00a937e}} 
+{\footnotesize template$<$bool db = Properties\+::\+Double\+Buffer, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$!db \&\&ctp==contraction\+\_\+type\+::local $>$ {\bfseries sync\+\_\+mem} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID, bool \&) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac36674f4e0b46d734cbb8b47f2b7bdcf}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac36674f4e0b46d734cbb8b47f2b7bdcf}} 
+{\footnotesize template$<$contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ ctp==contraction\+\_\+type\+::no\+\_\+local $>$ {\bfseries sync\+\_\+mem} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&, bool \&) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aec3e5a8402d89192a5e21ec25a93cde7}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aec3e5a8402d89192a5e21ec25a93cde7}} 
+{\footnotesize template$<$bool need\+\_\+sync, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ need\+\_\+sync \&\&ctp==contraction\+\_\+type\+::no\+\_\+local $>$ {\bfseries sync\+\_\+thread} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aa8eb48dad8bfc0e84b96dfbef0f25bce}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aa8eb48dad8bfc0e84b96dfbef0f25bce}} 
+{\footnotesize template$<$bool need\+\_\+sync, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ need\+\_\+sync \&\&ctp==contraction\+\_\+type\+::local $>$ {\bfseries sync\+\_\+thread} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a8cfd565450516f89ff1f2e043a461d69}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a8cfd565450516f89ff1f2e043a461d69}} 
+{\footnotesize template$<$bool need\+\_\+sync$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$!need\+\_\+sync $>$ {\bfseries sync\+\_\+thread} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac25498e16047c06b7e3846d17874fa99}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac25498e16047c06b7e3846d17874fa99}} 
+{\footnotesize template$<$typename Input\+Block\+Properties , Storage\+Index Tile\+Size\+Dim\+NC$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::pair$<$ Storage\+Index, Storage\+Index $>$ {\bfseries local\+\_\+id\+\_\+extract} (const Storage\+Index \&linear\+Local\+Thread\+Id)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a0c655aa6705fce2de00daa19d051d4c8}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a0c655aa6705fce2de00daa19d051d4c8}} 
+{\footnotesize template$<$bool db = Properties\+::\+Double\+Buffer, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ db \&\&ctp==contraction\+\_\+type\+::local $>$ {\bfseries sync\+\_\+mem} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&, bool \&db\+\_\+offset) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af6cea53524f7228e11325187d00a937e}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af6cea53524f7228e11325187d00a937e}} 
+{\footnotesize template$<$bool db = Properties\+::\+Double\+Buffer, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$!db \&\&ctp==contraction\+\_\+type\+::local $>$ {\bfseries sync\+\_\+mem} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID, bool \&) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac36674f4e0b46d734cbb8b47f2b7bdcf}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ac36674f4e0b46d734cbb8b47f2b7bdcf}} 
+{\footnotesize template$<$contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ ctp==contraction\+\_\+type\+::no\+\_\+local $>$ {\bfseries sync\+\_\+mem} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&, bool \&) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aec3e5a8402d89192a5e21ec25a93cde7}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aec3e5a8402d89192a5e21ec25a93cde7}} 
+{\footnotesize template$<$bool need\+\_\+sync, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ need\+\_\+sync \&\&ctp==contraction\+\_\+type\+::no\+\_\+local $>$ {\bfseries sync\+\_\+thread} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&) noexcept
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aa8eb48dad8bfc0e84b96dfbef0f25bce}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aa8eb48dad8bfc0e84b96dfbef0f25bce}} 
+{\footnotesize template$<$bool need\+\_\+sync, contraction\+\_\+type ctp = contraction\+\_\+tp$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$ need\+\_\+sync \&\&ctp==contraction\+\_\+type\+::local $>$ {\bfseries sync\+\_\+thread} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&item\+ID)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a8cfd565450516f89ff1f2e043a461d69}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a8cfd565450516f89ff1f2e043a461d69}} 
+{\footnotesize template$<$bool need\+\_\+sync$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE std\+::enable\+\_\+if\+\_\+t$<$!need\+\_\+sync $>$ {\bfseries sync\+\_\+thread} (const cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad63f9757743718e78f4f83f361d95e27}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad63f9757743718e78f4f83f361d95e27}} 
+Scratch {\bfseries scratch}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ae18a2c02e4480eefef84259c42980524}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ae18a2c02e4480eefef84259c42980524}} 
+const Lhs\+Mapper {\bfseries lhs}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aaf0fa30d0f7678c339e6cc6edd2746ee}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aaf0fa30d0f7678c339e6cc6edd2746ee}} 
+const Rhs\+Mapper {\bfseries rhs}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af6088e8b5c2a9b2d674edda777d1eeb1}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af6088e8b5c2a9b2d674edda777d1eeb1}} 
+Out\+Accessor {\bfseries out\+\_\+res}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a19a51818c29ba1ad67900dafecf58f85}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a19a51818c29ba1ad67900dafecf58f85}} 
+const Storage\+Index {\bfseries group\+SizeM}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af9052641c622ae3c31eb39005b436e03}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_af9052641c622ae3c31eb39005b436e03}} 
+const Storage\+Index {\bfseries group\+SizeN}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ab51ca4b6906514b17b8ea19c5ef16479}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ab51ca4b6906514b17b8ea19c5ef16479}} 
+const Storage\+Index {\bfseries num\+Tiles}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a92a4151d945b4d36f948f125f3f3afcf}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a92a4151d945b4d36f948f125f3f3afcf}} 
+const Triple\+Dim {\bfseries triple\+\_\+dim}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR int {\bfseries Packet\+Size}
+\item 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool {\bfseries is\+\_\+lhs\+\_\+transposed}
+\item 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool {\bfseries is\+\_\+rhs\+\_\+transposed}
+\item 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries N\+Stride}
+\item 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries L\+S\+DL}
+\item 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries L\+S\+DR}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a1431abbddc168450ebe9603a072ed0cf}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a1431abbddc168450ebe9603a072ed0cf}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Local\+Offset} = Properties\+::\+Local\+Thread\+SizeM $\ast$ Properties\+::\+Local\+Thread\+SizeN
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Out\+Scalar, typename Lhs\+Scalar, typename Rhs\+Scalar, typename Out\+Accessor, typename Lhs\+Mapper, typename Rhs\+Mapper, typename Storage\+Index, typename Properties, typename Triple\+Dim, bool Vectorizable, typename input\+\_\+mapper\+\_\+properties, bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$\newline
+class Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$}
+
+\mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Tensor\+Contraction\+Kernel}} is a template class that provides \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} -\/\mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} contraction operation. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Out\+Scalar} & determines the output scalar type\\
+\hline
+{\em Lhs\+Scalar} & determines the left-\/hand-\/side scalar type\\
+\hline
+{\em Rhs\+Scalar} & determines the right-\/hand-\/side scalar type\\
+\hline
+{\em Out\+Accessor} & determines the sycl accessor type for out put (please see the sycl-\/1.\+2.\+1 specification (\href{https://www.khronos.org/registry/SYCL/specs/sycl-1.2.1.pdf}{\texttt{ https\+://www.\+khronos.\+org/registry/\+S\+Y\+C\+L/specs/sycl-\/1.\+2.\+1.\+pdf}}) for accessor definition)\\
+\hline
+{\em Lhs\+Mapper} & determines the tensor contraction mapper type for left-\/hand-\/side matrix\\
+\hline
+{\em Rhs\+Mapper} & determines the tensor contraction mapper type for right-\/hand-\/side matrix\\
+\hline
+{\em Storage\+Index} & determines the Storage\+Index Type\\
+\hline
+{\em Properties} & determines the Contraction Panel properties\\
+\hline
+{\em Triple\+Dim} & determines the M, K, N dimensions for the flatten tensors in order to treat them as a matrix\\
+\hline
+{\em Vectorizable} & determines whether or not the vectorization is enabled for the \mbox{\hyperlink{namespace_eigen}{Eigen}} expression.\\
+\hline
+{\em input\+\_\+mapper\+\_\+properties} & \+: determine if the input tensors are matrix. If they are matrix, special memory access is used to guarantee that always the memory access are coalesced.\\
+\hline
+\end{DoxyTemplParams}
+\textbackslash{}tptaram Is\+Final \+: determine if this is the final kernel. If so, the result will be written in a final output. Otherwise, the result of contraction will be written iin a temporary buffer. This is the case when Tall/\+Skinny contraction is used. So in this case, a final reduction step is required to compute final output.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em contraction\+\_\+tp} & it is an enum value representing whether the local memory/no local memory implementation of the algorithm to be used\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em scratch} & local memory containing tiles of L\+HS and R\+HS tensors for each work-\/group\\
+\hline
+{\em lhs} & determines the left-\/hand-\/side flattened tensor (tensor mapper)\\
+\hline
+{\em rhs} & determines the right-\/hand-\/side flattened tensor (tensor mapper)\\
+\hline
+{\em out\+\_\+res} & determines the output tensor containing the contraction result\\
+\hline
+{\em group\+SizeM} & a logical number determining the number of work-\/group for m dimension\\
+\hline
+{\em group\+SizeN} & a logical number determining the number of work-\/group for n dimension\\
+\hline
+{\em num\+Tiles} & determines total number of tiles on the k dimension\\
+\hline
+{\em Triple\+Dim} & determines the M, K, N dimensions for the flatten tensors in order to treat them as a matrix \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a9bbdd615c7691b79d5f1e1158684fbf5}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a9bbdd615c7691b79d5f1e1158684fbf5}} 
+\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}!is\_lhs\_transposed@{is\_lhs\_transposed}}
+\index{is\_lhs\_transposed@{is\_lhs\_transposed}!Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+\doxysubsubsection{\texorpdfstring{is\_lhs\_transposed}{is\_lhs\_transposed}}
+{\footnotesize\ttfamily template$<$typename Out\+Scalar , typename Lhs\+Scalar , typename Rhs\+Scalar , typename Out\+Accessor , typename Lhs\+Mapper , typename Rhs\+Mapper , typename Storage\+Index , typename Properties , typename Triple\+Dim , bool Vectorizable, typename input\+\_\+mapper\+\_\+properties , bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$ \\
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool \mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel}}$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$\+::is\+\_\+lhs\+\_\+transposed\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      !\mbox{\hyperlink{struct_eigen_1_1internal_1_1_tensor_contraction_input_mapper_trait}{::Eigen::internal::TensorContractionInputMapperTrait<LhsMapper>::inner\_dim\_contiguous}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad4f0071e85096efcd95da55db942553b}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_ad4f0071e85096efcd95da55db942553b}} 
+\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}!is\_rhs\_transposed@{is\_rhs\_transposed}}
+\index{is\_rhs\_transposed@{is\_rhs\_transposed}!Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+\doxysubsubsection{\texorpdfstring{is\_rhs\_transposed}{is\_rhs\_transposed}}
+{\footnotesize\ttfamily template$<$typename Out\+Scalar , typename Lhs\+Scalar , typename Rhs\+Scalar , typename Out\+Accessor , typename Lhs\+Mapper , typename Rhs\+Mapper , typename Storage\+Index , typename Properties , typename Triple\+Dim , bool Vectorizable, typename input\+\_\+mapper\+\_\+properties , bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$ \\
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool \mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel}}$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$\+::is\+\_\+rhs\+\_\+transposed\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      !\mbox{\hyperlink{struct_eigen_1_1internal_1_1_tensor_contraction_input_mapper_trait}{::Eigen::internal::TensorContractionInputMapperTrait<RhsMapper>::inner\_dim\_contiguous}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a59bd1d1a2bade01c543d91ee1ffc278f}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_a59bd1d1a2bade01c543d91ee1ffc278f}} 
+\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}!LSDL@{LSDL}}
+\index{LSDL@{LSDL}!Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+\doxysubsubsection{\texorpdfstring{LSDL}{LSDL}}
+{\footnotesize\ttfamily template$<$typename Out\+Scalar , typename Lhs\+Scalar , typename Rhs\+Scalar , typename Out\+Accessor , typename Lhs\+Mapper , typename Rhs\+Mapper , typename Storage\+Index , typename Properties , typename Triple\+Dim , bool Vectorizable, typename input\+\_\+mapper\+\_\+properties , bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$ \\
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index \mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel}}$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$\+::L\+S\+DL\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= contraction\_tp == contraction\_type::local}
+\DoxyCodeLine{                                                 ? Properties::TileSizeDimM + Properties::BC}
+\DoxyCodeLine{                                                 : Properties::WorkLoadPerThreadM}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_afb68bbf9ebc4e04cdf1bbda738988f14}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_afb68bbf9ebc4e04cdf1bbda738988f14}} 
+\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}!LSDR@{LSDR}}
+\index{LSDR@{LSDR}!Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+\doxysubsubsection{\texorpdfstring{LSDR}{LSDR}}
+{\footnotesize\ttfamily template$<$typename Out\+Scalar , typename Lhs\+Scalar , typename Rhs\+Scalar , typename Out\+Accessor , typename Lhs\+Mapper , typename Rhs\+Mapper , typename Storage\+Index , typename Properties , typename Triple\+Dim , bool Vectorizable, typename input\+\_\+mapper\+\_\+properties , bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$ \\
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index \mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel}}$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$\+::L\+S\+DR\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= contraction\_tp == contraction\_type::local}
+\DoxyCodeLine{                                                 ? Properties::TileSizeDimN + Properties::BC}
+\DoxyCodeLine{                                                 : Properties::WorkLoadPerThreadN}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aad0b4db1d2c00e5cd995c183a34b68e9}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aad0b4db1d2c00e5cd995c183a34b68e9}} 
+\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}!NStride@{NStride}}
+\index{NStride@{NStride}!Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+\doxysubsubsection{\texorpdfstring{NStride}{NStride}}
+{\footnotesize\ttfamily template$<$typename Out\+Scalar , typename Lhs\+Scalar , typename Rhs\+Scalar , typename Out\+Accessor , typename Lhs\+Mapper , typename Rhs\+Mapper , typename Storage\+Index , typename Properties , typename Triple\+Dim , bool Vectorizable, typename input\+\_\+mapper\+\_\+properties , bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$ \\
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index \mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel}}$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$\+::N\+Stride\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      contraction\_tp == contraction\_type::local ? Properties::WorkLoadPerThreadN : RHSBlockProperties::nc\_stride}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aa72a318769d7facfd60510c7daa10629}\label{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel_aa72a318769d7facfd60510c7daa10629}} 
+\index{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}!PacketSize@{PacketSize}}
+\index{PacketSize@{PacketSize}!Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$@{Eigen::TensorSycl::internal::TensorContractionKernel$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Properties, TripleDim, Vectorizable, input\_mapper\_properties, IsFinal, contraction\_tp $>$}}
+\doxysubsubsection{\texorpdfstring{PacketSize}{PacketSize}}
+{\footnotesize\ttfamily template$<$typename Out\+Scalar , typename Lhs\+Scalar , typename Rhs\+Scalar , typename Out\+Accessor , typename Lhs\+Mapper , typename Rhs\+Mapper , typename Storage\+Index , typename Properties , typename Triple\+Dim , bool Vectorizable, typename input\+\_\+mapper\+\_\+properties , bool Is\+Final, contraction\+\_\+type contraction\+\_\+tp$>$ \\
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR int \mbox{\hyperlink{class_eigen_1_1_tensor_sycl_1_1internal_1_1_tensor_contraction_kernel}{Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Tensor\+Contraction\+Kernel}}$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Properties, Triple\+Dim, Vectorizable, input\+\_\+mapper\+\_\+properties, Is\+Final, contraction\+\_\+tp $>$\+::Packet\+Size\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      Eigen::TensorSycl::internal::Vectorise<OutScalar, Eigen::SyclDevice, Vectorizable>::PacketSize}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Contraction\+Sycl.\+h\end{DoxyCompactItemize}

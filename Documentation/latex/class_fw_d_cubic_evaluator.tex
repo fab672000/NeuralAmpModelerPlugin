@@ -1,0 +1,56 @@
+\hypertarget{class_fw_d_cubic_evaluator}{}\doxysection{Fw\+D\+Cubic\+Evaluator Class Reference}
+\label{class_fw_d_cubic_evaluator}\index{FwDCubicEvaluator@{FwDCubicEvaluator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fw_d_cubic_evaluator_adef461a9bc9df7f8e4443b37c23687cd}{Fw\+D\+Cubic\+Evaluator}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} points\mbox{[}4\mbox{]})
+\item 
+void \mbox{\hyperlink{class_fw_d_cubic_evaluator_a184e789e958bbd668d0ceee37e0c14f8}{restart}} (int divisions)
+\item 
+bool \mbox{\hyperlink{class_fw_d_cubic_evaluator_a635bf0c0b03cb205908de70affc3e8df}{done}} () const
+\item 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \mbox{\hyperlink{class_fw_d_cubic_evaluator_ae2a51008f6869c39567422a72bee58dc}{next}} ()
+\item 
+\mbox{\Hypertarget{class_fw_d_cubic_evaluator_ac13f7ae78757aed6769dc958bcc23128}\label{class_fw_d_cubic_evaluator_ac13f7ae78757aed6769dc958bcc23128}} 
+const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ {\bfseries get\+Ctrl\+Points} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Evaluator to sample the values of a cubic bezier using forward differences. Forward differences is a method for evaluating a nth degree polynomial at a uniform step by only adding precalculated values. For a linear example we have the function f(t) = m$\ast$t+b, then the value of that function at t+h would be f(t+h) = m$\ast$(t+h)+b. If we want to know the uniform step that we must add to the first evaluation f(t) then we need to substract f(t+h) -\/ f(t) = m$\ast$t + m$\ast$h + b -\/ m$\ast$t + b = mh. After obtaining this value (mh) we could just add this constant step to our first sampled point to compute the next one.
+
+For the cubic case the first difference gives as a result a quadratic polynomial to which we can apply again forward differences and get linear function to which we can apply again forward differences to get a constant difference. This is why we keep an array of size 4, the 0th position keeps the sampled value while the next ones keep the quadratic, linear and constant difference values. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_fw_d_cubic_evaluator_adef461a9bc9df7f8e4443b37c23687cd}\label{class_fw_d_cubic_evaluator_adef461a9bc9df7f8e4443b37c23687cd}} 
+\index{FwDCubicEvaluator@{FwDCubicEvaluator}!FwDCubicEvaluator@{FwDCubicEvaluator}}
+\index{FwDCubicEvaluator@{FwDCubicEvaluator}!FwDCubicEvaluator@{FwDCubicEvaluator}}
+\doxysubsubsection{\texorpdfstring{FwDCubicEvaluator()}{FwDCubicEvaluator()}}
+{\footnotesize\ttfamily Fw\+D\+Cubic\+Evaluator\+::\+Fw\+D\+Cubic\+Evaluator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{points\mbox{[}4\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Receives the 4 control points of the cubic bezier. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fw_d_cubic_evaluator_a635bf0c0b03cb205908de70affc3e8df}\label{class_fw_d_cubic_evaluator_a635bf0c0b03cb205908de70affc3e8df}} 
+\index{FwDCubicEvaluator@{FwDCubicEvaluator}!done@{done}}
+\index{done@{done}!FwDCubicEvaluator@{FwDCubicEvaluator}}
+\doxysubsubsection{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily bool Fw\+D\+Cubic\+Evaluator\+::done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if the evaluator is still within the range of 0$<$=t$<$=1 \mbox{\Hypertarget{class_fw_d_cubic_evaluator_ae2a51008f6869c39567422a72bee58dc}\label{class_fw_d_cubic_evaluator_ae2a51008f6869c39567422a72bee58dc}} 
+\index{FwDCubicEvaluator@{FwDCubicEvaluator}!next@{next}}
+\index{next@{next}!FwDCubicEvaluator@{FwDCubicEvaluator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} Fw\+D\+Cubic\+Evaluator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Call next to obtain the \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} sampled and move to the next one. \mbox{\Hypertarget{class_fw_d_cubic_evaluator_a184e789e958bbd668d0ceee37e0c14f8}\label{class_fw_d_cubic_evaluator_a184e789e958bbd668d0ceee37e0c14f8}} 
+\index{FwDCubicEvaluator@{FwDCubicEvaluator}!restart@{restart}}
+\index{restart@{restart}!FwDCubicEvaluator@{FwDCubicEvaluator}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily void Fw\+D\+Cubic\+Evaluator\+::restart (\begin{DoxyParamCaption}\item[{int}]{divisions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Restarts the forward differences evaluator to the first value of t = 0. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Patch\+Utils.\+cpp\end{DoxyCompactItemize}

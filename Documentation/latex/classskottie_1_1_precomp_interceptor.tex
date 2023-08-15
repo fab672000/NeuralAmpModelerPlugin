@@ -1,0 +1,50 @@
+\hypertarget{classskottie_1_1_precomp_interceptor}{}\doxysection{skottie\+::Precomp\+Interceptor Class Reference}
+\label{classskottie_1_1_precomp_interceptor}\index{skottie::PrecompInterceptor@{skottie::PrecompInterceptor}}
+
+
+{\ttfamily \#include $<$External\+Layer.\+h$>$}
+
+Inheritance diagram for skottie\+::Precomp\+Interceptor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classskottie_1_1_precomp_interceptor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskottie_1_1_external_layer}{External\+Layer}} $>$ \mbox{\hyperlink{classskottie_1_1_precomp_interceptor_a7e23f3563db9afe617e845f64df07824}{on\+Load\+Precomp}} (const char id\mbox{[}$\,$\mbox{]}, const char name\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{struct_sk_size}{Sk\+Size}} \&size)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for intercepting pre-\/composed layer creation.
+
+Embedders can register interceptors with animation builders, to substitute target layers with arbitrary/externally-\/controlled content (see \mbox{\hyperlink{classskottie_1_1_external_layer}{External\+Layer}} above). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classskottie_1_1_precomp_interceptor_a7e23f3563db9afe617e845f64df07824}\label{classskottie_1_1_precomp_interceptor_a7e23f3563db9afe617e845f64df07824}} 
+\index{skottie::PrecompInterceptor@{skottie::PrecompInterceptor}!onLoadPrecomp@{onLoadPrecomp}}
+\index{onLoadPrecomp@{onLoadPrecomp}!skottie::PrecompInterceptor@{skottie::PrecompInterceptor}}
+\doxysubsubsection{\texorpdfstring{onLoadPrecomp()}{onLoadPrecomp()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{classskottie_1_1_external_layer}{External\+Layer}}$>$ skottie\+::\+Precomp\+Interceptor\+::on\+Load\+Precomp (\begin{DoxyParamCaption}\item[{const char}]{id\mbox{[}$\,$\mbox{]},  }\item[{const char}]{name\mbox{[}$\,$\mbox{]},  }\item[{const \mbox{\hyperlink{struct_sk_size}{Sk\+Size}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Invoked at animation build time, for each precomp layer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The target composition ID (usually assigned automatically by BM\+: comp\+\_\+0, ...) \\
+\hline
+{\em name} & The name of the precomp layer (by default it matches the target comp name, but can be changed in AE) \\
+\hline
+{\em size} & Lottie-\/specified precomp layer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{classskottie_1_1_external_layer}{External\+Layer}} implementation (to be used instead of the actual Lottie file content), or nullptr (to use the Lottie file content). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skottie/include/External\+Layer.\+h\end{DoxyCompactItemize}

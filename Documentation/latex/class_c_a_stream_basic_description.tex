@@ -1,0 +1,337 @@
+\hypertarget{class_c_a_stream_basic_description}{}\doxysection{C\+A\+Stream\+Basic\+Description Class Reference}
+\label{class_c_a_stream_basic_description}\index{CAStreamBasicDescription@{CAStreamBasicDescription}}
+Inheritance diagram for C\+A\+Stream\+Basic\+Description\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_a_stream_basic_description}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aabcdf253bd2ce62db3f0d05d71966478}\label{class_c_a_stream_basic_description_aabcdf253bd2ce62db3f0d05d71966478}} 
+enum {\bfseries Common\+P\+C\+M\+Format} \{ \newline
+{\bfseries k\+P\+C\+M\+Format\+Other} = 0, 
+{\bfseries k\+P\+C\+M\+Format\+Float32} = 1, 
+{\bfseries k\+P\+C\+M\+Format\+Int16} = 2, 
+{\bfseries k\+P\+C\+M\+Format\+Fixed824} = 3, 
+\newline
+{\bfseries k\+P\+C\+M\+Format\+Other} = 0, 
+{\bfseries k\+P\+C\+M\+Format\+Float32} = 1, 
+{\bfseries k\+P\+C\+M\+Format\+Int16} = 2, 
+{\bfseries k\+P\+C\+M\+Format\+Fixed824} = 3
+ \}
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aabcdf253bd2ce62db3f0d05d71966478}\label{class_c_a_stream_basic_description_aabcdf253bd2ce62db3f0d05d71966478}} 
+enum {\bfseries Common\+P\+C\+M\+Format} \{ \newline
+{\bfseries k\+P\+C\+M\+Format\+Other} = 0, 
+{\bfseries k\+P\+C\+M\+Format\+Float32} = 1, 
+{\bfseries k\+P\+C\+M\+Format\+Int16} = 2, 
+{\bfseries k\+P\+C\+M\+Format\+Fixed824} = 3, 
+\newline
+{\bfseries k\+P\+C\+M\+Format\+Other} = 0, 
+{\bfseries k\+P\+C\+M\+Format\+Float32} = 1, 
+{\bfseries k\+P\+C\+M\+Format\+Int16} = 2, 
+{\bfseries k\+P\+C\+M\+Format\+Fixed824} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a890680667c95e50c8bc0c168e52952a0}\label{class_c_a_stream_basic_description_a890680667c95e50c8bc0c168e52952a0}} 
+{\bfseries C\+A\+Stream\+Basic\+Description} (const Audio\+Stream\+Basic\+Description \&desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa4942aef61c3cddc0072f5c06f5e76a8}\label{class_c_a_stream_basic_description_aa4942aef61c3cddc0072f5c06f5e76a8}} 
+{\bfseries C\+A\+Stream\+Basic\+Description} (double in\+Sample\+Rate, U\+Int32 in\+Format\+ID, U\+Int32 in\+Bytes\+Per\+Packet, U\+Int32 in\+Frames\+Per\+Packet, U\+Int32 in\+Bytes\+Per\+Frame, U\+Int32 in\+Channels\+Per\+Frame, U\+Int32 in\+Bits\+Per\+Channel, U\+Int32 in\+Format\+Flags)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa51207d0fb81f7b23d874970c4b6c484}\label{class_c_a_stream_basic_description_aa51207d0fb81f7b23d874970c4b6c484}} 
+{\bfseries C\+A\+Stream\+Basic\+Description} (double in\+Sample\+Rate, U\+Int32 in\+Num\+Channels, Common\+P\+C\+M\+Format pcmf, bool in\+Is\+Interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa5f4c61f3d88901ee8106034c515f274}\label{class_c_a_stream_basic_description_aa5f4c61f3d88901ee8106034c515f274}} 
+\mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \& {\bfseries operator=} (const Audio\+Stream\+Basic\+Description \&v)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a78a662b08d5107efcd93391e9eae86b3}\label{class_c_a_stream_basic_description_a78a662b08d5107efcd93391e9eae86b3}} 
+void {\bfseries Set\+From} (const Audio\+Stream\+Basic\+Description \&desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aaa14e56970f8ffd9e6d014dd93bae6e8}\label{class_c_a_stream_basic_description_aaa14e56970f8ffd9e6d014dd93bae6e8}} 
+bool {\bfseries From\+Text} (const char $\ast$in\+Text\+Desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a100fc78e85438a521f9cefb984106747}\label{class_c_a_stream_basic_description_a100fc78e85438a521f9cefb984106747}} 
+bool {\bfseries Is\+P\+CM} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a03b63fe1eea43fd9cf2ccb4b2161cf7d}\label{class_c_a_stream_basic_description_a03b63fe1eea43fd9cf2ccb4b2161cf7d}} 
+bool {\bfseries Packedness\+Is\+Significant} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a9aa7745afad23940aa3ca8e52b0c0db2}\label{class_c_a_stream_basic_description_a9aa7745afad23940aa3ca8e52b0c0db2}} 
+bool {\bfseries Alignment\+Is\+Significant} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a672ff001cd533f0d49bacb15a7c4b251}\label{class_c_a_stream_basic_description_a672ff001cd533f0d49bacb15a7c4b251}} 
+bool {\bfseries Is\+Interleaved} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa817905e40545e2f6ea12411a5233a76}\label{class_c_a_stream_basic_description_aa817905e40545e2f6ea12411a5233a76}} 
+bool {\bfseries Is\+Signed\+Integer} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a4cfa49524f1970396c6b6cfa340c46e3}\label{class_c_a_stream_basic_description_a4cfa49524f1970396c6b6cfa340c46e3}} 
+bool {\bfseries Is\+Float} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a7f1ef2c64e0b987172bbdc7e6427ae6c}\label{class_c_a_stream_basic_description_a7f1ef2c64e0b987172bbdc7e6427ae6c}} 
+bool {\bfseries Is\+Native\+Endian} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a6d2494cf632a43bd0e7d82cc06f97862}\label{class_c_a_stream_basic_description_a6d2494cf632a43bd0e7d82cc06f97862}} 
+U\+Int32 {\bfseries Number\+Interleaved\+Channels} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a76c838c70529063a6ba90923613a91b3}\label{class_c_a_stream_basic_description_a76c838c70529063a6ba90923613a91b3}} 
+U\+Int32 {\bfseries Number\+Channel\+Streams} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ad99ff358b70f86852a4ecec632059bb6}\label{class_c_a_stream_basic_description_ad99ff358b70f86852a4ecec632059bb6}} 
+U\+Int32 {\bfseries Number\+Channels} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a0e07f9655d9d65f0b0cd9d16401c2cf6}\label{class_c_a_stream_basic_description_a0e07f9655d9d65f0b0cd9d16401c2cf6}} 
+U\+Int32 {\bfseries Sample\+Word\+Size} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ae48864a9671f988218e1f5c8badacb6d}\label{class_c_a_stream_basic_description_ae48864a9671f988218e1f5c8badacb6d}} 
+U\+Int32 {\bfseries Frames\+To\+Bytes} (U\+Int32 nframes) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a2e7af2eea6b24ce99ac72f0ff1270975}\label{class_c_a_stream_basic_description_a2e7af2eea6b24ce99ac72f0ff1270975}} 
+U\+Int32 {\bfseries Bytes\+To\+Frames} (U\+Int32 nbytes) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aec1b2f6f159f379c524376bd9b9e7dd6}\label{class_c_a_stream_basic_description_aec1b2f6f159f379c524376bd9b9e7dd6}} 
+bool {\bfseries Same\+Channels\+And\+Interleaving} (const \mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \&a) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a6988d35a06055e9db01a9f906b4ecbfe}\label{class_c_a_stream_basic_description_a6988d35a06055e9db01a9f906b4ecbfe}} 
+bool {\bfseries Identify\+Common\+P\+C\+M\+Format} (Common\+P\+C\+M\+Format \&out\+Format, bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a994d8e67a93a20f5b1fe9b8ac938fba6}\label{class_c_a_stream_basic_description_a994d8e67a93a20f5b1fe9b8ac938fba6}} 
+bool {\bfseries Is\+Common\+Float32} (bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a2f53c05944cfc4122d9e3b95150e161d}\label{class_c_a_stream_basic_description_a2f53c05944cfc4122d9e3b95150e161d}} 
+bool {\bfseries Is\+Common\+Fixed824} (bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a8c3ed946ad7bab4001f3bcb15ff52806}\label{class_c_a_stream_basic_description_a8c3ed946ad7bab4001f3bcb15ff52806}} 
+bool {\bfseries Is\+Common\+Int16} (bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ac633aa610ac762235444d51db59a569e}\label{class_c_a_stream_basic_description_ac633aa610ac762235444d51db59a569e}} 
+void {\bfseries Set\+Canonical} (U\+Int32 n\+Channels, bool interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ab7da1f08db42566bfb2dc958c82d60a8}\label{class_c_a_stream_basic_description_ab7da1f08db42566bfb2dc958c82d60a8}} 
+bool {\bfseries Is\+Canonical} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a55187bd31444a9dd2e750d9d9d8857d9}\label{class_c_a_stream_basic_description_a55187bd31444a9dd2e750d9d9d8857d9}} 
+void {\bfseries Set\+A\+U\+Canonical} (U\+Int32 n\+Channels, bool interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ad23594a30eeb949107d567e5cf99c8ed}\label{class_c_a_stream_basic_description_ad23594a30eeb949107d567e5cf99c8ed}} 
+void {\bfseries Change\+Number\+Channels} (U\+Int32 n\+Channels, bool interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ad2fb22da9cd5c33de8166509fa4fc1dc}\label{class_c_a_stream_basic_description_ad2fb22da9cd5c33de8166509fa4fc1dc}} 
+bool {\bfseries Is\+Equal} (const Audio\+Stream\+Basic\+Description \&other, bool interpreting\+Wildcards=true) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a8d9af5bb0b2362cd72b3f09aa39ee64a}\label{class_c_a_stream_basic_description_a8d9af5bb0b2362cd72b3f09aa39ee64a}} 
+void {\bfseries Print} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a5b4e07dfb41ff1671135766da0a2b290}\label{class_c_a_stream_basic_description_a5b4e07dfb41ff1671135766da0a2b290}} 
+void {\bfseries Print} (F\+I\+LE $\ast$\mbox{\hyperlink{structfile}{file}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a66879fd2308fdb1b26b078696dca4fc9}\label{class_c_a_stream_basic_description_a66879fd2308fdb1b26b078696dca4fc9}} 
+void {\bfseries Print\+Format} (F\+I\+LE $\ast$f, const char $\ast$indent, const char $\ast$name) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a5d395c2e432111f929de92c0248d37a4}\label{class_c_a_stream_basic_description_a5d395c2e432111f929de92c0248d37a4}} 
+void {\bfseries Print\+Format2} (F\+I\+LE $\ast$f, const char $\ast$indent, const char $\ast$name) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ac4d754d6028eae3d80c5fa32ce541879}\label{class_c_a_stream_basic_description_ac4d754d6028eae3d80c5fa32ce541879}} 
+char $\ast$ {\bfseries As\+String} (char $\ast$buf, size\+\_\+t bufsize) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a910ee88c781ef8e0e7bce888ed1ec396}\label{class_c_a_stream_basic_description_a910ee88c781ef8e0e7bce888ed1ec396}} 
+O\+S\+Status {\bfseries Save} (C\+F\+Property\+List\+Ref $\ast$out\+Data) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a8984469000417d7ff3a314e4b9bd9637}\label{class_c_a_stream_basic_description_a8984469000417d7ff3a314e4b9bd9637}} 
+O\+S\+Status {\bfseries Restore} (C\+F\+Property\+List\+Ref \&in\+Data)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a890680667c95e50c8bc0c168e52952a0}\label{class_c_a_stream_basic_description_a890680667c95e50c8bc0c168e52952a0}} 
+{\bfseries C\+A\+Stream\+Basic\+Description} (const Audio\+Stream\+Basic\+Description \&desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa4942aef61c3cddc0072f5c06f5e76a8}\label{class_c_a_stream_basic_description_aa4942aef61c3cddc0072f5c06f5e76a8}} 
+{\bfseries C\+A\+Stream\+Basic\+Description} (double in\+Sample\+Rate, U\+Int32 in\+Format\+ID, U\+Int32 in\+Bytes\+Per\+Packet, U\+Int32 in\+Frames\+Per\+Packet, U\+Int32 in\+Bytes\+Per\+Frame, U\+Int32 in\+Channels\+Per\+Frame, U\+Int32 in\+Bits\+Per\+Channel, U\+Int32 in\+Format\+Flags)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa51207d0fb81f7b23d874970c4b6c484}\label{class_c_a_stream_basic_description_aa51207d0fb81f7b23d874970c4b6c484}} 
+{\bfseries C\+A\+Stream\+Basic\+Description} (double in\+Sample\+Rate, U\+Int32 in\+Num\+Channels, Common\+P\+C\+M\+Format pcmf, bool in\+Is\+Interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa5f4c61f3d88901ee8106034c515f274}\label{class_c_a_stream_basic_description_aa5f4c61f3d88901ee8106034c515f274}} 
+\mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \& {\bfseries operator=} (const Audio\+Stream\+Basic\+Description \&v)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a78a662b08d5107efcd93391e9eae86b3}\label{class_c_a_stream_basic_description_a78a662b08d5107efcd93391e9eae86b3}} 
+void {\bfseries Set\+From} (const Audio\+Stream\+Basic\+Description \&desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aaa14e56970f8ffd9e6d014dd93bae6e8}\label{class_c_a_stream_basic_description_aaa14e56970f8ffd9e6d014dd93bae6e8}} 
+bool {\bfseries From\+Text} (const char $\ast$in\+Text\+Desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a100fc78e85438a521f9cefb984106747}\label{class_c_a_stream_basic_description_a100fc78e85438a521f9cefb984106747}} 
+bool {\bfseries Is\+P\+CM} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a03b63fe1eea43fd9cf2ccb4b2161cf7d}\label{class_c_a_stream_basic_description_a03b63fe1eea43fd9cf2ccb4b2161cf7d}} 
+bool {\bfseries Packedness\+Is\+Significant} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a9aa7745afad23940aa3ca8e52b0c0db2}\label{class_c_a_stream_basic_description_a9aa7745afad23940aa3ca8e52b0c0db2}} 
+bool {\bfseries Alignment\+Is\+Significant} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a672ff001cd533f0d49bacb15a7c4b251}\label{class_c_a_stream_basic_description_a672ff001cd533f0d49bacb15a7c4b251}} 
+bool {\bfseries Is\+Interleaved} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aa817905e40545e2f6ea12411a5233a76}\label{class_c_a_stream_basic_description_aa817905e40545e2f6ea12411a5233a76}} 
+bool {\bfseries Is\+Signed\+Integer} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a4cfa49524f1970396c6b6cfa340c46e3}\label{class_c_a_stream_basic_description_a4cfa49524f1970396c6b6cfa340c46e3}} 
+bool {\bfseries Is\+Float} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a7f1ef2c64e0b987172bbdc7e6427ae6c}\label{class_c_a_stream_basic_description_a7f1ef2c64e0b987172bbdc7e6427ae6c}} 
+bool {\bfseries Is\+Native\+Endian} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a6d2494cf632a43bd0e7d82cc06f97862}\label{class_c_a_stream_basic_description_a6d2494cf632a43bd0e7d82cc06f97862}} 
+U\+Int32 {\bfseries Number\+Interleaved\+Channels} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a76c838c70529063a6ba90923613a91b3}\label{class_c_a_stream_basic_description_a76c838c70529063a6ba90923613a91b3}} 
+U\+Int32 {\bfseries Number\+Channel\+Streams} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ad99ff358b70f86852a4ecec632059bb6}\label{class_c_a_stream_basic_description_ad99ff358b70f86852a4ecec632059bb6}} 
+U\+Int32 {\bfseries Number\+Channels} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a0e07f9655d9d65f0b0cd9d16401c2cf6}\label{class_c_a_stream_basic_description_a0e07f9655d9d65f0b0cd9d16401c2cf6}} 
+U\+Int32 {\bfseries Sample\+Word\+Size} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ae48864a9671f988218e1f5c8badacb6d}\label{class_c_a_stream_basic_description_ae48864a9671f988218e1f5c8badacb6d}} 
+U\+Int32 {\bfseries Frames\+To\+Bytes} (U\+Int32 nframes) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a2e7af2eea6b24ce99ac72f0ff1270975}\label{class_c_a_stream_basic_description_a2e7af2eea6b24ce99ac72f0ff1270975}} 
+U\+Int32 {\bfseries Bytes\+To\+Frames} (U\+Int32 nbytes) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aec1b2f6f159f379c524376bd9b9e7dd6}\label{class_c_a_stream_basic_description_aec1b2f6f159f379c524376bd9b9e7dd6}} 
+bool {\bfseries Same\+Channels\+And\+Interleaving} (const \mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \&a) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a6988d35a06055e9db01a9f906b4ecbfe}\label{class_c_a_stream_basic_description_a6988d35a06055e9db01a9f906b4ecbfe}} 
+bool {\bfseries Identify\+Common\+P\+C\+M\+Format} (Common\+P\+C\+M\+Format \&out\+Format, bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a994d8e67a93a20f5b1fe9b8ac938fba6}\label{class_c_a_stream_basic_description_a994d8e67a93a20f5b1fe9b8ac938fba6}} 
+bool {\bfseries Is\+Common\+Float32} (bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a2f53c05944cfc4122d9e3b95150e161d}\label{class_c_a_stream_basic_description_a2f53c05944cfc4122d9e3b95150e161d}} 
+bool {\bfseries Is\+Common\+Fixed824} (bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a8c3ed946ad7bab4001f3bcb15ff52806}\label{class_c_a_stream_basic_description_a8c3ed946ad7bab4001f3bcb15ff52806}} 
+bool {\bfseries Is\+Common\+Int16} (bool $\ast$out\+Is\+Interleaved=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ac633aa610ac762235444d51db59a569e}\label{class_c_a_stream_basic_description_ac633aa610ac762235444d51db59a569e}} 
+void {\bfseries Set\+Canonical} (U\+Int32 n\+Channels, bool interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ab7da1f08db42566bfb2dc958c82d60a8}\label{class_c_a_stream_basic_description_ab7da1f08db42566bfb2dc958c82d60a8}} 
+bool {\bfseries Is\+Canonical} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a55187bd31444a9dd2e750d9d9d8857d9}\label{class_c_a_stream_basic_description_a55187bd31444a9dd2e750d9d9d8857d9}} 
+void {\bfseries Set\+A\+U\+Canonical} (U\+Int32 n\+Channels, bool interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ad23594a30eeb949107d567e5cf99c8ed}\label{class_c_a_stream_basic_description_ad23594a30eeb949107d567e5cf99c8ed}} 
+void {\bfseries Change\+Number\+Channels} (U\+Int32 n\+Channels, bool interleaved)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ad2fb22da9cd5c33de8166509fa4fc1dc}\label{class_c_a_stream_basic_description_ad2fb22da9cd5c33de8166509fa4fc1dc}} 
+bool {\bfseries Is\+Equal} (const Audio\+Stream\+Basic\+Description \&other, bool interpreting\+Wildcards=true) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a8d9af5bb0b2362cd72b3f09aa39ee64a}\label{class_c_a_stream_basic_description_a8d9af5bb0b2362cd72b3f09aa39ee64a}} 
+void {\bfseries Print} () const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a5b4e07dfb41ff1671135766da0a2b290}\label{class_c_a_stream_basic_description_a5b4e07dfb41ff1671135766da0a2b290}} 
+void {\bfseries Print} (F\+I\+LE $\ast$\mbox{\hyperlink{structfile}{file}}) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a66879fd2308fdb1b26b078696dca4fc9}\label{class_c_a_stream_basic_description_a66879fd2308fdb1b26b078696dca4fc9}} 
+void {\bfseries Print\+Format} (F\+I\+LE $\ast$f, const char $\ast$indent, const char $\ast$name) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a5d395c2e432111f929de92c0248d37a4}\label{class_c_a_stream_basic_description_a5d395c2e432111f929de92c0248d37a4}} 
+void {\bfseries Print\+Format2} (F\+I\+LE $\ast$f, const char $\ast$indent, const char $\ast$name) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a0fa9de8ccf1642cf2a5de7c333b72ef0}\label{class_c_a_stream_basic_description_a0fa9de8ccf1642cf2a5de7c333b72ef0}} 
+char $\ast$ {\bfseries As\+String} (char $\ast$buf, size\+\_\+t bufsize) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a910ee88c781ef8e0e7bce888ed1ec396}\label{class_c_a_stream_basic_description_a910ee88c781ef8e0e7bce888ed1ec396}} 
+O\+S\+Status {\bfseries Save} (C\+F\+Property\+List\+Ref $\ast$out\+Data) const
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a8984469000417d7ff3a314e4b9bd9637}\label{class_c_a_stream_basic_description_a8984469000417d7ff3a314e4b9bd9637}} 
+O\+S\+Status {\bfseries Restore} (C\+F\+Property\+List\+Ref \&in\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ab5df59e530a30f8ae47a81e4e3525d87}\label{class_c_a_stream_basic_description_ab5df59e530a30f8ae47a81e4e3525d87}} 
+static bool {\bfseries From\+Text} (const char $\ast$in\+Text\+Desc, Audio\+Stream\+Basic\+Description \&out\+Desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a008dbb7091c36e00f0cfd7c64baaac2b}\label{class_c_a_stream_basic_description_a008dbb7091c36e00f0cfd7c64baaac2b}} 
+static void {\bfseries Print} (const Audio\+Stream\+Basic\+Description \&in\+Desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a244df3cb37254de1e5208ec98f0a6029}\label{class_c_a_stream_basic_description_a244df3cb37254de1e5208ec98f0a6029}} 
+static bool {\bfseries Is\+Mixable} (const Audio\+Stream\+Basic\+Description \&in\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a783de129516d3019ea7f514b1824174c}\label{class_c_a_stream_basic_description_a783de129516d3019ea7f514b1824174c}} 
+static void {\bfseries Normalize\+Linear\+P\+C\+M\+Format} (Audio\+Stream\+Basic\+Description \&io\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a398c4f98fef8b1ab855b1d12a1e59c4d}\label{class_c_a_stream_basic_description_a398c4f98fef8b1ab855b1d12a1e59c4d}} 
+static void {\bfseries Normalize\+Linear\+P\+C\+M\+Format} (bool in\+Native\+Endian, Audio\+Stream\+Basic\+Description \&io\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ac9c723fcaeab6472b0141bbd2488767f}\label{class_c_a_stream_basic_description_ac9c723fcaeab6472b0141bbd2488767f}} 
+static void {\bfseries Reset\+Format} (Audio\+Stream\+Basic\+Description \&io\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a40339549e45e47a35276746e3a34250c}\label{class_c_a_stream_basic_description_a40339549e45e47a35276746e3a34250c}} 
+static void {\bfseries Fill\+Out\+Format} (Audio\+Stream\+Basic\+Description \&io\+Description, const Audio\+Stream\+Basic\+Description \&in\+Template\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a95be306f35ce1588b058bdfae29913f2}\label{class_c_a_stream_basic_description_a95be306f35ce1588b058bdfae29913f2}} 
+static void {\bfseries Get\+Simple\+Name} (const Audio\+Stream\+Basic\+Description \&in\+Description, char $\ast$out\+Name, U\+Int32 in\+Max\+Name\+Length, bool in\+Abbreviate, bool in\+Include\+Sample\+Rate=false)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_adfb4f484f5d8be4d5aa0e15779ea76e6}\label{class_c_a_stream_basic_description_adfb4f484f5d8be4d5aa0e15779ea76e6}} 
+static bool {\bfseries From\+Text} (const char $\ast$in\+Text\+Desc, Audio\+Stream\+Basic\+Description \&out\+Desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a008dbb7091c36e00f0cfd7c64baaac2b}\label{class_c_a_stream_basic_description_a008dbb7091c36e00f0cfd7c64baaac2b}} 
+static void {\bfseries Print} (const Audio\+Stream\+Basic\+Description \&in\+Desc)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a244df3cb37254de1e5208ec98f0a6029}\label{class_c_a_stream_basic_description_a244df3cb37254de1e5208ec98f0a6029}} 
+static bool {\bfseries Is\+Mixable} (const Audio\+Stream\+Basic\+Description \&in\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_acafd22d8b627386ac1c103fa056df715}\label{class_c_a_stream_basic_description_acafd22d8b627386ac1c103fa056df715}} 
+static void {\bfseries Normalize\+Linear\+P\+C\+M\+Format} (Audio\+Stream\+Basic\+Description \&io\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a1df3045982e131dc9041fe5513df7cb4}\label{class_c_a_stream_basic_description_a1df3045982e131dc9041fe5513df7cb4}} 
+static void {\bfseries Normalize\+Linear\+P\+C\+M\+Format} (bool in\+Native\+Endian, Audio\+Stream\+Basic\+Description \&io\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_abfeeb706b9115e38992a19d37cfd2b51}\label{class_c_a_stream_basic_description_abfeeb706b9115e38992a19d37cfd2b51}} 
+static void {\bfseries Reset\+Format} (Audio\+Stream\+Basic\+Description \&io\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_ab03ca4d4c4b2fbf8e9e24445b13c8aed}\label{class_c_a_stream_basic_description_ab03ca4d4c4b2fbf8e9e24445b13c8aed}} 
+static void {\bfseries Fill\+Out\+Format} (Audio\+Stream\+Basic\+Description \&io\+Description, const Audio\+Stream\+Basic\+Description \&in\+Template\+Description)
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_aeb3b5033e2b4fc10d7e5758a54c8c289}\label{class_c_a_stream_basic_description_aeb3b5033e2b4fc10d7e5758a54c8c289}} 
+static void {\bfseries Get\+Simple\+Name} (const Audio\+Stream\+Basic\+Description \&in\+Description, char $\ast$out\+Name, U\+Int32 in\+Max\+Name\+Length, bool in\+Abbreviate, bool in\+Include\+Sample\+Rate=false)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a33b4a63f9de312dab871de45be70f7fd}\label{class_c_a_stream_basic_description_a33b4a63f9de312dab871de45be70f7fd}} 
+static const Audio\+Stream\+Basic\+Description {\bfseries s\+Empty} = \{ 0.\+0, 0, 0, 0, 0, 0, 0, 0, 0 \}
+\item 
+static const char $\ast$ {\bfseries s\+Text\+Parsing\+Usage\+String}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_a_stream_basic_description_a404efa8117957c64e1948fbd1a49df95}\label{class_c_a_stream_basic_description_a404efa8117957c64e1948fbd1a49df95}} 
+\index{CAStreamBasicDescription@{CAStreamBasicDescription}!sTextParsingUsageString@{sTextParsingUsageString}}
+\index{sTextParsingUsageString@{sTextParsingUsageString}!CAStreamBasicDescription@{CAStreamBasicDescription}}
+\doxysubsubsection{\texorpdfstring{sTextParsingUsageString}{sTextParsingUsageString}}
+{\footnotesize\ttfamily static const char $\ast$ C\+A\+Stream\+Basic\+Description\+::s\+Text\+Parsing\+Usage\+String\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= }
+\DoxyCodeLine{    \textcolor{stringliteral}{"format[@sample\_rate\_hz][/format\_flags][\#frames\_per\_packet][:LHbytesPerFrame][,channelsDI].\(\backslash\)n"}}
+\DoxyCodeLine{    \textcolor{stringliteral}{"Format for PCM is [-\/][BE|LE]\{F|I|UI\}\{bitdepth\}; else a 4-\/char format code (e.g. aac, alac).\(\backslash\)n"}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/\+A\+U/\+Public\+Utility/C\+A\+Stream\+Basic\+Description.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/\+A\+U/\+Public\+Utility/C\+A\+Stream\+Basic\+Description.\+cpp\end{DoxyCompactItemize}

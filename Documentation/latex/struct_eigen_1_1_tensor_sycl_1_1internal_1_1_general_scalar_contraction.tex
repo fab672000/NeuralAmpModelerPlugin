@@ -1,0 +1,98 @@
+\hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::General\+Scalar\+Contraction$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Vectorizable $>$ Struct Template Reference}
+\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction}\index{Eigen::TensorSycl::internal::GeneralScalarContraction$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Vectorizable $>$@{Eigen::TensorSycl::internal::GeneralScalarContraction$<$ OutScalar, LhsScalar, RhsScalar, OutAccessor, LhsMapper, RhsMapper, StorageIndex, Vectorizable $>$}}
+
+
+\mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction}{General\+Scalar\+Contraction}} is a template class that provides the scalar value of \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} -\/\mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} contraction operation, when all the dimensions are contracting dimensions. This Kernel reduces two tensors to an scalar.  
+
+
+
+
+{\ttfamily \#include $<$Tensor\+Contraction\+Sycl.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_ab41dcd4738cec5fa61511e9d0ba6b51b}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_ab41dcd4738cec5fa61511e9d0ba6b51b}} 
+typedef cl\+::sycl\+::accessor$<$ Out\+Scalar, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Scratch}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_ab41dcd4738cec5fa61511e9d0ba6b51b}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_ab41dcd4738cec5fa61511e9d0ba6b51b}} 
+typedef cl\+::sycl\+::accessor$<$ Out\+Scalar, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Scratch}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_abaff70ddd3a2d534c5df397e8cfee7ff}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_abaff70ddd3a2d534c5df397e8cfee7ff}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries General\+Scalar\+Contraction} (Scratch scratch\+\_\+, const Lhs\+Mapper lhs\+\_\+, const Rhs\+Mapper rhs\+\_\+, Out\+Accessor out\+\_\+res\+\_\+, const Storage\+Index rng\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_a94d883f4df105b03f45c2f52a898d37b}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_a94d883f4df105b03f45c2f52a898d37b}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_abaff70ddd3a2d534c5df397e8cfee7ff}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_abaff70ddd3a2d534c5df397e8cfee7ff}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries General\+Scalar\+Contraction} (Scratch scratch\+\_\+, const Lhs\+Mapper lhs\+\_\+, const Rhs\+Mapper rhs\+\_\+, Out\+Accessor out\+\_\+res\+\_\+, const Storage\+Index rng\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_afc40ee0388c6e867c4820795224f37e0}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_afc40ee0388c6e867c4820795224f37e0}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_a5af103db0eabec64d5ffc152dd16bece}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_a5af103db0eabec64d5ffc152dd16bece}} 
+Scratch {\bfseries scratch}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_af296e693b370a3afcc8d6457aa0f3c29}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_af296e693b370a3afcc8d6457aa0f3c29}} 
+const Lhs\+Mapper {\bfseries lhs}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_abe685a7bf48bdad87eb472af733dd7b5}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_abe685a7bf48bdad87eb472af733dd7b5}} 
+const Rhs\+Mapper {\bfseries rhs}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_a45856fb9cd2cb1322b33180f2bcdb863}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_a45856fb9cd2cb1322b33180f2bcdb863}} 
+Out\+Accessor {\bfseries out\+\_\+res}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_ac361cc7e94a286767d433ffb5e093e20}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction_ac361cc7e94a286767d433ffb5e093e20}} 
+const Storage\+Index {\bfseries rng}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Out\+Scalar, typename Lhs\+Scalar, typename Rhs\+Scalar, typename Out\+Accessor, typename Lhs\+Mapper, typename Rhs\+Mapper, typename Storage\+Index, bool Vectorizable$>$\newline
+struct Eigen\+::\+Tensor\+Sycl\+::internal\+::\+General\+Scalar\+Contraction$<$ Out\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Out\+Accessor, Lhs\+Mapper, Rhs\+Mapper, Storage\+Index, Vectorizable $>$}
+
+\mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_general_scalar_contraction}{General\+Scalar\+Contraction}} is a template class that provides the scalar value of \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} -\/\mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} contraction operation, when all the dimensions are contracting dimensions. This Kernel reduces two tensors to an scalar. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Out\+Scalar} & determines the output scalar type\\
+\hline
+{\em Lhs\+Scalar} & determines the left-\/hand-\/side scalar type\\
+\hline
+{\em Rhs\+Scalar} & determines the right-\/hand-\/side scalar type\\
+\hline
+{\em Out\+Accessor} & determines the sycl accessor type for out put (please see the sycl-\/1.\+2.\+1 specification (\href{https://www.khronos.org/registry/SYCL/specs/sycl-1.2.1.pdf}{\texttt{ https\+://www.\+khronos.\+org/registry/\+S\+Y\+C\+L/specs/sycl-\/1.\+2.\+1.\+pdf}}) for accessor definition)\\
+\hline
+{\em Lhs\+Mapper} & determines the tensor contraction mapper type for left-\/hand-\/side matrix\\
+\hline
+{\em Rhs\+Mapper} & determines the tensor contraction mapper type for right-\/hand-\/side matrix\\
+\hline
+{\em Storage\+Index} & determines the Storage\+Index Type\\
+\hline
+{\em Vectorizable} & determines whether or not the vectorization is enabled for the \mbox{\hyperlink{namespace_eigen}{Eigen}} expression.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em scratch} & local memory containing tiles of L\+HS and R\+HS tensors for each work-\/group\\
+\hline
+{\em lhs} & determines the left-\/hand-\/side flattened tensor (tensor mapper)\\
+\hline
+{\em rhs} & determines the right-\/hand-\/side flattened tensor (tensor mapper)\\
+\hline
+{\em out\+\_\+res} & determines the output tensor containing the contraction result\\
+\hline
+{\em rng} & determines the total input data size \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Contraction\+Sycl.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,380 @@
+\hypertarget{class_sk_path_ref}{}\doxysection{Sk\+Path\+Ref Class Reference}
+\label{class_sk_path_ref}\index{SkPathRef@{SkPathRef}}
+
+
+{\ttfamily \#include $<$Sk\+Path\+Ref.\+h$>$}
+
+Inheritance diagram for Sk\+Path\+Ref\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_path_ref}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_path_ref_1_1_editor}{Editor}}
+\item 
+class \mbox{\hyperlink{class_sk_path_ref_1_1_iter}{Iter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a4e166cc481f2d5e46fb6013a85f22a22}\label{class_sk_path_ref_a4e166cc481f2d5e46fb6013a85f22a22}} 
+enum \{ {\bfseries k\+Min\+Size} = 256
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a4ec7a7aac1a84686bb816f4d47f4a77f}\label{class_sk_path_ref_a4ec7a7aac1a84686bb816f4d47f4a77f}} 
+enum \{ {\bfseries k\+Empty\+Gen\+ID} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ab446690978db8acf80e5acaa7f730d78}\label{class_sk_path_ref_ab446690978db8acf80e5acaa7f730d78}} 
+{\bfseries Sk\+Path\+Ref} (\mbox{\hyperlink{class_sk_t_d_array}{Sk\+T\+D\+Array}}$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $>$ \mbox{\hyperlink{class_sk_path_ref_aa39ec10c60e8be57ced99a7853877f06}{points}}, \mbox{\hyperlink{class_sk_t_d_array}{Sk\+T\+D\+Array}}$<$ uint8\+\_\+t $>$ verbs, \mbox{\hyperlink{class_sk_t_d_array}{Sk\+T\+D\+Array}}$<$ Sk\+Scalar $>$ weights, unsigned segment\+Mask)
+\item 
+bool \mbox{\hyperlink{class_sk_path_ref_a358cbe889fa9f9d2df07d14a5e8f5c86}{is\+Finite}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_path_ref_afe44c0f60da1fbe401df3fe659355f4e}{get\+Segment\+Masks}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_ref_aec5fc2d6318bed726f39b8d5ed0bc1b0}{is\+Oval}} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$rect, bool $\ast$is\+C\+CW, unsigned $\ast$start) const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a7f6d201ae947aabf7de4d3fffcb612d4}\label{class_sk_path_ref_a7f6d201ae947aabf7de4d3fffcb612d4}} 
+bool {\bfseries is\+R\+Rect} (\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$rrect, bool $\ast$is\+C\+CW, unsigned $\ast$start) const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a745d450fffce1c7905c539183f5e4bf7}\label{class_sk_path_ref_a745d450fffce1c7905c539183f5e4bf7}} 
+bool {\bfseries has\+Computed\+Bounds} () const
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_path_ref_a602f3c1ed60b8730004201d4c3eb0e84}{get\+Bounds}} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a238b28450a163bfd5131efe1f4e7887d}\label{class_sk_path_ref_a238b28450a163bfd5131efe1f4e7887d}} 
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} {\bfseries get\+R\+Rect} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a970f071ed1c3b83830d19ca3cdf4f40b}\label{class_sk_path_ref_a970f071ed1c3b83830d19ca3cdf4f40b}} 
+int {\bfseries count\+Points} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ad4a8604f62b3a9642d59347fe39f0e82}\label{class_sk_path_ref_ad4a8604f62b3a9642d59347fe39f0e82}} 
+int {\bfseries count\+Verbs} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a43f177192b954d38ab316248580ad1e0}\label{class_sk_path_ref_a43f177192b954d38ab316248580ad1e0}} 
+int {\bfseries count\+Weights} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a703df8159e251f3727e707b022913553}\label{class_sk_path_ref_a703df8159e251f3727e707b022913553}} 
+size\+\_\+t {\bfseries approximate\+Bytes\+Used} () const
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_sk_path_ref_ac3521613051ac815b36bf4effc5062fb}{verbs\+Begin}} () const
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_sk_path_ref_a1009986e9511d3b9798eeec4453ebf65}{verbs\+End}} () const
+\item 
+const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ \mbox{\hyperlink{class_sk_path_ref_aa39ec10c60e8be57ced99a7853877f06}{points}} () const
+\item 
+const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ \mbox{\hyperlink{class_sk_path_ref_ac7fe3ae5efe7e0ab55ffacd4c493f137}{points\+End}} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_af58e4cc5dadc3f4757a2233a0a67f4ac}\label{class_sk_path_ref_af58e4cc5dadc3f4757a2233a0a67f4ac}} 
+const Sk\+Scalar $\ast$ {\bfseries conic\+Weights} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ae2fbd431cbfbe2b3dee9260714e90788}\label{class_sk_path_ref_ae2fbd431cbfbe2b3dee9260714e90788}} 
+const Sk\+Scalar $\ast$ {\bfseries conic\+Weights\+End} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_sk_path_ref_a5c9ecdd64137fd501dd54f6c530b01f1}{at\+Verb}} (int index) const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a9add3c85e3e6a13457e1439e15e02aba}\label{class_sk_path_ref_a9add3c85e3e6a13457e1439e15e02aba}} 
+const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \& {\bfseries at\+Point} (int index) const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a23a6079f0f977bbea0d57c6007d27dc2}\label{class_sk_path_ref_a23a6079f0f977bbea0d57c6007d27dc2}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&ref) const
+\item 
+void \mbox{\hyperlink{class_sk_path_ref_acd7af2d59cf5c3d02582bc7daa4259f5}{write\+To\+Buffer}} (\mbox{\hyperlink{class_sk_w_buffer}{Sk\+W\+Buffer}} $\ast$\mbox{\hyperlink{structbuffer}{buffer}}) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_path_ref_aa1807ee68fbfeb9445eaba889baa18a1}{write\+Size}} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_af1efa40df1dd28a93b0bdba8aa62df72}\label{class_sk_path_ref_af1efa40df1dd28a93b0bdba8aa62df72}} 
+void {\bfseries interpolate} (const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&ending, Sk\+Scalar weight, \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $\ast$out) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_path_ref_a314979bd14de5a2dc3b1def692502322}{gen\+ID}} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ac41f9803fc85c200156a09e0d01b7cb9}\label{class_sk_path_ref_ac41f9803fc85c200156a09e0d01b7cb9}} 
+void {\bfseries add\+Gen\+I\+D\+Change\+Listener} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_i_d_change_listener}{Sk\+I\+D\+Change\+Listener}} $>$)
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a2953d12f98fb7e602c997f8c5b5981c7}\label{class_sk_path_ref_a2953d12f98fb7e602c997f8c5b5981c7}} 
+int {\bfseries gen\+I\+D\+Change\+Listener\+Count} ()
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ab241d5e437c7e24b6fbd33df03ea0b82}\label{class_sk_path_ref_ab241d5e437c7e24b6fbd33df03ea0b82}} 
+bool {\bfseries data\+Matches\+Verbs} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_acd2bb13d9ce1172f19e205d97ccad0ff}\label{class_sk_path_ref_acd2bb13d9ce1172f19e205d97ccad0ff}} 
+bool {\bfseries is\+Valid} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ac5f89d3d0f07e74d3389130b8e01eee7}\label{class_sk_path_ref_ac5f89d3d0f07e74d3389130b8e01eee7}} 
+void {\bfseries copy} (const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&ref, int additional\+Reserve\+Verbs, int additional\+Reserve\+Points)
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_aab0f8291c426f163509d24217d3e25c2}\label{class_sk_path_ref_aab0f8291c426f163509d24217d3e25c2}} 
+void {\bfseries compute\+Bounds} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a43880e446aa1682f9f75c06527a379a2}\label{class_sk_path_ref_a43880e446aa1682f9f75c06527a379a2}} 
+void {\bfseries set\+Bounds} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&rect)
+\item 
+void \mbox{\hyperlink{class_sk_path_ref_aeaa64663cef211371dda73e991e51988}{inc\+Reserve}} (int additional\+Verbs, int additional\+Points)
+\item 
+void \mbox{\hyperlink{class_sk_path_ref_ab89f1143d5796c9fe7f090fce27ffef4}{reset\+To\+Size}} (int verb\+Count, int point\+Count, int conic\+Count, int reserve\+Verbs=0, int reserve\+Points=0)
+\item 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ \mbox{\hyperlink{class_sk_path_ref_a262f4822f660bcd701f5ae23f4e54db1}{grow\+For\+Repeated\+Verb}} (int verb, int num\+Vbs, Sk\+Scalar $\ast$$\ast$weights)
+\item 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ \mbox{\hyperlink{class_sk_path_ref_aa594f12526fac0721d94ac48e6772a37}{grow\+For\+Verb}} (int verb, Sk\+Scalar weight)
+\item 
+std\+::tuple$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$, Sk\+Scalar $\ast$ $>$ \mbox{\hyperlink{class_sk_path_ref_a03dba8785e585bd5e85f9f132a3ccf69}{grow\+For\+Verbs\+In\+Path}} (const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&path)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_sk_path_ref_a2f083f835860526ba9c58f83d33d480d}{verbs\+Begin\+Writable}} ()
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_aa4f5fbeb3404b3f95734a5d7017547b9}\label{class_sk_path_ref_aa4f5fbeb3404b3f95734a5d7017547b9}} 
+void {\bfseries set\+Is\+Oval} (bool \mbox{\hyperlink{class_sk_path_ref_aec5fc2d6318bed726f39b8d5ed0bc1b0}{is\+Oval}}, bool is\+C\+CW, unsigned start)
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a2ff78efe407a465561abf6c3e14ee707}\label{class_sk_path_ref_a2ff78efe407a465561abf6c3e14ee707}} 
+void {\bfseries set\+Is\+R\+Rect} (bool is\+R\+Rect, bool is\+C\+CW, unsigned start)
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ac3a35af8e6b9220e3ff599a108e09e25}\label{class_sk_path_ref_ac3a35af8e6b9220e3ff599a108e09e25}} 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ {\bfseries get\+Writable\+Points} ()
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a31f0f69bd96d8482639d1efb192194c9}\label{class_sk_path_ref_a31f0f69bd96d8482639d1efb192194c9}} 
+const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ {\bfseries get\+Points} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_adb2f0af46b32dc4c25b1fe9e9bd74111}\label{class_sk_path_ref_adb2f0af46b32dc4c25b1fe9e9bd74111}} 
+void {\bfseries call\+Gen\+I\+D\+Change\+Listeners} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $\ast$ \mbox{\hyperlink{class_sk_path_ref_a68f6d1eca8e6ec2890b30d7a5edc00df}{Create\+Empty}} ()
+\item 
+static void \mbox{\hyperlink{class_sk_path_ref_a3fe7b6828168deec2594efdb7913f0f9}{Create\+Transformed\+Copy}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $>$ $\ast$dst, const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&src, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&matrix)
+\item 
+static void \mbox{\hyperlink{class_sk_path_ref_a2facf3a5d6c23f75ff90e35382d16911}{Rewind}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $>$ $\ast$path\+Ref)
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a897d21e40f9942a9ed076ca2c56deca5}\label{class_sk_path_ref_a897d21e40f9942a9ed076ca2c56deca5}} 
+static bool {\bfseries Compute\+Pt\+Bounds} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$bounds, const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&ref)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a948d4d63cfca73b86a2cfc3fa3a94481}\label{class_sk_path_ref_a948d4d63cfca73b86a2cfc3fa3a94481}} 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} {\bfseries f\+Bounds}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a24cc79c0709dd3d48625d81907ceb263}\label{class_sk_path_ref_a24cc79c0709dd3d48625d81907ceb263}} 
+\mbox{\hyperlink{class_sk_t_d_array}{Sk\+T\+D\+Array}}$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $>$ {\bfseries f\+Points}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_aee977615fb464ac8fd14f4ca31330c13}\label{class_sk_path_ref_aee977615fb464ac8fd14f4ca31330c13}} 
+\mbox{\hyperlink{class_sk_t_d_array}{Sk\+T\+D\+Array}}$<$ uint8\+\_\+t $>$ {\bfseries f\+Verbs}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_aa70b8d3a006fb03953af2e61d515a7ca}\label{class_sk_path_ref_aa70b8d3a006fb03953af2e61d515a7ca}} 
+\mbox{\hyperlink{class_sk_t_d_array}{Sk\+T\+D\+Array}}$<$ Sk\+Scalar $>$ {\bfseries f\+Conic\+Weights}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a58504d79ed5b2f80168d7aab8a63d035}\label{class_sk_path_ref_a58504d79ed5b2f80168d7aab8a63d035}} 
+uint32\+\_\+t {\bfseries f\+Generation\+ID}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a27dfc1b7eea68932b165922e3b0ea639}\label{class_sk_path_ref_a27dfc1b7eea68932b165922e3b0ea639}} 
+Sk\+D\+E\+B\+U\+G\+C\+O\+DE(std\+::atomic$<$ int $>$ f\+Editors\+Attached;) \mbox{\hyperlink{class_sk_i_d_change_listener}{Sk\+I\+D\+Change\+Listener}} uint8\+\_\+t {\bfseries f\+Bounds\+Is\+Dirty}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ae33e98f53bfa3818153ce04e7aea4edc}\label{class_sk_path_ref_ae33e98f53bfa3818153ce04e7aea4edc}} 
+bool {\bfseries f\+Is\+Finite}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_aa63a83663c61e6a61ee30a52c01f4711}\label{class_sk_path_ref_aa63a83663c61e6a61ee30a52c01f4711}} 
+bool {\bfseries f\+Is\+Oval}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ab92af34d31d51b150d904e40382d492f}\label{class_sk_path_ref_ab92af34d31d51b150d904e40382d492f}} 
+bool {\bfseries f\+Is\+R\+Rect}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a938bdbe4578665603925cabfdbbe1204}\label{class_sk_path_ref_a938bdbe4578665603925cabfdbbe1204}} 
+bool {\bfseries f\+R\+Rect\+Or\+Oval\+Is\+C\+CW}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ad07a70cdcc11b15d0c5457f6b16efb80}\label{class_sk_path_ref_ad07a70cdcc11b15d0c5457f6b16efb80}} 
+uint8\+\_\+t {\bfseries f\+R\+Rect\+Or\+Oval\+Start\+Idx}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a20dcf3bb45c1226f076703a6fe0b982d}\label{class_sk_path_ref_a20dcf3bb45c1226f076703a6fe0b982d}} 
+uint8\+\_\+t {\bfseries f\+Segment\+Mask}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a534bceecad87e033160ede1f8b67d119}\label{class_sk_path_ref_a534bceecad87e033160ede1f8b67d119}} 
+class {\bfseries Path\+Ref\+Test\+\_\+\+Private}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a51942369c3e4b3e574001c68f15541b9}\label{class_sk_path_ref_a51942369c3e4b3e574001c68f15541b9}} 
+class {\bfseries Force\+Is\+R\+Rect\+\_\+\+Private}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_ac6d676cb59ceeaf4644d4cbcbf2c8e9e}\label{class_sk_path_ref_ac6d676cb59ceeaf4644d4cbcbf2c8e9e}} 
+class {\bfseries Sk\+Path}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_af8d50b70a69e90cd8fd87e795b21d919}\label{class_sk_path_ref_af8d50b70a69e90cd8fd87e795b21d919}} 
+class {\bfseries Sk\+Path\+Builder}
+\item 
+\mbox{\Hypertarget{class_sk_path_ref_a31a0490cef71e330bab1a82755e4ee48}\label{class_sk_path_ref_a31a0490cef71e330bab1a82755e4ee48}} 
+class {\bfseries Sk\+Path\+Priv}
+\item 
+\mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $\ast$ \mbox{\hyperlink{class_sk_path_ref_a5078e34dbaf2086842aa752dbb3e46cb}{sk\+\_\+create\+\_\+empty\+\_\+pathref}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds the path verbs and points. It is versioned by a generation ID. None of its public methods modify the contents. To modify or append to the verbs/points wrap the \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} in an \mbox{\hyperlink{class_sk_path_ref_1_1_editor}{Sk\+Path\+Ref\+::\+Editor}} object. Installing the editor resets the generation ID. It also performs copy-\/on-\/write if the \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} is shared by multiple Sk\+Paths. The caller passes the \mbox{\hyperlink{class_sk_path_ref_1_1_editor}{Editor}}\textquotesingle{}s constructor a pointer to a \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp$<$\+Sk\+Path\+Ref$>$}}, which may be updated to point to a new \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} after the editor\textquotesingle{}s constructor returns.
+
+The points and verbs are stored in a single allocation. The points are at the begining of the allocation while the verbs are stored at end of the allocation, in reverse order. Thus the points and verbs both grow into the middle of the allocation until the meet. To access verb i in the verb array use ref.\+verbs()\mbox{[}$\sim$i\mbox{]} (because verbs() returns a pointer just beyond the first logical verb or the last verb in memory). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_path_ref_a5c9ecdd64137fd501dd54f6c530b01f1}\label{class_sk_path_ref_a5c9ecdd64137fd501dd54f6c530b01f1}} 
+\index{SkPathRef@{SkPathRef}!atVerb@{atVerb}}
+\index{atVerb@{atVerb}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{atVerb()}{atVerb()}}
+{\footnotesize\ttfamily uint8\+\_\+t Sk\+Path\+Ref\+::at\+Verb (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convenience methods for getting to a verb or point by index. \mbox{\Hypertarget{class_sk_path_ref_a68f6d1eca8e6ec2890b30d7a5edc00df}\label{class_sk_path_ref_a68f6d1eca8e6ec2890b30d7a5edc00df}} 
+\index{SkPathRef@{SkPathRef}!CreateEmpty@{CreateEmpty}}
+\index{CreateEmpty@{CreateEmpty}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{CreateEmpty()}{CreateEmpty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $\ast$ Sk\+Path\+Ref\+::\+Create\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets a path ref with no verbs or points. \mbox{\Hypertarget{class_sk_path_ref_a3fe7b6828168deec2594efdb7913f0f9}\label{class_sk_path_ref_a3fe7b6828168deec2594efdb7913f0f9}} 
+\index{SkPathRef@{SkPathRef}!CreateTransformedCopy@{CreateTransformedCopy}}
+\index{CreateTransformedCopy@{CreateTransformedCopy}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{CreateTransformedCopy()}{CreateTransformedCopy()}}
+{\footnotesize\ttfamily void Sk\+Path\+Ref\+::\+Create\+Transformed\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $>$ $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&}]{src,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Transforms a path ref by a matrix, allocating a new one only if necessary. \mbox{\Hypertarget{class_sk_path_ref_a314979bd14de5a2dc3b1def692502322}\label{class_sk_path_ref_a314979bd14de5a2dc3b1def692502322}} 
+\index{SkPathRef@{SkPathRef}!genID@{genID}}
+\index{genID@{genID}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{genID()}{genID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Path\+Ref\+::gen\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets an ID that uniquely identifies the contents of the path ref. If two path refs have the same ID then they have the same verbs and points. However, two path refs may have the same contents but different gen\+I\+Ds. \mbox{\Hypertarget{class_sk_path_ref_a602f3c1ed60b8730004201d4c3eb0e84}\label{class_sk_path_ref_a602f3c1ed60b8730004201d4c3eb0e84}} 
+\index{SkPathRef@{SkPathRef}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+Path\+Ref\+::get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the bounds of the path\textquotesingle{}s points. If the path contains 0 or 1 points, the bounds is set to (0,0,0,0), and is\+Empty() will return true. Note\+: this bounds may be larger than the actual shape, since curves do not extend as far as their control points. \mbox{\Hypertarget{class_sk_path_ref_afe44c0f60da1fbe401df3fe659355f4e}\label{class_sk_path_ref_afe44c0f60da1fbe401df3fe659355f4e}} 
+\index{SkPathRef@{SkPathRef}!getSegmentMasks@{getSegmentMasks}}
+\index{getSegmentMasks@{getSegmentMasks}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{getSegmentMasks()}{getSegmentMasks()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Path\+Ref\+::get\+Segment\+Masks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a mask, where each bit corresponding to a Segment\+Mask is set if the path contains 1 or more segments of that type. Returns 0 for an empty path (no segments). \mbox{\Hypertarget{class_sk_path_ref_a262f4822f660bcd701f5ae23f4e54db1}\label{class_sk_path_ref_a262f4822f660bcd701f5ae23f4e54db1}} 
+\index{SkPathRef@{SkPathRef}!growForRepeatedVerb@{growForRepeatedVerb}}
+\index{growForRepeatedVerb@{growForRepeatedVerb}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{growForRepeatedVerb()}{growForRepeatedVerb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ Sk\+Path\+Ref\+::grow\+For\+Repeated\+Verb (\begin{DoxyParamCaption}\item[{int}]{verb,  }\item[{int}]{num\+Vbs,  }\item[{Sk\+Scalar $\ast$$\ast$}]{weights }\end{DoxyParamCaption})}
+
+Increases the verb count by num\+Vbs and point count by the required amount. The new points are uninitialized. All the new verbs are set to the specified verb. If \textquotesingle{}verb\textquotesingle{} is k\+Conic\+\_\+\+Verb, \textquotesingle{}weights\textquotesingle{} will return a pointer to the uninitialized conic weights. \mbox{\Hypertarget{class_sk_path_ref_aa594f12526fac0721d94ac48e6772a37}\label{class_sk_path_ref_aa594f12526fac0721d94ac48e6772a37}} 
+\index{SkPathRef@{SkPathRef}!growForVerb@{growForVerb}}
+\index{growForVerb@{growForVerb}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{growForVerb()}{growForVerb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ Sk\+Path\+Ref\+::grow\+For\+Verb (\begin{DoxyParamCaption}\item[{int}]{verb,  }\item[{Sk\+Scalar}]{weight }\end{DoxyParamCaption})}
+
+Increases the verb count 1, records the new verb, and creates room for the requisite number of additional points. A pointer to the first point is returned. Any new points are uninitialized. \mbox{\Hypertarget{class_sk_path_ref_a03dba8785e585bd5e85f9f132a3ccf69}\label{class_sk_path_ref_a03dba8785e585bd5e85f9f132a3ccf69}} 
+\index{SkPathRef@{SkPathRef}!growForVerbsInPath@{growForVerbsInPath}}
+\index{growForVerbsInPath@{growForVerbsInPath}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{growForVerbsInPath()}{growForVerbsInPath()}}
+{\footnotesize\ttfamily std\+::tuple$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$, Sk\+Scalar $\ast$ $>$ Sk\+Path\+Ref\+::grow\+For\+Verbs\+In\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} \&}]{path }\end{DoxyParamCaption})}
+
+Concatenates all verbs from \textquotesingle{}path\textquotesingle{} onto our own verbs array. Increases the point count by the number of points in \textquotesingle{}path\textquotesingle{}, and the conic weight count by the number of conics in \textquotesingle{}path\textquotesingle{}.
+
+Returns pointers to the uninitialized points and conic weights data. \mbox{\Hypertarget{class_sk_path_ref_aeaa64663cef211371dda73e991e51988}\label{class_sk_path_ref_aeaa64663cef211371dda73e991e51988}} 
+\index{SkPathRef@{SkPathRef}!incReserve@{incReserve}}
+\index{incReserve@{incReserve}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{incReserve()}{incReserve()}}
+{\footnotesize\ttfamily void Sk\+Path\+Ref\+::inc\+Reserve (\begin{DoxyParamCaption}\item[{int}]{additional\+Verbs,  }\item[{int}]{additional\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes additional room but does not change the counts or change the gen\+ID \mbox{\Hypertarget{class_sk_path_ref_a358cbe889fa9f9d2df07d14a5e8f5c86}\label{class_sk_path_ref_a358cbe889fa9f9d2df07d14a5e8f5c86}} 
+\index{SkPathRef@{SkPathRef}!isFinite@{isFinite}}
+\index{isFinite@{isFinite}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{isFinite()}{isFinite()}}
+{\footnotesize\ttfamily bool Sk\+Path\+Ref\+::is\+Finite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if all of the points in this path are finite, meaning there are no infinities and no Na\+Ns. \mbox{\Hypertarget{class_sk_path_ref_aec5fc2d6318bed726f39b8d5ed0bc1b0}\label{class_sk_path_ref_aec5fc2d6318bed726f39b8d5ed0bc1b0}} 
+\index{SkPathRef@{SkPathRef}!isOval@{isOval}}
+\index{isOval@{isOval}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{isOval()}{isOval()}}
+{\footnotesize\ttfamily bool Sk\+Path\+Ref\+::is\+Oval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{rect,  }\item[{bool $\ast$}]{is\+C\+CW,  }\item[{unsigned $\ast$}]{start }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the path is an oval.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & returns the bounding rect of this oval. It\textquotesingle{}s a circle if the height and width are the same. \\
+\hline
+{\em is\+C\+CW} & is the oval C\+CW (or CW if false). \\
+\hline
+{\em start} & indicates where the contour starts on the oval (see \mbox{\hyperlink{class_sk_path_ac39cb6c5b07d25431388f5011f2c2de9}{Sk\+Path\+::add\+Oval}} for intepretation of the index).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this path is an oval. Tracking whether a path is an oval is considered an optimization for performance and so some paths that are in fact ovals can report false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ref_aa39ec10c60e8be57ced99a7853877f06}\label{class_sk_path_ref_aa39ec10c60e8be57ced99a7853877f06}} 
+\index{SkPathRef@{SkPathRef}!points@{points}}
+\index{points@{points}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{points()}{points()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}$\ast$ Sk\+Path\+Ref\+::points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a const pointer to the first point. \mbox{\Hypertarget{class_sk_path_ref_ac7fe3ae5efe7e0ab55ffacd4c493f137}\label{class_sk_path_ref_ac7fe3ae5efe7e0ab55ffacd4c493f137}} 
+\index{SkPathRef@{SkPathRef}!pointsEnd@{pointsEnd}}
+\index{pointsEnd@{pointsEnd}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{pointsEnd()}{pointsEnd()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}$\ast$ Sk\+Path\+Ref\+::points\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for this-\/$>$\mbox{\hyperlink{class_sk_path_ref_aa39ec10c60e8be57ced99a7853877f06}{points()}} + this-\/$>$count\+Points() \mbox{\Hypertarget{class_sk_path_ref_ab89f1143d5796c9fe7f090fce27ffef4}\label{class_sk_path_ref_ab89f1143d5796c9fe7f090fce27ffef4}} 
+\index{SkPathRef@{SkPathRef}!resetToSize@{resetToSize}}
+\index{resetToSize@{resetToSize}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{resetToSize()}{resetToSize()}}
+{\footnotesize\ttfamily void Sk\+Path\+Ref\+::reset\+To\+Size (\begin{DoxyParamCaption}\item[{int}]{verb\+Count,  }\item[{int}]{point\+Count,  }\item[{int}]{conic\+Count,  }\item[{int}]{reserve\+Verbs = {\ttfamily 0},  }\item[{int}]{reserve\+Points = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the path ref with verb\+Count verbs and point\+Count points, all uninitialized. Also allocates space for reserve\+Verb additional verbs and reserve\+Points additional points. \mbox{\Hypertarget{class_sk_path_ref_a2facf3a5d6c23f75ff90e35382d16911}\label{class_sk_path_ref_a2facf3a5d6c23f75ff90e35382d16911}} 
+\index{SkPathRef@{SkPathRef}!Rewind@{Rewind}}
+\index{Rewind@{Rewind}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{Rewind()}{Rewind()}}
+{\footnotesize\ttfamily void Sk\+Path\+Ref\+::\+Rewind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}} $>$ $\ast$}]{path\+Ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Rollsback a path ref to zero verbs and points with the assumption that the path ref will be repopulated with approximately the same number of verbs and points. A new path ref is created only if necessary. \mbox{\Hypertarget{class_sk_path_ref_ac3521613051ac815b36bf4effc5062fb}\label{class_sk_path_ref_ac3521613051ac815b36bf4effc5062fb}} 
+\index{SkPathRef@{SkPathRef}!verbsBegin@{verbsBegin}}
+\index{verbsBegin@{verbsBegin}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{verbsBegin()}{verbsBegin()}}
+{\footnotesize\ttfamily const uint8\+\_\+t$\ast$ Sk\+Path\+Ref\+::verbs\+Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a pointer one beyond the first logical verb (last verb in memory order). \mbox{\Hypertarget{class_sk_path_ref_a2f083f835860526ba9c58f83d33d480d}\label{class_sk_path_ref_a2f083f835860526ba9c58f83d33d480d}} 
+\index{SkPathRef@{SkPathRef}!verbsBeginWritable@{verbsBeginWritable}}
+\index{verbsBeginWritable@{verbsBeginWritable}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{verbsBeginWritable()}{verbsBeginWritable()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Sk\+Path\+Ref\+::verbs\+Begin\+Writable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Private, non-\/const-\/ptr version of the public function verbs\+Mem\+Begin(). \mbox{\Hypertarget{class_sk_path_ref_a1009986e9511d3b9798eeec4453ebf65}\label{class_sk_path_ref_a1009986e9511d3b9798eeec4453ebf65}} 
+\index{SkPathRef@{SkPathRef}!verbsEnd@{verbsEnd}}
+\index{verbsEnd@{verbsEnd}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{verbsEnd()}{verbsEnd()}}
+{\footnotesize\ttfamily const uint8\+\_\+t$\ast$ Sk\+Path\+Ref\+::verbs\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a const pointer to the first verb in memory (which is the last logical verb). \mbox{\Hypertarget{class_sk_path_ref_aa1807ee68fbfeb9445eaba889baa18a1}\label{class_sk_path_ref_aa1807ee68fbfeb9445eaba889baa18a1}} 
+\index{SkPathRef@{SkPathRef}!writeSize@{writeSize}}
+\index{writeSize@{writeSize}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{writeSize()}{writeSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Path\+Ref\+::write\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the number of bytes that would be written in write\+Buffer() \mbox{\Hypertarget{class_sk_path_ref_acd7af2d59cf5c3d02582bc7daa4259f5}\label{class_sk_path_ref_acd7af2d59cf5c3d02582bc7daa4259f5}} 
+\index{SkPathRef@{SkPathRef}!writeToBuffer@{writeToBuffer}}
+\index{writeToBuffer@{writeToBuffer}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{writeToBuffer()}{writeToBuffer()}}
+{\footnotesize\ttfamily void Sk\+Path\+Ref\+::write\+To\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_buffer}{Sk\+W\+Buffer}} $\ast$}]{buffer }\end{DoxyParamCaption}) const}
+
+Writes the path points and verbs to a buffer. 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_sk_path_ref_a5078e34dbaf2086842aa752dbb3e46cb}\label{class_sk_path_ref_a5078e34dbaf2086842aa752dbb3e46cb}} 
+\index{SkPathRef@{SkPathRef}!sk\_create\_empty\_pathref@{sk\_create\_empty\_pathref}}
+\index{sk\_create\_empty\_pathref@{sk\_create\_empty\_pathref}!SkPathRef@{SkPathRef}}
+\doxysubsubsection{\texorpdfstring{sk\_create\_empty\_pathref}{sk\_create\_empty\_pathref}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path_ref}{Sk\+Path\+Ref}}$\ast$ sk\+\_\+create\+\_\+empty\+\_\+pathref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Called the first time someone calls Create\+Empty to actually create the singleton. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/Sk\+Path\+Ref.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path\+Ref.\+cpp\end{DoxyCompactItemize}

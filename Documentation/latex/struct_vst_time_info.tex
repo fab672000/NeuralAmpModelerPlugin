@@ -1,0 +1,90 @@
+\hypertarget{struct_vst_time_info}{}\doxysection{Vst\+Time\+Info Struct Reference}
+\label{struct_vst_time_info}\index{VstTimeInfo@{VstTimeInfo}}
+
+
+{\ttfamily \#include $<$aeffectx.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_vst_time_info_ad46fad394f437e1b283f2e36285be146}\label{struct_vst_time_info_ad46fad394f437e1b283f2e36285be146}} 
+double \mbox{\hyperlink{struct_vst_time_info_ad46fad394f437e1b283f2e36285be146}{sample\+Pos}}
+\begin{DoxyCompactList}\small\item\em current Position in audio samples (always valid) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a4eeabf8718165724415405006df7f445}\label{struct_vst_time_info_a4eeabf8718165724415405006df7f445}} 
+double \mbox{\hyperlink{struct_vst_time_info_a4eeabf8718165724415405006df7f445}{sample\+Rate}}
+\begin{DoxyCompactList}\small\item\em current Sample Rate in Herz (always valid) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a752a9e10bb6ad422cccef03999b5ba33}\label{struct_vst_time_info_a752a9e10bb6ad422cccef03999b5ba33}} 
+double \mbox{\hyperlink{struct_vst_time_info_a752a9e10bb6ad422cccef03999b5ba33}{nano\+Seconds}}
+\begin{DoxyCompactList}\small\item\em System Time in nanoseconds (10$^\wedge$-\/9 second) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_aa243da6be1161a971983e68be39e7a28}\label{struct_vst_time_info_aa243da6be1161a971983e68be39e7a28}} 
+double \mbox{\hyperlink{struct_vst_time_info_aa243da6be1161a971983e68be39e7a28}{ppq\+Pos}}
+\begin{DoxyCompactList}\small\item\em Musical Position, in Quarter Note (1.\+0 equals 1 Quarter Note) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a239c72a382d14e54df88db80f164f368}\label{struct_vst_time_info_a239c72a382d14e54df88db80f164f368}} 
+double \mbox{\hyperlink{struct_vst_time_info_a239c72a382d14e54df88db80f164f368}{tempo}}
+\begin{DoxyCompactList}\small\item\em current Tempo in B\+PM (Beats Per Minute) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a52d38a95a4c34ea3fb060388d4b412d2}\label{struct_vst_time_info_a52d38a95a4c34ea3fb060388d4b412d2}} 
+double \mbox{\hyperlink{struct_vst_time_info_a52d38a95a4c34ea3fb060388d4b412d2}{bar\+Start\+Pos}}
+\begin{DoxyCompactList}\small\item\em last Bar Start Position, in Quarter Note \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a8cc34ec2d43a1cd5d86f2182373e9d9e}\label{struct_vst_time_info_a8cc34ec2d43a1cd5d86f2182373e9d9e}} 
+double \mbox{\hyperlink{struct_vst_time_info_a8cc34ec2d43a1cd5d86f2182373e9d9e}{cycle\+Start\+Pos}}
+\begin{DoxyCompactList}\small\item\em Cycle Start (left locator), in Quarter Note. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a518833deeff87f9fbf8d0507a646470f}\label{struct_vst_time_info_a518833deeff87f9fbf8d0507a646470f}} 
+double \mbox{\hyperlink{struct_vst_time_info_a518833deeff87f9fbf8d0507a646470f}{cycle\+End\+Pos}}
+\begin{DoxyCompactList}\small\item\em Cycle End (right locator), in Quarter Note. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_a4a0c1f8a51c53c3102cd1f97cca0b45f}\label{struct_vst_time_info_a4a0c1f8a51c53c3102cd1f97cca0b45f}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_time_info_a4a0c1f8a51c53c3102cd1f97cca0b45f}{time\+Sig\+Numerator}}
+\begin{DoxyCompactList}\small\item\em Time Signature Numerator (e.\+g. 3 for 3/4) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_ae38abc25d6a20b815084f1a99db4d2fb}\label{struct_vst_time_info_ae38abc25d6a20b815084f1a99db4d2fb}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_time_info_ae38abc25d6a20b815084f1a99db4d2fb}{time\+Sig\+Denominator}}
+\begin{DoxyCompactList}\small\item\em Time Signature Denominator (e.\+g. 4 for 3/4) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_time_info_ac5ce6832b16ce96a66e7f122163fee5e}\label{struct_vst_time_info_ac5ce6832b16ce96a66e7f122163fee5e}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_time_info_ac5ce6832b16ce96a66e7f122163fee5e}{smpte\+Offset}}
+\begin{DoxyCompactList}\small\item\em S\+M\+P\+TE offset (in S\+M\+P\+TE subframes (bits; 1/80 of a frame)). The current S\+M\+P\+TE position can be calculated using \mbox{\hyperlink{struct_vst_time_info_ad46fad394f437e1b283f2e36285be146}{sample\+Pos}}, \mbox{\hyperlink{struct_vst_time_info_a4eeabf8718165724415405006df7f445}{sample\+Rate}}, and \mbox{\hyperlink{struct_vst_time_info_a1a87a949afc7f10d770050b01063cd59}{smpte\+Frame\+Rate}}. \end{DoxyCompactList}\item 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_time_info_a1a87a949afc7f10d770050b01063cd59}{smpte\+Frame\+Rate}}
+\item 
+\mbox{\Hypertarget{struct_vst_time_info_aa64d2f92ed1a617aae11b3c785073ad7}\label{struct_vst_time_info_aa64d2f92ed1a617aae11b3c785073ad7}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_time_info_aa64d2f92ed1a617aae11b3c785073ad7}{samples\+To\+Next\+Clock}}
+\begin{DoxyCompactList}\small\item\em M\+I\+DI Clock Resolution (24 Per Quarter Note), can be negative (nearest clock) \end{DoxyCompactList}\item 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_time_info_afe7a9b32d56a79d5f70e19b2a862b310}{flags}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}} requested via \#audio\+Master\+Get\+Time. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}{Audio\+Effect\+X\+::get\+Time\+Info}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{struct_vst_time_info_ad46fad394f437e1b283f2e36285be146}{Vst\+Time\+Info\+::sample\+Pos}} \+:Current Position. It must always be valid, and should not cost a lot to ask for. The sample position is ahead of the time displayed to the user. In sequencer stop mode, its value does not change. A 32 bit integer is too small for sample positions, and it\textquotesingle{}s a double to make it easier to convert between ppq and samples. 
+
+\mbox{\hyperlink{struct_vst_time_info_aa243da6be1161a971983e68be39e7a28}{Vst\+Time\+Info\+::ppq\+Pos}} \+: At tempo 120, 1 quarter makes 1/2 second, so 2.\+0 ppq translates to 48000 samples at 48k\+Hz sample rate. .25 ppq is one sixteenth note then. if you need something like 480ppq, you simply multiply ppq by that scaler. 
+
+\mbox{\hyperlink{struct_vst_time_info_a52d38a95a4c34ea3fb060388d4b412d2}{Vst\+Time\+Info\+::bar\+Start\+Pos}} \+: Say we\textquotesingle{}re at bars/beats readout 3.\+3.\+3. That\textquotesingle{}s 2 bars + 2 q + 2 sixteenth, makes 2 $\ast$ 4 + 2 + .25 = 10.\+25 ppq. at tempo 120, that\textquotesingle{}s 10.\+25 $\ast$ .5 = 5.\+125 seconds, times 48000 = 246000 samples (if my calculator servers me well \+:-\/). 
+
+\mbox{\hyperlink{struct_vst_time_info_aa64d2f92ed1a617aae11b3c785073ad7}{Vst\+Time\+Info\+::samples\+To\+Next\+Clock}} \+: M\+I\+DI Clock Resolution (24 per Quarter Note), can be negative the distance to the next midi clock (24 ppq, pulses per quarter) in samples. unless sample\+Pos falls precicely on a midi clock, this will either be negative such that the previous M\+I\+DI clock is addressed, or positive when referencing the following (future) M\+I\+DI clock. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_vst_time_info_afe7a9b32d56a79d5f70e19b2a862b310}\label{struct_vst_time_info_afe7a9b32d56a79d5f70e19b2a862b310}} 
+\index{VstTimeInfo@{VstTimeInfo}!flags@{flags}}
+\index{flags@{flags}!VstTimeInfo@{VstTimeInfo}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily Vst\+Int32 Vst\+Time\+Info\+::flags}
+
+\begin{DoxySeeAlso}{See also}
+Vst\+Time\+Info\+Flags 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_vst_time_info_a1a87a949afc7f10d770050b01063cd59}\label{struct_vst_time_info_a1a87a949afc7f10d770050b01063cd59}} 
+\index{VstTimeInfo@{VstTimeInfo}!smpteFrameRate@{smpteFrameRate}}
+\index{smpteFrameRate@{smpteFrameRate}!VstTimeInfo@{VstTimeInfo}}
+\doxysubsubsection{\texorpdfstring{smpteFrameRate}{smpteFrameRate}}
+{\footnotesize\ttfamily Vst\+Int32 Vst\+Time\+Info\+::smpte\+Frame\+Rate}
+
+\begin{DoxySeeAlso}{See also}
+Vst\+Smpte\+Frame\+Rate 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/pluginterfaces/vst2.\+x/aeffectx.\+h\end{DoxyCompactItemize}

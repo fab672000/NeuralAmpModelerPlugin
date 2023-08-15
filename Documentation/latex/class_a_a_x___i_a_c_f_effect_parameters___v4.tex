@@ -1,0 +1,83 @@
+\hypertarget{class_a_a_x___i_a_c_f_effect_parameters___v4}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4 Class Reference}
+\label{class_a_a_x___i_a_c_f_effect_parameters___v4}\index{AAX\_IACFEffectParameters\_V4@{AAX\_IACFEffectParameters\_V4}}
+
+
+Supplemental interface for an A\+AX Plug-\/in\textquotesingle{}s data model.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.103448cm]{class_a_a_x___i_a_c_f_effect_parameters___v4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Auxiliary UI methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table}} (uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+Host\+Unknown, \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$io\+Page\+Table\+Unknown) const =0
+\begin{DoxyCompactList}\small\item\em Allow the plug-\/in to update its page tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Supplemental interface for an A\+AX Plug-\/in\textquotesingle{}s data model. 
+
+This is a supplemental interface for an instance of a plug-\/in\textquotesingle{}s data model. This interface gets exposed to the host application. Host applications that support A\+AX versioned features may call into these methods. See Common\+Interface\+\_\+\+Data\+Model.
+
+\begin{DoxyNote}{Note}
+Your implementation of this interface must inherit from \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}}.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000036}{Todo}}]Add documentation for expected error state return values\end{DoxyRefDesc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}\label{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}} 
+\index{AAX\_IACFEffectParameters\_V4@{AAX\_IACFEffectParameters\_V4}!UpdatePageTable@{UpdatePageTable}}
+\index{UpdatePageTable@{UpdatePageTable}!AAX\_IACFEffectParameters\_V4@{AAX\_IACFEffectParameters\_V4}}
+\doxysubsubsection{\texorpdfstring{UpdatePageTable()}{UpdatePageTable()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4\+::\+Update\+Page\+Table (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{in\+Table\+Type,  }\item[{int32\+\_\+t}]{in\+Table\+Page\+Size,  }\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+Host\+Unknown,  }\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{io\+Page\+Table\+Unknown }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Allow the plug-\/in to update its page tables. 
+
+Called by the plug-\/in host, usually in response to a \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed}} notification sent from the plug-\/in.
+
+Use this method to change the page table mapping for the plug-\/in instance or to apply other changes to auxiliary U\+Is which use the plug-\/in page tables, such as setting focus to a new page.
+
+See A\+A\+X\+\_\+\+Page\+\_\+\+Table\+\_\+\+Guide for more information about page tables.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Table\+Type} & Four-\/char type identifier for the table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+TL\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Table\+Page\+Size} & Page size for the table \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Host\+Unknown} & Unknown interface from the host which may support interfaces providing additional features or information.
+
+All interfaces queried from this unknown will be valid only within the scope of this \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()}} execution and will be relevant for only the current plug-\/in instance. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em io\+Page\+Table\+Unknown} & Unknown interface which supports \mbox{\hyperlink{class_a_a_x___i_page_table}{A\+A\+X\+\_\+\+I\+Page\+Table}}. This object represents the page table data which is currently stored by the host for this plug-\/in instance for the given table type and page size. This data and may be edited within the scope of \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()}} to change the page table mapping for this plug-\/in instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED if the plug-\/in does not implement it or when no change is requested by the plug-\/in. This allows optimizations to be used in the host when no \mbox{\hyperlink{class_u_i}{UI}} update is required following this call.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed}} 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a6a2a5cfe04b343f6ac47becb0e77ba84}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_effect_parameters_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h}}\end{DoxyCompactItemize}

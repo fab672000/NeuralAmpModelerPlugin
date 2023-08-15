@@ -1,0 +1,288 @@
+\hypertarget{usprep_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/usprep.h File Reference}
+\label{usprep_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/usprep.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/usprep.h}}
+
+
+C A\+PI\+: Implements the String\+Prep algorithm.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/parseerr.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{usprep_8h_ab5702434a76b6a260d200d2380166625}{U\+S\+P\+R\+E\+P\+\_\+\+D\+E\+F\+A\+U\+LT}}~0x0000
+\item 
+\#define \mbox{\hyperlink{usprep_8h_ab7b59be4f9636e3c43015642ff34f2c2}{U\+S\+P\+R\+E\+P\+\_\+\+A\+L\+L\+O\+W\+\_\+\+U\+N\+A\+S\+S\+I\+G\+N\+ED}}~0x0001
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}}
+\item 
+typedef enum \mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}} \mbox{\hyperlink{usprep_8h_a97e279ffc13187c90bb82236d326cc30}{U\+String\+Prep\+Profile\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}} \{ \newline
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158add2cb41011bb83a450365d4a64f1ab9c}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3491\+\_\+\+N\+A\+M\+E\+P\+R\+EP}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a358129952b212ff22dfb9f82756e0a09}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+C\+S\+\_\+\+P\+R\+EP}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a830fdd177933f8832dfe721c8459c301}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+C\+S\+\_\+\+P\+R\+E\+P\+\_\+\+CI}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a9526ec098dbb60edc5efd8d489ff5c8a}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+C\+I\+S\+\_\+\+P\+R\+EP}}, 
+\newline
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158aaa9b70ca503fcecde5b687177cc8a8e2}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+M\+I\+X\+E\+D\+\_\+\+P\+R\+E\+P\+\_\+\+P\+R\+E\+F\+IX}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a2e8d4f8d42d4a0d12d74d16cc43c19bd}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+M\+I\+X\+E\+D\+\_\+\+P\+R\+E\+P\+\_\+\+S\+U\+F\+F\+IX}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a3bdad3f602216d3f894cc14aefb377b2}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3722\+\_\+\+I\+S\+C\+SI}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a949424813fad4724db4cb041a2d2eab5}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3920\+\_\+\+N\+O\+D\+E\+P\+R\+EP}}, 
+\newline
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158ab6eb3ba15c6fc00f9c559be34bace7b2}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3920\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+P\+R\+EP}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a1fc4f2071a071d6f77ec1ad14f0c3168}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4011\+\_\+\+M\+IB}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a8de3b8ca7d3a7e60b5892cdadc721ccb}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4013\+\_\+\+S\+A\+S\+L\+P\+R\+EP}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a28e473bbcd279bb6ba4b3a046063304e}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4505\+\_\+\+T\+R\+A\+CE}}, 
+\newline
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a88f4ecb99d8d48847c10aa6ddee27fd3}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4518\+\_\+\+L\+D\+AP}}, 
+\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158a3f352d3878e7ba97f351fef792009876}{U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4518\+\_\+\+L\+D\+A\+P\+\_\+\+CI}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{usprep_8h_af4a0667e8d1b09573d35d0690a1d1e09}{usprep\+\_\+open}} (const char $\ast$path, const char $\ast$file\+Name, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{usprep_8h_ab99e590efdffd7d8e3a77af25ddc727b}{usprep\+\_\+open\+By\+Type}} (\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}} type, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}{usprep\+\_\+close}} (\mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} $\ast$profile)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{usprep_8h_a50c82f20ed517f62c8f9fc2d89b29be9}{usprep\+\_\+prepare}} (const \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} $\ast$prep, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t options, \mbox{\hyperlink{struct_u_parse_error}{U\+Parse\+Error}} $\ast$parse\+Error, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Implements the String\+Prep algorithm. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{usprep_8h_ab7b59be4f9636e3c43015642ff34f2c2}\label{usprep_8h_ab7b59be4f9636e3c43015642ff34f2c2}} 
+\index{usprep.h@{usprep.h}!USPREP\_ALLOW\_UNASSIGNED@{USPREP\_ALLOW\_UNASSIGNED}}
+\index{USPREP\_ALLOW\_UNASSIGNED@{USPREP\_ALLOW\_UNASSIGNED}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{USPREP\_ALLOW\_UNASSIGNED}{USPREP\_ALLOW\_UNASSIGNED}}
+{\footnotesize\ttfamily \#define U\+S\+P\+R\+E\+P\+\_\+\+A\+L\+L\+O\+W\+\_\+\+U\+N\+A\+S\+S\+I\+G\+N\+ED~0x0001}
+
+Option to allow processing of unassigned code points in the input
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{usprep_8h_a50c82f20ed517f62c8f9fc2d89b29be9}{usprep\+\_\+prepare}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{usprep_8h_ab5702434a76b6a260d200d2380166625}\label{usprep_8h_ab5702434a76b6a260d200d2380166625}} 
+\index{usprep.h@{usprep.h}!USPREP\_DEFAULT@{USPREP\_DEFAULT}}
+\index{USPREP\_DEFAULT@{USPREP\_DEFAULT}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{USPREP\_DEFAULT}{USPREP\_DEFAULT}}
+{\footnotesize\ttfamily \#define U\+S\+P\+R\+E\+P\+\_\+\+D\+E\+F\+A\+U\+LT~0x0000}
+
+Option to prohibit processing of unassigned code points in the input
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{usprep_8h_a50c82f20ed517f62c8f9fc2d89b29be9}{usprep\+\_\+prepare}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}\label{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}} 
+\index{usprep.h@{usprep.h}!UStringPrepProfile@{UStringPrepProfile}}
+\index{UStringPrepProfile@{UStringPrepProfile}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{UStringPrepProfile}{UStringPrepProfile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}}}
+
+String\+Prep A\+PI implements the Sting\+Prep framework as described by R\+FC 3454. String\+Prep prepares Unicode strings for use in network protocols. Profiles of Sting\+Prep are set of rules and data according to with the Unicode Strings are prepared. Each profiles contains tables which describe how a code point should be treated. The tables are broadly classified into 
+\begin{DoxyItemize}
+\item Unassigned Table\+: Contains code points that are unassigned in the Unicode \mbox{\hyperlink{struct_version}{Version}} supported by String\+Prep. Currently R\+FC 3454 supports Unicode 3.\+2.  
+\item Prohibited Table\+: Contains code points that are prohibited from the output of the String\+Prep processing function.  
+\item Mapping Table\+: Contains code points that are deleted from the output or case mapped.  
+\end{DoxyItemize}
+
+The procedure for preparing Unicode strings\+: 
+\begin{DoxyEnumerate}
+\item Map\+: For each character in the input, check if it has a mapping and, if so, replace it with its mapping.  
+\item Normalize\+: Possibly normalize the result of step 1 using Unicode normalization.  
+\item Prohibit\+: Check for any characters that are not allowed in the output. If any are found, return an error. 
+\item Check bidi\+: Possibly check for right-\/to-\/left characters, and if any are found, make sure that the whole string satisfies the requirements for bidirectional strings. If the string does not satisfy the requirements for bidirectional strings, return an error.  
+\end{DoxyEnumerate}\begin{DoxyAuthor}{Author}
+Ram Viswanadha The String\+Prep profile @stable I\+CU 2.\+8 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{usprep_8h_a97e279ffc13187c90bb82236d326cc30}\label{usprep_8h_a97e279ffc13187c90bb82236d326cc30}} 
+\index{usprep.h@{usprep.h}!UStringPrepProfileType@{UStringPrepProfileType}}
+\index{UStringPrepProfileType@{UStringPrepProfileType}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{UStringPrepProfileType}{UStringPrepProfileType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}} \mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}}}
+
+enums for the standard stringprep profile types supported by usprep\+\_\+open\+By\+Type. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{usprep_8h_ab99e590efdffd7d8e3a77af25ddc727b}{usprep\+\_\+open\+By\+Type}} @stable I\+CU 4.\+2 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158}} 
+\index{usprep.h@{usprep.h}!UStringPrepProfileType@{UStringPrepProfileType}}
+\index{UStringPrepProfileType@{UStringPrepProfileType}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{UStringPrepProfileType}{UStringPrepProfileType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}}}
+
+enums for the standard stringprep profile types supported by usprep\+\_\+open\+By\+Type. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{usprep_8h_ab99e590efdffd7d8e3a77af25ddc727b}{usprep\+\_\+open\+By\+Type}} @stable I\+CU 4.\+2 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3491\_NAMEPREP@{USPREP\_RFC3491\_NAMEPREP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3491\_NAMEPREP@{USPREP\_RFC3491\_NAMEPREP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158add2cb41011bb83a450365d4a64f1ab9c}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158add2cb41011bb83a450365d4a64f1ab9c}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3491\+\_\+\+N\+A\+M\+E\+P\+R\+EP&R\+F\+C3491 Nameprep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3530\_NFS4\_CS\_PREP@{USPREP\_RFC3530\_NFS4\_CS\_PREP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3530\_NFS4\_CS\_PREP@{USPREP\_RFC3530\_NFS4\_CS\_PREP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a358129952b212ff22dfb9f82756e0a09}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a358129952b212ff22dfb9f82756e0a09}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+C\+S\+\_\+\+P\+R\+EP&R\+F\+C3530 nfs4\+\_\+cs\+\_\+prep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3530\_NFS4\_CS\_PREP\_CI@{USPREP\_RFC3530\_NFS4\_CS\_PREP\_CI}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3530\_NFS4\_CS\_PREP\_CI@{USPREP\_RFC3530\_NFS4\_CS\_PREP\_CI}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a830fdd177933f8832dfe721c8459c301}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a830fdd177933f8832dfe721c8459c301}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+C\+S\+\_\+\+P\+R\+E\+P\+\_\+\+CI&R\+F\+C3530 nfs4\+\_\+cs\+\_\+prep with case insensitive option @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3530\_NFS4\_CIS\_PREP@{USPREP\_RFC3530\_NFS4\_CIS\_PREP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3530\_NFS4\_CIS\_PREP@{USPREP\_RFC3530\_NFS4\_CIS\_PREP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a9526ec098dbb60edc5efd8d489ff5c8a}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a9526ec098dbb60edc5efd8d489ff5c8a}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+C\+I\+S\+\_\+\+P\+R\+EP&R\+F\+C3530 nfs4\+\_\+cis\+\_\+prep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_PREFIX@{USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_PREFIX}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_PREFIX@{USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_PREFIX}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158aaa9b70ca503fcecde5b687177cc8a8e2}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158aaa9b70ca503fcecde5b687177cc8a8e2}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+M\+I\+X\+E\+D\+\_\+\+P\+R\+E\+P\+\_\+\+P\+R\+E\+F\+IX&R\+F\+C3530 nfs4\+\_\+mixed\+\_\+prep for prefix @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_SUFFIX@{USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_SUFFIX}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_SUFFIX@{USPREP\_RFC3530\_NFS4\_MIXED\_PREP\_SUFFIX}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a2e8d4f8d42d4a0d12d74d16cc43c19bd}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a2e8d4f8d42d4a0d12d74d16cc43c19bd}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3530\+\_\+\+N\+F\+S4\+\_\+\+M\+I\+X\+E\+D\+\_\+\+P\+R\+E\+P\+\_\+\+S\+U\+F\+F\+IX&R\+F\+C3530 nfs4\+\_\+mixed\+\_\+prep for suffix @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3722\_ISCSI@{USPREP\_RFC3722\_ISCSI}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3722\_ISCSI@{USPREP\_RFC3722\_ISCSI}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a3bdad3f602216d3f894cc14aefb377b2}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a3bdad3f602216d3f894cc14aefb377b2}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3722\+\_\+\+I\+S\+C\+SI&R\+F\+C3722 i\+S\+C\+SI @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3920\_NODEPREP@{USPREP\_RFC3920\_NODEPREP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3920\_NODEPREP@{USPREP\_RFC3920\_NODEPREP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a949424813fad4724db4cb041a2d2eab5}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a949424813fad4724db4cb041a2d2eab5}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3920\+\_\+\+N\+O\+D\+E\+P\+R\+EP&R\+F\+C3920 X\+M\+PP Nodeprep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC3920\_RESOURCEPREP@{USPREP\_RFC3920\_RESOURCEPREP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC3920\_RESOURCEPREP@{USPREP\_RFC3920\_RESOURCEPREP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158ab6eb3ba15c6fc00f9c559be34bace7b2}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158ab6eb3ba15c6fc00f9c559be34bace7b2}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C3920\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+P\+R\+EP&R\+F\+C3920 X\+M\+PP Resourceprep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC4011\_MIB@{USPREP\_RFC4011\_MIB}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC4011\_MIB@{USPREP\_RFC4011\_MIB}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a1fc4f2071a071d6f77ec1ad14f0c3168}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a1fc4f2071a071d6f77ec1ad14f0c3168}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4011\+\_\+\+M\+IB&R\+F\+C4011 Policy M\+IB Stringprep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC4013\_SASLPREP@{USPREP\_RFC4013\_SASLPREP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC4013\_SASLPREP@{USPREP\_RFC4013\_SASLPREP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a8de3b8ca7d3a7e60b5892cdadc721ccb}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a8de3b8ca7d3a7e60b5892cdadc721ccb}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4013\+\_\+\+S\+A\+S\+L\+P\+R\+EP&R\+F\+C4013 S\+A\+S\+Lprep @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC4505\_TRACE@{USPREP\_RFC4505\_TRACE}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC4505\_TRACE@{USPREP\_RFC4505\_TRACE}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a28e473bbcd279bb6ba4b3a046063304e}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a28e473bbcd279bb6ba4b3a046063304e}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4505\+\_\+\+T\+R\+A\+CE&R\+F\+C4505 trace @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC4518\_LDAP@{USPREP\_RFC4518\_LDAP}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC4518\_LDAP@{USPREP\_RFC4518\_LDAP}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a88f4ecb99d8d48847c10aa6ddee27fd3}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a88f4ecb99d8d48847c10aa6ddee27fd3}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4518\+\_\+\+L\+D\+AP&R\+F\+C4518 L\+D\+AP @stable I\+CU 4.\+2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USPREP\_RFC4518\_LDAP\_CI@{USPREP\_RFC4518\_LDAP\_CI}!usprep.h@{usprep.h}}\index{usprep.h@{usprep.h}!USPREP\_RFC4518\_LDAP\_CI@{USPREP\_RFC4518\_LDAP\_CI}}}\mbox{\Hypertarget{usprep_8h_a9cfa8a892882421a8b67087b09650158a3f352d3878e7ba97f351fef792009876}\label{usprep_8h_a9cfa8a892882421a8b67087b09650158a3f352d3878e7ba97f351fef792009876}} 
+U\+S\+P\+R\+E\+P\+\_\+\+R\+F\+C4518\+\_\+\+L\+D\+A\+P\+\_\+\+CI&R\+F\+C4518 L\+D\+AP for case ignore, numeric and stored prefix matching rules @stable I\+CU 4.\+2 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}\label{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}} 
+\index{usprep.h@{usprep.h}!usprep\_close@{usprep\_close}}
+\index{usprep\_close@{usprep\_close}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{usprep\_close()}{usprep\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 usprep\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} $\ast$}]{profile }\end{DoxyParamCaption})}
+
+Closes the profile 
+\begin{DoxyParams}{Parameters}
+{\em profile} & The profile to close @stable I\+CU 2.\+8 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{usprep_8h_af4a0667e8d1b09573d35d0690a1d1e09}\label{usprep_8h_af4a0667e8d1b09573d35d0690a1d1e09}} 
+\index{usprep.h@{usprep.h}!usprep\_open@{usprep\_open}}
+\index{usprep\_open@{usprep\_open}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{usprep\_open()}{usprep\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 usprep\+\_\+open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{file\+Name,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Creates a String\+Prep profile from the data file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & string containing the full path pointing to the directory where the profile reside followed by the package name e.\+g. \char`\"{}/usr/resource/my\+\_\+app/profiles/mydata\char`\"{} on a Unix system. if N\+U\+LL, I\+CU default data files will be used. \\
+\hline
+{\em file\+Name} & name of the profile file to be opened \\
+\hline
+{\em status} & I\+CU error code in/out parameter. Must not be N\+U\+LL. Must fulfill U\+\_\+\+S\+U\+C\+C\+E\+SS before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to U\+String\+Prep\+Profile that is opened. Should be closed by calling \mbox{\hyperlink{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}{usprep\+\_\+close()}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}{usprep\+\_\+close()}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{usprep_8h_ab99e590efdffd7d8e3a77af25ddc727b}\label{usprep_8h_ab99e590efdffd7d8e3a77af25ddc727b}} 
+\index{usprep.h@{usprep.h}!usprep\_openByType@{usprep\_openByType}}
+\index{usprep\_openByType@{usprep\_openByType}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{usprep\_openByType()}{usprep\_openByType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 usprep\+\_\+open\+By\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{usprep_8h_a9cfa8a892882421a8b67087b09650158}{U\+String\+Prep\+Profile\+Type}}}]{type,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Creates a String\+Prep profile for the specified profile type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The profile type \\
+\hline
+{\em status} & I\+CU error code in/out parameter. Must not be N\+U\+LL. Must fulfill U\+\_\+\+S\+U\+C\+C\+E\+SS before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to U\+String\+Prep\+Profile that is opened. Should be closed by calling \mbox{\hyperlink{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}{usprep\+\_\+close()}} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{usprep_8h_ae6fa7af92a87d5f0ad224ffe51d4d027}{usprep\+\_\+close()}} @stable I\+CU 4.\+2 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{usprep_8h_a50c82f20ed517f62c8f9fc2d89b29be9}\label{usprep_8h_a50c82f20ed517f62c8f9fc2d89b29be9}} 
+\index{usprep.h@{usprep.h}!usprep\_prepare@{usprep\_prepare}}
+\index{usprep\_prepare@{usprep\_prepare}!usprep.h@{usprep.h}}
+\doxysubsubsection{\texorpdfstring{usprep\_prepare()}{usprep\_prepare()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 usprep\+\_\+prepare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{usprep_8h_a725d11d0c462858ee0845710f7e1e2c2}{U\+String\+Prep\+Profile}} $\ast$}]{prep,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t}]{options,  }\item[{\mbox{\hyperlink{struct_u_parse_error}{U\+Parse\+Error}} $\ast$}]{parse\+Error,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Prepare the input buffer for use in applications with the given profile. This operation maps, normalizes(\+N\+F\+K\+C), checks for prohibited and Bi\+Di characters in the order defined by R\+FC 3454 depending on the options specified in the profile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prep} & The profile to use \\
+\hline
+{\em src} & Pointer to U\+Char buffer containing the string to prepare \\
+\hline
+{\em src\+Length} & Number of characters in the source string \\
+\hline
+{\em dest} & Pointer to the destination buffer to receive the output \\
+\hline
+{\em dest\+Capacity} & The capacity of destination array \\
+\hline
+{\em options} & A bit set of options\+:\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item U\+S\+P\+R\+E\+P\+\_\+\+D\+E\+F\+A\+U\+LT Prohibit processing of unassigned code points in the input
+\item U\+S\+P\+R\+E\+P\+\_\+\+A\+L\+L\+O\+W\+\_\+\+U\+N\+A\+S\+S\+I\+G\+N\+ED Treat the unassigned code points are in the input as normal Unicode code points.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em parse\+Error} & Pointer to \mbox{\hyperlink{struct_u_parse_error}{U\+Parse\+Error}} struct to receive information on position of error if an error is encountered. Can be N\+U\+LL. \\
+\hline
+{\em status} & I\+CU in/out error code parameter. U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND if src contains unmatched single surrogates. U\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+O\+F\+B\+O\+U\+N\+D\+S\+\_\+\+E\+R\+R\+OR if src contains too many code points. U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR if dest\+Capacity is not enough \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of U\+Chars in the destination buffer @stable I\+CU 2.\+8 
+\end{DoxyReturn}

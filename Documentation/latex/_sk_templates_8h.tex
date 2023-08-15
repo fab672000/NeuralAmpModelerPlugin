@@ -1,0 +1,82 @@
+\hypertarget{_sk_templates_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/\+Sk\+Templates.h File Reference}
+\label{_sk_templates_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/include/private/SkTemplates.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/include/private/SkTemplates.h}}
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/private/\+Sk\+Malloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/private/\+Sk\+T\+Logic.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$new$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_function_wrapper}{Sk\+Function\+Wrapper$<$ T, P $>$}}
+\item 
+class \mbox{\hyperlink{class_sk_auto_t_call_v_proc}{Sk\+Auto\+T\+Call\+V\+Proc$<$ T, P $>$}}
+\item 
+class \mbox{\hyperlink{class_sk_auto_t_array}{Sk\+Auto\+T\+Array$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{class_sk_auto_s_t_array}{Sk\+Auto\+S\+T\+Array$<$ k\+Count\+Requested, T $>$}}
+\item 
+class \mbox{\hyperlink{class_sk_auto_t_malloc}{Sk\+Auto\+T\+Malloc$<$ T, typename $>$}}
+\item 
+class \mbox{\hyperlink{class_sk_auto_s_t_malloc}{Sk\+Auto\+S\+T\+Malloc$<$ k\+Count\+Requested, T, typename $>$}}
+\item 
+class \mbox{\hyperlink{class_sk_aligned_s_t_storage}{Sk\+Aligned\+S\+T\+Storage$<$ N, T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_sk_templates_8h_ae7f25c98436282b269a4552f74945b03}\label{_sk_templates_8h_ae7f25c98436282b269a4552f74945b03}} 
+using {\bfseries Sk\+Auto\+Free} = std\+::unique\+\_\+ptr$<$ void, \mbox{\hyperlink{struct_sk_function_wrapper}{Sk\+Function\+Wrapper}}$<$ void(void $\ast$), sk\+\_\+free $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_sk_templates_8h_a776c7167752bf70b75beaa95acd9eb12}{sk\+\_\+ignore\+\_\+unused\+\_\+variable}} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{_sk_templates_8h_a49b5973a21babe98302b02a7758e7471}{Sk\+In\+Place\+Delete\+Check}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$obj, void $\ast$storage)
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{_sk_templates_8h_a71e279fbf61a53a1c5b5d08f1198e8c2}{Sk\+In\+Place\+New\+Check}} (void $\ast$storage, size\+\_\+t size, Args \&\&... args)
+\item 
+\mbox{\Hypertarget{_sk_templates_8h_a1e6556987e773f632a23e2d2643f38ac}\label{_sk_templates_8h_a1e6556987e773f632a23e2d2643f38ac}} 
+{\footnotesize template$<$typename C , std\+::size\+\_\+t... Is$>$ }\\constexpr auto {\bfseries Sk\+Make\+Array\+From\+Index\+Sequence} (C c, std\+::index\+\_\+sequence$<$ Is... $>$ is) -\/$>$ std\+::array$<$ decltype(c(std\+::declval$<$ typename decltype(is)\+::value\+\_\+type $>$())), sizeof...(Is)$>$
+\item 
+\mbox{\Hypertarget{_sk_templates_8h_a0502eb92abda758c93d7c0cc1e2b3bb3}\label{_sk_templates_8h_a0502eb92abda758c93d7c0cc1e2b3bb3}} 
+{\footnotesize template$<$size\+\_\+t N, typename C $>$ }\\constexpr auto {\bfseries Sk\+Make\+Array} (C c) -\/$>$ std\+::array$<$ decltype(c(std\+::declval$<$ typename std\+::index\+\_\+sequence$<$ N $>$\+::value\+\_\+type $>$())), N $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains light-\/weight template classes for type-\/safe and exception-\/safe resource management. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sk_templates_8h_a776c7167752bf70b75beaa95acd9eb12}\label{_sk_templates_8h_a776c7167752bf70b75beaa95acd9eb12}} 
+\index{SkTemplates.h@{SkTemplates.h}!sk\_ignore\_unused\_variable@{sk\_ignore\_unused\_variable}}
+\index{sk\_ignore\_unused\_variable@{sk\_ignore\_unused\_variable}!SkTemplates.h@{SkTemplates.h}}
+\doxysubsubsection{\texorpdfstring{sk\_ignore\_unused\_variable()}{sk\_ignore\_unused\_variable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void sk\+\_\+ignore\+\_\+unused\+\_\+variable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Marks a local variable as known to be unused (to avoid warnings). Note that this does {\itshape not} prevent the local variable from being optimized away. \mbox{\Hypertarget{_sk_templates_8h_a49b5973a21babe98302b02a7758e7471}\label{_sk_templates_8h_a49b5973a21babe98302b02a7758e7471}} 
+\index{SkTemplates.h@{SkTemplates.h}!SkInPlaceDeleteCheck@{SkInPlaceDeleteCheck}}
+\index{SkInPlaceDeleteCheck@{SkInPlaceDeleteCheck}!SkTemplates.h@{SkTemplates.h}}
+\doxysubsubsection{\texorpdfstring{SkInPlaceDeleteCheck()}{SkInPlaceDeleteCheck()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Sk\+In\+Place\+Delete\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{obj,  }\item[{void $\ast$}]{storage }\end{DoxyParamCaption})}
+
+Pass the object and the storage that was offered during Sk\+In\+Place\+New\+Check, and this will safely destroy (and free if it was dynamically allocated) the object. \mbox{\Hypertarget{_sk_templates_8h_a71e279fbf61a53a1c5b5d08f1198e8c2}\label{_sk_templates_8h_a71e279fbf61a53a1c5b5d08f1198e8c2}} 
+\index{SkTemplates.h@{SkTemplates.h}!SkInPlaceNewCheck@{SkInPlaceNewCheck}}
+\index{SkInPlaceNewCheck@{SkInPlaceNewCheck}!SkTemplates.h@{SkTemplates.h}}
+\doxysubsubsection{\texorpdfstring{SkInPlaceNewCheck()}{SkInPlaceNewCheck()}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ Sk\+In\+Place\+New\+Check (\begin{DoxyParamCaption}\item[{void $\ast$}]{storage,  }\item[{size\+\_\+t}]{size,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+Allocates T, using storage if it is large enough, and allocating on the heap (via new) if storage is not large enough. \begin{DoxyVerb}obj = SkInPlaceNewCheck<Type>(storage, size);
+...
+SkInPlaceDeleteCheck(obj, storage);
+\end{DoxyVerb}
+ 

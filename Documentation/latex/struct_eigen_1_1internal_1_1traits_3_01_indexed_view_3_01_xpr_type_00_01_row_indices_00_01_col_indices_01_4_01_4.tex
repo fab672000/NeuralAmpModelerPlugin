@@ -1,0 +1,66 @@
+\hypertarget{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4}{}\doxysection{Eigen\+::internal\+::traits$<$ Indexed\+View$<$ Xpr\+Type, Row\+Indices, Col\+Indices $>$ $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4}\index{Eigen::internal::traits$<$ IndexedView$<$ XprType, RowIndices, ColIndices $>$ $>$@{Eigen::internal::traits$<$ IndexedView$<$ XprType, RowIndices, ColIndices $>$ $>$}}
+Inheritance diagram for Eigen\+::internal\+::traits$<$ Indexed\+View$<$ Xpr\+Type, Row\+Indices, Col\+Indices $>$ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_af56997c42549072d401eee9e475def2e}\label{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_af56997c42549072d401eee9e475def2e}} 
+enum \{ \newline
+{\bfseries Rows\+At\+Compile\+Time} = int(array\+\_\+size$<$Row\+Indices$>$\+::value), 
+{\bfseries Cols\+At\+Compile\+Time} = int(array\+\_\+size$<$Col\+Indices$>$\+::value), 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Xpr\+Type\+Is\+Row\+Major} = (int(traits$<$Xpr\+Type$>$\+::Flags)\&Row\+Major\+Bit) != 0, 
+{\bfseries Is\+Row\+Major}, 
+{\bfseries Row\+Incr} = int(get\+\_\+compile\+\_\+time\+\_\+incr$<$Row\+Indices$>$\+::value), 
+{\bfseries Col\+Incr} = int(get\+\_\+compile\+\_\+time\+\_\+incr$<$Col\+Indices$>$\+::value), 
+\newline
+{\bfseries Inner\+Incr} = Is\+Row\+Major ? Col\+Incr \+: Row\+Incr, 
+{\bfseries Outer\+Incr} = Is\+Row\+Major ? Row\+Incr \+: Col\+Incr, 
+{\bfseries Has\+Same\+Storage\+Order\+As\+Xpr\+Type} = (Is\+Row\+Major == Xpr\+Type\+Is\+Row\+Major), 
+{\bfseries Xpr\+Inner\+Stride} = Has\+Same\+Storage\+Order\+As\+Xpr\+Type ? int(inner\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret) \+: int(outer\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret), 
+\newline
+{\bfseries Xpr\+Outerstride} = Has\+Same\+Storage\+Order\+As\+Xpr\+Type ? int(outer\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret) \+: int(inner\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret), 
+{\bfseries Inner\+Size} = Xpr\+Type\+Is\+Row\+Major ? Cols\+At\+Compile\+Time \+: Rows\+At\+Compile\+Time, 
+{\bfseries Is\+Block\+Alike} = Inner\+Incr==1 \&\& Outer\+Incr==1
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_ace4281c80d54d98df4e1428704d44f97}\label{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_ace4281c80d54d98df4e1428704d44f97}} 
+enum \{ \newline
+{\bfseries Rows\+At\+Compile\+Time} = int(array\+\_\+size$<$Row\+Indices$>$\+::value), 
+{\bfseries Cols\+At\+Compile\+Time} = int(array\+\_\+size$<$Col\+Indices$>$\+::value), 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Xpr\+Type\+Is\+Row\+Major} = (int(traits$<$Xpr\+Type$>$\+::Flags)\&Row\+Major\+Bit) != 0, 
+{\bfseries Is\+Row\+Major}, 
+{\bfseries Row\+Incr} = int(get\+\_\+compile\+\_\+time\+\_\+incr$<$Row\+Indices$>$\+::value), 
+{\bfseries Col\+Incr} = int(get\+\_\+compile\+\_\+time\+\_\+incr$<$Col\+Indices$>$\+::value), 
+\newline
+{\bfseries Inner\+Incr} = Is\+Row\+Major ? Col\+Incr \+: Row\+Incr, 
+{\bfseries Outer\+Incr} = Is\+Row\+Major ? Row\+Incr \+: Col\+Incr, 
+{\bfseries Has\+Same\+Storage\+Order\+As\+Xpr\+Type} = (Is\+Row\+Major == Xpr\+Type\+Is\+Row\+Major), 
+{\bfseries Xpr\+Inner\+Stride} = Has\+Same\+Storage\+Order\+As\+Xpr\+Type ? int(inner\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret) \+: int(outer\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret), 
+\newline
+{\bfseries Xpr\+Outerstride} = Has\+Same\+Storage\+Order\+As\+Xpr\+Type ? int(outer\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret) \+: int(inner\+\_\+stride\+\_\+at\+\_\+compile\+\_\+time$<$Xpr\+Type$>$\+::ret), 
+{\bfseries Inner\+Size} = Xpr\+Type\+Is\+Row\+Major ? Cols\+At\+Compile\+Time \+: Rows\+At\+Compile\+Time, 
+{\bfseries Is\+Block\+Alike} = Inner\+Incr==1 \&\& Outer\+Incr==1
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_afb5005f5a859693876e722e4da049ebb}\label{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_afb5005f5a859693876e722e4da049ebb}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_block}{Block}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}}, Rows\+At\+Compile\+Time, Cols\+At\+Compile\+Time, Is\+Inner\+Pannel $>$ {\bfseries Block\+Type}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_afb5005f5a859693876e722e4da049ebb}\label{struct_eigen_1_1internal_1_1traits_3_01_indexed_view_3_01_xpr_type_00_01_row_indices_00_01_col_indices_01_4_01_4_afb5005f5a859693876e722e4da049ebb}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_block}{Block}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}}, Rows\+At\+Compile\+Time, Cols\+At\+Compile\+Time, Is\+Inner\+Pannel $>$ {\bfseries Block\+Type}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Indexed\+View.\+h\end{DoxyCompactItemize}

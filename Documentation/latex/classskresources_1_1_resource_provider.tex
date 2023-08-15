@@ -1,0 +1,108 @@
+\hypertarget{classskresources_1_1_resource_provider}{}\doxysection{skresources\+::Resource\+Provider Class Reference}
+\label{classskresources_1_1_resource_provider}\index{skresources::ResourceProvider@{skresources::ResourceProvider}}
+
+
+{\ttfamily \#include $<$Sk\+Resources.\+h$>$}
+
+Inheritance diagram for skresources\+::Resource\+Provider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.381642cm]{classskresources_1_1_resource_provider}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{classskresources_1_1_resource_provider_a713f812aaadfb13487eb91ff6a70d1a3}{load}} (const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]}) const
+\item 
+virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskresources_1_1_image_asset}{Image\+Asset}} $>$ \mbox{\hyperlink{classskresources_1_1_resource_provider_a7c5956fbb4db134fab74f4558c59f961}{load\+Image\+Asset}} (const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]}) const
+\item 
+virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskresources_1_1_external_track_asset}{External\+Track\+Asset}} $>$ \mbox{\hyperlink{classskresources_1_1_resource_provider_abc4b3e43bf751d30d0ea81c7fe6e9d7f}{load\+Audio\+Asset}} (const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]})
+\item 
+virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{classskresources_1_1_resource_provider_aa4dae8c5189969939c150ea83721f698}{load\+Font}} (const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]}) const
+\item 
+virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$ \mbox{\hyperlink{classskresources_1_1_resource_provider_a5cc1b6a61edf0706c76e4b20a58fd4f9}{load\+Typeface}} (const char\mbox{[}$\,$\mbox{]}, const char\mbox{[}$\,$\mbox{]}) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classskresources_1_1_resource_provider}{Resource\+Provider}} is an interface that lets rich-\/content modules defer loading of external resources (images, fonts, etc.) to embedding clients. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classskresources_1_1_resource_provider_a713f812aaadfb13487eb91ff6a70d1a3}\label{classskresources_1_1_resource_provider_a713f812aaadfb13487eb91ff6a70d1a3}} 
+\index{skresources::ResourceProvider@{skresources::ResourceProvider}!load@{load}}
+\index{load@{load}!skresources::ResourceProvider@{skresources::ResourceProvider}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_data}{Sk\+Data}}$>$ skresources\+::\+Resource\+Provider\+::load (\begin{DoxyParamCaption}\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Load a generic resource (currently only nested animations) specified by $\vert$path$\vert$ + $\vert$name$\vert$, and return as an \mbox{\hyperlink{class_sk_data}{Sk\+Data}}. 
+
+Reimplemented in \mbox{\hyperlink{classskresources_1_1_resource_provider_proxy_base_ae8da0e9ad635fbbe8534672ec3c5d16f}{skresources\+::\+Resource\+Provider\+Proxy\+Base}}, and \mbox{\hyperlink{classskresources_1_1_file_resource_provider_af43a5d65448363d203bb0888879e3ec1}{skresources\+::\+File\+Resource\+Provider}}.
+
+\mbox{\Hypertarget{classskresources_1_1_resource_provider_abc4b3e43bf751d30d0ea81c7fe6e9d7f}\label{classskresources_1_1_resource_provider_abc4b3e43bf751d30d0ea81c7fe6e9d7f}} 
+\index{skresources::ResourceProvider@{skresources::ResourceProvider}!loadAudioAsset@{loadAudioAsset}}
+\index{loadAudioAsset@{loadAudioAsset}!skresources::ResourceProvider@{skresources::ResourceProvider}}
+\doxysubsubsection{\texorpdfstring{loadAudioAsset()}{loadAudioAsset()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{classskresources_1_1_external_track_asset}{External\+Track\+Asset}}$>$ skresources\+::\+Resource\+Provider\+::load\+Audio\+Asset (\begin{DoxyParamCaption}\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Load an external audio track specified by $\vert$path$\vert$/$\vert$name$\vert$/$\vert$id$\vert$. 
+
+Reimplemented in \mbox{\hyperlink{classskresources_1_1_resource_provider_proxy_base_a8d8a4cffd5758829a59ede74f7b772f3}{skresources\+::\+Resource\+Provider\+Proxy\+Base}}.
+
+\mbox{\Hypertarget{classskresources_1_1_resource_provider_aa4dae8c5189969939c150ea83721f698}\label{classskresources_1_1_resource_provider_aa4dae8c5189969939c150ea83721f698}} 
+\index{skresources::ResourceProvider@{skresources::ResourceProvider}!loadFont@{loadFont}}
+\index{loadFont@{loadFont}!skresources::ResourceProvider@{skresources::ResourceProvider}}
+\doxysubsubsection{\texorpdfstring{loadFont()}{loadFont()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_data}{Sk\+Data}}$>$ skresources\+::\+Resource\+Provider\+::load\+Font (\begin{DoxyParamCaption}\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+D\+E\+P\+R\+E\+C\+A\+T\+ED\+: implement \mbox{\hyperlink{classskresources_1_1_resource_provider_a5cc1b6a61edf0706c76e4b20a58fd4f9}{load\+Typeface()}} instead.
+
+Load an external font and return as \mbox{\hyperlink{class_sk_data}{Sk\+Data}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & font name (\char`\"{}f\+Name\char`\"{} Lottie property) \\
+\hline
+{\em url} & web font U\+RL (\char`\"{}f\+Path\char`\"{} Lottie property)\\
+\hline
+\end{DoxyParams}
+-- Note --
+
+This mechanism assumes monolithic fonts (single data blob). Some web font providers may serve multiple font blobs, segmented for various unicode ranges, depending on user agent capabilities (woff, woff2). In that case, the embedder would need to advertise no user agent capabilities when fetching the U\+RL, in order to receive full font data. 
+
+Reimplemented in \mbox{\hyperlink{classskresources_1_1_resource_provider_proxy_base_aedea61dc9582b8e92b67c2d64fe4ca84}{skresources\+::\+Resource\+Provider\+Proxy\+Base}}.
+
+\mbox{\Hypertarget{classskresources_1_1_resource_provider_a7c5956fbb4db134fab74f4558c59f961}\label{classskresources_1_1_resource_provider_a7c5956fbb4db134fab74f4558c59f961}} 
+\index{skresources::ResourceProvider@{skresources::ResourceProvider}!loadImageAsset@{loadImageAsset}}
+\index{loadImageAsset@{loadImageAsset}!skresources::ResourceProvider@{skresources::ResourceProvider}}
+\doxysubsubsection{\texorpdfstring{loadImageAsset()}{loadImageAsset()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{classskresources_1_1_image_asset}{Image\+Asset}}$>$ skresources\+::\+Resource\+Provider\+::load\+Image\+Asset (\begin{DoxyParamCaption}\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Load an image asset specified by $\vert$path$\vert$ + $\vert$name$\vert$, and returns the corresponding \mbox{\hyperlink{classskresources_1_1_image_asset}{Image\+Asset}} proxy. 
+
+Reimplemented in \mbox{\hyperlink{classskresources_1_1_resource_provider_proxy_base_a72042076ff1025dc06537798953be4b6}{skresources\+::\+Resource\+Provider\+Proxy\+Base}}, and \mbox{\hyperlink{classskresources_1_1_file_resource_provider_aa562d61a904537c3144e610455906ed9}{skresources\+::\+File\+Resource\+Provider}}.
+
+\mbox{\Hypertarget{classskresources_1_1_resource_provider_a5cc1b6a61edf0706c76e4b20a58fd4f9}\label{classskresources_1_1_resource_provider_a5cc1b6a61edf0706c76e4b20a58fd4f9}} 
+\index{skresources::ResourceProvider@{skresources::ResourceProvider}!loadTypeface@{loadTypeface}}
+\index{loadTypeface@{loadTypeface}!skresources::ResourceProvider@{skresources::ResourceProvider}}
+\doxysubsubsection{\texorpdfstring{loadTypeface()}{loadTypeface()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}$>$ skresources\+::\+Resource\+Provider\+::load\+Typeface (\begin{DoxyParamCaption}\item[{const char}]{\mbox{[}$\,$\mbox{]},  }\item[{const char}]{\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Load an external font and return as \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & font name \\
+\hline
+{\em url} & web font U\+RL \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classskresources_1_1_resource_provider_proxy_base_a527e9767f648d2a95f18bd2b1530458d}{skresources\+::\+Resource\+Provider\+Proxy\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skresources/include/Sk\+Resources.\+h\end{DoxyCompactItemize}

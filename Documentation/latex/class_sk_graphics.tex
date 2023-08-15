@@ -1,0 +1,177 @@
+\hypertarget{class_sk_graphics}{}\doxysection{Sk\+Graphics Class Reference}
+\label{class_sk_graphics}\index{SkGraphics@{SkGraphics}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_graphics_a795899f8a7ccdf46c76401b3cb966522}\label{class_sk_graphics_a795899f8a7ccdf46c76401b3cb966522}} 
+typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_image_generator}{Sk\+Image\+Generator}} $>$($\ast$ {\bfseries Image\+Generator\+From\+Encoded\+Data\+Factory}) (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_ab7e5afd5b5b0fd3c0c1b8732f5835b77}{Init}} ()
+\item 
+\mbox{\Hypertarget{class_sk_graphics_a2bf1a79ff0cc57d92122064dfb6f139b}\label{class_sk_graphics_a2bf1a79ff0cc57d92122064dfb6f139b}} 
+static void {\bfseries Term} ()
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_graphics_a3ab486e12e3a510e292014dce2ab4a95}{Get\+Font\+Cache\+Limit}} ()
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_graphics_aca374c78b3dfbbf30e8460933f2f48d3}{Set\+Font\+Cache\+Limit}} (size\+\_\+t bytes)
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_graphics_ab5574f9099f38113ea591ce3bc294b6e}{Get\+Font\+Cache\+Used}} ()
+\item 
+static int \mbox{\hyperlink{class_sk_graphics_aab5bbd11a7748f8483d6e850cc2c86ac}{Get\+Font\+Cache\+Count\+Used}} ()
+\item 
+static int \mbox{\hyperlink{class_sk_graphics_a35a046770f6c9a19dfe2c1ad2f20563c}{Get\+Font\+Cache\+Count\+Limit}} ()
+\item 
+static int \mbox{\hyperlink{class_sk_graphics_afe2395d7c86b4cec8d7a4851739ee7fd}{Set\+Font\+Cache\+Count\+Limit}} (int count)
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_ac25751c52433aea376dc1def028d1fdb}{Purge\+Font\+Cache}} ()
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_graphics_adbaffe4067671013404e59167422918c}{Get\+Resource\+Cache\+Total\+Bytes\+Used}} ()
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_graphics_a3b76824b1bd1e38f7c059004eba10d33}{Get\+Resource\+Cache\+Total\+Byte\+Limit}} ()
+\item 
+\mbox{\Hypertarget{class_sk_graphics_aa11a79d6a78ef1cdf7458f2672c03e94}\label{class_sk_graphics_aa11a79d6a78ef1cdf7458f2672c03e94}} 
+static size\+\_\+t {\bfseries Set\+Resource\+Cache\+Total\+Byte\+Limit} (size\+\_\+t new\+Limit)
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_ac158f26de91b3165e1976636ed14145d}{Purge\+Resource\+Cache}} ()
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_graphics_a6080d4cbfd8164b727f3d51a7f8f94d5}{Get\+Resource\+Cache\+Single\+Allocation\+Byte\+Limit}} ()
+\item 
+\mbox{\Hypertarget{class_sk_graphics_a999a0293200118d8b723cd805dad009e}\label{class_sk_graphics_a999a0293200118d8b723cd805dad009e}} 
+static size\+\_\+t {\bfseries Set\+Resource\+Cache\+Single\+Allocation\+Byte\+Limit} (size\+\_\+t new\+Limit)
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_a3cfae21a2d7b044fb79bcffa66cebe7c}{Dump\+Memory\+Statistics}} (\mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} $\ast$dump)
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_a08f5816025ed8e896560d147bee00df2}{Purge\+All\+Caches}} ()
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_a788de2b68c23a5f0db82d3dd9e2dbcce}{Set\+Flags}} (const char $\ast$flags)
+\item 
+static Image\+Generator\+From\+Encoded\+Data\+Factory \mbox{\hyperlink{class_sk_graphics_aefc826dd23aeca362588c10b37b03137}{Set\+Image\+Generator\+From\+Encoded\+Data\+Factory}} (Image\+Generator\+From\+Encoded\+Data\+Factory)
+\item 
+static void \mbox{\hyperlink{class_sk_graphics_a3bde8faded0c68705f9ddf478fbdc358}{Allow\+J\+IT}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_graphics_a3bde8faded0c68705f9ddf478fbdc358}\label{class_sk_graphics_a3bde8faded0c68705f9ddf478fbdc358}} 
+\index{SkGraphics@{SkGraphics}!AllowJIT@{AllowJIT}}
+\index{AllowJIT@{AllowJIT}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{AllowJIT()}{AllowJIT()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Allow\+J\+IT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Call early in main() to allow Skia to use a J\+IT to accelerate C\+P\+U-\/bound operations. \mbox{\Hypertarget{class_sk_graphics_a3cfae21a2d7b044fb79bcffa66cebe7c}\label{class_sk_graphics_a3cfae21a2d7b044fb79bcffa66cebe7c}} 
+\index{SkGraphics@{SkGraphics}!DumpMemoryStatistics@{DumpMemoryStatistics}}
+\index{DumpMemoryStatistics@{DumpMemoryStatistics}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{DumpMemoryStatistics()}{DumpMemoryStatistics()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Dump\+Memory\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} $\ast$}]{dump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Dumps memory usage of caches using the \mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} interface. See \mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} for usage of this method. \mbox{\Hypertarget{class_sk_graphics_a35a046770f6c9a19dfe2c1ad2f20563c}\label{class_sk_graphics_a35a046770f6c9a19dfe2c1ad2f20563c}} 
+\index{SkGraphics@{SkGraphics}!GetFontCacheCountLimit@{GetFontCacheCountLimit}}
+\index{GetFontCacheCountLimit@{GetFontCacheCountLimit}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetFontCacheCountLimit()}{GetFontCacheCountLimit()}}
+{\footnotesize\ttfamily int Sk\+Graphics\+::\+Get\+Font\+Cache\+Count\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the current limit to the number of entries in the font cache. A cache \char`\"{}entry\char`\"{} is associated with each typeface + point\+Size + matrix. \mbox{\Hypertarget{class_sk_graphics_aab5bbd11a7748f8483d6e850cc2c86ac}\label{class_sk_graphics_aab5bbd11a7748f8483d6e850cc2c86ac}} 
+\index{SkGraphics@{SkGraphics}!GetFontCacheCountUsed@{GetFontCacheCountUsed}}
+\index{GetFontCacheCountUsed@{GetFontCacheCountUsed}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetFontCacheCountUsed()}{GetFontCacheCountUsed()}}
+{\footnotesize\ttfamily int Sk\+Graphics\+::\+Get\+Font\+Cache\+Count\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the number of entries in the font cache. A cache \char`\"{}entry\char`\"{} is associated with each typeface + point\+Size + matrix. \mbox{\Hypertarget{class_sk_graphics_a3ab486e12e3a510e292014dce2ab4a95}\label{class_sk_graphics_a3ab486e12e3a510e292014dce2ab4a95}} 
+\index{SkGraphics@{SkGraphics}!GetFontCacheLimit@{GetFontCacheLimit}}
+\index{GetFontCacheLimit@{GetFontCacheLimit}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetFontCacheLimit()}{GetFontCacheLimit()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Graphics\+::\+Get\+Font\+Cache\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the max number of bytes that should be used by the font cache. If the cache needs to allocate more, it will purge previous entries. This max can be changed by calling \mbox{\hyperlink{class_sk_graphics_aca374c78b3dfbbf30e8460933f2f48d3}{Set\+Font\+Cache\+Limit()}}. \mbox{\Hypertarget{class_sk_graphics_ab5574f9099f38113ea591ce3bc294b6e}\label{class_sk_graphics_ab5574f9099f38113ea591ce3bc294b6e}} 
+\index{SkGraphics@{SkGraphics}!GetFontCacheUsed@{GetFontCacheUsed}}
+\index{GetFontCacheUsed@{GetFontCacheUsed}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetFontCacheUsed()}{GetFontCacheUsed()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Graphics\+::\+Get\+Font\+Cache\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the number of bytes currently used by the font cache. \mbox{\Hypertarget{class_sk_graphics_a6080d4cbfd8164b727f3d51a7f8f94d5}\label{class_sk_graphics_a6080d4cbfd8164b727f3d51a7f8f94d5}} 
+\index{SkGraphics@{SkGraphics}!GetResourceCacheSingleAllocationByteLimit@{GetResourceCacheSingleAllocationByteLimit}}
+\index{GetResourceCacheSingleAllocationByteLimit@{GetResourceCacheSingleAllocationByteLimit}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetResourceCacheSingleAllocationByteLimit()}{GetResourceCacheSingleAllocationByteLimit()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Graphics\+::\+Get\+Resource\+Cache\+Single\+Allocation\+Byte\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+When the cachable entry is very lage (e.\+g. a large scaled bitmap), adding it to the cache can cause most/all of the existing entries to be purged. To avoid the, the client can set a limit for a single allocation. If a cacheable entry would have been cached, but its size exceeds this limit, then we do not attempt to cache it at all.
+
+Zero is the default value, meaning we always attempt to cache entries. \mbox{\Hypertarget{class_sk_graphics_a3b76824b1bd1e38f7c059004eba10d33}\label{class_sk_graphics_a3b76824b1bd1e38f7c059004eba10d33}} 
+\index{SkGraphics@{SkGraphics}!GetResourceCacheTotalByteLimit@{GetResourceCacheTotalByteLimit}}
+\index{GetResourceCacheTotalByteLimit@{GetResourceCacheTotalByteLimit}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetResourceCacheTotalByteLimit()}{GetResourceCacheTotalByteLimit()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Graphics\+::\+Get\+Resource\+Cache\+Total\+Byte\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+These functions get/set the memory usage limit for the resource cache, used for temporary bitmaps and other resources. Entries are purged from the cache when the memory useage exceeds this limit. \mbox{\Hypertarget{class_sk_graphics_adbaffe4067671013404e59167422918c}\label{class_sk_graphics_adbaffe4067671013404e59167422918c}} 
+\index{SkGraphics@{SkGraphics}!GetResourceCacheTotalBytesUsed@{GetResourceCacheTotalBytesUsed}}
+\index{GetResourceCacheTotalBytesUsed@{GetResourceCacheTotalBytesUsed}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{GetResourceCacheTotalBytesUsed()}{GetResourceCacheTotalBytesUsed()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Graphics\+::\+Get\+Resource\+Cache\+Total\+Bytes\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This function returns the memory used for temporary images and other resources. \mbox{\Hypertarget{class_sk_graphics_ab7e5afd5b5b0fd3c0c1b8732f5835b77}\label{class_sk_graphics_ab7e5afd5b5b0fd3c0c1b8732f5835b77}} 
+\index{SkGraphics@{SkGraphics}!Init@{Init}}
+\index{Init@{Init}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Call this at process initialization time if your environment does not permit static global initializers that execute code. \mbox{\hyperlink{class_sk_graphics_ab7e5afd5b5b0fd3c0c1b8732f5835b77}{Init()}} is thread-\/safe and idempotent. \mbox{\Hypertarget{class_sk_graphics_a08f5816025ed8e896560d147bee00df2}\label{class_sk_graphics_a08f5816025ed8e896560d147bee00df2}} 
+\index{SkGraphics@{SkGraphics}!PurgeAllCaches@{PurgeAllCaches}}
+\index{PurgeAllCaches@{PurgeAllCaches}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{PurgeAllCaches()}{PurgeAllCaches()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Purge\+All\+Caches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Free as much globally cached memory as possible. This will purge all private caches in Skia, including font and image caches.
+
+If there are caches associated with G\+PU context, those will not be affected by this call. \mbox{\Hypertarget{class_sk_graphics_ac25751c52433aea376dc1def028d1fdb}\label{class_sk_graphics_ac25751c52433aea376dc1def028d1fdb}} 
+\index{SkGraphics@{SkGraphics}!PurgeFontCache@{PurgeFontCache}}
+\index{PurgeFontCache@{PurgeFontCache}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{PurgeFontCache()}{PurgeFontCache()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Purge\+Font\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+For debugging purposes, this will attempt to purge the font cache. It does not change the limit, but will cause subsequent font measures and draws to be recreated, since they will no longer be in the cache. \mbox{\Hypertarget{class_sk_graphics_ac158f26de91b3165e1976636ed14145d}\label{class_sk_graphics_ac158f26de91b3165e1976636ed14145d}} 
+\index{SkGraphics@{SkGraphics}!PurgeResourceCache@{PurgeResourceCache}}
+\index{PurgeResourceCache@{PurgeResourceCache}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{PurgeResourceCache()}{PurgeResourceCache()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Purge\+Resource\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+For debugging purposes, this will attempt to purge the resource cache. It does not change the limit. \mbox{\Hypertarget{class_sk_graphics_a788de2b68c23a5f0db82d3dd9e2dbcce}\label{class_sk_graphics_a788de2b68c23a5f0db82d3dd9e2dbcce}} 
+\index{SkGraphics@{SkGraphics}!SetFlags@{SetFlags}}
+\index{SetFlags@{SetFlags}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{SetFlags()}{SetFlags()}}
+{\footnotesize\ttfamily void Sk\+Graphics\+::\+Set\+Flags (\begin{DoxyParamCaption}\item[{const char $\ast$}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Applications with command line options may pass optional state, such as cache sizes, here, for instance\+: font-\/cache-\/limit=12345678
+
+The flags format is name=value\mbox{[};name=value...\mbox{]} with no spaces. This format is subject to change. \mbox{\Hypertarget{class_sk_graphics_afe2395d7c86b4cec8d7a4851739ee7fd}\label{class_sk_graphics_afe2395d7c86b4cec8d7a4851739ee7fd}} 
+\index{SkGraphics@{SkGraphics}!SetFontCacheCountLimit@{SetFontCacheCountLimit}}
+\index{SetFontCacheCountLimit@{SetFontCacheCountLimit}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{SetFontCacheCountLimit()}{SetFontCacheCountLimit()}}
+{\footnotesize\ttfamily int Sk\+Graphics\+::\+Set\+Font\+Cache\+Count\+Limit (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Set the limit to the number of entries in the font cache, and return the previous value. If this new value is lower than the previous, it will automatically try to purge entries to meet the new limit. \mbox{\Hypertarget{class_sk_graphics_aca374c78b3dfbbf30e8460933f2f48d3}\label{class_sk_graphics_aca374c78b3dfbbf30e8460933f2f48d3}} 
+\index{SkGraphics@{SkGraphics}!SetFontCacheLimit@{SetFontCacheLimit}}
+\index{SetFontCacheLimit@{SetFontCacheLimit}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{SetFontCacheLimit()}{SetFontCacheLimit()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Graphics\+::\+Set\+Font\+Cache\+Limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Specify the max number of bytes that should be used by the font cache. If the cache needs to allocate more, it will purge previous entries.
+
+This function returns the previous setting, as if \mbox{\hyperlink{class_sk_graphics_a3ab486e12e3a510e292014dce2ab4a95}{Get\+Font\+Cache\+Limit()}} had be called before the new limit was set. \mbox{\Hypertarget{class_sk_graphics_aefc826dd23aeca362588c10b37b03137}\label{class_sk_graphics_aefc826dd23aeca362588c10b37b03137}} 
+\index{SkGraphics@{SkGraphics}!SetImageGeneratorFromEncodedDataFactory@{SetImageGeneratorFromEncodedDataFactory}}
+\index{SetImageGeneratorFromEncodedDataFactory@{SetImageGeneratorFromEncodedDataFactory}!SkGraphics@{SkGraphics}}
+\doxysubsubsection{\texorpdfstring{SetImageGeneratorFromEncodedDataFactory()}{SetImageGeneratorFromEncodedDataFactory()}}
+{\footnotesize\ttfamily Sk\+Graphics\+::\+Image\+Generator\+From\+Encoded\+Data\+Factory Sk\+Graphics\+::\+Set\+Image\+Generator\+From\+Encoded\+Data\+Factory (\begin{DoxyParamCaption}\item[{Image\+Generator\+From\+Encoded\+Data\+Factory}]{factory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+To instantiate images from encoded data, first looks at this runtime function-\/ptr. If it exists, it is called to create an \mbox{\hyperlink{class_sk_image_generator}{Sk\+Image\+Generator}} from \mbox{\hyperlink{class_sk_data}{Sk\+Data}}. If there is no function-\/ptr or there is, but it returns N\+U\+LL, then skia will call its internal default implementation.
+
+Returns the previous factory (which could be N\+U\+LL). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Graphics.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Graphics.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Image\+Generator.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Resource\+Cache.\+cpp\end{DoxyCompactItemize}

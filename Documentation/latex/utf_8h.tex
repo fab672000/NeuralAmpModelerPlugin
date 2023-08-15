@@ -1,0 +1,231 @@
+\hypertarget{utf_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/utf.h File Reference}
+\label{utf_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/utf.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/utf.h}}
+
+
+C A\+PI\+: Code point macros.  
+
+
+{\ttfamily \#include \char`\"{}unicode/umachine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/utf8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/utf16.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/utf\+\_\+old.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{utf_8h_a7d794df2276384e748f2836b25b58f7d}{U\+\_\+\+I\+S\+\_\+\+U\+N\+I\+C\+O\+D\+E\+\_\+\+N\+O\+N\+C\+H\+AR}}(c)
+\item 
+\#define \mbox{\hyperlink{utf_8h_acd1d72b6c7a8a90ad13cdf5a4553ca3a}{U\+\_\+\+I\+S\+\_\+\+U\+N\+I\+C\+O\+D\+E\+\_\+\+C\+H\+AR}}(c)
+\item 
+\#define \mbox{\hyperlink{utf_8h_af61a68e47f2001bc1e9eca44b57f16d0}{U\+\_\+\+I\+S\+\_\+\+B\+MP}}(c)~((uint32\+\_\+t)(c)$<$=0xffff)
+\item 
+\#define \mbox{\hyperlink{utf_8h_a3e17136e0bf04c8cc2abeea275bde094}{U\+\_\+\+I\+S\+\_\+\+S\+U\+P\+P\+L\+E\+M\+E\+N\+T\+A\+RY}}(c)~((uint32\+\_\+t)((c)-\/0x10000)$<$=0xfffff)
+\item 
+\#define \mbox{\hyperlink{utf_8h_a8c2a23cf4c14a0c89070319b76e0bc58}{U\+\_\+\+I\+S\+\_\+\+L\+E\+AD}}(c)~(((c)\&0xfffffc00)==0xd800)
+\item 
+\#define \mbox{\hyperlink{utf_8h_ae37493f4f0e5cbec5cdb0e85ba456b65}{U\+\_\+\+I\+S\+\_\+\+T\+R\+A\+IL}}(c)~(((c)\&0xfffffc00)==0xdc00)
+\item 
+\#define \mbox{\hyperlink{utf_8h_a0ec1c520a06d1e8e3ca431a2ff8e6b02}{U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+TE}}(c)~(((c)\&0xfffff800)==0xd800)
+\item 
+\#define \mbox{\hyperlink{utf_8h_ab5f635b25601604c9a5f826fbd87c1aa}{U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+T\+E\+\_\+\+L\+E\+AD}}(c)~(((c)\&0x400)==0)
+\item 
+\#define \mbox{\hyperlink{utf_8h_ace975c9d1f75c650e035539fabc23883}{U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+T\+E\+\_\+\+T\+R\+A\+IL}}(c)~(((c)\&0x400)!=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Code point macros. 
+
+This file defines macros for checking whether a code point is a surrogate or a non-\/character etc.
+
+If U\+\_\+\+N\+O\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+U\+T\+F\+\_\+\+H\+E\+A\+D\+E\+RS is 0 then \mbox{\hyperlink{utf_8h}{utf.\+h}} is included by \mbox{\hyperlink{utypes_8h}{utypes.\+h}} and itself includes \mbox{\hyperlink{utf8_8h}{utf8.\+h}} and \mbox{\hyperlink{utf16_8h}{utf16.\+h}} after some common definitions. If U\+\_\+\+N\+O\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+U\+T\+F\+\_\+\+H\+E\+A\+D\+E\+RS is 1 then each of these headers must be included explicitly if their definitions are used.
+
+\mbox{\hyperlink{utf8_8h}{utf8.\+h}} and \mbox{\hyperlink{utf16_8h}{utf16.\+h}} define macros for efficiently getting code points in and out of U\+T\+F-\/8/16 strings. \mbox{\hyperlink{utf16_8h}{utf16.\+h}} macros have \char`\"{}\+U16\+\_\+\char`\"{} prefixes. \mbox{\hyperlink{utf8_8h}{utf8.\+h}} defines similar macros with \char`\"{}\+U8\+\_\+\char`\"{} prefixes for U\+T\+F-\/8 string handling.
+
+I\+CU mostly processes 16-\/bit Unicode strings. Most of the time, such strings are well-\/formed U\+T\+F-\/16. Single, unpaired surrogates must be handled as well, and are treated in I\+CU like regular code points where possible. (Pairs of surrogate code points are indistinguishable from supplementary code points encoded as pairs of supplementary code units.)
+
+In fact, almost all Unicode code points in normal text ($>$99\%) are on the B\+MP ($<$=U+ffff) and even $<$=U+d7ff. I\+CU functions handle supplementary code points (U+10000..U+10ffff) but are optimized for the much more frequently occurring B\+MP code points.
+
+\mbox{\hyperlink{umachine_8h}{umachine.\+h}} defines U\+Char to be an unsigned 16-\/bit integer. Since I\+CU 59, I\+CU uses char16\+\_\+t in C++, U\+Char only in C, and defines U\+Char=char16\+\_\+t by default. See the U\+Char A\+PI docs for details.
+
+U\+Char32 is defined to be a signed 32-\/bit integer (int32\+\_\+t), large enough for a 21-\/bit Unicode code point (Unicode scalar value, 0..0x10ffff) and U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1). Before I\+CU 2.\+4, the definition of U\+Char32 was similarly platform-\/dependent as the definition of U\+Char. For details see the documentation for U\+Char32 itself.
+
+\mbox{\hyperlink{utf_8h}{utf.\+h}} defines a small number of C macros for single Unicode code points. These are simple checks for surrogates and non-\/characters. For actual Unicode character properties see \mbox{\hyperlink{uchar_8h}{uchar.\+h}}.
+
+By default, string operations must be done with error checking in case a string is not well-\/formed U\+T\+F-\/16 or U\+T\+F-\/8.
+
+The U16\+\_\+ macros detect if a surrogate code unit is unpaired (lead unit without trail unit or vice versa) and just return the unit itself as the code point.
+
+The U8\+\_\+ macros detect illegal byte sequences and return a negative value. Starting with I\+CU 60, the observable length of a single illegal byte sequence skipped by one of these macros follows the Unicode 6+ recommendation which is consistent with the W3C Encoding Standard.
+
+There are ...\+\_\+\+O\+R\+\_\+\+F\+F\+FD versions of both U16\+\_\+ and U8\+\_\+ macros that return U+\+F\+F\+FD for illegal code unit sequences.
+
+The regular \char`\"{}safe\char`\"{} macros require that the initial, passed-\/in string index is within bounds. They only check the index when they read more than one code unit. This is usually done with code similar to the following loop\+: 
+\begin{DoxyPre}while(i<length) \{
+  \mbox{\hyperlink{utf16_8h_a844bb48486904fdca40c8b883e9c80ee}{U16\_NEXT(s, i, length, c)}};
+  // use c
+\}\end{DoxyPre}
+
+
+When it is safe to assume that text is well-\/formed U\+T\+F-\/16 (does not contain single, unpaired surrogates), then one can use U16\+\_\+...\+\_\+\+U\+N\+S\+A\+FE macros. These do not check for proper code unit sequences or truncated text and may yield wrong results or even cause a crash if they are used with \char`\"{}malformed\char`\"{} text. In practice, U16\+\_\+...\+\_\+\+U\+N\+S\+A\+FE macros will produce slightly less code but should not be faster because the processing is only different when a surrogate code unit is detected, which will be rare.
+
+Similarly for U\+T\+F-\/8, there are \char`\"{}safe\char`\"{} macros without a suffix, and U8\+\_\+...\+\_\+\+U\+N\+S\+A\+FE versions. The performance differences are much larger here because U\+T\+F-\/8 provides so many opportunities for malformed sequences. The unsafe U\+T\+F-\/8 macros are entirely implemented inside the macro definitions and are fast, while the safe U\+T\+F-\/8 macros call functions for some complicated cases.
+
+Unlike with U\+T\+F-\/16, malformed sequences cannot be expressed with distinct code point values (0..U+10ffff). They are indicated with negative values instead.
+
+For more information see the I\+CU User Guide Strings chapter (\href{https://unicode-org.github.io/icu/userguide/strings}{\texttt{ https\+://unicode-\/org.\+github.\+io/icu/userguide/strings}}).
+
+{\itshape Usage\+:} I\+CU coding guidelines for if() statements should be followed when using these macros. Compound statements (curly braces \{\}) must be used for if-\/else-\/while... bodies and all macro statements should be terminated with semicolon.
+
+@stable I\+CU 2.\+4 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{utf_8h_af61a68e47f2001bc1e9eca44b57f16d0}\label{utf_8h_af61a68e47f2001bc1e9eca44b57f16d0}} 
+\index{utf.h@{utf.h}!U\_IS\_BMP@{U\_IS\_BMP}}
+\index{U\_IS\_BMP@{U\_IS\_BMP}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_BMP}{U\_IS\_BMP}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+B\+MP(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~((uint32\+\_\+t)(c)$<$=0xffff)}
+
+Is this code point a B\+MP code point (U+0000..U+ffff)? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_a8c2a23cf4c14a0c89070319b76e0bc58}\label{utf_8h_a8c2a23cf4c14a0c89070319b76e0bc58}} 
+\index{utf.h@{utf.h}!U\_IS\_LEAD@{U\_IS\_LEAD}}
+\index{U\_IS\_LEAD@{U\_IS\_LEAD}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_LEAD}{U\_IS\_LEAD}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+L\+E\+AD(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(((c)\&0xfffffc00)==0xd800)}
+
+Is this code point a lead surrogate (U+d800..U+dbff)? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_a3e17136e0bf04c8cc2abeea275bde094}\label{utf_8h_a3e17136e0bf04c8cc2abeea275bde094}} 
+\index{utf.h@{utf.h}!U\_IS\_SUPPLEMENTARY@{U\_IS\_SUPPLEMENTARY}}
+\index{U\_IS\_SUPPLEMENTARY@{U\_IS\_SUPPLEMENTARY}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_SUPPLEMENTARY}{U\_IS\_SUPPLEMENTARY}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+S\+U\+P\+P\+L\+E\+M\+E\+N\+T\+A\+RY(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~((uint32\+\_\+t)((c)-\/0x10000)$<$=0xfffff)}
+
+Is this code point a supplementary code point (U+10000..U+10ffff)? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_a0ec1c520a06d1e8e3ca431a2ff8e6b02}\label{utf_8h_a0ec1c520a06d1e8e3ca431a2ff8e6b02}} 
+\index{utf.h@{utf.h}!U\_IS\_SURROGATE@{U\_IS\_SURROGATE}}
+\index{U\_IS\_SURROGATE@{U\_IS\_SURROGATE}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_SURROGATE}{U\_IS\_SURROGATE}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+TE(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(((c)\&0xfffff800)==0xd800)}
+
+Is this code point a surrogate (U+d800..U+dfff)? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_ab5f635b25601604c9a5f826fbd87c1aa}\label{utf_8h_ab5f635b25601604c9a5f826fbd87c1aa}} 
+\index{utf.h@{utf.h}!U\_IS\_SURROGATE\_LEAD@{U\_IS\_SURROGATE\_LEAD}}
+\index{U\_IS\_SURROGATE\_LEAD@{U\_IS\_SURROGATE\_LEAD}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_SURROGATE\_LEAD}{U\_IS\_SURROGATE\_LEAD}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+T\+E\+\_\+\+L\+E\+AD(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(((c)\&0x400)==0)}
+
+Assuming c is a surrogate code point (\mbox{\hyperlink{utf_8h_a0ec1c520a06d1e8e3ca431a2ff8e6b02}{U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+T\+E(c)}}), is it a lead surrogate? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_ace975c9d1f75c650e035539fabc23883}\label{utf_8h_ace975c9d1f75c650e035539fabc23883}} 
+\index{utf.h@{utf.h}!U\_IS\_SURROGATE\_TRAIL@{U\_IS\_SURROGATE\_TRAIL}}
+\index{U\_IS\_SURROGATE\_TRAIL@{U\_IS\_SURROGATE\_TRAIL}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_SURROGATE\_TRAIL}{U\_IS\_SURROGATE\_TRAIL}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+T\+E\+\_\+\+T\+R\+A\+IL(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(((c)\&0x400)!=0)}
+
+Assuming c is a surrogate code point (\mbox{\hyperlink{utf_8h_a0ec1c520a06d1e8e3ca431a2ff8e6b02}{U\+\_\+\+I\+S\+\_\+\+S\+U\+R\+R\+O\+G\+A\+T\+E(c)}}), is it a trail surrogate? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 4.\+2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_ae37493f4f0e5cbec5cdb0e85ba456b65}\label{utf_8h_ae37493f4f0e5cbec5cdb0e85ba456b65}} 
+\index{utf.h@{utf.h}!U\_IS\_TRAIL@{U\_IS\_TRAIL}}
+\index{U\_IS\_TRAIL@{U\_IS\_TRAIL}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_TRAIL}{U\_IS\_TRAIL}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+T\+R\+A\+IL(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~(((c)\&0xfffffc00)==0xdc00)}
+
+Is this code point a trail surrogate (U+dc00..U+dfff)? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_acd1d72b6c7a8a90ad13cdf5a4553ca3a}\label{utf_8h_acd1d72b6c7a8a90ad13cdf5a4553ca3a}} 
+\index{utf.h@{utf.h}!U\_IS\_UNICODE\_CHAR@{U\_IS\_UNICODE\_CHAR}}
+\index{U\_IS\_UNICODE\_CHAR@{U\_IS\_UNICODE\_CHAR}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_UNICODE\_CHAR}{U\_IS\_UNICODE\_CHAR}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+U\+N\+I\+C\+O\+D\+E\+\_\+\+C\+H\+AR(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}})(c)<0xd800 || \(\backslash\)}
+\DoxyCodeLine{        (0xdfff<(c) \&\& (c)<=0x10ffff \&\& !\mbox{\hyperlink{utf_8h_a7d794df2276384e748f2836b25b58f7d}{U\_IS\_UNICODE\_NONCHAR}}(c)))}
+
+\end{DoxyCode}
+Is c a Unicode code point value (0..U+10ffff) that can be assigned a character?
+
+Code points that are not characters include\+:
+\begin{DoxyItemize}
+\item single surrogate code points (U+d800..U+dfff, 2048 code points)
+\item the last two code points on each plane (U+\+\_\+\+\_\+fffe and U+\+\_\+\+\_\+ffff, 34 code points)
+\item U+fdd0..U+fdef (new with Unicode 3.\+1, 32 code points)
+\item the highest Unicode code point value is U+10ffff
+\end{DoxyItemize}
+
+This means that all code points below U+d800 are character code points, and that boundary is tested first for performance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utf_8h_a7d794df2276384e748f2836b25b58f7d}\label{utf_8h_a7d794df2276384e748f2836b25b58f7d}} 
+\index{utf.h@{utf.h}!U\_IS\_UNICODE\_NONCHAR@{U\_IS\_UNICODE\_NONCHAR}}
+\index{U\_IS\_UNICODE\_NONCHAR@{U\_IS\_UNICODE\_NONCHAR}!utf.h@{utf.h}}
+\doxysubsubsection{\texorpdfstring{U\_IS\_UNICODE\_NONCHAR}{U\_IS\_UNICODE\_NONCHAR}}
+{\footnotesize\ttfamily \#define U\+\_\+\+I\+S\+\_\+\+U\+N\+I\+C\+O\+D\+E\+\_\+\+N\+O\+N\+C\+H\+AR(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((c)>=0xfdd0 \&\& \(\backslash\)}
+\DoxyCodeLine{     ((c)<=0xfdef || ((c)\&0xfffe)==0xfffe) \&\& (c)<=0x10ffff)}
+
+\end{DoxyCode}
+Is this code point a Unicode noncharacter? 
+\begin{DoxyParams}{Parameters}
+{\em c} & 32-\/bit code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false @stable I\+CU 2.\+4 
+\end{DoxyReturn}

@@ -1,0 +1,23 @@
+Classes for playing audio data.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1106}{}\doxysection{Abstract}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1106}
+(Oboe) {\bfseries{iolib}} contains classes implementing streaming audio playback and mixing from multiple sources. It\textquotesingle{}s purpose is to demonstrate best practices and provide reusable code.
+
+Note\+: the more general name of \char`\"{}iolib\char`\"{} was chosen since it is presumed that this project will eventually implement audio capture capability.
+
+{\bfseries{iolib}} is written in C++ and is intended to be called from Android native code. It is implemented as a static library.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1107}{}\doxysection{$<$strong$>$iolib$<$/strong$>$ project structure}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1107}
+
+\begin{DoxyItemize}
+\item player Contains classes to support streaming playback from (potentially) multiple audio sources.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1108}{}\doxysubsection{player classes}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1108}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1109}{}\doxysubsubsection{Data\+Source}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1109}
+Declares the basic interface for audio data sources.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1110}{}\doxysubsubsection{Sample\+Source}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1110}
+Extends the {\ttfamily \mbox{\hyperlink{class_data_source}{Data\+Source}}} interface for audio data coming from Sample\+Buffer objects.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1111}{}\doxysubsubsection{One\+Shot\+Sample\+Source}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1111}
+Extends {\ttfamily Sample\+Source} to provide data that plays through it\textquotesingle{}s {\ttfamily Sample\+Buffer} and then provides silence, (i.\+e. a non-\/looping sample)\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1112}{}\doxysubsubsection{Sample\+Buffer}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1112}
+Loads and holds (in memory) audio sample data and provides read-\/only access to that data.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1113}{}\doxysubsubsection{Simple\+Multi\+Player}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_da67a7e47850783e5c2e89ad06fdb557_autotoc_md1113}
+Implements an Oboe audio stream into which it mixes audio from some number of {\ttfamily Sample\+Source}s.
+
+This class demonstrates\+:
+\begin{DoxyItemize}
+\item Creation and lifetime management of an Oboe audio stream ({\ttfamily Managed\+Stream})
+\item Logic for an Oboe {\ttfamily Audio\+Stream\+Callback} interface.
+\item Logic for handling streaming restart on error (i.\+e. playback device changes) 
+\end{DoxyItemize}

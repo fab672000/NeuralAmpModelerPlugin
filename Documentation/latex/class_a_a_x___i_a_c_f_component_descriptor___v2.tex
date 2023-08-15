@@ -1,0 +1,54 @@
+\hypertarget{class_a_a_x___i_a_c_f_component_descriptor___v2}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2 Class Reference}
+\label{class_a_a_x___i_a_c_f_component_descriptor___v2}\index{AAX\_IACFComponentDescriptor\_V2@{AAX\_IACFComponentDescriptor\_V2}}
+
+
+Versioned description interface for an A\+AX plug-\/in algorithm callback.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_a_a_x___i_a_c_f_component_descriptor___v2}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor___v2_acbd4eb771c30fad8cf7a821941a7490e}{Add\+Temporary\+Data}} (\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}} in\+Field\+Index, uint32\+\_\+t in\+Data\+Element\+Size)=0
+\begin{DoxyCompactList}\small\item\em Adds a block of data to a context that is not saved between callbacks and is scaled by the system buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Versioned description interface for an A\+AX plug-\/in algorithm callback. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_component_descriptor___v2_acbd4eb771c30fad8cf7a821941a7490e}\label{class_a_a_x___i_a_c_f_component_descriptor___v2_acbd4eb771c30fad8cf7a821941a7490e}} 
+\index{AAX\_IACFComponentDescriptor\_V2@{AAX\_IACFComponentDescriptor\_V2}!AddTemporaryData@{AddTemporaryData}}
+\index{AddTemporaryData@{AddTemporaryData}!AAX\_IACFComponentDescriptor\_V2@{AAX\_IACFComponentDescriptor\_V2}}
+\doxysubsubsection{\texorpdfstring{AddTemporaryData()}{AddTemporaryData()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2\+::\+Add\+Temporary\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}}}]{in\+Field\+Index,  }\item[{uint32\+\_\+t}]{in\+Data\+Element\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a block of data to a context that is not saved between callbacks and is scaled by the system buffer size. 
+
+This can be very useful if you use block processing and need to store intermediate results. Just specify your base element size and the system will scale the overall block size by the buffer size. For example, to create a buffer of floats that is the length of the block, specify 4 bytes as the elementsize.
+
+This data block does not retain state across callback and can also be reused across instances on memory contrained systems.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Field\+Index} & Unique identifier for the port, generated using \mbox{\hyperlink{_a_a_x_8h_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Data\+Element\+Size} & The size of a single piece of data in the block. This number will be multipied by the processing block size to determine total block size. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_component_descriptor_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h}}\end{DoxyCompactItemize}

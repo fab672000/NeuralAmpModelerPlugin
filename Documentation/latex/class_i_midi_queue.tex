@@ -1,0 +1,77 @@
+\hypertarget{class_i_midi_queue}{}\doxysection{I\+Midi\+Queue Class Reference}
+\label{class_i_midi_queue}\index{IMidiQueue@{IMidiQueue}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Midi.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_ad3cae2d1f58a1fc1927ca604edba7aad}\label{class_i_midi_queue_ad3cae2d1f58a1fc1927ca604edba7aad}} 
+{\bfseries I\+Midi\+Queue} (int size=D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+L\+O\+C\+K\+\_\+\+S\+I\+ZE)
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a85e746f6b3621895d3d0fc3aa61c4613}\label{class_i_midi_queue_a85e746f6b3621895d3d0fc3aa61c4613}} 
+void {\bfseries Add} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a7e563fb3bc2ca0194bbb0fd9ccb783cd}\label{class_i_midi_queue_a7e563fb3bc2ca0194bbb0fd9ccb783cd}} 
+void {\bfseries Remove} ()
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_aab9f5688d66492f7624cce3f5efdd2be}\label{class_i_midi_queue_aab9f5688d66492f7624cce3f5efdd2be}} 
+bool {\bfseries Empty} () const
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_ac1858ed1122a8b0047b2b584baebaa70}\label{class_i_midi_queue_ac1858ed1122a8b0047b2b584baebaa70}} 
+int {\bfseries To\+Do} () const
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_abf728febb37d308f0b007dd604a43349}\label{class_i_midi_queue_abf728febb37d308f0b007dd604a43349}} 
+int {\bfseries Get\+Size} () const
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a4d34c63273fa31404616655250978d7b}\label{class_i_midi_queue_a4d34c63273fa31404616655250978d7b}} 
+\mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \& {\bfseries Peek} () const
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a18955a1226c754cad183cc5c18aeff2a}\label{class_i_midi_queue_a18955a1226c754cad183cc5c18aeff2a}} 
+void {\bfseries Flush} (int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a8bf3a9fd1abd46ae34a31e6975a42b7e}\label{class_i_midi_queue_a8bf3a9fd1abd46ae34a31e6975a42b7e}} 
+void {\bfseries Clear} ()
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_add04476441577ef03717d6d501ff95ea}\label{class_i_midi_queue_add04476441577ef03717d6d501ff95ea}} 
+int {\bfseries Resize} (int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a0212c786cb052445ab422bfd361ac2d0}\label{class_i_midi_queue_a0212c786cb052445ab422bfd361ac2d0}} 
+bool {\bfseries Expand} ()
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a2887a647eea49e3f1a4a2afae7af4a16}\label{class_i_midi_queue_a2887a647eea49e3f1a4a2afae7af4a16}} 
+void {\bfseries Compact} ()
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a6900a5d003ea49d47a2c58398acbc54f}\label{class_i_midi_queue_a6900a5d003ea49d47a2c58398acbc54f}} 
+int {\bfseries Granulize} (int size) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a8a824282ccf7b45351f1d681315672f3}\label{class_i_midi_queue_a8a824282ccf7b45351f1d681315672f3}} 
+\mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $\ast$ {\bfseries m\+Buf}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_ae3b9e6656d3ae963a2ea4525f0f18110}\label{class_i_midi_queue_ae3b9e6656d3ae963a2ea4525f0f18110}} 
+int {\bfseries m\+Size}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_ae556723aa065d0e20f67fbf1509eb961}\label{class_i_midi_queue_ae556723aa065d0e20f67fbf1509eb961}} 
+int {\bfseries m\+Grow}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a93bc708f2cb9a3315fc796ccd8f8ea56}\label{class_i_midi_queue_a93bc708f2cb9a3315fc796ccd8f8ea56}} 
+int {\bfseries m\+Front}
+\item 
+\mbox{\Hypertarget{class_i_midi_queue_a1bec84a46427ccc7288f8eefde97ef41}\label{class_i_midi_queue_a1bec84a46427ccc7288f8eefde97ef41}} 
+int {\bfseries m\+Back}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to help with queuing timestamped M\+I\+DI messages 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\mbox{\hyperlink{_i_plug_midi_8h}{I\+Plug\+Midi.\+h}}\end{DoxyCompactItemize}

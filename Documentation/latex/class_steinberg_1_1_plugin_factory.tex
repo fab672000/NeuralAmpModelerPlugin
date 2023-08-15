@@ -1,0 +1,50 @@
+\hypertarget{class_steinberg_1_1_plugin_factory}{}\doxysection{Steinberg\+::Plugin\+Factory$<$ T $>$ Class Template Reference}
+\label{class_steinberg_1_1_plugin_factory}\index{Steinberg::PluginFactory$<$ T $>$@{Steinberg::PluginFactory$<$ T $>$}}
+
+
+{\ttfamily \#include $<$pluginfactory\+\_\+constexpr.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Plugin\+Factory$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.992882cm]{class_steinberg_1_1_plugin_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_plugin_factory_a8bb2919b5fc90c2fd62021a67b568dca}\label{class_steinberg_1_1_plugin_factory_a8bb2919b5fc90c2fd62021a67b568dca}} 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI {\bfseries get\+Factory\+Info} (\mbox{\hyperlink{struct_steinberg_1_1_p_factory_info}{P\+Factory\+Info}} $\ast$info) override
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_plugin_factory_a679d9b71ac9bb03d961ad648b07475d7}\label{class_steinberg_1_1_plugin_factory_a679d9b71ac9bb03d961ad648b07475d7}} 
+int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI {\bfseries count\+Classes} () override
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_plugin_factory_a83ad013401a3033e8831c65d4a88c9e0}\label{class_steinberg_1_1_plugin_factory_a83ad013401a3033e8831c65d4a88c9e0}} 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI {\bfseries get\+Class\+Info} (int32 index, \mbox{\hyperlink{struct_steinberg_1_1_p_class_info}{P\+Class\+Info}} $\ast$info) override
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_plugin_factory_a9dc602467da19796a01830d94459273f}\label{class_steinberg_1_1_plugin_factory_a9dc602467da19796a01830d94459273f}} 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI {\bfseries create\+Instance} (F\+I\+D\+String cid, F\+I\+D\+String iid, void $\ast$$\ast$obj) override
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_plugin_factory_abbb563474da4abb5da62ce33ba4f04f8}\label{class_steinberg_1_1_plugin_factory_abbb563474da4abb5da62ce33ba4f04f8}} 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI {\bfseries get\+Class\+Info2} (int32 index, \mbox{\hyperlink{struct_steinberg_1_1_p_class_info2}{P\+Class\+Info2}} $\ast$info) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Steinberg\+::\+Plugin\+Factory$<$ T $>$}
+
+\mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{I\+Plugin\+Factory}} implementation with compile time provided factory and class infos.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__constexpr_class_factory_macros}{Macros for defining the compile time class factory}}
+\end{DoxySeeAlso}
+You can use this factory when your number of classes are known during compile time. The advantage here is that during runtime no unnecessary setup is needed.
+
+Please note that this only supports A\+S\+C\+II names and thus if you need to support Unicode names you must use another implementation.
+
+This only works when compiling with c++17 or newer. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/main/pluginfactory\+\_\+constexpr.\+h\end{DoxyCompactItemize}

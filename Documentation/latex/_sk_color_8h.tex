@@ -1,0 +1,382 @@
+\hypertarget{_sk_color_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/\+Sk\+Color.h File Reference}
+\label{_sk_color_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/include/core/SkColor.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/include/core/SkColor.h}}
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Image\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Scalar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$array$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_r_g_b_a4f}{Sk\+R\+G\+B\+A4f$<$ k\+A\+T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_sk_color_8h_a8602c8f8d7a5796bc7825288a64da960}{Sk\+Color\+Set\+R\+GB}}(r,  g,  b)~Sk\+Color\+Set\+A\+R\+GB(0x\+FF, r, g, b)
+\item 
+\#define \mbox{\hyperlink{_sk_color_8h_ae05860d342c5073e890caa4cd366e947}{Sk\+Color\+GetA}}(color)~(((color) $>$$>$ 24) \& 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{_sk_color_8h_a2ea563278aea3bc61174f337304c57a9}{Sk\+Color\+GetR}}(color)~(((color) $>$$>$ 16) \& 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{_sk_color_8h_a3b387fe3e5a4f9ebe0c445d55dc443ee}{Sk\+Color\+GetG}}(color)~(((color) $>$$>$  8) \& 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{_sk_color_8h_af92bdc477c651777e7ae313e3f83f326}{Sk\+Color\+GetB}}(color)~(((color) $>$$>$  0) \& 0x\+FF)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_a385de830f201eda8ab6249f33d6273bb}\label{_sk_color_8h_a385de830f201eda8ab6249f33d6273bb}} 
+using {\bfseries Sk\+Color4f} = \mbox{\hyperlink{struct_sk_r_g_b_a4f}{Sk\+R\+G\+B\+A4f}}$<$ k\+Unpremul\+\_\+\+Sk\+Alpha\+Type $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_sk_color_8h_aac1e9297f6f6a4155b8539d878da3543}{Sk\+Color\+Channel}} \{ \newline
+{\bfseries kR}, 
+{\bfseries kG}, 
+{\bfseries kB}, 
+{\bfseries kA}, 
+\newline
+{\bfseries k\+Last\+Enum} = kA
+ \}
+\item 
+enum \mbox{\hyperlink{_sk_color_8h_af172003067a44e4b4fca5e28a576be98}{Sk\+Color\+Channel\+Flag}} \+: uint32\+\_\+t \{ \newline
+{\bfseries k\+Red\+\_\+\+Sk\+Color\+Channel\+Flag} = 1 $<$$<$ static\+\_\+cast$<$uint32\+\_\+t$>$(Sk\+Color\+Channel\+::kR), 
+{\bfseries k\+Green\+\_\+\+Sk\+Color\+Channel\+Flag} = 1 $<$$<$ static\+\_\+cast$<$uint32\+\_\+t$>$(Sk\+Color\+Channel\+::kG), 
+{\bfseries k\+Blue\+\_\+\+Sk\+Color\+Channel\+Flag} = 1 $<$$<$ static\+\_\+cast$<$uint32\+\_\+t$>$(Sk\+Color\+Channel\+::kB), 
+{\bfseries k\+Alpha\+\_\+\+Sk\+Color\+Channel\+Flag} = 1 $<$$<$ static\+\_\+cast$<$uint32\+\_\+t$>$(Sk\+Color\+Channel\+::kA), 
+\newline
+{\bfseries k\+Gray\+\_\+\+Sk\+Color\+Channel\+Flag} = 0x10, 
+{\bfseries k\+Gray\+Alpha\+\_\+\+Sk\+Color\+Channel\+Flags} = k\+Gray\+\_\+\+Sk\+Color\+Channel\+Flag $\vert$ k\+Alpha\+\_\+\+Sk\+Color\+Channel\+Flag, 
+{\bfseries k\+R\+G\+\_\+\+Sk\+Color\+Channel\+Flags} = k\+Red\+\_\+\+Sk\+Color\+Channel\+Flag $\vert$ k\+Green\+\_\+\+Sk\+Color\+Channel\+Flag, 
+{\bfseries k\+R\+G\+B\+\_\+\+Sk\+Color\+Channel\+Flags} = k\+R\+G\+\_\+\+Sk\+Color\+Channel\+Flags $\vert$ k\+Blue\+\_\+\+Sk\+Color\+Channel\+Flag, 
+\newline
+{\bfseries k\+R\+G\+B\+A\+\_\+\+Sk\+Color\+Channel\+Flags} = k\+R\+G\+B\+\_\+\+Sk\+Color\+Channel\+Flags $\vert$ k\+Alpha\+\_\+\+Sk\+Color\+Channel\+Flag
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\+K\+\_\+\+A\+PI void \mbox{\hyperlink{_sk_color_8h_ac85af31e388ae0fc25728c49fb10ed57}{Sk\+R\+G\+B\+To\+H\+SV}} (\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} red, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} green, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} blue, Sk\+Scalar hsv\mbox{[}3\mbox{]})
+\item 
+S\+K\+\_\+\+A\+PI \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_aa4793450ec27ba9eb4113f474ed544f9}{Sk\+H\+S\+V\+To\+Color}} (\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} alpha, const Sk\+Scalar hsv\mbox{[}3\mbox{]})
+\item 
+S\+K\+\_\+\+A\+PI \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} \mbox{\hyperlink{_sk_color_8h_a66ea5e710f61bbdd655e9cf854440087}{Sk\+Pre\+Multiply\+A\+R\+GB}} (\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} a, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} r, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} g, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} b)
+\item 
+S\+K\+\_\+\+A\+PI \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} \mbox{\hyperlink{_sk_color_8h_a80256b177a0cde31d3ee8255368fd32f}{Sk\+Pre\+Multiply\+Color}} (\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} \mbox{\hyperlink{_sk_color_8h_afda51d84aaf951c206c8eacc3c6ef04f}{S\+K\+\_\+\+Alpha\+T\+R\+A\+N\+S\+P\+A\+R\+E\+NT}} = 0x00
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} \mbox{\hyperlink{_sk_color_8h_abff565f111c382b9f4cf3f88ff499baa}{S\+K\+\_\+\+Alpha\+O\+P\+A\+Q\+UE}} = 0x\+FF
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_a96b23be2571f9e7f3cd59d78daf11341}{S\+K\+\_\+\+Color\+T\+R\+A\+N\+S\+P\+A\+R\+E\+NT}} = Sk\+Color\+Set\+A\+R\+GB(0x00, 0x00, 0x00, 0x00)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_ad81cbeb07424abba399655a3f28c1892}{S\+K\+\_\+\+Color\+B\+L\+A\+CK}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x00, 0x00)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_aff50fdbb8c5225684d283886e53d4a78}{S\+K\+\_\+\+Color\+D\+K\+G\+R\+AY}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x44, 0x44, 0x44)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_aabad490ee2298fc685e328f25ef441fb}{S\+K\+\_\+\+Color\+G\+R\+AY}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x88, 0x88, 0x88)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_a1960761743809c81be1b24ed2ff93531}{S\+K\+\_\+\+Color\+L\+T\+G\+R\+AY}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+CC, 0x\+CC, 0x\+CC)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_afc83962291af858c7e5829e48475b79f}{S\+K\+\_\+\+Color\+W\+H\+I\+TE}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x\+FF, 0x\+FF)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_acadbaf044c4eeb23919521e7b011ec60}{S\+K\+\_\+\+Color\+R\+ED}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x00, 0x00)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_ada42286fbc3a8dc0b2e53c1602597b36}{S\+K\+\_\+\+Color\+G\+R\+E\+EN}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x\+FF, 0x00)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_aac785736a046ec2064021eb00490f7ff}{S\+K\+\_\+\+Color\+B\+L\+UE}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x00, 0x\+FF)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_a00b959535268b607806fcc9ff2e55b98}{S\+K\+\_\+\+Color\+Y\+E\+L\+L\+OW}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x\+FF, 0x00)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_a86c5bc1a1503fbe61ff526a617af0a32}{S\+K\+\_\+\+Color\+C\+Y\+AN}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x\+FF, 0x\+FF)
+\item 
+constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{_sk_color_8h_a3792453e835be79c73a09a1df8d09436}{S\+K\+\_\+\+Color\+M\+A\+G\+E\+N\+TA}} = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x00, 0x\+FF)
+\item 
+\mbox{\Hypertarget{_sk_color_8h_ace01748c20a82c070863c4f10274954f}\label{_sk_color_8h_ace01748c20a82c070863c4f10274954f}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Transparent} = \{0, 0, 0, 0\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_ad0b4ff8f94d976fc18b10b3b7748a6b2}\label{_sk_color_8h_ad0b4ff8f94d976fc18b10b3b7748a6b2}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Black} = \{0, 0, 0, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_af08f222bb905a3d497f8c57dd2fc0041}\label{_sk_color_8h_af08f222bb905a3d497f8c57dd2fc0041}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Dk\+Gray} = \{0.\+25f, 0.\+25f, 0.\+25f, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_ad1b48d6ff4382ddf17b257981fc33980}\label{_sk_color_8h_ad1b48d6ff4382ddf17b257981fc33980}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Gray} = \{0.\+50f, 0.\+50f, 0.\+50f, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_a096fb3ea655c4da63dec25a43a583151}\label{_sk_color_8h_a096fb3ea655c4da63dec25a43a583151}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Lt\+Gray} = \{0.\+75f, 0.\+75f, 0.\+75f, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_aae7e78683db053366c300a0779ab6330}\label{_sk_color_8h_aae7e78683db053366c300a0779ab6330}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+White} = \{1, 1, 1, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_a7e7c5da1680ae6a99902c67d9d4015a3}\label{_sk_color_8h_a7e7c5da1680ae6a99902c67d9d4015a3}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Red} = \{1, 0, 0, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_a766407beb5c60add23d08c8ac886a098}\label{_sk_color_8h_a766407beb5c60add23d08c8ac886a098}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Green} = \{0, 1, 0, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_ad5af014af94efed82b2f4c6944873b3c}\label{_sk_color_8h_ad5af014af94efed82b2f4c6944873b3c}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Blue} = \{0, 0, 1, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_aec35034bea6227b2ec3d1a297ee3d999}\label{_sk_color_8h_aec35034bea6227b2ec3d1a297ee3d999}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Yellow} = \{1, 1, 0, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_ab7d11f9ff68e1c5d0ce1cbe748ec6f4e}\label{_sk_color_8h_ab7d11f9ff68e1c5d0ce1cbe748ec6f4e}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Cyan} = \{0, 1, 1, 1\}
+\item 
+\mbox{\Hypertarget{_sk_color_8h_a45edb29c1da93fa81beb26b62e2f1d90}\label{_sk_color_8h_a45edb29c1da93fa81beb26b62e2f1d90}} 
+constexpr \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} {\bfseries Sk\+Colors\+::k\+Magenta} = \{1, 0, 1, 1\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Types, consts, functions, and macros for colors. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sk_color_8h_ae05860d342c5073e890caa4cd366e947}\label{_sk_color_8h_ae05860d342c5073e890caa4cd366e947}} 
+\index{SkColor.h@{SkColor.h}!SkColorGetA@{SkColorGetA}}
+\index{SkColorGetA@{SkColorGetA}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorGetA}{SkColorGetA}}
+{\footnotesize\ttfamily \#define Sk\+Color\+GetA(\begin{DoxyParamCaption}\item[{}]{color }\end{DoxyParamCaption})~(((color) $>$$>$ 24) \& 0x\+FF)}
+
+Returns alpha byte from color value. \mbox{\Hypertarget{_sk_color_8h_af92bdc477c651777e7ae313e3f83f326}\label{_sk_color_8h_af92bdc477c651777e7ae313e3f83f326}} 
+\index{SkColor.h@{SkColor.h}!SkColorGetB@{SkColorGetB}}
+\index{SkColorGetB@{SkColorGetB}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorGetB}{SkColorGetB}}
+{\footnotesize\ttfamily \#define Sk\+Color\+GetB(\begin{DoxyParamCaption}\item[{}]{color }\end{DoxyParamCaption})~(((color) $>$$>$  0) \& 0x\+FF)}
+
+Returns blue component of color, from zero to 255. \mbox{\Hypertarget{_sk_color_8h_a3b387fe3e5a4f9ebe0c445d55dc443ee}\label{_sk_color_8h_a3b387fe3e5a4f9ebe0c445d55dc443ee}} 
+\index{SkColor.h@{SkColor.h}!SkColorGetG@{SkColorGetG}}
+\index{SkColorGetG@{SkColorGetG}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorGetG}{SkColorGetG}}
+{\footnotesize\ttfamily \#define Sk\+Color\+GetG(\begin{DoxyParamCaption}\item[{}]{color }\end{DoxyParamCaption})~(((color) $>$$>$  8) \& 0x\+FF)}
+
+Returns green component of color, from zero to 255. \mbox{\Hypertarget{_sk_color_8h_a2ea563278aea3bc61174f337304c57a9}\label{_sk_color_8h_a2ea563278aea3bc61174f337304c57a9}} 
+\index{SkColor.h@{SkColor.h}!SkColorGetR@{SkColorGetR}}
+\index{SkColorGetR@{SkColorGetR}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorGetR}{SkColorGetR}}
+{\footnotesize\ttfamily \#define Sk\+Color\+GetR(\begin{DoxyParamCaption}\item[{}]{color }\end{DoxyParamCaption})~(((color) $>$$>$ 16) \& 0x\+FF)}
+
+Returns red component of color, from zero to 255. \mbox{\Hypertarget{_sk_color_8h_a8602c8f8d7a5796bc7825288a64da960}\label{_sk_color_8h_a8602c8f8d7a5796bc7825288a64da960}} 
+\index{SkColor.h@{SkColor.h}!SkColorSetRGB@{SkColorSetRGB}}
+\index{SkColorSetRGB@{SkColorSetRGB}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorSetRGB}{SkColorSetRGB}}
+{\footnotesize\ttfamily \#define Sk\+Color\+Set\+R\+GB(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~Sk\+Color\+Set\+A\+R\+GB(0x\+FF, r, g, b)}
+
+Returns color value from 8-\/bit component values, with alpha set fully opaque to 255. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}\label{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}} 
+\index{SkColor.h@{SkColor.h}!SkAlpha@{SkAlpha}}
+\index{SkAlpha@{SkAlpha}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkAlpha}{SkAlpha}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}}}
+
+8-\/bit type for an alpha value. 255 is 100\% opaque, zero is 100\% transparent. \mbox{\Hypertarget{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}\label{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}} 
+\index{SkColor.h@{SkColor.h}!SkColor@{SkColor}}
+\index{SkColor@{SkColor}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColor}{SkColor}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}
+
+32-\/bit A\+R\+GB color value, unpremultiplied. Color components are always in a known order. This is different from Sk\+P\+M\+Color, which has its bytes in a configuration dependent order, to match the format of k\+B\+G\+R\+A\+\_\+8888\+\_\+\+Sk\+Color\+Type bitmaps. Sk\+Color is the type used to specify colors in \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} and in gradients.
+
+Color that is premultiplied has the same component values as color that is unpremultiplied if alpha is 255, fully opaque, although may have the component values in a different order. \mbox{\Hypertarget{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}\label{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}} 
+\index{SkColor.h@{SkColor.h}!SkPMColor@{SkPMColor}}
+\index{SkPMColor@{SkPMColor}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkPMColor}{SkPMColor}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}}}
+
+32-\/bit A\+R\+GB color value, premultiplied. The byte order for this value is configuration dependent, matching the format of k\+B\+G\+R\+A\+\_\+8888\+\_\+\+Sk\+Color\+Type bitmaps. This is different from Sk\+Color, which is unpremultiplied, and is always in the same byte order. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_sk_color_8h_aac1e9297f6f6a4155b8539d878da3543}\label{_sk_color_8h_aac1e9297f6f6a4155b8539d878da3543}} 
+\index{SkColor.h@{SkColor.h}!SkColorChannel@{SkColorChannel}}
+\index{SkColorChannel@{SkColorChannel}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorChannel}{SkColorChannel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sk_color_8h_aac1e9297f6f6a4155b8539d878da3543}{Sk\+Color\+Channel}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+Describes different color channels one can manipulate \mbox{\Hypertarget{_sk_color_8h_af172003067a44e4b4fca5e28a576be98}\label{_sk_color_8h_af172003067a44e4b4fca5e28a576be98}} 
+\index{SkColor.h@{SkColor.h}!SkColorChannelFlag@{SkColorChannelFlag}}
+\index{SkColorChannelFlag@{SkColorChannelFlag}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkColorChannelFlag}{SkColorChannelFlag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_sk_color_8h_af172003067a44e4b4fca5e28a576be98}{Sk\+Color\+Channel\+Flag}} \+: uint32\+\_\+t}
+
+Used to represent the channels available in a color type or texture format as a mask. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_sk_color_8h_aa4793450ec27ba9eb4113f474ed544f9}\label{_sk_color_8h_aa4793450ec27ba9eb4113f474ed544f9}} 
+\index{SkColor.h@{SkColor.h}!SkHSVToColor@{SkHSVToColor}}
+\index{SkHSVToColor@{SkHSVToColor}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkHSVToColor()}{SkHSVToColor()}}
+{\footnotesize\ttfamily S\+K\+\_\+\+A\+PI \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} Sk\+H\+S\+V\+To\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{alpha,  }\item[{const Sk\+Scalar}]{hsv\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Converts H\+SV components to an A\+R\+GB color. Alpha is passed through unchanged. hsv\mbox{[}0\mbox{]} represents hsv hue, an angle from zero to less than 360. hsv\mbox{[}1\mbox{]} represents hsv saturation, and varies from zero to one. hsv\mbox{[}2\mbox{]} represents hsv value, and varies from zero to one.
+
+Out of range hsv values are pinned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & alpha component of the returned A\+R\+GB color \\
+\hline
+{\em hsv} & three element array which holds the input H\+SV components \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+R\+GB equivalent to H\+SV 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_sk_color_8h_a66ea5e710f61bbdd655e9cf854440087}\label{_sk_color_8h_a66ea5e710f61bbdd655e9cf854440087}} 
+\index{SkColor.h@{SkColor.h}!SkPreMultiplyARGB@{SkPreMultiplyARGB}}
+\index{SkPreMultiplyARGB@{SkPreMultiplyARGB}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkPreMultiplyARGB()}{SkPreMultiplyARGB()}}
+{\footnotesize\ttfamily S\+K\+\_\+\+A\+PI \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} Sk\+Pre\+Multiply\+A\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{a,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{r,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{g,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{b }\end{DoxyParamCaption})}
+
+Returns a Sk\+P\+M\+Color value from unpremultiplied 8-\/bit component values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & amount of alpha, from fully transparent (0) to fully opaque (255) \\
+\hline
+{\em r} & amount of red, from no red (0) to full red (255) \\
+\hline
+{\em g} & amount of green, from no green (0) to full green (255) \\
+\hline
+{\em b} & amount of blue, from no blue (0) to full blue (255) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+premultiplied color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_sk_color_8h_a80256b177a0cde31d3ee8255368fd32f}\label{_sk_color_8h_a80256b177a0cde31d3ee8255368fd32f}} 
+\index{SkColor.h@{SkColor.h}!SkPreMultiplyColor@{SkPreMultiplyColor}}
+\index{SkPreMultiplyColor@{SkPreMultiplyColor}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkPreMultiplyColor()}{SkPreMultiplyColor()}}
+{\footnotesize\ttfamily S\+K\+\_\+\+A\+PI \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} Sk\+Pre\+Multiply\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{c }\end{DoxyParamCaption})}
+
+Returns pmcolor closest to color c. Multiplies c R\+GB components by the c alpha, and arranges the bytes to match the format of k\+N32\+\_\+\+Sk\+Color\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & unpremultiplied A\+R\+GB color \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+premultiplied color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_sk_color_8h_ac85af31e388ae0fc25728c49fb10ed57}\label{_sk_color_8h_ac85af31e388ae0fc25728c49fb10ed57}} 
+\index{SkColor.h@{SkColor.h}!SkRGBToHSV@{SkRGBToHSV}}
+\index{SkRGBToHSV@{SkRGBToHSV}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SkRGBToHSV()}{SkRGBToHSV()}}
+{\footnotesize\ttfamily S\+K\+\_\+\+A\+PI void Sk\+R\+G\+B\+To\+H\+SV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{red,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{green,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{blue,  }\item[{Sk\+Scalar}]{hsv\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Converts R\+GB to its H\+SV components. hsv\mbox{[}0\mbox{]} contains hsv hue, a value from zero to less than 360. hsv\mbox{[}1\mbox{]} contains hsv saturation, a value from zero to one. hsv\mbox{[}2\mbox{]} contains hsv value, a value from zero to one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & red component value from zero to 255 \\
+\hline
+{\em green} & green component value from zero to 255 \\
+\hline
+{\em blue} & blue component value from zero to 255 \\
+\hline
+{\em hsv} & three element array which holds the resulting H\+SV components \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_sk_color_8h_abff565f111c382b9f4cf3f88ff499baa}\label{_sk_color_8h_abff565f111c382b9f4cf3f88ff499baa}} 
+\index{SkColor.h@{SkColor.h}!SK\_AlphaOPAQUE@{SK\_AlphaOPAQUE}}
+\index{SK\_AlphaOPAQUE@{SK\_AlphaOPAQUE}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_AlphaOPAQUE}{SK\_AlphaOPAQUE}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} S\+K\+\_\+\+Alpha\+O\+P\+A\+Q\+UE = 0x\+FF\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque Sk\+Alpha value. Sk\+Alpha ranges from zero, fully transparent; to 255, fully opaque. \mbox{\Hypertarget{_sk_color_8h_afda51d84aaf951c206c8eacc3c6ef04f}\label{_sk_color_8h_afda51d84aaf951c206c8eacc3c6ef04f}} 
+\index{SkColor.h@{SkColor.h}!SK\_AlphaTRANSPARENT@{SK\_AlphaTRANSPARENT}}
+\index{SK\_AlphaTRANSPARENT@{SK\_AlphaTRANSPARENT}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_AlphaTRANSPARENT}{SK\_AlphaTRANSPARENT}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} S\+K\+\_\+\+Alpha\+T\+R\+A\+N\+S\+P\+A\+R\+E\+NT = 0x00\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully transparent Sk\+Alpha value. Sk\+Alpha ranges from zero, fully transparent; to 255, fully opaque. \mbox{\Hypertarget{_sk_color_8h_ad81cbeb07424abba399655a3f28c1892}\label{_sk_color_8h_ad81cbeb07424abba399655a3f28c1892}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorBLACK@{SK\_ColorBLACK}}
+\index{SK\_ColorBLACK@{SK\_ColorBLACK}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorBLACK}{SK\_ColorBLACK}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+B\+L\+A\+CK = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x00, 0x00)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque black. \mbox{\Hypertarget{_sk_color_8h_aac785736a046ec2064021eb00490f7ff}\label{_sk_color_8h_aac785736a046ec2064021eb00490f7ff}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorBLUE@{SK\_ColorBLUE}}
+\index{SK\_ColorBLUE@{SK\_ColorBLUE}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorBLUE}{SK\_ColorBLUE}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+B\+L\+UE = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x00, 0x\+FF)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque blue. \mbox{\Hypertarget{_sk_color_8h_a86c5bc1a1503fbe61ff526a617af0a32}\label{_sk_color_8h_a86c5bc1a1503fbe61ff526a617af0a32}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorCYAN@{SK\_ColorCYAN}}
+\index{SK\_ColorCYAN@{SK\_ColorCYAN}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorCYAN}{SK\_ColorCYAN}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+C\+Y\+AN = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x\+FF, 0x\+FF)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque cyan. H\+T\+ML aqua is equivalent. \mbox{\Hypertarget{_sk_color_8h_aff50fdbb8c5225684d283886e53d4a78}\label{_sk_color_8h_aff50fdbb8c5225684d283886e53d4a78}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorDKGRAY@{SK\_ColorDKGRAY}}
+\index{SK\_ColorDKGRAY@{SK\_ColorDKGRAY}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorDKGRAY}{SK\_ColorDKGRAY}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+D\+K\+G\+R\+AY = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x44, 0x44, 0x44)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque dark gray. Note that S\+VG dark gray is equivalent to 0x\+F\+F\+A9\+A9\+A9. \mbox{\Hypertarget{_sk_color_8h_aabad490ee2298fc685e328f25ef441fb}\label{_sk_color_8h_aabad490ee2298fc685e328f25ef441fb}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorGRAY@{SK\_ColorGRAY}}
+\index{SK\_ColorGRAY@{SK\_ColorGRAY}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorGRAY}{SK\_ColorGRAY}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+G\+R\+AY = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x88, 0x88, 0x88)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque gray. Note that H\+T\+ML gray is equivalent to 0x\+F\+F808080. \mbox{\Hypertarget{_sk_color_8h_ada42286fbc3a8dc0b2e53c1602597b36}\label{_sk_color_8h_ada42286fbc3a8dc0b2e53c1602597b36}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorGREEN@{SK\_ColorGREEN}}
+\index{SK\_ColorGREEN@{SK\_ColorGREEN}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorGREEN}{SK\_ColorGREEN}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+G\+R\+E\+EN = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x00, 0x\+FF, 0x00)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque green. H\+T\+ML lime is equivalent. Note that H\+T\+ML green is equivalent to 0x\+F\+F008000. \mbox{\Hypertarget{_sk_color_8h_a1960761743809c81be1b24ed2ff93531}\label{_sk_color_8h_a1960761743809c81be1b24ed2ff93531}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorLTGRAY@{SK\_ColorLTGRAY}}
+\index{SK\_ColorLTGRAY@{SK\_ColorLTGRAY}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorLTGRAY}{SK\_ColorLTGRAY}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+L\+T\+G\+R\+AY = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+CC, 0x\+CC, 0x\+CC)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque light gray. H\+T\+ML silver is equivalent to 0x\+F\+F\+C0\+C0\+C0. Note that S\+VG light gray is equivalent to 0x\+F\+F\+D3\+D3\+D3. \mbox{\Hypertarget{_sk_color_8h_a3792453e835be79c73a09a1df8d09436}\label{_sk_color_8h_a3792453e835be79c73a09a1df8d09436}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorMAGENTA@{SK\_ColorMAGENTA}}
+\index{SK\_ColorMAGENTA@{SK\_ColorMAGENTA}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorMAGENTA}{SK\_ColorMAGENTA}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+M\+A\+G\+E\+N\+TA = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x00, 0x\+FF)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque magenta. H\+T\+ML fuchsia is equivalent. \mbox{\Hypertarget{_sk_color_8h_acadbaf044c4eeb23919521e7b011ec60}\label{_sk_color_8h_acadbaf044c4eeb23919521e7b011ec60}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorRED@{SK\_ColorRED}}
+\index{SK\_ColorRED@{SK\_ColorRED}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorRED}{SK\_ColorRED}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+R\+ED = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x00, 0x00)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque red. \mbox{\Hypertarget{_sk_color_8h_a96b23be2571f9e7f3cd59d78daf11341}\label{_sk_color_8h_a96b23be2571f9e7f3cd59d78daf11341}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorTRANSPARENT@{SK\_ColorTRANSPARENT}}
+\index{SK\_ColorTRANSPARENT@{SK\_ColorTRANSPARENT}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorTRANSPARENT}{SK\_ColorTRANSPARENT}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+T\+R\+A\+N\+S\+P\+A\+R\+E\+NT = Sk\+Color\+Set\+A\+R\+GB(0x00, 0x00, 0x00, 0x00)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully transparent Sk\+Color. May be used to initialize a destination containing a mask or a non-\/rectangular image. \mbox{\Hypertarget{_sk_color_8h_afc83962291af858c7e5829e48475b79f}\label{_sk_color_8h_afc83962291af858c7e5829e48475b79f}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorWHITE@{SK\_ColorWHITE}}
+\index{SK\_ColorWHITE@{SK\_ColorWHITE}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorWHITE}{SK\_ColorWHITE}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+W\+H\+I\+TE = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x\+FF, 0x\+FF)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque white. \mbox{\Hypertarget{_sk_color_8h_a00b959535268b607806fcc9ff2e55b98}\label{_sk_color_8h_a00b959535268b607806fcc9ff2e55b98}} 
+\index{SkColor.h@{SkColor.h}!SK\_ColorYELLOW@{SK\_ColorYELLOW}}
+\index{SK\_ColorYELLOW@{SK\_ColorYELLOW}!SkColor.h@{SkColor.h}}
+\doxysubsubsection{\texorpdfstring{SK\_ColorYELLOW}{SK\_ColorYELLOW}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} S\+K\+\_\+\+Color\+Y\+E\+L\+L\+OW = Sk\+Color\+Set\+A\+R\+GB(0x\+FF, 0x\+FF, 0x\+FF, 0x00)\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+Represents fully opaque yellow. 

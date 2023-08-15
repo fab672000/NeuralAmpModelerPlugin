@@ -1,0 +1,783 @@
+\hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4}{}\doxysection{Eigen\+::Triangular\+View\+Impl$<$ Matrix\+Type\+\_\+, Mode\+\_\+, Dense $>$ Class Template Reference}
+\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4}\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+
+
+Base class for a triangular part in a {\bfseries{dense}} matrix.  
+
+
+
+
+{\ttfamily \#include $<$Triangular\+Matrix.\+h$>$}
+
+Inheritance diagram for Eigen\+::Triangular\+View\+Impl$<$ Matrix\+Type\+\_\+, Mode\+\_\+, Dense $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6cfdd3b21730dca598fdbc40cf233286}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6cfdd3b21730dca598fdbc40cf233286}} 
+enum \{ {\bfseries Mode} = Mode\+\_\+, 
+{\bfseries Flags} = internal\+::traits$<$Triangular\+View\+Type$>$\+::Flags
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2961102fd43b7ae441c853cc3923d593}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2961102fd43b7ae441c853cc3923d593}} 
+enum \{ {\bfseries Mode} = Mode\+\_\+, 
+{\bfseries Flags} = internal\+::traits$<$Triangular\+View\+Type$>$\+::Flags
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a9b3aac95636adde111dbb80fc0f21870}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a9b3aac95636adde111dbb80fc0f21870}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+ $>$ {\bfseries Triangular\+View\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0c0c08fb6d472e4175eb07a6a547023a}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0c0c08fb6d472e4175eb07a6a547023a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2b5f08f5f3a80cb64671f43e97464ef8}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2b5f08f5f3a80cb64671f43e97464ef8}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afeedeac4412960178e7a6f18575e72a3}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afeedeac4412960178e7a6f18575e72a3}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a187c35c30c28666da6d042c4e0f168c3}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a187c35c30c28666da6d042c4e0f168c3}} 
+typedef Matrix\+Type\+::\+Plain\+Object {\bfseries Dense\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a31f728817a0bdc942c2e6cd3cf78fc88}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a31f728817a0bdc942c2e6cd3cf78fc88}} 
+typedef Dense\+Matrix\+Type {\bfseries Plain\+Object}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aea05cd9c56c48f19b920bd51102de5e0}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aea05cd9c56c48f19b920bd51102de5e0}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a9b3aac95636adde111dbb80fc0f21870}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a9b3aac95636adde111dbb80fc0f21870}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+ $>$ {\bfseries Triangular\+View\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0c0c08fb6d472e4175eb07a6a547023a}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0c0c08fb6d472e4175eb07a6a547023a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2b5f08f5f3a80cb64671f43e97464ef8}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2b5f08f5f3a80cb64671f43e97464ef8}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afeedeac4412960178e7a6f18575e72a3}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afeedeac4412960178e7a6f18575e72a3}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a187c35c30c28666da6d042c4e0f168c3}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a187c35c30c28666da6d042c4e0f168c3}} 
+typedef Matrix\+Type\+::\+Plain\+Object {\bfseries Dense\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a31f728817a0bdc942c2e6cd3cf78fc88}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a31f728817a0bdc942c2e6cd3cf78fc88}} 
+typedef Dense\+Matrix\+Type {\bfseries Plain\+Object}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aea05cd9c56c48f19b920bd51102de5e0}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aea05cd9c56c48f19b920bd51102de5e0}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ae57dd07e14967dc46efeb5f5810315ef}{outer\+Stride}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a19ed82f7aa0dc836cec955316665b29e}{inner\+Stride}} () const
+\item 
+{\footnotesize template$<$typename Other $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a807379f3bb6ee6e5892494e5146c3ee0}{operator+=}} (const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a83dfd967157e208a2095bf46b76e5953}{operator-\/=}} (const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad4a7f3b455e4a9d80da9953c4eb30ef1}{operator$\ast$=}} (const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aae3f2981397e5020c75bf2daa319034c}{operator/=}} (const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_adb176191f56139578ee7a0ef80ea99dc}{fill}} (const Scalar \&value)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad55c364636ffb2d0e5f2d3d68689ddc9}{set\+Constant}} (const Scalar \&value)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_af4ec7c756827710a60a2a2f0273a092e}{set\+Zero}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a208f3e59a5de850f8417b09775b912b2}{set\+Ones}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aafc135233120ae3d1aa3a9fabb7dbcde}{coeff}} (\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} row, \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} col) const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a4c6d1904eded57087366baf7a37ff2ba}{coeff\+Ref}} (\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} row, \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} col)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a8fbfd89b132c47361b5e91b781d2df4e}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a68014f29465fe226d55ff1b7b67615ad}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2175250db568fef9e5edf30094772d4d}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2175250db568fef9e5edf30094772d4d}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}} \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a1a21f84977c39275b9eca81541e256cc}{lazy\+Assign}} (const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0e283c5b6facda09b69d13dbd64ced8c}{lazy\+Assign}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}, Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2edb8c7b6589fcfb420175964b7a18ae}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&rhs) const
+\item 
+{\footnotesize template$<$int Side, typename Other $>$ }\\const \mbox{\hyperlink{struct_eigen_1_1internal_1_1triangular__solve__retval}{internal\+::triangular\+\_\+solve\+\_\+retval}}$<$ Side, \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}, Other $>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}{solve}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other $>$ \&other) const
+\item 
+{\footnotesize template$<$int Side, typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}{solve\+In\+Place}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afcd9e782819ed0d96e47db1ed3a8c6ad}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afcd9e782819ed0d96e47db1ed3a8c6ad}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries solve\+In\+Place} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aca58a4ab072df89ecaa88b59b7342168}{swap}} (\mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ const \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a74904675d1f22c2a08c9382f6dc49817}{swap}} (\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ const \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad9bdf5046e3a082a4ef6e4d5df700937}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad9bdf5046e3a082a4ef6e4d5df700937}} 
+{\footnotesize template$<$typename Rhs\+Type , typename Dst\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries \+\_\+solve\+\_\+impl} (const Rhs\+Type \&rhs, Dst\+Type \&dst) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_acbf4a2061b81a925eac5a507a30ab825}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_acbf4a2061b81a925eac5a507a30ab825}} 
+{\footnotesize template$<$typename Product\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& {\bfseries \+\_\+assign\+Product} (const Product\+Type \&prod, const Scalar \&alpha, bool beta)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ae57dd07e14967dc46efeb5f5810315ef}{outer\+Stride}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a19ed82f7aa0dc836cec955316665b29e}{inner\+Stride}} () const
+\item 
+{\footnotesize template$<$typename Other $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a807379f3bb6ee6e5892494e5146c3ee0}{operator+=}} (const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a83dfd967157e208a2095bf46b76e5953}{operator-\/=}} (const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad4a7f3b455e4a9d80da9953c4eb30ef1}{operator$\ast$=}} (const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aae3f2981397e5020c75bf2daa319034c}{operator/=}} (const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&other)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_adb176191f56139578ee7a0ef80ea99dc}{fill}} (const Scalar \&value)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad55c364636ffb2d0e5f2d3d68689ddc9}{set\+Constant}} (const Scalar \&value)
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_af4ec7c756827710a60a2a2f0273a092e}{set\+Zero}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a208f3e59a5de850f8417b09775b912b2}{set\+Ones}} ()
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aafc135233120ae3d1aa3a9fabb7dbcde}{coeff}} (\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} row, \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} col) const
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a4c6d1904eded57087366baf7a37ff2ba}{coeff\+Ref}} (\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} row, \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} col)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a8fbfd89b132c47361b5e91b781d2df4e}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a68014f29465fe226d55ff1b7b67615ad}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2175250db568fef9e5edf30094772d4d}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2175250db568fef9e5edf30094772d4d}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}} \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a1a21f84977c39275b9eca81541e256cc}{lazy\+Assign}} (const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0e283c5b6facda09b69d13dbd64ced8c}{lazy\+Assign}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}, Other\+Derived $>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2edb8c7b6589fcfb420175964b7a18ae}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&rhs) const
+\item 
+{\footnotesize template$<$int Side, typename Other $>$ }\\const \mbox{\hyperlink{struct_eigen_1_1internal_1_1triangular__solve__retval}{internal\+::triangular\+\_\+solve\+\_\+retval}}$<$ Side, \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}, Other $>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}{solve}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other $>$ \&other) const
+\item 
+{\footnotesize template$<$int Side, typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}{solve\+In\+Place}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afcd9e782819ed0d96e47db1ed3a8c6ad}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_afcd9e782819ed0d96e47db1ed3a8c6ad}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries solve\+In\+Place} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aca58a4ab072df89ecaa88b59b7342168}{swap}} (\mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ const \&other)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a74904675d1f22c2a08c9382f6dc49817}{swap}} (\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ const \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad9bdf5046e3a082a4ef6e4d5df700937}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad9bdf5046e3a082a4ef6e4d5df700937}} 
+{\footnotesize template$<$typename Rhs\+Type , typename Dst\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries \+\_\+solve\+\_\+impl} (const Rhs\+Type \&rhs, Dst\+Type \&dst) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_acbf4a2061b81a925eac5a507a30ab825}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_acbf4a2061b81a925eac5a507a30ab825}} 
+{\footnotesize template$<$typename Product\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} \& {\bfseries \+\_\+assign\+Product} (const Product\+Type \&prod, const Scalar \&alpha, bool beta)
+\item 
+{\footnotesize template$<$typename Dense\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}{eval\+To\+Lazy}} (\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dense\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}} 
+{\footnotesize template$<$typename Dense\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries eval\+To\+Lazy} (\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dense\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} ()
+\item 
+{\footnotesize template$<$typename Dense\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}{eval\+To\+Lazy}} (\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dense\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}} 
+{\footnotesize template$<$typename Dense\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries eval\+To\+Lazy} (\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dense\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a51da31bdf699e9f8c50bf5710b9bc1dd}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ac5f8c093e6639aed751c81e1bcac8504}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Derived \& {\bfseries derived} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Other\+Derived, \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6c57d0861f8575c6f8f0706e12bf11f7}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&lhs, const \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}} \&rhs)
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Other\+Derived, \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}} $>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6c57d0861f8575c6f8f0706e12bf11f7}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&lhs, const \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}} \&rhs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Type\+\_\+, unsigned int Mode\+\_\+$>$\newline
+class Eigen\+::\+Triangular\+View\+Impl$<$ Matrix\+Type\+\_\+, Mode\+\_\+, Dense $>$}
+
+Base class for a triangular part in a {\bfseries{dense}} matrix. 
+
+This class is an abstract base class of class \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}, and objects of type \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}} cannot be instantiated. It extends class \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}} with additional methods which available for dense expressions only.
+
+\begin{DoxySeeAlso}{See also}
+class \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}, Matrix\+Base\+::triangular\+View() 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aafc135233120ae3d1aa3a9fabb7dbcde}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aafc135233120ae3d1aa3a9fabb7dbcde}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!coeff@{coeff}}
+\index{coeff@{coeff}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{coeff()}{coeff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::coeff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{row,  }\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::coeff() 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+the coordinates must fit into the referenced triangular part 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aafc135233120ae3d1aa3a9fabb7dbcde}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aafc135233120ae3d1aa3a9fabb7dbcde}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!coeff@{coeff}}
+\index{coeff@{coeff}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{coeff()}{coeff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::coeff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{row,  }\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::coeff() 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+the coordinates must fit into the referenced triangular part 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a4c6d1904eded57087366baf7a37ff2ba}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a4c6d1904eded57087366baf7a37ff2ba}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!coeffRef@{coeffRef}}
+\index{coeffRef@{coeffRef}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{coeffRef()}{coeffRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::coeff\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{row,  }\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::coeff\+Ref() 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+the coordinates must fit into the referenced triangular part 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a4c6d1904eded57087366baf7a37ff2ba}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a4c6d1904eded57087366baf7a37ff2ba}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!coeffRef@{coeffRef}}
+\index{coeffRef@{coeffRef}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{coeffRef()}{coeffRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Scalar\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::coeff\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{row,  }\item[{\mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}}}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::coeff\+Ref() 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+the coordinates must fit into the referenced triangular part 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!evalToLazy@{evalToLazy}}
+\index{evalToLazy@{evalToLazy}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{evalToLazy()}{evalToLazy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Dense\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Eigen\+::\+Triangular\+Base}}$<$ Derived $>$\+::eval\+To\+Lazy (\begin{DoxyParamCaption}\item[{typename Dense\+Derived}]{ }\end{DoxyParamCaption})}
+
+Assigns a triangular or selfadjoint matrix to a dense matrix. If the matrix is triangular, the opposite part is set to zero. \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad05367709c25defe72371a9fa83b9697}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!evalToLazy@{evalToLazy}}
+\index{evalToLazy@{evalToLazy}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{evalToLazy()}{evalToLazy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Dense\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Eigen\+::\+Triangular\+Base}}$<$ Derived $>$\+::eval\+To\+Lazy (\begin{DoxyParamCaption}\item[{typename Dense\+Derived}]{ }\end{DoxyParamCaption})}
+
+Assigns a triangular or selfadjoint matrix to a dense matrix. If the matrix is triangular, the opposite part is set to zero. \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_adb176191f56139578ee7a0ef80ea99dc}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_adb176191f56139578ee7a0ef80ea99dc}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!fill@{fill}}
+\index{fill@{fill}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::fill (\begin{DoxyParamCaption}\item[{const Scalar \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_a4f5eb49e80db57f79a8353ecdf811418}{Matrix\+Base\+::fill()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_adb176191f56139578ee7a0ef80ea99dc}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_adb176191f56139578ee7a0ef80ea99dc}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!fill@{fill}}
+\index{fill@{fill}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::fill (\begin{DoxyParamCaption}\item[{const Scalar \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_a4f5eb49e80db57f79a8353ecdf811418}{Matrix\+Base\+::fill()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a19ed82f7aa0dc836cec955316665b29e}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a19ed82f7aa0dc836cec955316665b29e}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!innerStride@{innerStride}}
+\index{innerStride@{innerStride}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{innerStride()}{innerStride()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::inner\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the inner-\/stride of the underlying dense matrix 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Dense\+Coeffs\+Base\+::inner\+Stride() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a19ed82f7aa0dc836cec955316665b29e}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a19ed82f7aa0dc836cec955316665b29e}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!innerStride@{innerStride}}
+\index{innerStride@{innerStride}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{innerStride()}{innerStride()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::inner\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the inner-\/stride of the underlying dense matrix 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Dense\+Coeffs\+Base\+::inner\+Stride() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0e283c5b6facda09b69d13dbd64ced8c}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0e283c5b6facda09b69d13dbd64ced8c}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!lazyAssign@{lazyAssign}}
+\index{lazyAssign@{lazyAssign}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{lazyAssign()}{lazyAssign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::lazy\+Assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000338}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0e283c5b6facda09b69d13dbd64ced8c}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a0e283c5b6facda09b69d13dbd64ced8c}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!lazyAssign@{lazyAssign}}
+\index{lazyAssign@{lazyAssign}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{lazyAssign()}{lazyAssign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::lazy\+Assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000380}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a1a21f84977c39275b9eca81541e256cc}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a1a21f84977c39275b9eca81541e256cc}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!lazyAssign@{lazyAssign}}
+\index{lazyAssign@{lazyAssign}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{lazyAssign()}{lazyAssign()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::lazy\+Assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000337}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a1a21f84977c39275b9eca81541e256cc}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a1a21f84977c39275b9eca81541e256cc}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!lazyAssign@{lazyAssign}}
+\index{lazyAssign@{lazyAssign}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{lazyAssign()}{lazyAssign()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::lazy\+Assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000379}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2edb8c7b6589fcfb420175964b7a18ae}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2edb8c7b6589fcfb420175964b7a18ae}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$\mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}},Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Efficient triangular matrix times vector/matrix product \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2edb8c7b6589fcfb420175964b7a18ae}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a2edb8c7b6589fcfb420175964b7a18ae}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$\mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}},Other\+Derived$>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Efficient triangular matrix times vector/matrix product \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad4a7f3b455e4a9d80da9953c4eb30ef1}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad4a7f3b455e4a9d80da9953c4eb30ef1}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_a3783b6168995ca117a1c19fea3630ac4}{Matrix\+Base\+::operator$\ast$=()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad4a7f3b455e4a9d80da9953c4eb30ef1}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad4a7f3b455e4a9d80da9953c4eb30ef1}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_a3783b6168995ca117a1c19fea3630ac4}{Matrix\+Base\+::operator$\ast$=()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a807379f3bb6ee6e5892494e5146c3ee0}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a807379f3bb6ee6e5892494e5146c3ee0}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_ad641d65d14cf19f7e0da5df38c61e23e}{Matrix\+Base\+::operator+=()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a807379f3bb6ee6e5892494e5146c3ee0}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a807379f3bb6ee6e5892494e5146c3ee0}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_ad641d65d14cf19f7e0da5df38c61e23e}{Matrix\+Base\+::operator+=()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a83dfd967157e208a2095bf46b76e5953}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a83dfd967157e208a2095bf46b76e5953}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_a64c96de8247e0b182963d4cb16e95f00}{Matrix\+Base\+::operator-\/=()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a83dfd967157e208a2095bf46b76e5953}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a83dfd967157e208a2095bf46b76e5953}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Other $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_a64c96de8247e0b182963d4cb16e95f00}{Matrix\+Base\+::operator-\/=()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aae3f2981397e5020c75bf2daa319034c}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aae3f2981397e5020c75bf2daa319034c}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+Dense\+Base\+::operator/=() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aae3f2981397e5020c75bf2daa319034c}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aae3f2981397e5020c75bf2daa319034c}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Matrix\+Type $>$\+::Scalar \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+Dense\+Base\+::operator/=() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a68014f29465fe226d55ff1b7b67615ad}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a68014f29465fe226d55ff1b7b67615ad}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+Shortcut for
+\begin{DoxyCode}{0}
+\DoxyCodeLine{*\textcolor{keyword}{this} = other.other.triangularView<(*this)::Mode>() }
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a68014f29465fe226d55ff1b7b67615ad}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a68014f29465fe226d55ff1b7b67615ad}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+Shortcut for
+\begin{DoxyCode}{0}
+\DoxyCodeLine{*\textcolor{keyword}{this} = other.other.triangularView<(*this)::Mode>() }
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a8fbfd89b132c47361b5e91b781d2df4e}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a8fbfd89b132c47361b5e91b781d2df4e}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+Assigns a triangular matrix to a triangular part of a dense matrix \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a8fbfd89b132c47361b5e91b781d2df4e}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a8fbfd89b132c47361b5e91b781d2df4e}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption})}
+
+Assigns a triangular matrix to a triangular part of a dense matrix \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ae57dd07e14967dc46efeb5f5810315ef}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ae57dd07e14967dc46efeb5f5810315ef}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!outerStride@{outerStride}}
+\index{outerStride@{outerStride}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{outerStride()}{outerStride()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::outer\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the outer-\/stride of the underlying dense matrix 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Dense\+Coeffs\+Base\+::outer\+Stride() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ae57dd07e14967dc46efeb5f5810315ef}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ae57dd07e14967dc46efeb5f5810315ef}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!outerStride@{outerStride}}
+\index{outerStride@{outerStride}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{outerStride()}{outerStride()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{struct_eigen_1_1_eigen_base_a554f30542cc2316add4b1ea0a492ff02}{Index}} \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::outer\+Stride (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the outer-\/stride of the underlying dense matrix 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Dense\+Coeffs\+Base\+::outer\+Stride() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad55c364636ffb2d0e5f2d3d68689ddc9}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad55c364636ffb2d0e5f2d3d68689ddc9}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!setConstant@{setConstant}}
+\index{setConstant@{setConstant}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{setConstant()}{setConstant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::set\+Constant (\begin{DoxyParamCaption}\item[{const Scalar \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_a19b2bc788277e9ab3f967a8857e290ae}{Matrix\+Base\+::set\+Constant()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad55c364636ffb2d0e5f2d3d68689ddc9}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad55c364636ffb2d0e5f2d3d68689ddc9}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!setConstant@{setConstant}}
+\index{setConstant@{setConstant}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{setConstant()}{setConstant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::set\+Constant (\begin{DoxyParamCaption}\item[{const Scalar \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_a19b2bc788277e9ab3f967a8857e290ae}{Matrix\+Base\+::set\+Constant()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a208f3e59a5de850f8417b09775b912b2}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a208f3e59a5de850f8417b09775b912b2}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!setOnes@{setOnes}}
+\index{setOnes@{setOnes}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{setOnes()}{setOnes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::set\+Ones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_ad18970fd7d9f9c3d8db9d05fa8652a25}{Matrix\+Base\+::set\+Ones()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a208f3e59a5de850f8417b09775b912b2}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a208f3e59a5de850f8417b09775b912b2}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!setOnes@{setOnes}}
+\index{setOnes@{setOnes}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{setOnes()}{setOnes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::set\+Ones (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_ad18970fd7d9f9c3d8db9d05fa8652a25}{Matrix\+Base\+::set\+Ones()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_af4ec7c756827710a60a2a2f0273a092e}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_af4ec7c756827710a60a2a2f0273a092e}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!setZero@{setZero}}
+\index{setZero@{setZero}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{setZero()}{setZero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_ac74411ddeea2545bf20baf14613be47e}{Matrix\+Base\+::set\+Zero()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_af4ec7c756827710a60a2a2f0273a092e}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_af4ec7c756827710a60a2a2f0273a092e}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!setZero@{setZero}}
+\index{setZero@{setZero}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{setZero()}{setZero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_ac74411ddeea2545bf20baf14613be47e}{Matrix\+Base\+::set\+Zero()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!solve@{solve}}
+\index{solve@{solve}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$int Side, typename Other $>$ \\
+const \mbox{\hyperlink{struct_eigen_1_1internal_1_1triangular__solve__retval}{internal\+::triangular\+\_\+solve\+\_\+retval}}$<$Side,\mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}, Other$>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the product of the inverse of {\ttfamily $\ast$this} with {\itshape other}, {\itshape $\ast$this} being triangular.
+\end{DoxyReturn}
+This function computes the inverse-\/matrix matrix product inverse({\ttfamily $\ast$this}) $\ast$ {\itshape other} if {\itshape Side==On\+The\+Left} (the default), or the right-\/inverse-\/multiply {\itshape other} $\ast$ inverse({\ttfamily $\ast$this}) if {\itshape Side==On\+The\+Right}.
+
+Note that the template parameter {\ttfamily Side} can be omitted, in which case {\ttfamily Side==On\+The\+Left} 
+
+The matrix {\ttfamily $\ast$this} must be triangular and invertible (i.\+e., all the coefficients of the diagonal must be non zero). It works as a forward (resp. backward) substitution if {\ttfamily $\ast$this} is an upper (resp. lower) triangular matrix.
+
+Example\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+
+
+This function returns an expression of the inverse-\/multiply and can works in-\/place if it is assigned to the same matrix or vector {\itshape other}.
+
+For users coming from B\+L\+AS, this function (and more specifically \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}{solve\+In\+Place()}}) offer all the operations supported by the {\ttfamily $\ast$\+T\+R\+SV} and {\ttfamily $\ast$\+T\+R\+SM} B\+L\+AS routines.
+
+\begin{DoxySeeAlso}{See also}
+Triangular\+View\+::solve\+In\+Place() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!solve@{solve}}
+\index{solve@{solve}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$int Side, typename Other $>$ \\
+const \mbox{\hyperlink{struct_eigen_1_1internal_1_1triangular__solve__retval}{internal\+::triangular\+\_\+solve\+\_\+retval}}$<$Side,\mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}, Other$>$ \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the product of the inverse of {\ttfamily $\ast$this} with {\itshape other}, {\itshape $\ast$this} being triangular.
+\end{DoxyReturn}
+This function computes the inverse-\/matrix matrix product inverse({\ttfamily $\ast$this}) $\ast$ {\itshape other} if {\itshape Side==On\+The\+Left} (the default), or the right-\/inverse-\/multiply {\itshape other} $\ast$ inverse({\ttfamily $\ast$this}) if {\itshape Side==On\+The\+Right}.
+
+Note that the template parameter {\ttfamily Side} can be omitted, in which case {\ttfamily Side==On\+The\+Left} 
+
+The matrix {\ttfamily $\ast$this} must be triangular and invertible (i.\+e., all the coefficients of the diagonal must be non zero). It works as a forward (resp. backward) substitution if {\ttfamily $\ast$this} is an upper (resp. lower) triangular matrix.
+
+Example\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+
+
+This function returns an expression of the inverse-\/multiply and can works in-\/place if it is assigned to the same matrix or vector {\itshape other}.
+
+For users coming from B\+L\+AS, this function (and more specifically \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}{solve\+In\+Place()}}) offer all the operations supported by the {\ttfamily $\ast$\+T\+R\+SV} and {\ttfamily $\ast$\+T\+R\+SM} B\+L\+AS routines.
+
+\begin{DoxySeeAlso}{See also}
+Triangular\+View\+::solve\+In\+Place() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!solveInPlace@{solveInPlace}}
+\index{solveInPlace@{solveInPlace}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{solveInPlace()}{solveInPlace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$int Side, typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::solve\+In\+Place (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const}
+
+\char`\"{}in-\/place\char`\"{} version of Triangular\+View\+::solve() where the result is written in {\itshape other} 
+
+\begin{DoxyWarning}{Warning}
+The parameter is only marked \textquotesingle{}const\textquotesingle{} to make the C++ compiler accept a temporary expression here. This function will const\+\_\+cast it, so constness isn\textquotesingle{}t honored here.
+\end{DoxyWarning}
+Note that the template parameter {\ttfamily Side} can be omitted, in which case {\ttfamily Side==On\+The\+Left} 
+
+See \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}\+:\mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}{solve()}} for the details. \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a943481fcdee624d4ad9b5939aea46fe1}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!solveInPlace@{solveInPlace}}
+\index{solveInPlace@{solveInPlace}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{solveInPlace()}{solveInPlace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$int Side, typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::solve\+In\+Place (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const}
+
+\char`\"{}in-\/place\char`\"{} version of Triangular\+View\+::solve() where the result is written in {\itshape other} 
+
+\begin{DoxyWarning}{Warning}
+The parameter is only marked \textquotesingle{}const\textquotesingle{} to make the C++ compiler accept a temporary expression here. This function will const\+\_\+cast it, so constness isn\textquotesingle{}t honored here.
+\end{DoxyWarning}
+Note that the template parameter {\ttfamily Side} can be omitted, in which case {\ttfamily Side==On\+The\+Left} 
+
+See \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}\+:\mbox{\hyperlink{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_ad0a79e600f86cad0d266d712fcec80b7}{solve()}} for the details. \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a74904675d1f22c2a08c9382f6dc49817}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a74904675d1f22c2a08c9382f6dc49817}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!swap@{swap}}
+\index{swap@{swap}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(*this).swap(other.triangularView<(*\textcolor{keyword}{this})::Mode>()) }
+\end{DoxyCode}
+ \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000381}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a74904675d1f22c2a08c9382f6dc49817}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a74904675d1f22c2a08c9382f6dc49817}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!swap@{swap}}
+\index{swap@{swap}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(*this).swap(other.triangularView<(*\textcolor{keyword}{this})::Mode>()) }
+\end{DoxyCode}
+ \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000339}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aca58a4ab072df89ecaa88b59b7342168}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aca58a4ab072df89ecaa88b59b7342168}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!swap@{swap}}
+\index{swap@{swap}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Swaps the coefficients of the common triangular parts of two matrices \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aca58a4ab072df89ecaa88b59b7342168}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_aca58a4ab072df89ecaa88b59b7342168}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!swap@{swap}}
+\index{swap@{swap}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Eigen\+::\+Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triangular_base}{Triangular\+Base}}$<$ Other\+Derived $>$ const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Swaps the coefficients of the common triangular parts of two matrices 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6c57d0861f8575c6f8f0706e12bf11f7}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6c57d0861f8575c6f8f0706e12bf11f7}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$Other\+Derived,\mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Efficient vector/matrix times triangular matrix product \mbox{\Hypertarget{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6c57d0861f8575c6f8f0706e12bf11f7}\label{class_eigen_1_1_triangular_view_impl_3_01_matrix_type___00_01_mode___00_01_dense_01_4_a6c57d0861f8575c6f8f0706e12bf11f7}} 
+\index{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$@{Eigen::TriangularViewImpl$<$ MatrixType\_, Mode\_, Dense $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , unsigned int Mode\+\_\+$>$ \\
+template$<$typename Other\+Derived $>$ \\
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$Other\+Derived,\mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View\+Type}}$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_triangular_view_impl}{Triangular\+View\+Impl}}$<$ Matrix\+Type\+\_\+, Mode\+\_\+, \mbox{\hyperlink{struct_eigen_1_1_dense}{Dense}} $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Efficient vector/matrix times triangular matrix product 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Triangular\+Matrix.\+h\end{DoxyCompactItemize}

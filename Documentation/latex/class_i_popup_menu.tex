@@ -1,0 +1,134 @@
+\hypertarget{class_i_popup_menu}{}\doxysection{I\+Popup\+Menu Class Reference}
+\label{class_i_popup_menu}\index{IPopupMenu@{IPopupMenu}}
+
+
+A class for setting the contents of a pop up menu.  
+
+
+
+
+{\ttfamily \#include $<$I\+Graphics\+Popup\+Menu.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a79ffad217b55c9cf5856ec7ff17ced84}\label{class_i_popup_menu_a79ffad217b55c9cf5856ec7ff17ced84}} 
+{\bfseries I\+Popup\+Menu} (const char $\ast$root\+Title=\char`\"{}\char`\"{}, int prefix=0, bool multicheck=false, const std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ \&items=\{\})
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a243be4361d083bd59494312873b25d60}\label{class_i_popup_menu_a243be4361d083bd59494312873b25d60}} 
+{\bfseries I\+Popup\+Menu} (const char $\ast$root\+Title, const std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ \&items, I\+Popup\+Function \mbox{\hyperlink{structfunc}{func}}=nullptr)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_aca31fc8684b6e231fb847637af78030b}\label{class_i_popup_menu_aca31fc8684b6e231fb847637af78030b}} 
+{\bfseries I\+Popup\+Menu} (const \mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_af19972fd88af27ae4e53ef06e5215aff}\label{class_i_popup_menu_af19972fd88af27ae4e53ef06e5215aff}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a0b5d0ea2a315f52bf20d929905dc144e}\label{class_i_popup_menu_a0b5d0ea2a315f52bf20d929905dc144e}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Add\+Item} (\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$p\+Item, int index=-\/1)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a15cc9a381b008f9893d86c8db3890786}\label{class_i_popup_menu_a15cc9a381b008f9893d86c8db3890786}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Add\+Item} (const char $\ast$str, int index=-\/1, int item\+Flags=Item\+::k\+No\+Flags)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_ad18ed22d0d622dd8cc7ae82e17cb0ca7}\label{class_i_popup_menu_ad18ed22d0d622dd8cc7ae82e17cb0ca7}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Add\+Item} (const char $\ast$str, int index, \mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$p\+Submenu)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a9418787b79fe163f8fc4abcf21533f28}\label{class_i_popup_menu_a9418787b79fe163f8fc4abcf21533f28}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Add\+Item} (const char $\ast$str, \mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$p\+Submenu, int index=-\/1)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a66abd518e322030d425819c76be9749d}\label{class_i_popup_menu_a66abd518e322030d425819c76be9749d}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Add\+Separator} (int index=-\/1)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a04c288d46032c529c65a8bc181ba1e82}\label{class_i_popup_menu_a04c288d46032c529c65a8bc181ba1e82}} 
+void {\bfseries Remove\+Empty\+Submenus} ()
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_aa6ac554b57ff56d26eb6ba35210d106d}\label{class_i_popup_menu_aa6ac554b57ff56d26eb6ba35210d106d}} 
+void {\bfseries Set\+Chosen\+Item\+Idx} (int index)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_ac38962b75f4fd5719c1c05053e8fe77a}\label{class_i_popup_menu_ac38962b75f4fd5719c1c05053e8fe77a}} 
+int {\bfseries Get\+Chosen\+Item\+Idx} () const
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a6e456c84492d935429f3fcc1a8f596df}\label{class_i_popup_menu_a6e456c84492d935429f3fcc1a8f596df}} 
+int {\bfseries N\+Items} () const
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_ac4b183c32baec2b9141e74a52a832730}\label{class_i_popup_menu_ac4b183c32baec2b9141e74a52a832730}} 
+int {\bfseries N\+Items\+Per\+Column} () const
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a3f042894fd823168250fd5eb02bfe29e}\label{class_i_popup_menu_a3f042894fd823168250fd5eb02bfe29e}} 
+void {\bfseries Set\+N\+Items\+Per\+Column} (int n\+Items\+Per\+Column)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a228ac5df24f3f7e5ca3d2ca10050172c}\label{class_i_popup_menu_a228ac5df24f3f7e5ca3d2ca10050172c}} 
+int {\bfseries Get\+Prefix} () const
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a3e7805377716bd912bac9ac8dfe355b6}\label{class_i_popup_menu_a3e7805377716bd912bac9ac8dfe355b6}} 
+bool {\bfseries Get\+Can\+Multi\+Check} () const
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a85ba28d1756c706b63d9017d9db5b5ab}\label{class_i_popup_menu_a85ba28d1756c706b63d9017d9db5b5ab}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Get\+Item} (int index)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a6e97b710c67c2a675ffb822e1d2ffe35}\label{class_i_popup_menu_a6e97b710c67c2a675ffb822e1d2ffe35}} 
+\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$ {\bfseries Get\+Chosen\+Item} ()
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a31655e4fc86c7796faf588ec407f1041}\label{class_i_popup_menu_a31655e4fc86c7796faf588ec407f1041}} 
+const char $\ast$ {\bfseries Get\+Item\+Text} (int index)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a5e01ff5db8df63e639c061d83b7996c8}\label{class_i_popup_menu_a5e01ff5db8df63e639c061d83b7996c8}} 
+void {\bfseries Set\+Prefix} (int count)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a37f73db08860d6b1cb0751c3ce9cba31}\label{class_i_popup_menu_a37f73db08860d6b1cb0751c3ce9cba31}} 
+void {\bfseries Set\+Multi\+Check} (bool multicheck)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_aa74fc824c35a75ac85e705661dd9f005}\label{class_i_popup_menu_aa74fc824c35a75ac85e705661dd9f005}} 
+void {\bfseries Clear} (bool reset\+Everything=true)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a13ca2101664825a10248e6c9affdef62}\label{class_i_popup_menu_a13ca2101664825a10248e6c9affdef62}} 
+bool {\bfseries Check\+Item} (int index, bool \mbox{\hyperlink{structstate}{state}})
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a957d626d3cf80b272209bc3d642ecae3}\label{class_i_popup_menu_a957d626d3cf80b272209bc3d642ecae3}} 
+void {\bfseries Check\+Item\+Alone} (int index)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a70fb6ede41b0f465b13083ce359d08c9}\label{class_i_popup_menu_a70fb6ede41b0f465b13083ce359d08c9}} 
+void {\bfseries Check\+Item\+With\+Text} (const char $\ast$str, bool \mbox{\hyperlink{structstate}{state}}=true)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_ac9f0ffc7fcca1fe93d19bde2aa7ef6cb}\label{class_i_popup_menu_ac9f0ffc7fcca1fe93d19bde2aa7ef6cb}} 
+void {\bfseries Check\+Item\+Alone} (\mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$p\+Item\+To\+Check)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a5c586c19a71e35f5527f705319693b93}\label{class_i_popup_menu_a5c586c19a71e35f5527f705319693b93}} 
+bool {\bfseries Is\+Item\+Checked} (int index)
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a598f5cc5d21990dd611f744372f5878d}\label{class_i_popup_menu_a598f5cc5d21990dd611f744372f5878d}} 
+void {\bfseries Set\+Function} (I\+Popup\+Function \mbox{\hyperlink{structfunc}{func}})
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a937e09124d3345fadb48aebdb1185b0a}\label{class_i_popup_menu_a937e09124d3345fadb48aebdb1185b0a}} 
+I\+Popup\+Function {\bfseries Get\+Function} ()
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a7d3ceae5e498fa9a7728eb0604dc8131}\label{class_i_popup_menu_a7d3ceae5e498fa9a7728eb0604dc8131}} 
+void {\bfseries Exec\+Function} ()
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_aff127236255714a3ed22a227c9b09606}\label{class_i_popup_menu_aff127236255714a3ed22a227c9b09606}} 
+const char $\ast$ {\bfseries Get\+Root\+Title} () const
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a7e653eb68ea0ad1abd6386a18d825907}\label{class_i_popup_menu_a7e653eb68ea0ad1abd6386a18d825907}} 
+void {\bfseries Set\+Root\+Title} (const char $\ast$root\+Title)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_popup_menu_a4abfb8371a4de1af771b19335c9f7f65}\label{class_i_popup_menu_a4abfb8371a4de1af771b19335c9f7f65}} 
+static int {\bfseries Sortfunc} (const \mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$$\ast$a, const \mbox{\hyperlink{class_i_popup_menu_1_1_item}{Item}} $\ast$$\ast$b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for setting the contents of a pop up menu. 
+
+An \mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} must not be declared as a temporary. In order for a receiving \mbox{\hyperlink{class_i_control}{I\+Control}} or lambda function to be triggered when something is selected, the menu should persist across function calls, therefore it should almost always be a member variable. An \mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} owns its sub items, including submenus This (and the platform implementations) are largely based on the V\+S\+T\+G\+UI C\+Option\+Menu 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_graphics_popup_menu_8h}{I\+Graphics\+Popup\+Menu.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\hypertarget{classui_menu}{}\doxysection{ui\+Menu Class Reference}
+\label{classui_menu}\index{uiMenu@{uiMenu}}
+
+
+{\ttfamily \#include $<$Juce\+G\+U\+I.\+h$>$}
+
+Inheritance diagram for ui\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.861111cm]{classui_menu}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classui_menu_aa8d44e2e4527aed4f51dc6f759091335}\label{classui_menu_aa8d44e2e4527aed4f51dc6f759091335}} 
+void {\bfseries update\+Zone} (int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classui_menu_adbb1c54e947546381d15168aca564557}{ui\+Menu}} (\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$gui, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$zone, String label, F\+A\+U\+S\+T\+F\+L\+O\+AT w, F\+A\+U\+S\+T\+F\+L\+O\+AT h, F\+A\+U\+S\+T\+F\+L\+O\+AT cur, F\+A\+U\+S\+T\+F\+L\+O\+AT lo, F\+A\+U\+S\+T\+F\+L\+O\+AT hi, String tooltip, const char $\ast$mdescr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classui_menu_a0ab51386163e12c60050e711dcce4305}{combo\+Box\+Changed}} (Combo\+Box $\ast$cb) override
+\item 
+\mbox{\Hypertarget{classui_menu_af2ad3224e28265bc617f61d699a6b080}\label{classui_menu_af2ad3224e28265bc617f61d699a6b080}} 
+virtual void {\bfseries reflect\+Zone} () override
+\item 
+virtual void \mbox{\hyperlink{classui_menu_ac01a1c44b52b34a33fbf0165d1ddba20}{resized}} () override
+\item 
+virtual void \mbox{\hyperlink{classui_menu_a89dd1ff50c701c54c40fd8139d1503bb}{paint}} (Graphics \&g) override
+\item 
+\mbox{\Hypertarget{classui_menu_aeebf022ef8e62c45aff967fa3f2089fb}\label{classui_menu_aeebf022ef8e62c45aff967fa3f2089fb}} 
+{\bfseries ui\+Menu} (\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$ui, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$z, const char $\ast$, F\+A\+U\+S\+T\+F\+L\+O\+AT cur, F\+A\+U\+S\+T\+F\+L\+O\+AT lo, F\+A\+U\+S\+T\+F\+L\+O\+AT hi, F\+A\+U\+S\+T\+F\+L\+O\+AT, const char $\ast$mdescr, Q\+Widget $\ast$parent)
+\item 
+\mbox{\Hypertarget{classui_menu_a7d46f4b878fc16ff09d37d0179713f26}\label{classui_menu_a7d46f4b878fc16ff09d37d0179713f26}} 
+virtual void {\bfseries reflect\+Zone} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Intern class for Menu
+
+A popup menu. The names and values used for the menu items are described in the string mdescr with the following syntax \char`\"{}\{\textquotesingle{}foo\textquotesingle{}\+:3.\+14; \textquotesingle{}faa\textquotesingle{}\+:-\/0.\+34; ... \textquotesingle{}fii\textquotesingle{}\+:10.\+5\}\char`\"{} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_menu_adbb1c54e947546381d15168aca564557}\label{classui_menu_adbb1c54e947546381d15168aca564557}} 
+\index{uiMenu@{uiMenu}!uiMenu@{uiMenu}}
+\index{uiMenu@{uiMenu}!uiMenu@{uiMenu}}
+\doxysubsubsection{\texorpdfstring{uiMenu()}{uiMenu()}}
+{\footnotesize\ttfamily ui\+Menu\+::ui\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$}]{gui,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{zone,  }\item[{String}]{label,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{w,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{h,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{cur,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{lo,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{hi,  }\item[{String}]{tooltip,  }\item[{const char $\ast$}]{mdescr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Initialize the \mbox{\hyperlink{classui_component}{ui\+Component}} and Menu specific variables, and the juce\+::\+Combo\+Box parameters. Menu is considered as a slider in the F\+A\+U\+ST logic, with a step of one. The first item would be 0 on a slider, the second 1, etc. Each \char`\"{}slider value\char`\"{} is associated with a string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gui,zone,w,h,tooltip,label} & \mbox{\hyperlink{classui_component}{ui\+Component}} variables. \\
+\hline
+{\em cur} & Current \char`\"{}slider value\char`\"{} associated with the current item selected. \\
+\hline
+{\em low} & Lowest value possible. \\
+\hline
+{\em hi} & Highest value possible. \\
+\hline
+{\em mdescr} & Menu description. Contains the names of the items associated with their \char`\"{}value\char`\"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_menu_a0ab51386163e12c60050e711dcce4305}\label{classui_menu_a0ab51386163e12c60050e711dcce4305}} 
+\index{uiMenu@{uiMenu}!comboBoxChanged@{comboBoxChanged}}
+\index{comboBoxChanged@{comboBoxChanged}!uiMenu@{uiMenu}}
+\doxysubsubsection{\texorpdfstring{comboBoxChanged()}{comboBoxChanged()}}
+{\footnotesize\ttfamily void ui\+Menu\+::combo\+Box\+Changed (\begin{DoxyParamCaption}\item[{Combo\+Box $\ast$}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Indicate to the F\+A\+U\+ST module when the selected items is changed. \mbox{\Hypertarget{classui_menu_a89dd1ff50c701c54c40fd8139d1503bb}\label{classui_menu_a89dd1ff50c701c54c40fd8139d1503bb}} 
+\index{uiMenu@{uiMenu}!paint@{paint}}
+\index{paint@{paint}!uiMenu@{uiMenu}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily virtual void ui\+Menu\+::paint (\begin{DoxyParamCaption}\item[{Graphics \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Display the name of the Menu \mbox{\Hypertarget{classui_menu_ac01a1c44b52b34a33fbf0165d1ddba20}\label{classui_menu_ac01a1c44b52b34a33fbf0165d1ddba20}} 
+\index{uiMenu@{uiMenu}!resized@{resized}}
+\index{resized@{resized}!uiMenu@{uiMenu}}
+\doxysubsubsection{\texorpdfstring{resized()}{resized()}}
+{\footnotesize\ttfamily virtual void ui\+Menu\+::resized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the good coordinates and size to the juce\+::\+Combo\+Box widget whenever the layout get reiszed 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Juce\+G\+U\+I.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Q\+T\+U\+I.\+h\end{DoxyCompactItemize}

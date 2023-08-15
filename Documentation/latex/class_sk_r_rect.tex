@@ -1,0 +1,751 @@
+\hypertarget{class_sk_r_rect}{}\doxysection{Sk\+R\+Rect Class Reference}
+\label{class_sk_r_rect}\index{SkRRect@{SkRRect}}
+
+
+{\ttfamily \#include $<$Sk\+R\+Rect.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}{Type}} \{ \newline
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a653b685abe3546fd516eac45b35c13eb}{k\+Empty\+\_\+\+Type}}, 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ac3424a5852872481d01f2d36933be558}{k\+Rect\+\_\+\+Type}}, 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a0d51a55f5328b3bc83687648675576df}{k\+Oval\+\_\+\+Type}}, 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a604ea00fcdfdcb1e4a6567060fdff9e5}{k\+Simple\+\_\+\+Type}}, 
+\newline
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ac00651d52390b6d52cafbc37e0fecca7}{k\+Nine\+Patch\+\_\+\+Type}}, 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ada488e390a6113ddb0ada8b329c5eda1}{k\+Complex\+\_\+\+Type}}, 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a1e27b34ef4952ee0f054789a39663a22}{k\+Last\+Type}} = k\+Complex\+\_\+\+Type
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764}{Corner}} \{ \mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764a4d52afd13975695f3ba338ffe78df207}{k\+Upper\+Left\+\_\+\+Corner}}, 
+\mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764ad3126e4cd7942ba11c9632ac27063801}{k\+Upper\+Right\+\_\+\+Corner}}, 
+\mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764a5f10ed2438a394ff9f4b9e8551ac5268}{k\+Lower\+Right\+\_\+\+Corner}}, 
+\mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764af95fcb3d79c760af57ea2997f7fa616a}{k\+Lower\+Left\+\_\+\+Corner}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_r_rect_a270505ad72190eea30091bf94db20632}{Sk\+R\+Rect}} ()=default
+\item 
+\mbox{\hyperlink{class_sk_r_rect_a5154d0a3d2011daee4ed67ab10b58208}{Sk\+R\+Rect}} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&rrect)=default
+\item 
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \& \mbox{\hyperlink{class_sk_r_rect_a27fc717a780c56c1fd7f285e98480cbf}{operator=}} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&rrect)=default
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_a0deec4521145028787e5dd47031dc9e6}\label{class_sk_r_rect_a0deec4521145028787e5dd47031dc9e6}} 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}{Type}} {\bfseries get\+Type} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_aa6d43ff531d0038ec44c3208a7d58490}\label{class_sk_r_rect_aa6d43ff531d0038ec44c3208a7d58490}} 
+\mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}{Type}} {\bfseries type} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_aaa899a797400333e1d86eba92079efe8}\label{class_sk_r_rect_aaa899a797400333e1d86eba92079efe8}} 
+bool {\bfseries is\+Empty} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_a9ec4fbeadcf0db003e8b844baa795cec}\label{class_sk_r_rect_a9ec4fbeadcf0db003e8b844baa795cec}} 
+bool {\bfseries is\+Rect} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_a0b57abc2db2c16c1ed938fa051eba722}\label{class_sk_r_rect_a0b57abc2db2c16c1ed938fa051eba722}} 
+bool {\bfseries is\+Oval} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_ad40a82b4b07f71c8276af125c44fa15f}\label{class_sk_r_rect_ad40a82b4b07f71c8276af125c44fa15f}} 
+bool {\bfseries is\+Simple} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_a701c84be92f27cb948b5ebe502ac9638}\label{class_sk_r_rect_a701c84be92f27cb948b5ebe502ac9638}} 
+bool {\bfseries is\+Nine\+Patch} () const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_aea52aa1b3cd046e3836117890b84433f}\label{class_sk_r_rect_aea52aa1b3cd046e3836117890b84433f}} 
+bool {\bfseries is\+Complex} () const
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_r_rect_a8134e65a1b54a58e9adbe23e11009cee}{width}} () const
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_r_rect_ab4625838be393a8f26fbd5a6b5c357c7}{height}} () const
+\item 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} \mbox{\hyperlink{class_sk_r_rect_a08e6cc108b88dc51c79a822cbeee1bde}{get\+Simple\+Radii}} () const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a5c6ab20b46d46fc912053fcc7fe0dadd}{set\+Empty}} ()
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_af3c42d6b4813568ed2f293410ee10cc8}{set\+Rect}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}})
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a7fc7d1e517bcb91d190b33246cbd1ca2}{set\+Oval}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&oval)
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_ab33693f07d40fa6923703588962c3063}{set\+Rect\+XY}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}}, Sk\+Scalar x\+Rad, Sk\+Scalar y\+Rad)
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_ab6c51ea391e9eb8c44e919fc7556a18a}{set\+Nine\+Patch}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}}, Sk\+Scalar left\+Rad, Sk\+Scalar top\+Rad, Sk\+Scalar right\+Rad, Sk\+Scalar bottom\+Rad)
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_aa3002c214675255620a96526c75785e8}{set\+Rect\+Radii}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}}, const \mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} \mbox{\hyperlink{class_sk_r_rect_a256a37e62d0f258e557b9e7a3159783b}{radii}}\mbox{[}4\mbox{]})
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}} () const
+\item 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} \mbox{\hyperlink{class_sk_r_rect_a256a37e62d0f258e557b9e7a3159783b}{radii}} (\mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764}{Corner}} corner) const
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_r_rect_a40eb19f85dfe160185e04996f3bf0a26}{get\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a4a60254a2a4addc93054c18ee24f40de}{inset}} (Sk\+Scalar dx, Sk\+Scalar dy, \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$dst) const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_ab88762b8c8127f49dfed649db07bf321}{inset}} (Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a09a8dbcf3d141f676d80beb21dbb898d}{outset}} (Sk\+Scalar dx, Sk\+Scalar dy, \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$dst) const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a8e799a8a9443556c1fb64cf864ab04b3}{outset}} (Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a84c7f23d5b710be0fef21afb84c1ccd4}{offset}} (Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \mbox{\hyperlink{class_sk_r_rect_aa07ea9f819771525efa765ce8f991c77}{make\+Offset}} (Sk\+Scalar dx, Sk\+Scalar dy) const
+\item 
+bool \mbox{\hyperlink{class_sk_r_rect_aa4ca7e5ebc829b23007b7c66af3e9b08}{contains}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}}) const
+\item 
+bool \mbox{\hyperlink{class_sk_r_rect_aef15313b09dcbb689e0706d9bb219c14}{is\+Valid}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_r_rect_a7316283e36f699d72b0df12150d52fb4}{write\+To\+Memory}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}) const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_r_rect_a6593bd19440b464566fa566b45d96443}{read\+From\+Memory}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t length)
+\item 
+bool \mbox{\hyperlink{class_sk_r_rect_a6d75e6c40fdd5bdbb847027af65b55d2}{transform}} (const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&matrix, \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$dst) const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a79ed9c52738ae7618d204bafa793e61f}{dump}} (bool as\+Hex) const
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_a3c2d775c6a74c660bcfd95df5e11e100}\label{class_sk_r_rect_a3c2d775c6a74c660bcfd95df5e11e100}} 
+\mbox{\hyperlink{class_sk_string}{Sk\+String}} {\bfseries dump\+To\+String} (bool as\+Hex) const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a014aa9fdefb7af8a2a8fca43a4a393bc}{dump}} () const
+\item 
+void \mbox{\hyperlink{class_sk_r_rect_a130c72aa6f828360166bbc9bd12ecef7}{dump\+Hex}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \mbox{\hyperlink{class_sk_r_rect_af644feeda0b9647eb796e99994f17540}{Make\+Empty}} ()
+\item 
+static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \mbox{\hyperlink{class_sk_r_rect_a6fb8249f66fc81c0d799b3b39a39d657}{Make\+Rect}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&r)
+\item 
+static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \mbox{\hyperlink{class_sk_r_rect_a3de795dcb8c4f314176cc595896a01eb}{Make\+Oval}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&oval)
+\item 
+static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \mbox{\hyperlink{class_sk_r_rect_a8d10ef1b1dad541eb6fb98c8a419bb3c}{Make\+Rect\+XY}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect}}, Sk\+Scalar x\+Rad, Sk\+Scalar y\+Rad)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_ac0e4ae70393a418a2ec6decc7af12420}\label{class_sk_r_rect_ac0e4ae70393a418a2ec6decc7af12420}} 
+static constexpr size\+\_\+t {\bfseries k\+Size\+In\+Memory} = 12 $\ast$ sizeof(Sk\+Scalar)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_ac6d676cb59ceeaf4644d4cbcbf2c8e9e}\label{class_sk_r_rect_ac6d676cb59ceeaf4644d4cbcbf2c8e9e}} 
+class {\bfseries Sk\+Path}
+\item 
+\mbox{\Hypertarget{class_sk_r_rect_a23a326f713956840e58476823142af39}\label{class_sk_r_rect_a23a326f713956840e58476823142af39}} 
+class {\bfseries Sk\+R\+Rect\+Priv}
+\item 
+bool \mbox{\hyperlink{class_sk_r_rect_a3c0c4061b5318f3d0ad4edf28215c729}{operator==}} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&a, const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&b)
+\item 
+bool \mbox{\hyperlink{class_sk_r_rect_a4fd1b0897c6d1fbecf6cbfe9e7ed55fa}{operator!=}} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&a, const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} describes a rounded rectangle with a bounds and a pair of radii for each corner. The bounds and radii can be set so that \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} describes\+: a rectangle with sharp corners; a circle; an oval; or a rectangle with one or more rounded corners.
+
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} allows implementing C\+SS properties that describe rounded corners. \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} may have up to eight different radii, one for each axis on each of its four corners.
+
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} may modify the provided parameters when initializing bounds and radii. If either axis radii is zero or less\+: radii are stored as zero; corner is square. If corner curves overlap, radii are proportionally reduced to fit within bounds. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764}\label{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764}} 
+\index{SkRRect@{SkRRect}!Corner@{Corner}}
+\index{Corner@{Corner}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{Corner}{Corner}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764}{Sk\+R\+Rect\+::\+Corner}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUpperLeft\_Corner@{kUpperLeft\_Corner}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kUpperLeft\_Corner@{kUpperLeft\_Corner}}}\mbox{\Hypertarget{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764a4d52afd13975695f3ba338ffe78df207}\label{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764a4d52afd13975695f3ba338ffe78df207}} 
+k\+Upper\+Left\+\_\+\+Corner&index of top-\/left corner radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUpperRight\_Corner@{kUpperRight\_Corner}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kUpperRight\_Corner@{kUpperRight\_Corner}}}\mbox{\Hypertarget{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764ad3126e4cd7942ba11c9632ac27063801}\label{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764ad3126e4cd7942ba11c9632ac27063801}} 
+k\+Upper\+Right\+\_\+\+Corner&index of top-\/right corner radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLowerRight\_Corner@{kLowerRight\_Corner}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kLowerRight\_Corner@{kLowerRight\_Corner}}}\mbox{\Hypertarget{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764a5f10ed2438a394ff9f4b9e8551ac5268}\label{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764a5f10ed2438a394ff9f4b9e8551ac5268}} 
+k\+Lower\+Right\+\_\+\+Corner&index of bottom-\/right corner radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLowerLeft\_Corner@{kLowerLeft\_Corner}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kLowerLeft\_Corner@{kLowerLeft\_Corner}}}\mbox{\Hypertarget{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764af95fcb3d79c760af57ea2997f7fa616a}\label{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764af95fcb3d79c760af57ea2997f7fa616a}} 
+k\+Lower\+Left\+\_\+\+Corner&index of bottom-\/left corner radii \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}} 
+\index{SkRRect@{SkRRect}!Type@{Type}}
+\index{Type@{Type}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}{Sk\+R\+Rect\+::\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEmpty\_Type@{kEmpty\_Type}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kEmpty\_Type@{kEmpty\_Type}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a653b685abe3546fd516eac45b35c13eb}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a653b685abe3546fd516eac45b35c13eb}} 
+k\+Empty\+\_\+\+Type&zero width or height \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRect\_Type@{kRect\_Type}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kRect\_Type@{kRect\_Type}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ac3424a5852872481d01f2d36933be558}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ac3424a5852872481d01f2d36933be558}} 
+k\+Rect\+\_\+\+Type&non-\/zero width and height, and zeroed radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kOval\_Type@{kOval\_Type}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kOval\_Type@{kOval\_Type}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a0d51a55f5328b3bc83687648675576df}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a0d51a55f5328b3bc83687648675576df}} 
+k\+Oval\+\_\+\+Type&non-\/zero width and height filled with radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSimple\_Type@{kSimple\_Type}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kSimple\_Type@{kSimple\_Type}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a604ea00fcdfdcb1e4a6567060fdff9e5}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a604ea00fcdfdcb1e4a6567060fdff9e5}} 
+k\+Simple\+\_\+\+Type&non-\/zero width and height with equal radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNinePatch\_Type@{kNinePatch\_Type}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kNinePatch\_Type@{kNinePatch\_Type}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ac00651d52390b6d52cafbc37e0fecca7}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ac00651d52390b6d52cafbc37e0fecca7}} 
+k\+Nine\+Patch\+\_\+\+Type&non-\/zero width and height with axis-\/aligned radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kComplex\_Type@{kComplex\_Type}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kComplex\_Type@{kComplex\_Type}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ada488e390a6113ddb0ada8b329c5eda1}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944ada488e390a6113ddb0ada8b329c5eda1}} 
+k\+Complex\+\_\+\+Type&non-\/zero width and height with arbitrary radii \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLastType@{kLastType}!SkRRect@{SkRRect}}\index{SkRRect@{SkRRect}!kLastType@{kLastType}}}\mbox{\Hypertarget{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a1e27b34ef4952ee0f054789a39663a22}\label{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944a1e27b34ef4952ee0f054789a39663a22}} 
+k\+Last\+Type&largest Type value \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_r_rect_a270505ad72190eea30091bf94db20632}\label{class_sk_r_rect_a270505ad72190eea30091bf94db20632}} 
+\index{SkRRect@{SkRRect}!SkRRect@{SkRRect}}
+\index{SkRRect@{SkRRect}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{SkRRect()}{SkRRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sk\+R\+Rect\+::\+Sk\+R\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Initializes bounds at (0, 0), the origin, with zero width and height. Initializes corner radii to (0, 0), and sets type of k\+Empty\+\_\+\+Type.
+
+\begin{DoxyReturn}{Returns}
+empty \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a5154d0a3d2011daee4ed67ab10b58208}\label{class_sk_r_rect_a5154d0a3d2011daee4ed67ab10b58208}} 
+\index{SkRRect@{SkRRect}!SkRRect@{SkRRect}}
+\index{SkRRect@{SkRRect}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{SkRRect()}{SkRRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sk\+R\+Rect\+::\+Sk\+R\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{rrect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Initializes to copy of rrect bounds and corner radii.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rrect} & bounds and corner to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of rrect 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_r_rect_aa4ca7e5ebc829b23007b7c66af3e9b08}\label{class_sk_r_rect_aa4ca7e5ebc829b23007b7c66af3e9b08}} 
+\index{SkRRect@{SkRRect}!contains@{contains}}
+\index{contains@{contains}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Sk\+R\+Rect\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect }\end{DoxyParamCaption}) const}
+
+Returns true if rect is inside the bounds and corner radii, and if \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} and rect are not empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & area tested for containment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} contains rect
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@RRect_contains}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+contains}} \mbox{\Hypertarget{class_sk_r_rect_a014aa9fdefb7af8a2a8fca43a4a393bc}\label{class_sk_r_rect_a014aa9fdefb7af8a2a8fca43a4a393bc}} 
+\index{SkRRect@{SkRRect}!dump@{dump}}
+\index{dump@{dump}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes text representation of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to standard output. The representation may be directly compiled as C++ code. Floating point values are written with limited precision; it may not be possible to reconstruct original \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} from output. \mbox{\Hypertarget{class_sk_r_rect_a79ed9c52738ae7618d204bafa793e61f}\label{class_sk_r_rect_a79ed9c52738ae7618d204bafa793e61f}} 
+\index{SkRRect@{SkRRect}!dump@{dump}}
+\index{dump@{dump}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::dump (\begin{DoxyParamCaption}\item[{bool}]{as\+Hex }\end{DoxyParamCaption}) const}
+
+Writes text representation of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to standard output. Set as\+Hex true to generate exact binary representations of floating point numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em as\+Hex} & true if Sk\+Scalar values are written as hexadecimal\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@RRect_dump}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+dump}} \mbox{\Hypertarget{class_sk_r_rect_a130c72aa6f828360166bbc9bd12ecef7}\label{class_sk_r_rect_a130c72aa6f828360166bbc9bd12ecef7}} 
+\index{SkRRect@{SkRRect}!dumpHex@{dumpHex}}
+\index{dumpHex@{dumpHex}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{dumpHex()}{dumpHex()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::dump\+Hex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Writes text representation of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to standard output. The representation may be directly compiled as C++ code. Floating point values are written in hexadecimal to preserve their exact bit pattern. The output reconstructs the original \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}. \mbox{\Hypertarget{class_sk_r_rect_a40eb19f85dfe160185e04996f3bf0a26}\label{class_sk_r_rect_a40eb19f85dfe160185e04996f3bf0a26}} 
+\index{SkRRect@{SkRRect}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+R\+Rect\+::get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns bounds. Bounds may have zero width or zero height. Bounds right is greater than or equal to left; bounds bottom is greater than or equal to top. Result is identical to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.
+
+\begin{DoxyReturn}{Returns}
+bounding box 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a08e6cc108b88dc51c79a822cbeee1bde}\label{class_sk_r_rect_a08e6cc108b88dc51c79a822cbeee1bde}} 
+\index{SkRRect@{SkRRect}!getSimpleRadii@{getSimpleRadii}}
+\index{getSimpleRadii@{getSimpleRadii}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{getSimpleRadii()}{getSimpleRadii()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} Sk\+R\+Rect\+::get\+Simple\+Radii (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns top-\/left corner radii. If type() returns k\+Empty\+\_\+\+Type, k\+Rect\+\_\+\+Type, k\+Oval\+\_\+\+Type, or k\+Simple\+\_\+\+Type, returns a value representative of all corner radii. If type() returns k\+Nine\+Patch\+\_\+\+Type or k\+Complex\+\_\+\+Type, at least one of the remaining three corners has a different value.
+
+\begin{DoxyReturn}{Returns}
+corner radii for simple types 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_ab4625838be393a8f26fbd5a6b5c357c7}\label{class_sk_r_rect_ab4625838be393a8f26fbd5a6b5c357c7}} 
+\index{SkRRect@{SkRRect}!height@{height}}
+\index{height@{height}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+R\+Rect\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns span on the y-\/axis. This does not check if result fits in 32-\/bit float; result may be infinity.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom minus \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_ab88762b8c8127f49dfed649db07bf321}\label{class_sk_r_rect_ab88762b8c8127f49dfed649db07bf321}} 
+\index{SkRRect@{SkRRect}!inset@{inset}}
+\index{inset@{inset}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{inset()}{inset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::inset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insets bounds by dx and dy, and adjusts radii by dx and dy. dx and dy may be positive, negative, or zero.
+
+If either corner radius is zero, the corner has no curvature and is unchanged. Otherwise, if adjusted radius becomes negative, pins radius to zero. If dx exceeds half bounds width, bounds left and right are set to bounds x-\/axis center. If dy exceeds half bounds height, bounds top and bottom are set to bounds y-\/axis center.
+
+If dx or dy cause the bounds to become infinite, bounds is zeroed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left, and subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right \\
+\hline
+{\em dy} & added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top, and subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_a4a60254a2a4addc93054c18ee24f40de}\label{class_sk_r_rect_a4a60254a2a4addc93054c18ee24f40de}} 
+\index{SkRRect@{SkRRect}!inset@{inset}}
+\index{inset@{inset}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{inset()}{inset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::inset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy,  }\item[{\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Copies \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to dst, then insets dst bounds by dx and dy, and adjusts dst radii by dx and dy. dx and dy may be positive, negative, or zero. dst may be \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}.
+
+If either corner radius is zero, the corner has no curvature and is unchanged. Otherwise, if adjusted radius becomes negative, pins radius to zero. If dx exceeds half dst bounds width, dst bounds left and right are set to bounds x-\/axis center. If dy exceeds half dst bounds height, dst bounds top and bottom are set to bounds y-\/axis center.
+
+If dx or dy cause the bounds to become infinite, dst bounds is zeroed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left, and subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right \\
+\hline
+{\em dy} & added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top, and subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom \\
+\hline
+{\em dst} & insets bounds and radii\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@RRect_inset}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+inset}} \mbox{\Hypertarget{class_sk_r_rect_aef15313b09dcbb689e0706d9bb219c14}\label{class_sk_r_rect_aef15313b09dcbb689e0706d9bb219c14}} 
+\index{SkRRect@{SkRRect}!isValid@{isValid}}
+\index{isValid@{isValid}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Sk\+R\+Rect\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if bounds and radii values are finite and describe a \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \mbox{\hyperlink{class_sk_r_rect_a266d3f4838c6294b32e05a034e348944}{Sk\+R\+Rect\+::\+Type}} that matches get\+Type(). All \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} methods construct valid types, even if the input values are not valid. Invalid \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} data can only be generated by corrupting memory.
+
+\begin{DoxyReturn}{Returns}
+true if bounds and radii match type()
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@RRect_isValid}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+is\+Valid}} \mbox{\Hypertarget{class_sk_r_rect_af644feeda0b9647eb796e99994f17540}\label{class_sk_r_rect_af644feeda0b9647eb796e99994f17540}} 
+\index{SkRRect@{SkRRect}!MakeEmpty@{MakeEmpty}}
+\index{MakeEmpty@{MakeEmpty}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{MakeEmpty()}{MakeEmpty()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} Sk\+R\+Rect\+::\+Make\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Initializes bounds at (0, 0), the origin, with zero width and height. Initializes corner radii to (0, 0), and sets type of k\+Empty\+\_\+\+Type.
+
+\begin{DoxyReturn}{Returns}
+empty \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_aa07ea9f819771525efa765ce8f991c77}\label{class_sk_r_rect_aa07ea9f819771525efa765ce8f991c77}} 
+\index{SkRRect@{SkRRect}!makeOffset@{makeOffset}}
+\index{makeOffset@{makeOffset}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{makeOffset()}{makeOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Sk\+R\+Rect\+::make\+Offset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} translated by (dx, dy).
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & offset added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left and \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right \\
+\hline
+{\em dy} & offset added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top and \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} bounds offset by (dx, dy), with unchanged corner radii 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a3de795dcb8c4f314176cc595896a01eb}\label{class_sk_r_rect_a3de795dcb8c4f314176cc595896a01eb}} 
+\index{SkRRect@{SkRRect}!MakeOval@{MakeOval}}
+\index{MakeOval@{MakeOval}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{MakeOval()}{MakeOval()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} Sk\+R\+Rect\+::\+Make\+Oval (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{oval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sets bounds to oval, x-\/axis radii to half oval.\+width(), and all y-\/axis radii to half oval.\+height(). If oval bounds is empty, sets to k\+Empty\+\_\+\+Type. Otherwise, sets to k\+Oval\+\_\+\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oval} & bounds of oval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a6fb8249f66fc81c0d799b3b39a39d657}\label{class_sk_r_rect_a6fb8249f66fc81c0d799b3b39a39d657}} 
+\index{SkRRect@{SkRRect}!MakeRect@{MakeRect}}
+\index{MakeRect@{MakeRect}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{MakeRect()}{MakeRect()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} Sk\+R\+Rect\+::\+Make\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Initializes to copy of r bounds and zeroes corner radii.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & bounds to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of r 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a8d10ef1b1dad541eb6fb98c8a419bb3c}\label{class_sk_r_rect_a8d10ef1b1dad541eb6fb98c8a419bb3c}} 
+\index{SkRRect@{SkRRect}!MakeRectXY@{MakeRectXY}}
+\index{MakeRectXY@{MakeRectXY}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{MakeRectXY()}{MakeRectXY()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} Sk\+R\+Rect\+::\+Make\+Rect\+XY (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{Sk\+Scalar}]{x\+Rad,  }\item[{Sk\+Scalar}]{y\+Rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Sets to rounded rectangle with the same radii for all four corners. If rect is empty, sets to k\+Empty\+\_\+\+Type. Otherwise, if x\+Rad and y\+Rad are zero, sets to k\+Rect\+\_\+\+Type. Otherwise, if x\+Rad is at least half rect.\+width() and y\+Rad is at least half rect.\+height(), sets to k\+Oval\+\_\+\+Type. Otherwise, sets to k\+Simple\+\_\+\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of rounded rectangle \\
+\hline
+{\em x\+Rad} & x-\/axis radius of corners \\
+\hline
+{\em y\+Rad} & y-\/axis radius of corners \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rounded rectangle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a84c7f23d5b710be0fef21afb84c1ccd4}\label{class_sk_r_rect_a84c7f23d5b710be0fef21afb84c1ccd4}} 
+\index{SkRRect@{SkRRect}!offset@{offset}}
+\index{offset@{offset}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{offset()}{offset()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::offset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Translates \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} by (dx, dy).
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & offset added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left and \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right \\
+\hline
+{\em dy} & offset added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top and \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_a27fc717a780c56c1fd7f285e98480cbf}\label{class_sk_r_rect_a27fc717a780c56c1fd7f285e98480cbf}} 
+\index{SkRRect@{SkRRect}!operator=@{operator=}}
+\index{operator=@{operator=}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}\& Sk\+R\+Rect\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{rrect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Copies rrect bounds and corner radii.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rrect} & bounds and corner to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of rrect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a8e799a8a9443556c1fb64cf864ab04b3}\label{class_sk_r_rect_a8e799a8a9443556c1fb64cf864ab04b3}} 
+\index{SkRRect@{SkRRect}!outset@{outset}}
+\index{outset@{outset}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{outset()}{outset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::outset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Outsets bounds by dx and dy, and adjusts radii by dx and dy. dx and dy may be positive, negative, or zero.
+
+If either corner radius is zero, the corner has no curvature and is unchanged. Otherwise, if adjusted radius becomes negative, pins radius to zero. If dx exceeds half bounds width, bounds left and right are set to bounds x-\/axis center. If dy exceeds half bounds height, bounds top and bottom are set to bounds y-\/axis center.
+
+If dx or dy cause the bounds to become infinite, bounds is zeroed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left, and added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right \\
+\hline
+{\em dy} & subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top, and added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_a09a8dbcf3d141f676d80beb21dbb898d}\label{class_sk_r_rect_a09a8dbcf3d141f676d80beb21dbb898d}} 
+\index{SkRRect@{SkRRect}!outset@{outset}}
+\index{outset@{outset}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{outset()}{outset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::outset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy,  }\item[{\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$}]{dst }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Outsets dst bounds by dx and dy, and adjusts radii by dx and dy. dx and dy may be positive, negative, or zero.
+
+If either corner radius is zero, the corner has no curvature and is unchanged. Otherwise, if adjusted radius becomes negative, pins radius to zero. If dx exceeds half dst bounds width, dst bounds left and right are set to bounds x-\/axis center. If dy exceeds half dst bounds height, dst bounds top and bottom are set to bounds y-\/axis center.
+
+If dx or dy cause the bounds to become infinite, dst bounds is zeroed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left, and added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right \\
+\hline
+{\em dy} & subtracted from \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Top, and added to \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Bottom \\
+\hline
+{\em dst} & outset bounds and radii \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_a256a37e62d0f258e557b9e7a3159783b}\label{class_sk_r_rect_a256a37e62d0f258e557b9e7a3159783b}} 
+\index{SkRRect@{SkRRect}!radii@{radii}}
+\index{radii@{radii}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{radii()}{radii()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} Sk\+R\+Rect\+::radii (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_r_rect_a6724dcdc32b956099702a500fc1fd764}{Corner}}}]{corner }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns scalar pair for radius of curve on x-\/axis and y-\/axis for one corner. Both radii may be zero. If not zero, both are positive and finite.
+
+\begin{DoxyReturn}{Returns}
+x-\/axis and y-\/axis radii for one corner 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a6593bd19440b464566fa566b45d96443}\label{class_sk_r_rect_a6593bd19440b464566fa566b45d96443}} 
+\index{SkRRect@{SkRRect}!readFromMemory@{readFromMemory}}
+\index{readFromMemory@{readFromMemory}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{readFromMemory()}{readFromMemory()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+R\+Rect\+::read\+From\+Memory (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Reads \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} from buffer, reading k\+Size\+In\+Memory bytes. Returns k\+Size\+In\+Memory, bytes read if length is at least k\+Size\+In\+Memory. Otherwise, returns zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & memory to read from \\
+\hline
+{\em length} & size of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes read, or 0 if length is less than k\+Size\+In\+Memory
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@RRect_readFromMemory}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+read\+From\+Memory}} \mbox{\Hypertarget{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}\label{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}} 
+\index{SkRRect@{SkRRect}!rect@{rect}}
+\index{rect@{rect}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{rect()}{rect()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+R\+Rect\+::rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns bounds. Bounds may have zero width or zero height. Bounds right is greater than or equal to left; bounds bottom is greater than or equal to top. Result is identical to \mbox{\hyperlink{class_sk_r_rect_a40eb19f85dfe160185e04996f3bf0a26}{get\+Bounds()}}.
+
+\begin{DoxyReturn}{Returns}
+bounding box 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a5c6ab20b46d46fc912053fcc7fe0dadd}\label{class_sk_r_rect_a5c6ab20b46d46fc912053fcc7fe0dadd}} 
+\index{SkRRect@{SkRRect}!setEmpty@{setEmpty}}
+\index{setEmpty@{setEmpty}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{setEmpty()}{setEmpty()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::set\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets bounds to zero width and height at (0, 0), the origin. Sets corner radii to zero and sets type to k\+Empty\+\_\+\+Type. \mbox{\Hypertarget{class_sk_r_rect_ab6c51ea391e9eb8c44e919fc7556a18a}\label{class_sk_r_rect_ab6c51ea391e9eb8c44e919fc7556a18a}} 
+\index{SkRRect@{SkRRect}!setNinePatch@{setNinePatch}}
+\index{setNinePatch@{setNinePatch}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{setNinePatch()}{setNinePatch()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::set\+Nine\+Patch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{Sk\+Scalar}]{left\+Rad,  }\item[{Sk\+Scalar}]{top\+Rad,  }\item[{Sk\+Scalar}]{right\+Rad,  }\item[{Sk\+Scalar}]{bottom\+Rad }\end{DoxyParamCaption})}
+
+Sets bounds to rect. Sets radii to (left\+Rad, top\+Rad), (right\+Rad, top\+Rad), (right\+Rad, bottom\+Rad), (left\+Rad, bottom\+Rad).
+
+If rect is empty, sets to k\+Empty\+\_\+\+Type. Otherwise, if left\+Rad and right\+Rad are zero, sets to k\+Rect\+\_\+\+Type. Otherwise, if top\+Rad and bottom\+Rad are zero, sets to k\+Rect\+\_\+\+Type. Otherwise, if left\+Rad and right\+Rad are equal and at least half rect.\+width(), and top\+Rad and bottom\+Rad are equal at least half rect.\+height(), sets to k\+Oval\+\_\+\+Type. Otherwise, if left\+Rad and right\+Rad are equal, and top\+Rad and bottom\+Rad are equal, sets to k\+Simple\+\_\+\+Type. Otherwise, sets to k\+Nine\+Patch\+\_\+\+Type.
+
+Nine patch refers to the nine parts defined by the radii\+: one center rectangle, four edge patches, and four corner patches.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of rounded rectangle \\
+\hline
+{\em left\+Rad} & left-\/top and left-\/bottom x-\/axis radius \\
+\hline
+{\em top\+Rad} & left-\/top and right-\/top y-\/axis radius \\
+\hline
+{\em right\+Rad} & right-\/top and right-\/bottom x-\/axis radius \\
+\hline
+{\em bottom\+Rad} & left-\/bottom and right-\/bottom y-\/axis radius \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_a7fc7d1e517bcb91d190b33246cbd1ca2}\label{class_sk_r_rect_a7fc7d1e517bcb91d190b33246cbd1ca2}} 
+\index{SkRRect@{SkRRect}!setOval@{setOval}}
+\index{setOval@{setOval}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{setOval()}{setOval()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::set\+Oval (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{oval }\end{DoxyParamCaption})}
+
+Sets bounds to oval, x-\/axis radii to half oval.\+width(), and all y-\/axis radii to half oval.\+height(). If oval bounds is empty, sets to k\+Empty\+\_\+\+Type. Otherwise, sets to k\+Oval\+\_\+\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oval} & bounds of oval \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_af3c42d6b4813568ed2f293410ee10cc8}\label{class_sk_r_rect_af3c42d6b4813568ed2f293410ee10cc8}} 
+\index{SkRRect@{SkRRect}!setRect@{setRect}}
+\index{setRect@{setRect}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{setRect()}{setRect()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::set\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets bounds to sorted rect, and sets corner radii to zero. If set bounds has width and height, and sets type to k\+Rect\+\_\+\+Type; otherwise, sets type to k\+Empty\+\_\+\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_r_rect_aa3002c214675255620a96526c75785e8}\label{class_sk_r_rect_aa3002c214675255620a96526c75785e8}} 
+\index{SkRRect@{SkRRect}!setRectRadii@{setRectRadii}}
+\index{setRectRadii@{setRectRadii}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{setRectRadii()}{setRectRadii()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::set\+Rect\+Radii (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Vector}}}]{radii\mbox{[}4\mbox{]} }\end{DoxyParamCaption})}
+
+Sets bounds to rect. Sets radii array for individual control of all for corners.
+
+If rect is empty, sets to k\+Empty\+\_\+\+Type. Otherwise, if one of each corner radii are zero, sets to k\+Rect\+\_\+\+Type. Otherwise, if all x-\/axis radii are equal and at least half rect.\+width(), and all y-\/axis radii are equal at least half rect.\+height(), sets to k\+Oval\+\_\+\+Type. Otherwise, if all x-\/axis radii are equal, and all y-\/axis radii are equal, sets to k\+Simple\+\_\+\+Type. Otherwise, sets to k\+Nine\+Patch\+\_\+\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of rounded rectangle \\
+\hline
+{\em radii} & corner x-\/axis and y-\/axis radii\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@RRect_setRectRadii}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+set\+Rect\+Radii}} \mbox{\Hypertarget{class_sk_r_rect_ab33693f07d40fa6923703588962c3063}\label{class_sk_r_rect_ab33693f07d40fa6923703588962c3063}} 
+\index{SkRRect@{SkRRect}!setRectXY@{setRectXY}}
+\index{setRectXY@{setRectXY}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{setRectXY()}{setRectXY()}}
+{\footnotesize\ttfamily void Sk\+R\+Rect\+::set\+Rect\+XY (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{Sk\+Scalar}]{x\+Rad,  }\item[{Sk\+Scalar}]{y\+Rad }\end{DoxyParamCaption})}
+
+Sets to rounded rectangle with the same radii for all four corners. If rect is empty, sets to k\+Empty\+\_\+\+Type. Otherwise, if x\+Rad or y\+Rad is zero, sets to k\+Rect\+\_\+\+Type. Otherwise, if x\+Rad is at least half rect.\+width() and y\+Rad is at least half rect.\+height(), sets to k\+Oval\+\_\+\+Type. Otherwise, sets to k\+Simple\+\_\+\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of rounded rectangle \\
+\hline
+{\em x\+Rad} & x-\/axis radius of corners \\
+\hline
+{\em y\+Rad} & y-\/axis radius of corners\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@RRect_setRectXY}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+set\+Rect\+XY}} \mbox{\Hypertarget{class_sk_r_rect_a6d75e6c40fdd5bdbb847027af65b55d2}\label{class_sk_r_rect_a6d75e6c40fdd5bdbb847027af65b55d2}} 
+\index{SkRRect@{SkRRect}!transform@{transform}}
+\index{transform@{transform}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily bool Sk\+R\+Rect\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{matrix,  }\item[{\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Transforms by \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} by matrix, storing result in dst. Returns true if \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} transformed can be represented by another \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}. Returns false if matrix contains transformations that are not axis aligned.
+
+Asserts in debug builds if \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} equals dst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} specifying the transform \\
+\hline
+{\em dst} & \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to store the result \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if transformation succeeded.
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@RRect_transform}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+transform}} \mbox{\Hypertarget{class_sk_r_rect_a8134e65a1b54a58e9adbe23e11009cee}\label{class_sk_r_rect_a8134e65a1b54a58e9adbe23e11009cee}} 
+\index{SkRRect@{SkRRect}!width@{width}}
+\index{width@{width}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+R\+Rect\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns span on the x-\/axis. This does not check if result fits in 32-\/bit float; result may be infinity.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Right minus \mbox{\hyperlink{class_sk_r_rect_a68217d47bde6aef4ef6f4060420ae5db}{rect()}}.f\+Left 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a7316283e36f699d72b0df12150d52fb4}\label{class_sk_r_rect_a7316283e36f699d72b0df12150d52fb4}} 
+\index{SkRRect@{SkRRect}!writeToMemory@{writeToMemory}}
+\index{writeToMemory@{writeToMemory}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{writeToMemory()}{writeToMemory()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+R\+Rect\+::write\+To\+Memory (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer }\end{DoxyParamCaption}) const}
+
+Writes \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to buffer. Writes k\+Size\+In\+Memory bytes, and returns k\+Size\+In\+Memory, the number of bytes written.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & storage for \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes written, k\+Size\+In\+Memory
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@RRect_writeToMemory}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+R\+Rect\+\_\+write\+To\+Memory}} 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_sk_r_rect_a4fd1b0897c6d1fbecf6cbfe9e7ed55fa}\label{class_sk_r_rect_a4fd1b0897c6d1fbecf6cbfe9e7ed55fa}} 
+\index{SkRRect@{SkRRect}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns true if bounds and radii in a are not equal to bounds and radii in b.
+
+a and b are not equal if either contain NaN. a and b are equal if members contain zeroes with different signs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} bounds and radii to compare \\
+\hline
+{\em b} & \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} bounds and radii to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if members are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_r_rect_a3c0c4061b5318f3d0ad4edf28215c729}\label{class_sk_r_rect_a3c0c4061b5318f3d0ad4edf28215c729}} 
+\index{SkRRect@{SkRRect}!operator==@{operator==}}
+\index{operator==@{operator==}!SkRRect@{SkRRect}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Returns true if bounds and radii in a are equal to bounds and radii in b.
+
+a and b are not equal if either contain NaN. a and b are equal if members contain zeroes with different signs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} bounds and radii to compare \\
+\hline
+{\em b} & \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} bounds and radii to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if members are equal 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+R\+Rect.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+R\+Rect.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency}{}\doxysection{Steinberg\+::Vst\+::I\+Audio\+Presentation\+Latency Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency}\index{Steinberg::Vst::IAudioPresentationLatency@{Steinberg::Vst::IAudioPresentationLatency}}
+
+
+{\ttfamily \#include $<$ivstaudioprocessor.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Audio\+Presentation\+Latency\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency_a8947189e9c5d813afeb7391a6a3d1490}{set\+Audio\+Presentation\+Latency\+Samples}} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_ab6726c6370253c99cb4f6cc939870b02}{Bus\+Direction}} dir, int32 bus\+Index, uint32 latency\+In\+Samples)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency_a7662dfc5b1a5addae08d666030bc9a5e}\label{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency_a7662dfc5b1a5addae08d666030bc9a5e}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extended \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_audio_processor}{I\+Audio\+Processor}} interface for a component\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency}{Vst\+::\+I\+Audio\+Presentation\+Latency}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_audio_processor}{I\+Audio\+Processor}}\mbox{]}
+\item \mbox{[}released\+: 3.\+1.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+Inform the plug-\/in about how long from the moment of generation/acquiring (from file or from Input) it will take for its input to arrive, and how long it will take for its output to be presented (to output or to speaker).
+
+Note for Input Presentation Latency\+: when reading from file, the first plug-\/in will have an input presentation latency set to zero. When monitoring audio input from an audio device, the initial input latency is the input latency of the audio device itself.
+
+Note for Output Presentation Latency\+: when writing to a file, the last plug-\/in will have an output presentation latency set to zero. When the output of this plug-\/in is connected to an audio device, the initial output latency is the output latency of the audio device itself.
+
+A value of zero either means no latency or an unknown latency.
+
+Each plug-\/in adding a latency (returning a none zero value for \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_audio_processor_aeb7c703a3148633ea50b7d7d387d4e7b}{I\+Audio\+Processor\+::get\+Latency\+Samples}}) will modify the input presentation latency of the next plug-\/ins in the mixer routing graph and will modify the output presentation latency of the previous plug-\/ins.
+
+~\newline
+ ~\newline
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_audio_processor}{I\+Audio\+Processor}} 
+
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component}{I\+Component}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency_a8947189e9c5d813afeb7391a6a3d1490}\label{class_steinberg_1_1_vst_1_1_i_audio_presentation_latency_a8947189e9c5d813afeb7391a6a3d1490}} 
+\index{Steinberg::Vst::IAudioPresentationLatency@{Steinberg::Vst::IAudioPresentationLatency}!setAudioPresentationLatencySamples@{setAudioPresentationLatencySamples}}
+\index{setAudioPresentationLatencySamples@{setAudioPresentationLatencySamples}!Steinberg::Vst::IAudioPresentationLatency@{Steinberg::Vst::IAudioPresentationLatency}}
+\doxysubsubsection{\texorpdfstring{setAudioPresentationLatencySamples()}{setAudioPresentationLatencySamples()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Audio\+Presentation\+Latency\+::set\+Audio\+Presentation\+Latency\+Samples (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_ab6726c6370253c99cb4f6cc939870b02}{Bus\+Direction}}}]{dir,  }\item[{int32}]{bus\+Index,  }\item[{uint32}]{latency\+In\+Samples }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Informs the plug-\/in about the Audio Presentation Latency in samples for a given direction (k\+Input/k\+Output) and bus index. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstaudioprocessor.\+h\end{DoxyCompactItemize}

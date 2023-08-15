@@ -1,0 +1,16 @@
+Helper Class wrapping a V\+ST 3 plug-\/in to a V\+ST 2.\+4 plug-\/in\hypertarget{vst2xwrapper_VST2Introduction}{}\doxysection{Introduction}\label{vst2xwrapper_VST2Introduction}
+The V\+ST 3 S\+DK comes with a helper class which wraps one V\+ST 3 Audio Processor and Edit Controller to a V\+ST 2.\+x plug-\/in. ~\newline
+~\newline
+ \hypertarget{vst2xwrapper_VST2howdoesitwork}{}\doxysection{How does it work?}\label{vst2xwrapper_VST2howdoesitwork}
+You just need to add public.\+sdk/source/vst/vst2wrapper/vst2wrapper.sdk.\+cpp to your project and add the following code somewhere in your sources\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/vst/vst2wrapper/vst2wrapper.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\mbox{\hyperlink{class_audio_effect}{::AudioEffect}}* createEffectInstance (audioMasterCallback audioMaster)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} Steinberg::Vst::Vst2Wrapper::create (\mbox{\hyperlink{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}{GetPluginFactory}} (), kAudioProcessorCID, kVst2UniqueID, audioMaster);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

@@ -1,0 +1,140 @@
+\hypertarget{class_sk_random}{}\doxysection{Sk\+Random Class Reference}
+\label{class_sk_random}\index{SkRandom@{SkRandom}}
+
+
+{\ttfamily \#include $<$Sk\+Random.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_random_af3b94afc6a10e83df058cfb68eefae82}\label{class_sk_random_af3b94afc6a10e83df058cfb68eefae82}} 
+{\bfseries Sk\+Random} (uint32\+\_\+t seed)
+\item 
+\mbox{\Hypertarget{class_sk_random_a3250a7797475a8ac853b3218a5f3c47b}\label{class_sk_random_a3250a7797475a8ac853b3218a5f3c47b}} 
+{\bfseries Sk\+Random} (const \mbox{\hyperlink{class_sk_random}{Sk\+Random}} \&rand)
+\item 
+\mbox{\Hypertarget{class_sk_random_a34b5fea8c6a680df1ec526e44aaf476a}\label{class_sk_random_a34b5fea8c6a680df1ec526e44aaf476a}} 
+\mbox{\hyperlink{class_sk_random}{Sk\+Random}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_sk_random}{Sk\+Random}} \&rand)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_random_a0ee2b238ff494b4a112f3e24dc5a5545}{nextU}} ()
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_sk_random_a215b6c1babf20959b038e48da57b40e0}{nextS}} ()
+\item 
+float \mbox{\hyperlink{class_sk_random_a14ba3bcf45e39661e2339eb7174f56e2}{nextF}} ()
+\item 
+float \mbox{\hyperlink{class_sk_random_a97387c732b472d65a054c0a834a48451}{next\+RangeF}} (float min, float max)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_random_aeb9d317acfda3163278e88b25a5fdfb3}{next\+Bits}} (unsigned bit\+Count)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_random_ae15a41decb978adf69368c726976deeb}{next\+RangeU}} (uint32\+\_\+t min, uint32\+\_\+t max)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_random_a9451aca7f1321b480f0ab7970736b81c}{next\+U\+Less\+Than}} (uint32\+\_\+t count)
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_random_a5f4d709c8e2591e775759caf6bcaca5e}{next\+U\+Scalar1}} ()
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_random_a9352ead560855fad10bfdf6d664c22aa}{next\+Range\+Scalar}} (Sk\+Scalar min, Sk\+Scalar max)
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_random_ad4fe6f3e668eb45b8db918b4f98f3038}{next\+S\+Scalar1}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_random_a7f5ce2bf928ee20f826df0f4462a7531}{next\+Bool}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_random_a9f44858dd6ececffc49c45063167b846}{next\+Biased\+Bool}} (Sk\+Scalar fraction\+True)
+\item 
+void \mbox{\hyperlink{class_sk_random_aab52733085206f387e57ac3ecb309f78}{set\+Seed}} (uint32\+\_\+t seed)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class that implements pseudo random 32bit numbers using Marsaglia\textquotesingle{}s multiply-\/with-\/carry \char`\"{}mother of all\char`\"{} algorithm. Unlike rand(), this class holds its own state, so that multiple instances can be used with no side-\/effects.
+
+Has a large period and all bits are well-\/randomized. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_random_a9f44858dd6ececffc49c45063167b846}\label{class_sk_random_a9f44858dd6ececffc49c45063167b846}} 
+\index{SkRandom@{SkRandom}!nextBiasedBool@{nextBiasedBool}}
+\index{nextBiasedBool@{nextBiasedBool}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextBiasedBool()}{nextBiasedBool()}}
+{\footnotesize\ttfamily bool Sk\+Random\+::next\+Biased\+Bool (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{fraction\+True }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A biased version of \mbox{\hyperlink{class_sk_random_a7f5ce2bf928ee20f826df0f4462a7531}{next\+Bool()}}. \mbox{\Hypertarget{class_sk_random_aeb9d317acfda3163278e88b25a5fdfb3}\label{class_sk_random_aeb9d317acfda3163278e88b25a5fdfb3}} 
+\index{SkRandom@{SkRandom}!nextBits@{nextBits}}
+\index{nextBits@{nextBits}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextBits()}{nextBits()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Random\+::next\+Bits (\begin{DoxyParamCaption}\item[{unsigned}]{bit\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number, as an unsigned value of at most bit\+Count bits. 
+\begin{DoxyParams}{Parameters}
+{\em bit\+Count} & The maximum number of bits to be returned \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_random_a7f5ce2bf928ee20f826df0f4462a7531}\label{class_sk_random_a7f5ce2bf928ee20f826df0f4462a7531}} 
+\index{SkRandom@{SkRandom}!nextBool@{nextBool}}
+\index{nextBool@{nextBool}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextBool()}{nextBool()}}
+{\footnotesize\ttfamily bool Sk\+Random\+::next\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number as a bool. \mbox{\Hypertarget{class_sk_random_a14ba3bcf45e39661e2339eb7174f56e2}\label{class_sk_random_a14ba3bcf45e39661e2339eb7174f56e2}} 
+\index{SkRandom@{SkRandom}!nextF@{nextF}}
+\index{nextF@{nextF}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextF()}{nextF()}}
+{\footnotesize\ttfamily float Sk\+Random\+::nextF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns value \mbox{[}0...1) as an I\+E\+EE float \mbox{\Hypertarget{class_sk_random_a97387c732b472d65a054c0a834a48451}\label{class_sk_random_a97387c732b472d65a054c0a834a48451}} 
+\index{SkRandom@{SkRandom}!nextRangeF@{nextRangeF}}
+\index{nextRangeF@{nextRangeF}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextRangeF()}{nextRangeF()}}
+{\footnotesize\ttfamily float Sk\+Random\+::next\+RangeF (\begin{DoxyParamCaption}\item[{float}]{min,  }\item[{float}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns value \mbox{[}min...max) as a float \mbox{\Hypertarget{class_sk_random_a9352ead560855fad10bfdf6d664c22aa}\label{class_sk_random_a9352ead560855fad10bfdf6d664c22aa}} 
+\index{SkRandom@{SkRandom}!nextRangeScalar@{nextRangeScalar}}
+\index{nextRangeScalar@{nextRangeScalar}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextRangeScalar()}{nextRangeScalar()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+Random\+::next\+Range\+Scalar (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{min,  }\item[{Sk\+Scalar}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number expressed as a Sk\+Scalar in the range \mbox{[}min..max). \mbox{\Hypertarget{class_sk_random_ae15a41decb978adf69368c726976deeb}\label{class_sk_random_ae15a41decb978adf69368c726976deeb}} 
+\index{SkRandom@{SkRandom}!nextRangeU@{nextRangeU}}
+\index{nextRangeU@{nextRangeU}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextRangeU()}{nextRangeU()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Random\+::next\+RangeU (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{min,  }\item[{uint32\+\_\+t}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random unsigned number, mapped to lie within \mbox{[}min, max\mbox{]} inclusive. \mbox{\Hypertarget{class_sk_random_a215b6c1babf20959b038e48da57b40e0}\label{class_sk_random_a215b6c1babf20959b038e48da57b40e0}} 
+\index{SkRandom@{SkRandom}!nextS@{nextS}}
+\index{nextS@{nextS}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextS()}{nextS()}}
+{\footnotesize\ttfamily int32\+\_\+t Sk\+Random\+::nextS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number as a signed 32bit value. \mbox{\Hypertarget{class_sk_random_ad4fe6f3e668eb45b8db918b4f98f3038}\label{class_sk_random_ad4fe6f3e668eb45b8db918b4f98f3038}} 
+\index{SkRandom@{SkRandom}!nextSScalar1@{nextSScalar1}}
+\index{nextSScalar1@{nextSScalar1}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextSScalar1()}{nextSScalar1()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+Random\+::next\+S\+Scalar1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number expressed as a Sk\+Scalar in the range \mbox{[}-\/S\+K\+\_\+\+Scalar1..S\+K\+\_\+\+Scalar1). \mbox{\Hypertarget{class_sk_random_a0ee2b238ff494b4a112f3e24dc5a5545}\label{class_sk_random_a0ee2b238ff494b4a112f3e24dc5a5545}} 
+\index{SkRandom@{SkRandom}!nextU@{nextU}}
+\index{nextU@{nextU}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextU()}{nextU()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Random\+::nextU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number as an unsigned 32bit value. \mbox{\Hypertarget{class_sk_random_a9451aca7f1321b480f0ab7970736b81c}\label{class_sk_random_a9451aca7f1321b480f0ab7970736b81c}} 
+\index{SkRandom@{SkRandom}!nextULessThan@{nextULessThan}}
+\index{nextULessThan@{nextULessThan}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextULessThan()}{nextULessThan()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Random\+::next\+U\+Less\+Than (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random unsigned number, mapped to lie within \mbox{[}0, count). \mbox{\Hypertarget{class_sk_random_a5f4d709c8e2591e775759caf6bcaca5e}\label{class_sk_random_a5f4d709c8e2591e775759caf6bcaca5e}} 
+\index{SkRandom@{SkRandom}!nextUScalar1@{nextUScalar1}}
+\index{nextUScalar1@{nextUScalar1}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{nextUScalar1()}{nextUScalar1()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+Random\+::next\+U\+Scalar1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next pseudo random number expressed as a Sk\+Scalar in the range \mbox{[}0..S\+K\+\_\+\+Scalar1). \mbox{\Hypertarget{class_sk_random_aab52733085206f387e57ac3ecb309f78}\label{class_sk_random_aab52733085206f387e57ac3ecb309f78}} 
+\index{SkRandom@{SkRandom}!setSeed@{setSeed}}
+\index{setSeed@{setSeed}!SkRandom@{SkRandom}}
+\doxysubsubsection{\texorpdfstring{setSeed()}{setSeed()}}
+{\footnotesize\ttfamily void Sk\+Random\+::set\+Seed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Reset the random object. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/utils/Sk\+Random.\+h\end{DoxyCompactItemize}

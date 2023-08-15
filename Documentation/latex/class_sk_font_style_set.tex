@@ -1,0 +1,53 @@
+\hypertarget{class_sk_font_style_set}{}\doxysection{Sk\+Font\+Style\+Set Class Reference}
+\label{class_sk_font_style_set}\index{SkFontStyleSet@{SkFontStyleSet}}
+Inheritance diagram for Sk\+Font\+Style\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sk_font_style_set}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_font_style_set_aa1546d42f8eccc999ad7ba388b2a34f3}\label{class_sk_font_style_set_aa1546d42f8eccc999ad7ba388b2a34f3}} 
+virtual int {\bfseries count} ()=0
+\item 
+\mbox{\Hypertarget{class_sk_font_style_set_af08b7ecdcf572d69869f8c472043d37a}\label{class_sk_font_style_set_af08b7ecdcf572d69869f8c472043d37a}} 
+virtual void {\bfseries get\+Style} (int index, \mbox{\hyperlink{class_sk_font_style}{Sk\+Font\+Style}} $\ast$, \mbox{\hyperlink{class_sk_string}{Sk\+String}} $\ast$style)=0
+\item 
+\mbox{\Hypertarget{class_sk_font_style_set_a5e960ec9a33fdb05aef51e29f65ed507}\label{class_sk_font_style_set_a5e960ec9a33fdb05aef51e29f65ed507}} 
+virtual \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $\ast$ {\bfseries create\+Typeface} (int index)=0
+\item 
+\mbox{\Hypertarget{class_sk_font_style_set_a2002708fa21612f4bb451a55a2d25dd5}\label{class_sk_font_style_set_a2002708fa21612f4bb451a55a2d25dd5}} 
+virtual \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $\ast$ {\bfseries match\+Style} (const \mbox{\hyperlink{class_sk_font_style}{Sk\+Font\+Style}} \&pattern)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_font_style_set_aff89ae6398d3ca8dbca7802db3312c95}\label{class_sk_font_style_set_aff89ae6398d3ca8dbca7802db3312c95}} 
+static \mbox{\hyperlink{class_sk_font_style_set}{Sk\+Font\+Style\+Set}} $\ast$ {\bfseries Create\+Empty} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $\ast$ \mbox{\hyperlink{class_sk_font_style_set_a4891f98ea3f2bf6b6e5b8e78dcd32de5}{match\+Style\+C\+S\+S3}} (const \mbox{\hyperlink{class_sk_font_style}{Sk\+Font\+Style}} \&pattern)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_font_style_set_a4891f98ea3f2bf6b6e5b8e78dcd32de5}\label{class_sk_font_style_set_a4891f98ea3f2bf6b6e5b8e78dcd32de5}} 
+\index{SkFontStyleSet@{SkFontStyleSet}!matchStyleCSS3@{matchStyleCSS3}}
+\index{matchStyleCSS3@{matchStyleCSS3}!SkFontStyleSet@{SkFontStyleSet}}
+\doxysubsubsection{\texorpdfstring{matchStyleCSS3()}{matchStyleCSS3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $\ast$ Sk\+Font\+Style\+Set\+::match\+Style\+C\+S\+S3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_font_style}{Sk\+Font\+Style}} \&}]{pattern }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Width has the greatest priority. If the value of pattern.\+width is 5 (normal) or less, narrower width values are checked first, then wider values. If the value of pattern.\+width is greater than 5 (normal), wider values are checked first, followed by narrower values.
+
+Italic/\+Oblique has the next highest priority. If italic requested and there is some italic font, use it. If oblique requested and there is some oblique font, use it. If italic requested and there is some oblique font, use it. If oblique requested and there is some italic font, use it.
+
+Exact match. If pattern.\+weight $<$ 400, weights below pattern.\+weight are checked in descending order followed by weights above pattern.\+weight in ascending order until a match is found. If pattern.\+weight $>$ 500, weights above pattern.\+weight are checked in ascending order followed by weights below pattern.\+weight in descending order until a match is found. If pattern.\+weight is 400, 500 is checked first and then the rule for pattern.\+weight $<$ 400 is used. If pattern.\+weight is 500, 400 is checked first and then the rule for pattern.\+weight $<$ 400 is used. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Font\+Mgr.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Font\+Mgr.\+cpp\end{DoxyCompactItemize}

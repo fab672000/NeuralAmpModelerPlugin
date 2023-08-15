@@ -1,0 +1,86 @@
+\hypertarget{class_v_s_t3_1_1_hosting_1_1_module}{}\doxysection{V\+S\+T3\+::Hosting\+::Module Class Reference}
+\label{class_v_s_t3_1_1_hosting_1_1_module}\index{VST3::Hosting::Module@{VST3::Hosting::Module}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_v_s_t3_1_1_hosting_1_1_module_1_1_snapshot}{Snapshot}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a3b6bbb0007f160e73c8354680a7ad798}\label{class_v_s_t3_1_1_hosting_1_1_module_a3b6bbb0007f160e73c8354680a7ad798}} 
+using {\bfseries Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_s_t3_1_1_hosting_1_1_module}{Module}} $>$
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_ad70eaa5af0f1c154c3dce6b04d8fa8f3}\label{class_v_s_t3_1_1_hosting_1_1_module_ad70eaa5af0f1c154c3dce6b04d8fa8f3}} 
+using {\bfseries Path\+List} = std\+::vector$<$ std\+::string $>$
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a97467f4017537f7bdaec0fb8818a85f6}\label{class_v_s_t3_1_1_hosting_1_1_module_a97467f4017537f7bdaec0fb8818a85f6}} 
+using {\bfseries Snapshot\+List} = std\+::vector$<$ \mbox{\hyperlink{struct_v_s_t3_1_1_hosting_1_1_module_1_1_snapshot}{Snapshot}} $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_af584fd58a8cad87ca0aa7bd23cbd604f}\label{class_v_s_t3_1_1_hosting_1_1_module_af584fd58a8cad87ca0aa7bd23cbd604f}} 
+const std\+::string \& {\bfseries get\+Name} () const noexcept
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a5d62ff66ea5171dcfb274ffe3c29e181}\label{class_v_s_t3_1_1_hosting_1_1_module_a5d62ff66ea5171dcfb274ffe3c29e181}} 
+const std\+::string \& {\bfseries get\+Path} () const noexcept
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a84c3280dc295d6af2eaf20efebe8e6be}\label{class_v_s_t3_1_1_hosting_1_1_module_a84c3280dc295d6af2eaf20efebe8e6be}} 
+const \mbox{\hyperlink{class_v_s_t3_1_1_hosting_1_1_plugin_factory}{Plugin\+Factory}} \& {\bfseries get\+Factory} () const noexcept
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a5401406616c64e80617f7e27fa9850b0}\label{class_v_s_t3_1_1_hosting_1_1_module_a5401406616c64e80617f7e27fa9850b0}} 
+bool {\bfseries is\+Bundle} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_ae791a0d74baf21196c831c7328b84b69}\label{class_v_s_t3_1_1_hosting_1_1_module_ae791a0d74baf21196c831c7328b84b69}} 
+static Ptr {\bfseries create} (const std\+::string \&path, std\+::string \&error\+Description)
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a1ff808dfaf2643b2a1c0a52a51b64e14}\label{class_v_s_t3_1_1_hosting_1_1_module_a1ff808dfaf2643b2a1c0a52a51b64e14}} 
+static Path\+List {\bfseries get\+Module\+Paths} ()
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a5d073717674e367e89f39645643b50b5}\label{class_v_s_t3_1_1_hosting_1_1_module_a5d073717674e367e89f39645643b50b5}} 
+static Snapshot\+List {\bfseries get\+Snapshots} (const std\+::string \&module\+Path)
+\item 
+static \mbox{\hyperlink{struct_v_s_t3_1_1_optional}{Optional}}$<$ std\+::string $>$ \mbox{\hyperlink{class_v_s_t3_1_1_hosting_1_1_module_a64be0db355ffcd9f466842ff5724199e}{get\+Module\+Info\+Path}} (const std\+::string \&module\+Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_af4173ac8de4e3d1ee564ed909448e2e8}\label{class_v_s_t3_1_1_hosting_1_1_module_af4173ac8de4e3d1ee564ed909448e2e8}} 
+virtual bool {\bfseries load} (const std\+::string \&path, std\+::string \&error\+Description)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a050fb801c957029a82ed9d4cf513dbbd}\label{class_v_s_t3_1_1_hosting_1_1_module_a050fb801c957029a82ed9d4cf513dbbd}} 
+\mbox{\hyperlink{class_v_s_t3_1_1_hosting_1_1_plugin_factory}{Plugin\+Factory}} {\bfseries factory} \{nullptr\}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_aadc67f80d19c01cb7ab531300a07a421}\label{class_v_s_t3_1_1_hosting_1_1_module_aadc67f80d19c01cb7ab531300a07a421}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a6577418017dd290d5781d4b38b462c63}\label{class_v_s_t3_1_1_hosting_1_1_module_a6577418017dd290d5781d4b38b462c63}} 
+std\+::string {\bfseries path}
+\item 
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a91c42c52cba627ffddf902c4a7a3f3a3}\label{class_v_s_t3_1_1_hosting_1_1_module_a91c42c52cba627ffddf902c4a7a3f3a3}} 
+bool {\bfseries has\+Bundle\+Structure} \{true\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_s_t3_1_1_hosting_1_1_module_a64be0db355ffcd9f466842ff5724199e}\label{class_v_s_t3_1_1_hosting_1_1_module_a64be0db355ffcd9f466842ff5724199e}} 
+\index{VST3::Hosting::Module@{VST3::Hosting::Module}!getModuleInfoPath@{getModuleInfoPath}}
+\index{getModuleInfoPath@{getModuleInfoPath}!VST3::Hosting::Module@{VST3::Hosting::Module}}
+\doxysubsubsection{\texorpdfstring{getModuleInfoPath()}{getModuleInfoPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_s_t3_1_1_optional}{Optional}}$<$ std\+::string $>$ V\+S\+T3\+::\+Hosting\+::\+Module\+::get\+Module\+Info\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{module\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get the path to the module info json file if it exists 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/module.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/module\+\_\+linux.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/module\+\_\+mac.\+mm\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/module\+\_\+win32.\+cpp\end{DoxyCompactItemize}

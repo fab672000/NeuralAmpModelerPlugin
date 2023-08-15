@@ -1,0 +1,100 @@
+\hypertarget{struct_u_c_p_trie}{}\doxysection{U\+C\+P\+Trie Struct Reference}
+\label{struct_u_c_p_trie}\index{UCPTrie@{UCPTrie}}
+
+
+{\ttfamily \#include $<$ucptrie.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_a09092e974ca518f5bea5a2d690b10278}\label{struct_u_c_p_trie_a09092e974ca518f5bea5a2d690b10278}} 
+const uint16\+\_\+t $\ast$ {\bfseries index}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_ae5ad7373811829ce4f15c2ed2fb8f258}\label{struct_u_c_p_trie_ae5ad7373811829ce4f15c2ed2fb8f258}} 
+\mbox{\hyperlink{union_u_c_p_trie_data}{U\+C\+P\+Trie\+Data}} {\bfseries data}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_a28f8d1503f974d20ff3e1e84d84e5681}\label{struct_u_c_p_trie_a28f8d1503f974d20ff3e1e84d84e5681}} 
+int32\+\_\+t {\bfseries index\+Length}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_a0bc7c7126ee2ba7c5c8478dc75b35c49}\label{struct_u_c_p_trie_a0bc7c7126ee2ba7c5c8478dc75b35c49}} 
+int32\+\_\+t {\bfseries data\+Length}
+\item 
+\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} \mbox{\hyperlink{struct_u_c_p_trie_a225991d12d645b6b31cd2a0df37f8d45}{high\+Start}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_c_p_trie_a8561b1eaad8ae4fdce031fa7465dcece}{shifted12\+High\+Start}}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_ab43b7758988c13571b36d6b9190f1c48}\label{struct_u_c_p_trie_ab43b7758988c13571b36d6b9190f1c48}} 
+int8\+\_\+t {\bfseries type}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_a40ea741e189c8d0f8645d9c7c9dee35c}\label{struct_u_c_p_trie_a40ea741e189c8d0f8645d9c7c9dee35c}} 
+int8\+\_\+t {\bfseries value\+Width}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_u_c_p_trie_ad416be420eb8d2add61553a5ca65173f}{reserved32}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_c_p_trie_ae6f8f5ea4836ae42e18cbc75c6a20294}{reserved16}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_u_c_p_trie_a583134f236b4b86392f501ee0af13484}{index3\+Null\+Offset}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{struct_u_c_p_trie_a0cbc612f0d8db1a57ccb3bd017636410}{data\+Null\+Offset}}
+\item 
+\mbox{\Hypertarget{struct_u_c_p_trie_a064a3a055ddfc8d7506054632760e38f}\label{struct_u_c_p_trie_a064a3a055ddfc8d7506054632760e38f}} 
+uint32\+\_\+t {\bfseries null\+Value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Immutable Unicode code point trie structure. Fast, reasonably compact, map from Unicode code points (U+0000..U+10\+F\+F\+FF) to integer values. For details see \href{http://site.icu-project.org/design/struct/utrie}{\texttt{ http\+://site.\+icu-\/project.\+org/design/struct/utrie}}
+
+Do not access \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} fields directly; use public functions and macros. Functions are easy to use\+: They support all trie types and value widths.
+
+When performance is really important, macros provide faster access. Most macros are specific to either \char`\"{}fast\char`\"{} or \char`\"{}small\char`\"{} tries, see U\+C\+P\+Trie\+Type. There are \char`\"{}fast\char`\"{} macros for special optimized use cases.
+
+The macros will return bogus values, or may crash, if used on the wrong type or value width.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{umutablecptrie_8h_ad8945cf34ca9d40596a66a1395baa19b}{U\+Mutable\+C\+P\+Trie}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_u_c_p_trie_a0cbc612f0d8db1a57ccb3bd017636410}\label{struct_u_c_p_trie_a0cbc612f0d8db1a57ccb3bd017636410}} 
+\index{UCPTrie@{UCPTrie}!dataNullOffset@{dataNullOffset}}
+\index{dataNullOffset@{dataNullOffset}!UCPTrie@{UCPTrie}}
+\doxysubsubsection{\texorpdfstring{dataNullOffset}{dataNullOffset}}
+{\footnotesize\ttfamily int32\+\_\+t U\+C\+P\+Trie\+::data\+Null\+Offset}
+
+Internal data null block offset, not shifted. Set to an impossibly high value (e.\+g., 0xfffff) if there is no dedicated data null block. \mbox{\Hypertarget{struct_u_c_p_trie_a225991d12d645b6b31cd2a0df37f8d45}\label{struct_u_c_p_trie_a225991d12d645b6b31cd2a0df37f8d45}} 
+\index{UCPTrie@{UCPTrie}!highStart@{highStart}}
+\index{highStart@{highStart}!UCPTrie@{UCPTrie}}
+\doxysubsubsection{\texorpdfstring{highStart}{highStart}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+C\+P\+Trie\+::high\+Start}
+
+Start of the last range which ends at U+10\+F\+F\+FF. \mbox{\Hypertarget{struct_u_c_p_trie_a583134f236b4b86392f501ee0af13484}\label{struct_u_c_p_trie_a583134f236b4b86392f501ee0af13484}} 
+\index{UCPTrie@{UCPTrie}!index3NullOffset@{index3NullOffset}}
+\index{index3NullOffset@{index3NullOffset}!UCPTrie@{UCPTrie}}
+\doxysubsubsection{\texorpdfstring{index3NullOffset}{index3NullOffset}}
+{\footnotesize\ttfamily uint16\+\_\+t U\+C\+P\+Trie\+::index3\+Null\+Offset}
+
+Internal index-\/3 null block offset. Set to an impossibly high value (e.\+g., 0xffff) if there is no dedicated index-\/3 null block. \mbox{\Hypertarget{struct_u_c_p_trie_ae6f8f5ea4836ae42e18cbc75c6a20294}\label{struct_u_c_p_trie_ae6f8f5ea4836ae42e18cbc75c6a20294}} 
+\index{UCPTrie@{UCPTrie}!reserved16@{reserved16}}
+\index{reserved16@{reserved16}!UCPTrie@{UCPTrie}}
+\doxysubsubsection{\texorpdfstring{reserved16}{reserved16}}
+{\footnotesize\ttfamily uint16\+\_\+t U\+C\+P\+Trie\+::reserved16}
+
+padding/reserved \mbox{\Hypertarget{struct_u_c_p_trie_ad416be420eb8d2add61553a5ca65173f}\label{struct_u_c_p_trie_ad416be420eb8d2add61553a5ca65173f}} 
+\index{UCPTrie@{UCPTrie}!reserved32@{reserved32}}
+\index{reserved32@{reserved32}!UCPTrie@{UCPTrie}}
+\doxysubsubsection{\texorpdfstring{reserved32}{reserved32}}
+{\footnotesize\ttfamily uint32\+\_\+t U\+C\+P\+Trie\+::reserved32}
+
+padding/reserved \mbox{\Hypertarget{struct_u_c_p_trie_a8561b1eaad8ae4fdce031fa7465dcece}\label{struct_u_c_p_trie_a8561b1eaad8ae4fdce031fa7465dcece}} 
+\index{UCPTrie@{UCPTrie}!shifted12HighStart@{shifted12HighStart}}
+\index{shifted12HighStart@{shifted12HighStart}!UCPTrie@{UCPTrie}}
+\doxysubsubsection{\texorpdfstring{shifted12HighStart}{shifted12HighStart}}
+{\footnotesize\ttfamily uint16\+\_\+t U\+C\+P\+Trie\+::shifted12\+High\+Start}
+
+high\+Start$>$$>$12 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/\mbox{\hyperlink{ucptrie_8h}{ucptrie.\+h}}\end{DoxyCompactItemize}

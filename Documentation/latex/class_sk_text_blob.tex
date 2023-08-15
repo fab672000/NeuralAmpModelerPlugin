@@ -1,0 +1,293 @@
+\hypertarget{class_sk_text_blob}{}\doxysection{Sk\+Text\+Blob Class Reference}
+\label{class_sk_text_blob}\index{SkTextBlob@{SkTextBlob}}
+
+
+{\ttfamily \#include $<$Sk\+Text\+Blob.\+h$>$}
+
+Inheritance diagram for Sk\+Text\+Blob\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_text_blob}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_text_blob_1_1_iter}{Iter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_ac56455825793eb4218218f499d6b191d}\label{class_sk_text_blob_ac56455825793eb4218218f499d6b191d}} 
+enum {\bfseries Glyph\+Positioning} \+: uint8\+\_\+t 
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_text_blob_a255b818b7dd1c9f3868838e96b9e2b62}{bounds}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_text_blob_a4399378562e7e10023e28fa40bf21a98}{unique\+ID}} () const
+\item 
+int \mbox{\hyperlink{class_sk_text_blob_a1fe6827517f45d9b478a950896e37bce}{get\+Intercepts}} (const Sk\+Scalar \mbox{\hyperlink{class_sk_text_blob_a255b818b7dd1c9f3868838e96b9e2b62}{bounds}}\mbox{[}2\mbox{]}, Sk\+Scalar intervals\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$paint=nullptr) const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_text_blob_af691ea8b0518dd6b88aa474be5fc672c}{serialize}} (const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} \&procs, void $\ast$memory, size\+\_\+t memory\+\_\+size) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_sk_text_blob_a8420584ca1bbcda00ba8adea887a503b}{serialize}} (const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} \&procs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ \mbox{\hyperlink{class_sk_text_blob_a5fe0af590018e2ecb3759437f11bdbd7}{Make\+From\+Text}} (const void $\ast$text, size\+\_\+t byte\+Length, const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&font, Sk\+Text\+Encoding encoding=Sk\+Text\+Encoding\+::k\+U\+T\+F8)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ \mbox{\hyperlink{class_sk_text_blob_a4277427f8404befd5f1c20dbb6a4f90d}{Make\+From\+String}} (const char $\ast$string, const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&font, Sk\+Text\+Encoding encoding=Sk\+Text\+Encoding\+::k\+U\+T\+F8)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ \mbox{\hyperlink{class_sk_text_blob_a484897154963377035e0353392b78bd8}{Make\+From\+Pos\+TextH}} (const void $\ast$text, size\+\_\+t byte\+Length, const Sk\+Scalar xpos\mbox{[}$\,$\mbox{]}, Sk\+Scalar constY, const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&font, Sk\+Text\+Encoding encoding=Sk\+Text\+Encoding\+::k\+U\+T\+F8)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ \mbox{\hyperlink{class_sk_text_blob_ac29ed921c93e2167c453bb2b4eaf4682}{Make\+From\+Pos\+Text}} (const void $\ast$text, size\+\_\+t byte\+Length, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pos\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&font, Sk\+Text\+Encoding encoding=Sk\+Text\+Encoding\+::k\+U\+T\+F8)
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_aecab4c3767b14fdce37ccf0da40af8b4}\label{class_sk_text_blob_aecab4c3767b14fdce37ccf0da40af8b4}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ {\bfseries Make\+From\+R\+S\+Xform} (const void $\ast$text, size\+\_\+t byte\+Length, const \mbox{\hyperlink{struct_sk_r_s_xform}{Sk\+R\+S\+Xform}} xform\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&font, Sk\+Text\+Encoding encoding=Sk\+Text\+Encoding\+::k\+U\+T\+F8)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ \mbox{\hyperlink{class_sk_text_blob_adfc714a79c066b43c2497ba8efa30cb3}{Deserialize}} (const void $\ast$data, size\+\_\+t size, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} \&procs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_a9c1d0b709122e0c6d269803fb37eb8d3}\label{class_sk_text_blob_a9c1d0b709122e0c6d269803fb37eb8d3}} 
+class {\bfseries Sk\+N\+V\+Ref\+Cnt$<$ Sk\+Text\+Blob $>$}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_a5646d4e5dbf30c9760e075696c164b0a}\label{class_sk_text_blob_a5646d4e5dbf30c9760e075696c164b0a}} 
+class {\bfseries Sk\+Glyph\+Run\+List}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_ab6978aaa2a7b73768b7e98c3031f63b3}\label{class_sk_text_blob_ab6978aaa2a7b73768b7e98c3031f63b3}} 
+class {\bfseries Gr\+Text\+Blob\+Cache}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_a4a285323122ed14ceb17eb46d1274d61}\label{class_sk_text_blob_a4a285323122ed14ceb17eb46d1274d61}} 
+class {\bfseries Sk\+Text\+Blob\+Builder}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_a2520472f5a1f11e5a31c51f2a1d5b337}\label{class_sk_text_blob_a2520472f5a1f11e5a31c51f2a1d5b337}} 
+class {\bfseries Sk\+Text\+Blob\+Priv}
+\item 
+\mbox{\Hypertarget{class_sk_text_blob_a3477c7ca8c413108d71e1b5f53427fda}\label{class_sk_text_blob_a3477c7ca8c413108d71e1b5f53427fda}} 
+class {\bfseries Sk\+Text\+Blob\+Run\+Iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} combines multiple text runs into an immutable container. Each text run consists of glyphs, \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}}, and position. Only parts of \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} related to fonts and text rendering are used by run. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_text_blob_a255b818b7dd1c9f3868838e96b9e2b62}\label{class_sk_text_blob_a255b818b7dd1c9f3868838e96b9e2b62}} 
+\index{SkTextBlob@{SkTextBlob}!bounds@{bounds}}
+\index{bounds@{bounds}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{bounds()}{bounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+Text\+Blob\+::bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns conservative bounding box. Uses \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} associated with each glyph to determine glyph bounds, and unions all bounds. Returned bounds may be larger than the bounds of all glyphs in runs.
+
+\begin{DoxyReturn}{Returns}
+conservative bounding box 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_adfc714a79c066b43c2497ba8efa30cb3}\label{class_sk_text_blob_adfc714a79c066b43c2497ba8efa30cb3}} 
+\index{SkTextBlob@{SkTextBlob}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ Sk\+Text\+Blob\+::\+Deserialize (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} \&}]{procs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Recreates \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} that was serialized into data. Returns constructed \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} if successful; otherwise, returns nullptr. Fails if size is smaller than required data length, or if data does not permit constructing valid \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}}.
+
+procs.\+f\+Typeface\+Proc permits supplying a custom function to decode \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}. If procs.\+f\+Typeface\+Proc is nullptr, default decoding is used. procs.\+f\+Typeface\+Ctx may be used to provide user context to procs.\+f\+Typeface\+Proc; procs.\+f\+Typeface\+Proc is called with a pointer to \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} data, data byte length, and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer for serial data \\
+\hline
+{\em size} & size of data \\
+\hline
+{\em procs} & custom serial data decoders; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} constructed from data in memory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_a1fe6827517f45d9b478a950896e37bce}\label{class_sk_text_blob_a1fe6827517f45d9b478a950896e37bce}} 
+\index{SkTextBlob@{SkTextBlob}!getIntercepts@{getIntercepts}}
+\index{getIntercepts@{getIntercepts}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{getIntercepts()}{getIntercepts()}}
+{\footnotesize\ttfamily int Sk\+Text\+Blob\+::get\+Intercepts (\begin{DoxyParamCaption}\item[{const Sk\+Scalar}]{bounds\mbox{[}2\mbox{]},  }\item[{Sk\+Scalar}]{intervals\mbox{[}$\,$\mbox{]},  }\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$}]{paint = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Returns the number of intervals that intersect bounds. bounds describes a pair of lines parallel to the text advance. The return count is zero or a multiple of two, and is at most twice the number of glyphs in the the blob.
+
+Pass nullptr for intervals to determine the size of the interval array.
+
+Runs within the blob that contain \mbox{\hyperlink{struct_sk_r_s_xform}{Sk\+R\+S\+Xform}} are ignored when computing intercepts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & lower and upper line parallel to the advance \\
+\hline
+{\em intervals} & returned intersections; may be nullptr \\
+\hline
+{\em paint} & specifies stroking, \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} that affects the result; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of intersections; may be zero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_ac29ed921c93e2167c453bb2b4eaf4682}\label{class_sk_text_blob_ac29ed921c93e2167c453bb2b4eaf4682}} 
+\index{SkTextBlob@{SkTextBlob}!MakeFromPosText@{MakeFromPosText}}
+\index{MakeFromPosText@{MakeFromPosText}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{MakeFromPosText()}{MakeFromPosText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ Sk\+Text\+Blob\+::\+Make\+From\+Pos\+Text (\begin{DoxyParamCaption}\item[{const void $\ast$}]{text,  }\item[{size\+\_\+t}]{byte\+Length,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{pos\mbox{[}$\,$\mbox{]},  }\item[{const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&}]{font,  }\item[{Sk\+Text\+Encoding}]{encoding = {\ttfamily SkTextEncoding\+:\+:kUTF8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a textblob built from a single run of text with positions. This is equivalent to using \mbox{\hyperlink{class_sk_text_blob_builder}{Sk\+Text\+Blob\+Builder}} and calling alloc\+Run\+Pos(). Returns nullptr if byte\+Length is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & character code points or glyphs drawn (based on encoding) \\
+\hline
+{\em byte\+Length} & byte length of text array \\
+\hline
+{\em pos} & array of positions, must contain values for all of the character points. \\
+\hline
+{\em font} & \mbox{\hyperlink{class_sk_font}{Sk\+Font}} used for this run \\
+\hline
+{\em encoding} & specifies the encoding of the text array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new textblob or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_a484897154963377035e0353392b78bd8}\label{class_sk_text_blob_a484897154963377035e0353392b78bd8}} 
+\index{SkTextBlob@{SkTextBlob}!MakeFromPosTextH@{MakeFromPosTextH}}
+\index{MakeFromPosTextH@{MakeFromPosTextH}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{MakeFromPosTextH()}{MakeFromPosTextH()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ Sk\+Text\+Blob\+::\+Make\+From\+Pos\+TextH (\begin{DoxyParamCaption}\item[{const void $\ast$}]{text,  }\item[{size\+\_\+t}]{byte\+Length,  }\item[{const Sk\+Scalar}]{xpos\mbox{[}$\,$\mbox{]},  }\item[{Sk\+Scalar}]{constY,  }\item[{const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&}]{font,  }\item[{Sk\+Text\+Encoding}]{encoding = {\ttfamily SkTextEncoding\+:\+:kUTF8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a textblob built from a single run of text with x-\/positions and a single y value. This is equivalent to using \mbox{\hyperlink{class_sk_text_blob_builder}{Sk\+Text\+Blob\+Builder}} and calling alloc\+Run\+Pos\+H(). Returns nullptr if byte\+Length is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & character code points or glyphs drawn (based on encoding) \\
+\hline
+{\em byte\+Length} & byte length of text array \\
+\hline
+{\em xpos} & array of x-\/positions, must contain values for all of the character points. \\
+\hline
+{\em constY} & shared y-\/position for each character point, to be paired with each xpos. \\
+\hline
+{\em font} & \mbox{\hyperlink{class_sk_font}{Sk\+Font}} used for this run \\
+\hline
+{\em encoding} & specifies the encoding of the text array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new textblob or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_a4277427f8404befd5f1c20dbb6a4f90d}\label{class_sk_text_blob_a4277427f8404befd5f1c20dbb6a4f90d}} 
+\index{SkTextBlob@{SkTextBlob}!MakeFromString@{MakeFromString}}
+\index{MakeFromString@{MakeFromString}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{MakeFromString()}{MakeFromString()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}}$>$ Sk\+Text\+Blob\+::\+Make\+From\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{string,  }\item[{const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&}]{font,  }\item[{Sk\+Text\+Encoding}]{encoding = {\ttfamily SkTextEncoding\+:\+:kUTF8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} with a single run. string meaning depends on Sk\+Text\+Encoding; by default, string is encoded as U\+T\+F-\/8.
+
+font contains attributes used to define the run text.
+
+When encoding is Sk\+Text\+Encoding\+::k\+U\+T\+F8, Sk\+Text\+Encoding\+::k\+U\+T\+F16, or Sk\+Text\+Encoding\+::k\+U\+T\+F32, this function uses the default character-\/to-\/glyph mapping from the \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} in font. It does not perform typeface fallback for characters not found in the \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}. It does not perform kerning or other complex shaping; glyphs are positioned based on their default advances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & character code points or glyphs drawn \\
+\hline
+{\em font} & text size, typeface, text scale, and so on, used to draw \\
+\hline
+{\em encoding} & text encoding used in the text array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} constructed from one run 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_a5fe0af590018e2ecb3759437f11bdbd7}\label{class_sk_text_blob_a5fe0af590018e2ecb3759437f11bdbd7}} 
+\index{SkTextBlob@{SkTextBlob}!MakeFromText@{MakeFromText}}
+\index{MakeFromText@{MakeFromText}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{MakeFromText()}{MakeFromText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} $>$ Sk\+Text\+Blob\+::\+Make\+From\+Text (\begin{DoxyParamCaption}\item[{const void $\ast$}]{text,  }\item[{size\+\_\+t}]{byte\+Length,  }\item[{const \mbox{\hyperlink{class_sk_font}{Sk\+Font}} \&}]{font,  }\item[{Sk\+Text\+Encoding}]{encoding = {\ttfamily SkTextEncoding\+:\+:kUTF8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} with a single run.
+
+font contains attributes used to define the run text.
+
+When encoding is Sk\+Text\+Encoding\+::k\+U\+T\+F8, Sk\+Text\+Encoding\+::k\+U\+T\+F16, or Sk\+Text\+Encoding\+::k\+U\+T\+F32, this function uses the default character-\/to-\/glyph mapping from the \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} in font. It does not perform typeface fallback for characters not found in the \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}. It does not perform kerning or other complex shaping; glyphs are positioned based on their default advances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & character code points or glyphs drawn \\
+\hline
+{\em byte\+Length} & byte length of text array \\
+\hline
+{\em font} & text size, typeface, text scale, and so on, used to draw \\
+\hline
+{\em encoding} & text encoding used in the text array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} constructed from one run 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_text_blob_a8420584ca1bbcda00ba8adea887a503b}\label{class_sk_text_blob_a8420584ca1bbcda00ba8adea887a503b}} 
+\index{SkTextBlob@{SkTextBlob}!serialize@{serialize}}
+\index{serialize@{serialize}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ Sk\+Text\+Blob\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} \&}]{procs }\end{DoxyParamCaption}) const}
+
+Returns storage containing \mbox{\hyperlink{class_sk_data}{Sk\+Data}} describing \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}}, using optional custom encoders.
+
+procs.\+f\+Typeface\+Proc permits supplying a custom function to encode \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}. If procs.\+f\+Typeface\+Proc is nullptr, default encoding is used. procs.\+f\+Typeface\+Ctx may be used to provide user context to procs.\+f\+Typeface\+Proc; procs.\+f\+Typeface\+Proc is called with a pointer to \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em procs} & custom serial data encoders; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+storage containing serialized \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@TextBlob_serialize_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Text\+Blob\+\_\+serialize\+\_\+2}} \mbox{\Hypertarget{class_sk_text_blob_af691ea8b0518dd6b88aa474be5fc672c}\label{class_sk_text_blob_af691ea8b0518dd6b88aa474be5fc672c}} 
+\index{SkTextBlob@{SkTextBlob}!serialize@{serialize}}
+\index{serialize@{serialize}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Text\+Blob\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} \&}]{procs,  }\item[{void $\ast$}]{memory,  }\item[{size\+\_\+t}]{memory\+\_\+size }\end{DoxyParamCaption}) const}
+
+Writes data to allow later reconstruction of \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}}. memory points to storage to receive the encoded data, and memory\+\_\+size describes the size of storage. Returns bytes used if provided storage is large enough to hold all data; otherwise, returns zero.
+
+procs.\+f\+Typeface\+Proc permits supplying a custom function to encode \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}}. If procs.\+f\+Typeface\+Proc is nullptr, default encoding is used. procs.\+f\+Typeface\+Ctx may be used to provide user context to procs.\+f\+Typeface\+Proc; procs.\+f\+Typeface\+Proc is called with a pointer to \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em procs} & custom serial data encoders; may be nullptr \\
+\hline
+{\em memory} & storage for data \\
+\hline
+{\em memory\+\_\+size} & size of storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes written, or zero if required storage is larger than memory\+\_\+size
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@TextBlob_serialize}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Text\+Blob\+\_\+serialize}} \mbox{\Hypertarget{class_sk_text_blob_a4399378562e7e10023e28fa40bf21a98}\label{class_sk_text_blob_a4399378562e7e10023e28fa40bf21a98}} 
+\index{SkTextBlob@{SkTextBlob}!uniqueID@{uniqueID}}
+\index{uniqueID@{uniqueID}!SkTextBlob@{SkTextBlob}}
+\doxysubsubsection{\texorpdfstring{uniqueID()}{uniqueID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Text\+Blob\+::unique\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a non-\/zero value unique among all text blobs.
+
+\begin{DoxyReturn}{Returns}
+identifier for \mbox{\hyperlink{class_sk_text_blob}{Sk\+Text\+Blob}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Text\+Blob.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Text\+Blob.\+cpp\end{DoxyCompactItemize}

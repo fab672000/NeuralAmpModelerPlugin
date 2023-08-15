@@ -1,0 +1,1620 @@
+\hypertarget{class_a_a_x___c_effect_parameters}{}\doxysection{A\+A\+X\+\_\+\+C\+Effect\+Parameters Class Reference}
+\label{class_a_a_x___c_effect_parameters}\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+
+
+Default implementation of the \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} interface.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Effect\+Parameters.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Effect\+Parameters\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.103448cm]{class_a_a_x___c_effect_parameters}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aea47eeb638da0d670fb92d3f1e0f9419}\label{class_a_a_x___c_effect_parameters_aea47eeb638da0d670fb92d3f1e0f9419}} 
+\mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} \&other)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Initialization and uninitialization}\par
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}{Initialize}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+Controller) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Main data model initialization. Called when plug-\/in instance is first instantiated. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_acd14ff2175a10759045674e8e14508b1}{Uninitialize}} (void) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Main data model uninitialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ A\+AX host and plug-\/in event notification}\par
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af18b23ec6d4e60e60e27c209c17e573a}{Notification\+Received}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} in\+Notification\+Type, const void $\ast$in\+Notification\+Data, uint32\+\_\+t in\+Notification\+Data\+Size) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Notification Hook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Parameter information}\par
+{\em These methods are used by the A\+AX host to retrieve information about the plug-\/in\textquotesingle{}s data model. For information about adding parameters to the plug-\/in and otherwise modifying the plug-\/in\textquotesingle{}s data model, see \mbox{\hyperlink{class_a_a_x___c_parameter_manager}{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}. For information about parameters, see \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}}. }\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_ab22ac55f74401eddbe3f270435a74f70}{Get\+Number\+Of\+Parameters}} (int32\+\_\+t $\ast$o\+Num\+Controls) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the total number of plug-\/in parameters. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_afe1313da2e24225af2f224623dca6b95}{Get\+Master\+Bypass\+Parameter}} (\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+I\+D\+String) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the ID of the plug-\/in\textquotesingle{}s Master Bypass parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a8a0890eacee81afbea6a5548592e1c8f}{Get\+Parameter\+Is\+Automatable}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} $\ast$o\+Automatable) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves information about a parameter\textquotesingle{}s automatable status. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a3a142f7b8bd3e09b522445c0b315c759}{Get\+Parameter\+Number\+Of\+Steps}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, int32\+\_\+t $\ast$o\+Num\+Steps) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the number of discrete steps for a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af618b324cdd013ffa322f798af30ca40}{Get\+Parameter\+Name}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+Name) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the full name for a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af0bc3d6fb8f387f58a073f8902233bd3}{Get\+Parameter\+Name\+Of\+Length}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+Name, int32\+\_\+t i\+Name\+Length) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves an abbreviated name for a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_ae92a568c56bfff70eb4622c48db85bc0}{Get\+Parameter\+Default\+Normalized\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double $\ast$o\+Value) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves default value of a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aafbafbc1b07c3f41c40b2ff9820557c8}{Set\+Parameter\+Default\+Normalized\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double i\+Value) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Sets the default value of a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a95c40a67ef6cd5e830e46826d1ccf5c4}{Get\+Parameter\+Type}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{_a_a_x___enums_8h_a4cd0f189daa9a60cf36883c56344bb2e}{A\+A\+X\+\_\+\+E\+Parameter\+Type}} $\ast$o\+Parameter\+Type) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the type of a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a8ddd81b155f01497508093d32f5545e7}{Get\+Parameter\+Orientation}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{_a_a_x___enums_8h_a52f91d1c14aa5dceedabfb9d2de31bf0}{A\+A\+X\+\_\+\+E\+Parameter\+Orientation}} $\ast$o\+Parameter\+Orientation) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the orientation that should be applied to a parameter\textquotesingle{}s controls. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a0fc56336535ca545f1844a5497eecc64}{Get\+Parameter}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} $\ast$$\ast$o\+Parameter) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves an arbitrary setting within a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a78485ad1079cf0da2843fce800afd5a8}{Get\+Parameter\+Index}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, int32\+\_\+t $\ast$o\+Control\+Index) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the index of a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a569cc13f2937cd68b3a1588c684df606}{Get\+Parameter\+I\+D\+From\+Index}} (int32\+\_\+t i\+Control\+Index, \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+Parameter\+I\+D\+String) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the ID of a parameter. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a0d3436cb88b4a86fe82a663221a9cfef}{Get\+Parameter\+Value\+Info}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, int32\+\_\+t i\+Selector, int32\+\_\+t $\ast$o\+Value) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves a property of a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Parameter setters and getters}\par
+{\em These methods are used by the A\+AX host and by the plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_u_i}{UI}} to retrieve and modify the values of the plug-\/in\textquotesingle{}s parameters.
+
+\begin{DoxyNote}{Note}
+The parameter setters in this section may generate asynchronous requests. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af52682d9ba47701be0e803d19eb057a7}{Get\+Parameter\+Value\+From\+String}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double $\ast$o\+Value, const \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} \&i\+Value\+String) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Converts a value string to a value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a4d92debb4785a84356960ac8c633bf12}{Get\+Parameter\+String\+From\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double i\+Value, \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+Value\+String, int32\+\_\+t i\+Max\+Length) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Converts a normalized parameter value into a string representing its corresponding real value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a5ca62ebda52ddd423450eaa77f1d6968}{Get\+Parameter\+Value\+String}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+Value\+String, int32\+\_\+t i\+Max\+Length) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves the value string associated with a parameter\textquotesingle{}s current value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_ae2892335e4613cfd427fc636b483fceb}{Get\+Parameter\+Normalized\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double $\ast$o\+Value\+Ptr) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Retrieves a parameter\textquotesingle{}s current value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a8eabaa279c51e74b30d3d2ffa5c865cb}{Set\+Parameter\+Normalized\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double i\+Value) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Sets the specified parameter to a new value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}{Set\+Parameter\+Normalized\+Relative}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double i\+Value) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Sets the specified parameter to a new value relative to its current value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Automated parameter helpers}\par
+{\em These methods are used to lock and unlock automation system \textquotesingle{}resources\textquotesingle{} when updating automatable parameters.
+
+\begin{DoxyNote}{Note}
+You should never need to override these methods to extend their behavior beyond what is provided in \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} and \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a0c7e32833e98facec61b73ac25049b13}{Touch\+Parameter}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Touches\char`\"{} (locks) a parameter in the automation system to a particular control in preparation for updates \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a39c2085d444916000acec5da3797ca37}{Release\+Parameter}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Releases a parameter from a \char`\"{}touched\char`\"{} state. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a035778f6cccf8cf96a11b3a028efed6e}{Update\+Parameter\+Touch}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} i\+Touch\+State) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Sets a \char`\"{}touched\char`\"{} state on a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Asynchronous parameter update methods}\par
+{\em These methods are called by the A\+AX host when parameter values have been updated. They are called by the host and can be triggered by other plug-\/in modules via calls to \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}}\textquotesingle{}s {\ttfamily Set\+Value} methods, e.\+g. \mbox{\hyperlink{class_a_a_x___i_parameter_a1d37b80bc3a9c4e53fc2c1684f47dfb7}{Set\+Value\+With\+Float()}}
+
+These methods are responsible for updating parameter values.
+
+Do not call these methods directly! To ensure proper synchronization and to avoid problematic dependency chains, other methods (e.\+g. \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a8eabaa279c51e74b30d3d2ffa5c865cb}{Set\+Parameter\+Normalized\+Value()}}) and components (e.\+g. \mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}}) should always call a {\ttfamily Set\+Value} method on \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} to update parameter values. The {\ttfamily Set\+Value} method will properly manage automation locks and other system resources. }\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aeff79c1e5cc6b65c7ed21d9912f87caf}{Update\+Parameter\+Normalized\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double i\+Value, \mbox{\hyperlink{_a_a_x___enums_8h_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source}} i\+Source) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Updates a single parameter\textquotesingle{}s state to its current value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aa2e14fdf26352f16f3b0c437bc0894cb}{Update\+Parameter\+Normalized\+Relative}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, double i\+Value) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Updates a single parameter\textquotesingle{}s state to its current value, as a difference with the parameter\textquotesingle{}s previous value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2ae4c7e4ed12f2763934da50aa5730f3}{Generate\+Coefficients}} (void) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Generates and dispatches new coefficient packets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ State reset handlers}\par
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a0dd675680a657de7f9d45d65d4b3bcfb}{Reset\+Field\+Data}} (\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}} in\+Field\+Index, void $\ast$o\+Data, uint32\+\_\+t in\+Data\+Size) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Called by the host to reset a private data field in the plug-\/in\textquotesingle{}s algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Chunk methods}\par
+{\em These methods are used to save and restore collections of plug-\/in state information, known as chunks. Chunks are used by the host when saving or restoring presets and session settings and when providing \char`\"{}compare\char`\"{} functionality for plug-\/ins.
+
+The default implementation of these methods in \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} supports a single chunk that includes state information for all of the plug-\/in\textquotesingle{}s registered parameters. Override all of these methods to add support for additional chunks in your plug-\/in, for example if your plug-\/ni contains any persistent state that is not encapsulated by its set of registered parameters.
+
+For reference, see also\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{class_a_a_x___c_chunk_data_parser}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}} \item \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} \end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a1b2e04986362ca076b862ceae18bbab7}{Get\+Number\+Of\+Chunks}} (int32\+\_\+t $\ast$o\+Num\+Chunks) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Retrieves the number of chunks used by this plug-\/in. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a493471529cb63af2e6b069f6c6a35d6f}{Get\+Chunk\+I\+D\+From\+Index}} (int32\+\_\+t i\+Index, \mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} $\ast$o\+Chunk\+ID) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Retrieves the ID associated with a chunk index. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}{Get\+Chunk\+Size}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Chunk\+ID, uint32\+\_\+t $\ast$o\+Size) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Get the size of the data structure that can hold all of a chunk\textquotesingle{}s information. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}{Get\+Chunk}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Chunk\+ID, \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} $\ast$o\+Chunk) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Fills a block of data with chunk information representing the plug-\/in\textquotesingle{}s current state. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a9908dd1d95995027bf6073c08f38b468}{Set\+Chunk}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Chunk\+ID, const \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} $\ast$i\+Chunk) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Restores a set of plug-\/in parameters based on chunk information. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a514644d855be6f58043ec165f6ce8ddb}{Compare\+Active\+Chunk}} (const \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} $\ast$i\+ChunkP, \mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} $\ast$o\+Is\+Equal) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Determine if a chunk represents settings that are equivalent to the plug-\/in\textquotesingle{}s current state. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a9c6e26d6b3e028fcb048e01caa155f65}{Get\+Number\+Of\+Changes}} (int32\+\_\+t $\ast$o\+Num\+Changes) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Retrieves the number of parameter changes made since the plug-\/in\textquotesingle{}s creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Threads}\par
+{\em Threading functions }\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a4e1dc0e4b966fe80041d67814d13e03d}{Timer\+Wakeup}} () \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Periodic wakeup callback for idle-\/time operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Auxiliary UI methods}\par
+{\em Methods defining the presentation of the plug-\/in on auxiliary U\+Is such as control surfaces }\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a258910d59fee409213caa04e51ee68cf}{Get\+Curve\+Data}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Curve\+Type, const float $\ast$i\+Values, uint32\+\_\+t i\+Num\+Values, float $\ast$o\+Values) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Generate a set of output values based on a set of given input values. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af9cd663956c0d903bbf0df349354e573}{Get\+Curve\+Data\+Meter\+Ids}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Curve\+Type, uint32\+\_\+t $\ast$o\+X\+Meter\+Id, uint32\+\_\+t $\ast$o\+Y\+Meter\+Id) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Indicates which meters correspond to the X and Y axes of the EQ or Dynamics graph. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af5a917a523f9117016a47227cc1a62f0}{Get\+Curve\+Data\+Display\+Range}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Curve\+Type, float $\ast$o\+X\+Min, float $\ast$o\+X\+Max, float $\ast$o\+Y\+Min, float $\ast$o\+Y\+Max) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Determines the range of the graph shown by the plug-\/in. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a6a2a5cfe04b343f6ac47becb0e77ba84}{Update\+Page\+Table}} (uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+Host\+Unknown, \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$io\+Page\+Table\+Unknown) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}} \mbox{\hyperlink{_a_a_x_8h_aa4da4a09e940c332a2205e34e0677f40}{A\+A\+X\+\_\+\+F\+I\+N\+AL}}
+\begin{DoxyCompactList}\small\item\em Allow the plug-\/in to update its page tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Custom Data Methods}\par
+{\em These functions exist as a proxiable way to move data between different modules (e.\+g. \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} and \mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}}.) ~\newline
+ Using these, the \mbox{\hyperlink{class_g_u_i}{G\+UI}} can query any data through \mbox{\hyperlink{class_a_a_x___c_effect_parameters_afc82be9a9444bc8bc4a82e8ea370d88e}{Get\+Custom\+Data()}} with a plug-\/in defined {\ttfamily type\+ID}, {\ttfamily void$\ast$} and size. This has an advantage over just sharing memory in that this function can work as a remote proxy as we enable those sorts of features later in the platform. Likewise, the \mbox{\hyperlink{class_g_u_i}{G\+UI}} can also set arbitrary data on the data model by using the \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2905b5ec2ef715cd9000c8f1902e13d3}{Set\+Custom\+Data()}} function with the same idea.
+
+\begin{DoxyNote}{Note}
+These are plug-\/in internal only. They are not called from the host right now, or likely ever. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_afc82be9a9444bc8bc4a82e8ea370d88e}{Get\+Custom\+Data}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Data\+Block\+ID, uint32\+\_\+t in\+Data\+Size, void $\ast$o\+Data, uint32\+\_\+t $\ast$o\+Data\+Written) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em An optional interface hook for getting custom data from another module. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2905b5ec2ef715cd9000c8f1902e13d3}{Set\+Custom\+Data}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Data\+Block\+ID, uint32\+\_\+t in\+Data\+Size, const void $\ast$i\+Data) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em An optional interface hook for setting custom data for use by another module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ M\+I\+DI methods}\par
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_ae1076f7e181a6f66f0078bf31beb2cf1}{Do\+M\+I\+D\+I\+Transfers}} () \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em M\+I\+DI update callback. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aac6fa72278c0f46aa430cd79bdb2d767}{Update\+M\+I\+D\+I\+Nodes}} (\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}} in\+Field\+Index, \mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} \&i\+Packet) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em M\+I\+DI update callback. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_ac6720637afc7a87adfd391c4ef59126f}{Update\+Control\+M\+I\+D\+I\+Nodes}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} node\+ID, \mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} \&i\+Packet) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em M\+I\+DI update callback for control M\+I\+DI nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Hybrid audio methods}\par
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2b68c51ddd302b43c0df250fdd3ba239}{Render\+Audio\+\_\+\+Hybrid}} (\mbox{\hyperlink{struct_a_a_x___s_hybrid_render_info}{A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info}} $\ast$io\+Render\+Info) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Hybrid audio render function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Private data accessors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a42390c0bb5b5cdb400b195f9013eac8b}\label{class_a_a_x___c_effect_parameters_a42390c0bb5b5cdb400b195f9013eac8b}} 
+\mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}} $\ast$ \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a42390c0bb5b5cdb400b195f9013eac8b}{Controller}} ()
+\begin{DoxyCompactList}\small\item\em Access to the Effect controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a36cda1bd12573e6ddd21fdd90b460ece}\label{class_a_a_x___c_effect_parameters_a36cda1bd12573e6ddd21fdd90b460ece}} 
+const \mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}} $\ast$ \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a36cda1bd12573e6ddd21fdd90b460ece}{Controller}} () const
+\begin{DoxyCompactList}\small\item\em {\ttfamily const} access to the Effect controller \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a82b1330d50dff601acb941c3693a88eb}\label{class_a_a_x___c_effect_parameters_a82b1330d50dff601acb941c3693a88eb}} 
+\mbox{\hyperlink{class_a_a_x___i_transport}{A\+A\+X\+\_\+\+I\+Transport}} $\ast$ \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a82b1330d50dff601acb941c3693a88eb}{Transport}} ()
+\begin{DoxyCompactList}\small\item\em Access to the Transport object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_abd1c96049bff78dd21994824bdff0f03}\label{class_a_a_x___c_effect_parameters_abd1c96049bff78dd21994824bdff0f03}} 
+const \mbox{\hyperlink{class_a_a_x___i_transport}{A\+A\+X\+\_\+\+I\+Transport}} $\ast$ \mbox{\hyperlink{class_a_a_x___c_effect_parameters_abd1c96049bff78dd21994824bdff0f03}{Transport}} () const
+\begin{DoxyCompactList}\small\item\em {\ttfamily const} access to the Transport object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a3a1abece25c4bd49ced4324ade02a4ea}\label{class_a_a_x___c_effect_parameters_a3a1abece25c4bd49ced4324ade02a4ea}} 
+\mbox{\hyperlink{class_a_a_x___i_automation_delegate}{A\+A\+X\+\_\+\+I\+Automation\+Delegate}} $\ast$ \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a3a1abece25c4bd49ced4324ade02a4ea}{Automation\+Delegate}} ()
+\begin{DoxyCompactList}\small\item\em Access to the Effect\textquotesingle{}s automation delegate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a572dc5683af7f848cefb876ac96b499d}\label{class_a_a_x___c_effect_parameters_a572dc5683af7f848cefb876ac96b499d}} 
+const \mbox{\hyperlink{class_a_a_x___i_automation_delegate}{A\+A\+X\+\_\+\+I\+Automation\+Delegate}} $\ast$ \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a572dc5683af7f848cefb876ac96b499d}{Automation\+Delegate}} () const
+\begin{DoxyCompactList}\small\item\em {\ttfamily const} access to the Effect\textquotesingle{}s automation delegate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Member Functions}
+\begin{Indent}\textbf{ Parameter management methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a363be3503435a8619f6cba787ee678ac}\label{class_a_a_x___c_effect_parameters_a363be3503435a8619f6cba787ee678ac}} 
+A\+A\+X\+\_\+\+Result {\bfseries Set\+Taper\+Delegate} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{class_a_a_x___i_taper_delegate_base}{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}} \&i\+Taper\+Delegate, bool i\+Preserve\+Value)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ad4aeb081bffb2414182251d4e41c1ed2}\label{class_a_a_x___c_effect_parameters_ad4aeb081bffb2414182251d4e41c1ed2}} 
+A\+A\+X\+\_\+\+Result {\bfseries Set\+Display\+Delegate} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{class_a_a_x___i_display_delegate_base}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}} \&i\+Display\+Delegate)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a7ee10904c6933cbf82b6050044fa15eb}\label{class_a_a_x___c_effect_parameters_a7ee10904c6933cbf82b6050044fa15eb}} 
+bool {\bfseries Is\+Parameter\+Touched} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID) const
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_adf4d2d6060bf3e13619838cea8b59865}\label{class_a_a_x___c_effect_parameters_adf4d2d6060bf3e13619838cea8b59865}} 
+bool {\bfseries Is\+Parameter\+Link\+Ready} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} in\+Parameter\+ID, \mbox{\hyperlink{_a_a_x___enums_8h_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source}} in\+Source) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Convenience functions}
+\label{_amgrp261f53803206021e88706036c48954d0}%
+These convenience functions provide quick access to various aspects of the default \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} implementation. \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a1d9f79117c9075f47b00a7af34113b22}\label{class_a_a_x___c_effect_parameters_a1d9f79117c9075f47b00a7af34113b22}} 
+int32\+\_\+t {\bfseries m\+Num\+Plug\+In\+Changes}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a8c792ec58dc073534348004f0c0c09dd}\label{class_a_a_x___c_effect_parameters_a8c792ec58dc073534348004f0c0c09dd}} 
+int32\+\_\+t {\bfseries m\+Chunk\+Size}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a71e52a24c8cd8853c768417aa181b41f}\label{class_a_a_x___c_effect_parameters_a71e52a24c8cd8853c768417aa181b41f}} 
+\mbox{\hyperlink{class_a_a_x___c_chunk_data_parser}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}} {\bfseries m\+Chunk\+Parser}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ad6a57b4e98161c28b55b250e0234c4ba}\label{class_a_a_x___c_effect_parameters_ad6a57b4e98161c28b55b250e0234c4ba}} 
+int32\+\_\+t {\bfseries m\+Num\+Chunked\+Parameters}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a1e4a92cdd947d35eb4382f0b5c4c8dae}\label{class_a_a_x___c_effect_parameters_a1e4a92cdd947d35eb4382f0b5c4c8dae}} 
+\mbox{\hyperlink{class_a_a_x___c_packet_dispatcher}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher}} {\bfseries m\+Packet\+Dispatcher}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_afbb31a7a131b227ddd8bbd920aafbfb8}\label{class_a_a_x___c_effect_parameters_afbb31a7a131b227ddd8bbd920aafbfb8}} 
+\mbox{\hyperlink{class_a_a_x___c_parameter_manager}{A\+A\+X\+\_\+\+C\+Parameter\+Manager}} {\bfseries m\+Parameter\+Manager}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a353f5472e4eaefd348f20f9ff07a13a0}\label{class_a_a_x___c_effect_parameters_a353f5472e4eaefd348f20f9ff07a13a0}} 
+std\+::set$<$ std\+::string $>$ {\bfseries m\+Filtered\+Parameters}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}{Effect\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization helper routine. Called from \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize}}. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a79c283d2698c39e664e590f256c51d02}{Update\+Page\+Table}} (uint32\+\_\+t, int32\+\_\+t, \mbox{\hyperlink{class_a_a_x___i_page_table}{A\+A\+X\+\_\+\+I\+Page\+Table}} \&) const
+\item 
+void \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a06251bbdd6ad5d6ccee160ce4cb5ee8c}{Filter\+Parameter\+I\+D\+On\+Save}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} control\+ID)
+\begin{DoxyCompactList}\small\item\em C\+A\+LL\+: Indicates the indices of parameters that should not be saved in the default \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} chunk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a0fd3465f1a37beb0c9d8be5e33a5cf58}{Build\+Chunk\+Data}} (void) const
+\begin{DoxyCompactList}\small\item\em Clears out the current chunk in Chunk Parser and adds all of the new values. Used by default implementations of \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}{Get\+Chunk()}} and \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}{Get\+Chunk\+Size()}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Default implementation of the \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} interface. 
+
+This class provides a default implementation of the \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} interface. In nearly all cases, your plug-\/in\textquotesingle{}s data model should inherit from this class and override only those functions that you wish to explicitly customize.
+
+\textbackslash{}legacy The default implementations in this class are mostly derived from their equivalent implementations in C\+Process and C\+Effect\+Process. For additional C\+Process-\/derived implementations, see \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.\hypertarget{class_a_a_x___c_effect_parameters_AAX_CEffectParameters_relclass}{}\doxysubsection{Related classes}\label{class_a_a_x___c_effect_parameters_AAX_CEffectParameters_relclass}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a0fd3465f1a37beb0c9d8be5e33a5cf58}\label{class_a_a_x___c_effect_parameters_a0fd3465f1a37beb0c9d8be5e33a5cf58}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!BuildChunkData@{BuildChunkData}}
+\index{BuildChunkData@{BuildChunkData}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{BuildChunkData()}{BuildChunkData()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Build\+Chunk\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clears out the current chunk in Chunk Parser and adds all of the new values. Used by default implementations of \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}{Get\+Chunk()}} and \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}{Get\+Chunk\+Size()}}. 
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a514644d855be6f58043ec165f6ce8ddb}\label{class_a_a_x___c_effect_parameters_a514644d855be6f58043ec165f6ce8ddb}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!CompareActiveChunk@{CompareActiveChunk}}
+\index{CompareActiveChunk@{CompareActiveChunk}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{CompareActiveChunk()}{CompareActiveChunk()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Compare\+Active\+Chunk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} $\ast$}]{i\+ChunkP,  }\item[{\mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} $\ast$}]{o\+Is\+Equal }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine if a chunk represents settings that are equivalent to the plug-\/in\textquotesingle{}s current state. 
+
+\textbackslash{}compatibility In Pro Tools, this method will only be called if a prior call to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a17b96da201d9a242d3662e87525a7227}{Get\+Number\+Of\+Changes()}} has indicated that the plug-\/in\textquotesingle{}s state has changed. If the plug-\/in\textquotesingle{}s current settings are different from the settings in {\ttfamily a\+ChunkP} then the plug-\/in\textquotesingle{}s Compare Light will be illuminated in the plug-\/in header, allowing users to toggle between the plug-\/in\textquotesingle{}s custom state and its saved state.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+ChunkP} & The chunk that is to be tested \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Is\+Equal} & True if the chunk represents equivalent settings when compared with the plug-\/in\textquotesingle{}s current state. False if the chunk represents non-\/equivalent settings \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a1e86f849e970c9998313fc7d451ccf85}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_a97668a3ec307bee93a07da360060be63}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ae1076f7e181a6f66f0078bf31beb2cf1}\label{class_a_a_x___c_effect_parameters_ae1076f7e181a6f66f0078bf31beb2cf1}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!DoMIDITransfers@{DoMIDITransfers}}
+\index{DoMIDITransfers@{DoMIDITransfers}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{DoMIDITransfers()}{DoMIDITransfers()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Do\+M\+I\+D\+I\+Transfers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+M\+I\+DI update callback. 
+
+Call \mbox{\hyperlink{class_a_a_x___i_controller_a2896ba3a1ed86ce2813b1736d316d275}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Next\+M\+I\+D\+I\+Packet()}} from within this method to retrieve and process M\+I\+DI packets directly within the Effect\textquotesingle{}s data model. M\+I\+DI data will also be delivered to the Effect algorithm.
+
+This method is called regularly by the host, similarly to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ab5b8da9e1a9d778d327ac04f4ab8d139}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Timer\+Wakeup()}} 
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_af376aef3d3ecdc6287f820b4e01f5c9b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}\label{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!EffectInit@{EffectInit}}
+\index{EffectInit@{EffectInit}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{EffectInit()}{EffectInit()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Effect\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initialization helper routine. Called from \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize}}. 
+
+Override to add parameters, packets, meters, and to do any other custom initialization.
+
+Add custom parameters\+: \begin{DoxyItemize}
+\item Create an \mbox{\hyperlink{class_a_a_x___c_parameter}{A\+A\+X\+\_\+\+C\+Parameter}} for each parameter in the plug-\/in \item Call \mbox{\hyperlink{class_a_a_x___c_parameter_manager_ae2f9631b33c012f7a8c042df9655b28c}{A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Add\+Parameter()}} using m\+Parameter\+Manager to add parameters to the Parameter Manager\end{DoxyItemize}
+Register packets\+: \begin{DoxyItemize}
+\item Call A\+A\+X\+\_\+\+C\+Packet\+Dispatcher\+::\+Register\+Packet() using m\+Packet\+Dispatcher to register a packet and handling callback. \end{DoxyItemize}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_a1232f79ae22114a90e47f5cbffde8ac2}{I\+Plug\+A\+AX}}, \mbox{\hyperlink{class_demo_sampler___parameters_a6ee56487227d55d72ac7359886754e6f}{Demo\+Sampler\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_synth___parameters_ad6d6fb94656b319a2d73a8a8927e9125}{Demo\+Synth\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_synth___parameters_ad6d6fb94656b319a2d73a8a8927e9125}{Demo\+Synth\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_dist___parameters_a875d1dba9a40993014c51a83ab03189a}{Demo\+Dist\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_dist___parameters_a875d1dba9a40993014c51a83ab03189a}{Demo\+Dist\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_gain___parameters_af4e0efbaa883d3a5ca879d5abfd0e2f5}{Demo\+Gain\+\_\+\+Parameters}}, \mbox{\hyperlink{class_recti_fi___effect_parameters_a7c11a30accf0fe5703a8af693418209d}{Recti\+Fi\+\_\+\+Effect\+Parameters}}, \mbox{\hyperlink{class_demo_delay___parameters_aff9f70073d39139a5a46349b98419a9d}{Demo\+Delay\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_delay___parameters_aff9f70073d39139a5a46349b98419a9d}{Demo\+Delay\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_delay___parameters_aff9f70073d39139a5a46349b98419a9d}{Demo\+Delay\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_delay___parameters_a81d331eaebc7e95f07be19c68e755ce1}{Demo\+Delay\+\_\+\+Parameters}}, and \mbox{\hyperlink{class_demo_m_i_d_i___parameters_aae48544ac0022ebd7176d9a3c23469d5}{Demo\+M\+I\+D\+I\+\_\+\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a06251bbdd6ad5d6ccee160ce4cb5ee8c}\label{class_a_a_x___c_effect_parameters_a06251bbdd6ad5d6ccee160ce4cb5ee8c}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!FilterParameterIDOnSave@{FilterParameterIDOnSave}}
+\index{FilterParameterIDOnSave@{FilterParameterIDOnSave}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{FilterParameterIDOnSave()}{FilterParameterIDOnSave()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Filter\+Parameter\+I\+D\+On\+Save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{control\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+C\+A\+LL\+: Indicates the indices of parameters that should not be saved in the default \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} chunk. 
+
+Allows specific parameters to filtered out of the default \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} \char`\"{}\+Save
+\+Settings\char`\"{} functionality. This call is automatically invoked on the Master Bypass control when specified by the Define\+Master\+Bypass\+Control\+Index() call.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em control\+ID} & The ID of the parameter that should be removed from the default chunk \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a2ae4c7e4ed12f2763934da50aa5730f3}\label{class_a_a_x___c_effect_parameters_a2ae4c7e4ed12f2763934da50aa5730f3}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GenerateCoefficients@{GenerateCoefficients}}
+\index{GenerateCoefficients@{GenerateCoefficients}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GenerateCoefficients()}{GenerateCoefficients()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Generate\+Coefficients (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generates and dispatches new coefficient packets. 
+
+This method is responsible for updating the coefficient packets associated with all parameters whose states have changed since the last call to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}}. The host may call this method once for every parameter update, or it may \char`\"{}batch\char`\"{} parameter updates such that changes for several parameters are all handled by a single call to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}}.
+
+For more information on tracking parameters\textquotesingle{} statuses using the \mbox{\hyperlink{class_a_a_x___c_packet_dispatcher}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher}}, helper class, see A\+A\+X\+\_\+\+C\+Packet\+Dispatcher\+::\+Set\+Dirty().
+
+\begin{DoxyNote}{Note}
+Do {\itshape not} call this method from the plug-\/in. This method should be called by the host only. To set parameter values from within the plug-\/in, use the \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} interface. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a083265b008921b6114ede387711694b7}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_a_a_x___c_i_plug_parameters_ac154763c3d3aca364423e3643cff7260}{A\+A\+X\+\_\+\+C\+I\+Plug\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}\label{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetChunk@{GetChunk}}
+\index{GetChunk@{GetChunk}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetChunk()}{GetChunk()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Chunk\+ID,  }\item[{\mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} $\ast$}]{o\+Chunk }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fills a block of data with chunk information representing the plug-\/in\textquotesingle{}s current state. 
+
+By calling this method, the host is requesting information about the current state of the plug-\/in. The following chunk fields should be explicitly populated in this method. Other fields will be populated by the host.
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_abc76d66fffa4a59ee5cfdbdd992c532c}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Data}} \item \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_ac114fd94e7b12c235f9c18bcbbc46f06}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Version}} \item \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_a1b07e29358b5549739f674e04653a6bc}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Name}} (Optional) \item \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_ac08f37f1ed50eac8ac3ca4bf5494c84d}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Size}} (Data size only)\end{DoxyItemize}
+\begin{DoxyWarning}{Warning}
+Remember that this chunk data may be loaded on a different platform from the one where it is saved. All data structures in the chunk must be properly data-\/aligned for compatibility across all platforms that the plug-\/in supports. See \mbox{\hyperlink{_a_a_x_8h_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+LG}} for notes about common cross-\/platform pitfalls for data structure alignment.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Chunk\+ID} & ID of the chunk that should be provided \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Chunk} & A preallocated block of memory that should be populated with the chunk\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ab977041a440a9cd6f3e631c059ee8b99}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_a5139e084a69f5c9cde254fac38bc4aec}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a493471529cb63af2e6b069f6c6a35d6f}\label{class_a_a_x___c_effect_parameters_a493471529cb63af2e6b069f6c6a35d6f}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetChunkIDFromIndex@{GetChunkIDFromIndex}}
+\index{GetChunkIDFromIndex@{GetChunkIDFromIndex}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetChunkIDFromIndex()}{GetChunkIDFromIndex()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Chunk\+I\+D\+From\+Index (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Index,  }\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} $\ast$}]{o\+Chunk\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the ID associated with a chunk index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Index} & Index of the queried chunk \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Chunk\+ID} & ID of the queried chunk \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a10409113cb781002551b878e4c0edd5a}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_ac62f90ea0700777944e66733270cdf71}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}\label{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetChunkSize@{GetChunkSize}}
+\index{GetChunkSize@{GetChunkSize}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetChunkSize()}{GetChunkSize()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Chunk\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Chunk\+ID,  }\item[{uint32\+\_\+t $\ast$}]{o\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the size of the data structure that can hold all of a chunk\textquotesingle{}s information. 
+
+If {\itshape chunk\+ID} is one of the plug-\/in\textquotesingle{}s custom chunks, initialize {\itshape $\ast$size} to the size of the chunk\textquotesingle{}s data in bytes.
+
+This method is invoked every time a chunk is saved, therefore it is possible to have dynamically sized chunks. However, note that each call to \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}{Get\+Chunk\+Size()}} will correspond to a following call to \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}{Get\+Chunk()}}. The chunk provided in \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aeddfa6e0b92f9373836ae41491114c4d}{Get\+Chunk()}} {\itshape must} have the same size as the {\itshape size} provided by \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}{Get\+Chunk\+Size()}}.
+
+\textbackslash{}legacy In A\+AX, the value provided by \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aade2d4ba2fcb8c302917caf4bfb0f8cf}{Get\+Chunk\+Size()}} should {\itshape N\+OT} include the size of the chunk header. The value should {\itshape O\+N\+LY} reflect the size of the chunk\textquotesingle{}s data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Chunk\+ID} & ID of the queried chunk \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Size} & The chunk\textquotesingle{}s size in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aa986711cd372febcaae803e86ae08f63}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_ad7619f5d7a5963cf1f857765bc7d1861}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a258910d59fee409213caa04e51ee68cf}\label{class_a_a_x___c_effect_parameters_a258910d59fee409213caa04e51ee68cf}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetCurveData@{GetCurveData}}
+\index{GetCurveData@{GetCurveData}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetCurveData()}{GetCurveData()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Curve\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Curve\+Type,  }\item[{const float $\ast$}]{i\+Values,  }\item[{uint32\+\_\+t}]{i\+Num\+Values,  }\item[{float $\ast$}]{o\+Values }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generate a set of output values based on a set of given input values. 
+
+This method is used by the host to generate graphical curves. Given a set of input values, e.\+g. frequencies in Hz, this method should generate a corresponding set of output values, e.\+g. dB gain at each frequency. The semantics of these input and output values are dictated by {\ttfamily i\+Curve\+Type}. See \mbox{\hyperlink{_a_a_x___enums_8h_a59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type}}.
+
+Plug-\/ins may also define custom curve type I\+Ds to use this method internally. For example, the plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}} could use this method to request curve data in an arbitrary format.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+This method may be called by the host simultaneously from multiple threads with differents {\ttfamily i\+Values}.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+{\ttfamily o\+Values} must be allocated by caller with the same size as {\ttfamily i\+Values} ({\ttfamily i\+Num\+Values}).
+\end{DoxyNote}
+\textbackslash{}compatibility Versions of S6 software which support the \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v3_a38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range()}} method will not display a plug-\/in\textquotesingle{}s curve data unless both \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aa85bda4027342eb644a9c92a17da6d49}{Get\+Curve\+Data()}} and \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v3_a38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range()}} are supported by the plug-\/in.
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+S6 currently polls this method to update a plug-\/in\textquotesingle{}s EQ or dynamics curves based on changes to the parameters mapped to the plug-\/in\textquotesingle{}s EQ or dynamics center section page tables. Parameters that are not included in these page tables will not trigger updates to the curves displayed on S6. (G\+W\+S\+W-\/7314, P\+T\+S\+W-\/195316)
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Curve\+Type} & One of \mbox{\hyperlink{_a_a_x___enums_8h_a59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Values} & An array of input values \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Num\+Values} & The size of {\ttfamily i\+Values} \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Values} & An array of ouptut values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method must return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED if the plug-\/in does not support curve data for the requested {\ttfamily i\+Curve\+Type} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aa85bda4027342eb644a9c92a17da6d49}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_af5a917a523f9117016a47227cc1a62f0}\label{class_a_a_x___c_effect_parameters_af5a917a523f9117016a47227cc1a62f0}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetCurveDataDisplayRange@{GetCurveDataDisplayRange}}
+\index{GetCurveDataDisplayRange@{GetCurveDataDisplayRange}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetCurveDataDisplayRange()}{GetCurveDataDisplayRange()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Display\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Curve\+Type,  }\item[{float $\ast$}]{o\+X\+Min,  }\item[{float $\ast$}]{o\+X\+Max,  }\item[{float $\ast$}]{o\+Y\+Min,  }\item[{float $\ast$}]{o\+Y\+Max }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines the range of the graph shown by the plug-\/in. 
+
+Min/max arguments define the range of the axes of the graph.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Curve\+Type} & One of \mbox{\hyperlink{_a_a_x___enums_8h_a59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+X\+Min} & Min value of X-\/axis range \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+X\+Max} & Max value of X-\/axis range \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Y\+Min} & Min value of Y-\/axis range \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Y\+Max} & Max value of Y-\/axis range\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED if the plug-\/in does not implement it. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v3_a38d1ac0c15a7052904077ef0e2527e0d}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_af9cd663956c0d903bbf0df349354e573}\label{class_a_a_x___c_effect_parameters_af9cd663956c0d903bbf0df349354e573}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetCurveDataMeterIds@{GetCurveDataMeterIds}}
+\index{GetCurveDataMeterIds@{GetCurveDataMeterIds}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetCurveDataMeterIds()}{GetCurveDataMeterIds()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Meter\+Ids (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Curve\+Type,  }\item[{uint32\+\_\+t $\ast$}]{o\+X\+Meter\+Id,  }\item[{uint32\+\_\+t $\ast$}]{o\+Y\+Meter\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Indicates which meters correspond to the X and Y axes of the EQ or Dynamics graph. 
+
+These meters can be used by attached control surfaces to present an indicator in the same X/Y coordinate plane as the plug-\/in\textquotesingle{}s curve data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Curve\+Type} & One of \mbox{\hyperlink{_a_a_x___enums_8h_a59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+X\+Meter\+Id} & Id of the X-\/axis meter \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Y\+Meter\+Id} & Id of the Y-\/axis meter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED if the plug-\/in does not implement it. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v3_ac7ba3c1063c35d761fdeba9c9a6cc0d1}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_afc82be9a9444bc8bc4a82e8ea370d88e}\label{class_a_a_x___c_effect_parameters_afc82be9a9444bc8bc4a82e8ea370d88e}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetCustomData@{GetCustomData}}
+\index{GetCustomData@{GetCustomData}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetCustomData()}{GetCustomData()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Custom\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Data\+Block\+ID,  }\item[{uint32\+\_\+t}]{in\+Data\+Size,  }\item[{void $\ast$}]{o\+Data,  }\item[{uint32\+\_\+t $\ast$}]{o\+Data\+Written }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An optional interface hook for getting custom data from another module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Data\+Block\+ID} & Identifier for the requested block of custom data \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Data\+Size} & Size of provided buffer, in bytes \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Data} & Pointer to an allocated buffer. Data will be written here. \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Data\+Written} & The number of bytes actually written \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a4728fcad006d921a07489144360f447e}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_afe1313da2e24225af2f224623dca6b95}\label{class_a_a_x___c_effect_parameters_afe1313da2e24225af2f224623dca6b95}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetMasterBypassParameter@{GetMasterBypassParameter}}
+\index{GetMasterBypassParameter@{GetMasterBypassParameter}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetMasterBypassParameter()}{GetMasterBypassParameter()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Master\+Bypass\+Parameter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+I\+D\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the ID of the plug-\/in\textquotesingle{}s Master Bypass parameter. 
+
+This is required if you want our master bypass functionality in the host to hook up to your bypass parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+I\+D\+String} & The ID of the plug-\/in\textquotesingle{}s Master Bypass control \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ab967122337b61064492024f8bf695ed4}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a9c6e26d6b3e028fcb048e01caa155f65}\label{class_a_a_x___c_effect_parameters_a9c6e26d6b3e028fcb048e01caa155f65}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetNumberOfChanges@{GetNumberOfChanges}}
+\index{GetNumberOfChanges@{GetNumberOfChanges}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfChanges()}{GetNumberOfChanges()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Number\+Of\+Changes (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{o\+Num\+Changes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the number of parameter changes made since the plug-\/in\textquotesingle{}s creation. 
+
+This method is polled regularly by the host, and can additionally be triggered by some events such as mouse clicks. When the number provided by this method changes, the host subsequently calls \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a514644d855be6f58043ec165f6ce8ddb}{Compare\+Active\+Chunk()}} to determine if the plug-\/in\textquotesingle{}s Compare light should be activated.
+
+The value provided by this method should increment with each call to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a685858711efb8634ce66c327f2865c71}{Update\+Parameter\+Normalized\+Value()}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+Num\+Changes} & Must be set to indicate the number of parameter changes that have occurred since plug-\/in initialization. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a17b96da201d9a242d3662e87525a7227}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a1b2e04986362ca076b862ceae18bbab7}\label{class_a_a_x___c_effect_parameters_a1b2e04986362ca076b862ceae18bbab7}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetNumberOfChunks@{GetNumberOfChunks}}
+\index{GetNumberOfChunks@{GetNumberOfChunks}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfChunks()}{GetNumberOfChunks()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Number\+Of\+Chunks (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{o\+Num\+Chunks }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieves the number of chunks used by this plug-\/in. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+Num\+Chunks} & The number of distinct chunks used by this plug-\/in \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a37e546c6dbb4d5a16fedb9f465de2599}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ab22ac55f74401eddbe3f270435a74f70}\label{class_a_a_x___c_effect_parameters_ab22ac55f74401eddbe3f270435a74f70}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetNumberOfParameters@{GetNumberOfParameters}}
+\index{GetNumberOfParameters@{GetNumberOfParameters}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfParameters()}{GetNumberOfParameters()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Number\+Of\+Parameters (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{o\+Num\+Controls }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the total number of plug-\/in parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+Num\+Controls} & The number of parameters in the plug-\/in\textquotesingle{}s Parameter Manager \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a8af398b1e308849464aee5a6713a3965}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a0fc56336535ca545f1844a5497eecc64}\label{class_a_a_x___c_effect_parameters_a0fc56336535ca545f1844a5497eecc64}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameter@{GetParameter}}
+\index{GetParameter@{GetParameter}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameter()}{GetParameter()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} $\ast$$\ast$}]{o\+Parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves an arbitrary setting within a parameter. 
+
+This is a convenience function for accessing the richer parameter interface from the plug-\/in\textquotesingle{}s other modules.
+
+\begin{DoxyNote}{Note}
+This function must not be called by the host; \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} is not safe for passing across the binary boundary with the host!
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Parameter} & A pointer to the returned parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a169b7e9fe64f2d86d20fffc152b5e365}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ae92a568c56bfff70eb4622c48db85bc0}\label{class_a_a_x___c_effect_parameters_ae92a568c56bfff70eb4622c48db85bc0}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterDefaultNormalizedValue@{GetParameterDefaultNormalizedValue}}
+\index{GetParameterDefaultNormalizedValue@{GetParameterDefaultNormalizedValue}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterDefaultNormalizedValue()}{GetParameterDefaultNormalizedValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Default\+Normalized\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double $\ast$}]{o\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves default value of a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Value} & The parameter\textquotesingle{}s default value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a858f07ba021f8c9912bf91735b10314b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a569cc13f2937cd68b3a1588c684df606}\label{class_a_a_x___c_effect_parameters_a569cc13f2937cd68b3a1588c684df606}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterIDFromIndex@{GetParameterIDFromIndex}}
+\index{GetParameterIDFromIndex@{GetParameterIDFromIndex}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterIDFromIndex()}{GetParameterIDFromIndex()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+I\+D\+From\+Index (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Control\+Index,  }\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+Parameter\+I\+D\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the ID of a parameter. 
+
+This method can be used to convert a parameter\textquotesingle{}s unique numeric index to its A\+A\+X\+\_\+\+C\+Param\+ID
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Control\+Index} & The numeric index of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Parameter\+I\+D\+String} & Reference to an \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} owned by the host. The plug-\/in must set this string equal to the parameter\textquotesingle{}s ID. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a5387b83e0f684a5bf0e09b24cae257d9}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a78485ad1079cf0da2843fce800afd5a8}\label{class_a_a_x___c_effect_parameters_a78485ad1079cf0da2843fce800afd5a8}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterIndex@{GetParameterIndex}}
+\index{GetParameterIndex@{GetParameterIndex}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterIndex()}{GetParameterIndex()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{int32\+\_\+t $\ast$}]{o\+Control\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the index of a parameter. 
+
+Although parameters are normally referenced by their A\+A\+X\+\_\+\+C\+Param\+ID, each parameter is also associated with a unique numeric index.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Control\+Index} & The parameter\textquotesingle{}s numeric index \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aff1ff6b27973200429f057dc003f30a8}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a8a0890eacee81afbea6a5548592e1c8f}\label{class_a_a_x___c_effect_parameters_a8a0890eacee81afbea6a5548592e1c8f}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterIsAutomatable@{GetParameterIsAutomatable}}
+\index{GetParameterIsAutomatable@{GetParameterIsAutomatable}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterIsAutomatable()}{GetParameterIsAutomatable()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Is\+Automatable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} $\ast$}]{o\+Automatable }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves information about a parameter\textquotesingle{}s automatable status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Automatable} & True if the queried parameter is automatable, false if it is not \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a4e6eeef25a797ea4c6961df45174b169}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_af618b324cdd013ffa322f798af30ca40}\label{class_a_a_x___c_effect_parameters_af618b324cdd013ffa322f798af30ca40}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterName@{GetParameterName}}
+\index{GetParameterName@{GetParameterName}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterName()}{GetParameterName()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the full name for a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Name} & Reference to an \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} owned by the host. The plug-\/in must set this string equal to the parameter\textquotesingle{}s full name. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a8f8ae4b4346e708ec6de612ef99e5a92}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_af0bc3d6fb8f387f58a073f8902233bd3}\label{class_a_a_x___c_effect_parameters_af0bc3d6fb8f387f58a073f8902233bd3}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterNameOfLength@{GetParameterNameOfLength}}
+\index{GetParameterNameOfLength@{GetParameterNameOfLength}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterNameOfLength()}{GetParameterNameOfLength()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Name\+Of\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+Name,  }\item[{int32\+\_\+t}]{i\+Name\+Length }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves an abbreviated name for a parameter. 
+
+In general, lengths of 3 through 8 and 31 should be specifically addressed.
+
+\textbackslash{}compatibility In most cases, the A\+AX host will call \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a8f8ae4b4346e708ec6de612ef99e5a92}{Get\+Parameter\+Name()}} or \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a5d556ae1fa4617a6439ef347139d70eb}{Get\+Parameter\+Name\+Of\+Length()}} to retrieve parameter names for display. However, when Pro Tools is retrieving a plug-\/in name for display on a control surface the X\+ML data stored in the plug-\/in\textquotesingle{}s page tables will be used in preference to values retrieved from these methods.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Name} & Reference to an \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} owned by the host. The plug-\/in must set this string equal to an abbreviated name for the parameter, using {\ttfamily i\+Name\+Length} characters or fewer. \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Name\+Length} & The maximum number of characters in {\ttfamily o\+Name} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a5d556ae1fa4617a6439ef347139d70eb}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ae2892335e4613cfd427fc636b483fceb}\label{class_a_a_x___c_effect_parameters_ae2892335e4613cfd427fc636b483fceb}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterNormalizedValue@{GetParameterNormalizedValue}}
+\index{GetParameterNormalizedValue@{GetParameterNormalizedValue}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterNormalizedValue()}{GetParameterNormalizedValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Normalized\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double $\ast$}]{o\+Value\+Ptr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves a parameter\textquotesingle{}s current value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Value\+Ptr} & The parameter\textquotesingle{}s current value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a18e3407bac178a9b0339bd6f95e74a17}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a3a142f7b8bd3e09b522445c0b315c759}\label{class_a_a_x___c_effect_parameters_a3a142f7b8bd3e09b522445c0b315c759}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterNumberOfSteps@{GetParameterNumberOfSteps}}
+\index{GetParameterNumberOfSteps@{GetParameterNumberOfSteps}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterNumberOfSteps()}{GetParameterNumberOfSteps()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Number\+Of\+Steps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{int32\+\_\+t $\ast$}]{o\+Num\+Steps }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the number of discrete steps for a parameter. 
+
+\begin{DoxyNote}{Note}
+The value returned for {\ttfamily o\+Num\+Steps} M\+U\+ST be greater than zero. All other values will be considered an error by the host.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Num\+Steps} & The number of steps for this parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a2a8d8d200383204db9bb780a4cc8ef6f}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a8ddd81b155f01497508093d32f5545e7}\label{class_a_a_x___c_effect_parameters_a8ddd81b155f01497508093d32f5545e7}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterOrientation@{GetParameterOrientation}}
+\index{GetParameterOrientation@{GetParameterOrientation}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterOrientation()}{GetParameterOrientation()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Orientation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a52f91d1c14aa5dceedabfb9d2de31bf0}{A\+A\+X\+\_\+\+E\+Parameter\+Orientation}} $\ast$}]{o\+Parameter\+Orientation }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the orientation that should be applied to a parameter\textquotesingle{}s controls. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000040}{Todo}}]update this documentation\end{DoxyRefDesc}
+
+
+This method allows you to specify the orientation of knob controls that are managed by the host (e.\+g. knobs on an attached control surface.)
+
+Here is an example override of this method that reverses the orientation of a control for a parameter\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// AAX\_IParameter* myBackwardsParameter}}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (iParameterID == myBackwardsParameter-\/>Identifier())}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{     *oParameterType =}
+\DoxyCodeLine{       AAX\_eParameterOrientation\_BottomMinTopMax |}
+\DoxyCodeLine{       AAX\_eParameterOrientation\_LeftMinRightMax |}
+\DoxyCodeLine{       AAX\_eParameterOrientation\_RotaryWrapMode |}
+\DoxyCodeLine{       AAX\_eParameterOrientation\_RotaryLeftMinRightMax;}
+\DoxyCodeLine{ \}}
+\end{DoxyCode}
+
+
+The orientation options are set according to \mbox{\hyperlink{_a_a_x___enums_8h_aa5ffa1ed828630b6b7a13c049d93ae87}{A\+A\+X\+\_\+\+E\+Parameter\+Orientation\+Bits}}
+
+\textbackslash{}legacy \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ac122e1a693296b059dca4350a5ff1dfe}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Parameter\+Orientation()}} corresponds to the Get\+Control\+Orientation() method in the legacy R\+T\+A\+S/\+T\+DM S\+DK.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Parameter\+Orientation} & The orientation of the parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ac122e1a693296b059dca4350a5ff1dfe}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a4d92debb4785a84356960ac8c633bf12}\label{class_a_a_x___c_effect_parameters_a4d92debb4785a84356960ac8c633bf12}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterStringFromValue@{GetParameterStringFromValue}}
+\index{GetParameterStringFromValue@{GetParameterStringFromValue}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterStringFromValue()}{GetParameterStringFromValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+String\+From\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value,  }\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+Value\+String,  }\item[{int32\+\_\+t}]{i\+Max\+Length }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Converts a normalized parameter value into a string representing its corresponding real value. 
+
+This method uses the queried parameter\textquotesingle{}s display delegate and taper to convert a normalized value into the corresponding {\ttfamily char$\ast$} value string for its real value.
+
+\textbackslash{}legacy This method corresponds to C\+Process\+::\+Map\+Control\+Val\+To\+String() in the R\+T\+A\+S/\+T\+DM S\+DK
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & The normalized value that will be converted to a formatted value\+String \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Value\+String} & The formatted value string associated with value \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Max\+Length} & The maximum length of value\+String \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_add995f2eb5a3967c48dd9f3e21f003aa}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a95c40a67ef6cd5e830e46826d1ccf5c4}\label{class_a_a_x___c_effect_parameters_a95c40a67ef6cd5e830e46826d1ccf5c4}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterType@{GetParameterType}}
+\index{GetParameterType@{GetParameterType}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterType()}{GetParameterType()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a4cd0f189daa9a60cf36883c56344bb2e}{A\+A\+X\+\_\+\+E\+Parameter\+Type}} $\ast$}]{o\+Parameter\+Type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the type of a parameter. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000039}{Todo}}]The concept of parameter type needs more documentation\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Parameter\+Type} & The parameter\textquotesingle{}s type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ae7f6d803fa9a472a4bad583868e3b951}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_af52682d9ba47701be0e803d19eb057a7}\label{class_a_a_x___c_effect_parameters_af52682d9ba47701be0e803d19eb057a7}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterValueFromString@{GetParameterValueFromString}}
+\index{GetParameterValueFromString@{GetParameterValueFromString}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterValueFromString()}{GetParameterValueFromString()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Value\+From\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double $\ast$}]{o\+Value,  }\item[{const \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} \&}]{i\+Value\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Converts a value string to a value. 
+
+This method uses the queried parameter\textquotesingle{}s display delegate and taper to convert a {\ttfamily char$\ast$} string into its corresponding value. The formatting of value\+String must be supported by the parameter\textquotesingle{}s display delegate in order for this call to succeed.
+
+\textbackslash{}legacy This method corresponds to C\+Process\+::\+Map\+Control\+String\+To\+Val() in the R\+T\+A\+S/\+T\+DM S\+DK
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Value} & The value associated with value\+String \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value\+String} & The formatted value string that will be converted into a value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a54bb12c9798e4f9a3a5b5d6f30ace992}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a0d3436cb88b4a86fe82a663221a9cfef}\label{class_a_a_x___c_effect_parameters_a0d3436cb88b4a86fe82a663221a9cfef}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterValueInfo@{GetParameterValueInfo}}
+\index{GetParameterValueInfo@{GetParameterValueInfo}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterValueInfo()}{GetParameterValueInfo()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Value\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{int32\+\_\+t}]{i\+Selector,  }\item[{int32\+\_\+t $\ast$}]{o\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves a property of a parameter. 
+
+This is a general purpose query that is specialized based on the value of {\ttfamily i\+Selector}. The currently supported selector values are described by \mbox{\hyperlink{_a_a_x___enums_8h_aa169208a2ce713fa021e20deb2eaf608}{A\+A\+X\+\_\+\+E\+Parameter\+Value\+Info\+Selector}} . The meaning of {\ttfamily o\+Value} is dependent upon {\ttfamily i\+Selector} .
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Selector} & The selector of the parameter value to retrieve. See \mbox{\hyperlink{_a_a_x___enums_8h_aa169208a2ce713fa021e20deb2eaf608}{A\+A\+X\+\_\+\+E\+Parameter\+Value\+Info\+Selector}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Value} & The value of the specified parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a1702de6d62b5b41b6a8b2f510300392b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a5ca62ebda52ddd423450eaa77f1d6968}\label{class_a_a_x___c_effect_parameters_a5ca62ebda52ddd423450eaa77f1d6968}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!GetParameterValueString@{GetParameterValueString}}
+\index{GetParameterValueString@{GetParameterValueString}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{GetParameterValueString()}{GetParameterValueString()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Value\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+Value\+String,  }\item[{int32\+\_\+t}]{i\+Max\+Length }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Retrieves the value string associated with a parameter\textquotesingle{}s current value. 
+
+This method uses the queried parameter\textquotesingle{}s display delegate and taper to convert its current value into a corresponding {\ttfamily char$\ast$} value string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Value\+String} & The formatted value string associated with the parameter\textquotesingle{}s current value \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Max\+Length} & The maximum length of value\+String \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aacb54e6522561fe91fe12d0d99734abf}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}\label{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Main data model initialization. Called when plug-\/in instance is first instantiated. 
+
+\begin{DoxyNote}{Note}
+Most plug-\/ins should override \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Effect\+Init()}} rather than directly overriding this method
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Controller} & A versioned reference that resolves to an \mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}} interface\\
+\hline
+\end{DoxyParams}
+This default implementation calls \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}{Effect\+Init()}}. Only override \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}{Initialize()}} when additional initialization steps must be performed prior to \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}{Effect\+Init()}}. 
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ad4db3c0ab67f8f41cdd042a915daabb4}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_af18b23ec6d4e60e60e27c209c17e573a}\label{class_a_a_x___c_effect_parameters_af18b23ec6d4e60e60e27c209c17e573a}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!NotificationReceived@{NotificationReceived}}
+\index{NotificationReceived@{NotificationReceived}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{NotificationReceived()}{NotificationReceived()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Notification\+Received (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{in\+Notification\+Type,  }\item[{const void $\ast$}]{in\+Notification\+Data,  }\item[{uint32\+\_\+t}]{in\+Notification\+Data\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notification Hook. 
+
+Called from the host to deliver notifications to this object.
+
+Look at the \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event}} enumeration to see a description of events you can listen for and the data they come with.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+some notifications are sent only to the plug-\/in \mbox{\hyperlink{class_g_u_i}{G\+UI}} while other notifications are sent only to the plug-\/in data model. If you are not seeing an expected notification, try checking the other plug-\/in objects\textquotesingle{} {\ttfamily \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af18b23ec6d4e60e60e27c209c17e573a}{Notification\+Received()}}} methods.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+the host may dispatch notifications synchronously or asynchronously, and calls to this method may occur concurrently on multiple threads.
+\end{DoxyNote}
+A plug-\/in may also dispatch custom notifications using \mbox{\hyperlink{class_a_a_x___i_controller_a0384f820cecf8cf7671057060bf5ba4f}{A\+A\+X\+\_\+\+I\+Controller\+::\+Send\+Notification()}}. Custom notifications will be posted back to the plug-\/in\textquotesingle{}s other objects which support a {\ttfamily \mbox{\hyperlink{class_a_a_x___c_effect_parameters_af18b23ec6d4e60e60e27c209c17e573a}{Notification\+Received()}}} method (e.\+g. the \mbox{\hyperlink{class_g_u_i}{G\+UI}}).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Type} & Type of notification being received. Notifications form the host are one of \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Data} & Block of incoming notification data \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Data\+Size} & Size of {\ttfamily in\+Notification\+Data}, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aa3eaeb292d2ca84086a5a058171994fd}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_a7026f3c0e1845472cc940c280392a5e1}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a39c2085d444916000acec5da3797ca37}\label{class_a_a_x___c_effect_parameters_a39c2085d444916000acec5da3797ca37}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!ReleaseParameter@{ReleaseParameter}}
+\index{ReleaseParameter@{ReleaseParameter}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{ReleaseParameter()}{ReleaseParameter()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Release\+Parameter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Releases a parameter from a \char`\"{}touched\char`\"{} state. 
+
+This method is called by the Parameter Manager to release a parameter so that any control may send updates to the parameter.
+
+\begin{DoxyNote}{Note}
+You should never need to override this method when using \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The parameter that is being released \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a2caf1b7b8e2dad62cf96f144479dee60}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a2b68c51ddd302b43c0df250fdd3ba239}\label{class_a_a_x___c_effect_parameters_a2b68c51ddd302b43c0df250fdd3ba239}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!RenderAudio\_Hybrid@{RenderAudio\_Hybrid}}
+\index{RenderAudio\_Hybrid@{RenderAudio\_Hybrid}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{RenderAudio\_Hybrid()}{RenderAudio\_Hybrid()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Render\+Audio\+\_\+\+Hybrid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___s_hybrid_render_info}{A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info}} $\ast$}]{io\+Render\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Hybrid audio render function. 
+
+This method is called from the host to render audio for the hybrid piece of the algorithm.
+
+\begin{DoxyNote}{Note}
+To use this method plug-\/in should register some hybrid inputs and ouputs in \char`\"{}\+Describe\char`\"{} 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v2_ae6139041de22f51f3146d26a01c54c1b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a0dd675680a657de7f9d45d65d4b3bcfb}\label{class_a_a_x___c_effect_parameters_a0dd675680a657de7f9d45d65d4b3bcfb}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!ResetFieldData@{ResetFieldData}}
+\index{ResetFieldData@{ResetFieldData}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{ResetFieldData()}{ResetFieldData()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Reset\+Field\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}}}]{in\+Field\+Index,  }\item[{void $\ast$}]{o\+Data,  }\item[{uint32\+\_\+t}]{in\+Data\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called by the host to reset a private data field in the plug-\/in\textquotesingle{}s algorithm. 
+
+This method is called sequentially for all private data fields on Effect initialization and during any \char`\"{}reset\char`\"{} event, such as priming for a non-\/real-\/time render. This method is called before the algorithm\textquotesingle{}s optional initialization callback, and the initialized private data will be available within that callback via its context block.
+
+\begin{DoxySeeAlso}{See also}
+alg\+\_\+initialization.
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Any data structures that will be passed between platforms (for example, sent to a TI \mbox{\hyperlink{class_d_s_p}{D\+SP}} in an A\+AX \mbox{\hyperlink{class_d_s_p}{D\+SP}} plug-\/in) must be properly data-\/aligned for compatibility across both platforms. See \mbox{\hyperlink{_a_a_x_8h_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+LG}} for more information about guaranteeing cross-\/platform compatibility of data structures used for algorithm processing.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Field\+Index} & The index of the field that is being initialized \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Data} & The pre-\/allocated block of data that should be initialized \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Data\+Size} & The size of the data block, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a6e87e40d42c7431e52ae5ebd4f631964}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_a_a_x___c_i_plug_parameters_a11e92785b6e9d6c4d77ed9d02ea6e1e0}{A\+A\+X\+\_\+\+C\+I\+Plug\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a9908dd1d95995027bf6073c08f38b468}\label{class_a_a_x___c_effect_parameters_a9908dd1d95995027bf6073c08f38b468}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!SetChunk@{SetChunk}}
+\index{SetChunk@{SetChunk}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{SetChunk()}{SetChunk()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Chunk\+ID,  }\item[{const \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}} $\ast$}]{i\+Chunk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restores a set of plug-\/in parameters based on chunk information. 
+
+By calling this method, the host is attempting to update the plug-\/in\textquotesingle{}s current state to match the data stored in a chunk. The plug-\/in should initialize itself to this new state by calling \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a8eabaa279c51e74b30d3d2ffa5c865cb}{Set\+Parameter\+Normalized\+Value()}} for each of the relevant parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Chunk\+ID} & ID of the chunk that is being set \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Chunk} & The chunk \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a2d780ebc594683e24302871b809602e8}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_a26224840d0f9a26450c8825860c5bd45}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a2905b5ec2ef715cd9000c8f1902e13d3}\label{class_a_a_x___c_effect_parameters_a2905b5ec2ef715cd9000c8f1902e13d3}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!SetCustomData@{SetCustomData}}
+\index{SetCustomData@{SetCustomData}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{SetCustomData()}{SetCustomData()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Custom\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Data\+Block\+ID,  }\item[{uint32\+\_\+t}]{in\+Data\+Size,  }\item[{const void $\ast$}]{i\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+An optional interface hook for setting custom data for use by another module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Data\+Block\+ID} & Identifier for the provided block of custom data \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Data\+Size} & Size of provided buffer, in bytes \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Data} & Pointer to the data buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aa838cad04781853ef2e0b9df22a05170}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aafbafbc1b07c3f41c40b2ff9820557c8}\label{class_a_a_x___c_effect_parameters_aafbafbc1b07c3f41c40b2ff9820557c8}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!SetParameterDefaultNormalizedValue@{SetParameterDefaultNormalizedValue}}
+\index{SetParameterDefaultNormalizedValue@{SetParameterDefaultNormalizedValue}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{SetParameterDefaultNormalizedValue()}{SetParameterDefaultNormalizedValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Parameter\+Default\+Normalized\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Sets the default value of a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being updated \\
+\hline
+\mbox{\texttt{ out}}  & {\em i\+Value} & The parameter\textquotesingle{}s new default value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000038}{Todo}}]T\+H\+IS IS N\+OT C\+A\+L\+L\+ED F\+R\+OM H\+O\+ST. U\+S\+E\+F\+UL F\+OR I\+N\+T\+E\+R\+N\+AL U\+SE O\+N\+LY?\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a333b83bc6f37b0103ce0de65be02fede}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}\label{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!SetParameterNormalizedRelative@{SetParameterNormalizedRelative}}
+\index{SetParameterNormalizedRelative@{SetParameterNormalizedRelative}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{SetParameterNormalizedRelative()}{SetParameterNormalizedRelative()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Parameter\+Normalized\+Relative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Sets the specified parameter to a new value relative to its current value. 
+
+This method is used in cases when a relative control value is more convenient, for example when updating a \mbox{\hyperlink{class_g_u_i}{G\+UI}} control using a mouse wheel or the arrow keys. Note that the host may apply the parameter\textquotesingle{}s step size prior to calling \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}{Set\+Parameter\+Normalized\+Relative()}} in order to determine the correct value for a\+Value.
+
+\mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}{Set\+Parameter\+Normalized\+Relative()}} can be used to incorporate \char`\"{}wrapping\char`\"{} behavior in a parameter\textquotesingle{}s controls, if desired. If this behavior is not desired, then this method must properly account for overflow of the parameter\textquotesingle{}s normalized value.
+
+\mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}{Set\+Parameter\+Normalized\+Relative()}} is responsible for initiating any process that is required in order to update all of the parameter\textquotesingle{}s controls (e.\+g. in the plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}}, on control surfaces, in automation lanes, etc.) In most cases, the parameter manager will handle this initiation step.
+
+See also \mbox{\hyperlink{class_a_a_x___c_effect_parameters_aa2e14fdf26352f16f3b0c437bc0894cb}{Update\+Parameter\+Normalized\+Relative()}}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000041}{Todo}}]R\+E\+M\+O\+VE T\+H\+IS M\+E\+T\+H\+OD (?)\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being queried \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & The change in value that should be applied to the parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000042}{Todo}}]N\+OT C\+U\+R\+R\+E\+N\+T\+LY C\+A\+L\+L\+ED F\+R\+OM T\+HE H\+O\+ST. U\+S\+E\+F\+UL F\+OR I\+N\+T\+E\+R\+N\+AL U\+SE O\+N\+LY?\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a6e28a427a0d7d0c8df69dd5eb88cff6c}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a8eabaa279c51e74b30d3d2ffa5c865cb}\label{class_a_a_x___c_effect_parameters_a8eabaa279c51e74b30d3d2ffa5c865cb}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!SetParameterNormalizedValue@{SetParameterNormalizedValue}}
+\index{SetParameterNormalizedValue@{SetParameterNormalizedValue}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{SetParameterNormalizedValue()}{SetParameterNormalizedValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Parameter\+Normalized\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+C\+A\+LL\+: Sets the specified parameter to a new value. 
+
+\mbox{\hyperlink{class_a_a_x___c_effect_parameters_a8eabaa279c51e74b30d3d2ffa5c865cb}{Set\+Parameter\+Normalized\+Value()}} is responsible for initiating any process that is required in order to update all of the parameter\textquotesingle{}s controls (e.\+g. in the plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}}, on control surfaces, in automation lanes, etc.) In most cases, the parameter manager will handle this initiation step.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being set \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & The value to which the parameter should be set \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a368b0f5a761d1eda4c41b420f153a077}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a4e1dc0e4b966fe80041d67814d13e03d}\label{class_a_a_x___c_effect_parameters_a4e1dc0e4b966fe80041d67814d13e03d}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!TimerWakeup@{TimerWakeup}}
+\index{TimerWakeup@{TimerWakeup}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{TimerWakeup()}{TimerWakeup()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Timer\+Wakeup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Periodic wakeup callback for idle-\/time operations. 
+
+This method is called from the host using a non-\/main thread. In general, it should be driven at approximately one call per 30 ms. However, the wakeup is not guaranteed to be called at any regular interval -\/ for example, it could be held off by a high real-\/time processing load -\/ and there is no host contract regarding maximum latency between wakeup calls.
+
+This wakeup thread runs continuously and cannot be armed/disarmed or by the plug-\/in. 
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ab5b8da9e1a9d778d327ac04f4ab8d139}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_a_a_x___c_i_plug_parameters_a814cf284be30c2ae64b2cf66eaba35b1}{A\+A\+X\+\_\+\+C\+I\+Plug\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a0c7e32833e98facec61b73ac25049b13}\label{class_a_a_x___c_effect_parameters_a0c7e32833e98facec61b73ac25049b13}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!TouchParameter@{TouchParameter}}
+\index{TouchParameter@{TouchParameter}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{TouchParameter()}{TouchParameter()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Touch\+Parameter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\char`\"{}\+Touches\char`\"{} (locks) a parameter in the automation system to a particular control in preparation for updates 
+
+This method is called by the Parameter Manager to prime a parameter for receiving new automation data. When an automatable parameter is touched by a control, it will reject input from other controls until it is released.
+
+\begin{DoxyNote}{Note}
+You should never need to override this method when using \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The parameter that is being touched \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ae82e80cbfd9cb837f8101a85f06856ba}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_acd14ff2175a10759045674e8e14508b1}\label{class_a_a_x___c_effect_parameters_acd14ff2175a10759045674e8e14508b1}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!Uninitialize@{Uninitialize}}
+\index{Uninitialize@{Uninitialize}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{Uninitialize()}{Uninitialize()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Uninitialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Main data model uninitialization. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000037}{Todo}}]Docs\+: When exactly is \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a711969adc95624fb9ac8a3e3b2c23696}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+::\+Uninitialize()}} called, and under what conditions?\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a711969adc95624fb9ac8a3e3b2c23696}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_ac6720637afc7a87adfd391c4ef59126f}\label{class_a_a_x___c_effect_parameters_ac6720637afc7a87adfd391c4ef59126f}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdateControlMIDINodes@{UpdateControlMIDINodes}}
+\index{UpdateControlMIDINodes@{UpdateControlMIDINodes}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdateControlMIDINodes()}{UpdateControlMIDINodes()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Control\+M\+I\+D\+I\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{node\+ID,  }\item[{\mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} \&}]{i\+Packet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+M\+I\+DI update callback for control M\+I\+DI nodes. 
+
+This method is called by the host for each pending M\+I\+DI packet for \mbox{\hyperlink{struct_control}{Control}} M\+I\+DI nodes. Overwrite this method in Plug-\/\+In\textquotesingle{}s Effect\+Parameter class if you want to receive M\+I\+DI data packets directly in the data model.
+
+The host calls this method in Effects that register one or more \mbox{\hyperlink{struct_control}{Control}} M\+I\+DI nodes using \mbox{\hyperlink{class_a_a_x___i_effect_descriptor_aa7709de005e0256feb522758ccc5b582}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor\+::\+Add\+Control\+M\+I\+D\+I\+Node()}}. Effects with algorithms that use M\+I\+DI data nodes should override \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v2_a229029f0d4bd758538c48931b9f9a9ad}{Update\+M\+I\+D\+I\+Nodes()}}.
+
+\begin{DoxyNote}{Note}
+This method will not be called if an Effect includes any M\+I\+DI nodes in its algorithm context structure.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em node\+ID} & Identifier for the M\+I\+DI node \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Packet} & The incoming M\+I\+DI packet for the node \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v2_ab4ec161f64086070083c21b566354861}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aac6fa72278c0f46aa430cd79bdb2d767}\label{class_a_a_x___c_effect_parameters_aac6fa72278c0f46aa430cd79bdb2d767}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdateMIDINodes@{UpdateMIDINodes}}
+\index{UpdateMIDINodes@{UpdateMIDINodes}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdateMIDINodes()}{UpdateMIDINodes()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+M\+I\+D\+I\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}}}]{in\+Field\+Index,  }\item[{\mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} \&}]{i\+Packet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+M\+I\+DI update callback. 
+
+This method is called by the host for each pending M\+I\+DI packet for M\+I\+DI nodes in algorithm context structure. Overwrite this method in Plug-\/\+In\textquotesingle{}s Effect\+Parameter class if you want to receive M\+I\+DI data packets directly in the data model. M\+I\+DI data will also be delivered to the Effect algorithm.
+
+The host calls this method in Effects that register one or more M\+I\+DI nodes using \mbox{\hyperlink{class_a_a_x___i_component_descriptor_a6284dda9ccca898e33075de29dad4e39}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node()}}. Effects that do not require M\+I\+DI data to be sent to the plug-\/in algorithm should override \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v2_ab4ec161f64086070083c21b566354861}{Update\+Control\+M\+I\+D\+I\+Nodes()}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Field\+Index} & M\+I\+DI node field index in algorithm context structure \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Packet} & The incoming M\+I\+DI packet for the node \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v2_a229029f0d4bd758538c48931b9f9a9ad}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a6a2a5cfe04b343f6ac47becb0e77ba84}\label{class_a_a_x___c_effect_parameters_a6a2a5cfe04b343f6ac47becb0e77ba84}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdatePageTable@{UpdatePageTable}}
+\index{UpdatePageTable@{UpdatePageTable}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdatePageTable()}{UpdatePageTable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Page\+Table (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{in\+Table\+Type,  }\item[{int32\+\_\+t}]{in\+Table\+Page\+Size,  }\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+Host\+Unknown,  }\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{io\+Page\+Table\+Unknown }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Allow the plug-\/in to update its page tables. 
+
+Called by the plug-\/in host, usually in response to a \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed}} notification sent from the plug-\/in.
+
+Use this method to change the page table mapping for the plug-\/in instance or to apply other changes to auxiliary U\+Is which use the plug-\/in page tables, such as setting focus to a new page.
+
+See A\+A\+X\+\_\+\+Page\+\_\+\+Table\+\_\+\+Guide for more information about page tables.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Table\+Type} & Four-\/char type identifier for the table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+TL\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Table\+Page\+Size} & Page size for the table \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Host\+Unknown} & Unknown interface from the host which may support interfaces providing additional features or information.
+
+All interfaces queried from this unknown will be valid only within the scope of this \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()}} execution and will be relevant for only the current plug-\/in instance. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em io\+Page\+Table\+Unknown} & Unknown interface which supports \mbox{\hyperlink{class_a_a_x___i_page_table}{A\+A\+X\+\_\+\+I\+Page\+Table}}. This object represents the page table data which is currently stored by the host for this plug-\/in instance for the given table type and page size. This data and may be edited within the scope of \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()}} to change the page table mapping for this plug-\/in instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED if the plug-\/in does not implement it or when no change is requested by the plug-\/in. This allows optimizations to be used in the host when no \mbox{\hyperlink{class_u_i}{UI}} update is required following this call.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+For convenience, do not override this method. Instead, override the \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a79c283d2698c39e664e590f256c51d02}{protected overload}} which provides a prepared copy of the relevant \mbox{\hyperlink{class_a_a_x___i_page_table}{A\+A\+X\+\_\+\+I\+Page\+Table}} host interface. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters___v4_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a79c283d2698c39e664e590f256c51d02}\label{class_a_a_x___c_effect_parameters_a79c283d2698c39e664e590f256c51d02}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdatePageTable@{UpdatePageTable}}
+\index{UpdatePageTable@{UpdatePageTable}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdatePageTable()}{UpdatePageTable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Page\+Table (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{,  }\item[{int32\+\_\+t}]{,  }\item[{\mbox{\hyperlink{class_a_a_x___i_page_table}{A\+A\+X\+\_\+\+I\+Page\+Table}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Protected overload of \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a6a2a5cfe04b343f6ac47becb0e77ba84}{Update\+Page\+Table()}}
+
+Override this version of the method for convenience. This allows the default \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a6a2a5cfe04b343f6ac47becb0e77ba84}{Update\+Page\+Table()}} implementation to handle the interface conversion from \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} to \mbox{\hyperlink{class_a_a_x___i_page_table}{A\+A\+X\+\_\+\+I\+Page\+Table}}.
+
+\begin{DoxyReturn}{Returns}
+This method should return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED if the plug-\/in does not implement it or when no change is made by the plug-\/in. This allows optimizations to be used in the host when no \mbox{\hyperlink{class_u_i}{UI}} update is required following this call. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aa2e14fdf26352f16f3b0c437bc0894cb}\label{class_a_a_x___c_effect_parameters_aa2e14fdf26352f16f3b0c437bc0894cb}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdateParameterNormalizedRelative@{UpdateParameterNormalizedRelative}}
+\index{UpdateParameterNormalizedRelative@{UpdateParameterNormalizedRelative}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdateParameterNormalizedRelative()}{UpdateParameterNormalizedRelative()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Parameter\+Normalized\+Relative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates a single parameter\textquotesingle{}s state to its current value, as a difference with the parameter\textquotesingle{}s previous value. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000270}{Deprecated}}]This is not called from the host. It {\itshape may} still be useful for internal calls within the plug-\/in, though it should only ever be used to update non-\/automatable parameters. Automatable parameters should always be updated through the \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} interface, which will ensure proper coordination with other automation clients.\end{DoxyRefDesc}
+
+
+\mbox{\hyperlink{class_a_a_x___c_effect_parameters_aa2e14fdf26352f16f3b0c437bc0894cb}{Update\+Parameter\+Normalized\+Relative()}} can be used to incorporate \char`\"{}wraparound\char`\"{} behavior in a parameter\textquotesingle{}s controls, if desired. If this behavior is not desired, then this method must properly account for overflow of the parameter\textquotesingle{}s normalized value.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2191024666f779ea95e89e03fc76a7a8}{Set\+Parameter\+Normalized\+Relative()}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being updated \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & The difference between the parameter\textquotesingle{}s current value and its previous value (normalized). The parameter\textquotesingle{}s state must be updated to reflect this difference. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a54403bec090fcc999a93f54c01bca0c9}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_aeff79c1e5cc6b65c7ed21d9912f87caf}\label{class_a_a_x___c_effect_parameters_aeff79c1e5cc6b65c7ed21d9912f87caf}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdateParameterNormalizedValue@{UpdateParameterNormalizedValue}}
+\index{UpdateParameterNormalizedValue@{UpdateParameterNormalizedValue}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdateParameterNormalizedValue()}{UpdateParameterNormalizedValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Parameter\+Normalized\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source}}}]{i\+Source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates a single parameter\textquotesingle{}s state to its current value. 
+
+\begin{DoxyNote}{Note}
+Do {\itshape not} call this method from the plug-\/in. This method should be called by the host only. To set parameter values from within the plug-\/in, use the \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} interface.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000043}{Todo}}]F\+L\+A\+G\+G\+ED F\+OR C\+O\+N\+S\+I\+D\+E\+R\+A\+T\+I\+ON OF R\+E\+V\+I\+S\+I\+ON\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being updated \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & The parameter\textquotesingle{}s current value, to which its internal state must be updated \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Source} & The source of the update \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a685858711efb8634ce66c327f2865c71}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_a_a_x___c_i_plug_parameters_ad987637812490326f1cb0eabacc8f8a8}{A\+A\+X\+\_\+\+C\+I\+Plug\+Parameters}}, and \mbox{\hyperlink{class_i_plug_a_a_x_a495f28636577b12ccc7693a444b91474}{I\+Plug\+A\+AX}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_parameters_a035778f6cccf8cf96a11b3a028efed6e}\label{class_a_a_x___c_effect_parameters_a035778f6cccf8cf96a11b3a028efed6e}} 
+\index{AAX\_CEffectParameters@{AAX\_CEffectParameters}!UpdateParameterTouch@{UpdateParameterTouch}}
+\index{UpdateParameterTouch@{UpdateParameterTouch}!AAX\_CEffectParameters@{AAX\_CEffectParameters}}
+\doxysubsubsection{\texorpdfstring{UpdateParameterTouch()}{UpdateParameterTouch()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Parameter\+Touch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}}}]{i\+Touch\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets a \char`\"{}touched\char`\"{} state on a parameter. 
+
+\begin{DoxyNote}{Note}
+This method should be overriden when dealing with linked parameters. Do N\+OT use this method to keep track of touch states. Use the \mbox{\hyperlink{class_a_a_x___i_a_c_f_automation_delegate}{automation delegate}} for that.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The parameter that is changing touch states. \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Touch\+State} & The touch state of the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a93483f44315bdf3adf60bf5bf773fbb8}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___c_effect_parameters_8h}{A\+A\+X\+\_\+\+C\+Effect\+Parameters.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Libs/\+A\+A\+X\+Library/source/A\+A\+X\+\_\+\+C\+Effect\+Parameters.\+cpp\end{DoxyCompactItemize}

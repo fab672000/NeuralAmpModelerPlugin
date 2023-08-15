@@ -1,0 +1,190 @@
+\hypertarget{_i_plug_paths_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+I\+Plug\+Paths.h File Reference}
+\label{_i_plug_paths_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/IPlug/IPlugPaths.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/IPlug/IPlugPaths.h}}
+
+
+Common paths useful for plug-\/ins.  
+
+
+{\ttfamily \#include \char`\"{}I\+Plug\+Utilities.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_i_plug_paths_8h_af15f0498352f27ebb7da102c4b7181bc}\label{_i_plug_paths_8h_af15f0498352f27ebb7da102c4b7181bc}} 
+using {\bfseries Plugin\+I\+D\+Type} = void $\ast$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_a795b9d00189ed09568cbd90acf1c0f88}{Host\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path, const char $\ast$bundle\+ID=0)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_a69d61644efbb2b4c90b8e5c802eb05f4}{Plugin\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path, Plugin\+I\+D\+Type p\+Extra)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_af14eac4a6241279b7096931f567f4af0}{Bundle\+Resource\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path, Plugin\+I\+D\+Type p\+Extra=0)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_a75615139c6bf033977de578c31512c2a}{Desktop\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_a03a8b65ce1ec3f165019023f43b3dd07}{User\+Home\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_adc3ebe2c27a9fae07f5fe4bdf22e6f55}{App\+Support\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path, bool is\+System=false)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_a6083eab93c92e02063862624d2d27934}{V\+S\+T3\+Presets\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path, const char $\ast$mfr\+Name, const char $\ast$plugin\+Name, bool is\+System=true)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_af2a34e54254ecf7b55eb09c772e6f558}{I\+N\+I\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path, const char $\ast$plugin\+Name)
+\item 
+void \mbox{\hyperlink{_i_plug_paths_8h_afd1c96003e52f6c8cce65b4fda6797a6}{Web\+View\+Cache\+Path}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&path)
+\item 
+E\+Resource\+Location \mbox{\hyperlink{_i_plug_paths_8h_a219939770dc84d12c583a7c6c5cd1d59}{Locate\+Resource}} (const char $\ast$file\+Name\+Or\+Res\+ID, const char $\ast$type, \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&result, const char $\ast$bundle\+ID, void $\ast$p\+H\+Instance, const char $\ast$shared\+Resources\+Sub\+Path)
+\item 
+const void $\ast$ \mbox{\hyperlink{_i_plug_paths_8h_a61146da655dd19af31cd4b4e65ef6de3}{Load\+Win\+Resource}} (const char $\ast$res\+ID, const char $\ast$type, int \&size\+In\+Bytes, void $\ast$p\+H\+Instance)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common paths useful for plug-\/ins. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_i_plug_paths_8h_adc3ebe2c27a9fae07f5fe4bdf22e6f55}\label{_i_plug_paths_8h_adc3ebe2c27a9fae07f5fe4bdf22e6f55}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!AppSupportPath@{AppSupportPath}}
+\index{AppSupportPath@{AppSupportPath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{AppSupportPath()}{AppSupportPath()}}
+{\footnotesize\ttfamily void App\+Support\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path,  }\item[{bool}]{is\+System = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+{\em is\+System} & Set {\ttfamily true} if you want to obtain the system-\/wide path, otherwise the path will be in the user\textquotesingle{}s home folder \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_af14eac4a6241279b7096931f567f4af0}\label{_i_plug_paths_8h_af14eac4a6241279b7096931f567f4af0}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!BundleResourcePath@{BundleResourcePath}}
+\index{BundleResourcePath@{BundleResourcePath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{BundleResourcePath()}{BundleResourcePath()}}
+{\footnotesize\ttfamily void Bundle\+Resource\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path,  }\item[{Plugin\+I\+D\+Type}]{p\+Extra = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Get the path to the plug-\/in bundle resource path. On mac\+OS and i\+OS if this is called in an A\+Uv3 app extension it will return the bundle of the parent app i\+OS bundles are flat, so the path is just to the .app where as mac\+OS bundles contain a resources subfolder On Windows this is only useful for V\+S\+T3 plug-\/ins which have a \char`\"{}bundle\char`\"{} with a resource path since v3.\+6 
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+{\em p\+Extra} & This should either be a const char$\ast$ to bundle\+ID (mac\+O\+S/i\+OS) or an H\+M\+O\+D\+U\+LE handle (windows) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_a75615139c6bf033977de578c31512c2a}\label{_i_plug_paths_8h_a75615139c6bf033977de578c31512c2a}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!DesktopPath@{DesktopPath}}
+\index{DesktopPath@{DesktopPath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{DesktopPath()}{DesktopPath()}}
+{\footnotesize\ttfamily void Desktop\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_a795b9d00189ed09568cbd90acf1c0f88}\label{_i_plug_paths_8h_a795b9d00189ed09568cbd90acf1c0f88}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!HostPath@{HostPath}}
+\index{HostPath@{HostPath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{HostPath()}{HostPath()}}
+{\footnotesize\ttfamily void Host\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path,  }\item[{const char $\ast$}]{bundle\+ID = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Get the path to the host binary 
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_af2a34e54254ecf7b55eb09c772e6f558}\label{_i_plug_paths_8h_af2a34e54254ecf7b55eb09c772e6f558}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!INIPath@{INIPath}}
+\index{INIPath@{INIPath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{INIPath()}{INIPath()}}
+{\footnotesize\ttfamily void I\+N\+I\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path,  }\item[{const char $\ast$}]{plugin\+Name }\end{DoxyParamCaption})}
+
+Get the path to the folder where the App\textquotesingle{}s settings.\+ini file is stored 
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+{\em plugin\+Name} & C\+String to specify the plug-\/in name (B\+U\+N\+D\+L\+E\+\_\+\+N\+A\+ME from config.\+h can be used here) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_a61146da655dd19af31cd4b4e65ef6de3}\label{_i_plug_paths_8h_a61146da655dd19af31cd4b4e65ef6de3}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!LoadWinResource@{LoadWinResource}}
+\index{LoadWinResource@{LoadWinResource}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{LoadWinResource()}{LoadWinResource()}}
+{\footnotesize\ttfamily const void$\ast$ Load\+Win\+Resource (\begin{DoxyParamCaption}\item[{const char $\ast$}]{res\+ID,  }\item[{const char $\ast$}]{type,  }\item[{int \&}]{size\+In\+Bytes,  }\item[{void $\ast$}]{p\+H\+Instance }\end{DoxyParamCaption})}
+
+Load a resource from the binary (windows only). 
+\begin{DoxyParams}{Parameters}
+{\em type} & The resource type in lower or upper case, e.\+g. ttf or T\+TF for a truetype font \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const void pointer to the data if successfull on windows. Returns nullptr if unsuccessfull or on platforms other than windows 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_i_plug_paths_8h_a219939770dc84d12c583a7c6c5cd1d59}\label{_i_plug_paths_8h_a219939770dc84d12c583a7c6c5cd1d59}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!LocateResource@{LocateResource}}
+\index{LocateResource@{LocateResource}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{LocateResource()}{LocateResource()}}
+{\footnotesize\ttfamily E\+Resource\+Location Locate\+Resource (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name\+Or\+Res\+ID,  }\item[{const char $\ast$}]{type,  }\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{result,  }\item[{const char $\ast$}]{bundle\+ID,  }\item[{void $\ast$}]{p\+H\+Instance,  }\item[{const char $\ast$}]{shared\+Resources\+Sub\+Path }\end{DoxyParamCaption})}
+
+Find the absolute path of a resource based on it\textquotesingle{}s file name (e.\+g. “background.\+png”) and type (e.\+g. “png”), or in the case of windows, confirm the existence of a particular resource in the binary. If it fails to find the resource with the binary it will test the file\+Name\+Or\+Res\+ID argument as an absolute path, to see if the file exists in that place. On mac\+OS resources are usually included inside the bundle resources folder. On Windows resources are usually baked into the binary via the resource compiler. In this case the file\+Name argument is the resource id to look for. The .rc file must include these ids, otherwise you may hit a runtime assertion when you come to load the file. In some cases you may want to provide an absolute path to a file in a shared resources folder here (for example if you want to reduce the disk footprint of multiple bundles, such as when you have multiple plug-\/in formats installed).
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name\+Or\+Res\+ID} & The filename or resource\+ID including extension. If no resource is found this argument is tested as an absolute path. \\
+\hline
+{\em type} & The resource type (file extension) in lower or upper case, e.\+g. ttf or T\+TF for a truetype font \\
+\hline
+{\em result} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} which will either contain the full path to the resource on disk, or the full Windows resource\+ID on success \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_i_plug_paths_8h_a69d61644efbb2b4c90b8e5c802eb05f4}\label{_i_plug_paths_8h_a69d61644efbb2b4c90b8e5c802eb05f4}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!PluginPath@{PluginPath}}
+\index{PluginPath@{PluginPath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{PluginPath()}{PluginPath()}}
+{\footnotesize\ttfamily void Plugin\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path,  }\item[{Plugin\+I\+D\+Type}]{p\+Extra }\end{DoxyParamCaption})}
+
+Get the path to the plug-\/in binary 
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+{\em p\+Extra} & This should either be a const char$\ast$ to bundle\+ID (mac\+OS) or an H\+M\+O\+D\+U\+LE handle (windows) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_a03a8b65ce1ec3f165019023f43b3dd07}\label{_i_plug_paths_8h_a03a8b65ce1ec3f165019023f43b3dd07}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!UserHomePath@{UserHomePath}}
+\index{UserHomePath@{UserHomePath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{UserHomePath()}{UserHomePath()}}
+{\footnotesize\ttfamily void User\+Home\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_a6083eab93c92e02063862624d2d27934}\label{_i_plug_paths_8h_a6083eab93c92e02063862624d2d27934}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!VST3PresetsPath@{VST3PresetsPath}}
+\index{VST3PresetsPath@{VST3PresetsPath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{VST3PresetsPath()}{VST3PresetsPath()}}
+{\footnotesize\ttfamily void V\+S\+T3\+Presets\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path,  }\item[{const char $\ast$}]{mfr\+Name,  }\item[{const char $\ast$}]{plugin\+Name,  }\item[{bool}]{is\+System = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} reference where the path will be put on success or empty string on failure \\
+\hline
+{\em mfr\+Name} & C\+String to specify the manufacturer name, which will be the top level folder for .vstpreset files for this manufacturer\textquotesingle{}s product \\
+\hline
+{\em plugin\+Name} & C\+String to specify the plug-\/in name, which will be the sub folder (beneath mfr\+Name) in which the .vstpreset files are located \\
+\hline
+{\em is\+System} & Set {\ttfamily true} if you want to obtain the system-\/wide path, otherwise the path will be in the user\textquotesingle{}s home folder \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_i_plug_paths_8h_afd1c96003e52f6c8cce65b4fda6797a6}\label{_i_plug_paths_8h_afd1c96003e52f6c8cce65b4fda6797a6}} 
+\index{IPlugPaths.h@{IPlugPaths.h}!WebViewCachePath@{WebViewCachePath}}
+\index{WebViewCachePath@{WebViewCachePath}!IPlugPaths.h@{IPlugPaths.h}}
+\doxysubsubsection{\texorpdfstring{WebViewCachePath()}{WebViewCachePath()}}
+{\footnotesize\ttfamily void Web\+View\+Cache\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{path }\end{DoxyParamCaption})}
+
+Get the path to the folder where the Plug-\/in\textquotesingle{}s I\+Core\+Web\+View2 userdata folder should be (Windows Web\+View only) 

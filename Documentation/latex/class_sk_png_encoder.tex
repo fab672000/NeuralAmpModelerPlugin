@@ -1,0 +1,83 @@
+\hypertarget{class_sk_png_encoder}{}\doxysection{Sk\+Png\+Encoder Class Reference}
+\label{class_sk_png_encoder}\index{SkPngEncoder@{SkPngEncoder}}
+Inheritance diagram for Sk\+Png\+Encoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sk_png_encoder}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_png_encoder_1_1_options}{Options}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_png_encoder_ac69e7a25b60a8bc8e1574f37e05773bd}\label{class_sk_png_encoder_ac69e7a25b60a8bc8e1574f37e05773bd}} 
+enum {\bfseries Filter\+Flag} \+: int \{ \newline
+{\bfseries k\+Zero} = 0x00, 
+{\bfseries k\+None} = 0x08, 
+{\bfseries k\+Sub} = 0x10, 
+{\bfseries k\+Up} = 0x20, 
+\newline
+{\bfseries k\+Avg} = 0x40, 
+{\bfseries k\+Paeth} = 0x80, 
+{\bfseries k\+All} = k\+None $\vert$ k\+Sub $\vert$ k\+Up $\vert$ k\+Avg $\vert$ k\+Paeth
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_sk_png_encoder_aaf6d62269c143221fdde9b87d7a69d6d}{Encode}} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$dst, const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&src, const \mbox{\hyperlink{struct_sk_png_encoder_1_1_options}{Options}} \&options)
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_encoder}{Sk\+Encoder}} $>$ \mbox{\hyperlink{class_sk_png_encoder_a5a8c333aa9cc79448ca2cf77e9933fb0}{Make}} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$dst, const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&src, const \mbox{\hyperlink{struct_sk_png_encoder_1_1_options}{Options}} \&options)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_png_encoder_a92778dd21d2ad79306909d1caaf4f3bf}\label{class_sk_png_encoder_a92778dd21d2ad79306909d1caaf4f3bf}} 
+using {\bfseries I\+N\+H\+E\+R\+I\+T\+ED} = \mbox{\hyperlink{class_sk_encoder}{Sk\+Encoder}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_png_encoder_a607c2ed83479a4767f99c4c558f2e515}\label{class_sk_png_encoder_a607c2ed83479a4767f99c4c558f2e515}} 
+bool {\bfseries on\+Encode\+Rows} (int num\+Rows) override
+\item 
+\mbox{\Hypertarget{class_sk_png_encoder_ac3286fb511c1a6d1c67a003e2d550f17}\label{class_sk_png_encoder_ac3286fb511c1a6d1c67a003e2d550f17}} 
+{\bfseries Sk\+Png\+Encoder} (std\+::unique\+\_\+ptr$<$ Sk\+Png\+Encoder\+Mgr $>$, const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&src)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_png_encoder_add422485ccb64cdffd3ddc4cc0d8a51c}\label{class_sk_png_encoder_add422485ccb64cdffd3ddc4cc0d8a51c}} 
+std\+::unique\+\_\+ptr$<$ Sk\+Png\+Encoder\+Mgr $>$ {\bfseries f\+Encoder\+Mgr}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_png_encoder_aaf6d62269c143221fdde9b87d7a69d6d}\label{class_sk_png_encoder_aaf6d62269c143221fdde9b87d7a69d6d}} 
+\index{SkPngEncoder@{SkPngEncoder}!Encode@{Encode}}
+\index{Encode@{Encode}!SkPngEncoder@{SkPngEncoder}}
+\doxysubsubsection{\texorpdfstring{Encode()}{Encode()}}
+{\footnotesize\ttfamily static bool Sk\+Png\+Encoder\+::\+Encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{src,  }\item[{const \mbox{\hyperlink{struct_sk_png_encoder_1_1_options}{Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Encode the $\vert$src$\vert$ pixels to the $\vert$dst$\vert$ stream. $\vert$options$\vert$ may be used to control the encoding behavior.
+
+Returns true on success. Returns false on an invalid or unsupported $\vert$src$\vert$. \mbox{\Hypertarget{class_sk_png_encoder_a5a8c333aa9cc79448ca2cf77e9933fb0}\label{class_sk_png_encoder_a5a8c333aa9cc79448ca2cf77e9933fb0}} 
+\index{SkPngEncoder@{SkPngEncoder}!Make@{Make}}
+\index{Make@{Make}!SkPngEncoder@{SkPngEncoder}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily static std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_sk_encoder}{Sk\+Encoder}}$>$ Sk\+Png\+Encoder\+::\+Make (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{src,  }\item[{const \mbox{\hyperlink{struct_sk_png_encoder_1_1_options}{Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a png encoder that will encode the $\vert$src$\vert$ pixels to the $\vert$dst$\vert$ stream. $\vert$options$\vert$ may be used to control the encoding behavior.
+
+$\vert$dst$\vert$ is unowned but must remain valid for the lifetime of the object.
+
+This returns nullptr on an invalid or unsupported $\vert$src$\vert$. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/encode/Sk\+Png\+Encoder.\+h\end{DoxyCompactItemize}

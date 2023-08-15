@@ -1,0 +1,131 @@
+\hypertarget{interface_dot_z_lib_1_1_codec}{}\doxysection{Dot\+Z\+Lib.\+Codec Interface Reference}
+\label{interface_dot_z_lib_1_1_codec}\index{DotZLib.Codec@{DotZLib.Codec}}
+
+
+Declares methods and events for implementing compressors/decompressors  
+
+
+Inheritance diagram for Dot\+Z\+Lib.\+Codec\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_dot_z_lib_1_1_codec}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_aa40d0820bd95f098b3e7d8e707e7a536}{Add}} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Adds more data to the codec to be processed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_a137234d0c6fa6981ca8b602340e79dbc}{Add}} (byte\mbox{[}$\,$\mbox{]} data, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Adds more data to the codec to be processed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_af12b887d445dcbc5e7c11b3aa000aa27}{Finish}} ()
+\begin{DoxyCompactList}\small\item\em Finishes up any pending data that needs to be processed and handled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_aa5f968120138390af2648c956d4355cb}{Checksum}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the checksum of the data that has been added so far \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_dot_z_lib_a3aa323950a96dc02f6b94462d498bfef}{Data\+Available\+Handler}} \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_a54b5cd5685e1256fcb0cb6ead5c3e5b5}{Data\+Available}}
+\begin{DoxyCompactList}\small\item\em Occurs when more processed data are available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares methods and events for implementing compressors/decompressors 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_dot_z_lib_1_1_codec_aa40d0820bd95f098b3e7d8e707e7a536}\label{interface_dot_z_lib_1_1_codec_aa40d0820bd95f098b3e7d8e707e7a536}} 
+\index{DotZLib.Codec@{DotZLib.Codec}!Add@{Add}}
+\index{Add@{Add}!DotZLib.Codec@{DotZLib.Codec}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec.\+Add (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})}
+
+
+
+Adds more data to the codec to be processed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Byte array containing the data to be added to the codec\\
+\hline
+\end{DoxyParams}
+
+
+Adding data may, or may not, raise the {\ttfamily Data\+Available} event
+
+Implemented in \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a9131ff23312ada67dbf58f428d562de4}{Dot\+Z\+Lib.\+Codec\+Base}}.
+
+\mbox{\Hypertarget{interface_dot_z_lib_1_1_codec_a137234d0c6fa6981ca8b602340e79dbc}\label{interface_dot_z_lib_1_1_codec_a137234d0c6fa6981ca8b602340e79dbc}} 
+\index{DotZLib.Codec@{DotZLib.Codec}!Add@{Add}}
+\index{Add@{Add}!DotZLib.Codec@{DotZLib.Codec}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec.\+Add (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Adds more data to the codec to be processed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Byte array containing the data to be added to the codec\\
+\hline
+{\em offset} & The index of the first byte to add from {\ttfamily data}\\
+\hline
+{\em count} & The number of bytes to add\\
+\hline
+\end{DoxyParams}
+
+
+Adding data may, or may not, raise the {\ttfamily Data\+Available} event
+
+Implemented in \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_ab01e6ad1d9c5b05745dd9e487aaa40ee}{Dot\+Z\+Lib.\+Codec\+Base}}, \mbox{\hyperlink{class_dot_z_lib_1_1_deflater_a2db95e3ca07e562df0652ed1ad8d0c4d}{Dot\+Z\+Lib.\+Deflater}}, and \mbox{\hyperlink{class_dot_z_lib_1_1_inflater_a773dd62fe806dd9b6117f859faaeb079}{Dot\+Z\+Lib.\+Inflater}}.
+
+\mbox{\Hypertarget{interface_dot_z_lib_1_1_codec_af12b887d445dcbc5e7c11b3aa000aa27}\label{interface_dot_z_lib_1_1_codec_af12b887d445dcbc5e7c11b3aa000aa27}} 
+\index{DotZLib.Codec@{DotZLib.Codec}!Finish@{Finish}}
+\index{Finish@{Finish}!DotZLib.Codec@{DotZLib.Codec}}
+\doxysubsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec.\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finishes up any pending data that needs to be processed and handled. 
+
+
+
+Implemented in \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_abab96cb01a9b983452a31777e3a1e633}{Dot\+Z\+Lib.\+Codec\+Base}}, \mbox{\hyperlink{class_dot_z_lib_1_1_deflater_a84507769a20a13c2ff48cfcef8f5c13b}{Dot\+Z\+Lib.\+Deflater}}, and \mbox{\hyperlink{class_dot_z_lib_1_1_inflater_aa70c9d026f5d1b44fe0679b78973285c}{Dot\+Z\+Lib.\+Inflater}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_dot_z_lib_1_1_codec_aa5f968120138390af2648c956d4355cb}\label{interface_dot_z_lib_1_1_codec_aa5f968120138390af2648c956d4355cb}} 
+\index{DotZLib.Codec@{DotZLib.Codec}!Checksum@{Checksum}}
+\index{Checksum@{Checksum}!DotZLib.Codec@{DotZLib.Codec}}
+\doxysubsubsection{\texorpdfstring{Checksum}{Checksum}}
+{\footnotesize\ttfamily uint Dot\+Z\+Lib.\+Codec.\+Checksum\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the checksum of the data that has been added so far 
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{interface_dot_z_lib_1_1_codec_a54b5cd5685e1256fcb0cb6ead5c3e5b5}\label{interface_dot_z_lib_1_1_codec_a54b5cd5685e1256fcb0cb6ead5c3e5b5}} 
+\index{DotZLib.Codec@{DotZLib.Codec}!DataAvailable@{DataAvailable}}
+\index{DataAvailable@{DataAvailable}!DotZLib.Codec@{DotZLib.Codec}}
+\doxysubsubsection{\texorpdfstring{DataAvailable}{DataAvailable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_dot_z_lib_a3aa323950a96dc02f6b94462d498bfef}{Data\+Available\+Handler}} Dot\+Z\+Lib.\+Codec.\+Data\+Available}
+
+
+
+Occurs when more processed data are available. 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/zlib/contrib/dotzlib/\+Dot\+Z\+Lib/Dot\+Z\+Lib.\+cs\end{DoxyCompactItemize}

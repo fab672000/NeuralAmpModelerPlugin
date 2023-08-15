@@ -1,0 +1,49 @@
+\hypertarget{class_s_h_m___msg_reply_connection}{}\doxysection{S\+H\+M\+\_\+\+Msg\+Reply\+Connection Class Reference}
+\label{class_s_h_m___msg_reply_connection}\index{SHM\_MsgReplyConnection@{SHM\_MsgReplyConnection}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_s_h_m___msg_reply_connection_1_1_waiting_message}{Waiting\+Message}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_a04e4800bbb935399b7c2069377ad0b33}\label{class_s_h_m___msg_reply_connection_a04e4800bbb935399b7c2069377ad0b33}} 
+{\bfseries S\+H\+M\+\_\+\+Msg\+Reply\+Connection} (int bufsize, int maxqueuesize, bool dir, const char $\ast$uniquestr=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}, int timeout\+\_\+sec=0, int extra\+\_\+flags=0)
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_adae5e9014ca54d59c7ffd5325bae16e4}\label{class_s_h_m___msg_reply_connection_adae5e9014ca54d59c7ffd5325bae16e4}} 
+bool {\bfseries Run} (bool run\+Full=true)
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_a316769a10fd7da8d44a861d5b7d6f2b4}\label{class_s_h_m___msg_reply_connection_a316769a10fd7da8d44a861d5b7d6f2b4}} 
+int {\bfseries Send} (int type, const void $\ast$msg, int msglen, void $\ast$replybuf, int maxretbuflen, const int $\ast$force\+Msg\+ID=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}, const void $\ast$secondchunk=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}, int secondchunklen=0, \mbox{\hyperlink{class_w_d_l___heap_buf}{W\+D\+L\+\_\+\+Heap\+Buf}} $\ast$hbreplyout=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}})
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_a9c01ef51c895f5c3ac6c4dae53e69b9b}\label{class_s_h_m___msg_reply_connection_a9c01ef51c895f5c3ac6c4dae53e69b9b}} 
+void {\bfseries Reply} (int msg\+ID, const void $\ast$msg, int msglen)
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_ad4f5a2f87ea5843e5ef2a45df57d74a8}\label{class_s_h_m___msg_reply_connection_ad4f5a2f87ea5843e5ef2a45df57d74a8}} 
+void {\bfseries Wait} (H\+A\+N\+D\+LE extra\+Evt=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}})
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_afb585e6e146cdd560bd9d71ba3058acc}\label{class_s_h_m___msg_reply_connection_afb585e6e146cdd560bd9d71ba3058acc}} 
+const char $\ast$ {\bfseries Get\+Unique\+String} ()
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_a67f4ad37b797a1f654e3c45f6ebffe30}\label{class_s_h_m___msg_reply_connection_a67f4ad37b797a1f654e3c45f6ebffe30}} 
+void {\bfseries Return\+Spares} (\mbox{\hyperlink{class_s_h_m___msg_reply_connection_1_1_waiting_message}{Waiting\+Message}} $\ast$msglist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_abbbada3115354b7fbbf6985b1b6bde37}\label{class_s_h_m___msg_reply_connection_abbbada3115354b7fbbf6985b1b6bde37}} 
+void $\ast$ {\bfseries user\+Data}
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_a63251b5de514548084d6c1f48f5f4474}\label{class_s_h_m___msg_reply_connection_a63251b5de514548084d6c1f48f5f4474}} 
+\mbox{\hyperlink{class_s_h_m___msg_reply_connection_1_1_waiting_message}{Waiting\+Message}} $\ast$($\ast$ {\bfseries On\+Recv} )(\mbox{\hyperlink{class_s_h_m___msg_reply_connection}{S\+H\+M\+\_\+\+Msg\+Reply\+Connection}} $\ast$con, \mbox{\hyperlink{class_s_h_m___msg_reply_connection_1_1_waiting_message}{Waiting\+Message}} $\ast$msg)
+\item 
+\mbox{\Hypertarget{class_s_h_m___msg_reply_connection_af6181628096b6d1931bc3cd87932fab1}\label{class_s_h_m___msg_reply_connection_af6181628096b6d1931bc3cd87932fab1}} 
+bool($\ast$ {\bfseries Idle\+Proc} )(\mbox{\hyperlink{class_s_h_m___msg_reply_connection}{S\+H\+M\+\_\+\+Msg\+Reply\+Connection}} $\ast$con)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+W\+D\+L/shm\+\_\+msgreply.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+W\+D\+L/shm\+\_\+msgreply.\+cpp\end{DoxyCompactItemize}

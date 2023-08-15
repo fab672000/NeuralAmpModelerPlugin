@@ -1,0 +1,450 @@
+\hypertarget{class_eigen_1_1_d_g_m_r_e_s}{}\doxysection{Eigen\+::D\+G\+M\+R\+ES$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1_d_g_m_r_e_s}\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+
+
+A Restarted \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} with deflation. This class implements a modification of the \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} solver for sparse linear systems. The basis is built with modified Gram-\/\+Schmidt. At each restart, a few approximated eigenvectors corresponding to the smallest eigenvalues are used to build a preconditioner for the next cycle. This preconditioner for deflation can be combined with any other preconditioner, the \mbox{\hyperlink{class_eigen_1_1_incomplete_l_u_t}{Incomplete\+L\+UT}} for instance. The preconditioner is applied at right of the matrix and the combination is multiplicative.  
+
+
+
+
+{\ttfamily \#include $<$D\+G\+M\+R\+E\+S.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_af6cf554793b3facaee182dc51d1fd84f}\label{class_eigen_1_1_d_g_m_r_e_s_af6cf554793b3facaee182dc51d1fd84f}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_abc460d149fed7605c3f3ecd139da96d0}\label{class_eigen_1_1_d_g_m_r_e_s_abc460d149fed7605c3f3ecd139da96d0}} 
+typedef Matrix\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a93640bf99312bcb9d5572e8f04ce153c}\label{class_eigen_1_1_d_g_m_r_e_s_a93640bf99312bcb9d5572e8f04ce153c}} 
+typedef Matrix\+Type\+::\+Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_aac1499ca0dfe13972a3d2ca88b90ae5c}\label{class_eigen_1_1_d_g_m_r_e_s_aac1499ca0dfe13972a3d2ca88b90ae5c}} 
+typedef Matrix\+Type\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a1e31cc0504edfb6a2f984968a90017c3}\label{class_eigen_1_1_d_g_m_r_e_s_a1e31cc0504edfb6a2f984968a90017c3}} 
+typedef Preconditioner\+\_\+ {\bfseries Preconditioner}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_aa8b50d477f265fc4e94773d1f2620021}\label{class_eigen_1_1_d_g_m_r_e_s_aa8b50d477f265fc4e94773d1f2620021}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}} $>$ {\bfseries Dense\+Matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a73b56ef9e009ecc2c169db506698dad7}\label{class_eigen_1_1_d_g_m_r_e_s_a73b56ef9e009ecc2c169db506698dad7}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}} $>$ {\bfseries Dense\+Real\+Matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5f0a5bc7c61998bf27e01cc1b99e7c87}\label{class_eigen_1_1_d_g_m_r_e_s_a5f0a5bc7c61998bf27e01cc1b99e7c87}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Dense\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a7078ef1b939178265540e15d042a7c0a}\label{class_eigen_1_1_d_g_m_r_e_s_a7078ef1b939178265540e15d042a7c0a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Dense\+Real\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a6a7f4bde13af8206f1b6e8619ae8ccdf}\label{class_eigen_1_1_d_g_m_r_e_s_a6a7f4bde13af8206f1b6e8619ae8ccdf}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ std\+::complex$<$ Real\+Scalar $>$, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Complex\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_af6cf554793b3facaee182dc51d1fd84f}\label{class_eigen_1_1_d_g_m_r_e_s_af6cf554793b3facaee182dc51d1fd84f}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_abc460d149fed7605c3f3ecd139da96d0}\label{class_eigen_1_1_d_g_m_r_e_s_abc460d149fed7605c3f3ecd139da96d0}} 
+typedef Matrix\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a93640bf99312bcb9d5572e8f04ce153c}\label{class_eigen_1_1_d_g_m_r_e_s_a93640bf99312bcb9d5572e8f04ce153c}} 
+typedef Matrix\+Type\+::\+Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_aac1499ca0dfe13972a3d2ca88b90ae5c}\label{class_eigen_1_1_d_g_m_r_e_s_aac1499ca0dfe13972a3d2ca88b90ae5c}} 
+typedef Matrix\+Type\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a1e31cc0504edfb6a2f984968a90017c3}\label{class_eigen_1_1_d_g_m_r_e_s_a1e31cc0504edfb6a2f984968a90017c3}} 
+typedef Preconditioner\+\_\+ {\bfseries Preconditioner}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_aa8b50d477f265fc4e94773d1f2620021}\label{class_eigen_1_1_d_g_m_r_e_s_aa8b50d477f265fc4e94773d1f2620021}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}} $>$ {\bfseries Dense\+Matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a73b56ef9e009ecc2c169db506698dad7}\label{class_eigen_1_1_d_g_m_r_e_s_a73b56ef9e009ecc2c169db506698dad7}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}} $>$ {\bfseries Dense\+Real\+Matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5f0a5bc7c61998bf27e01cc1b99e7c87}\label{class_eigen_1_1_d_g_m_r_e_s_a5f0a5bc7c61998bf27e01cc1b99e7c87}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Dense\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a7078ef1b939178265540e15d042a7c0a}\label{class_eigen_1_1_d_g_m_r_e_s_a7078ef1b939178265540e15d042a7c0a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Dense\+Real\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a6a7f4bde13af8206f1b6e8619ae8ccdf}\label{class_eigen_1_1_d_g_m_r_e_s_a6a7f4bde13af8206f1b6e8619ae8ccdf}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ std\+::complex$<$ Real\+Scalar $>$, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Complex\+Vector}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a60b9241a708ddfd7eb4ff4950faea18c}{D\+G\+M\+R\+ES}} ()
+\item 
+{\footnotesize template$<$typename Matrix\+Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a38cf741dbc55f3fa4f1a8e0d16713aab}{D\+G\+M\+R\+ES}} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Matrix\+Derived $>$ \&\mbox{\hyperlink{class_eigen_1_1_matrix}{A}})
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a827a9336d352a8bdfff4b18c8ea0775e}\label{class_eigen_1_1_d_g_m_r_e_s_a827a9336d352a8bdfff4b18c8ea0775e}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+vector\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, Dest \&x) const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}{restart}} ()
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a9732e699838ca2745486fc355eda36e7}{set\+\_\+restart}} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}{restart}})
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_abc45dbf1b2dc85405047157c753db90e}{set\+Eigenv}} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} neig)
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_ab1b05e529615d45f3b8c070edfeb82cc}{defl\+Size}} ()
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a5fe9096f6b96a387b521a866fe344de1}{set\+Max\+Eigenv}} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} max\+Neig)
+\item 
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a60b9241a708ddfd7eb4ff4950faea18c}{D\+G\+M\+R\+ES}} ()
+\item 
+{\footnotesize template$<$typename Matrix\+Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a38cf741dbc55f3fa4f1a8e0d16713aab}{D\+G\+M\+R\+ES}} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Matrix\+Derived $>$ \&\mbox{\hyperlink{class_eigen_1_1_matrix}{A}})
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a827a9336d352a8bdfff4b18c8ea0775e}\label{class_eigen_1_1_d_g_m_r_e_s_a827a9336d352a8bdfff4b18c8ea0775e}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+vector\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, Dest \&x) const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}{restart}} ()
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a9732e699838ca2745486fc355eda36e7}{set\+\_\+restart}} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}{restart}})
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_abc45dbf1b2dc85405047157c753db90e}{set\+Eigenv}} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} neig)
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_ab1b05e529615d45f3b8c070edfeb82cc}{defl\+Size}} ()
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a5fe9096f6b96a387b521a866fe344de1}{set\+Max\+Eigenv}} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} max\+Neig)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}\label{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const Rhs \&b, Dest \&x) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}\label{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const Rhs \&b, Dest \&x) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}\label{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\void {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}\label{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time!=1 \&\&Dest\+Derived\+::\+Cols\+At\+Compile\+Time!=1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}\label{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time==1$\vert$$\vert$Dest\+Derived\+::\+Cols\+At\+Compile\+Time==1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}\label{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\void {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}\label{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time!=1 \&\&Dest\+Derived\+::\+Cols\+At\+Compile\+Time!=1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}\label{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time==1$\vert$$\vert$Dest\+Derived\+::\+Cols\+At\+Compile\+Time==1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}\label{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const Rhs \&b, Dest \&x) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}\label{class_eigen_1_1_d_g_m_r_e_s_a946a3c9598afbc6f93fbd4ac2742f6e2}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const Rhs \&b, Dest \&x) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}\label{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\void {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}\label{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time!=1 \&\&Dest\+Derived\+::\+Cols\+At\+Compile\+Time!=1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}\label{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time==1$\vert$$\vert$Dest\+Derived\+::\+Cols\+At\+Compile\+Time==1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}\label{class_eigen_1_1_d_g_m_r_e_s_a9f2403e90106dcff20966cbc54ea38ff}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\void {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}\label{class_eigen_1_1_d_g_m_r_e_s_a5f492ce4b2e00b67419178fecd63549c}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time!=1 \&\&Dest\+Derived\+::\+Cols\+At\+Compile\+Time!=1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&a\+Dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}\label{class_eigen_1_1_d_g_m_r_e_s_a378e6d0b0a94b010d5157592826efec6}} 
+{\footnotesize template$<$typename Rhs , typename Dest\+Derived $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ Rhs\+::\+Cols\+At\+Compile\+Time==1$\vert$$\vert$Dest\+Derived\+::\+Cols\+At\+Compile\+Time==1 $>$ {\bfseries \+\_\+solve\+\_\+with\+\_\+guess\+\_\+impl} (const Rhs \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest\+Derived $>$ \&dest) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a8a47ed3ddd5ac039f9d368c87287a807}{dgmres}} (const Matrix\+Type \&mat, const Rhs \&rhs, Dest \&x, const Preconditioner \&precond) const
+\begin{DoxyCompactList}\small\item\em Perform several cycles of restarted \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} with modified Gram Schmidt,. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Dest $>$ }\\\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s_a1db4ed4c02a85b9479b67be692ade42f}{dgmres\+Cycle}} (const Matrix\+Type \&mat, const Preconditioner \&precond, Dest \&x, \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Vector}} \&r0, Real\+Scalar \&beta, const Real\+Scalar \&norm\+Rhs, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&nb\+Its) const
+\begin{DoxyCompactList}\small\item\em Perform one restart cycle of \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ad784eadfe0cba29e0fd59e2543743bb9}\label{class_eigen_1_1_d_g_m_r_e_s_ad784eadfe0cba29e0fd59e2543743bb9}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries dgmres\+Compute\+Deflation\+Data} (const Matrix\+Type \&mat, const Preconditioner \&precond, const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&it, Storage\+Index \&neig) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a57d7a69fc3e0e561827c0309d78b48c8}\label{class_eigen_1_1_d_g_m_r_e_s_a57d7a69fc3e0e561827c0309d78b48c8}} 
+{\footnotesize template$<$typename Rhs\+Type , typename Dest\+Type $>$ }\\\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries dgmres\+Apply\+Deflation} (const Rhs\+Type \&In, Dest\+Type \&Out) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ae78021019fa90cea13351d0d6ab3d729}\label{class_eigen_1_1_d_g_m_r_e_s_ae78021019fa90cea13351d0d6ab3d729}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Complex\+Vector}} {\bfseries schur\+Values} (const \mbox{\hyperlink{class_eigen_1_1_complex_schur}{Complex\+Schur}}$<$ \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} $>$ \&schurofH) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a495f55e2e2f0310a05de9adaf706c9d7}\label{class_eigen_1_1_d_g_m_r_e_s_a495f55e2e2f0310a05de9adaf706c9d7}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Complex\+Vector}} {\bfseries schur\+Values} (const \mbox{\hyperlink{class_eigen_1_1_real_schur}{Real\+Schur}}$<$ \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} $>$ \&schurofH) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a2eb273bc87d8b342abf807077ca11b97}\label{class_eigen_1_1_d_g_m_r_e_s_a2eb273bc87d8b342abf807077ca11b97}} 
+void {\bfseries dgmres\+Init\+Deflation} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&rows) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a8a47ed3ddd5ac039f9d368c87287a807}\label{class_eigen_1_1_d_g_m_r_e_s_a8a47ed3ddd5ac039f9d368c87287a807}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries dgmres} (const Matrix\+Type \&mat, const Rhs \&rhs, Dest \&x, const Preconditioner \&precond) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a1db4ed4c02a85b9479b67be692ade42f}\label{class_eigen_1_1_d_g_m_r_e_s_a1db4ed4c02a85b9479b67be692ade42f}} 
+{\footnotesize template$<$typename Dest $>$ }\\\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries dgmres\+Cycle} (const Matrix\+Type \&mat, const Preconditioner \&precond, Dest \&x, \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Vector}} \&r0, Real\+Scalar \&beta, const Real\+Scalar \&norm\+Rhs, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&nb\+Its) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ad784eadfe0cba29e0fd59e2543743bb9}\label{class_eigen_1_1_d_g_m_r_e_s_ad784eadfe0cba29e0fd59e2543743bb9}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries dgmres\+Compute\+Deflation\+Data} (const Matrix\+Type \&mat, const Preconditioner \&precond, const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&it, Storage\+Index \&neig) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a57d7a69fc3e0e561827c0309d78b48c8}\label{class_eigen_1_1_d_g_m_r_e_s_a57d7a69fc3e0e561827c0309d78b48c8}} 
+{\footnotesize template$<$typename Rhs\+Type , typename Dest\+Type $>$ }\\\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries dgmres\+Apply\+Deflation} (const Rhs\+Type \&In, Dest\+Type \&Out) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a3f6d8375e96fb70966f03c13c49d02bc}\label{class_eigen_1_1_d_g_m_r_e_s_a3f6d8375e96fb70966f03c13c49d02bc}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Complex\+Vector}} {\bfseries schur\+Values} (const \mbox{\hyperlink{class_eigen_1_1_complex_schur}{Complex\+Schur}}$<$ \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} $>$ \&schurofH) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a1d1aad232b1367105afa62f4137e01a5}\label{class_eigen_1_1_d_g_m_r_e_s_a1d1aad232b1367105afa62f4137e01a5}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Complex\+Vector}} {\bfseries schur\+Values} (const \mbox{\hyperlink{class_eigen_1_1_real_schur}{Real\+Schur}}$<$ \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} $>$ \&schurofH) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a2eb273bc87d8b342abf807077ca11b97}\label{class_eigen_1_1_d_g_m_r_e_s_a2eb273bc87d8b342abf807077ca11b97}} 
+void {\bfseries dgmres\+Init\+Deflation} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&rows) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a6c4e9a1c89492c3ee02930369ead0f28}\label{class_eigen_1_1_d_g_m_r_e_s_a6c4e9a1c89492c3ee02930369ead0f28}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} {\bfseries m\+\_\+V}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a6479a9c0b9c9bf51580a564d4a0e3e23}\label{class_eigen_1_1_d_g_m_r_e_s_a6479a9c0b9c9bf51580a564d4a0e3e23}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} {\bfseries m\+\_\+H}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_aa0d01a25d4df3cb9ab2eaa41871c9668}\label{class_eigen_1_1_d_g_m_r_e_s_aa0d01a25d4df3cb9ab2eaa41871c9668}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} {\bfseries m\+\_\+\+Hes}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a980740dfc9669d2cb133089bcd8b1722}\label{class_eigen_1_1_d_g_m_r_e_s_a980740dfc9669d2cb133089bcd8b1722}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries m\+\_\+restart}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a8798346f2ae6de219a95684e8ae1e0ce}\label{class_eigen_1_1_d_g_m_r_e_s_a8798346f2ae6de219a95684e8ae1e0ce}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} {\bfseries m\+\_\+U}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9c8fae5fed4c297fb9216245f4359349}\label{class_eigen_1_1_d_g_m_r_e_s_a9c8fae5fed4c297fb9216245f4359349}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} {\bfseries m\+\_\+\+MU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a80da6d3358d544e118f815ec7d48bb5e}\label{class_eigen_1_1_d_g_m_r_e_s_a80da6d3358d544e118f815ec7d48bb5e}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} {\bfseries m\+\_\+T}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_abfce55388f22d4677c2d541fedf3e4ec}\label{class_eigen_1_1_d_g_m_r_e_s_abfce55388f22d4677c2d541fedf3e4ec}} 
+\mbox{\hyperlink{class_eigen_1_1_partial_piv_l_u}{Partial\+Piv\+LU}}$<$ \mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Matrix}} $>$ {\bfseries m\+\_\+luT}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a79f9870e78979668b16839edb1d78665}\label{class_eigen_1_1_d_g_m_r_e_s_a79f9870e78979668b16839edb1d78665}} 
+Storage\+Index {\bfseries m\+\_\+neig}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_adb71d7128e4fdb69f7258fcbfe6096c9}\label{class_eigen_1_1_d_g_m_r_e_s_adb71d7128e4fdb69f7258fcbfe6096c9}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries m\+\_\+r}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ac3470a0d715765b9c456cd2ef94a2b93}\label{class_eigen_1_1_d_g_m_r_e_s_ac3470a0d715765b9c456cd2ef94a2b93}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries m\+\_\+max\+Neig}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_afc4702147e6a07288d76691f4c76c327}\label{class_eigen_1_1_d_g_m_r_e_s_afc4702147e6a07288d76691f4c76c327}} 
+Real\+Scalar {\bfseries m\+\_\+lambdaN}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9290f11f3982f36d3c8e0b80104137f2}\label{class_eigen_1_1_d_g_m_r_e_s_a9290f11f3982f36d3c8e0b80104137f2}} 
+bool {\bfseries m\+\_\+is\+Defl\+Allocated}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ae1658e58ab67e95a5371f491fa274b77}\label{class_eigen_1_1_d_g_m_r_e_s_ae1658e58ab67e95a5371f491fa274b77}} 
+bool {\bfseries m\+\_\+is\+Defl\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a547b61b469b0d2d96c86fdaab4f48d27}\label{class_eigen_1_1_d_g_m_r_e_s_a547b61b469b0d2d96c86fdaab4f48d27}} 
+Real\+Scalar {\bfseries m\+\_\+smv}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_aaa2be7daf43dd34e2b393aeb85873599}\label{class_eigen_1_1_d_g_m_r_e_s_aaa2be7daf43dd34e2b393aeb85873599}} 
+bool {\bfseries m\+\_\+force}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Type\+\_\+, typename Preconditioner\+\_\+$>$\newline
+class Eigen\+::\+D\+G\+M\+R\+E\+S$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}
+
+A Restarted \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} with deflation. This class implements a modification of the \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} solver for sparse linear systems. The basis is built with modified Gram-\/\+Schmidt. At each restart, a few approximated eigenvectors corresponding to the smallest eigenvalues are used to build a preconditioner for the next cycle. This preconditioner for deflation can be combined with any other preconditioner, the \mbox{\hyperlink{class_eigen_1_1_incomplete_l_u_t}{Incomplete\+L\+UT}} for instance. The preconditioner is applied at right of the matrix and the combination is multiplicative. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Matrix\+Type\+\_\+} & the type of the sparse matrix A, can be a dense or a sparse matrix. \\
+\hline
+{\em Preconditioner\+\_\+} & the type of the preconditioner. Default is \mbox{\hyperlink{class_eigen_1_1_diagonal_preconditioner}{Diagonal\+Preconditioner}} Typical usage \+: 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{SparseMatrix<double> A;}
+\DoxyCodeLine{VectorXd x, b; }
+\DoxyCodeLine{\textcolor{comment}{//Fill A and b ...}}
+\DoxyCodeLine{DGMRES<SparseMatrix<double> > solver;}
+\DoxyCodeLine{solver.set\_restart(30); \textcolor{comment}{// Set restarting value}}
+\DoxyCodeLine{solver.setEigenv(1); \textcolor{comment}{// Set the number of eigenvalues to deflate}}
+\DoxyCodeLine{solver.compute(A);}
+\DoxyCodeLine{x = solver.solve(b);}
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyTemplParams}
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}} can also be used in a matrix-\/free context, see the following \mbox{\hyperlink{group___matrixfree_solver_example}{example }}.
+
+References \+: \mbox{[}1\mbox{]} D. N\+U\+E\+N\+T\+SA W\+A\+K\+AM and \mbox{\hyperlink{struct_f}{F}}. P\+A\+C\+U\+LL, Memory Efficient Hybrid Algebraic Solvers for \mbox{\hyperlink{class_linear}{Linear}} Systems Arising from Compressible Flows, Computers and Fluids, In Press, \href{https://doi.org/10.1016/j.compfluid.2012.03.023}{\texttt{ https\+://doi.\+org/10.\+1016/j.\+compfluid.\+2012.\+03.\+023}} ~\newline
+ \mbox{[}2\mbox{]} K. Burrage and J. Erhel, On the performance of various adaptive preconditioned \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} strategies, 5(1998), 101-\/121. \mbox{[}3\mbox{]} J. Erhel, K. Burrage and B. Pohl, Restarted \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} preconditioned by deflation,J. Computational and Applied Mathematics, 69(1996), 303-\/318. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a60b9241a708ddfd7eb4ff4950faea18c}\label{class_eigen_1_1_d_g_m_r_e_s_a60b9241a708ddfd7eb4ff4950faea18c}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!DGMRES@{DGMRES}}
+\index{DGMRES@{DGMRES}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{DGMRES()}{DGMRES()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a38cf741dbc55f3fa4f1a8e0d16713aab}\label{class_eigen_1_1_d_g_m_r_e_s_a38cf741dbc55f3fa4f1a8e0d16713aab}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!DGMRES@{DGMRES}}
+\index{DGMRES@{DGMRES}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{DGMRES()}{DGMRES()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+template$<$typename Matrix\+Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Matrix\+Derived $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Initialize the solver with matrix {\itshape A} for further {\ttfamily Ax=b} solving.
+
+This constructor is a shortcut for the default constructor followed by a call to compute().
+
+\begin{DoxyWarning}{Warning}
+this class stores a reference to the matrix A as well as some precomputed values that depend on it. Therefore, if {\itshape A} is changed this class becomes invalid. Call compute() to update it with the new matrix A, or modify a copy of A. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a60b9241a708ddfd7eb4ff4950faea18c}\label{class_eigen_1_1_d_g_m_r_e_s_a60b9241a708ddfd7eb4ff4950faea18c}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!DGMRES@{DGMRES}}
+\index{DGMRES@{DGMRES}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{DGMRES()}{DGMRES()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor. \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a38cf741dbc55f3fa4f1a8e0d16713aab}\label{class_eigen_1_1_d_g_m_r_e_s_a38cf741dbc55f3fa4f1a8e0d16713aab}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!DGMRES@{DGMRES}}
+\index{DGMRES@{DGMRES}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{DGMRES()}{DGMRES()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+template$<$typename Matrix\+Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Matrix\+Derived $>$ \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Initialize the solver with matrix {\itshape A} for further {\ttfamily Ax=b} solving.
+
+This constructor is a shortcut for the default constructor followed by a call to compute().
+
+\begin{DoxyWarning}{Warning}
+this class stores a reference to the matrix A as well as some precomputed values that depend on it. Therefore, if {\itshape A} is changed this class becomes invalid. Call compute() to update it with the new matrix A, or modify a copy of A. 
+\end{DoxyWarning}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ab1b05e529615d45f3b8c070edfeb82cc}\label{class_eigen_1_1_d_g_m_r_e_s_ab1b05e529615d45f3b8c070edfeb82cc}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!deflSize@{deflSize}}
+\index{deflSize@{deflSize}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{deflSize()}{deflSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::defl\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the size of the deflation subspace size \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_ab1b05e529615d45f3b8c070edfeb82cc}\label{class_eigen_1_1_d_g_m_r_e_s_ab1b05e529615d45f3b8c070edfeb82cc}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!deflSize@{deflSize}}
+\index{deflSize@{deflSize}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{deflSize()}{deflSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::defl\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the size of the deflation subspace size \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a8a47ed3ddd5ac039f9d368c87287a807}\label{class_eigen_1_1_d_g_m_r_e_s_a8a47ed3ddd5ac039f9d368c87287a807}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!dgmres@{dgmres}}
+\index{dgmres@{dgmres}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{dgmres()}{dgmres()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+template$<$typename Rhs , typename Dest $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::dgmres (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{mat,  }\item[{const Rhs \&}]{rhs,  }\item[{Dest \&}]{x,  }\item[{const Preconditioner \&}]{precond }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Perform several cycles of restarted \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} with modified Gram Schmidt,. 
+
+A right preconditioner is used combined with deflation. \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a1db4ed4c02a85b9479b67be692ade42f}\label{class_eigen_1_1_d_g_m_r_e_s_a1db4ed4c02a85b9479b67be692ade42f}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!dgmresCycle@{dgmresCycle}}
+\index{dgmresCycle@{dgmresCycle}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{dgmresCycle()}{dgmresCycle()}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+template$<$typename Dest $>$ \\
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::dgmres\+Cycle (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{mat,  }\item[{const Preconditioner \&}]{precond,  }\item[{Dest \&}]{x,  }\item[{\mbox{\hyperlink{class_eigen_1_1_matrix}{Dense\+Vector}} \&}]{r0,  }\item[{Real\+Scalar \&}]{beta,  }\item[{const Real\+Scalar \&}]{norm\+Rhs,  }\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \&}]{nb\+Its }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Perform one restart cycle of \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{D\+G\+M\+R\+ES}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat} & The coefficient matrix \\
+\hline
+{\em precond} & The preconditioner \\
+\hline
+{\em x} & the new approximated solution \\
+\hline
+{\em r0} & The initial residual vector \\
+\hline
+{\em beta} & The norm of the residual computed so far \\
+\hline
+{\em norm\+Rhs} & The norm of the right hand side vector \\
+\hline
+{\em nb\+Its} & The number of iterations \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}\label{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!restart@{restart}}
+\index{restart@{restart}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the restart value \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}\label{class_eigen_1_1_d_g_m_r_e_s_a2bd9a6bfc4530cc6d1c1e3312c731bcc}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!restart@{restart}}
+\index{restart@{restart}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the restart value \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9732e699838ca2745486fc355eda36e7}\label{class_eigen_1_1_d_g_m_r_e_s_a9732e699838ca2745486fc355eda36e7}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!set\_restart@{set\_restart}}
+\index{set\_restart@{set\_restart}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{set\_restart()}{set\_restart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::set\+\_\+restart (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{restart }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the restart value (default is 30) ~\newline
+ \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a9732e699838ca2745486fc355eda36e7}\label{class_eigen_1_1_d_g_m_r_e_s_a9732e699838ca2745486fc355eda36e7}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!set\_restart@{set\_restart}}
+\index{set\_restart@{set\_restart}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{set\_restart()}{set\_restart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::set\+\_\+restart (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{restart }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the restart value (default is 30) ~\newline
+ \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_abc45dbf1b2dc85405047157c753db90e}\label{class_eigen_1_1_d_g_m_r_e_s_abc45dbf1b2dc85405047157c753db90e}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!setEigenv@{setEigenv}}
+\index{setEigenv@{setEigenv}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{setEigenv()}{setEigenv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::set\+Eigenv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{neig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the number of eigenvalues to deflate at each restart \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_abc45dbf1b2dc85405047157c753db90e}\label{class_eigen_1_1_d_g_m_r_e_s_abc45dbf1b2dc85405047157c753db90e}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!setEigenv@{setEigenv}}
+\index{setEigenv@{setEigenv}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{setEigenv()}{setEigenv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::set\+Eigenv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{neig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the number of eigenvalues to deflate at each restart \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5fe9096f6b96a387b521a866fe344de1}\label{class_eigen_1_1_d_g_m_r_e_s_a5fe9096f6b96a387b521a866fe344de1}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!setMaxEigenv@{setMaxEigenv}}
+\index{setMaxEigenv@{setMaxEigenv}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{setMaxEigenv()}{setMaxEigenv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::set\+Max\+Eigenv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{max\+Neig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the maximum size of the deflation subspace \mbox{\Hypertarget{class_eigen_1_1_d_g_m_r_e_s_a5fe9096f6b96a387b521a866fe344de1}\label{class_eigen_1_1_d_g_m_r_e_s_a5fe9096f6b96a387b521a866fe344de1}} 
+\index{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}!setMaxEigenv@{setMaxEigenv}}
+\index{setMaxEigenv@{setMaxEigenv}!Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$@{Eigen::DGMRES$<$ MatrixType\_, Preconditioner\_ $>$}}
+\doxysubsubsection{\texorpdfstring{setMaxEigenv()}{setMaxEigenv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , typename Preconditioner\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+ES}}$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$\+::set\+Max\+Eigenv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{max\+Neig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the maximum size of the deflation subspace 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/src/\+Iterative\+Solvers/D\+G\+M\+R\+E\+S.\+h\end{DoxyCompactItemize}

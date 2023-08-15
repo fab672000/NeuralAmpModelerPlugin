@@ -1,0 +1,85 @@
+\hypertarget{class_eigen_1_1_cholmod_decomposition}{}\doxysection{Eigen\+::Cholmod\+Decomposition$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1_cholmod_decomposition}\index{Eigen::CholmodDecomposition$<$ MatrixType\_, UpLo\_ $>$@{Eigen::CholmodDecomposition$<$ MatrixType\_, UpLo\_ $>$}}
+
+
+A general Cholesky factorization and solver based on Cholmod.  
+
+
+
+
+{\ttfamily \#include $<$Cholmod\+Support.\+h$>$}
+
+Inheritance diagram for Eigen\+::Cholmod\+Decomposition$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_eigen_1_1_cholmod_decomposition}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_a30b735a97f2fbdca6a9880bca01f9e34}\label{class_eigen_1_1_cholmod_decomposition_a30b735a97f2fbdca6a9880bca01f9e34}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_a30b735a97f2fbdca6a9880bca01f9e34}\label{class_eigen_1_1_cholmod_decomposition_a30b735a97f2fbdca6a9880bca01f9e34}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_ab27d1f3ed9784368ea86a8f14e7b38f1}\label{class_eigen_1_1_cholmod_decomposition_ab27d1f3ed9784368ea86a8f14e7b38f1}} 
+{\bfseries Cholmod\+Decomposition} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_af759a9d62834b1dcb1fa69974f81c8fc}\label{class_eigen_1_1_cholmod_decomposition_af759a9d62834b1dcb1fa69974f81c8fc}} 
+void {\bfseries set\+Mode} (Cholmod\+Mode mode)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_ab27d1f3ed9784368ea86a8f14e7b38f1}\label{class_eigen_1_1_cholmod_decomposition_ab27d1f3ed9784368ea86a8f14e7b38f1}} 
+{\bfseries Cholmod\+Decomposition} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_af759a9d62834b1dcb1fa69974f81c8fc}\label{class_eigen_1_1_cholmod_decomposition_af759a9d62834b1dcb1fa69974f81c8fc}} 
+void {\bfseries set\+Mode} (Cholmod\+Mode mode)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_a20452f8995dd88f9fa2c9f9244681685}\label{class_eigen_1_1_cholmod_decomposition_a20452f8995dd88f9fa2c9f9244681685}} 
+void {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_decomposition_a20452f8995dd88f9fa2c9f9244681685}\label{class_eigen_1_1_cholmod_decomposition_a20452f8995dd88f9fa2c9f9244681685}} 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Type\+\_\+, int Up\+Lo\+\_\+ = Lower$>$\newline
+class Eigen\+::\+Cholmod\+Decomposition$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+ $>$}
+
+A general Cholesky factorization and solver based on Cholmod. 
+
+This class allows to solve for A.\+X = B sparse linear problems via a L\+L$^\wedge$T or L\+D\+L$^\wedge$T Cholesky factorization using the Cholmod library. The sparse matrix A must be selfadjoint and positive definite. The vectors or matrices X and B can be either dense or sparse.
+
+This variant permits to change the underlying Cholesky method at runtime. On the other hand, it does not provide access to the result of the factorization. The default is to let Cholmod automatically choose between a simplicial and supernodal factorization.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Matrix\+Type\+\_\+} & the type of the sparse matrix A, it must be a Sparse\+Matrix$<$$>$ \\
+\hline
+{\em Up\+Lo\+\_\+} & the triangular part that will be used for the computations. It can be Lower or Upper. Default is Lower.\\
+\hline
+\end{DoxyTemplParams}
+\textbackslash{}implsparsesolverconcept
+
+This class supports all kind of Sparse\+Matrix$<$$>$\+: row or column major; upper, lower, or both; compressed or non compressed.
+
+\begin{DoxyWarning}{Warning}
+Only double precision real and complex scalar types are supported by Cholmod.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SparseLinearSystems.dox_TutorialSparseSolverConcept}{Sparse solver concept}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Cholmod\+Support/Cholmod\+Support.\+h\end{DoxyCompactItemize}

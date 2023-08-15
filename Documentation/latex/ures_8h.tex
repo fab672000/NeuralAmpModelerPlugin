@@ -1,0 +1,923 @@
+\hypertarget{ures_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ures.h File Reference}
+\label{ures_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ures.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ures.h}}
+
+
+C A\+PI\+: Resource Bundle.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/uloc.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}{U\+Res\+Type}} \{ \newline
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbab73cbea3085f99defd0538171d343f03}{U\+R\+E\+S\+\_\+\+N\+O\+NE}} =-\/1, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac4db2a063c1c73cc363b0e21891bc480}{U\+R\+E\+S\+\_\+\+S\+T\+R\+I\+NG}} =0, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba7220aa0da13f4d7a1e62a1856026c271}{U\+R\+E\+S\+\_\+\+B\+I\+N\+A\+RY}} =1, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2cfd36db6917951f177723df3a58e2b4}{U\+R\+E\+S\+\_\+\+T\+A\+B\+LE}} =2, 
+\newline
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba6890eb4a8669521aace76b4c854d304e}{U\+R\+E\+S\+\_\+\+A\+L\+I\+AS}} =3, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac71be9c52845b8404c84610320b550ba}{U\+R\+E\+S\+\_\+\+I\+NT}} =7, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaa2e7a87c3c144d7df2abd973b86512ca}{U\+R\+E\+S\+\_\+\+A\+R\+R\+AY}} =8, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba6c6b406d49cebed764c515d49dcf73b3}{U\+R\+E\+S\+\_\+\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}} = 14, 
+\newline
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba78e3758a381e62148cc4b0438f3c0777}{R\+E\+S\+\_\+\+N\+O\+NE}} =U\+R\+E\+S\+\_\+\+N\+O\+NE, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbad6c0349cb0484769c040d660de1c7445}{R\+E\+S\+\_\+\+S\+T\+R\+I\+NG}} =U\+R\+E\+S\+\_\+\+S\+T\+R\+I\+NG, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2ad74e7a8c734f374bf8b786617fb212}{R\+E\+S\+\_\+\+B\+I\+N\+A\+RY}} =U\+R\+E\+S\+\_\+\+B\+I\+N\+A\+RY, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac93b5478e79d51b10747d617765069af}{R\+E\+S\+\_\+\+T\+A\+B\+LE}} =U\+R\+E\+S\+\_\+\+T\+A\+B\+LE, 
+\newline
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbae4f137b23dcc82d1b7c5b19d5453b3a1}{R\+E\+S\+\_\+\+A\+L\+I\+AS}} =U\+R\+E\+S\+\_\+\+A\+L\+I\+AS, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaf1f3ced984a5ff062dae837b00769e9f}{R\+E\+S\+\_\+\+I\+NT}} =U\+R\+E\+S\+\_\+\+I\+NT, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2eeb630d6cacdd4cdeae5ae05edfc8bd}{R\+E\+S\+\_\+\+A\+R\+R\+AY}} =U\+R\+E\+S\+\_\+\+A\+R\+R\+AY, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac5f51dba6417cd88750d7fb32c1cfb7e}{R\+E\+S\+\_\+\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR}} =U\+R\+E\+S\+\_\+\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR, 
+\newline
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbabb8f79bd6e07400f6870fe51ae24fcef}{R\+E\+S\+\_\+\+R\+E\+S\+E\+R\+V\+ED}} =15, 
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaf5e9652169f8062eaaaf8e35accdf0d8}{U\+R\+E\+S\+\_\+\+L\+I\+M\+IT}} = 16
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}{ures\+\_\+open}} (const char $\ast$package\+Name, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ae34794c67d6c28db1ad6df5b6d6937de}{ures\+\_\+open\+Direct}} (const char $\ast$package\+Name, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a9e587bc887ecc795d3a5b558f0fb1018}{ures\+\_\+openU}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$package\+Name, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a15493bbbc3793fa60b33cad4955430a0}{U\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ac7e78fb1a607921c2174e53dc52b2d9e}{ures\+\_\+count\+Array\+Items}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, const char $\ast$resource\+Key, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$err)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a8953f009c1c51396083a0fa13bda4317}{ures\+\_\+close}} (\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+const \mbox{\hyperlink{umachine_8h_a15493bbbc3793fa60b33cad4955430a0}{U\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ac54897145ed666cfb4c0e2b01d3d77ca}{ures\+\_\+get\+Version\+Number}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a56decc559c98e56143df32485198f82c}{ures\+\_\+get\+Version}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resB, \mbox{\hyperlink{uversion_8h_a61caef96ba86d8e86a4031925ea44e94}{U\+Version\+Info}} version\+Info)
+\item 
+const \mbox{\hyperlink{umachine_8h_a15493bbbc3793fa60b33cad4955430a0}{U\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a5f5c83989df11a9c4ef5879091f462ca}{ures\+\_\+get\+Locale}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a9852f07fcd19cdc79574ff2421ef63ae}{ures\+\_\+get\+Locale\+By\+Type}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, \mbox{\hyperlink{uloc_8h_adf053345d343f8d82ae080f7a5871f34}{U\+Loc\+Data\+Locale\+Type}} type, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a8861a6619a57935fd366bcc347771e6e}{ures\+\_\+open\+Fill\+In}} (\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$r, const char $\ast$package\+Name, const char $\ast$locale\+ID, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}{ures\+\_\+get\+String}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, int32\+\_\+t $\ast$len, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a65effb10cbe8508ea79b982097ebea45}{ures\+\_\+get\+U\+T\+F8\+String}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resB, char $\ast$dest, int32\+\_\+t $\ast$length, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} force\+Copy, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint8\+\_\+t $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ac64df38058000841499e8775808e6300}{ures\+\_\+get\+Binary}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, int32\+\_\+t $\ast$len, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}{ures\+\_\+get\+Int\+Vector}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, int32\+\_\+t $\ast$len, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a6a2e0ecace0d4cd8c5d5cad45fc64c46}{ures\+\_\+get\+Size}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}{U\+Res\+Type}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ab48f2a6ea97bae3907c5cada906b1262}{ures\+\_\+get\+Type}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_aaa9281854d804aecaf140b20b8a3c43f}{ures\+\_\+get\+Key}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a0b2bd1c7357f311a3cf3d33821c72219}{ures\+\_\+reset\+Iterator}} (\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ab069146f9eecff15e7663e4db3ad8a13}{ures\+\_\+has\+Next}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ad6ed790ab02609a819cf107754bbd1ae}{ures\+\_\+get\+Next\+Resource}} (\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$fill\+In, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a9275fffbe5895a6186c50962cd44a774}{ures\+\_\+get\+Next\+String}} (\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, int32\+\_\+t $\ast$len, const char $\ast$$\ast$key, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a250e91273d5b0bd190f836561c6c87e3}{ures\+\_\+get\+By\+Index}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, int32\+\_\+t indexR, \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$fill\+In, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ab086782e96e7f42048675966c0d93a45}{ures\+\_\+get\+String\+By\+Index}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, int32\+\_\+t indexS, int32\+\_\+t $\ast$len, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_afa3eabd39765cd3c731729b91f17855a}{ures\+\_\+get\+U\+T\+F8\+String\+By\+Index}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resB, int32\+\_\+t string\+Index, char $\ast$dest, int32\+\_\+t $\ast$p\+Length, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} force\+Copy, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_ac618a01688fe8e290c42376782fddb7e}{ures\+\_\+get\+By\+Key}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resource\+Bundle, const char $\ast$key, \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$fill\+In, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a036f672412639c76497ecc41d458ec45}{ures\+\_\+get\+String\+By\+Key}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resB, const char $\ast$key, int32\+\_\+t $\ast$len, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a0936f853e04ad880ee1430e45a22588a}{ures\+\_\+get\+U\+T\+F8\+String\+By\+Key}} (const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$resB, const char $\ast$key, char $\ast$dest, int32\+\_\+t $\ast$p\+Length, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} force\+Copy, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{uenum_8h_a32b7253b2148022535be36a9fcdb5a8d}{U\+Enumeration}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ures_8h_a511a5343f9e899d4235e202b074d6142}{ures\+\_\+open\+Available\+Locales}} (const char $\ast$package\+Name, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Resource Bundle. 
+
+\doxysubsubsection*{C A\+PI\+: Resource Bundle}
+
+C A\+PI representing a collection of resource information pertaining to a given locale. A resource bundle provides a way of accessing locale-\/ specific information in a data file. You create a resource bundle that manages the resources for a given locale and then ask it for individual resources. 
+
+Resource bundles in I\+C\+U4C are currently defined using text files which conform to the following \href{http://source.icu-project.org/repos/icu/icuhtml/trunk/design/bnf_rb.txt}{\texttt{ B\+NF definition}}. More on resource bundle concepts and syntax can be found in the \href{http://icu-project.org/userguide/ResourceManagement.html}{\texttt{ Users Guide}}. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}\label{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}} 
+\index{ures.h@{ures.h}!UResourceBundle@{UResourceBundle}}
+\index{UResourceBundle@{UResourceBundle}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{UResourceBundle}{UResourceBundle}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}}
+
+@stable I\+CU 2.\+0 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}} 
+\index{ures.h@{ures.h}!UResType@{UResType}}
+\index{UResType@{UResType}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{UResType}{UResType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}{U\+Res\+Type}}}
+
+Numeric constants for types of resource items. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ab48f2a6ea97bae3907c5cada906b1262}{ures\+\_\+get\+Type}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_NONE@{URES\_NONE}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_NONE@{URES\_NONE}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbab73cbea3085f99defd0538171d343f03}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbab73cbea3085f99defd0538171d343f03}} 
+U\+R\+E\+S\+\_\+\+N\+O\+NE&Resource type constant for \char`\"{}no resource\char`\"{}. @stable I\+CU 2.\+6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_STRING@{URES\_STRING}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_STRING@{URES\_STRING}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac4db2a063c1c73cc363b0e21891bc480}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac4db2a063c1c73cc363b0e21891bc480}} 
+U\+R\+E\+S\+\_\+\+S\+T\+R\+I\+NG&Resource type constant for 16-\/bit Unicode strings. @stable I\+CU 2.\+6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_BINARY@{URES\_BINARY}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_BINARY@{URES\_BINARY}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba7220aa0da13f4d7a1e62a1856026c271}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba7220aa0da13f4d7a1e62a1856026c271}} 
+U\+R\+E\+S\+\_\+\+B\+I\+N\+A\+RY&Resource type constant for binary data. @stable I\+CU 2.\+6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_TABLE@{URES\_TABLE}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_TABLE@{URES\_TABLE}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2cfd36db6917951f177723df3a58e2b4}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2cfd36db6917951f177723df3a58e2b4}} 
+U\+R\+E\+S\+\_\+\+T\+A\+B\+LE&Resource type constant for tables of key-\/value pairs. @stable I\+CU 2.\+6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_ALIAS@{URES\_ALIAS}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_ALIAS@{URES\_ALIAS}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba6890eb4a8669521aace76b4c854d304e}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba6890eb4a8669521aace76b4c854d304e}} 
+U\+R\+E\+S\+\_\+\+A\+L\+I\+AS&Resource type constant for aliases; internally stores a string which identifies the actual resource storing the data (can be in a different resource bundle). Resolved internally before delivering the actual resource through the A\+PI. @stable I\+CU 2.\+6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_INT@{URES\_INT}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_INT@{URES\_INT}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac71be9c52845b8404c84610320b550ba}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac71be9c52845b8404c84610320b550ba}} 
+U\+R\+E\+S\+\_\+\+I\+NT&Resource type constant for a single 28-\/bit integer, interpreted as signed or unsigned by the \mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int()}} or \mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int()}} function. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int}} 
+
+\mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int}} @stable I\+CU 2.\+6 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_ARRAY@{URES\_ARRAY}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_ARRAY@{URES\_ARRAY}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaa2e7a87c3c144d7df2abd973b86512ca}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaa2e7a87c3c144d7df2abd973b86512ca}} 
+U\+R\+E\+S\+\_\+\+A\+R\+R\+AY&Resource type constant for arrays of resources. @stable I\+CU 2.\+6 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_INT\_VECTOR@{URES\_INT\_VECTOR}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_INT\_VECTOR@{URES\_INT\_VECTOR}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba6c6b406d49cebed764c515d49dcf73b3}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba6c6b406d49cebed764c515d49dcf73b3}} 
+U\+R\+E\+S\+\_\+\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR&Resource type constant for vectors of 32-\/bit integers. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}{ures\+\_\+get\+Int\+Vector}} @stable I\+CU 2.\+6 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_NONE@{RES\_NONE}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_NONE@{RES\_NONE}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba78e3758a381e62148cc4b0438f3c0777}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba78e3758a381e62148cc4b0438f3c0777}} 
+R\+E\+S\+\_\+\+N\+O\+NE&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000073}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_STRING@{RES\_STRING}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_STRING@{RES\_STRING}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbad6c0349cb0484769c040d660de1c7445}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbad6c0349cb0484769c040d660de1c7445}} 
+R\+E\+S\+\_\+\+S\+T\+R\+I\+NG&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000074}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_BINARY@{RES\_BINARY}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_BINARY@{RES\_BINARY}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2ad74e7a8c734f374bf8b786617fb212}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2ad74e7a8c734f374bf8b786617fb212}} 
+R\+E\+S\+\_\+\+B\+I\+N\+A\+RY&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000075}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_TABLE@{RES\_TABLE}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_TABLE@{RES\_TABLE}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac93b5478e79d51b10747d617765069af}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac93b5478e79d51b10747d617765069af}} 
+R\+E\+S\+\_\+\+T\+A\+B\+LE&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000076}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_ALIAS@{RES\_ALIAS}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_ALIAS@{RES\_ALIAS}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbae4f137b23dcc82d1b7c5b19d5453b3a1}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbae4f137b23dcc82d1b7c5b19d5453b3a1}} 
+R\+E\+S\+\_\+\+A\+L\+I\+AS&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000077}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_INT@{RES\_INT}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_INT@{RES\_INT}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaf1f3ced984a5ff062dae837b00769e9f}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaf1f3ced984a5ff062dae837b00769e9f}} 
+R\+E\+S\+\_\+\+I\+NT&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000078}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_ARRAY@{RES\_ARRAY}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_ARRAY@{RES\_ARRAY}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2eeb630d6cacdd4cdeae5ae05edfc8bd}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fba2eeb630d6cacdd4cdeae5ae05edfc8bd}} 
+R\+E\+S\+\_\+\+A\+R\+R\+AY&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000079}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_INT\_VECTOR@{RES\_INT\_VECTOR}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_INT\_VECTOR@{RES\_INT\_VECTOR}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac5f51dba6417cd88750d7fb32c1cfb7e}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbac5f51dba6417cd88750d7fb32c1cfb7e}} 
+R\+E\+S\+\_\+\+I\+N\+T\+\_\+\+V\+E\+C\+T\+OR&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000080}{Deprecated}}]I\+CU 2.\+6 Use the U\+R\+E\+S\+\_\+ constant instead. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RES\_RESERVED@{RES\_RESERVED}!ures.h@{ures.h}}\index{ures.h@{ures.h}!RES\_RESERVED@{RES\_RESERVED}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbabb8f79bd6e07400f6870fe51ae24fcef}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbabb8f79bd6e07400f6870fe51ae24fcef}} 
+R\+E\+S\+\_\+\+R\+E\+S\+E\+R\+V\+ED&\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000081}{Deprecated}}]I\+CU 2.\+6 Not used. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{URES\_LIMIT@{URES\_LIMIT}!ures.h@{ures.h}}\index{ures.h@{ures.h}!URES\_LIMIT@{URES\_LIMIT}}}\mbox{\Hypertarget{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaf5e9652169f8062eaaaf8e35accdf0d8}\label{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fbaf5e9652169f8062eaaaf8e35accdf0d8}} 
+U\+R\+E\+S\+\_\+\+L\+I\+M\+IT&One more than the highest normal U\+Res\+Type value. \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000082}{Deprecated}}]I\+CU 58 The numeric value may change over time, see I\+CU ticket \#12420. \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ures_8h_a8953f009c1c51396083a0fa13bda4317}\label{ures_8h_a8953f009c1c51396083a0fa13bda4317}} 
+\index{ures.h@{ures.h}!ures\_close@{ures\_close}}
+\index{ures\_close@{ures\_close}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_close()}{ures\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Close a resource bundle, all pointers returned from the various ures\+\_\+get\+X\+XX calls on this particular bundle should be considered invalid henceforth.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a pointer to a resource\+Bundle struct. Can be N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}{ures\+\_\+open}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_ac7e78fb1a607921c2174e53dc52b2d9e}\label{ures_8h_ac7e78fb1a607921c2174e53dc52b2d9e}} 
+\index{ures.h@{ures.h}!ures\_countArrayItems@{ures\_countArrayItems}}
+\index{ures\_countArrayItems@{ures\_countArrayItems}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_countArrayItems()}{ures\_countArrayItems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a15493bbbc3793fa60b33cad4955430a0}{U\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+count\+Array\+Items (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{const char $\ast$}]{resource\+Key,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{err }\end{DoxyParamCaption})}
+
+Returns the number of strings/arrays in resource bundles. Better to use ures\+\_\+get\+Size, as this function will be deprecated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & resource bundle containing the desired strings \\
+\hline
+{\em resource\+Key} & key tagging the resource \\
+\hline
+{\em err} & fills in the outgoing error code could be {\ttfamily U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR} if the key is not found could be a non-\/failing error e.\+g.\+: {\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG},{\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG } \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: for {\bfseries{Arrays}}\+: returns the number of resources in the array {\bfseries{Tables}}\+: returns the number of resources in the table {\bfseries{single string}}\+: returns 1 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a6a2e0ecace0d4cd8c5d5cad45fc64c46}{ures\+\_\+get\+Size}} 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000070}{Deprecated}}]I\+CU 2.\+8 User ures\+\_\+get\+Size instead \end{DoxyRefDesc}
+\mbox{\Hypertarget{ures_8h_ac64df38058000841499e8775808e6300}\label{ures_8h_ac64df38058000841499e8775808e6300}} 
+\index{ures.h@{ures.h}!ures\_getBinary@{ures\_getBinary}}
+\index{ures\_getBinary@{ures\_getBinary}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getBinary()}{ures\_getBinary()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint8\+\_\+t$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Binary (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a binary data from a binary resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a string resource \\
+\hline
+{\em len} & fills in the length of resulting byte chunk \\
+\hline
+{\em status} & fills in the outgoing error code could be {\ttfamily U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR} if the key is not found Always check the value of status. Don\textquotesingle{}t count on returning N\+U\+LL. could be a non-\/failing error e.\+g.\+: {\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG},{\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG } \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a chunk of unsigned bytes which live in a memory mapped/\+D\+LL file. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}{ures\+\_\+get\+String}} 
+
+\mbox{\hyperlink{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}{ures\+\_\+get\+Int\+Vector}} 
+
+\mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int}} 
+
+\mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a250e91273d5b0bd190f836561c6c87e3}\label{ures_8h_a250e91273d5b0bd190f836561c6c87e3}} 
+\index{ures.h@{ures.h}!ures\_getByIndex@{ures\_getByIndex}}
+\index{ures\_getByIndex@{ures\_getByIndex}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getByIndex()}{ures\_getByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+By\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{int32\+\_\+t}]{indexR,  }\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{fill\+In,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns the resource in a given resource at the specified index. Features a fill-\/in parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & the resource bundle from which to get a sub-\/resource \\
+\hline
+{\em indexR} & an index to the wanted resource. \\
+\hline
+{\em fill\+In} & if N\+U\+LL a new U\+Resource\+Bundle struct is allocated and must be closed by the caller. Alternatively, you can supply a struct to be filled by this function. \\
+\hline
+{\em status} & fills in the outgoing error code. Don\textquotesingle{}t count on N\+U\+LL being returned if an error has occurred. Check status instead. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a U\+Resource\+Bundle struct. If fill in param was N\+U\+LL, caller must close it @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_ac618a01688fe8e290c42376782fddb7e}\label{ures_8h_ac618a01688fe8e290c42376782fddb7e}} 
+\index{ures.h@{ures.h}!ures\_getByKey@{ures\_getByKey}}
+\index{ures\_getByKey@{ures\_getByKey}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getByKey()}{ures\_getByKey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+By\+Key (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{const char $\ast$}]{key,  }\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{fill\+In,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a resource in a given resource that has a given key. This procedure works only with table resources. Features a fill-\/in parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+{\em key} & a key associated with the wanted resource \\
+\hline
+{\em fill\+In} & if N\+U\+LL a new U\+Resource\+Bundle struct is allocated and must be closed by the caller. Alternatively, you can supply a struct to be filled by this function. \\
+\hline
+{\em status} & fills in the outgoing error code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a U\+Resource\+Bundle struct. If fill in param was N\+U\+LL, caller must close it @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_ab00ab045bdb48a136ce235e299929b90}\label{ures_8h_ab00ab045bdb48a136ce235e299929b90}} 
+\index{ures.h@{ures.h}!ures\_getInt@{ures\_getInt}}
+\index{ures\_getInt@{ures\_getInt}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getInt()}{ures\_getInt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Int (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a signed integer from a resource. This integer is originally 28 bit and the sign gets propagated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a string resource \\
+\hline
+{\em status} & fills in the outgoing error code could be {\ttfamily U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR} if the key is not found could be a non-\/failing error e.\+g.\+: {\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG},{\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG } \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer value 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int}} 
+
+\mbox{\hyperlink{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}{ures\+\_\+get\+Int\+Vector}} 
+
+\mbox{\hyperlink{ures_8h_ac64df38058000841499e8775808e6300}{ures\+\_\+get\+Binary}} 
+
+\mbox{\hyperlink{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}{ures\+\_\+get\+String}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}\label{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}} 
+\index{ures.h@{ures.h}!ures\_getIntVector@{ures\_getIntVector}}
+\index{ures\_getIntVector@{ures\_getIntVector}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getIntVector()}{ures\_getIntVector()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Int\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a 32 bit integer array from a resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & an int vector resource \\
+\hline
+{\em len} & fills in the length of resulting byte chunk \\
+\hline
+{\em status} & fills in the outgoing error code could be {\ttfamily U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR} if the key is not found Always check the value of status. Don\textquotesingle{}t count on returning N\+U\+LL. could be a non-\/failing error e.\+g.\+: {\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG},{\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG } \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a chunk of integers which live in a memory mapped/\+D\+LL file. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ac64df38058000841499e8775808e6300}{ures\+\_\+get\+Binary}} 
+
+\mbox{\hyperlink{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}{ures\+\_\+get\+String}} 
+
+\mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int}} 
+
+\mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_aaa9281854d804aecaf140b20b8a3c43f}\label{ures_8h_aaa9281854d804aecaf140b20b8a3c43f}} 
+\index{ures.h@{ures.h}!ures\_getKey@{ures\_getKey}}
+\index{ures\_getKey@{ures\_getKey}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getKey()}{ures\_getKey()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Key (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Returns the key associated with a given resource. Not all the resources have a key -\/ only those that are members of a table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a key associated to this resource, or N\+U\+LL if it doesn\textquotesingle{}t have a key @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_a5f5c83989df11a9c4ef5879091f462ca}\label{ures_8h_a5f5c83989df11a9c4ef5879091f462ca}} 
+\index{ures.h@{ures.h}!ures\_getLocale@{ures\_getLocale}}
+\index{ures\_getLocale@{ures\_getLocale}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getLocale()}{ures\_getLocale()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a15493bbbc3793fa60b33cad4955430a0}{U\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Locale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Return the name of the Locale associated with this Resource\+Bundle. This A\+PI allows you to query for the real locale of the resource. For example, if you requested \char`\"{}en\+\_\+\+U\+S\+\_\+\+C\+A\+L\+I\+F\+O\+R\+N\+I\+A\char`\"{} and only \char`\"{}en\+\_\+\+U\+S\char`\"{} bundle exists, \char`\"{}en\+\_\+\+U\+S\char`\"{} will be returned. For subresources, the locale where this resource comes from will be returned. If fallback has occurred, get\+Locale will reflect this.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & resource bundle in question \\
+\hline
+{\em status} & just for catching illegal arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Locale name 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000072}{Deprecated}}]I\+CU 2.\+8 Use ures\+\_\+get\+Locale\+By\+Type instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{ures_8h_a9852f07fcd19cdc79574ff2421ef63ae}\label{ures_8h_a9852f07fcd19cdc79574ff2421ef63ae}} 
+\index{ures.h@{ures.h}!ures\_getLocaleByType@{ures\_getLocaleByType}}
+\index{ures\_getLocaleByType@{ures\_getLocaleByType}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getLocaleByType()}{ures\_getLocaleByType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Locale\+By\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{\mbox{\hyperlink{uloc_8h_adf053345d343f8d82ae080f7a5871f34}{U\+Loc\+Data\+Locale\+Type}}}]{type,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Return the name of the Locale associated with this Resource\+Bundle. You can choose between requested, valid and real locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & resource bundle in question \\
+\hline
+{\em type} & You can choose between requested, valid and actual locale. For description see the definition of U\+Loc\+Data\+Locale\+Type in \mbox{\hyperlink{uloc_8h}{uloc.\+h}} \\
+\hline
+{\em status} & just for catching illegal arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Locale name @stable I\+CU 2.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_ad6ed790ab02609a819cf107754bbd1ae}\label{ures_8h_ad6ed790ab02609a819cf107754bbd1ae}} 
+\index{ures.h@{ures.h}!ures\_getNextResource@{ures\_getNextResource}}
+\index{ures\_getNextResource@{ures\_getNextResource}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getNextResource()}{ures\_getNextResource()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Next\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{fill\+In,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns the next resource in a given resource or N\+U\+LL if there are no more resources to iterate over. Features a fill-\/in parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+{\em fill\+In} & if N\+U\+LL a new U\+Resource\+Bundle struct is allocated and must be closed by the caller. Alternatively, you can supply a struct to be filled by this function. \\
+\hline
+{\em status} & fills in the outgoing error code. You may still get a non N\+U\+LL result even if an error occurred. Check status instead. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a U\+Resource\+Bundle struct. If fill in param was N\+U\+LL, caller must close it @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_a9275fffbe5895a6186c50962cd44a774}\label{ures_8h_a9275fffbe5895a6186c50962cd44a774}} 
+\index{ures.h@{ures.h}!ures\_getNextString@{ures\_getNextString}}
+\index{ures\_getNextString@{ures\_getNextString}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getNextString()}{ures\_getNextString()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Next\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{const char $\ast$$\ast$}]{key,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns the next string in a given resource or N\+U\+LL if there are no more resources to iterate over.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+{\em len} & fill in length of the string \\
+\hline
+{\em key} & fill in for key associated with this string. N\+U\+LL if no key \\
+\hline
+{\em status} & fills in the outgoing error code. If an error occurred, we may return N\+U\+LL, but don\textquotesingle{}t count on it. Check status instead! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a zero-\/terminated U\+Char array which lives in a memory mapped/\+D\+LL file. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_a6a2e0ecace0d4cd8c5d5cad45fc64c46}\label{ures_8h_a6a2e0ecace0d4cd8c5d5cad45fc64c46}} 
+\index{ures.h@{ures.h}!ures\_getSize@{ures\_getSize}}
+\index{ures\_getSize@{ures\_getSize}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getSize()}{ures\_getSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Returns the size of a resource. Size for scalar types is always 1, and for vector/table types is the number of child resources. \begin{DoxyWarning}{Warning}
+Integer array is treated as a scalar type. There are no A\+P\+Is to access individual members of an integer array. It is always returned as a whole. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of resources in a given resource. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}\label{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}} 
+\index{ures.h@{ures.h}!ures\_getString@{ures\_getString}}
+\index{ures\_getString@{ures\_getString}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getString()}{ures\_getString()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a string from a string resource type
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a string resource \\
+\hline
+{\em len} & fills in the length of resulting string \\
+\hline
+{\em status} & fills in the outgoing error code could be {\ttfamily U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR} if the key is not found Always check the value of status. Don\textquotesingle{}t count on returning N\+U\+LL. could be a non-\/failing error e.\+g.\+: {\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG},{\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG } \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a zero-\/terminated U\+Char array which lives in a memory mapped/\+D\+LL file. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ac64df38058000841499e8775808e6300}{ures\+\_\+get\+Binary}} 
+
+\mbox{\hyperlink{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}{ures\+\_\+get\+Int\+Vector}} 
+
+\mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int}} 
+
+\mbox{\hyperlink{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}{ures\+\_\+get\+U\+Int}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_ab086782e96e7f42048675966c0d93a45}\label{ures_8h_ab086782e96e7f42048675966c0d93a45}} 
+\index{ures.h@{ures.h}!ures\_getStringByIndex@{ures\_getStringByIndex}}
+\index{ures\_getStringByIndex@{ures\_getStringByIndex}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getStringByIndex()}{ures\_getStringByIndex()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+String\+By\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{int32\+\_\+t}]{indexS,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns the string in a given resource at the specified index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+{\em indexS} & an index to the wanted string. \\
+\hline
+{\em len} & fill in length of the string \\
+\hline
+{\em status} & fills in the outgoing error code. If an error occurred, we may return N\+U\+LL, but don\textquotesingle{}t count on it. Check status instead! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a zero-\/terminated U\+Char array which lives in a memory mapped/\+D\+LL file. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_a036f672412639c76497ecc41d458ec45}\label{ures_8h_a036f672412639c76497ecc41d458ec45}} 
+\index{ures.h@{ures.h}!ures\_getStringByKey@{ures\_getStringByKey}}
+\index{ures\_getStringByKey@{ures\_getStringByKey}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getStringByKey()}{ures\_getStringByKey()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+String\+By\+Key (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resB,  }\item[{const char $\ast$}]{key,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a string in a given resource that has a given key. This procedure works only with table resources.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resB} & a resource \\
+\hline
+{\em key} & a key associated with the wanted string \\
+\hline
+{\em len} & fill in length of the string \\
+\hline
+{\em status} & fills in the outgoing error code. If an error occurred, we may return N\+U\+LL, but don\textquotesingle{}t count on it. Check status instead! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a zero-\/terminated U\+Char array which lives in a memory mapped/\+D\+LL file. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_ab48f2a6ea97bae3907c5cada906b1262}\label{ures_8h_ab48f2a6ea97bae3907c5cada906b1262}} 
+\index{ures.h@{ures.h}!ures\_getType@{ures\_getType}}
+\index{ures\_getType@{ures\_getType}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getType()}{ures\_getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}{U\+Res\+Type}} U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Returns the type of a resource. Available types are defined in enum U\+Res\+Type
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+type of the given resource. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a3f1197bf41a6228c38e3fddb58bf96fb}{U\+Res\+Type}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}\label{ures_8h_a6743a3a40dbfe7bf204bf082600c3ee6}} 
+\index{ures.h@{ures.h}!ures\_getUInt@{ures\_getUInt}}
+\index{ures\_getUInt@{ures\_getUInt}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getUInt()}{ures\_getUInt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+U\+Int (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns an unsigned integer from a resource. This integer is originally 28 bits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a string resource \\
+\hline
+{\em status} & fills in the outgoing error code could be {\ttfamily U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR} if the key is not found could be a non-\/failing error e.\+g.\+: {\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG},{\ttfamily U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG } \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer value 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ab00ab045bdb48a136ce235e299929b90}{ures\+\_\+get\+Int}} 
+
+\mbox{\hyperlink{ures_8h_ae4d92aa1ade08bc251120a4a5b1129b5}{ures\+\_\+get\+Int\+Vector}} 
+
+\mbox{\hyperlink{ures_8h_ac64df38058000841499e8775808e6300}{ures\+\_\+get\+Binary}} 
+
+\mbox{\hyperlink{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}{ures\+\_\+get\+String}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a65effb10cbe8508ea79b982097ebea45}\label{ures_8h_a65effb10cbe8508ea79b982097ebea45}} 
+\index{ures.h@{ures.h}!ures\_getUTF8String@{ures\_getUTF8String}}
+\index{ures\_getUTF8String@{ures\_getUTF8String}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getUTF8String()}{ures\_getUTF8String()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+U\+T\+F8\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resB,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t $\ast$}]{length,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{force\+Copy,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a U\+T\+F-\/8 string from a string resource. The U\+T\+F-\/8 string may be returnable directly as a pointer, or it may need to be copied, or transformed from U\+T\+F-\/16 using \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8()}} or equivalent.
+
+If force\+Copy==true, then the string is always written to the dest buffer and dest is returned.
+
+If force\+Copy==false, then the string is returned as a pointer if possible, without needing a dest buffer (it can be N\+U\+LL). If the string needs to be copied or transformed, then it may be placed into dest at an arbitrary offset.
+
+If the string is to be written to dest, then U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR and U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG are set if appropriate, as usual.
+
+If the string is transformed from U\+T\+F-\/16, then a conversion error may occur if an unpaired surrogate is encountered. If the function is successful, then the output U\+T\+F-\/8 string is always well-\/formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resB} & Resource bundle. \\
+\hline
+{\em dest} & Destination buffer. Can be N\+U\+LL only if capacity=$\ast$length==0. \\
+\hline
+{\em length} & Input\+: Capacity of destination buffer. Output\+: Actual length of the U\+T\+F-\/8 string, not counting the terminating N\+UL, even in case of U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR. Can be N\+U\+LL, meaning capacity=0 and the string length is not returned to the caller. \\
+\hline
+{\em force\+Copy} & If true, then the output string will always be written to dest, with U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR and U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG set if appropriate. If false, then the dest buffer may or may not contain a copy of the string. dest may or may not be modified. If a copy needs to be written, then the U\+Error\+Code parameter indicates overflow etc. as usual. \\
+\hline
+{\em status} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the U\+T\+F-\/8 string. It may be dest, or at some offset from dest (only if !force\+Copy), or in unrelated memory. Always N\+U\+L-\/terminated unless the string was written to dest and length==capacity (in which case U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG is set).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a9eae9b96086042c1e4fa7bef9bf3f80a}{ures\+\_\+get\+String}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_afa3eabd39765cd3c731729b91f17855a}\label{ures_8h_afa3eabd39765cd3c731729b91f17855a}} 
+\index{ures.h@{ures.h}!ures\_getUTF8StringByIndex@{ures\_getUTF8StringByIndex}}
+\index{ures\_getUTF8StringByIndex@{ures\_getUTF8StringByIndex}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getUTF8StringByIndex()}{ures\_getUTF8StringByIndex()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+U\+T\+F8\+String\+By\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resB,  }\item[{int32\+\_\+t}]{string\+Index,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t $\ast$}]{p\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{force\+Copy,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a U\+T\+F-\/8 string from a resource at the specified index. The U\+T\+F-\/8 string may be returnable directly as a pointer, or it may need to be copied, or transformed from U\+T\+F-\/16 using \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8()}} or equivalent.
+
+If force\+Copy==true, then the string is always written to the dest buffer and dest is returned.
+
+If force\+Copy==false, then the string is returned as a pointer if possible, without needing a dest buffer (it can be N\+U\+LL). If the string needs to be copied or transformed, then it may be placed into dest at an arbitrary offset.
+
+If the string is to be written to dest, then U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR and U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG are set if appropriate, as usual.
+
+If the string is transformed from U\+T\+F-\/16, then a conversion error may occur if an unpaired surrogate is encountered. If the function is successful, then the output U\+T\+F-\/8 string is always well-\/formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resB} & Resource bundle. \\
+\hline
+{\em string\+Index} & An index to the wanted string. \\
+\hline
+{\em dest} & Destination buffer. Can be N\+U\+LL only if capacity=$\ast$length==0. \\
+\hline
+{\em p\+Length} & Input\+: Capacity of destination buffer. Output\+: Actual length of the U\+T\+F-\/8 string, not counting the terminating N\+UL, even in case of U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR. Can be N\+U\+LL, meaning capacity=0 and the string length is not returned to the caller. \\
+\hline
+{\em force\+Copy} & If true, then the output string will always be written to dest, with U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR and U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG set if appropriate. If false, then the dest buffer may or may not contain a copy of the string. dest may or may not be modified. If a copy needs to be written, then the U\+Error\+Code parameter indicates overflow etc. as usual. \\
+\hline
+{\em status} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the U\+T\+F-\/8 string. It may be dest, or at some offset from dest (only if !force\+Copy), or in unrelated memory. Always N\+U\+L-\/terminated unless the string was written to dest and length==capacity (in which case U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG is set).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_ab086782e96e7f42048675966c0d93a45}{ures\+\_\+get\+String\+By\+Index}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a0936f853e04ad880ee1430e45a22588a}\label{ures_8h_a0936f853e04ad880ee1430e45a22588a}} 
+\index{ures.h@{ures.h}!ures\_getUTF8StringByKey@{ures\_getUTF8StringByKey}}
+\index{ures\_getUTF8StringByKey@{ures\_getUTF8StringByKey}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getUTF8StringByKey()}{ures\_getUTF8StringByKey()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+U\+T\+F8\+String\+By\+Key (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resB,  }\item[{const char $\ast$}]{key,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t $\ast$}]{p\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{force\+Copy,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Returns a U\+T\+F-\/8 string from a resource and a key. This function works only with table resources.
+
+The U\+T\+F-\/8 string may be returnable directly as a pointer, or it may need to be copied, or transformed from U\+T\+F-\/16 using \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8()}} or equivalent.
+
+If force\+Copy==true, then the string is always written to the dest buffer and dest is returned.
+
+If force\+Copy==false, then the string is returned as a pointer if possible, without needing a dest buffer (it can be N\+U\+LL). If the string needs to be copied or transformed, then it may be placed into dest at an arbitrary offset.
+
+If the string is to be written to dest, then U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR and U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG are set if appropriate, as usual.
+
+If the string is transformed from U\+T\+F-\/16, then a conversion error may occur if an unpaired surrogate is encountered. If the function is successful, then the output U\+T\+F-\/8 string is always well-\/formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resB} & Resource bundle. \\
+\hline
+{\em key} & A key associated with the wanted resource \\
+\hline
+{\em dest} & Destination buffer. Can be N\+U\+LL only if capacity=$\ast$length==0. \\
+\hline
+{\em p\+Length} & Input\+: Capacity of destination buffer. Output\+: Actual length of the U\+T\+F-\/8 string, not counting the terminating N\+UL, even in case of U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR. Can be N\+U\+LL, meaning capacity=0 and the string length is not returned to the caller. \\
+\hline
+{\em force\+Copy} & If true, then the output string will always be written to dest, with U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR and U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG set if appropriate. If false, then the dest buffer may or may not contain a copy of the string. dest may or may not be modified. If a copy needs to be written, then the U\+Error\+Code parameter indicates overflow etc. as usual. \\
+\hline
+{\em status} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the U\+T\+F-\/8 string. It may be dest, or at some offset from dest (only if !force\+Copy), or in unrelated memory. Always N\+U\+L-\/terminated unless the string was written to dest and length==capacity (in which case U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+N\+O\+T\+\_\+\+T\+E\+R\+M\+I\+N\+A\+T\+E\+D\+\_\+\+W\+A\+R\+N\+I\+NG is set).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a036f672412639c76497ecc41d458ec45}{ures\+\_\+get\+String\+By\+Key}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a56decc559c98e56143df32485198f82c}\label{ures_8h_a56decc559c98e56143df32485198f82c}} 
+\index{ures.h@{ures.h}!ures\_getVersion@{ures\_getVersion}}
+\index{ures\_getVersion@{ures\_getVersion}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getVersion()}{ures\_getVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Version (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resB,  }\item[{\mbox{\hyperlink{uversion_8h_a61caef96ba86d8e86a4031925ea44e94}{U\+Version\+Info}}}]{version\+Info }\end{DoxyParamCaption})}
+
+Return the version number associated with this Resource\+Bundle as an U\+Version\+Info array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resB} & The resource bundle for which the version is checked. \\
+\hline
+{\em version\+Info} & A U\+Version\+Info array that is filled with the version number as specified in the resource bundle or its parent. @stable I\+CU 2.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ures_8h_ac54897145ed666cfb4c0e2b01d3d77ca}\label{ures_8h_ac54897145ed666cfb4c0e2b01d3d77ca}} 
+\index{ures.h@{ures.h}!ures\_getVersionNumber@{ures\_getVersionNumber}}
+\index{ures\_getVersionNumber@{ures\_getVersionNumber}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_getVersionNumber()}{ures\_getVersionNumber()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a15493bbbc3793fa60b33cad4955430a0}{U\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+get\+Version\+Number (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Return the version number associated with this Resource\+Bundle as a string. Please use ures\+\_\+get\+Version as this function is going to be deprecated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & The resource bundle for which the version is checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A version number string as specified in the resource bundle or its parent. The caller does not own this string. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a56decc559c98e56143df32485198f82c}{ures\+\_\+get\+Version}} 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000071}{Deprecated}}]I\+CU 2.\+8 Use ures\+\_\+get\+Version instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{ures_8h_ab069146f9eecff15e7663e4db3ad8a13}\label{ures_8h_ab069146f9eecff15e7663e4db3ad8a13}} 
+\index{ures.h@{ures.h}!ures\_hasNext@{ures\_hasNext}}
+\index{ures\_hasNext@{ures\_hasNext}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_hasNext()}{ures\_hasNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+has\+Next (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Checks whether the given resource has another element to iterate over.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there are more elements, false if there is no more elements @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}\label{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}} 
+\index{ures.h@{ures.h}!ures\_open@{ures\_open}}
+\index{ures\_open@{ures\_open}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_open()}{ures\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{package\+Name,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Opens a U\+Resource\+Bundle, from which users can extract strings by using their corresponding keys. Note that the caller is responsible of calling {\ttfamily ures\+\_\+close} on each successfully opened resource bundle. 
+\begin{DoxyParams}{Parameters}
+{\em package\+Name} & The package\+Name and locale together point to an I\+CU udata object, as defined by {\ttfamily  udata\+\_\+open( package\+Name, \char`\"{}res\char`\"{}, locale, err) } or equivalent. Typically, package\+Name will refer to a (.dat) file, or to a package registered with \mbox{\hyperlink{udata_8h_a8a44e57ac1388440e90c58d606df9b90}{udata\+\_\+set\+App\+Data()}}. Using a full file or directory pathname for package\+Name is deprecated. If N\+U\+LL, I\+CU data will be used. \\
+\hline
+{\em locale} & specifies the locale for which we want to open the resource if N\+U\+LL, the default locale will be used. If strlen(locale) == 0 root locale will be used.\\
+\hline
+{\em status} & fills in the outgoing error code. The U\+Error\+Code err parameter is used to return status information to the user. To check whether the construction succeeded or not, you should check the value of \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S(err)}}. If you wish more detailed information, you can check for informational status results which still indicate success. U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG indicates that a fall back locale was used. For example, \textquotesingle{}de\+\_\+\+CH\textquotesingle{} was requested, but nothing was found there, so \textquotesingle{}de\textquotesingle{} was used. U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG indicates that the default locale data or root locale data was used; neither the requested locale nor any of its fall back locales could be found. Please see the users guide for more information on this topic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a newly allocated resource bundle. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a8953f009c1c51396083a0fa13bda4317}{ures\+\_\+close}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a511a5343f9e899d4235e202b074d6142}\label{ures_8h_a511a5343f9e899d4235e202b074d6142}} 
+\index{ures.h@{ures.h}!ures\_openAvailableLocales@{ures\_openAvailableLocales}}
+\index{ures\_openAvailableLocales@{ures\_openAvailableLocales}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_openAvailableLocales()}{ures\_openAvailableLocales()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{uenum_8h_a32b7253b2148022535be36a9fcdb5a8d}{U\+Enumeration}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+open\+Available\+Locales (\begin{DoxyParamCaption}\item[{const char $\ast$}]{package\+Name,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Create a string enumerator, owned by the caller, of all locales located within the specified resource tree. 
+\begin{DoxyParams}{Parameters}
+{\em package\+Name} & name of the tree, such as (N\+U\+LL) or U\+\_\+\+I\+C\+U\+D\+A\+T\+A\+\_\+\+A\+L\+I\+AS or or \char`\"{}\+I\+C\+U\+D\+A\+T\+A-\/coll\char`\"{} This call is similar to \mbox{\hyperlink{uloc_8h_aba597e3e3b2d0c9ebdd544cc3f2d5c60}{uloc\+\_\+get\+Available()}}. \\
+\hline
+{\em status} & error code @stable I\+CU 3.\+2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ures_8h_ae34794c67d6c28db1ad6df5b6d6937de}\label{ures_8h_ae34794c67d6c28db1ad6df5b6d6937de}} 
+\index{ures.h@{ures.h}!ures\_openDirect@{ures\_openDirect}}
+\index{ures\_openDirect@{ures\_openDirect}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_openDirect()}{ures\_openDirect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+open\+Direct (\begin{DoxyParamCaption}\item[{const char $\ast$}]{package\+Name,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+This function does not care what kind of locale\+ID is passed in. It simply opens a bundle with that name. Fallback mechanism is disabled for the new bundle. If the requested bundle contains an \%A\+L\+I\+AS directive, the results are undefined. 
+\begin{DoxyParams}{Parameters}
+{\em package\+Name} & The package\+Name and locale together point to an I\+CU udata object, as defined by {\ttfamily  udata\+\_\+open( package\+Name, \char`\"{}res\char`\"{}, locale, err) } or equivalent. Typically, package\+Name will refer to a (.dat) file, or to a package registered with \mbox{\hyperlink{udata_8h_a8a44e57ac1388440e90c58d606df9b90}{udata\+\_\+set\+App\+Data()}}. Using a full file or directory pathname for package\+Name is deprecated. If N\+U\+LL, I\+CU data will be used. \\
+\hline
+{\em locale} & specifies the locale for which we want to open the resource if N\+U\+LL, the default locale will be used. If strlen(locale) == 0 root locale will be used.\\
+\hline
+{\em status} & fills in the outgoing error code. Either U\+\_\+\+Z\+E\+R\+O\+\_\+\+E\+R\+R\+OR or U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a newly allocated resource bundle or N\+U\+LL if it doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_a8953f009c1c51396083a0fa13bda4317}{ures\+\_\+close}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a8861a6619a57935fd366bcc347771e6e}\label{ures_8h_a8861a6619a57935fd366bcc347771e6e}} 
+\index{ures.h@{ures.h}!ures\_openFillIn@{ures\_openFillIn}}
+\index{ures\_openFillIn@{ures\_openFillIn}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_openFillIn()}{ures\_openFillIn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+open\+Fill\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{r,  }\item[{const char $\ast$}]{package\+Name,  }\item[{const char $\ast$}]{locale\+ID,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Same as \mbox{\hyperlink{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}{ures\+\_\+open()}} but uses the fill-\/in parameter instead of allocating a new bundle.
+
+T\+O\+DO need to revisit usefulness of this function and usage model for fill\+In parameters without knowing sizeof(\+U\+Resource\+Bundle) 
+\begin{DoxyParams}{Parameters}
+{\em r} & The existing U\+Resource\+Bundle to fill in. If N\+U\+LL then status will be set to U\+\_\+\+I\+L\+L\+E\+G\+A\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR. \\
+\hline
+{\em package\+Name} & The package\+Name and locale together point to an I\+CU udata object, as defined by {\ttfamily  udata\+\_\+open( package\+Name, \char`\"{}res\char`\"{}, locale, err) } or equivalent. Typically, package\+Name will refer to a (.dat) file, or to a package registered with \mbox{\hyperlink{udata_8h_a8a44e57ac1388440e90c58d606df9b90}{udata\+\_\+set\+App\+Data()}}. Using a full file or directory pathname for package\+Name is deprecated. If N\+U\+LL, I\+CU data will be used. \\
+\hline
+{\em locale\+ID} & specifies the locale for which we want to open the resource \\
+\hline
+{\em status} & The error code. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ures_8h_a9e587bc887ecc795d3a5b558f0fb1018}\label{ures_8h_a9e587bc887ecc795d3a5b558f0fb1018}} 
+\index{ures.h@{ures.h}!ures\_openU@{ures\_openU}}
+\index{ures\_openU@{ures\_openU}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_openU()}{ures\_openU()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+openU (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{package\+Name,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Same as \mbox{\hyperlink{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}{ures\+\_\+open()}} but takes a const U\+Char $\ast$path. This path will be converted to char $\ast$ using the default converter, then \mbox{\hyperlink{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}{ures\+\_\+open()}} is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em package\+Name} & The package\+Name and locale together point to an I\+CU udata object, as defined by {\ttfamily  udata\+\_\+open( package\+Name, \char`\"{}res\char`\"{}, locale, err) } or equivalent. Typically, package\+Name will refer to a (.dat) file, or to a package registered with \mbox{\hyperlink{udata_8h_a8a44e57ac1388440e90c58d606df9b90}{udata\+\_\+set\+App\+Data()}}. Using a full file or directory pathname for package\+Name is deprecated. If N\+U\+LL, I\+CU data will be used. \\
+\hline
+{\em locale} & specifies the locale for which we want to open the resource if N\+U\+LL, the default locale will be used. If strlen(locale) == 0 root locale will be used. \\
+\hline
+{\em status} & fills in the outgoing error code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a newly allocated resource bundle. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ures_8h_adddb31d49caccda3fd5372dfe4b76ce7}{ures\+\_\+open}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ures_8h_a0b2bd1c7357f311a3cf3d33821c72219}\label{ures_8h_a0b2bd1c7357f311a3cf3d33821c72219}} 
+\index{ures.h@{ures.h}!ures\_resetIterator@{ures\_resetIterator}}
+\index{ures\_resetIterator@{ures\_resetIterator}!ures.h@{ures.h}}
+\doxysubsubsection{\texorpdfstring{ures\_resetIterator()}{ures\_resetIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ures\+\_\+reset\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$}]{resource\+Bundle }\end{DoxyParamCaption})}
+
+Resets the internal context of a resource so that iteration starts from the first element.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resource\+Bundle} & a resource @stable I\+CU 2.\+0 \\
+\hline
+\end{DoxyParams}

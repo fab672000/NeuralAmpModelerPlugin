@@ -1,0 +1,77 @@
+\hypertarget{class_sk_auto_s_malloc}{}\doxysection{Sk\+Auto\+S\+Malloc$<$ k\+Size\+Requested $>$ Class Template Reference}
+\label{class_sk_auto_s_malloc}\index{SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}}
+
+
+{\ttfamily \#include $<$Sk\+Auto\+Malloc.\+h$>$}
+
+Inheritance diagram for Sk\+Auto\+S\+Malloc$<$ k\+Size\+Requested $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_auto_s_malloc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_auto_s_malloc_ad6f11b1a1f67d4e95bd063c2d6e3cbdf}{Sk\+Auto\+S\+Malloc}} ()
+\item 
+\mbox{\hyperlink{class_sk_auto_s_malloc_a5f3f7c6f4e4cf25bdc9fb5bedcf003f5}{Sk\+Auto\+S\+Malloc}} (size\+\_\+t size)
+\item 
+\mbox{\hyperlink{class_sk_auto_s_malloc_a2b5076a1852669c509ddb7dfb4a09129}{$\sim$\+Sk\+Auto\+S\+Malloc}} ()
+\item 
+void $\ast$ \mbox{\hyperlink{class_sk_auto_s_malloc_ade819e8ccc3291b41da7e9aa34e20a92}{get}} () const
+\item 
+void $\ast$ \mbox{\hyperlink{class_sk_auto_s_malloc_a80672b16f401e76b5e0faaff45296684}{reset}} (size\+\_\+t size, \mbox{\hyperlink{class_sk_auto_malloc_abd21b1dbfb59693eee36349b922a064a}{Sk\+Auto\+Malloc\+::\+On\+Shrink}} shrink=\mbox{\hyperlink{class_sk_auto_malloc_abd21b1dbfb59693eee36349b922a064aae00d4cbd5cfd8d5ddedadf8210dda799}{Sk\+Auto\+Malloc\+::k\+Alloc\+\_\+\+On\+Shrink}}, bool $\ast$did\+Change\+Alloc=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t k\+Size\+Requested$>$\newline
+class Sk\+Auto\+S\+Malloc$<$ k\+Size\+Requested $>$}
+
+Manage an allocated block of memory. If the requested size is $<$= k\+Size\+Requested (or slightly more), then the allocation will come from the stack rather than the heap. This object is the sole manager of the lifetime of the block, so the caller must not call sk\+\_\+free() or delete on the block. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_auto_s_malloc_ad6f11b1a1f67d4e95bd063c2d6e3cbdf}\label{class_sk_auto_s_malloc_ad6f11b1a1f67d4e95bd063c2d6e3cbdf}} 
+\index{SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}!SkAutoSMalloc@{SkAutoSMalloc}}
+\index{SkAutoSMalloc@{SkAutoSMalloc}!SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}}
+\doxysubsubsection{\texorpdfstring{SkAutoSMalloc()}{SkAutoSMalloc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t k\+Size\+Requested$>$ \\
+\mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}}$<$ k\+Size\+Requested $>$\+::\mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates initially empty storage. \mbox{\hyperlink{class_sk_auto_s_malloc_ade819e8ccc3291b41da7e9aa34e20a92}{get()}} returns a ptr, but it is to a zero-\/byte allocation. Must call reset(size) to return an allocated block. \mbox{\Hypertarget{class_sk_auto_s_malloc_a5f3f7c6f4e4cf25bdc9fb5bedcf003f5}\label{class_sk_auto_s_malloc_a5f3f7c6f4e4cf25bdc9fb5bedcf003f5}} 
+\index{SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}!SkAutoSMalloc@{SkAutoSMalloc}}
+\index{SkAutoSMalloc@{SkAutoSMalloc}!SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}}
+\doxysubsubsection{\texorpdfstring{SkAutoSMalloc()}{SkAutoSMalloc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t k\+Size\+Requested$>$ \\
+\mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}}$<$ k\+Size\+Requested $>$\+::\mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Allocate a block of the specified size. If size $<$= k\+Size\+Requested (or slightly more), then the allocation will come from the stack, otherwise it will be dynamically allocated. \mbox{\Hypertarget{class_sk_auto_s_malloc_a2b5076a1852669c509ddb7dfb4a09129}\label{class_sk_auto_s_malloc_a2b5076a1852669c509ddb7dfb4a09129}} 
+\index{SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}!````~SkAutoSMalloc@{$\sim$SkAutoSMalloc}}
+\index{````~SkAutoSMalloc@{$\sim$SkAutoSMalloc}!SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkAutoSMalloc()}{~SkAutoSMalloc()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t k\+Size\+Requested$>$ \\
+\mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}}$<$ k\+Size\+Requested $>$\+::$\sim$\mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Free the allocated block (if any). If the block was small enough to have been allocated on the stack, then this does nothing. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_auto_s_malloc_ade819e8ccc3291b41da7e9aa34e20a92}\label{class_sk_auto_s_malloc_ade819e8ccc3291b41da7e9aa34e20a92}} 
+\index{SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}!get@{get}}
+\index{get@{get}!SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t k\+Size\+Requested$>$ \\
+void$\ast$ \mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}}$<$ k\+Size\+Requested $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the allocated block. May return non-\/null even if the block is of zero size. Since this may be on the stack or dynamically allocated, the caller must not call sk\+\_\+free() on it, but must rely on \mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}} to manage it. \mbox{\Hypertarget{class_sk_auto_s_malloc_a80672b16f401e76b5e0faaff45296684}\label{class_sk_auto_s_malloc_a80672b16f401e76b5e0faaff45296684}} 
+\index{SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}!reset@{reset}}
+\index{reset@{reset}!SkAutoSMalloc$<$ kSizeRequested $>$@{SkAutoSMalloc$<$ kSizeRequested $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t k\+Size\+Requested$>$ \\
+void$\ast$ \mbox{\hyperlink{class_sk_auto_s_malloc}{Sk\+Auto\+S\+Malloc}}$<$ k\+Size\+Requested $>$\+::reset (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{\mbox{\hyperlink{class_sk_auto_malloc_abd21b1dbfb59693eee36349b922a064a}{Sk\+Auto\+Malloc\+::\+On\+Shrink}}}]{shrink = {\ttfamily \mbox{\hyperlink{class_sk_auto_malloc_abd21b1dbfb59693eee36349b922a064aae00d4cbd5cfd8d5ddedadf8210dda799}{Sk\+Auto\+Malloc\+::k\+Alloc\+\_\+\+On\+Shrink}}},  }\item[{bool $\ast$}]{did\+Change\+Alloc = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a new block of the requested size, freeing (as necessary) any previously allocated block. As with the constructor, if size $<$= k\+Size\+Requested (or slightly more) then the return block may be allocated locally, rather than from the heap. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Auto\+Malloc.\+h\end{DoxyCompactItemize}

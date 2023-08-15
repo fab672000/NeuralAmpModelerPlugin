@@ -1,0 +1,51 @@
+\hypertarget{struct_steinberg_1_1_f_conditional_bool_setter}{}\doxysection{Steinberg\+::F\+Conditional\+Bool\+Setter Struct Reference}
+\label{struct_steinberg_1_1_f_conditional_bool_setter}\index{Steinberg::FConditionalBoolSetter@{Steinberg::FConditionalBoolSetter}}
+
+
+{\ttfamily \#include $<$fcleanup.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_steinberg_1_1_f_conditional_bool_setter_ab4c8b33da1c23a50ddf53a9decc3a513}{F\+Conditional\+Bool\+Setter}} (bool \&\+\_\+to\+Set, bool condition)
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_conditional_bool_setter_a7c2ddc6881a4f88e3b3c50a67b90eb8d}\label{struct_steinberg_1_1_f_conditional_bool_setter_a7c2ddc6881a4f88e3b3c50a67b90eb8d}} 
+\mbox{\hyperlink{struct_steinberg_1_1_f_conditional_bool_setter_a7c2ddc6881a4f88e3b3c50a67b90eb8d}{$\sim$\+F\+Conditional\+Bool\+Setter}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Resets the at construction time passed boolean to F\+A\+L\+SE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_conditional_bool_setter_aec4477e633c986fc0818edee0179393e}\label{struct_steinberg_1_1_f_conditional_bool_setter_aec4477e633c986fc0818edee0179393e}} 
+bool \& \mbox{\hyperlink{struct_steinberg_1_1_f_conditional_bool_setter_aec4477e633c986fc0818edee0179393e}{to\+Set}}
+\begin{DoxyCompactList}\small\item\em Remembers the boolean that is to be reset during destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class definition for objects that help setting boolean variables. A stack allocated object of this type automatically sets an at construction time passed boolean variable to T\+R\+UE if the given condition is met. At the end of its own scope the stack object will reset the same boolean variable to F\+A\+L\+SE, if it wasn\textquotesingle{}t set so already. ~\newline
+~\newline
+Intended usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} theBoolean = \textcolor{keyword}{false};}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{bool} creativityFirst = \textcolor{keyword}{true};}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_steinberg_1_1_f_conditional_bool_setter}{Steinberg::FConditionalBoolSetter}} theCBSetter (theBoolean, creativityFirst);}
+\DoxyCodeLine{    \textcolor{comment}{// Here the constructor of theCBSetter sets theBoolean to the value of creativityFirst.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Do something.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\} \textcolor{comment}{// Here the destructor of theCBSetter resets theBoolean to FALSE.}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_f_conditional_bool_setter_ab4c8b33da1c23a50ddf53a9decc3a513}\label{struct_steinberg_1_1_f_conditional_bool_setter_ab4c8b33da1c23a50ddf53a9decc3a513}} 
+\index{Steinberg::FConditionalBoolSetter@{Steinberg::FConditionalBoolSetter}!FConditionalBoolSetter@{FConditionalBoolSetter}}
+\index{FConditionalBoolSetter@{FConditionalBoolSetter}!Steinberg::FConditionalBoolSetter@{Steinberg::FConditionalBoolSetter}}
+\doxysubsubsection{\texorpdfstring{FConditionalBoolSetter()}{FConditionalBoolSetter()}}
+{\footnotesize\ttfamily Steinberg\+::\+F\+Conditional\+Bool\+Setter\+::\+F\+Conditional\+Bool\+Setter (\begin{DoxyParamCaption}\item[{bool \&}]{\+\_\+to\+Set,  }\item[{bool}]{condition }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \+\_\+to\+Set is a reference to the boolean that is to be set. If the in the second parameter given condition is T\+R\+UE then also \+\_\+to\+Set is set to T\+R\+UE immediately. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fcleanup.\+h\end{DoxyCompactItemize}

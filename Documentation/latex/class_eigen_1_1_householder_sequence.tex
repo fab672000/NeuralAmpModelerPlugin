@@ -1,0 +1,555 @@
+\hypertarget{class_eigen_1_1_householder_sequence}{}\doxysection{Eigen\+::Householder\+Sequence Class Reference}
+\label{class_eigen_1_1_householder_sequence}\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+
+
+Sequence of Householder reflections acting on subspaces with decreasing size.  
+
+
+
+
+{\ttfamily \#include $<$Householder\+Sequence.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aea15b8d2896e464a5474e50241bceb48}\label{class_eigen_1_1_householder_sequence_aea15b8d2896e464a5474e50241bceb48}} 
+enum \{ {\bfseries Rows\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Max\+Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Max\+Cols\+At\+Compile\+Time
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a770d3f2677a7c0cf1dcb9f604d3acd83}\label{class_eigen_1_1_householder_sequence_a770d3f2677a7c0cf1dcb9f604d3acd83}} 
+enum \{ {\bfseries Rows\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Max\+Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = internal\+::traits$<$Householder\+Sequence$>$\+::Max\+Cols\+At\+Compile\+Time
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ae4ddf58ac9a001275bb072d26d9d2d46}\label{class_eigen_1_1_householder_sequence_ae4ddf58ac9a001275bb072d26d9d2d46}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a8bb902bac546dc9d7228240d597061dc}\label{class_eigen_1_1_householder_sequence_a8bb902bac546dc9d7228240d597061dc}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Vectors\+Type\+::\+Conjugate\+Return\+Type $>$, Vectors\+Type $>$, std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Coeffs\+Type\+::\+Conjugate\+Return\+Type $>$, Coeffs\+Type $>$, Side $>$ {\bfseries Conjugate\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a751bad5d040c3c3361aa836cdfffa50c}\label{class_eigen_1_1_householder_sequence_a751bad5d040c3c3361aa836cdfffa50c}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ Vectors\+Type, std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Coeffs\+Type\+::\+Conjugate\+Return\+Type $>$, Coeffs\+Type $>$, Side $>$ {\bfseries Adjoint\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_abee555433c9fb2771ea95de0fac895c5}\label{class_eigen_1_1_householder_sequence_abee555433c9fb2771ea95de0fac895c5}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Vectors\+Type\+::\+Conjugate\+Return\+Type $>$, Vectors\+Type $>$, Coeffs\+Type, Side $>$ {\bfseries Transpose\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_abc3aadb8400aa37e7918514da76662f3}\label{class_eigen_1_1_householder_sequence_abc3aadb8400aa37e7918514da76662f3}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ std\+::add\+\_\+const\+\_\+t$<$ Vectors\+Type $>$, std\+::add\+\_\+const\+\_\+t$<$ Coeffs\+Type $>$, Side $>$ {\bfseries Const\+Householder\+Sequence}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ae4ddf58ac9a001275bb072d26d9d2d46}\label{class_eigen_1_1_householder_sequence_ae4ddf58ac9a001275bb072d26d9d2d46}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a8bb902bac546dc9d7228240d597061dc}\label{class_eigen_1_1_householder_sequence_a8bb902bac546dc9d7228240d597061dc}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Vectors\+Type\+::\+Conjugate\+Return\+Type $>$, Vectors\+Type $>$, std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Coeffs\+Type\+::\+Conjugate\+Return\+Type $>$, Coeffs\+Type $>$, Side $>$ {\bfseries Conjugate\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a751bad5d040c3c3361aa836cdfffa50c}\label{class_eigen_1_1_householder_sequence_a751bad5d040c3c3361aa836cdfffa50c}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ Vectors\+Type, std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Coeffs\+Type\+::\+Conjugate\+Return\+Type $>$, Coeffs\+Type $>$, Side $>$ {\bfseries Adjoint\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_abee555433c9fb2771ea95de0fac895c5}\label{class_eigen_1_1_householder_sequence_abee555433c9fb2771ea95de0fac895c5}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, internal\+::remove\+\_\+all\+\_\+t$<$ typename Vectors\+Type\+::\+Conjugate\+Return\+Type $>$, Vectors\+Type $>$, Coeffs\+Type, Side $>$ {\bfseries Transpose\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_abc3aadb8400aa37e7918514da76662f3}\label{class_eigen_1_1_householder_sequence_abc3aadb8400aa37e7918514da76662f3}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}$<$ std\+::add\+\_\+const\+\_\+t$<$ Vectors\+Type $>$, std\+::add\+\_\+const\+\_\+t$<$ Coeffs\+Type $>$, Side $>$ {\bfseries Const\+Householder\+Sequence}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}{Householder\+Sequence}} (const Vectors\+Type \&v, const Coeffs\+Type \&h)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_add79fef052f8e0de91cd01e4915f72d4}\label{class_eigen_1_1_householder_sequence_add79fef052f8e0de91cd01e4915f72d4}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence_add79fef052f8e0de91cd01e4915f72d4}{Householder\+Sequence}} (const \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_abe4a6e51499d349a084e4e02a5a9a070}{rows}} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\begin{DoxyCompactList}\small\item\em Number of rows of transformation viewed as a matrix. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_af0e721caae5bb3dfad3d2d274f10e7ce}{cols}} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\begin{DoxyCompactList}\small\item\em Number of columns of transformation viewed as a matrix. \end{DoxyCompactList}\item 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_block}{Essential\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_ab33430b9aee3e9fd4ee082234a76c46e}{essential\+Vector}} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} k) const
+\begin{DoxyCompactList}\small\item\em Essential part of a Householder vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aeb200aa9cfd7a7acc8ea199f09db1774}\label{class_eigen_1_1_householder_sequence_aeb200aa9cfd7a7acc8ea199f09db1774}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Transpose\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb200aa9cfd7a7acc8ea199f09db1774}{transpose}} () const
+\begin{DoxyCompactList}\small\item\em Transpose of the Householder sequence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a94ba79850e6b39f01f4cd7e231a93907}\label{class_eigen_1_1_householder_sequence_a94ba79850e6b39f01f4cd7e231a93907}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Conjugate\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a94ba79850e6b39f01f4cd7e231a93907}{conjugate}} () const
+\begin{DoxyCompactList}\small\item\em Complex conjugate of the Householder sequence. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Cond$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_cond}{Cond}}, \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Conjugate\+Return\+Type}}, \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Const\+Householder\+Sequence}} $>$ \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a1ac295ca6f5ac2284538560da9ec293a}{conjugate\+If}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aed08733416d943ef4f0405191887a08d}\label{class_eigen_1_1_householder_sequence_aed08733416d943ef4f0405191887a08d}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Adjoint\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aed08733416d943ef4f0405191887a08d}{adjoint}} () const
+\begin{DoxyCompactList}\small\item\em Adjoint (conjugate transpose) of the Householder sequence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a7d92fc01492c3bea7aa1d0433f0e9bd2}\label{class_eigen_1_1_householder_sequence_a7d92fc01492c3bea7aa1d0433f0e9bd2}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Adjoint\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a7d92fc01492c3bea7aa1d0433f0e9bd2}{inverse}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_eigen_1_1_inverse}{Inverse}} of the Householder sequence (equals the adjoint). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a66f65285bf3b8563db60153d1fa5b481}\label{class_eigen_1_1_householder_sequence_a66f65285bf3b8563db60153d1fa5b481}} 
+{\footnotesize template$<$typename Dest\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries eval\+To} (Dest\+Type \&dst) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a2ba05fddb42b172b272a165660b2a5ff}\label{class_eigen_1_1_householder_sequence_a2ba05fddb42b172b272a165660b2a5ff}} 
+{\footnotesize template$<$typename Dest , typename Workspace $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries eval\+To} (Dest \&dst, Workspace \&workspace) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a69da80afb9f7c0b4d1a76e9c17b14eab}\label{class_eigen_1_1_householder_sequence_a69da80afb9f7c0b4d1a76e9c17b14eab}} 
+{\footnotesize template$<$typename Dest $>$ }\\void {\bfseries apply\+This\+On\+The\+Right} (Dest \&dst) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aeeec411f1b190312fb3db60e5cbae75f}\label{class_eigen_1_1_householder_sequence_aeeec411f1b190312fb3db60e5cbae75f}} 
+{\footnotesize template$<$typename Dest , typename Workspace $>$ }\\void {\bfseries apply\+This\+On\+The\+Right} (Dest \&dst, Workspace \&workspace) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aa49b9ea47551f3b4c1dd8a3b445cef7c}\label{class_eigen_1_1_householder_sequence_aa49b9ea47551f3b4c1dd8a3b445cef7c}} 
+{\footnotesize template$<$typename Dest $>$ }\\void {\bfseries apply\+This\+On\+The\+Left} (Dest \&dst, bool input\+Is\+Identity=false) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a1ad851047a44aed637010ef46fc9c71f}\label{class_eigen_1_1_householder_sequence_a1ad851047a44aed637010ef46fc9c71f}} 
+{\footnotesize template$<$typename Dest , typename Workspace $>$ }\\void {\bfseries apply\+This\+On\+The\+Left} (Dest \&dst, Workspace \&workspace, bool input\+Is\+Identity=false) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\mbox{\hyperlink{struct_eigen_1_1internal_1_1matrix__type__times__scalar__type}{internal\+::matrix\+\_\+type\+\_\+times\+\_\+scalar\+\_\+type}}$<$ Scalar, Other\+Derived $>$\+::Type \mbox{\hyperlink{class_eigen_1_1_householder_sequence_ab07d54a92020f55d887aecde54118693}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Computes the product of a Householder sequence with a matrix. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \& \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}{set\+Length}} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} length)
+\begin{DoxyCompactList}\small\item\em Sets the length of the Householder sequence. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \& \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}{set\+Shift}} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} shift)
+\begin{DoxyCompactList}\small\item\em Sets the shift of the Householder sequence. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}{Householder\+Sequence}} (const Vectors\+Type \&v, const Coeffs\+Type \&h)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_add79fef052f8e0de91cd01e4915f72d4}\label{class_eigen_1_1_householder_sequence_add79fef052f8e0de91cd01e4915f72d4}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence_add79fef052f8e0de91cd01e4915f72d4}{Householder\+Sequence}} (const \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_abe4a6e51499d349a084e4e02a5a9a070}{rows}} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\begin{DoxyCompactList}\small\item\em Number of rows of transformation viewed as a matrix. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_af0e721caae5bb3dfad3d2d274f10e7ce}{cols}} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\begin{DoxyCompactList}\small\item\em Number of columns of transformation viewed as a matrix. \end{DoxyCompactList}\item 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_block}{Essential\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_ab33430b9aee3e9fd4ee082234a76c46e}{essential\+Vector}} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} k) const
+\begin{DoxyCompactList}\small\item\em Essential part of a Householder vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aeb200aa9cfd7a7acc8ea199f09db1774}\label{class_eigen_1_1_householder_sequence_aeb200aa9cfd7a7acc8ea199f09db1774}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Transpose\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb200aa9cfd7a7acc8ea199f09db1774}{transpose}} () const
+\begin{DoxyCompactList}\small\item\em Transpose of the Householder sequence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a94ba79850e6b39f01f4cd7e231a93907}\label{class_eigen_1_1_householder_sequence_a94ba79850e6b39f01f4cd7e231a93907}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Conjugate\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a94ba79850e6b39f01f4cd7e231a93907}{conjugate}} () const
+\begin{DoxyCompactList}\small\item\em Complex conjugate of the Householder sequence. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool Cond$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_cond}{Cond}}, \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Conjugate\+Return\+Type}}, \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Const\+Householder\+Sequence}} $>$ \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a1ac295ca6f5ac2284538560da9ec293a}{conjugate\+If}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aed08733416d943ef4f0405191887a08d}\label{class_eigen_1_1_householder_sequence_aed08733416d943ef4f0405191887a08d}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Adjoint\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aed08733416d943ef4f0405191887a08d}{adjoint}} () const
+\begin{DoxyCompactList}\small\item\em Adjoint (conjugate transpose) of the Householder sequence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a7d92fc01492c3bea7aa1d0433f0e9bd2}\label{class_eigen_1_1_householder_sequence_a7d92fc01492c3bea7aa1d0433f0e9bd2}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Adjoint\+Return\+Type}} \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a7d92fc01492c3bea7aa1d0433f0e9bd2}{inverse}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_eigen_1_1_inverse}{Inverse}} of the Householder sequence (equals the adjoint). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a66f65285bf3b8563db60153d1fa5b481}\label{class_eigen_1_1_householder_sequence_a66f65285bf3b8563db60153d1fa5b481}} 
+{\footnotesize template$<$typename Dest\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries eval\+To} (Dest\+Type \&dst) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a2ba05fddb42b172b272a165660b2a5ff}\label{class_eigen_1_1_householder_sequence_a2ba05fddb42b172b272a165660b2a5ff}} 
+{\footnotesize template$<$typename Dest , typename Workspace $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries eval\+To} (Dest \&dst, Workspace \&workspace) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a69da80afb9f7c0b4d1a76e9c17b14eab}\label{class_eigen_1_1_householder_sequence_a69da80afb9f7c0b4d1a76e9c17b14eab}} 
+{\footnotesize template$<$typename Dest $>$ }\\void {\bfseries apply\+This\+On\+The\+Right} (Dest \&dst) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aeeec411f1b190312fb3db60e5cbae75f}\label{class_eigen_1_1_householder_sequence_aeeec411f1b190312fb3db60e5cbae75f}} 
+{\footnotesize template$<$typename Dest , typename Workspace $>$ }\\void {\bfseries apply\+This\+On\+The\+Right} (Dest \&dst, Workspace \&workspace) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aa49b9ea47551f3b4c1dd8a3b445cef7c}\label{class_eigen_1_1_householder_sequence_aa49b9ea47551f3b4c1dd8a3b445cef7c}} 
+{\footnotesize template$<$typename Dest $>$ }\\void {\bfseries apply\+This\+On\+The\+Left} (Dest \&dst, bool input\+Is\+Identity=false) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a1ad851047a44aed637010ef46fc9c71f}\label{class_eigen_1_1_householder_sequence_a1ad851047a44aed637010ef46fc9c71f}} 
+{\footnotesize template$<$typename Dest , typename Workspace $>$ }\\void {\bfseries apply\+This\+On\+The\+Left} (Dest \&dst, Workspace \&workspace, bool input\+Is\+Identity=false) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\mbox{\hyperlink{struct_eigen_1_1internal_1_1matrix__type__times__scalar__type}{internal\+::matrix\+\_\+type\+\_\+times\+\_\+scalar\+\_\+type}}$<$ Scalar, Other\+Derived $>$\+::Type \mbox{\hyperlink{class_eigen_1_1_householder_sequence_ab07d54a92020f55d887aecde54118693}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\begin{DoxyCompactList}\small\item\em Computes the product of a Householder sequence with a matrix. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \& \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}{set\+Length}} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} length)
+\begin{DoxyCompactList}\small\item\em Sets the length of the Householder sequence. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \& \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}{set\+Shift}} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} shift)
+\begin{DoxyCompactList}\small\item\em Sets the shift of the Householder sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a1ee79054624221f647401c9de2c95c2d}\label{class_eigen_1_1_householder_sequence_a1ee79054624221f647401c9de2c95c2d}} 
+enum \{ {\bfseries Block\+Size} = 48
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a1b18af5bfff4df32d2e1bd1562bed058}\label{class_eigen_1_1_householder_sequence_a1b18af5bfff4df32d2e1bd1562bed058}} 
+enum \{ {\bfseries Block\+Size} = 48
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a9bf1ed377869d870d6f6cbda0b33c3a9}\label{class_eigen_1_1_householder_sequence_a9bf1ed377869d870d6f6cbda0b33c3a9}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \& {\bfseries set\+Reverse\+Flag} (bool reverse)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a9bf1ed377869d870d6f6cbda0b33c3a9}\label{class_eigen_1_1_householder_sequence_a9bf1ed377869d870d6f6cbda0b33c3a9}} 
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}} \& {\bfseries set\+Reverse\+Flag} (bool reverse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_afdc01e1601bda85780a34522ff3f8e0c}\label{class_eigen_1_1_householder_sequence_afdc01e1601bda85780a34522ff3f8e0c}} 
+Vectors\+Type\+::\+Nested {\bfseries m\+\_\+vectors}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ae5f97bc1254391f24a07428693733b38}\label{class_eigen_1_1_householder_sequence_ae5f97bc1254391f24a07428693733b38}} 
+Coeffs\+Type\+::\+Nested {\bfseries m\+\_\+coeffs}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a98eb9bf2f6aea63375a6b5718a701827}\label{class_eigen_1_1_householder_sequence_a98eb9bf2f6aea63375a6b5718a701827}} 
+bool {\bfseries m\+\_\+reverse}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a975a680d11a37462c63b227ec2f658e8}\label{class_eigen_1_1_householder_sequence_a975a680d11a37462c63b227ec2f658e8}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries m\+\_\+length}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a51b50b1b53af233893a1854192bdca3f}\label{class_eigen_1_1_householder_sequence_a51b50b1b53af233893a1854192bdca3f}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries m\+\_\+shift}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ad2b8c53f81cf9ea056a2eec6ad36cb6b}\label{class_eigen_1_1_householder_sequence_ad2b8c53f81cf9ea056a2eec6ad36cb6b}} 
+{\footnotesize template$<$typename Vectors\+Type\+\_\+ , typename Coeffs\+Type\+\_\+ , int Side\+\_\+$>$ }\\struct {\bfseries internal\+::hseq\+\_\+side\+\_\+dependent\+\_\+impl}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_af03a5e79c2305c3390a71cfbfd2232cf}\label{class_eigen_1_1_householder_sequence_af03a5e79c2305c3390a71cfbfd2232cf}} 
+{\footnotesize template$<$typename Vectors\+Type\+\_\+ , typename Coeffs\+Type\+\_\+ , int Side\+\_\+$>$ }\\struct {\bfseries internal\+::hseq\+\_\+side\+\_\+dependent\+\_\+impl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sequence of Householder reflections acting on subspaces with decreasing size. 
+
+\textbackslash{}householder\+\_\+module
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Vectors\+Type} & type of matrix containing the Householder vectors \\
+\hline
+{\em Coeffs\+Type} & type of vector containing the Householder coefficients \\
+\hline
+{\em Side} & either On\+The\+Left (the default) or On\+The\+Right\\
+\hline
+\end{DoxyTemplParams}
+This class represents a product sequence of Householder reflections where the first Householder reflection acts on the whole space, the second Householder reflection leaves the one-\/dimensional subspace spanned by the first unit vector invariant, the third Householder reflection leaves the two-\/dimensional subspace spanned by the first two unit vectors invariant, and so on up to the last reflection which leaves all but one dimensions invariant and acts only on the last dimension. Such sequences of Householder reflections are used in several algorithms to zero out certain parts of a matrix. Indeed, the methods \mbox{\hyperlink{class_eigen_1_1_hessenberg_decomposition_a89702bceeb4b3d4ebedeb62d4f3e224b}{Hessenberg\+Decomposition\+::matrix\+Q()}}, \mbox{\hyperlink{class_eigen_1_1_tridiagonalization_ad5c279c97cee574215ba3f3037e9fbbc}{Tridiagonalization\+::matrix\+Q()}}, \mbox{\hyperlink{class_eigen_1_1_householder_q_r_a44b2ac7eb826f490e4cba819dd23de06}{Householder\+Q\+R\+::householder\+Q()}}, and Col\+Piv\+Householder\+Q\+R\+::householder\+Q() all return a Householder\+Sequence.
+
+More precisely, the class Householder\+Sequence represents an $ n \times n $ matrix $ H $ of the form $ H = \prod_{i=0}^{n-1} H_i $ where the i-\/th Householder reflection is $ H_i = I - h_i v_i v_i^* $. The i-\/th Householder coefficient $ h_i $ is a scalar and the i-\/th Householder vector $ v_i $ is a vector of the form \[ v_i = [\underbrace{0, \ldots, 0}_{i-1\mbox{ zeros}}, 1, \underbrace{*, \ldots,*}_{n-i\mbox{ arbitrary entries}} ]. \] The last $ n-i $ entries of $ v_i $ are called the essential part of the Householder vector.
+
+Typical usages are listed below, where \mbox{\hyperlink{struct_h}{H}} is a \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{A.applyOnTheRight(\mbox{\hyperlink{struct_h}{H}});             \textcolor{comment}{// A = A * H}}
+\DoxyCodeLine{A.applyOnTheLeft(\mbox{\hyperlink{struct_h}{H}});              \textcolor{comment}{// A = H * A}}
+\DoxyCodeLine{A.applyOnTheRight(\mbox{\hyperlink{struct_h}{H}}.adjoint());   \textcolor{comment}{// A = A * H\string^*}}
+\DoxyCodeLine{A.applyOnTheLeft(\mbox{\hyperlink{struct_h}{H}}.adjoint());    \textcolor{comment}{// A = H\string^* * A}}
+\DoxyCodeLine{MatrixXd Q = \mbox{\hyperlink{struct_h}{H}};                   \textcolor{comment}{// conversion to a dense matrix}}
+\end{DoxyCode}
+ In addition to the adjoint, you can also apply the inverse (=adjoint), the transpose, and the conjugate operators.
+
+See the documentation for \mbox{\hyperlink{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}{Householder\+Sequence(const Vectors\+Type\&, const Coeffs\+Type\&)}} for an example.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_matrix_base_a3a08ad41e81d8ad4a37b5d5c7490e765}{Matrix\+Base\+::apply\+On\+The\+Left()}}, \mbox{\hyperlink{class_eigen_1_1_matrix_base_a45d91752925d2757fc8058a293b15462}{Matrix\+Base\+::apply\+On\+The\+Right()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}\label{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!HouseholderSequence@{HouseholderSequence}}
+\index{HouseholderSequence@{HouseholderSequence}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{HouseholderSequence()}{HouseholderSequence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Eigen\+::\+Householder\+Sequence\+::\+Householder\+Sequence (\begin{DoxyParamCaption}\item[{const Vectors\+Type \&}]{v,  }\item[{const Coeffs\+Type \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & Matrix containing the essential parts of the Householder vectors \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & Vector containing the Householder coefficients\\
+\hline
+\end{DoxyParams}
+Constructs the Householder sequence with coefficients given by {\ttfamily h} and vectors given by {\ttfamily v}. The i-\/th Householder coefficient $ h_i $ is given by {\ttfamily h(i)} and the essential part of the i-\/th Householder vector $ v_i $ is given by {\ttfamily v(k,i)} with {\ttfamily k} $>$ {\ttfamily i} (the subdiagonal part of the i-\/th column). If {\ttfamily v} has fewer columns than rows, then the Householder sequence contains as many Householder reflections as there are columns.
+
+\begin{DoxyNote}{Note}
+The Householder\+Sequence object stores {\ttfamily v} and {\ttfamily h} by reference.
+\end{DoxyNote}
+Example\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}{set\+Length()}}, \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}{set\+Shift()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}\label{class_eigen_1_1_householder_sequence_a3c396d30b1cce20f7aab88ba28dd1b32}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!HouseholderSequence@{HouseholderSequence}}
+\index{HouseholderSequence@{HouseholderSequence}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{HouseholderSequence()}{HouseholderSequence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Eigen\+::\+Householder\+Sequence\+::\+Householder\+Sequence (\begin{DoxyParamCaption}\item[{const Vectors\+Type \&}]{v,  }\item[{const Coeffs\+Type \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em v} & Matrix containing the essential parts of the Householder vectors \\
+\hline
+\mbox{\texttt{ in}}  & {\em h} & Vector containing the Householder coefficients\\
+\hline
+\end{DoxyParams}
+Constructs the Householder sequence with coefficients given by {\ttfamily h} and vectors given by {\ttfamily v}. The i-\/th Householder coefficient $ h_i $ is given by {\ttfamily h(i)} and the essential part of the i-\/th Householder vector $ v_i $ is given by {\ttfamily v(k,i)} with {\ttfamily k} $>$ {\ttfamily i} (the subdiagonal part of the i-\/th column). If {\ttfamily v} has fewer columns than rows, then the Householder sequence contains as many Householder reflections as there are columns.
+
+\begin{DoxyNote}{Note}
+The Householder\+Sequence object stores {\ttfamily v} and {\ttfamily h} by reference.
+\end{DoxyNote}
+Example\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}{set\+Length()}}, \mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}{set\+Shift()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_af0e721caae5bb3dfad3d2d274f10e7ce}\label{class_eigen_1_1_householder_sequence_af0e721caae5bb3dfad3d2d274f10e7ce}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!cols@{cols}}
+\index{cols@{cols}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Householder\+Sequence\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of columns of transformation viewed as a matrix. 
+
+\begin{DoxyReturn}{Returns}
+Number of columns
+\end{DoxyReturn}
+This equals the dimension of the space that the transformation acts on. \mbox{\Hypertarget{class_eigen_1_1_householder_sequence_af0e721caae5bb3dfad3d2d274f10e7ce}\label{class_eigen_1_1_householder_sequence_af0e721caae5bb3dfad3d2d274f10e7ce}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!cols@{cols}}
+\index{cols@{cols}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Householder\+Sequence\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of columns of transformation viewed as a matrix. 
+
+\begin{DoxyReturn}{Returns}
+Number of columns
+\end{DoxyReturn}
+This equals the dimension of the space that the transformation acts on. \mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a1ac295ca6f5ac2284538560da9ec293a}\label{class_eigen_1_1_householder_sequence_a1ac295ca6f5ac2284538560da9ec293a}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!conjugateIf@{conjugateIf}}
+\index{conjugateIf@{conjugateIf}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{conjugateIf()}{conjugateIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$bool Cond$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_eigen_1_1_cond}{Cond}},\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Conjugate\+Return\+Type}},\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Const\+Householder\+Sequence}}$>$ Eigen\+::\+Householder\+Sequence\+::conjugate\+If (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an expression of the complex conjugate of {\ttfamily $\ast$this} if \mbox{\hyperlink{struct_eigen_1_1_cond}{Cond}}==true, returns {\ttfamily $\ast$this} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a1ac295ca6f5ac2284538560da9ec293a}\label{class_eigen_1_1_householder_sequence_a1ac295ca6f5ac2284538560da9ec293a}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!conjugateIf@{conjugateIf}}
+\index{conjugateIf@{conjugateIf}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{conjugateIf()}{conjugateIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$bool Cond$>$ \\
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_eigen_1_1_cond}{Cond}},\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Conjugate\+Return\+Type}},\mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Const\+Householder\+Sequence}}$>$ Eigen\+::\+Householder\+Sequence\+::conjugate\+If (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an expression of the complex conjugate of {\ttfamily $\ast$this} if \mbox{\hyperlink{struct_eigen_1_1_cond}{Cond}}==true, returns {\ttfamily $\ast$this} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ab33430b9aee3e9fd4ee082234a76c46e}\label{class_eigen_1_1_householder_sequence_ab33430b9aee3e9fd4ee082234a76c46e}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!essentialVector@{essentialVector}}
+\index{essentialVector@{essentialVector}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{essentialVector()}{essentialVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_block}{Essential\+Vector\+Type}} Eigen\+::\+Householder\+Sequence\+::essential\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Essential part of a Householder vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em k} & Index of Householder reflection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing non-\/trivial entries of k-\/th Householder vector
+\end{DoxyReturn}
+This function returns the essential part of the Householder vector $ v_i $. This is a vector of length $ n-i $ containing the last $ n-i $ entries of the vector \[ v_i = [\underbrace{0, \ldots, 0}_{i-1\mbox{ zeros}}, 1, \underbrace{*, \ldots,*}_{n-i\mbox{ arbitrary entries}} ]. \] The index $ i $ equals {\ttfamily k} + shift(), corresponding to the k-\/th column of the matrix {\ttfamily v} passed to the constructor.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}{set\+Shift()}}, shift() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ab33430b9aee3e9fd4ee082234a76c46e}\label{class_eigen_1_1_householder_sequence_ab33430b9aee3e9fd4ee082234a76c46e}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!essentialVector@{essentialVector}}
+\index{essentialVector@{essentialVector}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{essentialVector()}{essentialVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_block}{Essential\+Vector\+Type}} Eigen\+::\+Householder\+Sequence\+::essential\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{k }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Essential part of a Householder vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em k} & Index of Householder reflection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing non-\/trivial entries of k-\/th Householder vector
+\end{DoxyReturn}
+This function returns the essential part of the Householder vector $ v_i $. This is a vector of length $ n-i $ containing the last $ n-i $ entries of the vector \[ v_i = [\underbrace{0, \ldots, 0}_{i-1\mbox{ zeros}}, 1, \underbrace{*, \ldots,*}_{n-i\mbox{ arbitrary entries}} ]. \] The index $ i $ equals {\ttfamily k} + shift(), corresponding to the k-\/th column of the matrix {\ttfamily v} passed to the constructor.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}{set\+Shift()}}, shift() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ab07d54a92020f55d887aecde54118693}\label{class_eigen_1_1_householder_sequence_ab07d54a92020f55d887aecde54118693}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Other\+Derived $>$ \\
+\mbox{\hyperlink{struct_eigen_1_1internal_1_1matrix__type__times__scalar__type}{internal\+::matrix\+\_\+type\+\_\+times\+\_\+scalar\+\_\+type}}$<$Scalar, Other\+Derived$>$\+::Type Eigen\+::\+Householder\+Sequence\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the product of a Householder sequence with a matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Matrix being multiplied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Expression object representing the product.
+\end{DoxyReturn}
+This function computes $ HM $ where $ H $ is the Householder sequence represented by {\ttfamily $\ast$this} and $ M $ is the matrix {\ttfamily other}. \mbox{\Hypertarget{class_eigen_1_1_householder_sequence_ab07d54a92020f55d887aecde54118693}\label{class_eigen_1_1_householder_sequence_ab07d54a92020f55d887aecde54118693}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Other\+Derived $>$ \\
+\mbox{\hyperlink{struct_eigen_1_1internal_1_1matrix__type__times__scalar__type}{internal\+::matrix\+\_\+type\+\_\+times\+\_\+scalar\+\_\+type}}$<$Scalar, Other\+Derived$>$\+::Type Eigen\+::\+Householder\+Sequence\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the product of a Householder sequence with a matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Matrix being multiplied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Expression object representing the product.
+\end{DoxyReturn}
+This function computes $ HM $ where $ H $ is the Householder sequence represented by {\ttfamily $\ast$this} and $ M $ is the matrix {\ttfamily other}. \mbox{\Hypertarget{class_eigen_1_1_householder_sequence_abe4a6e51499d349a084e4e02a5a9a070}\label{class_eigen_1_1_householder_sequence_abe4a6e51499d349a084e4e02a5a9a070}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!rows@{rows}}
+\index{rows@{rows}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Householder\+Sequence\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of rows of transformation viewed as a matrix. 
+
+\begin{DoxyReturn}{Returns}
+Number of rows
+\end{DoxyReturn}
+This equals the dimension of the space that the transformation acts on. \mbox{\Hypertarget{class_eigen_1_1_householder_sequence_abe4a6e51499d349a084e4e02a5a9a070}\label{class_eigen_1_1_householder_sequence_abe4a6e51499d349a084e4e02a5a9a070}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!rows@{rows}}
+\index{rows@{rows}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Householder\+Sequence\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Number of rows of transformation viewed as a matrix. 
+
+\begin{DoxyReturn}{Returns}
+Number of rows
+\end{DoxyReturn}
+This equals the dimension of the space that the transformation acts on. \mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}\label{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!setLength@{setLength}}
+\index{setLength@{setLength}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{setLength()}{setLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}\& Eigen\+::\+Householder\+Sequence\+::set\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the length of the Householder sequence. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em length} & New value for the length.\\
+\hline
+\end{DoxyParams}
+By default, the length $ n $ of the Householder sequence $ H = H_0 H_1 \ldots H_{n-1} $ is set to the number of columns of the matrix {\ttfamily v} passed to the constructor, or the number of rows if that is smaller. After this function is called, the length equals {\ttfamily length}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__core__func__geometric_ga18d45e3d4c7705e67ccfabd99e521604}{length()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}\label{class_eigen_1_1_householder_sequence_a2fa4e6ee3602772c75d821017921cf2c}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!setLength@{setLength}}
+\index{setLength@{setLength}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{setLength()}{setLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}\& Eigen\+::\+Householder\+Sequence\+::set\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the length of the Householder sequence. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em length} & New value for the length.\\
+\hline
+\end{DoxyParams}
+By default, the length $ n $ of the Householder sequence $ H = H_0 H_1 \ldots H_{n-1} $ is set to the number of columns of the matrix {\ttfamily v} passed to the constructor, or the number of rows if that is smaller. After this function is called, the length equals {\ttfamily length}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__core__func__geometric_ga18d45e3d4c7705e67ccfabd99e521604}{length()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}\label{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!setShift@{setShift}}
+\index{setShift@{setShift}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{setShift()}{setShift()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}\& Eigen\+::\+Householder\+Sequence\+::set\+Shift (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the shift of the Householder sequence. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em shift} & New value for the shift.\\
+\hline
+\end{DoxyParams}
+By default, a Householder\+Sequence object represents $ H = H_0 H_1 \ldots H_{n-1} $ and the i-\/th column of the matrix {\ttfamily v} passed to the constructor corresponds to the i-\/th Householder reflection. After this function is called, the object represents $ H = H_{\mathrm{shift}} H_{\mathrm{shift}+1} \ldots H_{n-1} $ and the i-\/th column of {\ttfamily v} corresponds to the (shift+i)-\/th Householder reflection.
+
+\begin{DoxySeeAlso}{See also}
+shift() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}\label{class_eigen_1_1_householder_sequence_aeb6475482d1f535386686ce03fb5f3da}} 
+\index{Eigen::HouseholderSequence@{Eigen::HouseholderSequence}!setShift@{setShift}}
+\index{setShift@{setShift}!Eigen::HouseholderSequence@{Eigen::HouseholderSequence}}
+\doxysubsubsection{\texorpdfstring{setShift()}{setShift()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC \mbox{\hyperlink{class_eigen_1_1_householder_sequence}{Householder\+Sequence}}\& Eigen\+::\+Householder\+Sequence\+::set\+Shift (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}}]{shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the shift of the Householder sequence. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em shift} & New value for the shift.\\
+\hline
+\end{DoxyParams}
+By default, a Householder\+Sequence object represents $ H = H_0 H_1 \ldots H_{n-1} $ and the i-\/th column of the matrix {\ttfamily v} passed to the constructor corresponds to the i-\/th Householder reflection. After this function is called, the object represents $ H = H_{\mathrm{shift}} H_{\mathrm{shift}+1} \ldots H_{n-1} $ and the i-\/th column of {\ttfamily v} corresponds to the (shift+i)-\/th Householder reflection.
+
+\begin{DoxySeeAlso}{See also}
+shift() 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/util/Forward\+Declarations.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Householder/Householder\+Sequence.\+h\end{DoxyCompactItemize}

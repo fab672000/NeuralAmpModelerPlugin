@@ -1,0 +1,94 @@
+\hypertarget{class_sk_shadow_utils}{}\doxysection{Sk\+Shadow\+Utils Class Reference}
+\label{class_sk_shadow_utils}\index{SkShadowUtils@{SkShadowUtils}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_sk_shadow_utils_a0f4fb6bd33bac11db420efe5e73c5645}{Draw\+Shadow}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&z\+Plane\+Params, const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&light\+Pos, Sk\+Scalar light\+Radius, \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} ambient\+Color, \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} spot\+Color, uint32\+\_\+t flags=Sk\+Shadow\+Flags\+::k\+None\+\_\+\+Shadow\+Flag)
+\item 
+static bool \mbox{\hyperlink{class_sk_shadow_utils_a27323ff167172e21aeb0fc40f226a1f2}{Get\+Local\+Bounds}} (const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&ctm, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&z\+Plane\+Params, const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&light\+Pos, Sk\+Scalar light\+Radius, uint32\+\_\+t flags, \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$bounds)
+\item 
+static void \mbox{\hyperlink{class_sk_shadow_utils_a88ec8316b7a80d7949b6d3ec36d50ad1}{Compute\+Tonal\+Colors}} (\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} in\+Ambient\+Color, \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} in\+Spot\+Color, \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} $\ast$out\+Ambient\+Color, \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} $\ast$out\+Spot\+Color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_shadow_utils_a88ec8316b7a80d7949b6d3ec36d50ad1}\label{class_sk_shadow_utils_a88ec8316b7a80d7949b6d3ec36d50ad1}} 
+\index{SkShadowUtils@{SkShadowUtils}!ComputeTonalColors@{ComputeTonalColors}}
+\index{ComputeTonalColors@{ComputeTonalColors}!SkShadowUtils@{SkShadowUtils}}
+\doxysubsubsection{\texorpdfstring{ComputeTonalColors()}{ComputeTonalColors()}}
+{\footnotesize\ttfamily void Sk\+Shadow\+Utils\+::\+Compute\+Tonal\+Colors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{in\+Ambient\+Color,  }\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{in\+Spot\+Color,  }\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} $\ast$}]{out\+Ambient\+Color,  }\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} $\ast$}]{out\+Spot\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper routine to compute color values for one-\/pass tonal alpha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Ambient\+Color} & Original ambient color \\
+\hline
+{\em in\+Spot\+Color} & Original spot color \\
+\hline
+{\em out\+Ambient\+Color} & Modified ambient color \\
+\hline
+{\em out\+Spot\+Color} & Modified spot color \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_shadow_utils_a0f4fb6bd33bac11db420efe5e73c5645}\label{class_sk_shadow_utils_a0f4fb6bd33bac11db420efe5e73c5645}} 
+\index{SkShadowUtils@{SkShadowUtils}!DrawShadow@{DrawShadow}}
+\index{DrawShadow@{DrawShadow}!SkShadowUtils@{SkShadowUtils}}
+\doxysubsubsection{\texorpdfstring{DrawShadow()}{DrawShadow()}}
+{\footnotesize\ttfamily void Sk\+Shadow\+Utils\+::\+Draw\+Shadow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&}]{z\+Plane\+Params,  }\item[{const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&}]{light\+Pos,  }\item[{Sk\+Scalar}]{light\+Radius,  }\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{ambient\+Color,  }\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{spot\+Color,  }\item[{uint32\+\_\+t}]{flags = {\ttfamily SkShadowFlags\+:\+:kNone\+\_\+ShadowFlag} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Draw an offset spot shadow and outlining ambient shadow for the given path using a disc light. The shadow may be cached, depending on the path type and canvas matrix. If the matrix is perspective or the path is volatile, it will not be cached.
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & The canvas on which to draw the shadows. \\
+\hline
+{\em path} & The occluder used to generate the shadows. \\
+\hline
+{\em z\+Plane\+Params} & Values for the plane function which returns the Z offset of the occluder from the canvas based on local x and y values (the current matrix is not applied). \\
+\hline
+{\em light\+Pos} & Generally, the 3D position of the light relative to the canvas plane. If k\+Directional\+Light\+\_\+\+Shadow\+Flag is set, this specifies a vector pointing towards the light. \\
+\hline
+{\em light\+Radius} & Generally, the radius of the disc light. If Directional\+Light\+\_\+\+Shadow\+Flag is set, this specifies the amount of blur when the occluder is at Z offset == 1. The blur will grow linearly as the Z value increases. \\
+\hline
+{\em ambient\+Color} & The color of the ambient shadow. \\
+\hline
+{\em spot\+Color} & The color of the spot shadow. \\
+\hline
+{\em flags} & Options controlling opaque occluder optimizations, shadow appearance, and light position. See Sk\+Shadow\+Flags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_shadow_utils_a27323ff167172e21aeb0fc40f226a1f2}\label{class_sk_shadow_utils_a27323ff167172e21aeb0fc40f226a1f2}} 
+\index{SkShadowUtils@{SkShadowUtils}!GetLocalBounds@{GetLocalBounds}}
+\index{GetLocalBounds@{GetLocalBounds}!SkShadowUtils@{SkShadowUtils}}
+\doxysubsubsection{\texorpdfstring{GetLocalBounds()}{GetLocalBounds()}}
+{\footnotesize\ttfamily bool Sk\+Shadow\+Utils\+::\+Get\+Local\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{ctm,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&}]{z\+Plane\+Params,  }\item[{const \mbox{\hyperlink{struct_sk_point3}{Sk\+Point3}} \&}]{light\+Pos,  }\item[{Sk\+Scalar}]{light\+Radius,  }\item[{uint32\+\_\+t}]{flags,  }\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{bounds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate bounding box for shadows relative to path. Includes both the ambient and spot shadow bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctm} & Current transformation matrix to device space. \\
+\hline
+{\em path} & The occluder used to generate the shadows. \\
+\hline
+{\em z\+Plane\+Params} & Values for the plane function which returns the Z offset of the occluder from the canvas based on local x and y values (the current matrix is not applied). \\
+\hline
+{\em light\+Pos} & Generally, the 3D position of the light relative to the canvas plane. If k\+Directional\+Light\+\_\+\+Shadow\+Flag is set, this specifies a vector pointing towards the light. \\
+\hline
+{\em light\+Radius} & Generally, the radius of the disc light. If Directional\+Light\+\_\+\+Shadow\+Flag is set, this specifies the amount of blur when the occluder is at Z offset == 1. The blur will grow linearly as the Z value increases. \\
+\hline
+{\em flags} & Options controlling opaque occluder optimizations, shadow appearance, and light position. See Sk\+Shadow\+Flags. \\
+\hline
+{\em bounds} & Return value for shadow bounding box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if successful, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/utils/Sk\+Shadow\+Utils.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Shadow\+Utils.\+cpp\end{DoxyCompactItemize}

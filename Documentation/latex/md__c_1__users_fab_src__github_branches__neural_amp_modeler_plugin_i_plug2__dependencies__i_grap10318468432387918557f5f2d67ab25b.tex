@@ -1,0 +1,74 @@
+Metal\+Nano\+VG is the native \href{https://developer.apple.com/metal/}{\texttt{ Metal}} port of \href{https://github.com/memononen/nanovg}{\texttt{ Nano\+VG}} that tries to get the most out of Apple\textquotesingle{}s Graphics A\+P\+Is.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1323}{}\doxysubsection{Donation}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1323}
+If you found this project useful, please consider donating to show your support ❤️
+
+\href{https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3366Q3AVUJLTQ}{\texttt{ }}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1324}{}\doxysection{Precautions}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1324}
+
+\begin{DoxyItemize}
+\item Works only on \href{https://support.apple.com/en-us/HT205073}{\texttt{ mac\+OS 10.\+11+}}, tv\+OS 9.\+0+ and \href{https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/DeviceCompatibilityMatrix/DeviceCompatibilityMatrix.html\#//apple_ref/doc/uid/TP40013599-CH17-SW1}{\texttt{ i\+OS 8.\+0+}}.
+\item Simulator support is available since i\+OS 13 and requires Xcode 11+ running on mac\+OS 10.\+15+.
+\item Not all Apple hardwares are supported even if meets the OS requirement.
+\item \href{https://en.wikipedia.org/wiki/Automatic_Reference_Counting}{\texttt{ A\+RC}} is required.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1325}{}\doxysection{Advantages}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1325}
+
+\begin{DoxyItemize}
+\item Shared buffers between C\+PU and G\+PU.
+\item Various Metal states are cached whenever possible.
+\item Low overheads compared to Open\+GL.
+\item Pre-\/compiled shaders. (no need to compile shaders at runtime)
+\item Seamless integration with powerful Metal features such as \href{https://developer.apple.com/documentation/metalperformanceshaders}{\texttt{ Metal Performance Shaders}}.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1326}{}\doxysection{Installation}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1326}
+
+\begin{DoxyEnumerate}
+\item Download both {\ttfamily Nano\+VG} and {\ttfamily Metal\+Nano\+VG} source codes.
+\item Add both {\ttfamily Nano\+VG} and {\ttfamily Metal\+Nano\+VG}\textquotesingle{}s {\ttfamily src} directories to the header search path.
+\item Add {\ttfamily Nano\+VG}\textquotesingle{}s {\ttfamily src/nanovg.\+c} and {\ttfamily Metal\+Nano\+VG}\textquotesingle{}s {\ttfamily src/nanovg\+\_\+mtl.\+m} to the {\ttfamily Compile Sources} section in Xcode.
+\item Link the {\ttfamily Metal} and {\ttfamily Quartz\+Core} frameworks.
+\item For best performance, disable {\itshape G\+PU \mbox{\hyperlink{class_frame}{Frame}} Capture} and {\itshape Metal A\+PI Validation} as described \href{https://developer.apple.com/library/content/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Dev-Technique/Dev-Technique.html\#//apple_ref/doc/uid/TP40014221-CH8-SW3}{\texttt{ here}}.
+\end{DoxyEnumerate}
+
+Done.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1327}{}\doxysection{Usage}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1327}
+
+\begin{DoxyEnumerate}
+\item Include the headers.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "nanovg.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "nanovg\_mtl.h"}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Pass the {\ttfamily C\+A\+Metal\+Layer} object when creating the Nano\+VG context.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_n_v_gcontext}{NVGcontext}}* ctx = nvgCreateMTL(metalLayer, NVG\_ANTIALIAS | NVG\_STENCIL\_STROKES);}
+\end{DoxyCode}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1328}{}\doxysection{Benchmark}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1328}
+The following table depicts a simple C\+PU usage benchmark of running the Nano\+VG demo app on i\+OS devices with full Retina resolution. Both Metal and Open\+GL E\+S2 implementations get constant 60 F\+PS.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ i\+Phone 6s+ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ i\+Pad Pro 12.\+7\char`\"{} (2015)$<$/th$>$  $<$/tr$>$
+$<$tr class=\char`\"{}markdown\+Table\+Row\+Odd\char`\"{}$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ Resolution$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 1080 x 1920$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 2732 $\ast$ 2048$<$/td$>$  $<$/tr$>$
+$<$tr class=\char`\"{}markdown\+Table\+Row\+Even\char`\"{}$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ Metal$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 20\%$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 20\%$<$/td$>$  $<$/tr$>$
+$<$tr class=\char`\"{}markdown\+Table\+Row\+Odd\char`\"{}$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ Open\+G\+L E\+S2$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 35\%$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None"$>$ 33\%  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ i\+Phone 6s+ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ i\+Pad Pro 12.\+7\char`\"{} (2015)$<$/th$>$  $<$/tr$>$
+$<$tr class=\char`\"{}markdown\+Table\+Row\+Odd\char`\"{}$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ Resolution$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 1080 x 1920$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 2732 $\ast$ 2048$<$/td$>$  $<$/tr$>$
+$<$tr class=\char`\"{}markdown\+Table\+Row\+Even\char`\"{}$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ Metal$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 20\%$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 20\%$<$/td$>$  $<$/tr$>$
+$<$tr class=\char`\"{}markdown\+Table\+Row\+Odd\char`\"{}$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ Open\+G\+L E\+S2$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None\char`\"{}$>$ 35\%$<$/td$>$    $<$td class=\char`\"{}markdown\+Table\+Body\+None"$>$ 33\%  }\\\cline{1-3}
+\endhead
+\end{longtabu}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1329}{}\doxysection{Example}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_grap10318468432387918557f5f2d67ab25b_autotoc_md1329}
+Metal\+Nano\+VG was originally created to improve the performance of the i\+OS app \href{https://fogofworld.com}{\texttt{ Fog of World}}.
+
+ 

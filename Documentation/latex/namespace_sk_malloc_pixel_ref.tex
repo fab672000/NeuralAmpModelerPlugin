@@ -1,0 +1,34 @@
+\hypertarget{namespace_sk_malloc_pixel_ref}{}\doxysection{Sk\+Malloc\+Pixel\+Ref Namespace Reference}
+\label{namespace_sk_malloc_pixel_ref}\index{SkMallocPixelRef@{SkMallocPixelRef}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+S\+K\+\_\+\+A\+PI \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} $>$ \mbox{\hyperlink{namespace_sk_malloc_pixel_ref_a973256bd56563b2d10d0526a6ae2c100}{Make\+Allocate}} (const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&, size\+\_\+t row\+Bytes)
+\item 
+S\+K\+\_\+\+A\+PI \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} $>$ \mbox{\hyperlink{namespace_sk_malloc_pixel_ref_a8e2bfa75ef1f20f29c56231953b49216}{Make\+With\+Data}} (const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&, size\+\_\+t row\+Bytes, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+We explicitly use the same allocator for our pixels that \mbox{\hyperlink{struct_sk_mask}{Sk\+Mask}} does, so that we can freely assign memory allocated by one class to the other. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_sk_malloc_pixel_ref_a973256bd56563b2d10d0526a6ae2c100}\label{namespace_sk_malloc_pixel_ref_a973256bd56563b2d10d0526a6ae2c100}} 
+\index{SkMallocPixelRef@{SkMallocPixelRef}!MakeAllocate@{MakeAllocate}}
+\index{MakeAllocate@{MakeAllocate}!SkMallocPixelRef@{SkMallocPixelRef}}
+\doxysubsubsection{\texorpdfstring{MakeAllocate()}{MakeAllocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} $>$ Sk\+Malloc\+Pixel\+Ref\+::\+Make\+Allocate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&}]{info,  }\item[{size\+\_\+t}]{row\+Bytes }\end{DoxyParamCaption})}
+
+Return a new \mbox{\hyperlink{namespace_sk_malloc_pixel_ref}{Sk\+Malloc\+Pixel\+Ref}}, automatically allocating storage for the pixels. If row\+Bytes are 0, an optimal value will be chosen automatically. If row\+Bytes is $>$ 0, then it will be respected, or N\+U\+LL will be returned if row\+Bytes is invalid for the specified info.
+
+All pixel bytes are zeroed.
+
+Returns N\+U\+LL on failure. \mbox{\Hypertarget{namespace_sk_malloc_pixel_ref_a8e2bfa75ef1f20f29c56231953b49216}\label{namespace_sk_malloc_pixel_ref_a8e2bfa75ef1f20f29c56231953b49216}} 
+\index{SkMallocPixelRef@{SkMallocPixelRef}!MakeWithData@{MakeWithData}}
+\index{MakeWithData@{MakeWithData}!SkMallocPixelRef@{SkMallocPixelRef}}
+\doxysubsubsection{\texorpdfstring{MakeWithData()}{MakeWithData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} $>$ Sk\+Malloc\+Pixel\+Ref\+::\+Make\+With\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&}]{info,  }\item[{size\+\_\+t}]{row\+Bytes,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$}]{data }\end{DoxyParamCaption})}
+
+Return a new \mbox{\hyperlink{namespace_sk_malloc_pixel_ref}{Sk\+Malloc\+Pixel\+Ref}} that will use the provided \mbox{\hyperlink{class_sk_data}{Sk\+Data}} and row\+Bytes as pixel storage. The \mbox{\hyperlink{class_sk_data}{Sk\+Data}} will be ref()ed and on destruction of the Pixel\+Ref, the \mbox{\hyperlink{class_sk_data}{Sk\+Data}} will be unref()ed.
+
+Returns N\+U\+LL on failure. 

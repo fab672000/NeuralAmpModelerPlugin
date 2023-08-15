@@ -1,0 +1,59 @@
+\hypertarget{class_sk_auto_canvas_restore}{}\doxysection{Sk\+Auto\+Canvas\+Restore Class Reference}
+\label{class_sk_auto_canvas_restore}\index{SkAutoCanvasRestore@{SkAutoCanvasRestore}}
+
+
+{\ttfamily \#include $<$Sk\+Canvas.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_auto_canvas_restore_a3fe37770e17e1a968d91514d9a90ffdc}{Sk\+Auto\+Canvas\+Restore}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, bool do\+Save)
+\item 
+\mbox{\hyperlink{class_sk_auto_canvas_restore_a81c484a5a042bb071496d31dabea7be8}{$\sim$\+Sk\+Auto\+Canvas\+Restore}} ()
+\item 
+void \mbox{\hyperlink{class_sk_auto_canvas_restore_a057837d8704cea07bf3701f45226f460}{restore}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stack helper class calls \mbox{\hyperlink{class_sk_canvas_aae519c51173be795b59f4f4e10c67b9d}{Sk\+Canvas\+::restore\+To\+Count}} when \mbox{\hyperlink{class_sk_auto_canvas_restore}{Sk\+Auto\+Canvas\+Restore}} goes out of scope. Use this to guarantee that the canvas is restored to a known state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_auto_canvas_restore_a3fe37770e17e1a968d91514d9a90ffdc}\label{class_sk_auto_canvas_restore_a3fe37770e17e1a968d91514d9a90ffdc}} 
+\index{SkAutoCanvasRestore@{SkAutoCanvasRestore}!SkAutoCanvasRestore@{SkAutoCanvasRestore}}
+\index{SkAutoCanvasRestore@{SkAutoCanvasRestore}!SkAutoCanvasRestore@{SkAutoCanvasRestore}}
+\doxysubsubsection{\texorpdfstring{SkAutoCanvasRestore()}{SkAutoCanvasRestore()}}
+{\footnotesize\ttfamily Sk\+Auto\+Canvas\+Restore\+::\+Sk\+Auto\+Canvas\+Restore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas,  }\item[{bool}]{do\+Save }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Preserves \mbox{\hyperlink{class_sk_canvas_ac98147dc771b47c7353a51e7c171e428}{Sk\+Canvas\+::save()}} count. Optionally saves \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} clip and \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} to guard \\
+\hline
+{\em do\+Save} & call \mbox{\hyperlink{class_sk_canvas_ac98147dc771b47c7353a51e7c171e428}{Sk\+Canvas\+::save()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+utility to restore \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} state on destructor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_auto_canvas_restore_a81c484a5a042bb071496d31dabea7be8}\label{class_sk_auto_canvas_restore_a81c484a5a042bb071496d31dabea7be8}} 
+\index{SkAutoCanvasRestore@{SkAutoCanvasRestore}!````~SkAutoCanvasRestore@{$\sim$SkAutoCanvasRestore}}
+\index{````~SkAutoCanvasRestore@{$\sim$SkAutoCanvasRestore}!SkAutoCanvasRestore@{SkAutoCanvasRestore}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkAutoCanvasRestore()}{~SkAutoCanvasRestore()}}
+{\footnotesize\ttfamily Sk\+Auto\+Canvas\+Restore\+::$\sim$\+Sk\+Auto\+Canvas\+Restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Restores \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} to saved state. Destructor is called when container goes out of scope. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_auto_canvas_restore_a057837d8704cea07bf3701f45226f460}\label{class_sk_auto_canvas_restore_a057837d8704cea07bf3701f45226f460}} 
+\index{SkAutoCanvasRestore@{SkAutoCanvasRestore}!restore@{restore}}
+\index{restore@{restore}!SkAutoCanvasRestore@{SkAutoCanvasRestore}}
+\doxysubsubsection{\texorpdfstring{restore()}{restore()}}
+{\footnotesize\ttfamily void Sk\+Auto\+Canvas\+Restore\+::restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Restores \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} to saved state immediately. Subsequent calls and \mbox{\hyperlink{class_sk_auto_canvas_restore_a81c484a5a042bb071496d31dabea7be8}{$\sim$\+Sk\+Auto\+Canvas\+Restore()}} have no effect. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Canvas.\+h\end{DoxyCompactItemize}

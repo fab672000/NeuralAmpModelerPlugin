@@ -1,0 +1,132 @@
+\hypertarget{class_i_byte_stream}{}\doxysection{I\+Byte\+Stream Class Reference}
+\label{class_i_byte_stream}\index{IByteStream@{IByteStream}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Structs.\+h$>$}
+
+Inheritance diagram for I\+Byte\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_byte_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_byte_stream_ae4275b65b5575e051bb9db384abb6d20}\label{class_i_byte_stream_ae4275b65b5575e051bb9db384abb6d20}} 
+{\bfseries I\+Byte\+Stream} (const void $\ast$p\+Data, int data\+Size)
+\item 
+int \mbox{\hyperlink{class_i_byte_stream_a4cf96e252fafe72bccb435d6a7cbfdb2}{Get\+Bytes}} (void $\ast$p\+Dst, int n\+Bytes\+To\+Copy, int start\+Pos) const
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{class_i_byte_stream_a6a559e06ec65ba71667b37265c1061da}{Get}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$p\+Dst, int start\+Pos) const
+\item 
+int \mbox{\hyperlink{class_i_byte_stream_a0422b8fdf0082604a32018f3f3459a75}{Get\+Str}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&str, int start\+Pos) const
+\item 
+int \mbox{\hyperlink{class_i_byte_stream_a049874c73a326ea30c7115dc2248dbec}{Size}} () const
+\item 
+bool \mbox{\hyperlink{class_i_byte_stream_a5a2935a97b378da84851bce7698354f9}{Is\+Equal}} (\mbox{\hyperlink{class_i_byte_stream}{I\+Byte\+Stream}} \&other\+Stream) const
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_i_byte_stream_a3f3272c39dab4929d93917d5a514d7ea}{Get\+Data}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a non-\/owned block of memory, for receiving arbitrary message byte streams 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_byte_stream_a6a559e06ec65ba71667b37265c1061da}\label{class_i_byte_stream_a6a559e06ec65ba71667b37265c1061da}} 
+\index{IByteStream@{IByteStream}!Get@{Get}}
+\index{Get@{Get}!IByteStream@{IByteStream}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int I\+Byte\+Stream\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{p\+Dst,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get arbitary typed data from the stream 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to be extracted \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Dst} & Ptr to the destination where the data will be extracted \\
+\hline
+{\em start\+Pos} & The starting position in bytes in the stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in the stream (in bytes) after the copy, or -\/1 if the copy would have copied more data than in the stream ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_stream_a4cf96e252fafe72bccb435d6a7cbfdb2}\label{class_i_byte_stream_a4cf96e252fafe72bccb435d6a7cbfdb2}} 
+\index{IByteStream@{IByteStream}!GetBytes@{GetBytes}}
+\index{GetBytes@{GetBytes}!IByteStream@{IByteStream}}
+\doxysubsubsection{\texorpdfstring{GetBytes()}{GetBytes()}}
+{\footnotesize\ttfamily int I\+Byte\+Stream\+::\+Get\+Bytes (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Dst,  }\item[{int}]{n\+Bytes\+To\+Copy,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy raw bytes from the stream, returning the new position for subsequent calls 
+\begin{DoxyParams}{Parameters}
+{\em p\+Dst} & The destination buffer \\
+\hline
+{\em n\+Bytes\+To\+Copy} & The number of bytes to copy from the stream \\
+\hline
+{\em start\+Pos} & The starting position in bytes in the stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in the stream (in bytes) after the copy, or -\/1 if the copy would have copied more data than in the stream ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_stream_a3f3272c39dab4929d93917d5a514d7ea}\label{class_i_byte_stream_a3f3272c39dab4929d93917d5a514d7ea}} 
+\index{IByteStream@{IByteStream}!GetData@{GetData}}
+\index{GetData@{GetData}!IByteStream@{IByteStream}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily const uint8\+\_\+t$\ast$ I\+Byte\+Stream\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a const ptr to the stream data \begin{DoxyReturn}{Returns}
+uint8\+\_\+t$\ast$ const ptr to the stream data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_stream_a0422b8fdf0082604a32018f3f3459a75}\label{class_i_byte_stream_a0422b8fdf0082604a32018f3f3459a75}} 
+\index{IByteStream@{IByteStream}!GetStr@{GetStr}}
+\index{GetStr@{GetStr}!IByteStream@{IByteStream}}
+\doxysubsubsection{\texorpdfstring{GetStr()}{GetStr()}}
+{\footnotesize\ttfamily int I\+Byte\+Stream\+::\+Get\+Str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{str,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a string from the stream 
+\begin{DoxyParams}{Parameters}
+{\em str} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} to fill \\
+\hline
+{\em start\+Pos} & The starting position in bytes in the stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in the stream (in bytes) after the copy, or -\/1 if the copy would have copied more data than in the stream ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_stream_a5a2935a97b378da84851bce7698354f9}\label{class_i_byte_stream_a5a2935a97b378da84851bce7698354f9}} 
+\index{IByteStream@{IByteStream}!IsEqual@{IsEqual}}
+\index{IsEqual@{IsEqual}!IByteStream@{IByteStream}}
+\doxysubsubsection{\texorpdfstring{IsEqual()}{IsEqual()}}
+{\footnotesize\ttfamily bool I\+Byte\+Stream\+::\+Is\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_byte_stream}{I\+Byte\+Stream}} \&}]{other\+Stream }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares the size \& values of the data of another stream with this one 
+\begin{DoxyParams}{Parameters}
+{\em other\+Chunk} & The stream to compare with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the streams are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_stream_a049874c73a326ea30c7115dc2248dbec}\label{class_i_byte_stream_a049874c73a326ea30c7115dc2248dbec}} 
+\index{IByteStream@{IByteStream}!Size@{Size}}
+\index{Size@{Size}!IByteStream@{IByteStream}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int I\+Byte\+Stream\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the size of the stream \begin{DoxyReturn}{Returns}
+size (in bytes) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/I\+Plug\+Structs.\+h\end{DoxyCompactItemize}

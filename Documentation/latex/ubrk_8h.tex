@@ -1,0 +1,812 @@
+\hypertarget{ubrk_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ubrk.h File Reference}
+\label{ubrk_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ubrk.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ubrk.h}}
+
+
+C A\+PI\+: Break\+Iterator.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/uloc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/utext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/parseerr.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ubrk_8h_a08c0431a8c9c65e9578b12978681bbc8}{U\+B\+R\+K\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+U\+B\+R\+E\+A\+K\+\_\+\+I\+T\+E\+R\+A\+T\+OR}}
+\item 
+\#define \mbox{\hyperlink{ubrk_8h_a7c31c1e5091fb47ab85db522c7536252}{U\+B\+R\+K\+\_\+\+D\+O\+NE}}~((int32\+\_\+t) -\/1)
+\item 
+\#define \mbox{\hyperlink{ubrk_8h_ab17dc88e0028fd85c622889eea22a6fa}{U\+\_\+\+B\+R\+K\+\_\+\+S\+A\+F\+E\+C\+L\+O\+N\+E\+\_\+\+B\+U\+F\+F\+E\+R\+S\+I\+ZE}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}
+\item 
+typedef enum \mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}} \mbox{\hyperlink{ubrk_8h_a37ea279440364e75126a507a8d827464}{U\+Break\+Iterator\+Type}}
+\item 
+typedef enum \mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}{U\+Word\+Break}} \mbox{\hyperlink{ubrk_8h_ad998235a2dd88fbcf5770d5126155fac}{U\+Word\+Break}}
+\item 
+typedef enum \mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}{U\+Line\+Break\+Tag}} \mbox{\hyperlink{ubrk_8h_a9c3490675794c9a070b47f9827cbb271}{U\+Line\+Break\+Tag}}
+\item 
+typedef enum \mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}{U\+Sentence\+Break\+Tag}} \mbox{\hyperlink{ubrk_8h_a631777441c7e6abade73386896839d1b}{U\+Sentence\+Break\+Tag}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}} \{ \newline
+\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588ba446d025be7ca2f64dfac303b0a55c0b3}{U\+B\+R\+K\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER}} = 0, 
+\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588ba17772e8ee70d3de4064c71417c574f36}{U\+B\+R\+K\+\_\+\+W\+O\+RD}} = 1, 
+\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588ba73e81a0d478daeb2c6de8a63cac1070c}{U\+B\+R\+K\+\_\+\+L\+I\+NE}} = 2, 
+\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588bab1b31cbd0fb0b298b87cb67da729ba62}{U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+CE}} = 3, 
+\newline
+\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588ba3d79f0b0db32243e6b85b0b5036f9831}{U\+B\+R\+K\+\_\+\+T\+I\+T\+LE}} = 4, 
+\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588ba6040742b07566e5e3655d4843efaefac}{U\+B\+R\+K\+\_\+\+C\+O\+U\+NT}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}{U\+Word\+Break}} \{ \newline
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a8229f94661c6289a6497018ef341801a}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a54839e74f8aa4ffd4ea7b9d86f3de050}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+O\+N\+E\+\_\+\+L\+I\+M\+IT}} = 100, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a3ec03137beddd2ce1d611cc7798b6e74}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+U\+M\+B\+ER}} = 100, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a82e563b42b89e0a49c097d40a54c8621}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+L\+I\+M\+IT}} = 200, 
+\newline
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a945eb6dd49881b36d4e2c9f592d97197}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+T\+T\+ER}} = 200, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a66ad49e358ce8a4fba6d6161ec678dd6}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+T\+T\+E\+R\+\_\+\+L\+I\+M\+IT}} = 300, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a69f55c4740ce6f96ad9b61d859de201f}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+K\+A\+NA}} = 300, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a7d507a35a3813629c11340a3f0f10fec}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+K\+A\+N\+A\+\_\+\+L\+I\+M\+IT}} = 400, 
+\newline
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a295f3da24ba9978b5787c1494079c8de}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+I\+D\+EO}} = 400, 
+\mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a8097221024f5c65d58951ad488d57474}{U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+I\+D\+E\+O\+\_\+\+L\+I\+M\+IT}} = 500
+ \}
+\item 
+enum \mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}{U\+Line\+Break\+Tag}} \{ \mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccda6a91dd50489f1fbc5c8c32c29fcc3fee}{U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+S\+O\+FT}} = 0, 
+\mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdaef314dd1a053a6f2ab57c06f3a3d5f1f}{U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+S\+O\+F\+T\+\_\+\+L\+I\+M\+IT}} = 100, 
+\mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdad02d1bfcd98382e53c9e83db37fba492}{U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+H\+A\+RD}} = 100, 
+\mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdae767435243d44e5a22c1db90dd3a8f6e}{U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+H\+A\+R\+D\+\_\+\+L\+I\+M\+IT}} = 200
+ \}
+\item 
+enum \mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}{U\+Sentence\+Break\+Tag}} \{ \mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71addbcb13addb315fc0814a6fb1284c339}{U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+T\+E\+RM}} = 0, 
+\mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71a650703353df53947eb3b996e3e5239f7}{U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+T\+E\+R\+M\+\_\+\+L\+I\+M\+IT}} = 100, 
+\mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71aca695be696e0e48676c109de60bcbbdf}{U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+S\+EP}} = 100, 
+\mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71af573420e1d53a811d6c5c4a07a4f5c8e}{U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+S\+E\+P\+\_\+\+L\+I\+M\+IT}} = 200
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_aa04d2f0c5bda7ad22a18bab9cb23205f}{ubrk\+\_\+open}} (\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}} type, const char $\ast$locale, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$text, int32\+\_\+t text\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a677814917ce89844eb5167cad5b0a495}{ubrk\+\_\+open\+Rules}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$rules, int32\+\_\+t rules\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$text, int32\+\_\+t text\+Length, \mbox{\hyperlink{struct_u_parse_error}{U\+Parse\+Error}} $\ast$parse\+Err, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_abce41edfcb4d834c70bef6d521c9b177}{ubrk\+\_\+open\+Binary\+Rules}} (const uint8\+\_\+t $\ast$binary\+Rules, int32\+\_\+t rules\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$text, int32\+\_\+t text\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a2b418014e541f87ff0b2732c815f751b}{ubrk\+\_\+safe\+Clone}} (const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, void $\ast$stack\+Buffer, int32\+\_\+t $\ast$p\+Buffer\+Size, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_ae994d7f4d88df95e4dc402bb2996cb8a}{ubrk\+\_\+clone}} (const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a2f2d4e62b39713081a16aebcb260c063}{ubrk\+\_\+close}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a947dba7a3175ac7c133780bed23865fd}{ubrk\+\_\+set\+Text}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$text, int32\+\_\+t text\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_aa075242cd28edaf7b8ecbb455095cab0}{ubrk\+\_\+set\+U\+Text}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$text, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a7eabe4221161ca640f0fa9b48f02e777}{ubrk\+\_\+current}} (const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a05bf3b980102ea3c1eace050c1576a23}{ubrk\+\_\+next}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_aef960574a054a0d179a36cc26900d1e4}{ubrk\+\_\+previous}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a57e4e52c1a0d99202ce51dd51915ff63}{ubrk\+\_\+first}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a74ab1cf559df34d3d11ae39b4231727e}{ubrk\+\_\+last}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_ab3c1f53fff6b8db46cdcee71f66d1b62}{ubrk\+\_\+preceding}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, int32\+\_\+t offset)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_aea0a8f7aa89319b2c9df2268f0f39785}{ubrk\+\_\+following}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, int32\+\_\+t offset)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_af2b15be76710ca9daaaba71fa17dd36d}{ubrk\+\_\+get\+Available}} (int32\+\_\+t index)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a8443848da93e172e2a64bab30bb6b1b9}{ubrk\+\_\+count\+Available}} (void)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a96176b72ad3d453b75b4e2905289d121}{ubrk\+\_\+is\+Boundary}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, int32\+\_\+t offset)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a6c4c88e677dfb1f87c56f7c4d3f1a09d}{ubrk\+\_\+get\+Rule\+Status}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a75a58be16725c6adcf3edcf2bfe9c5b6}{ubrk\+\_\+get\+Rule\+Status\+Vec}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, int32\+\_\+t $\ast$fill\+In\+Vec, int32\+\_\+t capacity, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_aeb607efef310397f695ab56d73e0f9de}{ubrk\+\_\+get\+Locale\+By\+Type}} (const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, \mbox{\hyperlink{uloc_8h_adf053345d343f8d82ae080f7a5871f34}{U\+Loc\+Data\+Locale\+Type}} type, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_ad27320807ffd34622f043c2e1d65792c}{ubrk\+\_\+refresh\+U\+Text}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$text, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ubrk_8h_a215dcc4f6e8bbca85a72489258ea4846}{ubrk\+\_\+get\+Binary\+Rules}} (\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$bi, uint8\+\_\+t $\ast$binary\+Rules, int32\+\_\+t rules\+Capacity, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Break\+Iterator. 
+
+\doxysubsubsection*{Break\+Iterator C A\+PI }
+
+The Break\+Iterator C A\+PI defines methods for finding the location of boundaries in text. Pointer to a U\+Break\+Iterator maintain a current position and scan over text returning the index of characters where boundaries occur. 
+
+Line boundary analysis determines where a text string can be broken when line-\/wrapping. The mechanism correctly handles punctuation and hyphenated words. 
+
+Note\+: The locale keyword \char`\"{}lb\char`\"{} can be used to modify line break behavior according to the C\+SS level 3 line-\/break options, see \href{http://dev.w3.org/csswg/css-text/\#line-breaking}{\texttt{ http\+://dev.\+w3.\+org/csswg/css-\/text/\#line-\/breaking}}. For example\+: \char`\"{}ja@lb=strict\char`\"{}, \char`\"{}zh@lb=loose\char`\"{}. 
+
+Sentence boundary analysis allows selection with correct interpretation of periods within numbers and abbreviations, and trailing punctuation marks such as quotation marks and parentheses. 
+
+Note\+: The locale keyword \char`\"{}ss\char`\"{} can be used to enable use of segmentation suppression data (preventing breaks in English after abbreviations such as \char`\"{}\+Mr.\char`\"{} or \char`\"{}\+Est.\char`\"{}, for example), as follows\+: \char`\"{}en@ss=standard\char`\"{}. 
+
+Word boundary analysis is used by search and replace functions, as well as within text editing applications that allow the user to select words with a double click. Word selection provides correct interpretation of punctuation marks within and following words. Characters that are not part of a word, such as symbols or punctuation marks, have word-\/breaks on both sides. 
+
+Character boundary analysis identifies the boundaries of \char`\"{}\+Extended Grapheme Clusters\char`\"{}, which are groupings of codepoints that should be treated as character-\/like units for many text operations. Please see Unicode Standard Annex \#29, Unicode Text Segmentation, \href{http://www.unicode.org/reports/tr29/}{\texttt{ http\+://www.\+unicode.\+org/reports/tr29/}} for additional information on grapheme clusters and guidelines on their use. 
+
+Title boundary analysis locates all positions, typically starts of words, that should be set to Title Case when title casing the text. 
+
+The text boundary positions are found according to the rules described in Unicode Standard Annex \#29, Text Boundaries, and Unicode Standard Annex \#14, Line Breaking Properties. These are available at \href{http://www.unicode.org/reports/tr14/}{\texttt{ http\+://www.\+unicode.\+org/reports/tr14/}} and \href{http://www.unicode.org/reports/tr29/}{\texttt{ http\+://www.\+unicode.\+org/reports/tr29/}}. 
+
+In addition to the plain C A\+PI defined in this header file, an object oriented C++ A\+PI with equivalent functionality is defined in the file \mbox{\hyperlink{brkiter_8h}{brkiter.\+h}}. 
+
+Code snippets illustrating the use of the Break Iterator A\+P\+Is are available in the I\+CU User Guide, \href{http://icu-project.org/userguide/boundaryAnalysis.html}{\texttt{ http\+://icu-\/project.\+org/userguide/boundary\+Analysis.\+html}} and in the sample program icu/source/samples/break/break.\+cpp 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ubrk_8h_ab17dc88e0028fd85c622889eea22a6fa}\label{ubrk_8h_ab17dc88e0028fd85c622889eea22a6fa}} 
+\index{ubrk.h@{ubrk.h}!U\_BRK\_SAFECLONE\_BUFFERSIZE@{U\_BRK\_SAFECLONE\_BUFFERSIZE}}
+\index{U\_BRK\_SAFECLONE\_BUFFERSIZE@{U\_BRK\_SAFECLONE\_BUFFERSIZE}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{U\_BRK\_SAFECLONE\_BUFFERSIZE}{U\_BRK\_SAFECLONE\_BUFFERSIZE}}
+{\footnotesize\ttfamily \#define U\+\_\+\+B\+R\+K\+\_\+\+S\+A\+F\+E\+C\+L\+O\+N\+E\+\_\+\+B\+U\+F\+F\+E\+R\+S\+I\+ZE~1}
+
+A recommended size (in bytes) for the memory buffer to be passed to ubrk\+\_\+save\+Clone(). \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]I\+CU 52. Do not rely on \mbox{\hyperlink{ubrk_8h_a2b418014e541f87ff0b2732c815f751b}{ubrk\+\_\+safe\+Clone()}} cloning into any provided buffer. \end{DoxyRefDesc}
+\mbox{\Hypertarget{ubrk_8h_a7c31c1e5091fb47ab85db522c7536252}\label{ubrk_8h_a7c31c1e5091fb47ab85db522c7536252}} 
+\index{ubrk.h@{ubrk.h}!UBRK\_DONE@{UBRK\_DONE}}
+\index{UBRK\_DONE@{UBRK\_DONE}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UBRK\_DONE}{UBRK\_DONE}}
+{\footnotesize\ttfamily \#define U\+B\+R\+K\+\_\+\+D\+O\+NE~((int32\+\_\+t) -\/1)}
+
+Value indicating all text boundaries have been returned. @stable I\+CU 2.\+0 \mbox{\Hypertarget{ubrk_8h_a08c0431a8c9c65e9578b12978681bbc8}\label{ubrk_8h_a08c0431a8c9c65e9578b12978681bbc8}} 
+\index{ubrk.h@{ubrk.h}!UBRK\_TYPEDEF\_UBREAK\_ITERATOR@{UBRK\_TYPEDEF\_UBREAK\_ITERATOR}}
+\index{UBRK\_TYPEDEF\_UBREAK\_ITERATOR@{UBRK\_TYPEDEF\_UBREAK\_ITERATOR}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UBRK\_TYPEDEF\_UBREAK\_ITERATOR}{UBRK\_TYPEDEF\_UBREAK\_ITERATOR}}
+{\footnotesize\ttfamily \#define U\+B\+R\+K\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+U\+B\+R\+E\+A\+K\+\_\+\+I\+T\+E\+R\+A\+T\+OR}
+
+A text-\/break iterator. For usage in C programs. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}\label{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}} 
+\index{ubrk.h@{ubrk.h}!UBreakIterator@{UBreakIterator}}
+\index{UBreakIterator@{UBreakIterator}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UBreakIterator}{UBreakIterator}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}}
+
+Opaque type representing an I\+CU Break iterator object. @stable I\+CU 2.\+0 \mbox{\Hypertarget{ubrk_8h_a37ea279440364e75126a507a8d827464}\label{ubrk_8h_a37ea279440364e75126a507a8d827464}} 
+\index{ubrk.h@{ubrk.h}!UBreakIteratorType@{UBreakIteratorType}}
+\index{UBreakIteratorType@{UBreakIteratorType}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UBreakIteratorType}{UBreakIteratorType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}} \mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}}}
+
+The possible types of text boundaries. @stable I\+CU 2.\+0 \mbox{\Hypertarget{ubrk_8h_a9c3490675794c9a070b47f9827cbb271}\label{ubrk_8h_a9c3490675794c9a070b47f9827cbb271}} 
+\index{ubrk.h@{ubrk.h}!ULineBreakTag@{ULineBreakTag}}
+\index{ULineBreakTag@{ULineBreakTag}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ULineBreakTag}{ULineBreakTag}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}{U\+Line\+Break\+Tag}} \mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}{U\+Line\+Break\+Tag}}}
+
+Enum constants for the line break tags returned by get\+Rule\+Status(). A range of values is defined for each category of word, to allow for further subdivisions of a category in future releases. Applications should check for tag values falling within the range, rather than for single individual values.
+
+The numeric values of all of these constants are stable (will not change).
+
+@stable I\+CU 2.\+8 \mbox{\Hypertarget{ubrk_8h_a631777441c7e6abade73386896839d1b}\label{ubrk_8h_a631777441c7e6abade73386896839d1b}} 
+\index{ubrk.h@{ubrk.h}!USentenceBreakTag@{USentenceBreakTag}}
+\index{USentenceBreakTag@{USentenceBreakTag}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{USentenceBreakTag}{USentenceBreakTag}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}{U\+Sentence\+Break\+Tag}} \mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}{U\+Sentence\+Break\+Tag}}}
+
+Enum constants for the sentence break tags returned by get\+Rule\+Status(). A range of values is defined for each category of sentence, to allow for further subdivisions of a category in future releases. Applications should check for tag values falling within the range, rather than for single individual values.
+
+The numeric values of all of these constants are stable (will not change).
+
+@stable I\+CU 2.\+8 \mbox{\Hypertarget{ubrk_8h_ad998235a2dd88fbcf5770d5126155fac}\label{ubrk_8h_ad998235a2dd88fbcf5770d5126155fac}} 
+\index{ubrk.h@{ubrk.h}!UWordBreak@{UWordBreak}}
+\index{UWordBreak@{UWordBreak}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UWordBreak}{UWordBreak}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}{U\+Word\+Break}} \mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}{U\+Word\+Break}}}
+
+Enum constants for the word break tags returned by get\+Rule\+Status(). A range of values is defined for each category of word, to allow for further subdivisions of a category in future releases. Applications should check for tag values falling within the range, rather than for single individual values.
+
+The numeric values of all of these constants are stable (will not change).
+
+@stable I\+CU 2.\+2 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588b}\label{ubrk_8h_a026dec40289da8261d787daf3baa588b}} 
+\index{ubrk.h@{ubrk.h}!UBreakIteratorType@{UBreakIteratorType}}
+\index{UBreakIteratorType@{UBreakIteratorType}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UBreakIteratorType}{UBreakIteratorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}}}
+
+The possible types of text boundaries. @stable I\+CU 2.\+0 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_CHARACTER@{UBRK\_CHARACTER}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_CHARACTER@{UBRK\_CHARACTER}}}\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588ba446d025be7ca2f64dfac303b0a55c0b3}\label{ubrk_8h_a026dec40289da8261d787daf3baa588ba446d025be7ca2f64dfac303b0a55c0b3}} 
+U\+B\+R\+K\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER&Character breaks @stable I\+CU 2.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD@{UBRK\_WORD}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD@{UBRK\_WORD}}}\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588ba17772e8ee70d3de4064c71417c574f36}\label{ubrk_8h_a026dec40289da8261d787daf3baa588ba17772e8ee70d3de4064c71417c574f36}} 
+U\+B\+R\+K\+\_\+\+W\+O\+RD&Word breaks @stable I\+CU 2.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_LINE@{UBRK\_LINE}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_LINE@{UBRK\_LINE}}}\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588ba73e81a0d478daeb2c6de8a63cac1070c}\label{ubrk_8h_a026dec40289da8261d787daf3baa588ba73e81a0d478daeb2c6de8a63cac1070c}} 
+U\+B\+R\+K\+\_\+\+L\+I\+NE&Line breaks @stable I\+CU 2.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_SENTENCE@{UBRK\_SENTENCE}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_SENTENCE@{UBRK\_SENTENCE}}}\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588bab1b31cbd0fb0b298b87cb67da729ba62}\label{ubrk_8h_a026dec40289da8261d787daf3baa588bab1b31cbd0fb0b298b87cb67da729ba62}} 
+U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+CE&Sentence breaks @stable I\+CU 2.\+0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_TITLE@{UBRK\_TITLE}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_TITLE@{UBRK\_TITLE}}}\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588ba3d79f0b0db32243e6b85b0b5036f9831}\label{ubrk_8h_a026dec40289da8261d787daf3baa588ba3d79f0b0db32243e6b85b0b5036f9831}} 
+U\+B\+R\+K\+\_\+\+T\+I\+T\+LE&Title Case breaks The iterator created using this type locates title boundaries as described for Unicode 3.\+2 only. For Unicode 4.\+0 and above title boundary iteration, please use Word Boundary iterator.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000005}{Deprecated}}]I\+CU 2.\+8 Use the word break iterator for titlecasing for Unicode 4 and later. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_COUNT@{UBRK\_COUNT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_COUNT@{UBRK\_COUNT}}}\mbox{\Hypertarget{ubrk_8h_a026dec40289da8261d787daf3baa588ba6040742b07566e5e3655d4843efaefac}\label{ubrk_8h_a026dec40289da8261d787daf3baa588ba6040742b07566e5e3655d4843efaefac}} 
+U\+B\+R\+K\+\_\+\+C\+O\+U\+NT&One more than the highest normal U\+Break\+Iterator\+Type value. \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000006}{Deprecated}}]I\+CU 58 The numeric value may change over time, see I\+CU ticket \#12420. \end{DoxyRefDesc}
+\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}\label{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}} 
+\index{ubrk.h@{ubrk.h}!ULineBreakTag@{ULineBreakTag}}
+\index{ULineBreakTag@{ULineBreakTag}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ULineBreakTag}{ULineBreakTag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccd}{U\+Line\+Break\+Tag}}}
+
+Enum constants for the line break tags returned by get\+Rule\+Status(). A range of values is defined for each category of word, to allow for further subdivisions of a category in future releases. Applications should check for tag values falling within the range, rather than for single individual values.
+
+The numeric values of all of these constants are stable (will not change).
+
+@stable I\+CU 2.\+8 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_LINE\_SOFT@{UBRK\_LINE\_SOFT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_LINE\_SOFT@{UBRK\_LINE\_SOFT}}}\mbox{\Hypertarget{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccda6a91dd50489f1fbc5c8c32c29fcc3fee}\label{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccda6a91dd50489f1fbc5c8c32c29fcc3fee}} 
+U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+S\+O\+FT&Tag value for soft line breaks, positions at which a line break is acceptable but not required ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_LINE\_SOFT\_LIMIT@{UBRK\_LINE\_SOFT\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_LINE\_SOFT\_LIMIT@{UBRK\_LINE\_SOFT\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdaef314dd1a053a6f2ab57c06f3a3d5f1f}\label{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdaef314dd1a053a6f2ab57c06f3a3d5f1f}} 
+U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+S\+O\+F\+T\+\_\+\+L\+I\+M\+IT&Upper bound for soft line breaks. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_LINE\_HARD@{UBRK\_LINE\_HARD}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_LINE\_HARD@{UBRK\_LINE\_HARD}}}\mbox{\Hypertarget{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdad02d1bfcd98382e53c9e83db37fba492}\label{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdad02d1bfcd98382e53c9e83db37fba492}} 
+U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+H\+A\+RD&Tag value for a hard, or mandatory line break ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_LINE\_HARD\_LIMIT@{UBRK\_LINE\_HARD\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_LINE\_HARD\_LIMIT@{UBRK\_LINE\_HARD\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdae767435243d44e5a22c1db90dd3a8f6e}\label{ubrk_8h_a8de005c411b5e5306850f4246d1d7ccdae767435243d44e5a22c1db90dd3a8f6e}} 
+U\+B\+R\+K\+\_\+\+L\+I\+N\+E\+\_\+\+H\+A\+R\+D\+\_\+\+L\+I\+M\+IT&Upper bound for hard line breaks. ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}\label{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}} 
+\index{ubrk.h@{ubrk.h}!USentenceBreakTag@{USentenceBreakTag}}
+\index{USentenceBreakTag@{USentenceBreakTag}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{USentenceBreakTag}{USentenceBreakTag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71}{U\+Sentence\+Break\+Tag}}}
+
+Enum constants for the sentence break tags returned by get\+Rule\+Status(). A range of values is defined for each category of sentence, to allow for further subdivisions of a category in future releases. Applications should check for tag values falling within the range, rather than for single individual values.
+
+The numeric values of all of these constants are stable (will not change).
+
+@stable I\+CU 2.\+8 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_SENTENCE\_TERM@{UBRK\_SENTENCE\_TERM}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_SENTENCE\_TERM@{UBRK\_SENTENCE\_TERM}}}\mbox{\Hypertarget{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71addbcb13addb315fc0814a6fb1284c339}\label{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71addbcb13addb315fc0814a6fb1284c339}} 
+U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+T\+E\+RM&Tag value for for sentences ending with a sentence terminator (\textquotesingle{}.\textquotesingle{}, \textquotesingle{}?\textquotesingle{}, \textquotesingle{}!\textquotesingle{}, etc.) character, possibly followed by a hard separator (CR, LF, PS, etc.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_SENTENCE\_TERM\_LIMIT@{UBRK\_SENTENCE\_TERM\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_SENTENCE\_TERM\_LIMIT@{UBRK\_SENTENCE\_TERM\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71a650703353df53947eb3b996e3e5239f7}\label{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71a650703353df53947eb3b996e3e5239f7}} 
+U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+T\+E\+R\+M\+\_\+\+L\+I\+M\+IT&Upper bound for tags for sentences ended by sentence terminators. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_SENTENCE\_SEP@{UBRK\_SENTENCE\_SEP}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_SENTENCE\_SEP@{UBRK\_SENTENCE\_SEP}}}\mbox{\Hypertarget{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71aca695be696e0e48676c109de60bcbbdf}\label{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71aca695be696e0e48676c109de60bcbbdf}} 
+U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+S\+EP&Tag value for for sentences that do not contain an ending sentence terminator (\textquotesingle{}.\textquotesingle{}, \textquotesingle{}?\textquotesingle{}, \textquotesingle{}!\textquotesingle{}, etc.) character, but are ended only by a hard separator (CR, LF, PS, etc.) or end of input. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_SENTENCE\_SEP\_LIMIT@{UBRK\_SENTENCE\_SEP\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_SENTENCE\_SEP\_LIMIT@{UBRK\_SENTENCE\_SEP\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71af573420e1d53a811d6c5c4a07a4f5c8e}\label{ubrk_8h_ad03d8e27f121bcf11eaed0a288786a71af573420e1d53a811d6c5c4a07a4f5c8e}} 
+U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+C\+E\+\_\+\+S\+E\+P\+\_\+\+L\+I\+M\+IT&Upper bound for tags for sentences ended by a separator. ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}} 
+\index{ubrk.h@{ubrk.h}!UWordBreak@{UWordBreak}}
+\index{UWordBreak@{UWordBreak}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{UWordBreak}{UWordBreak}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9}{U\+Word\+Break}}}
+
+Enum constants for the word break tags returned by get\+Rule\+Status(). A range of values is defined for each category of word, to allow for further subdivisions of a category in future releases. Applications should check for tag values falling within the range, rather than for single individual values.
+
+The numeric values of all of these constants are stable (will not change).
+
+@stable I\+CU 2.\+2 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_NONE@{UBRK\_WORD\_NONE}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_NONE@{UBRK\_WORD\_NONE}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a8229f94661c6289a6497018ef341801a}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a8229f94661c6289a6497018ef341801a}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+O\+NE&Tag value for \char`\"{}words\char`\"{} that do not fit into any of other categories. Includes spaces and most punctuation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_NONE\_LIMIT@{UBRK\_WORD\_NONE\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_NONE\_LIMIT@{UBRK\_WORD\_NONE\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a54839e74f8aa4ffd4ea7b9d86f3de050}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a54839e74f8aa4ffd4ea7b9d86f3de050}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+O\+N\+E\+\_\+\+L\+I\+M\+IT&Upper bound for tags for uncategorized words. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_NUMBER@{UBRK\_WORD\_NUMBER}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_NUMBER@{UBRK\_WORD\_NUMBER}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a3ec03137beddd2ce1d611cc7798b6e74}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a3ec03137beddd2ce1d611cc7798b6e74}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+U\+M\+B\+ER&Tag value for words that appear to be numbers, lower limit. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_NUMBER\_LIMIT@{UBRK\_WORD\_NUMBER\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_NUMBER\_LIMIT@{UBRK\_WORD\_NUMBER\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a82e563b42b89e0a49c097d40a54c8621}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a82e563b42b89e0a49c097d40a54c8621}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+L\+I\+M\+IT&Tag value for words that appear to be numbers, upper limit. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_LETTER@{UBRK\_WORD\_LETTER}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_LETTER@{UBRK\_WORD\_LETTER}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a945eb6dd49881b36d4e2c9f592d97197}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a945eb6dd49881b36d4e2c9f592d97197}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+T\+T\+ER&Tag value for words that contain letters, excluding hiragana, katakana or ideographic characters, lower limit. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_LETTER\_LIMIT@{UBRK\_WORD\_LETTER\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_LETTER\_LIMIT@{UBRK\_WORD\_LETTER\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a66ad49e358ce8a4fba6d6161ec678dd6}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a66ad49e358ce8a4fba6d6161ec678dd6}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+L\+E\+T\+T\+E\+R\+\_\+\+L\+I\+M\+IT&Tag value for words containing letters, upper limit ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_KANA@{UBRK\_WORD\_KANA}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_KANA@{UBRK\_WORD\_KANA}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a69f55c4740ce6f96ad9b61d859de201f}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a69f55c4740ce6f96ad9b61d859de201f}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+K\+A\+NA&Tag value for words containing kana characters, lower limit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_KANA\_LIMIT@{UBRK\_WORD\_KANA\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_KANA\_LIMIT@{UBRK\_WORD\_KANA\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a7d507a35a3813629c11340a3f0f10fec}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a7d507a35a3813629c11340a3f0f10fec}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+K\+A\+N\+A\+\_\+\+L\+I\+M\+IT&Tag value for words containing kana characters, upper limit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_IDEO@{UBRK\_WORD\_IDEO}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_IDEO@{UBRK\_WORD\_IDEO}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a295f3da24ba9978b5787c1494079c8de}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a295f3da24ba9978b5787c1494079c8de}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+I\+D\+EO&Tag value for words containing ideographic characters, lower limit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UBRK\_WORD\_IDEO\_LIMIT@{UBRK\_WORD\_IDEO\_LIMIT}!ubrk.h@{ubrk.h}}\index{ubrk.h@{ubrk.h}!UBRK\_WORD\_IDEO\_LIMIT@{UBRK\_WORD\_IDEO\_LIMIT}}}\mbox{\Hypertarget{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a8097221024f5c65d58951ad488d57474}\label{ubrk_8h_af9836cc79482f82ac12eefb1f70b14b9a8097221024f5c65d58951ad488d57474}} 
+U\+B\+R\+K\+\_\+\+W\+O\+R\+D\+\_\+\+I\+D\+E\+O\+\_\+\+L\+I\+M\+IT&Tag value for words containing ideographic characters, upper limit \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ubrk_8h_ae994d7f4d88df95e4dc402bb2996cb8a}\label{ubrk_8h_ae994d7f4d88df95e4dc402bb2996cb8a}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_clone@{ubrk\_clone}}
+\index{ubrk\_clone@{ubrk\_clone}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_clone()}{ubrk\_clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Thread safe cloning operation. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & iterator to be cloned \\
+\hline
+{\em status} & to indicate whether the operation went on smoothly or there were errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new clone @draft I\+CU 69 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ubrk_8h_a2f2d4e62b39713081a16aebcb260c063}\label{ubrk_8h_a2f2d4e62b39713081a16aebcb260c063}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_close@{ubrk\_close}}
+\index{ubrk\_close@{ubrk\_close}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_close()}{ubrk\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Close a U\+Break\+Iterator. Once closed, a U\+Break\+Iterator may no longer be used. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to close. @stable I\+CU 2.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ubrk_8h_a8443848da93e172e2a64bab30bb6b1b9}\label{ubrk_8h_a8443848da93e172e2a64bab30bb6b1b9}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_countAvailable@{ubrk\_countAvailable}}
+\index{ubrk\_countAvailable@{ubrk\_countAvailable}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_countAvailable()}{ubrk\_countAvailable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+count\+Available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Determine how many locales have text breaking information available. This function is most useful as determining the loop ending condition for calls to \mbox{\hyperlink{ubrk_8h_af2b15be76710ca9daaaba71fa17dd36d}{ubrk\+\_\+get\+Available}}. \begin{DoxyReturn}{Returns}
+The number of locales for which text breaking information is available. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_af2b15be76710ca9daaaba71fa17dd36d}{ubrk\+\_\+get\+Available}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_a7eabe4221161ca640f0fa9b48f02e777}\label{ubrk_8h_a7eabe4221161ca640f0fa9b48f02e777}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_current@{ubrk\_current}}
+\index{ubrk\_current@{ubrk\_current}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_current()}{ubrk\_current()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+current (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Determine the most recently-\/returned text boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character index most recently returned by \mbox{\hyperlink{ubrk_8h_a05bf3b980102ea3c1eace050c1576a23}{ubrk\+\_\+next}}, \mbox{\hyperlink{ubrk_8h_aef960574a054a0d179a36cc26900d1e4}{ubrk\+\_\+previous}}, \mbox{\hyperlink{ubrk_8h_a57e4e52c1a0d99202ce51dd51915ff63}{ubrk\+\_\+first}}, or \mbox{\hyperlink{ubrk_8h_a74ab1cf559df34d3d11ae39b4231727e}{ubrk\+\_\+last}}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ubrk_8h_a57e4e52c1a0d99202ce51dd51915ff63}\label{ubrk_8h_a57e4e52c1a0d99202ce51dd51915ff63}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_first@{ubrk\_first}}
+\index{ubrk\_first@{ubrk\_first}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_first()}{ubrk\_first()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+first (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Set the iterator position to zero, the start of the text being scanned. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new iterator position (zero). 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_a74ab1cf559df34d3d11ae39b4231727e}{ubrk\+\_\+last}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_aea0a8f7aa89319b2c9df2268f0f39785}\label{ubrk_8h_aea0a8f7aa89319b2c9df2268f0f39785}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_following@{ubrk\_following}}
+\index{ubrk\_following@{ubrk\_following}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_following()}{ubrk\_following()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+following (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{int32\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+Advance the iterator to the first boundary following the specified offset. The value returned is always greater than offset, or U\+B\+R\+K\+\_\+\+D\+O\+NE. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+{\em offset} & The offset to begin scanning. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The text boundary following offset, or U\+B\+R\+K\+\_\+\+D\+O\+NE. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_ab3c1f53fff6b8db46cdcee71f66d1b62}{ubrk\+\_\+preceding}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_af2b15be76710ca9daaaba71fa17dd36d}\label{ubrk_8h_af2b15be76710ca9daaaba71fa17dd36d}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_getAvailable@{ubrk\_getAvailable}}
+\index{ubrk\_getAvailable@{ubrk\_getAvailable}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_getAvailable()}{ubrk\_getAvailable()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+get\+Available (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+Get a locale for which text breaking information is available. A U\+Break\+Iterator in a locale returned by this function will perform the correct text breaking for the locale. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the desired locale. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A locale for which number text breaking information is available, or 0 if none. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_a8443848da93e172e2a64bab30bb6b1b9}{ubrk\+\_\+count\+Available}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_a215dcc4f6e8bbca85a72489258ea4846}\label{ubrk_8h_a215dcc4f6e8bbca85a72489258ea4846}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_getBinaryRules@{ubrk\_getBinaryRules}}
+\index{ubrk\_getBinaryRules@{ubrk\_getBinaryRules}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_getBinaryRules()}{ubrk\_getBinaryRules()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+get\+Binary\+Rules (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{uint8\+\_\+t $\ast$}]{binary\+Rules,  }\item[{int32\+\_\+t}]{rules\+Capacity,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Get a compiled binary version of the rules specifying the behavior of a U\+Break\+Iterator. The binary rules may be used with ubrk\+\_\+open\+Binary\+Rules to open a new U\+Break\+Iterator more quickly than using ubrk\+\_\+open\+Rules. The compiled rules are not compatible across different major versions of I\+CU, nor across platforms of different endianness or different base character set family (A\+S\+C\+II vs E\+B\+C\+D\+IC). Supports preflighting (with binary\+Rules=N\+U\+LL and rules\+Capacity=0) to get the rules length without copying them to the binary\+Rules buffer. However, whether preflighting or not, if the actual length is greater than I\+N\+T32\+\_\+\+M\+AX, then the function returns 0 and sets $\ast$status to U\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+O\+F\+B\+O\+U\+N\+D\+S\+\_\+\+E\+R\+R\+OR.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+{\em binary\+Rules} & \mbox{\hyperlink{class_buffer}{Buffer}} to receive the compiled binary rules; set to N\+U\+LL for preflighting. \\
+\hline
+{\em rules\+Capacity} & Capacity (in bytes) of the binary\+Rules buffer; set to 0 for preflighting. Must be $>$= 0. \\
+\hline
+{\em status} & Pointer to U\+Error\+Code to receive any errors, such as U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR, U\+\_\+\+I\+N\+D\+E\+X\+\_\+\+O\+U\+T\+O\+F\+B\+O\+U\+N\+D\+S\+\_\+\+E\+R\+R\+OR, or U\+\_\+\+I\+L\+L\+E\+G\+A\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+E\+R\+R\+OR. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual byte length of the binary rules, if $<$= I\+N\+T32\+\_\+\+M\+AX; otherwise 0. If not preflighting and this is larger than rules\+Capacity, $\ast$status will be set to an error. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_abce41edfcb4d834c70bef6d521c9b177}{ubrk\+\_\+open\+Binary\+Rules}} @stable I\+CU 59 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_aeb607efef310397f695ab56d73e0f9de}\label{ubrk_8h_aeb607efef310397f695ab56d73e0f9de}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_getLocaleByType@{ubrk\_getLocaleByType}}
+\index{ubrk\_getLocaleByType@{ubrk\_getLocaleByType}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_getLocaleByType()}{ubrk\_getLocaleByType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+get\+Locale\+By\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{\mbox{\hyperlink{uloc_8h_adf053345d343f8d82ae080f7a5871f34}{U\+Loc\+Data\+Locale\+Type}}}]{type,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Return the locale of the break iterator. You can choose between the valid and the actual locale. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & break iterator \\
+\hline
+{\em type} & locale type (valid or actual) \\
+\hline
+{\em status} & error code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+locale string @stable I\+CU 2.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ubrk_8h_a6c4c88e677dfb1f87c56f7c4d3f1a09d}\label{ubrk_8h_a6c4c88e677dfb1f87c56f7c4d3f1a09d}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_getRuleStatus@{ubrk\_getRuleStatus}}
+\index{ubrk\_getRuleStatus@{ubrk\_getRuleStatus}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_getRuleStatus()}{ubrk\_getRuleStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+get\+Rule\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Return the status from the break rule that determined the most recently returned break position. The values appear in the rule source within brackets, \{123\}, for example. For rules that do not specify a status, a default value of 0 is returned. 
+
+For word break iterators, the possible values are defined in enum U\+Word\+Break. @stable I\+CU 2.\+2 \mbox{\Hypertarget{ubrk_8h_a75a58be16725c6adcf3edcf2bfe9c5b6}\label{ubrk_8h_a75a58be16725c6adcf3edcf2bfe9c5b6}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_getRuleStatusVec@{ubrk\_getRuleStatusVec}}
+\index{ubrk\_getRuleStatusVec@{ubrk\_getRuleStatusVec}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_getRuleStatusVec()}{ubrk\_getRuleStatusVec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+get\+Rule\+Status\+Vec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{int32\+\_\+t $\ast$}]{fill\+In\+Vec,  }\item[{int32\+\_\+t}]{capacity,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Get the statuses from the break rules that determined the most recently returned break position. The values appear in the rule source within brackets, \{123\}, for example. The default status value for rules that do not explicitly provide one is zero. 
+
+For word break iterators, the possible values are defined in enum U\+Word\+Break. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use \\
+\hline
+{\em fill\+In\+Vec} & an array to be filled in with the status values. \\
+\hline
+{\em capacity} & the length of the supplied vector. A length of zero causes the function to return the number of status values, in the normal way, without attempting to store any values. \\
+\hline
+{\em status} & receives error codes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of rule status values from rules that determined the most recent boundary returned by the break iterator. @stable I\+CU 3.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ubrk_8h_a96176b72ad3d453b75b4e2905289d121}\label{ubrk_8h_a96176b72ad3d453b75b4e2905289d121}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_isBoundary@{ubrk\_isBoundary}}
+\index{ubrk\_isBoundary@{ubrk\_isBoundary}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_isBoundary()}{ubrk\_isBoundary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+is\+Boundary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{int32\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+Returns true if the specified position is a boundary position. As a side effect, leaves the iterator pointing to the first boundary position at or after \char`\"{}offset\char`\"{}. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+{\em offset} & the offset to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if \char`\"{}offset\char`\"{} is a boundary position. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ubrk_8h_a74ab1cf559df34d3d11ae39b4231727e}\label{ubrk_8h_a74ab1cf559df34d3d11ae39b4231727e}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_last@{ubrk\_last}}
+\index{ubrk\_last@{ubrk\_last}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_last()}{ubrk\_last()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Set the iterator position to the index immediately {\itshape beyond} the last character in the text being scanned. This is not the same as the last character. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character offset immediately {\itshape beyond} the last character in the text being scanned. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_a57e4e52c1a0d99202ce51dd51915ff63}{ubrk\+\_\+first}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_a05bf3b980102ea3c1eace050c1576a23}\label{ubrk_8h_a05bf3b980102ea3c1eace050c1576a23}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_next@{ubrk\_next}}
+\index{ubrk\_next@{ubrk\_next}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_next()}{ubrk\_next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Advance the iterator to the boundary following the current boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character index of the next text boundary, or U\+B\+R\+K\+\_\+\+D\+O\+NE if all text boundaries have been returned. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_aef960574a054a0d179a36cc26900d1e4}{ubrk\+\_\+previous}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_aa04d2f0c5bda7ad22a18bab9cb23205f}\label{ubrk_8h_aa04d2f0c5bda7ad22a18bab9cb23205f}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_open@{ubrk\_open}}
+\index{ubrk\_open@{ubrk\_open}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_open()}{ubrk\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_a026dec40289da8261d787daf3baa588b}{U\+Break\+Iterator\+Type}}}]{type,  }\item[{const char $\ast$}]{locale,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{text,  }\item[{int32\+\_\+t}]{text\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Open a new U\+Break\+Iterator for locating text boundaries for a specified locale. A U\+Break\+Iterator may be used for detecting character, line, word, and sentence breaks in text. 
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of U\+Break\+Iterator to open\+: one of U\+B\+R\+K\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER, U\+B\+R\+K\+\_\+\+W\+O\+RD, U\+B\+R\+K\+\_\+\+L\+I\+NE, U\+B\+R\+K\+\_\+\+S\+E\+N\+T\+E\+N\+CE \\
+\hline
+{\em locale} & The locale specifying the text-\/breaking conventions. Note that locale keys such as \char`\"{}lb\char`\"{} and \char`\"{}ss\char`\"{} may be used to modify text break behavior, see general discussion of Break\+Iterator C A\+PI. \\
+\hline
+{\em text} & The text to be iterated over. May be null, in which case \mbox{\hyperlink{ubrk_8h_a947dba7a3175ac7c133780bed23865fd}{ubrk\+\_\+set\+Text()}} is used to specify the text to be iterated. \\
+\hline
+{\em text\+Length} & The number of characters in text, or -\/1 if null-\/terminated. \\
+\hline
+{\em status} & A U\+Error\+Code to receive any errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A U\+Break\+Iterator for the specified locale. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_a677814917ce89844eb5167cad5b0a495}{ubrk\+\_\+open\+Rules}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_abce41edfcb4d834c70bef6d521c9b177}\label{ubrk_8h_abce41edfcb4d834c70bef6d521c9b177}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_openBinaryRules@{ubrk\_openBinaryRules}}
+\index{ubrk\_openBinaryRules@{ubrk\_openBinaryRules}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_openBinaryRules()}{ubrk\_openBinaryRules()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+open\+Binary\+Rules (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{binary\+Rules,  }\item[{int32\+\_\+t}]{rules\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{text,  }\item[{int32\+\_\+t}]{text\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Open a new U\+Break\+Iterator for locating text boundaries using precompiled binary rules. Opening a U\+Break\+Iterator this way is substantially faster than using ubrk\+\_\+open\+Rules. Binary rules may be obtained using ubrk\+\_\+get\+Binary\+Rules. The compiled rules are not compatible across different major versions of I\+CU, nor across platforms of different endianness or different base character set family (A\+S\+C\+II vs E\+B\+C\+D\+IC). 
+\begin{DoxyParams}{Parameters}
+{\em binary\+Rules} & A set of compiled binary rules specifying the text breaking conventions. Ownership of the storage containing the compiled rules remains with the caller of this function. The compiled rules must not be modified or deleted during the life of the break iterator. \\
+\hline
+{\em rules\+Length} & The length of binary\+Rules in bytes; must be $>$= 0. \\
+\hline
+{\em text} & The text to be iterated over. May be null, in which case \mbox{\hyperlink{ubrk_8h_a947dba7a3175ac7c133780bed23865fd}{ubrk\+\_\+set\+Text()}} is used to specify the text to be iterated. \\
+\hline
+{\em text\+Length} & The number of characters in text, or -\/1 if null-\/terminated. \\
+\hline
+{\em status} & Pointer to U\+Error\+Code to receive any errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+U\+Break\+Iterator for the specified rules. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_a215dcc4f6e8bbca85a72489258ea4846}{ubrk\+\_\+get\+Binary\+Rules}} @stable I\+CU 59 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_a677814917ce89844eb5167cad5b0a495}\label{ubrk_8h_a677814917ce89844eb5167cad5b0a495}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_openRules@{ubrk\_openRules}}
+\index{ubrk\_openRules@{ubrk\_openRules}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_openRules()}{ubrk\_openRules()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+open\+Rules (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{rules,  }\item[{int32\+\_\+t}]{rules\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{text,  }\item[{int32\+\_\+t}]{text\+Length,  }\item[{\mbox{\hyperlink{struct_u_parse_error}{U\+Parse\+Error}} $\ast$}]{parse\+Err,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Open a new U\+Break\+Iterator for locating text boundaries using specified breaking rules. The rule syntax is ... (T\+BD) 
+\begin{DoxyParams}{Parameters}
+{\em rules} & A set of rules specifying the text breaking conventions. \\
+\hline
+{\em rules\+Length} & The number of characters in rules, or -\/1 if null-\/terminated. \\
+\hline
+{\em text} & The text to be iterated over. May be null, in which case \mbox{\hyperlink{ubrk_8h_a947dba7a3175ac7c133780bed23865fd}{ubrk\+\_\+set\+Text()}} is used to specify the text to be iterated. \\
+\hline
+{\em text\+Length} & The number of characters in text, or -\/1 if null-\/terminated. \\
+\hline
+{\em parse\+Err} & Receives position and context information for any syntax errors detected while parsing the rules. \\
+\hline
+{\em status} & A U\+Error\+Code to receive any errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A U\+Break\+Iterator for the specified rules. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_aa04d2f0c5bda7ad22a18bab9cb23205f}{ubrk\+\_\+open}} @stable I\+CU 2.\+2 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_ab3c1f53fff6b8db46cdcee71f66d1b62}\label{ubrk_8h_ab3c1f53fff6b8db46cdcee71f66d1b62}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_preceding@{ubrk\_preceding}}
+\index{ubrk\_preceding@{ubrk\_preceding}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_preceding()}{ubrk\_preceding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+preceding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{int32\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+Set the iterator position to the first boundary preceding the specified offset. The new position is always smaller than offset, or U\+B\+R\+K\+\_\+\+D\+O\+NE. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+{\em offset} & The offset to begin scanning. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The text boundary preceding offset, or U\+B\+R\+K\+\_\+\+D\+O\+NE. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_aea0a8f7aa89319b2c9df2268f0f39785}{ubrk\+\_\+following}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_aef960574a054a0d179a36cc26900d1e4}\label{ubrk_8h_aef960574a054a0d179a36cc26900d1e4}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_previous@{ubrk\_previous}}
+\index{ubrk\_previous@{ubrk\_previous}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_previous()}{ubrk\_previous()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+previous (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi }\end{DoxyParamCaption})}
+
+Set the iterator position to the boundary preceding the current boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character index of the preceding text boundary, or U\+B\+R\+K\+\_\+\+D\+O\+NE if all text boundaries have been returned. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ubrk_8h_a05bf3b980102ea3c1eace050c1576a23}{ubrk\+\_\+next}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ubrk_8h_ad27320807ffd34622f043c2e1d65792c}\label{ubrk_8h_ad27320807ffd34622f043c2e1d65792c}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_refreshUText@{ubrk\_refreshUText}}
+\index{ubrk\_refreshUText@{ubrk\_refreshUText}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_refreshUText()}{ubrk\_refreshUText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+refresh\+U\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{text,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Set the subject text string upon which the break iterator is operating without changing any other aspect of the state. The new and previous text strings must have the same content.
+
+This function is intended for use in environments where I\+CU is operating on strings that may move around in memory. It provides a mechanism for notifying I\+CU that the string has been relocated, and providing a new \mbox{\hyperlink{struct_u_text}{U\+Text}} to access the string in its new position.
+
+Note that the break iterator never copies the underlying text of a string being processed, but always operates directly on the original text provided by the user. Refreshing simply drops the references to the old text and replaces them with references to the new.
+
+Caution\+: this function is normally used only by very specialized system-\/level code. One example use case is with garbage collection that moves the text in memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The break iterator. \\
+\hline
+{\em text} & The new (moved) text string. \\
+\hline
+{\em status} & Receives errors detected by this function.\\
+\hline
+\end{DoxyParams}
+@stable I\+CU 49 \mbox{\Hypertarget{ubrk_8h_a2b418014e541f87ff0b2732c815f751b}\label{ubrk_8h_a2b418014e541f87ff0b2732c815f751b}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_safeClone@{ubrk\_safeClone}}
+\index{ubrk\_safeClone@{ubrk\_safeClone}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_safeClone()}{ubrk\_safeClone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+safe\+Clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{void $\ast$}]{stack\+Buffer,  }\item[{int32\+\_\+t $\ast$}]{p\+Buffer\+Size,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Thread safe cloning operation 
+\begin{DoxyParams}{Parameters}
+{\em bi} & iterator to be cloned \\
+\hline
+{\em stack\+Buffer} & {\itshape Deprecated functionality as of I\+CU 52, use N\+U\+LL.}~\newline
+ user allocated space for the new clone. If N\+U\+LL new memory will be allocated. If buffer is not large enough, new memory will be allocated. Clients can use the U\+\_\+\+B\+R\+K\+\_\+\+S\+A\+F\+E\+C\+L\+O\+N\+E\+\_\+\+B\+U\+F\+F\+E\+R\+S\+I\+ZE. \\
+\hline
+{\em p\+Buffer\+Size} & {\itshape Deprecated functionality as of I\+CU 52, use N\+U\+LL or 1.}~\newline
+ pointer to size of allocated space. If $\ast$p\+Buffer\+Size == 0, a sufficient size for use in cloning will be returned (\textquotesingle{}pre-\/flighting\textquotesingle{}) If $\ast$p\+Buffer\+Size is not enough for a stack-\/based safe clone, new memory will be allocated. \\
+\hline
+{\em status} & to indicate whether the operation went on smoothly or there were errors An informational status value, U\+\_\+\+S\+A\+F\+E\+C\+L\+O\+N\+E\+\_\+\+A\+L\+L\+O\+C\+A\+T\+E\+D\+\_\+\+E\+R\+R\+OR, is used if any allocations were necessary. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new clone 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]I\+CU 69 Use \mbox{\hyperlink{ubrk_8h_ae994d7f4d88df95e4dc402bb2996cb8a}{ubrk\+\_\+clone()}} instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{ubrk_8h_a947dba7a3175ac7c133780bed23865fd}\label{ubrk_8h_a947dba7a3175ac7c133780bed23865fd}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_setText@{ubrk\_setText}}
+\index{ubrk\_setText@{ubrk\_setText}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_setText()}{ubrk\_setText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+set\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{text,  }\item[{int32\+\_\+t}]{text\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Sets an existing iterator to point to a new piece of text. The break iterator retains a pointer to the supplied text. The caller must not modify or delete the text while the Break\+Iterator retains the reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The iterator to use \\
+\hline
+{\em text} & The text to be set \\
+\hline
+{\em text\+Length} & The length of the text \\
+\hline
+{\em status} & The error code @stable I\+CU 2.\+0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ubrk_8h_aa075242cd28edaf7b8ecbb455095cab0}\label{ubrk_8h_aa075242cd28edaf7b8ecbb455095cab0}} 
+\index{ubrk.h@{ubrk.h}!ubrk\_setUText@{ubrk\_setUText}}
+\index{ubrk\_setUText@{ubrk\_setUText}!ubrk.h@{ubrk.h}}
+\doxysubsubsection{\texorpdfstring{ubrk\_setUText()}{ubrk\_setUText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ubrk\+\_\+set\+U\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{bi,  }\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{text,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Sets an existing iterator to point to a new piece of text.
+
+All index positions returned by break iterator functions are native indices from the \mbox{\hyperlink{struct_u_text}{U\+Text}}. For example, when breaking U\+T\+F-\/8 encoded text, the break positions returned by \mbox{\hyperlink{ubrk_8h_a05bf3b980102ea3c1eace050c1576a23}{ubrk\+\_\+next}}, \mbox{\hyperlink{ubrk_8h_aef960574a054a0d179a36cc26900d1e4}{ubrk\+\_\+previous}}, etc. will be U\+T\+F-\/8 string indices, not U\+T\+F-\/16 positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bi} & The iterator to use \\
+\hline
+{\em text} & The text to be set. This function makes a shallow clone of the supplied \mbox{\hyperlink{struct_u_text}{U\+Text}}. This means that the caller is free to immediately close or otherwise reuse the \mbox{\hyperlink{struct_u_text}{U\+Text}} that was passed as a parameter, but that the underlying text itself must not be altered while being referenced by the break iterator. \\
+\hline
+{\em status} & The error code @stable I\+CU 3.\+4 \\
+\hline
+\end{DoxyParams}

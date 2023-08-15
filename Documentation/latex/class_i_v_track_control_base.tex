@@ -1,0 +1,269 @@
+\hypertarget{class_i_v_track_control_base}{}\doxysection{I\+V\+Track\+Control\+Base Class Reference}
+\label{class_i_v_track_control_base}\index{IVTrackControlBase@{IVTrackControlBase}}
+
+
+{\ttfamily \#include $<$I\+Control.\+h$>$}
+
+Inheritance diagram for I\+V\+Track\+Control\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.535088cm]{class_i_v_track_control_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ad70649fdb57704893a18f9920b1e774d}\label{class_i_v_track_control_base_ad70649fdb57704893a18f9920b1e774d}} 
+{\bfseries I\+V\+Track\+Control\+Base} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const char $\ast$label, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style, int max\+N\+Tracks=1, int n\+Steps=0, E\+Direction dir=E\+Direction\+::\+Horizontal, std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ track\+Names=\{\})
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_afe6788934baf6e744d8362f723aa5244}\label{class_i_v_track_control_base_afe6788934baf6e744d8362f723aa5244}} 
+{\bfseries I\+V\+Track\+Control\+Base} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const char $\ast$label, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style, int low\+Paramidx, int max\+N\+Tracks=1, int n\+Steps=0, E\+Direction dir=E\+Direction\+::\+Horizontal, std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ track\+Names=\{\})
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a536b02053731626d2a45c829f6648759}\label{class_i_v_track_control_base_a536b02053731626d2a45c829f6648759}} 
+{\bfseries I\+V\+Track\+Control\+Base} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const char $\ast$label, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style, const std\+::initializer\+\_\+list$<$ int $>$ \&params, int n\+Steps=0, E\+Direction dir=E\+Direction\+::\+Horizontal, std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ track\+Names=\{\})
+\item 
+void \mbox{\hyperlink{class_i_v_track_control_base_a363f852546690776bec5b02fe2715a9d}{On\+Mouse\+Over}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_v_track_control_base_a5c099f9c210d664df425531a6ea24c52}{On\+Mouse\+Out}} () override
+\item 
+virtual void \mbox{\hyperlink{class_i_v_track_control_base_afc94f4135e921c5bc114f8020a850559}{On\+Resize}} () override
+\item 
+int \mbox{\hyperlink{class_i_v_track_control_base_aead38b40183cdda58e281b3ce840b968}{Get\+Val\+Idx\+For\+Pos}} (float x, float y) const override
+\item 
+void \mbox{\hyperlink{class_i_v_track_control_base_acf8ec865ca575a3e6051d607dd57a049}{Draw\+Widget}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_v_track_control_base_a61a71fd9ceeacc77109d56edb1e5a7d2}{Set\+Params\+By\+Group}} (const char $\ast$param\+Group)
+\item 
+void \mbox{\hyperlink{class_i_v_track_control_base_abdcbd6e9ec89a89e6a6a69ab76a44446}{Set\+Params}} (const std\+::vector$<$ int $>$ \&param\+Ids)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a3f40f3c570b38f753e9b4e67e71fd1e6}\label{class_i_v_track_control_base_a3f40f3c570b38f753e9b4e67e71fd1e6}} 
+void {\bfseries Set\+N\+Tracks} (int n\+Tracks)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_aa6c54ce808182d2966c7ba7d3293d2e2}\label{class_i_v_track_control_base_aa6c54ce808182d2966c7ba7d3293d2e2}} 
+void {\bfseries Set\+Base\+Value} (double value)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a12079dabb29e61e1d9ecb0d40cc1f3bb}\label{class_i_v_track_control_base_a12079dabb29e61e1d9ecb0d40cc1f3bb}} 
+void {\bfseries Set\+Track\+Padding} (float value)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a1447cd008f569ae06d7a3703c172f2cd}\label{class_i_v_track_control_base_a1447cd008f569ae06d7a3703c172f2cd}} 
+void {\bfseries Set\+Peak\+Size} (float value)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a97ec7ce3abce147f92423242aad86207}\label{class_i_v_track_control_base_a97ec7ce3abce147f92423242aad86207}} 
+void {\bfseries Set\+N\+Steps} (int n\+Steps)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ac0f96bcb3dfe6b4c8a617ba08ac71469}\label{class_i_v_track_control_base_ac0f96bcb3dfe6b4c8a617ba08ac71469}} 
+void {\bfseries Set\+Highlighted\+Track} (int highlight\+Idx)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a6a522cdd35829a5d6c22f15cb4fd2d86}\label{class_i_v_track_control_base_a6a522cdd35829a5d6c22f15cb4fd2d86}} 
+void {\bfseries Set\+Zero\+Value\+Step\+Has\+Bounds} (bool val)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a010e21be521dad76a5c155fa5342c974}\label{class_i_v_track_control_base_a010e21be521dad76a5c155fa5342c974}} 
+bool {\bfseries Has\+Track\+Names} () const
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a8e6573c179a618035bc059a5552e43f5}\label{class_i_v_track_control_base_a8e6573c179a618035bc059a5552e43f5}} 
+const char $\ast$ {\bfseries Get\+Track\+Name} (int ch\+Idx) const
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ab313794d658a5d96d94519586db4ad66}\label{class_i_v_track_control_base_ab313794d658a5d96d94519586db4ad66}} 
+void {\bfseries Set\+Track\+Name} (int ch\+Idx, const char $\ast$new\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_i_v_track_control_base_af08f90afc0b195874887cf7b8dd691c3}{Draw\+Background}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r) override
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a7758dcc94b3dc4202a3397c7342b21b3}\label{class_i_v_track_control_base_a7758dcc94b3dc4202a3397c7342b21b3}} 
+virtual void {\bfseries Draw\+Track} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a1ed9536fa8270983e2aa39b8c2c8e973}\label{class_i_v_track_control_base_a1ed9536fa8270983e2aa39b8c2c8e973}} 
+virtual void {\bfseries Draw\+Track\+Background} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a648dadc9e01c63ff618d18cc23358e36}\label{class_i_v_track_control_base_a648dadc9e01c63ff618d18cc23358e36}} 
+virtual void {\bfseries Draw\+Track\+Name} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx)
+\item 
+virtual void \mbox{\hyperlink{class_i_v_track_control_base_a8034d6bd1afc1a91074f6365e799928f}{Draw\+Track\+Handle}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx, bool above\+Base\+Value)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ae1866f79b15cf37296f3c6adeb1d44e2}\label{class_i_v_track_control_base_ae1866f79b15cf37296f3c6adeb1d44e2}} 
+virtual void {\bfseries Draw\+Peak} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx, bool above\+Base\+Value)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_af0aa2301d8dd0dcf3bfeb6ef20735154}\label{class_i_v_track_control_base_af0aa2301d8dd0dcf3bfeb6ef20735154}} 
+int {\bfseries Get\+Step\+Idx\+For\+Pos} (float x, float y) const
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a088e29f721dd0c80976c68d640a8e8d3}\label{class_i_v_track_control_base_a088e29f721dd0c80976c68d640a8e8d3}} 
+virtual void {\bfseries Make\+Track\+Rects} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a6f4790aef3485e301cd758c4ecb0cb00}\label{class_i_v_track_control_base_a6f4790aef3485e301cd758c4ecb0cb00}} 
+virtual void {\bfseries Make\+Step\+Rects} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, int n\+Steps)
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ae31effe9e03b8d2f5a865e0456979e5e}\label{class_i_v_track_control_base_ae31effe9e03b8d2f5a865e0456979e5e}} 
+bool {\bfseries Get\+Stepped} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ae53f74b97edf4103b1e4347770c29060}\label{class_i_v_track_control_base_ae53f74b97edf4103b1e4347770c29060}} 
+E\+Direction {\bfseries m\+Direction} = E\+Direction\+::\+Vertical
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a7d70d5260d7efd5b54993bbec4818e46}\label{class_i_v_track_control_base_a7d70d5260d7efd5b54993bbec4818e46}} 
+\mbox{\hyperlink{class_w_d_l___typed_buf}{W\+D\+L\+\_\+\+Typed\+Buf}}$<$ \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} $>$ {\bfseries m\+Track\+Bounds}
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ad35f91b4f3b24860d2e25a0abe58dcc4}\label{class_i_v_track_control_base_ad35f91b4f3b24860d2e25a0abe58dcc4}} 
+\mbox{\hyperlink{class_w_d_l___typed_buf}{W\+D\+L\+\_\+\+Typed\+Buf}}$<$ \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} $>$ {\bfseries m\+Step\+Bounds}
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_abd36f446632533a487245127975a3316}\label{class_i_v_track_control_base_abd36f446632533a487245127975a3316}} 
+\mbox{\hyperlink{class_w_d_l___ptr_list}{W\+D\+L\+\_\+\+Ptr\+List}}$<$ \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} $>$ {\bfseries m\+Track\+Names}
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a8638b6d55a71cae8a891169c00e6b0c0}\label{class_i_v_track_control_base_a8638b6d55a71cae8a891169c00e6b0c0}} 
+int {\bfseries m\+N\+Steps} = 0
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a5d78791a9d4b58e7a6e94f7ddf09041b}\label{class_i_v_track_control_base_a5d78791a9d4b58e7a6e94f7ddf09041b}} 
+float {\bfseries m\+Track\+Padding} = 0.
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ad8c94f10ef5e5bb609b4b64aab043b7c}\label{class_i_v_track_control_base_ad8c94f10ef5e5bb609b4b64aab043b7c}} 
+float {\bfseries m\+Peak\+Size} = 1.
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_ad57fdc8f6b37abe4a1c0e07c8f7b10d6}\label{class_i_v_track_control_base_ad57fdc8f6b37abe4a1c0e07c8f7b10d6}} 
+int {\bfseries m\+Highlighted\+Track} = -\/1
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_afe4970d8940c20b8544f1eba3084012c}\label{class_i_v_track_control_base_afe4970d8940c20b8544f1eba3084012c}} 
+int {\bfseries m\+Mouse\+Over\+Track} = -\/1
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a8daec8afe9ef506fc5d2d376f8d1de49}\label{class_i_v_track_control_base_a8daec8afe9ef506fc5d2d376f8d1de49}} 
+double {\bfseries m\+Base\+Value} = 0.
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_a418b9920ad75df7ba2513946354341a8}\label{class_i_v_track_control_base_a418b9920ad75df7ba2513946354341a8}} 
+bool {\bfseries m\+Draw\+Track\+Frame} = true
+\item 
+\mbox{\Hypertarget{class_i_v_track_control_base_aff295d64fcae61ce11ca510a81ee8224}\label{class_i_v_track_control_base_aff295d64fcae61ce11ca510a81ee8224}} 
+bool {\bfseries m\+Zero\+Value\+Step\+Has\+Bounds} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A base class for mult-\/strip/track controls, such as multi-\/sliders, meters Track refers to the channel/strip, Step refers to cross-\/axis steps, e.\+g. integer quantization 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_v_track_control_base_af08f90afc0b195874887cf7b8dd691c3}\label{class_i_v_track_control_base_af08f90afc0b195874887cf7b8dd691c3}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!DrawBackground@{DrawBackground}}
+\index{DrawBackground@{DrawBackground}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{DrawBackground()}{DrawBackground()}}
+{\footnotesize\ttfamily virtual void I\+V\+Track\+Control\+Base\+::\+Draw\+Background (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Draw the I\+V\+Control background (usually transparent) 
+
+Reimplemented from \mbox{\hyperlink{class_i_vector_base_a34ede48b05e8aa446350eaf2e1bfc45a}{I\+Vector\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_a_m_meter_control_a3cd0f823124e72fb983f6ea411d9adbb}{N\+A\+M\+Meter\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_a8034d6bd1afc1a91074f6365e799928f}\label{class_i_v_track_control_base_a8034d6bd1afc1a91074f6365e799928f}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!DrawTrackHandle@{DrawTrackHandle}}
+\index{DrawTrackHandle@{DrawTrackHandle}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{DrawTrackHandle()}{DrawTrackHandle()}}
+{\footnotesize\ttfamily virtual void I\+V\+Track\+Control\+Base\+::\+Draw\+Track\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{r,  }\item[{int}]{ch\+Idx,  }\item[{bool}]{above\+Base\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Draw the main body of the track 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} context \\
+\hline
+{\em r} & The bounds of the track handle, which may be centered around m\+Base\+Value, if m\+Base\+Value $>$ 0. \\
+\hline
+{\em ch\+Idx} & channel index \\
+\hline
+{\em above\+Base\+Value} & true if the handle channel value is above the base value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_n_a_m_meter_control_a26f5e55f86d5be8bb66c7e639979024e}{N\+A\+M\+Meter\+Control}}, and \mbox{\hyperlink{class_i_v_l_e_d_meter_control_a17cebd46d7120fb484e32a7de51cdc73}{I\+V\+L\+E\+D\+Meter\+Control$<$ M\+A\+X\+N\+C $>$}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_acf8ec865ca575a3e6051d607dd57a049}\label{class_i_v_track_control_base_acf8ec865ca575a3e6051d607dd57a049}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!DrawWidget@{DrawWidget}}
+\index{DrawWidget@{DrawWidget}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{DrawWidget()}{DrawWidget()}}
+{\footnotesize\ttfamily void I\+V\+Track\+Control\+Base\+::\+Draw\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the I\+V\+Control main widget (override) 
+
+Reimplemented from \mbox{\hyperlink{class_i_vector_base_a4f5560428511e64ebc99836ee7f74e96}{I\+Vector\+Base}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_aead38b40183cdda58e281b3ce840b968}\label{class_i_v_track_control_base_aead38b40183cdda58e281b3ce840b968}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!GetValIdxForPos@{GetValIdxForPos}}
+\index{GetValIdxForPos@{GetValIdxForPos}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{GetValIdxForPos()}{GetValIdxForPos()}}
+{\footnotesize\ttfamily int I\+V\+Track\+Control\+Base\+::\+Get\+Val\+Idx\+For\+Pos (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Check to see which of the control\textquotesingle{}s values relates to this x and y coordinate 
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate to check \\
+\hline
+{\em y} & x coordinate to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer specifying which value matches the x, y coordinates, or k\+No\+Val\+Idx if the position is not linked to a value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ae5f3d9757bc6ceeef856e7d710fc187c}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_a5c099f9c210d664df425531a6ea24c52}\label{class_i_v_track_control_base_a5c099f9c210d664df425531a6ea24c52}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!OnMouseOut@{OnMouseOut}}
+\index{OnMouseOut@{OnMouseOut}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseOut()}{OnMouseOut()}}
+{\footnotesize\ttfamily void I\+V\+Track\+Control\+Base\+::\+On\+Mouse\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseout event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a2897e1dbb1dc32428cea7bad93e3c97e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_a363f852546690776bec5b02fe2715a9d}\label{class_i_v_track_control_base_a363f852546690776bec5b02fe2715a9d}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!OnMouseOver@{OnMouseOver}}
+\index{OnMouseOver@{OnMouseOver}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseOver()}{OnMouseOver()}}
+{\footnotesize\ttfamily void I\+V\+Track\+Control\+Base\+::\+On\+Mouse\+Over (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseover event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a39df22eddb4d9b0fd2f2504562556c49}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_afc94f4135e921c5bc114f8020a850559}\label{class_i_v_track_control_base_afc94f4135e921c5bc114f8020a850559}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily virtual void I\+V\+Track\+Control\+Base\+::\+On\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called when \mbox{\hyperlink{class_i_control}{I\+Control}} is constructed or resized using Set\+Rect(). N\+O\+TE\+: if you call \mbox{\hyperlink{class_i_control_af8c805c09b1a89f44aec43026fcb1fe7}{Set\+Dirty()}} in this method, you should call Set\+Dirty(false) to avoid triggering parameter changes 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a0c4927d3332fabe6f7626a03624f390f}{I\+Control}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_n_a_m_meter_control_a37cce960206403367f18f696f1e550fd}{N\+A\+M\+Meter\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_track_control_base_abdcbd6e9ec89a89e6a6a69ab76a44446}\label{class_i_v_track_control_base_abdcbd6e9ec89a89e6a6a69ab76a44446}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!SetParams@{SetParams}}
+\index{SetParams@{SetParams}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{SetParams()}{SetParams()}}
+{\footnotesize\ttfamily void I\+V\+Track\+Control\+Base\+::\+Set\+Params (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{param\+Ids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Update the parameters based on a parameter group name. You probably want to call \mbox{\hyperlink{class_i_editor_delegate_a6de7961ce51f65d5112aa357210444ab}{I\+Editor\+Delegate\+::\+Send\+Current\+Param\+Values\+From\+Delegate()}} after this, to update the control values \mbox{\Hypertarget{class_i_v_track_control_base_a61a71fd9ceeacc77109d56edb1e5a7d2}\label{class_i_v_track_control_base_a61a71fd9ceeacc77109d56edb1e5a7d2}} 
+\index{IVTrackControlBase@{IVTrackControlBase}!SetParamsByGroup@{SetParamsByGroup}}
+\index{SetParamsByGroup@{SetParamsByGroup}!IVTrackControlBase@{IVTrackControlBase}}
+\doxysubsubsection{\texorpdfstring{SetParamsByGroup()}{SetParamsByGroup()}}
+{\footnotesize\ttfamily void I\+V\+Track\+Control\+Base\+::\+Set\+Params\+By\+Group (\begin{DoxyParamCaption}\item[{const char $\ast$}]{param\+Group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Update the parameters based on a parameter group name. You probably want to call \mbox{\hyperlink{class_i_editor_delegate_a6de7961ce51f65d5112aa357210444ab}{I\+Editor\+Delegate\+::\+Send\+Current\+Param\+Values\+From\+Delegate()}} after this, to update the control values 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_control_8h}{I\+Control.\+h}}\end{DoxyCompactItemize}

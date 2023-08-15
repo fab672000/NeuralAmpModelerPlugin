@@ -1,0 +1,59 @@
+\hypertarget{class_sk_blender_base}{}\doxysection{Sk\+Blender\+Base Class Reference}
+\label{class_sk_blender_base}\index{SkBlenderBase@{SkBlenderBase}}
+
+
+{\ttfamily \#include $<$Sk\+Blender\+Base.\+h$>$}
+
+Inheritance diagram for Sk\+Blender\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_sk_blender_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classskstd_1_1optional}{skstd\+::optional}}$<$ Sk\+Blend\+Mode $>$ \mbox{\hyperlink{class_sk_blender_base_af42461b4799379fdc3e2ec73cfa16951}{as\+Blend\+Mode}} () const
+\item 
+S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \mbox{\hyperlink{structskvm_1_1_color}{skvm\+::\+Color}} \mbox{\hyperlink{class_sk_blender_base_af8e3e7cd3fd0546995c455d0dd530fcf}{program}} (\mbox{\hyperlink{classskvm_1_1_builder}{skvm\+::\+Builder}} $\ast$p, \mbox{\hyperlink{structskvm_1_1_color}{skvm\+::\+Color}} src, \mbox{\hyperlink{structskvm_1_1_color}{skvm\+::\+Color}} dst, const \mbox{\hyperlink{class_sk_color_info}{Sk\+Color\+Info}} \&color\+Info, \mbox{\hyperlink{structskvm_1_1_uniforms}{skvm\+::\+Uniforms}} $\ast$uniforms, \mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$alloc) const
+\item 
+\mbox{\Hypertarget{class_sk_blender_base_ae43a3716439f55d0d598af5f6d3124fa}\label{class_sk_blender_base_ae43a3716439f55d0d598af5f6d3124fa}} 
+virtual Sk\+Runtime\+Effect $\ast$ {\bfseries as\+Runtime\+Effect} () const
+\item 
+\mbox{\Hypertarget{class_sk_blender_base_a73c296e0dcdccad5cdcf7b08ef5bbf93}\label{class_sk_blender_base_a73c296e0dcdccad5cdcf7b08ef5bbf93}} 
+Type {\bfseries get\+Flattenable\+Type} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_blender_base_a61a6f25a1bf6954990d59e29d75dba36}\label{class_sk_blender_base_a61a6f25a1bf6954990d59e29d75dba36}} 
+static Sk\+Flattenable\+::\+Type {\bfseries Get\+Flattenable\+Type} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Encapsulates a blend function, including non-\/public A\+P\+Is. Blends combine a source color (the result of our paint) and destination color (from the canvas) into a final color. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_blender_base_af42461b4799379fdc3e2ec73cfa16951}\label{class_sk_blender_base_af42461b4799379fdc3e2ec73cfa16951}} 
+\index{SkBlenderBase@{SkBlenderBase}!asBlendMode@{asBlendMode}}
+\index{asBlendMode@{asBlendMode}!SkBlenderBase@{SkBlenderBase}}
+\doxysubsubsection{\texorpdfstring{asBlendMode()}{asBlendMode()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classskstd_1_1optional}{skstd\+::optional}}$<$Sk\+Blend\+Mode$>$ Sk\+Blender\+Base\+::as\+Blend\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Returns true if this \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} represents any Sk\+Blend\+Mode, and returns the blender\textquotesingle{}s Sk\+Blend\+Mode in {\ttfamily mode}. Returns false for other types of blends. 
+
+Reimplemented in \mbox{\hyperlink{class_sk_blend_mode_blender_ade23c70653ecb0ea9b4ba7e16dfe278a}{Sk\+Blend\+Mode\+Blender}}.
+
+\mbox{\Hypertarget{class_sk_blender_base_af8e3e7cd3fd0546995c455d0dd530fcf}\label{class_sk_blender_base_af8e3e7cd3fd0546995c455d0dd530fcf}} 
+\index{SkBlenderBase@{SkBlenderBase}!program@{program}}
+\index{program@{program}!SkBlenderBase@{SkBlenderBase}}
+\doxysubsubsection{\texorpdfstring{program()}{program()}}
+{\footnotesize\ttfamily S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \mbox{\hyperlink{structskvm_1_1_color}{skvm\+::\+Color}} Sk\+Blender\+Base\+::program (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classskvm_1_1_builder}{skvm\+::\+Builder}} $\ast$}]{p,  }\item[{\mbox{\hyperlink{structskvm_1_1_color}{skvm\+::\+Color}}}]{src,  }\item[{\mbox{\hyperlink{structskvm_1_1_color}{skvm\+::\+Color}}}]{dst,  }\item[{const \mbox{\hyperlink{class_sk_color_info}{Sk\+Color\+Info}} \&}]{color\+Info,  }\item[{\mbox{\hyperlink{structskvm_1_1_uniforms}{skvm\+::\+Uniforms}} $\ast$}]{uniforms,  }\item[{\mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$}]{alloc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates the blend program in Sk\+VM. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blender\+Base.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,158 @@
+\hypertarget{class_a_a_x___i_display_delegate}{}\doxysection{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$ Class Template Reference}
+\label{class_a_a_x___i_display_delegate}\index{AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}}
+
+
+ 
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Display\+Delegate.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.876712cm]{class_a_a_x___i_display_delegate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_display_delegate}{A\+A\+X\+\_\+\+I\+Display\+Delegate}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_display_delegate_a138a82c124ddda8255ce39194dfc1f3f}{Clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Constructs and returns a copy of the display delegate. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_a_a_x___i_display_delegate_a7fd1e2f55055c817937bbfa66b73b2fd}{Value\+To\+String}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} value, \mbox{\hyperlink{class_a_a_x___c_string}{A\+A\+X\+\_\+\+C\+String}} $\ast$value\+String) const =0
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_a_a_x___i_display_delegate_a471c7381db773683b69216a9c3f5eda7}{Value\+To\+String}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} value, int32\+\_\+t max\+Num\+Chars, \mbox{\hyperlink{class_a_a_x___c_string}{A\+A\+X\+\_\+\+C\+String}} $\ast$value\+String) const =0
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_a_a_x___i_display_delegate_aed5224775c9f733f091afddfba057d5e}{String\+To\+Value}} (const \mbox{\hyperlink{class_a_a_x___c_string}{A\+A\+X\+\_\+\+C\+String}} \&value\+String, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$value) const =0
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}
+
+
+
+Display delegate interface template
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_display_delegate_a138a82c124ddda8255ce39194dfc1f3f}\label{class_a_a_x___i_display_delegate_a138a82c124ddda8255ce39194dfc1f3f}} 
+\index{AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}!Clone@{Clone}}
+\index{Clone@{Clone}!AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual \mbox{\hyperlink{class_a_a_x___i_display_delegate}{A\+A\+X\+\_\+\+I\+Display\+Delegate}}$\ast$ \mbox{\hyperlink{class_a_a_x___i_display_delegate}{A\+A\+X\+\_\+\+I\+Display\+Delegate}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Constructs and returns a copy of the display delegate. 
+
+In general, this method\textquotesingle{}s implementation can use a simple copy constructor\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{AAX\_CSubclassDisplayDelegate<T>*    AAX\_CSubclassDisplayDelegate<T>::Clone()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\textcolor{keyword}{}\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} \textcolor{keyword}{new} AAX\_CSubclassDisplayDelegate(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___i_display_delegate_decorator_a8e2ad7312467089a9112ba6460fe0e5b}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_state_display_delegate_ad6e328d8784aaccc960da70f51f040a3}{A\+A\+X\+\_\+\+C\+State\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_prefix_display_delegate_decorator_aa09598c77cd1e9556013bc8cdd651a2b}{A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_binary_display_delegate_ac0f060429501b13e2f79babbcfdda9ab}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_percent_display_delegate_decorator_affe52efa34c969895f75b067e875dafb}{A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_string_display_delegate_a011fc2e134ffa0469ee995232922bcb2}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_decibel_display_delegate_decorator_a2abd5f4d5a8d6db7db73fadfe8a2aa04}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_display_delegate_decorator_ad987fdc5423673b664ce099c6f27bf06}{A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_number_display_delegate_ab92a0973a7ed56034aa269c760d6b935}{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$}}, and \mbox{\hyperlink{class_recti_fi___unit_display_delegate_decorator_af7b486b3593b99f5dad1a77da3791e03}{Recti\+Fi\+\_\+\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_display_delegate_aed5224775c9f733f091afddfba057d5e}\label{class_a_a_x___i_display_delegate_aed5224775c9f733f091afddfba057d5e}} 
+\index{AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}!StringToValue@{StringToValue}}
+\index{StringToValue@{StringToValue}!AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{StringToValue()}{StringToValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual bool \mbox{\hyperlink{class_a_a_x___i_display_delegate}{A\+A\+X\+\_\+\+I\+Display\+Delegate}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::String\+To\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_a_x___c_string}{A\+A\+X\+\_\+\+C\+String}} \&}]{value\+String,  }\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Converts a string to a real parameter value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___i_display_delegate_decorator_a18d19293f3eca619cb5bb7f1ffde1a8d}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_state_display_delegate_a88ad0da8c178688d38134cef85ab37b2}{A\+A\+X\+\_\+\+C\+State\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_prefix_display_delegate_decorator_a6d930afe0a249f6936504c25d9c29764}{A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_binary_display_delegate_ac707b7ca0e5fafdc4133959d8b7c5035}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_percent_display_delegate_decorator_a702a4dea21a72dc8edf6b91b5a5bf5e5}{A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_string_display_delegate_a465943be762c4c273eb19f2272800ed0}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_decibel_display_delegate_decorator_a7f4645d7e464d63ef22e93c4a99f3f09}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_display_delegate_decorator_a4577b27d63067a75deead21c25f1b932}{A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_number_display_delegate_ad7fba7856368f7ffe4398e6efd65dfa5}{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$}}, and \mbox{\hyperlink{class_recti_fi___unit_display_delegate_decorator_a1faed5be05197f326f67c7d7db0cf8dc}{Recti\+Fi\+\_\+\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_display_delegate_a7fd1e2f55055c817937bbfa66b73b2fd}\label{class_a_a_x___i_display_delegate_a7fd1e2f55055c817937bbfa66b73b2fd}} 
+\index{AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}!ValueToString@{ValueToString}}
+\index{ValueToString@{ValueToString}!AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ValueToString()}{ValueToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual bool \mbox{\hyperlink{class_a_a_x___i_display_delegate}{A\+A\+X\+\_\+\+I\+Display\+Delegate}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Value\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}}]{value,  }\item[{\mbox{\hyperlink{class_a_a_x___c_string}{A\+A\+X\+\_\+\+C\+String}} $\ast$}]{value\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Converts a real parameter value to a string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\texttt{ out}}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___i_display_delegate_decorator_ada5780cfa332ac7946bf95aa65ae96f5}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_state_display_delegate_aa8c3a9028d0fcf4bb2a95390de8049fa}{A\+A\+X\+\_\+\+C\+State\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_prefix_display_delegate_decorator_a74d63ddd342455674e9b1b00dc0f76e2}{A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_binary_display_delegate_a37fc0647f758a9ff0d47595ba110ecdd}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_percent_display_delegate_decorator_a06407f0b1287891bf658bc4e4166e2e4}{A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_string_display_delegate_a96ae6bc68f2a2df5224539b4b07f914b}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_decibel_display_delegate_decorator_a147cb1d0b62b0a62c6e3bb98daf80027}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_display_delegate_decorator_a8531395e74327b93e210fd0aafaed3f7}{A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_number_display_delegate_a260439b47a0890a008f7984958e11662}{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$}}, and \mbox{\hyperlink{class_recti_fi___unit_display_delegate_decorator_a2d1f41a05c6cf9da219a82c58a52fc5f}{Recti\+Fi\+\_\+\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_display_delegate_a471c7381db773683b69216a9c3f5eda7}\label{class_a_a_x___i_display_delegate_a471c7381db773683b69216a9c3f5eda7}} 
+\index{AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}!ValueToString@{ValueToString}}
+\index{ValueToString@{ValueToString}!AAX\_IDisplayDelegate$<$ T $>$@{AAX\_IDisplayDelegate$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ValueToString()}{ValueToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual bool \mbox{\hyperlink{class_a_a_x___i_display_delegate}{A\+A\+X\+\_\+\+I\+Display\+Delegate}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Value\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}}]{value,  }\item[{int32\+\_\+t}]{max\+Num\+Chars,  }\item[{\mbox{\hyperlink{class_a_a_x___c_string}{A\+A\+X\+\_\+\+C\+String}} $\ast$}]{value\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+Num\+Chars} & Size hint for the desired maximum number of characters in the string (not including null termination) \\
+\hline
+\mbox{\texttt{ out}}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___i_display_delegate_decorator_a29a49bb21a08c1c1e59758b08396d0a4}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_state_display_delegate_aa215047157510512cba129c41c8fc191}{A\+A\+X\+\_\+\+C\+State\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_prefix_display_delegate_decorator_a0dc5128bed27ac1d671df4e4ac04d806}{A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_binary_display_delegate_ad499fa03159aec7df8da1be67aae82c7}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_percent_display_delegate_decorator_a80f4b7189ac37a15550e9f1846fcbfd7}{A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_string_display_delegate_a5b5af0bb407230879e3cf7f952ad4de9}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_decibel_display_delegate_decorator_ab301958be3d376757bf1bb88ded1c911}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_unit_display_delegate_decorator_a2a5d19b4d616c56e2c5e671cd3741ad3}{A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}, \mbox{\hyperlink{class_a_a_x___c_number_display_delegate_a8cb553887b6a334fbcb6432770c67ed8}{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$}}, and \mbox{\hyperlink{class_recti_fi___unit_display_delegate_decorator_a87d89329aad01e2438ca980103a03912}{Recti\+Fi\+\_\+\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_display_delegate_8h}{A\+A\+X\+\_\+\+I\+Display\+Delegate.\+h}}\end{DoxyCompactItemize}

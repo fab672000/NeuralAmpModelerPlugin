@@ -1,0 +1,57 @@
+Oboe Docs Home\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md758}{}\doxysection{Tech Note\+: Disconnected Streams and Plugin Issues}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md758}
+When Oboe is using {\bfseries{Open\+SL ES}}, and a headset is plugged in or out, then Open\+SL ES will automatically switch between devices. This is convenient but can cause problems because the new device may have different burst sizes and different latency.
+
+When Oboe is using {\bfseries{A\+Audio}}, and a headset is plugged in or out, then the stream is no longer available and becomes \char`\"{}disconnected\char`\"{}. The app should then be notified in one of two ways.
+
+1) If the app is using a callback then the Audio\+Stream\+Callback object will be called. It will launch a thread, which will call on\+Error\+Before\+Close(). Then it stops and closes the stream. Then on\+Error\+After\+Close() will be called. An app may choose to reopen a stream in the on\+Error\+After\+Close() method.
+
+2) If an app is using read()/write() calls then they will return an error when a disconnect occurs. The app should then stop() and close() the stream. An app may then choose to reopen a stream.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md759}{}\doxysubsection{Workaround for not Disconnecting Properly}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md759}
+On some versions of Android P the disconnect message does not reach A\+Audio and the app will not know that the device has changed. There is a \char`\"{}\+Test Disconnects\char`\"{} option in \href{https://github.com/google/oboe/tree/master/apps/OboeTester/docs}{\texttt{ Oboe\+Tester}} that can be used to diagnose this problem.
+
+As a workaround you can listen for a Java \href{https://developer.android.com/reference/android/content/Intent\#ACTION_HEADSET_PLUG}{\texttt{ Intent.\+A\+C\+T\+I\+O\+N\+\_\+\+H\+E\+A\+D\+S\+E\+T\+\_\+\+P\+L\+UG}}, which is fired when a head set is plugged in or out. If your min S\+DK is L\+O\+L\+L\+I\+P\+OP or later then you can use \href{https://developer.android.com/reference/android/media/AudioManager\#ACTION_HEADSET_PLUG}{\texttt{ Audio\+Manager.\+A\+C\+T\+I\+O\+N\+\_\+\+H\+E\+A\+D\+S\+E\+T\+\_\+\+P\+L\+UG}} instead. \begin{DoxyVerb}// Receive a broadcast Intent when a headset is plugged in or unplugged.
+public class PluginBroadcastReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        // Close the stream if it was not disconnected.
+    }
+}
+
+private BroadcastReceiver mPluginReceiver = new PluginBroadcastReceiver();
+\end{DoxyVerb}
+
+
+You can register for the Intent when your app resumes and unregister when it pauses. \begin{DoxyVerb}@Override
+public void onResume() {
+    super.onResume();
+    IntentFilter filter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
+    this.registerReceiver(mPluginReceiver, filter);
+}
+
+@Override
+public void onPause() {
+    this.unregisterReceiver(mPluginReceiver);
+    super.onPause();
+}
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md760}{}\doxysubsection{Internal Notes}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md760}
+
+\begin{DoxyItemize}
+\item Oboe Issues \#381 , \#893
+\item This issue is tracked internally as b/111711159.
+\item A fix in A\+O\+SP is \href{https://android-review.googlesource.com/c/platform/frameworks/av/+/836184}{\texttt{ here}}
+\item A fix was also merged into pi-\/dev on July 30, 2018.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md761}{}\doxysubsubsection{Results from Test Disconnect in Oboe\+Tester}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_ca33675fad48fe50c92002d706637079_autotoc_md761}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Device }&\cellcolor{\tableheadbgcolor}\textbf{ Build }&\cellcolor{\tableheadbgcolor}\textbf{ Result  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Device }&\cellcolor{\tableheadbgcolor}\textbf{ Build }&\cellcolor{\tableheadbgcolor}\textbf{ Result  }\\\cline{1-3}
+\endhead
+\mbox{\hyperlink{struct_pixel}{Pixel}} 1 &Q\+Q1\+A.\+190919.\+002 &A\+LL P\+A\+SS  \\\cline{1-3}
+Samsung S10e &P\+P\+R1.\+180610.\+011 &M\+M\+AP Output plug\+IN failed  \\\cline{1-3}
+Huawei M\+A\+R-\/\+L\+X3A &10.\+0.\+0.\+216 &M\+M\+AP In/\+Out fails, Legacy In fails.  \\\cline{1-3}
+\end{longtabu}

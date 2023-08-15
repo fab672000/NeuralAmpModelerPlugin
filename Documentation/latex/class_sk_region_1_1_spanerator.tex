@@ -1,0 +1,68 @@
+\hypertarget{class_sk_region_1_1_spanerator}{}\doxysection{Sk\+Region\+::Spanerator Class Reference}
+\label{class_sk_region_1_1_spanerator}\index{SkRegion::Spanerator@{SkRegion::Spanerator}}
+
+
+{\ttfamily \#include $<$Sk\+Region.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_region_1_1_spanerator_ae985826f4373ee3a303f8b1223fc4a72}{Spanerator}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&region, int y, int left, int right)
+\item 
+bool \mbox{\hyperlink{class_sk_region_1_1_spanerator_a067060874eced21bee97191bf03fa055}{next}} (int $\ast$left, int $\ast$right)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Returns the line segment ends within \mbox{\hyperlink{class_sk_region}{Sk\+Region}} that intersect a horizontal line. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_region_1_1_spanerator_ae985826f4373ee3a303f8b1223fc4a72}\label{class_sk_region_1_1_spanerator_ae985826f4373ee3a303f8b1223fc4a72}} 
+\index{SkRegion::Spanerator@{SkRegion::Spanerator}!Spanerator@{Spanerator}}
+\index{Spanerator@{Spanerator}!SkRegion::Spanerator@{SkRegion::Spanerator}}
+\doxysubsubsection{\texorpdfstring{Spanerator()}{Spanerator()}}
+{\footnotesize\ttfamily Sk\+Region\+::\+Spanerator\+::\+Spanerator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{region,  }\item[{int}]{y,  }\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_region_1_1_spanerator}{Sk\+Region\+::\+Spanerator}} to return line segments in \mbox{\hyperlink{class_sk_region}{Sk\+Region}} on scan line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to iterate \\
+\hline
+{\em y} & horizontal line to intersect \\
+\hline
+{\em left} & bounds of iteration \\
+\hline
+{\em right} & bounds of iteration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_region}{Sk\+Region}} iterator
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_Spanerator_const_SkRegion_int_int_int}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+\+Spanerator\+\_\+const\+\_\+\+Sk\+Region\+\_\+int\+\_\+int\+\_\+int}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_region_1_1_spanerator_a067060874eced21bee97191bf03fa055}\label{class_sk_region_1_1_spanerator_a067060874eced21bee97191bf03fa055}} 
+\index{SkRegion::Spanerator@{SkRegion::Spanerator}!next@{next}}
+\index{next@{next}!SkRegion::Spanerator@{SkRegion::Spanerator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::\+Spanerator\+::next (\begin{DoxyParamCaption}\item[{int $\ast$}]{left,  }\item[{int $\ast$}]{right }\end{DoxyParamCaption})}
+
+Advances iterator to next span intersecting \mbox{\hyperlink{class_sk_region}{Sk\+Region}} within line segment provided in constructor. Returns true if interval was found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & pointer to span start; may be nullptr \\
+\hline
+{\em right} & pointer to span end; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if interval was found
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_Spanerator_next}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+\+Spanerator\+\_\+next}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Region.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Region.\+cpp\end{DoxyCompactItemize}

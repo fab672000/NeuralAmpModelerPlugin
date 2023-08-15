@@ -1,0 +1,117 @@
+\hypertarget{_a_a_x___misc_utils_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+T\+I/\+Signal\+Processing/\+A\+A\+X\+\_\+\+Misc\+Utils.h File Reference}
+\label{_a_a_x___misc_utils_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/TI/SignalProcessing/AAX\_MiscUtils.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/TI/SignalProcessing/AAX\_MiscUtils.h}}
+
+
+Miscellaneous signal processing utilities.  
+
+
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Platform\+Optimization\+Constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Denormal.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a89034ace563ff82face40a019fc93063}\label{_a_a_x___misc_utils_8h_a89034ace563ff82face40a019fc93063}} 
+\#define {\bfseries A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+H}
+\item 
+\#define \mbox{\hyperlink{_a_a_x___misc_utils_8h_a7eb399409be7572c8bd589395c450cdc}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+NT}}(a,  b)
+\begin{DoxyCompactList}\small\item\em Currently only functional on TI, these word alignments will provide better performance on TI. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a61b7ad0861da92bf265b94334b9b042f}\label{_a_a_x___misc_utils_8h_a61b7ad0861da92bf265b94334b9b042f}} 
+\#define {\bfseries A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+NT}(a)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a31858c8aae0329f66ac1bfbc2fadd013}\label{_a_a_x___misc_utils_8h_a31858c8aae0329f66ac1bfbc2fadd013}} 
+\#define {\bfseries A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+NT}(a)
+\item 
+\#define \mbox{\hyperlink{_a_a_x___misc_utils_8h_a30b9af679d91539e6aa0871d36c4b024}{A\+A\+X\+\_\+\+LO}}(x)~x
+\begin{DoxyCompactList}\small\item\em These macros are used on TI to convert 2 single words accesses to one double word access to provide additional optimization. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a51ea059e820f6ca326531adb132183c3}\label{_a_a_x___misc_utils_8h_a51ea059e820f6ca326531adb132183c3}} 
+\#define {\bfseries A\+A\+X\+\_\+\+HI}(x)~$\ast$((const\+\_\+cast$<$float$\ast$$>$(\&x))+1)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a28c81661236c242d6ed7a3050033bba7}\label{_a_a_x___misc_utils_8h_a28c81661236c242d6ed7a3050033bba7}} 
+\#define {\bfseries A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+LO}(x)~x
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a6160eaa64818bfff43404b5c057f5f5f}\label{_a_a_x___misc_utils_8h_a6160eaa64818bfff43404b5c057f5f5f}} 
+\#define {\bfseries A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+HI}(x)~$\ast$((const\+\_\+cast$<$int32\+\_\+t$\ast$$>$(reinterpret\+\_\+cast$<$const int32\+\_\+t$\ast$$>$(\&x)))+1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a6b1f85f5d8c5837ff52212e13b84e6d0}\label{_a_a_x___misc_utils_8h_a6b1f85f5d8c5837ff52212e13b84e6d0}} 
+{\footnotesize template$<$class G\+F\+L\+O\+AT $>$ }\\G\+F\+L\+O\+AT {\bfseries A\+A\+X\+::\+Clamp\+To\+Zero} (G\+F\+L\+O\+AT i\+Value, G\+F\+L\+O\+AT i\+Clamp\+Threshold)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a21944b08bd8a0f5d759094500571f57e}\label{_a_a_x___misc_utils_8h_a21944b08bd8a0f5d759094500571f57e}} 
+void {\bfseries A\+A\+X\+::\+Zero\+Memory\+SW} (void $\ast$i\+Pointer, int i\+Num\+Bytes)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a0e598e79488a12354e9dbc340fa99b5a}\label{_a_a_x___misc_utils_8h_a0e598e79488a12354e9dbc340fa99b5a}} 
+void {\bfseries A\+A\+X\+::\+Zero\+Memory\+DW} (void $\ast$i\+Pointer, int i\+Num\+Bytes)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a1e72222769ecdf34fa73ae38c0c709df}\label{_a_a_x___misc_utils_8h_a1e72222769ecdf34fa73ae38c0c709df}} 
+{\footnotesize template$<$typename T , int N$>$ }\\void {\bfseries A\+A\+X\+::\+Fill} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$i\+Array, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$i\+Val)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a480beff32ac0847c665f735fd8f78c0a}\label{_a_a_x___misc_utils_8h_a480beff32ac0847c665f735fd8f78c0a}} 
+{\footnotesize template$<$typename T , int M, int N$>$ }\\void {\bfseries A\+A\+X\+::\+Fill} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$i\+Array, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$i\+Val)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a114e6f06cf5789da4aad7ae0d786876e}\label{_a_a_x___misc_utils_8h_a114e6f06cf5789da4aad7ae0d786876e}} 
+{\footnotesize template$<$typename T , int L, int M, int N$>$ }\\void {\bfseries A\+A\+X\+::\+Fill} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$i\+Array, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$i\+Val)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_aa4fa4d0765a764b020102cdbff8b45b0}\label{_a_a_x___misc_utils_8h_aa4fa4d0765a764b020102cdbff8b45b0}} 
+double {\bfseries A\+A\+X\+::fabs} (double i\+Val)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_af486dfb226661e4a47d7b42eca881759}\label{_a_a_x___misc_utils_8h_af486dfb226661e4a47d7b42eca881759}} 
+float {\bfseries A\+A\+X\+::fabs} (float i\+Val)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a7fc4d4cd59850b8b875d085467ff5850}\label{_a_a_x___misc_utils_8h_a7fc4d4cd59850b8b875d085467ff5850}} 
+float {\bfseries A\+A\+X\+::fabsf} (float i\+Val)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_aa4cbb7d8707ad89fc5ba5169ebb75201}\label{_a_a_x___misc_utils_8h_aa4cbb7d8707ad89fc5ba5169ebb75201}} 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} {\bfseries A\+A\+X\+::\+Abs\+Max} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Max)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_aca59c4cdf56130ee251118c02a9963e3}\label{_a_a_x___misc_utils_8h_aca59c4cdf56130ee251118c02a9963e3}} 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} {\bfseries A\+A\+X\+::\+Min\+Max} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Min, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Max)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a55ac62cf1b543338c58f8dd0d747c56c}\label{_a_a_x___misc_utils_8h_a55ac62cf1b543338c58f8dd0d747c56c}} 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} {\bfseries A\+A\+X\+::\+Max} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value1, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value2)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a38c17ad30c1eb394bfa06e662d8d2598}\label{_a_a_x___misc_utils_8h_a38c17ad30c1eb394bfa06e662d8d2598}} 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} {\bfseries A\+A\+X\+::\+Min} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value1, const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value2)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_ab6a3e1aef81cd84dec2eee9a27755bb0}\label{_a_a_x___misc_utils_8h_ab6a3e1aef81cd84dec2eee9a27755bb0}} 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} {\bfseries A\+A\+X\+::\+Sign} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&i\+Value)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_aa0094a6a87ca0c48f58b48ce5eea636e}\label{_a_a_x___misc_utils_8h_aa0094a6a87ca0c48f58b48ce5eea636e}} 
+double {\bfseries A\+A\+X\+::\+Poly\+Eval} (double x, const double $\ast$coefs, int num\+Coefs)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_aad5df8c4502619ca12136a2f7b8d8a06}\label{_a_a_x___misc_utils_8h_aad5df8c4502619ca12136a2f7b8d8a06}} 
+double {\bfseries A\+A\+X\+::\+Ceil\+Log2} (double i\+Value)
+\item 
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a3826233eb62186c03bb093f1031ca8f4}\label{_a_a_x___misc_utils_8h_a3826233eb62186c03bb093f1031ca8f4}} 
+void {\bfseries A\+A\+X\+::\+Sin\+Cos\+Mix} (float a\+Linear\+Mix, float \&a\+Sin\+Mix, float \&a\+Cos\+Mix)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Miscellaneous signal processing utilities. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a7eb399409be7572c8bd589395c450cdc}\label{_a_a_x___misc_utils_8h_a7eb399409be7572c8bd589395c450cdc}} 
+\index{AAX\_MiscUtils.h@{AAX\_MiscUtils.h}!AAX\_ALIGNMENT\_HINT@{AAX\_ALIGNMENT\_HINT}}
+\index{AAX\_ALIGNMENT\_HINT@{AAX\_ALIGNMENT\_HINT}!AAX\_MiscUtils.h@{AAX\_MiscUtils.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_ALIGNMENT\_HINT}{AAX\_ALIGNMENT\_HINT}}
+{\footnotesize\ttfamily \#define A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+NT(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+
+
+Currently only functional on TI, these word alignments will provide better performance on TI. 
+
+\mbox{\Hypertarget{_a_a_x___misc_utils_8h_a30b9af679d91539e6aa0871d36c4b024}\label{_a_a_x___misc_utils_8h_a30b9af679d91539e6aa0871d36c4b024}} 
+\index{AAX\_MiscUtils.h@{AAX\_MiscUtils.h}!AAX\_LO@{AAX\_LO}}
+\index{AAX\_LO@{AAX\_LO}!AAX\_MiscUtils.h@{AAX\_MiscUtils.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_LO}{AAX\_LO}}
+{\footnotesize\ttfamily \#define A\+A\+X\+\_\+\+LO(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+
+
+These macros are used on TI to convert 2 single words accesses to one double word access to provide additional optimization. 
+

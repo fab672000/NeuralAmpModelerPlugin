@@ -1,0 +1,282 @@
+\hypertarget{class_dot_z_lib_1_1_codec_base}{}\doxysection{Dot\+Z\+Lib.\+Codec\+Base Class Reference}
+\label{class_dot_z_lib_1_1_codec_base}\index{DotZLib.CodecBase@{DotZLib.CodecBase}}
+
+
+Implements the common functionality needed for all \mbox{\hyperlink{interface_dot_z_lib_1_1_codec}{Codec}}s  
+
+
+Inheritance diagram for Dot\+Z\+Lib.\+Codec\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_dot_z_lib_1_1_codec_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a1e372f5061c8f7c16a55bc41c55ebfa5}{Codec\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the {\ttfamily Code\+Base} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a9131ff23312ada67dbf58f428d562de4}{Add}} (byte\mbox{[}$\,$\mbox{]} data)
+\begin{DoxyCompactList}\small\item\em Adds more data to the codec to be processed. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_ab01e6ad1d9c5b05745dd9e487aaa40ee}{Add}} (byte\mbox{[}$\,$\mbox{]} data, int offset, int count)
+\begin{DoxyCompactList}\small\item\em Adds more data to the codec to be processed. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_abab96cb01a9b983452a31777e3a1e633}{Finish}} ()
+\begin{DoxyCompactList}\small\item\em Finishes up any pending data that needs to be processed and handled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_ab4bdcee97631d9e80d2bceb01d01f368}{Dispose}} ()
+\begin{DoxyCompactList}\small\item\em Releases any unmanaged resources and calls the \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_aa0ded075105c5cf6f5f0d61928c90ca6}{Clean\+Up()}} method of the derived class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a5c697195bc017ae951858e7c8948f9ae}{On\+Data\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Fires the \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a985cf58f6ed5cfeeb9fd8c34a7c052d4}{Data\+Available}} event \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_aa0ded075105c5cf6f5f0d61928c90ca6}{Clean\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Performs any codec specific cleanup \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a8c827f091195356490e7f8b69e0546a7}{copy\+Input}} (byte\mbox{[}$\,$\mbox{]} data, int start\+Index, int count)
+\begin{DoxyCompactList}\small\item\em Copies a number of bytes to the internal codec buffer -\/ ready for proccesing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a801b625073b21aeaab52ebf9e96dd9c9}{reset\+Output}} ()
+\begin{DoxyCompactList}\small\item\em Resets the internal output buffers to a known state -\/ ready for processing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a5dfa2dddf3ac857652af7fd8e3d2034d}{set\+Checksum}} (uint new\+Sum)
+\begin{DoxyCompactList}\small\item\em Updates the running checksum property \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a9aa2d3961669aad672e43946c25ae24b}{\+\_\+is\+Disposed}} = false
+\begin{DoxyCompactList}\small\item\em True if the object instance has been disposed, false otherwise \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a6cf60968f7eaa921e5a8108e0ebcb880}{k\+Buffer\+Size}} = 16384
+\begin{DoxyCompactList}\small\item\em The size of the internal buffers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+uint \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_aac848293ff53082bb60cb561daa6fd6b}{Checksum}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the checksum of the data that has been added so far \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_dot_z_lib_a3aa323950a96dc02f6b94462d498bfef}{Data\+Available\+Handler}} \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a985cf58f6ed5cfeeb9fd8c34a7c052d4}{Data\+Available}}
+\begin{DoxyCompactList}\small\item\em Occurs when more processed data are available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the common functionality needed for all \mbox{\hyperlink{interface_dot_z_lib_1_1_codec}{Codec}}s 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a1e372f5061c8f7c16a55bc41c55ebfa5}\label{class_dot_z_lib_1_1_codec_base_a1e372f5061c8f7c16a55bc41c55ebfa5}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!CodecBase@{CodecBase}}
+\index{CodecBase@{CodecBase}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{CodecBase()}{CodecBase()}}
+{\footnotesize\ttfamily Dot\+Z\+Lib.\+Codec\+Base.\+Codec\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the {\ttfamily Code\+Base} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a9131ff23312ada67dbf58f428d562de4}\label{class_dot_z_lib_1_1_codec_base_a9131ff23312ada67dbf58f428d562de4}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!Add@{Add}}
+\index{Add@{Add}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec\+Base.\+Add (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds more data to the codec to be processed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Byte array containing the data to be added to the codec\\
+\hline
+\end{DoxyParams}
+
+
+Adding data may, or may not, raise the {\ttfamily Data\+Available} event
+
+Implements \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_aa40d0820bd95f098b3e7d8e707e7a536}{Dot\+Z\+Lib.\+Codec}}.
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_ab01e6ad1d9c5b05745dd9e487aaa40ee}\label{class_dot_z_lib_1_1_codec_base_ab01e6ad1d9c5b05745dd9e487aaa40ee}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!Add@{Add}}
+\index{Add@{Add}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily abstract void Dot\+Z\+Lib.\+Codec\+Base.\+Add (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{int}]{offset,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds more data to the codec to be processed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Byte array containing the data to be added to the codec\\
+\hline
+{\em offset} & The index of the first byte to add from {\ttfamily data}\\
+\hline
+{\em count} & The number of bytes to add\\
+\hline
+\end{DoxyParams}
+
+
+Adding data may, or may not, raise the {\ttfamily Data\+Available} event
+
+This must be implemented by a derived class
+
+Implements \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_a137234d0c6fa6981ca8b602340e79dbc}{Dot\+Z\+Lib.\+Codec}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_dot_z_lib_1_1_deflater_a2db95e3ca07e562df0652ed1ad8d0c4d}{Dot\+Z\+Lib.\+Deflater}}, and \mbox{\hyperlink{class_dot_z_lib_1_1_inflater_a773dd62fe806dd9b6117f859faaeb079}{Dot\+Z\+Lib.\+Inflater}}.
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_aa0ded075105c5cf6f5f0d61928c90ca6}\label{class_dot_z_lib_1_1_codec_base_aa0ded075105c5cf6f5f0d61928c90ca6}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!CleanUp@{CleanUp}}
+\index{CleanUp@{CleanUp}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{CleanUp()}{CleanUp()}}
+{\footnotesize\ttfamily abstract void Dot\+Z\+Lib.\+Codec\+Base.\+Clean\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Performs any codec specific cleanup 
+
+This must be implemented by a derived class
+
+Implemented in \mbox{\hyperlink{class_dot_z_lib_1_1_deflater_af06ac29d92dbe5d6198b8fa906476e05}{Dot\+Z\+Lib.\+Deflater}}, and \mbox{\hyperlink{class_dot_z_lib_1_1_inflater_af4ed4f530151f83222d2cb732a77626b}{Dot\+Z\+Lib.\+Inflater}}.
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a8c827f091195356490e7f8b69e0546a7}\label{class_dot_z_lib_1_1_codec_base_a8c827f091195356490e7f8b69e0546a7}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!copyInput@{copyInput}}
+\index{copyInput@{copyInput}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{copyInput()}{copyInput()}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec\+Base.\+copy\+Input (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{int}]{start\+Index,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Copies a number of bytes to the internal codec buffer -\/ ready for proccesing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The byte array that contains the data to copy\\
+\hline
+{\em start\+Index} & The index of the first byte to copy\\
+\hline
+{\em count} & The number of bytes to copy from {\ttfamily data}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_ab4bdcee97631d9e80d2bceb01d01f368}\label{class_dot_z_lib_1_1_codec_base_ab4bdcee97631d9e80d2bceb01d01f368}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec\+Base.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Releases any unmanaged resources and calls the \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_aa0ded075105c5cf6f5f0d61928c90ca6}{Clean\+Up()}} method of the derived class 
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_abab96cb01a9b983452a31777e3a1e633}\label{class_dot_z_lib_1_1_codec_base_abab96cb01a9b983452a31777e3a1e633}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!Finish@{Finish}}
+\index{Finish@{Finish}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily abstract void Dot\+Z\+Lib.\+Codec\+Base.\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Finishes up any pending data that needs to be processed and handled. 
+
+This must be implemented by a derived class
+
+Implements \mbox{\hyperlink{interface_dot_z_lib_1_1_codec_af12b887d445dcbc5e7c11b3aa000aa27}{Dot\+Z\+Lib.\+Codec}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_dot_z_lib_1_1_deflater_a84507769a20a13c2ff48cfcef8f5c13b}{Dot\+Z\+Lib.\+Deflater}}, and \mbox{\hyperlink{class_dot_z_lib_1_1_inflater_aa70c9d026f5d1b44fe0679b78973285c}{Dot\+Z\+Lib.\+Inflater}}.
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a5c697195bc017ae951858e7c8948f9ae}\label{class_dot_z_lib_1_1_codec_base_a5c697195bc017ae951858e7c8948f9ae}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!OnDataAvailable@{OnDataAvailable}}
+\index{OnDataAvailable@{OnDataAvailable}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{OnDataAvailable()}{OnDataAvailable()}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec\+Base.\+On\+Data\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Fires the \mbox{\hyperlink{class_dot_z_lib_1_1_codec_base_a985cf58f6ed5cfeeb9fd8c34a7c052d4}{Data\+Available}} event 
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a801b625073b21aeaab52ebf9e96dd9c9}\label{class_dot_z_lib_1_1_codec_base_a801b625073b21aeaab52ebf9e96dd9c9}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!resetOutput@{resetOutput}}
+\index{resetOutput@{resetOutput}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{resetOutput()}{resetOutput()}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec\+Base.\+reset\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Resets the internal output buffers to a known state -\/ ready for processing 
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a5dfa2dddf3ac857652af7fd8e3d2034d}\label{class_dot_z_lib_1_1_codec_base_a5dfa2dddf3ac857652af7fd8e3d2034d}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!setChecksum@{setChecksum}}
+\index{setChecksum@{setChecksum}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{setChecksum()}{setChecksum()}}
+{\footnotesize\ttfamily void Dot\+Z\+Lib.\+Codec\+Base.\+set\+Checksum (\begin{DoxyParamCaption}\item[{uint}]{new\+Sum }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Updates the running checksum property 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Sum} & The new checksum value\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a9aa2d3961669aad672e43946c25ae24b}\label{class_dot_z_lib_1_1_codec_base_a9aa2d3961669aad672e43946c25ae24b}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!\_isDisposed@{\_isDisposed}}
+\index{\_isDisposed@{\_isDisposed}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{\_isDisposed}{\_isDisposed}}
+{\footnotesize\ttfamily bool Dot\+Z\+Lib.\+Codec\+Base.\+\_\+is\+Disposed = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True if the object instance has been disposed, false otherwise 
+
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a6cf60968f7eaa921e5a8108e0ebcb880}\label{class_dot_z_lib_1_1_codec_base_a6cf60968f7eaa921e5a8108e0ebcb880}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!kBufferSize@{kBufferSize}}
+\index{kBufferSize@{kBufferSize}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{kBufferSize}{kBufferSize}}
+{\footnotesize\ttfamily const int Dot\+Z\+Lib.\+Codec\+Base.\+k\+Buffer\+Size = 16384\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The size of the internal buffers 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_aac848293ff53082bb60cb561daa6fd6b}\label{class_dot_z_lib_1_1_codec_base_aac848293ff53082bb60cb561daa6fd6b}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!Checksum@{Checksum}}
+\index{Checksum@{Checksum}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{Checksum}{Checksum}}
+{\footnotesize\ttfamily uint Dot\+Z\+Lib.\+Codec\+Base.\+Checksum\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the checksum of the data that has been added so far 
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{class_dot_z_lib_1_1_codec_base_a985cf58f6ed5cfeeb9fd8c34a7c052d4}\label{class_dot_z_lib_1_1_codec_base_a985cf58f6ed5cfeeb9fd8c34a7c052d4}} 
+\index{DotZLib.CodecBase@{DotZLib.CodecBase}!DataAvailable@{DataAvailable}}
+\index{DataAvailable@{DataAvailable}!DotZLib.CodecBase@{DotZLib.CodecBase}}
+\doxysubsubsection{\texorpdfstring{DataAvailable}{DataAvailable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_dot_z_lib_a3aa323950a96dc02f6b94462d498bfef}{Data\+Available\+Handler}} Dot\+Z\+Lib.\+Codec\+Base.\+Data\+Available}
+
+
+
+Occurs when more processed data are available. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/zlib/contrib/dotzlib/\+Dot\+Z\+Lib/Codec\+Base.\+cs\end{DoxyCompactItemize}

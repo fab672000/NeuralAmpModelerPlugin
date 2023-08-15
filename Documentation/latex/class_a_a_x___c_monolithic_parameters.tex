@@ -1,0 +1,257 @@
+\hypertarget{class_a_a_x___c_monolithic_parameters}{}\doxysection{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters Class Reference}
+\label{class_a_a_x___c_monolithic_parameters}\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+
+
+Extension of the \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} class for monolithic V\+Is and effects.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_a_a_x___c_monolithic_parameters}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_ac0f3767546709abcf078503bc7dc636b}\label{class_a_a_x___c_monolithic_parameters_ac0f3767546709abcf078503bc7dc636b}} 
+typedef std\+::pair$<$ \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} const, const \mbox{\hyperlink{class_a_a_x___i_parameter_value}{A\+A\+X\+\_\+\+I\+Parameter\+Value}} $\ast$ $>$ {\bfseries T\+Param\+Val\+Pair}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{Indent}\textbf{ Real-\/time functions}\par
+{\em Virtual functions called on the real-\/time thread }\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}{Render\+Audio}} (\mbox{\hyperlink{struct_a_a_x___s_instrument_render_info}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}} $\ast$io\+Render\+Info, const T\+Param\+Val\+Pair $\ast$in\+Synchronized\+Param\+Values\mbox{[}$\,$\mbox{]}, int32\+\_\+t in\+Num\+Synchronized\+Param\+Values)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Configuration methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a1b23573e8aa3f8e64c61813b721559c2}{Add\+Synchronized\+Parameter}} (const \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} \&in\+Parameter)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Convenience Layer Methods}
+\label{_amgrpa25aad2c441b64357c88325565684575}%
+\begin{DoxyNote}{Note}
+You should not need to override these methods, but if you do, make sure to call into the base class. 
+\end{DoxyNote}
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a9ef4fd6fa467008fcea4455d19c08009}{Update\+Parameter\+Normalized\+Value}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Param\+ID, double a\+Value, \mbox{\hyperlink{_a_a_x___enums_8h_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source}} in\+Source) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Updates a single parameter\textquotesingle{}s state to its current value. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a626cb2aaa68c64238298acfd6db448f5}{Generate\+Coefficients}} () \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Generates and dispatches new coefficient packets. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a43db72446afba852f68d19d92c2aa05b}{Reset\+Field\+Data}} (\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}} i\+Field\+Index, void $\ast$o\+Data, uint32\+\_\+t i\+Data\+Size) const \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Called by the host to reset a private data field in the plug-\/in\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_ac3f92841efe2d864ffefce94b7ae27b4}{Timer\+Wakeup}} () \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Periodic wakeup callback for idle-\/time operations. \end{DoxyCompactList}\item 
+static A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a69f9b80a70ecc6b7b2a7eec372d2502a}{Static\+Describe}} (\mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}} $\ast$io\+Descriptor, const \mbox{\hyperlink{struct_a_a_x___s_instrument_setup_info}{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}} \&setup\+Info)
+\item 
+static void A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+CK \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_aff6c9ac549ab88231759a9311b2a6640}{Static\+Render\+Audio}} (\mbox{\hyperlink{struct_a_a_x___s_instrument_render_info}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}} $\ast$const in\+Instances\+Begin\mbox{[}$\,$\mbox{]}, const void $\ast$in\+Instances\+End)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Extension of the \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} class for monolithic V\+Is and effects. 
+
+This extension to \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} adds some conveniences for Virtual Instrument (VI) plug-\/ins and for other plug-\/ins that use a monolithic processing object, i.\+e. an object that combines state data with the audio render routine in a single object.
+
+\begin{DoxyItemize}
+\item The \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}{Render\+Audio}} method provides a direct audio processing callback within the data model object. Perform all audio processing in this method. \item The \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a69f9b80a70ecc6b7b2a7eec372d2502a}{Static\+Describe}} method establishes a generic M\+I\+DI processing context for the Effect. Call this method from the plug-\/in\textquotesingle{}s Common\+Interface\+\_\+\+Describe implementation. \item The \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a1b23573e8aa3f8e64c61813b721559c2}{Add\+Synchronized\+Parameter}} method provides a mechanism for synchronizing parameter updates with the real-\/time thread, allowing deterministic, accurate automation playback. For more information abou this feature, see parameter\+Update\+Timing\+\_\+shared\+Data\end{DoxyItemize}
+\begin{DoxyNote}{Note}
+This convenience class assumes a monolithic processing environment (i.\+e. \mbox{\hyperlink{_a_a_x___enums_8h_a0c5d795c1fd021c5b9b541febc34601aa027df08c137702400a92719828bea44b}{A\+A\+X\+\_\+e\+Constraint\+Location\+Mask\+\_\+\+Data\+Model}} .) This precludes the use of \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}} -\/derived Effects in distributed-\/processing formats such as A\+AX \mbox{\hyperlink{class_d_s_p}{D\+SP}}. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_a1b23573e8aa3f8e64c61813b721559c2}\label{class_a_a_x___c_monolithic_parameters_a1b23573e8aa3f8e64c61813b721559c2}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!AddSynchronizedParameter@{AddSynchronizedParameter}}
+\index{AddSynchronizedParameter@{AddSynchronizedParameter}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{AddSynchronizedParameter()}{AddSynchronizedParameter()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Add\+Synchronized\+Parameter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} \&}]{in\+Parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Add a parameter for state synchronization
+
+A parameter should be added for synchronization if\+:
+\begin{DoxyItemize}
+\item It is important for the parameter\textquotesingle{}s automation to be applied at the correct point on the timeline
+\item It is possible to quickly update the plug-\/in\textquotesingle{}s state to reflect a parameter change
+\end{DoxyItemize}
+
+See advanced\+Topics\+\_\+parameter\+Update\+Timing for more information
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Parameter} & The parameter to be synchronized. This string will be copied internally and is not required to persist \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_a626cb2aaa68c64238298acfd6db448f5}\label{class_a_a_x___c_monolithic_parameters_a626cb2aaa68c64238298acfd6db448f5}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!GenerateCoefficients@{GenerateCoefficients}}
+\index{GenerateCoefficients@{GenerateCoefficients}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{GenerateCoefficients()}{GenerateCoefficients()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Generate\+Coefficients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generates and dispatches new coefficient packets. 
+
+This method is responsible for updating the coefficient packets associated with all parameters whose states have changed since the last call to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}}. The host may call this method once for every parameter update, or it may \char`\"{}batch\char`\"{} parameter updates such that changes for several parameters are all handled by a single call to \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}}.
+
+For more information on tracking parameters\textquotesingle{} statuses using the \mbox{\hyperlink{class_a_a_x___c_packet_dispatcher}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher}}, helper class, see A\+A\+X\+\_\+\+C\+Packet\+Dispatcher\+::\+Set\+Dirty().
+
+\begin{DoxyNote}{Note}
+Do {\itshape not} call this method from the plug-\/in. This method should be called by the host only. To set parameter values from within the plug-\/in, use the \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} interface. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a083265b008921b6114ede387711694b7}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}\label{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!RenderAudio@{RenderAudio}}
+\index{RenderAudio@{RenderAudio}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{RenderAudio()}{RenderAudio()}}
+{\footnotesize\ttfamily virtual void A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Render\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___s_instrument_render_info}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}} $\ast$}]{io\+Render\+Info,  }\item[{const T\+Param\+Val\+Pair $\ast$}]{in\+Synchronized\+Param\+Values\mbox{[}$\,$\mbox{]},  }\item[{int32\+\_\+t}]{in\+Num\+Synchronized\+Param\+Values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Perform audio render
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em io\+Render\+Info} & State data for the current render buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Synchronized\+Param\+Values} & The parameter values which should be applied for the current render buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a1b23573e8aa3f8e64c61813b721559c2}{Add\+Synchronized\+Parameter}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Num\+Synchronized\+Param\+Values} & The number of parameter values provided in {\ttfamily in\+Synchronized\+Param\+Values} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_demo_sampler___parameters_aa05edfda968f2d92a50cde42b7a2482d}{Demo\+Sampler\+\_\+\+Parameters}}, \mbox{\hyperlink{class_demo_synth___parameters_af71b07690e5e0f860df0f1cf01ef0d0e}{Demo\+Synth\+\_\+\+Parameters}}, and \mbox{\hyperlink{class_demo_synth___parameters_af71b07690e5e0f860df0f1cf01ef0d0e}{Demo\+Synth\+\_\+\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_a43db72446afba852f68d19d92c2aa05b}\label{class_a_a_x___c_monolithic_parameters_a43db72446afba852f68d19d92c2aa05b}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!ResetFieldData@{ResetFieldData}}
+\index{ResetFieldData@{ResetFieldData}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{ResetFieldData()}{ResetFieldData()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Reset\+Field\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}}}]{in\+Field\+Index,  }\item[{void $\ast$}]{o\+Data,  }\item[{uint32\+\_\+t}]{in\+Data\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called by the host to reset a private data field in the plug-\/in\textquotesingle{}s algorithm. 
+
+This method is called sequentially for all private data fields on Effect initialization and during any \char`\"{}reset\char`\"{} event, such as priming for a non-\/real-\/time render. This method is called before the algorithm\textquotesingle{}s optional initialization callback, and the initialized private data will be available within that callback via its context block.
+
+\begin{DoxySeeAlso}{See also}
+alg\+\_\+initialization.
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Any data structures that will be passed between platforms (for example, sent to a TI \mbox{\hyperlink{class_d_s_p}{D\+SP}} in an A\+AX \mbox{\hyperlink{class_d_s_p}{D\+SP}} plug-\/in) must be properly data-\/aligned for compatibility across both platforms. See \mbox{\hyperlink{_a_a_x_8h_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+LG}} for more information about guaranteeing cross-\/platform compatibility of data structures used for algorithm processing.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Field\+Index} & The index of the field that is being initialized \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+Data} & The pre-\/allocated block of data that should be initialized \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Data\+Size} & The size of the data block, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a6e87e40d42c7431e52ae5ebd4f631964}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_a69f9b80a70ecc6b7b2a7eec372d2502a}\label{class_a_a_x___c_monolithic_parameters_a69f9b80a70ecc6b7b2a7eec372d2502a}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!StaticDescribe@{StaticDescribe}}
+\index{StaticDescribe@{StaticDescribe}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{StaticDescribe()}{StaticDescribe()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}} $\ast$}]{io\+Descriptor,  }\item[{const \mbox{\hyperlink{struct_a_a_x___s_instrument_setup_info}{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}} \&}]{setup\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static description callback
+
+This method performs all of the basic context setup and pointer passing work
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em io\+Descriptor} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em setup\+Info} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_aff6c9ac549ab88231759a9311b2a6640}\label{class_a_a_x___c_monolithic_parameters_aff6c9ac549ab88231759a9311b2a6640}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!StaticRenderAudio@{StaticRenderAudio}}
+\index{StaticRenderAudio@{StaticRenderAudio}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{StaticRenderAudio()}{StaticRenderAudio()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+CK A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Render\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___s_instrument_render_info}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}} $\ast$const}]{in\+Instances\+Begin\mbox{[}$\,$\mbox{]},  }\item[{const void $\ast$}]{in\+Instances\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static Render\+Audio (Called by the host)
+
+Plug-\/ins should override \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Render\+Audio()}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Instances\+Begin} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Instances\+End} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_ac3f92841efe2d864ffefce94b7ae27b4}\label{class_a_a_x___c_monolithic_parameters_ac3f92841efe2d864ffefce94b7ae27b4}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!TimerWakeup@{TimerWakeup}}
+\index{TimerWakeup@{TimerWakeup}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{TimerWakeup()}{TimerWakeup()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Timer\+Wakeup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Periodic wakeup callback for idle-\/time operations. 
+
+This method is called from the host using a non-\/main thread. In general, it should be driven at approximately one call per 30 ms. However, the wakeup is not guaranteed to be called at any regular interval -\/ for example, it could be held off by a high real-\/time processing load -\/ and there is no host contract regarding maximum latency between wakeup calls.
+
+This wakeup thread runs continuously and cannot be armed/disarmed or by the plug-\/in. 
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ab5b8da9e1a9d778d327ac04f4ab8d139}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_monolithic_parameters_a9ef4fd6fa467008fcea4455d19c08009}\label{class_a_a_x___c_monolithic_parameters_a9ef4fd6fa467008fcea4455d19c08009}} 
+\index{AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}!UpdateParameterNormalizedValue@{UpdateParameterNormalizedValue}}
+\index{UpdateParameterNormalizedValue@{UpdateParameterNormalizedValue}!AAX\_CMonolithicParameters@{AAX\_CMonolithicParameters}}
+\doxysubsubsection{\texorpdfstring{UpdateParameterNormalizedValue()}{UpdateParameterNormalizedValue()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Update\+Parameter\+Normalized\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{double}]{i\+Value,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source}}}]{i\+Source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates a single parameter\textquotesingle{}s state to its current value. 
+
+\begin{DoxyNote}{Note}
+Do {\itshape not} call this method from the plug-\/in. This method should be called by the host only. To set parameter values from within the plug-\/in, use the \mbox{\hyperlink{class_a_a_x___i_parameter}{A\+A\+X\+\_\+\+I\+Parameter}} interface.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000043}{Todo}}]F\+L\+A\+G\+G\+ED F\+OR C\+O\+N\+S\+I\+D\+E\+R\+A\+T\+I\+ON OF R\+E\+V\+I\+S\+I\+ON\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & The ID of the parameter that is being updated \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & The parameter\textquotesingle{}s current value, to which its internal state must be updated \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Source} & The source of the update \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a685858711efb8634ce66c327f2865c71}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Extensions/\+Topology/\mbox{\hyperlink{_a_a_x___c_monolithic_parameters_8h}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Extensions/\+Topology/A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+cpp\end{DoxyCompactItemize}

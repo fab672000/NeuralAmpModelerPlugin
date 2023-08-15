@@ -1,0 +1,64 @@
+\hypertarget{class_sk_color_space_luminance}{}\doxysection{Sk\+Color\+Space\+Luminance Class Reference}
+\label{class_sk_color_space_luminance}\index{SkColorSpaceLuminance@{SkColorSpaceLuminance}}
+
+
+{\ttfamily \#include $<$Sk\+Mask\+Gamma.\+h$>$}
+
+Inheritance diagram for Sk\+Color\+Space\+Luminance\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.758621cm]{class_sk_color_space_luminance}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Sk\+Scalar \mbox{\hyperlink{class_sk_color_space_luminance_a36331dad20117d0c3af6a67007a88567}{to\+Luma}} (Sk\+Scalar gamma, Sk\+Scalar luminance) const =0
+\item 
+virtual Sk\+Scalar \mbox{\hyperlink{class_sk_color_space_luminance_a266f024b24bd367fe0932232d89c89f5}{from\+Luma}} (Sk\+Scalar gamma, Sk\+Scalar luma) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} \mbox{\hyperlink{class_sk_color_space_luminance_a0bca8e8d2e3af93e6ec7a22ddb1b38b8}{compute\+Luminance}} (Sk\+Scalar gamma, \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} c)
+\item 
+static const \mbox{\hyperlink{class_sk_color_space_luminance}{Sk\+Color\+Space\+Luminance}} \& \mbox{\hyperlink{class_sk_color_space_luminance_a3d86c040282676d50d9cba16620e45dd}{Fetch}} (Sk\+Scalar gamma)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_color_space_luminance}{Sk\+Color\+Space\+Luminance}} is used to convert luminances to and from linear and perceptual color spaces.
+
+Luma is used to specify a linear luminance value \mbox{[}0.\+0, 1.\+0\mbox{]}. Luminance is used to specify a luminance value in an arbitrary color space \mbox{[}0.\+0, 1.\+0\mbox{]}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_color_space_luminance_a0bca8e8d2e3af93e6ec7a22ddb1b38b8}\label{class_sk_color_space_luminance_a0bca8e8d2e3af93e6ec7a22ddb1b38b8}} 
+\index{SkColorSpaceLuminance@{SkColorSpaceLuminance}!computeLuminance@{computeLuminance}}
+\index{computeLuminance@{computeLuminance}!SkColorSpaceLuminance@{SkColorSpaceLuminance}}
+\doxysubsubsection{\texorpdfstring{computeLuminance()}{computeLuminance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} Sk\+Color\+Space\+Luminance\+::compute\+Luminance (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{gamma,  }\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Converts a color to a luminance value. \mbox{\Hypertarget{class_sk_color_space_luminance_a3d86c040282676d50d9cba16620e45dd}\label{class_sk_color_space_luminance_a3d86c040282676d50d9cba16620e45dd}} 
+\index{SkColorSpaceLuminance@{SkColorSpaceLuminance}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!SkColorSpaceLuminance@{SkColorSpaceLuminance}}
+\doxysubsubsection{\texorpdfstring{Fetch()}{Fetch()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_sk_color_space_luminance}{Sk\+Color\+Space\+Luminance}} \& Sk\+Color\+Space\+Luminance\+::\+Fetch (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{gamma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Retrieves the \mbox{\hyperlink{class_sk_color_space_luminance}{Sk\+Color\+Space\+Luminance}} for the given gamma. \mbox{\Hypertarget{class_sk_color_space_luminance_a266f024b24bd367fe0932232d89c89f5}\label{class_sk_color_space_luminance_a266f024b24bd367fe0932232d89c89f5}} 
+\index{SkColorSpaceLuminance@{SkColorSpaceLuminance}!fromLuma@{fromLuma}}
+\index{fromLuma@{fromLuma}!SkColorSpaceLuminance@{SkColorSpaceLuminance}}
+\doxysubsubsection{\texorpdfstring{fromLuma()}{fromLuma()}}
+{\footnotesize\ttfamily virtual Sk\+Scalar Sk\+Color\+Space\+Luminance\+::from\+Luma (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{gamma,  }\item[{Sk\+Scalar}]{luma }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Converts a linear luma to a color component luminance in the color space. \mbox{\Hypertarget{class_sk_color_space_luminance_a36331dad20117d0c3af6a67007a88567}\label{class_sk_color_space_luminance_a36331dad20117d0c3af6a67007a88567}} 
+\index{SkColorSpaceLuminance@{SkColorSpaceLuminance}!toLuma@{toLuma}}
+\index{toLuma@{toLuma}!SkColorSpaceLuminance@{SkColorSpaceLuminance}}
+\doxysubsubsection{\texorpdfstring{toLuma()}{toLuma()}}
+{\footnotesize\ttfamily virtual Sk\+Scalar Sk\+Color\+Space\+Luminance\+::to\+Luma (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{gamma,  }\item[{Sk\+Scalar}]{luminance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Converts a color component luminance in the color space to a linear luma. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Mask\+Gamma.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Mask\+Gamma.\+cpp\end{DoxyCompactItemize}

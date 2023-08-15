@@ -1,0 +1,1057 @@
+\hypertarget{class_sk_paint}{}\doxysection{Sk\+Paint Class Reference}
+\label{class_sk_paint}\index{SkPaint@{SkPaint}}
+
+
+{\ttfamily \#include $<$Sk\+Paint.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdab18888b04d1a69cee2f4b03f3191e611}{k\+Fill\+\_\+\+Style}}, 
+\mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fda4bcc9f35fd6468ad92012c70daf7a495}{k\+Stroke\+\_\+\+Style}}, 
+\mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdace3b97d439287fa390dec09c0c99a12c}{k\+Stroke\+And\+Fill\+\_\+\+Style}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Cap}} \{ \newline
+\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333abaac9668fb0acc014c962d843d6674b5}{k\+Butt\+\_\+\+Cap}}, 
+\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333ab00b95302fe33924e63513c82b53f16b}{k\+Round\+\_\+\+Cap}}, 
+\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333ada3bff894a3c2a8874860e533bc04334}{k\+Square\+\_\+\+Cap}}, 
+\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333ad07659a427b9472f6bc6e5f8b0b98f92}{k\+Last\+\_\+\+Cap}} = k\+Square\+\_\+\+Cap, 
+\newline
+\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333a0466608a5c9b4ab9f61f9f13b69b13ae}{k\+Default\+\_\+\+Cap}} = k\+Butt\+\_\+\+Cap
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Join}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaad7852b8634b32ee8dd5eb939f36377b8}{k\+Miter\+\_\+\+Join}}, 
+\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaac8a858c3d826222706eb753b4dc40ca0}{k\+Round\+\_\+\+Join}}, 
+\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaae443e4659062bf7a0ad22510cb0405c2}{k\+Bevel\+\_\+\+Join}}, 
+\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa28f52126a8341ff0661634d9476e77b7}{k\+Last\+\_\+\+Join}} = k\+Bevel\+\_\+\+Join, 
+\newline
+\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa3ed4219716da3cfa8703427ff1bcb35c}{k\+Default\+\_\+\+Join}} = k\+Miter\+\_\+\+Join
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_paint_ad02bcb0bfd7d45f65e36f517b47e038f}{Sk\+Paint}} ()
+\item 
+\mbox{\hyperlink{class_sk_paint_a10af594bc1ab2c1b8c250c4a381f7dca}{Sk\+Paint}} (const \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} \&color, \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$color\+Space=nullptr)
+\item 
+\mbox{\hyperlink{class_sk_paint_a86ee2a1bea02c46931b92e8694a564f9}{Sk\+Paint}} (const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint)
+\item 
+\mbox{\hyperlink{class_sk_paint_afc3c119aacdbad1f9f3da0d8aa263c74}{Sk\+Paint}} (\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&\&paint)
+\item 
+\mbox{\hyperlink{class_sk_paint_ae59020460f1762fffd89809d6b2d0aac}{$\sim$\+Sk\+Paint}} ()
+\item 
+\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \& \mbox{\hyperlink{class_sk_paint_a808f33a205ecf7d2cc460195ff7ddd55}{operator=}} (const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint)
+\item 
+\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \& \mbox{\hyperlink{class_sk_paint_a65d6a8730a2022af5c81945e02ac9033}{operator=}} (\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&\&paint)
+\item 
+void \mbox{\hyperlink{class_sk_paint_a6c7118c97a0e8819d75aa757afbc4c49}{reset}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_paint_ab03db5785abbcdb2b9c1a778ba8c44de}{is\+Anti\+Alias}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a3d65cf5830557558d3d4b67791745a4d}{set\+Anti\+Alias}} (bool aa)
+\item 
+bool \mbox{\hyperlink{class_sk_paint_a758da2765053ca1c3a9d2b0444ffc13c}{is\+Dither}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a621464a3f1f92c3c1035195e42783826}{set\+Dither}} (bool dither)
+\item 
+\mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}} \mbox{\hyperlink{class_sk_paint_a174dfba10eceb1f8bce57d032dec4a91}{get\+Style}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a171899ddc016e84f4adb4cbd5ff17357}{set\+Style}} (\mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}} style)
+\item 
+void \mbox{\hyperlink{class_sk_paint_aeeaef723b621f1e82b11888edfc06fb9}{set\+Stroke}} (bool)
+\item 
+\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} \mbox{\hyperlink{class_sk_paint_a6cd1cdfc0b9f2f9f1430e1212c85004b}{get\+Color}} () const
+\item 
+\mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} \mbox{\hyperlink{class_sk_paint_a9d298511798af80a4c16cfd2a496a22b}{get\+Color4f}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a2afde76523eb9fafe22fca89b841e14b}{set\+Color}} (\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} color)
+\item 
+void \mbox{\hyperlink{class_sk_paint_a7a6bd293bb2eee4655e3ef534ab7478c}{set\+Color}} (const \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} \&color, \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$color\+Space=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_paint_a9471a021f3e0220937ce8ddbc410e722}\label{class_sk_paint_a9471a021f3e0220937ce8ddbc410e722}} 
+void {\bfseries set\+Color4f} (const \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} \&color, \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$color\+Space=nullptr)
+\item 
+float \mbox{\hyperlink{class_sk_paint_ab91605a8e41c8f4ab05e7ad1b2cff475}{get\+Alphaf}} () const
+\item 
+\mbox{\Hypertarget{class_sk_paint_ad856204a8fec2b7e75a67e7b1952b146}\label{class_sk_paint_ad856204a8fec2b7e75a67e7b1952b146}} 
+uint8\+\_\+t {\bfseries get\+Alpha} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_af9f453314796e7fb6b34796967cd389f}{set\+Alphaf}} (float a)
+\item 
+\mbox{\Hypertarget{class_sk_paint_a789a2fd25de77b700d5b4c691c2e2225}\label{class_sk_paint_a789a2fd25de77b700d5b4c691c2e2225}} 
+void {\bfseries set\+Alpha} (\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} a)
+\item 
+void \mbox{\hyperlink{class_sk_paint_a9e6134e520cdb72542f6e89538a8a993}{set\+A\+R\+GB}} (\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} a, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} r, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} g, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} b)
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_paint_ac0c8250341bc7c21b3aef173c0747cc9}{get\+Stroke\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_af08c5bc138e981a4e39ad1f9b165c32c}{set\+Stroke\+Width}} (Sk\+Scalar width)
+\item 
+Sk\+Scalar \mbox{\hyperlink{class_sk_paint_a030ad80fdab9de4297a75ddf57f600e1}{get\+Stroke\+Miter}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a2e767abfeb7795ed251a08b5ed85033f}{set\+Stroke\+Miter}} (Sk\+Scalar miter)
+\item 
+\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Cap}} \mbox{\hyperlink{class_sk_paint_ad9c39e1f59941b5795ca928d423f8cbd}{get\+Stroke\+Cap}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a68e82b3dfce8a3c35413795461794ba6}{set\+Stroke\+Cap}} (\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Cap}} cap)
+\item 
+\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Join}} \mbox{\hyperlink{class_sk_paint_aebb019270f1507d4a98b489368b728a9}{get\+Stroke\+Join}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a701338207855a667edf2c426222bb0bb}{set\+Stroke\+Join}} (\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Join}} join)
+\item 
+bool \mbox{\hyperlink{class_sk_paint_a9a252159ba57877a58b718b3ce016473}{get\+Fill\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$dst, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$cull\+Rect, Sk\+Scalar res\+Scale=1) const
+\item 
+\mbox{\Hypertarget{class_sk_paint_a8bc8348a102bc445fdda305a2a465110}\label{class_sk_paint_a8bc8348a102bc445fdda305a2a465110}} 
+bool {\bfseries get\+Fill\+Path} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$dst, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$cull\+Rect, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&ctm) const
+\item 
+bool \mbox{\hyperlink{class_sk_paint_aea97b0e582974219ed2e8fd857a9ad1a}{get\+Fill\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$dst) const
+\item 
+\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $\ast$ \mbox{\hyperlink{class_sk_paint_a6a06bb14c5fd5205b05c06b791ee38d6}{get\+Shader}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ \mbox{\hyperlink{class_sk_paint_a2d585acd0e408cd8d66ebad9d76a8a07}{ref\+Shader}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_ab1fecafb4783c85159f701d195221354}{set\+Shader}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ shader)
+\item 
+\mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $\ast$ \mbox{\hyperlink{class_sk_paint_ae8d306290e10915f9159ee8eaac368b5}{get\+Color\+Filter}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $>$ \mbox{\hyperlink{class_sk_paint_a81da0199e5a10cf05efc921b64cfeb83}{ref\+Color\+Filter}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_adf2f43ea22a6b4ba62ef16d8f8ff680d}{set\+Color\+Filter}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $>$ color\+Filter)
+\item 
+\mbox{\hyperlink{classskstd_1_1optional}{skstd\+::optional}}$<$ Sk\+Blend\+Mode $>$ \mbox{\hyperlink{class_sk_paint_a5022cc9c6dc1a6ad42dfb920df7ec194}{as\+Blend\+Mode}} () const
+\item 
+Sk\+Blend\+Mode \mbox{\hyperlink{class_sk_paint_a6b5697de305a877b4f3854a7d6feddf4}{get\+Blend\+Mode\+\_\+or}} (Sk\+Blend\+Mode default\+Mode) const
+\item 
+bool \mbox{\hyperlink{class_sk_paint_a5279dc992ffd05618089b3499f3df56e}{is\+Src\+Over}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_ac7c58424231c740f54c70165df1bb145}{set\+Blend\+Mode}} (Sk\+Blend\+Mode mode)
+\item 
+\mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} $\ast$ \mbox{\hyperlink{class_sk_paint_accd1171fbffaa0ddd05aa74497090ca9}{get\+Blender}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} $>$ \mbox{\hyperlink{class_sk_paint_af85298556a0086cf07bf3f712f2beb14}{ref\+Blender}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_aea34211e56049d1f2d8860b797dccc18}{set\+Blender}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} $>$ blender)
+\item 
+\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $\ast$ \mbox{\hyperlink{class_sk_paint_acb489117fd339b65bf76dcae432a6067}{get\+Path\+Effect}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ \mbox{\hyperlink{class_sk_paint_a6863a0a1170b4b7ef2a7b38c3154c997}{ref\+Path\+Effect}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_ab6829fa163e1db2c6021061ae908d0cc}{set\+Path\+Effect}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ path\+Effect)
+\item 
+\mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $\ast$ \mbox{\hyperlink{class_sk_paint_a97363259492b343178fd5e17ae666973}{get\+Mask\+Filter}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $>$ \mbox{\hyperlink{class_sk_paint_a6c018f60d7fd5b048f2b78342abe656d}{ref\+Mask\+Filter}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a9b0d0c21f04d0c98f8bf167f991716ea}{set\+Mask\+Filter}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $>$ mask\+Filter)
+\item 
+\mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $\ast$ \mbox{\hyperlink{class_sk_paint_ac34bee0e423825342fe309fc335763e3}{get\+Image\+Filter}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $>$ \mbox{\hyperlink{class_sk_paint_ae66916875e8e829ba8708d7ebeb4f9d0}{ref\+Image\+Filter}} () const
+\item 
+void \mbox{\hyperlink{class_sk_paint_a67092e32b2081a05ddc8ebdef31af0f5}{set\+Image\+Filter}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $>$ image\+Filter)
+\item 
+bool \mbox{\hyperlink{class_sk_paint_a9bd5cbc8738186aa3c6bcfe73dc5547e}{nothing\+To\+Draw}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_paint_aeecd948c180179a10869a748492da3d1}{can\+Compute\+Fast\+Bounds}} () const
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_paint_ac6983dcd9e1ec0f69b2d9547663771cb}{compute\+Fast\+Bounds}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&orig, \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$storage) const
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_paint_a76db5b9df4b313be27176aa14b81c9ad}{compute\+Fast\+Stroke\+Bounds}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&orig, \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$storage) const
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_paint_a1241713daad6f588803bcf629b18a60a}{do\+Compute\+Fast\+Bounds}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&orig, \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$storage, \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}} style) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_sk_paint_a25903caaaa2a53488d97a863d11af1f0}{k\+Style\+Count}} = \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdace3b97d439287fa390dec09c0c99a12c}{k\+Stroke\+And\+Fill\+\_\+\+Style}} + 1
+\item 
+static constexpr int \mbox{\hyperlink{class_sk_paint_a1a07d61a5d34a03b4e94609535d8e22f}{k\+Cap\+Count}} = \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333ad07659a427b9472f6bc6e5f8b0b98f92}{k\+Last\+\_\+\+Cap}} + 1
+\item 
+static constexpr int \mbox{\hyperlink{class_sk_paint_a9caa2ebd06ab960b13ba99a536981ca7}{k\+Join\+Count}} = \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa28f52126a8341ff0661634d9476e77b7}{k\+Last\+\_\+\+Join}} + 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_paint_ae3e8a9f3f7df8ccfe41ff659611c83fe}\label{class_sk_paint_ae3e8a9f3f7df8ccfe41ff659611c83fe}} 
+class {\bfseries Sk\+Paint\+Priv}
+\item 
+S\+K\+\_\+\+A\+PI friend bool \mbox{\hyperlink{class_sk_paint_a09b0bb3f4e5a5e8f9ad1c274706e3aca}{operator==}} (const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&a, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&b)
+\item 
+bool \mbox{\hyperlink{class_sk_paint_a1b5da0b4af796032ea5f8c99355b7eb3}{operator!=}} (const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&a, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} controls options applied when drawing. \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} collects all options outside of the \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} clip and \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} matrix.
+
+Various options apply to strokes and fills, and images.
+
+\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} collects effects and filters that describe single-\/pass and multiple-\/pass algorithms that alter the drawing geometry, color, and transparency. For instance, \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} does not directly implement dashing or blur, but contains the objects that do so. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_paint_a0f78de8559b795defba93171f6cb6333}\label{class_sk_paint_a0f78de8559b795defba93171f6cb6333}} 
+\index{SkPaint@{SkPaint}!Cap@{Cap}}
+\index{Cap@{Cap}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{Cap}{Cap}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Sk\+Paint\+::\+Cap}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kButt\_Cap@{kButt\_Cap}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kButt\_Cap@{kButt\_Cap}}}\mbox{\Hypertarget{class_sk_paint_a0f78de8559b795defba93171f6cb6333abaac9668fb0acc014c962d843d6674b5}\label{class_sk_paint_a0f78de8559b795defba93171f6cb6333abaac9668fb0acc014c962d843d6674b5}} 
+k\+Butt\+\_\+\+Cap&no stroke extension \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRound\_Cap@{kRound\_Cap}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kRound\_Cap@{kRound\_Cap}}}\mbox{\Hypertarget{class_sk_paint_a0f78de8559b795defba93171f6cb6333ab00b95302fe33924e63513c82b53f16b}\label{class_sk_paint_a0f78de8559b795defba93171f6cb6333ab00b95302fe33924e63513c82b53f16b}} 
+k\+Round\+\_\+\+Cap&adds circle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSquare\_Cap@{kSquare\_Cap}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kSquare\_Cap@{kSquare\_Cap}}}\mbox{\Hypertarget{class_sk_paint_a0f78de8559b795defba93171f6cb6333ada3bff894a3c2a8874860e533bc04334}\label{class_sk_paint_a0f78de8559b795defba93171f6cb6333ada3bff894a3c2a8874860e533bc04334}} 
+k\+Square\+\_\+\+Cap&adds square \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLast\_Cap@{kLast\_Cap}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kLast\_Cap@{kLast\_Cap}}}\mbox{\Hypertarget{class_sk_paint_a0f78de8559b795defba93171f6cb6333ad07659a427b9472f6bc6e5f8b0b98f92}\label{class_sk_paint_a0f78de8559b795defba93171f6cb6333ad07659a427b9472f6bc6e5f8b0b98f92}} 
+k\+Last\+\_\+\+Cap&largest Cap value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDefault\_Cap@{kDefault\_Cap}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kDefault\_Cap@{kDefault\_Cap}}}\mbox{\Hypertarget{class_sk_paint_a0f78de8559b795defba93171f6cb6333a0466608a5c9b4ab9f61f9f13b69b13ae}\label{class_sk_paint_a0f78de8559b795defba93171f6cb6333a0466608a5c9b4ab9f61f9f13b69b13ae}} 
+k\+Default\+\_\+\+Cap&equivalent to k\+Butt\+\_\+\+Cap \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}\label{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}} 
+\index{SkPaint@{SkPaint}!Join@{Join}}
+\index{Join@{Join}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{Join}{Join}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Sk\+Paint\+::\+Join}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMiter\_Join@{kMiter\_Join}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kMiter\_Join@{kMiter\_Join}}}\mbox{\Hypertarget{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaad7852b8634b32ee8dd5eb939f36377b8}\label{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaad7852b8634b32ee8dd5eb939f36377b8}} 
+k\+Miter\+\_\+\+Join&extends to miter limit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRound\_Join@{kRound\_Join}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kRound\_Join@{kRound\_Join}}}\mbox{\Hypertarget{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaac8a858c3d826222706eb753b4dc40ca0}\label{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaac8a858c3d826222706eb753b4dc40ca0}} 
+k\+Round\+\_\+\+Join&adds circle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kBevel\_Join@{kBevel\_Join}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kBevel\_Join@{kBevel\_Join}}}\mbox{\Hypertarget{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaae443e4659062bf7a0ad22510cb0405c2}\label{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaae443e4659062bf7a0ad22510cb0405c2}} 
+k\+Bevel\+\_\+\+Join&connects outside edges \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLast\_Join@{kLast\_Join}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kLast\_Join@{kLast\_Join}}}\mbox{\Hypertarget{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa28f52126a8341ff0661634d9476e77b7}\label{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa28f52126a8341ff0661634d9476e77b7}} 
+k\+Last\+\_\+\+Join&equivalent to the largest value for Join \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDefault\_Join@{kDefault\_Join}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kDefault\_Join@{kDefault\_Join}}}\mbox{\Hypertarget{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa3ed4219716da3cfa8703427ff1bcb35c}\label{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa3ed4219716da3cfa8703427ff1bcb35c}} 
+k\+Default\+\_\+\+Join&equivalent to k\+Miter\+\_\+\+Join \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}\label{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}} 
+\index{SkPaint@{SkPaint}!Style@{Style}}
+\index{Style@{Style}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{Style}{Style}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Sk\+Paint\+::\+Style}} \+: uint8\+\_\+t}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFill\_Style@{kFill\_Style}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kFill\_Style@{kFill\_Style}}}\mbox{\Hypertarget{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdab18888b04d1a69cee2f4b03f3191e611}\label{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdab18888b04d1a69cee2f4b03f3191e611}} 
+k\+Fill\+\_\+\+Style&set to fill geometry \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStroke\_Style@{kStroke\_Style}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kStroke\_Style@{kStroke\_Style}}}\mbox{\Hypertarget{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fda4bcc9f35fd6468ad92012c70daf7a495}\label{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fda4bcc9f35fd6468ad92012c70daf7a495}} 
+k\+Stroke\+\_\+\+Style&set to stroke geometry \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStrokeAndFill\_Style@{kStrokeAndFill\_Style}!SkPaint@{SkPaint}}\index{SkPaint@{SkPaint}!kStrokeAndFill\_Style@{kStrokeAndFill\_Style}}}\mbox{\Hypertarget{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdace3b97d439287fa390dec09c0c99a12c}\label{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdace3b97d439287fa390dec09c0c99a12c}} 
+k\+Stroke\+And\+Fill\+\_\+\+Style&sets to stroke and fill geometry \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_paint_ad02bcb0bfd7d45f65e36f517b47e038f}\label{class_sk_paint_ad02bcb0bfd7d45f65e36f517b47e038f}} 
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{SkPaint()}{SkPaint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Sk\+Paint\+::\+Sk\+Paint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} with default values.
+
+\begin{DoxyReturn}{Returns}
+default initialized \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_empty_constructor}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+empty\+\_\+constructor}} \mbox{\Hypertarget{class_sk_paint_a10af594bc1ab2c1b8c250c4a381f7dca}\label{class_sk_paint_a10af594bc1ab2c1b8c250c4a381f7dca}} 
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{SkPaint()}{SkPaint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Sk\+Paint\+::\+Sk\+Paint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} \&}]{color,  }\item[{\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$}]{color\+Space = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} with default values and the given color.
+
+Sets alpha and R\+GB used when stroking and filling. The color is four floating point values, unpremultiplied. The color values are interpreted as being in the color\+Space. If color\+Space is nullptr, then color is assumed to be in the s\+R\+GB color space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & unpremultiplied R\+G\+BA \\
+\hline
+{\em color\+Space} & \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} describing the encoding of color \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} with the given color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a86ee2a1bea02c46931b92e8694a564f9}\label{class_sk_paint_a86ee2a1bea02c46931b92e8694a564f9}} 
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{SkPaint()}{SkPaint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Sk\+Paint\+::\+Sk\+Paint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{paint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Makes a shallow copy of \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}}. \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}, \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}, \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}, and \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} are shared between the original paint and the copy. Objects containing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} increment their references by one.
+
+The referenced objects \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}, \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}, \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}, and \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} cannot be modified after they are created. This prevents objects with \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} from being modified once \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} refers to them.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint} & original to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shallow copy of paint
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_copy_const_SkPaint}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+copy\+\_\+const\+\_\+\+Sk\+Paint}} \mbox{\Hypertarget{class_sk_paint_afc3c119aacdbad1f9f3da0d8aa263c74}\label{class_sk_paint_afc3c119aacdbad1f9f3da0d8aa263c74}} 
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\index{SkPaint@{SkPaint}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{SkPaint()}{SkPaint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Sk\+Paint\+::\+Sk\+Paint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&\&}]{paint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Implements a move constructor to avoid increasing the reference counts of objects referenced by the paint.
+
+After the call, paint is undefined, and can be safely destructed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint} & original to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+content of paint
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_move_SkPaint}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+move\+\_\+\+Sk\+Paint}} \mbox{\Hypertarget{class_sk_paint_ae59020460f1762fffd89809d6b2d0aac}\label{class_sk_paint_ae59020460f1762fffd89809d6b2d0aac}} 
+\index{SkPaint@{SkPaint}!````~SkPaint@{$\sim$SkPaint}}
+\index{````~SkPaint@{$\sim$SkPaint}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkPaint()}{~SkPaint()}}
+{\footnotesize\ttfamily Sk\+Paint\+::$\sim$\+Sk\+Paint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Decreases \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} of owned objects\+: \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}, \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}, \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}, and \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}}. If the objects containing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} go to zero, they are deleted. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_paint_a5022cc9c6dc1a6ad42dfb920df7ec194}\label{class_sk_paint_a5022cc9c6dc1a6ad42dfb920df7ec194}} 
+\index{SkPaint@{SkPaint}!asBlendMode@{asBlendMode}}
+\index{asBlendMode@{asBlendMode}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{asBlendMode()}{asBlendMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classskstd_1_1optional}{skstd\+::optional}}$<$ Sk\+Blend\+Mode $>$ Sk\+Paint\+::as\+Blend\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+If the current blender can be represented as a Sk\+Blend\+Mode enum, this returns that enum in the optional\textquotesingle{}s value(). If it cannot, then the returned optional does not contain a value. \mbox{\Hypertarget{class_sk_paint_aeecd948c180179a10869a748492da3d1}\label{class_sk_paint_aeecd948c180179a10869a748492da3d1}} 
+\index{SkPaint@{SkPaint}!canComputeFastBounds@{canComputeFastBounds}}
+\index{canComputeFastBounds@{canComputeFastBounds}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{canComputeFastBounds()}{canComputeFastBounds()}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::can\+Compute\+Fast\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+(to be made private) Returns true if \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} does not include elements requiring extensive computation to compute \mbox{\hyperlink{class_sk_base_device}{Sk\+Base\+Device}} bounds of drawn geometry. For instance, \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} with \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} always returns false.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} allows for fast computation of bounds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_ac6983dcd9e1ec0f69b2d9547663771cb}\label{class_sk_paint_ac6983dcd9e1ec0f69b2d9547663771cb}} 
+\index{SkPaint@{SkPaint}!computeFastBounds@{computeFastBounds}}
+\index{computeFastBounds@{computeFastBounds}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{computeFastBounds()}{computeFastBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+Paint\+::compute\+Fast\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{orig,  }\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{storage }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+(to be made private) Only call this if \mbox{\hyperlink{class_sk_paint_aeecd948c180179a10869a748492da3d1}{can\+Compute\+Fast\+Bounds()}} returned true. This takes a raw rectangle (the raw bounds of a shape), and adjusts it for stylistic effects in the paint (e.\+g. stroking). If needed, it uses the storage parameter. It returns the adjusted bounds that can then be used for \mbox{\hyperlink{class_sk_canvas_af7f091b4f9abb2cdefe749ad60cb1bb0}{Sk\+Canvas\+::quick\+Reject}} tests.
+
+The returned \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} will either be orig or storage, thus the caller should not rely on storage being set to the result, but should always use the returned value. It is legal for orig and storage to be the same \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}. For example\+: if (!path.is\+Inverse\+Fill\+Type() \&\& paint.\+can\+Compute\+Fast\+Bounds()) \{ \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} storage; if (canvas-\/$>$quick\+Reject(paint.\+compute\+Fast\+Bounds(path.\+get\+Bounds(), \&storage))) \{ return; // do not draw the path \} \} draw the path \begin{DoxyVerb}    @param orig     geometry modified by SkPaint when drawn
+    @param storage  computed bounds of geometry; may not be nullptr
+    @return         fast computed bounds
+\end{DoxyVerb}
+ \mbox{\Hypertarget{class_sk_paint_a76db5b9df4b313be27176aa14b81c9ad}\label{class_sk_paint_a76db5b9df4b313be27176aa14b81c9ad}} 
+\index{SkPaint@{SkPaint}!computeFastStrokeBounds@{computeFastStrokeBounds}}
+\index{computeFastStrokeBounds@{computeFastStrokeBounds}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{computeFastStrokeBounds()}{computeFastStrokeBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+Paint\+::compute\+Fast\+Stroke\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{orig,  }\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{storage }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+(to be made private)
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & geometry modified by \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} when drawn \\
+\hline
+{\em storage} & computed bounds of geometry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fast computed bounds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a1241713daad6f588803bcf629b18a60a}\label{class_sk_paint_a1241713daad6f588803bcf629b18a60a}} 
+\index{SkPaint@{SkPaint}!doComputeFastBounds@{doComputeFastBounds}}
+\index{doComputeFastBounds@{doComputeFastBounds}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{doComputeFastBounds()}{doComputeFastBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& Sk\+Paint\+::do\+Compute\+Fast\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{orig,  }\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{storage,  }\item[{\mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}}}]{style }\end{DoxyParamCaption}) const}
+
+(to be made private) Computes the bounds, overriding the \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Sk\+Paint\+::\+Style}}. This can be used to account for additional width required by stroking orig, without altering \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Sk\+Paint\+::\+Style}} set to fill.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & geometry modified by \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} when drawn \\
+\hline
+{\em storage} & computed bounds of geometry \\
+\hline
+{\em style} & overrides \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Sk\+Paint\+::\+Style}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fast computed bounds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_ab91605a8e41c8f4ab05e7ad1b2cff475}\label{class_sk_paint_ab91605a8e41c8f4ab05e7ad1b2cff475}} 
+\index{SkPaint@{SkPaint}!getAlphaf@{getAlphaf}}
+\index{getAlphaf@{getAlphaf}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getAlphaf()}{getAlphaf()}}
+{\footnotesize\ttfamily float Sk\+Paint\+::get\+Alphaf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves alpha from the color used when stroking and filling.
+
+\begin{DoxyReturn}{Returns}
+alpha ranging from zero, fully transparent, to 255, fully opaque 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_accd1171fbffaa0ddd05aa74497090ca9}\label{class_sk_paint_accd1171fbffaa0ddd05aa74497090ca9}} 
+\index{SkPaint@{SkPaint}!getBlender@{getBlender}}
+\index{getBlender@{getBlender}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getBlender()}{getBlender()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}}$\ast$ Sk\+Paint\+::get\+Blender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the user-\/supplied blend function, if one has been set. Does not alter \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}}\textquotesingle{}s \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}}.
+
+A nullptr blender signifies the default Src\+Over behavior.
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} assigned to this paint, otherwise nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a6b5697de305a877b4f3854a7d6feddf4}\label{class_sk_paint_a6b5697de305a877b4f3854a7d6feddf4}} 
+\index{SkPaint@{SkPaint}!getBlendMode\_or@{getBlendMode\_or}}
+\index{getBlendMode\_or@{getBlendMode\_or}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getBlendMode\_or()}{getBlendMode\_or()}}
+{\footnotesize\ttfamily Sk\+Blend\+Mode Sk\+Paint\+::get\+Blend\+Mode\+\_\+or (\begin{DoxyParamCaption}\item[{Sk\+Blend\+Mode}]{default\+Mode }\end{DoxyParamCaption}) const}
+
+Queries the blender, and if it can be represented as a Sk\+Blend\+Mode, return that mode, else return the default\+Mode provided. \mbox{\Hypertarget{class_sk_paint_a6cd1cdfc0b9f2f9f1430e1212c85004b}\label{class_sk_paint_a6cd1cdfc0b9f2f9f1430e1212c85004b}} 
+\index{SkPaint@{SkPaint}!getColor@{getColor}}
+\index{getColor@{getColor}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}} Sk\+Paint\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves alpha and R\+GB, unpremultiplied, packed into 32 bits. Use helpers \mbox{\hyperlink{_sk_color_8h_ae05860d342c5073e890caa4cd366e947}{Sk\+Color\+Get\+A()}}, \mbox{\hyperlink{_sk_color_8h_a2ea563278aea3bc61174f337304c57a9}{Sk\+Color\+Get\+R()}}, \mbox{\hyperlink{_sk_color_8h_a3b387fe3e5a4f9ebe0c445d55dc443ee}{Sk\+Color\+Get\+G()}}, and \mbox{\hyperlink{_sk_color_8h_af92bdc477c651777e7ae313e3f83f326}{Sk\+Color\+Get\+B()}} to extract a color component.
+
+\begin{DoxyReturn}{Returns}
+unpremultiplied A\+R\+GB 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a9d298511798af80a4c16cfd2a496a22b}\label{class_sk_paint_a9d298511798af80a4c16cfd2a496a22b}} 
+\index{SkPaint@{SkPaint}!getColor4f@{getColor4f}}
+\index{getColor4f@{getColor4f}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getColor4f()}{getColor4f()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} Sk\+Paint\+::get\+Color4f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves alpha and R\+GB, unpremultiplied, as four floating point values. R\+GB are extended s\+R\+GB values (s\+R\+GB gamut, and encoded with the s\+R\+GB transfer function).
+
+\begin{DoxyReturn}{Returns}
+unpremultiplied R\+G\+BA 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_ae8d306290e10915f9159ee8eaac368b5}\label{class_sk_paint_ae8d306290e10915f9159ee8eaac368b5}} 
+\index{SkPaint@{SkPaint}!getColorFilter@{getColorFilter}}
+\index{getColorFilter@{getColorFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getColorFilter()}{getColorFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}$\ast$ Sk\+Paint\+::get\+Color\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} if set, or nullptr. Does not alter \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}}.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} if previously set, nullptr otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_aea97b0e582974219ed2e8fd857a9ad1a}\label{class_sk_paint_aea97b0e582974219ed2e8fd857a9ad1a}} 
+\index{SkPaint@{SkPaint}!getFillPath@{getFillPath}}
+\index{getFillPath@{getFillPath}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getFillPath()}{getFillPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::get\+Fill\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src,  }\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{dst }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the filled equivalent of the stroked path.
+
+Replaces dst with the src path modified by \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} and style stroke. \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, if any, is not culled. stroke width is created with default precision.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} read to create a filled version \\
+\hline
+{\em dst} & resulting \mbox{\hyperlink{class_sk_path}{Sk\+Path}} dst may be the same as src, but may not be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the path represents style fill, or false if it represents hairline 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a9a252159ba57877a58b718b3ce016473}\label{class_sk_paint_a9a252159ba57877a58b718b3ce016473}} 
+\index{SkPaint@{SkPaint}!getFillPath@{getFillPath}}
+\index{getFillPath@{getFillPath}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getFillPath()}{getFillPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::get\+Fill\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src,  }\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{cull\+Rect,  }\item[{Sk\+Scalar}]{res\+Scale = {\ttfamily 1} }\end{DoxyParamCaption}) const}
+
+Returns the filled equivalent of the stroked path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} read to create a filled version \\
+\hline
+{\em dst} & resulting \mbox{\hyperlink{class_sk_path}{Sk\+Path}}; may be the same as src, but may not be nullptr \\
+\hline
+{\em cull\+Rect} & optional limit passed to \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} \\
+\hline
+{\em res\+Scale} & if $>$ 1, increase precision, else if (0 $<$ res\+Scale $<$ 1) reduce precision to favor speed and size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the path represents style fill, or false if it represents hairline 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_ac34bee0e423825342fe309fc335763e3}\label{class_sk_paint_ac34bee0e423825342fe309fc335763e3}} 
+\index{SkPaint@{SkPaint}!getImageFilter@{getImageFilter}}
+\index{getImageFilter@{getImageFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getImageFilter()}{getImageFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}}$\ast$ Sk\+Paint\+::get\+Image\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} if set, or nullptr. Does not alter \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}}.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} if previously set, nullptr otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a97363259492b343178fd5e17ae666973}\label{class_sk_paint_a97363259492b343178fd5e17ae666973}} 
+\index{SkPaint@{SkPaint}!getMaskFilter@{getMaskFilter}}
+\index{getMaskFilter@{getMaskFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getMaskFilter()}{getMaskFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}$\ast$ Sk\+Paint\+::get\+Mask\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} if set, or nullptr. Does not alter \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}}.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} if previously set, nullptr otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_acb489117fd339b65bf76dcae432a6067}\label{class_sk_paint_acb489117fd339b65bf76dcae432a6067}} 
+\index{SkPaint@{SkPaint}!getPathEffect@{getPathEffect}}
+\index{getPathEffect@{getPathEffect}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getPathEffect()}{getPathEffect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}$\ast$ Sk\+Paint\+::get\+Path\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} if set, or nullptr. Does not alter \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}}.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} if previously set, nullptr otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a6a06bb14c5fd5205b05c06b791ee38d6}\label{class_sk_paint_a6a06bb14c5fd5205b05c06b791ee38d6}} 
+\index{SkPaint@{SkPaint}!getShader@{getShader}}
+\index{getShader@{getShader}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getShader()}{getShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}$\ast$ Sk\+Paint\+::get\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns optional colors used when filling a path, such as a gradient.
+
+Does not alter \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}}.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} if previously set, nullptr otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_ad9c39e1f59941b5795ca928d423f8cbd}\label{class_sk_paint_ad9c39e1f59941b5795ca928d423f8cbd}} 
+\index{SkPaint@{SkPaint}!getStrokeCap@{getStrokeCap}}
+\index{getStrokeCap@{getStrokeCap}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getStrokeCap()}{getStrokeCap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Cap}} Sk\+Paint\+::get\+Stroke\+Cap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the geometry drawn at the beginning and end of strokes. \mbox{\Hypertarget{class_sk_paint_aebb019270f1507d4a98b489368b728a9}\label{class_sk_paint_aebb019270f1507d4a98b489368b728a9}} 
+\index{SkPaint@{SkPaint}!getStrokeJoin@{getStrokeJoin}}
+\index{getStrokeJoin@{getStrokeJoin}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getStrokeJoin()}{getStrokeJoin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Join}} Sk\+Paint\+::get\+Stroke\+Join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the geometry drawn at the corners of strokes. \mbox{\Hypertarget{class_sk_paint_a030ad80fdab9de4297a75ddf57f600e1}\label{class_sk_paint_a030ad80fdab9de4297a75ddf57f600e1}} 
+\index{SkPaint@{SkPaint}!getStrokeMiter@{getStrokeMiter}}
+\index{getStrokeMiter@{getStrokeMiter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getStrokeMiter()}{getStrokeMiter()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+Paint\+::get\+Stroke\+Miter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the limit at which a sharp corner is drawn beveled.
+
+\begin{DoxyReturn}{Returns}
+zero and greater miter limit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_ac0c8250341bc7c21b3aef173c0747cc9}\label{class_sk_paint_ac0c8250341bc7c21b3aef173c0747cc9}} 
+\index{SkPaint@{SkPaint}!getStrokeWidth@{getStrokeWidth}}
+\index{getStrokeWidth@{getStrokeWidth}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getStrokeWidth()}{getStrokeWidth()}}
+{\footnotesize\ttfamily Sk\+Scalar Sk\+Paint\+::get\+Stroke\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the thickness of the pen used by \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} to outline the shape.
+
+\begin{DoxyReturn}{Returns}
+zero for hairline, greater than zero for pen thickness 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a174dfba10eceb1f8bce57d032dec4a91}\label{class_sk_paint_a174dfba10eceb1f8bce57d032dec4a91}} 
+\index{SkPaint@{SkPaint}!getStyle@{getStyle}}
+\index{getStyle@{getStyle}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{getStyle()}{getStyle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}} Sk\+Paint\+::get\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether the geometry is filled, stroked, or filled and stroked. \mbox{\Hypertarget{class_sk_paint_ab03db5785abbcdb2b9c1a778ba8c44de}\label{class_sk_paint_ab03db5785abbcdb2b9c1a778ba8c44de}} 
+\index{SkPaint@{SkPaint}!isAntiAlias@{isAntiAlias}}
+\index{isAntiAlias@{isAntiAlias}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{isAntiAlias()}{isAntiAlias()}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::is\+Anti\+Alias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if pixels on the active edges of \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may be drawn with partial transparency. \begin{DoxyReturn}{Returns}
+antialiasing state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a758da2765053ca1c3a9d2b0444ffc13c}\label{class_sk_paint_a758da2765053ca1c3a9d2b0444ffc13c}} 
+\index{SkPaint@{SkPaint}!isDither@{isDither}}
+\index{isDither@{isDither}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{isDither()}{isDither()}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::is\+Dither (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if color error may be distributed to smooth color transition. \begin{DoxyReturn}{Returns}
+dithering state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a5279dc992ffd05618089b3499f3df56e}\label{class_sk_paint_a5279dc992ffd05618089b3499f3df56e}} 
+\index{SkPaint@{SkPaint}!isSrcOver@{isSrcOver}}
+\index{isSrcOver@{isSrcOver}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{isSrcOver()}{isSrcOver()}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::is\+Src\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true iff the current blender claims to be equivalent to Sk\+Blend\+Mode\+::k\+Src\+Over.
+
+Also returns true of the current blender is nullptr. \mbox{\Hypertarget{class_sk_paint_a9bd5cbc8738186aa3c6bcfe73dc5547e}\label{class_sk_paint_a9bd5cbc8738186aa3c6bcfe73dc5547e}} 
+\index{SkPaint@{SkPaint}!nothingToDraw@{nothingToDraw}}
+\index{nothingToDraw@{nothingToDraw}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{nothingToDraw()}{nothingToDraw()}}
+{\footnotesize\ttfamily bool Sk\+Paint\+::nothing\+To\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} prevents all drawing; otherwise, the \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} may or may not allow drawing.
+
+Returns true if, for example, Sk\+Blend\+Mode combined with alpha computes a new alpha of zero.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} prevents all drawing
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_nothingToDraw}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+nothing\+To\+Draw}} \mbox{\Hypertarget{class_sk_paint_a808f33a205ecf7d2cc460195ff7ddd55}\label{class_sk_paint_a808f33a205ecf7d2cc460195ff7ddd55}} 
+\index{SkPaint@{SkPaint}!operator=@{operator=}}
+\index{operator=@{operator=}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \& Sk\+Paint\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{paint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Makes a shallow copy of \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}}. \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}, \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}, \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}, and \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} are shared between the original paint and the copy. Objects containing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} in the prior destination are decreased by one, and the referenced objects are deleted if the resulting count is zero. Objects containing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} in the parameter paint are increased by one. paint is unmodified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint} & original to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+content of paint
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_copy_operator}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+copy\+\_\+operator}} \mbox{\Hypertarget{class_sk_paint_a65d6a8730a2022af5c81945e02ac9033}\label{class_sk_paint_a65d6a8730a2022af5c81945e02ac9033}} 
+\index{SkPaint@{SkPaint}!operator=@{operator=}}
+\index{operator=@{operator=}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \& Sk\+Paint\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&\&}]{paint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Moves the paint to avoid increasing the reference counts of objects referenced by the paint parameter. Objects containing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} in the prior destination are decreased by one; those objects are deleted if the resulting count is zero.
+
+After the call, paint is undefined, and can be safely destructed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em paint} & original to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+content of paint
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_move_operator}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+move\+\_\+operator}} \mbox{\Hypertarget{class_sk_paint_af85298556a0086cf07bf3f712f2beb14}\label{class_sk_paint_af85298556a0086cf07bf3f712f2beb14}} 
+\index{SkPaint@{SkPaint}!refBlender@{refBlender}}
+\index{refBlender@{refBlender}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{refBlender()}{refBlender()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_blender}{Sk\+Blender}}$>$ Sk\+Paint\+::ref\+Blender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the user-\/supplied blend function, if one has been set. Increments the \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}}\textquotesingle{}s \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+A nullptr blender signifies the default Src\+Over behavior.
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} assigned to this paint, otherwise nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a81da0199e5a10cf05efc921b64cfeb83}\label{class_sk_paint_a81da0199e5a10cf05efc921b64cfeb83}} 
+\index{SkPaint@{SkPaint}!refColorFilter@{refColorFilter}}
+\index{refColorFilter@{refColorFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{refColorFilter()}{refColorFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}$>$ Sk\+Paint\+::ref\+Color\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} if set, or nullptr. Increases \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} if set, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_refColorFilter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+ref\+Color\+Filter}} \mbox{\Hypertarget{class_sk_paint_ae66916875e8e829ba8708d7ebeb4f9d0}\label{class_sk_paint_ae66916875e8e829ba8708d7ebeb4f9d0}} 
+\index{SkPaint@{SkPaint}!refImageFilter@{refImageFilter}}
+\index{refImageFilter@{refImageFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{refImageFilter()}{refImageFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}}$>$ Sk\+Paint\+::ref\+Image\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} if set, or nullptr. Increases \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} if previously set, nullptr otherwise
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_refImageFilter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+ref\+Image\+Filter}} \mbox{\Hypertarget{class_sk_paint_a6c018f60d7fd5b048f2b78342abe656d}\label{class_sk_paint_a6c018f60d7fd5b048f2b78342abe656d}} 
+\index{SkPaint@{SkPaint}!refMaskFilter@{refMaskFilter}}
+\index{refMaskFilter@{refMaskFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{refMaskFilter()}{refMaskFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}$>$ Sk\+Paint\+::ref\+Mask\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} if set, or nullptr.
+
+Increases \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} if previously set, nullptr otherwise
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_refMaskFilter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+ref\+Mask\+Filter}} \mbox{\Hypertarget{class_sk_paint_a6863a0a1170b4b7ef2a7b38c3154c997}\label{class_sk_paint_a6863a0a1170b4b7ef2a7b38c3154c997}} 
+\index{SkPaint@{SkPaint}!refPathEffect@{refPathEffect}}
+\index{refPathEffect@{refPathEffect}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{refPathEffect()}{refPathEffect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}$>$ Sk\+Paint\+::ref\+Path\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} if set, or nullptr. Increases \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} if previously set, nullptr otherwise
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_refPathEffect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+ref\+Path\+Effect}} \mbox{\Hypertarget{class_sk_paint_a2d585acd0e408cd8d66ebad9d76a8a07}\label{class_sk_paint_a2d585acd0e408cd8d66ebad9d76a8a07}} 
+\index{SkPaint@{SkPaint}!refShader@{refShader}}
+\index{refShader@{refShader}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{refShader()}{refShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}$>$ Sk\+Paint\+::ref\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns optional colors used when filling a path, such as a gradient.
+
+Increases \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} if previously set, nullptr otherwise
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Paint_refShader}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+ref\+Shader}} \mbox{\Hypertarget{class_sk_paint_a6c7118c97a0e8819d75aa757afbc4c49}\label{class_sk_paint_a6c7118c97a0e8819d75aa757afbc4c49}} 
+\index{SkPaint@{SkPaint}!reset@{reset}}
+\index{reset@{reset}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets all \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} contents to their initial values. This is equivalent to replacing \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} with the result of \mbox{\hyperlink{class_sk_paint_ad02bcb0bfd7d45f65e36f517b47e038f}{Sk\+Paint()}}.
+
+example\+: \href{https://fiddle.skia.org/c/@Paint_reset}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+reset}} \mbox{\Hypertarget{class_sk_paint_af9f453314796e7fb6b34796967cd389f}\label{class_sk_paint_af9f453314796e7fb6b34796967cd389f}} 
+\index{SkPaint@{SkPaint}!setAlphaf@{setAlphaf}}
+\index{setAlphaf@{setAlphaf}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setAlphaf()}{setAlphaf()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Alphaf (\begin{DoxyParamCaption}\item[{float}]{a }\end{DoxyParamCaption})}
+
+Replaces alpha, leaving R\+GB unchanged. An out of range value triggers an assert in the debug build. a is a value from 0.\+0 to 1.\+0. a set to zero makes color fully transparent; a set to 1.\+0 makes color fully opaque.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & alpha component of color \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_paint_a3d65cf5830557558d3d4b67791745a4d}\label{class_sk_paint_a3d65cf5830557558d3d4b67791745a4d}} 
+\index{SkPaint@{SkPaint}!setAntiAlias@{setAntiAlias}}
+\index{setAntiAlias@{setAntiAlias}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setAntiAlias()}{setAntiAlias()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Anti\+Alias (\begin{DoxyParamCaption}\item[{bool}]{aa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Requests, but does not require, that edge pixels draw opaque or with partial transparency. 
+\begin{DoxyParams}{Parameters}
+{\em aa} & setting for antialiasing \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_paint_a9e6134e520cdb72542f6e89538a8a993}\label{class_sk_paint_a9e6134e520cdb72542f6e89538a8a993}} 
+\index{SkPaint@{SkPaint}!setARGB@{setARGB}}
+\index{setARGB@{setARGB}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setARGB()}{setARGB()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+A\+R\+GB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{a,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{r,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{g,  }\item[{\mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}}}]{b }\end{DoxyParamCaption})}
+
+Sets color used when drawing solid fills. The color components range from 0 to 255. The color is unpremultiplied; alpha sets the transparency independent of R\+GB.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & amount of alpha, from fully transparent (0) to fully opaque (255) \\
+\hline
+{\em r} & amount of red, from no red (0) to full red (255) \\
+\hline
+{\em g} & amount of green, from no green (0) to full green (255) \\
+\hline
+{\em b} & amount of blue, from no blue (0) to full blue (255)\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Paint_setARGB}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+A\+R\+GB}} \mbox{\Hypertarget{class_sk_paint_aea34211e56049d1f2d8860b797dccc18}\label{class_sk_paint_aea34211e56049d1f2d8860b797dccc18}} 
+\index{SkPaint@{SkPaint}!setBlender@{setBlender}}
+\index{setBlender@{setBlender}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setBlender()}{setBlender()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Blender (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_blender}{Sk\+Blender}} $>$}]{blender }\end{DoxyParamCaption})}
+
+Sets the current blender, increasing its refcnt, and if a blender is already present, decreasing that object\textquotesingle{}s refcnt.
+
+A nullptr blender signifies the default Src\+Over behavior.
+
+For convenience, you can call \mbox{\hyperlink{class_sk_paint_ac7c58424231c740f54c70165df1bb145}{set\+Blend\+Mode()}} if the blend effect can be expressed as one of those values. \mbox{\Hypertarget{class_sk_paint_ac7c58424231c740f54c70165df1bb145}\label{class_sk_paint_ac7c58424231c740f54c70165df1bb145}} 
+\index{SkPaint@{SkPaint}!setBlendMode@{setBlendMode}}
+\index{setBlendMode@{setBlendMode}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setBlendMode()}{setBlendMode()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Blend\+Mode (\begin{DoxyParamCaption}\item[{Sk\+Blend\+Mode}]{mode }\end{DoxyParamCaption})}
+
+Helper method for calling \mbox{\hyperlink{class_sk_paint_aea34211e56049d1f2d8860b797dccc18}{set\+Blender()}}.
+
+This sets a blender that implements the specified blendmode enum. \mbox{\Hypertarget{class_sk_paint_a7a6bd293bb2eee4655e3ef534ab7478c}\label{class_sk_paint_a7a6bd293bb2eee4655e3ef534ab7478c}} 
+\index{SkPaint@{SkPaint}!setColor@{setColor}}
+\index{setColor@{setColor}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_color4f}{Sk\+Color4f}} \&}]{color,  }\item[{\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$}]{color\+Space = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Sets alpha and R\+GB used when stroking and filling. The color is four floating point values, unpremultiplied. The color values are interpreted as being in the color\+Space. If color\+Space is nullptr, then color is assumed to be in the s\+R\+GB color space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & unpremultiplied R\+G\+BA \\
+\hline
+{\em color\+Space} & \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} describing the encoding of color \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_paint_a2afde76523eb9fafe22fca89b841e14b}\label{class_sk_paint_a2afde76523eb9fafe22fca89b841e14b}} 
+\index{SkPaint@{SkPaint}!setColor@{setColor}}
+\index{setColor@{setColor}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_color_8h_a84c81e6a24ff07a55333acf5603046a8}{Sk\+Color}}}]{color }\end{DoxyParamCaption})}
+
+Sets alpha and R\+GB used when stroking and filling. The color is a 32-\/bit value, unpremultiplied, packing 8-\/bit components for alpha, red, blue, and green.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & unpremultiplied A\+R\+GB\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Paint_setColor}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Color}} \mbox{\Hypertarget{class_sk_paint_adf2f43ea22a6b4ba62ef16d8f8ff680d}\label{class_sk_paint_adf2f43ea22a6b4ba62ef16d8f8ff680d}} 
+\index{SkPaint@{SkPaint}!setColorFilter@{setColorFilter}}
+\index{setColorFilter@{setColorFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setColorFilter()}{setColorFilter()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Color\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $>$}]{color\+Filter }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} to filter, decreasing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} of the previous \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}. Pass nullptr to clear \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}.
+
+Increments filter \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color\+Filter} & \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} to apply to subsequent draw\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Blend_Mode_Methods}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Blend\+\_\+\+Mode\+\_\+\+Methods}} example\+: \href{https://fiddle.skia.org/c/@Paint_setColorFilter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Color\+Filter}} \mbox{\Hypertarget{class_sk_paint_a621464a3f1f92c3c1035195e42783826}\label{class_sk_paint_a621464a3f1f92c3c1035195e42783826}} 
+\index{SkPaint@{SkPaint}!setDither@{setDither}}
+\index{setDither@{setDither}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setDither()}{setDither()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Dither (\begin{DoxyParamCaption}\item[{bool}]{dither }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Requests, but does not require, to distribute color error. 
+\begin{DoxyParams}{Parameters}
+{\em dither} & setting for ditering \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_paint_a67092e32b2081a05ddc8ebdef31af0f5}\label{class_sk_paint_a67092e32b2081a05ddc8ebdef31af0f5}} 
+\index{SkPaint@{SkPaint}!setImageFilter@{setImageFilter}}
+\index{setImageFilter@{setImageFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setImageFilter()}{setImageFilter()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Image\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $>$}]{image\+Filter }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} to image\+Filter, decreasing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} of the previous \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}}. Pass nullptr to clear \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}}, and remove \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} effect on drawing.
+
+Increments image\+Filter \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Filter} & how \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is sampled when transformed\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Paint_setImageFilter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Image\+Filter}} \mbox{\Hypertarget{class_sk_paint_a9b0d0c21f04d0c98f8bf167f991716ea}\label{class_sk_paint_a9b0d0c21f04d0c98f8bf167f991716ea}} 
+\index{SkPaint@{SkPaint}!setMaskFilter@{setMaskFilter}}
+\index{setMaskFilter@{setMaskFilter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setMaskFilter()}{setMaskFilter()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Mask\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $>$}]{mask\+Filter }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} to mask\+Filter, decreasing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} of the previous \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}. Pass nullptr to clear \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} and leave \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} effect on mask alpha unaltered.
+
+Increments mask\+Filter \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mask\+Filter} & modifies clipping mask generated from drawn geometry\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Paint_setMaskFilter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Mask\+Filter}} example\+: \href{https://fiddle.skia.org/c/@Typeface_Methods}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Typeface\+\_\+\+Methods}} \mbox{\Hypertarget{class_sk_paint_ab6829fa163e1db2c6021061ae908d0cc}\label{class_sk_paint_ab6829fa163e1db2c6021061ae908d0cc}} 
+\index{SkPaint@{SkPaint}!setPathEffect@{setPathEffect}}
+\index{setPathEffect@{setPathEffect}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setPathEffect()}{setPathEffect()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Path\+Effect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$}]{path\+Effect }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} to path\+Effect, decreasing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} of the previous \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}. Pass nullptr to leave the path geometry unaltered.
+
+Increments path\+Effect \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Effect} & replace \mbox{\hyperlink{class_sk_path}{Sk\+Path}} with a modification when drawn\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Mask_Filter_Methods}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Mask\+\_\+\+Filter\+\_\+\+Methods}} example\+: \href{https://fiddle.skia.org/c/@Paint_setPathEffect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Path\+Effect}} \mbox{\Hypertarget{class_sk_paint_ab1fecafb4783c85159f701d195221354}\label{class_sk_paint_ab1fecafb4783c85159f701d195221354}} 
+\index{SkPaint@{SkPaint}!setShader@{setShader}}
+\index{setShader@{setShader}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setShader()}{setShader()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$}]{shader }\end{DoxyParamCaption})}
+
+Sets optional colors used when filling a path, such as a gradient.
+
+Sets \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} to shader, decreasing \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} of the previous \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}. Increments shader \mbox{\hyperlink{class_sk_ref_cnt}{Sk\+Ref\+Cnt}} by one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & how geometry is filled with color; if nullptr, color is used instead\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Color_Filter_Methods}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Color\+\_\+\+Filter\+\_\+\+Methods}} example\+: \href{https://fiddle.skia.org/c/@Paint_setShader}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Shader}} \mbox{\Hypertarget{class_sk_paint_aeeaef723b621f1e82b11888edfc06fb9}\label{class_sk_paint_aeeaef723b621f1e82b11888edfc06fb9}} 
+\index{SkPaint@{SkPaint}!setStroke@{setStroke}}
+\index{setStroke@{setStroke}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setStroke()}{setStroke()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Stroke (\begin{DoxyParamCaption}\item[{bool}]{is\+Stroke }\end{DoxyParamCaption})}
+
+Set paint\textquotesingle{}s style to k\+Stroke if true, or k\+Fill if false. \mbox{\Hypertarget{class_sk_paint_a68e82b3dfce8a3c35413795461794ba6}\label{class_sk_paint_a68e82b3dfce8a3c35413795461794ba6}} 
+\index{SkPaint@{SkPaint}!setStrokeCap@{setStrokeCap}}
+\index{setStrokeCap@{setStrokeCap}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setStrokeCap()}{setStrokeCap()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Stroke\+Cap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Cap}}}]{cap }\end{DoxyParamCaption})}
+
+Sets the geometry drawn at the beginning and end of strokes.
+
+example\+: \href{https://fiddle.skia.org/c/@Paint_setStrokeCap_a}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Stroke\+Cap\+\_\+a}} example\+: \href{https://fiddle.skia.org/c/@Paint_setStrokeCap_b}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Stroke\+Cap\+\_\+b}} \mbox{\Hypertarget{class_sk_paint_a701338207855a667edf2c426222bb0bb}\label{class_sk_paint_a701338207855a667edf2c426222bb0bb}} 
+\index{SkPaint@{SkPaint}!setStrokeJoin@{setStrokeJoin}}
+\index{setStrokeJoin@{setStrokeJoin}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setStrokeJoin()}{setStrokeJoin()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Stroke\+Join (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Join}}}]{join }\end{DoxyParamCaption})}
+
+Sets the geometry drawn at the corners of strokes.
+
+example\+: \href{https://fiddle.skia.org/c/@Paint_setStrokeJoin}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Stroke\+Join}} \mbox{\Hypertarget{class_sk_paint_a2e767abfeb7795ed251a08b5ed85033f}\label{class_sk_paint_a2e767abfeb7795ed251a08b5ed85033f}} 
+\index{SkPaint@{SkPaint}!setStrokeMiter@{setStrokeMiter}}
+\index{setStrokeMiter@{setStrokeMiter}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setStrokeMiter()}{setStrokeMiter()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Stroke\+Miter (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{miter }\end{DoxyParamCaption})}
+
+Sets the limit at which a sharp corner is drawn beveled. Valid values are zero and greater. Has no effect if miter is less than zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em miter} & zero and greater miter limit\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Paint_setStrokeMiter}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Stroke\+Miter}} \mbox{\Hypertarget{class_sk_paint_af08c5bc138e981a4e39ad1f9b165c32c}\label{class_sk_paint_af08c5bc138e981a4e39ad1f9b165c32c}} 
+\index{SkPaint@{SkPaint}!setStrokeWidth@{setStrokeWidth}}
+\index{setStrokeWidth@{setStrokeWidth}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setStrokeWidth()}{setStrokeWidth()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Stroke\+Width (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{width }\end{DoxyParamCaption})}
+
+Sets the thickness of the pen used by the paint to outline the shape. A stroke-\/width of zero is treated as \char`\"{}hairline\char`\"{} width. Hairlines are always exactly one pixel wide in device space (their thickness does not change as the canvas is scaled). Negative stroke-\/widths are invalid; setting a negative width will have no effect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & zero thickness for hairline; greater than zero for pen thickness\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Miter_Limit}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Miter\+\_\+\+Limit}} example\+: \href{https://fiddle.skia.org/c/@Paint_setStrokeWidth}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Stroke\+Width}} \mbox{\Hypertarget{class_sk_paint_a171899ddc016e84f4adb4cbd5ff17357}\label{class_sk_paint_a171899ddc016e84f4adb4cbd5ff17357}} 
+\index{SkPaint@{SkPaint}!setStyle@{setStyle}}
+\index{setStyle@{setStyle}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{setStyle()}{setStyle()}}
+{\footnotesize\ttfamily void Sk\+Paint\+::set\+Style (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Style}}}]{style }\end{DoxyParamCaption})}
+
+Sets whether the geometry is filled, stroked, or filled and stroked. Has no effect if style is not a legal \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Sk\+Paint\+::\+Style}} value.
+
+example\+: \href{https://fiddle.skia.org/c/@Paint_setStyle}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Paint\+\_\+set\+Style}} example\+: \href{https://fiddle.skia.org/c/@Stroke_Width}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Stroke\+\_\+\+Width}} 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_sk_paint_a1b5da0b4af796032ea5f8c99355b7eb3}\label{class_sk_paint_a1b5da0b4af796032ea5f8c99355b7eb3}} 
+\index{SkPaint@{SkPaint}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Compares a and b, and returns true if a and b are not equivalent. May return true if \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}, \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}, \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}, or \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} have identical contents but different pointers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} to compare \\
+\hline
+{\em b} & \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} pair are not equivalent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_paint_a09b0bb3f4e5a5e8f9ad1c274706e3aca}\label{class_sk_paint_a09b0bb3f4e5a5e8f9ad1c274706e3aca}} 
+\index{SkPaint@{SkPaint}!operator==@{operator==}}
+\index{operator==@{operator==}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily S\+K\+\_\+\+A\+PI friend bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Compares a and b, and returns true if a and b are equivalent. May return false if \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}, \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}, \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}}, \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}, or \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} have identical contents but different pointers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} to compare \\
+\hline
+{\em b} & \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} pair are equivalent 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sk_paint_a1a07d61a5d34a03b4e94609535d8e22f}\label{class_sk_paint_a1a07d61a5d34a03b4e94609535d8e22f}} 
+\index{SkPaint@{SkPaint}!kCapCount@{kCapCount}}
+\index{kCapCount@{kCapCount}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{kCapCount}{kCapCount}}
+{\footnotesize\ttfamily constexpr int Sk\+Paint\+::k\+Cap\+Count = \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333ad07659a427b9472f6bc6e5f8b0b98f92}{k\+Last\+\_\+\+Cap}} + 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+May be used to verify that \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Sk\+Paint\+::\+Cap}} is a legal value. \mbox{\Hypertarget{class_sk_paint_a9caa2ebd06ab960b13ba99a536981ca7}\label{class_sk_paint_a9caa2ebd06ab960b13ba99a536981ca7}} 
+\index{SkPaint@{SkPaint}!kJoinCount@{kJoinCount}}
+\index{kJoinCount@{kJoinCount}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{kJoinCount}{kJoinCount}}
+{\footnotesize\ttfamily constexpr int Sk\+Paint\+::k\+Join\+Count = \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977ccaa28f52126a8341ff0661634d9476e77b7}{k\+Last\+\_\+\+Join}} + 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+May be used to verify that \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Sk\+Paint\+::\+Join}} is a legal value. \mbox{\Hypertarget{class_sk_paint_a25903caaaa2a53488d97a863d11af1f0}\label{class_sk_paint_a25903caaaa2a53488d97a863d11af1f0}} 
+\index{SkPaint@{SkPaint}!kStyleCount@{kStyleCount}}
+\index{kStyleCount@{kStyleCount}!SkPaint@{SkPaint}}
+\doxysubsubsection{\texorpdfstring{kStyleCount}{kStyleCount}}
+{\footnotesize\ttfamily constexpr int Sk\+Paint\+::k\+Style\+Count = \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdace3b97d439287fa390dec09c0c99a12c}{k\+Stroke\+And\+Fill\+\_\+\+Style}} + 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+May be used to verify that \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fd}{Sk\+Paint\+::\+Style}} is a legal value. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Paint.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Paint.\+cpp\end{DoxyCompactItemize}

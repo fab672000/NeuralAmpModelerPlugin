@@ -1,0 +1,65 @@
+Using \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} for audio input is almost identical to the way it is used for playback. Here\textquotesingle{}s the blocking playback example rewritten for recording\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{_rt_audio_8h}{RtAudio.h}}"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} record( \textcolor{keywordtype}{void} *outputBuffer, \textcolor{keywordtype}{void} *inputBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nBufferFrames,}
+\DoxyCodeLine{         \textcolor{keywordtype}{double} streamTime, \mbox{\hyperlink{_rt_audio_8h_a80e306d363583da3b0a1b65d9b57c806}{RtAudioStreamStatus}} status, \textcolor{keywordtype}{void} *userData )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( status )}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"Stream overflow detected!"} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Do something with the data in the "inputBuffer" buffer.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \mbox{\hyperlink{class_rt_audio}{RtAudio}} adc;}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( adc.\mbox{\hyperlink{class_rt_audio_a747ce2d73803641bbb66d6e78092aa1a}{getDeviceCount}}() < 1 ) \{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"\(\backslash\)nNo audio devices found!\(\backslash\)n"};}
+\DoxyCodeLine{    exit( 0 );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{struct_rt_audio_1_1_stream_parameters}{RtAudio::StreamParameters}} parameters;}
+\DoxyCodeLine{  parameters.deviceId = adc.\mbox{\hyperlink{class_rt_audio_aad8b94edd3cd379ee300b125750ac6ce}{getDefaultInputDevice}}();}
+\DoxyCodeLine{  parameters.nChannels = 2;}
+\DoxyCodeLine{  parameters.firstChannel = 0;}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sampleRate = 44100;}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bufferFrames = 256; \textcolor{comment}{// 256 sample frames}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    adc.\mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{openStream}}( \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}, \&parameters, RTAUDIO\_SINT16,}
+\DoxyCodeLine{                    sampleRate, \&bufferFrames, \&record );}
+\DoxyCodeLine{    adc.\mbox{\hyperlink{class_rt_audio_aec017a89629ccef66a90b60be22a2f80}{startStream}}();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{catch} ( \mbox{\hyperlink{class_rt_audio_error}{RtAudioError}}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}} ) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}.printMessage();}
+\DoxyCodeLine{    exit( 0 );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{keywordtype}{char} input;}
+\DoxyCodeLine{  std::cout << \textcolor{stringliteral}{"\(\backslash\)nRecording ... press <enter> to quit.\(\backslash\)n"};}
+\DoxyCodeLine{  std::cin.get( input );}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    \textcolor{comment}{// Stop the stream}}
+\DoxyCodeLine{    adc.\mbox{\hyperlink{class_rt_audio_af4c241ff86936ecc8108f0d9dfe3efdd}{stopStream}}();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_rt_audio_error}{RtAudioError}}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}.printMessage();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( adc.\mbox{\hyperlink{class_rt_audio_a9c191aa5401a60e5438291b117bbf8c4}{isStreamOpen}}() ) adc.\mbox{\hyperlink{class_rt_audio_a90d599002ad32cf250a4cb866f2cc93a}{closeStream}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+In this example, we pass the address of the stream parameter structure as the second argument of the \mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{Rt\+Audio\+::open\+Stream()}} function and pass a N\+U\+LL value for the output stream parameters. In this example, the {\itshape record()} callback function performs no specific operations. 

@@ -1,0 +1,100 @@
+\hypertarget{class_sk_shaper_1_1_run_handler}{}\doxysection{Sk\+Shaper\+::Run\+Handler Class Reference}
+\label{class_sk_shaper_1_1_run_handler}\index{SkShaper::RunHandler@{SkShaper::RunHandler}}
+Inheritance diagram for Sk\+Shaper\+::Run\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.428571cm]{class_sk_shaper_1_1_run_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_buffer}{Buffer}}
+\item 
+struct \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_range}{Range}}
+\item 
+struct \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a2a8f99db2fc3f8d2f3bf30acc541299f}{begin\+Line}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a5d0a2e6812423d1a4b1d1b1ce53395df}{run\+Info}} (const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&)=0
+\item 
+virtual void \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a5b5d3fe0afa0140226d4b2aeb7471269}{commit\+Run\+Info}} ()=0
+\item 
+virtual \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_buffer}{Buffer}} \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_aa280e5db0d4779f59df9cbd6226aee28}{run\+Buffer}} (const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&)=0
+\item 
+virtual void \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a15b6354e7c09a497d55446d92114ff80}{commit\+Run\+Buffer}} (const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&)=0
+\item 
+virtual void \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a301461bffec8aa25ca75cad6fa28256e}{commit\+Line}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_shaper_1_1_run_handler_a2a8f99db2fc3f8d2f3bf30acc541299f}\label{class_sk_shaper_1_1_run_handler_a2a8f99db2fc3f8d2f3bf30acc541299f}} 
+\index{SkShaper::RunHandler@{SkShaper::RunHandler}!beginLine@{beginLine}}
+\index{beginLine@{beginLine}!SkShaper::RunHandler@{SkShaper::RunHandler}}
+\doxysubsubsection{\texorpdfstring{beginLine()}{beginLine()}}
+{\footnotesize\ttfamily virtual void Sk\+Shaper\+::\+Run\+Handler\+::begin\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when beginning a line. 
+
+Implemented in \mbox{\hyperlink{class_sk_text_blob_builder_run_handler_a54563337a1b798238086d8021ca1e04f}{Sk\+Text\+Blob\+Builder\+Run\+Handler}}, and \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_ab2258893122041e1318865c9e91868a2}{Sk\+Shaper\+J\+S\+O\+N\+Writer}}.
+
+\mbox{\Hypertarget{class_sk_shaper_1_1_run_handler_a301461bffec8aa25ca75cad6fa28256e}\label{class_sk_shaper_1_1_run_handler_a301461bffec8aa25ca75cad6fa28256e}} 
+\index{SkShaper::RunHandler@{SkShaper::RunHandler}!commitLine@{commitLine}}
+\index{commitLine@{commitLine}!SkShaper::RunHandler@{SkShaper::RunHandler}}
+\doxysubsubsection{\texorpdfstring{commitLine()}{commitLine()}}
+{\footnotesize\ttfamily virtual void Sk\+Shaper\+::\+Run\+Handler\+::commit\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called when ending a line. 
+
+Implemented in \mbox{\hyperlink{class_sk_text_blob_builder_run_handler_a40f4b7ce331cd46c66c40f71ba60cb1a}{Sk\+Text\+Blob\+Builder\+Run\+Handler}}, and \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_ab7dbd6b41ac68510b2ca483432b8701b}{Sk\+Shaper\+J\+S\+O\+N\+Writer}}.
+
+\mbox{\Hypertarget{class_sk_shaper_1_1_run_handler_a15b6354e7c09a497d55446d92114ff80}\label{class_sk_shaper_1_1_run_handler_a15b6354e7c09a497d55446d92114ff80}} 
+\index{SkShaper::RunHandler@{SkShaper::RunHandler}!commitRunBuffer@{commitRunBuffer}}
+\index{commitRunBuffer@{commitRunBuffer}!SkShaper::RunHandler@{SkShaper::RunHandler}}
+\doxysubsubsection{\texorpdfstring{commitRunBuffer()}{commitRunBuffer()}}
+{\footnotesize\ttfamily virtual void Sk\+Shaper\+::\+Run\+Handler\+::commit\+Run\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called after each run\+Buffer is filled out. 
+
+Implemented in \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_a9a844084a75ede4a0070cb4bb5093d99}{Sk\+Shaper\+J\+S\+O\+N\+Writer}}, and \mbox{\hyperlink{class_sk_text_blob_builder_run_handler_ad0544a226b1a5be34c80cc28d5b29405}{Sk\+Text\+Blob\+Builder\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_1_1_run_handler_a5b5d3fe0afa0140226d4b2aeb7471269}\label{class_sk_shaper_1_1_run_handler_a5b5d3fe0afa0140226d4b2aeb7471269}} 
+\index{SkShaper::RunHandler@{SkShaper::RunHandler}!commitRunInfo@{commitRunInfo}}
+\index{commitRunInfo@{commitRunInfo}!SkShaper::RunHandler@{SkShaper::RunHandler}}
+\doxysubsubsection{\texorpdfstring{commitRunInfo()}{commitRunInfo()}}
+{\footnotesize\ttfamily virtual void Sk\+Shaper\+::\+Run\+Handler\+::commit\+Run\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called after all run\+Info calls for a line. 
+
+Implemented in \mbox{\hyperlink{class_sk_text_blob_builder_run_handler_a94a48f54fbc4120efce8d427f8537dfb}{Sk\+Text\+Blob\+Builder\+Run\+Handler}}, and \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_a01326598eed717d36f2529401cd1559f}{Sk\+Shaper\+J\+S\+O\+N\+Writer}}.
+
+\mbox{\Hypertarget{class_sk_shaper_1_1_run_handler_aa280e5db0d4779f59df9cbd6226aee28}\label{class_sk_shaper_1_1_run_handler_aa280e5db0d4779f59df9cbd6226aee28}} 
+\index{SkShaper::RunHandler@{SkShaper::RunHandler}!runBuffer@{runBuffer}}
+\index{runBuffer@{runBuffer}!SkShaper::RunHandler@{SkShaper::RunHandler}}
+\doxysubsubsection{\texorpdfstring{runBuffer()}{runBuffer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_buffer}{Buffer}} Sk\+Shaper\+::\+Run\+Handler\+::run\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called for each run in a line after commit\+Run\+Info. The buffer will be filled out. 
+
+Implemented in \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_abec29bd41e6850396174dafdb5973c6f}{Sk\+Shaper\+J\+S\+O\+N\+Writer}}, and \mbox{\hyperlink{class_sk_text_blob_builder_run_handler_ac89016bc719a02d7b7d8a6bff8b91446}{Sk\+Text\+Blob\+Builder\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_1_1_run_handler_a5d0a2e6812423d1a4b1d1b1ce53395df}\label{class_sk_shaper_1_1_run_handler_a5d0a2e6812423d1a4b1d1b1ce53395df}} 
+\index{SkShaper::RunHandler@{SkShaper::RunHandler}!runInfo@{runInfo}}
+\index{runInfo@{runInfo}!SkShaper::RunHandler@{SkShaper::RunHandler}}
+\doxysubsubsection{\texorpdfstring{runInfo()}{runInfo()}}
+{\footnotesize\ttfamily virtual void Sk\+Shaper\+::\+Run\+Handler\+::run\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called once for each run in a line. Can compute baselines and offsets. 
+
+Implemented in \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_aa4df8a21e960f0063c321b0901d4a825}{Sk\+Shaper\+J\+S\+O\+N\+Writer}}, and \mbox{\hyperlink{class_sk_text_blob_builder_run_handler_ab777708147845073a01f01c37d6aa3ac}{Sk\+Text\+Blob\+Builder\+Run\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skshaper/include/Sk\+Shaper.\+h\end{DoxyCompactItemize}

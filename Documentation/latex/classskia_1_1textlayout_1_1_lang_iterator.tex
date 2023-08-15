@@ -1,0 +1,70 @@
+\hypertarget{classskia_1_1textlayout_1_1_lang_iterator}{}\doxysection{skia\+::textlayout\+::Lang\+Iterator Class Reference}
+\label{classskia_1_1textlayout_1_1_lang_iterator}\index{skia::textlayout::LangIterator@{skia::textlayout::LangIterator}}
+Inheritance diagram for skia\+::textlayout\+::Lang\+Iterator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classskia_1_1textlayout_1_1_lang_iterator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_lang_iterator_aade6ee6860a76c8ffe1b299aa457b5b4}\label{classskia_1_1textlayout_1_1_lang_iterator_aade6ee6860a76c8ffe1b299aa457b5b4}} 
+{\bfseries Lang\+Iterator} (\mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ const char $>$ utf8, \mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ \mbox{\hyperlink{structskia_1_1textlayout_1_1_block}{Block}} $>$ styles, const \mbox{\hyperlink{classskia_1_1textlayout_1_1_text_style}{Text\+Style}} \&default\+Style)
+\item 
+void \mbox{\hyperlink{classskia_1_1textlayout_1_1_lang_iterator_a5e914f69f9ff62ded2362fe8a1f531e2}{consume}} () override
+\item 
+size\+\_\+t \mbox{\hyperlink{classskia_1_1textlayout_1_1_lang_iterator_a66fa66ed32c06bcedddfd57994cbb852}{end\+Of\+Current\+Run}} () const override
+\item 
+bool \mbox{\hyperlink{classskia_1_1textlayout_1_1_lang_iterator_acaa02ccb61348bfa2c77ec27f33717e0}{at\+End}} () const override
+\item 
+const char $\ast$ \mbox{\hyperlink{classskia_1_1textlayout_1_1_lang_iterator_aa0f49d52192e891a288d1fe1b7cb3d3d}{current\+Language}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_lang_iterator_acaa02ccb61348bfa2c77ec27f33717e0}\label{classskia_1_1textlayout_1_1_lang_iterator_acaa02ccb61348bfa2c77ec27f33717e0}} 
+\index{skia::textlayout::LangIterator@{skia::textlayout::LangIterator}!atEnd@{atEnd}}
+\index{atEnd@{atEnd}!skia::textlayout::LangIterator@{skia::textlayout::LangIterator}}
+\doxysubsubsection{\texorpdfstring{atEnd()}{atEnd()}}
+{\footnotesize\ttfamily bool skia\+::textlayout\+::\+Lang\+Iterator\+::at\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Return true if consume should no longer be called. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_iterator_a0892f1bcbf72f55937eee6fd0196a326}{Sk\+Shaper\+::\+Run\+Iterator}}.
+
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_lang_iterator_a5e914f69f9ff62ded2362fe8a1f531e2}\label{classskia_1_1textlayout_1_1_lang_iterator_a5e914f69f9ff62ded2362fe8a1f531e2}} 
+\index{skia::textlayout::LangIterator@{skia::textlayout::LangIterator}!consume@{consume}}
+\index{consume@{consume}!skia::textlayout::LangIterator@{skia::textlayout::LangIterator}}
+\doxysubsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily void skia\+::textlayout\+::\+Lang\+Iterator\+::consume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set state to that of current run and move iterator to end of that run. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_iterator_a16b5787b2c8be5a81ba89768f2e01899}{Sk\+Shaper\+::\+Run\+Iterator}}.
+
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_lang_iterator_aa0f49d52192e891a288d1fe1b7cb3d3d}\label{classskia_1_1textlayout_1_1_lang_iterator_aa0f49d52192e891a288d1fe1b7cb3d3d}} 
+\index{skia::textlayout::LangIterator@{skia::textlayout::LangIterator}!currentLanguage@{currentLanguage}}
+\index{currentLanguage@{currentLanguage}!skia::textlayout::LangIterator@{skia::textlayout::LangIterator}}
+\doxysubsubsection{\texorpdfstring{currentLanguage()}{currentLanguage()}}
+{\footnotesize\ttfamily const char$\ast$ skia\+::textlayout\+::\+Lang\+Iterator\+::current\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Should be B\+C\+P-\/47, c locale names may also work. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_language_run_iterator_a91ae66e6fa54b6946738e8a324dde118}{Sk\+Shaper\+::\+Language\+Run\+Iterator}}.
+
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_lang_iterator_a66fa66ed32c06bcedddfd57994cbb852}\label{classskia_1_1textlayout_1_1_lang_iterator_a66fa66ed32c06bcedddfd57994cbb852}} 
+\index{skia::textlayout::LangIterator@{skia::textlayout::LangIterator}!endOfCurrentRun@{endOfCurrentRun}}
+\index{endOfCurrentRun@{endOfCurrentRun}!skia::textlayout::LangIterator@{skia::textlayout::LangIterator}}
+\doxysubsubsection{\texorpdfstring{endOfCurrentRun()}{endOfCurrentRun()}}
+{\footnotesize\ttfamily size\+\_\+t skia\+::textlayout\+::\+Lang\+Iterator\+::end\+Of\+Current\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Offset to one past the last (utf8) element in the current run. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_iterator_a28655c90848ee22db4fcbc5ce615da33}{Sk\+Shaper\+::\+Run\+Iterator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skparagraph/src/Iterators.\+h\end{DoxyCompactItemize}

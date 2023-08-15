@@ -1,0 +1,92 @@
+\hypertarget{struct_sk_codec_1_1_frame_info}{}\doxysection{Sk\+Codec\+::Frame\+Info Struct Reference}
+\label{struct_sk_codec_1_1_frame_info}\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+
+
+{\ttfamily \#include $<$Sk\+Codec.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a47283289c8d579b63d47c12e17aa8bab}{f\+Required\+Frame}}
+\item 
+int \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a0cdf2b80529e1bc57d669b8c65436d4b}{f\+Duration}}
+\item 
+bool \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a3c0ecd3b9e71a61d42bdc6c16d2df4f6}{f\+Fully\+Received}}
+\item 
+Sk\+Alpha\+Type \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a979aead1902a2eb95206316a29d8cb1f}{f\+Alpha\+Type}}
+\item 
+bool \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a704a15ba7b3fb96f20690db5efd3388d}{f\+Has\+Alpha\+Within\+Bounds}}
+\item 
+Sk\+Codec\+Animation\+::\+Disposal\+Method \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a1b31a73a3b625b66506c3fa8a371329d}{f\+Disposal\+Method}}
+\item 
+Sk\+Codec\+Animation\+::\+Blend \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_a37a0634fb07253965b17b2bf0be02d8f}{f\+Blend}}
+\item 
+\mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \mbox{\hyperlink{struct_sk_codec_1_1_frame_info_adb254fbb4b710a65718de46130686f8a}{f\+Frame\+Rect}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about individual frames in a multi-\/framed image. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a979aead1902a2eb95206316a29d8cb1f}\label{struct_sk_codec_1_1_frame_info_a979aead1902a2eb95206316a29d8cb1f}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fAlphaType@{fAlphaType}}
+\index{fAlphaType@{fAlphaType}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fAlphaType}{fAlphaType}}
+{\footnotesize\ttfamily Sk\+Alpha\+Type Sk\+Codec\+::\+Frame\+Info\+::f\+Alpha\+Type}
+
+This is conservative; it will still return non-\/opaque if e.\+g. a color index-\/based frame has a color with alpha but does not use it. \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a37a0634fb07253965b17b2bf0be02d8f}\label{struct_sk_codec_1_1_frame_info_a37a0634fb07253965b17b2bf0be02d8f}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fBlend@{fBlend}}
+\index{fBlend@{fBlend}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fBlend}{fBlend}}
+{\footnotesize\ttfamily Sk\+Codec\+Animation\+::\+Blend Sk\+Codec\+::\+Frame\+Info\+::f\+Blend}
+
+How this frame should blend with the prior frame. \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a1b31a73a3b625b66506c3fa8a371329d}\label{struct_sk_codec_1_1_frame_info_a1b31a73a3b625b66506c3fa8a371329d}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fDisposalMethod@{fDisposalMethod}}
+\index{fDisposalMethod@{fDisposalMethod}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fDisposalMethod}{fDisposalMethod}}
+{\footnotesize\ttfamily Sk\+Codec\+Animation\+::\+Disposal\+Method Sk\+Codec\+::\+Frame\+Info\+::f\+Disposal\+Method}
+
+How this frame should be modified before decoding the next one. \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a0cdf2b80529e1bc57d669b8c65436d4b}\label{struct_sk_codec_1_1_frame_info_a0cdf2b80529e1bc57d669b8c65436d4b}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fDuration@{fDuration}}
+\index{fDuration@{fDuration}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fDuration}{fDuration}}
+{\footnotesize\ttfamily int Sk\+Codec\+::\+Frame\+Info\+::f\+Duration}
+
+Number of milliseconds to show this frame. \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_adb254fbb4b710a65718de46130686f8a}\label{struct_sk_codec_1_1_frame_info_adb254fbb4b710a65718de46130686f8a}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fFrameRect@{fFrameRect}}
+\index{fFrameRect@{fFrameRect}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fFrameRect}{fFrameRect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} Sk\+Codec\+::\+Frame\+Info\+::f\+Frame\+Rect}
+
+The rectangle updated by this frame.
+
+It may be empty, if the frame does not change the image. It will always be contained by Sk\+Codec\+::dimensions(). \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a3c0ecd3b9e71a61d42bdc6c16d2df4f6}\label{struct_sk_codec_1_1_frame_info_a3c0ecd3b9e71a61d42bdc6c16d2df4f6}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fFullyReceived@{fFullyReceived}}
+\index{fFullyReceived@{fFullyReceived}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fFullyReceived}{fFullyReceived}}
+{\footnotesize\ttfamily bool Sk\+Codec\+::\+Frame\+Info\+::f\+Fully\+Received}
+
+Whether the end marker for this frame is contained in the stream.
+
+Note\+: this does not guarantee that an attempt to decode will be complete. There could be an error in the stream. \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a704a15ba7b3fb96f20690db5efd3388d}\label{struct_sk_codec_1_1_frame_info_a704a15ba7b3fb96f20690db5efd3388d}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fHasAlphaWithinBounds@{fHasAlphaWithinBounds}}
+\index{fHasAlphaWithinBounds@{fHasAlphaWithinBounds}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fHasAlphaWithinBounds}{fHasAlphaWithinBounds}}
+{\footnotesize\ttfamily bool Sk\+Codec\+::\+Frame\+Info\+::f\+Has\+Alpha\+Within\+Bounds}
+
+Whether the updated rectangle contains alpha.
+
+This is conservative; it will still be set to true if e.\+g. a color index-\/based frame has a color with alpha but does not use it. In addition, it may be set to true, even if the final frame, after blending, is opaque. \mbox{\Hypertarget{struct_sk_codec_1_1_frame_info_a47283289c8d579b63d47c12e17aa8bab}\label{struct_sk_codec_1_1_frame_info_a47283289c8d579b63d47c12e17aa8bab}} 
+\index{SkCodec::FrameInfo@{SkCodec::FrameInfo}!fRequiredFrame@{fRequiredFrame}}
+\index{fRequiredFrame@{fRequiredFrame}!SkCodec::FrameInfo@{SkCodec::FrameInfo}}
+\doxysubsubsection{\texorpdfstring{fRequiredFrame}{fRequiredFrame}}
+{\footnotesize\ttfamily int Sk\+Codec\+::\+Frame\+Info\+::f\+Required\+Frame}
+
+The frame that this frame needs to be blended with, or k\+No\+Frame if this frame is independent (so it can be drawn over an uninitialized buffer).
+
+Note that this is the {\itshape earliest} frame that can be used for blending. Any frame from \mbox{[}f\+Required\+Frame, i) can be used, unless its f\+Disposal\+Method is k\+Restore\+Previous. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/codec/Sk\+Codec.\+h\end{DoxyCompactItemize}

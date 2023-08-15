@@ -1,0 +1,38 @@
+\hypertarget{class_sk_discrete_path_effect}{}\doxysection{Sk\+Discrete\+Path\+Effect Class Reference}
+\label{class_sk_discrete_path_effect}\index{SkDiscretePathEffect@{SkDiscretePathEffect}}
+
+
+{\ttfamily \#include $<$Sk\+Discrete\+Path\+Effect.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ \mbox{\hyperlink{class_sk_discrete_path_effect_a2fc34937f172998ac612d216bd2bee76}{Make}} (Sk\+Scalar seg\+Length, Sk\+Scalar dev, uint32\+\_\+t seed\+Assist=0)
+\item 
+\mbox{\Hypertarget{class_sk_discrete_path_effect_ae614d75e462e28c924ab1784ed2df566}\label{class_sk_discrete_path_effect_ae614d75e462e28c924ab1784ed2df566}} 
+static void {\bfseries Register\+Flattenables} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This path effect chops a path into discrete segments, and randomly displaces them. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_discrete_path_effect_a2fc34937f172998ac612d216bd2bee76}\label{class_sk_discrete_path_effect_a2fc34937f172998ac612d216bd2bee76}} 
+\index{SkDiscretePathEffect@{SkDiscretePathEffect}!Make@{Make}}
+\index{Make@{Make}!SkDiscretePathEffect@{SkDiscretePathEffect}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}$>$ Sk\+Discrete\+Path\+Effect\+::\+Make (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{seg\+Length,  }\item[{Sk\+Scalar}]{dev,  }\item[{uint32\+\_\+t}]{seed\+Assist = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Break the path into segments of seg\+Length length, and randomly move the endpoints away from the original path by a maximum of deviation. Note\+: works on filled or framed paths
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed\+Assist} & This is a caller-\/supplied seed\+Assist that modifies the seed value that is used to randomize the path segments\textquotesingle{} endpoints. If not supplied it defaults to 0, in which case filtering a path multiple times will result in the same set of segments (this is useful for testing). If a caller does not want this behaviour they can pass in a different seed\+Assist to get a different set of path segments. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/effects/Sk\+Discrete\+Path\+Effect.\+h\end{DoxyCompactItemize}

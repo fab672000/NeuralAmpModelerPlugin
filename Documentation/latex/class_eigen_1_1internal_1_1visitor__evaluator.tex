@@ -1,0 +1,122 @@
+\hypertarget{class_eigen_1_1internal_1_1visitor__evaluator}{}\doxysection{Eigen\+::internal\+::visitor\+\_\+evaluator$<$ Xpr\+Type $>$ Class Template Reference}
+\label{class_eigen_1_1internal_1_1visitor__evaluator}\index{Eigen::internal::visitor\_evaluator$<$ XprType $>$@{Eigen::internal::visitor\_evaluator$<$ XprType $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a8d336577aebd439c697b21473efa2f58}\label{class_eigen_1_1internal_1_1visitor__evaluator_a8d336577aebd439c697b21473efa2f58}} 
+enum \{ \newline
+{\bfseries Packet\+Access} = Evaluator\+::Flags \& Packet\+Access\+Bit, 
+{\bfseries Is\+Row\+Major} = Xpr\+Type\+::Is\+Row\+Major, 
+{\bfseries Rows\+At\+Compile\+Time} = Xpr\+Type\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Xpr\+Type\+::Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Coeff\+Read\+Cost} = Evaluator\+::Coeff\+Read\+Cost
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_aacc951d4cb8a75b5327eacbc812bd3a5}\label{class_eigen_1_1internal_1_1visitor__evaluator_aacc951d4cb8a75b5327eacbc812bd3a5}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1evaluator}{internal\+::evaluator}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$ {\bfseries Evaluator}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a338f2c6066ef18790ed4c56e9c34fada}\label{class_eigen_1_1internal_1_1visitor__evaluator_a338f2c6066ef18790ed4c56e9c34fada}} 
+typedef Xpr\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ab8e81f54e16e1bbb1a208eebd97b1e46}\label{class_eigen_1_1internal_1_1visitor__evaluator_ab8e81f54e16e1bbb1a208eebd97b1e46}} 
+typedef std\+::remove\+\_\+const\+\_\+t$<$ typename Xpr\+Type\+::\+Coeff\+Return\+Type $>$ {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a1af691fe2697d4f018d93485443683db}\label{class_eigen_1_1internal_1_1visitor__evaluator_a1af691fe2697d4f018d93485443683db}} 
+typedef std\+::remove\+\_\+const\+\_\+t$<$ typename Xpr\+Type\+::\+Packet\+Return\+Type $>$ {\bfseries Packet\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a258491365602146b40e71c812c81b796}\label{class_eigen_1_1internal_1_1visitor__evaluator_a258491365602146b40e71c812c81b796}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1evaluator}{evaluator}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$ {\bfseries Evaluator}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a338f2c6066ef18790ed4c56e9c34fada}\label{class_eigen_1_1internal_1_1visitor__evaluator_a338f2c6066ef18790ed4c56e9c34fada}} 
+typedef Xpr\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_af76e29c6c0ba2807628eb1d7bd777439}\label{class_eigen_1_1internal_1_1visitor__evaluator_af76e29c6c0ba2807628eb1d7bd777439}} 
+using {\bfseries Packet} = typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{packet\+\_\+traits}}$<$ Scalar $>$\+::type
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ab8e81f54e16e1bbb1a208eebd97b1e46}\label{class_eigen_1_1internal_1_1visitor__evaluator_ab8e81f54e16e1bbb1a208eebd97b1e46}} 
+typedef std\+::remove\+\_\+const\+\_\+t$<$ typename Xpr\+Type\+::\+Coeff\+Return\+Type $>$ {\bfseries Coeff\+Return\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a7cdf20b122dd158ae4a9c74d42b95a82}\label{class_eigen_1_1internal_1_1visitor__evaluator_a7cdf20b122dd158ae4a9c74d42b95a82}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries visitor\+\_\+evaluator} (const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \&xpr)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a9659b8eb6377b443b6efe864a149b52e}\label{class_eigen_1_1internal_1_1visitor__evaluator_a9659b8eb6377b443b6efe864a149b52e}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries rows} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ad0e33ae2294ea446ede7c3295440340f}\label{class_eigen_1_1internal_1_1visitor__evaluator_ad0e33ae2294ea446ede7c3295440340f}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries cols} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a7150ffc72a5847856e571908193d4a45}\label{class_eigen_1_1internal_1_1visitor__evaluator_a7150ffc72a5847856e571908193d4a45}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries size} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ac46afdb69f8a6b864b619cd2028ba7e5}\label{class_eigen_1_1internal_1_1visitor__evaluator_ac46afdb69f8a6b864b619cd2028ba7e5}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Coeff\+Return\+Type {\bfseries coeff} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} row, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} col) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a812bc6ff0d83b9098b9121c1707105c2}\label{class_eigen_1_1internal_1_1visitor__evaluator_a812bc6ff0d83b9098b9121c1707105c2}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Packet\+Return\+Type {\bfseries packet} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} row, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} col) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a7cdf20b122dd158ae4a9c74d42b95a82}\label{class_eigen_1_1internal_1_1visitor__evaluator_a7cdf20b122dd158ae4a9c74d42b95a82}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries visitor\+\_\+evaluator} (const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \&xpr)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a9659b8eb6377b443b6efe864a149b52e}\label{class_eigen_1_1internal_1_1visitor__evaluator_a9659b8eb6377b443b6efe864a149b52e}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries rows} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ad0e33ae2294ea446ede7c3295440340f}\label{class_eigen_1_1internal_1_1visitor__evaluator_ad0e33ae2294ea446ede7c3295440340f}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries cols} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a7150ffc72a5847856e571908193d4a45}\label{class_eigen_1_1internal_1_1visitor__evaluator_a7150ffc72a5847856e571908193d4a45}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries size} () const E\+I\+G\+E\+N\+\_\+\+N\+O\+E\+X\+C\+E\+PT
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ad1945609954c823d5f81f651daede384}\label{class_eigen_1_1internal_1_1visitor__evaluator_ad1945609954c823d5f81f651daede384}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Coeff\+Return\+Type {\bfseries coeff} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} row, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} col) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a53d3fb36f6abd18e54f03aedaffc2db0}\label{class_eigen_1_1internal_1_1visitor__evaluator_a53d3fb36f6abd18e54f03aedaffc2db0}} 
+{\footnotesize template$<$typename Packet , int Alignment = Unaligned$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Packet {\bfseries packet} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} row, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} col) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a2492090ed4deefc12814a9b2aa114c90}\label{class_eigen_1_1internal_1_1visitor__evaluator_a2492090ed4deefc12814a9b2aa114c90}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Coeff\+Return\+Type {\bfseries coeff} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_af06237e132b022d16ba8f31d85259425}\label{class_eigen_1_1internal_1_1visitor__evaluator_af06237e132b022d16ba8f31d85259425}} 
+{\footnotesize template$<$typename Packet , int Alignment = Xpr\+Alignment$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Packet {\bfseries packet} (\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} index) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a1838a18a2cbaf18b7018cb0f7bcfa7a8}\label{class_eigen_1_1internal_1_1visitor__evaluator_a1838a18a2cbaf18b7018cb0f7bcfa7a8}} 
+static constexpr bool {\bfseries Packet\+Access} = static\+\_\+cast$<$bool$>$(Evaluator\+::\+Flags \& \mbox{\hyperlink{group__flags_ga1a306a438e1ab074e8be59512e887b9f}{Packet\+Access\+Bit}})
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a383caf4ef96512276967e5024e891210}\label{class_eigen_1_1internal_1_1visitor__evaluator_a383caf4ef96512276967e5024e891210}} 
+static constexpr bool {\bfseries Linear\+Access} = static\+\_\+cast$<$bool$>$(Evaluator\+::\+Flags \& \mbox{\hyperlink{group__flags_ga4b983a15d57cd55806df618ac544d09e}{Linear\+Access\+Bit}})
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ab8f96ee4181f76140b0fb08497d85dd5}\label{class_eigen_1_1internal_1_1visitor__evaluator_ab8f96ee4181f76140b0fb08497d85dd5}} 
+static constexpr bool {\bfseries Is\+Row\+Major} = static\+\_\+cast$<$bool$>$(Xpr\+Type\+::\+Is\+Row\+Major)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a86e4481f1edc82aeb39d691362886015}\label{class_eigen_1_1internal_1_1visitor__evaluator_a86e4481f1edc82aeb39d691362886015}} 
+static constexpr int {\bfseries Rows\+At\+Compile\+Time} = Xpr\+Type\+::\+Rows\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_a4cc853daaa40e33c59165fd1dff5e914}\label{class_eigen_1_1internal_1_1visitor__evaluator_a4cc853daaa40e33c59165fd1dff5e914}} 
+static constexpr int {\bfseries Cols\+At\+Compile\+Time} = Xpr\+Type\+::\+Cols\+At\+Compile\+Time
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ae845a4691c1ef693e3577b539ff2480d}\label{class_eigen_1_1internal_1_1visitor__evaluator_ae845a4691c1ef693e3577b539ff2480d}} 
+static constexpr int {\bfseries Xpr\+Alignment} = Evaluator\+::\+Alignment
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ad391febeb2028e32b4a6ffb5a920e0ff}\label{class_eigen_1_1internal_1_1visitor__evaluator_ad391febeb2028e32b4a6ffb5a920e0ff}} 
+static constexpr int {\bfseries Coeff\+Read\+Cost} = Evaluator\+::\+Coeff\+Read\+Cost
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_adc7d0fe870e9a364fcb28647d542b614}\label{class_eigen_1_1internal_1_1visitor__evaluator_adc7d0fe870e9a364fcb28647d542b614}} 
+\mbox{\hyperlink{struct_eigen_1_1internal_1_1evaluator}{Evaluator}} {\bfseries m\+\_\+evaluator}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1visitor__evaluator_ac06ce7b7d5056826ae9cd585e028f4b0}\label{class_eigen_1_1internal_1_1visitor__evaluator_ac06ce7b7d5056826ae9cd585e028f4b0}} 
+const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \& {\bfseries m\+\_\+xpr}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Visitor.\+h\end{DoxyCompactItemize}

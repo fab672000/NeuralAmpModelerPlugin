@@ -1,0 +1,70 @@
+\hypertarget{classskresources_1_1_multi_frame_image_asset}{}\doxysection{skresources\+::Multi\+Frame\+Image\+Asset Class Reference}
+\label{classskresources_1_1_multi_frame_image_asset}\index{skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}}
+Inheritance diagram for skresources\+::Multi\+Frame\+Image\+Asset\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classskresources_1_1_multi_frame_image_asset}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classskresources_1_1_multi_frame_image_asset_a5e15f210347ddbc7ab675d7d441a71db}{is\+Multi\+Frame}} () override
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{classskresources_1_1_multi_frame_image_asset_ad06e0c4aea0323621f8098b0172fd538}{get\+Frame}} (float t) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskresources_1_1_multi_frame_image_asset}{Multi\+Frame\+Image\+Asset}} $>$ \mbox{\hyperlink{classskresources_1_1_multi_frame_image_asset_a2db34451478833e9a186c4030b66099f}{Make}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$, bool predecode=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classskresources_1_1_multi_frame_image_asset_ad06e0c4aea0323621f8098b0172fd538}\label{classskresources_1_1_multi_frame_image_asset_ad06e0c4aea0323621f8098b0172fd538}} 
+\index{skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}}
+\doxysubsubsection{\texorpdfstring{getFrame()}{getFrame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ skresources\+::\+Multi\+Frame\+Image\+Asset\+::get\+Frame (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+D\+E\+P\+R\+E\+C\+A\+T\+ED\+: override \mbox{\hyperlink{classskresources_1_1_image_asset_a657b79dbb80cf3166a8395ef0b2a5bec}{get\+Frame\+Data()}} instead.
+
+Returns the \mbox{\hyperlink{class_sk_image}{Sk\+Image}} for a given frame.
+
+If the image asset is static, \mbox{\hyperlink{classskresources_1_1_multi_frame_image_asset_ad06e0c4aea0323621f8098b0172fd538}{get\+Frame()}} is only called once, at animation load time. Otherwise, this gets invoked every time the animation time is adjusted (on every seek).
+
+Embedders should cache and serve the same \mbox{\hyperlink{class_sk_image}{Sk\+Image}} whenever possible, for efficiency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \mbox{\hyperlink{class_frame}{Frame}} time code, in seconds, relative to the image layer timeline origin (in-\/point). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classskresources_1_1_image_asset_a37d4dcdb126f6fc7b81f38567d26d25b}{skresources\+::\+Image\+Asset}}.
+
+\mbox{\Hypertarget{classskresources_1_1_multi_frame_image_asset_a5e15f210347ddbc7ab675d7d441a71db}\label{classskresources_1_1_multi_frame_image_asset_a5e15f210347ddbc7ab675d7d441a71db}} 
+\index{skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}!isMultiFrame@{isMultiFrame}}
+\index{isMultiFrame@{isMultiFrame}!skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}}
+\doxysubsubsection{\texorpdfstring{isMultiFrame()}{isMultiFrame()}}
+{\footnotesize\ttfamily bool skresources\+::\+Multi\+Frame\+Image\+Asset\+::is\+Multi\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns true if the image asset is animated. 
+
+Implements \mbox{\hyperlink{classskresources_1_1_image_asset_aac241468508b4467e412fb86480c35d4}{skresources\+::\+Image\+Asset}}.
+
+\mbox{\Hypertarget{classskresources_1_1_multi_frame_image_asset_a2db34451478833e9a186c4030b66099f}\label{classskresources_1_1_multi_frame_image_asset_a2db34451478833e9a186c4030b66099f}} 
+\index{skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}!Make@{Make}}
+\index{Make@{Make}!skresources::MultiFrameImageAsset@{skresources::MultiFrameImageAsset}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskresources_1_1_multi_frame_image_asset}{Multi\+Frame\+Image\+Asset}} $>$ skresources\+::\+Multi\+Frame\+Image\+Asset\+::\+Make (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$}]{data,  }\item[{bool}]{predecode = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+By default, images are decoded on-\/the-\/fly, at rasterization time. Large images may cause jank as decoding is expensive (and can thrash internal caches).
+
+Pass $\vert$predecode$\vert$ true to force-\/decode all images upfront, at the cost of potentially more R\+AM and slower animation build times. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skresources/include/Sk\+Resources.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skresources/src/Sk\+Resources.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\hypertarget{class_n_a_m_meter_control}{}\doxysection{N\+A\+M\+Meter\+Control Class Reference}
+\label{class_n_a_m_meter_control}\index{NAMMeterControl@{NAMMeterControl}}
+Inheritance diagram for N\+A\+M\+Meter\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_n_a_m_meter_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_n_a_m_meter_control_acf34a611900707e9392ecabc3c84e47f}\label{class_n_a_m_meter_control_acf34a611900707e9392ecabc3c84e47f}} 
+{\bfseries N\+A\+M\+Meter\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style)
+\item 
+void \mbox{\hyperlink{class_n_a_m_meter_control_aeea8f189dd3b2185a6c40c43e5dd60d0}{On\+Rescale}} () override
+\item 
+virtual void \mbox{\hyperlink{class_n_a_m_meter_control_a37cce960206403367f18f696f1e550fd}{On\+Resize}} () override
+\item 
+void \mbox{\hyperlink{class_n_a_m_meter_control_a3cd0f823124e72fb983f6ea411d9adbb}{Draw\+Background}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r) override
+\item 
+void \mbox{\hyperlink{class_n_a_m_meter_control_a26f5e55f86d5be8bb66c7e639979024e}{Draw\+Track\+Handle}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx, bool above\+Base\+Value) override
+\item 
+\mbox{\Hypertarget{class_n_a_m_meter_control_a6c5f8316f594b3bca0705e91707276e4}\label{class_n_a_m_meter_control_a6c5f8316f594b3bca0705e91707276e4}} 
+void {\bfseries Draw\+Peak} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx, bool above\+Base\+Value) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_a_m_meter_control_a3cd0f823124e72fb983f6ea411d9adbb}\label{class_n_a_m_meter_control_a3cd0f823124e72fb983f6ea411d9adbb}} 
+\index{NAMMeterControl@{NAMMeterControl}!DrawBackground@{DrawBackground}}
+\index{DrawBackground@{DrawBackground}!NAMMeterControl@{NAMMeterControl}}
+\doxysubsubsection{\texorpdfstring{DrawBackground()}{DrawBackground()}}
+{\footnotesize\ttfamily void N\+A\+M\+Meter\+Control\+::\+Draw\+Background (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the I\+V\+Control background (usually transparent) 
+
+Reimplemented from \mbox{\hyperlink{class_i_v_track_control_base_af08f90afc0b195874887cf7b8dd691c3}{I\+V\+Track\+Control\+Base}}.
+
+\mbox{\Hypertarget{class_n_a_m_meter_control_a26f5e55f86d5be8bb66c7e639979024e}\label{class_n_a_m_meter_control_a26f5e55f86d5be8bb66c7e639979024e}} 
+\index{NAMMeterControl@{NAMMeterControl}!DrawTrackHandle@{DrawTrackHandle}}
+\index{DrawTrackHandle@{DrawTrackHandle}!NAMMeterControl@{NAMMeterControl}}
+\doxysubsubsection{\texorpdfstring{DrawTrackHandle()}{DrawTrackHandle()}}
+{\footnotesize\ttfamily void N\+A\+M\+Meter\+Control\+::\+Draw\+Track\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{r,  }\item[{int}]{ch\+Idx,  }\item[{bool}]{above\+Base\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the main body of the track 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} context \\
+\hline
+{\em r} & The bounds of the track handle, which may be centered around m\+Base\+Value, if m\+Base\+Value $>$ 0. \\
+\hline
+{\em ch\+Idx} & channel index \\
+\hline
+{\em above\+Base\+Value} & true if the handle channel value is above the base value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_v_track_control_base_a8034d6bd1afc1a91074f6365e799928f}{I\+V\+Track\+Control\+Base}}.
+
+\mbox{\Hypertarget{class_n_a_m_meter_control_aeea8f189dd3b2185a6c40c43e5dd60d0}\label{class_n_a_m_meter_control_aeea8f189dd3b2185a6c40c43e5dd60d0}} 
+\index{NAMMeterControl@{NAMMeterControl}!OnRescale@{OnRescale}}
+\index{OnRescale@{OnRescale}!NAMMeterControl@{NAMMeterControl}}
+\doxysubsubsection{\texorpdfstring{OnRescale()}{OnRescale()}}
+{\footnotesize\ttfamily void N\+A\+M\+Meter\+Control\+::\+On\+Rescale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to do something when graphics is scaled globally (e.\+g. moves to different D\+PI screen) 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a57f6186624e970a5d6de172570aee111}{I\+Control}}.
+
+\mbox{\Hypertarget{class_n_a_m_meter_control_a37cce960206403367f18f696f1e550fd}\label{class_n_a_m_meter_control_a37cce960206403367f18f696f1e550fd}} 
+\index{NAMMeterControl@{NAMMeterControl}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!NAMMeterControl@{NAMMeterControl}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily virtual void N\+A\+M\+Meter\+Control\+::\+On\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called when \mbox{\hyperlink{class_i_control}{I\+Control}} is constructed or resized using Set\+Rect(). N\+O\+TE\+: if you call \mbox{\hyperlink{class_i_control_af8c805c09b1a89f44aec43026fcb1fe7}{Set\+Dirty()}} in this method, you should call Set\+Dirty(false) to avoid triggering parameter changes 
+
+Reimplemented from \mbox{\hyperlink{class_i_v_track_control_base_afc94f4135e921c5bc114f8020a850559}{I\+V\+Track\+Control\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/Neural\+Amp\+Modeler\+Controls.\+h\end{DoxyCompactItemize}

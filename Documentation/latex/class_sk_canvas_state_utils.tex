@@ -1,0 +1,78 @@
+\hypertarget{class_sk_canvas_state_utils}{}\doxysection{Sk\+Canvas\+State\+Utils Class Reference}
+\label{class_sk_canvas_state_utils}\index{SkCanvasStateUtils@{SkCanvasStateUtils}}
+
+
+{\ttfamily \#include $<$Sk\+Canvas\+State\+Utils.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\ast$ \mbox{\hyperlink{class_sk_canvas_state_utils_a9cf77e0997419311e3c8ffa487ab6d1e}{Capture\+Canvas\+State}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas)
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $>$ \mbox{\hyperlink{class_sk_canvas_state_utils_aec2bd7ecd38ed902646fe4b98eff7f95}{Make\+From\+Canvas\+State}} (const \mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\ast$\mbox{\hyperlink{structstate}{state}})
+\item 
+static void \mbox{\hyperlink{class_sk_canvas_state_utils_aff8114b7e452741aebfeee6b4b08c4de}{Release\+Canvas\+State}} (\mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\ast$\mbox{\hyperlink{structstate}{state}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A set of functions that are useful for copying the state of an \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} across a library boundary where the Skia library on the other side of the boundary may be newer. The expected usage is outline below... \begin{DoxyVerb}                     Lib Boundary
+\end{DoxyVerb}
+ Capture\+Canvas\+State(...) $\vert$$\vert$$\vert$ \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} -\/-\/$>$ \mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\vert$$\vert$$\vert$ $\vert$$\vert$$\vert$ Create\+From\+Canvas\+State(...) $\vert$$\vert$$\vert$ \mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} -\/-\/$>$ \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}}{\ttfamily  $\vert$$\vert$$\vert$ Draw into \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}}} $\vert$$\vert$$\vert$ Unref Sk\+Canvas\`{} Release\+Canvas\+State(...) $\vert$$\vert$$\vert$ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_canvas_state_utils_a9cf77e0997419311e3c8ffa487ab6d1e}\label{class_sk_canvas_state_utils_a9cf77e0997419311e3c8ffa487ab6d1e}} 
+\index{SkCanvasStateUtils@{SkCanvasStateUtils}!CaptureCanvasState@{CaptureCanvasState}}
+\index{CaptureCanvasState@{CaptureCanvasState}!SkCanvasStateUtils@{SkCanvasStateUtils}}
+\doxysubsubsection{\texorpdfstring{CaptureCanvasState()}{CaptureCanvasState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\ast$ Sk\+Canvas\+State\+Utils\+::\+Capture\+Canvas\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Captures the current state of the canvas into an opaque ptr that is safe to pass to a different instance of Skia (which may be the same version, or may be newer). The function will return N\+U\+LL in the event that one of the following conditions are true. 1) the canvas device type is not supported (currently only raster is supported) 2) the canvas clip type is not supported (currently only non-\/\+AA clips are supported)
+
+It is recommended that the original canvas also not be used until all canvases that have been created using its captured state have been dereferenced.
+
+Finally, it is important to note that any draw filters attached to the canvas are N\+OT currently captured.
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & The canvas you wish to capture the current state of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL or an opaque ptr that can be passed to Create\+From\+Canvas\+State to reconstruct the canvas. The caller is responsible for calling Release\+Canvas\+State to free the memory associated with this state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_canvas_state_utils_aec2bd7ecd38ed902646fe4b98eff7f95}\label{class_sk_canvas_state_utils_aec2bd7ecd38ed902646fe4b98eff7f95}} 
+\index{SkCanvasStateUtils@{SkCanvasStateUtils}!MakeFromCanvasState@{MakeFromCanvasState}}
+\index{MakeFromCanvasState@{MakeFromCanvasState}!SkCanvasStateUtils@{SkCanvasStateUtils}}
+\doxysubsubsection{\texorpdfstring{MakeFromCanvasState()}{MakeFromCanvasState()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $>$ Sk\+Canvas\+State\+Utils\+::\+Make\+From\+Canvas\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\ast$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a new \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} from the captured state of another \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}}. The function will return N\+U\+LL in the event that one of the following conditions are true. 1) the captured state is in an unrecognized format 2) the captured canvas device type is not supported
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Opaque object created by Capture\+Canvas\+State. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL or an Sk\+Canvas$\ast$ whose devices and matrix/clip state are identical to the captured canvas. The caller is responsible for calling unref on the \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_canvas_state_utils_aff8114b7e452741aebfeee6b4b08c4de}\label{class_sk_canvas_state_utils_aff8114b7e452741aebfeee6b4b08c4de}} 
+\index{SkCanvasStateUtils@{SkCanvasStateUtils}!ReleaseCanvasState@{ReleaseCanvasState}}
+\index{ReleaseCanvasState@{ReleaseCanvasState}!SkCanvasStateUtils@{SkCanvasStateUtils}}
+\doxysubsubsection{\texorpdfstring{ReleaseCanvasState()}{ReleaseCanvasState()}}
+{\footnotesize\ttfamily void Sk\+Canvas\+State\+Utils\+::\+Release\+Canvas\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas_state}{Sk\+Canvas\+State}} $\ast$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Free the memory associated with the captured canvas state. The state should not be released until all \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} objects created using that state have been dereferenced. Must be called from the same library instance that created the state via Capture\+Canvas\+State.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The captured state you wish to dispose of. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/utils/Sk\+Canvas\+State\+Utils.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Canvas\+State\+Utils.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\hypertarget{icuplug_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/icuplug.h File Reference}
+\label{icuplug_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/icuplug.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/icuplug.h}}
+
+
+C A\+PI\+: I\+CU \mbox{\hyperlink{class_plugin}{Plugin}} A\+PI.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: I\+CU \mbox{\hyperlink{class_plugin}{Plugin}} A\+PI. 
+
+\doxysubsubsection*{C A\+PI\+: I\+CU \mbox{\hyperlink{class_plugin}{Plugin}} A\+PI}
+
+C A\+PI allowing run-\/time loadable modules that extend or modify I\+CU functionality.
+
+\doxyparagraph*{Loading and Configuration}
+
+At I\+CU startup time, the environment variable \char`\"{}\+I\+C\+U\+\_\+\+P\+L\+U\+G\+I\+N\+S\char`\"{} will be queried for a directory name. If it is not set, the preprocessor symbol \char`\"{}\+D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+C\+U\+\_\+\+P\+L\+U\+G\+I\+N\+S\char`\"{} will be checked for a default value.
+
+Within the above-\/named directory, the file \char`\"{}icuplugins\#\#.\+txt\char`\"{} will be opened, if present, where \#\# is the major+minor number of the currently running I\+CU (such as, 44 for I\+CU 4.\+4, thus icuplugins44.\+txt)
+
+The configuration file has this format\+:
+
+
+\begin{DoxyItemize}
+\item Hash (\#) begins a comment line
+
+
+\item Non-\/comment lines have two or three components\+: L\+I\+B\+R\+A\+R\+Y\+N\+A\+ME E\+N\+T\+R\+Y\+P\+O\+I\+NT \mbox{[} C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON .. \mbox{]}
+
+
+\item Tabs or spaces separate the three items.
+
+
+\item L\+I\+B\+R\+A\+R\+Y\+N\+A\+ME is the name of a shared library, either a short name if it is on the loader path, or a full pathname.
+
+
+\item E\+N\+T\+R\+Y\+P\+O\+I\+NT is the short (undecorated) symbol name of the plugin\textquotesingle{}s entrypoint, as above.
+
+
+\item C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON is the entire rest of the line . It\textquotesingle{}s passed as-\/is to the plugin. 
+\end{DoxyItemize}
+
+An example configuration file is, in its entirety\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\# this is icuplugins44.txt}}
+\DoxyCodeLine{\textcolor{preprocessor}{testplug.dll    myPlugin        hello=world}}
+\end{DoxyCode}
+ 
+
+Plugins are categorized as \char`\"{}high\char`\"{} or \char`\"{}low\char`\"{} level. Low level are those which must be run B\+E\+F\+O\+RE high level plugins, and before any operations which cause I\+CU to be \textquotesingle{}initialized\textquotesingle{}. If a plugin is low level but causes I\+CU to allocate memory or become initialized, that plugin is said to cause a \textquotesingle{}level change\textquotesingle{}. 
+
+At load time, I\+CU first queries all plugins to determine their level, then loads all \textquotesingle{}low\textquotesingle{} plugins first, and then loads all \textquotesingle{}high\textquotesingle{} plugins. ~\newline
+ Plugins are otherwise loaded in the order listed in the configuration file.
+
+\doxyparagraph*{Implementing a \mbox{\hyperlink{class_plugin}{Plugin}}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\_CAPI}} UPlugTokenReturn U\_EXPORT2 }
+\DoxyCodeLine{myPlugin (UPlugData *plug, UPlugReason reason, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{UErrorCode}} *status) \{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if}(reason==UPLUG\_REASON\_QUERY) \{}
+\DoxyCodeLine{     uplug\_setPlugName(plug, \textcolor{stringliteral}{"Simple Plugin"});}
+\DoxyCodeLine{     uplug\_setPlugLevel(plug, UPLUG\_LEVEL\_HIGH);}
+\DoxyCodeLine{   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(reason==UPLUG\_REASON\_LOAD) \{}
+\DoxyCodeLine{      ... Set up some ICU things here.... }
+\DoxyCodeLine{   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(reason==UPLUG\_REASON\_UNLOAD) \{}
+\DoxyCodeLine{      ... unload, clean up ...}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} UPLUG\_TOKEN;}
+\DoxyCodeLine{ \}}
+\end{DoxyCode}
+
+
+The U\+Plug\+Data$\ast$ is an opaque pointer to the plugin-\/specific data, and is used in all other A\+PI calls.
+
+The A\+PI contract is\+:
+
+
+\begin{DoxyEnumerate}
+\item The plugin M\+U\+ST always return U\+P\+L\+U\+G\+\_\+\+T\+O\+K\+EN as a return value-\/ to indicate that it is a valid plugin.
+
+
+\item When the \textquotesingle{}reason\textquotesingle{} parameter is set to U\+P\+L\+U\+G\+\_\+\+R\+E\+A\+S\+O\+N\+\_\+\+Q\+U\+E\+RY, the plugin M\+U\+ST call uplug\+\_\+set\+Plug\+Level() to indicate whether it is a high level or low level plugin.
+
+
+\item When the \textquotesingle{}reason\textquotesingle{} parameter is U\+P\+L\+U\+G\+\_\+\+R\+E\+A\+S\+O\+N\+\_\+\+Q\+U\+E\+RY, the plugin S\+H\+O\+U\+LD call uplug\+\_\+set\+Plug\+Name to indicate a human readable plugin name.
+\end{DoxyEnumerate}

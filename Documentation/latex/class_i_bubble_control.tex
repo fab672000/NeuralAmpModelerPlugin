@@ -1,0 +1,204 @@
+\hypertarget{class_i_bubble_control}{}\doxysection{I\+Bubble\+Control Class Reference}
+\label{class_i_bubble_control}\index{IBubbleControl@{IBubbleControl}}
+
+
+{\ttfamily \#include $<$I\+Bubble\+Control.\+h$>$}
+
+Inheritance diagram for I\+Bubble\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_bubble_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_i_bubble_control_a70b7ab408a4856065d59781e94640190}{E\+Popup\+State}} \{ {\bfseries k\+Collapsed} = 0, 
+{\bfseries k\+Expanding}, 
+{\bfseries k\+Expanded}, 
+{\bfseries k\+Collapsing}
+ \}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_af27cb27013b222fbcc0b024e3f5dc4b0}\label{class_i_bubble_control_af27cb27013b222fbcc0b024e3f5dc4b0}} 
+enum {\bfseries E\+Arrow\+Dir} \{ {\bfseries k\+North}, 
+{\bfseries k\+East}, 
+{\bfseries k\+South}, 
+{\bfseries k\+West}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_bubble_control_a4868cbc7f7ac3d5192c50e1c55e880a1}{I\+Bubble\+Control}} (const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&text=D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+E\+X\+T.\+With\+Align(E\+Align\+::\+Center), const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&fill\+Color=C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&stroke\+Color=C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK, float roundness=5.f)
+\item 
+void \mbox{\hyperlink{class_i_bubble_control_ad2caffd4d5f51576358b2d1d3d11464b}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_bubble_control_a40acb0a3cf58d134560b07464981a8ed}{Reset\+Bounds}} ()
+\item 
+void \mbox{\hyperlink{class_i_bubble_control_ac658d715bf685456ecbea68cf0825937}{Set\+Max\+Bounds}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds)
+\item 
+void \mbox{\hyperlink{class_i_bubble_control_aeaecffe97a46990ebb432f03e6eb16b0}{Set\+Fill\+Color}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color)
+\item 
+void \mbox{\hyperlink{class_i_bubble_control_a503730223aeba63fc78481eb4d02c622}{Set\+Stroke\+Color}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a7aaa4af4bf8b829867614c8378a263d5}\label{class_i_bubble_control_a7aaa4af4bf8b829867614c8378a263d5}} 
+virtual void {\bfseries Draw\+Content} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r)
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ad32b837a2796e01ce368b61c6e320b75}\label{class_i_bubble_control_ad32b837a2796e01ce368b61c6e320b75}} 
+virtual void {\bfseries Draw\+Bubble} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r)
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a88c5f00eaea6dae12eac9d778e3ae9a3}\label{class_i_bubble_control_a88c5f00eaea6dae12eac9d778e3ae9a3}} 
+void {\bfseries Draw\+Drop\+Shadow} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r)
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a37f5070eef976418317553a2131558b5}\label{class_i_bubble_control_a37f5070eef976418317553a2131558b5}} 
+virtual void {\bfseries Measure\+Text} (const char $\ast$str, \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&content\+Bounds)
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ac4ae7c7c9ea7e11cbc04ed55fbae0ace}\label{class_i_bubble_control_ac4ae7c7c9ea7e11cbc04ed55fbae0ace}} 
+void {\bfseries Show\+Bubble} (\mbox{\hyperlink{class_i_control}{I\+Control}} $\ast$p\+Caller, float x, float y, const char $\ast$str, E\+Direction dir, \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} minimum\+Content\+Bounds, I\+Touch\+ID touch\+ID=0)
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a02095de39cad4739c7bb2e124b77c05c}\label{class_i_bubble_control_a02095de39cad4739c7bb2e124b77c05c}} 
+bool {\bfseries Get\+Active} () const
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a85877514a7d4bc08f2e3cdd89c71d2dd}\label{class_i_bubble_control_a85877514a7d4bc08f2e3cdd89c71d2dd}} 
+I\+Touch\+ID {\bfseries Get\+Touch\+ID} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_af8f2d1d1c4d68b7eb7c38b4934f096b2}\label{class_i_bubble_control_af8f2d1d1c4d68b7eb7c38b4934f096b2}} 
+I\+Touch\+ID {\bfseries m\+Touch\+Id} = 0
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ae1194ab831825cf6c2ef6867d1d3a13e}\label{class_i_bubble_control_ae1194ab831825cf6c2ef6867d1d3a13e}} 
+E\+Direction {\bfseries m\+Direction} = E\+Direction\+::\+Horizontal
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ac82de56724bddf7c9f33c2641fdf65c4}\label{class_i_bubble_control_ac82de56724bddf7c9f33c2641fdf65c4}} 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} {\bfseries m\+Max\+Bounds}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_aa38c012c1cbce7d01e4d8c4f6872cf22}\label{class_i_bubble_control_aa38c012c1cbce7d01e4d8c4f6872cf22}} 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} {\bfseries m\+Bubble\+Bounds}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a3e6112dedcc6c4120fa6c949d4a4d7d3}\label{class_i_bubble_control_a3e6112dedcc6c4120fa6c949d4a4d7d3}} 
+\mbox{\hyperlink{class_i_control}{I\+Control}} $\ast$ {\bfseries m\+Caller} = nullptr
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a6b4d5e4f726e2a364013ae3b6b1c9fad}\label{class_i_bubble_control_a6b4d5e4f726e2a364013ae3b6b1c9fad}} 
+E\+Arrow\+Dir {\bfseries m\+Arrow\+Dir} = E\+Arrow\+Dir\+::k\+West
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_aa38d649b4590661c11167aed2c229ed0}\label{class_i_bubble_control_aa38d649b4590661c11167aed2c229ed0}} 
+\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} {\bfseries m\+Str}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ace5285be044f3bde70c5b0a625f05d4c}\label{class_i_bubble_control_ace5285be044f3bde70c5b0a625f05d4c}} 
+\mbox{\hyperlink{struct_i_blend}{I\+Blend}} {\bfseries m\+Blend} = \{ E\+Blend\+::\+Default, 0.f \}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a2d9bdcd0e8585135d53e1433875c12b6}\label{class_i_bubble_control_a2d9bdcd0e8585135d53e1433875c12b6}} 
+float {\bfseries m\+Roundness} = 5.f
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ab9652e01c7e5ba6d5ab4a3b2cbd25e65}\label{class_i_bubble_control_ab9652e01c7e5ba6d5ab4a3b2cbd25e65}} 
+float {\bfseries m\+Drop\+Shadow\+Size} = 10.f
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a5a0407ea0c3cb831a114368706c69e49}\label{class_i_bubble_control_a5a0407ea0c3cb831a114368706c69e49}} 
+float {\bfseries m\+Callout\+Size} = 10.f
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ac514d68456ddf02f08f8b8946b9016be}\label{class_i_bubble_control_ac514d68456ddf02f08f8b8946b9016be}} 
+float {\bfseries m\+Opacity} = 0.\+95f
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_afba8e0db820dc19097ad7f0b94f95cfe}\label{class_i_bubble_control_afba8e0db820dc19097ad7f0b94f95cfe}} 
+float {\bfseries m\+Stroke\+Thickness} = 2.f
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a64bec6e137e9d4b7d9730324f419d44b}\label{class_i_bubble_control_a64bec6e137e9d4b7d9730324f419d44b}} 
+float {\bfseries m\+Horizontal\+Padding} = 5.f
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a065bc5f65d6920b800bb5a9f8049fb57}\label{class_i_bubble_control_a065bc5f65d6920b800bb5a9f8049fb57}} 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} {\bfseries m\+Fill\+Color} = C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a6a572d2c9d2cc661030bf7fa28c456e6}\label{class_i_bubble_control_a6a572d2c9d2cc661030bf7fa28c456e6}} 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} {\bfseries m\+Stroke\+Color} = C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_ada1d462f489a9dcaca7f80529d18d60e}\label{class_i_bubble_control_ada1d462f489a9dcaca7f80529d18d60e}} 
+\mbox{\hyperlink{class_i_bubble_control_a70b7ab408a4856065d59781e94640190}{E\+Popup\+State}} {\bfseries m\+State} = k\+Collapsed
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_bubble_control_a016e7b58c7acfee8e30e95f1fc4488af}\label{class_i_bubble_control_a016e7b58c7acfee8e30e95f1fc4488af}} 
+class {\bfseries I\+Graphics}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A special control to draw contextual info as a slider etc is moved If used in the main \mbox{\hyperlink{class_i_control}{I\+Control}} stack, you probably want it to be the very last control that is added, so that it gets drawn on top. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_i_bubble_control_a70b7ab408a4856065d59781e94640190}\label{class_i_bubble_control_a70b7ab408a4856065d59781e94640190}} 
+\index{IBubbleControl@{IBubbleControl}!EPopupState@{EPopupState}}
+\index{EPopupState@{EPopupState}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{EPopupState}{EPopupState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_i_bubble_control_a70b7ab408a4856065d59781e94640190}{I\+Bubble\+Control\+::\+E\+Popup\+State}}}
+
+An enumerated list, that is used to determine the state of the menu, mainly for animations 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_bubble_control_a4868cbc7f7ac3d5192c50e1c55e880a1}\label{class_i_bubble_control_a4868cbc7f7ac3d5192c50e1c55e880a1}} 
+\index{IBubbleControl@{IBubbleControl}!IBubbleControl@{IBubbleControl}}
+\index{IBubbleControl@{IBubbleControl}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{IBubbleControl()}{IBubbleControl()}}
+{\footnotesize\ttfamily I\+Bubble\+Control\+::\+I\+Bubble\+Control (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&}]{text = {\ttfamily DEFAULT\+\_\+TEXT.WithAlign(EAlign\+:\+:Center)},  }\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{fill\+Color = {\ttfamily COLOR\+\_\+WHITE},  }\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{stroke\+Color = {\ttfamily COLOR\+\_\+BLACK},  }\item[{float}]{roundness = {\ttfamily 5.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a new \mbox{\hyperlink{class_i_bubble_control}{I\+Bubble\+Control}} 
+\begin{DoxyParams}{Parameters}
+{\em text} & The \mbox{\hyperlink{struct_i_text}{I\+Text}} style to use for the readout \\
+\hline
+{\em fill\+Color} & The background color of the bubble \\
+\hline
+{\em stroke\+Color} & The stroke color of the bubble \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_bubble_control_ad2caffd4d5f51576358b2d1d3d11464b}\label{class_i_bubble_control_ad2caffd4d5f51576358b2d1d3d11464b}} 
+\index{IBubbleControl@{IBubbleControl}!Draw@{Draw}}
+\index{Draw@{Draw}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+Bubble\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_bubble_control_a40acb0a3cf58d134560b07464981a8ed}\label{class_i_bubble_control_a40acb0a3cf58d134560b07464981a8ed}} 
+\index{IBubbleControl@{IBubbleControl}!ResetBounds@{ResetBounds}}
+\index{ResetBounds@{ResetBounds}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{ResetBounds()}{ResetBounds()}}
+{\footnotesize\ttfamily void I\+Bubble\+Control\+::\+Reset\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+If controls get moved, you may need to call this to avoid the wrong regions getting dirtied \mbox{\Hypertarget{class_i_bubble_control_aeaecffe97a46990ebb432f03e6eb16b0}\label{class_i_bubble_control_aeaecffe97a46990ebb432f03e6eb16b0}} 
+\index{IBubbleControl@{IBubbleControl}!SetFillColor@{SetFillColor}}
+\index{SetFillColor@{SetFillColor}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{SetFillColor()}{SetFillColor()}}
+{\footnotesize\ttfamily void I\+Bubble\+Control\+::\+Set\+Fill\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the background color for the bubble \mbox{\Hypertarget{class_i_bubble_control_ac658d715bf685456ecbea68cf0825937}\label{class_i_bubble_control_ac658d715bf685456ecbea68cf0825937}} 
+\index{IBubbleControl@{IBubbleControl}!SetMaxBounds@{SetMaxBounds}}
+\index{SetMaxBounds@{SetMaxBounds}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{SetMaxBounds()}{SetMaxBounds()}}
+{\footnotesize\ttfamily void I\+Bubble\+Control\+::\+Set\+Max\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the bounds that the menu can potentially occupy, if not the full graphics context \mbox{\Hypertarget{class_i_bubble_control_a503730223aeba63fc78481eb4d02c622}\label{class_i_bubble_control_a503730223aeba63fc78481eb4d02c622}} 
+\index{IBubbleControl@{IBubbleControl}!SetStrokeColor@{SetStrokeColor}}
+\index{SetStrokeColor@{SetStrokeColor}!IBubbleControl@{IBubbleControl}}
+\doxysubsubsection{\texorpdfstring{SetStrokeColor()}{SetStrokeColor()}}
+{\footnotesize\ttfamily void I\+Bubble\+Control\+::\+Set\+Stroke\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the stroke color for the bubble 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_bubble_control_8h}{I\+Bubble\+Control.\+h}}\end{DoxyCompactItemize}

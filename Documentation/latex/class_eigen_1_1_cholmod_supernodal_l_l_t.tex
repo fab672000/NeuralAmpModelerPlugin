@@ -1,0 +1,77 @@
+\hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t}{}\doxysection{Eigen\+::Cholmod\+Supernodal\+L\+LT$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1_cholmod_supernodal_l_l_t}\index{Eigen::CholmodSupernodalLLT$<$ MatrixType\_, UpLo\_ $>$@{Eigen::CholmodSupernodalLLT$<$ MatrixType\_, UpLo\_ $>$}}
+
+
+A supernodal Cholesky (\mbox{\hyperlink{class_eigen_1_1_l_l_t}{L\+LT}}) factorization and solver based on Cholmod.  
+
+
+
+
+{\ttfamily \#include $<$Cholmod\+Support.\+h$>$}
+
+Inheritance diagram for Eigen\+::Cholmod\+Supernodal\+L\+LT$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_eigen_1_1_cholmod_supernodal_l_l_t}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t_a3877312610d308b3431843cec1f946b8}\label{class_eigen_1_1_cholmod_supernodal_l_l_t_a3877312610d308b3431843cec1f946b8}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t_a3877312610d308b3431843cec1f946b8}\label{class_eigen_1_1_cholmod_supernodal_l_l_t_a3877312610d308b3431843cec1f946b8}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t_aff0b2608ae1855c4567a8a1a32b97a6a}\label{class_eigen_1_1_cholmod_supernodal_l_l_t_aff0b2608ae1855c4567a8a1a32b97a6a}} 
+{\bfseries Cholmod\+Supernodal\+L\+LT} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t_aff0b2608ae1855c4567a8a1a32b97a6a}\label{class_eigen_1_1_cholmod_supernodal_l_l_t_aff0b2608ae1855c4567a8a1a32b97a6a}} 
+{\bfseries Cholmod\+Supernodal\+L\+LT} (const Matrix\+Type \&matrix)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t_adaeca935848e3d8fdac809aeab6fb911}\label{class_eigen_1_1_cholmod_supernodal_l_l_t_adaeca935848e3d8fdac809aeab6fb911}} 
+void {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_supernodal_l_l_t_adaeca935848e3d8fdac809aeab6fb911}\label{class_eigen_1_1_cholmod_supernodal_l_l_t_adaeca935848e3d8fdac809aeab6fb911}} 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Type\+\_\+, int Up\+Lo\+\_\+ = Lower$>$\newline
+class Eigen\+::\+Cholmod\+Supernodal\+L\+L\+T$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+ $>$}
+
+A supernodal Cholesky (\mbox{\hyperlink{class_eigen_1_1_l_l_t}{L\+LT}}) factorization and solver based on Cholmod. 
+
+This class allows to solve for A.\+X = B sparse linear problems via a supernodal L\+L$^\wedge$T Cholesky factorization using the Cholmod library. This supernodal variant performs best on dense enough problems, e.\+g., 3D F\+EM, or very high order 2D F\+EM. The sparse matrix A must be selfadjoint and positive definite. The vectors or matrices X and B can be either dense or sparse.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Matrix\+Type\+\_\+} & the type of the sparse matrix A, it must be a Sparse\+Matrix$<$$>$ \\
+\hline
+{\em Up\+Lo\+\_\+} & the triangular part that will be used for the computations. It can be Lower or Upper. Default is Lower.\\
+\hline
+\end{DoxyTemplParams}
+\textbackslash{}implsparsesolverconcept
+
+This class supports all kind of Sparse\+Matrix$<$$>$\+: row or column major; upper, lower, or both; compressed or non compressed.
+
+\begin{DoxyWarning}{Warning}
+Only double precision real and complex scalar types are supported by Cholmod.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SparseLinearSystems.dox_TutorialSparseSolverConcept}{Sparse solver concept}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Cholmod\+Support/Cholmod\+Support.\+h\end{DoxyCompactItemize}

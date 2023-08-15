@@ -1,0 +1,77 @@
+\hypertarget{_source_2_demo_dist___alg_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Demo\+Dist/\+Source/\+Demo\+Dist\+\_\+\+Alg.h File Reference}
+\label{_source_2_demo_dist___alg_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/ExamplePlugIns/DemoDist/Source/DemoDist\_Alg.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/ExamplePlugIns/DemoDist/Source/DemoDist\_Alg.h}}
+
+
+Algorithm component definitions for Demo\+Dist.  
+
+
+{\ttfamily \#include \char`\"{}C\+Simple\+Biquad.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_meter_taps}{S\+Meter\+Taps$<$ k\+Num\+Channels $>$}}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_dist___dist_coefs}{S\+Demo\+Dist\+\_\+\+Dist\+Coefs}}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_dist___filt_coefs}{S\+Demo\+Dist\+\_\+\+Filt\+Coefs}}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_dist___alg___context}{S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_source_2_demo_dist___alg_8h_a5d8ee7dff73913d1e009287f2f12a25e}\label{_source_2_demo_dist___alg_8h_a5d8ee7dff73913d1e009287f2f12a25e}} 
+typedef \mbox{\hyperlink{struct_s_meter_taps}{S\+Meter\+Taps}}$<$ 1 $>$ {\bfseries S\+Meter\+TapsM}
+\item 
+\mbox{\Hypertarget{_source_2_demo_dist___alg_8h_ac74223e0c206dfc465dc523f8f42aea1}\label{_source_2_demo_dist___alg_8h_ac74223e0c206dfc465dc523f8f42aea1}} 
+typedef \mbox{\hyperlink{struct_s_meter_taps}{S\+Meter\+Taps}}$<$ 2 $>$ {\bfseries S\+Meter\+TapsS}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_source_2_demo_dist___alg_8h_a666c67f3542f91b38db857b629617a35}\label{_source_2_demo_dist___alg_8h_a666c67f3542f91b38db857b629617a35}} 
+enum {\bfseries E\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Port\+ID} \{ \newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Mix\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+MixP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Inp\+G\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+Inp\+GP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Out\+G\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+Out\+GP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Dist\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+DistP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Filter\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+FiltP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Biquads} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Biquads), 
+{\bfseries e\+Demo\+Dist\+\_\+\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+\newline
+{\bfseries e\+Demo\+Dist\+\_\+\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Demo\+Dist\+\_\+\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Length} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+LengthP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meter\+Taps} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Meter\+Taps\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Mix\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+MixP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Inp\+G\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+Inp\+GP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Out\+G\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+Out\+GP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Dist\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+DistP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Filter\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+FiltP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Biquads} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Biquads), 
+{\bfseries e\+Demo\+Dist\+\_\+\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+{\bfseries e\+Demo\+Dist\+\_\+\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+\newline
+{\bfseries e\+Demo\+Dist\+\_\+\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Length} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+LengthP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meter\+Taps} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Dist\+\_\+\+Alg\+\_\+\+Context, m\+Meter\+Taps\+PP)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_source_2_demo_dist___alg_8h_a76767826fc52638af2b7a3f830458d0f}\label{_source_2_demo_dist___alg_8h_a76767826fc52638af2b7a3f830458d0f}} 
+void A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+CK {\bfseries Demo\+Dist\+\_\+\+Algorithm\+Reset\+Biquads} (\mbox{\hyperlink{_a_a_x_8h_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}}, void $\ast$, int32\+\_\+t, \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$const)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Algorithm component definitions for Demo\+Dist. 
+
+\begin{DoxyAuthor}{Author}
+Rob Majors 
+\end{DoxyAuthor}

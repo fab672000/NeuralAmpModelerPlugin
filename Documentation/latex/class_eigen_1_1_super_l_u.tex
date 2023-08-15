@@ -1,0 +1,380 @@
+\hypertarget{class_eigen_1_1_super_l_u}{}\doxysection{Eigen\+::Super\+LU$<$ Matrix\+Type\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1_super_l_u}\index{Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}}
+
+
+A sparse direct LU factorization and solver based on the \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Super\+LU}} library.  
+
+
+
+
+{\ttfamily \#include $<$Super\+L\+U\+Support.\+h$>$}
+
+Inheritance diagram for Eigen\+::Super\+LU$<$ Matrix\+Type\+\_\+ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_eigen_1_1_super_l_u}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a6bcb813db8b6502ccfa3fa0c63f22d3e}\label{class_eigen_1_1_super_l_u_a6bcb813db8b6502ccfa3fa0c63f22d3e}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_super_l_u_base}{Super\+L\+U\+Base}}$<$ Matrix\+Type\+\_\+, \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Super\+LU}} $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ac3ebf6433f1b45108693bd3fd121bc2e}\label{class_eigen_1_1_super_l_u_ac3ebf6433f1b45108693bd3fd121bc2e}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a2b4cbe950140c1eb118d0e81065ccd1b}\label{class_eigen_1_1_super_l_u_a2b4cbe950140c1eb118d0e81065ccd1b}} 
+typedef Base\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a58a6ac71e2ecbe8cb0026bf745bb5177}\label{class_eigen_1_1_super_l_u_a58a6ac71e2ecbe8cb0026bf745bb5177}} 
+typedef Base\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ae02ae9dc080362c3731ce03bb3f0f760}\label{class_eigen_1_1_super_l_u_ae02ae9dc080362c3731ce03bb3f0f760}} 
+typedef Base\+::\+Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a070f067cc7f248417c29f95faf6c8f81}\label{class_eigen_1_1_super_l_u_a070f067cc7f248417c29f95faf6c8f81}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Int\+Row\+Vector\+Type}} {\bfseries Int\+Row\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a23f0a3fd8e3e7335a62034349f533443}\label{class_eigen_1_1_super_l_u_a23f0a3fd8e3e7335a62034349f533443}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Int\+Col\+Vector\+Type}} {\bfseries Int\+Col\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_afdee9ba526673b2307f7a13762f745af}\label{class_eigen_1_1_super_l_u_afdee9ba526673b2307f7a13762f745af}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_map}{Base\+::\+Permutation\+Map}} {\bfseries Permutation\+Map}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a707f6ec6d5d8f4cdd16c1eb3687cf92f}\label{class_eigen_1_1_super_l_u_a707f6ec6d5d8f4cdd16c1eb3687cf92f}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{Base\+::\+L\+U\+Matrix\+Type}} {\bfseries L\+U\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a276070527b0b9593283cb59dc58d9ee4}\label{class_eigen_1_1_super_l_u_a276070527b0b9593283cb59dc58d9ee4}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}}, \mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda891792b8ed394f7607ab16dd716f60e6}{Lower}}$\vert$\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cdaddb72f888ac85d5a1c52333e54f9374b}{Unit\+Diag}} $>$ {\bfseries L\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5a6f043494fc2030d1d1440a9651c452}\label{class_eigen_1_1_super_l_u_a5a6f043494fc2030d1d1440a9651c452}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}}, \mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda6bcb58be3b8b8ec84859ce0c5ac0aaec}{Upper}} $>$ {\bfseries U\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a6bcb813db8b6502ccfa3fa0c63f22d3e}\label{class_eigen_1_1_super_l_u_a6bcb813db8b6502ccfa3fa0c63f22d3e}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_super_l_u_base}{Super\+L\+U\+Base}}$<$ Matrix\+Type\+\_\+, \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Super\+LU}} $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ac3ebf6433f1b45108693bd3fd121bc2e}\label{class_eigen_1_1_super_l_u_ac3ebf6433f1b45108693bd3fd121bc2e}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a2b4cbe950140c1eb118d0e81065ccd1b}\label{class_eigen_1_1_super_l_u_a2b4cbe950140c1eb118d0e81065ccd1b}} 
+typedef Base\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a58a6ac71e2ecbe8cb0026bf745bb5177}\label{class_eigen_1_1_super_l_u_a58a6ac71e2ecbe8cb0026bf745bb5177}} 
+typedef Base\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ae02ae9dc080362c3731ce03bb3f0f760}\label{class_eigen_1_1_super_l_u_ae02ae9dc080362c3731ce03bb3f0f760}} 
+typedef Base\+::\+Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a070f067cc7f248417c29f95faf6c8f81}\label{class_eigen_1_1_super_l_u_a070f067cc7f248417c29f95faf6c8f81}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Int\+Row\+Vector\+Type}} {\bfseries Int\+Row\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a23f0a3fd8e3e7335a62034349f533443}\label{class_eigen_1_1_super_l_u_a23f0a3fd8e3e7335a62034349f533443}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Int\+Col\+Vector\+Type}} {\bfseries Int\+Col\+Vector\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_afdee9ba526673b2307f7a13762f745af}\label{class_eigen_1_1_super_l_u_afdee9ba526673b2307f7a13762f745af}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_map}{Base\+::\+Permutation\+Map}} {\bfseries Permutation\+Map}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a707f6ec6d5d8f4cdd16c1eb3687cf92f}\label{class_eigen_1_1_super_l_u_a707f6ec6d5d8f4cdd16c1eb3687cf92f}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{Base\+::\+L\+U\+Matrix\+Type}} {\bfseries L\+U\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a276070527b0b9593283cb59dc58d9ee4}\label{class_eigen_1_1_super_l_u_a276070527b0b9593283cb59dc58d9ee4}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}}, \mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda891792b8ed394f7607ab16dd716f60e6}{Lower}}$\vert$\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cdaddb72f888ac85d5a1c52333e54f9374b}{Unit\+Diag}} $>$ {\bfseries L\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5a6f043494fc2030d1d1440a9651c452}\label{class_eigen_1_1_super_l_u_a5a6f043494fc2030d1d1440a9651c452}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}}, \mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda6bcb58be3b8b8ec84859ce0c5ac0aaec}{Upper}} $>$ {\bfseries U\+Matrix\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_adf3baa2ee7983f904eccb7653b233e52}\label{class_eigen_1_1_super_l_u_adf3baa2ee7983f904eccb7653b233e52}} 
+{\bfseries Super\+LU} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}{analyze\+Pattern}} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u_a0b5a5fbda1a1f368003c7c01021a4636}{factorize}} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_aff6428de2f43f9d90b640dc713dfd802}\label{class_eigen_1_1_super_l_u_aff6428de2f43f9d90b640dc713dfd802}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Rhs $>$ \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a6cedf3ec8c0b5abf8f35581596f1ac91}\label{class_eigen_1_1_super_l_u_a6cedf3ec8c0b5abf8f35581596f1ac91}} 
+const \mbox{\hyperlink{class_eigen_1_1_triangular_view}{L\+Matrix\+Type}} \& {\bfseries matrixL} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5b2d0f0b5be326b04cac72549bf1a129}\label{class_eigen_1_1_super_l_u_a5b2d0f0b5be326b04cac72549bf1a129}} 
+const \mbox{\hyperlink{class_eigen_1_1_triangular_view}{U\+Matrix\+Type}} \& {\bfseries matrixU} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a28c5fb9d1e4e4dbae06e521a260902d6}\label{class_eigen_1_1_super_l_u_a28c5fb9d1e4e4dbae06e521a260902d6}} 
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Col\+Vector\+Type}} \& {\bfseries permutationP} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad4a4ab0bf9f156a3333b52b292b67650}\label{class_eigen_1_1_super_l_u_ad4a4ab0bf9f156a3333b52b292b67650}} 
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Row\+Vector\+Type}} \& {\bfseries permutationQ} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad2ccbf5b565c8dc5e7a0216a86e3662c}\label{class_eigen_1_1_super_l_u_ad2ccbf5b565c8dc5e7a0216a86e3662c}} 
+Scalar {\bfseries determinant} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_adf3baa2ee7983f904eccb7653b233e52}\label{class_eigen_1_1_super_l_u_adf3baa2ee7983f904eccb7653b233e52}} 
+{\bfseries Super\+LU} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}{analyze\+Pattern}} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u_ab6180e3a449b4a793ff923d87fbea422}{factorize}} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad40334fd2832fd8a33130a2b13545879}\label{class_eigen_1_1_super_l_u_ad40334fd2832fd8a33130a2b13545879}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Rhs $>$ \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a6cedf3ec8c0b5abf8f35581596f1ac91}\label{class_eigen_1_1_super_l_u_a6cedf3ec8c0b5abf8f35581596f1ac91}} 
+const \mbox{\hyperlink{class_eigen_1_1_triangular_view}{L\+Matrix\+Type}} \& {\bfseries matrixL} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5b2d0f0b5be326b04cac72549bf1a129}\label{class_eigen_1_1_super_l_u_a5b2d0f0b5be326b04cac72549bf1a129}} 
+const \mbox{\hyperlink{class_eigen_1_1_triangular_view}{U\+Matrix\+Type}} \& {\bfseries matrixU} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a28c5fb9d1e4e4dbae06e521a260902d6}\label{class_eigen_1_1_super_l_u_a28c5fb9d1e4e4dbae06e521a260902d6}} 
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Col\+Vector\+Type}} \& {\bfseries permutationP} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad4a4ab0bf9f156a3333b52b292b67650}\label{class_eigen_1_1_super_l_u_ad4a4ab0bf9f156a3333b52b292b67650}} 
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Row\+Vector\+Type}} \& {\bfseries permutationQ} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_acea8b687437fc5a948e85611ba1612b5}\label{class_eigen_1_1_super_l_u_acea8b687437fc5a948e85611ba1612b5}} 
+Scalar {\bfseries determinant} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a72b8795d51bec57b89bcb1766eda8094}\label{class_eigen_1_1_super_l_u_a72b8795d51bec57b89bcb1766eda8094}} 
+void {\bfseries init} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a72b8795d51bec57b89bcb1766eda8094}\label{class_eigen_1_1_super_l_u_a72b8795d51bec57b89bcb1766eda8094}} 
+void {\bfseries init} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_aff57ca9d51a81e305737db8352593661}\label{class_eigen_1_1_super_l_u_aff57ca9d51a81e305737db8352593661}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}} {\bfseries m\+\_\+matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad0188e81c1d2aa9c64f856be47cd6719}\label{class_eigen_1_1_super_l_u_ad0188e81c1d2aa9c64f856be47cd6719}} 
+superlu\+\_\+options\+\_\+t {\bfseries m\+\_\+slu\+Options}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ae926324d794dc1454f1d034f639d2c94}\label{class_eigen_1_1_super_l_u_ae926324d794dc1454f1d034f639d2c94}} 
+\mbox{\hyperlink{struct_eigen_1_1_slu_matrix}{Slu\+Matrix}} {\bfseries m\+\_\+sluA}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a4642cd756b7709287080d43b54303530}\label{class_eigen_1_1_super_l_u_a4642cd756b7709287080d43b54303530}} 
+\mbox{\hyperlink{struct_eigen_1_1_slu_matrix}{Slu\+Matrix}} {\bfseries m\+\_\+sluB}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a7a5a58df4d96351e6f7b41c1204bcf04}\label{class_eigen_1_1_super_l_u_a7a5a58df4d96351e6f7b41c1204bcf04}} 
+\mbox{\hyperlink{struct_eigen_1_1_slu_matrix}{Slu\+Matrix}} {\bfseries m\+\_\+sluX}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a91ca484283741175553cb5a88ad9db29}\label{class_eigen_1_1_super_l_u_a91ca484283741175553cb5a88ad9db29}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Col\+Vector\+Type}} {\bfseries m\+\_\+p}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5e1f2624d95f0765a934e60ffb9dc66b}\label{class_eigen_1_1_super_l_u_a5e1f2624d95f0765a934e60ffb9dc66b}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Row\+Vector\+Type}} {\bfseries m\+\_\+q}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_aae8bfdcac382005b06961ea773c024c0}\label{class_eigen_1_1_super_l_u_aae8bfdcac382005b06961ea773c024c0}} 
+std\+::vector$<$ int $>$ {\bfseries m\+\_\+slu\+Etree}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad5e77cc7de6d104f768b624eeb1e574f}\label{class_eigen_1_1_super_l_u_ad5e77cc7de6d104f768b624eeb1e574f}} 
+char {\bfseries m\+\_\+slu\+Equed}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a46887220f1d2078474c45eb252baed83}\label{class_eigen_1_1_super_l_u_a46887220f1d2078474c45eb252baed83}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Rscale}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a1331f362204d078ac14cf967b6081c69}\label{class_eigen_1_1_super_l_u_a1331f362204d078ac14cf967b6081c69}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Cscale}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a0a28e590c08c4767f78358f8d13d7c6a}\label{class_eigen_1_1_super_l_u_a0a28e590c08c4767f78358f8d13d7c6a}} 
+Super\+Matrix {\bfseries m\+\_\+sluL}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5c6218b6dce860f594b14c9bf875ee5e}\label{class_eigen_1_1_super_l_u_a5c6218b6dce860f594b14c9bf875ee5e}} 
+Super\+Matrix {\bfseries m\+\_\+sluU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a27a2aaf1208604ed8aeae28206ea2323}\label{class_eigen_1_1_super_l_u_a27a2aaf1208604ed8aeae28206ea2323}} 
+Super\+L\+U\+Stat\+\_\+t {\bfseries m\+\_\+slu\+Stat}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ab9f7d97f0ba53cacb62be0628ddbcdf5}\label{class_eigen_1_1_super_l_u_ab9f7d97f0ba53cacb62be0628ddbcdf5}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Ferr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_afe2020b2ad21d0d16eb1749ff5456f21}\label{class_eigen_1_1_super_l_u_afe2020b2ad21d0d16eb1749ff5456f21}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Berr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a1c77bf1d4253d2cc306686a322ac26e2}\label{class_eigen_1_1_super_l_u_a1c77bf1d4253d2cc306686a322ac26e2}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}} {\bfseries m\+\_\+l}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a83f3306c5f6208427d7f265e20fe7ea4}\label{class_eigen_1_1_super_l_u_a83f3306c5f6208427d7f265e20fe7ea4}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}} {\bfseries m\+\_\+u}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a877117fcbf265ce9c7ffd06a3d8ccd34}\label{class_eigen_1_1_super_l_u_a877117fcbf265ce9c7ffd06a3d8ccd34}} 
+int {\bfseries m\+\_\+analysis\+Is\+Ok}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a9009d06a24b677748527f20ca74aa077}\label{class_eigen_1_1_super_l_u_a9009d06a24b677748527f20ca74aa077}} 
+int {\bfseries m\+\_\+factorization\+Is\+Ok}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a1baf2cf2a9b5d26d740ff40f52482bca}\label{class_eigen_1_1_super_l_u_a1baf2cf2a9b5d26d740ff40f52482bca}} 
+bool {\bfseries m\+\_\+extracted\+Data\+Are\+Dirty}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ac52101f69d048d5c4b036eadf1f13673}\label{class_eigen_1_1_super_l_u_ac52101f69d048d5c4b036eadf1f13673}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_adc665fb734162705126d7744e2a84f8b}\label{class_eigen_1_1_super_l_u_adc665fb734162705126d7744e2a84f8b}} 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} {\bfseries m\+\_\+info}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_aff57ca9d51a81e305737db8352593661}\label{class_eigen_1_1_super_l_u_aff57ca9d51a81e305737db8352593661}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}} {\bfseries m\+\_\+matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad0188e81c1d2aa9c64f856be47cd6719}\label{class_eigen_1_1_super_l_u_ad0188e81c1d2aa9c64f856be47cd6719}} 
+superlu\+\_\+options\+\_\+t {\bfseries m\+\_\+slu\+Options}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ae926324d794dc1454f1d034f639d2c94}\label{class_eigen_1_1_super_l_u_ae926324d794dc1454f1d034f639d2c94}} 
+\mbox{\hyperlink{struct_eigen_1_1_slu_matrix}{Slu\+Matrix}} {\bfseries m\+\_\+sluA}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a4642cd756b7709287080d43b54303530}\label{class_eigen_1_1_super_l_u_a4642cd756b7709287080d43b54303530}} 
+\mbox{\hyperlink{struct_eigen_1_1_slu_matrix}{Slu\+Matrix}} {\bfseries m\+\_\+sluB}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a7a5a58df4d96351e6f7b41c1204bcf04}\label{class_eigen_1_1_super_l_u_a7a5a58df4d96351e6f7b41c1204bcf04}} 
+\mbox{\hyperlink{struct_eigen_1_1_slu_matrix}{Slu\+Matrix}} {\bfseries m\+\_\+sluX}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a91ca484283741175553cb5a88ad9db29}\label{class_eigen_1_1_super_l_u_a91ca484283741175553cb5a88ad9db29}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Col\+Vector\+Type}} {\bfseries m\+\_\+p}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5e1f2624d95f0765a934e60ffb9dc66b}\label{class_eigen_1_1_super_l_u_a5e1f2624d95f0765a934e60ffb9dc66b}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Int\+Row\+Vector\+Type}} {\bfseries m\+\_\+q}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_aae8bfdcac382005b06961ea773c024c0}\label{class_eigen_1_1_super_l_u_aae8bfdcac382005b06961ea773c024c0}} 
+std\+::vector$<$ int $>$ {\bfseries m\+\_\+slu\+Etree}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ad5e77cc7de6d104f768b624eeb1e574f}\label{class_eigen_1_1_super_l_u_ad5e77cc7de6d104f768b624eeb1e574f}} 
+char {\bfseries m\+\_\+slu\+Equed}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a46887220f1d2078474c45eb252baed83}\label{class_eigen_1_1_super_l_u_a46887220f1d2078474c45eb252baed83}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Rscale}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a1331f362204d078ac14cf967b6081c69}\label{class_eigen_1_1_super_l_u_a1331f362204d078ac14cf967b6081c69}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Cscale}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a0a28e590c08c4767f78358f8d13d7c6a}\label{class_eigen_1_1_super_l_u_a0a28e590c08c4767f78358f8d13d7c6a}} 
+Super\+Matrix {\bfseries m\+\_\+sluL}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a5c6218b6dce860f594b14c9bf875ee5e}\label{class_eigen_1_1_super_l_u_a5c6218b6dce860f594b14c9bf875ee5e}} 
+Super\+Matrix {\bfseries m\+\_\+sluU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a27a2aaf1208604ed8aeae28206ea2323}\label{class_eigen_1_1_super_l_u_a27a2aaf1208604ed8aeae28206ea2323}} 
+Super\+L\+U\+Stat\+\_\+t {\bfseries m\+\_\+slu\+Stat}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ab9f7d97f0ba53cacb62be0628ddbcdf5}\label{class_eigen_1_1_super_l_u_ab9f7d97f0ba53cacb62be0628ddbcdf5}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Ferr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_afe2020b2ad21d0d16eb1749ff5456f21}\label{class_eigen_1_1_super_l_u_afe2020b2ad21d0d16eb1749ff5456f21}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Real\+Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries m\+\_\+slu\+Berr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a1c77bf1d4253d2cc306686a322ac26e2}\label{class_eigen_1_1_super_l_u_a1c77bf1d4253d2cc306686a322ac26e2}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}} {\bfseries m\+\_\+l}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a83f3306c5f6208427d7f265e20fe7ea4}\label{class_eigen_1_1_super_l_u_a83f3306c5f6208427d7f265e20fe7ea4}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{L\+U\+Matrix\+Type}} {\bfseries m\+\_\+u}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a877117fcbf265ce9c7ffd06a3d8ccd34}\label{class_eigen_1_1_super_l_u_a877117fcbf265ce9c7ffd06a3d8ccd34}} 
+int {\bfseries m\+\_\+analysis\+Is\+Ok}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a9009d06a24b677748527f20ca74aa077}\label{class_eigen_1_1_super_l_u_a9009d06a24b677748527f20ca74aa077}} 
+int {\bfseries m\+\_\+factorization\+Is\+Ok}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a1baf2cf2a9b5d26d740ff40f52482bca}\label{class_eigen_1_1_super_l_u_a1baf2cf2a9b5d26d740ff40f52482bca}} 
+bool {\bfseries m\+\_\+extracted\+Data\+Are\+Dirty}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ac52101f69d048d5c4b036eadf1f13673}\label{class_eigen_1_1_super_l_u_ac52101f69d048d5c4b036eadf1f13673}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ac52101f69d048d5c4b036eadf1f13673}\label{class_eigen_1_1_super_l_u_ac52101f69d048d5c4b036eadf1f13673}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_adc665fb734162705126d7744e2a84f8b}\label{class_eigen_1_1_super_l_u_adc665fb734162705126d7744e2a84f8b}} 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} {\bfseries m\+\_\+info}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Type\+\_\+$>$\newline
+class Eigen\+::\+Super\+L\+U$<$ Matrix\+Type\+\_\+ $>$}
+
+A sparse direct LU factorization and solver based on the \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Super\+LU}} library. 
+
+This class allows to solve for A.\+X = B sparse linear problems via a direct LU factorization using the \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Super\+LU}} library. The sparse matrix A must be squared and invertible. The vectors or matrices X and B can be either dense or sparse.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Matrix\+Type\+\_\+} & the type of the sparse matrix A, it must be a Sparse\+Matrix$<$$>$\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyWarning}{Warning}
+This class is only for the 4.\+x versions of \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Super\+LU}}. The 3.\+x and 5.\+x versions are not supported.
+\end{DoxyWarning}
+\textbackslash{}implsparsesolverconcept
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SparseLinearSystems.dox_TutorialSparseSolverConcept}{Sparse solver concept}}, class \mbox{\hyperlink{class_eigen_1_1_sparse_l_u}{Sparse\+LU}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}\label{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}} 
+\index{Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}!analyzePattern@{analyzePattern}}
+\index{analyzePattern@{analyzePattern}!Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}}
+\doxysubsubsection{\texorpdfstring{analyzePattern()}{analyzePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Eigen\+::\+Super\+LU}}$<$ Matrix\+Type\+\_\+ $>$\+::analyze\+Pattern (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a symbolic decomposition on the sparcity of {\itshape matrix}.
+
+This function is particularly useful when solving for several problems having the same structure.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_super_l_u_a0b5a5fbda1a1f368003c7c01021a4636}{factorize()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}\label{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}} 
+\index{Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}!analyzePattern@{analyzePattern}}
+\index{analyzePattern@{analyzePattern}!Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}}
+\doxysubsubsection{\texorpdfstring{analyzePattern()}{analyzePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Eigen\+::\+Super\+LU}}$<$ Matrix\+Type\+\_\+ $>$\+::analyze\+Pattern (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a symbolic decomposition on the sparcity of {\itshape matrix}.
+
+This function is particularly useful when solving for several problems having the same structure.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_super_l_u_a0b5a5fbda1a1f368003c7c01021a4636}{factorize()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_a0b5a5fbda1a1f368003c7c01021a4636}\label{class_eigen_1_1_super_l_u_a0b5a5fbda1a1f368003c7c01021a4636}} 
+\index{Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}!factorize@{factorize}}
+\index{factorize@{factorize}!Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}}
+\doxysubsubsection{\texorpdfstring{factorize()}{factorize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Eigen\+::\+Super\+LU}}$<$ Matrix\+Type $>$\+::factorize (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})}
+
+Performs a numeric decomposition of {\itshape matrix} 
+
+The given matrix must has the same sparcity than the matrix on which the symbolic decomposition has been performed.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}{analyze\+Pattern()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_super_l_u_ab6180e3a449b4a793ff923d87fbea422}\label{class_eigen_1_1_super_l_u_ab6180e3a449b4a793ff923d87fbea422}} 
+\index{Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}!factorize@{factorize}}
+\index{factorize@{factorize}!Eigen::SuperLU$<$ MatrixType\_ $>$@{Eigen::SuperLU$<$ MatrixType\_ $>$}}
+\doxysubsubsection{\texorpdfstring{factorize()}{factorize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_super_l_u}{Eigen\+::\+Super\+LU}}$<$ Matrix\+Type\+\_\+ $>$\+::factorize (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})}
+
+Performs a numeric decomposition of {\itshape matrix} 
+
+The given matrix must has the same sparcity than the matrix on which the symbolic decomposition has been performed.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_super_l_u_a12cfc985526ead011f33504581fb9cbf}{analyze\+Pattern()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Super\+L\+U\+Support/Super\+L\+U\+Support.\+h\end{DoxyCompactItemize}

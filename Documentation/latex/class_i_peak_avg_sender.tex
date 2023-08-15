@@ -1,0 +1,75 @@
+\hypertarget{class_i_peak_avg_sender}{}\doxysection{I\+Peak\+Avg\+Sender$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE $>$ Class Template Reference}
+\label{class_i_peak_avg_sender}\index{IPeakAvgSender$<$ MAXNC, QUEUE\_SIZE $>$@{IPeakAvgSender$<$ MAXNC, QUEUE\_SIZE $>$}}
+
+
+{\ttfamily \#include $<$I\+Sender.\+h$>$}
+
+Inheritance diagram for I\+Peak\+Avg\+Sender$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_peak_avg_sender}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_peak_avg_sender_1_1_envelope_follower}{Envelope\+Follower}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_peak_avg_sender_a7254072745a7f5bdb243ad5add06ff73}\label{class_i_peak_avg_sender_a7254072745a7f5bdb243ad5add06ff73}} 
+{\bfseries I\+Peak\+Avg\+Sender} (double min\+Threshold\+Db=-\/90.\+0, bool rms\+Mode=true, float window\+Size\+Ms=5.\+0f, float attack\+Time\+Ms=1.\+0f, float decay\+Time\+Ms=100.\+0f, float peak\+Hold\+Time\+Ms=500.\+0f)
+\item 
+\mbox{\Hypertarget{class_i_peak_avg_sender_a4cffa912a321d7e4b5399b8360ce2114}\label{class_i_peak_avg_sender_a4cffa912a321d7e4b5399b8360ce2114}} 
+void {\bfseries Reset} (double sample\+Rate)
+\item 
+\mbox{\Hypertarget{class_i_peak_avg_sender_a45ad32e8874b84cf8838c66f56178799}\label{class_i_peak_avg_sender_a45ad32e8874b84cf8838c66f56178799}} 
+void {\bfseries Set\+Attack\+Time\+Ms} (double time\+Ms, double sample\+Rate)
+\item 
+\mbox{\Hypertarget{class_i_peak_avg_sender_ae298ccbbac40d1f82e47ba0c9419e9cd}\label{class_i_peak_avg_sender_ae298ccbbac40d1f82e47ba0c9419e9cd}} 
+void {\bfseries Set\+Decay\+Time\+Ms} (double time\+Ms, double sample\+Rate)
+\item 
+\mbox{\Hypertarget{class_i_peak_avg_sender_a699d8a25be42d40a53d52db2aab59132}\label{class_i_peak_avg_sender_a699d8a25be42d40a53d52db2aab59132}} 
+void {\bfseries Set\+Window\+Size\+Ms} (double time\+Ms, double sample\+Rate)
+\item 
+\mbox{\Hypertarget{class_i_peak_avg_sender_a87dd521c85b312a54948f45e6f985c74}\label{class_i_peak_avg_sender_a87dd521c85b312a54948f45e6f985c74}} 
+void {\bfseries Set\+Peak\+Hold\+Time\+Ms} (double time\+Ms, double sample\+Rate)
+\item 
+void \mbox{\hyperlink{class_i_peak_avg_sender_a63b7d60fbfa8dbff5c0de31d88bb716f}{Process\+Block}} (sample $\ast$$\ast$inputs, int n\+Frames, int ctrl\+Tag=k\+No\+Tag, int n\+Chans=M\+A\+X\+NC, int chan\+Offset=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$int M\+A\+X\+NC = 1, int Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE = 64$>$\newline
+class I\+Peak\+Avg\+Sender$<$ M\+A\+X\+N\+C, Q\+U\+E\+U\+E\+\_\+\+S\+I\+Z\+E $>$}
+
+\mbox{\hyperlink{class_i_peak_avg_sender}{I\+Peak\+Avg\+Sender}} is a utility class which can be used to defer peak \& avg/\+R\+MS data from sample buffers for sending to the \mbox{\hyperlink{class_g_u_i}{G\+UI}} It also features an envelope follower to control meter ballistics 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_peak_avg_sender_a63b7d60fbfa8dbff5c0de31d88bb716f}\label{class_i_peak_avg_sender_a63b7d60fbfa8dbff5c0de31d88bb716f}} 
+\index{IPeakAvgSender$<$ MAXNC, QUEUE\_SIZE $>$@{IPeakAvgSender$<$ MAXNC, QUEUE\_SIZE $>$}!ProcessBlock@{ProcessBlock}}
+\index{ProcessBlock@{ProcessBlock}!IPeakAvgSender$<$ MAXNC, QUEUE\_SIZE $>$@{IPeakAvgSender$<$ MAXNC, QUEUE\_SIZE $>$}}
+\doxysubsubsection{\texorpdfstring{ProcessBlock()}{ProcessBlock()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1, int Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE = 64$>$ \\
+void \mbox{\hyperlink{class_i_peak_avg_sender}{I\+Peak\+Avg\+Sender}}$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE $>$\+::Process\+Block (\begin{DoxyParamCaption}\item[{sample $\ast$$\ast$}]{inputs,  }\item[{int}]{n\+Frames,  }\item[{int}]{ctrl\+Tag = {\ttfamily kNoTag},  }\item[{int}]{n\+Chans = {\ttfamily MAXNC},  }\item[{int}]{chan\+Offset = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Queue peaks from sample buffers into the sender This can be called on the realtime audio thread. 
+\begin{DoxyParams}{Parameters}
+{\em inputs} & the sample buffers to analyze \\
+\hline
+{\em n\+Frames} & the number of sample frames in the input buffers \\
+\hline
+{\em ctrl\+Tag} & a control tag to indicate which control to send the buffers to. Note\+: if you don\textquotesingle{}t supply the control tag here, you must use \mbox{\hyperlink{class_i_sender_a969329ff6714cfa7ed8429702146f499}{Transmit\+Data\+To\+Controls\+With\+Tags()}} and specify one or more tags there \\
+\hline
+{\em n\+Chans} & the number of channels of data that should be sent \\
+\hline
+{\em chan\+Offset} & the starting channel \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\mbox{\hyperlink{_i_sender_8h}{I\+Sender.\+h}}\end{DoxyCompactItemize}

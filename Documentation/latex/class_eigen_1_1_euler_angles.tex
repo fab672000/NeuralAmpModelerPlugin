@@ -1,0 +1,944 @@
+\hypertarget{class_eigen_1_1_euler_angles}{}\doxysection{Eigen\+::Euler\+Angles$<$ Scalar\+\_\+, \+\_\+\+System $>$ Class Template Reference}
+\label{class_eigen_1_1_euler_angles}\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+
+
+Represents a rotation in a 3 dimensional space as three Euler angles.  
+
+
+
+
+{\ttfamily \#include $<$Euler\+Angles.\+h$>$}
+
+Inheritance diagram for Eigen\+::Euler\+Angles$<$ Scalar\+\_\+, \+\_\+\+System $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eigen_1_1_euler_angles}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_ad8d5b360301f02288a06e200d0adf627}\label{class_eigen_1_1_euler_angles_ad8d5b360301f02288a06e200d0adf627}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$, 3 $>$ {\bfseries Base}
+\item 
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a6a9cdcbf6744e2b2396fdd33eebd3386}\label{class_eigen_1_1_euler_angles_a6a9cdcbf6744e2b2396fdd33eebd3386}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+typedef \+\_\+\+System \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}, 3, 3 $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}, 3, 1 $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_quaternion}{Quaternion}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}{Quaternion\+Type}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_angle_axis}{Angle\+Axis}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}{Angle\+Axis\+Type}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_ad8d5b360301f02288a06e200d0adf627}\label{class_eigen_1_1_euler_angles_ad8d5b360301f02288a06e200d0adf627}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$, 3 $>$ {\bfseries Base}
+\item 
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a6a9cdcbf6744e2b2396fdd33eebd3386}\label{class_eigen_1_1_euler_angles_a6a9cdcbf6744e2b2396fdd33eebd3386}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+typedef \+\_\+\+System \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}, 3, 3 $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}, 3, 1 $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_quaternion}{Quaternion}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}{Quaternion\+Type}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_angle_axis}{Angle\+Axis}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}{Angle\+Axis\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_abe1367f90d728dd7b230d9589cefec89}{Euler\+Angles}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a3c2909797afa7e7d4efdad3d883c914b}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&\mbox{\hyperlink{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}{alpha}}, const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&\mbox{\hyperlink{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}{beta}}, const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&\mbox{\hyperlink{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}{gamma}})
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a430e6d50569d0f10a067e13019ce0b1d}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $\ast$data)
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&rot)
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a430d0f255f3a671433fb2d81b7759347}{angles}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a86c18f2f491ecd7e1c1bd41ce5a58034}{angles}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}{alpha}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_ac3a564a92a4b43e24f267f968a4338b2}{alpha}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}{beta}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a8fdec84c62624ab5950eb0855d176464}{beta}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}{gamma}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a5111ba70822f6f057e6a294fafa6cb11}{gamma}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a88d41eba39cf221a9437028fb6431948}{inverse}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a928b1ec13cb2aa8e885b3e0c9ffacfb7}{operator-\/}} () const
+\item 
+{\footnotesize template$<$class Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a0d9cccdfc7baa141ad22673fe7cb6b98}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a09721e16bfbbd908adf14f12e5469535}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&rot)
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_euler_angles_aaba297075906f560e8c9b369b4b47cc6}{is\+Approx}} (const \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \&other, const Real\+Scalar \&prec=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a5db785d10c675039efa3368ded1270ef}{to\+Rotation\+Matrix}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a0de66ebc0a5fafb3e9c02acab6ef7f66}{operator Quaternion\+Type}} () const
+\item 
+{\footnotesize template$<$typename New\+Scalar\+Type $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ New\+Scalar\+Type, \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}} $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a2add1e1c2cdae9305d759c1f515fb4ef}{cast}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_abe1367f90d728dd7b230d9589cefec89}{Euler\+Angles}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a3c2909797afa7e7d4efdad3d883c914b}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&\mbox{\hyperlink{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}{alpha}}, const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&\mbox{\hyperlink{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}{beta}}, const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&\mbox{\hyperlink{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}{gamma}})
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a430e6d50569d0f10a067e13019ce0b1d}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $\ast$data)
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}{Euler\+Angles}} (const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&rot)
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a430d0f255f3a671433fb2d81b7759347}{angles}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a86c18f2f491ecd7e1c1bd41ce5a58034}{angles}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}{alpha}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_ac3a564a92a4b43e24f267f968a4338b2}{alpha}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}{beta}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a8fdec84c62624ab5950eb0855d176464}{beta}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}{gamma}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a5111ba70822f6f057e6a294fafa6cb11}{gamma}} ()
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a88d41eba39cf221a9437028fb6431948}{inverse}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a928b1ec13cb2aa8e885b3e0c9ffacfb7}{operator-\/}} () const
+\item 
+{\footnotesize template$<$class Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a0d9cccdfc7baa141ad22673fe7cb6b98}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&other)
+\item 
+{\footnotesize template$<$typename Derived $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \& \mbox{\hyperlink{class_eigen_1_1_euler_angles_a09721e16bfbbd908adf14f12e5469535}{operator=}} (const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&rot)
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_euler_angles_aaba297075906f560e8c9b369b4b47cc6}{is\+Approx}} (const \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \&other, const Real\+Scalar \&prec=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a5db785d10c675039efa3368ded1270ef}{to\+Rotation\+Matrix}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a0de66ebc0a5fafb3e9c02acab6ef7f66}{operator Quaternion\+Type}} () const
+\item 
+{\footnotesize template$<$typename New\+Scalar\+Type $>$ }\\\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ New\+Scalar\+Type, \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}} $>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a2add1e1c2cdae9305d759c1f515fb4ef}{cast}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a293acf98b393c33700fa3ef73ebb5908}{Alpha\+Axis\+Vector}} ()
+\item 
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a8688fc64fbfe00f0fc13c97ec20de8bf}{Beta\+Axis\+Vector}} ()
+\item 
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a2097a8d02e36a9d6b847177afa4f40fa}{Gamma\+Axis\+Vector}} ()
+\item 
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a293acf98b393c33700fa3ef73ebb5908}{Alpha\+Axis\+Vector}} ()
+\item 
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a8688fc64fbfe00f0fc13c97ec20de8bf}{Beta\+Axis\+Vector}} ()
+\item 
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles_a2097a8d02e36a9d6b847177afa4f40fa}{Gamma\+Axis\+Vector}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a649647ed389370e190cd9f2a53ed1191}\label{class_eigen_1_1_euler_angles_a649647ed389370e190cd9f2a53ed1191}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}, \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}} $>$ \&euler\+Angles)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a649647ed389370e190cd9f2a53ed1191}\label{class_eigen_1_1_euler_angles_a649647ed389370e190cd9f2a53ed1191}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}, \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}} $>$ \&euler\+Angles)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+\_\+, class \+\_\+\+System$>$\newline
+class Eigen\+::\+Euler\+Angles$<$ Scalar\+\_\+, \+\_\+\+System $>$}
+
+Represents a rotation in a 3 dimensional space as three Euler angles. 
+
+Euler rotation is a set of three rotation of three angles over three fixed axes, defined by the \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} given as a template parameter.
+
+Here is how intrinsic Euler angles works\+:
+\begin{DoxyItemize}
+\item first, rotate the axes system over the alpha axis in angle alpha
+\item then, rotate the axes system over the beta axis(which was rotated in the first stage) in angle beta
+\item then, rotate the axes system over the gamma axis(which was rotated in the two stages above) in angle gamma
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This class support only intrinsic Euler angles for simplicity, see \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} how to easily overcome this for extrinsic systems.
+\end{DoxyNote}
+\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1552}{}\doxyparagraph{Rotation representation and conversions}\label{class_eigen_1_1_euler_angles_autotoc_md1552}
+It has been proved(see Wikipedia link below) that every rotation can be represented by Euler angles, but there is no single representation (e.\+g. unlike rotation matrices). Therefore, you can convert from \mbox{\hyperlink{namespace_eigen}{Eigen}} rotation and to them (including rotation matrices, which is not called \char`\"{}rotations\char`\"{} by \mbox{\hyperlink{namespace_eigen}{Eigen}} design).
+
+Euler angles usually used for\+:
+\begin{DoxyItemize}
+\item convenient human representation of rotation, especially in interactive \mbox{\hyperlink{class_g_u_i}{G\+UI}}.
+\item gimbal systems and robotics
+\item efficient encoding(i.\+e. 3 floats only) of rotation for network protocols.
+\end{DoxyItemize}
+
+However, Euler angles are slow comparing to quaternion or matrices, because their unnatural math definition, although it\textquotesingle{}s simple for human. To overcome this, this class provide easy movement from the math friendly representation to the human friendly representation, and vise-\/versa.
+
+All the user need to do is a safe simple C++ type conversion, and this class take care for the math. Additionally, some axes related computation is done in compile time.\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1553}{}\doxysubparagraph{Euler angles ranges in conversions}\label{class_eigen_1_1_euler_angles_autotoc_md1553}
+Rotations representation as \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} are not single (unlike matrices), and even have infinite \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} representations.~\newline
+ For example, add or subtract 2$\ast$\+PI from either angle of \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} and you\textquotesingle{}ll get the same rotation. This is the general reason for infinite representation, but it\textquotesingle{}s not the only general reason for not having a single representation.
+
+When converting rotation to \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}, this class convert it to specific ranges When converting some rotation to \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}, the rules for ranges are as follow\+:
+\begin{DoxyItemize}
+\item If the rotation we converting from is an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (even when it represented as \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}} explicitly), angles ranges are {\bfseries{undefined}}.
+\item otherwise, alpha and gamma angles will be in the range \mbox{[}-\/PI, PI\mbox{]}.~\newline
+ As for Beta angle\+:
+\begin{DoxyItemize}
+\item If the system is Tait-\/\+Bryan, the beta angle will be in the range \mbox{[}-\/P\+I/2, P\+I/2\mbox{]}.
+\item otherwise\+:
+\begin{DoxyItemize}
+\item If the beta axis is positive, the beta angle will be in the range \mbox{[}0, PI\mbox{]}
+\item If the beta axis is negative, the beta angle will be in the range \mbox{[}-\/PI, 0\mbox{]}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}{Euler\+Angles(const Matrix\+Base$<$\+Derived$>$\&)}} 
+
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}{Euler\+Angles(const Rotation\+Base$<$\+Derived, 3$>$\&)}}
+\end{DoxySeeAlso}
+\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1554}{}\doxyparagraph{Convenient user typedefs}\label{class_eigen_1_1_euler_angles_autotoc_md1554}
+Convenient typedefs for \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} exist for float and double scalar, in a form of \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}\{A\}\{B\}\{C\}\{scalar\}, e.\+g. Euler\+Angles\+X\+Y\+Zd, Euler\+Angles\+Z\+Y\+Zf.
+
+Only for positive axes\{+x,+y,+z\} Euler systems are have convenient typedef. If you need negative axes\{-\/x,-\/y,-\/z\}, it is recommended to create you own typedef with a word that represent what you need.\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1555}{}\doxyparagraph{Example}\label{class_eigen_1_1_euler_angles_autotoc_md1555}
+
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1556}{}\doxyparagraph{Additional reading}\label{class_eigen_1_1_euler_angles_autotoc_md1556}
+If you\textquotesingle{}re want to get more idea about how Euler system work in \mbox{\hyperlink{namespace_eigen}{Eigen}} see \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}}.
+
+More information about Euler angles\+: \href{https://en.wikipedia.org/wiki/Euler_angles}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Euler\+\_\+angles}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\+\_\+} & the scalar type, i.\+e. the type of the angles.\\
+\hline
+{\em \+\_\+\+System} & the \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} to use, which represents the axes of rotation.\\
+\hline
+\end{DoxyTemplParams}
+Euler rotation is a set of three rotation of three angles over three fixed axes, defined by the \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} given as a template parameter.
+
+Here is how intrinsic Euler angles works\+:
+\begin{DoxyItemize}
+\item first, rotate the axes system over the alpha axis in angle alpha
+\item then, rotate the axes system over the beta axis(which was rotated in the first stage) in angle beta
+\item then, rotate the axes system over the gamma axis(which was rotated in the two stages above) in angle gamma
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This class support only intrinsic Euler angles for simplicity, see \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} how to easily overcome this for extrinsic systems.
+\end{DoxyNote}
+\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1687}{}\doxyparagraph{Rotation representation and conversions}\label{class_eigen_1_1_euler_angles_autotoc_md1687}
+It has been proved(see Wikipedia link below) that every rotation can be represented by Euler angles, but there is no single representation (e.\+g. unlike rotation matrices). Therefore, you can convert from \mbox{\hyperlink{namespace_eigen}{Eigen}} rotation and to them (including rotation matrices, which is not called \char`\"{}rotations\char`\"{} by \mbox{\hyperlink{namespace_eigen}{Eigen}} design).
+
+Euler angles usually used for\+:
+\begin{DoxyItemize}
+\item convenient human representation of rotation, especially in interactive \mbox{\hyperlink{class_g_u_i}{G\+UI}}.
+\item gimbal systems and robotics
+\item efficient encoding(i.\+e. 3 floats only) of rotation for network protocols.
+\end{DoxyItemize}
+
+However, Euler angles are slow comparing to quaternion or matrices, because their unnatural math definition, although it\textquotesingle{}s simple for human. To overcome this, this class provide easy movement from the math friendly representation to the human friendly representation, and vise-\/versa.
+
+All the user need to do is a safe simple C++ type conversion, and this class take care for the math. Additionally, some axes related computation is done in compile time.\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1688}{}\doxysubparagraph{Euler angles ranges in conversions}\label{class_eigen_1_1_euler_angles_autotoc_md1688}
+Rotations representation as \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} are not single (unlike matrices), and even have infinite \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} representations.~\newline
+ For example, add or subtract 2$\ast$\+PI from either angle of \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} and you\textquotesingle{}ll get the same rotation. This is the general reason for infinite representation, but it\textquotesingle{}s not the only general reason for not having a single representation.
+
+When converting rotation to \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}, this class convert it to specific ranges When converting some rotation to \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}, the rules for ranges are as follow\+:
+\begin{DoxyItemize}
+\item If the rotation we converting from is an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (even when it represented as \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}} explicitly), angles ranges are {\bfseries{undefined}}.
+\item otherwise, alpha and gamma angles will be in the range \mbox{[}-\/PI, PI\mbox{]}.~\newline
+ As for Beta angle\+:
+\begin{DoxyItemize}
+\item If the system is Tait-\/\+Bryan, the beta angle will be in the range \mbox{[}-\/P\+I/2, P\+I/2\mbox{]}.
+\item otherwise\+:
+\begin{DoxyItemize}
+\item If the beta axis is positive, the beta angle will be in the range \mbox{[}0, PI\mbox{]}
+\item If the beta axis is negative, the beta angle will be in the range \mbox{[}-\/PI, 0\mbox{]}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}{Euler\+Angles(const Matrix\+Base$<$\+Derived$>$\&)}} 
+
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}{Euler\+Angles(const Rotation\+Base$<$\+Derived, 3$>$\&)}}
+\end{DoxySeeAlso}
+\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1689}{}\doxyparagraph{Convenient user typedefs}\label{class_eigen_1_1_euler_angles_autotoc_md1689}
+Convenient typedefs for \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} exist for float and double scalar, in a form of \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}\{A\}\{B\}\{C\}\{scalar\}, e.\+g. Euler\+Angles\+X\+Y\+Zd, Euler\+Angles\+Z\+Y\+Zf.
+
+Only for positive axes\{+x,+y,+z\} Euler systems are have convenient typedef. If you need negative axes\{-\/x,-\/y,-\/z\}, it is recommended to create you own typedef with a word that represent what you need.\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1690}{}\doxyparagraph{Example}\label{class_eigen_1_1_euler_angles_autotoc_md1690}
+
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+\hypertarget{class_eigen_1_1_euler_angles_autotoc_md1691}{}\doxyparagraph{Additional reading}\label{class_eigen_1_1_euler_angles_autotoc_md1691}
+If you\textquotesingle{}re want to get more idea about how Euler system work in \mbox{\hyperlink{namespace_eigen}{Eigen}} see \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}}.
+
+More information about Euler angles\+: \href{https://en.wikipedia.org/wiki/Euler_angles}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Euler\+\_\+angles}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\+\_\+} & the scalar type, i.\+e. the type of the angles.\\
+\hline
+{\em \+\_\+\+System} & the \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} to use, which represents the axes of rotation. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}\label{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!AngleAxisType@{AngleAxisType}}
+\index{AngleAxisType@{AngleAxisType}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{AngleAxisType}{AngleAxisType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_angle_axis}{Angle\+Axis}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}{Angle\+Axis\+Type}}}
+
+the equivalent angle-\/axis type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}\label{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!AngleAxisType@{AngleAxisType}}
+\index{AngleAxisType@{AngleAxisType}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{AngleAxisType}{AngleAxisType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_angle_axis}{Angle\+Axis}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a5342f1946064f4dc87f27e9d7ef3b944}{Angle\+Axis\+Type}}}
+
+the equivalent angle-\/axis type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}\label{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!Matrix3@{Matrix3}}
+\index{Matrix3@{Matrix3}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix3}{Matrix3}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}},3,3$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}}}
+
+the equivalent rotation matrix type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}\label{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!Matrix3@{Matrix3}}
+\index{Matrix3@{Matrix3}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix3}{Matrix3}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}},3,3$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}}}
+
+the equivalent rotation matrix type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}\label{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!QuaternionType@{QuaternionType}}
+\index{QuaternionType@{QuaternionType}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{QuaternionType}{QuaternionType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_quaternion}{Quaternion}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}{Quaternion\+Type}}}
+
+the equivalent quaternion type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}\label{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!QuaternionType@{QuaternionType}}
+\index{QuaternionType@{QuaternionType}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{QuaternionType}{QuaternionType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_quaternion}{Quaternion}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}{Quaternion\+Type}}}
+
+the equivalent quaternion type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}\label{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{Scalar}{Scalar}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}}
+
+the scalar type of the angles \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}\label{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{Scalar}{Scalar}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}}
+
+the scalar type of the angles \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}\label{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!System@{System}}
+\index{System@{System}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{System}{System}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \+\_\+\+System \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}}}
+
+the \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} to use, which represents the axes of rotation. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}\label{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!System@{System}}
+\index{System@{System}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{System}{System}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \+\_\+\+System \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}}}
+
+the \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} to use, which represents the axes of rotation. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}\label{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3}{Vector3}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}},3,1$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}}
+
+the equivalent 3 dimension vector type \mbox{\Hypertarget{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}\label{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{Vector3}{Vector3}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}},3,1$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}}
+
+the equivalent 3 dimension vector type 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_abe1367f90d728dd7b230d9589cefec89}\label{class_eigen_1_1_euler_angles_abe1367f90d728dd7b230d9589cefec89}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor without initialization. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a3c2909797afa7e7d4efdad3d883c914b}\label{class_eigen_1_1_euler_angles_a3c2909797afa7e7d4efdad3d883c914b}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&}]{alpha,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&}]{beta,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&}]{gamma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs and initialize an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} ({\ttfamily alpha}, {\ttfamily beta}, {\ttfamily gamma}). \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a430e6d50569d0f10a067e13019ce0b1d}\label{class_eigen_1_1_euler_angles_a430e6d50569d0f10a067e13019ce0b1d}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs and initialize an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} from the array data \{alpha, beta, gamma\} \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}\label{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs and initializes an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} from either\+:
+\begin{DoxyItemize}
+\item a 3x3 rotation matrix expression(i.\+e. pure orthogonal matrix with determinant of +1),
+\item a 3D vector expression representing Euler angles.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+If {\ttfamily other} is a 3x3 rotation matrix, the angles range rules will be as follow\+:~\newline
+ Alpha and gamma angles will be in the range \mbox{[}-\/PI, PI\mbox{]}.~\newline
+ As for Beta angle\+:
+\begin{DoxyItemize}
+\item If the system is Tait-\/\+Bryan, the beta angle will be in the range \mbox{[}-\/P\+I/2, P\+I/2\mbox{]}.
+\item otherwise\+:
+\begin{DoxyItemize}
+\item If the beta axis is positive, the beta angle will be in the range \mbox{[}0, PI\mbox{]}
+\item If the beta axis is negative, the beta angle will be in the range \mbox{[}-\/PI, 0\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyNote}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}\label{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs and initialize Euler angles from a rotation {\ttfamily rot}.
+
+\begin{DoxyNote}{Note}
+If {\ttfamily rot} is an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (even when it represented as \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}} explicitly), angles ranges are {\bfseries{undefined}}. Otherwise, alpha and gamma angles will be in the range \mbox{[}-\/PI, PI\mbox{]}.~\newline
+ As for Beta angle\+:
+\begin{DoxyItemize}
+\item If the system is Tait-\/\+Bryan, the beta angle will be in the range \mbox{[}-\/P\+I/2, P\+I/2\mbox{]}.
+\item otherwise\+:
+\begin{DoxyItemize}
+\item If the beta axis is positive, the beta angle will be in the range \mbox{[}0, PI\mbox{]}
+\item If the beta axis is negative, the beta angle will be in the range \mbox{[}-\/PI, 0\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyNote}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_abe1367f90d728dd7b230d9589cefec89}\label{class_eigen_1_1_euler_angles_abe1367f90d728dd7b230d9589cefec89}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor without initialization. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a3c2909797afa7e7d4efdad3d883c914b}\label{class_eigen_1_1_euler_angles_a3c2909797afa7e7d4efdad3d883c914b}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&}]{alpha,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&}]{beta,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \&}]{gamma }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs and initialize an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} ({\ttfamily alpha}, {\ttfamily beta}, {\ttfamily gamma}). \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a430e6d50569d0f10a067e13019ce0b1d}\label{class_eigen_1_1_euler_angles_a430e6d50569d0f10a067e13019ce0b1d}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs and initialize an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} from the array data \{alpha, beta, gamma\} \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}\label{class_eigen_1_1_euler_angles_a8eee875698fd7dfb4a0a0a101dfaffc1}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs and initializes an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} from either\+:
+\begin{DoxyItemize}
+\item a 3x3 rotation matrix expression(i.\+e. pure orthogonal matrix with determinant of +1),
+\item a 3D vector expression representing Euler angles.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+If {\ttfamily other} is a 3x3 rotation matrix, the angles range rules will be as follow\+:~\newline
+ Alpha and gamma angles will be in the range \mbox{[}-\/PI, PI\mbox{]}.~\newline
+ As for Beta angle\+:
+\begin{DoxyItemize}
+\item If the system is Tait-\/\+Bryan, the beta angle will be in the range \mbox{[}-\/P\+I/2, P\+I/2\mbox{]}.
+\item otherwise\+:
+\begin{DoxyItemize}
+\item If the beta axis is positive, the beta angle will be in the range \mbox{[}0, PI\mbox{]}
+\item If the beta axis is negative, the beta angle will be in the range \mbox{[}-\/PI, 0\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyNote}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}\label{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!EulerAngles@{EulerAngles}}
+\index{EulerAngles@{EulerAngles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{EulerAngles()}{EulerAngles()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs and initialize Euler angles from a rotation {\ttfamily rot}.
+
+\begin{DoxyNote}{Note}
+If {\ttfamily rot} is an \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} (even when it represented as \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}} explicitly), angles ranges are {\bfseries{undefined}}. Otherwise, alpha and gamma angles will be in the range \mbox{[}-\/PI, PI\mbox{]}.~\newline
+ As for Beta angle\+:
+\begin{DoxyItemize}
+\item If the system is Tait-\/\+Bryan, the beta angle will be in the range \mbox{[}-\/P\+I/2, P\+I/2\mbox{]}.
+\item otherwise\+:
+\begin{DoxyItemize}
+\item If the beta axis is positive, the beta angle will be in the range \mbox{[}0, PI\mbox{]}
+\item If the beta axis is negative, the beta angle will be in the range \mbox{[}-\/PI, 0\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_ac3a564a92a4b43e24f267f968a4338b2}\label{class_eigen_1_1_euler_angles_ac3a564a92a4b43e24f267f968a4338b2}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!alpha@{alpha}}
+\index{alpha@{alpha}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle of the first angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_ac3a564a92a4b43e24f267f968a4338b2}\label{class_eigen_1_1_euler_angles_ac3a564a92a4b43e24f267f968a4338b2}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!alpha@{alpha}}
+\index{alpha@{alpha}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle of the first angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}\label{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!alpha@{alpha}}
+\index{alpha@{alpha}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The value of the first angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}\label{class_eigen_1_1_euler_angles_a271449e2a6b745b4e97f7546bef1bc0a}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!alpha@{alpha}}
+\index{alpha@{alpha}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::alpha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The value of the first angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a293acf98b393c33700fa3ef73ebb5908}\label{class_eigen_1_1_euler_angles_a293acf98b393c33700fa3ef73ebb5908}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!AlphaAxisVector@{AlphaAxisVector}}
+\index{AlphaAxisVector@{AlphaAxisVector}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{AlphaAxisVector()}{AlphaAxisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::Alpha\+Axis\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the axis vector of the first (alpha) rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a293acf98b393c33700fa3ef73ebb5908}\label{class_eigen_1_1_euler_angles_a293acf98b393c33700fa3ef73ebb5908}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!AlphaAxisVector@{AlphaAxisVector}}
+\index{AlphaAxisVector@{AlphaAxisVector}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{AlphaAxisVector()}{AlphaAxisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::Alpha\+Axis\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the axis vector of the first (alpha) rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a86c18f2f491ecd7e1c1bd41ce5a58034}\label{class_eigen_1_1_euler_angles_a86c18f2f491ecd7e1c1bd41ce5a58034}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!angles@{angles}}
+\index{angles@{angles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{angles()}{angles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle values stored in a vector (alpha, beta, gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a86c18f2f491ecd7e1c1bd41ce5a58034}\label{class_eigen_1_1_euler_angles_a86c18f2f491ecd7e1c1bd41ce5a58034}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!angles@{angles}}
+\index{angles@{angles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{angles()}{angles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle values stored in a vector (alpha, beta, gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a430d0f255f3a671433fb2d81b7759347}\label{class_eigen_1_1_euler_angles_a430d0f255f3a671433fb2d81b7759347}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!angles@{angles}}
+\index{angles@{angles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{angles()}{angles()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The angle values stored in a vector (alpha, beta, gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a430d0f255f3a671433fb2d81b7759347}\label{class_eigen_1_1_euler_angles_a430d0f255f3a671433fb2d81b7759347}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!angles@{angles}}
+\index{angles@{angles}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{angles()}{angles()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The angle values stored in a vector (alpha, beta, gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8fdec84c62624ab5950eb0855d176464}\label{class_eigen_1_1_euler_angles_a8fdec84c62624ab5950eb0855d176464}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!beta@{beta}}
+\index{beta@{beta}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{beta()}{beta()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::beta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle of the second angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8fdec84c62624ab5950eb0855d176464}\label{class_eigen_1_1_euler_angles_a8fdec84c62624ab5950eb0855d176464}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!beta@{beta}}
+\index{beta@{beta}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{beta()}{beta()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::beta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle of the second angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}\label{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!beta@{beta}}
+\index{beta@{beta}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{beta()}{beta()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::beta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The value of the second angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}\label{class_eigen_1_1_euler_angles_a8701809550b7423d8747b2c54d54a758}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!beta@{beta}}
+\index{beta@{beta}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{beta()}{beta()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::beta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The value of the second angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8688fc64fbfe00f0fc13c97ec20de8bf}\label{class_eigen_1_1_euler_angles_a8688fc64fbfe00f0fc13c97ec20de8bf}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!BetaAxisVector@{BetaAxisVector}}
+\index{BetaAxisVector@{BetaAxisVector}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{BetaAxisVector()}{BetaAxisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::Beta\+Axis\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the axis vector of the second (beta) rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a8688fc64fbfe00f0fc13c97ec20de8bf}\label{class_eigen_1_1_euler_angles_a8688fc64fbfe00f0fc13c97ec20de8bf}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!BetaAxisVector@{BetaAxisVector}}
+\index{BetaAxisVector@{BetaAxisVector}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{BetaAxisVector()}{BetaAxisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::Beta\+Axis\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the axis vector of the second (beta) rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a2add1e1c2cdae9305d759c1f515fb4ef}\label{class_eigen_1_1_euler_angles_a2add1e1c2cdae9305d759c1f515fb4ef}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!cast@{cast}}
+\index{cast@{cast}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{cast()}{cast()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename New\+Scalar\+Type $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$New\+Scalar\+Type, \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}}$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::cast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} with scalar type casted to {\itshape New\+Scalar\+Type} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a2add1e1c2cdae9305d759c1f515fb4ef}\label{class_eigen_1_1_euler_angles_a2add1e1c2cdae9305d759c1f515fb4ef}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!cast@{cast}}
+\index{cast@{cast}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{cast()}{cast()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename New\+Scalar\+Type $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$New\+Scalar\+Type, \mbox{\hyperlink{class_eigen_1_1_euler_angles_a1462fffa812b7bec67c8f2e2b2daca52}{System}}$>$ \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::cast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} with scalar type casted to {\itshape New\+Scalar\+Type} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a5111ba70822f6f057e6a294fafa6cb11}\label{class_eigen_1_1_euler_angles_a5111ba70822f6f057e6a294fafa6cb11}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!gamma@{gamma}}
+\index{gamma@{gamma}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::gamma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle of the third angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a5111ba70822f6f057e6a294fafa6cb11}\label{class_eigen_1_1_euler_angles_a5111ba70822f6f057e6a294fafa6cb11}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!gamma@{gamma}}
+\index{gamma@{gamma}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::gamma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+A read-\/write reference to the angle of the third angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}\label{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!gamma@{gamma}}
+\index{gamma@{gamma}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::gamma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The value of the third angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}\label{class_eigen_1_1_euler_angles_a73fad7a6e7becb9407fa726fa2d8fded}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!gamma@{gamma}}
+\index{gamma@{gamma}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{gamma()}{gamma()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::gamma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The value of the third angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a2097a8d02e36a9d6b847177afa4f40fa}\label{class_eigen_1_1_euler_angles_a2097a8d02e36a9d6b847177afa4f40fa}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!GammaAxisVector@{GammaAxisVector}}
+\index{GammaAxisVector@{GammaAxisVector}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{GammaAxisVector()}{GammaAxisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::Gamma\+Axis\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the axis vector of the third (gamma) rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a2097a8d02e36a9d6b847177afa4f40fa}\label{class_eigen_1_1_euler_angles_a2097a8d02e36a9d6b847177afa4f40fa}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!GammaAxisVector@{GammaAxisVector}}
+\index{GammaAxisVector@{GammaAxisVector}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{GammaAxisVector()}{GammaAxisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_euler_angles_adc9885adf8d93f64b74413aa1df38760}{Vector3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::Gamma\+Axis\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the axis vector of the third (gamma) rotation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a88d41eba39cf221a9437028fb6431948}\label{class_eigen_1_1_euler_angles_a88d41eba39cf221a9437028fb6431948}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!inverse@{inverse}}
+\index{inverse@{inverse}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The Euler angles rotation inverse (which is as same as the negative), (-\/alpha, -\/beta, -\/gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a88d41eba39cf221a9437028fb6431948}\label{class_eigen_1_1_euler_angles_a88d41eba39cf221a9437028fb6431948}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!inverse@{inverse}}
+\index{inverse@{inverse}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The Euler angles rotation inverse (which is as same as the negative), (-\/alpha, -\/beta, -\/gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_aaba297075906f560e8c9b369b4b47cc6}\label{class_eigen_1_1_euler_angles_aaba297075906f560e8c9b369b4b47cc6}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!isApprox@{isApprox}}
+\index{isApprox@{isApprox}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{isApprox()}{isApprox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+bool \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::is\+Approx (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$ \&}]{other,  }\item[{const Real\+Scalar \&}]{prec = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily $\ast$this} is approximately equal to {\itshape other}, within the precision determined by {\itshape prec}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_af3793521d788a946cb9c5f4f92bab4d3}{Matrix\+Base\+::is\+Approx()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_aaba297075906f560e8c9b369b4b47cc6}\label{class_eigen_1_1_euler_angles_aaba297075906f560e8c9b369b4b47cc6}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!isApprox@{isApprox}}
+\index{isApprox@{isApprox}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{isApprox()}{isApprox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+bool \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::is\+Approx (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$ \&}]{other,  }\item[{const Real\+Scalar \&}]{prec = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_euler_angles_a7893abd67974354b798200b3b458262f}{Scalar}}$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if {\ttfamily $\ast$this} is approximately equal to {\itshape other}, within the precision determined by {\itshape prec}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_dense_base_af3793521d788a946cb9c5f4f92bab4d3}{Matrix\+Base\+::is\+Approx()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a0de66ebc0a5fafb3e9c02acab6ef7f66}\label{class_eigen_1_1_euler_angles_a0de66ebc0a5fafb3e9c02acab6ef7f66}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator QuaternionType@{operator QuaternionType}}
+\index{operator QuaternionType@{operator QuaternionType}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator QuaternionType()}{operator QuaternionType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator \mbox{\hyperlink{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}{Quaternion\+Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert the Euler angles to quaternion. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a0de66ebc0a5fafb3e9c02acab6ef7f66}\label{class_eigen_1_1_euler_angles_a0de66ebc0a5fafb3e9c02acab6ef7f66}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator QuaternionType@{operator QuaternionType}}
+\index{operator QuaternionType@{operator QuaternionType}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator QuaternionType()}{operator QuaternionType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator \mbox{\hyperlink{class_eigen_1_1_euler_angles_a3000fb4d6de76cf9b68ae2766e4dd1c6}{Quaternion\+Type}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert the Euler angles to quaternion. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a928b1ec13cb2aa8e885b3e0c9ffacfb7}\label{class_eigen_1_1_euler_angles_a928b1ec13cb2aa8e885b3e0c9ffacfb7}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The Euler angles rotation negative (which is as same as the inverse), (-\/alpha, -\/beta, -\/gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a928b1ec13cb2aa8e885b3e0c9ffacfb7}\label{class_eigen_1_1_euler_angles_a928b1ec13cb2aa8e885b3e0c9ffacfb7}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The Euler angles rotation negative (which is as same as the inverse), (-\/alpha, -\/beta, -\/gamma). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a0d9cccdfc7baa141ad22673fe7cb6b98}\label{class_eigen_1_1_euler_angles_a0d9cccdfc7baa141ad22673fe7cb6b98}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$class Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set {\ttfamily $\ast$this} from either\+:
+\begin{DoxyItemize}
+\item a 3x3 rotation matrix expression(i.\+e. pure orthogonal matrix with determinant of +1),
+\item a 3D vector expression representing Euler angles.
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{class_euler_angles}{Euler\+Angles(const Matrix\+Base$<$\+Derived, 3$>$\&)}} for more information about angles ranges output. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a0d9cccdfc7baa141ad22673fe7cb6b98}\label{class_eigen_1_1_euler_angles_a0d9cccdfc7baa141ad22673fe7cb6b98}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$class Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Derived $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set {\ttfamily $\ast$this} from either\+:
+\begin{DoxyItemize}
+\item a 3x3 rotation matrix expression(i.\+e. pure orthogonal matrix with determinant of +1),
+\item a 3D vector expression representing Euler angles.
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{class_euler_angles}{Euler\+Angles(const Matrix\+Base$<$\+Derived, 3$>$\&)}} for more information about angles ranges output. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a09721e16bfbbd908adf14f12e5469535}\label{class_eigen_1_1_euler_angles_a09721e16bfbbd908adf14f12e5469535}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set {\ttfamily $\ast$this} from a rotation.
+
+See \mbox{\hyperlink{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}{Euler\+Angles(const Rotation\+Base$<$\+Derived, 3$>$\&)}} for more information about angles ranges output. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a09721e16bfbbd908adf14f12e5469535}\label{class_eigen_1_1_euler_angles_a09721e16bfbbd908adf14f12e5469535}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+template$<$typename Derived $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}\& \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_rotation_base}{Rotation\+Base}}$<$ Derived, 3 $>$ \&}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set {\ttfamily $\ast$this} from a rotation.
+
+See \mbox{\hyperlink{class_eigen_1_1_euler_angles_aa4bd914c869a7ad06252eb9672326a06}{Euler\+Angles(const Rotation\+Base$<$\+Derived, 3$>$\&)}} for more information about angles ranges output. \mbox{\Hypertarget{class_eigen_1_1_euler_angles_a5db785d10c675039efa3368ded1270ef}\label{class_eigen_1_1_euler_angles_a5db785d10c675039efa3368ded1270ef}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!toRotationMatrix@{toRotationMatrix}}
+\index{toRotationMatrix@{toRotationMatrix}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{toRotationMatrix()}{toRotationMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::to\+Rotation\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an equivalent 3x3 rotation matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_euler_angles_a5db785d10c675039efa3368ded1270ef}\label{class_eigen_1_1_euler_angles_a5db785d10c675039efa3368ded1270ef}} 
+\index{Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}!toRotationMatrix@{toRotationMatrix}}
+\index{toRotationMatrix@{toRotationMatrix}!Eigen::EulerAngles$<$ Scalar\_, \_System $>$@{Eigen::EulerAngles$<$ Scalar\_, \_System $>$}}
+\doxysubsubsection{\texorpdfstring{toRotationMatrix()}{toRotationMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_euler_angles_a9af783749247585b5660ed5209241759}{Matrix3}} \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Eigen\+::\+Euler\+Angles}}$<$ Scalar\+\_\+, \+\_\+\+System $>$\+::to\+Rotation\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an equivalent 3x3 rotation matrix. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/src/\+Euler\+Angles/Euler\+Angles.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/\+Neural\+Amp\+Modeler\+Core/\+Dependencies/eigen/demos/opengl/quaternion\+\_\+demo.\+cpp\end{DoxyCompactItemize}

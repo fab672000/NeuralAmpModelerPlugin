@@ -1,0 +1,40 @@
+\hypertarget{struct_sk_text_blob_builder_1_1_run_buffer}{}\doxysection{Sk\+Text\+Blob\+Builder\+::Run\+Buffer Struct Reference}
+\label{struct_sk_text_blob_builder_1_1_run_buffer}\index{SkTextBlobBuilder::RunBuffer@{SkTextBlobBuilder::RunBuffer}}
+
+
+{\ttfamily \#include $<$Sk\+Text\+Blob.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_text_blob_builder_1_1_run_buffer_a8ee22f44abfebe73130d40b8f5002f22}\label{struct_sk_text_blob_builder_1_1_run_buffer_a8ee22f44abfebe73130d40b8f5002f22}} 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$ {\bfseries points} () const
+\item 
+\mbox{\Hypertarget{struct_sk_text_blob_builder_1_1_run_buffer_a327e0c6370eed7effbc268a28ca1f8b7}\label{struct_sk_text_blob_builder_1_1_run_buffer_a327e0c6370eed7effbc268a28ca1f8b7}} 
+\mbox{\hyperlink{struct_sk_r_s_xform}{Sk\+R\+S\+Xform}} $\ast$ {\bfseries xforms} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_text_blob_builder_1_1_run_buffer_a81d605d234e2eed9399779e78efa98f0}\label{struct_sk_text_blob_builder_1_1_run_buffer_a81d605d234e2eed9399779e78efa98f0}} 
+\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} $\ast$ \mbox{\hyperlink{struct_sk_text_blob_builder_1_1_run_buffer_a81d605d234e2eed9399779e78efa98f0}{glyphs}}
+\begin{DoxyCompactList}\small\item\em storage for glyph indexes in run \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_sk_text_blob_builder_1_1_run_buffer_a69dc3694061e726781687c4bd98f3fa5}\label{struct_sk_text_blob_builder_1_1_run_buffer_a69dc3694061e726781687c4bd98f3fa5}} 
+Sk\+Scalar $\ast$ \mbox{\hyperlink{struct_sk_text_blob_builder_1_1_run_buffer_a69dc3694061e726781687c4bd98f3fa5}{pos}}
+\begin{DoxyCompactList}\small\item\em storage for glyph positions in run \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_sk_text_blob_builder_1_1_run_buffer_a7e0a588508200bf7c0e8150483a5e691}\label{struct_sk_text_blob_builder_1_1_run_buffer_a7e0a588508200bf7c0e8150483a5e691}} 
+char $\ast$ \mbox{\hyperlink{struct_sk_text_blob_builder_1_1_run_buffer_a7e0a588508200bf7c0e8150483a5e691}{utf8text}}
+\begin{DoxyCompactList}\small\item\em storage for text U\+T\+F-\/8 code units in run \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_sk_text_blob_builder_1_1_run_buffer_a917234139d3b355fa48b44c73cd9a99a}\label{struct_sk_text_blob_builder_1_1_run_buffer_a917234139d3b355fa48b44c73cd9a99a}} 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct_sk_text_blob_builder_1_1_run_buffer_a917234139d3b355fa48b44c73cd9a99a}{clusters}}
+\begin{DoxyCompactList}\small\item\em storage for glyph clusters (index of U\+T\+F-\/8 code unit) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_sk_text_blob_builder_1_1_run_buffer}{Run\+Buffer}} supplies storage for glyphs and positions within a run.
+
+A run is a sequence of glyphs sharing font metrics and positioning. Each run may position its glyphs in one of three ways\+: by specifying where the first glyph is drawn, and allowing font metrics to determine the advance to subsequent glyphs; by specifying a baseline, and the position on that baseline for each glyph in run; or by providing \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, one per glyph. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Text\+Blob.\+h\end{DoxyCompactItemize}

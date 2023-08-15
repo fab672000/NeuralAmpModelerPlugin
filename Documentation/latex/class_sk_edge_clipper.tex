@@ -1,0 +1,50 @@
+\hypertarget{class_sk_edge_clipper}{}\doxysection{Sk\+Edge\+Clipper Class Reference}
+\label{class_sk_edge_clipper}\index{SkEdgeClipper@{SkEdgeClipper}}
+
+
+{\ttfamily \#include $<$Sk\+Edge\+Clipper.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_edge_clipper_afad416bbc16425c61efbe40f4066d540}\label{class_sk_edge_clipper_afad416bbc16425c61efbe40f4066d540}} 
+{\bfseries Sk\+Edge\+Clipper} (bool can\+Cull\+To\+The\+Right)
+\item 
+\mbox{\Hypertarget{class_sk_edge_clipper_aaccf76722634603c58e93e6c780b4806}\label{class_sk_edge_clipper_aaccf76722634603c58e93e6c780b4806}} 
+bool {\bfseries clip\+Line} (\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p0, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&clip)
+\item 
+\mbox{\Hypertarget{class_sk_edge_clipper_ad6fcc143f6cd3d9fe6b4affc07b30504}\label{class_sk_edge_clipper_ad6fcc143f6cd3d9fe6b4affc07b30504}} 
+bool {\bfseries clip\+Quad} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pts\mbox{[}3\mbox{]}, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&clip)
+\item 
+\mbox{\Hypertarget{class_sk_edge_clipper_aa67ae329b0f9f1972db6544ec21f46a8}\label{class_sk_edge_clipper_aa67ae329b0f9f1972db6544ec21f46a8}} 
+bool {\bfseries clip\+Cubic} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pts\mbox{[}4\mbox{]}, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&clip)
+\item 
+\mbox{\Hypertarget{class_sk_edge_clipper_a432d9d3b3e4507ca5fbcccb3d1c2de77}\label{class_sk_edge_clipper_a432d9d3b3e4507ca5fbcccb3d1c2de77}} 
+Sk\+Path\+::\+Verb {\bfseries next} (\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pts\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{class_sk_edge_clipper_a33ef9f13a7a28bc50daddbf958fe03fc}\label{class_sk_edge_clipper_a33ef9f13a7a28bc50daddbf958fe03fc}} 
+bool {\bfseries can\+Cull\+To\+The\+Right} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_sk_edge_clipper_a3e64b149f69069bc7bb87db06c1433a1}{Clip\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&clip, bool can\+Cull\+To\+The\+Right, void($\ast$consume)(\mbox{\hyperlink{class_sk_edge_clipper}{Sk\+Edge\+Clipper}} $\ast$, bool new\+Ctr, void $\ast$ctx), void $\ast$ctx)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is basically an iterator. It is initialized with an edge and a clip, and then next() is called until it returns k\+Done\+\_\+\+Verb. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_edge_clipper_a3e64b149f69069bc7bb87db06c1433a1}\label{class_sk_edge_clipper_a3e64b149f69069bc7bb87db06c1433a1}} 
+\index{SkEdgeClipper@{SkEdgeClipper}!ClipPath@{ClipPath}}
+\index{ClipPath@{ClipPath}!SkEdgeClipper@{SkEdgeClipper}}
+\doxysubsubsection{\texorpdfstring{ClipPath()}{ClipPath()}}
+{\footnotesize\ttfamily void Sk\+Edge\+Clipper\+::\+Clip\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{clip,  }\item[{bool}]{can\+Cull\+To\+The\+Right,  }\item[{void($\ast$)(\mbox{\hyperlink{class_sk_edge_clipper}{Sk\+Edge\+Clipper}} $\ast$, bool new\+Ctr, void $\ast$ctx)}]{consume,  }\item[{void $\ast$}]{ctx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Clips each segment from the path, and passes the result (in a clipper) to the consume proc. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Edge\+Clipper.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Edge\+Clipper.\+cpp\end{DoxyCompactItemize}

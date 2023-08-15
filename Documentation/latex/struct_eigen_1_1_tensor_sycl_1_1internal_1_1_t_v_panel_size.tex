@@ -1,0 +1,61 @@
+\hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::T\+V\+Panel\+Size$<$ Scalar, Storage\+Index, N\+C\+Window, C\+Factor, N\+C\+Factor $>$ Struct Template Reference}
+\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size}\index{Eigen::TensorSycl::internal::TVPanelSize$<$ Scalar, StorageIndex, NCWindow, CFactor, NCFactor $>$@{Eigen::TensorSycl::internal::TVPanelSize$<$ Scalar, StorageIndex, NCWindow, CFactor, NCFactor $>$}}
+
+
+\mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size}{T\+V\+Panel\+Size}}, a template class used for setting the panel size required for launching General Tensor\+Vector contraction kernel on various hardware devices.  
+
+
+
+
+{\ttfamily \#include $<$Tensor\+Contraction\+Sycl.\+h$>$}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a8eef4d38992279fdbf0e328161f255dc}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a8eef4d38992279fdbf0e328161f255dc}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Local\+Thread\+SizeC} = E\+I\+G\+E\+N\+\_\+\+S\+Y\+C\+L\+\_\+\+L\+O\+C\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+D\+I\+M0
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_af0204b64840c2efd55b49f21235fc61d}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_af0204b64840c2efd55b49f21235fc61d}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Local\+Thread\+Size\+NC} = E\+I\+G\+E\+N\+\_\+\+S\+Y\+C\+L\+\_\+\+L\+O\+C\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+D\+I\+M1
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a165405647dfa6a67f588446c3c18e335}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a165405647dfa6a67f588446c3c18e335}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Tile\+Size\+Dim\+NC} = N\+C\+Window / N\+C\+Factor
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_ac5384343df9833c887bb6df546def3d2}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_ac5384343df9833c887bb6df546def3d2}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Tile\+Size\+DimC} = C\+Factor $\ast$ Local\+Thread\+Size\+NC $\ast$ Local\+Thread\+SizeC
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_ab73e3cedf0f102102fb0ec4b8bade676}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_ab73e3cedf0f102102fb0ec4b8bade676}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Work\+Load\+Per\+Thread\+NC} = Tile\+Size\+Dim\+NC / Local\+Thread\+Size\+NC
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a9e2b31e1ddf1bdebf1dd8f7b3893cf47}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a9e2b31e1ddf1bdebf1dd8f7b3893cf47}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR Storage\+Index {\bfseries Work\+Load\+Per\+ThreadC} = Tile\+Size\+DimC / Local\+Thread\+SizeC
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a1ff8c32566cb3e24f26b629856ea6200}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size_a1ff8c32566cb3e24f26b629856ea6200}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool {\bfseries BC} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar, typename Storage\+Index, Storage\+Index N\+C\+Window, Storage\+Index C\+Factor, Storage\+Index N\+C\+Factor$>$\newline
+struct Eigen\+::\+Tensor\+Sycl\+::internal\+::\+T\+V\+Panel\+Size$<$ Scalar, Storage\+Index, N\+C\+Window, C\+Factor, N\+C\+Factor $>$}
+
+\mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_t_v_panel_size}{T\+V\+Panel\+Size}}, a template class used for setting the panel size required for launching General Tensor\+Vector contraction kernel on various hardware devices. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar} & determines the element type of the tensor/vector\\
+\hline
+{\em Storage\+Index} & determines the Index type.\\
+\hline
+{\em N\+C\+Window} & determines the number of non-\/contracting element to be process by each work-\/group\\
+\hline
+{\em C\+Factor} & determines the number of contracting element to be process by each thread\\
+\hline
+{\em N\+C\+Factor} & determines the number of non-\/contracting element to be process by each thread \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Contraction\+Sycl.\+h\end{DoxyCompactItemize}

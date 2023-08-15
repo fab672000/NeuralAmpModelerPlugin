@@ -1,0 +1,75 @@
+\hypertarget{class_sk_s_l_1_1_program_element}{}\doxysection{Sk\+SL\+::Program\+Element Class Reference}
+\label{class_sk_s_l_1_1_program_element}\index{SkSL::ProgramElement@{SkSL::ProgramElement}}
+
+
+{\ttfamily \#include $<$Sk\+S\+L\+Program\+Element.\+h$>$}
+
+Inheritance diagram for Sk\+SL\+::Program\+Element\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sk_s_l_1_1_program_element}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_s_l_1_1_program_element_ac3134f6d18f97239fa45dcc0491b0528}\label{class_sk_s_l_1_1_program_element_ac3134f6d18f97239fa45dcc0491b0528}} 
+enum {\bfseries Kind} \{ \newline
+{\bfseries k\+Extension} = 0, 
+{\bfseries k\+Function}, 
+{\bfseries k\+Function\+Prototype}, 
+{\bfseries k\+Global\+Var}, 
+\newline
+{\bfseries k\+Interface\+Block}, 
+{\bfseries k\+Modifiers}, 
+{\bfseries k\+Struct\+Definition}, 
+{\bfseries k\+First} = k\+Extension, 
+\newline
+{\bfseries k\+Last} = k\+Struct\+Definition
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_s_l_1_1_program_element_abf849bd67ac012e137f49b1014ea683a}\label{class_sk_s_l_1_1_program_element_abf849bd67ac012e137f49b1014ea683a}} 
+{\bfseries Program\+Element} (int offset, Kind kind)
+\item 
+\mbox{\Hypertarget{class_sk_s_l_1_1_program_element_a65d6ba0e1f327b33057ba08aa4b8d255}\label{class_sk_s_l_1_1_program_element_a65d6ba0e1f327b33057ba08aa4b8d255}} 
+Kind {\bfseries kind} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{class_sk_s_l_1_1_program_element_a4257ae31bee34f34c09920934571dc71}{is}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \& \mbox{\hyperlink{class_sk_s_l_1_1_program_element_a4f1803a81a66cb67881f14b0022a8521}{as}} () const
+\item 
+\mbox{\Hypertarget{class_sk_s_l_1_1_program_element_a19556f69e6ff1a469ba235c36cd5e9c0}\label{class_sk_s_l_1_1_program_element_a19556f69e6ff1a469ba235c36cd5e9c0}} 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \& {\bfseries as} ()
+\item 
+\mbox{\Hypertarget{class_sk_s_l_1_1_program_element_a803ce2e7a8ec3e3a37961d8aa63d4525}\label{class_sk_s_l_1_1_program_element_a803ce2e7a8ec3e3a37961d8aa63d4525}} 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_s_l_1_1_program_element}{Program\+Element}} $>$ {\bfseries clone} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a top-\/level element (e.\+g. function or global variable) in a program. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_s_l_1_1_program_element_a4f1803a81a66cb67881f14b0022a8521}\label{class_sk_s_l_1_1_program_element_a4f1803a81a66cb67881f14b0022a8521}} 
+\index{SkSL::ProgramElement@{SkSL::ProgramElement}!as@{as}}
+\index{as@{as}!SkSL::ProgramElement@{SkSL::ProgramElement}}
+\doxysubsubsection{\texorpdfstring{as()}{as()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}}\& Sk\+S\+L\+::\+Program\+Element\+::as (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Use as$<$\+T$>$ to downcast program elements. e.\+g. replace {\ttfamily (Extension\&) el} with {\ttfamily el.\+as$<$Extension$>$()}. \mbox{\Hypertarget{class_sk_s_l_1_1_program_element_a4257ae31bee34f34c09920934571dc71}\label{class_sk_s_l_1_1_program_element_a4257ae31bee34f34c09920934571dc71}} 
+\index{SkSL::ProgramElement@{SkSL::ProgramElement}!is@{is}}
+\index{is@{is}!SkSL::ProgramElement@{SkSL::ProgramElement}}
+\doxysubsubsection{\texorpdfstring{is()}{is()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool Sk\+S\+L\+::\+Program\+Element\+::is (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Use is$<$\+T$>$ to check the type of a program element. e.\+g. replace {\ttfamily el.\+kind() == Program\+Element\+::\+Kind\+::k\+Extension} with {\ttfamily el.\+is$<$Extension$>$()}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/Sk\+S\+L\+Program\+Element.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,766 @@
+\hypertarget{class_sk_region}{}\doxysection{Sk\+Region Class Reference}
+\label{class_sk_region}\index{SkRegion@{SkRegion}}
+
+
+{\ttfamily \#include $<$Sk\+Region.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_region_1_1_cliperator}{Cliperator}}
+\item 
+class \mbox{\hyperlink{class_sk_region_1_1_iterator}{Iterator}}
+\item 
+struct \mbox{\hyperlink{struct_sk_region_1_1_run_head}{Run\+Head}}
+\item 
+class \mbox{\hyperlink{class_sk_region_1_1_spanerator}{Spanerator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}} \{ \newline
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54aa8d813d8769e5bd03fb2584f4e83095d}{k\+Difference\+\_\+\+Op}}, 
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54aa00c0597c1fbf86c99b98c6e52a0fda6}{k\+Intersect\+\_\+\+Op}}, 
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a17849871e8a2f1caff9f1cc7fd11106f}{k\+Union\+\_\+\+Op}}, 
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54ad16c7158cd646c13ca5a48280179aba9}{k\+X\+O\+R\+\_\+\+Op}}, 
+\newline
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a17466849e3abe575fe900ad86561b28a}{k\+Reverse\+Difference\+\_\+\+Op}}, 
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a9de12d8ccfa287794729769e00ef8c50}{k\+Replace\+\_\+\+Op}}, 
+\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a7471994dd9843de935ea5bcbeb7082ea}{k\+Last\+Op}} = k\+Replace\+\_\+\+Op
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_region_a3115115088b9f849cbc46799d5bc0097}{Sk\+Region}} ()
+\item 
+\mbox{\hyperlink{class_sk_region_ac983d26a3ef4b307ee0df3f7e6bb93ff}{Sk\+Region}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&region)
+\item 
+\mbox{\hyperlink{class_sk_region_aba9c85f49c2f8590f26f916e7193dbbd}{Sk\+Region}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect)
+\item 
+\mbox{\hyperlink{class_sk_region_a1091b8697d5afb66d62c232e13234349}{$\sim$\+Sk\+Region}} ()
+\item 
+\mbox{\hyperlink{class_sk_region}{Sk\+Region}} \& \mbox{\hyperlink{class_sk_region_a68b72aabcf987b002673b7bdccec5f98}{operator=}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&region)
+\item 
+bool \mbox{\hyperlink{class_sk_region_a2c8084bfb167121be4ff7607b955ba53}{operator==}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_aca5dd873053d5045bab158543f0a2591}{operator!=}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a1d905dc125d8084da4a0d73f28ddbeba}{set}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&src)
+\item 
+void \mbox{\hyperlink{class_sk_region_aa19e58949596345002669be52aa71033}{swap}} (\mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&other)
+\item 
+bool \mbox{\hyperlink{class_sk_region_a955568200655e395afaab73288aca55d}{is\+Empty}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a604f56ce9d5186b0c634ecfdd3b947e9}{is\+Rect}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a4209e9cc3292a0f45e4e65046f2bf510}{is\+Complex}} () const
+\item 
+const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \& \mbox{\hyperlink{class_sk_region_a491866b01d078f262a5b64f53d69d46a}{get\+Bounds}} () const
+\item 
+int \mbox{\hyperlink{class_sk_region_a5ed5c459b173a33fe6282bf58671d7b4}{compute\+Region\+Complexity}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a07e87a657612ef9c1c40fa6478fd86b9}{get\+Boundary\+Path}} (\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$path) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a242b7fbda5368a5ebde342c5ae939fb4}{set\+Empty}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_region_a8133caa06957080d84b1c06bfab88316}{set\+Rect}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect)
+\item 
+bool \mbox{\hyperlink{class_sk_region_a31f3536fb5249c2d45f3986c4457114c}{set\+Rects}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} rects\mbox{[}$\,$\mbox{]}, int count)
+\item 
+bool \mbox{\hyperlink{class_sk_region_aa40e299d00c0a4de158927dd18b6fdcd}{set\+Region}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&region)
+\item 
+bool \mbox{\hyperlink{class_sk_region_a95f1f1718af6fae66a554f1a5099e22d}{set\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&clip)
+\item 
+bool \mbox{\hyperlink{class_sk_region_af96c1c4733a203c0a1bb185ebcce722e}{intersects}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a9306529a3e9aead900e6e3c64e4fed95}{intersects}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a28ee44e5af22068da81781463fa8612f}{contains}} (int32\+\_\+t x, int32\+\_\+t y) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a661d3946596a2a439e5c28c5f391b624}{contains}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a859f08905373615b963c1e2feb54e3d5}{contains}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&other) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a67dfde10c59a87475158f7e860b64f40}{quick\+Contains}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&r) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_ac3c33203fb98cbdb94c43973bb26f00b}{quick\+Reject}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a875e488a3ffb22b54939dcda79b328aa}{quick\+Reject}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&rgn) const
+\item 
+void \mbox{\hyperlink{class_sk_region_a0441521104a6bb409deddc2377ec8362}{translate}} (int dx, int dy)
+\item 
+void \mbox{\hyperlink{class_sk_region_a669df875e57d0ad2382f2019031dc178}{translate}} (int dx, int dy, \mbox{\hyperlink{class_sk_region}{Sk\+Region}} $\ast$dst) const
+\item 
+bool \mbox{\hyperlink{class_sk_region_a6e37bb62f825289a80750c69934ecf2d}{op}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect, \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}} op)
+\item 
+bool \mbox{\hyperlink{class_sk_region_ad9022d2967359f8afacb8a763a575b34}{op}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&rgn, \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}} op)
+\item 
+bool \mbox{\hyperlink{class_sk_region_ae0f781c2867fcce63c8f49594af88593}{op}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect, const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&rgn, \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}} op)
+\item 
+bool \mbox{\hyperlink{class_sk_region_a0bd6816d71fb0f6c94737e871cbab343}{op}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&rgn, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&rect, \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}} op)
+\item 
+bool \mbox{\hyperlink{class_sk_region_a3418123982325709a5a45537fed1a5bf}{op}} (const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&rgna, const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&rgnb, \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}} op)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_region_ad0600a8abfd5f465247444cc4939e046}{write\+To\+Memory}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}) const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_region_a0ed52ef3850a941b721ccf50fe34758a}{read\+From\+Memory}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_region_a67d3c785649452ba687642e558079985}\label{class_sk_region_a67d3c785649452ba687642e558079985}} 
+static const int {\bfseries k\+Op\+Cnt} = \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a7471994dd9843de935ea5bcbeb7082ea}{k\+Last\+Op}} + 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_region_a49e50d174b37a9dc6f36ca204f2810b4}\label{class_sk_region_a49e50d174b37a9dc6f36ca204f2810b4}} 
+struct {\bfseries Run\+Head}
+\item 
+\mbox{\Hypertarget{class_sk_region_a9830fc407400559db7e7783cc10a9394}\label{class_sk_region_a9830fc407400559db7e7783cc10a9394}} 
+class {\bfseries Iterator}
+\item 
+\mbox{\Hypertarget{class_sk_region_afd55a67e94faaa7228b5824173e121d5}\label{class_sk_region_afd55a67e94faaa7228b5824173e121d5}} 
+class {\bfseries Spanerator}
+\item 
+\mbox{\Hypertarget{class_sk_region_a9abb9a9c027713d88ec4da32c1e2bf45}\label{class_sk_region_a9abb9a9c027713d88ec4da32c1e2bf45}} 
+class {\bfseries Sk\+Region\+Priv}
+\item 
+\mbox{\Hypertarget{class_sk_region_a85b7ac6f1db1f4282eb4aae2d91a93f4}\label{class_sk_region_a85b7ac6f1db1f4282eb4aae2d91a93f4}} 
+class {\bfseries Sk\+Rgn\+Builder}
+\item 
+\mbox{\Hypertarget{class_sk_region_a479125c8c68c10041cd937d9f0a52b5d}\label{class_sk_region_a479125c8c68c10041cd937d9f0a52b5d}} 
+class {\bfseries Sk\+Flat\+Region}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_region}{Sk\+Region}} describes the set of pixels used to clip \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}}. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is compact, efficiently storing a single integer rectangle, or a run length encoded array of rectangles. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} may reduce the current \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} clip, or may be drawn as one or more integer rectangles. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} iterator returns the scan lines or rectangles contained by it, optionally intersecting a bounding rectangle. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}} 
+\index{SkRegion@{SkRegion}!Op@{Op}}
+\index{Op@{Op}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{Op}{Op}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Sk\+Region\+::\+Op}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDifference\_Op@{kDifference\_Op}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kDifference\_Op@{kDifference\_Op}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54aa8d813d8769e5bd03fb2584f4e83095d}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54aa8d813d8769e5bd03fb2584f4e83095d}} 
+k\+Difference\+\_\+\+Op&target minus operand \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kIntersect\_Op@{kIntersect\_Op}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kIntersect\_Op@{kIntersect\_Op}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54aa00c0597c1fbf86c99b98c6e52a0fda6}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54aa00c0597c1fbf86c99b98c6e52a0fda6}} 
+k\+Intersect\+\_\+\+Op&target intersected with operand \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kUnion\_Op@{kUnion\_Op}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kUnion\_Op@{kUnion\_Op}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a17849871e8a2f1caff9f1cc7fd11106f}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a17849871e8a2f1caff9f1cc7fd11106f}} 
+k\+Union\+\_\+\+Op&target unioned with operand \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kXOR\_Op@{kXOR\_Op}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kXOR\_Op@{kXOR\_Op}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54ad16c7158cd646c13ca5a48280179aba9}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54ad16c7158cd646c13ca5a48280179aba9}} 
+k\+X\+O\+R\+\_\+\+Op&target exclusive or with operand \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kReverseDifference\_Op@{kReverseDifference\_Op}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kReverseDifference\_Op@{kReverseDifference\_Op}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a17466849e3abe575fe900ad86561b28a}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a17466849e3abe575fe900ad86561b28a}} 
+k\+Reverse\+Difference\+\_\+\+Op&operand minus target \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kReplace\_Op@{kReplace\_Op}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kReplace\_Op@{kReplace\_Op}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a9de12d8ccfa287794729769e00ef8c50}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a9de12d8ccfa287794729769e00ef8c50}} 
+k\+Replace\+\_\+\+Op&replace target with operand \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLastOp@{kLastOp}!SkRegion@{SkRegion}}\index{SkRegion@{SkRegion}!kLastOp@{kLastOp}}}\mbox{\Hypertarget{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a7471994dd9843de935ea5bcbeb7082ea}\label{class_sk_region_a2ced93c36095d876b020e20cf39f5b54a7471994dd9843de935ea5bcbeb7082ea}} 
+k\+Last\+Op&last operator \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_region_a3115115088b9f849cbc46799d5bc0097}\label{class_sk_region_a3115115088b9f849cbc46799d5bc0097}} 
+\index{SkRegion@{SkRegion}!SkRegion@{SkRegion}}
+\index{SkRegion@{SkRegion}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{SkRegion()}{SkRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Sk\+Region\+::\+Sk\+Region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is set to empty bounds at (0, 0) with zero width and height.
+
+\begin{DoxyReturn}{Returns}
+empty \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_empty_constructor}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+empty\+\_\+constructor}} \mbox{\Hypertarget{class_sk_region_ac983d26a3ef4b307ee0df3f7e6bb93ff}\label{class_sk_region_ac983d26a3ef4b307ee0df3f7e6bb93ff}} 
+\index{SkRegion@{SkRegion}!SkRegion@{SkRegion}}
+\index{SkRegion@{SkRegion}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{SkRegion()}{SkRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Sk\+Region\+::\+Sk\+Region (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{region }\end{DoxyParamCaption})}
+
+Constructs a copy of an existing region. Copy constructor makes two regions identical by value. Internally, region and the returned result share pointer values. The underlying \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} array is copied when modified.
+
+Creating a \mbox{\hyperlink{class_sk_region}{Sk\+Region}} copy is very efficient and never allocates memory. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} are always copied by value from the interface; the underlying shared pointers are not exposed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to copy by value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_copy_const_SkRegion}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+copy\+\_\+const\+\_\+\+Sk\+Region}} \mbox{\Hypertarget{class_sk_region_aba9c85f49c2f8590f26f916e7193dbbd}\label{class_sk_region_aba9c85f49c2f8590f26f916e7193dbbd}} 
+\index{SkRegion@{SkRegion}!SkRegion@{SkRegion}}
+\index{SkRegion@{SkRegion}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{SkRegion()}{SkRegion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Sk\+Region\+::\+Sk\+Region (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs a rectangular \mbox{\hyperlink{class_sk_region}{Sk\+Region}} matching the bounds of rect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rectangular \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_copy_const_SkIRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+copy\+\_\+const\+\_\+\+Sk\+I\+Rect}} \mbox{\Hypertarget{class_sk_region_a1091b8697d5afb66d62c232e13234349}\label{class_sk_region_a1091b8697d5afb66d62c232e13234349}} 
+\index{SkRegion@{SkRegion}!````~SkRegion@{$\sim$SkRegion}}
+\index{````~SkRegion@{$\sim$SkRegion}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkRegion()}{~SkRegion()}}
+{\footnotesize\ttfamily Sk\+Region\+::$\sim$\+Sk\+Region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Releases ownership of any shared data and deletes data if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is sole owner.
+
+example\+: \href{https://fiddle.skia.org/c/@Region_destructor}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+destructor}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_region_a5ed5c459b173a33fe6282bf58671d7b4}\label{class_sk_region_a5ed5c459b173a33fe6282bf58671d7b4}} 
+\index{SkRegion@{SkRegion}!computeRegionComplexity@{computeRegionComplexity}}
+\index{computeRegionComplexity@{computeRegionComplexity}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{computeRegionComplexity()}{computeRegionComplexity()}}
+{\footnotesize\ttfamily int Sk\+Region\+::compute\+Region\+Complexity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a value that increases with the number of elements in \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. Returns zero if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty. Returns one if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} equals \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}}; otherwise, returns value greater than one indicating that \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is complex.
+
+Call to compare \mbox{\hyperlink{class_sk_region}{Sk\+Region}} for relative complexity.
+
+\begin{DoxyReturn}{Returns}
+relative complexity
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_computeRegionComplexity}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+compute\+Region\+Complexity}} \mbox{\Hypertarget{class_sk_region_a661d3946596a2a439e5c28c5f391b624}\label{class_sk_region_a661d3946596a2a439e5c28c5f391b624}} 
+\index{SkRegion@{SkRegion}!contains@{contains}}
+\index{contains@{contains}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{other }\end{DoxyParamCaption}) const}
+
+Returns true if other is completely inside \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. Returns false if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} or other is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} to contain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if other is inside \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_contains_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+contains\+\_\+2}} \mbox{\Hypertarget{class_sk_region_a859f08905373615b963c1e2feb54e3d5}\label{class_sk_region_a859f08905373615b963c1e2feb54e3d5}} 
+\index{SkRegion@{SkRegion}!contains@{contains}}
+\index{contains@{contains}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{other }\end{DoxyParamCaption}) const}
+
+Returns true if other is completely inside \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. Returns false if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} or other is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to contain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if other is inside \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_contains_3}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+contains\+\_\+3}} \mbox{\Hypertarget{class_sk_region_a28ee44e5af22068da81781463fa8612f}\label{class_sk_region_a28ee44e5af22068da81781463fa8612f}} 
+\index{SkRegion@{SkRegion}!contains@{contains}}
+\index{contains@{contains}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::contains (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x,  }\item[{int32\+\_\+t}]{y }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} (x, y) is inside \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. Returns false if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & test \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} x-\/coordinate \\
+\hline
+{\em y} & test \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if (x, y) is inside \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_contains}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+contains}} \mbox{\Hypertarget{class_sk_region_a07e87a657612ef9c1c40fa6478fd86b9}\label{class_sk_region_a07e87a657612ef9c1c40fa6478fd86b9}} 
+\index{SkRegion@{SkRegion}!getBoundaryPath@{getBoundaryPath}}
+\index{getBoundaryPath@{getBoundaryPath}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{getBoundaryPath()}{getBoundaryPath()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::get\+Boundary\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{path }\end{DoxyParamCaption}) const}
+
+Appends outline of \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to path. Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty; otherwise, returns false, and leaves path unmodified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to append to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if path changed
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_getBoundaryPath}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+get\+Boundary\+Path}} \mbox{\Hypertarget{class_sk_region_a491866b01d078f262a5b64f53d69d46a}\label{class_sk_region_a491866b01d078f262a5b64f53d69d46a}} 
+\index{SkRegion@{SkRegion}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}}\& Sk\+Region\+::get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns minimum and maximum axes values of \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} array. Returns (0, 0, 0, 0) if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty.
+
+\begin{DoxyReturn}{Returns}
+combined bounds of all \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} elements 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_af96c1c4733a203c0a1bb185ebcce722e}\label{class_sk_region_af96c1c4733a203c0a1bb185ebcce722e}} 
+\index{SkRegion@{SkRegion}!intersects@{intersects}}
+\index{intersects@{intersects}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} intersects rect. Returns false if either rect or \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty, or do not intersect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} to intersect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if rect and \mbox{\hyperlink{class_sk_region}{Sk\+Region}} have area in common
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_intersects}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+intersects}} \mbox{\Hypertarget{class_sk_region_a9306529a3e9aead900e6e3c64e4fed95}\label{class_sk_region_a9306529a3e9aead900e6e3c64e4fed95}} 
+\index{SkRegion@{SkRegion}!intersects@{intersects}}
+\index{intersects@{intersects}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{other }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} intersects other. Returns false if either other or \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty, or do not intersect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to intersect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if other and \mbox{\hyperlink{class_sk_region}{Sk\+Region}} have area in common
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_intersects_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+intersects\+\_\+2}} \mbox{\Hypertarget{class_sk_region_a4209e9cc3292a0f45e4e65046f2bf510}\label{class_sk_region_a4209e9cc3292a0f45e4e65046f2bf510}} 
+\index{SkRegion@{SkRegion}!isComplex@{isComplex}}
+\index{isComplex@{isComplex}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{isComplex()}{isComplex()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::is\+Complex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is described by more than one rectangle.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} contains more than one \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a955568200655e395afaab73288aca55d}\label{class_sk_region_a955568200655e395afaab73288aca55d}} 
+\index{SkRegion@{SkRegion}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty. Empty \mbox{\hyperlink{class_sk_region}{Sk\+Region}} has bounds width or height less than or equal to zero. \mbox{\hyperlink{class_sk_region_a3115115088b9f849cbc46799d5bc0097}{Sk\+Region()}} constructs empty \mbox{\hyperlink{class_sk_region}{Sk\+Region}}; \mbox{\hyperlink{class_sk_region_a242b7fbda5368a5ebde342c5ae939fb4}{set\+Empty()}} and \mbox{\hyperlink{class_sk_region_a8133caa06957080d84b1c06bfab88316}{set\+Rect()}} with dimensionless data make \mbox{\hyperlink{class_sk_region}{Sk\+Region}} empty.
+
+\begin{DoxyReturn}{Returns}
+true if bounds has no width or height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a604f56ce9d5186b0c634ecfdd3b947e9}\label{class_sk_region_a604f56ce9d5186b0c634ecfdd3b947e9}} 
+\index{SkRegion@{SkRegion}!isRect@{isRect}}
+\index{isRect@{isRect}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{isRect()}{isRect()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::is\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is one \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} with positive dimensions.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} contains one \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_ae0f781c2867fcce63c8f49594af88593}\label{class_sk_region_ae0f781c2867fcce63c8f49594af88593}} 
+\index{SkRegion@{SkRegion}!op@{op}}
+\index{op@{op}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{op()}{op()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect,  }\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{rgn,  }\item[{\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}}}]{op }\end{DoxyParamCaption})}
+
+Replaces \mbox{\hyperlink{class_sk_region}{Sk\+Region}} with the result of rect op rgn. Returns true if replaced \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} operand \\
+\hline
+{\em rgn} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if result is empty
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_op_4}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+op\+\_\+4}} \mbox{\Hypertarget{class_sk_region_a6e37bb62f825289a80750c69934ecf2d}\label{class_sk_region_a6e37bb62f825289a80750c69934ecf2d}} 
+\index{SkRegion@{SkRegion}!op@{op}}
+\index{op@{op}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{op()}{op()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect,  }\item[{\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}}}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Replaces \mbox{\hyperlink{class_sk_region}{Sk\+Region}} with the result of \mbox{\hyperlink{class_sk_region}{Sk\+Region}} op rect. Returns true if replaced \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if result is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a0bd6816d71fb0f6c94737e871cbab343}\label{class_sk_region_a0bd6816d71fb0f6c94737e871cbab343}} 
+\index{SkRegion@{SkRegion}!op@{op}}
+\index{op@{op}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{op()}{op()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{rgn,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect,  }\item[{\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}}}]{op }\end{DoxyParamCaption})}
+
+Replaces \mbox{\hyperlink{class_sk_region}{Sk\+Region}} with the result of rgn op rect. Returns true if replaced \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgn} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} operand \\
+\hline
+{\em rect} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if result is empty
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_op_5}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+op\+\_\+5}} \mbox{\Hypertarget{class_sk_region_ad9022d2967359f8afacb8a763a575b34}\label{class_sk_region_ad9022d2967359f8afacb8a763a575b34}} 
+\index{SkRegion@{SkRegion}!op@{op}}
+\index{op@{op}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{op()}{op()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{rgn,  }\item[{\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}}}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Replaces \mbox{\hyperlink{class_sk_region}{Sk\+Region}} with the result of \mbox{\hyperlink{class_sk_region}{Sk\+Region}} op rgn. Returns true if replaced \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgn} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if result is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a3418123982325709a5a45537fed1a5bf}\label{class_sk_region_a3418123982325709a5a45537fed1a5bf}} 
+\index{SkRegion@{SkRegion}!op@{op}}
+\index{op@{op}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{op()}{op()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{rgna,  }\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{rgnb,  }\item[{\mbox{\hyperlink{class_sk_region_a2ced93c36095d876b020e20cf39f5b54}{Op}}}]{op }\end{DoxyParamCaption})}
+
+Replaces \mbox{\hyperlink{class_sk_region}{Sk\+Region}} with the result of rgna op rgnb. Returns true if replaced \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgna} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} operand \\
+\hline
+{\em rgnb} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if result is empty
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_op_6}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+op\+\_\+6}} \mbox{\Hypertarget{class_sk_region_aca5dd873053d5045bab158543f0a2591}\label{class_sk_region_aca5dd873053d5045bab158543f0a2591}} 
+\index{SkRegion@{SkRegion}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares \mbox{\hyperlink{class_sk_region}{Sk\+Region}} and other; returns true if they do not enclose the same area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} pair are not equivalent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a68b72aabcf987b002673b7bdccec5f98}\label{class_sk_region_a68b72aabcf987b002673b7bdccec5f98}} 
+\index{SkRegion@{SkRegion}!operator=@{operator=}}
+\index{operator=@{operator=}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \& Sk\+Region\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{region }\end{DoxyParamCaption})}
+
+Constructs a copy of an existing region. Makes two regions identical by value. Internally, region and the returned result share pointer values. The underlying \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} array is copied when modified.
+
+Creating a \mbox{\hyperlink{class_sk_region}{Sk\+Region}} copy is very efficient and never allocates memory. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} are always copied by value from the interface; the underlying shared pointers are not exposed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to copy by value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_region}{Sk\+Region}} to copy by value
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_copy_operator}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+copy\+\_\+operator}} \mbox{\Hypertarget{class_sk_region_a2c8084bfb167121be4ff7607b955ba53}\label{class_sk_region_a2c8084bfb167121be4ff7607b955ba53}} 
+\index{SkRegion@{SkRegion}!operator==@{operator==}}
+\index{operator==@{operator==}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{other }\end{DoxyParamCaption}) const}
+
+Compares \mbox{\hyperlink{class_sk_region}{Sk\+Region}} and other; returns true if they enclose exactly the same area.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} pair are equivalent
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_equal1_operator}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+equal1\+\_\+operator}} \mbox{\Hypertarget{class_sk_region_a67dfde10c59a87475158f7e860b64f40}\label{class_sk_region_a67dfde10c59a87475158f7e860b64f40}} 
+\index{SkRegion@{SkRegion}!quickContains@{quickContains}}
+\index{quickContains@{quickContains}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{quickContains()}{quickContains()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::quick\+Contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is a single rectangle and contains r. May return false even though \mbox{\hyperlink{class_sk_region}{Sk\+Region}} contains r.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} to contain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true quickly if r points are equal or inside 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_ac3c33203fb98cbdb94c43973bb26f00b}\label{class_sk_region_ac3c33203fb98cbdb94c43973bb26f00b}} 
+\index{SkRegion@{SkRegion}!quickReject@{quickReject}}
+\index{quickReject@{quickReject}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{quickReject()}{quickReject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::quick\+Reject (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} does not intersect rect. Returns true if rect is empty or \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty. May return false even though \mbox{\hyperlink{class_sk_region}{Sk\+Region}} does not intersect rect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} to intersect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if rect does not intersect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a875e488a3ffb22b54939dcda79b328aa}\label{class_sk_region_a875e488a3ffb22b54939dcda79b328aa}} 
+\index{SkRegion@{SkRegion}!quickReject@{quickReject}}
+\index{quickReject@{quickReject}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{quickReject()}{quickReject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Sk\+Region\+::quick\+Reject (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{rgn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} does not intersect rgn. Returns true if rgn is empty or \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty. May return false even though \mbox{\hyperlink{class_sk_region}{Sk\+Region}} does not intersect rgn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgn} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to intersect \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if rgn does not intersect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a0ed52ef3850a941b721ccf50fe34758a}\label{class_sk_region_a0ed52ef3850a941b721ccf50fe34758a}} 
+\index{SkRegion@{SkRegion}!readFromMemory@{readFromMemory}}
+\index{readFromMemory@{readFromMemory}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{readFromMemory()}{readFromMemory()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Region\+::read\+From\+Memory (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Constructs \mbox{\hyperlink{class_sk_region}{Sk\+Region}} from buffer of size length. Returns bytes read. Returned value will be multiple of four or zero if length was too small.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & storage for binary data \\
+\hline
+{\em length} & size of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes read
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_readFromMemory}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+read\+From\+Memory}} \mbox{\Hypertarget{class_sk_region_a1d905dc125d8084da4a0d73f28ddbeba}\label{class_sk_region_a1d905dc125d8084da4a0d73f28ddbeba}} 
+\index{SkRegion@{SkRegion}!set@{set}}
+\index{set@{set}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to src, and returns true if src bounds is not empty. This makes \mbox{\hyperlink{class_sk_region}{Sk\+Region}} and src identical by value. Internally, \mbox{\hyperlink{class_sk_region}{Sk\+Region}} and src share pointer values. The underlying \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} array is copied when modified.
+
+Creating a \mbox{\hyperlink{class_sk_region}{Sk\+Region}} copy is very efficient and never allocates memory. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} are always copied by value from the interface; the underlying shared pointers are not exposed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of src 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_region_a242b7fbda5368a5ebde342c5ae939fb4}\label{class_sk_region_a242b7fbda5368a5ebde342c5ae939fb4}} 
+\index{SkRegion@{SkRegion}!setEmpty@{setEmpty}}
+\index{setEmpty@{setEmpty}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{setEmpty()}{setEmpty()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::set\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is set to empty bounds at (0, 0) with zero width and height. Always returns false.
+
+\begin{DoxyReturn}{Returns}
+false
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_setEmpty}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+set\+Empty}} \mbox{\Hypertarget{class_sk_region_a95f1f1718af6fae66a554f1a5099e22d}\label{class_sk_region_a95f1f1718af6fae66a554f1a5099e22d}} 
+\index{SkRegion@{SkRegion}!setPath@{setPath}}
+\index{setPath@{setPath}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{setPath()}{setPath()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::set\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{clip }\end{DoxyParamCaption})}
+
+Constructs \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to match outline of path within clip. Returns false if constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty.
+
+Constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} draws the same pixels as path through clip when anti-\/aliasing is disabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} providing outline \\
+\hline
+{\em clip} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} containing path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_setPath}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+set\+Path}} \mbox{\Hypertarget{class_sk_region_a8133caa06957080d84b1c06bfab88316}\label{class_sk_region_a8133caa06957080d84b1c06bfab88316}} 
+\index{SkRegion@{SkRegion}!setRect@{setRect}}
+\index{setRect@{setRect}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{setRect()}{setRect()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::set\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{rect }\end{DoxyParamCaption})}
+
+Constructs a rectangular \mbox{\hyperlink{class_sk_region}{Sk\+Region}} matching the bounds of rect. If rect is empty, constructs empty and returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if rect is not empty
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_setRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+set\+Rect}} \mbox{\Hypertarget{class_sk_region_a31f3536fb5249c2d45f3986c4457114c}\label{class_sk_region_a31f3536fb5249c2d45f3986c4457114c}} 
+\index{SkRegion@{SkRegion}!setRects@{setRects}}
+\index{setRects@{setRects}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{setRects()}{setRects()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::set\+Rects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}}}]{rects\mbox{[}$\,$\mbox{]},  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+Constructs \mbox{\hyperlink{class_sk_region}{Sk\+Region}} as the union of \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} in rects array. If count is zero, constructs empty \mbox{\hyperlink{class_sk_region}{Sk\+Region}}. Returns false if constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty.
+
+May be faster than repeated calls to \mbox{\hyperlink{class_sk_region_a6e37bb62f825289a80750c69934ecf2d}{op()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rects} & array of \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \\
+\hline
+{\em count} & array size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if constructed \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is not empty
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_setRects}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+set\+Rects}} \mbox{\Hypertarget{class_sk_region_aa40e299d00c0a4de158927dd18b6fdcd}\label{class_sk_region_aa40e299d00c0a4de158927dd18b6fdcd}} 
+\index{SkRegion@{SkRegion}!setRegion@{setRegion}}
+\index{setRegion@{setRegion}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{setRegion()}{setRegion()}}
+{\footnotesize\ttfamily bool Sk\+Region\+::set\+Region (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{region }\end{DoxyParamCaption})}
+
+Constructs a copy of an existing region. Makes two regions identical by value. Internally, region and the returned result share pointer values. The underlying \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} array is copied when modified.
+
+Creating a \mbox{\hyperlink{class_sk_region}{Sk\+Region}} copy is very efficient and never allocates memory. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} are always copied by value from the interface; the underlying shared pointers are not exposed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em region} & \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to copy by value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_region}{Sk\+Region}} to copy by value
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_setRegion}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+set\+Region}} \mbox{\Hypertarget{class_sk_region_aa19e58949596345002669be52aa71033}\label{class_sk_region_aa19e58949596345002669be52aa71033}} 
+\index{SkRegion@{SkRegion}!swap@{swap}}
+\index{swap@{swap}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void Sk\+Region\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_region}{Sk\+Region}} \&}]{other }\end{DoxyParamCaption})}
+
+Exchanges \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} array of \mbox{\hyperlink{class_sk_region}{Sk\+Region}} and other. \mbox{\hyperlink{class_sk_region_aa19e58949596345002669be52aa71033}{swap()}} internally exchanges pointers, so it is lightweight and does not allocate memory.
+
+\mbox{\hyperlink{class_sk_region_aa19e58949596345002669be52aa71033}{swap()}} usage has largely been replaced by \mbox{\hyperlink{class_sk_region_a68b72aabcf987b002673b7bdccec5f98}{operator=(const Sk\+Region\& region)}}. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} do not copy their content on assignment until they are written to, making assignment as efficient as \mbox{\hyperlink{class_sk_region_aa19e58949596345002669be52aa71033}{swap()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_sk_region_a68b72aabcf987b002673b7bdccec5f98}{operator=(const Sk\+Region\& region)}} set\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Region_swap}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+swap}} \mbox{\Hypertarget{class_sk_region_a0441521104a6bb409deddc2377ec8362}\label{class_sk_region_a0441521104a6bb409deddc2377ec8362}} 
+\index{SkRegion@{SkRegion}!translate@{translate}}
+\index{translate@{translate}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+Region\+::translate (\begin{DoxyParamCaption}\item[{int}]{dx,  }\item[{int}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Offsets \mbox{\hyperlink{class_sk_region}{Sk\+Region}} by ivector (dx, dy). Has no effect if \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & x-\/axis offset \\
+\hline
+{\em dy} & y-\/axis offset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_region_a669df875e57d0ad2382f2019031dc178}\label{class_sk_region_a669df875e57d0ad2382f2019031dc178}} 
+\index{SkRegion@{SkRegion}!translate@{translate}}
+\index{translate@{translate}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+Region\+::translate (\begin{DoxyParamCaption}\item[{int}]{dx,  }\item[{int}]{dy,  }\item[{\mbox{\hyperlink{class_sk_region}{Sk\+Region}} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Offsets \mbox{\hyperlink{class_sk_region}{Sk\+Region}} by ivector (dx, dy), writing result to dst. \mbox{\hyperlink{class_sk_region}{Sk\+Region}} may be passed as dst parameter, translating \mbox{\hyperlink{class_sk_region}{Sk\+Region}} in place. Has no effect if dst is nullptr. If \mbox{\hyperlink{class_sk_region}{Sk\+Region}} is empty, sets dst to empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & x-\/axis offset \\
+\hline
+{\em dy} & y-\/axis offset \\
+\hline
+{\em dst} & translated result\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Region_translate_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+translate\+\_\+2}} \mbox{\Hypertarget{class_sk_region_ad0600a8abfd5f465247444cc4939e046}\label{class_sk_region_ad0600a8abfd5f465247444cc4939e046}} 
+\index{SkRegion@{SkRegion}!writeToMemory@{writeToMemory}}
+\index{writeToMemory@{writeToMemory}!SkRegion@{SkRegion}}
+\doxysubsubsection{\texorpdfstring{writeToMemory()}{writeToMemory()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Region\+::write\+To\+Memory (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer }\end{DoxyParamCaption}) const}
+
+Writes \mbox{\hyperlink{class_sk_region}{Sk\+Region}} to buffer, and returns number of bytes written. If buffer is nullptr, returns number number of bytes that would be written.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & storage for binary data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size of \mbox{\hyperlink{class_sk_region}{Sk\+Region}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Region_writeToMemory}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Region\+\_\+write\+To\+Memory}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Region.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Region.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Region\+\_\+path.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{struct_sk_packed_glyph_i_d}{}\doxysection{Sk\+Packed\+Glyph\+ID Struct Reference}
+\label{struct_sk_packed_glyph_i_d}\index{SkPackedGlyphID@{SkPackedGlyphID}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a1127dafc68b9e878a8b3134e7d6273fb}\label{struct_sk_packed_glyph_i_d_a1127dafc68b9e878a8b3134e7d6273fb}} 
+enum \{ \newline
+{\bfseries k\+Glyph\+I\+D\+Len} = 16u, 
+{\bfseries k\+Sub\+Pixel\+Pos\+Len} = 2u, 
+{\bfseries k\+Sub\+PixelX} = 0u, 
+{\bfseries k\+Glyph\+ID} = k\+Sub\+Pixel\+Pos\+Len, 
+\newline
+{\bfseries k\+Sub\+PixelY} = k\+Glyph\+I\+D\+Len + k\+Sub\+Pixel\+Pos\+Len, 
+{\bfseries k\+End\+Data} = k\+Glyph\+I\+D\+Len + 2 $\ast$ k\+Sub\+Pixel\+Pos\+Len, 
+{\bfseries k\+Glyph\+I\+D\+Mask} = (1u $<$$<$ k\+Glyph\+I\+D\+Len) -\/ 1, 
+{\bfseries k\+Sub\+Pixel\+Pos\+Mask} = (1u $<$$<$ k\+Sub\+Pixel\+Pos\+Len) -\/ 1, 
+\newline
+{\bfseries k\+Mask\+All} = (1u $<$$<$ k\+End\+Data) -\/ 1, 
+{\bfseries k\+Fixed\+Point\+Binary\+Point\+Pos} = 16u, 
+{\bfseries k\+Fixed\+Point\+Sub\+Pixel\+Pos\+Bits} = k\+Fixed\+Point\+Binary\+Point\+Pos -\/ k\+Sub\+Pixel\+Pos\+Len
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a8f65fc91cdfbbfa58ace62625440e09e}\label{struct_sk_packed_glyph_i_d_a8f65fc91cdfbbfa58ace62625440e09e}} 
+constexpr {\bfseries Sk\+Packed\+Glyph\+ID} (\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} glyph\+ID)
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a5db8242485d6bda51747cedb4bc257c2}\label{struct_sk_packed_glyph_i_d_a5db8242485d6bda51747cedb4bc257c2}} 
+constexpr {\bfseries Sk\+Packed\+Glyph\+ID} (\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} glyph\+ID, \mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}} x, \mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}} y)
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a8ebfa0b8b0c03107ef7c5c258edc1abd}\label{struct_sk_packed_glyph_i_d_a8ebfa0b8b0c03107ef7c5c258edc1abd}} 
+constexpr {\bfseries Sk\+Packed\+Glyph\+ID} (\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} glyph\+ID, uint32\+\_\+t x, uint32\+\_\+t y)
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_aa5d9f607a68cc0e75f863c6c0e8dfcf9}\label{struct_sk_packed_glyph_i_d_aa5d9f607a68cc0e75f863c6c0e8dfcf9}} 
+{\bfseries Sk\+Packed\+Glyph\+ID} (\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} glyph\+ID, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pt, \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} mask)
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a341f899e08b6bffd2c8ff7e1578e1e4c}\label{struct_sk_packed_glyph_i_d_a341f899e08b6bffd2c8ff7e1578e1e4c}} 
+constexpr {\bfseries Sk\+Packed\+Glyph\+ID} (uint32\+\_\+t v)
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a90fc44c6f03a4e82e02acc1b50444b87}\label{struct_sk_packed_glyph_i_d_a90fc44c6f03a4e82e02acc1b50444b87}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{struct_sk_packed_glyph_i_d}{Sk\+Packed\+Glyph\+ID}} \&that) const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a806808569e9b8cd2a11805179745b939}\label{struct_sk_packed_glyph_i_d_a806808569e9b8cd2a11805179745b939}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{struct_sk_packed_glyph_i_d}{Sk\+Packed\+Glyph\+ID}} \&that) const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a74a41e0d62eb9327d239291f51a26d84}\label{struct_sk_packed_glyph_i_d_a74a41e0d62eb9327d239291f51a26d84}} 
+bool {\bfseries operator$<$} (\mbox{\hyperlink{struct_sk_packed_glyph_i_d}{Sk\+Packed\+Glyph\+ID}} that) const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_af8654c6dbebb3656e6672e6c91c0645e}\label{struct_sk_packed_glyph_i_d_af8654c6dbebb3656e6672e6c91c0645e}} 
+\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} {\bfseries glyph\+ID} () const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_ac5a98a274d2804828273871b04ff634f}\label{struct_sk_packed_glyph_i_d_ac5a98a274d2804828273871b04ff634f}} 
+uint32\+\_\+t {\bfseries value} () const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a350d6d44f686e5c27ae9fee68787dde8}\label{struct_sk_packed_glyph_i_d_a350d6d44f686e5c27ae9fee68787dde8}} 
+\mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}} {\bfseries get\+Sub\+X\+Fixed} () const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_ae9839df80d3eab3de9b08a1f3c110294}\label{struct_sk_packed_glyph_i_d_ae9839df80d3eab3de9b08a1f3c110294}} 
+\mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}} {\bfseries get\+Sub\+Y\+Fixed} () const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_ad904b994d230098c0dd851971dd1e7dd}\label{struct_sk_packed_glyph_i_d_ad904b994d230098c0dd851971dd1e7dd}} 
+uint32\+\_\+t {\bfseries hash} () const
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_aa924940c59dd69154f3ba1b224ae0fed}\label{struct_sk_packed_glyph_i_d_aa924940c59dd69154f3ba1b224ae0fed}} 
+\mbox{\hyperlink{class_sk_string}{Sk\+String}} {\bfseries dump} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_adf4d63f6cd599d428237c29da9977e77}\label{struct_sk_packed_glyph_i_d_adf4d63f6cd599d428237c29da9977e77}} 
+static constexpr uint32\+\_\+t {\bfseries k\+Impossible\+ID} = $\sim$0u
+\item 
+static constexpr Sk\+Scalar {\bfseries k\+Subpixel\+Round}
+\item 
+static constexpr \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} {\bfseries k\+X\+Y\+Field\+Mask}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_a73696862f324cd7cd1eafd6318466d31}\label{struct_sk_packed_glyph_i_d_a73696862f324cd7cd1eafd6318466d31}} 
+\index{SkPackedGlyphID@{SkPackedGlyphID}!kSubpixelRound@{kSubpixelRound}}
+\index{kSubpixelRound@{kSubpixelRound}!SkPackedGlyphID@{SkPackedGlyphID}}
+\doxysubsubsection{\texorpdfstring{kSubpixelRound}{kSubpixelRound}}
+{\footnotesize\ttfamily constexpr Sk\+Scalar Sk\+Packed\+Glyph\+I\+D\+::k\+Subpixel\+Round\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            1.f / (1u << (SkPackedGlyphID::kSubPixelPosLen + 1))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_sk_packed_glyph_i_d_af78d5cc66138798a878f1e9b279f5a79}\label{struct_sk_packed_glyph_i_d_af78d5cc66138798a878f1e9b279f5a79}} 
+\index{SkPackedGlyphID@{SkPackedGlyphID}!kXYFieldMask@{kXYFieldMask}}
+\index{kXYFieldMask@{kXYFieldMask}!SkPackedGlyphID@{SkPackedGlyphID}}
+\doxysubsubsection{\texorpdfstring{kXYFieldMask}{kXYFieldMask}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} Sk\+Packed\+Glyph\+I\+D\+::k\+X\+Y\+Field\+Mask\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{kSubPixelPosMask << kSubPixelX,}
+\DoxyCodeLine{                                                  kSubPixelPosMask << kSubPixelY\}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Glyph.\+h\end{DoxyCompactItemize}

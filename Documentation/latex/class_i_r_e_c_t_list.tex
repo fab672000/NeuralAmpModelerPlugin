@@ -1,0 +1,174 @@
+\hypertarget{class_i_r_e_c_t_list}{}\doxysection{I\+R\+E\+C\+T\+List Class Reference}
+\label{class_i_r_e_c_t_list}\index{IRECTList@{IRECTList}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Structs.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a772e5605e51d40865cf59551326f3dc3}\label{class_i_r_e_c_t_list_a772e5605e51d40865cf59551326f3dc3}} 
+{\bfseries I\+R\+E\+C\+T\+List} (const \mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_i_r_e_c_t_list_ad8f05d96c7ea38f5783a185c07d06926}\label{class_i_r_e_c_t_list_ad8f05d96c7ea38f5783a185c07d06926}} 
+\mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} \&)=delete
+\item 
+int \mbox{\hyperlink{class_i_r_e_c_t_list_a102f356edda88328b8cd0a2dafabff21}{Size}} () const
+\item 
+void \mbox{\hyperlink{class_i_r_e_c_t_list_a32f90eda37aa901bd3d2350c271558a7}{Add}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&rect)
+\item 
+void \mbox{\hyperlink{class_i_r_e_c_t_list_a04c52a8eef4d148cd1cfb2e6e02294b0}{Set}} (int idx, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&rect)
+\item 
+const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \& \mbox{\hyperlink{class_i_r_e_c_t_list_a7c9738600b30ad0e3b4653ff1415744b}{Get}} (int idx) const
+\item 
+void \mbox{\hyperlink{class_i_r_e_c_t_list_a0279853df5e632679fd5523acf4074c6}{Clear}} ()
+\item 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \mbox{\hyperlink{class_i_r_e_c_t_list_a07ad9451d0545a045063ac0470a05fde}{Bounds}} ()
+\item 
+void \mbox{\hyperlink{class_i_r_e_c_t_list_a803ab2f424774b925dd1efa2e01b6328}{Pixel\+Align}} ()
+\item 
+void \mbox{\hyperlink{class_i_r_e_c_t_list_a3889f13594290dcee2f3159dcb862879}{Pixel\+Align}} (float scale)
+\item 
+int \mbox{\hyperlink{class_i_r_e_c_t_list_a985166d78b9e8adf0f3f3052e8ae08f2}{Find}} (float x, float y) const
+\item 
+void \mbox{\hyperlink{class_i_r_e_c_t_list_a85ccba7f16c5069c3e5d408fb79b4e81}{Optimize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_i_r_e_c_t_list_acfddc798645ca9cb155ce4777eddb9b6}{Get\+Frac\+Grid}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&input, \mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} \&rects, const std\+::initializer\+\_\+list$<$ float $>$ \&row\+Fractions, const std\+::initializer\+\_\+list$<$ float $>$ \&col\+Fractions, E\+Direction layout\+Dir=E\+Direction\+::\+Horizontal)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to manage a list of rectangular areas and optimize them for drawing to the screen. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a32f90eda37aa901bd3d2350c271558a7}\label{class_i_r_e_c_t_list_a32f90eda37aa901bd3d2350c271558a7}} 
+\index{IRECTList@{IRECTList}!Add@{Add}}
+\index{Add@{Add}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void I\+R\+E\+C\+T\+List\+::\+Add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add a rectangle to the list 
+\begin{DoxyParams}{Parameters}
+{\em rect} & The \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a07ad9451d0545a045063ac0470a05fde}\label{class_i_r_e_c_t_list_a07ad9451d0545a045063ac0470a05fde}} 
+\index{IRECTList@{IRECTList}!Bounds@{Bounds}}
+\index{Bounds@{Bounds}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Bounds()}{Bounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} I\+R\+E\+C\+T\+List\+::\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a union of all rectangles in the list \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} Union of all rectangles in the list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a0279853df5e632679fd5523acf4074c6}\label{class_i_r_e_c_t_list_a0279853df5e632679fd5523acf4074c6}} 
+\index{IRECTList@{IRECTList}!Clear@{Clear}}
+\index{Clear@{Clear}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void I\+R\+E\+C\+T\+List\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear the list \mbox{\Hypertarget{class_i_r_e_c_t_list_a985166d78b9e8adf0f3f3052e8ae08f2}\label{class_i_r_e_c_t_list_a985166d78b9e8adf0f3f3052e8ae08f2}} 
+\index{IRECTList@{IRECTList}!Find@{Find}}
+\index{Find@{Find}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily int I\+R\+E\+C\+T\+List\+::\+Find (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Find the first index of the rect that contains point x, y, if it exists 
+\begin{DoxyParams}{Parameters}
+{\em x} & Horizontal position to check \\
+\hline
+{\em y} & Vertical position to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer index of rect that contains point x,y or -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a7c9738600b30ad0e3b4653ff1415744b}\label{class_i_r_e_c_t_list_a7c9738600b30ad0e3b4653ff1415744b}} 
+\index{IRECTList@{IRECTList}!Get@{Get}}
+\index{Get@{Get}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}}\& I\+R\+E\+C\+T\+List\+::\+Get (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} from the list (will crash if idx is invalid) 
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}}\& The \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} at idx 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_acfddc798645ca9cb155ce4777eddb9b6}\label{class_i_r_e_c_t_list_acfddc798645ca9cb155ce4777eddb9b6}} 
+\index{IRECTList@{IRECTList}!GetFracGrid@{GetFracGrid}}
+\index{GetFracGrid@{GetFracGrid}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{GetFracGrid()}{GetFracGrid()}}
+{\footnotesize\ttfamily static bool I\+R\+E\+C\+T\+List\+::\+Get\+Frac\+Grid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{input,  }\item[{\mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} \&}]{rects,  }\item[{const std\+::initializer\+\_\+list$<$ float $>$ \&}]{row\+Fractions,  }\item[{const std\+::initializer\+\_\+list$<$ float $>$ \&}]{col\+Fractions,  }\item[{E\+Direction}]{layout\+Dir = {\ttfamily EDirection\+:\+:Horizontal} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Fill an \mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} with divisons of an input \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} 
+\begin{DoxyParams}{Parameters}
+{\em input} & The input rectangle \\
+\hline
+{\em rects} & The output \mbox{\hyperlink{class_i_r_e_c_t_list}{I\+R\+E\+C\+T\+List}} \\
+\hline
+{\em row\+Fractions} & Initializer list of fractions for the grid rows (should sum to 1.\+0) \\
+\hline
+{\em col\+Fractions} & Initializer list of fractions for the grid columns (should sum to 1.\+0) \\
+\hline
+{\em layout\+Dir} & By default the cell idx increases horizontally (by row). If set to E\+Direction\+::\+Vertical, cell idx increases vertically (by column). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the row and column fractions summed to 1.\+0, and grid creation was successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a85ccba7f16c5069c3e5d408fb79b4e81}\label{class_i_r_e_c_t_list_a85ccba7f16c5069c3e5d408fb79b4e81}} 
+\index{IRECTList@{IRECTList}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Optimize()}{Optimize()}}
+{\footnotesize\ttfamily void I\+R\+E\+C\+T\+List\+::\+Optimize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove rects that are contained by other rects and intersections and merge any rects that can be merged \mbox{\Hypertarget{class_i_r_e_c_t_list_a803ab2f424774b925dd1efa2e01b6328}\label{class_i_r_e_c_t_list_a803ab2f424774b925dd1efa2e01b6328}} 
+\index{IRECTList@{IRECTList}!PixelAlign@{PixelAlign}}
+\index{PixelAlign@{PixelAlign}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{PixelAlign()}{PixelAlign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+R\+E\+C\+T\+List\+::\+Pixel\+Align (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Align the rectangles to pixel boundaries \mbox{\Hypertarget{class_i_r_e_c_t_list_a3889f13594290dcee2f3159dcb862879}\label{class_i_r_e_c_t_list_a3889f13594290dcee2f3159dcb862879}} 
+\index{IRECTList@{IRECTList}!PixelAlign@{PixelAlign}}
+\index{PixelAlign@{PixelAlign}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{PixelAlign()}{PixelAlign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+R\+E\+C\+T\+List\+::\+Pixel\+Align (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pixel-\/align the I\+R\+E\+C\+Ts at the given scale factor then scale them back down 
+\begin{DoxyParams}{Parameters}
+{\em scale} & Scale value for the alignment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a04c52a8eef4d148cd1cfb2e6e02294b0}\label{class_i_r_e_c_t_list_a04c52a8eef4d148cd1cfb2e6e02294b0}} 
+\index{IRECTList@{IRECTList}!Set@{Set}}
+\index{Set@{Set}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily void I\+R\+E\+C\+T\+List\+::\+Set (\begin{DoxyParamCaption}\item[{int}]{idx,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set a specific rectangle in the list (will crash if idx is invalid) 
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index to set \\
+\hline
+{\em rect} & The new \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_r_e_c_t_list_a102f356edda88328b8cd0a2dafabff21}\label{class_i_r_e_c_t_list_a102f356edda88328b8cd0a2dafabff21}} 
+\index{IRECTList@{IRECTList}!Size@{Size}}
+\index{Size@{Size}!IRECTList@{IRECTList}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int I\+R\+E\+C\+T\+List\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+int The number of rectangles in the list 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Graphics\+Structs.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{class_sk_weak_ref_cnt}{}\doxysection{Sk\+Weak\+Ref\+Cnt Class Reference}
+\label{class_sk_weak_ref_cnt}\index{SkWeakRefCnt@{SkWeakRefCnt}}
+
+
+{\ttfamily \#include $<$Sk\+Weak\+Ref\+Cnt.\+h$>$}
+
+Inheritance diagram for Sk\+Weak\+Ref\+Cnt\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_sk_weak_ref_cnt}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_weak_ref_cnt_a1fa86fb0536ac751ae35d7b16443f861}{Sk\+Weak\+Ref\+Cnt}} ()
+\item 
+\mbox{\hyperlink{class_sk_weak_ref_cnt_af78f94c580f89d1bd20e39133a30806f}{$\sim$\+Sk\+Weak\+Ref\+Cnt}} () override
+\item 
+bool S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref}} () const
+\item 
+void \mbox{\hyperlink{class_sk_weak_ref_cnt_a1d5cbef1593103031f0a9a8fdc396372}{weak\+\_\+ref}} () const
+\item 
+void \mbox{\hyperlink{class_sk_weak_ref_cnt_aabce810a3111ea7fe5cd63899cf14aed}{weak\+\_\+unref}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_weak_ref_cnt_aaa49feed9bf022fa7cef65d99ff27aaa}{weak\+\_\+expired}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_sk_weak_ref_cnt_af42a3245daf5d126de151fc0398cfeb0}{weak\+\_\+dispose}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_weak_ref_cnt}{Sk\+Weak\+Ref\+Cnt}} is the base class for objects that may be shared by multiple objects. When an existing strong owner wants to share a reference, it calls \mbox{\hyperlink{class_sk_ref_cnt_base_abbbd318b36c9e232c70488254e1f5e67}{ref()}}. When a strong owner wants to release its reference, it calls \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref()}}. When the shared object\textquotesingle{}s strong reference count goes to zero as the result of an \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref()}} call, its (virtual) weak\+\_\+dispose method is called. It is an error for the destructor to be called explicitly (or via the object going out of scope on the stack or calling delete) if get\+Ref\+Cnt() $>$ 1.
+
+In addition to strong ownership, an owner may instead obtain a weak reference by calling \mbox{\hyperlink{class_sk_weak_ref_cnt_a1d5cbef1593103031f0a9a8fdc396372}{weak\+\_\+ref()}}. A call to \mbox{\hyperlink{class_sk_weak_ref_cnt_a1d5cbef1593103031f0a9a8fdc396372}{weak\+\_\+ref()}} must be balanced by a call to \mbox{\hyperlink{class_sk_weak_ref_cnt_aabce810a3111ea7fe5cd63899cf14aed}{weak\+\_\+unref()}}. To obtain a strong reference from a weak reference, call \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref()}}. If \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref()}} returns true, the owner\textquotesingle{}s pointer is now also a strong reference on which \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref()}} must be called. Note that this does not affect the original weak reference, \mbox{\hyperlink{class_sk_weak_ref_cnt_aabce810a3111ea7fe5cd63899cf14aed}{weak\+\_\+unref()}} must still be called. When the weak reference count goes to zero, the object is deleted. While the weak reference count is positive and the strong reference count is zero the object still exists, but will be in the disposed state. It is up to the object to define what this means.
+
+Note that a strong reference implicitly implies a weak reference. As a result, it is allowable for the owner of a strong ref to call \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref()}}. This will have the same effect as calling \mbox{\hyperlink{class_sk_ref_cnt_base_abbbd318b36c9e232c70488254e1f5e67}{ref()}}, but may be more expensive.
+
+Example\+:
+
+\mbox{\hyperlink{class_sk_weak_ref_cnt}{Sk\+Weak\+Ref\+Cnt}} my\+Ref = strong\+Ref.\+weak\+\_\+ref(); ... // strong\+Ref.\+unref() may or may not be called if (my\+Ref.\+try\+\_\+ref()) \{ ... // use my\+Ref my\+Ref.\+unref(); \} else \{ my\+Ref is in the disposed state \} my\+Ref.\+weak\+\_\+unref(); 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_weak_ref_cnt_a1fa86fb0536ac751ae35d7b16443f861}\label{class_sk_weak_ref_cnt_a1fa86fb0536ac751ae35d7b16443f861}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!SkWeakRefCnt@{SkWeakRefCnt}}
+\index{SkWeakRefCnt@{SkWeakRefCnt}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{SkWeakRefCnt()}{SkWeakRefCnt()}}
+{\footnotesize\ttfamily Sk\+Weak\+Ref\+Cnt\+::\+Sk\+Weak\+Ref\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default construct, initializing the reference counts to 1. The strong references collectively hold one weak reference. When the strong reference count goes to zero, the collectively held weak reference is released. \mbox{\Hypertarget{class_sk_weak_ref_cnt_af78f94c580f89d1bd20e39133a30806f}\label{class_sk_weak_ref_cnt_af78f94c580f89d1bd20e39133a30806f}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!````~SkWeakRefCnt@{$\sim$SkWeakRefCnt}}
+\index{````~SkWeakRefCnt@{$\sim$SkWeakRefCnt}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkWeakRefCnt()}{~SkWeakRefCnt()}}
+{\footnotesize\ttfamily Sk\+Weak\+Ref\+Cnt\+::$\sim$\+Sk\+Weak\+Ref\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Destruct, asserting that the weak reference count is 1. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}\label{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!try\_ref@{try\_ref}}
+\index{try\_ref@{try\_ref}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{try\_ref()}{try\_ref()}}
+{\footnotesize\ttfamily bool S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Sk\+Weak\+Ref\+Cnt\+::try\+\_\+ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a strong reference from a weak reference, if possible. The caller must already be an owner. If \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref()}} returns true the owner is in posession of an additional strong reference. Both the original reference and new reference must be properly unreferenced. If \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref()}} returns false, no strong reference could be created and the owner\textquotesingle{}s reference is in the same state as before the call. \mbox{\Hypertarget{class_sk_weak_ref_cnt_af42a3245daf5d126de151fc0398cfeb0}\label{class_sk_weak_ref_cnt_af42a3245daf5d126de151fc0398cfeb0}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!weak\_dispose@{weak\_dispose}}
+\index{weak\_dispose@{weak\_dispose}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{weak\_dispose()}{weak\_dispose()}}
+{\footnotesize\ttfamily virtual void Sk\+Weak\+Ref\+Cnt\+::weak\+\_\+dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Called when the strong reference count goes to zero. This allows the object to free any resources it may be holding. Weak references may still exist and their level of allowed access to the object is defined by the object\textquotesingle{}s class. \mbox{\Hypertarget{class_sk_weak_ref_cnt_aaa49feed9bf022fa7cef65d99ff27aaa}\label{class_sk_weak_ref_cnt_aaa49feed9bf022fa7cef65d99ff27aaa}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!weak\_expired@{weak\_expired}}
+\index{weak\_expired@{weak\_expired}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{weak\_expired()}{weak\_expired()}}
+{\footnotesize\ttfamily bool Sk\+Weak\+Ref\+Cnt\+::weak\+\_\+expired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if there are no strong references to the object. When this is the case all future calls to \mbox{\hyperlink{class_sk_weak_ref_cnt_a2472c5dd8f4de824426e742ca97e6647}{try\+\_\+ref()}} will return false. \mbox{\Hypertarget{class_sk_weak_ref_cnt_a1d5cbef1593103031f0a9a8fdc396372}\label{class_sk_weak_ref_cnt_a1d5cbef1593103031f0a9a8fdc396372}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!weak\_ref@{weak\_ref}}
+\index{weak\_ref@{weak\_ref}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{weak\_ref()}{weak\_ref()}}
+{\footnotesize\ttfamily void Sk\+Weak\+Ref\+Cnt\+::weak\+\_\+ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Increment the weak reference count. Must be balanced by a call to \mbox{\hyperlink{class_sk_weak_ref_cnt_aabce810a3111ea7fe5cd63899cf14aed}{weak\+\_\+unref()}}. \mbox{\Hypertarget{class_sk_weak_ref_cnt_aabce810a3111ea7fe5cd63899cf14aed}\label{class_sk_weak_ref_cnt_aabce810a3111ea7fe5cd63899cf14aed}} 
+\index{SkWeakRefCnt@{SkWeakRefCnt}!weak\_unref@{weak\_unref}}
+\index{weak\_unref@{weak\_unref}!SkWeakRefCnt@{SkWeakRefCnt}}
+\doxysubsubsection{\texorpdfstring{weak\_unref()}{weak\_unref()}}
+{\footnotesize\ttfamily void Sk\+Weak\+Ref\+Cnt\+::weak\+\_\+unref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Decrement the weak reference count. If the weak reference count is 1 before the decrement, then call delete on the object. Note that if this is the case, then the object needs to have been allocated via new, and not on the stack. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/Sk\+Weak\+Ref\+Cnt.\+h\end{DoxyCompactItemize}

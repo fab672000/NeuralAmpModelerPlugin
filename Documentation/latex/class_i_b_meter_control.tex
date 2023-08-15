@@ -1,0 +1,124 @@
+\hypertarget{class_i_b_meter_control}{}\doxysection{I\+B\+Meter\+Control Class Reference}
+\label{class_i_b_meter_control}\index{IBMeterControl@{IBMeterControl}}
+
+
+{\ttfamily \#include $<$I\+Controls.\+h$>$}
+
+Inheritance diagram for I\+B\+Meter\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_b_meter_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_b_meter_control_a244f836ac4fb6c1c760ceeb4363496b1}\label{class_i_b_meter_control_a244f836ac4fb6c1c760ceeb4363496b1}} 
+enum {\bfseries E\+Response} \{ {\bfseries Linear}, 
+{\bfseries Log}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_b_meter_control_a78b784bcda677e8d00078813a6c8674d}{I\+B\+Meter\+Control}} (float x, float y, const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap, E\+Response response=E\+Response\+::\+Log, float low\+Range\+DB=-\/72.f, float high\+Range\+DB=12.f)
+\item 
+\mbox{\hyperlink{class_i_b_meter_control_a82bbedd6119b8e1196c4e210546fcde8}{I\+B\+Meter\+Control}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap, E\+Response response=E\+Response\+::\+Log, float low\+Range\+DB=-\/72.f, float high\+Range\+DB=12.f)
+\item 
+void \mbox{\hyperlink{class_i_b_meter_control_aa9f8ec15d837045a23a812e3af3149d0}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_b_meter_control_a9e80c08ef5355a251d034bc3b08e80db}{On\+Rescale}} () override
+\item 
+void \mbox{\hyperlink{class_i_b_meter_control_a4a6063c7d56c0b2fcbe7219e48823d50}{On\+Msg\+From\+Delegate}} (int msg\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_b_meter_control_a5739fa4aeefc5437dbf4e8063bfed893}\label{class_i_b_meter_control_a5739fa4aeefc5437dbf4e8063bfed893}} 
+float {\bfseries m\+High\+Range\+DB}
+\item 
+\mbox{\Hypertarget{class_i_b_meter_control_aa17f9db817f689955f0fcdab69801606}\label{class_i_b_meter_control_aa17f9db817f689955f0fcdab69801606}} 
+float {\bfseries m\+Low\+Range\+DB}
+\item 
+\mbox{\Hypertarget{class_i_b_meter_control_a142d2c736447d7c96c579d81ce9c0945}\label{class_i_b_meter_control_a142d2c736447d7c96c579d81ce9c0945}} 
+E\+Response {\bfseries m\+Response} = E\+Response\+::\+Linear
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A bitmap meter control, that can be used for V\+U\+Meters. Use with I\+Peak\+Avg\+Sender$<$1$>$ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_b_meter_control_a78b784bcda677e8d00078813a6c8674d}\label{class_i_b_meter_control_a78b784bcda677e8d00078813a6c8674d}} 
+\index{IBMeterControl@{IBMeterControl}!IBMeterControl@{IBMeterControl}}
+\index{IBMeterControl@{IBMeterControl}!IBMeterControl@{IBMeterControl}}
+\doxysubsubsection{\texorpdfstring{IBMeterControl()}{IBMeterControl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+B\+Meter\+Control\+::\+I\+B\+Meter\+Control (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&}]{bitmap,  }\item[{E\+Response}]{response = {\ttfamily EResponse\+:\+:Log},  }\item[{float}]{low\+Range\+DB = {\ttfamily -\/72.f},  }\item[{float}]{high\+Range\+DB = {\ttfamily 12.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a bitmap meter control 
+\begin{DoxyParams}{Parameters}
+{\em x} & The x position of the top left point in the control\textquotesingle{}s bounds (width will be determined by bitmap\textquotesingle{}s dimensions) \\
+\hline
+{\em y} & The y position of the top left point in the control\textquotesingle{}s bounds (height will be determined by bitmap\textquotesingle{}s dimensions) \\
+\hline
+{\em bitmap} & The bitmap resource for the control \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_b_meter_control_a82bbedd6119b8e1196c4e210546fcde8}\label{class_i_b_meter_control_a82bbedd6119b8e1196c4e210546fcde8}} 
+\index{IBMeterControl@{IBMeterControl}!IBMeterControl@{IBMeterControl}}
+\index{IBMeterControl@{IBMeterControl}!IBMeterControl@{IBMeterControl}}
+\doxysubsubsection{\texorpdfstring{IBMeterControl()}{IBMeterControl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+B\+Meter\+Control\+::\+I\+B\+Meter\+Control (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&}]{bitmap,  }\item[{E\+Response}]{response = {\ttfamily EResponse\+:\+:Log},  }\item[{float}]{low\+Range\+DB = {\ttfamily -\/72.f},  }\item[{float}]{high\+Range\+DB = {\ttfamily 12.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs a bitmap meter control 
+\begin{DoxyParams}{Parameters}
+{\em bounds} & The control\textquotesingle{}s bounds \\
+\hline
+{\em bitmap} & The bitmap resource for the control \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_b_meter_control_aa9f8ec15d837045a23a812e3af3149d0}\label{class_i_b_meter_control_aa9f8ec15d837045a23a812e3af3149d0}} 
+\index{IBMeterControl@{IBMeterControl}!Draw@{Draw}}
+\index{Draw@{Draw}!IBMeterControl@{IBMeterControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+B\+Meter\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_b_meter_control_a4a6063c7d56c0b2fcbe7219e48823d50}\label{class_i_b_meter_control_a4a6063c7d56c0b2fcbe7219e48823d50}} 
+\index{IBMeterControl@{IBMeterControl}!OnMsgFromDelegate@{OnMsgFromDelegate}}
+\index{OnMsgFromDelegate@{OnMsgFromDelegate}!IBMeterControl@{IBMeterControl}}
+\doxysubsubsection{\texorpdfstring{OnMsgFromDelegate()}{OnMsgFromDelegate()}}
+{\footnotesize\ttfamily void I\+B\+Meter\+Control\+::\+On\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to receive messages sent to the control, see \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}\+:Send\+Control\+Msg\+From\+Delegate() 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a850af818653722be3d3a72c9558ff6a6}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_b_meter_control_a9e80c08ef5355a251d034bc3b08e80db}\label{class_i_b_meter_control_a9e80c08ef5355a251d034bc3b08e80db}} 
+\index{IBMeterControl@{IBMeterControl}!OnRescale@{OnRescale}}
+\index{OnRescale@{OnRescale}!IBMeterControl@{IBMeterControl}}
+\doxysubsubsection{\texorpdfstring{OnRescale()}{OnRescale()}}
+{\footnotesize\ttfamily void I\+B\+Meter\+Control\+::\+On\+Rescale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to do something when graphics is scaled globally (e.\+g. moves to different D\+PI screen) 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a57f6186624e970a5d6de172570aee111}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_controls_8h}{I\+Controls.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_controls_8cpp}{I\+Controls.\+cpp}}\end{DoxyCompactItemize}

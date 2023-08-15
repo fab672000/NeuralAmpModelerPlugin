@@ -1,0 +1,57 @@
+\hypertarget{struct_a_a_x___s_instrument_render_info}{}\doxysection{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info Struct Reference}
+\label{struct_a_a_x___s_instrument_render_info}\index{AAX\_SInstrumentRenderInfo@{AAX\_SInstrumentRenderInfo}}
+
+
+Information used to parameterize \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Render\+Audio()}}  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a84a9670391f6c3ade12f8577e3c127a7}\label{struct_a_a_x___s_instrument_render_info_a84a9670391f6c3ade12f8577e3c127a7}} 
+float $\ast$$\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a84a9670391f6c3ade12f8577e3c127a7}{m\+Audio\+Inputs}}
+\begin{DoxyCompactList}\small\item\em Audio input buffers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a24be01ad79dac3d110302a4392a8c8cc}\label{struct_a_a_x___s_instrument_render_info_a24be01ad79dac3d110302a4392a8c8cc}} 
+float $\ast$$\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a24be01ad79dac3d110302a4392a8c8cc}{m\+Audio\+Outputs}}
+\begin{DoxyCompactList}\small\item\em Audio output buffers, including any aux output stems. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a7668a9950721f0a2819bee60fafc8e10}\label{struct_a_a_x___s_instrument_render_info_a7668a9950721f0a2819bee60fafc8e10}} 
+int32\+\_\+t $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a7668a9950721f0a2819bee60fafc8e10}{m\+Num\+Samples}}
+\begin{DoxyCompactList}\small\item\em Number of samples in each buffer. Bounded as per \mbox{\hyperlink{_a_a_x___enums_8h_aa1769ee466fd07659d8c7ef5ac61cd49}{A\+A\+E\+\_\+\+E\+Audio\+Buffer\+Length\+Native}}. The exact value can vary from buffer to buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a4db77b69a4d4993b0fa6a5ab3573eb05}\label{struct_a_a_x___s_instrument_render_info_a4db77b69a4d4993b0fa6a5ab3573eb05}} 
+\mbox{\hyperlink{_a_a_x_8h_aae7325dbfa53a983f208a68cb563fba5}{A\+A\+X\+\_\+\+C\+Timestamp}} $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a4db77b69a4d4993b0fa6a5ab3573eb05}{m\+Clock}}
+\begin{DoxyCompactList}\small\item\em Pointer to the global running time clock. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_ab567e317ed0127a51bf0491a4d972f3b}\label{struct_a_a_x___s_instrument_render_info_ab567e317ed0127a51bf0491a4d972f3b}} 
+\mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}} $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_ab567e317ed0127a51bf0491a4d972f3b}{m\+Input\+Node}}
+\begin{DoxyCompactList}\small\item\em Buffered local M\+I\+DI input node. Used for incoming M\+I\+DI messages directed to the instrument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a48eed53d672bf4c844ec501d5dfe1784}\label{struct_a_a_x___s_instrument_render_info_a48eed53d672bf4c844ec501d5dfe1784}} 
+\mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}} $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a48eed53d672bf4c844ec501d5dfe1784}{m\+Global\+Node}}
+\begin{DoxyCompactList}\small\item\em Buffered global M\+I\+DI input node. Used for global events like beat updates in metronomes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a60ea39a008cad2ecd97b2251787b3b38}\label{struct_a_a_x___s_instrument_render_info_a60ea39a008cad2ecd97b2251787b3b38}} 
+\mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}} $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a60ea39a008cad2ecd97b2251787b3b38}{m\+Transport\+Node}}
+\begin{DoxyCompactList}\small\item\em Transport M\+I\+DI node. Used for querying the state of the M\+I\+DI transport. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_ab90074855c83148226feb8a64ac0b354}\label{struct_a_a_x___s_instrument_render_info_ab90074855c83148226feb8a64ac0b354}} 
+\mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}} $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_ab90074855c83148226feb8a64ac0b354}{m\+Additional\+Input\+M\+I\+D\+I\+Nodes}} \mbox{[}k\+Max\+Additional\+M\+I\+D\+I\+Nodes\mbox{]}
+\begin{DoxyCompactList}\small\item\em List of additional input M\+I\+DI nodes, if your plugin needs them. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_aff00dfa131d966478ab571ebcab7a86c}\label{struct_a_a_x___s_instrument_render_info_aff00dfa131d966478ab571ebcab7a86c}} 
+\mbox{\hyperlink{struct_a_a_x___s_instrument_private_data}{A\+A\+X\+\_\+\+S\+Instrument\+Private\+Data}} $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_aff00dfa131d966478ab571ebcab7a86c}{m\+Private\+Data}}
+\begin{DoxyCompactList}\small\item\em Struct containing private data relating to the instance. You should not need to use this data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a68ae865355f50537127d3e2e0efd585f}\label{struct_a_a_x___s_instrument_render_info_a68ae865355f50537127d3e2e0efd585f}} 
+float $\ast$$\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a68ae865355f50537127d3e2e0efd585f}{m\+Meters}}
+\begin{DoxyCompactList}\small\item\em Array of meter taps. One meter value should be entered per tap for each render call. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_instrument_render_info_a846c5f9e518bb66bf1854a9eb77d54a7}\label{struct_a_a_x___s_instrument_render_info_a846c5f9e518bb66bf1854a9eb77d54a7}} 
+int64\+\_\+t $\ast$ \mbox{\hyperlink{struct_a_a_x___s_instrument_render_info_a846c5f9e518bb66bf1854a9eb77d54a7}{m\+Current\+State\+Num}}
+\begin{DoxyCompactList}\small\item\em State counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information used to parameterize \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Render\+Audio()}} 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Extensions/\+Topology/\mbox{\hyperlink{_a_a_x___c_monolithic_parameters_8h}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}}\end{DoxyCompactItemize}

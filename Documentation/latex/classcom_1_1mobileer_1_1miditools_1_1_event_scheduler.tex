@@ -1,0 +1,353 @@
+\hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler}{}\doxysection{com.\+mobileer.\+miditools.\+Event\+Scheduler Class Reference}
+\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler}\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+Inheritance diagram for com.\+mobileer.\+miditools.\+Event\+Scheduler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Schedulable\+Event}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}{remove\+Eventfrom\+Pool}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}{add\+Event\+To\+Pool}} (Schedulable\+Event event)
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}{add}} (Schedulable\+Event event)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}{get\+Next\+Event}} (long time)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}{wait\+Next\+Event}} ()  throws Interrupted\+Exception 
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}{remove\+Eventfrom\+Pool}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}{add\+Event\+To\+Pool}} (Schedulable\+Event event)
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}{add}} (Schedulable\+Event event)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}{get\+Next\+Event}} (long time)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}{wait\+Next\+Event}} ()  throws Interrupted\+Exception 
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}{remove\+Eventfrom\+Pool}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}{add\+Event\+To\+Pool}} (Schedulable\+Event event)
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}{add}} (Schedulable\+Event event)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}{get\+Next\+Event}} (long time)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}{wait\+Next\+Event}} ()  throws Interrupted\+Exception 
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}{remove\+Eventfrom\+Pool}} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}{add\+Event\+To\+Pool}} (Schedulable\+Event event)
+\item 
+void \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}{add}} (Schedulable\+Event event)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}{get\+Next\+Event}} (long time)
+\item 
+Schedulable\+Event \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}{wait\+Next\+Event}} ()  throws Interrupted\+Exception 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Store Schedulable\+Events in a timestamped buffer. Events may be written in any order. Events will be read in sorted order. Events with the same timestamp will be read in the order they were added.
+
+Only one Thread can write into the buffer. And only one Thread can read from the buffer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!add@{add}}
+\index{add@{add}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add an event to the scheduler. Events with the same time will be processed in order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!add@{add}}
+\index{add@{add}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add an event to the scheduler. Events with the same time will be processed in order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!add@{add}}
+\index{add@{add}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add an event to the scheduler. Events with the same time will be processed in order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_aadef4c319822205e7e3ceb2167341a5f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!add@{add}}
+\index{add@{add}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add an event to the scheduler. Events with the same time will be processed in order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!addEventToPool@{addEventToPool}}
+\index{addEventToPool@{addEventToPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{addEventToPool()}{addEventToPool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add\+Event\+To\+Pool (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return events to a pool so they can be reused.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, and \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}.
+
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!addEventToPool@{addEventToPool}}
+\index{addEventToPool@{addEventToPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{addEventToPool()}{addEventToPool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add\+Event\+To\+Pool (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return events to a pool so they can be reused.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, and \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}.
+
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!addEventToPool@{addEventToPool}}
+\index{addEventToPool@{addEventToPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{addEventToPool()}{addEventToPool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add\+Event\+To\+Pool (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return events to a pool so they can be reused.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, and \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}.
+
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_ad9d593c1166d872ad28128495574123f}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!addEventToPool@{addEventToPool}}
+\index{addEventToPool@{addEventToPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{addEventToPool()}{addEventToPool()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void com.\+mobileer.\+miditools.\+Event\+Scheduler.\+add\+Event\+To\+Pool (\begin{DoxyParamCaption}\item[{Schedulable\+Event}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return events to a pool so they can be reused.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}, and \mbox{\hyperlink{classcom_1_1mobileer_1_1miditools_1_1_midi_event_scheduler_a34042a83861ee928a725ac0f9fe6991e}{com.\+mobileer.\+miditools.\+Midi\+Event\+Scheduler}}.
+
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!getNextEvent@{getNextEvent}}
+\index{getNextEvent@{getNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{getNextEvent()}{getNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+get\+Next\+Event (\begin{DoxyParamCaption}\item[{long}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check to see if any scheduled events are ready to be processed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next event or null if none ready 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!getNextEvent@{getNextEvent}}
+\index{getNextEvent@{getNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{getNextEvent()}{getNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+get\+Next\+Event (\begin{DoxyParamCaption}\item[{long}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check to see if any scheduled events are ready to be processed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next event or null if none ready 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!getNextEvent@{getNextEvent}}
+\index{getNextEvent@{getNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{getNextEvent()}{getNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+get\+Next\+Event (\begin{DoxyParamCaption}\item[{long}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check to see if any scheduled events are ready to be processed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next event or null if none ready 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a8f7e5c9ab0d623c5cf2e4e13829682ab}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!getNextEvent@{getNextEvent}}
+\index{getNextEvent@{getNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{getNextEvent()}{getNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+get\+Next\+Event (\begin{DoxyParamCaption}\item[{long}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check to see if any scheduled events are ready to be processed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timestamp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+next event or null if none ready 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!removeEventfromPool@{removeEventfromPool}}
+\index{removeEventfromPool@{removeEventfromPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{removeEventfromPool()}{removeEventfromPool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+remove\+Eventfrom\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an event from the pool. Always leave at least one event in the pool. \begin{DoxyReturn}{Returns}
+event or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!removeEventfromPool@{removeEventfromPool}}
+\index{removeEventfromPool@{removeEventfromPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{removeEventfromPool()}{removeEventfromPool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+remove\+Eventfrom\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an event from the pool. Always leave at least one event in the pool. \begin{DoxyReturn}{Returns}
+event or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!removeEventfromPool@{removeEventfromPool}}
+\index{removeEventfromPool@{removeEventfromPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{removeEventfromPool()}{removeEventfromPool()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+remove\+Eventfrom\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an event from the pool. Always leave at least one event in the pool. \begin{DoxyReturn}{Returns}
+event or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a54c42629dd6541544fa48398ee1d463d}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!removeEventfromPool@{removeEventfromPool}}
+\index{removeEventfromPool@{removeEventfromPool}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{removeEventfromPool()}{removeEventfromPool()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+remove\+Eventfrom\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an event from the pool. Always leave at least one event in the pool. \begin{DoxyReturn}{Returns}
+event or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!waitNextEvent@{waitNextEvent}}
+\index{waitNextEvent@{waitNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{waitNextEvent()}{waitNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+wait\+Next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Interrupted\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next available event or wait until there is an event ready to be processed. This method assumes that the timestamps are in nanoseconds and that the current time is System.\+nano\+Time().
+
+\begin{DoxyReturn}{Returns}
+event 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!waitNextEvent@{waitNextEvent}}
+\index{waitNextEvent@{waitNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{waitNextEvent()}{waitNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+wait\+Next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Interrupted\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next available event or wait until there is an event ready to be processed. This method assumes that the timestamps are in nanoseconds and that the current time is System.\+nano\+Time().
+
+\begin{DoxyReturn}{Returns}
+event 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!waitNextEvent@{waitNextEvent}}
+\index{waitNextEvent@{waitNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{waitNextEvent()}{waitNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+wait\+Next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Interrupted\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next available event or wait until there is an event ready to be processed. This method assumes that the timestamps are in nanoseconds and that the current time is System.\+nano\+Time().
+
+\begin{DoxyReturn}{Returns}
+event 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}\label{classcom_1_1mobileer_1_1miditools_1_1_event_scheduler_a294c0377c0524e264f8c96e7878855fe}} 
+\index{com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}!waitNextEvent@{waitNextEvent}}
+\index{waitNextEvent@{waitNextEvent}!com.mobileer.miditools.EventScheduler@{com.mobileer.miditools.EventScheduler}}
+\doxysubsubsection{\texorpdfstring{waitNextEvent()}{waitNextEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Schedulable\+Event com.\+mobileer.\+miditools.\+Event\+Scheduler.\+wait\+Next\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Interrupted\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the next available event or wait until there is an event ready to be processed. This method assumes that the timestamps are in nanoseconds and that the current time is System.\+nano\+Time().
+
+\begin{DoxyReturn}{Returns}
+event 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/apps/\+Oboe\+Tester/app/src/main/java/com/mobileer/miditools/Event\+Scheduler.\+java\end{DoxyCompactItemize}

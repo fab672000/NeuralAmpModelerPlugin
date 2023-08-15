@@ -1,0 +1,30 @@
+\hypertarget{_i_plug_editor_delegate_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+I\+Plug\+Editor\+Delegate.h File Reference}
+\label{_i_plug_editor_delegate_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/IPlug/IPlugEditorDelegate.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/IPlug/IPlugEditorDelegate.h}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ptrlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I\+Plug\+Parameter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I\+Plug\+Midi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}I\+Plug\+Structs.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+This pure virtual interface delegates communication in both directions between a \mbox{\hyperlink{class_u_i}{UI}} editor and something else (which is usually a plug-\/in) It is also the class that owns parameter objects (for historical reasons) -\/ although it\textquotesingle{}s not necessary to allocate them
+
+This is the lowest level base class in i\+Plug 2 that facilitates distributing editor and \mbox{\hyperlink{class_d_s_p}{D\+SP}} parts for plug-\/in formats that need that, but also allowing non-\/distributed plug-\/ins to use the same A\+PI. In distributed plug-\/in architectures certain methods will be overridden in order to pipe messages to various places, using whatever mechanism that plug-\/in format requires. In this case, there are actually two classes that implement the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} interface, but only one which is directly connected to the user interface (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} etc.), the other being connected to a class inheriting \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}} that deals with processing audio, see for example \mbox{\hyperlink{class_i_plug_v_s_t3_processor}{I\+Plug\+V\+S\+T3\+Processor}}
+
+Note on method names\+:
+\begin{DoxyItemize}
+\item \char`\"{}\+From\+U\+I\char`\"{} in a method name, means that that method is called by something in the \mbox{\hyperlink{class_u_i}{UI}} i.\+e. when the user interacts with a control.
+\item \char`\"{}\+From\+Delegate\char`\"{} in a method name means that method is called from a class that implements the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} interface, which is usually your plug-\/in base class, but may not be in the case of an isolated editor class, or if you are using \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} without I\+Plug, and your \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} is not a plug-\/in
+\end{DoxyItemize}
+
+N\+O\+T\+ES\+: A parameter V\+A\+L\+UE is a floating point number linked to an integer parameter index. T\+O\+DO\+: Normalised ? A parameter O\+B\+J\+E\+CT (\mbox{\hyperlink{class_i_param}{I\+Param}}) is an instance of the \mbox{\hyperlink{class_i_param}{I\+Param}} class as defined in \mbox{\hyperlink{_i_plug_parameter_8h}{I\+Plug\+Parameter.\+h}} A parameter O\+B\+J\+E\+CT is also referred to as a \char`\"{}param\char`\"{}, in method names such as \mbox{\hyperlink{class_i_editor_delegate_af0cbc14738af908eb83bb89521b5257e}{I\+Editor\+Delegate\+::\+Get\+Param(int param\+Idx)}} and \mbox{\hyperlink{class_i_control_abbfdd75f0f84648d23c70dc19f197585}{I\+Control\+::\+Get\+Param()}}. 

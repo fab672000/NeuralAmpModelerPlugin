@@ -1,0 +1,62 @@
+\hypertarget{class_a_a_x___i_a_c_f_effect_direct_data___v2}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+\_\+\+V2 Class Reference}
+\label{class_a_a_x___i_a_c_f_effect_direct_data___v2}\index{AAX\_IACFEffectDirectData\_V2@{AAX\_IACFEffectDirectData\_V2}}
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+\_\+\+V2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_a_a_x___i_a_c_f_effect_direct_data___v2}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ A\+AX host and plug-\/in event notification}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_direct_data___v2_a741ad6f48a2fbf80ff062b1ce16bc3ab}{Notification\+Received}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} in\+Notification\+Type, const void $\ast$in\+Notification\+Data, uint32\+\_\+t in\+Notification\+Data\+Size)=0
+\begin{DoxyCompactList}\small\item\em Notification Hook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_direct_data___v2_a741ad6f48a2fbf80ff062b1ce16bc3ab}\label{class_a_a_x___i_a_c_f_effect_direct_data___v2_a741ad6f48a2fbf80ff062b1ce16bc3ab}} 
+\index{AAX\_IACFEffectDirectData\_V2@{AAX\_IACFEffectDirectData\_V2}!NotificationReceived@{NotificationReceived}}
+\index{NotificationReceived@{NotificationReceived}!AAX\_IACFEffectDirectData\_V2@{AAX\_IACFEffectDirectData\_V2}}
+\doxysubsubsection{\texorpdfstring{NotificationReceived()}{NotificationReceived()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+\_\+\+V2\+::\+Notification\+Received (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{in\+Notification\+Type,  }\item[{const void $\ast$}]{in\+Notification\+Data,  }\item[{uint32\+\_\+t}]{in\+Notification\+Data\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notification Hook. 
+
+Called from the host to deliver notifications to this object.
+
+Look at the \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event}} enumeration to see a description of events you can listen for and the data they come with.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+some notifications are sent only to the plug-\/in \mbox{\hyperlink{class_g_u_i}{G\+UI}} while other notifications are sent only to the plug-\/in data model. If you are not seeing an expected notification, try checking the other plug-\/in objects\textquotesingle{} {\ttfamily \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_direct_data___v2_a741ad6f48a2fbf80ff062b1ce16bc3ab}{Notification\+Received()}}} methods.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+the host may dispatch notifications synchronously or asynchronously, and calls to this method may occur concurrently on multiple threads.
+\end{DoxyNote}
+A plug-\/in may also dispatch custom notifications using \mbox{\hyperlink{class_a_a_x___i_controller_a0384f820cecf8cf7671057060bf5ba4f}{A\+A\+X\+\_\+\+I\+Controller\+::\+Send\+Notification()}}. Custom notifications will be posted back to the plug-\/in\textquotesingle{}s other objects which support a {\ttfamily \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_direct_data___v2_a741ad6f48a2fbf80ff062b1ce16bc3ab}{Notification\+Received()}}} method (e.\+g. the \mbox{\hyperlink{class_g_u_i}{G\+UI}}).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Type} & Type of notification being received. Notifications form the host are one of \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Data} & Block of incoming notification data \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Data\+Size} & Size of {\ttfamily in\+Notification\+Data}, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_direct_data_a7ceccdf975613b3255d18faeef844037}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_effect_direct_data_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data.\+h}}\end{DoxyCompactItemize}

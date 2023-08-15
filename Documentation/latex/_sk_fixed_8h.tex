@@ -1,0 +1,135 @@
+\hypertarget{_sk_fixed_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/\+Sk\+Fixed.h File Reference}
+\label{_sk_fixed_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/include/private/SkFixed.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/include/private/SkFixed.h}}
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Scalar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/private/\+Sk\+Safe\+\_\+math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/private/\+Sk\+T\+Pin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/private/\+Sk\+To.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a57cf4d6e7ae16b17b2a99dc2eb70b138}\label{_sk_fixed_8h_a57cf4d6e7ae16b17b2a99dc2eb70b138}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed1}~(1 $<$$<$ 16)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a86ff599f2230dc54366f4fb38c0db3a8}\label{_sk_fixed_8h_a86ff599f2230dc54366f4fb38c0db3a8}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Half}~(1 $<$$<$ 15)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_ac5be93c072ffa70de05b4599da2aa415}\label{_sk_fixed_8h_ac5be93c072ffa70de05b4599da2aa415}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Quarter}~(1 $<$$<$ 14)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_acfca27d22beb012d2796bad7d3b2c1b2}\label{_sk_fixed_8h_acfca27d22beb012d2796bad7d3b2c1b2}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Max}~(0x7\+F\+F\+F\+F\+F\+FF)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_acdb66554de094d9fb6454ecb37bd9e68}\label{_sk_fixed_8h_acdb66554de094d9fb6454ecb37bd9e68}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Min}~(-\/S\+K\+\_\+\+Fixed\+Max)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a3f34032aad581143f905d70312a2452d}\label{_sk_fixed_8h_a3f34032aad581143f905d70312a2452d}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+PI}~(0x3243F)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_af14300beab41b3a0328ce1077954a710}\label{_sk_fixed_8h_af14300beab41b3a0328ce1077954a710}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Sqrt2}~(92682)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_add732878677ace643c2896ca921806c1}\label{_sk_fixed_8h_add732878677ace643c2896ca921806c1}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Tan\+P\+I\+Over8}~(0x6\+A0A)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a3c599dd04825f349d8d2d0c7b4da0c2d}\label{_sk_fixed_8h_a3c599dd04825f349d8d2d0c7b4da0c2d}} 
+\#define {\bfseries S\+K\+\_\+\+Fixed\+Root2\+Over2}~(0x\+B505)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_ab6d309c6215571b7d4552684b77bc3a4}\label{_sk_fixed_8h_ab6d309c6215571b7d4552684b77bc3a4}} 
+\#define {\bfseries Sk\+Fixed\+To\+Float}(x)~((x) $\ast$ 1.\+52587890625e-\/5f)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_ae806ec43b217e119ddb402964a78cc25}\label{_sk_fixed_8h_ae806ec43b217e119ddb402964a78cc25}} 
+\#define {\bfseries Sk\+Float\+To\+Fixed}(x)~sk\+\_\+float\+\_\+saturate2int((x) $\ast$ S\+K\+\_\+\+Fixed1)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a4945850e25b567e7bab21c761270a1bc}\label{_sk_fixed_8h_a4945850e25b567e7bab21c761270a1bc}} 
+\#define {\bfseries Sk\+Float\+To\+Fixed\+\_\+\+Check}(x)~Sk\+Float\+To\+Fixed(x)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a7165ab326273ac667a68cb708d25a4a4}\label{_sk_fixed_8h_a7165ab326273ac667a68cb708d25a4a4}} 
+\#define {\bfseries Sk\+Fixed\+To\+Double}(x)~((x) $\ast$ 1.\+52587890625e-\/5)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_aed3e2af8674deb94e23c2289162c3488}\label{_sk_fixed_8h_aed3e2af8674deb94e23c2289162c3488}} 
+\#define {\bfseries Sk\+Double\+To\+Fixed}(x)~((\mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}})((x) $\ast$ S\+K\+\_\+\+Fixed1))
+\item 
+\#define \mbox{\hyperlink{_sk_fixed_8h_a7d86f19b08461375de282d223fa35f65}{Sk\+Int\+To\+Fixed}}(n)~(\mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}})((unsigned)(n) $<$$<$ 16)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_ad305e4deb6c596c46005090dd35b5b5d}\label{_sk_fixed_8h_ad305e4deb6c596c46005090dd35b5b5d}} 
+\#define {\bfseries Sk\+Fixed\+Round\+To\+Int}(x)~(((x) + S\+K\+\_\+\+Fixed\+Half) $>$$>$ 16)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a177dfc6c2118bc98d6075e216fad5f8e}\label{_sk_fixed_8h_a177dfc6c2118bc98d6075e216fad5f8e}} 
+\#define {\bfseries Sk\+Fixed\+Ceil\+To\+Int}(x)~(((x) + S\+K\+\_\+\+Fixed1 -\/ 1) $>$$>$ 16)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_aaf3ae26355d735878ac39c4b63250372}\label{_sk_fixed_8h_aaf3ae26355d735878ac39c4b63250372}} 
+\#define {\bfseries Sk\+Fixed\+Floor\+To\+Int}(x)~((x) $>$$>$ 16)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a30f761be1599e9a4197b5033a54c430b}\label{_sk_fixed_8h_a30f761be1599e9a4197b5033a54c430b}} 
+\#define {\bfseries Sk\+Fixed\+Abs}(x)~Sk\+Abs32(x)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a988204e9a6f3538fdb66bc184b623565}\label{_sk_fixed_8h_a988204e9a6f3538fdb66bc184b623565}} 
+\#define {\bfseries Sk\+Fixed\+Ave}(a,  b)~(((a) + (b)) $>$$>$ 1)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a7b050fb71a37e35bd75412de9a176020}\label{_sk_fixed_8h_a7b050fb71a37e35bd75412de9a176020}} 
+\#define {\bfseries Sk\+Fixed\+Div}(numer,  denom)~Sk\+To\+S32(Sk\+T\+Pin$<$int64\+\_\+t$>$((Sk\+Left\+Shift((int64\+\_\+t)(numer), 16) / (denom)), S\+K\+\_\+\+Min\+S32, S\+K\+\_\+\+Max\+S32))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a9637f67822711666f3172889aa7524f1}\label{_sk_fixed_8h_a9637f67822711666f3172889aa7524f1}} 
+\#define {\bfseries Sk\+Fixed\+To\+Scalar}(x)~Sk\+Fixed\+To\+Float(x)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a5a5f7d0dded00d318d6fcdcd1bb8176d}\label{_sk_fixed_8h_a5a5f7d0dded00d318d6fcdcd1bb8176d}} 
+\#define {\bfseries Sk\+Scalar\+To\+Fixed}(x)~Sk\+Float\+To\+Fixed(x)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a67e8eddca603a1ea4326b2cf6fc09511}\label{_sk_fixed_8h_a67e8eddca603a1ea4326b2cf6fc09511}} 
+\#define {\bfseries Sk\+Fixed3232\+Max}~S\+K\+\_\+\+Max\+S64
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a2225b316a769eb3d2ac34a4d263ad989}\label{_sk_fixed_8h_a2225b316a769eb3d2ac34a4d263ad989}} 
+\#define {\bfseries Sk\+Fixed3232\+Min}~(-\/Sk\+Fixed3232\+Max)
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_aa4b8cdae80c652f0e92dffad451d7650}\label{_sk_fixed_8h_aa4b8cdae80c652f0e92dffad451d7650}} 
+\#define {\bfseries Sk\+Int\+To\+Fixed3232}(x)~(Sk\+Left\+Shift((Sk\+Fixed3232)(x), 32))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a36d92ceb9e8d440a8eb932d1462b680b}\label{_sk_fixed_8h_a36d92ceb9e8d440a8eb932d1462b680b}} 
+\#define {\bfseries Sk\+Fixed3232\+To\+Int}(x)~((int)((x) $>$$>$ 32))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a0138e7219fa17430cfd939c6f3373d97}\label{_sk_fixed_8h_a0138e7219fa17430cfd939c6f3373d97}} 
+\#define {\bfseries Sk\+Fixed\+To\+Fixed3232}(x)~(Sk\+Left\+Shift((Sk\+Fixed3232)(x), 16))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a4c7b4031626eebea25479618d26d1807}\label{_sk_fixed_8h_a4c7b4031626eebea25479618d26d1807}} 
+\#define {\bfseries Sk\+Fixed3232\+To\+Fixed}(x)~((\mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}})((x) $>$$>$ 16))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a84f7df994847da4aee5c17f737d1d099}\label{_sk_fixed_8h_a84f7df994847da4aee5c17f737d1d099}} 
+\#define {\bfseries Sk\+Float\+To\+Fixed3232}(x)~sk\+\_\+float\+\_\+saturate2int64((x) $\ast$ (65536.\+0f $\ast$ 65536.\+0f))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a3132fe3c16849ba5ee6c615daa9c31d6}\label{_sk_fixed_8h_a3132fe3c16849ba5ee6c615daa9c31d6}} 
+\#define {\bfseries Sk\+Fixed3232\+To\+Float}(x)~(x $\ast$ (1 / (65536.\+0f $\ast$ 65536.\+0f)))
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a9d8721253d3d157708275d694a1731da}\label{_sk_fixed_8h_a9d8721253d3d157708275d694a1731da}} 
+\#define {\bfseries Sk\+Scalar\+To\+Fixed3232}(x)~Sk\+Float\+To\+Fixed3232(x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}}
+\item 
+\mbox{\Hypertarget{_sk_fixed_8h_a5b40607366b5f47731dfe7ab8e5ff3b5}\label{_sk_fixed_8h_a5b40607366b5f47731dfe7ab8e5ff3b5}} 
+typedef int64\+\_\+t {\bfseries Sk\+Fixed3232}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Types and macros for 16.\+16 fixed point 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_sk_fixed_8h_a7d86f19b08461375de282d223fa35f65}\label{_sk_fixed_8h_a7d86f19b08461375de282d223fa35f65}} 
+\index{SkFixed.h@{SkFixed.h}!SkIntToFixed@{SkIntToFixed}}
+\index{SkIntToFixed@{SkIntToFixed}!SkFixed.h@{SkFixed.h}}
+\doxysubsubsection{\texorpdfstring{SkIntToFixed}{SkIntToFixed}}
+{\footnotesize\ttfamily \#define Sk\+Int\+To\+Fixed(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~(\mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}})((unsigned)(n) $<$$<$ 16)}
+
+Converts an integer to a Sk\+Fixed, asserting that the result does not overflow a 32 bit signed integer 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}\label{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}} 
+\index{SkFixed.h@{SkFixed.h}!SkFixed@{SkFixed}}
+\index{SkFixed@{SkFixed}!SkFixed.h@{SkFixed.h}}
+\doxysubsubsection{\texorpdfstring{SkFixed}{SkFixed}}
+{\footnotesize\ttfamily typedef int32\+\_\+t \mbox{\hyperlink{_sk_fixed_8h_a2f208c049f1e9eb4d35b8c47615f5c47}{Sk\+Fixed}}}
+
+32 bit signed integer used to represent fractions values with 16 bits to the right of the decimal point 

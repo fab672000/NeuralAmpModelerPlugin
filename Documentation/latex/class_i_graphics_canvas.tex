@@ -1,0 +1,591 @@
+\hypertarget{class_i_graphics_canvas}{}\doxysection{I\+Graphics\+Canvas Class Reference}
+\label{class_i_graphics_canvas}\index{IGraphicsCanvas@{IGraphicsCanvas}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Canvas.\+h$>$}
+
+Inheritance diagram for I\+Graphics\+Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_graphics_canvas}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_graphics_canvas_1_1_bitmap}{Bitmap}}
+\item 
+struct \mbox{\hyperlink{struct_i_graphics_canvas_1_1_font}{Font}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_graphics_canvas_a466bb2ed17dc528f7b3f8b3778bc916d}\label{class_i_graphics_canvas_a466bb2ed17dc528f7b3f8b3778bc916d}} 
+{\bfseries I\+Graphics\+Canvas} (\mbox{\hyperlink{class_i_g_editor_delegate}{I\+G\+Editor\+Delegate}} \&dlg, int w, int h, int fps, float scale)
+\item 
+const char $\ast$ \mbox{\hyperlink{class_i_graphics_canvas_acc99afa0c3ffef53121f13539f050162}{Get\+Drawing\+A\+P\+I\+Str}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_afe2d7bfcef6daad88f26d98834eedff1}{Draw\+Bitmap}} (const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, int srcX, int srcY, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a36ae9a23aff18af8d22495c91f6860be}{Draw\+Resize}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a2f73a6681254c30875712873197676e9}{Path\+Clear}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a58572b391957c86146f59c5cba776558}{Path\+Close}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a29e644327aa2c4bf89e8b51e7a391a06}{Path\+Arc}} (float cx, float cy, float r, float a1, float a2, E\+Winding winding) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a64ea26b98fd9b4fd45dfa2e2bf2d82d2}{Path\+Move\+To}} (float x, float y) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a9bc54a297a06bea5521898e45042e1bc}{Path\+Line\+To}} (float x, float y) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a444a41f7dc891180ae58f7a067766c9b}{Path\+Cubic\+Bezier\+To}} (float c1x, float c1y, float c2x, float c2y, float x2, float y2) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a0451480e9223afe2a479f67058e9785d}{Path\+Quadratic\+Bezier\+To}} (float cx, float cy, float x2, float y2) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_aad3ff1efd75ac0665818a146340e8727}{Path\+Stroke}} (const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&pattern, float thickness, const \mbox{\hyperlink{struct_i_stroke_options}{I\+Stroke\+Options}} \&options, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_a935849179c416d470c7997c08bb44a71}{Path\+Fill}} (const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&pattern, const \mbox{\hyperlink{struct_i_fill_options}{I\+Fill\+Options}} \&options, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\item 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} \mbox{\hyperlink{class_i_graphics_canvas_a9edc604393491c8592a6c7c37c57df41}{Get\+Point}} (int x, int y) override
+\item 
+void $\ast$ \mbox{\hyperlink{class_i_graphics_canvas_a287f844e20a8c611d2ee853cd2367e57}{Get\+Draw\+Context}} () override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_canvas_a162e493fcca1427cc180c85186bf90fe}{Bitmap\+Ext\+Supported}} (const char $\ast$ext) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_graphics_canvas_a2c03ebfe575b5932ed4506b70ea8a0f9}{Load\+A\+P\+I\+Bitmap}} (const char $\ast$file\+Name\+Or\+Res\+ID, int scale, E\+Resource\+Location location, const char $\ast$ext) override
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_graphics_canvas_a0ebd3f70754d4331a250c90d2d126426}{Load\+A\+P\+I\+Bitmap}} (const char $\ast$name, const void $\ast$p\+Data, int data\+Size, int scale) override
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_graphics_canvas_adb93a773da3026af635dca0d979cb30c}{Create\+A\+P\+I\+Bitmap}} (int width, int height, float scale, double draw\+Scale, bool cacheable=false) override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_canvas_a0d751ab333800b2e7dc5925f23a5c535}{Load\+A\+P\+I\+Font}} (const char $\ast$font\+ID, const Platform\+Font\+Ptr \&font) override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_canvas_a94153d28cb1929ed9783982bad19fd15}{Assets\+Loaded}} () override
+\item 
+int \mbox{\hyperlink{class_i_graphics_canvas_a56065396ec671b7e08d475c7770dd123}{Alpha\+Channel}} () const override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_canvas_ae1b64aa8fdbb73fe1f4389448bcbb4d1}{Flipped\+Bitmap}} () const override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_ae18effee7f26740c079bb34821cd5a57}{Get\+Layer\+Bitmap\+Data}} (const \mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&layer, \mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&data) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_af6815a4819c949cf7baf0709293197b6}{Apply\+Shadow\+Mask}} (\mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&layer, \mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&mask, const \mbox{\hyperlink{struct_i_shadow}{I\+Shadow}} \&shadow) override
+\item 
+float \mbox{\hyperlink{class_i_graphics_canvas_a19620f83565a747a2b54adec5aff99b0}{Do\+Measure\+Text}} (const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&text, const char $\ast$str, \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds) const override
+\item 
+void \mbox{\hyperlink{class_i_graphics_canvas_af2588255ad2390487501db256ef1cc08}{Do\+Draw\+Text}} (const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&text, const char $\ast$str, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} draw class H\+T\+M\+L5 canvas 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_graphics_canvas_a56065396ec671b7e08d475c7770dd123}\label{class_i_graphics_canvas_a56065396ec671b7e08d475c7770dd123}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!AlphaChannel@{AlphaChannel}}
+\index{AlphaChannel@{AlphaChannel}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{AlphaChannel()}{AlphaChannel()}}
+{\footnotesize\ttfamily int I\+Graphics\+Canvas\+::\+Alpha\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+int The index of the alpha component in a drawing backend\textquotesingle{}s pixel (R\+G\+BA or A\+R\+GB) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a42d34a154fd59b2b9ffdb818c358defc}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_af6815a4819c949cf7baf0709293197b6}\label{class_i_graphics_canvas_af6815a4819c949cf7baf0709293197b6}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!ApplyShadowMask@{ApplyShadowMask}}
+\index{ApplyShadowMask@{ApplyShadowMask}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{ApplyShadowMask()}{ApplyShadowMask()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Apply\+Shadow\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&}]{layer,  }\item[{\mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&}]{mask,  }\item[{const \mbox{\hyperlink{struct_i_shadow}{I\+Shadow}} \&}]{shadow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implemented by a graphics backend to apply a calculated shadow mask to a layer, according to the shadow settings specified 
+\begin{DoxyParams}{Parameters}
+{\em layer} & The layer to apply the shadow to \\
+\hline
+{\em mask} & The mask of the shadow as raw bitmap data \\
+\hline
+{\em shadow} & The shadow specification \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a62bbfa473b05138994e220cf24afdf3f}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a94153d28cb1929ed9783982bad19fd15}\label{class_i_graphics_canvas_a94153d28cb1929ed9783982bad19fd15}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!AssetsLoaded@{AssetsLoaded}}
+\index{AssetsLoaded@{AssetsLoaded}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{AssetsLoaded()}{AssetsLoaded()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Canvas\+::\+Assets\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Specialized in \mbox{\hyperlink{class_i_graphics_canvas}{I\+Graphics\+Canvas}} drawing backend 
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a5aef76c90b25e6acfad95ba94234ed84}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a162e493fcca1427cc180c85186bf90fe}\label{class_i_graphics_canvas_a162e493fcca1427cc180c85186bf90fe}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!BitmapExtSupported@{BitmapExtSupported}}
+\index{BitmapExtSupported@{BitmapExtSupported}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{BitmapExtSupported()}{BitmapExtSupported()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Canvas\+::\+Bitmap\+Ext\+Supported (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks a file extension and reports whether this drawing A\+PI supports loading that extension 
+
+Implements \mbox{\hyperlink{class_i_graphics_a7eb2eac86a838af6e6f85cd2242043d4}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_adb93a773da3026af635dca0d979cb30c}\label{class_i_graphics_canvas_adb93a773da3026af635dca0d979cb30c}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!CreateAPIBitmap@{CreateAPIBitmap}}
+\index{CreateAPIBitmap@{CreateAPIBitmap}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{CreateAPIBitmap()}{CreateAPIBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ I\+Graphics\+Canvas\+::\+Create\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{float}]{scale,  }\item[{double}]{draw\+Scale,  }\item[{bool}]{cacheable = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Creates a new A\+PI bitmap, either in memory or as a G\+PU texture 
+\begin{DoxyParams}{Parameters}
+{\em width} & The desired width \\
+\hline
+{\em height} & The desired height \\
+\hline
+{\em scale} & The scale in relation to 1\+:1 pixels \\
+\hline
+{\em draw\+Scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000083}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em cacheable} & Used to make sure the underlying bitmap can be shared between plug-\/in instances \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+P\+I\+Bitmap$\ast$ The new A\+PI \mbox{\hyperlink{class_i_graphics_canvas_1_1_bitmap}{Bitmap}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_af9c6805802f1c599313041a5a79f59b6}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_af2588255ad2390487501db256ef1cc08}\label{class_i_graphics_canvas_af2588255ad2390487501db256ef1cc08}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!DoDrawText@{DoDrawText}}
+\index{DoDrawText@{DoDrawText}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{DoDrawText()}{DoDrawText()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Do\+Draw\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&}]{text,  }\item[{const char $\ast$}]{str,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000097}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000098}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000099}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000100}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Blend} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000101}{Todo}}]\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_abfee1fdc10a629de6ef03cad85ad5a65}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a19620f83565a747a2b54adec5aff99b0}\label{class_i_graphics_canvas_a19620f83565a747a2b54adec5aff99b0}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!DoMeasureText@{DoMeasureText}}
+\index{DoMeasureText@{DoMeasureText}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{DoMeasureText()}{DoMeasureText()}}
+{\footnotesize\ttfamily float I\+Graphics\+Canvas\+::\+Do\+Measure\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&}]{text,  }\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000093}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000094}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000095}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000096}{Todo}}]\end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+The width of the text 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a056c8ae37821338c32091e6b228429a9}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_afe2d7bfcef6daad88f26d98834eedff1}\label{class_i_graphics_canvas_afe2d7bfcef6daad88f26d98834eedff1}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!DrawBitmap@{DrawBitmap}}
+\index{DrawBitmap@{DrawBitmap}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{DrawBitmap()}{DrawBitmap()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Draw\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&}]{bitmap,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{int}]{srcX,  }\item[{int}]{srcY,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw a bitmap (raster) image to the graphics context 
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap image to draw to the graphics context \\
+\hline
+{\em bounds} & The rectangular region to draw the image in \\
+\hline
+{\em srcX} & The X offset in the source image to draw from \\
+\hline
+{\em srcY} & The Y offset in the source image to draw from \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_afea2763c96575af7140d644e4d748299}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a36ae9a23aff18af8d22495c91f6860be}\label{class_i_graphics_canvas_a36ae9a23aff18af8d22495c91f6860be}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!DrawResize@{DrawResize}}
+\index{DrawResize@{DrawResize}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{DrawResize()}{DrawResize()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Draw\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000074}{Todo}}]\end{DoxyRefDesc}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_ae1b64aa8fdbb73fe1f4389448bcbb4d1}\label{class_i_graphics_canvas_ae1b64aa8fdbb73fe1f4389448bcbb4d1}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!FlippedBitmap@{FlippedBitmap}}
+\index{FlippedBitmap@{FlippedBitmap}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{FlippedBitmap()}{FlippedBitmap()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Canvas\+::\+Flipped\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+bool {\ttfamily true} if the drawing backend flips images (e.\+g. Open\+GL) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_ab07c25e58a1fdfd6acce197bf0805ec0}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a287f844e20a8c611d2ee853cd2367e57}\label{class_i_graphics_canvas_a287f844e20a8c611d2ee853cd2367e57}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!GetDrawContext@{GetDrawContext}}
+\index{GetDrawContext@{GetDrawContext}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{GetDrawContext()}{GetDrawContext()}}
+{\footnotesize\ttfamily void$\ast$ I\+Graphics\+Canvas\+::\+Get\+Draw\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets a void pointer to underlying drawing context, for the \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} backend See draw class implementation headers (e.\+g. \mbox{\hyperlink{_i_graphics_nano_v_g_8h_source}{I\+Graphics\+Nano\+V\+G.\+h}}) for what you can cast the void pointer to 
+
+Implements \mbox{\hyperlink{class_i_graphics_ae2761ff1cedc86acf4b0a73a6634cbc4}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_acc99afa0c3ffef53121f13539f050162}\label{class_i_graphics_canvas_acc99afa0c3ffef53121f13539f050162}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!GetDrawingAPIStr@{GetDrawingAPIStr}}
+\index{GetDrawingAPIStr@{GetDrawingAPIStr}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{GetDrawingAPIStr()}{GetDrawingAPIStr()}}
+{\footnotesize\ttfamily const char$\ast$ I\+Graphics\+Canvas\+::\+Get\+Drawing\+A\+P\+I\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+A C\+String representing the Drawing A\+PI in use e.\+g. \char`\"{}\+Nano\+V\+G\char`\"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_ab2d20e544f14c4a14fde3a3391936511}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_ae18effee7f26740c079bb34821cd5a57}\label{class_i_graphics_canvas_ae18effee7f26740c079bb34821cd5a57}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!GetLayerBitmapData@{GetLayerBitmapData}}
+\index{GetLayerBitmapData@{GetLayerBitmapData}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{GetLayerBitmapData()}{GetLayerBitmapData()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Get\+Layer\+Bitmap\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&}]{layer,  }\item[{\mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Get the contents of a layer as Raw R\+G\+BA bitmap data N\+O\+TE\+: you should only call this within \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control\+::\+Draw()}} 
+\begin{DoxyParams}{Parameters}
+{\em layer} & The layer to get the data from \\
+\hline
+{\em data} & The pixel data extracted from the layer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a8c93b8a237c99caf10a0281cc97e0327}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a9edc604393491c8592a6c7c37c57df41}\label{class_i_graphics_canvas_a9edc604393491c8592a6c7c37c57df41}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_color}{I\+Color}} I\+Graphics\+Canvas\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the color at an X, Y location in the graphics context 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the pixel \\
+\hline
+{\em y} & The Y coordinate of the pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{struct_i_color}{I\+Color}} specifiying the color of the pixel at x, y 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a1e1b75ade14fcae02d24262caa63757d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a2c03ebfe575b5932ed4506b70ea8a0f9}\label{class_i_graphics_canvas_a2c03ebfe575b5932ed4506b70ea8a0f9}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!LoadAPIBitmap@{LoadAPIBitmap}}
+\index{LoadAPIBitmap@{LoadAPIBitmap}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{LoadAPIBitmap()}{LoadAPIBitmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ I\+Graphics\+Canvas\+::\+Load\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name\+Or\+Res\+ID,  }\item[{int}]{scale,  }\item[{E\+Resource\+Location}]{location,  }\item[{const char $\ast$}]{ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Drawing A\+PI method to load a bitmap, called internally 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name\+Or\+Res\+ID} & A C\+String absolute path or resource ID \\
+\hline
+{\em scale} & Integer to identify the scale of the resource, for multi-\/scale bitmaps \\
+\hline
+{\em location} & Identifies the kind of resource location \\
+\hline
+{\em ext} & C\+String for the file extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+P\+I\+Bitmap$\ast$ Drawing A\+PI bitmap abstraction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a8df2d625ee7352532f79a45c85e78491}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a0ebd3f70754d4331a250c90d2d126426}\label{class_i_graphics_canvas_a0ebd3f70754d4331a250c90d2d126426}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!LoadAPIBitmap@{LoadAPIBitmap}}
+\index{LoadAPIBitmap@{LoadAPIBitmap}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{LoadAPIBitmap()}{LoadAPIBitmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ I\+Graphics\+Canvas\+::\+Load\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const void $\ast$}]{p\+Data,  }\item[{int}]{data\+Size,  }\item[{int}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Drawing A\+PI method to load a bitmap from binary data, called internally 
+\begin{DoxyParams}{Parameters}
+{\em name} & C\+String for the name of the resource \\
+\hline
+{\em p\+Data} & Raw pointer to the binary data \\
+\hline
+{\em data\+Size} & Size of the data in bytes \\
+\hline
+{\em scale} & Integer to identify the scale of the resource, for multi-\/scale bitmaps \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+P\+I\+Bitmap$\ast$ Drawing A\+PI bitmap abstraction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_abbbe20e625e34cd74b752db6be018e41}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a0d751ab333800b2e7dc5925f23a5c535}\label{class_i_graphics_canvas_a0d751ab333800b2e7dc5925f23a5c535}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!LoadAPIFont@{LoadAPIFont}}
+\index{LoadAPIFont@{LoadAPIFont}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{LoadAPIFont()}{LoadAPIFont()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Canvas\+::\+Load\+A\+P\+I\+Font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font\+ID,  }\item[{const Platform\+Font\+Ptr \&}]{font }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Drawing A\+PI method to load a font from a Platform\+Font\+Ptr, called internally 
+\begin{DoxyParams}{Parameters}
+{\em font\+ID} & A C\+String that will be used to reference the font \\
+\hline
+{\em font} & Valid Platform\+Font\+Ptr, loaded via Load\+Platform\+Font \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool {\ttfamily true} if the font was loaded successfully 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_ab6cbb9c4ec9e06b0ba49bb04369f51d8}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a29e644327aa2c4bf89e8b51e7a391a06}\label{class_i_graphics_canvas_a29e644327aa2c4bf89e8b51e7a391a06}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathArc@{PathArc}}
+\index{PathArc@{PathArc}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathArc()}{PathArc()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Arc (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{r,  }\item[{float}]{a1,  }\item[{float}]{a2,  }\item[{E\+Winding}]{winding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add an arc to the current path 
+\begin{DoxyParams}{Parameters}
+{\em cx} & The X coordinate of the centre of the circle on which the arc lies \\
+\hline
+{\em cy} & The Y coordinate of the centre of the circle on which the arc lies \\
+\hline
+{\em r} & The radius of the circle on which the arc lies \\
+\hline
+{\em a1} & the start angle of the arc at in degrees clockwise where 0 is up \\
+\hline
+{\em a2} & the end angle of the arc at in degrees clockwise where 0 is up \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_aafdafe42c5a776a8aeadd4c1aeb87bd9}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a2f73a6681254c30875712873197676e9}\label{class_i_graphics_canvas_a2f73a6681254c30875712873197676e9}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathClear@{PathClear}}
+\index{PathClear@{PathClear}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathClear()}{PathClear()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Clear the stack of path drawing commands 
+
+Implements \mbox{\hyperlink{class_i_graphics_a1e8d0d9c4f7f680827abe7db265af82d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a58572b391957c86146f59c5cba776558}\label{class_i_graphics_canvas_a58572b391957c86146f59c5cba776558}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathClose@{PathClose}}
+\index{PathClose@{PathClose}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathClose()}{PathClose()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close the path that is being specified. 
+
+Implements \mbox{\hyperlink{class_i_graphics_a24d5d28f2e0ccb1ecd64e59088c74f72}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a444a41f7dc891180ae58f7a067766c9b}\label{class_i_graphics_canvas_a444a41f7dc891180ae58f7a067766c9b}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathCubicBezierTo@{PathCubicBezierTo}}
+\index{PathCubicBezierTo@{PathCubicBezierTo}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathCubicBezierTo()}{PathCubicBezierTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Cubic\+Bezier\+To (\begin{DoxyParamCaption}\item[{float}]{c1x,  }\item[{float}]{c1y,  }\item[{float}]{c2x,  }\item[{float}]{c2y,  }\item[{float}]{x2,  }\item[{float}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add a cubic bezier to the current path from the current point to the specified location 
+\begin{DoxyParams}{Parameters}
+{\em c1x} & \mbox{\hyperlink{struct_control}{Control}} point 1 X coordinate \\
+\hline
+{\em c1y} & \mbox{\hyperlink{struct_control}{Control}} point 1 Y coordinate \\
+\hline
+{\em c2x} & \mbox{\hyperlink{struct_control}{Control}} point 2 X coordinate \\
+\hline
+{\em c2y} & \mbox{\hyperlink{struct_control}{Control}} point 2 Y coordinate \\
+\hline
+{\em x2} & The X coordinate of the end of the line \\
+\hline
+{\em y2} & The Y coordinate of the end of the line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_aed5ddf9b2290dd9a6c5cfad5153adb4d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a935849179c416d470c7997c08bb44a71}\label{class_i_graphics_canvas_a935849179c416d470c7997c08bb44a71}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathFill@{PathFill}}
+\index{PathFill@{PathFill}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathFill()}{PathFill()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Fill (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&}]{pattern,  }\item[{const \mbox{\hyperlink{struct_i_fill_options}{I\+Fill\+Options}} \&}]{options,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Fill the current current path 
+\begin{DoxyParams}{Parameters}
+{\em pattern} & The \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} to use, for e.\+g. color or gradient \\
+\hline
+{\em options} & Optional \mbox{\hyperlink{struct_i_fill_options}{I\+Fill\+Options}} to specify fill rule and preserve options \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a185b056c70c54319c85c72246cd79458}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a9bc54a297a06bea5521898e45042e1bc}\label{class_i_graphics_canvas_a9bc54a297a06bea5521898e45042e1bc}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathLineTo@{PathLineTo}}
+\index{PathLineTo@{PathLineTo}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathLineTo()}{PathLineTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Line\+To (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add a line to the current path from the current point to the specified location 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the end of the line \\
+\hline
+{\em y} & The Y coordinate of the end of the line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_acd575e0411509a2fe05495ef05198a8d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a64ea26b98fd9b4fd45dfa2e2bf2d82d2}\label{class_i_graphics_canvas_a64ea26b98fd9b4fd45dfa2e2bf2d82d2}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathMoveTo@{PathMoveTo}}
+\index{PathMoveTo@{PathMoveTo}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathMoveTo()}{PathMoveTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Move\+To (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move the current point in the current path 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate \\
+\hline
+{\em y} & The Y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_aafa78e8658ed993d876cbb4d91397043}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_a0451480e9223afe2a479f67058e9785d}\label{class_i_graphics_canvas_a0451480e9223afe2a479f67058e9785d}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathQuadraticBezierTo@{PathQuadraticBezierTo}}
+\index{PathQuadraticBezierTo@{PathQuadraticBezierTo}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathQuadraticBezierTo()}{PathQuadraticBezierTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Quadratic\+Bezier\+To (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{x2,  }\item[{float}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add a quadratic bezier to the current path from the current point to the specified location 
+\begin{DoxyParams}{Parameters}
+{\em cx} & \mbox{\hyperlink{struct_control}{Control}} point X coordinate \\
+\hline
+{\em cy} & \mbox{\hyperlink{struct_control}{Control}} point Y coordinate \\
+\hline
+{\em x2} & The X coordinate of the end of the line \\
+\hline
+{\em y2} & The Y coordinate of the end of the line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_abd5b91fd7f7dd8784b4bf01fbf91da55}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_canvas_aad3ff1efd75ac0665818a146340e8727}\label{class_i_graphics_canvas_aad3ff1efd75ac0665818a146340e8727}} 
+\index{IGraphicsCanvas@{IGraphicsCanvas}!PathStroke@{PathStroke}}
+\index{PathStroke@{PathStroke}!IGraphicsCanvas@{IGraphicsCanvas}}
+\doxysubsubsection{\texorpdfstring{PathStroke()}{PathStroke()}}
+{\footnotesize\ttfamily void I\+Graphics\+Canvas\+::\+Path\+Stroke (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&}]{pattern,  }\item[{float}]{thickness,  }\item[{const \mbox{\hyperlink{struct_i_stroke_options}{I\+Stroke\+Options}} \&}]{options,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stroke the current current path 
+\begin{DoxyParams}{Parameters}
+{\em pattern} & The \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} to use, for e.\+g. color or gradient \\
+\hline
+{\em thickness} & The line thickness \\
+\hline
+{\em options} & Optional \mbox{\hyperlink{struct_i_stroke_options}{I\+Stroke\+Options}} to specify dash, join and path preserve options \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a5b28bcb1e3e7e72307ceee71ab7fbb5a}{I\+Graphics}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Drawing/I\+Graphics\+Canvas.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Drawing/I\+Graphics\+Canvas.\+cpp\end{DoxyCompactItemize}

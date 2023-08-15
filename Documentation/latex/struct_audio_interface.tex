@@ -1,0 +1,168 @@
+\hypertarget{struct_audio_interface}{}\doxysection{Audio\+Interface Struct Reference}
+\label{struct_audio_interface}\index{AudioInterface@{AudioInterface}}
+
+
+{\ttfamily \#include $<$alsa-\/dsp.\+h$>$}
+
+Inheritance diagram for Audio\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_audio_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_afb422bb2c00935f7b45e1def744dfb67}\label{struct_audio_interface_afb422bb2c00935f7b45e1def744dfb67}} 
+const char $\ast$ {\bfseries card\+Name} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a6480f41caffba05810117b4f2eed6de6}\label{struct_audio_interface_a6480f41caffba05810117b4f2eed6de6}} 
+int {\bfseries frequency} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_ae989897e3feb76122b5db2b559729e5a}\label{struct_audio_interface_ae989897e3feb76122b5db2b559729e5a}} 
+int {\bfseries buffering} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a5a5eda2ad579e07baed941ac731d8cf8}\label{struct_audio_interface_a5a5eda2ad579e07baed941ac731d8cf8}} 
+int {\bfseries periods} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a7fbba88efba73566fac360eeaec1cf15}\label{struct_audio_interface_a7fbba88efba73566fac360eeaec1cf15}} 
+float $\ast$$\ast$ {\bfseries input\+Soft\+Channels} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_aa5dbb4a0f373fb9588ad79b34d485f69}\label{struct_audio_interface_aa5dbb4a0f373fb9588ad79b34d485f69}} 
+float $\ast$$\ast$ {\bfseries output\+Soft\+Channels} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a663a2ef4bb5fc99dcecd6afec6642775}\label{struct_audio_interface_a663a2ef4bb5fc99dcecd6afec6642775}} 
+bool {\bfseries duplex\+Mode} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_ad18d13ed1cdff4d43014eab9704f98e3}\label{struct_audio_interface_ad18d13ed1cdff4d43014eab9704f98e3}} 
+{\bfseries Audio\+Interface} (const \mbox{\hyperlink{struct_audio_param}{Audio\+Param}} \&ap=\mbox{\hyperlink{struct_audio_param}{Audio\+Param}}())
+\item 
+void \mbox{\hyperlink{struct_audio_interface_af879263299342c9c0c52a2deb906f40e}{open}} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a0547eddfdbc11b311e1cb283a6b7ca95}\label{struct_audio_interface_a0547eddfdbc11b311e1cb283a6b7ca95}} 
+void {\bfseries set\+Audio\+Params} (snd\+\_\+pcm\+\_\+t $\ast$stream, snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+t $\ast$params)
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a9e24abbc9af20fedd2cf793eeb14aac6}\label{struct_audio_interface_a9e24abbc9af20fedd2cf793eeb14aac6}} 
+ssize\+\_\+t {\bfseries interleaved\+Buffer\+Size} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+t $\ast$params)
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a3331444bb1493f4b50e27fd665057525}\label{struct_audio_interface_a3331444bb1493f4b50e27fd665057525}} 
+ssize\+\_\+t {\bfseries noninterleaved\+Buffer\+Size} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+t $\ast$params)
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a6d361612b36de63f5ae9b212c3da09ed}\label{struct_audio_interface_a6d361612b36de63f5ae9b212c3da09ed}} 
+void {\bfseries close} ()
+\item 
+void \mbox{\hyperlink{struct_audio_interface_a7cd67405014d0dcb2d383cd567288a80}{read}} ()
+\item 
+void \mbox{\hyperlink{struct_audio_interface_a259fe2382e2430a7bcfc6df2854f7c5f}{write}} ()
+\item 
+void \mbox{\hyperlink{struct_audio_interface_af3bd5a6fbeb658c842cc97fd36d8c7fe}{shortinfo}} ()
+\item 
+void \mbox{\hyperlink{struct_audio_interface_a940352809b2055b5c3457e2b8b4ebbca}{longinfo}} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a3beb31d998881b2f10d5d6d24bfa6c52}\label{struct_audio_interface_a3beb31d998881b2f10d5d6d24bfa6c52}} 
+void {\bfseries print\+Card\+Info} (snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+t $\ast$ci)
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a989cdea6e22c4c9e26e08cc5d4bf7bb7}\label{struct_audio_interface_a989cdea6e22c4c9e26e08cc5d4bf7bb7}} 
+void {\bfseries print\+H\+W\+Params} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+t $\ast$params)
+\item 
+\mbox{\Hypertarget{struct_audio_interface_aa74f6eccf65dcb6359142fe3845abc4d}\label{struct_audio_interface_aa74f6eccf65dcb6359142fe3845abc4d}} 
+int {\bfseries get\+Num\+Inputs} ()
+\item 
+\mbox{\Hypertarget{struct_audio_interface_aa912200c5f61fd8fec33ab1d656ed983}\label{struct_audio_interface_aa912200c5f61fd8fec33ab1d656ed983}} 
+int {\bfseries get\+Num\+Outputs} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a8180e379b7dfb651ce3440b810cb336d}\label{struct_audio_interface_a8180e379b7dfb651ce3440b810cb336d}} 
+snd\+\_\+pcm\+\_\+t $\ast$ {\bfseries f\+Output\+Device}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_ac59db8a6c98277fa8399a47fd8ffdde8}\label{struct_audio_interface_ac59db8a6c98277fa8399a47fd8ffdde8}} 
+snd\+\_\+pcm\+\_\+t $\ast$ {\bfseries f\+Input\+Device}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a857adc93e04f7e2de06658c065570a9c}\label{struct_audio_interface_a857adc93e04f7e2de06658c065570a9c}} 
+snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+t $\ast$ {\bfseries f\+Input\+Params}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_aeaf1c577053ae340ded1c66843e4df43}\label{struct_audio_interface_aeaf1c577053ae340ded1c66843e4df43}} 
+snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+t $\ast$ {\bfseries f\+Output\+Params}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a98be922909b29e53f06c4e6d1ea9387d}\label{struct_audio_interface_a98be922909b29e53f06c4e6d1ea9387d}} 
+snd\+\_\+pcm\+\_\+format\+\_\+t {\bfseries f\+Sample\+Format}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a4848c41a37a8ecd196dcb727c6b7e0bb}\label{struct_audio_interface_a4848c41a37a8ecd196dcb727c6b7e0bb}} 
+snd\+\_\+pcm\+\_\+access\+\_\+t {\bfseries f\+Sample\+Access}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a52b22c7a90cd9f0c92ac32fd21ed6409}\label{struct_audio_interface_a52b22c7a90cd9f0c92ac32fd21ed6409}} 
+unsigned int {\bfseries f\+Card\+Inputs}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a3cf4ab5392883286f252f70ea2a9b130}\label{struct_audio_interface_a3cf4ab5392883286f252f70ea2a9b130}} 
+unsigned int {\bfseries f\+Card\+Outputs}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a51f57a48b5da548df83504016f447461}\label{struct_audio_interface_a51f57a48b5da548df83504016f447461}} 
+unsigned int {\bfseries f\+Chan\+Inputs}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a67e9eac1f0cf194cef67dcefc1172329}\label{struct_audio_interface_a67e9eac1f0cf194cef67dcefc1172329}} 
+unsigned int {\bfseries f\+Chan\+Outputs}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a5742e8937b8e36cc4e7fb26175cf4772}\label{struct_audio_interface_a5742e8937b8e36cc4e7fb26175cf4772}} 
+bool {\bfseries f\+Duplex\+Mode}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_ab01d049a77878e2427d1c458d957e524}\label{struct_audio_interface_ab01d049a77878e2427d1c458d957e524}} 
+void $\ast$ {\bfseries f\+Input\+Card\+Buffer}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a559489f700deffbd96bc2fe965e2f64f}\label{struct_audio_interface_a559489f700deffbd96bc2fe965e2f64f}} 
+void $\ast$ {\bfseries f\+Output\+Card\+Buffer}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a9ff359a643fb416b69e405e803aba7e7}\label{struct_audio_interface_a9ff359a643fb416b69e405e803aba7e7}} 
+void $\ast$ {\bfseries f\+Input\+Card\+Channels} \mbox{[}256\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a80dc4ee3802c33932c41f2746dc1bd3c}\label{struct_audio_interface_a80dc4ee3802c33932c41f2746dc1bd3c}} 
+void $\ast$ {\bfseries f\+Output\+Card\+Channels} \mbox{[}256\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_ade350cea5a416b376fad185980fd4883}\label{struct_audio_interface_ade350cea5a416b376fad185980fd4883}} 
+float $\ast$ {\bfseries f\+Input\+Soft\+Channels} \mbox{[}256\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_audio_interface_a85ac1501904c4042dd81d670e447bb55}\label{struct_audio_interface_a85ac1501904c4042dd81d670e447bb55}} 
+float $\ast$ {\bfseries f\+Output\+Soft\+Channels} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An A\+L\+SA audio interface 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_audio_interface_a940352809b2055b5c3457e2b8b4ebbca}\label{struct_audio_interface_a940352809b2055b5c3457e2b8b4ebbca}} 
+\index{AudioInterface@{AudioInterface}!longinfo@{longinfo}}
+\index{longinfo@{longinfo}!AudioInterface@{AudioInterface}}
+\doxysubsubsection{\texorpdfstring{longinfo()}{longinfo()}}
+{\footnotesize\ttfamily void Audio\+Interface\+::longinfo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+print more detailled information on the audio device \mbox{\Hypertarget{struct_audio_interface_af879263299342c9c0c52a2deb906f40e}\label{struct_audio_interface_af879263299342c9c0c52a2deb906f40e}} 
+\index{AudioInterface@{AudioInterface}!open@{open}}
+\index{open@{open}!AudioInterface@{AudioInterface}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Audio\+Interface\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Open the audio interface \mbox{\Hypertarget{struct_audio_interface_a7cd67405014d0dcb2d383cd567288a80}\label{struct_audio_interface_a7cd67405014d0dcb2d383cd567288a80}} 
+\index{AudioInterface@{AudioInterface}!read@{read}}
+\index{read@{read}!AudioInterface@{AudioInterface}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Audio\+Interface\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Read audio samples from the audio card. Convert samples to floats and take care of interleaved buffers \mbox{\Hypertarget{struct_audio_interface_af3bd5a6fbeb658c842cc97fd36d8c7fe}\label{struct_audio_interface_af3bd5a6fbeb658c842cc97fd36d8c7fe}} 
+\index{AudioInterface@{AudioInterface}!shortinfo@{shortinfo}}
+\index{shortinfo@{shortinfo}!AudioInterface@{AudioInterface}}
+\doxysubsubsection{\texorpdfstring{shortinfo()}{shortinfo()}}
+{\footnotesize\ttfamily void Audio\+Interface\+::shortinfo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+print short information on the audio device \mbox{\Hypertarget{struct_audio_interface_a259fe2382e2430a7bcfc6df2854f7c5f}\label{struct_audio_interface_a259fe2382e2430a7bcfc6df2854f7c5f}} 
+\index{AudioInterface@{AudioInterface}!write@{write}}
+\index{write@{write}!AudioInterface@{AudioInterface}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Audio\+Interface\+::write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+write the output soft channels to the audio card. Convert sample format and interleaves buffers when needed 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/audio/alsa-\/dsp.\+h\end{DoxyCompactItemize}

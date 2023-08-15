@@ -1,0 +1,160 @@
+\hypertarget{class_i_plug_a_p_p}{}\doxysection{I\+Plug\+A\+PP Class Reference}
+\label{class_i_plug_a_p_p}\index{IPlugAPP@{IPlugAPP}}
+
+
+{\ttfamily \#include $<$I\+Plug\+A\+P\+P.\+h$>$}
+
+Inheritance diagram for I\+Plug\+A\+PP\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_i_plug_a_p_p}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_a_p_p_a366fc054630eb16e50c697ee9461e226}\label{class_i_plug_a_p_p_a366fc054630eb16e50c697ee9461e226}} 
+{\bfseries I\+Plug\+A\+PP} (const \mbox{\hyperlink{struct_instance_info}{Instance\+Info}} \&info, const \mbox{\hyperlink{struct_config}{Config}} \&\mbox{\hyperlink{structconfig__s}{config}})
+\item 
+void \mbox{\hyperlink{class_i_plug_a_p_p_aca20386ac0a0b4bc247988fca4127097}{Begin\+Inform\+Host\+Of\+Param\+Change}} (int idx) override
+\item 
+void \mbox{\hyperlink{class_i_plug_a_p_p_a8c7e09a360cd0e5fbee5597aeda25d67}{Inform\+Host\+Of\+Param\+Change}} (int idx, double normalized\+Value) override
+\item 
+void \mbox{\hyperlink{class_i_plug_a_p_p_aa2e2e0f0d1e2cfdbae8dda791eb27b39}{End\+Inform\+Host\+Of\+Param\+Change}} (int idx) override
+\item 
+void \mbox{\hyperlink{class_i_plug_a_p_p_abdcef0ce032a0c77aad14f9b9aee1e5b}{Inform\+Host\+Of\+Preset\+Change}} () override
+\item 
+bool \mbox{\hyperlink{class_i_plug_a_p_p_a8bf854849bfa0eaa365b4e665548cd80}{Editor\+Resize}} (int view\+Width, int view\+Height) override
+\item 
+\mbox{\Hypertarget{class_i_plug_a_p_p_aa19680d6368a7443b2f9e0e491513b42}\label{class_i_plug_a_p_p_aa19680d6368a7443b2f9e0e491513b42}} 
+void {\bfseries Send\+Sysex\+Msg\+From\+UI} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg) override
+\item 
+bool \mbox{\hyperlink{class_i_plug_a_p_p_a215e72927e405b3cf2c02ff06ed39209}{Send\+Midi\+Msg}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg) override
+\item 
+bool \mbox{\hyperlink{class_i_plug_a_p_p_a0afb62394c388ecd7654be6378c0c1f0}{Send\+Sys\+Ex}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg) override
+\item 
+\mbox{\Hypertarget{class_i_plug_a_p_p_a19bc1fde11b9fc839485716b7d21e7d0}\label{class_i_plug_a_p_p_a19bc1fde11b9fc839485716b7d21e7d0}} 
+void {\bfseries App\+Process} (double $\ast$$\ast$inputs, double $\ast$$\ast$outputs, int n\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_a_p_p_a6b2506ec5ce2a52fc338db226b889c16}\label{class_i_plug_a_p_p_a6b2506ec5ce2a52fc338db226b889c16}} 
+class {\bfseries I\+Plug\+A\+P\+P\+Host}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Standalone application base class for an I\+Plug plug-\/in 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_plug_a_p_p_aca20386ac0a0b4bc247988fca4127097}\label{class_i_plug_a_p_p_aca20386ac0a0b4bc247988fca4127097}} 
+\index{IPlugAPP@{IPlugAPP}!BeginInformHostOfParamChange@{BeginInformHostOfParamChange}}
+\index{BeginInformHostOfParamChange@{BeginInformHostOfParamChange}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{BeginInformHostOfParamChange()}{BeginInformHostOfParamChange()}}
+{\footnotesize\ttfamily void I\+Plug\+A\+P\+P\+::\+Begin\+Inform\+Host\+Of\+Param\+Change (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implemented by the A\+PI class, called by the \mbox{\hyperlink{class_u_i}{UI}} (or by a delegate) at the beginning of a parameter change gesture 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The parameter that is being changed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}}.
+
+\mbox{\Hypertarget{class_i_plug_a_p_p_a8bf854849bfa0eaa365b4e665548cd80}\label{class_i_plug_a_p_p_a8bf854849bfa0eaa365b4e665548cd80}} 
+\index{IPlugAPP@{IPlugAPP}!EditorResize@{EditorResize}}
+\index{EditorResize@{EditorResize}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{EditorResize()}{EditorResize()}}
+{\footnotesize\ttfamily bool I\+Plug\+A\+P\+P\+::\+Editor\+Resize (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implementations call into the A\+P\+Is resize hooks returns a bool to indicate whether the D\+AW or plugin class has resized the host window 
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}}.
+
+\mbox{\Hypertarget{class_i_plug_a_p_p_aa2e2e0f0d1e2cfdbae8dda791eb27b39}\label{class_i_plug_a_p_p_aa2e2e0f0d1e2cfdbae8dda791eb27b39}} 
+\index{IPlugAPP@{IPlugAPP}!EndInformHostOfParamChange@{EndInformHostOfParamChange}}
+\index{EndInformHostOfParamChange@{EndInformHostOfParamChange}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{EndInformHostOfParamChange()}{EndInformHostOfParamChange()}}
+{\footnotesize\ttfamily void I\+Plug\+A\+P\+P\+::\+End\+Inform\+Host\+Of\+Param\+Change (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implemented by the A\+PI class, called by the \mbox{\hyperlink{class_u_i}{UI}} (or by a delegate) at the end of a parameter change gesture 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The parameter that is being changed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}}.
+
+\mbox{\Hypertarget{class_i_plug_a_p_p_a8c7e09a360cd0e5fbee5597aeda25d67}\label{class_i_plug_a_p_p_a8c7e09a360cd0e5fbee5597aeda25d67}} 
+\index{IPlugAPP@{IPlugAPP}!InformHostOfParamChange@{InformHostOfParamChange}}
+\index{InformHostOfParamChange@{InformHostOfParamChange}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{InformHostOfParamChange()}{InformHostOfParamChange()}}
+{\footnotesize\ttfamily void I\+Plug\+A\+P\+P\+::\+Inform\+Host\+Of\+Param\+Change (\begin{DoxyParamCaption}\item[{int}]{param\+Idx,  }\item[{double}]{normalized\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implemented by the A\+PI class, called by the \mbox{\hyperlink{class_u_i}{UI}} via \mbox{\hyperlink{class_i_plug_a_p_i_base_aa6f6ef17fdaf1d877e783eeb65c1ea7a}{Set\+Parameter\+Value()}} with the value of a parameter change gesture 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The parameter that is being changed \\
+\hline
+{\em normalized\+Value} & The new normalised value of the parameter being changed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}}.
+
+\mbox{\Hypertarget{class_i_plug_a_p_p_abdcef0ce032a0c77aad14f9b9aee1e5b}\label{class_i_plug_a_p_p_abdcef0ce032a0c77aad14f9b9aee1e5b}} 
+\index{IPlugAPP@{IPlugAPP}!InformHostOfPresetChange@{InformHostOfPresetChange}}
+\index{InformHostOfPresetChange@{InformHostOfPresetChange}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{InformHostOfPresetChange()}{InformHostOfPresetChange()}}
+{\footnotesize\ttfamily void I\+Plug\+A\+P\+P\+::\+Inform\+Host\+Of\+Preset\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implemented by the A\+PI class, called by the \mbox{\hyperlink{class_u_i}{UI}} (etc) when the plug-\/in initiates a program/preset change (not applicable to all A\+P\+Is) 
+
+Reimplemented from \mbox{\hyperlink{class_i_plugin_base_a76e63793d667abfad1510cf55a56906d}{I\+Plugin\+Base}}.
+
+\mbox{\Hypertarget{class_i_plug_a_p_p_a215e72927e405b3cf2c02ff06ed39209}\label{class_i_plug_a_p_p_a215e72927e405b3cf2c02ff06ed39209}} 
+\index{IPlugAPP@{IPlugAPP}!SendMidiMsg@{SendMidiMsg}}
+\index{SendMidiMsg@{SendMidiMsg}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsg()}{SendMidiMsg()}}
+{\footnotesize\ttfamily bool I\+Plug\+A\+P\+P\+::\+Send\+Midi\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send a single M\+I\+DI message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_plug_processor_a4e9b417cee5b4baba70468cb15d927c3}{I\+Plug\+Processor}}.
+
+\mbox{\Hypertarget{class_i_plug_a_p_p_a0afb62394c388ecd7654be6378c0c1f0}\label{class_i_plug_a_p_p_a0afb62394c388ecd7654be6378c0c1f0}} 
+\index{IPlugAPP@{IPlugAPP}!SendSysEx@{SendSysEx}}
+\index{SendSysEx@{SendSysEx}!IPlugAPP@{IPlugAPP}}
+\doxysubsubsection{\texorpdfstring{SendSysEx()}{SendSysEx()}}
+{\footnotesize\ttfamily bool I\+Plug\+A\+P\+P\+::\+Send\+Sys\+Ex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send a single M\+I\+DI System Exclusive (Sys\+Ex) message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_processor_a195e1f95d847cfb5d5cc665b2143d10a}{I\+Plug\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+A\+P\+P/\mbox{\hyperlink{_i_plug_a_p_p_8h}{I\+Plug\+A\+P\+P.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+A\+P\+P/I\+Plug\+A\+P\+P.\+cpp\end{DoxyCompactItemize}

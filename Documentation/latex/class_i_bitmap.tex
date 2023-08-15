@@ -1,0 +1,166 @@
+\hypertarget{class_i_bitmap}{}\doxysection{I\+Bitmap Class Reference}
+\label{class_i_bitmap}\index{IBitmap@{IBitmap}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Structs.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_bitmap_ae027d6a3f2d712eb6e636a5d4a14d7cf}{I\+Bitmap}} (\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$p\+A\+P\+I\+Bitmap, int n, bool frames\+Are\+Horizontal, const char $\ast$name=\char`\"{}\char`\"{})
+\item 
+int \mbox{\hyperlink{class_i_bitmap_a04ab741b9052cab58021ca135f23a083}{W}} () const
+\item 
+int \mbox{\hyperlink{class_i_bitmap_a81bface3c9e2401aea5ae65b1cf80bdc}{H}} () const
+\item 
+int \mbox{\hyperlink{class_i_bitmap_a9e1a1690c11e510b06cf498beeb4a989}{FW}} () const
+\item 
+int \mbox{\hyperlink{class_i_bitmap_a43f7928576addbd80de0e7464117447b}{FH}} () const
+\item 
+int \mbox{\hyperlink{class_i_bitmap_a34aaabcfb1188f201fb8093fe655bc02}{N}} () const
+\item 
+float \mbox{\hyperlink{class_i_bitmap_a70a3b8059f0cdb99073e8dd351926332}{Get\+Scale}} () const
+\item 
+float \mbox{\hyperlink{class_i_bitmap_a4c57db9b0c37ce72338668be8e663497}{Get\+Draw\+Scale}} () const
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_bitmap_aae6e181f7da007b4947a621b97aa3938}{Get\+A\+P\+I\+Bitmap}} () const
+\item 
+bool \mbox{\hyperlink{class_i_bitmap_a300cbf13f704e225a7f20cbd00dd9003}{Get\+Frames\+Are\+Horizontal}} () const
+\item 
+const \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \& \mbox{\hyperlink{class_i_bitmap_af73eabc22a460e116b7844dde9d50728}{Get\+Resource\+Name}} () const
+\item 
+bool \mbox{\hyperlink{class_i_bitmap_af95fd617b3839841ac5c15ad9540576f}{Is\+Valid}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+User-\/facing bitmap abstraction that you use to manage bitmap data, independant of draw class/platform. \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} doesn\textquotesingle{}t actually own the image data \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} An \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}}\textquotesingle{}s width and height are always in relation to a 1\+:1 (low dpi) screen. Any scaling happens at the drawing stage. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_bitmap_ae027d6a3f2d712eb6e636a5d4a14d7cf}\label{class_i_bitmap_ae027d6a3f2d712eb6e636a5d4a14d7cf}} 
+\index{IBitmap@{IBitmap}!IBitmap@{IBitmap}}
+\index{IBitmap@{IBitmap}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{IBitmap()}{IBitmap()}}
+{\footnotesize\ttfamily I\+Bitmap\+::\+I\+Bitmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$}]{p\+A\+P\+I\+Bitmap,  }\item[{int}]{n,  }\item[{bool}]{frames\+Are\+Horizontal,  }\item[{const char $\ast$}]{name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} Constructor 
+\begin{DoxyParams}{Parameters}
+{\em p\+A\+P\+I\+Bitmap} & Pointer to a drawing A\+PI bitmap \\
+\hline
+{\em n} & Number of frames (for multi frame film-\/strip bitmaps) \\
+\hline
+{\em frames\+Are\+Horizontal} & frames\+Are\+Horizontal {\ttfamily true} if the frames are positioned horizontally \\
+\hline
+{\em name} & Resource name for the bitmap \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_bitmap_a43f7928576addbd80de0e7464117447b}\label{class_i_bitmap_a43f7928576addbd80de0e7464117447b}} 
+\index{IBitmap@{IBitmap}!FH@{FH}}
+\index{FH@{FH}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{FH()}{FH()}}
+{\footnotesize\ttfamily int I\+Bitmap\+::\+FH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Height of a single frame in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a9e1a1690c11e510b06cf498beeb4a989}\label{class_i_bitmap_a9e1a1690c11e510b06cf498beeb4a989}} 
+\index{IBitmap@{IBitmap}!FW@{FW}}
+\index{FW@{FW}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{FW()}{FW()}}
+{\footnotesize\ttfamily int I\+Bitmap\+::\+FW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Width of a single frame in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_aae6e181f7da007b4947a621b97aa3938}\label{class_i_bitmap_aae6e181f7da007b4947a621b97aa3938}} 
+\index{IBitmap@{IBitmap}!GetAPIBitmap@{GetAPIBitmap}}
+\index{GetAPIBitmap@{GetAPIBitmap}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{GetAPIBitmap()}{GetAPIBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}}$\ast$ I\+Bitmap\+::\+Get\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a pointer to the referenced \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a4c57db9b0c37ce72338668be8e663497}\label{class_i_bitmap_a4c57db9b0c37ce72338668be8e663497}} 
+\index{IBitmap@{IBitmap}!GetDrawScale@{GetDrawScale}}
+\index{GetDrawScale@{GetDrawScale}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{GetDrawScale()}{GetDrawScale()}}
+{\footnotesize\ttfamily float I\+Bitmap\+::\+Get\+Draw\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the draw scale of the bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a300cbf13f704e225a7f20cbd00dd9003}\label{class_i_bitmap_a300cbf13f704e225a7f20cbd00dd9003}} 
+\index{IBitmap@{IBitmap}!GetFramesAreHorizontal@{GetFramesAreHorizontal}}
+\index{GetFramesAreHorizontal@{GetFramesAreHorizontal}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{GetFramesAreHorizontal()}{GetFramesAreHorizontal()}}
+{\footnotesize\ttfamily bool I\+Bitmap\+::\+Get\+Frames\+Are\+Horizontal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+whether or not frames are stored horizontally 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_af73eabc22a460e116b7844dde9d50728}\label{class_i_bitmap_af73eabc22a460e116b7844dde9d50728}} 
+\index{IBitmap@{IBitmap}!GetResourceName@{GetResourceName}}
+\index{GetResourceName@{GetResourceName}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{GetResourceName()}{GetResourceName()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}}\& I\+Bitmap\+::\+Get\+Resource\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the resource name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a70a3b8059f0cdb99073e8dd351926332}\label{class_i_bitmap_a70a3b8059f0cdb99073e8dd351926332}} 
+\index{IBitmap@{IBitmap}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily float I\+Bitmap\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the scale of the bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a81bface3c9e2401aea5ae65b1cf80bdc}\label{class_i_bitmap_a81bface3c9e2401aea5ae65b1cf80bdc}} 
+\index{IBitmap@{IBitmap}!H@{H}}
+\index{H@{H}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{H()}{H()}}
+{\footnotesize\ttfamily int I\+Bitmap\+::H (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+overall bitmap height in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_af95fd617b3839841ac5c15ad9540576f}\label{class_i_bitmap_af95fd617b3839841ac5c15ad9540576f}} 
+\index{IBitmap@{IBitmap}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily bool I\+Bitmap\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+\textbackslash{}true if the bitmap has valid data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a34aaabcfb1188f201fb8093fe655bc02}\label{class_i_bitmap_a34aaabcfb1188f201fb8093fe655bc02}} 
+\index{IBitmap@{IBitmap}!N@{N}}
+\index{N@{N}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{N()}{N()}}
+{\footnotesize\ttfamily int I\+Bitmap\+::N (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+number of frames 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_bitmap_a04ab741b9052cab58021ca135f23a083}\label{class_i_bitmap_a04ab741b9052cab58021ca135f23a083}} 
+\index{IBitmap@{IBitmap}!W@{W}}
+\index{W@{W}!IBitmap@{IBitmap}}
+\doxysubsubsection{\texorpdfstring{W()}{W()}}
+{\footnotesize\ttfamily int I\+Bitmap\+::W (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+overall bitmap width in pixels 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Graphics\+Structs.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+\hypertarget{struct_sk_base64}{}\doxysection{Sk\+Base64 Struct Reference}
+\label{struct_sk_base64}\index{SkBase64@{SkBase64}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_base64_a5f65a8f3cb4ff9ca9719bbe13830d69f}\label{struct_sk_base64_a5f65a8f3cb4ff9ca9719bbe13830d69f}} 
+enum {\bfseries Error} \{ {\bfseries k\+No\+Error}, 
+{\bfseries k\+Pad\+Error}, 
+{\bfseries k\+Bad\+Char\+Error}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{struct_sk_base64_a9cdc50a28527fd25ee28869fd2c4f76a}{Encode}} (const void $\ast$src, size\+\_\+t length, void $\ast$dst, const char $\ast$encode=nullptr)
+\item 
+static Error S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \mbox{\hyperlink{struct_sk_base64_a08fb31b90a4bed7608dae6734c151957}{Decode}} (const void $\ast$src, size\+\_\+t src\+Length, void $\ast$dst, size\+\_\+t $\ast$dst\+Length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_sk_base64_a08fb31b90a4bed7608dae6734c151957}\label{struct_sk_base64_a08fb31b90a4bed7608dae6734c151957}} 
+\index{SkBase64@{SkBase64}!Decode@{Decode}}
+\index{Decode@{Decode}!SkBase64@{SkBase64}}
+\doxysubsubsection{\texorpdfstring{Decode()}{Decode()}}
+{\footnotesize\ttfamily Sk\+Base64\+::\+Error Sk\+Base64\+::\+Decode (\begin{DoxyParamCaption}\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{src\+Length,  }\item[{void $\ast$}]{dst,  }\item[{size\+\_\+t $\ast$}]{dst\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Base64 decodes src into dst.
+
+Normally this is called once with \textquotesingle{}dst\textquotesingle{} nullptr to get the required size, then again with an allocated \textquotesingle{}dst\textquotesingle{} pointer to do the actual encoding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & nullptr or a pointer to a buffer large enough to receive the result\\
+\hline
+{\em dst\+Length} & assigned the length dst is required to be. Must not be nullptr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_sk_base64_a9cdc50a28527fd25ee28869fd2c4f76a}\label{struct_sk_base64_a9cdc50a28527fd25ee28869fd2c4f76a}} 
+\index{SkBase64@{SkBase64}!Encode@{Encode}}
+\index{Encode@{Encode}!SkBase64@{SkBase64}}
+\doxysubsubsection{\texorpdfstring{Encode()}{Encode()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Base64\+::\+Encode (\begin{DoxyParamCaption}\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{length,  }\item[{void $\ast$}]{dst,  }\item[{const char $\ast$}]{encode = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Base64 encodes src into dst.
+
+Normally this is called once with \textquotesingle{}dst\textquotesingle{} nullptr to get the required size, then again with an allocated \textquotesingle{}dst\textquotesingle{} pointer to do the actual encoding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & nullptr or a pointer to a buffer large enough to receive the result\\
+\hline
+{\em encode} & nullptr for default encoding or a pointer to at least 65 chars. encode\mbox{[}64\mbox{]} will be used as the pad character. Encodings other than the default encoding cannot be decoded.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the required length of dst for encoding. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/utils/Sk\+Base64.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Base64.\+cpp\end{DoxyCompactItemize}

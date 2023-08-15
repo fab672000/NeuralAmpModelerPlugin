@@ -1,0 +1,75 @@
+\hypertarget{class_i_a_c_f_plugin_definition}{}\doxysection{I\+A\+C\+F\+Plugin\+Definition Interface Reference}
+\label{class_i_a_c_f_plugin_definition}\index{IACFPluginDefinition@{IACFPluginDefinition}}
+
+
+Publicly inherits from I\+A\+C\+F\+Definition.\+Provides the abstract interface for defining A\+CF plug-\/ins.  
+
+
+
+
+{\ttfamily \#include $<$acfbaseapi.\+h$>$}
+
+Inheritance diagram for I\+A\+C\+F\+Plugin\+Definition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_i_a_c_f_plugin_definition}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+C\+F\+R\+E\+S\+U\+LT A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE \mbox{\hyperlink{class_i_a_c_f_plugin_definition_ad9e66cb646b111521dd5cb124f15e2da}{Initialize\+Plugin}} (const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&uid, acf\+U\+Int32 major\+Version, acf\+U\+Int32 minor\+Version, const acf\+W\+Char $\ast$name, const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&vendor\+ID, const acf\+W\+Char $\ast$vendor\+Name, acf\+U\+Int32 component\+Count, \mbox{\hyperlink{acfbasetypes_8h_ab14f16ef9317b9c6f3b65b29b2d43ea2}{acf\+Bool}} cache\+Definition)=0
+\begin{DoxyCompactList}\small\item\em Initializes the minimum required attributes for any A\+CF plug-\/in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Publicly inherits from I\+A\+C\+F\+Definition.\+Provides the abstract interface for defining A\+CF plug-\/ins. 
+
+\begin{DoxyRemark}{Remarks}
+An object that implements this interface must be returned to the host from the A\+C\+F\+Register\+Plugin callback. This object is only valid during the registration of the plug-\/in. 
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+This interface is implemented by the host. Plug-\/in The plug-\/in will use this interface to register itself with the A\+CF host. 
+
+The components implemented by a plug-\/in are registered separately in the A\+C\+F\+Register\+Component callback. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_a_c_f_plugin_definition_ad9e66cb646b111521dd5cb124f15e2da}\label{class_i_a_c_f_plugin_definition_ad9e66cb646b111521dd5cb124f15e2da}} 
+\index{IACFPluginDefinition@{IACFPluginDefinition}!InitializePlugin@{InitializePlugin}}
+\index{InitializePlugin@{InitializePlugin}!IACFPluginDefinition@{IACFPluginDefinition}}
+\doxysubsubsection{\texorpdfstring{InitializePlugin()}{InitializePlugin()}}
+{\footnotesize\ttfamily virtual A\+C\+F\+R\+E\+S\+U\+LT A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE I\+A\+C\+F\+Plugin\+Definition\+::\+Initialize\+Plugin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&}]{uid,  }\item[{acf\+U\+Int32}]{major\+Version,  }\item[{acf\+U\+Int32}]{minor\+Version,  }\item[{const acf\+W\+Char $\ast$}]{name,  }\item[{const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&}]{vendor\+ID,  }\item[{const acf\+W\+Char $\ast$}]{vendor\+Name,  }\item[{acf\+U\+Int32}]{component\+Count,  }\item[{\mbox{\hyperlink{acfbasetypes_8h_ab14f16ef9317b9c6f3b65b29b2d43ea2}{acf\+Bool}}}]{cache\+Definition }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initializes the minimum required attributes for any A\+CF plug-\/in. 
+
+{\bfseries{Initialize\+Plugin}} \begin{DoxyRemark}{Remarks}
+This method should be called within the context of the A\+C\+F\+Register\+Plugin callback. Use the Define\+Attribute method to add optional attributes. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em uid} & Unique identifier for the plug-\/in \\
+\hline
+{\em major\+Version} & Major version of the plug-\/in \\
+\hline
+{\em minor\+Version} & Minor version of the plug-\/in \\
+\hline
+{\em name} & The name of the plug-\/in (may be used for host console debugging) \\
+\hline
+{\em vendor\+ID} & The unique vendor identifier (obtained from Avid with licensed A\+CF S\+DK) \\
+\hline
+{\em vendor\+Name} & The plug-\/in\textquotesingle{}s vendor name \\
+\hline
+{\em component\+Count} & The number of component implementation classes exported from this plug-\/in. \\
+\hline
+{\em cache\+Definition} & Indicates whether the plug-\/in registration information can be cached. If k\+A\+C\+F\+True then the host can launch faster and only load the plug-\/in modules if and when any contained components are actually used. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\+A\+C\+F/\mbox{\hyperlink{acfbaseapi_8h}{acfbaseapi.\+h}}\end{DoxyCompactItemize}

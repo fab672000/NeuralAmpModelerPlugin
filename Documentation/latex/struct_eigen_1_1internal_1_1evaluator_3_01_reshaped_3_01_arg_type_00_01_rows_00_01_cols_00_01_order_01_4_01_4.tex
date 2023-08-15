@@ -1,0 +1,79 @@
+\hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4}{}\doxysection{Eigen\+::internal\+::evaluator$<$ Reshaped$<$ Arg\+Type, Rows, Cols, Order $>$ $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4}\index{Eigen::internal::evaluator$<$ Reshaped$<$ ArgType, Rows, Cols, Order $>$ $>$@{Eigen::internal::evaluator$<$ Reshaped$<$ ArgType, Rows, Cols, Order $>$ $>$}}
+Inheritance diagram for Eigen\+::internal\+::evaluator$<$ Reshaped$<$ Arg\+Type, Rows, Cols, Order $>$ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.370869cm]{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_aaaf75994ba998969f1ee69681186ad66}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_aaaf75994ba998969f1ee69681186ad66}} 
+enum \{ \newline
+{\bfseries Coeff\+Read\+Cost} = evaluator$<$Arg\+Type$>$\+::Coeff\+Read\+Cost, 
+{\bfseries Has\+Direct\+Access} = traits$<$Xpr\+Type$>$\+::Has\+Direct\+Access, 
+{\bfseries Flags\+Linear\+Access\+Bit} = (traits$<$Xpr\+Type$>$\+::Rows\+At\+Compile\+Time == 1 $\vert$$\vert$ traits$<$Xpr\+Type$>$\+::Cols\+At\+Compile\+Time == 1 $\vert$$\vert$ Has\+Direct\+Access) ? Linear\+Access\+Bit \+: 0, 
+{\bfseries Flags\+Row\+Major\+Bit} = (traits$<$Xpr\+Type$>$\+::Reshaped\+Storage\+Order==int(Row\+Major)) ? Row\+Major\+Bit \+: 0, 
+\newline
+{\bfseries Flags\+Direct\+Access\+Bit} = Has\+Direct\+Access ? Direct\+Access\+Bit \+: 0, 
+{\bfseries Flags0} = evaluator$<$Arg\+Type$>$\+::Flags \& (Hereditary\+Bits \& $\sim$\+Row\+Major\+Bit), 
+{\bfseries Flags} = Flags0 $\vert$ Flags\+Linear\+Access\+Bit $\vert$ Flags\+Row\+Major\+Bit $\vert$ Flags\+Direct\+Access\+Bit, 
+{\bfseries Packet\+Alignment} = unpacket\+\_\+traits$<$Packet\+Scalar$>$\+::alignment, 
+\newline
+{\bfseries Alignment} = evaluator$<$Arg\+Type$>$\+::Alignment
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a541c3e0ecccb35dee641dbdd91678f18}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a541c3e0ecccb35dee641dbdd91678f18}} 
+enum \{ \newline
+{\bfseries Coeff\+Read\+Cost} = evaluator$<$Arg\+Type$>$\+::Coeff\+Read\+Cost, 
+{\bfseries Has\+Direct\+Access} = traits$<$Xpr\+Type$>$\+::Has\+Direct\+Access, 
+{\bfseries Flags\+Linear\+Access\+Bit} = (traits$<$Xpr\+Type$>$\+::Rows\+At\+Compile\+Time == 1 $\vert$$\vert$ traits$<$Xpr\+Type$>$\+::Cols\+At\+Compile\+Time == 1 $\vert$$\vert$ Has\+Direct\+Access) ? Linear\+Access\+Bit \+: 0, 
+{\bfseries Flags\+Row\+Major\+Bit} = (traits$<$Xpr\+Type$>$\+::Reshaped\+Storage\+Order==int(Row\+Major)) ? Row\+Major\+Bit \+: 0, 
+\newline
+{\bfseries Flags\+Direct\+Access\+Bit} = Has\+Direct\+Access ? Direct\+Access\+Bit \+: 0, 
+{\bfseries Flags0} = evaluator$<$Arg\+Type$>$\+::Flags \& (Hereditary\+Bits \& $\sim$\+Row\+Major\+Bit), 
+{\bfseries Flags} = Flags0 $\vert$ Flags\+Linear\+Access\+Bit $\vert$ Flags\+Row\+Major\+Bit $\vert$ Flags\+Direct\+Access\+Bit, 
+{\bfseries Packet\+Alignment} = unpacket\+\_\+traits$<$Packet\+Scalar$>$\+::alignment, 
+\newline
+{\bfseries Alignment} = evaluator$<$Arg\+Type$>$\+::Alignment
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a86b3d96dd4eb95cfd1748a64ae1655fa}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a86b3d96dd4eb95cfd1748a64ae1655fa}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_reshaped}{Reshaped}}$<$ Arg\+Type, Rows, Cols, Order $>$ {\bfseries Xpr\+Type}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6209929a360312975bc692cccd246e10}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6209929a360312975bc692cccd246e10}} 
+typedef Xpr\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a3d3c741dfab3e2097e46856b3987ecd7}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a3d3c741dfab3e2097e46856b3987ecd7}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{packet\+\_\+traits}}$<$ Scalar $>$\+::type {\bfseries Packet\+Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a4a74050804ed4a1141a05eacbabe6afb}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a4a74050804ed4a1141a05eacbabe6afb}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1reshaped__evaluator}{reshaped\+\_\+evaluator}}$<$ Arg\+Type, Rows, Cols, Order, Has\+Direct\+Access $>$ {\bfseries reshaped\+\_\+evaluator\+\_\+type}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a86b3d96dd4eb95cfd1748a64ae1655fa}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a86b3d96dd4eb95cfd1748a64ae1655fa}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_reshaped}{Reshaped}}$<$ Arg\+Type, Rows, Cols, Order $>$ {\bfseries Xpr\+Type}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6209929a360312975bc692cccd246e10}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6209929a360312975bc692cccd246e10}} 
+typedef Xpr\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a3d3c741dfab3e2097e46856b3987ecd7}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a3d3c741dfab3e2097e46856b3987ecd7}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{packet\+\_\+traits}}$<$ Scalar $>$\+::type {\bfseries Packet\+Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a4a74050804ed4a1141a05eacbabe6afb}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a4a74050804ed4a1141a05eacbabe6afb}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1reshaped__evaluator}{reshaped\+\_\+evaluator}}$<$ Arg\+Type, Rows, Cols, Order, Has\+Direct\+Access $>$ {\bfseries reshaped\+\_\+evaluator\+\_\+type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a5c81a1570c220a82daebeffd487570d6}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a5c81a1570c220a82daebeffd487570d6}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries evaluator} (const \mbox{\hyperlink{class_eigen_1_1_reshaped}{Xpr\+Type}} \&xpr)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a5c81a1570c220a82daebeffd487570d6}\label{struct_eigen_1_1internal_1_1evaluator_3_01_reshaped_3_01_arg_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a5c81a1570c220a82daebeffd487570d6}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries evaluator} (const \mbox{\hyperlink{class_eigen_1_1_reshaped}{Xpr\+Type}} \&xpr)
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Reshaped.\+h\end{DoxyCompactItemize}

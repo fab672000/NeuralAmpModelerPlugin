@@ -1,0 +1,80 @@
+\hypertarget{class_sk_typeface_cache}{}\doxysection{Sk\+Typeface\+Cache Class Reference}
+\label{class_sk_typeface_cache}\index{SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{class_sk_typeface_cache_a6e3d97fc4f4ac7c18f6784fae784153a}{Find\+Proc}}) (\mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $\ast$, void $\ast$context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sk_typeface_cache_a79333395aa6c9199c4f01e54ae6307ed}{add}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$)
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$ \mbox{\hyperlink{class_sk_typeface_cache_a57edc0ddfe9cc39a9c2290b056a07ee0}{find\+By\+Proc\+And\+Ref}} (\mbox{\hyperlink{class_sk_typeface_cache_a6e3d97fc4f4ac7c18f6784fae784153a}{Find\+Proc}} proc, void $\ast$ctx) const
+\item 
+void \mbox{\hyperlink{class_sk_typeface_cache_ada545e389bdeacff577b4bd67f75b204}{purge\+All}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Sk\+Font\+ID \mbox{\hyperlink{class_sk_typeface_cache_a8cab12d11da3b82945798a9c8c87c419}{New\+Font\+ID}} ()
+\item 
+\mbox{\Hypertarget{class_sk_typeface_cache_a84525b0f19a59370ae6ddc07d98bddfb}\label{class_sk_typeface_cache_a84525b0f19a59370ae6ddc07d98bddfb}} 
+static void {\bfseries Add} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$)
+\item 
+\mbox{\Hypertarget{class_sk_typeface_cache_a535001210c591f383e392e072da34fa0}\label{class_sk_typeface_cache_a535001210c591f383e392e072da34fa0}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$ {\bfseries Find\+By\+Proc\+And\+Ref} (\mbox{\hyperlink{class_sk_typeface_cache_a6e3d97fc4f4ac7c18f6784fae784153a}{Find\+Proc}} proc, void $\ast$ctx)
+\item 
+\mbox{\Hypertarget{class_sk_typeface_cache_aaddf0554ed611bf452ecb22d881bfba2}\label{class_sk_typeface_cache_aaddf0554ed611bf452ecb22d881bfba2}} 
+static void {\bfseries Purge\+All} ()
+\item 
+static void \mbox{\hyperlink{class_sk_typeface_cache_af1b967e5e7f49ec628b0bd120e8f04cc}{Dump}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_sk_typeface_cache_a6e3d97fc4f4ac7c18f6784fae784153a}\label{class_sk_typeface_cache_a6e3d97fc4f4ac7c18f6784fae784153a}} 
+\index{SkTypefaceCache@{SkTypefaceCache}!FindProc@{FindProc}}
+\index{FindProc@{FindProc}!SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsubsection{\texorpdfstring{FindProc}{FindProc}}
+{\footnotesize\ttfamily typedef bool($\ast$ Sk\+Typeface\+Cache\+::\+Find\+Proc) (\mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $\ast$, void $\ast$context)}
+
+Callback for Find\+By\+Proc. Returns true if the given typeface is a match for the given context. The passed typeface is owned by the cache and is not additionally ref()ed. The typeface may be in the disposed state. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_typeface_cache_a79333395aa6c9199c4f01e54ae6307ed}\label{class_sk_typeface_cache_a79333395aa6c9199c4f01e54ae6307ed}} 
+\index{SkTypefaceCache@{SkTypefaceCache}!add@{add}}
+\index{add@{add}!SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Sk\+Typeface\+Cache\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$}]{face }\end{DoxyParamCaption})}
+
+Add a typeface to the cache. Later, if we need to purge the cache, typefaces uniquely owned by the cache will be unref()ed. \mbox{\Hypertarget{class_sk_typeface_cache_af1b967e5e7f49ec628b0bd120e8f04cc}\label{class_sk_typeface_cache_af1b967e5e7f49ec628b0bd120e8f04cc}} 
+\index{SkTypefaceCache@{SkTypefaceCache}!Dump@{Dump}}
+\index{Dump@{Dump}!SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsubsection{\texorpdfstring{Dump()}{Dump()}}
+{\footnotesize\ttfamily void Sk\+Typeface\+Cache\+::\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Debugging only\+: dumps the status of the typefaces in the cache \mbox{\Hypertarget{class_sk_typeface_cache_a57edc0ddfe9cc39a9c2290b056a07ee0}\label{class_sk_typeface_cache_a57edc0ddfe9cc39a9c2290b056a07ee0}} 
+\index{SkTypefaceCache@{SkTypefaceCache}!findByProcAndRef@{findByProcAndRef}}
+\index{findByProcAndRef@{findByProcAndRef}!SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsubsection{\texorpdfstring{findByProcAndRef()}{findByProcAndRef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} $>$ Sk\+Typeface\+Cache\+::find\+By\+Proc\+And\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_typeface_cache_a6e3d97fc4f4ac7c18f6784fae784153a}{Find\+Proc}}}]{proc,  }\item[{void $\ast$}]{ctx }\end{DoxyParamCaption}) const}
+
+Iterate through the cache, calling proc(typeface, ctx) for each typeface. If proc returns true, then return that typeface. If it never returns true, return nullptr. \mbox{\Hypertarget{class_sk_typeface_cache_a8cab12d11da3b82945798a9c8c87c419}\label{class_sk_typeface_cache_a8cab12d11da3b82945798a9c8c87c419}} 
+\index{SkTypefaceCache@{SkTypefaceCache}!NewFontID@{NewFontID}}
+\index{NewFontID@{NewFontID}!SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsubsection{\texorpdfstring{NewFontID()}{NewFontID()}}
+{\footnotesize\ttfamily Sk\+Font\+ID Sk\+Typeface\+Cache\+::\+New\+Font\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Helper\+: returns a unique font\+ID to pass to the constructor of your subclass of \mbox{\hyperlink{class_sk_typeface}{Sk\+Typeface}} \mbox{\Hypertarget{class_sk_typeface_cache_ada545e389bdeacff577b4bd67f75b204}\label{class_sk_typeface_cache_ada545e389bdeacff577b4bd67f75b204}} 
+\index{SkTypefaceCache@{SkTypefaceCache}!purgeAll@{purgeAll}}
+\index{purgeAll@{purgeAll}!SkTypefaceCache@{SkTypefaceCache}}
+\doxysubsubsection{\texorpdfstring{purgeAll()}{purgeAll()}}
+{\footnotesize\ttfamily void Sk\+Typeface\+Cache\+::purge\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This will unref all of the typefaces in the cache for which the cache is the only owner. Normally this is handled automatically as needed. This function is exposed for clients that explicitly want to purge the cache (e.\+g. to look for leaks). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Typeface\+Cache.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Typeface\+Cache.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,42 @@
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_f1631daa307f998d0eb5f0dbd90267d4_autotoc_md275}{}\doxysection{Description}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_f1631daa307f998d0eb5f0dbd90267d4_autotoc_md275}
+A simple, M\+I\+DI controlled sawtooth synthesizer\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_f1631daa307f998d0eb5f0dbd90267d4_autotoc_md276}{}\doxysection{Parameters}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_f1631daa307f998d0eb5f0dbd90267d4_autotoc_md276}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \#  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \#  }\\\cline{1-2}
+\endhead
+Volume &{\ttfamily C\+C-\/1}  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_f1631daa307f998d0eb5f0dbd90267d4_autotoc_md277}{}\doxysection{Building the Example}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_f1631daa307f998d0eb5f0dbd90267d4_autotoc_md277}
+The faust code (.dsp) in this directory has been compiled using {\ttfamily faust2sam} into {\ttfamily sawtooth\+\_\+synth-\/sam}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\% faust2sam -\/midi sawtooth\_synth.dsp}
+\end{DoxyCode}
+
+
+The result of this compile is a zip file {\ttfamily sawtooth\+\_\+synth-\/sam.\+zip} which contains the following three files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily fast\+\_\+pow2.\+h}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+cpp}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+h}
+\end{DoxyItemize}
+
+These 3 files should be placed into the directory {\ttfamily sam\+\_\+baremetal\+\_\+framework\+\_\+core1/src/faust}
+
+In addition there is a header file that is common across all cores called {\ttfamily audio\+\_\+system\+\_\+config.\+h}. In this file the following pre-\/processor variables should be set in the following way. The example below indicates that a \mbox{\hyperlink{struct_faust}{Faust}} algorithm will only be running on Core1 and that Core2 will be simply passing audio to the codec.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE1           TRUE}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE2           FALSE}
+\end{DoxyCode}
+ 

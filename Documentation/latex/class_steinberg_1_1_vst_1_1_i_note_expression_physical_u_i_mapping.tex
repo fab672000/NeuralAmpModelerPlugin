@@ -1,0 +1,99 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping}{}\doxysection{Steinberg\+::Vst\+::I\+Note\+Expression\+Physical\+U\+I\+Mapping Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping}\index{Steinberg::Vst::INoteExpressionPhysicalUIMapping@{Steinberg::Vst::INoteExpressionPhysicalUIMapping}}
+
+
+{\ttfamily \#include $<$ivstphysicalui.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Note\+Expression\+Physical\+U\+I\+Mapping\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_a7fca17aba26157e3cb1ec5bcf0581aef}{get\+Physical\+U\+I\+Mapping}} (int32 bus\+Index, int16 channel, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_physical_u_i_map_list}{Physical\+U\+I\+Map\+List}} \&list)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_ad5871cc318856ff3dcf1e2ad2af2d6ea}\label{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_ad5871cc318856ff3dcf1e2ad2af2d6ea}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extended plug-\/in interface \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}} for note expression event support\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping}{Vst\+::\+I\+Note\+Expression\+Physical\+U\+I\+Mapping}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}}\mbox{]}
+\item \mbox{[}released\+: 3.\+6.\+11\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+With this plug-\/in interface, the host can retrieve the preferred physical mapping associated to note expression supported by the plug-\/in. When the mapping changes (for example when switching presets) the plug-\/in needs to inform the host about it via \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler_a65e162e3686dbcd5f2739b6481f69186}{I\+Component\+Handler\+::restart\+Component}} (k\+Note\+Expression\+Changed).\hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_INoteExpressionPhysicalUIMappingExample}{}\doxysubsection{Example}\label{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_INoteExpressionPhysicalUIMappingExample}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{// here an example of how a VST3 plug-\/in could support this INoteExpressionPhysicalUIMapping interface.}}
+\DoxyCodeLine{\textcolor{comment}{// we need to define somewhere the iids:}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//in MyController class declaration}}
+\DoxyCodeLine{\textcolor{keyword}{class }MyController : \textcolor{keyword}{public} Vst::EditController, \textcolor{keyword}{public} Vst::INoteExpressionPhysicalUIMapping}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// ...}}
+\DoxyCodeLine{    \textcolor{comment}{//-\/-\/-\/ INoteExpressionPhysicalUIMapping -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{    tresult PLUGIN\_API \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_a7fca17aba26157e3cb1ec5bcf0581aef}{getPhysicalUIMapping}} (int32 busIndex, int16 channel, PhysicalUIMapList\& list) SMTG\_OVERRIDE;}
+\DoxyCodeLine{    \textcolor{comment}{// ...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    OBJ\_METHODS (MyController, Vst::EditController)}
+\DoxyCodeLine{    \mbox{\hyperlink{fobject_8h_a3c0ce0ce836f44d269b414624e3e0971}{DEFINE\_INTERFACES}}}
+\DoxyCodeLine{        \textcolor{comment}{// ...}}
+\DoxyCodeLine{        \mbox{\hyperlink{fobject_8h_a53e7d200032b573e38e925748fdb89e3}{DEF\_INTERFACE}} (Vst::INoteExpressionPhysicalUIMapping)}
+\DoxyCodeLine{    \mbox{\hyperlink{fobject_8h_a7991876302dbc825f493930c856dbd83}{END\_DEFINE\_INTERFACES}} (Vst::EditController)}
+\DoxyCodeLine{    \textcolor{comment}{//...}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// In mycontroller.cpp}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "pluginterfaces/vst/ivstnoteexpression.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_steinberg}{Steinberg}} \{}
+\DoxyCodeLine{    \textcolor{keyword}{namespace }Vst \{}
+\DoxyCodeLine{        DEF\_CLASS\_IID (INoteExpressionPhysicalUIMapping)}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{tresult PLUGIN\_API MyController::getPhysicalUIMapping (int32 busIndex, int16 channel, PhysicalUIMapList\& list)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (busIndex == 0 \&\& channel == 0)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (uint32 i = 0; i < list.count; ++i)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \mbox{\hyperlink{namespace_steinberg_1_1_vst_a83c64b6b28833bdf0ce3dbd5923aff52}{NoteExpressionTypeID}} type = \mbox{\hyperlink{namespace_steinberg_1_1_vst_a74bfd4548e5ea034de6ea751b7a5cd3ba2ab117f3b6b7681757fed3af4d1b7d5e}{kInvalidTypeID}};}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a9fa0b500839939d41792f416af97123ea1238817df14af6dc0d3721c228481de0}{kPUIXMovement}} == list.map[i].physicalUITypeID)}
+\DoxyCodeLine{                list.map[i].noteExpressionTypeID = \mbox{\hyperlink{namespace_steinberg_1_1_vst_a74bfd4548e5ea034de6ea751b7a5cd3ba3881f9ca34486c2c5bbe50a2c0296e54}{kCustomStart}} + 1;}
+\DoxyCodeLine{            \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a9fa0b500839939d41792f416af97123ea335f725bc2000ed973bdfafe3282f03f}{kPUIYMovement}} == list.map[i].physicalUITypeID)}
+\DoxyCodeLine{                list.map[i].noteExpressionTypeID = \mbox{\hyperlink{namespace_steinberg_1_1_vst_a74bfd4548e5ea034de6ea751b7a5cd3ba3881f9ca34486c2c5bbe50a2c0296e54}{kCustomStart}} + 2;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} kResultTrue;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} kResultFalse;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_a7fca17aba26157e3cb1ec5bcf0581aef}\label{class_steinberg_1_1_vst_1_1_i_note_expression_physical_u_i_mapping_a7fca17aba26157e3cb1ec5bcf0581aef}} 
+\index{Steinberg::Vst::INoteExpressionPhysicalUIMapping@{Steinberg::Vst::INoteExpressionPhysicalUIMapping}!getPhysicalUIMapping@{getPhysicalUIMapping}}
+\index{getPhysicalUIMapping@{getPhysicalUIMapping}!Steinberg::Vst::INoteExpressionPhysicalUIMapping@{Steinberg::Vst::INoteExpressionPhysicalUIMapping}}
+\doxysubsubsection{\texorpdfstring{getPhysicalUIMapping()}{getPhysicalUIMapping()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Note\+Expression\+Physical\+U\+I\+Mapping\+::get\+Physical\+U\+I\+Mapping (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel,  }\item[{\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_physical_u_i_map_list}{Physical\+U\+I\+Map\+List}} \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Fills the list of mapped \mbox{[}physical \mbox{\hyperlink{class_u_i}{UI}} (in) -\/ note expression (out)\mbox{]} for a given bus index and channel. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstphysicalui.\+h\end{DoxyCompactItemize}

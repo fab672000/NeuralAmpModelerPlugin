@@ -1,0 +1,414 @@
+\hypertarget{class_a_a_x___i_dma}{}\doxysection{A\+A\+X\+\_\+\+I\+Dma Class Reference}
+\label{class_a_a_x___i_dma}\index{AAX\_IDma@{AAX\_IDma}}
+
+
+Cross-\/platform interface for access to the host\textquotesingle{}s direct memory access (D\+MA) facilities.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Dma.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_a64e694fd40d32179e429eb7934a64842}\label{class_a_a_x___i_dma_a64e694fd40d32179e429eb7934a64842}} 
+enum {\bfseries E\+State} \{ \newline
+{\bfseries e\+State\+\_\+\+Error} = -\/1, 
+{\bfseries e\+State\+\_\+\+Init} = 0, 
+{\bfseries e\+State\+\_\+\+Running} = 1, 
+{\bfseries e\+State\+\_\+\+Complete} = 2, 
+\newline
+{\bfseries e\+State\+\_\+\+Pending} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39b}{E\+Mode}} \{ {\bfseries e\+Mode\+\_\+\+Error} = -\/1, 
+\mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39ba253c129077dc004dd83cca8931e69eb9}{e\+Mode\+\_\+\+Burst}} = 6, 
+\mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39badec2b76540ba9a168b7a049acb50654d}{e\+Mode\+\_\+\+Gather}} = 10, 
+\mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39bac8f3cbed92bc7d135e306cc154ac2ae6}{e\+Mode\+\_\+\+Scatter}} = 11
+ \}
+\begin{DoxyCompactList}\small\item\em D\+MA mode I\+Ds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Basic D\+MA operation}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ac732944930f4fce9c47b59fe278eddc1}{Post\+Request}} ()=0
+\begin{DoxyCompactList}\small\item\em Posts the transfer request to the D\+MA server. \end{DoxyCompactList}\item 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a44981285d022e5ddee41d903eed68a7d}{Is\+Transfer\+Complete}} ()=0
+\begin{DoxyCompactList}\small\item\em Query whether a transfer has completed. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a4d1a182655fef78b18d564a5669bae18}{Set\+Dma\+State}} (E\+State i\+State)=0
+\begin{DoxyCompactList}\small\item\em Sets the D\+MA State. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_ab5cf4ad618853e4a94ed63a693d7b800}\label{class_a_a_x___i_dma_ab5cf4ad618853e4a94ed63a693d7b800}} 
+virtual E\+State A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ab5cf4ad618853e4a94ed63a693d7b800}{Get\+Dma\+State}} () const =0
+\begin{DoxyCompactList}\small\item\em Inquire to find the state of the D\+MA instance. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39b}{E\+Mode}} A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a9bd67775d41c32da19d5532362fe86c8}{Get\+Dma\+Mode}} () const =0
+\begin{DoxyCompactList}\small\item\em Inquire to find the mode of the D\+MA instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Methods for Burst operation}\par
+{\em Use these methods in conjunction with \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39ba253c129077dc004dd83cca8931e69eb9}{A\+A\+X\+\_\+\+I\+Dma\+::e\+Mode\+\_\+\+Burst}} }\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a92774eab2dec8864d617e2655f3de00d}{Set\+Src}} (int8\+\_\+t $\ast$i\+Src)=0
+\begin{DoxyCompactList}\small\item\em Sets the address of the source buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_af3adfd15058b274b01b86705d42a4cd6}\label{class_a_a_x___i_dma_af3adfd15058b274b01b86705d42a4cd6}} 
+virtual int8\+\_\+t $\ast$A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_af3adfd15058b274b01b86705d42a4cd6}{Get\+Src}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the address of the source buffer. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a80c98a61fc14c8cc87a30360e92655fe}{Set\+Dst}} (int8\+\_\+t $\ast$i\+Dst)=0
+\begin{DoxyCompactList}\small\item\em Sets the address of the destination buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_a19544dc2ec903f8e80d80db846ea8af0}\label{class_a_a_x___i_dma_a19544dc2ec903f8e80d80db846ea8af0}} 
+virtual int8\+\_\+t $\ast$A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a19544dc2ec903f8e80d80db846ea8af0}{Get\+Dst}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the address of the destination buffer. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ac85fdea20b072cbdc258aa398d02fa92}{Set\+Burst\+Length}} (int32\+\_\+t i\+Burst\+Length\+Bytes)=0
+\begin{DoxyCompactList}\small\item\em Sets the length of each burst. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_ac4ded104803ed34131be6924d591f0e6}\label{class_a_a_x___i_dma_ac4ded104803ed34131be6924d591f0e6}} 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ac4ded104803ed34131be6924d591f0e6}{Get\+Burst\+Length}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the length of each burst. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a174fc7382d7f587252f4a9e557830b91}{Set\+Num\+Bursts}} (int32\+\_\+t i\+Num\+Bursts)=0
+\begin{DoxyCompactList}\small\item\em Sets the number of bursts to perform before giving up priority to other D\+MA transfers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_ae8a335f5230a5f7face87f9efb7c8aaf}\label{class_a_a_x___i_dma_ae8a335f5230a5f7face87f9efb7c8aaf}} 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ae8a335f5230a5f7face87f9efb7c8aaf}{Get\+Num\+Bursts}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the number of bursts to perform before giving up priority to other D\+MA transfers. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a4d38f5502dc2446ea997e675d3f59d61}{Set\+Transfer\+Size}} (int32\+\_\+t i\+Transfer\+Size\+Bytes)=0
+\begin{DoxyCompactList}\small\item\em Sets the size of the whole transfer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_a3cd20d341b8b592d259716768a03a88a}\label{class_a_a_x___i_dma_a3cd20d341b8b592d259716768a03a88a}} 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a3cd20d341b8b592d259716768a03a88a}{Get\+Transfer\+Size}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the size of the whole transfer, in Bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Methods for Scatter and Gather operation}\par
+{\em Use these methods in conjunction with \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39bac8f3cbed92bc7d135e306cc154ac2ae6}{A\+A\+X\+\_\+\+I\+Dma\+::e\+Mode\+\_\+\+Scatter}} and \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39badec2b76540ba9a168b7a049acb50654d}{A\+A\+X\+\_\+\+I\+Dma\+::e\+Mode\+\_\+\+Gather}} }\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_afeda3af6b2c5da7a8b2759aa9429c7dc}{Set\+Fifo\+Buffer}} (int8\+\_\+t $\ast$i\+Fifo\+Base)=0
+\begin{DoxyCompactList}\small\item\em Sets the address of the F\+I\+FO buffer for the D\+MA transfer (usually the external memory block) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_af5c4988d5f844b219077773e4e810d64}\label{class_a_a_x___i_dma_af5c4988d5f844b219077773e4e810d64}} 
+virtual int8\+\_\+t $\ast$A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_af5c4988d5f844b219077773e4e810d64}{Get\+Fifo\+Buffer}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the address of the F\+I\+FO buffer for the D\+MA transfer. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ad0c409f61f989e72f6afd47cb02b108e}{Set\+Linear\+Buffer}} (int8\+\_\+t $\ast$i\+Linear\+Base)=0
+\begin{DoxyCompactList}\small\item\em Sets the address of the linear buffer for the D\+MA transfer (usually the internal memory block) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_a5a23f32e268d310ea6c80049c1661982}\label{class_a_a_x___i_dma_a5a23f32e268d310ea6c80049c1661982}} 
+virtual int8\+\_\+t $\ast$A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a5a23f32e268d310ea6c80049c1661982}{Get\+Linear\+Buffer}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the address of the linear buffer for the D\+MA transfer. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a9a106088088a8fc812b137bd90c0fa3a}{Set\+Offset\+Table}} (const int32\+\_\+t $\ast$i\+Offset\+Table)=0
+\begin{DoxyCompactList}\small\item\em Sets the offset table for the D\+MA transfer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_ab00bbebfffe925b8332eade3457d706e}\label{class_a_a_x___i_dma_ab00bbebfffe925b8332eade3457d706e}} 
+virtual const int32\+\_\+t $\ast$A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ab00bbebfffe925b8332eade3457d706e}{Get\+Offset\+Table}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the offset table for the D\+MA transfer. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a58f2933fda57ac6a1cdf20cce96aceac}{Set\+Num\+Offsets}} (int32\+\_\+t i\+Num\+Offsets)=0
+\begin{DoxyCompactList}\small\item\em Sets the number of offets in the offset table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_a582df429c4f543d66d63c87e2ea3a1e2}\label{class_a_a_x___i_dma_a582df429c4f543d66d63c87e2ea3a1e2}} 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a582df429c4f543d66d63c87e2ea3a1e2}{Get\+Num\+Offsets}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the number of offets in the offset table. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_ac3a22df0462c7f4888a429b3eadae4dd}{Set\+Base\+Offset}} (int32\+\_\+t i\+Base\+Offset\+Bytes)=0
+\begin{DoxyCompactList}\small\item\em Sets the relative base offset into the F\+I\+FO where transfers will begin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_a1f6ce2d66bb6c26fa4e7e70821e8bd2d}\label{class_a_a_x___i_dma_a1f6ce2d66bb6c26fa4e7e70821e8bd2d}} 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a1f6ce2d66bb6c26fa4e7e70821e8bd2d}{Get\+Base\+Offset}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the relative base offset into the F\+I\+FO where transfers will begin. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_a98f731e4c7c60a3b6b969fd699448224}{Set\+Fifo\+Size}} (int32\+\_\+t i\+Size\+Bytes)=0
+\begin{DoxyCompactList}\small\item\em Sets the size of the F\+I\+FO buffer, in bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___i_dma_aae573c01b6ecc918978f74881e87a761}\label{class_a_a_x___i_dma_aae573c01b6ecc918978f74881e87a761}} 
+virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI \mbox{\hyperlink{class_a_a_x___i_dma_aae573c01b6ecc918978f74881e87a761}{Get\+Fifo\+Size}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the size of the F\+I\+FO buffer, in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Cross-\/platform interface for access to the host\textquotesingle{}s direct memory access (D\+MA) facilities. 
+
+\textbackslash{}hostimp
+
+This interface is provided via a D\+MA port in the plug-\/in\textquotesingle{}s algorithm context.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_component_descriptor_aff9e1c726bbdf500f2d61b164589744e}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Dma\+Instance()}} 
+
+additional\+Features\+\_\+\+D\+MA 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39b}\label{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39b}} 
+\index{AAX\_IDma@{AAX\_IDma}!EMode@{EMode}}
+\index{EMode@{EMode}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{EMode}{EMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39b}{A\+A\+X\+\_\+\+I\+Dma\+::\+E\+Mode}}}
+
+
+
+D\+MA mode I\+Ds. 
+
+These I\+Ds are used to bind D\+MA context fields to a particular D\+MA mode when describing the fields with \mbox{\hyperlink{class_a_a_x___i_component_descriptor_aff9e1c726bbdf500f2d61b164589744e}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Dma\+Instance()}} \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMode\_Burst@{eMode\_Burst}!AAX\_IDma@{AAX\_IDma}}\index{AAX\_IDma@{AAX\_IDma}!eMode\_Burst@{eMode\_Burst}}}\mbox{\Hypertarget{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39ba253c129077dc004dd83cca8931e69eb9}\label{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39ba253c129077dc004dd83cca8931e69eb9}} 
+e\+Mode\+\_\+\+Burst&Burst mode (uncommon) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMode\_Gather@{eMode\_Gather}!AAX\_IDma@{AAX\_IDma}}\index{AAX\_IDma@{AAX\_IDma}!eMode\_Gather@{eMode\_Gather}}}\mbox{\Hypertarget{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39badec2b76540ba9a168b7a049acb50654d}\label{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39badec2b76540ba9a168b7a049acb50654d}} 
+e\+Mode\+\_\+\+Gather&Gather mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMode\_Scatter@{eMode\_Scatter}!AAX\_IDma@{AAX\_IDma}}\index{AAX\_IDma@{AAX\_IDma}!eMode\_Scatter@{eMode\_Scatter}}}\mbox{\Hypertarget{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39bac8f3cbed92bc7d135e306cc154ac2ae6}\label{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39bac8f3cbed92bc7d135e306cc154ac2ae6}} 
+e\+Mode\+\_\+\+Scatter&Scatter mode. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a9bd67775d41c32da19d5532362fe86c8}\label{class_a_a_x___i_dma_a9bd67775d41c32da19d5532362fe86c8}} 
+\index{AAX\_IDma@{AAX\_IDma}!GetDmaMode@{GetDmaMode}}
+\index{GetDmaMode@{GetDmaMode}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{GetDmaMode()}{GetDmaMode()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_a_x___i_dma_af8d0f19f2896dd6dbd126b919b24e39b}{E\+Mode}} A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Get\+Dma\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Inquire to find the mode of the D\+MA instance. 
+
+This value does not change, so there is no setter. \mbox{\Hypertarget{class_a_a_x___i_dma_a44981285d022e5ddee41d903eed68a7d}\label{class_a_a_x___i_dma_a44981285d022e5ddee41d903eed68a7d}} 
+\index{AAX\_IDma@{AAX\_IDma}!IsTransferComplete@{IsTransferComplete}}
+\index{IsTransferComplete@{IsTransferComplete}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{IsTransferComplete()}{IsTransferComplete()}}
+{\footnotesize\ttfamily virtual int32\+\_\+t A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Is\+Transfer\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Query whether a transfer has completed. 
+
+A return value of false indicates an error, and that the D\+MA missed its cycle count deadline
+
+\begin{DoxyNote}{Note}
+This function should not be used for polling within a Process loop! Instead, it can be used as a test for D\+MA failure. This test is usually performed via a Debug-\/only assert.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000050}{Todo}}]Clarify return value meaning -- ambiguity in documentation\end{DoxyRefDesc}
+
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if all pending transfers are complete 
+
+{\bfseries{false}} if pending transfers are not complete 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_ac732944930f4fce9c47b59fe278eddc1}\label{class_a_a_x___i_dma_ac732944930f4fce9c47b59fe278eddc1}} 
+\index{AAX\_IDma@{AAX\_IDma}!PostRequest@{PostRequest}}
+\index{PostRequest@{PostRequest}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{PostRequest()}{PostRequest()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Post\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Posts the transfer request to the D\+MA server. 
+
+\begin{DoxyNote}{Note}
+Whichever mode this method is called on first will be the first mode to start transferring. Most plug-\/ins should therefore call this method for their Scatter D\+MA fields before their Gather D\+MA fields so that the scattered data is available as quickly as possible for future gathers.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_ac3a22df0462c7f4888a429b3eadae4dd}\label{class_a_a_x___i_dma_ac3a22df0462c7f4888a429b3eadae4dd}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetBaseOffset@{SetBaseOffset}}
+\index{SetBaseOffset@{SetBaseOffset}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetBaseOffset()}{SetBaseOffset()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Base\+Offset (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Base\+Offset\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the relative base offset into the F\+I\+FO where transfers will begin. 
+
+The base offset will be added to each value in the offset table in order to determine the starting offset within the F\+I\+FO buffer for each burst.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_dma_a9a106088088a8fc812b137bd90c0fa3a}{A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Offset\+Table()}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_ac85fdea20b072cbdc258aa398d02fa92}\label{class_a_a_x___i_dma_ac85fdea20b072cbdc258aa398d02fa92}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetBurstLength@{SetBurstLength}}
+\index{SetBurstLength@{SetBurstLength}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetBurstLength()}{SetBurstLength()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Burst\+Length (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Burst\+Length\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the length of each burst. 
+
+\begin{DoxyNote}{Note}
+Burst length must be between 1 and 64 Bytes, inclusive 
+
+64-\/Byte transfers are recommended for the fastest overall transfer speed
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a4d1a182655fef78b18d564a5669bae18}\label{class_a_a_x___i_dma_a4d1a182655fef78b18d564a5669bae18}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetDmaState@{SetDmaState}}
+\index{SetDmaState@{SetDmaState}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetDmaState()}{SetDmaState()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Dma\+State (\begin{DoxyParamCaption}\item[{E\+State}]{i\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the D\+MA State. 
+
+\begin{DoxyNote}{Note}
+This method is part of the host interface and should not be used by plug-\/ins
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a80c98a61fc14c8cc87a30360e92655fe}\label{class_a_a_x___i_dma_a80c98a61fc14c8cc87a30360e92655fe}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetDst@{SetDst}}
+\index{SetDst@{SetDst}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetDst()}{SetDst()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Dst (\begin{DoxyParamCaption}\item[{int8\+\_\+t $\ast$}]{i\+Dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the address of the destination buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Dst} & Address of the location in the destination buffer where the write transfer should begin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_afeda3af6b2c5da7a8b2759aa9429c7dc}\label{class_a_a_x___i_dma_afeda3af6b2c5da7a8b2759aa9429c7dc}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetFifoBuffer@{SetFifoBuffer}}
+\index{SetFifoBuffer@{SetFifoBuffer}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetFifoBuffer()}{SetFifoBuffer()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Fifo\+Buffer (\begin{DoxyParamCaption}\item[{int8\+\_\+t $\ast$}]{i\+Fifo\+Base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the address of the F\+I\+FO buffer for the D\+MA transfer (usually the external memory block) 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a98f731e4c7c60a3b6b969fd699448224}\label{class_a_a_x___i_dma_a98f731e4c7c60a3b6b969fd699448224}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetFifoSize@{SetFifoSize}}
+\index{SetFifoSize@{SetFifoSize}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetFifoSize()}{SetFifoSize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Fifo\+Size (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Size\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the size of the F\+I\+FO buffer, in bytes. 
+
+\begin{DoxyNote}{Note}
+The F\+I\+FO buffer must be padded with at least enough memory to accommodate one burst, as defined by \mbox{\hyperlink{class_a_a_x___i_dma_ac85fdea20b072cbdc258aa398d02fa92}{Set\+Burst\+Length()}}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_ad0c409f61f989e72f6afd47cb02b108e}\label{class_a_a_x___i_dma_ad0c409f61f989e72f6afd47cb02b108e}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetLinearBuffer@{SetLinearBuffer}}
+\index{SetLinearBuffer@{SetLinearBuffer}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetLinearBuffer()}{SetLinearBuffer()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Linear\+Buffer (\begin{DoxyParamCaption}\item[{int8\+\_\+t $\ast$}]{i\+Linear\+Base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the address of the linear buffer for the D\+MA transfer (usually the internal memory block) 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a174fc7382d7f587252f4a9e557830b91}\label{class_a_a_x___i_dma_a174fc7382d7f587252f4a9e557830b91}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetNumBursts@{SetNumBursts}}
+\index{SetNumBursts@{SetNumBursts}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetNumBursts()}{SetNumBursts()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Num\+Bursts (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Num\+Bursts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the number of bursts to perform before giving up priority to other D\+MA transfers. 
+
+Valid values are 1, 2, 4, or 16.
+
+The full transmission may be broken up into several series of bursts, and thus the total size of the data being transferred is not bounded by the number of bursts times the burst length.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Num\+Bursts} & The number of bursts\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a58f2933fda57ac6a1cdf20cce96aceac}\label{class_a_a_x___i_dma_a58f2933fda57ac6a1cdf20cce96aceac}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetNumOffsets@{SetNumOffsets}}
+\index{SetNumOffsets@{SetNumOffsets}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetNumOffsets()}{SetNumOffsets()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Num\+Offsets (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Num\+Offsets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the number of offets in the offset table. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_dma_a9a106088088a8fc812b137bd90c0fa3a}{A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Offset\+Table()}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a9a106088088a8fc812b137bd90c0fa3a}\label{class_a_a_x___i_dma_a9a106088088a8fc812b137bd90c0fa3a}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetOffsetTable@{SetOffsetTable}}
+\index{SetOffsetTable@{SetOffsetTable}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetOffsetTable()}{SetOffsetTable()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Offset\+Table (\begin{DoxyParamCaption}\item[{const int32\+\_\+t $\ast$}]{i\+Offset\+Table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the offset table for the D\+MA transfer. 
+
+The offset table provides a list of Byte-\/aligned memory offsets into the F\+I\+FO buffer. The transfer will be broken into a series of individual bursts, each beginning at the specified offset locations within the F\+I\+FO buffer. The size of each burst is set by \mbox{\hyperlink{class_a_a_x___i_dma_ac85fdea20b072cbdc258aa398d02fa92}{Set\+Burst\+Length()}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_dma_a58f2933fda57ac6a1cdf20cce96aceac}{A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Num\+Offsets()}} 
+
+\mbox{\hyperlink{class_a_a_x___i_dma_ac3a22df0462c7f4888a429b3eadae4dd}{A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Base\+Offset()}}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a92774eab2dec8864d617e2655f3de00d}\label{class_a_a_x___i_dma_a92774eab2dec8864d617e2655f3de00d}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetSrc@{SetSrc}}
+\index{SetSrc@{SetSrc}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetSrc()}{SetSrc()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Src (\begin{DoxyParamCaption}\item[{int8\+\_\+t $\ast$}]{i\+Src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the address of the source buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Src} & Address of the location in the source buffer where the read transfer should begin\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_a_x___i_dma_a4d38f5502dc2446ea997e675d3f59d61}\label{class_a_a_x___i_dma_a4d38f5502dc2446ea997e675d3f59d61}} 
+\index{AAX\_IDma@{AAX\_IDma}!SetTransferSize@{SetTransferSize}}
+\index{SetTransferSize@{SetTransferSize}!AAX\_IDma@{AAX\_IDma}}
+\doxysubsubsection{\texorpdfstring{SetTransferSize()}{SetTransferSize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+D\+M\+A\+\_\+\+A\+PI A\+A\+X\+\_\+\+I\+Dma\+::\+Set\+Transfer\+Size (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Transfer\+Size\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the size of the whole transfer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Transfer\+Size\+Bytes} & The transfer size, in Bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+SS} on success 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_dma_8h}{A\+A\+X\+\_\+\+I\+Dma.\+h}}\end{DoxyCompactItemize}

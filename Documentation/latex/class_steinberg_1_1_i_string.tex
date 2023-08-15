@@ -1,0 +1,108 @@
+\hypertarget{class_steinberg_1_1_i_string}{}\doxysection{Steinberg\+::I\+String Class Reference}
+\label{class_steinberg_1_1_i_string}\index{Steinberg::IString@{Steinberg::IString}}
+
+
+{\ttfamily \#include $<$istringresult.\+h$>$}
+
+Inheritance diagram for Steinberg\+::I\+String\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_steinberg_1_1_i_string}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_string_ae6f49dc1b958ec1722bf0251bd965391}{set\+Text8}} (const char8 $\ast$text)=0
+\item 
+virtual void P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_string_ae3cdca3fcd12df1c8c4164944e3ba603}{set\+Text16}} (const char16 $\ast$text)=0
+\item 
+virtual const char8 $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_string_a68c18ee93c5466a00ed1d7a7a8cd0dfc}{get\+Text8}} ()=0
+\item 
+virtual const char16 $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_string_ae59ddea57caf84e53db52b09b1ea9558}{get\+Text16}} ()=0
+\item 
+virtual void P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_string_afb6b89d13ce09fb8c378071864694863}{take}} (void $\ast$s, bool is\+Wide)=0
+\item 
+virtual bool P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_string_a231c8b0774aff904a821de77239c0ca9}{is\+Wide\+String}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_a0eae5af437df91d93e994f06886181cc}\label{class_steinberg_1_1_i_string_a0eae5af437df91d93e994f06886181cc}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to a string of variable size and encoding.
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]} or \mbox{[}plug imp\mbox{]}
+\item \mbox{[}released\+: \mbox{]} 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_ae59ddea57caf84e53db52b09b1ea9558}\label{class_steinberg_1_1_i_string_ae59ddea57caf84e53db52b09b1ea9558}} 
+\index{Steinberg::IString@{Steinberg::IString}!getText16@{getText16}}
+\index{getText16@{getText16}!Steinberg::IString@{Steinberg::IString}}
+\doxysubsubsection{\texorpdfstring{getText16()}{getText16()}}
+{\footnotesize\ttfamily virtual const char16$\ast$ P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+String\+::get\+Text16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return unicode string. If the string is A\+S\+C\+II so far, it will be converted. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_string_object_a82d71893e14fd84714c04c37fad57b15}{Steinberg\+::\+String\+Object}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_a68c18ee93c5466a00ed1d7a7a8cd0dfc}\label{class_steinberg_1_1_i_string_a68c18ee93c5466a00ed1d7a7a8cd0dfc}} 
+\index{Steinberg::IString@{Steinberg::IString}!getText8@{getText8}}
+\index{getText8@{getText8}!Steinberg::IString@{Steinberg::IString}}
+\doxysubsubsection{\texorpdfstring{getText8()}{getText8()}}
+{\footnotesize\ttfamily virtual const char8$\ast$ P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+String\+::get\+Text8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return A\+S\+C\+II string. If the string is unicode so far, it will be converted. So you need to be careful, because the conversion can result in data loss. It is save though to call get\+Text8 if \mbox{\hyperlink{class_steinberg_1_1_i_string_a231c8b0774aff904a821de77239c0ca9}{is\+Wide\+String()}} returns false 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_string_object_a14224ab8c06bb52c69ad7a5dbca00cb8}{Steinberg\+::\+String\+Object}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_a231c8b0774aff904a821de77239c0ca9}\label{class_steinberg_1_1_i_string_a231c8b0774aff904a821de77239c0ca9}} 
+\index{Steinberg::IString@{Steinberg::IString}!isWideString@{isWideString}}
+\index{isWideString@{isWideString}!Steinberg::IString@{Steinberg::IString}}
+\doxysubsubsection{\texorpdfstring{isWideString()}{isWideString()}}
+{\footnotesize\ttfamily virtual bool P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+String\+::is\+Wide\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns true if the string is in unicode format, returns false if the string is A\+S\+C\+II 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_string_object_aa9ea46ebc623e5925e5881e1423803e6}{Steinberg\+::\+String\+Object}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_ae3cdca3fcd12df1c8c4164944e3ba603}\label{class_steinberg_1_1_i_string_ae3cdca3fcd12df1c8c4164944e3ba603}} 
+\index{Steinberg::IString@{Steinberg::IString}!setText16@{setText16}}
+\index{setText16@{setText16}!Steinberg::IString@{Steinberg::IString}}
+\doxysubsubsection{\texorpdfstring{setText16()}{setText16()}}
+{\footnotesize\ttfamily virtual void P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+String\+::set\+Text16 (\begin{DoxyParamCaption}\item[{const char16 $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Assign unicode string 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_string_object_a9d0f66f4398e1985a90080618e56fa69}{Steinberg\+::\+String\+Object}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_ae6f49dc1b958ec1722bf0251bd965391}\label{class_steinberg_1_1_i_string_ae6f49dc1b958ec1722bf0251bd965391}} 
+\index{Steinberg::IString@{Steinberg::IString}!setText8@{setText8}}
+\index{setText8@{setText8}!Steinberg::IString@{Steinberg::IString}}
+\doxysubsubsection{\texorpdfstring{setText8()}{setText8()}}
+{\footnotesize\ttfamily virtual void P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+String\+::set\+Text8 (\begin{DoxyParamCaption}\item[{const char8 $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Assign A\+S\+C\+II string 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_string_object_a4365868f9b1da6a7325247487e5064b8}{Steinberg\+::\+String\+Object}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_string_afb6b89d13ce09fb8c378071864694863}\label{class_steinberg_1_1_i_string_afb6b89d13ce09fb8c378071864694863}} 
+\index{Steinberg::IString@{Steinberg::IString}!take@{take}}
+\index{take@{take}!Steinberg::IString@{Steinberg::IString}}
+\doxysubsubsection{\texorpdfstring{take()}{take()}}
+{\footnotesize\ttfamily virtual void P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+String\+::take (\begin{DoxyParamCaption}\item[{void $\ast$}]{s,  }\item[{bool}]{is\+Wide }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+!\+Do not use this method! Early implementations take the given pointer as internal string and this will cause problems because \textquotesingle{}free\textquotesingle{} will be used to delete the passed memory. Later implementations will redirect \textquotesingle{}take\textquotesingle{} to set\+Text8 and set\+Text16 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_string_object_a167f60162a11053ad528b6ee9170318b}{Steinberg\+::\+String\+Object}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/base/istringresult.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,162 @@
+\hypertarget{classskjson_1_1_value}{}\doxysection{skjson\+::Value Class Reference}
+\label{classskjson_1_1_value}\index{skjson::Value@{skjson::Value}}
+
+
+{\ttfamily \#include $<$Sk\+J\+S\+O\+N.\+h$>$}
+
+Inheritance diagram for skjson\+::Value\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.733945cm]{classskjson_1_1_value}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a7573432465e3c549edfe593f21af57b8}\label{classskjson_1_1_value_a7573432465e3c549edfe593f21af57b8}} 
+enum {\bfseries Type} \{ \newline
+{\bfseries k\+Null}, 
+{\bfseries k\+Bool}, 
+{\bfseries k\+Number}, 
+{\bfseries k\+String}, 
+\newline
+{\bfseries k\+Array}, 
+{\bfseries k\+Object}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Type \mbox{\hyperlink{classskjson_1_1_value_a6ce3a342a2278fb2a82be0e965f01bde}{get\+Type}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classskjson_1_1_value_ad1e79b9fd1e59867d4c3360906765079}{is}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \& \mbox{\hyperlink{classskjson_1_1_value_adffa17670b0e110f78a28009f5189ba8}{as}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classskjson_1_1_value_a0a96029c4b0bbbdc463e31b27423acd8}{operator const T $\ast$}} () const
+\item 
+\mbox{\hyperlink{class_sk_string}{Sk\+String}} \mbox{\hyperlink{classskjson_1_1_value_a4df4cd15a511f2e1de9e1ad524f80c7e}{to\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_aa57c8681408affabc6609594de8087c0}\label{classskjson_1_1_value_aa57c8681408affabc6609594de8087c0}} 
+enum {\bfseries Tag} \+: uint8\+\_\+t \{ \newline
+{\bfseries k\+Short\+String} = 0b00000000, 
+{\bfseries k\+Null} = 0b00000001, 
+{\bfseries k\+Bool} = 0b00000010, 
+{\bfseries k\+Int} = 0b00000011, 
+\newline
+{\bfseries k\+Float} = 0b00000100, 
+{\bfseries k\+String} = 0b00000101, 
+{\bfseries k\+Array} = 0b00000110, 
+{\bfseries k\+Object} = 0b00000111
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a2baaa649dd6d3c940373780c80d69c05}\label{classskjson_1_1_value_a2baaa649dd6d3c940373780c80d69c05}} 
+void {\bfseries init\+\_\+tagged} (Tag)
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a5c5a00613fc8ed10eeea157bc4cea1d5}\label{classskjson_1_1_value_a5c5a00613fc8ed10eeea157bc4cea1d5}} 
+void {\bfseries init\+\_\+tagged\+\_\+pointer} (Tag, void $\ast$)
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a588fdef4c4a72a79c9296b1067916557}\label{classskjson_1_1_value_a588fdef4c4a72a79c9296b1067916557}} 
+Tag {\bfseries get\+Tag} () const
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a1b24de056a3373dfd76311b38331fb67}\label{classskjson_1_1_value_a1b24de056a3373dfd76311b38331fb67}} 
+{\footnotesize template$<$typename T $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ {\bfseries cast} () const
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a6527d31f1c0b6f32bffcc213330d266a}\label{classskjson_1_1_value_a6527d31f1c0b6f32bffcc213330d266a}} 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ {\bfseries cast} ()
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_ad4d6b97fabc8e46bf839c1df934ca4f5}\label{classskjson_1_1_value_ad4d6b97fabc8e46bf839c1df934ca4f5}} 
+{\footnotesize template$<$typename T $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ {\bfseries ptr} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskjson_1_1_value_a18ab3ac52cdd8ce110e0f43210344992}\label{classskjson_1_1_value_a18ab3ac52cdd8ce110e0f43210344992}} 
+static constexpr uint8\+\_\+t {\bfseries k\+Tag\+Mask} = 0b00000111
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A fast and likely non-\/conforming J\+S\+ON parser.
+
+Some known limitations/compromises\+:
+
+-- single-\/precision FP numbers
+
+-- missing string unescaping (no current users, could be easily added)
+
+Values are opaque, fixed-\/size (64 bits), immutable records.
+
+They can be converted to facade types for type-\/specific functionality.
+
+E.\+g.\+:
+
+if (v.\+is$<$\+Array\+Value$>$()) \{ for (const auto\& item \+: v.\+as$<$\+Array\+Value$>$()) \{ if (const Number\+Value$\ast$ n = item) \{ printf(\char`\"{}\+Found number\+: \%f\char`\"{}, $\ast$$\ast$n); \} \} \}
+
+if (v.\+is$<$\+Object\+Value$>$()) \{ const String\+Value$\ast$ id = v.\+as$<$\+Object\+Value$>$()\mbox{[}\char`\"{}id\char`\"{}\mbox{]}; if (id) \{ printf(\char`\"{}\+Found object I\+D\+: \%s\char`\"{}, id-\/$>$begin()); \} else \{ printf(\char`\"{}\+Missing object I\+D\char`\"{}); \} \} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classskjson_1_1_value_adffa17670b0e110f78a28009f5189ba8}\label{classskjson_1_1_value_adffa17670b0e110f78a28009f5189ba8}} 
+\index{skjson::Value@{skjson::Value}!as@{as}}
+\index{as@{as}!skjson::Value@{skjson::Value}}
+\doxysubsubsection{\texorpdfstring{as()}{as()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}}\& skjson\+::\+Value\+::as (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Unguarded conversion to facade types.
+
+\begin{DoxyReturn}{Returns}
+The record cast as facade type T\&. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classskjson_1_1_value_a6ce3a342a2278fb2a82be0e965f01bde}\label{classskjson_1_1_value_a6ce3a342a2278fb2a82be0e965f01bde}} 
+\index{skjson::Value@{skjson::Value}!getType@{getType}}
+\index{getType@{getType}!skjson::Value@{skjson::Value}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Value\+::\+Type skjson\+::\+Value\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The type of this value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classskjson_1_1_value_ad1e79b9fd1e59867d4c3360906765079}\label{classskjson_1_1_value_ad1e79b9fd1e59867d4c3360906765079}} 
+\index{skjson::Value@{skjson::Value}!is@{is}}
+\index{is@{is}!skjson::Value@{skjson::Value}}
+\doxysubsubsection{\texorpdfstring{is()}{is()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool skjson\+::\+Value\+::is (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+True if the record matches the facade type T. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classskjson_1_1_value_a0a96029c4b0bbbdc463e31b27423acd8}\label{classskjson_1_1_value_a0a96029c4b0bbbdc463e31b27423acd8}} 
+\index{skjson::Value@{skjson::Value}!operator const T $\ast$@{operator const T $\ast$}}
+\index{operator const T $\ast$@{operator const T $\ast$}!skjson::Value@{skjson::Value}}
+\doxysubsubsection{\texorpdfstring{operator const T $\ast$()}{operator const T *()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+skjson\+::\+Value\+::operator const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Guarded conversion to facade types.
+
+\begin{DoxyReturn}{Returns}
+The record cast as facade type T$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classskjson_1_1_value_a4df4cd15a511f2e1de9e1ad524f80c7e}\label{classskjson_1_1_value_a4df4cd15a511f2e1de9e1ad524f80c7e}} 
+\index{skjson::Value@{skjson::Value}!toString@{toString}}
+\index{toString@{toString}!skjson::Value@{skjson::Value}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_string}{Sk\+String}} skjson\+::\+Value\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The string representation of this value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+J\+S\+O\+N.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+J\+S\+O\+N.\+cpp\end{DoxyCompactItemize}

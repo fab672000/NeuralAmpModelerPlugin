@@ -1,0 +1,47 @@
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+The host application will handle a plug-\/in in the following manner (some code is Windows-\/specific!)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{HMODULE hModule = LoadLibrary (\textcolor{stringliteral}{"SomePlugin.dll"});}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (hModule)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    InitModuleProc initProc = (InitModuleProc)GetProcAddress (hModule, \textcolor{stringliteral}{"InitDll"});}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (initProc)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (initProc () == \textcolor{keyword}{false})}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            FreeLibrary (module);}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    GetFactoryProc proc = (GetFactoryProc)GetProcAddress (hModule, \textcolor{stringliteral}{"GetPluginFactory"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{    IPluginFactory* factory = proc ? proc () : 0;}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (factory)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{for} (\mbox{\hyperlink{group__gtc__type__precision_ga632d8b25f6b61659f39ea4321fab92a4}{int32}} i = 0; i < factory-\/>countClasses (); i++)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            PClassInfo ci;}
+\DoxyCodeLine{            factory-\/>getClassInfo (i, \&ci);}
+\DoxyCodeLine{}
+\DoxyCodeLine{            FUnknown* obj;}
+\DoxyCodeLine{            factory-\/>createInstance (ci.cid, FUnknown::iid, (\textcolor{keywordtype}{void}**)\&obj);}
+\DoxyCodeLine{            ...}
+\DoxyCodeLine{            obj-\/>release ();}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{        factory-\/>release ();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    ExitModuleProc exitProc = (ExitModuleProc)GetProcAddress (hModule, \textcolor{stringliteral}{"ExitDll"});}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (exitProc)}
+\DoxyCodeLine{        exitProc ();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    FreeLibrary (hModule);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

@@ -1,0 +1,331 @@
+\hypertarget{class_eigen_1_1_tensor_fixed_size}{}\doxysection{Eigen\+::Tensor\+Fixed\+Size$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$ Class Template Reference}
+\label{class_eigen_1_1_tensor_fixed_size}\index{Eigen::TensorFixedSize$<$ Scalar\_, Dimensions\_, Options\_, IndexType $>$@{Eigen::TensorFixedSize$<$ Scalar\_, Dimensions\_, Options\_, IndexType $>$}}
+
+
+The fixed sized version of the tensor class.  
+
+
+
+
+{\ttfamily \#include $<$Tensor\+Fixed\+Size.\+h$>$}
+
+Inheritance diagram for Eigen\+::Tensor\+Fixed\+Size$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eigen_1_1_tensor_fixed_size}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a4c37e406f3f06c68d1c9d55e90172b32}\label{class_eigen_1_1_tensor_fixed_size_a4c37e406f3f06c68d1c9d55e90172b32}} 
+enum \{ \newline
+{\bfseries Is\+Aligned} = bool(E\+I\+G\+E\+N\+\_\+\+M\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+Y\+T\+ES$>$0), 
+{\bfseries Packet\+Access} = (internal\+::packet\+\_\+traits$<$Scalar$>$\+::size $>$ 1), 
+{\bfseries Block\+Access} = false, 
+{\bfseries Prefer\+Block\+Access} = false, 
+\newline
+{\bfseries Coord\+Access} = true, 
+{\bfseries Raw\+Access} = true
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a761d6092e1b5d3897cf19ca528dadf27}\label{class_eigen_1_1_tensor_fixed_size_a761d6092e1b5d3897cf19ca528dadf27}} 
+enum \{ \newline
+{\bfseries Is\+Aligned} = bool(E\+I\+G\+E\+N\+\_\+\+M\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+B\+Y\+T\+ES$>$0), 
+{\bfseries Packet\+Access} = (internal\+::packet\+\_\+traits$<$Scalar$>$\+::size $>$ 1), 
+{\bfseries Block\+Access} = false, 
+{\bfseries Prefer\+Block\+Access} = false, 
+\newline
+{\bfseries Coord\+Access} = true, 
+{\bfseries Raw\+Access} = true
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a7a1b2d66554ac90311ed8da4b649f23a}\label{class_eigen_1_1_tensor_fixed_size_a7a1b2d66554ac90311ed8da4b649f23a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Tensor\+Fixed\+Size}}$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$ {\bfseries Self}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a265ab3158de7ea1fb7af56982a99f157}\label{class_eigen_1_1_tensor_fixed_size_a265ab3158de7ea1fb7af56982a99f157}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_tensor_base}{Tensor\+Base}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Tensor\+Fixed\+Size}}$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$ $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a493d8479135a88416b99aa83dec8d5fa}\label{class_eigen_1_1_tensor_fixed_size_a493d8479135a88416b99aa83dec8d5fa}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1nested}{Eigen\+::internal\+::nested}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} $>$\+::type {\bfseries Nested}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_abc19e8654428d0d1ef47591e716d1fa0}\label{class_eigen_1_1_tensor_fixed_size_abc19e8654428d0d1ef47591e716d1fa0}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a9f216e56b705771c41b13318ab4f0d9f}\label{class_eigen_1_1_tensor_fixed_size_a9f216e56b705771c41b13318ab4f0d9f}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} $>$\+::Index {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a279e84dd200f45087fd11be7ef8868af}\label{class_eigen_1_1_tensor_fixed_size_a279e84dd200f45087fd11be7ef8868af}} 
+typedef Scalar\+\_\+ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ad8c3a607bc14a360d373abf69054614e}\label{class_eigen_1_1_tensor_fixed_size_ad8c3a607bc14a360d373abf69054614e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a6e1bc5f90cc4c5d7f5e3d3ad3d2d06bd}\label{class_eigen_1_1_tensor_fixed_size_a6e1bc5f90cc4c5d7f5e3d3ad3d2d06bd}} 
+typedef Base\+::\+Coeff\+Return\+Type {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a4bd10d8e109e01bfb50476423177eb14}\label{class_eigen_1_1_tensor_fixed_size_a4bd10d8e109e01bfb50476423177eb14}} 
+typedef \mbox{\hyperlink{class_eigen_1_1internal_1_1_tensor_block_not_implemented}{internal\+::\+Tensor\+Block\+Not\+Implemented}} {\bfseries Tensor\+Block}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aa307b323caf82bd8629923bcd4a7632b}\label{class_eigen_1_1_tensor_fixed_size_aa307b323caf82bd8629923bcd4a7632b}} 
+typedef Dimensions\+\_\+ {\bfseries Dimensions}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a7a1b2d66554ac90311ed8da4b649f23a}\label{class_eigen_1_1_tensor_fixed_size_a7a1b2d66554ac90311ed8da4b649f23a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Tensor\+Fixed\+Size}}$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$ {\bfseries Self}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a265ab3158de7ea1fb7af56982a99f157}\label{class_eigen_1_1_tensor_fixed_size_a265ab3158de7ea1fb7af56982a99f157}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_tensor_base}{Tensor\+Base}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Tensor\+Fixed\+Size}}$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$ $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a493d8479135a88416b99aa83dec8d5fa}\label{class_eigen_1_1_tensor_fixed_size_a493d8479135a88416b99aa83dec8d5fa}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1nested}{Eigen\+::internal\+::nested}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} $>$\+::type {\bfseries Nested}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_abc19e8654428d0d1ef47591e716d1fa0}\label{class_eigen_1_1_tensor_fixed_size_abc19e8654428d0d1ef47591e716d1fa0}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a9f216e56b705771c41b13318ab4f0d9f}\label{class_eigen_1_1_tensor_fixed_size_a9f216e56b705771c41b13318ab4f0d9f}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} $>$\+::Index {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a279e84dd200f45087fd11be7ef8868af}\label{class_eigen_1_1_tensor_fixed_size_a279e84dd200f45087fd11be7ef8868af}} 
+typedef Scalar\+\_\+ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ad8c3a607bc14a360d373abf69054614e}\label{class_eigen_1_1_tensor_fixed_size_ad8c3a607bc14a360d373abf69054614e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a6e1bc5f90cc4c5d7f5e3d3ad3d2d06bd}\label{class_eigen_1_1_tensor_fixed_size_a6e1bc5f90cc4c5d7f5e3d3ad3d2d06bd}} 
+typedef Base\+::\+Coeff\+Return\+Type {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a4bd10d8e109e01bfb50476423177eb14}\label{class_eigen_1_1_tensor_fixed_size_a4bd10d8e109e01bfb50476423177eb14}} 
+typedef \mbox{\hyperlink{class_eigen_1_1internal_1_1_tensor_block_not_implemented}{internal\+::\+Tensor\+Block\+Not\+Implemented}} {\bfseries Tensor\+Block}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aa307b323caf82bd8629923bcd4a7632b}\label{class_eigen_1_1_tensor_fixed_size_aa307b323caf82bd8629923bcd4a7632b}} 
+typedef Dimensions\+\_\+ {\bfseries Dimensions}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a9bd827e74e66c5ad8e1139750f932296}\label{class_eigen_1_1_tensor_fixed_size_a9bd827e74e66c5ad8e1139750f932296}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries rank} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aa46081bc3fcbd0642d46ec16b2376843}\label{class_eigen_1_1_tensor_fixed_size_aa46081bc3fcbd0642d46ec16b2376843}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries dimension} (std\+::size\+\_\+t n) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ae254f8d4f13c5d76e85fd6ddf56743a3}\label{class_eigen_1_1_tensor_fixed_size_ae254f8d4f13c5d76e85fd6ddf56743a3}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Dimensions {\bfseries dimensions} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a96dd0e6a1d15323384f1600b512a9fac}\label{class_eigen_1_1_tensor_fixed_size_a96dd0e6a1d15323384f1600b512a9fac}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ae1267be644159b8c4926cc4f62f91a2a}\label{class_eigen_1_1_tensor_fixed_size_ae1267be644159b8c4926cc4f62f91a2a}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar $\ast$ {\bfseries data} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_af9bbcf13f58039569fb62435e1d63e3d}\label{class_eigen_1_1_tensor_fixed_size_af9bbcf13f58039569fb62435e1d63e3d}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar $\ast$ {\bfseries data} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a5be0375818cc7dfe18237ac24515cf4a}\label{class_eigen_1_1_tensor_fixed_size_a5be0375818cc7dfe18237ac24515cf4a}} 
+\mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \& {\bfseries base} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a23c06e6c763faa169dd257a3a6a4328e}\label{class_eigen_1_1_tensor_fixed_size_a23c06e6c763faa169dd257a3a6a4328e}} 
+const \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \& {\bfseries base} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ab6d2a89ac9185a12dbcfc6bad369d61f}\label{class_eigen_1_1_tensor_fixed_size_ab6d2a89ac9185a12dbcfc6bad369d61f}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} (Index first\+Index, Index\+Types... other\+Indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a531346cc27f508a6c337c27a3046f67a}\label{class_eigen_1_1_tensor_fixed_size_a531346cc27f508a6c337c27a3046f67a}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} (const array$<$ Index, Num\+Indices $>$ \&indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a4c7c5de9fce4ae16dc26cbd435ab05ee}\label{class_eigen_1_1_tensor_fixed_size_a4c7c5de9fce4ae16dc26cbd435ab05ee}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} (Index index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a3f0fa1e7181b0ef536f5b855d27e21c2}\label{class_eigen_1_1_tensor_fixed_size_a3f0fa1e7181b0ef536f5b855d27e21c2}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ab722d9472f1a381f4f578fa0582153f1}\label{class_eigen_1_1_tensor_fixed_size_ab722d9472f1a381f4f578fa0582153f1}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} (Index first\+Index, Index\+Types... other\+Indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a8659b7903814031122c82690cc7c010b}\label{class_eigen_1_1_tensor_fixed_size_a8659b7903814031122c82690cc7c010b}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} (const array$<$ Index, Num\+Indices $>$ \&indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a025b2fc02f00f9b3a100e85eddc59ca9}\label{class_eigen_1_1_tensor_fixed_size_a025b2fc02f00f9b3a100e85eddc59ca9}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} (Index index)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a137e21057f64825af9e238b73899a744}\label{class_eigen_1_1_tensor_fixed_size_a137e21057f64825af9e238b73899a744}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a614353a97426c9eb88c13cbb68ed8d2c}\label{class_eigen_1_1_tensor_fixed_size_a614353a97426c9eb88c13cbb68ed8d2c}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index first\+Index, Index\+Types... other\+Indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_af79ea884586d6b976e81deb2a8794954}\label{class_eigen_1_1_tensor_fixed_size_af79ea884586d6b976e81deb2a8794954}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (const array$<$ Index, Num\+Indices $>$ \&indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a96baca294a0d676826b78a4fcde86e82}\label{class_eigen_1_1_tensor_fixed_size_a96baca294a0d676826b78a4fcde86e82}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a509cacc2f548dd970911e341c77c70c7}\label{class_eigen_1_1_tensor_fixed_size_a509cacc2f548dd970911e341c77c70c7}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a1335dd5476ec1a3d6c5925e2801ee4f2}\label{class_eigen_1_1_tensor_fixed_size_a1335dd5476ec1a3d6c5925e2801ee4f2}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (Index index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a3fde6e18613edeb1a0adc6124e8b6c16}\label{class_eigen_1_1_tensor_fixed_size_a3fde6e18613edeb1a0adc6124e8b6c16}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index first\+Index, Index\+Types... other\+Indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a656cb9e7ff25fb122c8e287431b7df95}\label{class_eigen_1_1_tensor_fixed_size_a656cb9e7ff25fb122c8e287431b7df95}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (const array$<$ Index, Num\+Indices $>$ \&indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_abc69263e2a0c5fa47238a2b3fd591a63}\label{class_eigen_1_1_tensor_fixed_size_abc69263e2a0c5fa47238a2b3fd591a63}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index index)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a17b0f692638b3b0cbf27eb52ac8bec38}\label{class_eigen_1_1_tensor_fixed_size_a17b0f692638b3b0cbf27eb52ac8bec38}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ae9094e44629422c8fa3516ab84ccf48d}\label{class_eigen_1_1_tensor_fixed_size_ae9094e44629422c8fa3516ab84ccf48d}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (Index index)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a2d634d188e4393f8b41f72e3e5022b70}\label{class_eigen_1_1_tensor_fixed_size_a2d634d188e4393f8b41f72e3e5022b70}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (const \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a072f40a506ea3315d37889ef101bc011}\label{class_eigen_1_1_tensor_fixed_size_a072f40a506ea3315d37889ef101bc011}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (\mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \&\&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aaf625b2a75378a0ee259a7fb40080f9c}\label{class_eigen_1_1_tensor_fixed_size_aaf625b2a75378a0ee259a7fb40080f9c}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (const \mbox{\hyperlink{class_eigen_1_1_tensor_base}{Tensor\+Base}}$<$ Other\+Derived, \mbox{\hyperlink{group__enums_gga9f93eac38eb83deb0e8dbd42ddf11d5da42865f87356ad7e585a1bfbfd1b81699}{Read\+Only\+Accessors}} $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a10cfeabe6c4136871f40e943967218c5}\label{class_eigen_1_1_tensor_fixed_size_a10cfeabe6c4136871f40e943967218c5}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (const \mbox{\hyperlink{class_eigen_1_1_tensor_base}{Tensor\+Base}}$<$ Other\+Derived, \mbox{\hyperlink{group__enums_gga9f93eac38eb83deb0e8dbd42ddf11d5da2c59ef3697d65866c3a8e16eda7881ab}{Write\+Accessors}} $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a9bd827e74e66c5ad8e1139750f932296}\label{class_eigen_1_1_tensor_fixed_size_a9bd827e74e66c5ad8e1139750f932296}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries rank} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aa46081bc3fcbd0642d46ec16b2376843}\label{class_eigen_1_1_tensor_fixed_size_aa46081bc3fcbd0642d46ec16b2376843}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries dimension} (std\+::size\+\_\+t n) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ae254f8d4f13c5d76e85fd6ddf56743a3}\label{class_eigen_1_1_tensor_fixed_size_ae254f8d4f13c5d76e85fd6ddf56743a3}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Dimensions {\bfseries dimensions} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a96dd0e6a1d15323384f1600b512a9fac}\label{class_eigen_1_1_tensor_fixed_size_a96dd0e6a1d15323384f1600b512a9fac}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ae1267be644159b8c4926cc4f62f91a2a}\label{class_eigen_1_1_tensor_fixed_size_ae1267be644159b8c4926cc4f62f91a2a}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar $\ast$ {\bfseries data} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_af9bbcf13f58039569fb62435e1d63e3d}\label{class_eigen_1_1_tensor_fixed_size_af9bbcf13f58039569fb62435e1d63e3d}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar $\ast$ {\bfseries data} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a5be0375818cc7dfe18237ac24515cf4a}\label{class_eigen_1_1_tensor_fixed_size_a5be0375818cc7dfe18237ac24515cf4a}} 
+\mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \& {\bfseries base} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a23c06e6c763faa169dd257a3a6a4328e}\label{class_eigen_1_1_tensor_fixed_size_a23c06e6c763faa169dd257a3a6a4328e}} 
+const \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \& {\bfseries base} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ab6d2a89ac9185a12dbcfc6bad369d61f}\label{class_eigen_1_1_tensor_fixed_size_ab6d2a89ac9185a12dbcfc6bad369d61f}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} (Index first\+Index, Index\+Types... other\+Indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a531346cc27f508a6c337c27a3046f67a}\label{class_eigen_1_1_tensor_fixed_size_a531346cc27f508a6c337c27a3046f67a}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} (const array$<$ Index, Num\+Indices $>$ \&indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a4c7c5de9fce4ae16dc26cbd435ab05ee}\label{class_eigen_1_1_tensor_fixed_size_a4c7c5de9fce4ae16dc26cbd435ab05ee}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} (Index index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a3f0fa1e7181b0ef536f5b855d27e21c2}\label{class_eigen_1_1_tensor_fixed_size_a3f0fa1e7181b0ef536f5b855d27e21c2}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ab722d9472f1a381f4f578fa0582153f1}\label{class_eigen_1_1_tensor_fixed_size_ab722d9472f1a381f4f578fa0582153f1}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} (Index first\+Index, Index\+Types... other\+Indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a8659b7903814031122c82690cc7c010b}\label{class_eigen_1_1_tensor_fixed_size_a8659b7903814031122c82690cc7c010b}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} (const array$<$ Index, Num\+Indices $>$ \&indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a025b2fc02f00f9b3a100e85eddc59ca9}\label{class_eigen_1_1_tensor_fixed_size_a025b2fc02f00f9b3a100e85eddc59ca9}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} (Index index)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a137e21057f64825af9e238b73899a744}\label{class_eigen_1_1_tensor_fixed_size_a137e21057f64825af9e238b73899a744}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries coeff\+Ref} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a614353a97426c9eb88c13cbb68ed8d2c}\label{class_eigen_1_1_tensor_fixed_size_a614353a97426c9eb88c13cbb68ed8d2c}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index first\+Index, Index\+Types... other\+Indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_af79ea884586d6b976e81deb2a8794954}\label{class_eigen_1_1_tensor_fixed_size_af79ea884586d6b976e81deb2a8794954}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (const array$<$ Index, Num\+Indices $>$ \&indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a96baca294a0d676826b78a4fcde86e82}\label{class_eigen_1_1_tensor_fixed_size_a96baca294a0d676826b78a4fcde86e82}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a509cacc2f548dd970911e341c77c70c7}\label{class_eigen_1_1_tensor_fixed_size_a509cacc2f548dd970911e341c77c70c7}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a1335dd5476ec1a3d6c5925e2801ee4f2}\label{class_eigen_1_1_tensor_fixed_size_a1335dd5476ec1a3d6c5925e2801ee4f2}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (Index index) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a3fde6e18613edeb1a0adc6124e8b6c16}\label{class_eigen_1_1_tensor_fixed_size_a3fde6e18613edeb1a0adc6124e8b6c16}} 
+{\footnotesize template$<$typename... Index\+Types$>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index first\+Index, Index\+Types... other\+Indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a656cb9e7ff25fb122c8e287431b7df95}\label{class_eigen_1_1_tensor_fixed_size_a656cb9e7ff25fb122c8e287431b7df95}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (const array$<$ Index, Num\+Indices $>$ \&indices)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_abc69263e2a0c5fa47238a2b3fd591a63}\label{class_eigen_1_1_tensor_fixed_size_abc69263e2a0c5fa47238a2b3fd591a63}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} (Index index)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a17b0f692638b3b0cbf27eb52ac8bec38}\label{class_eigen_1_1_tensor_fixed_size_a17b0f692638b3b0cbf27eb52ac8bec38}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator()} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ae9094e44629422c8fa3516ab84ccf48d}\label{class_eigen_1_1_tensor_fixed_size_ae9094e44629422c8fa3516ab84ccf48d}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (Index index)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a2d634d188e4393f8b41f72e3e5022b70}\label{class_eigen_1_1_tensor_fixed_size_a2d634d188e4393f8b41f72e3e5022b70}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (const \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a072f40a506ea3315d37889ef101bc011}\label{class_eigen_1_1_tensor_fixed_size_a072f40a506ea3315d37889ef101bc011}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (\mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Self}} \&\&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aaf625b2a75378a0ee259a7fb40080f9c}\label{class_eigen_1_1_tensor_fixed_size_aaf625b2a75378a0ee259a7fb40080f9c}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (const \mbox{\hyperlink{class_eigen_1_1_tensor_base}{Tensor\+Base}}$<$ Other\+Derived, \mbox{\hyperlink{group__enums_gga9f93eac38eb83deb0e8dbd42ddf11d5da42865f87356ad7e585a1bfbfd1b81699}{Read\+Only\+Accessors}} $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a10cfeabe6c4136871f40e943967218c5}\label{class_eigen_1_1_tensor_fixed_size_a10cfeabe6c4136871f40e943967218c5}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+Fixed\+Size} (const \mbox{\hyperlink{class_eigen_1_1_tensor_base}{Tensor\+Base}}$<$ Other\+Derived, \mbox{\hyperlink{group__enums_gga9f93eac38eb83deb0e8dbd42ddf11d5da2c59ef3697d65866c3a8e16eda7881ab}{Write\+Accessors}} $>$ \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a20c4a74ae9e094c95e42d20c77805509}\label{class_eigen_1_1_tensor_fixed_size_a20c4a74ae9e094c95e42d20c77805509}} 
+static constexpr int {\bfseries Options} = Options\+\_\+
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_a8d7527857db918476277238d607fbc58}\label{class_eigen_1_1_tensor_fixed_size_a8d7527857db918476277238d607fbc58}} 
+static constexpr int {\bfseries Layout} = Options\+\_\+ \& \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13acfcde9cd8677c5f7caf6bd603666aae3}{Row\+Major}} ? \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13acfcde9cd8677c5f7caf6bd603666aae3}{Row\+Major}} \+: \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_adc2df8161ffcf3225e295df5ee79ae2f}\label{class_eigen_1_1_tensor_fixed_size_adc2df8161ffcf3225e295df5ee79ae2f}} 
+static constexpr std\+::size\+\_\+t {\bfseries Num\+Indices} = Dimensions\+::count
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ad46d72e55a8eb94256c02361d9f6047c}\label{class_eigen_1_1_tensor_fixed_size_ad46d72e55a8eb94256c02361d9f6047c}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE bool {\bfseries check\+Index\+Range} (const array$<$ Index, Num\+Indices $>$ \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_adb982d78883b4f5a1c2787297419c8d4}\label{class_eigen_1_1_tensor_fixed_size_adb982d78883b4f5a1c2787297419c8d4}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries linearized\+Index} (const array$<$ Index, Num\+Indices $>$ \&indices) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_ad46d72e55a8eb94256c02361d9f6047c}\label{class_eigen_1_1_tensor_fixed_size_ad46d72e55a8eb94256c02361d9f6047c}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE bool {\bfseries check\+Index\+Range} (const array$<$ Index, Num\+Indices $>$ \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_adb982d78883b4f5a1c2787297419c8d4}\label{class_eigen_1_1_tensor_fixed_size_adb982d78883b4f5a1c2787297419c8d4}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Index {\bfseries linearized\+Index} (const array$<$ Index, Num\+Indices $>$ \&indices) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_fixed_size_aaa3ef6aa599835faa6919ccb83646bca}\label{class_eigen_1_1_tensor_fixed_size_aaa3ef6aa599835faa6919ccb83646bca}} 
+\mbox{\hyperlink{class_eigen_1_1_tensor_storage}{Tensor\+Storage}}$<$ Scalar, Dimensions, Options $>$ {\bfseries m\+\_\+storage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+\_\+, typename Dimensions\+\_\+, int Options\+\_\+, typename Index\+Type$>$\newline
+class Eigen\+::\+Tensor\+Fixed\+Size$<$ Scalar\+\_\+, Dimensions\+\_\+, Options\+\_\+, Index\+Type $>$}
+
+The fixed sized version of the tensor class. 
+
+The fixed sized equivalent of Eigen\+::\+Tensor$<$float, 3$>$ t(3, 5, 7); is \mbox{\hyperlink{class_eigen_1_1_tensor_fixed_size}{Eigen\+::\+Tensor\+Fixed\+Size}}$<$float, Sizes$<$3,5,7$>$$>$ t; 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Fixed\+Size.\+h\end{DoxyCompactItemize}

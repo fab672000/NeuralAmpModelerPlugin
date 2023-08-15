@@ -1,0 +1,435 @@
+\hypertarget{class_audio_effect_x}{}\doxysection{Audio\+EffectX Class Reference}
+\label{class_audio_effect_x}\index{AudioEffectX@{AudioEffectX}}
+
+
+{\ttfamily \#include $<$audioeffectx.\+h$>$}
+
+Inheritance diagram for Audio\+EffectX\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_audio_effect_x}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_audio_effect_x_a2cf2e60b0a0ad1a52654611593d83dcb}{Audio\+EffectX}} (audio\+Master\+Callback \mbox{\hyperlink{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}{audio\+Master}}, Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a709e60e18ecca1108fdb3a4d04f68dc3}{num\+Programs}}, Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a597a9d9a5edb95e486bb3b238c570ce8}{num\+Params}})
+\begin{DoxyCompactList}\small\item\em Create an {\itshape \mbox{\hyperlink{class_audio_effect_x}{Audio\+EffectX}}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Connections and Configuration}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_audio_effect_x_afd1663ca60afd2f9b7288d10004cf575}{io\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Tell Host num\+Inputs and/or num\+Outputs and/or initial\+Delay (and/or num\+Parameters\+: to be avoid) have changed. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_audio_effect_x_a65ea6583567e22cc5f2594e25a76bcdf}{update\+Sample\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Returns sample rate from Host (may issue set\+Sample\+Rate()) \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_a2a57d5f42162dabf65d9695b6575e785}{update\+Block\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns block size from Host (may issue get\+Block\+Size()) \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_aae00a5d338e0b6d291ed10fb554a4132}{get\+Input\+Latency}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Audio (maybe A\+S\+IO) input latency values. \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_a7f1f2249c54ef470bbb2e9262c7707f4}{get\+Output\+Latency}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Audio (maybe A\+S\+IO) output latency values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Realtime}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}} $\ast$ \mbox{\hyperlink{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}{get\+Time\+Info}} (Vst\+Int32 filter)
+\begin{DoxyCompactList}\small\item\em Get time information from Host. \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_a48e1604ed621e8a0ca9ff7836aa76dfc}{get\+Current\+Process\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Host\textquotesingle{}s process level. \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_a84da796c09c89ff64c77000e04618073}{get\+Automation\+State}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Host\textquotesingle{}s automation state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_audio_effect_x_a0b5d8c7546cbec387015a6a8fe7a0a98}{send\+Vst\+Events\+To\+Host}} (\mbox{\hyperlink{struct_vst_events}{Vst\+Events}} $\ast$events)
+\begin{DoxyCompactList}\small\item\em Send M\+I\+DI events back to Host application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Host Properties}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_audio_effect_x_aebb28af8d3942675a8816bd6a018f049}{get\+Host\+Vendor\+String}} (char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Fills {\itshape text} with a string identifying the vendor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_audio_effect_x_ad601bba9648b3fadf0073783508f34aa}{get\+Host\+Product\+String}} (char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Fills {\itshape text} with a string with product name. \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_aa5cfcc05fa41316602e69cf14c59874b}{get\+Host\+Vendor\+Version}} ()
+\begin{DoxyCompactList}\small\item\em Returns vendor-\/specific version (for example 3200 for Nuendo 3.\+2) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_x_a64a489eb3b8a4353a1f5956db05685d9}\label{class_audio_effect_x_a64a489eb3b8a4353a1f5956db05685d9}} 
+virtual Vst\+Int\+Ptr \mbox{\hyperlink{class_audio_effect_x_a64a489eb3b8a4353a1f5956db05685d9}{host\+Vendor\+Specific}} (Vst\+Int32 l\+Arg1, Vst\+Int\+Ptr l\+Arg2, void $\ast$ptr\+Arg, float float\+Arg)
+\begin{DoxyCompactList}\small\item\em No specific definition. \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_aebd9e3052c52d95b4ee146b87eef64f0}{can\+Host\+Do}} (char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Reports what the Host is able to do (\#host\+Can\+Dos in audioeffectx.\+cpp) \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_x_a56b1e99320ff53095ea79440f2149c5e}{get\+Host\+Language}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Host\textquotesingle{}s language (\#\+Vst\+Host\+Language) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Plug-\/in Properties}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_audio_effect_x_a37e43c4b41ea11e8d00b9252c14434cf}{is\+Synth}} (bool \mbox{\hyperlink{structstate}{state}}=true)
+\begin{DoxyCompactList}\small\item\em Set if plug-\/in is a synth. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_x_af683acda0f55fe277b8cbbbb479f6312}{no\+Tail}} (bool \mbox{\hyperlink{structstate}{state}}=true)
+\begin{DoxyCompactList}\small\item\em Plug-\/in won\textquotesingle{}t produce output signals while there is no input. \end{DoxyCompactList}\item 
+virtual void $\ast$ \mbox{\hyperlink{class_audio_effect_x_a0d6ad09461186d3e779b279b55463a30}{get\+Directory}} ()
+\begin{DoxyCompactList}\small\item\em Returns the plug-\/in\textquotesingle{}s directory. \end{DoxyCompactList}\item 
+virtual Vst\+Plug\+Category \mbox{\hyperlink{class_audio_effect_x_afc661d87373690a8dba38d201cf61010}{get\+Plug\+Category}} ()
+\begin{DoxyCompactList}\small\item\em Specify a category that fits the plug (\#\+Vst\+Plug\+Category) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Others}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_audio_effect_x_a62c47e72d53185d259979cef66b96081}{update\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Something has changed in plug-\/in, request an update display like program (M\+I\+DI too) and parameters list in Host. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_audio_effect_x_a33b48b4b937163e7eb0cdac51778dbd1}{size\+Window}} (Vst\+Int32 width, Vst\+Int32 height)
+\begin{DoxyCompactList}\small\item\em Requests to resize the editor window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Extended V\+ST Effect Class (V\+ST 2.\+x). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_audio_effect_x_a2cf2e60b0a0ad1a52654611593d83dcb}\label{class_audio_effect_x_a2cf2e60b0a0ad1a52654611593d83dcb}} 
+\index{AudioEffectX@{AudioEffectX}!AudioEffectX@{AudioEffectX}}
+\index{AudioEffectX@{AudioEffectX}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{AudioEffectX()}{AudioEffectX()}}
+{\footnotesize\ttfamily Audio\+Effect\+X\+::\+Audio\+EffectX (\begin{DoxyParamCaption}\item[{audio\+Master\+Callback}]{audio\+Master,  }\item[{Vst\+Int32}]{num\+Programs,  }\item[{Vst\+Int32}]{num\+Params }\end{DoxyParamCaption})}
+
+
+
+Create an {\itshape \mbox{\hyperlink{class_audio_effect_x}{Audio\+EffectX}}} object. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_audio_effect_af4c7918732aa2661a753c688cbb8a0a9}{Audio\+Effect()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_audio_effect_x_aebd9e3052c52d95b4ee146b87eef64f0}\label{class_audio_effect_x_aebd9e3052c52d95b4ee146b87eef64f0}} 
+\index{AudioEffectX@{AudioEffectX}!canHostDo@{canHostDo}}
+\index{canHostDo@{canHostDo}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{canHostDo()}{canHostDo()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::can\+Host\+Do (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reports what the Host is able to do (\#host\+Can\+Dos in audioeffectx.\+cpp) 
+
+Asks Host if it implements the feature text. A plug-\/in cannot assume a 2.\+x feature is available from the Host. Use this method to ascertain the environment in which the plug-\/in finds itself. Ignoring this inquiry methods and trying to access a 2.\+x feature in a 1.\+0 Host will mean your plug-\/in or Host application will break. It is not the end-\/users job to pick and choose which plug-\/ins can be supported by which Host.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & A string from \#host\+Can\+Dos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item 0 \+: don\textquotesingle{}t know (default)
+\item 1 \+: yes
+\item -\/1\+: no 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a84da796c09c89ff64c77000e04618073}\label{class_audio_effect_x_a84da796c09c89ff64c77000e04618073}} 
+\index{AudioEffectX@{AudioEffectX}!getAutomationState@{getAutomationState}}
+\index{getAutomationState@{getAutomationState}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getAutomationState()}{getAutomationState()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::get\+Automation\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Host\textquotesingle{}s automation state. 
+
+\begin{DoxyReturn}{Returns}
+\#\+Vst\+Automation\+States in \mbox{\hyperlink{aeffectx_8h_source}{aeffectx.\+h}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a48e1604ed621e8a0ca9ff7836aa76dfc}\label{class_audio_effect_x_a48e1604ed621e8a0ca9ff7836aa76dfc}} 
+\index{AudioEffectX@{AudioEffectX}!getCurrentProcessLevel@{getCurrentProcessLevel}}
+\index{getCurrentProcessLevel@{getCurrentProcessLevel}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getCurrentProcessLevel()}{getCurrentProcessLevel()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::get\+Current\+Process\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Host\textquotesingle{}s process level. 
+
+A plug-\/in is like a black box processing some audio coming in on some inputs (if any) and going out of some outputs (if any). This may be used to do offline or real-\/time processing, and sometimes it may be desirable to know the current context.
+
+\begin{DoxyReturn}{Returns}
+\#\+Vst\+Process\+Levels in \mbox{\hyperlink{aeffectx_8h_source}{aeffectx.\+h}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a0d6ad09461186d3e779b279b55463a30}\label{class_audio_effect_x_a0d6ad09461186d3e779b279b55463a30}} 
+\index{AudioEffectX@{AudioEffectX}!getDirectory@{getDirectory}}
+\index{getDirectory@{getDirectory}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getDirectory()}{getDirectory()}}
+{\footnotesize\ttfamily void $\ast$ Audio\+Effect\+X\+::get\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the plug-\/in\textquotesingle{}s directory. 
+
+\begin{DoxyReturn}{Returns}
+F\+S\+Spec on M\+AC, else char$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a56b1e99320ff53095ea79440f2149c5e}\label{class_audio_effect_x_a56b1e99320ff53095ea79440f2149c5e}} 
+\index{AudioEffectX@{AudioEffectX}!getHostLanguage@{getHostLanguage}}
+\index{getHostLanguage@{getHostLanguage}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getHostLanguage()}{getHostLanguage()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::get\+Host\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Host\textquotesingle{}s language (\#\+Vst\+Host\+Language) 
+
+\begin{DoxyReturn}{Returns}
+\#\+Vst\+Host\+Language in \mbox{\hyperlink{aeffectx_8h_source}{aeffectx.\+h}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_ad601bba9648b3fadf0073783508f34aa}\label{class_audio_effect_x_ad601bba9648b3fadf0073783508f34aa}} 
+\index{AudioEffectX@{AudioEffectX}!getHostProductString@{getHostProductString}}
+\index{getHostProductString@{getHostProductString}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getHostProductString()}{getHostProductString()}}
+{\footnotesize\ttfamily bool Audio\+Effect\+X\+::get\+Host\+Product\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fills {\itshape text} with a string with product name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & String of maximum 64 char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape true} if supported 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_aebb28af8d3942675a8816bd6a018f049}\label{class_audio_effect_x_aebb28af8d3942675a8816bd6a018f049}} 
+\index{AudioEffectX@{AudioEffectX}!getHostVendorString@{getHostVendorString}}
+\index{getHostVendorString@{getHostVendorString}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getHostVendorString()}{getHostVendorString()}}
+{\footnotesize\ttfamily bool Audio\+Effect\+X\+::get\+Host\+Vendor\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fills {\itshape text} with a string identifying the vendor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & String of maximum 64 char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape true} if supported 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_aa5cfcc05fa41316602e69cf14c59874b}\label{class_audio_effect_x_aa5cfcc05fa41316602e69cf14c59874b}} 
+\index{AudioEffectX@{AudioEffectX}!getHostVendorVersion@{getHostVendorVersion}}
+\index{getHostVendorVersion@{getHostVendorVersion}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getHostVendorVersion()}{getHostVendorVersion()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::get\+Host\+Vendor\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns vendor-\/specific version (for example 3200 for Nuendo 3.\+2) 
+
+\begin{DoxyReturn}{Returns}
+Host vendor version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_aae00a5d338e0b6d291ed10fb554a4132}\label{class_audio_effect_x_aae00a5d338e0b6d291ed10fb554a4132}} 
+\index{AudioEffectX@{AudioEffectX}!getInputLatency@{getInputLatency}}
+\index{getInputLatency@{getInputLatency}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getInputLatency()}{getInputLatency()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::get\+Input\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Audio (maybe A\+S\+IO) input latency values. 
+
+\begin{DoxyReturn}{Returns}
+A\+S\+IO input latency 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_audio_effect_x_a7f1f2249c54ef470bbb2e9262c7707f4}{get\+Output\+Latency()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_audio_effect_x_a7f1f2249c54ef470bbb2e9262c7707f4}\label{class_audio_effect_x_a7f1f2249c54ef470bbb2e9262c7707f4}} 
+\index{AudioEffectX@{AudioEffectX}!getOutputLatency@{getOutputLatency}}
+\index{getOutputLatency@{getOutputLatency}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getOutputLatency()}{getOutputLatency()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::get\+Output\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Audio (maybe A\+S\+IO) output latency values. 
+
+While input\+Latency is probably not of concern, output\+Latency may be used in conjunction with \mbox{\hyperlink{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}{get\+Time\+Info()}}. {\itshape sample\+Pos} of \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}} is ahead of the \textquotesingle{}visual\textquotesingle{} sequencer play time by the output latency, such that when output\+Latency samples have passed by, our processing result becomes audible.
+
+\begin{DoxyReturn}{Returns}
+A\+S\+IO output latency 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_audio_effect_x_aae00a5d338e0b6d291ed10fb554a4132}{get\+Input\+Latency()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_audio_effect_x_afc661d87373690a8dba38d201cf61010}\label{class_audio_effect_x_afc661d87373690a8dba38d201cf61010}} 
+\index{AudioEffectX@{AudioEffectX}!getPlugCategory@{getPlugCategory}}
+\index{getPlugCategory@{getPlugCategory}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getPlugCategory()}{getPlugCategory()}}
+{\footnotesize\ttfamily Vst\+Plug\+Category Audio\+Effect\+X\+::get\+Plug\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Specify a category that fits the plug (\#\+Vst\+Plug\+Category) 
+
+\begin{DoxyReturn}{Returns}
+Plug-\/in\textquotesingle{}s category defined in Vst\+Plug\+Category 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}\label{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}} 
+\index{AudioEffectX@{AudioEffectX}!getTimeInfo@{getTimeInfo}}
+\index{getTimeInfo@{getTimeInfo}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{getTimeInfo()}{getTimeInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}} $\ast$ Audio\+Effect\+X\+::get\+Time\+Info (\begin{DoxyParamCaption}\item[{Vst\+Int32}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get time information from Host. 
+
+A plug-\/in will request time info by calling the function \mbox{\hyperlink{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}{get\+Time\+Info()}} which returns a {\itshape \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}}} pointer (or N\+U\+LL if not implemented by the Host). The mask parameter is composed of the same flags which will be found in the flags field of {\itshape \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}}} when returned, that is, if you need information about tempo. The parameter passed to \mbox{\hyperlink{class_audio_effect_x_a321316fdaf0c636a8db927eabe8b5304}{get\+Time\+Info()}} should have the {\itshape \#k\+Vst\+Tempo\+Valid} flag set. This request and delivery system is important, as a request like this may cause significant calculations at the application\textquotesingle{}s end, which may take a lot of our precious time. This obviously means you should only set those flags that are required to get the information you need. Also please be aware that requesting information does not necessarily mean that that information is provided in return. Check the {\itshape flags} field in the {\itshape \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}}} structure to see if your request was actually met.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & A mask indicating which fields are requested, as some items may require extensive conversions. See the {\itshape flags} in \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to a \mbox{\hyperlink{struct_vst_time_info}{Vst\+Time\+Info}} structure or N\+U\+LL if not implemented by the Host 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_afd1663ca60afd2f9b7288d10004cf575}\label{class_audio_effect_x_afd1663ca60afd2f9b7288d10004cf575}} 
+\index{AudioEffectX@{AudioEffectX}!ioChanged@{ioChanged}}
+\index{ioChanged@{ioChanged}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{ioChanged()}{ioChanged()}}
+{\footnotesize\ttfamily bool Audio\+Effect\+X\+::io\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Tell Host num\+Inputs and/or num\+Outputs and/or initial\+Delay (and/or num\+Parameters\+: to be avoid) have changed. 
+
+The Host could call a suspend() (if the plug-\/in was enabled (in resume() state)) and then ask for get\+Speaker\+Arrangement() and/or check the {\itshape num\+Inputs} and {\itshape num\+Outputs} and {\itshape initial\+Delay} and then call a resume().
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} on success
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+set\+Speaker\+Arrangement(), get\+Speaker\+Arrangement() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_audio_effect_x_a37e43c4b41ea11e8d00b9252c14434cf}\label{class_audio_effect_x_a37e43c4b41ea11e8d00b9252c14434cf}} 
+\index{AudioEffectX@{AudioEffectX}!isSynth@{isSynth}}
+\index{isSynth@{isSynth}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{isSynth()}{isSynth()}}
+{\footnotesize\ttfamily void Audio\+Effect\+X\+::is\+Synth (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set if plug-\/in is a synth. 
+
+Tells the Host that the plug-\/in is an instrument, i.\+e. that it will call want\+Events().
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & 
+\begin{DoxyItemize}
+\item true\+: is an instrument (default)
+\item false\+: is a simple audio effect 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_x_af683acda0f55fe277b8cbbbb479f6312}\label{class_audio_effect_x_af683acda0f55fe277b8cbbbb479f6312}} 
+\index{AudioEffectX@{AudioEffectX}!noTail@{noTail}}
+\index{noTail@{noTail}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{noTail()}{noTail()}}
+{\footnotesize\ttfamily void Audio\+Effect\+X\+::no\+Tail (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Plug-\/in won\textquotesingle{}t produce output signals while there is no input. 
+
+Enables Host to omit \mbox{\hyperlink{class_audio_effect_adc6e2f1db03219622654a36aafd6b391}{process\+Replacing()}} when no data is present on any input. \mbox{\Hypertarget{class_audio_effect_x_a0b5d8c7546cbec387015a6a8fe7a0a98}\label{class_audio_effect_x_a0b5d8c7546cbec387015a6a8fe7a0a98}} 
+\index{AudioEffectX@{AudioEffectX}!sendVstEventsToHost@{sendVstEventsToHost}}
+\index{sendVstEventsToHost@{sendVstEventsToHost}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{sendVstEventsToHost()}{sendVstEventsToHost()}}
+{\footnotesize\ttfamily bool Audio\+Effect\+X\+::send\+Vst\+Events\+To\+Host (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vst_events}{Vst\+Events}} $\ast$}]{events }\end{DoxyParamCaption})}
+
+
+
+Send M\+I\+DI events back to Host application. 
+
+Can be called inside process\+Replacing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em events} & Fill with V\+ST events \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns {\itshape true} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a33b48b4b937163e7eb0cdac51778dbd1}\label{class_audio_effect_x_a33b48b4b937163e7eb0cdac51778dbd1}} 
+\index{AudioEffectX@{AudioEffectX}!sizeWindow@{sizeWindow}}
+\index{sizeWindow@{sizeWindow}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{sizeWindow()}{sizeWindow()}}
+{\footnotesize\ttfamily bool Audio\+Effect\+X\+::size\+Window (\begin{DoxyParamCaption}\item[{Vst\+Int32}]{width,  }\item[{Vst\+Int32}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Requests to resize the editor window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The window\textquotesingle{}s width in pixel \\
+\hline
+{\em height} & The window\textquotesingle{}s height in pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape true} on success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a2a57d5f42162dabf65d9695b6575e785}\label{class_audio_effect_x_a2a57d5f42162dabf65d9695b6575e785}} 
+\index{AudioEffectX@{AudioEffectX}!updateBlockSize@{updateBlockSize}}
+\index{updateBlockSize@{updateBlockSize}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{updateBlockSize()}{updateBlockSize()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+X\+::update\+Block\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns block size from Host (may issue get\+Block\+Size()) 
+
+\begin{DoxyReturn}{Returns}
+The Host\textquotesingle{}s block size
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Will cause application to call \mbox{\hyperlink{class_audio_effect}{Audio\+Effect}}\textquotesingle{}s set\+Sample\+Rate() to be called (when implemented). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_audio_effect_x_a62c47e72d53185d259979cef66b96081}\label{class_audio_effect_x_a62c47e72d53185d259979cef66b96081}} 
+\index{AudioEffectX@{AudioEffectX}!updateDisplay@{updateDisplay}}
+\index{updateDisplay@{updateDisplay}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{updateDisplay()}{updateDisplay()}}
+{\footnotesize\ttfamily bool Audio\+Effect\+X\+::update\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Something has changed in plug-\/in, request an update display like program (M\+I\+DI too) and parameters list in Host. 
+
+\begin{DoxyReturn}{Returns}
+{\itshape true} if supported 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_x_a65ea6583567e22cc5f2594e25a76bcdf}\label{class_audio_effect_x_a65ea6583567e22cc5f2594e25a76bcdf}} 
+\index{AudioEffectX@{AudioEffectX}!updateSampleRate@{updateSampleRate}}
+\index{updateSampleRate@{updateSampleRate}!AudioEffectX@{AudioEffectX}}
+\doxysubsubsection{\texorpdfstring{updateSampleRate()}{updateSampleRate()}}
+{\footnotesize\ttfamily double Audio\+Effect\+X\+::update\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns sample rate from Host (may issue set\+Sample\+Rate()) 
+
+\begin{DoxyReturn}{Returns}
+The Host\textquotesingle{}s sample rate 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/public.\+sdk/source/vst2.\+x/audioeffectx.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/public.\+sdk/source/vst2.\+x/audioeffectx.\+cpp\end{DoxyCompactItemize}

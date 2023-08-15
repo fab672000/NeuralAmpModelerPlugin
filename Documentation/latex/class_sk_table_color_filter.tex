@@ -1,0 +1,32 @@
+\hypertarget{class_sk_table_color_filter}{}\doxysection{Sk\+Table\+Color\+Filter Class Reference}
+\label{class_sk_table_color_filter}\index{SkTableColorFilter@{SkTableColorFilter}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $>$ \mbox{\hyperlink{class_sk_table_color_filter_a4657faa4d3f4cea3d48ba54c2c9d327e}{Make}} (const uint8\+\_\+t table\mbox{[}256\mbox{]})
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $>$ \mbox{\hyperlink{class_sk_table_color_filter_a1a78175f498f66a87432fb556338ba0a}{Make\+A\+R\+GB}} (const uint8\+\_\+t tableA\mbox{[}256\mbox{]}, const uint8\+\_\+t tableR\mbox{[}256\mbox{]}, const uint8\+\_\+t tableG\mbox{[}256\mbox{]}, const uint8\+\_\+t tableB\mbox{[}256\mbox{]})
+\item 
+\mbox{\Hypertarget{class_sk_table_color_filter_a832530fa94f9e36ce526485189a70028}\label{class_sk_table_color_filter_a832530fa94f9e36ce526485189a70028}} 
+static void {\bfseries Register\+Flattenables} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_table_color_filter_a4657faa4d3f4cea3d48ba54c2c9d327e}\label{class_sk_table_color_filter_a4657faa4d3f4cea3d48ba54c2c9d327e}} 
+\index{SkTableColorFilter@{SkTableColorFilter}!Make@{Make}}
+\index{Make@{Make}!SkTableColorFilter@{SkTableColorFilter}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}$>$ Sk\+Table\+Color\+Filter\+::\+Make (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{table\mbox{[}256\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a table colorfilter, copying the table into the filter, and applying it to all 4 components. a\textquotesingle{} = table\mbox{[}a\mbox{]}; r\textquotesingle{} = table\mbox{[}r\mbox{]}; g\textquotesingle{} = table\mbox{[}g\mbox{]}; b\textquotesingle{} = table\mbox{[}b\mbox{]}; Compoents are operated on in unpremultiplied space. If the incomming colors are premultiplied, they are temporarily unpremultiplied, then the table is applied, and then the result is remultiplied. \mbox{\Hypertarget{class_sk_table_color_filter_a1a78175f498f66a87432fb556338ba0a}\label{class_sk_table_color_filter_a1a78175f498f66a87432fb556338ba0a}} 
+\index{SkTableColorFilter@{SkTableColorFilter}!MakeARGB@{MakeARGB}}
+\index{MakeARGB@{MakeARGB}!SkTableColorFilter@{SkTableColorFilter}}
+\doxysubsubsection{\texorpdfstring{MakeARGB()}{MakeARGB()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}}$>$ Sk\+Table\+Color\+Filter\+::\+Make\+A\+R\+GB (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{tableA\mbox{[}256\mbox{]},  }\item[{const uint8\+\_\+t}]{tableR\mbox{[}256\mbox{]},  }\item[{const uint8\+\_\+t}]{tableG\mbox{[}256\mbox{]},  }\item[{const uint8\+\_\+t}]{tableB\mbox{[}256\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a table colorfilter, with a different table for each component \mbox{[}A, R, \mbox{\hyperlink{struct_g}{G}}, B\mbox{]}. If a given table is N\+U\+LL, then it is treated as identity, with the component left unchanged. If a table is not null, then its contents are copied into the filter. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/effects/Sk\+Table\+Color\+Filter.\+h\end{DoxyCompactItemize}

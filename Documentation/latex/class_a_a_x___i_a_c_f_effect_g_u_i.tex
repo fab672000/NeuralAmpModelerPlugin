@@ -1,0 +1,289 @@
+\hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+UI Class Reference}
+\label{class_a_a_x___i_a_c_f_effect_g_u_i}\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+
+
+The interface for a A\+AX Plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}} (graphical user interface).  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.200000cm]{class_a_a_x___i_a_c_f_effect_g_u_i}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Initialization and uninitialization}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_aac9d8ab88172ac594d86ac2441522fec}{Initialize}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+Controller)=0
+\begin{DoxyCompactList}\small\item\em Main \mbox{\hyperlink{class_g_u_i}{G\+UI}} initialization. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_ab7d1c3c80a60637f9a9fd1860fe418cb}{Uninitialize}} ()=0
+\begin{DoxyCompactList}\small\item\em Main \mbox{\hyperlink{class_g_u_i}{G\+UI}} uninitialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ A\+AX host and plug-\/in event notification}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a11a15162cb3c7019d1fabf2994fba6c6}{Notification\+Received}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} in\+Notification\+Type, const void $\ast$in\+Notification\+Data, uint32\+\_\+t in\+Notification\+Data\+Size)=0
+\begin{DoxyCompactList}\small\item\em Notification Hook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ View accessors}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a50830385c58f104c87b6ef25144b30dd}{Set\+View\+Container}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+View\+Container)=0
+\begin{DoxyCompactList}\small\item\em Provides a handle to the main plug-\/in window. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_ae67c876225e9b5c538560d19a842a34c}{Get\+View\+Size}} (\mbox{\hyperlink{struct_a_a_x___point}{A\+A\+X\+\_\+\+Point}} $\ast$o\+View\+Size) const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the size of the plug-\/in window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ G\+UI update methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_a4b132a0bc22ba443027998a56e4eadfb}\label{class_a_a_x___i_a_c_f_effect_g_u_i_a4b132a0bc22ba443027998a56e4eadfb}} 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a4b132a0bc22ba443027998a56e4eadfb}{Draw}} (\mbox{\hyperlink{struct_a_a_x___rect}{A\+A\+X\+\_\+\+Rect}} $\ast$i\+Draw\+Rect)=0
+\begin{DoxyCompactList}\small\item\em D\+E\+P\+R\+E\+C\+A\+T\+ED, Not called from host any longer. ~\newline
+ Your chosen graphics framework should be directly handling draw events from the OS. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_aafa484110d39046de1f927f30c9da387}{Timer\+Wakeup}} ()=0
+\begin{DoxyCompactList}\small\item\em Periodic wakeup callback for idle-\/time operations. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a45b468fef806611581f748af9301ab4d}{Parameter\+Updated}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} in\+Param\+ID)=0
+\begin{DoxyCompactList}\small\item\em Notifies the \mbox{\hyperlink{class_g_u_i}{G\+UI}} that a parameter value has changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Host interface methods}\par
+{\em Miscellaneous methods to provide host-\/specific functionality }\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a81450c5272935689a4fb9c1820d6bba8}{Get\+Custom\+Label}} (\mbox{\hyperlink{_a_a_x___enums_8h_a86f7310877399d9d4d2ea4863d472476}{A\+A\+X\+\_\+\+E\+Plug\+In\+Strings}} i\+Selector, \mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$o\+String) const =0
+\begin{DoxyCompactList}\small\item\em Called by host application to retrieve a custom plug-\/in string. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a3922a4b9fef09e88440d7655422c2b96}{Set\+Control\+Highlight\+Info}} (\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} i\+Parameter\+ID, \mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} i\+Is\+Highlighted, \mbox{\hyperlink{_a_a_x___enums_8h_a143056a07989a48e5db3a101f1b12567}{A\+A\+X\+\_\+\+E\+Highlight\+Color}} i\+Color)=0
+\begin{DoxyCompactList}\small\item\em Called by host application. Indicates that a control widget should be updated with a highlight color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+The interface for a A\+AX Plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}} (graphical user interface). 
+
+This is the interface for an instance of a plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}} that gets exposed to the host application. The A\+AX host interacts with your plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}} via this interface. See Common\+Interface\+\_\+\+G\+UI.
+
+The plug-\/in\textquotesingle{}s implementation of this interface is responsible for managing the plug-\/in\textquotesingle{}s window and graphics objects and for defining the interactions between \mbox{\hyperlink{class_g_u_i}{G\+UI}} views and the plug-\/in\textquotesingle{}s data model.
+
+At \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_aac9d8ab88172ac594d86ac2441522fec}{initialization}}, the host provides this interface with a reference to \mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}}. The \mbox{\hyperlink{class_g_u_i}{G\+UI}} may use this controller to retrieve a pointer to the plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} interface, allowing the \mbox{\hyperlink{class_g_u_i}{G\+UI}} to request changes to the plug-\/in\textquotesingle{}s data model in response to view events. In addition, the controller provides a means of querying information from the host such as stem format or sample rate
+
+When managing a plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_g_u_i}{G\+UI}} it is important to remember that this is just one of many possible sets of views for the plug-\/in\textquotesingle{}s parameters. Other views and editors, such as automation lanes or control surfaces, also have the ability to synchronously interact with the plug-\/in\textquotesingle{}s abstract data model interface. Therefore, the \mbox{\hyperlink{class_g_u_i}{G\+UI}} should not take asymmetric control over the data model, act as a secondary data model, or otherwise assume exclusive ownership of the plug-\/in\textquotesingle{}s state. In general, the data model\textquotesingle{}s abstraction to a pure virtual interface will protect against such aberrations, but this remains an important consideration when managing sophisiticated \mbox{\hyperlink{class_g_u_i}{G\+UI}} interactions.
+
+You will most likely inherit your implementation of this interface from \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}, a default implementation that provides basic \mbox{\hyperlink{class_g_u_i}{G\+UI}} functionality and which you can override and customize as needed.
+
+The S\+DK includes several examples of how the \mbox{\hyperlink{class_g_u_i}{G\+UI}} interface may be extended and implemented in order to provide support for third-\/party frameworks. These examples can be found in the /\+Extensions/\+G\+UI directory in the S\+DK.
+
+\begin{DoxyNote}{Note}
+Your implementation of this interface must inherit from \mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}}.
+\end{DoxyNote}
+\textbackslash{}legacy In the legacy plug-\/in S\+DK, these methods were found in C\+Process and C\+Effect\+Process. For additional C\+Process methods, see \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_a81450c5272935689a4fb9c1820d6bba8}\label{class_a_a_x___i_a_c_f_effect_g_u_i_a81450c5272935689a4fb9c1820d6bba8}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!GetCustomLabel@{GetCustomLabel}}
+\index{GetCustomLabel@{GetCustomLabel}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{GetCustomLabel()}{GetCustomLabel()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Get\+Custom\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a86f7310877399d9d4d2ea4863d472476}{A\+A\+X\+\_\+\+E\+Plug\+In\+Strings}}}]{i\+Selector,  }\item[{\mbox{\hyperlink{class_a_a_x___i_string}{A\+A\+X\+\_\+\+I\+String}} $\ast$}]{o\+String }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called by host application to retrieve a custom plug-\/in string. 
+
+If no string is provided then the host\textquotesingle{}s default will be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Selector} & The requested strong. One of \mbox{\hyperlink{_a_a_x___enums_8h_a86f7310877399d9d4d2ea4863d472476}{A\+A\+X\+\_\+\+E\+Plug\+In\+Strings}} \\
+\hline
+\mbox{\texttt{ out}}  & {\em o\+String} & The plug-\/in\textquotesingle{}s custom value for the requested string \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_aa903a721baf5a5cfd0b959d0d8dbb874}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_ae67c876225e9b5c538560d19a842a34c}\label{class_a_a_x___i_a_c_f_effect_g_u_i_ae67c876225e9b5c538560d19a842a34c}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!GetViewSize@{GetViewSize}}
+\index{GetViewSize@{GetViewSize}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{GetViewSize()}{GetViewSize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Get\+View\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___point}{A\+A\+X\+\_\+\+Point}} $\ast$}]{o\+View\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the size of the plug-\/in window. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_view_container_ad750e9f0231c61ab32114276ee8cb5f7}{A\+A\+X\+\_\+\+I\+View\+Container\+::\+Set\+View\+Size()}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+View\+Size} & The size of the plug-\/in window as a point (width, height) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_a38a6ac28d9c7ece1a9346a1768009c0a}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32}}, \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___juce_afb906768c77551abedc3c0485667cab1}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Juce}}, \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___v_s_t_af80b5c62280534a4dc8016668e3161d2}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+V\+ST}}, \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___cocoa_a3d5778ce47e2772e1d99aa045a6ea23f}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Cocoa}}, and \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a23c51648957128cf563b31e1a5fbc249}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_aac9d8ab88172ac594d86ac2441522fec}\label{class_a_a_x___i_a_c_f_effect_g_u_i_aac9d8ab88172ac594d86ac2441522fec}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Main \mbox{\hyperlink{class_g_u_i}{G\+UI}} initialization. 
+
+Called when the \mbox{\hyperlink{class_g_u_i}{G\+UI}} is created
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Controller} & A versioned reference that resolves to an \mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}} interface \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a5fcb43bfa54847abe95c2ff76cc6cb13}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_a11a15162cb3c7019d1fabf2994fba6c6}\label{class_a_a_x___i_a_c_f_effect_g_u_i_a11a15162cb3c7019d1fabf2994fba6c6}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!NotificationReceived@{NotificationReceived}}
+\index{NotificationReceived@{NotificationReceived}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{NotificationReceived()}{NotificationReceived()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Notification\+Received (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{in\+Notification\+Type,  }\item[{const void $\ast$}]{in\+Notification\+Data,  }\item[{uint32\+\_\+t}]{in\+Notification\+Data\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notification Hook. 
+
+Called from the host to deliver notifications to this object.
+
+Look at the \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event}} enumeration to see a description of events you can listen for and the data they come with.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+some notifications are sent only to the plug-\/in \mbox{\hyperlink{class_g_u_i}{G\+UI}} while other notifications are sent only to the plug-\/in data model. If you are not seeing an expected notification, try checking the other plug-\/in objects\textquotesingle{} {\ttfamily \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a11a15162cb3c7019d1fabf2994fba6c6}{Notification\+Received()}}} methods.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+the host may dispatch notifications synchronously or asynchronously, and calls to this method may occur concurrently on multiple threads.
+\end{DoxyNote}
+A plug-\/in may also dispatch custom notifications using \mbox{\hyperlink{class_a_a_x___i_controller_a0384f820cecf8cf7671057060bf5ba4f}{A\+A\+X\+\_\+\+I\+Controller\+::\+Send\+Notification()}}. Custom notifications will be posted back to the plug-\/in\textquotesingle{}s other objects which support a {\ttfamily \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_a11a15162cb3c7019d1fabf2994fba6c6}{Notification\+Received()}}} method (e.\+g. the data model).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Type} & Type of notification being received. Notifications form the host are one of \mbox{\hyperlink{_a_a_x___enums_8h_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Data} & Block of incoming notification data \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Notification\+Data\+Size} & Size of {\ttfamily in\+Notification\+Data}, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_af00b27d16a45bccf632a445491c56833}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_a45b468fef806611581f748af9301ab4d}\label{class_a_a_x___i_a_c_f_effect_g_u_i_a45b468fef806611581f748af9301ab4d}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!ParameterUpdated@{ParameterUpdated}}
+\index{ParameterUpdated@{ParameterUpdated}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{ParameterUpdated()}{ParameterUpdated()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Parameter\+Updated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{in\+Param\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies the \mbox{\hyperlink{class_g_u_i}{G\+UI}} that a parameter value has changed. 
+
+This method is called by the host whenever a parameter value has been modified
+
+This method may be called on a non-\/main thread 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_aa86943fbaf8920b533ea31a7669fb009}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}, \mbox{\hyperlink{class_demo_gain___g_u_i_acb2b66cda16660f088b6b2f136e2646d}{Demo\+Gain\+\_\+\+G\+UI}}, \mbox{\hyperlink{class_demo_gain___g_u_i_acb2b66cda16660f088b6b2f136e2646d}{Demo\+Gain\+\_\+\+G\+UI}}, \mbox{\hyperlink{class_demo_gain___g_u_i_acb2b66cda16660f088b6b2f136e2646d}{Demo\+Gain\+\_\+\+G\+UI}}, and \mbox{\hyperlink{class_demo_gain___g_u_i_afd287b02edb143481fb1c245fd2f4034}{Demo\+Gain\+\_\+\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_a3922a4b9fef09e88440d7655422c2b96}\label{class_a_a_x___i_a_c_f_effect_g_u_i_a3922a4b9fef09e88440d7655422c2b96}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!SetControlHighlightInfo@{SetControlHighlightInfo}}
+\index{SetControlHighlightInfo@{SetControlHighlightInfo}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{SetControlHighlightInfo()}{SetControlHighlightInfo()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Set\+Control\+Highlight\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}}}]{i\+Parameter\+ID,  }\item[{\mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}}}]{i\+Is\+Highlighted,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a143056a07989a48e5db3a101f1b12567}{A\+A\+X\+\_\+\+E\+Highlight\+Color}}}]{i\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called by host application. Indicates that a control widget should be updated with a highlight color. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000032}{Todo}}]Document this method\end{DoxyRefDesc}
+
+
+\textbackslash{}legacy This method was re-\/named from {\ttfamily Set\+Control\+Highlite\+Info()}, its name in the legacy plug-\/in S\+DK.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Parameter\+ID} & ID of parameter whose widget(s) must be highlighted \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Is\+Highlighted} & True if turning highlight on, false if turning it off \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Color} & Desired highlight color. One of \mbox{\hyperlink{_a_a_x___enums_8h_a143056a07989a48e5db3a101f1b12567}{A\+A\+X\+\_\+\+E\+Highlight\+Color}} \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_ab2080eb028030b8f180b9e3a39606ca7}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}, \mbox{\hyperlink{class_demo_gain___g_u_i_a1894b86369030a80c0e9313613e055f0}{Demo\+Gain\+\_\+\+G\+UI}}, \mbox{\hyperlink{class_demo_gain___g_u_i_a1894b86369030a80c0e9313613e055f0}{Demo\+Gain\+\_\+\+G\+UI}}, and \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___i_p_l_u_g_a331260de3a2f0d008b90ac1ff608d715}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+I\+P\+L\+UG}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_a50830385c58f104c87b6ef25144b30dd}\label{class_a_a_x___i_a_c_f_effect_g_u_i_a50830385c58f104c87b6ef25144b30dd}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!SetViewContainer@{SetViewContainer}}
+\index{SetViewContainer@{SetViewContainer}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{SetViewContainer()}{SetViewContainer()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Set\+View\+Container (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+View\+Container }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Provides a handle to the main plug-\/in window. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+View\+Container} & An \mbox{\hyperlink{class_a_a_x___i_view_container}{A\+A\+X\+\_\+\+I\+View\+Container}} providing a native handle to the plug-\/in\textquotesingle{}s window \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a5ba8d0cf5326583ed9e2a4b9752e4287}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_aafa484110d39046de1f927f30c9da387}\label{class_a_a_x___i_a_c_f_effect_g_u_i_aafa484110d39046de1f927f30c9da387}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!TimerWakeup@{TimerWakeup}}
+\index{TimerWakeup@{TimerWakeup}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{TimerWakeup()}{TimerWakeup()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Timer\+Wakeup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Periodic wakeup callback for idle-\/time operations. 
+
+\mbox{\hyperlink{class_g_u_i}{G\+UI}} animation events such as meter updates should be triggered from this method.
+
+This method is called from the host\textquotesingle{}s main thread. In general, it should be driven at approximately one call per 30 ms. However, the wakeup is not guaranteed to be called at any regular interval -\/ for example, it could be held off by a high real-\/time processing load -\/ and there is no host contract regarding maximum latency between wakeup calls.
+
+This wakeup runs continuously and cannot be armed/disarmed by the plug-\/in. 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a0b7bada7e7d72da637bde2daa79f71ee}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}, \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___juce_a97a8e149ee096546f9e816c750ee18e7}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Juce}}, \mbox{\hyperlink{class_demo_gain___g_u_i_ab046228148fd385bd1d8703c8ce00907}{Demo\+Gain\+\_\+\+G\+UI}}, and \mbox{\hyperlink{class_demo_gain___g_u_i_a671baf26c31d4be01813342bdd9bd79b}{Demo\+Gain\+\_\+\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_g_u_i_ab7d1c3c80a60637f9a9fd1860fe418cb}\label{class_a_a_x___i_a_c_f_effect_g_u_i_ab7d1c3c80a60637f9a9fd1860fe418cb}} 
+\index{AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}!Uninitialize@{Uninitialize}}
+\index{Uninitialize@{Uninitialize}!AAX\_IACFEffectGUI@{AAX\_IACFEffectGUI}}
+\doxysubsubsection{\texorpdfstring{Uninitialize()}{Uninitialize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I\+::\+Uninitialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Main \mbox{\hyperlink{class_g_u_i}{G\+UI}} uninitialization. 
+
+Called when the \mbox{\hyperlink{class_g_u_i}{G\+UI}} is destroyed. Frees the \mbox{\hyperlink{class_g_u_i}{G\+UI}}. 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a7d3230457433a1a8204114e57fef7bef}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_effect_g_u_i_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I.\+h}}\end{DoxyCompactItemize}

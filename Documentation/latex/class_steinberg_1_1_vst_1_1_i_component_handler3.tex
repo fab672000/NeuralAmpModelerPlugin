@@ -1,0 +1,136 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler3}{}\doxysection{Steinberg\+::Vst\+::I\+Component\+Handler3 Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_component_handler3}\index{Steinberg::Vst::IComponentHandler3@{Steinberg::Vst::IComponentHandler3}}
+
+
+{\ttfamily \#include $<$ivstcontextmenu.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Component\+Handler3\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_component_handler3}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{I\+Context\+Menu}} $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler3_a99008d84976f9e136e3719afdb022f20}{create\+Context\+Menu}} (\mbox{\hyperlink{class_steinberg_1_1_i_plug_view}{I\+Plug\+View}} $\ast$plug\+View, const \mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{Param\+ID}} $\ast$param\+ID)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler3_aa3a74fbaf32f6e7783ac4e55a8923657}\label{class_steinberg_1_1_vst_1_1_i_component_handler3_aa3a74fbaf32f6e7783ac4e55a8923657}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extended host callback interface \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler3}{Vst\+::\+I\+Component\+Handler3}} for an edit controller.
+
+
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler}{I\+Component\+Handler}}\mbox{]}
+\item \mbox{[}released\+: 3.\+5.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+A plug-\/in can ask the host to create a context menu for a given exported parameter ID or a generic context menu.~\newline
+ The host may pre-\/fill this context menu with specific items regarding the parameter ID like \char`\"{}\+Show automation for parameter\char`\"{}, \char`\"{}\+M\+I\+D\+I learn\char`\"{} etc...~\newline
+ The plug-\/in can use the context menu in two ways \+:
+\begin{DoxyItemize}
+\item add its own items to the menu via the \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{I\+Context\+Menu}} interface and call \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_a740811258f789a6da82b3155f7191dac}{I\+Context\+Menu\+::popup}}(..) to create the pop-\/up. See the \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler3_IContextMenuExample}{Examples}}.
+\item extract the host menu items and add them to a context menu created by the plug-\/in.
+\end{DoxyItemize}
+
+{\bfseries{Note\+:}} You can and should use this even if you do not add your own items to the menu as this is considered to be a big user value.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{I\+Context\+Menu}} 
+
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}}
+\end{DoxySeeAlso}
+\hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler3_IContextMenuExample}{}\doxysubsection{Examples}\label{class_steinberg_1_1_vst_1_1_i_component_handler3_IContextMenuExample}
+
+\begin{DoxyItemize}
+\item For example, Cubase adds its owned entries in the context menu opened with right-\/click on an exported parameter when the plug-\/in uses create\+Context\+Menu.  ~\newline
+
+\item Adding plug-\/in specific items to the context menu\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{keyword}{class }PluginContextMenuTarget : \textcolor{keyword}{public} IContextMenuTarget, \textcolor{keyword}{public} FObject}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    PluginContextMenuTarget () \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} tresult PLUGIN\_API executeMenuItem (int32 tag)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{comment}{// this will be called if the user has executed one of the menu items of the plug-\/in.}}
+\DoxyCodeLine{        \textcolor{comment}{// It will not be called for items of the host.}}
+\DoxyCodeLine{        \textcolor{keywordflow}{switch} (tag)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{case} 1: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{            \textcolor{keywordflow}{case} 2: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} kResultTrue;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    OBJ\_METHODS(PluginContextMenuTarget, FObject)}
+\DoxyCodeLine{    \mbox{\hyperlink{fobject_8h_a3c0ce0ce836f44d269b414624e3e0971}{DEFINE\_INTERFACES}}}
+\DoxyCodeLine{        \mbox{\hyperlink{fobject_8h_a53e7d200032b573e38e925748fdb89e3}{DEF\_INTERFACE}} (IContextMenuTarget)}
+\DoxyCodeLine{    \mbox{\hyperlink{fobject_8h_a7991876302dbc825f493930c856dbd83}{END\_DEFINE\_INTERFACES}} (FObject)}
+\DoxyCodeLine{    \mbox{\hyperlink{fobject_8h_aebbb3846780fdaf18f8ee89b73ff149d}{REFCOUNT\_METHODS}}(FObject)}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// The following is the code to create the context menu}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} popupContextMenu (IComponentHandler* componentHandler, IPlugView* view, \textcolor{keyword}{const} \mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{ParamID}}* paramID, \mbox{\hyperlink{namespace_steinberg_a91e26bd765c8845ae5e3cf7871c842e7}{UCoord}} x, \mbox{\hyperlink{namespace_steinberg_a91e26bd765c8845ae5e3cf7871c842e7}{UCoord}} y)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (componentHandler == 0 || view == 0)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return};}
+\DoxyCodeLine{    FUnknownPtr<IComponentHandler3> handler (componentHandler);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (handler == 0)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return};}
+\DoxyCodeLine{    IContextMenu* menu = handler-\/>createContextMenu (view, paramID);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (menu)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{comment}{// here you can add your entries (optional)}}
+\DoxyCodeLine{        PluginContextMenuTarget* target = \textcolor{keyword}{new} PluginContextMenuTarget ();}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        IContextMenu::Item item = \{0\};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_steinberg_a1015c828bfd14fe73f94c95d784b8977}{UString128}} (\textcolor{stringliteral}{"My Item 1"}).copyTo (item.name, 128);}
+\DoxyCodeLine{        item.tag = 1;}
+\DoxyCodeLine{        menu-\/>addItem (item, target);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_steinberg_a1015c828bfd14fe73f94c95d784b8977}{UString128}} (\textcolor{stringliteral}{"My Item 2"}).copyTo (item.name, 128);}
+\DoxyCodeLine{        item.tag = 2;}
+\DoxyCodeLine{        menu-\/>addItem (item, target);}
+\DoxyCodeLine{        target-\/>release ();}
+\DoxyCodeLine{        \textcolor{comment}{//-\/-\/end of adding new entries}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        \textcolor{comment}{// here the the context menu will be pop-\/up (and it waits a user interaction)}}
+\DoxyCodeLine{        menu-\/>popup (x, y);}
+\DoxyCodeLine{        menu-\/>release ();}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler3_a99008d84976f9e136e3719afdb022f20}\label{class_steinberg_1_1_vst_1_1_i_component_handler3_a99008d84976f9e136e3719afdb022f20}} 
+\index{Steinberg::Vst::IComponentHandler3@{Steinberg::Vst::IComponentHandler3}!createContextMenu@{createContextMenu}}
+\index{createContextMenu@{createContextMenu}!Steinberg::Vst::IComponentHandler3@{Steinberg::Vst::IComponentHandler3}}
+\doxysubsubsection{\texorpdfstring{createContextMenu()}{createContextMenu()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{I\+Context\+Menu}}$\ast$ P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Component\+Handler3\+::create\+Context\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_i_plug_view}{I\+Plug\+View}} $\ast$}]{plug\+View,  }\item[{const \mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{Param\+ID}} $\ast$}]{param\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Creates a host context menu for a plug-\/in\+:
+\begin{DoxyItemize}
+\item If param\+ID is zero, the host may create a generic context menu.
+\item The \mbox{\hyperlink{class_steinberg_1_1_i_plug_view}{I\+Plug\+View}} object must be valid.
+\item The return \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{I\+Context\+Menu}} object needs to be released afterwards by the plug-\/in. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstcontextmenu.\+h\end{DoxyCompactItemize}

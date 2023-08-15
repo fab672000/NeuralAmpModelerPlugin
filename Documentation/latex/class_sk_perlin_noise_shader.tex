@@ -1,0 +1,44 @@
+\hypertarget{class_sk_perlin_noise_shader}{}\doxysection{Sk\+Perlin\+Noise\+Shader Class Reference}
+\label{class_sk_perlin_noise_shader}\index{SkPerlinNoiseShader@{SkPerlinNoiseShader}}
+
+
+{\ttfamily \#include $<$Sk\+Perlin\+Noise\+Shader.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ \mbox{\hyperlink{class_sk_perlin_noise_shader_a3a3262c3b50644b87ff8a2370efdec91}{Make\+Fractal\+Noise}} (Sk\+Scalar base\+FrequencyX, Sk\+Scalar base\+FrequencyY, int num\+Octaves, Sk\+Scalar seed, const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} $\ast$tile\+Size=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_perlin_noise_shader_ae6bad5c198b2658aefb924ac945dda66}\label{class_sk_perlin_noise_shader_ae6bad5c198b2658aefb924ac945dda66}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ {\bfseries Make\+Turbulence} (Sk\+Scalar base\+FrequencyX, Sk\+Scalar base\+FrequencyY, int num\+Octaves, Sk\+Scalar seed, const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} $\ast$tile\+Size=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_perlin_noise_shader_a306541258ca0c3b45b6533d393b8a9f1}\label{class_sk_perlin_noise_shader_a306541258ca0c3b45b6533d393b8a9f1}} 
+static void {\bfseries Register\+Flattenables} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_perlin_noise_shader}{Sk\+Perlin\+Noise\+Shader}} creates an image using the Perlin turbulence function.
+
+It can produce tileable noise if asked to stitch tiles and provided a tile size. In order to fill a large area with repeating noise, set the stitch\+Tiles flag to true, and render exactly a single tile of noise. Without this flag, the result will contain visible seams between tiles.
+
+The algorithm used is described here \+: \href{http://www.w3.org/TR/SVG/filters.html\#feTurbulenceElement}{\texttt{ http\+://www.\+w3.\+org/\+T\+R/\+S\+V\+G/filters.\+html\#fe\+Turbulence\+Element}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_perlin_noise_shader_a3a3262c3b50644b87ff8a2370efdec91}\label{class_sk_perlin_noise_shader_a3a3262c3b50644b87ff8a2370efdec91}} 
+\index{SkPerlinNoiseShader@{SkPerlinNoiseShader}!MakeFractalNoise@{MakeFractalNoise}}
+\index{MakeFractalNoise@{MakeFractalNoise}!SkPerlinNoiseShader@{SkPerlinNoiseShader}}
+\doxysubsubsection{\texorpdfstring{MakeFractalNoise()}{MakeFractalNoise()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}$>$ Sk\+Perlin\+Noise\+Shader\+::\+Make\+Fractal\+Noise (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{base\+FrequencyX,  }\item[{Sk\+Scalar}]{base\+FrequencyY,  }\item[{int}]{num\+Octaves,  }\item[{Sk\+Scalar}]{seed,  }\item[{const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} $\ast$}]{tile\+Size = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+This will construct Perlin noise of the given type (Fractal Noise or Turbulence).
+
+Both base frequencies (X and Y) have a usual range of (0..1) and must be non-\/negative.
+
+The number of octaves provided should be fairly small, with a limit of 255 enforced. Each octave doubles the frequency, so 10 octaves would produce noise from base\+Frequency $\ast$ 1, $\ast$ 2, $\ast$ 4, ..., $\ast$ 512, which quickly yields insignificantly small periods and resembles regular unstructured noise rather than Perlin noise.
+
+If tile\+Size isn\textquotesingle{}t N\+U\+LL or an empty size, the tile\+Size parameter will be used to modify the frequencies so that the noise will be tileable for the given tile size. If tile\+Size is N\+U\+LL or an empty size, the frequencies will be used as is without modification. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/effects/Sk\+Perlin\+Noise\+Shader.\+h\end{DoxyCompactItemize}

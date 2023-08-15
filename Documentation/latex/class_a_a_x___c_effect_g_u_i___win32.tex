@@ -1,0 +1,175 @@
+\hypertarget{class_a_a_x___c_effect_g_u_i___win32}{}\doxysection{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32 Class Reference}
+\label{class_a_a_x___c_effect_g_u_i___win32}\index{AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}}
+
+
+Implementation of the \mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}} interface that provides a native window to the effect.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_a_a_x___c_effect_g_u_i___win32}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_ac10538ed5ad46f6fcc1c6888f1f6e809}\label{class_a_a_x___c_effect_g_u_i___win32_ac10538ed5ad46f6fcc1c6888f1f6e809}} 
+\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} {\bfseries Get\+Parent\+H\+W\+ND} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a6cd9fbc92ccd0a35c4deeb20e60c6f2d}\label{class_a_a_x___c_effect_g_u_i___win32_a6cd9fbc92ccd0a35c4deeb20e60c6f2d}} 
+static void {\bfseries Set\+Instance} (H\+I\+N\+S\+T\+A\+N\+CE i\+Instance)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a7460719fbf6e0254bf5ed4657d4f8c7d}\label{class_a_a_x___c_effect_g_u_i___win32_a7460719fbf6e0254bf5ed4657d4f8c7d}} 
+static H\+I\+N\+S\+T\+A\+N\+CE {\bfseries Get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_a9900ea9440b57dbad4a7715172aeb77f}{Create\+View\+Contents}} ()
+\begin{DoxyCompactList}\small\item\em Creates any required top-\/level \mbox{\hyperlink{class_g_u_i}{G\+UI}} components. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_ad4bafe1aecb25404adee236f479a1212}{Create\+View\+Container}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the plug-\/in window and creates the main \mbox{\hyperlink{class_g_u_i}{G\+UI}} view or frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_a65ee2cbd1634e6b8a414698e55abd4ac}{Delete\+View\+Container}} ()
+\begin{DoxyCompactList}\small\item\em Uninitializes the plug-\/in window and deletes the main \mbox{\hyperlink{class_g_u_i}{G\+UI}} view or frame. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_a38a6ac28d9c7ece1a9346a1768009c0a}{Get\+View\+Size}} (\mbox{\hyperlink{struct_a_a_x___point}{A\+A\+X\+\_\+\+Point}} $\ast$o\+View\+Size) const
+\begin{DoxyCompactList}\small\item\em Retrieves the size of the plug-\/in window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a9dc51ba8e5fadd9ce409251f522593c8}\label{class_a_a_x___c_effect_g_u_i___win32_a9dc51ba8e5fadd9ce409251f522593c8}} 
+virtual W\+O\+RD \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_a9dc51ba8e5fadd9ce409251f522593c8}{Get\+Plug\+In\+H\+W\+N\+D\+Resource\+ID}} () const =0
+\begin{DoxyCompactList}\small\item\em Override this method to return the plug-\/in H\+W\+ND resource ID. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32_a534681e62efcaa9e21f51f1ebb9b823c}{Init\+Plug\+In\+H\+W\+N\+D\+Contents}} ()=0
+\begin{DoxyCompactList}\small\item\em Override this method to initialize the contents of the plug-\/in H\+W\+ND. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a92854703ecc363f3b017e95a0c3f5499}\label{class_a_a_x___c_effect_g_u_i___win32_a92854703ecc363f3b017e95a0c3f5499}} 
+virtual A\+A\+X\+\_\+\+E\+Event\+Result {\bfseries Handle\+Key\+Down} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd, W\+P\+A\+R\+AM w\+Param)=0
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a261b21cfa675cc1426be7c51b129c76e}\label{class_a_a_x___c_effect_g_u_i___win32_a261b21cfa675cc1426be7c51b129c76e}} 
+virtual A\+A\+X\+\_\+\+E\+Event\+Result {\bfseries Do\+Text\+Window\+Proc} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd, U\+I\+NT u\+Msg, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a3749b8c35554e7d192a0b39a89f7b5b1}\label{class_a_a_x___c_effect_g_u_i___win32_a3749b8c35554e7d192a0b39a89f7b5b1}} 
+virtual A\+A\+X\+\_\+\+E\+Event\+Result {\bfseries Do\+Mouse\+Window\+Proc} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd, U\+I\+NT u\+Msg, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_ad9328cec4fb8b08b09d13e6a042ad557}\label{class_a_a_x___c_effect_g_u_i___win32_ad9328cec4fb8b08b09d13e6a042ad557}} 
+virtual bool {\bfseries Handle\+Message} (U\+I\+NT u\+Msg, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)=0
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a24a8212778e5fd0ec1d6c57222d8816e}\label{class_a_a_x___c_effect_g_u_i___win32_a24a8212778e5fd0ec1d6c57222d8816e}} 
+virtual void {\bfseries Force\+Parameter\+Update\+For\+H\+W\+ND} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd)=0
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_ac51ce1fd30911eaab9a66abf61c0b0cf}\label{class_a_a_x___c_effect_g_u_i___win32_ac51ce1fd30911eaab9a66abf61c0b0cf}} 
+void {\bfseries Set\+Plug\+In\+H\+W\+ND} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} i\+Plug\+In\+H\+W\+ND)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_ac5b97efc13d76df2dae3820a572eddb0}\label{class_a_a_x___c_effect_g_u_i___win32_ac5b97efc13d76df2dae3820a572eddb0}} 
+\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} {\bfseries Get\+Plug\+In\+H\+W\+ND} () const
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a0523af234839df07bb951a8ffd057d35}\label{class_a_a_x___c_effect_g_u_i___win32_a0523af234839df07bb951a8ffd057d35}} 
+void {\bfseries Setup\+For\+Keyboard\+Input} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} i\+Edit\+Text)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a6666f03955c0fcea23d53e222f389b7a}\label{class_a_a_x___c_effect_g_u_i___win32_a6666f03955c0fcea23d53e222f389b7a}} 
+void {\bfseries Setup\+For\+Mouse\+Input} (\mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} i\+Window)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a4318cac752c76a07e68b4f294fa7f1a5}\label{class_a_a_x___c_effect_g_u_i___win32_a4318cac752c76a07e68b4f294fa7f1a5}} 
+static I\+N\+T\+\_\+\+P\+TR C\+A\+L\+L\+B\+A\+CK {\bfseries Dialog\+Proc} (\+\_\+\+\_\+in \mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd, \+\_\+\+\_\+in U\+I\+NT u\+Msg, \+\_\+\+\_\+in W\+P\+A\+R\+AM w\+Param, \+\_\+\+\_\+in L\+P\+A\+R\+AM l\+Param)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a910426d3476d07a50750641345b7460b}\label{class_a_a_x___c_effect_g_u_i___win32_a910426d3476d07a50750641345b7460b}} 
+static L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK {\bfseries Text\+Window\+Proc} (\+\_\+\+\_\+in \mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd, \+\_\+\+\_\+in U\+I\+NT u\+Msg, \+\_\+\+\_\+in W\+P\+A\+R\+AM w\+Param, \+\_\+\+\_\+in L\+P\+A\+R\+AM l\+Param)
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a255208726cbc987c308e598c3b910335}\label{class_a_a_x___c_effect_g_u_i___win32_a255208726cbc987c308e598c3b910335}} 
+static L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK {\bfseries Mouse\+Input\+Window\+Proc} (\+\_\+\+\_\+in \mbox{\hyperlink{struct_h_w_n_d____}{H\+W\+ND}} hwnd, \+\_\+\+\_\+in U\+I\+NT u\+Msg, \+\_\+\+\_\+in W\+P\+A\+R\+AM w\+Param, \+\_\+\+\_\+in L\+P\+A\+R\+AM l\+Param)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}} interface that provides a native window to the effect. 
+
+\mbox{\hyperlink{class_a_a_x___c_effect_g_u_i___win32}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32}} adapts the \mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}} in order to provide a native window. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_ad4bafe1aecb25404adee236f479a1212}\label{class_a_a_x___c_effect_g_u_i___win32_ad4bafe1aecb25404adee236f479a1212}} 
+\index{AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}!CreateViewContainer@{CreateViewContainer}}
+\index{CreateViewContainer@{CreateViewContainer}!AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}}
+\doxysubsubsection{\texorpdfstring{CreateViewContainer()}{CreateViewContainer()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32\+::\+Create\+View\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the plug-\/in window and creates the main \mbox{\hyperlink{class_g_u_i}{G\+UI}} view or frame. 
+
+This method is called by default from \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a5ba8d0cf5326583ed9e2a4b9752e4287}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+::\+Set\+View\+Container()}} when a valid window is present 
+
+Implements \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_adbc45d3155099452ca746ee3940f16da}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a9900ea9440b57dbad4a7715172aeb77f}\label{class_a_a_x___c_effect_g_u_i___win32_a9900ea9440b57dbad4a7715172aeb77f}} 
+\index{AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}!CreateViewContents@{CreateViewContents}}
+\index{CreateViewContents@{CreateViewContents}!AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}}
+\doxysubsubsection{\texorpdfstring{CreateViewContents()}{CreateViewContents()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32\+::\+Create\+View\+Contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates any required top-\/level \mbox{\hyperlink{class_g_u_i}{G\+UI}} components. 
+
+This method is called by default from \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a5fcb43bfa54847abe95c2ff76cc6cb13}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+::\+Initialize()}} 
+
+Implements \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_ab84514feda09e4893ee0ff5e6df99b23}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a65ee2cbd1634e6b8a414698e55abd4ac}\label{class_a_a_x___c_effect_g_u_i___win32_a65ee2cbd1634e6b8a414698e55abd4ac}} 
+\index{AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}!DeleteViewContainer@{DeleteViewContainer}}
+\index{DeleteViewContainer@{DeleteViewContainer}!AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}}
+\doxysubsubsection{\texorpdfstring{DeleteViewContainer()}{DeleteViewContainer()}}
+{\footnotesize\ttfamily void A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32\+::\+Delete\+View\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Uninitializes the plug-\/in window and deletes the main \mbox{\hyperlink{class_g_u_i}{G\+UI}} view or frame. 
+
+This method is called by default from \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a5ba8d0cf5326583ed9e2a4b9752e4287}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+::\+Set\+View\+Container()}} when no valid window is present. It may also be appropriate for inheriting classes to call this method from their destructors, depending on their own internal implementation. 
+
+Implements \mbox{\hyperlink{class_a_a_x___c_effect_g_u_i_a56632ebf59c5ef3f4fe3d7d76da27a37}{A\+A\+X\+\_\+\+C\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a38a6ac28d9c7ece1a9346a1768009c0a}\label{class_a_a_x___c_effect_g_u_i___win32_a38a6ac28d9c7ece1a9346a1768009c0a}} 
+\index{AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}!GetViewSize@{GetViewSize}}
+\index{GetViewSize@{GetViewSize}!AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}}
+\doxysubsubsection{\texorpdfstring{GetViewSize()}{GetViewSize()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32\+::\+Get\+View\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___point}{A\+A\+X\+\_\+\+Point}} $\ast$}]{o\+View\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the size of the plug-\/in window. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_view_container_ad750e9f0231c61ab32114276ee8cb5f7}{A\+A\+X\+\_\+\+I\+View\+Container\+::\+Set\+View\+Size()}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+View\+Size} & The size of the plug-\/in window as a point (width, height) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_g_u_i_ae67c876225e9b5c538560d19a842a34c}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+UI}}.
+
+\mbox{\Hypertarget{class_a_a_x___c_effect_g_u_i___win32_a534681e62efcaa9e21f51f1ebb9b823c}\label{class_a_a_x___c_effect_g_u_i___win32_a534681e62efcaa9e21f51f1ebb9b823c}} 
+\index{AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}!InitPlugInHWNDContents@{InitPlugInHWNDContents}}
+\index{InitPlugInHWNDContents@{InitPlugInHWNDContents}!AAX\_CEffectGUI\_Win32@{AAX\_CEffectGUI\_Win32}}
+\doxysubsubsection{\texorpdfstring{InitPlugInHWNDContents()}{InitPlugInHWNDContents()}}
+{\footnotesize\ttfamily virtual void A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32\+::\+Init\+Plug\+In\+H\+W\+N\+D\+Contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Override this method to initialize the contents of the plug-\/in H\+W\+ND. 
+
+Called after the plug-\/in H\+W\+ND has been created 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Extensions/\+G\+U\+I/\mbox{\hyperlink{_a_a_x___c_effect_g_u_i___win32_8h}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Extensions/\+G\+U\+I/A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I\+\_\+\+Win32.\+cpp\end{DoxyCompactItemize}

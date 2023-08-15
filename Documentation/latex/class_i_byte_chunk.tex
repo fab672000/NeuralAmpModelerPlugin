@@ -1,0 +1,274 @@
+\hypertarget{class_i_byte_chunk}{}\doxysection{I\+Byte\+Chunk Class Reference}
+\label{class_i_byte_chunk}\index{IByteChunk@{IByteChunk}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Structs.\+h$>$}
+
+Inheritance diagram for I\+Byte\+Chunk\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_byte_chunk}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_a7559f9ed06d8c5d3b2015487a2f6d31a}{Put\+Bytes}} (const void $\ast$p\+Src, int n\+Bytes\+To\+Copy)
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_a2e61871f2fcd611bc2208f650e2ae2b0}{Get\+Bytes}} (void $\ast$p\+Dst, int n\+Bytes\+To\+Copy, int start\+Pos) const
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{class_i_byte_chunk_a2dc2a8fb999c033170fe1e39265f7d77}{Put}} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$p\+Val)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{class_i_byte_chunk_a67372e4391e1102905393ab2d3dc2700}{Get}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$p\+Dst, int start\+Pos) const
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_a2e91d645f493d431a89143006021197d}{Put\+Str}} (const char $\ast$str)
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_af4ba354807e9a8aacbc656c19e75bb16}{Get\+Str}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&str, int start\+Pos) const
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_af6d52f5125503573d3450d44f87b9b42}{Put\+Chunk}} (const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} $\ast$p\+R\+HS)
+\item 
+void \mbox{\hyperlink{class_i_byte_chunk_a7642292f776ee8f18e6caa501bb4bd8b}{Clear}} ()
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_ac2764e767d4938c53ed5e02af7eea0de}{Size}} () const
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_ad7f02cbd9bbcfacc5e2b84241a8d777e}{Resize}} (int new\+Size)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_i_byte_chunk_a3db2a2017f445e3364ac47d8d8edaf9b}{Get\+Data}} ()
+\item 
+const uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_i_byte_chunk_ac97cdfeecc6a5ff9a21adac8df9014e2}{Get\+Data}} () const
+\item 
+bool \mbox{\hyperlink{class_i_byte_chunk_a8332ce0f64b3796e610e766d4aea22ae}{Is\+Equal}} (\mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&other\+Chunk) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_i_byte_chunk_abe98fc55844514182d8ad6aef3df5a6a}{Init\+Chunk\+With\+I\+Plug\+Ver}} (\mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&chunk)
+\item 
+static int \mbox{\hyperlink{class_i_byte_chunk_a0e13ae7780354cf19b5da30ff9d454d1}{Get\+I\+Plug\+Ver\+From\+Chunk}} (const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&chunk, int \&position)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a block of memory, for plug-\/in settings store/recall 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_byte_chunk_a7642292f776ee8f18e6caa501bb4bd8b}\label{class_i_byte_chunk_a7642292f776ee8f18e6caa501bb4bd8b}} 
+\index{IByteChunk@{IByteChunk}!Clear@{Clear}}
+\index{Clear@{Clear}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void I\+Byte\+Chunk\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the chunk (resizes to 0) \mbox{\Hypertarget{class_i_byte_chunk_a67372e4391e1102905393ab2d3dc2700}\label{class_i_byte_chunk_a67372e4391e1102905393ab2d3dc2700}} 
+\index{IByteChunk@{IByteChunk}!Get@{Get}}
+\index{Get@{Get}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int I\+Byte\+Chunk\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{p\+Dst,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get arbitary typed data from the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to be extracted \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Dst} & Ptr to the destination where the data will be extracted \\
+\hline
+{\em start\+Pos} & The starting position in bytes in the chunk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in the chunk (in bytes) after the copy, or -\/1 if the copy would have copied more data than in the chunk ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_a2e61871f2fcd611bc2208f650e2ae2b0}\label{class_i_byte_chunk_a2e61871f2fcd611bc2208f650e2ae2b0}} 
+\index{IByteChunk@{IByteChunk}!GetBytes@{GetBytes}}
+\index{GetBytes@{GetBytes}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{GetBytes()}{GetBytes()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Get\+Bytes (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Dst,  }\item[{int}]{n\+Bytes\+To\+Copy,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy raw bytes from the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}}, returning the new position for subsequent calls 
+\begin{DoxyParams}{Parameters}
+{\em p\+Dst} & The destination buffer \\
+\hline
+{\em n\+Bytes\+To\+Copy} & The number of bytes to copy from the chunk \\
+\hline
+{\em start\+Pos} & The starting position in bytes in the chunk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in the chunk (in bytes) after the copy, or -\/1 if the copy would have copied more data than in the chunk ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_a3db2a2017f445e3364ac47d8d8edaf9b}\label{class_i_byte_chunk_a3db2a2017f445e3364ac47d8d8edaf9b}} 
+\index{IByteChunk@{IByteChunk}!GetData@{GetData}}
+\index{GetData@{GetData}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ I\+Byte\+Chunk\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a ptr to the chunk data \begin{DoxyReturn}{Returns}
+uint8\+\_\+t$\ast$ Ptr to the chunk data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_ac97cdfeecc6a5ff9a21adac8df9014e2}\label{class_i_byte_chunk_ac97cdfeecc6a5ff9a21adac8df9014e2}} 
+\index{IByteChunk@{IByteChunk}!GetData@{GetData}}
+\index{GetData@{GetData}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const uint8\+\_\+t$\ast$ I\+Byte\+Chunk\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a const ptr to the chunk data \begin{DoxyReturn}{Returns}
+const uint8\+\_\+t$\ast$ const Ptr to the chunk data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_a0e13ae7780354cf19b5da30ff9d454d1}\label{class_i_byte_chunk_a0e13ae7780354cf19b5da30ff9d454d1}} 
+\index{IByteChunk@{IByteChunk}!GetIPlugVerFromChunk@{GetIPlugVerFromChunk}}
+\index{GetIPlugVerFromChunk@{GetIPlugVerFromChunk}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{GetIPlugVerFromChunk()}{GetIPlugVerFromChunk()}}
+{\footnotesize\ttfamily static int I\+Byte\+Chunk\+::\+Get\+I\+Plug\+Ver\+From\+Chunk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&}]{chunk,  }\item[{int \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Helper method to retrieve the I\+Plug version number from the beginning of the byte chunk 
+\begin{DoxyParams}{Parameters}
+{\em chunk} & The incoming byte chunk that contains the version number \\
+\hline
+{\em position} & The position (in bytes) to start looking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The I\+Plug version number, retrieved from the chunk, or 0 if it failed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_af4ba354807e9a8aacbc656c19e75bb16}\label{class_i_byte_chunk_af4ba354807e9a8aacbc656c19e75bb16}} 
+\index{IByteChunk@{IByteChunk}!GetStr@{GetStr}}
+\index{GetStr@{GetStr}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{GetStr()}{GetStr()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Get\+Str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{str,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a string from the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\begin{DoxyParams}{Parameters}
+{\em str} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} to fill \\
+\hline
+{\em start\+Pos} & The starting position in bytes in the chunk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in the chunk (in bytes) after the copy, or -\/1 if the copy would have copied more data than in the chunk ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_abe98fc55844514182d8ad6aef3df5a6a}\label{class_i_byte_chunk_abe98fc55844514182d8ad6aef3df5a6a}} 
+\index{IByteChunk@{IByteChunk}!InitChunkWithIPlugVer@{InitChunkWithIPlugVer}}
+\index{InitChunkWithIPlugVer@{InitChunkWithIPlugVer}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{InitChunkWithIPlugVer()}{InitChunkWithIPlugVer()}}
+{\footnotesize\ttfamily static void I\+Byte\+Chunk\+::\+Init\+Chunk\+With\+I\+Plug\+Ver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&}]{chunk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+This method is used in order to place the I\+Plug version number in the chunk when serialising data. In theory this is for backwards compatibility. 
+\begin{DoxyParams}{Parameters}
+{\em chunk} & reference to the chunk where the version number will be placed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_byte_chunk_a8332ce0f64b3796e610e766d4aea22ae}\label{class_i_byte_chunk_a8332ce0f64b3796e610e766d4aea22ae}} 
+\index{IByteChunk@{IByteChunk}!IsEqual@{IsEqual}}
+\index{IsEqual@{IsEqual}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{IsEqual()}{IsEqual()}}
+{\footnotesize\ttfamily bool I\+Byte\+Chunk\+::\+Is\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&}]{other\+Chunk }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compares the size \& values of the data of another chunk with this one 
+\begin{DoxyParams}{Parameters}
+{\em other\+Chunk} & The chunk to compare with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the chunks are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_a2dc2a8fb999c033170fe1e39265f7d77}\label{class_i_byte_chunk_a2dc2a8fb999c033170fe1e39265f7d77}} 
+\index{IByteChunk@{IByteChunk}!Put@{Put}}
+\index{Put@{Put}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int I\+Byte\+Chunk\+::\+Put (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{p\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copies arbitary typed data into the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data to be stored \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Val} & Ptr to the data to be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The size of the chunk after insertion ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_a7559f9ed06d8c5d3b2015487a2f6d31a}\label{class_i_byte_chunk_a7559f9ed06d8c5d3b2015487a2f6d31a}} 
+\index{IByteChunk@{IByteChunk}!PutBytes@{PutBytes}}
+\index{PutBytes@{PutBytes}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{PutBytes()}{PutBytes()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Put\+Bytes (\begin{DoxyParamCaption}\item[{const void $\ast$}]{p\+Src,  }\item[{int}]{n\+Bytes\+To\+Copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copies data into the chunk, placing it at the end, resizing if nessecary 
+\begin{DoxyParams}{Parameters}
+{\em p\+Src} & Pointer to the data to copy \\
+\hline
+{\em n\+Bytes\+To\+Copy} & Number of bytes to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The size of the chunk after insertion ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_af6d52f5125503573d3450d44f87b9b42}\label{class_i_byte_chunk_af6d52f5125503573d3450d44f87b9b42}} 
+\index{IByteChunk@{IByteChunk}!PutChunk@{PutChunk}}
+\index{PutChunk@{PutChunk}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{PutChunk()}{PutChunk()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Put\+Chunk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} $\ast$}]{p\+R\+HS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Put another \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} into this one 
+\begin{DoxyParams}{Parameters}
+{\em p\+R\+HS} & Ptr to the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} to copy in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The size of the chunk after insertion ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_a2e91d645f493d431a89143006021197d}\label{class_i_byte_chunk_a2e91d645f493d431a89143006021197d}} 
+\index{IByteChunk@{IByteChunk}!PutStr@{PutStr}}
+\index{PutStr@{PutStr}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{PutStr()}{PutStr()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Put\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Put a string into the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\begin{DoxyParams}{Parameters}
+{\em str} & C\+String to insert into the chunk \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The size of the chunk after insertion ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_ad7f02cbd9bbcfacc5e2b84241a8d777e}\label{class_i_byte_chunk_ad7f02cbd9bbcfacc5e2b84241a8d777e}} 
+\index{IByteChunk@{IByteChunk}!Resize@{Resize}}
+\index{Resize@{Resize}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Resize (\begin{DoxyParamCaption}\item[{int}]{new\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resizes the chunk 
+\begin{DoxyParams}{Parameters}
+{\em new\+Size} & Desired size (in bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Old size (in bytes) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_ac2764e767d4938c53ed5e02af7eea0de}\label{class_i_byte_chunk_ac2764e767d4938c53ed5e02af7eea0de}} 
+\index{IByteChunk@{IByteChunk}!Size@{Size}}
+\index{Size@{Size}!IByteChunk@{IByteChunk}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current size of the chunk \begin{DoxyReturn}{Returns}
+Current size (in bytes) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/I\+Plug\+Structs.\+h\end{DoxyCompactItemize}

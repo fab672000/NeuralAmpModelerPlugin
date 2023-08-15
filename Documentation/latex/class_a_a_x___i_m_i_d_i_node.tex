@@ -1,0 +1,84 @@
+\hypertarget{class_a_a_x___i_m_i_d_i_node}{}\doxysection{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node Class Reference}
+\label{class_a_a_x___i_m_i_d_i_node}\index{AAX\_IMIDINode@{AAX\_IMIDINode}}
+
+
+Interface for accessing information in a M\+I\+DI node.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_a_a_x___c_midi_stream}{A\+A\+X\+\_\+\+C\+Midi\+Stream}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node_a794f1c0d19ac6720382c23b0a4dc2b17}{Get\+Node\+Buffer}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns a M\+I\+DI stream data structure. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node_a5e1c5409158164f57376f908c9693a8b}{Post\+M\+I\+D\+I\+Packet}} (\mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} $\ast$packet)=0
+\begin{DoxyCompactList}\small\item\em Posts an \mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} to an output M\+I\+DI node. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_transport}{A\+A\+X\+\_\+\+I\+Transport}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_m_i_d_i_node_a57bd132ee74047e25298b157c0bff2f9}{Get\+Transport}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns a transport object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for accessing information in a M\+I\+DI node. 
+
+\textbackslash{}hostimp
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_component_descriptor_a6284dda9ccca898e33075de29dad4e39}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_m_i_d_i_node_a794f1c0d19ac6720382c23b0a4dc2b17}\label{class_a_a_x___i_m_i_d_i_node_a794f1c0d19ac6720382c23b0a4dc2b17}} 
+\index{AAX\_IMIDINode@{AAX\_IMIDINode}!GetNodeBuffer@{GetNodeBuffer}}
+\index{GetNodeBuffer@{GetNodeBuffer}!AAX\_IMIDINode@{AAX\_IMIDINode}}
+\doxysubsubsection{\texorpdfstring{GetNodeBuffer()}{GetNodeBuffer()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_a_a_x___c_midi_stream}{A\+A\+X\+\_\+\+C\+Midi\+Stream}}$\ast$ A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::\+Get\+Node\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns a M\+I\+DI stream data structure. 
+
+\mbox{\Hypertarget{class_a_a_x___i_m_i_d_i_node_a57bd132ee74047e25298b157c0bff2f9}\label{class_a_a_x___i_m_i_d_i_node_a57bd132ee74047e25298b157c0bff2f9}} 
+\index{AAX\_IMIDINode@{AAX\_IMIDINode}!GetTransport@{GetTransport}}
+\index{GetTransport@{GetTransport}!AAX\_IMIDINode@{AAX\_IMIDINode}}
+\doxysubsubsection{\texorpdfstring{GetTransport()}{GetTransport()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_a_x___i_transport}{A\+A\+X\+\_\+\+I\+Transport}}$\ast$ A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::\+Get\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns a transport object. 
+
+\mbox{\Hypertarget{class_a_a_x___i_m_i_d_i_node_a5e1c5409158164f57376f908c9693a8b}\label{class_a_a_x___i_m_i_d_i_node_a5e1c5409158164f57376f908c9693a8b}} 
+\index{AAX\_IMIDINode@{AAX\_IMIDINode}!PostMIDIPacket@{PostMIDIPacket}}
+\index{PostMIDIPacket@{PostMIDIPacket}!AAX\_IMIDINode@{AAX\_IMIDINode}}
+\doxysubsubsection{\texorpdfstring{PostMIDIPacket()}{PostMIDIPacket()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::\+Post\+M\+I\+D\+I\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} $\ast$}]{packet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Posts an \mbox{\hyperlink{struct_a_a_x___c_midi_packet}{A\+A\+X\+\_\+\+C\+Midi\+Packet}} to an output M\+I\+DI node. 
+
+\textbackslash{}compatibility Pro Tools supports the following M\+I\+DI events from plug-\/ins\+:
+\begin{DoxyItemize}
+\item Note\+On
+\item Note\+Off
+\item Pitch bend
+\item Polyphonic key pressure
+\item Bank select (controller \#0)
+\item Program change (no bank)
+\item Channel pressure
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em packet} & The M\+I\+DI packet to be pushed to a M\+I\+DI output node \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_m_i_d_i_node_8h}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node.\+h}}\end{DoxyCompactItemize}

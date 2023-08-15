@@ -1,0 +1,22 @@
+Helper Class wrapping a {\bfseries{V\+ST 3 plug-\/in}} to an Audio Unit v2 plug-\/in\hypertarget{_a_u_wrapper_AUIntroduction}{}\doxysection{Introduction}\label{_a_u_wrapper_AUIntroduction}
+The V\+ST 3 S\+DK comes with an Audio\+Unit wrapper, which wraps one V\+ST 3 Audio Processor and Edit Controller as an Audio\+Unit effect/instrument.
+
+The wrapper is a small dynamic library which loads the {\bfseries{V\+ST 3 plug-\/in}}. No extra code is needed to be written. ~\newline
+\hypertarget{_a_u_wrapper_AUhowdoesitwork}{}\doxysection{How does it work?}\label{_a_u_wrapper_AUhowdoesitwork}
+to add an A\+Uv2 to your V\+S\+T3 plug-\/in you have to use cmake and call the cmake function\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{preprocessor}{\# Add an AudioUnit Version 2 target for macOS}}
+\DoxyCodeLine{\textcolor{preprocessor}{\# @param target                 target name}}
+\DoxyCodeLine{\textcolor{preprocessor}{\# @param bundle\_name            name of the bundle}}
+\DoxyCodeLine{\textcolor{preprocessor}{\# @param bundle\_identifier      bundle identifier}}
+\DoxyCodeLine{\textcolor{preprocessor}{\# @param info\_plist\_template    the info.plist file containing the needed AudioUnit keys}}
+\DoxyCodeLine{\textcolor{preprocessor}{\# @param vst3\_plugin\_target     the vst3 plugin target}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{preprocessor}{function(smtg\_target\_add\_auv2 target bundle\_name bundle\_identifier info\_plist\_template vst3\_plugin\_target)}}
+\end{DoxyCode}
+
+
+This adds a new target to your project which builds and setup the Audio\+Unit. After successfully building the AU should be copied to your user Library folder (Library/\+Audio/\+Components/) and ready to be used. 

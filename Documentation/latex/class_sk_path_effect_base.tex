@@ -1,0 +1,86 @@
+\hypertarget{class_sk_path_effect_base}{}\doxysection{Sk\+Path\+Effect\+Base Class Reference}
+\label{class_sk_path_effect_base}\index{SkPathEffectBase@{SkPathEffectBase}}
+Inheritance diagram for Sk\+Path\+Effect\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{class_sk_path_effect_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_path_effect_base_1_1_point_data}{Point\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sk_path_effect_base_a86041c884928daafc6b407be8dc97161}{as\+Points}} (\mbox{\hyperlink{class_sk_path_effect_base_1_1_point_data}{Point\+Data}} $\ast$results, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, const \mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} \&, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$cullR) const
+\item 
+Sk\+Flattenable\+::\+Type \mbox{\hyperlink{class_sk_path_effect_base_a31cf99f8a108a377499203133e6d9635}{get\+Flattenable\+Type}} () const override
+\item 
+virtual bool \mbox{\hyperlink{class_sk_path_effect_base_ae3cef314f6a219c6d89ea4f1d13d335a}{on\+Filter\+Path}} (\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&, \mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} $\ast$, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&) const =0
+\item 
+virtual bool \mbox{\hyperlink{class_sk_path_effect_base_a55fec3ac7246596f119f7bd2211c9a5f}{on\+Needs\+C\+TM}} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_effect_base_afebf64129ffd10ded8ab6f8d09b2bf3c}\label{class_sk_path_effect_base_afebf64129ffd10ded8ab6f8d09b2bf3c}} 
+virtual bool {\bfseries on\+As\+Points} (\mbox{\hyperlink{class_sk_path_effect_base_1_1_point_data}{Point\+Data}} $\ast$, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&, const \mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} \&, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$) const
+\item 
+\mbox{\Hypertarget{class_sk_path_effect_base_a751bf8665cdc98025e537a4d1d2c0c49}\label{class_sk_path_effect_base_a751bf8665cdc98025e537a4d1d2c0c49}} 
+virtual \mbox{\hyperlink{class_sk_path_effect_ac46f9b2ce2f7869e1c80016db85ce832}{Dash\+Type}} {\bfseries on\+As\+A\+Dash} (\mbox{\hyperlink{struct_sk_path_effect_1_1_dash_info}{Dash\+Info}} $\ast$) const
+\item 
+\mbox{\Hypertarget{class_sk_path_effect_base_a6399009f7aa8c0c4070bab6bfa628296}\label{class_sk_path_effect_base_a6399009f7aa8c0c4070bab6bfa628296}} 
+virtual bool {\bfseries compute\+Fast\+Bounds} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$bounds) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_path_effect_base_a42711393795ab0af535b18fdd1b41ecd}\label{class_sk_path_effect_base_a42711393795ab0af535b18fdd1b41ecd}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ {\bfseries Deserialize} (const void $\ast$data, size\+\_\+t size, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_path_effect_base_accbf207f92328347706dc1f78d86ba52}\label{class_sk_path_effect_base_accbf207f92328347706dc1f78d86ba52}} 
+static void {\bfseries Register\+Flattenables} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_path_effect_base_a86041c884928daafc6b407be8dc97161}\label{class_sk_path_effect_base_a86041c884928daafc6b407be8dc97161}} 
+\index{SkPathEffectBase@{SkPathEffectBase}!asPoints@{asPoints}}
+\index{asPoints@{asPoints}!SkPathEffectBase@{SkPathEffectBase}}
+\doxysubsubsection{\texorpdfstring{asPoints()}{asPoints()}}
+{\footnotesize\ttfamily bool Sk\+Path\+Effect\+Base\+::as\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_path_effect_base_1_1_point_data}{Point\+Data}} $\ast$}]{results,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src,  }\item[{const \mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} \&}]{rec,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{mx,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{cullR }\end{DoxyParamCaption}) const}
+
+Does applying this path effect to \textquotesingle{}src\textquotesingle{} yield a set of points? If so, optionally return the points in \textquotesingle{}results\textquotesingle{}. \mbox{\Hypertarget{class_sk_path_effect_base_a31cf99f8a108a377499203133e6d9635}\label{class_sk_path_effect_base_a31cf99f8a108a377499203133e6d9635}} 
+\index{SkPathEffectBase@{SkPathEffectBase}!getFlattenableType@{getFlattenableType}}
+\index{getFlattenableType@{getFlattenableType}!SkPathEffectBase@{SkPathEffectBase}}
+\doxysubsubsection{\texorpdfstring{getFlattenableType()}{getFlattenableType()}}
+{\footnotesize\ttfamily Sk\+Flattenable\+::\+Type Sk\+Path\+Effect\+Base\+::get\+Flattenable\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If the Path\+Effect can be represented as a dash pattern, as\+A\+Dash will return k\+Dash\+\_\+\+Dash\+Type and None otherwise. If a non N\+U\+LL info is passed in, the various Dash\+Info will be filled in if the Path\+Effect can be a dash pattern. If passed in info has an f\+Count equal or greater to that of the effect, it will memcpy the values of the dash intervals into the info. Thus the general approach will be call as\+A\+Dash once with default info to get Dash\+Type and f\+Count. If effect can be represented as a dash pattern, allocate space for the intervals in info, then call as\+A\+Dash again with the same info and the intervals will get copied in. 
+
+Implements \mbox{\hyperlink{class_sk_flattenable}{Sk\+Flattenable}}.
+
+\mbox{\Hypertarget{class_sk_path_effect_base_ae3cef314f6a219c6d89ea4f1d13d335a}\label{class_sk_path_effect_base_ae3cef314f6a219c6d89ea4f1d13d335a}} 
+\index{SkPathEffectBase@{SkPathEffectBase}!onFilterPath@{onFilterPath}}
+\index{onFilterPath@{onFilterPath}!SkPathEffectBase@{SkPathEffectBase}}
+\doxysubsubsection{\texorpdfstring{onFilterPath()}{onFilterPath()}}
+{\footnotesize\ttfamily virtual bool Sk\+Path\+Effect\+Base\+::on\+Filter\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{,  }\item[{\mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\hyperlink{struct_filter}{Filter}} the input path.
+
+The C\+TM parameter is provided for path effects that can use the information. The output of path effects must always be in the original (input) coordinate system, regardless of whether the path effect uses the C\+TM or not. 
+
+Implemented in \mbox{\hyperlink{class_sk_sum_path_effect_ad35a4d52370608d109445ebc181cecb3}{Sk\+Sum\+Path\+Effect}}, and \mbox{\hyperlink{class_sk_compose_path_effect_af723ed8ff88ca12789792d30e3205b2a}{Sk\+Compose\+Path\+Effect}}.
+
+\mbox{\Hypertarget{class_sk_path_effect_base_a55fec3ac7246596f119f7bd2211c9a5f}\label{class_sk_path_effect_base_a55fec3ac7246596f119f7bd2211c9a5f}} 
+\index{SkPathEffectBase@{SkPathEffectBase}!onNeedsCTM@{onNeedsCTM}}
+\index{onNeedsCTM@{onNeedsCTM}!SkPathEffectBase@{SkPathEffectBase}}
+\doxysubsubsection{\texorpdfstring{onNeedsCTM()}{onNeedsCTM()}}
+{\footnotesize\ttfamily virtual bool Sk\+Path\+Effect\+Base\+::on\+Needs\+C\+TM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Path effects {\itshape requiring} a valid C\+TM should override to return true. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path\+Effect\+Base.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path\+Effect.\+cpp\end{DoxyCompactItemize}

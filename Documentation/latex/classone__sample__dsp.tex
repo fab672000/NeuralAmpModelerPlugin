@@ -1,0 +1,141 @@
+\hypertarget{classone__sample__dsp}{}\doxysection{one\+\_\+sample\+\_\+dsp Class Reference}
+\label{classone__sample__dsp}\index{one\_sample\_dsp@{one\_sample\_dsp}}
+Inheritance diagram for one\+\_\+sample\+\_\+dsp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classone__sample__dsp}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classone__sample__dsp_ab8173bcbe0d6273a5f2b406879c7fd5a}{get\+Num\+Int\+Controls}} ()=0
+\item 
+virtual int \mbox{\hyperlink{classone__sample__dsp_acd4297e0bb7458b79e5d5b3471937773}{get\+Num\+Real\+Controls}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classone__sample__dsp_a4e01f970c5bbe1371df66983bf9f2fa7}{control}} (int $\ast$i\+Control, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$f\+Control)=0
+\item 
+virtual void \mbox{\hyperlink{classone__sample__dsp_a349caba50660ad2a44991e397e8982f1}{compute}} (F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$inputs, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$outputs, int $\ast$i\+Control, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$f\+Control)=0
+\item 
+virtual void \mbox{\hyperlink{classone__sample__dsp_adec6988cfca06aacc9ca93a010553b6d}{compute}} (int count, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$inputs\+\_\+aux, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$outputs\+\_\+aux)
+\item 
+virtual void \mbox{\hyperlink{classone__sample__dsp_a65771ca6fa44a27c69f79be2bfe092eb}{compute}} (double date\+\_\+usec, int count, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$inputs, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$outputs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classone__sample__dsp_a3486d189642d87de63a76cff4bb3de36}\label{classone__sample__dsp_a3486d189642d87de63a76cff4bb3de36}} 
+int $\ast$ {\bfseries i\+Zone}
+\item 
+\mbox{\Hypertarget{classone__sample__dsp_a3e9d78e03e84621e3d87c42306423c9d}\label{classone__sample__dsp_a3e9d78e03e84621e3d87c42306423c9d}} 
+F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$ {\bfseries f\+Zone}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classone__sample__dsp_a65771ca6fa44a27c69f79be2bfe092eb}\label{classone__sample__dsp_a65771ca6fa44a27c69f79be2bfe092eb}} 
+\index{one\_sample\_dsp@{one\_sample\_dsp}!compute@{compute}}
+\index{compute@{compute}!one\_sample\_dsp@{one\_sample\_dsp}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void one\+\_\+sample\+\_\+dsp\+::compute (\begin{DoxyParamCaption}\item[{double}]{,  }\item[{int}]{count,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$}]{inputs,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$}]{outputs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{class_d_s_p}{D\+SP}} instance computation\+: alternative method to be used by subclasses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+usec} & -\/ the timestamp in microsec given by audio driver. \\
+\hline
+{\em count} & -\/ the number of frames to compute \\
+\hline
+{\em inputs} & -\/ the input audio buffers as an array of non-\/interleaved F\+A\+U\+S\+T\+F\+L\+O\+AT samples (either float, double or quad) \\
+\hline
+{\em outputs} & -\/ the output audio buffers as an array of non-\/interleaved F\+A\+U\+S\+T\+F\+L\+O\+AT samples (either float, double or quad) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classdsp_a80d42585e8050854f2be7c56ec8353bb}{dsp}}.
+
+\mbox{\Hypertarget{classone__sample__dsp_a349caba50660ad2a44991e397e8982f1}\label{classone__sample__dsp_a349caba50660ad2a44991e397e8982f1}} 
+\index{one\_sample\_dsp@{one\_sample\_dsp}!compute@{compute}}
+\index{compute@{compute}!one\_sample\_dsp@{one\_sample\_dsp}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void one\+\_\+sample\+\_\+dsp\+::compute (\begin{DoxyParamCaption}\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{inputs,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{outputs,  }\item[{int $\ast$}]{i\+Control,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{f\+Control }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Compute one sample.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & -\/ the input audio buffers as an array of get\+Num\+Inputs F\+A\+U\+S\+T\+F\+L\+O\+AT samples (either float, double or quad) \\
+\hline
+{\em outputs} & -\/ the output audio buffers as an array of get\+Num\+Outputs F\+A\+U\+S\+T\+F\+L\+O\+AT samples (either float, double or quad) \\
+\hline
+{\em icontrol} & -\/ the externally allocated array of \textquotesingle{}int\textquotesingle{} typed values used to keep the \mbox{\hyperlink{class_d_s_p}{D\+SP}} control state \\
+\hline
+{\em fcontrol} & -\/ the externally allocated array of \textquotesingle{}float, double or quad\textquotesingle{} typed values used to keep the \mbox{\hyperlink{class_d_s_p}{D\+SP}} control state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classone__sample__dsp_adec6988cfca06aacc9ca93a010553b6d}\label{classone__sample__dsp_adec6988cfca06aacc9ca93a010553b6d}} 
+\index{one\_sample\_dsp@{one\_sample\_dsp}!compute@{compute}}
+\index{compute@{compute}!one\_sample\_dsp@{one\_sample\_dsp}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void one\+\_\+sample\+\_\+dsp\+::compute (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$}]{inputs,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$}]{outputs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{class_d_s_p}{D\+SP}} instance computation, to be called with successive in/out audio buffers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & -\/ the number of frames to compute \\
+\hline
+{\em inputs} & -\/ the input audio buffers as an array of non-\/interleaved F\+A\+U\+S\+T\+F\+L\+O\+AT samples (eiher float, double or quad) \\
+\hline
+{\em outputs} & -\/ the output audio buffers as an array of non-\/interleaved F\+A\+U\+S\+T\+F\+L\+O\+AT samples (eiher float, double or quad) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classdsp_a6b1431a48300dedd89f7b8d316a30a3f}{dsp}}.
+
+\mbox{\Hypertarget{classone__sample__dsp_a4e01f970c5bbe1371df66983bf9f2fa7}\label{classone__sample__dsp_a4e01f970c5bbe1371df66983bf9f2fa7}} 
+\index{one\_sample\_dsp@{one\_sample\_dsp}!control@{control}}
+\index{control@{control}!one\_sample\_dsp@{one\_sample\_dsp}}
+\doxysubsubsection{\texorpdfstring{control()}{control()}}
+{\footnotesize\ttfamily virtual void one\+\_\+sample\+\_\+dsp\+::control (\begin{DoxyParamCaption}\item[{int $\ast$}]{i\+Control,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{f\+Control }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Update the \mbox{\hyperlink{class_d_s_p}{D\+SP}} control state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em icontrol} & -\/ an externally allocated array of \textquotesingle{}int\textquotesingle{} typed values used to keep the \mbox{\hyperlink{class_d_s_p}{D\+SP}} control state \\
+\hline
+{\em fcontrol} & -\/ an externally allocated array of \textquotesingle{}float, double or quad\textquotesingle{} typed values used to keep the \mbox{\hyperlink{class_d_s_p}{D\+SP}} control state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classone__sample__dsp_ab8173bcbe0d6273a5f2b406879c7fd5a}\label{classone__sample__dsp_ab8173bcbe0d6273a5f2b406879c7fd5a}} 
+\index{one\_sample\_dsp@{one\_sample\_dsp}!getNumIntControls@{getNumIntControls}}
+\index{getNumIntControls@{getNumIntControls}!one\_sample\_dsp@{one\_sample\_dsp}}
+\doxysubsubsection{\texorpdfstring{getNumIntControls()}{getNumIntControls()}}
+{\footnotesize\ttfamily virtual int one\+\_\+sample\+\_\+dsp\+::get\+Num\+Int\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the number of \textquotesingle{}int\textquotesingle{} typed values necessary to compute the internal \mbox{\hyperlink{class_d_s_p}{D\+SP}} state
+
+\begin{DoxyReturn}{Returns}
+the number of \textquotesingle{}int\textquotesingle{} typed values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classone__sample__dsp_acd4297e0bb7458b79e5d5b3471937773}\label{classone__sample__dsp_acd4297e0bb7458b79e5d5b3471937773}} 
+\index{one\_sample\_dsp@{one\_sample\_dsp}!getNumRealControls@{getNumRealControls}}
+\index{getNumRealControls@{getNumRealControls}!one\_sample\_dsp@{one\_sample\_dsp}}
+\doxysubsubsection{\texorpdfstring{getNumRealControls()}{getNumRealControls()}}
+{\footnotesize\ttfamily virtual int one\+\_\+sample\+\_\+dsp\+::get\+Num\+Real\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Return the number of \textquotesingle{}float, double or quad\textquotesingle{} typed values necessary to compute the \mbox{\hyperlink{class_d_s_p}{D\+SP}} control state
+
+\begin{DoxyReturn}{Returns}
+the number of \textquotesingle{}float, double or quad\textquotesingle{} typed values. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/dsp/one-\/sample-\/dsp.\+h\end{DoxyCompactItemize}

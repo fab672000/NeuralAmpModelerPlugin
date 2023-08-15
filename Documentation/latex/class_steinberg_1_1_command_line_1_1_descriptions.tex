@@ -1,0 +1,132 @@
+\hypertarget{class_steinberg_1_1_command_line_1_1_descriptions}{}\doxysection{Steinberg\+::Command\+Line\+::Descriptions Class Reference}
+\label{class_steinberg_1_1_command_line_1_1_descriptions}\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+
+
+{\ttfamily \#include $<$fcommandline.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}} \& \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions_a0253b8a7882b6de7dcc2917221841f7b}{add\+Options}} (const std\+::string \&caption=\char`\"{}\char`\"{}, std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_description}{Description}} $>$ \&\&options=\{\})
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions_a35b334bd3f220e2f7bd6bd1acd9b7b8c}{parse}} (int ac, char $\ast$av\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_variables_map}{Variables\+Map}} \&result, \mbox{\hyperlink{namespace_steinberg_1_1_command_line_a06958ad3668e749ef2390379d4114ddf}{Files\+Vector}} $\ast$files=nullptr) const
+\item 
+void \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions_a441e4c84bbfecdf8849ff965dbb87485}{print}} (std\+::ostream \&os) const
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}} \& \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions_a942e7046cd2aa3929f4ab75389c2d841}{operator()}} (const std\+::string \&name, const std\+::string \&help)
+\item 
+{\footnotesize template$<$typename Type $>$ }\\\mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}} \& \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions_ac7060f325e644fa35b72b70df280713f}{operator()}} (const std\+::string \&name, const Type \&in\+Type, std\+::string help)
+\item 
+template$<$$>$ \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}} \& \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions_a074f4abd589048f6f9796dfef42bb22f}{operator()}} (const std\+::string \&name, const std\+::string \&in\+Type, std\+::string help)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+List of command-\/line option descriptions.
+
+Use add\+Options(const std\+::string\&) to add \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_command_line_1_1_descriptions_a0253b8a7882b6de7dcc2917221841f7b}\label{class_steinberg_1_1_command_line_1_1_descriptions_a0253b8a7882b6de7dcc2917221841f7b}} 
+\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}!addOptions@{addOptions}}
+\index{addOptions@{addOptions}!Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+\doxysubsubsection{\texorpdfstring{addOptions()}{addOptions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}} \& Steinberg\+::\+Command\+Line\+::\+Descriptions\+::add\+Options (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{caption = {\ttfamily \char`\"{}\char`\"{}},  }\item[{std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_description}{Description}} $>$ \&\&}]{options = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+Sets the command-\/line tool caption and starts adding \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}}.
+
+{\bfseries{Usage example\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CommandLine::Descriptions desc;}
+\DoxyCodeLine{desc.addOptions (\textcolor{stringliteral}{"myTool"})           \textcolor{comment}{// Set caption to "myTool"}}
+\DoxyCodeLine{    (\textcolor{stringliteral}{"help"}, \textcolor{stringliteral}{"produce help message"}) \textcolor{comment}{// add switch -\/help}}
+\DoxyCodeLine{    (\textcolor{stringliteral}{"opt1"}, \textcolor{keywordtype}{string}(), \textcolor{stringliteral}{"option 1"})   \textcolor{comment}{// add string option -\/opt1}}
+\DoxyCodeLine{    (\textcolor{stringliteral}{"opt2"}, \textcolor{keywordtype}{string}(), \textcolor{stringliteral}{"option 2"})   \textcolor{comment}{// add string option -\/opt2}}
+\DoxyCodeLine{;}
+\end{DoxyCode}
+ \begin{DoxyNote}{Note}
+The operator() is used for every additional option.
+\end{DoxyNote}
+Or with initializer list \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CommandLine::Descriptions desc;}
+\DoxyCodeLine{desc.addOptions (\textcolor{stringliteral}{"myTool"},                                 \textcolor{comment}{// Set caption to "myTool"}}
+\DoxyCodeLine{    \{\{\textcolor{stringliteral}{"help"}, \textcolor{stringliteral}{"produce help message"}, Description::kBool\}, \textcolor{comment}{// add switch -\/help}}
+\DoxyCodeLine{     \{\textcolor{stringliteral}{"opt1"}, \textcolor{stringliteral}{"option 1"}, Description::kString\},           \textcolor{comment}{// add string option -\/opt1}}
+\DoxyCodeLine{     \{\textcolor{stringliteral}{"opt2"}, \textcolor{stringliteral}{"option 2"}, Description::kString\}\}           \textcolor{comment}{// add string option -\/opt2}}
+\DoxyCodeLine{);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em caption} & the caption of the command-\/line tool. \\
+\hline
+\mbox{\texttt{ in}}  & {\em options} & initializer list with options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reverense to $\ast$this. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_command_line_1_1_descriptions_a942e7046cd2aa3929f4ab75389c2d841}\label{class_steinberg_1_1_command_line_1_1_descriptions_a942e7046cd2aa3929f4ab75389c2d841}} 
+\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}!operator()@{operator()}}
+\index{operator()@{operator()}!Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}} \& Steinberg\+::\+Command\+Line\+::\+Descriptions\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{help }\end{DoxyParamCaption})}
+
+Add a new switch. Only
+
+Returning a reference to $\ast$this, enables chaining of calls to operator()(const std\+::string\&, const std\+::string\&). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & of the added option. \\
+\hline
+\mbox{\texttt{ in}}  & {\em help} & a help description for this option. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to $\ast$this. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_command_line_1_1_descriptions_a074f4abd589048f6f9796dfef42bb22f}\label{class_steinberg_1_1_command_line_1_1_descriptions_a074f4abd589048f6f9796dfef42bb22f}} 
+\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}!operator()@{operator()}}
+\index{operator()@{operator()}!Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+\mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}}\& Steinberg\+::\+Command\+Line\+::\+Descriptions\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{in\+Type,  }\item[{std\+::string}]{help }\end{DoxyParamCaption})}
+
+Add a new option with a string as parameter. \mbox{\Hypertarget{class_steinberg_1_1_command_line_1_1_descriptions_ac7060f325e644fa35b72b70df280713f}\label{class_steinberg_1_1_command_line_1_1_descriptions_ac7060f325e644fa35b72b70df280713f}} 
+\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}!operator()@{operator()}}
+\index{operator()@{operator()}!Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_descriptions}{Descriptions}}\& Steinberg\+::\+Command\+Line\+::\+Descriptions\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const Type \&}]{in\+Type,  }\item[{std\+::string}]{help }\end{DoxyParamCaption})}
+
+Add a new option of type {\ttfamily in\+Type}. Currently only std\+::string is supported. \mbox{\Hypertarget{class_steinberg_1_1_command_line_1_1_descriptions_a35b334bd3f220e2f7bd6bd1acd9b7b8c}\label{class_steinberg_1_1_command_line_1_1_descriptions_a35b334bd3f220e2f7bd6bd1acd9b7b8c}} 
+\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}!parse@{parse}}
+\index{parse@{parse}!Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool Steinberg\+::\+Command\+Line\+::\+Descriptions\+::parse (\begin{DoxyParamCaption}\item[{int}]{ac,  }\item[{char $\ast$}]{av\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{class_steinberg_1_1_command_line_1_1_variables_map}{Variables\+Map}} \&}]{result,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_command_line_a06958ad3668e749ef2390379d4114ddf}{Files\+Vector}} $\ast$}]{files = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Parse the command-\/line.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ac} & count of command-\/line parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em av} & command-\/line as array of strings \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & the parsing result \\
+\hline
+\mbox{\texttt{ out}}  & {\em files} & optional list of elements on the command line that are not handled by options parsing \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_command_line_1_1_descriptions_a441e4c84bbfecdf8849ff965dbb87485}\label{class_steinberg_1_1_command_line_1_1_descriptions_a441e4c84bbfecdf8849ff965dbb87485}} 
+\index{Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}!print@{print}}
+\index{print@{print}!Steinberg::CommandLine::Descriptions@{Steinberg::CommandLine::Descriptions}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Steinberg\+::\+Command\+Line\+::\+Descriptions\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+Print a brief description for the command-\/line tool into the stream {\ttfamily os}.
+
+The description includes the help strings for all options. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/\mbox{\hyperlink{fcommandline_8h}{fcommandline.\+h}}\end{DoxyCompactItemize}

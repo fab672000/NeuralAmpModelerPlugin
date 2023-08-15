@@ -1,0 +1,156 @@
+\hypertarget{classskottie_1_1_animation}{}\doxysection{skottie\+::Animation Class Reference}
+\label{classskottie_1_1_animation}\index{skottie::Animation@{skottie::Animation}}
+Inheritance diagram for skottie\+::Animation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classskottie_1_1_animation}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classskottie_1_1_animation_1_1_builder}{Builder}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_a2b9fca7113b04b8d0dd9bbe37fd5fef6}\label{classskottie_1_1_animation_a2b9fca7113b04b8d0dd9bbe37fd5fef6}} 
+enum {\bfseries Render\+Flag} \+: uint32\+\_\+t \{ {\bfseries k\+Skip\+Top\+Level\+Isolation} = 0x01, 
+{\bfseries k\+Disable\+Top\+Level\+Clipping} = 0x02
+ \}
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_aec961c5ca3cf1d7c926effe0f41ec9bf}\label{classskottie_1_1_animation_aec961c5ca3cf1d7c926effe0f41ec9bf}} 
+using {\bfseries Render\+Flags} = uint32\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classskottie_1_1_animation_ac7d94a13a7735587046477d7a2674da2}{render}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$dst=nullptr) const
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_aab451b9747df48ce96b684270de5a976}\label{classskottie_1_1_animation_aab451b9747df48ce96b684270de5a976}} 
+void {\bfseries render} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$dst, Render\+Flags) const
+\item 
+void \mbox{\hyperlink{classskottie_1_1_animation_aca4031cacc94de80cd87d0142cafc569}{seek}} (Sk\+Scalar t, sksg\+::\+Invalidation\+Controller $\ast$ic=nullptr)
+\item 
+void \mbox{\hyperlink{classskottie_1_1_animation_a3512284479b0c98a0d9d254e547b1de3}{seek\+Frame}} (double t, sksg\+::\+Invalidation\+Controller $\ast$ic=nullptr)
+\item 
+void \mbox{\hyperlink{classskottie_1_1_animation_aabb8663f8ecfac80288fbf9b44b2cc3c}{seek\+Frame\+Time}} (double t, sksg\+::\+Invalidation\+Controller $\ast$=nullptr)
+\item 
+double \mbox{\hyperlink{classskottie_1_1_animation_ab0fc082708fb5587d0ee1db18c16e270}{duration}} () const
+\item 
+double \mbox{\hyperlink{classskottie_1_1_animation_a5e4ce093d8ea96f872d54f52361a24c4}{fps}} () const
+\item 
+double \mbox{\hyperlink{classskottie_1_1_animation_a3ce5484098ca53bf0b6ed7ed1d7f87af}{in\+Point}} () const
+\item 
+double \mbox{\hyperlink{classskottie_1_1_animation_aaf4d03decf8cc396f379987ecf970aab}{out\+Point}} () const
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_a39949557476510586704fbbe458d6d46}\label{classskottie_1_1_animation_a39949557476510586704fbbe458d6d46}} 
+const \mbox{\hyperlink{class_sk_string}{Sk\+String}} \& {\bfseries version} () const
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_a24158f87ea73b0d5299a8cb6a814429f}\label{classskottie_1_1_animation_a24158f87ea73b0d5299a8cb6a814429f}} 
+const \mbox{\hyperlink{struct_sk_size}{Sk\+Size}} \& {\bfseries size} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskottie_1_1_animation}{Animation}} $>$ \mbox{\hyperlink{classskottie_1_1_animation_ac54e16989b6dc667c1abe91ff5978110}{Make}} (const char $\ast$data, size\+\_\+t length)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_a40d8418ee788e9559ae8b898e400f75a}\label{classskottie_1_1_animation_a40d8418ee788e9559ae8b898e400f75a}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskottie_1_1_animation}{Animation}} $>$ {\bfseries Make} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_animation_a2de39233f9379a9105f480f989d5ce7d}\label{classskottie_1_1_animation_a2de39233f9379a9105f480f989d5ce7d}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskottie_1_1_animation}{Animation}} $>$ {\bfseries Make\+From\+File} (const char path\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classskottie_1_1_animation_ab0fc082708fb5587d0ee1db18c16e270}\label{classskottie_1_1_animation_ab0fc082708fb5587d0ee1db18c16e270}} 
+\index{skottie::Animation@{skottie::Animation}!duration@{duration}}
+\index{duration@{duration}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{duration()}{duration()}}
+{\footnotesize\ttfamily double skottie\+::\+Animation\+::duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the animation duration in seconds. \mbox{\Hypertarget{classskottie_1_1_animation_a5e4ce093d8ea96f872d54f52361a24c4}\label{classskottie_1_1_animation_a5e4ce093d8ea96f872d54f52361a24c4}} 
+\index{skottie::Animation@{skottie::Animation}!fps@{fps}}
+\index{fps@{fps}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{fps()}{fps()}}
+{\footnotesize\ttfamily double skottie\+::\+Animation\+::fps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the animation frame rate (frames / second). \mbox{\Hypertarget{classskottie_1_1_animation_a3ce5484098ca53bf0b6ed7ed1d7f87af}\label{classskottie_1_1_animation_a3ce5484098ca53bf0b6ed7ed1d7f87af}} 
+\index{skottie::Animation@{skottie::Animation}!inPoint@{inPoint}}
+\index{inPoint@{inPoint}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{inPoint()}{inPoint()}}
+{\footnotesize\ttfamily double skottie\+::\+Animation\+::in\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classskottie_1_1_animation}{Animation}} in point, in frame index units. \mbox{\Hypertarget{classskottie_1_1_animation_ac54e16989b6dc667c1abe91ff5978110}\label{classskottie_1_1_animation_ac54e16989b6dc667c1abe91ff5978110}} 
+\index{skottie::Animation@{skottie::Animation}!Make@{Make}}
+\index{Make@{Make}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{classskottie_1_1_animation}{Animation}} $>$ skottie\+::\+Animation\+::\+Make (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\hyperlink{classskottie_1_1_animation}{Animation}} factories.
+
+Use the \mbox{\hyperlink{classskottie_1_1_animation_1_1_builder}{Builder}} helper above for more options/control. \mbox{\Hypertarget{classskottie_1_1_animation_aaf4d03decf8cc396f379987ecf970aab}\label{classskottie_1_1_animation_aaf4d03decf8cc396f379987ecf970aab}} 
+\index{skottie::Animation@{skottie::Animation}!outPoint@{outPoint}}
+\index{outPoint@{outPoint}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{outPoint()}{outPoint()}}
+{\footnotesize\ttfamily double skottie\+::\+Animation\+::out\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classskottie_1_1_animation}{Animation}} out point, in frame index units. \mbox{\Hypertarget{classskottie_1_1_animation_ac7d94a13a7735587046477d7a2674da2}\label{classskottie_1_1_animation_ac7d94a13a7735587046477d7a2674da2}} 
+\index{skottie::Animation@{skottie::Animation}!render@{render}}
+\index{render@{render}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void skottie\+::\+Animation\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{dst = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Draws the current animation frame.
+
+It is undefined behavior to call \mbox{\hyperlink{classskottie_1_1_animation_ac7d94a13a7735587046477d7a2674da2}{render()}} on a newly created \mbox{\hyperlink{classskottie_1_1_animation}{Animation}} before specifying an initial frame via one of the \mbox{\hyperlink{classskottie_1_1_animation_aca4031cacc94de80cd87d0142cafc569}{seek()}} variants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & destination canvas \\
+\hline
+{\em dst} & optional destination rect \\
+\hline
+{\em flags} & optional Render\+Flags \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classskottie_1_1_animation_aca4031cacc94de80cd87d0142cafc569}\label{classskottie_1_1_animation_aca4031cacc94de80cd87d0142cafc569}} 
+\index{skottie::Animation@{skottie::Animation}!seek@{seek}}
+\index{seek@{seek}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily void skottie\+::\+Animation\+::seek (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{t,  }\item[{sksg\+::\+Invalidation\+Controller $\ast$}]{ic = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{[}Deprecated\+: use one of the other versions.\mbox{]}
+
+Updates the animation state for $\vert$t$\vert$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & normalized \mbox{[}0..1\mbox{]} frame selector (0 -\/$>$ first frame, 1 -\/$>$ final frame) \\
+\hline
+{\em ic} & optional invalidation controller (dirty region tracking) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classskottie_1_1_animation_a3512284479b0c98a0d9d254e547b1de3}\label{classskottie_1_1_animation_a3512284479b0c98a0d9d254e547b1de3}} 
+\index{skottie::Animation@{skottie::Animation}!seekFrame@{seekFrame}}
+\index{seekFrame@{seekFrame}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{seekFrame()}{seekFrame()}}
+{\footnotesize\ttfamily void skottie\+::\+Animation\+::seek\+Frame (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{sksg\+::\+Invalidation\+Controller $\ast$}]{ic = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Update the animation state to match $\vert$t$\vert$, specified as a frame index i.\+e. relative to \mbox{\hyperlink{classskottie_1_1_animation_ab0fc082708fb5587d0ee1db18c16e270}{duration()}} $\ast$ \mbox{\hyperlink{classskottie_1_1_animation_a5e4ce093d8ea96f872d54f52361a24c4}{fps()}}.
+
+Fractional values are allowed and meaningful -\/ e.\+g.
+
+0.\+0 -\/$>$ first frame 1.\+0 -\/$>$ second frame 0.\+5 -\/$>$ halfway between first and second frame \mbox{\Hypertarget{classskottie_1_1_animation_aabb8663f8ecfac80288fbf9b44b2cc3c}\label{classskottie_1_1_animation_aabb8663f8ecfac80288fbf9b44b2cc3c}} 
+\index{skottie::Animation@{skottie::Animation}!seekFrameTime@{seekFrameTime}}
+\index{seekFrameTime@{seekFrameTime}!skottie::Animation@{skottie::Animation}}
+\doxysubsubsection{\texorpdfstring{seekFrameTime()}{seekFrameTime()}}
+{\footnotesize\ttfamily void skottie\+::\+Animation\+::seek\+Frame\+Time (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{sksg\+::\+Invalidation\+Controller $\ast$}]{ic = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Update the animation state to match t, specifed in frame time i.\+e. relative to \mbox{\hyperlink{classskottie_1_1_animation_ab0fc082708fb5587d0ee1db18c16e270}{duration()}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skottie/include/Skottie.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skottie/src/Skottie.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{class_a_c_f_c_o_m_b_a_s_e}{}\doxysection{A\+C\+F\+C\+O\+M\+B\+A\+SE Class Reference}
+\label{class_a_c_f_c_o_m_b_a_s_e}\index{ACFCOMBASE@{ACFCOMBASE}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+I\+N\+T\+E\+R\+F\+A\+CE A\+C\+F\+R\+E\+S\+U\+LT A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE \mbox{\hyperlink{class_a_c_f_c_o_m_b_a_s_e_a214726aaa24852963aa4f7dc8e60fe78}{Query\+Interface}} (const \mbox{\hyperlink{acfbasetypes_8h_a59df0b41744eee7a066787aaedf97f67}{acf\+I\+ID}} \&iid, void $\ast$$\ast$pp\+Out)=0
+\begin{DoxyCompactList}\small\item\em Returns pointers to supported interfaces. \end{DoxyCompactList}\item 
+virtual acf\+U\+Int32 A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE \mbox{\hyperlink{class_a_c_f_c_o_m_b_a_s_e_a0b207991e2ca5c7c655b810a8caa6e83}{Add\+Ref}} (void)=0
+\begin{DoxyCompactList}\small\item\em Increments reference count. \end{DoxyCompactList}\item 
+virtual acf\+U\+Int32 A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE \mbox{\hyperlink{class_a_c_f_c_o_m_b_a_s_e_a4fc721f4ab620f203f540932760c7873}{Release}} (void)=0
+\begin{DoxyCompactList}\small\item\em Decrements reference count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_c_f_c_o_m_b_a_s_e_a0b207991e2ca5c7c655b810a8caa6e83}\label{class_a_c_f_c_o_m_b_a_s_e_a0b207991e2ca5c7c655b810a8caa6e83}} 
+\index{ACFCOMBASE@{ACFCOMBASE}!AddRef@{AddRef}}
+\index{AddRef@{AddRef}!ACFCOMBASE@{ACFCOMBASE}}
+\doxysubsubsection{\texorpdfstring{AddRef()}{AddRef()}}
+{\footnotesize\ttfamily virtual acf\+U\+Int32 A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE A\+C\+F\+C\+O\+M\+B\+A\+S\+E\+::\+Add\+Ref (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Increments reference count. 
+
+\begin{DoxyRemark}{Remarks}
+The Add\+Ref method should be called every time a new copy of an interface is made. When this copy is no longer referenced it must be released with the Release method. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{class_a_c_f_c_o_m_b_a_s_e_a214726aaa24852963aa4f7dc8e60fe78}\label{class_a_c_f_c_o_m_b_a_s_e_a214726aaa24852963aa4f7dc8e60fe78}} 
+\index{ACFCOMBASE@{ACFCOMBASE}!QueryInterface@{QueryInterface}}
+\index{QueryInterface@{QueryInterface}!ACFCOMBASE@{ACFCOMBASE}}
+\doxysubsubsection{\texorpdfstring{QueryInterface()}{QueryInterface()}}
+{\footnotesize\ttfamily virtual B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+I\+N\+T\+E\+R\+F\+A\+CE A\+C\+F\+R\+E\+S\+U\+LT A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE A\+C\+F\+C\+O\+M\+B\+A\+S\+E\+::\+Query\+Interface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{acfbasetypes_8h_a59df0b41744eee7a066787aaedf97f67}{acf\+I\+ID}} \&}]{iid,  }\item[{void $\ast$$\ast$}]{pp\+Out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns pointers to supported interfaces. 
+
+\begin{DoxyRemark}{Remarks}
+The Query\+Interface method gives a client access to alternate interfaces implemented by an object. The returned interface pointer will have already had its reference count incremented so the caller will be required to call the Release method. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em iid} & Identifier of the requested interface \\
+\hline
+{\em pp\+Out} & Address of variable that receives the interface pointer associated with iid. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_c_f_c_o_m_b_a_s_e_a4fc721f4ab620f203f540932760c7873}\label{class_a_c_f_c_o_m_b_a_s_e_a4fc721f4ab620f203f540932760c7873}} 
+\index{ACFCOMBASE@{ACFCOMBASE}!Release@{Release}}
+\index{Release@{Release}!ACFCOMBASE@{ACFCOMBASE}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily virtual acf\+U\+Int32 A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+PE A\+C\+F\+C\+O\+M\+B\+A\+S\+E\+::\+Release (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decrements reference count. 
+
+\begin{DoxyRemark}{Remarks}
+Use this method to decrement the reference count. When the reference count reaches zero the object that implements the interface will be deleted. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\+A\+C\+F/\mbox{\hyperlink{acfunknown_8h}{acfunknown.\+h}}\end{DoxyCompactItemize}

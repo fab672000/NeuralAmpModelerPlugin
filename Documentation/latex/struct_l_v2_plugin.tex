@@ -1,0 +1,289 @@
+\hypertarget{struct_l_v2_plugin}{}\doxysection{L\+V2\+Plugin Struct Reference}
+\label{struct_l_v2_plugin}\index{LV2Plugin@{LV2Plugin}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_adc2fd0daede2dedc71f99da85daf298f}\label{struct_l_v2_plugin_adc2fd0daede2dedc71f99da85daf298f}} 
+{\bfseries L\+V2\+Plugin} (const int num\+\_\+voices, const int sr)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_acc2273027c82c9a8fd1d7b00da125255}\label{struct_l_v2_plugin_acc2273027c82c9a8fd1d7b00da125255}} 
+int {\bfseries alloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_af138078cfc5edf12f003b1f665065429}\label{struct_l_v2_plugin_af138078cfc5edf12f003b1f665065429}} 
+int {\bfseries dealloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a45d7bc5fde052547761c176edd7ab94d}\label{struct_l_v2_plugin_a45d7bc5fde052547761c176edd7ab94d}} 
+float {\bfseries midicps} (int8\+\_\+t note, uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a90678486fc65098286afd3b1c2acea54}\label{struct_l_v2_plugin_a90678486fc65098286afd3b1c2acea54}} 
+void {\bfseries voice\+\_\+on} (int i, int8\+\_\+t note, int8\+\_\+t vel, uint8\+\_\+t ch)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a2ad5a129bd6882ff0aade9017169e3e8}\label{struct_l_v2_plugin_a2ad5a129bd6882ff0aade9017169e3e8}} 
+void {\bfseries voice\+\_\+off} (int i)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_afd6bbcd965efdff2a3da4e64911c096f}\label{struct_l_v2_plugin_afd6bbcd965efdff2a3da4e64911c096f}} 
+void {\bfseries update\+\_\+voices} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a0dfdc9603fcc6c729e272c3ac6e2b118}\label{struct_l_v2_plugin_a0dfdc9603fcc6c729e272c3ac6e2b118}} 
+void {\bfseries all\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a66a46cac29592d70c6f499296d9070d1}\label{struct_l_v2_plugin_a66a46cac29592d70c6f499296d9070d1}} 
+void {\bfseries all\+\_\+notes\+\_\+off} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab770da26f7c03823b928cabd50863ea4}\label{struct_l_v2_plugin_ab770da26f7c03823b928cabd50863ea4}} 
+void {\bfseries queued\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a2387a481d9d4e1c347ce6f347d983dfa}\label{struct_l_v2_plugin_a2387a481d9d4e1c347ce6f347d983dfa}} 
+void {\bfseries suspend} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a9f6f163a51379f6fca450d82b661b9e4}\label{struct_l_v2_plugin_a9f6f163a51379f6fca450d82b661b9e4}} 
+void {\bfseries resume} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a380cdb4f525a66fa4b5916c4fe8a4cd1}\label{struct_l_v2_plugin_a380cdb4f525a66fa4b5916c4fe8a4cd1}} 
+void {\bfseries set\+\_\+rate} (int sr)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_aace5f1186c0ca827f8056036f6c8f0fd}\label{struct_l_v2_plugin_aace5f1186c0ca827f8056036f6c8f0fd}} 
+void {\bfseries process\+\_\+audio} (int blocksz, float $\ast$$\ast$inputs, float $\ast$$\ast$outputs)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a6d77b8e8cf0e66da398a2b5afdd75534}\label{struct_l_v2_plugin_a6d77b8e8cf0e66da398a2b5afdd75534}} 
+void {\bfseries process\+\_\+midi} (unsigned char $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_acee385b4b05a7bf77f9076fe89486d31}\label{struct_l_v2_plugin_acee385b4b05a7bf77f9076fe89486d31}} 
+void {\bfseries process\+\_\+sysex} (uint8\+\_\+t $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a77a655967dc87c207494397a65be7b97}\label{struct_l_v2_plugin_a77a655967dc87c207494397a65be7b97}} 
+void {\bfseries change\+\_\+tuning} (int num)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_adc2fd0daede2dedc71f99da85daf298f}\label{struct_l_v2_plugin_adc2fd0daede2dedc71f99da85daf298f}} 
+{\bfseries L\+V2\+Plugin} (const int num\+\_\+voices, const int sr)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_acc2273027c82c9a8fd1d7b00da125255}\label{struct_l_v2_plugin_acc2273027c82c9a8fd1d7b00da125255}} 
+int {\bfseries alloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_af138078cfc5edf12f003b1f665065429}\label{struct_l_v2_plugin_af138078cfc5edf12f003b1f665065429}} 
+int {\bfseries dealloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a45d7bc5fde052547761c176edd7ab94d}\label{struct_l_v2_plugin_a45d7bc5fde052547761c176edd7ab94d}} 
+float {\bfseries midicps} (int8\+\_\+t note, uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a90678486fc65098286afd3b1c2acea54}\label{struct_l_v2_plugin_a90678486fc65098286afd3b1c2acea54}} 
+void {\bfseries voice\+\_\+on} (int i, int8\+\_\+t note, int8\+\_\+t vel, uint8\+\_\+t ch)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a2ad5a129bd6882ff0aade9017169e3e8}\label{struct_l_v2_plugin_a2ad5a129bd6882ff0aade9017169e3e8}} 
+void {\bfseries voice\+\_\+off} (int i)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_afd6bbcd965efdff2a3da4e64911c096f}\label{struct_l_v2_plugin_afd6bbcd965efdff2a3da4e64911c096f}} 
+void {\bfseries update\+\_\+voices} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a0dfdc9603fcc6c729e272c3ac6e2b118}\label{struct_l_v2_plugin_a0dfdc9603fcc6c729e272c3ac6e2b118}} 
+void {\bfseries all\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a66a46cac29592d70c6f499296d9070d1}\label{struct_l_v2_plugin_a66a46cac29592d70c6f499296d9070d1}} 
+void {\bfseries all\+\_\+notes\+\_\+off} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab770da26f7c03823b928cabd50863ea4}\label{struct_l_v2_plugin_ab770da26f7c03823b928cabd50863ea4}} 
+void {\bfseries queued\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a2387a481d9d4e1c347ce6f347d983dfa}\label{struct_l_v2_plugin_a2387a481d9d4e1c347ce6f347d983dfa}} 
+void {\bfseries suspend} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a9f6f163a51379f6fca450d82b661b9e4}\label{struct_l_v2_plugin_a9f6f163a51379f6fca450d82b661b9e4}} 
+void {\bfseries resume} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a380cdb4f525a66fa4b5916c4fe8a4cd1}\label{struct_l_v2_plugin_a380cdb4f525a66fa4b5916c4fe8a4cd1}} 
+void {\bfseries set\+\_\+rate} (int sr)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_aace5f1186c0ca827f8056036f6c8f0fd}\label{struct_l_v2_plugin_aace5f1186c0ca827f8056036f6c8f0fd}} 
+void {\bfseries process\+\_\+audio} (int blocksz, float $\ast$$\ast$inputs, float $\ast$$\ast$outputs)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a6d77b8e8cf0e66da398a2b5afdd75534}\label{struct_l_v2_plugin_a6d77b8e8cf0e66da398a2b5afdd75534}} 
+void {\bfseries process\+\_\+midi} (unsigned char $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_acee385b4b05a7bf77f9076fe89486d31}\label{struct_l_v2_plugin_acee385b4b05a7bf77f9076fe89486d31}} 
+void {\bfseries process\+\_\+sysex} (uint8\+\_\+t $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a77a655967dc87c207494397a65be7b97}\label{struct_l_v2_plugin_a77a655967dc87c207494397a65be7b97}} 
+void {\bfseries change\+\_\+tuning} (int num)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_af70681dc3975cbfa44a14f4bff050360}\label{struct_l_v2_plugin_af70681dc3975cbfa44a14f4bff050360}} 
+static void {\bfseries init\+\_\+meta} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a5cdb12f0454c6f63f8460ca4985d5902}\label{struct_l_v2_plugin_a5cdb12f0454c6f63f8460ca4985d5902}} 
+static const char $\ast$ {\bfseries meta\+\_\+get} (const char $\ast$key, const char $\ast$deflt)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab72fe09c0a9335774cdbf8411fc99dc6}\label{struct_l_v2_plugin_ab72fe09c0a9335774cdbf8411fc99dc6}} 
+static const char $\ast$ {\bfseries plugin\+Name} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a84317efe7539ff357f1db3014006e276}\label{struct_l_v2_plugin_a84317efe7539ff357f1db3014006e276}} 
+static const char $\ast$ {\bfseries plugin\+Author} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a0c0cf9eae588dfa0f7d8aee148f2f128}\label{struct_l_v2_plugin_a0c0cf9eae588dfa0f7d8aee148f2f128}} 
+static const char $\ast$ {\bfseries plugin\+Description} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab145cdf7aa12fd7097b86d438206aecd}\label{struct_l_v2_plugin_ab145cdf7aa12fd7097b86d438206aecd}} 
+static const char $\ast$ {\bfseries plugin\+License} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a4bb80307faf014001cf20651b891936c}\label{struct_l_v2_plugin_a4bb80307faf014001cf20651b891936c}} 
+static const char $\ast$ {\bfseries plugin\+Version} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_abc31f5156f42bf706852d952f3344f16}\label{struct_l_v2_plugin_abc31f5156f42bf706852d952f3344f16}} 
+static \mbox{\hyperlink{struct_m_t_s_tunings}{M\+T\+S\+Tunings}} $\ast$ {\bfseries load\+\_\+sysex\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a8b575e9a6567f3eaa72ed556c26fcbef}\label{struct_l_v2_plugin_a8b575e9a6567f3eaa72ed556c26fcbef}} 
+static int {\bfseries num\+Voices} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_af70681dc3975cbfa44a14f4bff050360}\label{struct_l_v2_plugin_af70681dc3975cbfa44a14f4bff050360}} 
+static void {\bfseries init\+\_\+meta} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a5cdb12f0454c6f63f8460ca4985d5902}\label{struct_l_v2_plugin_a5cdb12f0454c6f63f8460ca4985d5902}} 
+static const char $\ast$ {\bfseries meta\+\_\+get} (const char $\ast$key, const char $\ast$deflt)
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab72fe09c0a9335774cdbf8411fc99dc6}\label{struct_l_v2_plugin_ab72fe09c0a9335774cdbf8411fc99dc6}} 
+static const char $\ast$ {\bfseries plugin\+Name} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a84317efe7539ff357f1db3014006e276}\label{struct_l_v2_plugin_a84317efe7539ff357f1db3014006e276}} 
+static const char $\ast$ {\bfseries plugin\+Author} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a0c0cf9eae588dfa0f7d8aee148f2f128}\label{struct_l_v2_plugin_a0c0cf9eae588dfa0f7d8aee148f2f128}} 
+static const char $\ast$ {\bfseries plugin\+Description} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab145cdf7aa12fd7097b86d438206aecd}\label{struct_l_v2_plugin_ab145cdf7aa12fd7097b86d438206aecd}} 
+static const char $\ast$ {\bfseries plugin\+License} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a4bb80307faf014001cf20651b891936c}\label{struct_l_v2_plugin_a4bb80307faf014001cf20651b891936c}} 
+static const char $\ast$ {\bfseries plugin\+Version} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_abc31f5156f42bf706852d952f3344f16}\label{struct_l_v2_plugin_abc31f5156f42bf706852d952f3344f16}} 
+static \mbox{\hyperlink{struct_m_t_s_tunings}{M\+T\+S\+Tunings}} $\ast$ {\bfseries load\+\_\+sysex\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a8b575e9a6567f3eaa72ed556c26fcbef}\label{struct_l_v2_plugin_a8b575e9a6567f3eaa72ed556c26fcbef}} 
+static int {\bfseries num\+Voices} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ac7175a3b0063f6ff58f4ad5493a6065e}\label{struct_l_v2_plugin_ac7175a3b0063f6ff58f4ad5493a6065e}} 
+const int {\bfseries maxvoices}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a31151a878ffbcae7ee344d0e0d548325}\label{struct_l_v2_plugin_a31151a878ffbcae7ee344d0e0d548325}} 
+const int {\bfseries ndsps}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ab7abf88c574dd36bd78143b943f69772}\label{struct_l_v2_plugin_ab7abf88c574dd36bd78143b943f69772}} 
+bool {\bfseries active}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a05ea54b52c444fcddc4127086f8fa0f8}\label{struct_l_v2_plugin_a05ea54b52c444fcddc4127086f8fa0f8}} 
+int {\bfseries rate}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a8c60cc52ae67b67b7a3cd2f7fbc24a54}\label{struct_l_v2_plugin_a8c60cc52ae67b67b7a3cd2f7fbc24a54}} 
+int {\bfseries nvoices}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a3c6e4eb3484d593e55c2fcab7c2405e0}\label{struct_l_v2_plugin_a3c6e4eb3484d593e55c2fcab7c2405e0}} 
+int {\bfseries tuning\+\_\+no}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a9aeb47948f4f55fa577d938ddfb0a575}\label{struct_l_v2_plugin_a9aeb47948f4f55fa577d938ddfb0a575}} 
+\mbox{\hyperlink{classmydsp}{mydsp}} $\ast$$\ast$ {\bfseries dsp}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_afad25f24b5ee899b9480e1946df4fd35}\label{struct_l_v2_plugin_afad25f24b5ee899b9480e1946df4fd35}} 
+\mbox{\hyperlink{class_l_v2_u_i}{L\+V2\+UI}} $\ast$$\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ad403e079a26aa7341fde92e5ab0d7d0f}\label{struct_l_v2_plugin_ad403e079a26aa7341fde92e5ab0d7d0f}} 
+int {\bfseries n\+\_\+in}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a3e9976256364fed6bb903295b2944214}\label{struct_l_v2_plugin_a3e9976256364fed6bb903295b2944214}} 
+int {\bfseries n\+\_\+out}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a4ac57e908776b192fed58ec98a5dd87a}\label{struct_l_v2_plugin_a4ac57e908776b192fed58ec98a5dd87a}} 
+int $\ast$ {\bfseries ctrls}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_abd5264b918a96462aa8a99672960750b}\label{struct_l_v2_plugin_abd5264b918a96462aa8a99672960750b}} 
+float $\ast$$\ast$ {\bfseries ports}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a5f29fd3ffc0dd8bbc90d50999a827f32}\label{struct_l_v2_plugin_a5f29fd3ffc0dd8bbc90d50999a827f32}} 
+float $\ast$ {\bfseries portvals}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ac80b8208cef3f0c68f19b9d945f1d7ed}\label{struct_l_v2_plugin_ac80b8208cef3f0c68f19b9d945f1d7ed}} 
+float $\ast$ {\bfseries midivals} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_aec6b2a34fbc202652e071e8319552599}\label{struct_l_v2_plugin_aec6b2a34fbc202652e071e8319552599}} 
+int $\ast$ {\bfseries inctrls}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ae259db436d572ac87f38e46b92192c8d}\label{struct_l_v2_plugin_ae259db436d572ac87f38e46b92192c8d}} 
+int $\ast$ {\bfseries outctrls}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a85080f86d9bb8544e6e86b1d21a1d27f}\label{struct_l_v2_plugin_a85080f86d9bb8544e6e86b1d21a1d27f}} 
+float $\ast$$\ast$ {\bfseries inputs}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a33e7569fc08a61f7cf6864808c0f3275}\label{struct_l_v2_plugin_a33e7569fc08a61f7cf6864808c0f3275}} 
+float $\ast$$\ast$ {\bfseries outputs}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a50a16d00b3a4370e408f209a5f889d81}\label{struct_l_v2_plugin_a50a16d00b3a4370e408f209a5f889d81}} 
+int {\bfseries freq}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ac7f3fc146f1c21652892d6acfa5aff6e}\label{struct_l_v2_plugin_ac7f3fc146f1c21652892d6acfa5aff6e}} 
+int {\bfseries gain}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a3b165886b07e470cabc620f7618f658b}\label{struct_l_v2_plugin_a3b165886b07e470cabc620f7618f658b}} 
+int {\bfseries gate}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a6286becf9afe349b5d99eb9c4900d19c}\label{struct_l_v2_plugin_a6286becf9afe349b5d99eb9c4900d19c}} 
+unsigned {\bfseries n\+\_\+samples}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a5da3ae914963f42490a56ca0f917a3f8}\label{struct_l_v2_plugin_a5da3ae914963f42490a56ca0f917a3f8}} 
+float $\ast$$\ast$ {\bfseries outbuf}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a2bd57b526d6d48b720c14652675cdd67}\label{struct_l_v2_plugin_a2bd57b526d6d48b720c14652675cdd67}} 
+float $\ast$$\ast$ {\bfseries inbuf}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a8a4ca7a466fa4800893fc1eeeb0595e5}\label{struct_l_v2_plugin_a8a4ca7a466fa4800893fc1eeeb0595e5}} 
+L\+V2\+\_\+\+Atom\+\_\+\+Sequence $\ast$ {\bfseries event\+\_\+port}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a6cceac320c7d00ea35693de83038614b}\label{struct_l_v2_plugin_a6cceac320c7d00ea35693de83038614b}} 
+float $\ast$ {\bfseries poly}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a99d680e0f2e0d4e0ba705b27a84747c4}\label{struct_l_v2_plugin_a99d680e0f2e0d4e0ba705b27a84747c4}} 
+float $\ast$ {\bfseries tuning}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a301a143854d0e0f4fa27a22504c60ab1}\label{struct_l_v2_plugin_a301a143854d0e0f4fa27a22504c60ab1}} 
+std\+::map$<$ uint8\+\_\+t, int $>$ {\bfseries ctrlmap}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a3d93a42db422e44ecd1a4d5b45b7caf4}\label{struct_l_v2_plugin_a3d93a42db422e44ecd1a4d5b45b7caf4}} 
+L\+V2\+\_\+\+U\+R\+I\+D\+\_\+\+Map $\ast$ {\bfseries map}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a01c51bfe508276120449af04234951a7}\label{struct_l_v2_plugin_a01c51bfe508276120449af04234951a7}} 
+L\+V2\+\_\+\+U\+R\+ID {\bfseries midi\+\_\+event}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a63845cc2529a556cb0d65f3ec3b8a2f8}\label{struct_l_v2_plugin_a63845cc2529a556cb0d65f3ec3b8a2f8}} 
+uint8\+\_\+t {\bfseries rpn\+\_\+msb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a82ca7a77df2c34b95b854748345b2af6}\label{struct_l_v2_plugin_a82ca7a77df2c34b95b854748345b2af6}} 
+uint8\+\_\+t {\bfseries rpn\+\_\+lsb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_afe975970b42e632c7f91c8c827777bf9}\label{struct_l_v2_plugin_afe975970b42e632c7f91c8c827777bf9}} 
+uint8\+\_\+t {\bfseries data\+\_\+msb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a1c9888de63e274616676d3544a0e36e2}\label{struct_l_v2_plugin_a1c9888de63e274616676d3544a0e36e2}} 
+uint8\+\_\+t {\bfseries data\+\_\+lsb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_a4fe1529c9387a1dc38a929818e8062e8}\label{struct_l_v2_plugin_a4fe1529c9387a1dc38a929818e8062e8}} 
+\mbox{\hyperlink{struct_voice_data}{Voice\+Data}} $\ast$ {\bfseries vd}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_aea70bff5f58fe9f9357c6f042e58da1f}\label{struct_l_v2_plugin_aea70bff5f58fe9f9357c6f042e58da1f}} 
+static \mbox{\hyperlink{struct_meta}{Meta}} $\ast$ {\bfseries meta} = 0
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_ad373f55e2eff6bf0d9ac3e9a480487c5}\label{struct_l_v2_plugin_ad373f55e2eff6bf0d9ac3e9a480487c5}} 
+static int {\bfseries n\+\_\+tunings} = 0
+\item 
+\mbox{\Hypertarget{struct_l_v2_plugin_aaea519ad9bf60e498c46ec2efe052680}\label{struct_l_v2_plugin_aaea519ad9bf60e498c46ec2efe052680}} 
+static \mbox{\hyperlink{struct_m_t_s_tunings}{M\+T\+S\+Tunings}} $\ast$ {\bfseries mts} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/lv2.\+cpp\end{DoxyCompactItemize}

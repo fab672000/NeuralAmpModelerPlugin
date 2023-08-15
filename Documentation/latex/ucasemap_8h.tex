@@ -1,0 +1,388 @@
+\hypertarget{ucasemap_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ucasemap.h File Reference}
+\label{ucasemap_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ucasemap.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ucasemap.h}}
+
+
+C A\+PI\+: Unicode case mapping functions using a U\+Case\+Map service object.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/stringoptions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/ustring.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}{ucasemap\+\_\+open}} (const char $\ast$locale, uint32\+\_\+t options, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a3e7c4e737e1a90cdbd5d3934a6374a0f}{ucasemap\+\_\+close}} (\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_adebbf4abfdf9f97891c5debfd5a765ff}{ucasemap\+\_\+get\+Locale}} (const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a70f3693819b955cfefd8f90b404fb04e}{ucasemap\+\_\+get\+Options}} (const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a9ece19e39216e44a792c9d1b01a47455}{ucasemap\+\_\+set\+Locale}} (\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}{ucasemap\+\_\+set\+Options}} (\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, uint32\+\_\+t options, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a7d169ff9473a9158ed1796263d61bfd0}{ucasemap\+\_\+get\+Break\+Iterator}} (const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a265d8ed7566c025cacb25ac163d161b2}{ucasemap\+\_\+set\+Break\+Iterator}} (\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$iter\+To\+Adopt, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_ab418dd97485e25cb7ceaa990f7ae6f07}{ucasemap\+\_\+to\+Title}} (\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_ac75230a3a61c0aac90849dfbc2e1f337}{ucasemap\+\_\+utf8\+To\+Lower}} (const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, char $\ast$dest, int32\+\_\+t dest\+Capacity, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a31b6230ac2ea3c5ec9b3fbebea16dc15}{ucasemap\+\_\+utf8\+To\+Upper}} (const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, char $\ast$dest, int32\+\_\+t dest\+Capacity, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_a759cd963e38b80c8162341831dbf93ee}{ucasemap\+\_\+utf8\+To\+Title}} (\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, char $\ast$dest, int32\+\_\+t dest\+Capacity, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucasemap_8h_abf215d472df1ff7b166ba40d8291cf9b}{ucasemap\+\_\+utf8\+Fold\+Case}} (const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$csm, char $\ast$dest, int32\+\_\+t dest\+Capacity, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Unicode case mapping functions using a U\+Case\+Map service object. 
+
+The service object takes care of memory allocations, data loading, and setup for the attributes, as usual.
+
+Currently, the functionality provided here does not overlap with \mbox{\hyperlink{uchar_8h}{uchar.\+h}} and ustring.\+h, except for \mbox{\hyperlink{ucasemap_8h_ab418dd97485e25cb7ceaa990f7ae6f07}{ucasemap\+\_\+to\+Title()}}.
+
+ucasemap\+\_\+utf8\+X\+Y\+Z() functions operate directly on U\+T\+F-\/8 strings. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}\label{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}} 
+\index{ucasemap.h@{ucasemap.h}!UCaseMap@{UCaseMap}}
+\index{UCaseMap@{UCaseMap}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{UCaseMap}{UCaseMap}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}}}
+
+C typedef for struct U\+Case\+Map. @stable I\+CU 3.\+4 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ucasemap_8h_a3e7c4e737e1a90cdbd5d3934a6374a0f}\label{ucasemap_8h_a3e7c4e737e1a90cdbd5d3934a6374a0f}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_close@{ucasemap\_close}}
+\index{ucasemap\_close@{ucasemap\_close}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_close()}{ucasemap\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm }\end{DoxyParamCaption})}
+
+Close a U\+Case\+Map service object. 
+\begin{DoxyParams}{Parameters}
+{\em csm} & Object to be closed. @stable I\+CU 3.\+4 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ucasemap_8h_a7d169ff9473a9158ed1796263d61bfd0}\label{ucasemap_8h_a7d169ff9473a9158ed1796263d61bfd0}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_getBreakIterator@{ucasemap\_getBreakIterator}}
+\index{ucasemap\_getBreakIterator@{ucasemap\_getBreakIterator}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_getBreakIterator()}{ucasemap\_getBreakIterator()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+get\+Break\+Iterator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm }\end{DoxyParamCaption})}
+
+Get the break iterator that is used for titlecasing. Do not modify the returned break iterator. 
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+titlecasing break iterator @stable I\+CU 3.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucasemap_8h_adebbf4abfdf9f97891c5debfd5a765ff}\label{ucasemap_8h_adebbf4abfdf9f97891c5debfd5a765ff}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_getLocale@{ucasemap\_getLocale}}
+\index{ucasemap\_getLocale@{ucasemap\_getLocale}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_getLocale()}{ucasemap\_getLocale()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+get\+Locale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm }\end{DoxyParamCaption})}
+
+Get the locale ID that is used for language-\/dependent case mappings. 
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+locale ID @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucasemap_8h_a70f3693819b955cfefd8f90b404fb04e}\label{ucasemap_8h_a70f3693819b955cfefd8f90b404fb04e}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_getOptions@{ucasemap\_getOptions}}
+\index{ucasemap\_getOptions@{ucasemap\_getOptions}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_getOptions()}{ucasemap\_getOptions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+get\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm }\end{DoxyParamCaption})}
+
+Get the options bit set that is used for case folding and string comparisons. 
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+options bit set @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}\label{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_open@{ucasemap\_open}}
+\index{ucasemap\_open@{ucasemap\_open}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_open()}{ucasemap\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{locale,  }\item[{uint32\+\_\+t}]{options,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Open a U\+Case\+Map service object for a locale and a set of options. The locale ID and options are preprocessed so that functions using the service object need not process them in each call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em locale} & I\+CU locale ID, used for language-\/dependent upper-\//lower-\//title-\/casing according to the Unicode standard. Usual semantics\+: \char`\"{}\char`\"{}=root, N\+U\+LL=default locale, etc. \\
+\hline
+{\em options} & Options bit set, used for case folding and string comparisons. Same flags as for \mbox{\hyperlink{uchar_8h_aacf788907c10594e327433695208535e}{u\+\_\+fold\+Case()}}, \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af3625d1217d94b88da0f061414788083}{u\+\_\+str\+Fold\+Case()}}, \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8fe1bad15747dd072d0a5d2a51d443e6}{u\+\_\+str\+Case\+Compare()}}, etc. Use 0 or U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT for default behavior. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a U\+Case\+Map service object, if successful.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{stringoptions_8h_a7c41915be9809fd815a5c7d581ad1ea3}{U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}} 
+
+\mbox{\hyperlink{stringoptions_8h_a2d074cf9ee160fbcaec63740c4f9689e}{U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I}} 
+
+\mbox{\hyperlink{stringoptions_8h_aab9de6ad843adcbc21001f7f93f1e888}{U\+\_\+\+T\+I\+T\+L\+E\+C\+A\+S\+E\+\_\+\+N\+O\+\_\+\+L\+O\+W\+E\+R\+C\+A\+SE}} 
+
+\mbox{\hyperlink{stringoptions_8h_afc65fa226cac9b8eeef0e877b8a7744e}{U\+\_\+\+T\+I\+T\+L\+E\+C\+A\+S\+E\+\_\+\+N\+O\+\_\+\+B\+R\+E\+A\+K\+\_\+\+A\+D\+J\+U\+S\+T\+M\+E\+NT}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_a265d8ed7566c025cacb25ac163d161b2}\label{ucasemap_8h_a265d8ed7566c025cacb25ac163d161b2}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_setBreakIterator@{ucasemap\_setBreakIterator}}
+\index{ucasemap\_setBreakIterator@{ucasemap\_setBreakIterator}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_setBreakIterator()}{ucasemap\_setBreakIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+set\+Break\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{iter\+To\+Adopt,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Set the break iterator that is used for titlecasing. The U\+Case\+Map service object releases a previously set break iterator and \char`\"{}adopts\char`\"{} this new one, taking ownership of it. It will be released in a subsequent call to \mbox{\hyperlink{ucasemap_8h_a265d8ed7566c025cacb25ac163d161b2}{ucasemap\+\_\+set\+Break\+Iterator()}} or \mbox{\hyperlink{ucasemap_8h_a3e7c4e737e1a90cdbd5d3934a6374a0f}{ucasemap\+\_\+close()}}.
+
+Break iterator operations are not thread-\/safe. Therefore, titlecasing functions use non-\/const U\+Case\+Map objects. It is not possible to titlecase strings concurrently using the same U\+Case\+Map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+{\em iter\+To\+Adopt} & Break iterator to be adopted for titlecasing. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucasemap_8h_ab418dd97485e25cb7ceaa990f7ae6f07}{ucasemap\+\_\+to\+Title}} 
+
+\mbox{\hyperlink{ucasemap_8h_a759cd963e38b80c8162341831dbf93ee}{ucasemap\+\_\+utf8\+To\+Title}} @stable I\+CU 3.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_a9ece19e39216e44a792c9d1b01a47455}\label{ucasemap_8h_a9ece19e39216e44a792c9d1b01a47455}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_setLocale@{ucasemap\_setLocale}}
+\index{ucasemap\_setLocale@{ucasemap\_setLocale}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_setLocale()}{ucasemap\_setLocale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+set\+Locale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Set the locale ID that is used for language-\/dependent case mappings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+{\em locale} & Locale ID, see \mbox{\hyperlink{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}{ucasemap\+\_\+open()}}. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}{ucasemap\+\_\+open}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}\label{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_setOptions@{ucasemap\_setOptions}}
+\index{ucasemap\_setOptions@{ucasemap\_setOptions}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_setOptions()}{ucasemap\_setOptions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+set\+Options (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{uint32\+\_\+t}]{options,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Set the options bit set that is used for case folding and string comparisons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+{\em options} & Options bit set, see \mbox{\hyperlink{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}{ucasemap\+\_\+open()}}. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucasemap_8h_a60c6f00d73b424f785ca73444b7ae0a2}{ucasemap\+\_\+open}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_ab418dd97485e25cb7ceaa990f7ae6f07}\label{ucasemap_8h_ab418dd97485e25cb7ceaa990f7ae6f07}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_toTitle@{ucasemap\_toTitle}}
+\index{ucasemap\_toTitle@{ucasemap\_toTitle}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_toTitle()}{ucasemap\_toTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+to\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Titlecase a U\+T\+F-\/16 string. This function is almost a duplicate of \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}{u\+\_\+str\+To\+Title()}}, except that it takes \mbox{\hyperlink{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}{ucasemap\+\_\+set\+Options()}} into account and has performance advantages from being able to use a U\+Case\+Map object for multiple case mapping operations, saving setup time.
+
+Casing is locale-\/dependent and context-\/sensitive. Titlecasing uses a break iterator to find the first characters of words that are to be titlecased. It titlecases those characters and lowercases all others. (This can be modified with \mbox{\hyperlink{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}{ucasemap\+\_\+set\+Options()}}.)
+
+Note\+: This function takes a non-\/const U\+Case\+Map pointer because it will open a default break iterator if no break iterator was set yet, and effectively call \mbox{\hyperlink{ucasemap_8h_a265d8ed7566c025cacb25ac163d161b2}{ucasemap\+\_\+set\+Break\+Iterator()}}; also because the break iterator is stateful and will be modified during the iteration.
+
+The titlecase break iterator can be provided to customize for arbitrary styles, using rules and dictionaries beyond the standard iterators. The standard titlecase iterator for the root locale implements the algorithm of Unicode TR 21.
+
+This function uses only the set\+Text(), first() and next() methods of the provided break iterator.
+
+The result may be longer or shorter than the original. The source string and the destination buffer must not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. This pointer is non-\/const! See the note above for details. \\
+\hline
+{\em dest} & A buffer for the result string. The result will be N\+U\+L-\/terminated if the buffer is large enough. The contents is undefined in case of failure. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string. \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be N\+U\+L-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string, if successful -\/ or in case of a buffer overflow, in which case it will be greater than dest\+Capacity.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}{u\+\_\+str\+To\+Title}} @stable I\+CU 3.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_abf215d472df1ff7b166ba40d8291cf9b}\label{ucasemap_8h_abf215d472df1ff7b166ba40d8291cf9b}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_utf8FoldCase@{ucasemap\_utf8FoldCase}}
+\index{ucasemap\_utf8FoldCase@{ucasemap\_utf8FoldCase}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_utf8FoldCase()}{ucasemap\_utf8FoldCase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+utf8\+Fold\+Case (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Case-\/folds the characters in a U\+T\+F-\/8 string.
+
+Case-\/folding is locale-\/independent and not context-\/sensitive, but there is an option for whether to include or exclude mappings for dotted \mbox{\hyperlink{struct_i}{I}} and dotless i that are marked with \textquotesingle{}T\textquotesingle{} in Case\+Folding.\+txt.
+
+The result may be longer or shorter than the original. The source string and the destination buffer must not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+{\em dest} & A buffer for the result string. The result will be N\+U\+L-\/terminated if the buffer is large enough. The contents is undefined in case of failure. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of bytes). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string. \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be N\+U\+L-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string, if successful -\/ or in case of a buffer overflow, in which case it will be greater than dest\+Capacity.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af3625d1217d94b88da0f061414788083}{u\+\_\+str\+Fold\+Case}} 
+
+\mbox{\hyperlink{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}{ucasemap\+\_\+set\+Options}} 
+
+\mbox{\hyperlink{stringoptions_8h_a7c41915be9809fd815a5c7d581ad1ea3}{U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}} 
+
+\mbox{\hyperlink{stringoptions_8h_a2d074cf9ee160fbcaec63740c4f9689e}{U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I}} @stable I\+CU 3.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_ac75230a3a61c0aac90849dfbc2e1f337}\label{ucasemap_8h_ac75230a3a61c0aac90849dfbc2e1f337}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_utf8ToLower@{ucasemap\_utf8ToLower}}
+\index{ucasemap\_utf8ToLower@{ucasemap\_utf8ToLower}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_utf8ToLower()}{ucasemap\_utf8ToLower()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+utf8\+To\+Lower (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Lowercase the characters in a U\+T\+F-\/8 string. Casing is locale-\/dependent and context-\/sensitive. The result may be longer or shorter than the original. The source string and the destination buffer must not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+{\em dest} & A buffer for the result string. The result will be N\+U\+L-\/terminated if the buffer is large enough. The contents is undefined in case of failure. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of bytes). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string. \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be N\+U\+L-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string, if successful -\/ or in case of a buffer overflow, in which case it will be greater than dest\+Capacity.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a748e339012d814138b9163acfb15497a}{u\+\_\+str\+To\+Lower}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_a759cd963e38b80c8162341831dbf93ee}\label{ucasemap_8h_a759cd963e38b80c8162341831dbf93ee}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_utf8ToTitle@{ucasemap\_utf8ToTitle}}
+\index{ucasemap\_utf8ToTitle@{ucasemap\_utf8ToTitle}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_utf8ToTitle()}{ucasemap\_utf8ToTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+utf8\+To\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Titlecase a U\+T\+F-\/8 string. Casing is locale-\/dependent and context-\/sensitive. Titlecasing uses a break iterator to find the first characters of words that are to be titlecased. It titlecases those characters and lowercases all others. (This can be modified with \mbox{\hyperlink{ucasemap_8h_abd822547a5ae987d9c575ff289c11dd1}{ucasemap\+\_\+set\+Options()}}.)
+
+Note\+: This function takes a non-\/const U\+Case\+Map pointer because it will open a default break iterator if no break iterator was set yet, and effectively call \mbox{\hyperlink{ucasemap_8h_a265d8ed7566c025cacb25ac163d161b2}{ucasemap\+\_\+set\+Break\+Iterator()}}; also because the break iterator is stateful and will be modified during the iteration.
+
+The titlecase break iterator can be provided to customize for arbitrary styles, using rules and dictionaries beyond the standard iterators. The standard titlecase iterator for the root locale implements the algorithm of Unicode TR 21.
+
+This function uses only the set\+U\+Text(), first(), next() and close() methods of the provided break iterator.
+
+The result may be longer or shorter than the original. The source string and the destination buffer must not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. This pointer is non-\/const! See the note above for details. \\
+\hline
+{\em dest} & A buffer for the result string. The result will be N\+U\+L-\/terminated if the buffer is large enough. The contents is undefined in case of failure. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of bytes). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string. \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be N\+U\+L-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string, if successful -\/ or in case of a buffer overflow, in which case it will be greater than dest\+Capacity.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}{u\+\_\+str\+To\+Title}} 
+
+\mbox{\hyperlink{stringoptions_8h_aab9de6ad843adcbc21001f7f93f1e888}{U\+\_\+\+T\+I\+T\+L\+E\+C\+A\+S\+E\+\_\+\+N\+O\+\_\+\+L\+O\+W\+E\+R\+C\+A\+SE}} 
+
+\mbox{\hyperlink{stringoptions_8h_afc65fa226cac9b8eeef0e877b8a7744e}{U\+\_\+\+T\+I\+T\+L\+E\+C\+A\+S\+E\+\_\+\+N\+O\+\_\+\+B\+R\+E\+A\+K\+\_\+\+A\+D\+J\+U\+S\+T\+M\+E\+NT}} @stable I\+CU 3.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucasemap_8h_a31b6230ac2ea3c5ec9b3fbebea16dc15}\label{ucasemap_8h_a31b6230ac2ea3c5ec9b3fbebea16dc15}} 
+\index{ucasemap.h@{ucasemap.h}!ucasemap\_utf8ToUpper@{ucasemap\_utf8ToUpper}}
+\index{ucasemap\_utf8ToUpper@{ucasemap\_utf8ToUpper}!ucasemap.h@{ucasemap.h}}
+\doxysubsubsection{\texorpdfstring{ucasemap\_utf8ToUpper()}{ucasemap\_utf8ToUpper()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucasemap\+\_\+utf8\+To\+Upper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ucasemap_8h_a2c127e061c4bc5f4ccc9defbe01f9dca}{U\+Case\+Map}} $\ast$}]{csm,  }\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Uppercase the characters in a U\+T\+F-\/8 string. Casing is locale-\/dependent and context-\/sensitive. The result may be longer or shorter than the original. The source string and the destination buffer must not overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em csm} & U\+Case\+Map service object. \\
+\hline
+{\em dest} & A buffer for the result string. The result will be N\+U\+L-\/terminated if the buffer is large enough. The contents is undefined in case of failure. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of bytes). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string. \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be N\+U\+L-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string, if successful -\/ or in case of a buffer overflow, in which case it will be greater than dest\+Capacity.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a9b03fbdbaf7cc03d53fd3334a600d6e0}{u\+\_\+str\+To\+Upper}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}

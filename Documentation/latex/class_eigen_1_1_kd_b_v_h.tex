@@ -1,0 +1,244 @@
+\hypertarget{class_eigen_1_1_kd_b_v_h}{}\doxysection{Eigen\+::Kd\+B\+VH$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$ Class Template Reference}
+\label{class_eigen_1_1_kd_b_v_h}\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+
+
+A simple bounding volume hierarchy based on \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Aligned\+Box}}.  
+
+
+
+
+{\ttfamily \#include $<$Kd\+B\+V\+H.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a349fdb055828c013bc119fdc4d4dbcb9}\label{class_eigen_1_1_kd_b_v_h_a349fdb055828c013bc119fdc4d4dbcb9}} 
+enum \{ {\bfseries Dim} = Dim\+\_\+
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a887cd7ae377c334b9a44bbf028aab17f}\label{class_eigen_1_1_kd_b_v_h_a887cd7ae377c334b9a44bbf028aab17f}} 
+enum \{ {\bfseries Dim} = Dim\+\_\+
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a44961f40b5e4301cc72acb57cb8fa70e}\label{class_eigen_1_1_kd_b_v_h_a44961f40b5e4301cc72acb57cb8fa70e}} 
+typedef \+\_\+\+Object {\bfseries Object}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a15fb51ef096f1f0fa8958e13ac2b247f}\label{class_eigen_1_1_kd_b_v_h_a15fb51ef096f1f0fa8958e13ac2b247f}} 
+typedef std\+::vector$<$ Object, \mbox{\hyperlink{class_eigen_1_1aligned__allocator}{aligned\+\_\+allocator}}$<$ Object $>$ $>$ {\bfseries Object\+List}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a7d92bcc0ff31c0ee7ab4297d0b69adfb}\label{class_eigen_1_1_kd_b_v_h_a7d92bcc0ff31c0ee7ab4297d0b69adfb}} 
+typedef Scalar\+\_\+ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a30a2f505b9e0f5e090c8afbc28a6edab}\label{class_eigen_1_1_kd_b_v_h_a30a2f505b9e0f5e090c8afbc28a6edab}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Aligned\+Box}}$<$ Scalar, Dim $>$ {\bfseries Volume}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_af6855c499a42d2caf8abc4a1d4652dd6}\label{class_eigen_1_1_kd_b_v_h_af6855c499a42d2caf8abc4a1d4652dd6}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}}, \mbox{\hyperlink{class_eigen_1_1aligned__allocator}{aligned\+\_\+allocator}}$<$ \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}} $>$ $>$ {\bfseries Volume\+List}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_abf16d1f09b2424a97f94b83ec60aaaab}\label{class_eigen_1_1_kd_b_v_h_abf16d1f09b2424a97f94b83ec60aaaab}} 
+typedef int {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a44961f40b5e4301cc72acb57cb8fa70e}\label{class_eigen_1_1_kd_b_v_h_a44961f40b5e4301cc72acb57cb8fa70e}} 
+typedef \+\_\+\+Object {\bfseries Object}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a15fb51ef096f1f0fa8958e13ac2b247f}\label{class_eigen_1_1_kd_b_v_h_a15fb51ef096f1f0fa8958e13ac2b247f}} 
+typedef std\+::vector$<$ Object, \mbox{\hyperlink{class_eigen_1_1aligned__allocator}{aligned\+\_\+allocator}}$<$ Object $>$ $>$ {\bfseries Object\+List}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a7d92bcc0ff31c0ee7ab4297d0b69adfb}\label{class_eigen_1_1_kd_b_v_h_a7d92bcc0ff31c0ee7ab4297d0b69adfb}} 
+typedef Scalar\+\_\+ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a30a2f505b9e0f5e090c8afbc28a6edab}\label{class_eigen_1_1_kd_b_v_h_a30a2f505b9e0f5e090c8afbc28a6edab}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Aligned\+Box}}$<$ Scalar, Dim $>$ {\bfseries Volume}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_af6855c499a42d2caf8abc4a1d4652dd6}\label{class_eigen_1_1_kd_b_v_h_af6855c499a42d2caf8abc4a1d4652dd6}} 
+typedef std\+::vector$<$ \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}}, \mbox{\hyperlink{class_eigen_1_1aligned__allocator}{aligned\+\_\+allocator}}$<$ \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}} $>$ $>$ {\bfseries Volume\+List}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_abf16d1f09b2424a97f94b83ec60aaaab}\label{class_eigen_1_1_kd_b_v_h_abf16d1f09b2424a97f94b83ec60aaaab}} 
+typedef int {\bfseries Index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a4fc557019311b34d06fa373d0acc56a9}{Kd\+B\+VH}} (Iter begin, Iter end)
+\item 
+{\footnotesize template$<$typename O\+Iter , typename B\+Iter $>$ }\\\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a4f73354cf98418434ce3edf8a692d209}{Kd\+B\+VH}} (O\+Iter begin, O\+Iter end, B\+Iter box\+Begin, B\+Iter box\+End)
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a26f0bdeb0ed913b80293a627aaaabcde}{init}} (Iter begin, Iter end)
+\item 
+{\footnotesize template$<$typename O\+Iter , typename B\+Iter $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a7998a24eecd773a5d9c216a41d945c40}{init}} (O\+Iter begin, O\+Iter end, B\+Iter box\+Begin, B\+Iter box\+End)
+\item 
+Index \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a84177669979d54c27b2ee1c52b297b6f}{get\+Root\+Index}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_adc1652072b336ff3de60eaaad18f6d46}{get\+Children}} (Index index, Volume\+Iterator \&out\+V\+Begin, Volume\+Iterator \&out\+V\+End, Object\+Iterator \&out\+O\+Begin, Object\+Iterator \&out\+O\+End) const
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}} \& \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a52614ec8a7890fbb0f1db4b5359ce89c}{get\+Volume}} (Index index) const
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a4fc557019311b34d06fa373d0acc56a9}{Kd\+B\+VH}} (Iter begin, Iter end)
+\item 
+{\footnotesize template$<$typename O\+Iter , typename B\+Iter $>$ }\\\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a4f73354cf98418434ce3edf8a692d209}{Kd\+B\+VH}} (O\+Iter begin, O\+Iter end, B\+Iter box\+Begin, B\+Iter box\+End)
+\item 
+{\footnotesize template$<$typename Iter $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a26f0bdeb0ed913b80293a627aaaabcde}{init}} (Iter begin, Iter end)
+\item 
+{\footnotesize template$<$typename O\+Iter , typename B\+Iter $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a7998a24eecd773a5d9c216a41d945c40}{init}} (O\+Iter begin, O\+Iter end, B\+Iter box\+Begin, B\+Iter box\+End)
+\item 
+Index \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a84177669979d54c27b2ee1c52b297b6f}{get\+Root\+Index}} () const
+\item 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_adc1652072b336ff3de60eaaad18f6d46}{get\+Children}} (Index index, Volume\+Iterator \&out\+V\+Begin, Volume\+Iterator \&out\+V\+End, Object\+Iterator \&out\+O\+Begin, Object\+Iterator \&out\+O\+End) const
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}} \& \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h_a52614ec8a7890fbb0f1db4b5359ce89c}{get\+Volume}} (Index index) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_adb4317b97fa91071f3f83ebe0faf74cb}\label{class_eigen_1_1_kd_b_v_h_adb4317b97fa91071f3f83ebe0faf74cb}} 
+const typedef int $\ast$ {\bfseries Volume\+Iterator}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_aecdc64af984e8bccfd3a4c8672eb9d35}\label{class_eigen_1_1_kd_b_v_h_aecdc64af984e8bccfd3a4c8672eb9d35}} 
+const typedef Object $\ast$ {\bfseries Object\+Iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+\_\+, int Dim\+\_\+, typename \+\_\+\+Object$>$\newline
+class Eigen\+::\+Kd\+B\+V\+H$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$}
+
+A simple bounding volume hierarchy based on \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Aligned\+Box}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Scalar\+\_\+} & The underlying scalar type of the bounding boxes \\
+\hline
+{\em Dim\+\_\+} & The dimension of the space in which the hierarchy lives \\
+\hline
+{\em $<$em$>$\+Object} & The object type that lives in the hierarchy. It must have value semantics. Either bounding\+\_\+box(\+\_\+\+Object) must be defined and return an \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Aligned\+Box}}$<$Scalar, Dim\+\_\+$>$ or bounding boxes must be provided to the tree initializer.\\
+\hline
+\end{DoxyParams}
+This class provides a simple (as opposed to optimized) implementation of a bounding volume hierarchy analogous to a Kd-\/tree. Given a sequence of objects, it computes their bounding boxes, constructs a Kd-\/tree of their centers and builds a B\+VH with the structure of that Kd-\/tree. When the elements of the tree are too expensive to be copied around, it is useful for \+\_\+\+Object to be a pointer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a4fc557019311b34d06fa373d0acc56a9}\label{class_eigen_1_1_kd_b_v_h_a4fc557019311b34d06fa373d0acc56a9}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!KdBVH@{KdBVH}}
+\index{KdBVH@{KdBVH}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{KdBVH()}{KdBVH()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename Iter $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Kd\+B\+VH}} (\begin{DoxyParamCaption}\item[{Iter}]{begin,  }\item[{Iter}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references, constructs the B\+VH. Requires that bounding\+\_\+box(\+Object) return a Volume. \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a4f73354cf98418434ce3edf8a692d209}\label{class_eigen_1_1_kd_b_v_h_a4f73354cf98418434ce3edf8a692d209}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!KdBVH@{KdBVH}}
+\index{KdBVH@{KdBVH}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{KdBVH()}{KdBVH()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename O\+Iter , typename B\+Iter $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Kd\+B\+VH}} (\begin{DoxyParamCaption}\item[{O\+Iter}]{begin,  }\item[{O\+Iter}]{end,  }\item[{B\+Iter}]{box\+Begin,  }\item[{B\+Iter}]{box\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references and an iterator range over their bounding boxes, constructs the B\+VH \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a4fc557019311b34d06fa373d0acc56a9}\label{class_eigen_1_1_kd_b_v_h_a4fc557019311b34d06fa373d0acc56a9}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!KdBVH@{KdBVH}}
+\index{KdBVH@{KdBVH}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{KdBVH()}{KdBVH()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename Iter $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Kd\+B\+VH}} (\begin{DoxyParamCaption}\item[{Iter}]{begin,  }\item[{Iter}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references, constructs the B\+VH. Requires that bounding\+\_\+box(\+Object) return a Volume. \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a4f73354cf98418434ce3edf8a692d209}\label{class_eigen_1_1_kd_b_v_h_a4f73354cf98418434ce3edf8a692d209}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!KdBVH@{KdBVH}}
+\index{KdBVH@{KdBVH}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{KdBVH()}{KdBVH()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename O\+Iter , typename B\+Iter $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Kd\+B\+VH}} (\begin{DoxyParamCaption}\item[{O\+Iter}]{begin,  }\item[{O\+Iter}]{end,  }\item[{B\+Iter}]{box\+Begin,  }\item[{B\+Iter}]{box\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references and an iterator range over their bounding boxes, constructs the B\+VH 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_adc1652072b336ff3de60eaaad18f6d46}\label{class_eigen_1_1_kd_b_v_h_adc1652072b336ff3de60eaaad18f6d46}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::get\+Children (\begin{DoxyParamCaption}\item[{Index}]{index,  }\item[{Volume\+Iterator \&}]{out\+V\+Begin,  }\item[{Volume\+Iterator \&}]{out\+V\+End,  }\item[{Object\+Iterator \&}]{out\+O\+Begin,  }\item[{Object\+Iterator \&}]{out\+O\+End }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an {\itshape index} of a node, on exit, {\itshape out\+V\+Begin} and {\itshape out\+V\+End} range over the indices of the volume children of the node and {\itshape out\+O\+Begin} and {\itshape out\+O\+End} range over the object children of the node \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_adc1652072b336ff3de60eaaad18f6d46}\label{class_eigen_1_1_kd_b_v_h_adc1652072b336ff3de60eaaad18f6d46}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::get\+Children (\begin{DoxyParamCaption}\item[{Index}]{index,  }\item[{Volume\+Iterator \&}]{out\+V\+Begin,  }\item[{Volume\+Iterator \&}]{out\+V\+End,  }\item[{Object\+Iterator \&}]{out\+O\+Begin,  }\item[{Object\+Iterator \&}]{out\+O\+End }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an {\itshape index} of a node, on exit, {\itshape out\+V\+Begin} and {\itshape out\+V\+End} range over the indices of the volume children of the node and {\itshape out\+O\+Begin} and {\itshape out\+O\+End} range over the object children of the node \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a84177669979d54c27b2ee1c52b297b6f}\label{class_eigen_1_1_kd_b_v_h_a84177669979d54c27b2ee1c52b297b6f}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!getRootIndex@{getRootIndex}}
+\index{getRootIndex@{getRootIndex}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{getRootIndex()}{getRootIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+Index \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::get\+Root\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the index of the root of the hierarchy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a84177669979d54c27b2ee1c52b297b6f}\label{class_eigen_1_1_kd_b_v_h_a84177669979d54c27b2ee1c52b297b6f}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!getRootIndex@{getRootIndex}}
+\index{getRootIndex@{getRootIndex}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{getRootIndex()}{getRootIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+Index \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::get\+Root\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the index of the root of the hierarchy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a52614ec8a7890fbb0f1db4b5359ce89c}\label{class_eigen_1_1_kd_b_v_h_a52614ec8a7890fbb0f1db4b5359ce89c}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!getVolume@{getVolume}}
+\index{getVolume@{getVolume}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{getVolume()}{getVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}}\& \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::get\+Volume (\begin{DoxyParamCaption}\item[{Index}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the bounding box of the node at {\itshape index} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a52614ec8a7890fbb0f1db4b5359ce89c}\label{class_eigen_1_1_kd_b_v_h_a52614ec8a7890fbb0f1db4b5359ce89c}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!getVolume@{getVolume}}
+\index{getVolume@{getVolume}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{getVolume()}{getVolume()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_aligned_box}{Volume}}\& \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::get\+Volume (\begin{DoxyParamCaption}\item[{Index}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the bounding box of the node at {\itshape index} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a26f0bdeb0ed913b80293a627aaaabcde}\label{class_eigen_1_1_kd_b_v_h_a26f0bdeb0ed913b80293a627aaaabcde}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!init@{init}}
+\index{init@{init}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename Iter $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{structinit}{init}} (\begin{DoxyParamCaption}\item[{Iter}]{begin,  }\item[{Iter}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references, constructs the B\+VH, overwriting whatever is in there currently. Requires that bounding\+\_\+box(\+Object) return a Volume. \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a26f0bdeb0ed913b80293a627aaaabcde}\label{class_eigen_1_1_kd_b_v_h_a26f0bdeb0ed913b80293a627aaaabcde}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!init@{init}}
+\index{init@{init}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename Iter $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{structinit}{init}} (\begin{DoxyParamCaption}\item[{Iter}]{begin,  }\item[{Iter}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references, constructs the B\+VH, overwriting whatever is in there currently. Requires that bounding\+\_\+box(\+Object) return a Volume. \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a7998a24eecd773a5d9c216a41d945c40}\label{class_eigen_1_1_kd_b_v_h_a7998a24eecd773a5d9c216a41d945c40}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!init@{init}}
+\index{init@{init}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename O\+Iter , typename B\+Iter $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{structinit}{init}} (\begin{DoxyParamCaption}\item[{O\+Iter}]{begin,  }\item[{O\+Iter}]{end,  }\item[{B\+Iter}]{box\+Begin,  }\item[{B\+Iter}]{box\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references and an iterator range over their bounding boxes, constructs the B\+VH, overwriting whatever is in there currently. \mbox{\Hypertarget{class_eigen_1_1_kd_b_v_h_a7998a24eecd773a5d9c216a41d945c40}\label{class_eigen_1_1_kd_b_v_h_a7998a24eecd773a5d9c216a41d945c40}} 
+\index{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}!init@{init}}
+\index{init@{init}!Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$@{Eigen::KdBVH$<$ Scalar\_, Dim\_, \_Object $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, typename \+\_\+\+Object $>$ \\
+template$<$typename O\+Iter , typename B\+Iter $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_kd_b_v_h}{Eigen\+::\+Kd\+B\+VH}}$<$ Scalar\+\_\+, Dim\+\_\+, \+\_\+\+Object $>$\+::\mbox{\hyperlink{structinit}{init}} (\begin{DoxyParamCaption}\item[{O\+Iter}]{begin,  }\item[{O\+Iter}]{end,  }\item[{B\+Iter}]{box\+Begin,  }\item[{B\+Iter}]{box\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Given an iterator range over {\itshape Object} references and an iterator range over their bounding boxes, constructs the B\+VH, overwriting whatever is in there currently. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/src/\+B\+V\+H/Kd\+B\+V\+H.\+h\end{DoxyCompactItemize}

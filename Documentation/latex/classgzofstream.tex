@@ -1,0 +1,155 @@
+\hypertarget{classgzofstream}{}\doxysection{gzofstream Class Reference}
+\label{classgzofstream}\index{gzofstream@{gzofstream}}
+
+
+Gzipped file output stream class.  
+
+
+
+
+{\ttfamily \#include $<$zfstream.\+h$>$}
+
+Inheritance diagram for gzofstream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classgzofstream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgzofstream_aad6a405bc9ecfd82cc0861a15e4a6983}\label{classgzofstream_aad6a405bc9ecfd82cc0861a15e4a6983}} 
+{\bfseries gzofstream} (const char $\ast$name, int io\+\_\+mode=ios\+::out)
+\item 
+\mbox{\Hypertarget{classgzofstream_a5291a0c4c0e7f6f18ca72ae98f4e4d40}\label{classgzofstream_a5291a0c4c0e7f6f18ca72ae98f4e4d40}} 
+{\bfseries gzofstream} (int fd, int io\+\_\+mode=ios\+::out)
+\item 
+\mbox{\hyperlink{classgzofstream_a4334d31aab99f8c9c2277b672a55c78f}{gzofstream}} (const char $\ast$name, std\+::ios\+\_\+base\+::openmode mode=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Construct stream on gzipped file to be opened. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgzofstream_aa94d0c8414119a52f2a7f42aa0440941}{gzofstream}} (int fd, std\+::ios\+\_\+base\+::openmode mode=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Construct stream on already open gzipped file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgzfilebuf}{gzfilebuf}} $\ast$ \mbox{\hyperlink{classgzofstream_a2fef74202b114357f41cfeb28f1d2acc}{rdbuf}} () const
+\item 
+bool \mbox{\hyperlink{classgzofstream_acb1c9c6dccaf41bc5e44c2263ea48de3}{is\+\_\+open}} ()
+\begin{DoxyCompactList}\small\item\em Check if file is open. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgzofstream_aee3eb31f07eda7f5ad1f60d59ea4b239}{open}} (const char $\ast$name, std\+::ios\+\_\+base\+::openmode mode=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Open gzipped file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgzofstream_a95b76eaecd03b6cbf53d2f4b1c867439}{attach}} (int fd, std\+::ios\+\_\+base\+::openmode mode=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Attach to already open gzipped file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgzofstream_a59e8b01e1c9741085f18ca456c4b8f54}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close gzipped file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gzipped file output stream class. 
+
+This class implements ofstream for gzipped files. Seeking and putback is not supported yet. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgzofstream_a4334d31aab99f8c9c2277b672a55c78f}\label{classgzofstream_a4334d31aab99f8c9c2277b672a55c78f}} 
+\index{gzofstream@{gzofstream}!gzofstream@{gzofstream}}
+\index{gzofstream@{gzofstream}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{gzofstream()}{gzofstream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily gzofstream\+::gzofstream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct stream on gzipped file to be opened. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & File name. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classgzofstream_aa94d0c8414119a52f2a7f42aa0440941}\label{classgzofstream_aa94d0c8414119a52f2a7f42aa0440941}} 
+\index{gzofstream@{gzofstream}!gzofstream@{gzofstream}}
+\index{gzofstream@{gzofstream}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{gzofstream()}{gzofstream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily gzofstream\+::gzofstream (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct stream on already open gzipped file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgzofstream_a95b76eaecd03b6cbf53d2f4b1c867439}\label{classgzofstream_a95b76eaecd03b6cbf53d2f4b1c867439}} 
+\index{gzofstream@{gzofstream}!attach@{attach}}
+\index{attach@{attach}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily void gzofstream\+::attach (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})}
+
+
+
+Attach to already open gzipped file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out).\\
+\hline
+\end{DoxyParams}
+Stream will be in state good() if attach succeeded; otherwise in state fail(). \mbox{\Hypertarget{classgzofstream_a59e8b01e1c9741085f18ca456c4b8f54}\label{classgzofstream_a59e8b01e1c9741085f18ca456c4b8f54}} 
+\index{gzofstream@{gzofstream}!close@{close}}
+\index{close@{close}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void gzofstream\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close gzipped file. 
+
+Stream will be in state fail() if close failed. \mbox{\Hypertarget{classgzofstream_acb1c9c6dccaf41bc5e44c2263ea48de3}\label{classgzofstream_acb1c9c6dccaf41bc5e44c2263ea48de3}} 
+\index{gzofstream@{gzofstream}!is\_open@{is\_open}}
+\index{is\_open@{is\_open}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{is\_open()}{is\_open()}}
+{\footnotesize\ttfamily bool gzofstream\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if file is open. 
+
+\begin{DoxyReturn}{Returns}
+True if file is open. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classgzofstream_aee3eb31f07eda7f5ad1f60d59ea4b239}\label{classgzofstream_aee3eb31f07eda7f5ad1f60d59ea4b239}} 
+\index{gzofstream@{gzofstream}!open@{open}}
+\index{open@{open}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void gzofstream\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})}
+
+
+
+Open gzipped file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & File name. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out).\\
+\hline
+\end{DoxyParams}
+Stream will be in state good() if file opens successfully; otherwise in state fail(). This differs from the behavior of ofstream, which never sets the state to good() and therefore won\textquotesingle{}t allow you to reuse the stream for a second file unless you manually clear() the state. The choice is a matter of convenience. \mbox{\Hypertarget{classgzofstream_a2fef74202b114357f41cfeb28f1d2acc}\label{classgzofstream_a2fef74202b114357f41cfeb28f1d2acc}} 
+\index{gzofstream@{gzofstream}!rdbuf@{rdbuf}}
+\index{rdbuf@{rdbuf}!gzofstream@{gzofstream}}
+\doxysubsubsection{\texorpdfstring{rdbuf()}{rdbuf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classgzfilebuf}{gzfilebuf}}$\ast$ gzofstream\+::rdbuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Obtain underlying stream buffer. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/zlib/contrib/iostream/zfstream.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/zlib/contrib/iostream/zfstream.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/zlib/contrib/iostream3/zfstream.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\hypertarget{class_test_m_t_control}{}\doxysection{Test\+M\+T\+Control Class Reference}
+\label{class_test_m_t_control}\index{TestMTControl@{TestMTControl}}
+
+
+{\ttfamily \#include $<$Test\+Multi\+Touch\+Control.\+h$>$}
+
+Inheritance diagram for Test\+M\+T\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_test_m_t_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_m_t_control_a91d2e792b8501cd3f4a98a728f8f65a8}\label{class_test_m_t_control_a91d2e792b8501cd3f4a98a728f8f65a8}} 
+{\bfseries Test\+M\+T\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds)
+\item 
+void \mbox{\hyperlink{class_test_m_t_control_ac98e1ca5bea0881fbcdc63cc6c0eced6}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_test_m_t_control_a14bf76dcd7143cb14d55377090045ccc}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_test_m_t_control_a662438091ea2da8dbfbe73e36cbf5ed9}{On\+Mouse\+Up}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_test_m_t_control_a20211f6765a371be3d88709068e06f7f}{On\+Touch\+Cancelled}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_test_m_t_control_a0736d3e9004a9dcf8ff615688e96f45a}{On\+Mouse\+Drag}} (float x, float y, float dx, float dy, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+bool \mbox{\hyperlink{class_test_m_t_control_a1a29ad25d2b5d4c844bbe13183cf1f51}{Is\+Dirty}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_m_t_control_a048dc96a4581032bd475704279e0c337}\label{class_test_m_t_control_a048dc96a4581032bd475704279e0c337}} 
+\mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} {\bfseries m\+Layer}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_control}{Control}} to test multi touch 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_m_t_control_ac98e1ca5bea0881fbcdc63cc6c0eced6}\label{class_test_m_t_control_ac98e1ca5bea0881fbcdc63cc6c0eced6}} 
+\index{TestMTControl@{TestMTControl}!Draw@{Draw}}
+\index{Draw@{Draw}!TestMTControl@{TestMTControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Test\+M\+T\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_m_t_control_a1a29ad25d2b5d4c844bbe13183cf1f51}\label{class_test_m_t_control_a1a29ad25d2b5d4c844bbe13183cf1f51}} 
+\index{TestMTControl@{TestMTControl}!IsDirty@{IsDirty}}
+\index{IsDirty@{IsDirty}!TestMTControl@{TestMTControl}}
+\doxysubsubsection{\texorpdfstring{IsDirty()}{IsDirty()}}
+{\footnotesize\ttfamily bool Test\+M\+T\+Control\+::\+Is\+Dirty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called at each display refresh by the \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} draw loop, after I\+Control\+::\+Animate(), to determine if the control is marked as dirty. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the control is marked dirty. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a5169582ea732d3d7c7352d0ed88d7957}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_m_t_control_a14bf76dcd7143cb14d55377090045ccc}\label{class_test_m_t_control_a14bf76dcd7143cb14d55377090045ccc}} 
+\index{TestMTControl@{TestMTControl}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!TestMTControl@{TestMTControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Test\+M\+T\+Control\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_m_t_control_a0736d3e9004a9dcf8ff615688e96f45a}\label{class_test_m_t_control_a0736d3e9004a9dcf8ff615688e96f45a}} 
+\index{TestMTControl@{TestMTControl}!OnMouseDrag@{OnMouseDrag}}
+\index{OnMouseDrag@{OnMouseDrag}!TestMTControl@{TestMTControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDrag()}{OnMouseDrag()}}
+{\footnotesize\ttfamily void Test\+M\+T\+Control\+::\+On\+Mouse\+Drag (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse drag event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em dX} & The X delta (difference) since the last event \\
+\hline
+{\em dY} & The Y delta (difference) since the last event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab5b2fc14c84159cd5e0af3386a2a12e5}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_m_t_control_a662438091ea2da8dbfbe73e36cbf5ed9}\label{class_test_m_t_control_a662438091ea2da8dbfbe73e36cbf5ed9}} 
+\index{TestMTControl@{TestMTControl}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!TestMTControl@{TestMTControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void Test\+M\+T\+Control\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse up event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a919eb7860ce5559e589f95ceb3309df7}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_m_t_control_a20211f6765a371be3d88709068e06f7f}\label{class_test_m_t_control_a20211f6765a371be3d88709068e06f7f}} 
+\index{TestMTControl@{TestMTControl}!OnTouchCancelled@{OnTouchCancelled}}
+\index{OnTouchCancelled@{OnTouchCancelled}!TestMTControl@{TestMTControl}}
+\doxysubsubsection{\texorpdfstring{OnTouchCancelled()}{OnTouchCancelled()}}
+{\footnotesize\ttfamily void Test\+M\+T\+Control\+::\+On\+Touch\+Cancelled (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a touch cancel event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a5dae9dfa41819ec1634eb02dd05ab9f3}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\+Test/\mbox{\hyperlink{_test_multi_touch_control_8h}{Test\+Multi\+Touch\+Control.\+h}}\end{DoxyCompactItemize}

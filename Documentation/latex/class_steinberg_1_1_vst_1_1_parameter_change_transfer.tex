@@ -1,0 +1,59 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer}{}\doxysection{Steinberg\+::Vst\+::Parameter\+Change\+Transfer Class Reference}
+\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer}\index{Steinberg::Vst::ParameterChangeTransfer@{Steinberg::Vst::ParameterChangeTransfer}}
+
+
+{\ttfamily \#include $<$parameterchanges.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_parameter_change_transfer_1_1_parameter_change}{Parameter\+Change}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a0c063815687fe39242ab988f14beddc4}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a0c063815687fe39242ab988f14beddc4}} 
+{\bfseries Parameter\+Change\+Transfer} (int32 max\+Parameters=0)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a9b0189ad39d4ba738279477ea27bea08}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a9b0189ad39d4ba738279477ea27bea08}} 
+void {\bfseries set\+Max\+Parameters} (int32 max\+Parameters)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a0e35a387078b8a106e4cdc1f801ad2a1}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a0e35a387078b8a106e4cdc1f801ad2a1}} 
+void {\bfseries add\+Change} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{Param\+ID}} pid, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a4db0796162b8b9751ae472df998f8736}{Param\+Value}} value, int32 sample\+Offset)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a41be95906b823744bd686d7ff208217b}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a41be95906b823744bd686d7ff208217b}} 
+bool {\bfseries get\+Next\+Change} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{Param\+ID}} \&pid, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a4db0796162b8b9751ae472df998f8736}{Param\+Value}} \&value, int32 \&sample\+Offset)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a4f702b30b38db32f35e3f8881ec87c86}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a4f702b30b38db32f35e3f8881ec87c86}} 
+void {\bfseries transfer\+Changes\+To} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter_changes}{Parameter\+Changes}} \&dest)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a0cd74588cbeccdc1e3761f7a9cc38656}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a0cd74588cbeccdc1e3761f7a9cc38656}} 
+void {\bfseries transfer\+Changes\+From} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter_changes}{Parameter\+Changes}} \&source)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a68b9762ed761c57f8a0dde463cc211ca}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a68b9762ed761c57f8a0dde463cc211ca}} 
+void {\bfseries remove\+Changes} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a31678078fb80cca7967e58ad4cabaf0d}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a31678078fb80cca7967e58ad4cabaf0d}} 
+int32 {\bfseries size}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_af63de2aefee4bbb141dea22ab53c408e}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_af63de2aefee4bbb141dea22ab53c408e}} 
+\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_parameter_change_transfer_1_1_parameter_change}{Parameter\+Change}} $\ast$ {\bfseries changes}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_ac22d2be110320810779fd73783a697d5}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_ac22d2be110320810779fd73783a697d5}} 
+volatile int32 {\bfseries read\+Index}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a274e0a786766b74e68585a34993ecf7d}\label{class_steinberg_1_1_vst_1_1_parameter_change_transfer_a274e0a786766b74e68585a34993ecf7d}} 
+volatile int32 {\bfseries write\+Index}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ring buffer for transferring parameter changes from a writer to a read thread . 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/parameterchanges.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/parameterchanges.\+cpp\end{DoxyCompactItemize}

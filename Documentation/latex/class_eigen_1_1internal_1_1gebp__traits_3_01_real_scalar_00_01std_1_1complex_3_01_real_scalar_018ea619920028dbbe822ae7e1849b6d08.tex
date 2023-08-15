@@ -1,0 +1,215 @@
+\hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08}{}\doxysection{Eigen\+::internal\+::gebp\+\_\+traits$<$ Real\+Scalar, std\+::complex$<$ Real\+Scalar $>$, false, Conj\+Rhs\+\_\+, Arch, Packet\+Size\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08}\index{Eigen::internal::gebp\_traits$<$ RealScalar, std::complex$<$ RealScalar $>$, false, ConjRhs\_, Arch, PacketSize\_ $>$@{Eigen::internal::gebp\_traits$<$ RealScalar, std::complex$<$ RealScalar $>$, false, ConjRhs\_, Arch, PacketSize\_ $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a300efbeb3e6ab6dff1683e8124b8a994}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a300efbeb3e6ab6dff1683e8124b8a994}} 
+enum \{ \newline
+{\bfseries Conj\+Lhs} = false, 
+{\bfseries Conj\+Rhs} = Conj\+Rhs\+\_\+, 
+{\bfseries Vectorizable}, 
+{\bfseries Lhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Lhs\+Packet\+\_\+$>$\+::size \+: 1, 
+\newline
+{\bfseries Rhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Rhs\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Res\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Res\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Number\+Of\+Registers} = E\+I\+G\+E\+N\+\_\+\+A\+R\+C\+H\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, 
+{\bfseries nr} = 4, 
+\newline
+{\bfseries mr} = (plain\+\_\+enum\+\_\+min(16, Number\+Of\+Registers)/2/nr)$\ast$\+Res\+Packet\+Size, 
+{\bfseries Lhs\+Progress} = Res\+Packet\+Size, 
+{\bfseries Rhs\+Progress} = 1
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a2d08aefc4c86c90b3fd8c80986da5797}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a2d08aefc4c86c90b3fd8c80986da5797}} 
+enum \{ \newline
+{\bfseries Conj\+Lhs} = false, 
+{\bfseries Conj\+Rhs} = Conj\+Rhs\+\_\+, 
+{\bfseries Vectorizable}, 
+{\bfseries Lhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Lhs\+Packet\+\_\+$>$\+::size \+: 1, 
+\newline
+{\bfseries Rhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Rhs\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Res\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Res\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Number\+Of\+Registers} = E\+I\+G\+E\+N\+\_\+\+A\+R\+C\+H\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, 
+{\bfseries nr} = 4, 
+\newline
+{\bfseries mr} = (plain\+\_\+enum\+\_\+min(16, Number\+Of\+Registers)/2/nr)$\ast$\+Res\+Packet\+Size, 
+{\bfseries Lhs\+Progress} = Res\+Packet\+Size, 
+{\bfseries Rhs\+Progress} = 1
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a72a374ae0bf82cd283c30d6d9d53a353}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a72a374ae0bf82cd283c30d6d9d53a353}} 
+typedef std\+::complex$<$ Real\+Scalar $>$ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ac75d6a743048a8e733378972738a4d58}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ac75d6a743048a8e733378972738a4d58}} 
+typedef Real\+Scalar {\bfseries Lhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a338aa65dc51d7cad6aea988262121521}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a338aa65dc51d7cad6aea988262121521}} 
+typedef Scalar {\bfseries Rhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_af8fff20bdffc069b1db404b024f4562c}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_af8fff20bdffc069b1db404b024f4562c}} 
+typedef Scalar {\bfseries Res\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a22b92a16ead84fb55ec9ec5ba7c6dd9d}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a22b92a16ead84fb55ec9ec5ba7c6dd9d}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Lhs\+Packet\+\_\+, Lhs\+Scalar $>$ {\bfseries Lhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aadf10099ab8c6b8df7a4de75bb95f7f7}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aadf10099ab8c6b8df7a4de75bb95f7f7}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Rhs\+Packet\+\_\+, Rhs\+Scalar $>$ {\bfseries Rhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a7e66e783bc6becd09e5d009a4d4c1196}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a7e66e783bc6becd09e5d009a4d4c1196}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Res\+Packet\+\_\+, Res\+Scalar $>$ {\bfseries Res\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a400b3e0f2c9b05a0d811b8f8bafb7e53}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a400b3e0f2c9b05a0d811b8f8bafb7e53}} 
+typedef Lhs\+Packet {\bfseries Lhs\+Packet4\+Packing}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a98531a3f2886a2991e9a6cac4f564abc}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a98531a3f2886a2991e9a6cac4f564abc}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Quad\+Packet}}$<$ Rhs\+Packet $>$ {\bfseries Rhs\+Packetx4}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abfbadf85a7c2b7cf02223acf30242d29}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abfbadf85a7c2b7cf02223acf30242d29}} 
+typedef Res\+Packet {\bfseries Acc\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a72a374ae0bf82cd283c30d6d9d53a353}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a72a374ae0bf82cd283c30d6d9d53a353}} 
+typedef std\+::complex$<$ Real\+Scalar $>$ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ac75d6a743048a8e733378972738a4d58}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ac75d6a743048a8e733378972738a4d58}} 
+typedef Real\+Scalar {\bfseries Lhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a338aa65dc51d7cad6aea988262121521}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a338aa65dc51d7cad6aea988262121521}} 
+typedef Scalar {\bfseries Rhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_af8fff20bdffc069b1db404b024f4562c}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_af8fff20bdffc069b1db404b024f4562c}} 
+typedef Scalar {\bfseries Res\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a22b92a16ead84fb55ec9ec5ba7c6dd9d}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a22b92a16ead84fb55ec9ec5ba7c6dd9d}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Lhs\+Packet\+\_\+, Lhs\+Scalar $>$ {\bfseries Lhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aadf10099ab8c6b8df7a4de75bb95f7f7}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aadf10099ab8c6b8df7a4de75bb95f7f7}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Rhs\+Packet\+\_\+, Rhs\+Scalar $>$ {\bfseries Rhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a7e66e783bc6becd09e5d009a4d4c1196}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a7e66e783bc6becd09e5d009a4d4c1196}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Res\+Packet\+\_\+, Res\+Scalar $>$ {\bfseries Res\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a400b3e0f2c9b05a0d811b8f8bafb7e53}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a400b3e0f2c9b05a0d811b8f8bafb7e53}} 
+typedef Lhs\+Packet {\bfseries Lhs\+Packet4\+Packing}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a98531a3f2886a2991e9a6cac4f564abc}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a98531a3f2886a2991e9a6cac4f564abc}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Quad\+Packet}}$<$ Rhs\+Packet $>$ {\bfseries Rhs\+Packetx4}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abfbadf85a7c2b7cf02223acf30242d29}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abfbadf85a7c2b7cf02223acf30242d29}} 
+typedef Res\+Packet {\bfseries Acc\+Packet}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abdd7dde05286effc7bdc0e1e1cfba7d1}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abdd7dde05286effc7bdc0e1e1cfba7d1}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Lhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a0dbdd45c8e1593af61a42b08f5ba3858}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a0dbdd45c8e1593af61a42b08f5ba3858}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Rhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ad9b966ddcc79056d35dac334f591fc1b}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ad9b966ddcc79056d35dac334f591fc1b}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Res, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_afb82a592806a68d155f9505788972e76}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_afb82a592806a68d155f9505788972e76}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Real, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_add289c681821a43b6eeea671fcdd6057}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_add289c681821a43b6eeea671fcdd6057}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35fa8d38945ba5d2d0f04d76968255ac}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35fa8d38945ba5d2d0f04d76968255ac}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries init\+Acc} (Acc\+Packet \&p)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aac3032b03f3bdb3e4285eb47bc446505}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aac3032b03f3bdb3e4285eb47bc446505}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35421d016e058d5a1aac8c98fa90ef8e}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35421d016e058d5a1aac8c98fa90ef8e}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a463729d8842db13a274de93eb8f33424}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a463729d8842db13a274de93eb8f33424}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ab784ca61c073a20061ef6074e8985139}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ab784ca61c073a20061ef6074e8985139}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ae519e24e18e21b1940d465757ccd76c4}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ae519e24e18e21b1940d465757ccd76c4}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs} (const Lhs\+Scalar $\ast$a, Lhs\+Packet \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a66232e1078062beaec7e8248153ec27d}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a66232e1078062beaec7e8248153ec27d}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs\+Quad} (const Rhs\+Scalar $\ast$b, Rhs\+Packet \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a4006c943094a51aaf73496b703d67107}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a4006c943094a51aaf73496b703d67107}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs\+Unaligned} (const Lhs\+Scalar $\ast$a, Lhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a09f5dec2529921cd200d19f67779a844}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a09f5dec2529921cd200d19f67779a844}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Rhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const Rhs\+Packet\+Type \&b, Acc\+Packet\+Type \&c, Rhs\+Packet\+Type \&tmp, const Lane\+Id\+Type \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a68a662f0e81dcab63144d34479817c52}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a68a662f0e81dcab63144d34479817c52}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Rhs\+Packet\+Type , typename Acc\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd\+\_\+impl} (const Lhs\+Packet\+Type \&a, const Rhs\+Packet\+Type \&b, Acc\+Packet\+Type \&c, Rhs\+Packet\+Type \&tmp, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1true__type}{true\+\_\+type}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_acac14ff5ff7ee0f0d7468d7673b884c7}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_acac14ff5ff7ee0f0d7468d7673b884c7}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd\+\_\+impl} (const Lhs\+Scalar \&a, const Rhs\+Scalar \&b, Res\+Scalar \&c, Rhs\+Scalar \&, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1false__type}{false\+\_\+type}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abe1ef6fd104bea247f958dc4f45bfc7f}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abe1ef6fd104bea247f958dc4f45bfc7f}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&b, Acc\+Packet\+Type \&c, Rhs\+Packet \&tmp, const Lane\+Id\+Type \&lane) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a2858fdbf2cb204834a8379d9bbd7dc11}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a2858fdbf2cb204834a8379d9bbd7dc11}} 
+{\footnotesize template$<$typename Res\+Packet\+Type , typename Acc\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries acc} (const Acc\+Packet\+Type \&c, const Res\+Packet\+Type \&alpha, Res\+Packet\+Type \&r) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abdd7dde05286effc7bdc0e1e1cfba7d1}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abdd7dde05286effc7bdc0e1e1cfba7d1}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Lhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a0dbdd45c8e1593af61a42b08f5ba3858}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a0dbdd45c8e1593af61a42b08f5ba3858}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Rhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ad9b966ddcc79056d35dac334f591fc1b}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ad9b966ddcc79056d35dac334f591fc1b}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Res, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_afb82a592806a68d155f9505788972e76}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_afb82a592806a68d155f9505788972e76}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Real, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_add289c681821a43b6eeea671fcdd6057}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_add289c681821a43b6eeea671fcdd6057}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+S\+C\+A\+L\+A\+R\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35fa8d38945ba5d2d0f04d76968255ac}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35fa8d38945ba5d2d0f04d76968255ac}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries init\+Acc} (Acc\+Packet \&p)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aac3032b03f3bdb3e4285eb47bc446505}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_aac3032b03f3bdb3e4285eb47bc446505}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35421d016e058d5a1aac8c98fa90ef8e}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a35421d016e058d5a1aac8c98fa90ef8e}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a463729d8842db13a274de93eb8f33424}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a463729d8842db13a274de93eb8f33424}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ab784ca61c073a20061ef6074e8985139}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ab784ca61c073a20061ef6074e8985139}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ae519e24e18e21b1940d465757ccd76c4}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_ae519e24e18e21b1940d465757ccd76c4}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs} (const Lhs\+Scalar $\ast$a, Lhs\+Packet \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a66232e1078062beaec7e8248153ec27d}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a66232e1078062beaec7e8248153ec27d}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs\+Quad} (const Rhs\+Scalar $\ast$b, Rhs\+Packet \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a4006c943094a51aaf73496b703d67107}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a4006c943094a51aaf73496b703d67107}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs\+Unaligned} (const Lhs\+Scalar $\ast$a, Lhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a09f5dec2529921cd200d19f67779a844}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a09f5dec2529921cd200d19f67779a844}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Rhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const Rhs\+Packet\+Type \&b, Acc\+Packet\+Type \&c, Rhs\+Packet\+Type \&tmp, const Lane\+Id\+Type \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a68a662f0e81dcab63144d34479817c52}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a68a662f0e81dcab63144d34479817c52}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Rhs\+Packet\+Type , typename Acc\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd\+\_\+impl} (const Lhs\+Packet\+Type \&a, const Rhs\+Packet\+Type \&b, Acc\+Packet\+Type \&c, Rhs\+Packet\+Type \&tmp, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1true__type}{true\+\_\+type}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_acac14ff5ff7ee0f0d7468d7673b884c7}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_acac14ff5ff7ee0f0d7468d7673b884c7}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd\+\_\+impl} (const Lhs\+Scalar \&a, const Rhs\+Scalar \&b, Res\+Scalar \&c, Rhs\+Scalar \&, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1false__type}{false\+\_\+type}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abe1ef6fd104bea247f958dc4f45bfc7f}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_abe1ef6fd104bea247f958dc4f45bfc7f}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&b, Acc\+Packet\+Type \&c, Rhs\+Packet \&tmp, const Lane\+Id\+Type \&lane) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a2858fdbf2cb204834a8379d9bbd7dc11}\label{class_eigen_1_1internal_1_1gebp__traits_3_01_real_scalar_00_01std_1_1complex_3_01_real_scalar_018ea619920028dbbe822ae7e1849b6d08_a2858fdbf2cb204834a8379d9bbd7dc11}} 
+{\footnotesize template$<$typename Res\+Packet\+Type , typename Acc\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries acc} (const Acc\+Packet\+Type \&c, const Res\+Packet\+Type \&alpha, Res\+Packet\+Type \&r) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/products/General\+Block\+Panel\+Kernel.\+h\end{DoxyCompactItemize}

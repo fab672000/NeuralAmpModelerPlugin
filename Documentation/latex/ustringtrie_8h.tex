@@ -1,0 +1,115 @@
+\hypertarget{ustringtrie_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ustringtrie.h File Reference}
+\label{ustringtrie_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ustringtrie.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ustringtrie.h}}
+
+
+C A\+PI\+: Helper definitions for dictionary trie A\+P\+Is.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ustringtrie_8h_ad1e3fea7099ad56dfbc6d82d997a15ec}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+M\+A\+T\+C\+H\+ES}}(result)~((result)!=\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda59cdeb2ea73a75c61684b4ea11ccfb37}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH}})
+\item 
+\#define \mbox{\hyperlink{ustringtrie_8h_af1bd176224b0d2e692c76d819be185b8}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+H\+A\+S\+\_\+\+V\+A\+L\+UE}}(result)~((result)$>$=\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda4474a12ed66e5def252c31cadd0a2663}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+F\+I\+N\+A\+L\+\_\+\+V\+A\+L\+UE}})
+\item 
+\#define \mbox{\hyperlink{ustringtrie_8h_a7e1962396a228f3d0f7d073fef78e2e0}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+H\+A\+S\+\_\+\+N\+E\+XT}}(result)~((result)\&1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bd}{U\+String\+Trie\+Result}} \{ \mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda59cdeb2ea73a75c61684b4ea11ccfb37}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH}}, 
+\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda686677dbe92d514a0f424b48810fb21c}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+V\+A\+L\+UE}}, 
+\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda4474a12ed66e5def252c31cadd0a2663}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+F\+I\+N\+A\+L\+\_\+\+V\+A\+L\+UE}}, 
+\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda62f2fef78e07bab5f68fa803b581504f}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+T\+E\+\_\+\+V\+A\+L\+UE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Helper definitions for dictionary trie A\+P\+Is. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ustringtrie_8h_a7e1962396a228f3d0f7d073fef78e2e0}\label{ustringtrie_8h_a7e1962396a228f3d0f7d073fef78e2e0}} 
+\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_HAS\_NEXT@{USTRINGTRIE\_HAS\_NEXT}}
+\index{USTRINGTRIE\_HAS\_NEXT@{USTRINGTRIE\_HAS\_NEXT}!ustringtrie.h@{ustringtrie.h}}
+\doxysubsubsection{\texorpdfstring{USTRINGTRIE\_HAS\_NEXT}{USTRINGTRIE\_HAS\_NEXT}}
+{\footnotesize\ttfamily \#define U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+H\+A\+S\+\_\+\+N\+E\+XT(\begin{DoxyParamCaption}\item[{}]{result }\end{DoxyParamCaption})~((result)\&1)}
+
+Equivalent to (result==U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+V\+A\+L\+UE $\vert$$\vert$ result==U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+T\+E\+\_\+\+V\+A\+L\+UE) but this macro evaluates result exactly once. 
+\begin{DoxyParams}{Parameters}
+{\em result} & A result from Bytes\+Trie\+::first(), U\+Chars\+Trie\+::next() etc. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if another input byte/unit can continue a matching string. @stable I\+CU 4.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ustringtrie_8h_af1bd176224b0d2e692c76d819be185b8}\label{ustringtrie_8h_af1bd176224b0d2e692c76d819be185b8}} 
+\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_HAS\_VALUE@{USTRINGTRIE\_HAS\_VALUE}}
+\index{USTRINGTRIE\_HAS\_VALUE@{USTRINGTRIE\_HAS\_VALUE}!ustringtrie.h@{ustringtrie.h}}
+\doxysubsubsection{\texorpdfstring{USTRINGTRIE\_HAS\_VALUE}{USTRINGTRIE\_HAS\_VALUE}}
+{\footnotesize\ttfamily \#define U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+H\+A\+S\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{result }\end{DoxyParamCaption})~((result)$>$=\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda4474a12ed66e5def252c31cadd0a2663}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+F\+I\+N\+A\+L\+\_\+\+V\+A\+L\+UE}})}
+
+Equivalent to (result==U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+T\+E\+\_\+\+V\+A\+L\+UE $\vert$$\vert$ result==U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+F\+I\+N\+A\+L\+\_\+\+V\+A\+L\+UE) but this macro evaluates result exactly once. 
+\begin{DoxyParams}{Parameters}
+{\em result} & A result from Bytes\+Trie\+::first(), U\+Chars\+Trie\+::next() etc. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is a value for the input bytes/units so far. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Bytes\+Trie\+::get\+Value 
+
+U\+Chars\+Trie\+::get\+Value @stable I\+CU 4.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ustringtrie_8h_ad1e3fea7099ad56dfbc6d82d997a15ec}\label{ustringtrie_8h_ad1e3fea7099ad56dfbc6d82d997a15ec}} 
+\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_MATCHES@{USTRINGTRIE\_MATCHES}}
+\index{USTRINGTRIE\_MATCHES@{USTRINGTRIE\_MATCHES}!ustringtrie.h@{ustringtrie.h}}
+\doxysubsubsection{\texorpdfstring{USTRINGTRIE\_MATCHES}{USTRINGTRIE\_MATCHES}}
+{\footnotesize\ttfamily \#define U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+M\+A\+T\+C\+H\+ES(\begin{DoxyParamCaption}\item[{}]{result }\end{DoxyParamCaption})~((result)!=\mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bda59cdeb2ea73a75c61684b4ea11ccfb37}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH}})}
+
+Same as (result!=U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH). 
+\begin{DoxyParams}{Parameters}
+{\em result} & A result from Bytes\+Trie\+::first(), U\+Chars\+Trie\+::next() etc. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the input bytes/units so far are part of a matching string/byte sequence. @stable I\+CU 4.\+8 
+\end{DoxyReturn}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ustringtrie_8h_a760046451d48a1551ba71162a31365bd}\label{ustringtrie_8h_a760046451d48a1551ba71162a31365bd}} 
+\index{ustringtrie.h@{ustringtrie.h}!UStringTrieResult@{UStringTrieResult}}
+\index{UStringTrieResult@{UStringTrieResult}!ustringtrie.h@{ustringtrie.h}}
+\doxysubsubsection{\texorpdfstring{UStringTrieResult}{UStringTrieResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ustringtrie_8h_a760046451d48a1551ba71162a31365bd}{U\+String\+Trie\+Result}}}
+
+Return values for Bytes\+Trie\+::next(), U\+Chars\+Trie\+::next() and similar methods. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ustringtrie_8h_ad1e3fea7099ad56dfbc6d82d997a15ec}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+M\+A\+T\+C\+H\+ES}} 
+
+\mbox{\hyperlink{ustringtrie_8h_af1bd176224b0d2e692c76d819be185b8}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+H\+A\+S\+\_\+\+V\+A\+L\+UE}} 
+
+\mbox{\hyperlink{ustringtrie_8h_a7e1962396a228f3d0f7d073fef78e2e0}{U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+H\+A\+S\+\_\+\+N\+E\+XT}} @stable I\+CU 4.\+8 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USTRINGTRIE\_NO\_MATCH@{USTRINGTRIE\_NO\_MATCH}!ustringtrie.h@{ustringtrie.h}}\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_NO\_MATCH@{USTRINGTRIE\_NO\_MATCH}}}\mbox{\Hypertarget{ustringtrie_8h_a760046451d48a1551ba71162a31365bda59cdeb2ea73a75c61684b4ea11ccfb37}\label{ustringtrie_8h_a760046451d48a1551ba71162a31365bda59cdeb2ea73a75c61684b4ea11ccfb37}} 
+U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH&The input unit(s) did not continue a matching string. Once current()/next() return U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH, all further calls to current()/next() will also return U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+M\+A\+T\+CH, until the trie is reset to its original state or to a saved state. @stable I\+CU 4.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USTRINGTRIE\_NO\_VALUE@{USTRINGTRIE\_NO\_VALUE}!ustringtrie.h@{ustringtrie.h}}\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_NO\_VALUE@{USTRINGTRIE\_NO\_VALUE}}}\mbox{\Hypertarget{ustringtrie_8h_a760046451d48a1551ba71162a31365bda686677dbe92d514a0f424b48810fb21c}\label{ustringtrie_8h_a760046451d48a1551ba71162a31365bda686677dbe92d514a0f424b48810fb21c}} 
+U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+N\+O\+\_\+\+V\+A\+L\+UE&The input unit(s) continued a matching string but there is no value for the string so far. (It is a prefix of a longer string.) @stable I\+CU 4.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USTRINGTRIE\_FINAL\_VALUE@{USTRINGTRIE\_FINAL\_VALUE}!ustringtrie.h@{ustringtrie.h}}\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_FINAL\_VALUE@{USTRINGTRIE\_FINAL\_VALUE}}}\mbox{\Hypertarget{ustringtrie_8h_a760046451d48a1551ba71162a31365bda4474a12ed66e5def252c31cadd0a2663}\label{ustringtrie_8h_a760046451d48a1551ba71162a31365bda4474a12ed66e5def252c31cadd0a2663}} 
+U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+F\+I\+N\+A\+L\+\_\+\+V\+A\+L\+UE&The input unit(s) continued a matching string and there is a value for the string so far. This value will be returned by get\+Value(). No further input byte/unit can continue a matching string. @stable I\+CU 4.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{USTRINGTRIE\_INTERMEDIATE\_VALUE@{USTRINGTRIE\_INTERMEDIATE\_VALUE}!ustringtrie.h@{ustringtrie.h}}\index{ustringtrie.h@{ustringtrie.h}!USTRINGTRIE\_INTERMEDIATE\_VALUE@{USTRINGTRIE\_INTERMEDIATE\_VALUE}}}\mbox{\Hypertarget{ustringtrie_8h_a760046451d48a1551ba71162a31365bda62f2fef78e07bab5f68fa803b581504f}\label{ustringtrie_8h_a760046451d48a1551ba71162a31365bda62f2fef78e07bab5f68fa803b581504f}} 
+U\+S\+T\+R\+I\+N\+G\+T\+R\+I\+E\+\_\+\+I\+N\+T\+E\+R\+M\+E\+D\+I\+A\+T\+E\+\_\+\+V\+A\+L\+UE&The input unit(s) continued a matching string and there is a value for the string so far. This value will be returned by get\+Value(). Another input byte/unit can continue a matching string. @stable I\+CU 4.\+8 \\
+\hline
+
+\end{DoxyEnumFields}

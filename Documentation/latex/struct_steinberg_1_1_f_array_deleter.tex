@@ -1,0 +1,53 @@
+\hypertarget{struct_steinberg_1_1_f_array_deleter}{}\doxysection{Steinberg\+::F\+Array\+Deleter$<$ T $>$ Struct Template Reference}
+\label{struct_steinberg_1_1_f_array_deleter}\index{Steinberg::FArrayDeleter$<$ T $>$@{Steinberg::FArrayDeleter$<$ T $>$}}
+
+
+{\ttfamily \#include $<$fcleanup.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter_ad13ab634b3b2630f11e3224ba1f3cddb}{F\+Array\+Deleter}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$\+\_\+array\+To\+Delete)
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_array_deleter_af66156cced720da8308c0ae74056ff73}\label{struct_steinberg_1_1_f_array_deleter_af66156cced720da8308c0ae74056ff73}} 
+\mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter_af66156cced720da8308c0ae74056ff73}{$\sim$\+F\+Array\+Deleter}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Calls delete\mbox{[}\mbox{]} on the at construction time passed pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_array_deleter_a446e5ef705ab6a243a56e3c8f9ba37aa}\label{struct_steinberg_1_1_f_array_deleter_a446e5ef705ab6a243a56e3c8f9ba37aa}} 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter_a446e5ef705ab6a243a56e3c8f9ba37aa}{array\+To\+Delete}}
+\begin{DoxyCompactList}\small\item\em Remembers the array of objects that is to be deleted during destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+struct Steinberg\+::\+F\+Array\+Deleter$<$ T $>$}
+
+Template definition for classes that help guarding against memory leaks. A stack allocated object of this type automatically deletes an at construction time passed dynamically allocated array of objects when it reaches the end of its scope. ~\newline
+~\newline
+Intended usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int}* pointerToIntArray = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[10];}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter}{Steinberg::FArrayDeleter<int>}} deleter (pointerToIntArray);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Do something with the array behind pointerToIntArray.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\} \textcolor{comment}{// No memory leak here, destructor of deleter cleans up the integer array.}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_f_array_deleter_ad13ab634b3b2630f11e3224ba1f3cddb}\label{struct_steinberg_1_1_f_array_deleter_ad13ab634b3b2630f11e3224ba1f3cddb}} 
+\index{Steinberg::FArrayDeleter$<$ T $>$@{Steinberg::FArrayDeleter$<$ T $>$}!FArrayDeleter@{FArrayDeleter}}
+\index{FArrayDeleter@{FArrayDeleter}!Steinberg::FArrayDeleter$<$ T $>$@{Steinberg::FArrayDeleter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FArrayDeleter()}{FArrayDeleter()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter}{Steinberg\+::\+F\+Array\+Deleter}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::\mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter}{F\+Array\+Deleter}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{\+\_\+array\+To\+Delete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \+\_\+array\+To\+Delete is a pointer to the dynamically allocated array of objects that is to be deleted when this \mbox{\hyperlink{struct_steinberg_1_1_f_array_deleter}{F\+Array\+Deleter}} object\textquotesingle{}s destructor is executed. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fcleanup.\+h\end{DoxyCompactItemize}

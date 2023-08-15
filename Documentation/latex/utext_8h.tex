@@ -1,0 +1,1175 @@
+\hypertarget{utext_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/utext.h File Reference}
+\label{utext_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/utext.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/utext.h}}
+
+
+C A\+PI\+: Abstract Unicode Text A\+PI.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/uchar.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_text_funcs}{U\+Text\+Funcs}}
+\item 
+struct \mbox{\hyperlink{struct_u_text}{U\+Text}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{utext_8h_afedc50a892711dbf795af1fb8aac40cf}{U\+T\+E\+X\+T\+\_\+\+C\+U\+R\+R\+E\+N\+T32}}(ut)
+\item 
+\#define \mbox{\hyperlink{utext_8h_aa4b973aeeb5f10f8aec454545f85b6a2}{U\+T\+E\+X\+T\+\_\+\+N\+E\+X\+T32}}(ut)
+\item 
+\#define \mbox{\hyperlink{utext_8h_a8aa3d9bae7b252622fe8e70e87758205}{U\+T\+E\+X\+T\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S32}}(ut)
+\item 
+\#define \mbox{\hyperlink{utext_8h_a23a003b461019bea876827b8b24cb364}{U\+T\+E\+X\+T\+\_\+\+G\+E\+T\+N\+A\+T\+I\+V\+E\+I\+N\+D\+EX}}(ut)
+\item 
+\#define \mbox{\hyperlink{utext_8h_a74aa6ff1add5886508657997ca8d4747}{U\+T\+E\+X\+T\+\_\+\+S\+E\+T\+N\+A\+T\+I\+V\+E\+I\+N\+D\+EX}}(ut,  ix)
+\item 
+\#define \mbox{\hyperlink{utext_8h_a3dc916f710c0d3f17fe2a220384bcc8c}{U\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_u_text}{U\+Text}} \mbox{\hyperlink{utext_8h_a8da22111033cc0c063d89cae348ec1e4}{U\+Text}}
+\item 
+typedef \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$\mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_a3ca63bcf657509e4604d70434d6a83d4}{U\+Text\+Clone}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$dest, const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$src, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} deep, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+typedef int64\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_aea56c4f0245b449fb5a3346c6fe3e022}{U\+Text\+Native\+Length}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+typedef \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_a1f5dc096a853eaa7e03790b0ed14b8de}{U\+Text\+Access}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} forward)
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_ae1f71e9cae273d006c72f2ab3f6143c9}{U\+Text\+Extract}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_a4c911f2b913e270fbaf55a58aad909b4}{U\+Text\+Replace}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$replacement\+Text, int32\+\_\+t replacment\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_ab8abccd00ffedf836bd6cbf6ce160583}{U\+Text\+Copy}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, int64\+\_\+t native\+Dest, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} move, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+typedef int64\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_a6ae2a19d39d565c5610eb3a2ccf0518b}{U\+Text\+Map\+Offset\+To\+Native}}(const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+typedef int32\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_ace2f4d9b593cbedc97413bbdb6210c10}{U\+Text\+Map\+Native\+Index\+To\+U\+T\+F16}}(const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index)
+\item 
+typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utext_8h_ac52b52c9fb86271888ea96e58910b2f6}{U\+Text\+Close}}(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+typedef struct \mbox{\hyperlink{struct_u_text_funcs}{U\+Text\+Funcs}} \mbox{\hyperlink{utext_8h_acaf57d3fd11db28583a36df05ec02295}{U\+Text\+Funcs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a752c07f9df260b5b0e234e15eab97f9f}{U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+I\+S\+\_\+\+E\+X\+P\+E\+N\+S\+I\+VE}} = 1, 
+\mbox{\hyperlink{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a52bb5c9cacd1f46eb87a856c71c073be}{U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+S\+T\+A\+B\+L\+E\+\_\+\+C\+H\+U\+N\+KS}} = 2, 
+\mbox{\hyperlink{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266ac67ce6ecf6bf959645e282f7194fbe3b}{U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+W\+R\+I\+T\+A\+B\+LE}} = 3, 
+\mbox{\hyperlink{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a40c5cd24aea472f3752b4833b9ce63ca}{U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+H\+A\+S\+\_\+\+M\+E\+T\+A\+\_\+\+D\+A\+TA}} = 4, 
+\newline
+\mbox{\hyperlink{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a75695072a896ec104b5d77598a7429f7}{U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+O\+W\+N\+S\+\_\+\+T\+E\+XT}} = 5
+ \}
+\item 
+\mbox{\Hypertarget{utext_8h_a8420dba71b9cc240cf981b0bef892004}\label{utext_8h_a8420dba71b9cc240cf981b0bef892004}} 
+enum \{ {\bfseries U\+T\+E\+X\+T\+\_\+\+M\+A\+G\+IC} = 0x345ad82c
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a19c92d1f33409f077441f31c0d9efee0}{utext\+\_\+close}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_ac3fc67a15cc31e492b4c5a27c4a6d283}{utext\+\_\+open\+U\+T\+F8}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, const char $\ast$s, int64\+\_\+t length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a2fb9aa1b6501c97be2ef89f5f79bc270}{utext\+\_\+open\+U\+Chars}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, int64\+\_\+t length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_afea146b3abd7c75e023ef693fc4eefb5}{utext\+\_\+clone}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$dest, const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$src, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} deep, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} read\+Only, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_ad26995f4242a7d72d64dd8eb2bfaadd8}{utext\+\_\+equals}} (const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$a, const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$b)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int64\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a867b62de7e7f8a985fe8e002005fe360}{utext\+\_\+native\+Length}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a72e193ce4c3892d2c01ca10a72609377}{utext\+\_\+is\+Length\+Expensive}} (const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a9a628cdbd6c7738da843b978dd750dba}{utext\+\_\+char32\+At}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a78ccfe9642204de1263eb7fb18958cc0}{utext\+\_\+current32}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_aee71d3711b9d714595663285de7f74da}{utext\+\_\+next32}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_afa1683c9a786776e9d76e848d2427775}{utext\+\_\+previous32}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a2bb86a61936bee0d4cca0a84898d26cc}{utext\+\_\+next32\+From}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_aba463eb1706a2f8a4c7404eed9548101}{utext\+\_\+previous32\+From}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int64\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_aed3d3968c559f5eb4623403ef5f79bc3}{utext\+\_\+get\+Native\+Index}} (const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_afb8307d30ee34c5b2eb61f62c6a56c37}{utext\+\_\+set\+Native\+Index}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_ac2457cddd35d47659b1cf0b292d0f9db}{utext\+\_\+move\+Index32}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int32\+\_\+t delta)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int64\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_aebb95c39037d24a3372e4adf8bc466ac}{utext\+\_\+get\+Previous\+Native\+Index}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a0bd1a2187c8b41be81247e4534e9c6c7}{utext\+\_\+extract}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_ad58869db46de600d59ee216bc15081c5}{utext\+\_\+is\+Writable}} (const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a1bfa9beb8290c464ab2126418638dcf2}{utext\+\_\+has\+Meta\+Data}} (const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_af297590a0fd52fa23f6349c87f9b849d}{utext\+\_\+replace}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$replacement\+Text, int32\+\_\+t replacement\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a7b8161e82b7a9a2ea3f82483c3d7e032}{utext\+\_\+copy}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, int64\+\_\+t dest\+Index, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} move, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_aa736996b466809d26a358feaee2ddbba}{utext\+\_\+freeze}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utext_8h_a901cf6731d8881b980e555cae71fa698}{utext\+\_\+setup}} (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int32\+\_\+t extra\+Space, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Abstract Unicode Text A\+PI. 
+
+The Text Access A\+PI provides a means to allow text that is stored in alternative formats to work with I\+CU services. I\+CU normally operates on text that is stored in U\+T\+F-\/16 format, in (U\+Char $\ast$) arrays for the C A\+P\+Is or as type Unicode\+String for C++ A\+P\+Is.
+
+I\+CU Text Access allows other formats, such as U\+T\+F-\/8 or non-\/contiguous U\+T\+F-\/16 strings, to be placed in a \mbox{\hyperlink{struct_u_text}{U\+Text}} wrapper and then passed to I\+CU services.
+
+There are three general classes of usage for \mbox{\hyperlink{struct_u_text}{U\+Text}}\+: \begin{DoxyVerb}Application Level Use.  This is the simplest usage - applications would
+use one of the utext_open() functions on their input text, and pass
+the resulting UText to the desired ICU service.
+
+Second is usage in ICU Services, such as break iteration, that will need to
+operate on input presented to them as a UText.  These implementations
+will need to use the iteration and related UText functions to gain
+access to the actual text.
+
+The third class of UText users are "text providers."  These are the
+UText implementations for the various text storage formats.  An application
+or system with a unique text storage format can implement a set of
+UText provider functions for that format, which will then allow
+ICU services to operate on that format.
+\end{DoxyVerb}
+
+
+{\itshape Iterating over text}
+
+Here is sample code for a forward iteration over the contents of a \mbox{\hyperlink{struct_u_text}{U\+Text}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{UChar32}}  c;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_text}{UText}}    *ut = whatever();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (c=\mbox{\hyperlink{utext_8h_a2bb86a61936bee0d4cca0a84898d26cc}{utext\_next32From}}(ut, 0); c>=0; c=\mbox{\hyperlink{utext_8h_aee71d3711b9d714595663285de7f74da}{utext\_next32}}(ut)) \{}
+\DoxyCodeLine{   \textcolor{comment}{// do whatever with the codepoint c here.}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+And here is similar code to iterate in the reverse direction, from the end of the text towards the beginning.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{UChar32}}  c;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_text}{UText}}    *ut = whatever();}
+\DoxyCodeLine{\textcolor{keywordtype}{int}      textLength = \mbox{\hyperlink{utext_8h_a867b62de7e7f8a985fe8e002005fe360}{utext\_nativeLength}}(ut);}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (c=\mbox{\hyperlink{utext_8h_aba463eb1706a2f8a4c7404eed9548101}{utext\_previous32From}}(ut, textLength); c>=0; c=\mbox{\hyperlink{utext_8h_afa1683c9a786776e9d76e848d2427775}{utext\_previous32}}(ut)) \{}
+\DoxyCodeLine{   \textcolor{comment}{// do whatever with the codepoint c here.}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+{\itshape Characters and Indexing}
+
+Indexing into text by \mbox{\hyperlink{struct_u_text}{U\+Text}} functions is nearly always in terms of the native indexing of the underlying text storage. The storage format could be U\+T\+F-\/8 or U\+T\+F-\/32, for example. When coding to the \mbox{\hyperlink{struct_u_text}{U\+Text}} access A\+PI, no assumptions can be made regarding the size of characters, or how far an index may move when iterating between characters.
+
+All indices supplied to \mbox{\hyperlink{struct_u_text}{U\+Text}} functions are pinned to the length of the text. An out-\/of-\/bounds index is not considered to be an error, but is adjusted to be in the range 0 $<$= index $<$= length of input text.
+
+When an index position is returned from a \mbox{\hyperlink{struct_u_text}{U\+Text}} function, it will be a native index to the underlying text. In the case of multi-\/unit characters, it will always refer to the first position of the character, never to the interior. This is essentially the same thing as saying that a returned index will always point to a boundary between characters.
+
+When a native index is supplied to a \mbox{\hyperlink{struct_u_text}{U\+Text}} function, all indices that refer to any part of a multi-\/unit character representation are considered to be equivalent. In the case of multi-\/unit characters, an incoming index will be logically normalized to refer to the start of the character.
+
+It is possible to test whether a native index is on a code point boundary by doing a \mbox{\hyperlink{utext_8h_afb8307d30ee34c5b2eb61f62c6a56c37}{utext\+\_\+set\+Native\+Index()}} followed by a \mbox{\hyperlink{utext_8h_aed3d3968c559f5eb4623403ef5f79bc3}{utext\+\_\+get\+Native\+Index()}}. If the index is returned unchanged, it was on a code point boundary. If an adjusted index is returned, the original index referred to the interior of a character.
+
+{\itshape Conventions for calling \mbox{\hyperlink{struct_u_text}{U\+Text}} functions}
+
+Most \mbox{\hyperlink{struct_u_text}{U\+Text}} access functions have as their first parameter a (\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$) pointer, which specifies the \mbox{\hyperlink{struct_u_text}{U\+Text}} to be used. Unless otherwise noted, the pointer must refer to a valid, open \mbox{\hyperlink{struct_u_text}{U\+Text}}. Attempting to use a closed \mbox{\hyperlink{struct_u_text}{U\+Text}} or passing a N\+U\+LL pointer is a programming error and will produce undefined results or N\+U\+LL pointer exceptions.
+
+The U\+Text\+\_\+\+Open family of functions can either open an existing (closed) \mbox{\hyperlink{struct_u_text}{U\+Text}}, or heap allocate a new \mbox{\hyperlink{struct_u_text}{U\+Text}}. Here is sample code for creating a stack-\/allocated \mbox{\hyperlink{struct_u_text}{U\+Text}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char}     *s = whatever();  \textcolor{comment}{// A utf-\/8 string }}
+\DoxyCodeLine{U\_ErrorCode status = \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78caa43dbfc9499c5f911d04e1a0ca3bf6f9}{U\_ZERO\_ERROR}};}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_text}{UText}}    ut = \mbox{\hyperlink{utext_8h_a3dc916f710c0d3f17fe2a220384bcc8c}{UTEXT\_INITIALIZER}};}
+\DoxyCodeLine{\mbox{\hyperlink{utext_8h_ac3fc67a15cc31e492b4c5a27c4a6d283}{utext\_openUTF8}}(ut, s, -\/1, \&status);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\_FAILURE}}(status)) \{}
+\DoxyCodeLine{    \textcolor{comment}{// error handling}}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    \textcolor{comment}{// work with the UText}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Any existing \mbox{\hyperlink{struct_u_text}{U\+Text}} passed to an open function {\itshape must} have been initialized, either by the U\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER, or by having been originally heap-\/allocated by an open function. Passing N\+U\+LL will cause the open function to heap-\/allocate and fully initialize a new \mbox{\hyperlink{struct_u_text}{U\+Text}}. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{utext_8h_afedc50a892711dbf795af1fb8aac40cf}\label{utext_8h_afedc50a892711dbf795af1fb8aac40cf}} 
+\index{utext.h@{utext.h}!UTEXT\_CURRENT32@{UTEXT\_CURRENT32}}
+\index{UTEXT\_CURRENT32@{UTEXT\_CURRENT32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTEXT\_CURRENT32}{UTEXT\_CURRENT32}}
+{\footnotesize\ttfamily \#define U\+T\+E\+X\+T\+\_\+\+C\+U\+R\+R\+E\+N\+T32(\begin{DoxyParamCaption}\item[{}]{ut }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((ut)-\/>chunkOffset < (ut)-\/>chunkLength \&\& ((ut)-\/>chunkContents)[(ut)-\/>chunkOffset]<0xd800 ? \(\backslash\)}
+\DoxyCodeLine{    ((ut)-\/>chunkContents)[((ut)-\/>chunkOffset)] : \mbox{\hyperlink{utext_8h_a78ccfe9642204de1263eb7fb18958cc0}{utext\_current32}}(ut))}
+
+\end{DoxyCode}
+inline version of \mbox{\hyperlink{utext_8h_a78ccfe9642204de1263eb7fb18958cc0}{utext\+\_\+current32()}}, for performance-\/critical situations.
+
+Get the code point at the current iteration position of the \mbox{\hyperlink{struct_u_text}{U\+Text}}. Returns U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if the position is at the end of the text. \mbox{\Hypertarget{utext_8h_a23a003b461019bea876827b8b24cb364}\label{utext_8h_a23a003b461019bea876827b8b24cb364}} 
+\index{utext.h@{utext.h}!UTEXT\_GETNATIVEINDEX@{UTEXT\_GETNATIVEINDEX}}
+\index{UTEXT\_GETNATIVEINDEX@{UTEXT\_GETNATIVEINDEX}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTEXT\_GETNATIVEINDEX}{UTEXT\_GETNATIVEINDEX}}
+{\footnotesize\ttfamily \#define U\+T\+E\+X\+T\+\_\+\+G\+E\+T\+N\+A\+T\+I\+V\+E\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{ut }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((ut)-\/>chunkOffset <= (ut)-\/>nativeIndexingLimit?   \(\backslash\)}
+\DoxyCodeLine{        (ut)-\/>chunkNativeStart+(ut)-\/>chunkOffset :     \(\backslash\)}
+\DoxyCodeLine{        (ut)-\/>pFuncs-\/>mapOffsetToNative(ut))}
+
+\end{DoxyCode}
+inline version of \mbox{\hyperlink{utext_8h_aed3d3968c559f5eb4623403ef5f79bc3}{utext\+\_\+get\+Native\+Index()}}, for performance-\/critical situations.
+
+Get the current iterator position, which can range from 0 to the length of the text. The position is a native index into the input text, in whatever format it may have (possibly U\+T\+F-\/8 for example), and may not always be the same as the corresponding U\+Char (U\+T\+F-\/16) index. The returned position will always be aligned to a code point boundary.
+
+@stable I\+CU 3.\+6 \mbox{\Hypertarget{utext_8h_a3dc916f710c0d3f17fe2a220384bcc8c}\label{utext_8h_a3dc916f710c0d3f17fe2a220384bcc8c}} 
+\index{utext.h@{utext.h}!UTEXT\_INITIALIZER@{UTEXT\_INITIALIZER}}
+\index{UTEXT\_INITIALIZER@{UTEXT\_INITIALIZER}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTEXT\_INITIALIZER}{UTEXT\_INITIALIZER}}
+{\footnotesize\ttfamily \#define U\+T\+E\+X\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                  \{                                        \(\backslash\)}
+\DoxyCodeLine{                  UTEXT\_MAGIC,          \textcolor{comment}{/* magic                */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* flags                */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* providerProps        */} \(\backslash\)}
+\DoxyCodeLine{                  sizeof(\mbox{\hyperlink{struct_u_text}{UText}}),        \textcolor{comment}{/* sizeOfStruct         */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* chunkNativeLimit     */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* extraSize            */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* nativeIndexingLimit  */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* chunkNativeStart     */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* chunkOffset          */} \(\backslash\)}
+\DoxyCodeLine{                  0,                    \textcolor{comment}{/* chunkLength          */} \(\backslash\)}
+\DoxyCodeLine{                  NULL,                 \textcolor{comment}{/* chunkContents        */} \(\backslash\)}
+\DoxyCodeLine{                  NULL,                 \textcolor{comment}{/* pFuncs               */} \(\backslash\)}
+\DoxyCodeLine{                  NULL,                 \textcolor{comment}{/* pExtra               */} \(\backslash\)}
+\DoxyCodeLine{                  NULL,                 \textcolor{comment}{/* context              */} \(\backslash\)}
+\DoxyCodeLine{                  NULL, \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}, \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},     \textcolor{comment}{/* p, q, r              */} \(\backslash\)}
+\DoxyCodeLine{                  NULL,                 \textcolor{comment}{/* privP                */} \(\backslash\)}
+\DoxyCodeLine{                  0, 0, 0,              \textcolor{comment}{/* a, b, c              */} \(\backslash\)}
+\DoxyCodeLine{                  0, 0, 0               \textcolor{comment}{/* privA,B,C,           */} \(\backslash\)}
+\DoxyCodeLine{                  \}}
+
+\end{DoxyCode}
+initializer to be used with local (stack) instances of a \mbox{\hyperlink{struct_u_text}{U\+Text}} struct. \mbox{\hyperlink{struct_u_text}{U\+Text}} structs must be initialized before passing them to one of the utext\+\_\+open functions.
+
+@stable I\+CU 3.\+6 \mbox{\Hypertarget{utext_8h_aa4b973aeeb5f10f8aec454545f85b6a2}\label{utext_8h_aa4b973aeeb5f10f8aec454545f85b6a2}} 
+\index{utext.h@{utext.h}!UTEXT\_NEXT32@{UTEXT\_NEXT32}}
+\index{UTEXT\_NEXT32@{UTEXT\_NEXT32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTEXT\_NEXT32}{UTEXT\_NEXT32}}
+{\footnotesize\ttfamily \#define U\+T\+E\+X\+T\+\_\+\+N\+E\+X\+T32(\begin{DoxyParamCaption}\item[{}]{ut }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((ut)-\/>chunkOffset < (ut)-\/>chunkLength \&\& ((ut)-\/>chunkContents)[(ut)-\/>chunkOffset]<0xd800 ? \(\backslash\)}
+\DoxyCodeLine{    ((ut)-\/>chunkContents)[((ut)-\/>chunkOffset)++] : \mbox{\hyperlink{utext_8h_aee71d3711b9d714595663285de7f74da}{utext\_next32}}(ut))}
+
+\end{DoxyCode}
+inline version of \mbox{\hyperlink{utext_8h_aee71d3711b9d714595663285de7f74da}{utext\+\_\+next32()}}, for performance-\/critical situations.
+
+Get the code point at the current iteration position of the \mbox{\hyperlink{struct_u_text}{U\+Text}}, and advance the position to the first index following the character. This is a post-\/increment operation. Returns U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if the position is at the end of the text.
+
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_a8aa3d9bae7b252622fe8e70e87758205}\label{utext_8h_a8aa3d9bae7b252622fe8e70e87758205}} 
+\index{utext.h@{utext.h}!UTEXT\_PREVIOUS32@{UTEXT\_PREVIOUS32}}
+\index{UTEXT\_PREVIOUS32@{UTEXT\_PREVIOUS32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTEXT\_PREVIOUS32}{UTEXT\_PREVIOUS32}}
+{\footnotesize\ttfamily \#define U\+T\+E\+X\+T\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S32(\begin{DoxyParamCaption}\item[{}]{ut }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((ut)-\/>chunkOffset > 0 \&\& \(\backslash\)}
+\DoxyCodeLine{     (ut)-\/>chunkContents[(ut)-\/>chunkOffset-\/1] < 0xd800 ? \(\backslash\)}
+\DoxyCodeLine{          (ut)-\/>chunkContents[-\/-\/((ut)-\/>chunkOffset)]  :  \mbox{\hyperlink{utext_8h_afa1683c9a786776e9d76e848d2427775}{utext\_previous32}}(ut))}
+
+\end{DoxyCode}
+inline version of \mbox{\hyperlink{utext_8h_afa1683c9a786776e9d76e848d2427775}{utext\+\_\+previous32()}}, for performance-\/critical situations.
+
+Move the iterator position to the character (code point) whose index precedes the current position, and return that character. This is a pre-\/decrement operation. Returns U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if the position is at the start of the text.
+
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_a74aa6ff1add5886508657997ca8d4747}\label{utext_8h_a74aa6ff1add5886508657997ca8d4747}} 
+\index{utext.h@{utext.h}!UTEXT\_SETNATIVEINDEX@{UTEXT\_SETNATIVEINDEX}}
+\index{UTEXT\_SETNATIVEINDEX@{UTEXT\_SETNATIVEINDEX}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTEXT\_SETNATIVEINDEX}{UTEXT\_SETNATIVEINDEX}}
+{\footnotesize\ttfamily \#define U\+T\+E\+X\+T\+\_\+\+S\+E\+T\+N\+A\+T\+I\+V\+E\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{ut,  }\item[{}]{ix }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{umachine_8h_abfdc26d020b4fab3ed5ca2b98fe5df43}{UPRV\_BLOCK\_MACRO\_BEGIN}} \{ \(\backslash\)}
+\DoxyCodeLine{    int64\_t \_\_offset = (ix) -\/ (ut)-\/>chunkNativeStart; \(\backslash\)}
+\DoxyCodeLine{    if (\_\_offset>=0 \&\& \_\_offset<(int64\_t)(ut)-\/>nativeIndexingLimit \&\& (ut)-\/>chunkContents[\_\_offset]<0xdc00) \{ \(\backslash\)}
+\DoxyCodeLine{        (ut)-\/>chunkOffset=(int32\_t)\_\_offset; \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{        utext\_setNativeIndex((ut), (ix)); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{\} \mbox{\hyperlink{umachine_8h_a983e6cc57f8c1b0c5b9ad9ceb290418a}{UPRV\_BLOCK\_MACRO\_END}}}
+
+\end{DoxyCode}
+inline version of \mbox{\hyperlink{utext_8h_afb8307d30ee34c5b2eb61f62c6a56c37}{utext\+\_\+set\+Native\+Index()}}, for performance-\/critical situations.
+
+Set the current iteration position to the nearest code point boundary at or preceding the specified index. The index is in the native units of the original input text. If the index is out of range, it will be pinned to be within the range of the input text.
+
+@stable I\+CU 3.\+8 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{utext_8h_a8da22111033cc0c063d89cae348ec1e4}\label{utext_8h_a8da22111033cc0c063d89cae348ec1e4}} 
+\index{utext.h@{utext.h}!UText@{UText}}
+\index{UText@{UText}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UText}{UText}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_u_text}{U\+Text}} \mbox{\hyperlink{struct_u_text}{U\+Text}}}
+
+C typedef for struct \mbox{\hyperlink{struct_u_text}{U\+Text}}. @stable I\+CU 3.\+6 \mbox{\Hypertarget{utext_8h_a1f5dc096a853eaa7e03790b0ed14b8de}\label{utext_8h_a1f5dc096a853eaa7e03790b0ed14b8de}} 
+\index{utext.h@{utext.h}!UTextAccess@{UTextAccess}}
+\index{UTextAccess@{UTextAccess}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextAccess}{UTextAccess}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Access(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} forward)}
+
+Function type declaration for U\+Text.\+access(). Get the description of the text chunk containing the text at a requested native index. The \mbox{\hyperlink{struct_u_text}{U\+Text}}\textquotesingle{}s iteration position will be left at the requested index. If the index is out of bounds, the iteration position will be left at the start or end of the string, as appropriate.
+
+Chunks must begin and end on code point boundaries. A single code point comprised of multiple storage units must never span a chunk boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} being accessed. \\
+\hline
+{\em native\+Index} & Requested index of the text to be accessed. \\
+\hline
+{\em forward} & If true, then the returned chunk must contain text starting from the index, so that start$<$=index$<$limit. If false, then the returned chunk must contain text before the index, so that start$<$index$<$=limit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the requested index could be accessed. The chunk will contain the requested text. False value if a chunk cannot be accessed (the requested index is out of bounds).
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_u_text}{U\+Text}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_a3ca63bcf657509e4604d70434d6a83d4}\label{utext_8h_a3ca63bcf657509e4604d70434d6a83d4}} 
+\index{utext.h@{utext.h}!UTextClone@{UTextClone}}
+\index{UTextClone@{UTextClone}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextClone}{UTextClone}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_u_text}{U\+Text}}$\ast$ \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Clone(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$dest, const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$src, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} deep, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)}
+
+Function type declaration for U\+Text.\+clone().
+
+clone a \mbox{\hyperlink{struct_u_text}{U\+Text}}. Much like opening a \mbox{\hyperlink{struct_u_text}{U\+Text}} where the source text is itself another \mbox{\hyperlink{struct_u_text}{U\+Text}}.
+
+A deep clone will copy both the \mbox{\hyperlink{struct_u_text}{U\+Text}} data structures and the underlying text. The original and cloned \mbox{\hyperlink{struct_u_text}{U\+Text}} will operate completely independently; modifications made to the text in one will not effect the other. Text providers are not required to support deep clones. The user of clone() must check the status return and be prepared to handle failures.
+
+A shallow clone replicates only the \mbox{\hyperlink{struct_u_text}{U\+Text}} data structures; it does not make a copy of the underlying text. Shallow clones can be used as an efficient way to have multiple iterators active in a single text string that is not being modified.
+
+A shallow clone operation must not fail except for truly exceptional conditions such as memory allocation failures.
+
+A \mbox{\hyperlink{struct_u_text}{U\+Text}} and its clone may be safely concurrently accessed by separate threads. This is true for both shallow and deep clones. It is the responsibility of the Text Provider to ensure that this thread safety constraint is met.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A \mbox{\hyperlink{struct_u_text}{U\+Text}} struct to be filled in with the result of the clone operation, or N\+U\+LL if the clone function should heap-\/allocate a new \mbox{\hyperlink{struct_u_text}{U\+Text}} struct. \\
+\hline
+{\em src} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} to be cloned. \\
+\hline
+{\em deep} & true to request a deep clone, false for a shallow clone. \\
+\hline
+{\em status} & Errors are returned here. For deep clones, U\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+E\+R\+R\+OR should be returned if the text provider is unable to clone the original text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created clone, or N\+U\+LL if the clone operation failed.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_ac52b52c9fb86271888ea96e58910b2f6}\label{utext_8h_ac52b52c9fb86271888ea96e58910b2f6}} 
+\index{utext.h@{utext.h}!UTextClose@{UTextClose}}
+\index{UTextClose@{UTextClose}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextClose}{UTextClose}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Close(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)}
+
+Function type declaration for U\+Text.\+utext\+Close().
+
+A Text Provider close function is only required for provider types that make allocations in their open function (or other functions) that must be cleaned when the \mbox{\hyperlink{struct_u_text}{U\+Text}} is closed.
+
+The allocation of the \mbox{\hyperlink{struct_u_text}{U\+Text}} struct itself and any \char`\"{}extra\char`\"{} storage associated with the \mbox{\hyperlink{struct_u_text}{U\+Text}} is handled by the common \mbox{\hyperlink{struct_u_text}{U\+Text}} implementation and does not require provider specific cleanup in a close function.
+
+Most \mbox{\hyperlink{struct_u_text}{U\+Text}} provider implementations do not need to implement this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & A \mbox{\hyperlink{struct_u_text}{U\+Text}} object to be closed.\\
+\hline
+\end{DoxyParams}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_ab8abccd00ffedf836bd6cbf6ce160583}\label{utext_8h_ab8abccd00ffedf836bd6cbf6ce160583}} 
+\index{utext.h@{utext.h}!UTextCopy@{UTextCopy}}
+\index{UTextCopy@{UTextCopy}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextCopy}{UTextCopy}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Copy(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, int64\+\_\+t native\+Dest, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} move, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)}
+
+Function type declaration for U\+Text.\+copy().
+
+Copy or move a substring from one position to another within the text, while retaining any metadata associated with the text. This function is used to duplicate or reorder substrings. The destination index must not overlap the source range.
+
+The text to be copied or moved is inserted at dest\+Index; it does not replace or overwrite any existing text.
+
+This function need only be implemented for \mbox{\hyperlink{struct_u_text}{U\+Text}} types that support writing.
+
+When using this function, there should be only a single \mbox{\hyperlink{struct_u_text}{U\+Text}} opened onto the underlying native text string. The function is responsible for updating the text chunk within the \mbox{\hyperlink{struct_u_text}{U\+Text}} to reflect the updated iteration position, taking into account any changes to the underlying string\textquotesingle{}s structure caused by the replace operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} representing the text to be operated on. \\
+\hline
+{\em native\+Start} & The index of the start of the region to be copied or moved \\
+\hline
+{\em native\+Limit} & The index of the character following the region to be replaced. \\
+\hline
+{\em native\+Dest} & The destination index to which the source substring is copied or moved. \\
+\hline
+{\em move} & If true, then the substring is moved, not copied/duplicated. \\
+\hline
+{\em status} & receives any error status. Possible errors include U\+\_\+\+N\+O\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON\\
+\hline
+\end{DoxyParams}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_ae1f71e9cae273d006c72f2ab3f6143c9}\label{utext_8h_ae1f71e9cae273d006c72f2ab3f6143c9}} 
+\index{utext.h@{utext.h}!UTextExtract@{UTextExtract}}
+\index{UTextExtract@{UTextExtract}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextExtract}{UTextExtract}}
+{\footnotesize\ttfamily typedef int32\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Extract(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)}
+
+Function type declaration for U\+Text.\+extract().
+
+Extract text from a \mbox{\hyperlink{struct_u_text}{U\+Text}} into a U\+Char buffer. The range of text to be extracted is specified in the native indices of the \mbox{\hyperlink{struct_u_text}{U\+Text}} provider. These may not necessarily be U\+T\+F-\/16 indices. 
+
+The size (number of 16 bit U\+Chars) in the data to be extracted is returned. The full amount is returned, even when the specified buffer size is smaller. 
+
+The extracted string will (if you are a user) / must (if you are a text provider) be N\+U\+L-\/terminated if there is sufficient space in the destination buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} from which to extract data. \\
+\hline
+{\em native\+Start} & the native index of the first character to extract. \\
+\hline
+{\em native\+Limit} & the native string index of the position following the last character to extract. \\
+\hline
+{\em dest} & the U\+Char (U\+T\+F-\/16) buffer into which the extracted text is placed \\
+\hline
+{\em dest\+Capacity} & The size, in U\+Chars, of the destination buffer. May be zero for precomputing the required size. \\
+\hline
+{\em status} & receives any error status. If U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR\+: Returns number of U\+Chars for preflighting. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of U\+Chars in the data. Does not include a trailing N\+UL.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_acaf57d3fd11db28583a36df05ec02295}\label{utext_8h_acaf57d3fd11db28583a36df05ec02295}} 
+\index{utext.h@{utext.h}!UTextFuncs@{UTextFuncs}}
+\index{UTextFuncs@{UTextFuncs}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextFuncs}{UTextFuncs}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_u_text_funcs}{U\+Text\+Funcs}} \mbox{\hyperlink{struct_u_text_funcs}{U\+Text\+Funcs}}}
+
+Function dispatch table for \mbox{\hyperlink{struct_u_text}{U\+Text}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_u_text_funcs}{U\+Text\+Funcs}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_ace2f4d9b593cbedc97413bbdb6210c10}\label{utext_8h_ace2f4d9b593cbedc97413bbdb6210c10}} 
+\index{utext.h@{utext.h}!UTextMapNativeIndexToUTF16@{UTextMapNativeIndexToUTF16}}
+\index{UTextMapNativeIndexToUTF16@{UTextMapNativeIndexToUTF16}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextMapNativeIndexToUTF16}{UTextMapNativeIndexToUTF16}}
+{\footnotesize\ttfamily typedef int32\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Map\+Native\+Index\+To\+U\+T\+F16(const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Index)}
+
+Function type declaration for U\+Text.\+map\+Index\+To\+U\+T\+F16(). Map from a native index to a U\+Char offset within a text chunk. Behavior is undefined if the native index does not fall within the current chunk.
+
+This function is required only for text providers that do not use native U\+T\+F-\/16 indexes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} containing the text chunk. \\
+\hline
+{\em native\+Index} & Absolute (native) text index, chunk-\/$>$start$<$=index$<$=chunk-\/$>$limit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chunk-\/relative U\+T\+F-\/16 offset corresponding to the specified native index.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_a6ae2a19d39d565c5610eb3a2ccf0518b}\label{utext_8h_a6ae2a19d39d565c5610eb3a2ccf0518b}} 
+\index{utext.h@{utext.h}!UTextMapOffsetToNative@{UTextMapOffsetToNative}}
+\index{UTextMapOffsetToNative@{UTextMapOffsetToNative}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextMapOffsetToNative}{UTextMapOffsetToNative}}
+{\footnotesize\ttfamily typedef int64\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Map\+Offset\+To\+Native(const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)}
+
+Function type declaration for U\+Text.\+map\+Offset\+To\+Native(). Map from the current U\+Char offset within the current text chunk to the corresponding native index in the original source text.
+
+This is required only for text providers that do not use native U\+T\+F-\/16 indexes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Absolute (native) index corresponding to chunk\+Offset in the current chunk. The returned native index should always be to a code point boundary.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_aea56c4f0245b449fb5a3346c6fe3e022}\label{utext_8h_aea56c4f0245b449fb5a3346c6fe3e022}} 
+\index{utext.h@{utext.h}!UTextNativeLength@{UTextNativeLength}}
+\index{UTextNativeLength@{UTextNativeLength}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextNativeLength}{UTextNativeLength}}
+{\footnotesize\ttfamily typedef int64\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Native\+Length(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut)}
+
+Function type declaration for U\+Text.\+native\+Length().
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} to get the length of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length, in the native units of the original text string. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_u_text}{U\+Text}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_a4c911f2b913e270fbaf55a58aad909b4}\label{utext_8h_a4c911f2b913e270fbaf55a58aad909b4}} 
+\index{utext.h@{utext.h}!UTextReplace@{UTextReplace}}
+\index{UTextReplace@{UTextReplace}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{UTextReplace}{UTextReplace}}
+{\footnotesize\ttfamily typedef int32\+\_\+t \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Text\+Replace(\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$ut, int64\+\_\+t native\+Start, int64\+\_\+t native\+Limit, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$replacement\+Text, int32\+\_\+t replacment\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$status)}
+
+Function type declaration for U\+Text.\+replace().
+
+Replace a range of the original text with a replacement text.
+
+Leaves the current iteration position at the position following the newly inserted replacement text.
+
+This function need only be implemented on \mbox{\hyperlink{struct_u_text}{U\+Text}} types that support writing.
+
+When using this function, there should be only a single \mbox{\hyperlink{struct_u_text}{U\+Text}} opened onto the underlying native text string. The function is responsible for updating the text chunk within the \mbox{\hyperlink{struct_u_text}{U\+Text}} to reflect the updated iteration position, taking into account any changes to the underlying string\textquotesingle{}s structure caused by the replace operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} representing the text to be operated on. \\
+\hline
+{\em native\+Start} & the index of the start of the region to be replaced \\
+\hline
+{\em native\+Limit} & the index of the character following the region to be replaced. \\
+\hline
+{\em replacement\+Text} & pointer to the replacement text \\
+\hline
+{\em replacment\+Length} & length of the replacement text in U\+Chars, or -\/1 if the text is N\+UL terminated. \\
+\hline
+{\em status} & receives any error status. Possible errors include U\+\_\+\+N\+O\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The signed number of (native) storage units by which the length of the text expanded or contracted.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266}\label{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\mbox{\hyperlink{struct_u_text}{U\+Text}} provider properties (bit field indexes).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_u_text}{U\+Text}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTEXT\_PROVIDER\_LENGTH\_IS\_EXPENSIVE@{UTEXT\_PROVIDER\_LENGTH\_IS\_EXPENSIVE}!utext.h@{utext.h}}\index{utext.h@{utext.h}!UTEXT\_PROVIDER\_LENGTH\_IS\_EXPENSIVE@{UTEXT\_PROVIDER\_LENGTH\_IS\_EXPENSIVE}}}\mbox{\Hypertarget{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a752c07f9df260b5b0e234e15eab97f9f}\label{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a752c07f9df260b5b0e234e15eab97f9f}} 
+U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+I\+S\+\_\+\+E\+X\+P\+E\+N\+S\+I\+VE&It is potentially time consuming for the provider to determine the length of the text. @stable I\+CU 3.\+4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTEXT\_PROVIDER\_STABLE\_CHUNKS@{UTEXT\_PROVIDER\_STABLE\_CHUNKS}!utext.h@{utext.h}}\index{utext.h@{utext.h}!UTEXT\_PROVIDER\_STABLE\_CHUNKS@{UTEXT\_PROVIDER\_STABLE\_CHUNKS}}}\mbox{\Hypertarget{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a52bb5c9cacd1f46eb87a856c71c073be}\label{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a52bb5c9cacd1f46eb87a856c71c073be}} 
+U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+S\+T\+A\+B\+L\+E\+\_\+\+C\+H\+U\+N\+KS&Text chunks remain valid and usable until the text object is modified or deleted, not just until the next time the \mbox{\hyperlink{structaccess}{access()}} function is called (which is the default). @stable I\+CU 3.\+4 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTEXT\_PROVIDER\_WRITABLE@{UTEXT\_PROVIDER\_WRITABLE}!utext.h@{utext.h}}\index{utext.h@{utext.h}!UTEXT\_PROVIDER\_WRITABLE@{UTEXT\_PROVIDER\_WRITABLE}}}\mbox{\Hypertarget{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266ac67ce6ecf6bf959645e282f7194fbe3b}\label{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266ac67ce6ecf6bf959645e282f7194fbe3b}} 
+U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+W\+R\+I\+T\+A\+B\+LE&The provider supports modifying the text via the replace() and copy() functions. \begin{DoxySeeAlso}{See also}
+Replaceable @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTEXT\_PROVIDER\_HAS\_META\_DATA@{UTEXT\_PROVIDER\_HAS\_META\_DATA}!utext.h@{utext.h}}\index{utext.h@{utext.h}!UTEXT\_PROVIDER\_HAS\_META\_DATA@{UTEXT\_PROVIDER\_HAS\_META\_DATA}}}\mbox{\Hypertarget{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a40c5cd24aea472f3752b4833b9ce63ca}\label{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a40c5cd24aea472f3752b4833b9ce63ca}} 
+U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+H\+A\+S\+\_\+\+M\+E\+T\+A\+\_\+\+D\+A\+TA&There is meta data associated with the text. \begin{DoxySeeAlso}{See also}
+Replaceable\+::has\+Meta\+Data() @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTEXT\_PROVIDER\_OWNS\_TEXT@{UTEXT\_PROVIDER\_OWNS\_TEXT}!utext.h@{utext.h}}\index{utext.h@{utext.h}!UTEXT\_PROVIDER\_OWNS\_TEXT@{UTEXT\_PROVIDER\_OWNS\_TEXT}}}\mbox{\Hypertarget{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a75695072a896ec104b5d77598a7429f7}\label{utext_8h_aecd12a18eeb0ee701fc7b0efd5068266a75695072a896ec104b5d77598a7429f7}} 
+U\+T\+E\+X\+T\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+O\+W\+N\+S\+\_\+\+T\+E\+XT&Text provider owns the text storage. Generally occurs as the result of a deep clone of the \mbox{\hyperlink{struct_u_text}{U\+Text}}. When closing the \mbox{\hyperlink{struct_u_text}{U\+Text}}, the associated text must also be closed/deleted/freed/ whatever is appropriate. @stable I\+CU 3.\+6 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utext_8h_a9a628cdbd6c7738da843b978dd750dba}\label{utext_8h_a9a628cdbd6c7738da843b978dd750dba}} 
+\index{utext.h@{utext.h}!utext\_char32At@{utext\_char32At}}
+\index{utext\_char32At@{utext\_char32At}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_char32At()}{utext\_char32At()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+char32\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Index }\end{DoxyParamCaption})}
+
+Returns the code point at the requested index, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if it is out of bounds.
+
+If the specified index points to the interior of a multi-\/unit character -\/ one of the trail bytes of a U\+T\+F-\/8 sequence, for example -\/ the complete code point will be returned.
+
+The iteration position will be set to the start of the returned code point.
+
+This function is roughly equivalent to the sequence utext\+\_\+set\+Native\+Index(index); \mbox{\hyperlink{utext_8h_a78ccfe9642204de1263eb7fb18958cc0}{utext\+\_\+current32()}}; (There is a subtle difference if the index is out of bounds by being less than zero -\/ utext\+\_\+set\+Native\+Index(negative value) sets the index to zero, after which utext\+\_\+current() will return the char at zero. utext\+\_\+char32\+At(negative index), on the other hand, will return the U\+\_\+\+S\+E\+N\+T\+I\+N\+EL value of -\/1.)
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed \\
+\hline
+{\em native\+Index} & the native index of the character to be accessed. If the index points to other than the first unit of a multi-\/unit character, it will be adjusted to the start of the character. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the code point at the specified index. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_afea146b3abd7c75e023ef693fc4eefb5}\label{utext_8h_afea146b3abd7c75e023ef693fc4eefb5}} 
+\index{utext.h@{utext.h}!utext\_clone@{utext\_clone}}
+\index{utext\_clone@{utext\_clone}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_clone()}{utext\_clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{src,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{deep,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{read\+Only,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Clone a \mbox{\hyperlink{struct_u_text}{U\+Text}}. This is much like opening a \mbox{\hyperlink{struct_u_text}{U\+Text}} where the source text is itself another \mbox{\hyperlink{struct_u_text}{U\+Text}}.
+
+A deep clone will copy both the \mbox{\hyperlink{struct_u_text}{U\+Text}} data structures and the underlying text. The original and cloned \mbox{\hyperlink{struct_u_text}{U\+Text}} will operate completely independently; modifications made to the text in one will not affect the other. Text providers are not required to support deep clones. The user of clone() must check the status return and be prepared to handle failures.
+
+The standard \mbox{\hyperlink{struct_u_text}{U\+Text}} implementations for U\+T\+F8, U\+Char $\ast$, Unicode\+String and Replaceable all support deep cloning.
+
+The \mbox{\hyperlink{struct_u_text}{U\+Text}} returned from a deep clone will be writable, assuming that the text provider is able to support writing, even if the source \mbox{\hyperlink{struct_u_text}{U\+Text}} had been made non-\/writable by means of U\+Text\+\_\+freeze().
+
+A shallow clone replicates only the \mbox{\hyperlink{struct_u_text}{U\+Text}} data structures; it does not make a copy of the underlying text. Shallow clones can be used as an efficient way to have multiple iterators active in a single text string that is not being modified.
+
+A shallow clone operation will not fail, barring truly exceptional conditions such as memory allocation failures.
+
+Shallow \mbox{\hyperlink{struct_u_text}{U\+Text}} clones should be avoided if the \mbox{\hyperlink{struct_u_text}{U\+Text}} functions that modify the text are expected to be used, either on the original or the cloned \mbox{\hyperlink{struct_u_text}{U\+Text}}. Any such modifications can cause unpredictable behavior. Read Only shallow clones provide some protection against errors of this type by disabling text modification via the cloned \mbox{\hyperlink{struct_u_text}{U\+Text}}.
+
+A shallow clone made with the read\+Only parameter == false will preserve the \mbox{\hyperlink{utext_8h_ad58869db46de600d59ee216bc15081c5}{utext\+\_\+is\+Writable()}} state of the source object. Note, however, that write operations must be avoided while more than one \mbox{\hyperlink{struct_u_text}{U\+Text}} exists that refer to the same underlying text.
+
+A \mbox{\hyperlink{struct_u_text}{U\+Text}} and its clone may be safely concurrently accessed by separate threads. This is true for read access only with shallow clones, and for both read and write access with deep clones. It is the responsibility of the Text Provider to ensure that this thread safety constraint is met.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A \mbox{\hyperlink{struct_u_text}{U\+Text}} struct to be filled in with the result of the clone operation, or N\+U\+LL if the clone function should heap-\/allocate a new \mbox{\hyperlink{struct_u_text}{U\+Text}} struct. If non-\/\+N\+U\+LL, must refer to an already existing \mbox{\hyperlink{struct_u_text}{U\+Text}}, which will then be reset to become the clone. \\
+\hline
+{\em src} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} to be cloned. \\
+\hline
+{\em deep} & true to request a deep clone, false for a shallow clone. \\
+\hline
+{\em read\+Only} & true to request that the cloned \mbox{\hyperlink{struct_u_text}{U\+Text}} have read only access to the underlying text. ~\newline
+\\
+\hline
+{\em status} & Errors are returned here. For deep clones, U\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+E\+R\+R\+OR will be returned if the text provider is unable to clone the original text. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created clone, or N\+U\+LL if the clone operation failed. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_a19c92d1f33409f077441f31c0d9efee0}\label{utext_8h_a19c92d1f33409f077441f31c0d9efee0}} 
+\index{utext.h@{utext.h}!utext\_close@{utext\_close}}
+\index{utext\_close@{utext\_close}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_close()}{utext\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Close function for \mbox{\hyperlink{struct_u_text}{U\+Text}} instances. Cleans up, releases any resources being held by an open \mbox{\hyperlink{struct_u_text}{U\+Text}}. 
+
+If the \mbox{\hyperlink{struct_u_text}{U\+Text}} was originally allocated by one of the utext\+\_\+open functions, the storage associated with the utext will also be freed. If the \mbox{\hyperlink{struct_u_text}{U\+Text}} storage originated with the application, as it would with a local or static instance, the storage will not be deleted.
+
+An open \mbox{\hyperlink{struct_u_text}{U\+Text}} can be reset to refer to new string by using one of the utext\+\_\+open() functions without first closing the \mbox{\hyperlink{struct_u_text}{U\+Text}}. ~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} to be closed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL if the \mbox{\hyperlink{struct_u_text}{U\+Text}} struct was deleted by the close. If the \mbox{\hyperlink{struct_u_text}{U\+Text}} struct was originally provided by the caller to the open function, it is returned by this function, and may be safely used again in a subsequent utext\+\_\+open.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_a7b8161e82b7a9a2ea3f82483c3d7e032}\label{utext_8h_a7b8161e82b7a9a2ea3f82483c3d7e032}} 
+\index{utext.h@{utext.h}!utext\_copy@{utext\_copy}}
+\index{utext\_copy@{utext\_copy}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_copy()}{utext\_copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Start,  }\item[{int64\+\_\+t}]{native\+Limit,  }\item[{int64\+\_\+t}]{dest\+Index,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{move,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Copy or move a substring from one position to another within the text, while retaining any metadata associated with the text. This function is used to duplicate or reorder substrings. The destination index must not overlap the source range.
+
+The text to be copied or moved is inserted at dest\+Index; it does not replace or overwrite any existing text.
+
+The iteration position is left following the newly inserted text at the destination position.
+
+This function is only available on \mbox{\hyperlink{struct_u_text}{U\+Text}} types that support writing, that is, ones where \mbox{\hyperlink{utext_8h_ad58869db46de600d59ee216bc15081c5}{utext\+\_\+is\+Writable()}} returns true.
+
+When using this function, there should be only a single \mbox{\hyperlink{struct_u_text}{U\+Text}} opened onto the underlying native text string. Behavior after a copy operation on a \mbox{\hyperlink{struct_u_text}{U\+Text}} is undefined in any other additional U\+Texts that refer to the modified string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} representing the text to be operated on. \\
+\hline
+{\em native\+Start} & The native index of the start of the region to be copied or moved \\
+\hline
+{\em native\+Limit} & The native index of the character position following the region to be copied. \\
+\hline
+{\em dest\+Index} & The native destination index to which the source substring is copied or moved. \\
+\hline
+{\em move} & If true, then the substring is moved, not copied/duplicated. \\
+\hline
+{\em status} & receives any error status. Possible errors include U\+\_\+\+N\+O\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON\\
+\hline
+\end{DoxyParams}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_a78ccfe9642204de1263eb7fb18958cc0}\label{utext_8h_a78ccfe9642204de1263eb7fb18958cc0}} 
+\index{utext.h@{utext.h}!utext\_current32@{utext\_current32}}
+\index{utext\_current32@{utext\_current32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_current32()}{utext\_current32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+current32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Get the code point at the current iteration position, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if the iteration has reached the end of the input text.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Unicode code point at the current iterator position. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_ad26995f4242a7d72d64dd8eb2bfaadd8}\label{utext_8h_ad26995f4242a7d72d64dd8eb2bfaadd8}} 
+\index{utext.h@{utext.h}!utext\_equals@{utext\_equals}}
+\index{utext\_equals@{utext\_equals}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_equals()}{utext\_equals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+equals (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+Compare two \mbox{\hyperlink{struct_u_text}{U\+Text}} objects for equality. U\+Texts are equal if they are iterating over the same text, and have the same iteration position within the text. If either or both of the parameters are N\+U\+LL, the comparison is false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first of the two U\+Texts to compare. \\
+\hline
+{\em b} & The other \mbox{\hyperlink{struct_u_text}{U\+Text}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the two U\+Texts are equal. @stable I\+CU 3.\+6 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_a0bd1a2187c8b41be81247e4534e9c6c7}\label{utext_8h_a0bd1a2187c8b41be81247e4534e9c6c7}} 
+\index{utext.h@{utext.h}!utext\_extract@{utext\_extract}}
+\index{utext\_extract@{utext\_extract}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_extract()}{utext\_extract()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+extract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Start,  }\item[{int64\+\_\+t}]{native\+Limit,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Extract text from a \mbox{\hyperlink{struct_u_text}{U\+Text}} into a U\+Char buffer. The range of text to be extracted is specified in the native indices of the \mbox{\hyperlink{struct_u_text}{U\+Text}} provider. These may not necessarily be U\+T\+F-\/16 indices. 
+
+The size (number of 16 bit U\+Chars) of the data to be extracted is returned. The full number of U\+Chars is returned, even when the extracted text is truncated because the specified buffer size is too small. 
+
+The extracted string will (if you are a user) / must (if you are a text provider) be N\+U\+L-\/terminated if there is sufficient space in the destination buffer. This terminating N\+UL is not included in the returned length. 
+
+The iteration index is left at the position following the last extracted character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} from which to extract data. \\
+\hline
+{\em native\+Start} & the native index of the first character to extract.\textbackslash{} If the specified index is out of range, it will be pinned to be within 0 $<$= index $<$= text\+Length \\
+\hline
+{\em native\+Limit} & the native string index of the position following the last character to extract. If the specified index is out of range, it will be pinned to be within 0 $<$= index $<$= text\+Length. native\+Limit must be $>$= native\+Start. \\
+\hline
+{\em dest} & the U\+Char (U\+T\+F-\/16) buffer into which the extracted text is placed \\
+\hline
+{\em dest\+Capacity} & The size, in U\+Chars, of the destination buffer. May be zero for precomputing the required size. \\
+\hline
+{\em status} & receives any error status. U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR\+: the extracted text was truncated because the buffer was too small. Returns number of U\+Chars for preflighting. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of U\+Chars in the data to be extracted. Does not include a trailing N\+UL.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_aa736996b466809d26a358feaee2ddbba}\label{utext_8h_aa736996b466809d26a358feaee2ddbba}} 
+\index{utext.h@{utext.h}!utext\_freeze@{utext\_freeze}}
+\index{utext\_freeze@{utext\_freeze}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_freeze()}{utext\_freeze()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+freeze (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Freeze a \mbox{\hyperlink{struct_u_text}{U\+Text}}. This prevents any modification to the underlying text itself by means of functions operating on this \mbox{\hyperlink{struct_u_text}{U\+Text}}. 
+
+Once frozen, a \mbox{\hyperlink{struct_u_text}{U\+Text}} can not be unfrozen. The intent is to ensure that a the text underlying a frozen \mbox{\hyperlink{struct_u_text}{U\+Text}} wrapper cannot be modified via that \mbox{\hyperlink{struct_u_text}{U\+Text}}. 
+
+Caution\+: freezing a \mbox{\hyperlink{struct_u_text}{U\+Text}} will disable changes made via the specific frozen \mbox{\hyperlink{struct_u_text}{U\+Text}} wrapper only; it will not have any effect on the ability to directly modify the text by bypassing the \mbox{\hyperlink{struct_u_text}{U\+Text}}. Any such backdoor modifications are always an error while \mbox{\hyperlink{struct_u_text}{U\+Text}} access is occurring because the underlying text can get out of sync with \mbox{\hyperlink{struct_u_text}{U\+Text}}\textquotesingle{}s buffering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} to be frozen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utext_8h_ad58869db46de600d59ee216bc15081c5}{utext\+\_\+is\+Writable()}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_aed3d3968c559f5eb4623403ef5f79bc3}\label{utext_8h_aed3d3968c559f5eb4623403ef5f79bc3}} 
+\index{utext.h@{utext.h}!utext\_getNativeIndex@{utext\_getNativeIndex}}
+\index{utext\_getNativeIndex@{utext\_getNativeIndex}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_getNativeIndex()}{utext\_getNativeIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int64\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+get\+Native\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Get the current iterator position, which can range from 0 to the length of the text. The position is a native index into the input text, in whatever format it may have (possibly U\+T\+F-\/8 for example), and may not always be the same as the corresponding U\+Char (U\+T\+F-\/16) index. The returned position will always be aligned to a code point boundary.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the current index position, in the native units of the text provider. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_aebb95c39037d24a3372e4adf8bc466ac}\label{utext_8h_aebb95c39037d24a3372e4adf8bc466ac}} 
+\index{utext.h@{utext.h}!utext\_getPreviousNativeIndex@{utext\_getPreviousNativeIndex}}
+\index{utext\_getPreviousNativeIndex@{utext\_getPreviousNativeIndex}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_getPreviousNativeIndex()}{utext\_getPreviousNativeIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int64\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+get\+Previous\+Native\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Get the native index of the character preceding the current position. If the iteration position is already at the start of the text, zero is returned. The value returned is the same as that obtained from the following sequence, but without the side effect of changing the iteration position.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_u_text}{UText}}  *ut = whatever;}
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{utext\_previous(ut)}
+\DoxyCodeLine{\mbox{\hyperlink{utext_8h_aed3d3968c559f5eb4623403ef5f79bc3}{utext\_getNativeIndex}}(ut);}
+\end{DoxyCode}
+
+
+This function is most useful during forwards iteration, where it will get the native index of the character most recently returned from utext\+\_\+next().
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the native index of the character preceding the current index position, or zero if the current position is at the start of the text. @stable I\+CU 3.\+6 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_a1bfa9beb8290c464ab2126418638dcf2}\label{utext_8h_a1bfa9beb8290c464ab2126418638dcf2}} 
+\index{utext.h@{utext.h}!utext\_hasMetaData@{utext\_hasMetaData}}
+\index{utext\_hasMetaData@{utext\_hasMetaData}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_hasMetaData()}{utext\_hasMetaData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+has\+Meta\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Test whether there is meta data associated with the text. \begin{DoxySeeAlso}{See also}
+Replaceable\+::has\+Meta\+Data()
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & The \mbox{\hyperlink{struct_u_text}{U\+Text}} to be tested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the underlying text includes meta data. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_a72e193ce4c3892d2c01ca10a72609377}\label{utext_8h_a72e193ce4c3892d2c01ca10a72609377}} 
+\index{utext.h@{utext.h}!utext\_isLengthExpensive@{utext\_isLengthExpensive}}
+\index{utext\_isLengthExpensive@{utext\_isLengthExpensive}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_isLengthExpensive()}{utext\_isLengthExpensive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+is\+Length\+Expensive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Return true if calculating the length of the text could be expensive. Finding the length of N\+UL terminated strings is considered to be expensive.
+
+Note that the value of this function may change as the result of other operations on a \mbox{\hyperlink{struct_u_text}{U\+Text}}. Once the length of a string has been discovered, it will no longer be expensive to report it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if determining the length of the text could be time consuming. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_ad58869db46de600d59ee216bc15081c5}\label{utext_8h_ad58869db46de600d59ee216bc15081c5}} 
+\index{utext.h@{utext.h}!utext\_isWritable@{utext\_isWritable}}
+\index{utext\_isWritable@{utext\_isWritable}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_isWritable()}{utext\_isWritable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+is\+Writable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Return true if the text can be written (modified) with \mbox{\hyperlink{utext_8h_af297590a0fd52fa23f6349c87f9b849d}{utext\+\_\+replace()}} or \mbox{\hyperlink{utext_8h_a7b8161e82b7a9a2ea3f82483c3d7e032}{utext\+\_\+copy()}}. For the text to be writable, the text provider must be of a type that supports writing and the \mbox{\hyperlink{struct_u_text}{U\+Text}} must not be frozen.
+
+Attempting to modify text when utext\+\_\+is\+Writeable() is false will fail -\/ the text will not be modified, and an error will be returned from the function that attempted the modification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} to be tested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the text is modifiable.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utext_8h_aa736996b466809d26a358feaee2ddbba}{utext\+\_\+freeze()}} 
+
+\mbox{\hyperlink{utext_8h_af297590a0fd52fa23f6349c87f9b849d}{utext\+\_\+replace()}} 
+
+\mbox{\hyperlink{utext_8h_a7b8161e82b7a9a2ea3f82483c3d7e032}{utext\+\_\+copy()}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_ac2457cddd35d47659b1cf0b292d0f9db}\label{utext_8h_ac2457cddd35d47659b1cf0b292d0f9db}} 
+\index{utext.h@{utext.h}!utext\_moveIndex32@{utext\_moveIndex32}}
+\index{utext\_moveIndex32@{utext\_moveIndex32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_moveIndex32()}{utext\_moveIndex32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+move\+Index32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int32\+\_\+t}]{delta }\end{DoxyParamCaption})}
+
+Move the iterator position by delta code points. The number of code points is a signed number; a negative delta will move the iterator backwards, towards the start of the text. 
+
+The index is moved by {\ttfamily delta} code points forward or backward, but no further backward than to 0 and no further forward than to \mbox{\hyperlink{utext_8h_a867b62de7e7f8a985fe8e002005fe360}{utext\+\_\+native\+Length()}}. The resulting index value will be in between 0 and length, inclusive.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+{\em delta} & the signed number of code points to move the iteration position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the position could be moved the requested number of positions while staying within the range \mbox{[}0 -\/ text length\mbox{]}. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_a867b62de7e7f8a985fe8e002005fe360}\label{utext_8h_a867b62de7e7f8a985fe8e002005fe360}} 
+\index{utext.h@{utext.h}!utext\_nativeLength@{utext\_nativeLength}}
+\index{utext\_nativeLength@{utext\_nativeLength}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_nativeLength()}{utext\_nativeLength()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int64\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+native\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Get the length of the text. Depending on the characteristics of the underlying text representation, this may be expensive. ~\newline
+ \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utext_8h_a72e193ce4c3892d2c01ca10a72609377}{utext\+\_\+is\+Length\+Expensive()}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of the text, expressed in native units.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_aee71d3711b9d714595663285de7f74da}\label{utext_8h_aee71d3711b9d714595663285de7f74da}} 
+\index{utext.h@{utext.h}!utext\_next32@{utext\_next32}}
+\index{utext\_next32@{utext\_next32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_next32()}{utext\_next32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+next32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Get the code point at the current iteration position of the \mbox{\hyperlink{struct_u_text}{U\+Text}}, and advance the position to the first index following the character.
+
+If the position is at the end of the text (the index following the last character, which is also the length of the text), return U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) and do not advance the index.
+
+This is a post-\/increment operation.
+
+An inline macro version of this function, \mbox{\hyperlink{utext_8h_aa4b973aeeb5f10f8aec454545f85b6a2}{U\+T\+E\+X\+T\+\_\+\+N\+E\+X\+T32()}}, is available for performance critical use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Unicode code point at the iteration position. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utext_8h_aa4b973aeeb5f10f8aec454545f85b6a2}{U\+T\+E\+X\+T\+\_\+\+N\+E\+X\+T32}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_a2bb86a61936bee0d4cca0a84898d26cc}\label{utext_8h_a2bb86a61936bee0d4cca0a84898d26cc}} 
+\index{utext.h@{utext.h}!utext\_next32From@{utext\_next32From}}
+\index{utext\_next32From@{utext\_next32From}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_next32From()}{utext\_next32From()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+next32\+From (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Index }\end{DoxyParamCaption})}
+
+Set the iteration index and return the code point at that index. Leave the iteration index at the start of the following code point.
+
+This function is the most efficient and convenient way to begin a forward iteration. The results are identical to the those from the sequence 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{utext\_setIndex();}
+\DoxyCodeLine{\mbox{\hyperlink{utext_8h_aee71d3711b9d714595663285de7f74da}{utext\_next32}}();}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+{\em native\+Index} & Iteration index, in the native units of the text provider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code point which starts at or before index, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if it is out of bounds. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_a2fb9aa1b6501c97be2ef89f5f79bc270}\label{utext_8h_a2fb9aa1b6501c97be2ef89f5f79bc270}} 
+\index{utext.h@{utext.h}!utext\_openUChars@{utext\_openUChars}}
+\index{utext\_openUChars@{utext\_openUChars}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_openUChars()}{utext\_openUChars()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+open\+U\+Chars (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{int64\+\_\+t}]{length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Open a read-\/only \mbox{\hyperlink{struct_u_text}{U\+Text}} for U\+Char $\ast$ string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & Pointer to a \mbox{\hyperlink{struct_u_text}{U\+Text}} struct. If N\+U\+LL, a new \mbox{\hyperlink{struct_u_text}{U\+Text}} will be created. If non-\/\+N\+U\+LL, must refer to an initialized \mbox{\hyperlink{struct_u_text}{U\+Text}} struct, which will then be reset to reference the specified U\+Char string. \\
+\hline
+{\em s} & A U\+Char (U\+T\+F-\/16) string \\
+\hline
+{\em length} & The number of U\+Chars in the input string, or -\/1 if the string is zero terminated. \\
+\hline
+{\em status} & Errors are returned here. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{struct_u_text}{U\+Text}}. If a pre-\/allocated \mbox{\hyperlink{struct_u_text}{U\+Text}} was provided, it will always be used and returned. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_ac3fc67a15cc31e492b4c5a27c4a6d283}\label{utext_8h_ac3fc67a15cc31e492b4c5a27c4a6d283}} 
+\index{utext.h@{utext.h}!utext\_openUTF8@{utext\_openUTF8}}
+\index{utext\_openUTF8@{utext\_openUTF8}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_openUTF8()}{utext\_openUTF8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+open\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{const char $\ast$}]{s,  }\item[{int64\+\_\+t}]{length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Open a read-\/only \mbox{\hyperlink{struct_u_text}{U\+Text}} implementation for U\+T\+F-\/8 strings.
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & Pointer to a \mbox{\hyperlink{struct_u_text}{U\+Text}} struct. If N\+U\+LL, a new \mbox{\hyperlink{struct_u_text}{U\+Text}} will be created. If non-\/\+N\+U\+LL, must refer to an initialized \mbox{\hyperlink{struct_u_text}{U\+Text}} struct, which will then be reset to reference the specified U\+T\+F-\/8 string. \\
+\hline
+{\em s} & A U\+T\+F-\/8 string. Must not be N\+U\+LL. \\
+\hline
+{\em length} & The length of the U\+T\+F-\/8 string in bytes, or -\/1 if the string is zero terminated. \\
+\hline
+{\em status} & Errors are returned here. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{struct_u_text}{U\+Text}}. If a pre-\/allocated \mbox{\hyperlink{struct_u_text}{U\+Text}} was provided, it will always be used and returned. @stable I\+CU 3.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utext_8h_afa1683c9a786776e9d76e848d2427775}\label{utext_8h_afa1683c9a786776e9d76e848d2427775}} 
+\index{utext.h@{utext.h}!utext\_previous32@{utext\_previous32}}
+\index{utext\_previous32@{utext\_previous32}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_previous32()}{utext\_previous32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+previous32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut }\end{DoxyParamCaption})}
+
+Move the iterator position to the character (code point) whose index precedes the current position, and return that character. This is a pre-\/decrement operation.
+
+If the initial position is at the start of the text (index of 0) return U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1), and leave the position unchanged.
+
+An inline macro version of this function, \mbox{\hyperlink{utext_8h_a8aa3d9bae7b252622fe8e70e87758205}{U\+T\+E\+X\+T\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S32()}}, is available for performance critical use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the previous U\+Char32 code point, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if the iteration has reached the start of the text. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utext_8h_a8aa3d9bae7b252622fe8e70e87758205}{U\+T\+E\+X\+T\+\_\+\+P\+R\+E\+V\+I\+O\+U\+S32}} @stable I\+CU 3.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utext_8h_aba463eb1706a2f8a4c7404eed9548101}\label{utext_8h_aba463eb1706a2f8a4c7404eed9548101}} 
+\index{utext.h@{utext.h}!utext\_previous32From@{utext\_previous32From}}
+\index{utext\_previous32From@{utext\_previous32From}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_previous32From()}{utext\_previous32From()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+previous32\+From (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Index }\end{DoxyParamCaption})}
+
+Set the iteration index, and return the code point preceding the one specified by the initial index. Leave the iteration position at the start of the returned code point.
+
+This function is the most efficient and convenient way to begin a backwards iteration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+{\em native\+Index} & Iteration index in the native units of the text provider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Code point preceding the one at the initial index, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL (-\/1) if it is out of bounds.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_af297590a0fd52fa23f6349c87f9b849d}\label{utext_8h_af297590a0fd52fa23f6349c87f9b849d}} 
+\index{utext.h@{utext.h}!utext\_replace@{utext\_replace}}
+\index{utext\_replace@{utext\_replace}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_replace()}{utext\_replace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Start,  }\item[{int64\+\_\+t}]{native\+Limit,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{replacement\+Text,  }\item[{int32\+\_\+t}]{replacement\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Replace a range of the original text with a replacement text.
+
+Leaves the current iteration position at the position following the newly inserted replacement text.
+
+This function is only available on \mbox{\hyperlink{struct_u_text}{U\+Text}} types that support writing, that is, ones where \mbox{\hyperlink{utext_8h_ad58869db46de600d59ee216bc15081c5}{utext\+\_\+is\+Writable()}} returns true.
+
+When using this function, there should be only a single \mbox{\hyperlink{struct_u_text}{U\+Text}} opened onto the underlying native text string. Behavior after a replace operation on a \mbox{\hyperlink{struct_u_text}{U\+Text}} is undefined for any other additional U\+Texts that refer to the modified string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the \mbox{\hyperlink{struct_u_text}{U\+Text}} representing the text to be operated on. \\
+\hline
+{\em native\+Start} & the native index of the start of the region to be replaced \\
+\hline
+{\em native\+Limit} & the native index of the character following the region to be replaced. \\
+\hline
+{\em replacement\+Text} & pointer to the replacement text \\
+\hline
+{\em replacement\+Length} & length of the replacement text, or -\/1 if the text is N\+UL terminated. \\
+\hline
+{\em status} & receives any error status. Possible errors include U\+\_\+\+N\+O\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+E\+R\+M\+I\+S\+S\+I\+ON\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The signed number of (native) storage units by which the length of the text expanded or contracted.
+\end{DoxyReturn}
+@stable I\+CU 3.\+4 \mbox{\Hypertarget{utext_8h_afb8307d30ee34c5b2eb61f62c6a56c37}\label{utext_8h_afb8307d30ee34c5b2eb61f62c6a56c37}} 
+\index{utext.h@{utext.h}!utext\_setNativeIndex@{utext\_setNativeIndex}}
+\index{utext\_setNativeIndex@{utext\_setNativeIndex}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_setNativeIndex()}{utext\_setNativeIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+set\+Native\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int64\+\_\+t}]{native\+Index }\end{DoxyParamCaption})}
+
+Set the current iteration position to the nearest code point boundary at or preceding the specified index. The index is in the native units of the original input text. If the index is out of range, it will be pinned to be within the range of the input text. 
+
+It will usually be more efficient to begin an iteration using the functions \mbox{\hyperlink{utext_8h_a2bb86a61936bee0d4cca0a84898d26cc}{utext\+\_\+next32\+From()}} or \mbox{\hyperlink{utext_8h_aba463eb1706a2f8a4c7404eed9548101}{utext\+\_\+previous32\+From()}} rather than set\+Index(). 
+
+Moving the index position to an adjacent character is best done with \mbox{\hyperlink{utext_8h_aee71d3711b9d714595663285de7f74da}{utext\+\_\+next32()}}, \mbox{\hyperlink{utext_8h_afa1683c9a786776e9d76e848d2427775}{utext\+\_\+previous32()}} or \mbox{\hyperlink{utext_8h_ac2457cddd35d47659b1cf0b292d0f9db}{utext\+\_\+move\+Index32()}}. Attempting to do direct arithmetic on the index position is complicated by the fact that the size (in native units) of a character depends on the underlying representation of the character (U\+T\+F-\/8, U\+T\+F-\/16, U\+T\+F-\/32, arbitrary codepage), and is not easily knowable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & the text to be accessed. \\
+\hline
+{\em native\+Index} & the native unit index of the new iteration position. @stable I\+CU 3.\+4 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utext_8h_a901cf6731d8881b980e555cae71fa698}\label{utext_8h_a901cf6731d8881b980e555cae71fa698}} 
+\index{utext.h@{utext.h}!utext\_setup@{utext\_setup}}
+\index{utext\_setup@{utext\_setup}!utext.h@{utext.h}}
+\doxysubsubsection{\texorpdfstring{utext\_setup()}{utext\_setup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_text}{U\+Text}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 utext\+\_\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_text}{U\+Text}} $\ast$}]{ut,  }\item[{int32\+\_\+t}]{extra\+Space,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+Common function for use by Text Provider implementations to allocate and/or initialize a new \mbox{\hyperlink{struct_u_text}{U\+Text}} struct. To be called in the implementation of utext\+\_\+open() functions. If the supplied \mbox{\hyperlink{struct_u_text}{U\+Text}} parameter is null, a new \mbox{\hyperlink{struct_u_text}{U\+Text}} struct will be allocated on the heap. If the supplied \mbox{\hyperlink{struct_u_text}{U\+Text}} is already open, the provider\textquotesingle{}s close function will be called so that the struct can be reused by the open that is in progress.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ut} & pointer to a \mbox{\hyperlink{struct_u_text}{U\+Text}} struct to be re-\/used, or null if a new \mbox{\hyperlink{struct_u_text}{U\+Text}} should be allocated. \\
+\hline
+{\em extra\+Space} & The amount of additional space to be allocated as part of this \mbox{\hyperlink{struct_u_text}{U\+Text}}, for use by types of providers that require additional storage. \\
+\hline
+{\em status} & Errors are returned here. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the \mbox{\hyperlink{struct_u_text}{U\+Text}}, allocated if necessary, with extra space set up if requested. @stable I\+CU 3.\+4 
+\end{DoxyReturn}

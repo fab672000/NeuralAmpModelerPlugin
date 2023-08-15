@@ -1,0 +1,39 @@
+\hypertarget{class_sk_checksum}{}\doxysection{Sk\+Checksum Class Reference}
+\label{class_sk_checksum}\index{SkChecksum@{SkChecksum}}
+Inheritance diagram for Sk\+Checksum\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_checksum}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{class_sk_checksum_aa77cf5388a6047b0f1f46d8b4d4750fb}{Mix}} (uint32\+\_\+t hash)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{class_sk_checksum_a9f72277683aae55d1588c9ec84d0d3d5}{Cheap\+Mix}} (uint32\+\_\+t hash)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_checksum_a9f72277683aae55d1588c9ec84d0d3d5}\label{class_sk_checksum_a9f72277683aae55d1588c9ec84d0d3d5}} 
+\index{SkChecksum@{SkChecksum}!CheapMix@{CheapMix}}
+\index{CheapMix@{CheapMix}!SkChecksum@{SkChecksum}}
+\doxysubsubsection{\texorpdfstring{CheapMix()}{CheapMix()}}
+{\footnotesize\ttfamily static uint32\+\_\+t Sk\+Checksum\+::\+Cheap\+Mix (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+uint32\+\_\+t -\/$>$ uint32\+\_\+t hash, useful for when you\textquotesingle{}re about to trucate this hash but you suspect its low bits aren\textquotesingle{}t well mixed.
+
+This version is 2-\/lines cheaper than Mix, but seems to be sufficient for the font cache. \mbox{\Hypertarget{class_sk_checksum_aa77cf5388a6047b0f1f46d8b4d4750fb}\label{class_sk_checksum_aa77cf5388a6047b0f1f46d8b4d4750fb}} 
+\index{SkChecksum@{SkChecksum}!Mix@{Mix}}
+\index{Mix@{Mix}!SkChecksum@{SkChecksum}}
+\doxysubsubsection{\texorpdfstring{Mix()}{Mix()}}
+{\footnotesize\ttfamily static uint32\+\_\+t Sk\+Checksum\+::\+Mix (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+uint32\+\_\+t -\/$>$ uint32\+\_\+t hash, useful for when you\textquotesingle{}re about to trucate this hash but you suspect its low bits aren\textquotesingle{}t well mixed.
+
+This is the Murmur3 finalizer. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/Sk\+Checksum.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,378 @@
+\hypertarget{class_eigen_1_1_polynomial_solver_base}{}\doxysection{Eigen\+::Polynomial\+Solver\+Base$<$ Scalar\+\_\+, Deg\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1_polynomial_solver_base}\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+
+
+Defined to be inherited by polynomial solvers\+: it provides convenient methods such as.  
+
+
+
+
+{\ttfamily \#include $<$Polynomial\+Solver.\+h$>$}
+
+Inheritance diagram for Eigen\+::Polynomial\+Solver\+Base$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eigen_1_1_polynomial_solver_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_accee5b1724d036f3f8aa2dd01517a70c}\label{class_eigen_1_1_polynomial_solver_base_accee5b1724d036f3f8aa2dd01517a70c}} 
+typedef Scalar\+\_\+ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ac7554829cf7903bd9247f78ae882f9f3}\label{class_eigen_1_1_polynomial_solver_base_ac7554829cf7903bd9247f78ae882f9f3}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a71bdbc4d3075a8f9a4e646ab9bb38a98}\label{class_eigen_1_1_polynomial_solver_base_a71bdbc4d3075a8f9a4e646ab9bb38a98}} 
+typedef std\+::complex$<$ Real\+Scalar $>$ {\bfseries Root\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a3dbb24ded42a92da95cb6f619949cbaa}\label{class_eigen_1_1_polynomial_solver_base_a3dbb24ded42a92da95cb6f619949cbaa}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Root\+Type, Deg\+\_\+, 1 $>$ {\bfseries Roots\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_aeeb1e150056adfd8c51c524e3538c3a7}\label{class_eigen_1_1_polynomial_solver_base_aeeb1e150056adfd8c51c524e3538c3a7}} 
+typedef Dense\+Index {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_accee5b1724d036f3f8aa2dd01517a70c}\label{class_eigen_1_1_polynomial_solver_base_accee5b1724d036f3f8aa2dd01517a70c}} 
+typedef Scalar\+\_\+ {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ac7554829cf7903bd9247f78ae882f9f3}\label{class_eigen_1_1_polynomial_solver_base_ac7554829cf7903bd9247f78ae882f9f3}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a71bdbc4d3075a8f9a4e646ab9bb38a98}\label{class_eigen_1_1_polynomial_solver_base_a71bdbc4d3075a8f9a4e646ab9bb38a98}} 
+typedef std\+::complex$<$ Real\+Scalar $>$ {\bfseries Root\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a3dbb24ded42a92da95cb6f619949cbaa}\label{class_eigen_1_1_polynomial_solver_base_a3dbb24ded42a92da95cb6f619949cbaa}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Root\+Type, Deg\+\_\+, 1 $>$ {\bfseries Roots\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_aeeb1e150056adfd8c51c524e3538c3a7}\label{class_eigen_1_1_polynomial_solver_base_aeeb1e150056adfd8c51c524e3538c3a7}} 
+typedef Dense\+Index {\bfseries Index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a6995c5dc447a1dd48edc75458506ea25}\label{class_eigen_1_1_polynomial_solver_base_a6995c5dc447a1dd48edc75458506ea25}} 
+{\footnotesize template$<$typename Other\+Polynomial $>$ }\\{\bfseries Polynomial\+Solver\+Base} (const Other\+Polynomial \&poly)
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Roots\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_ae315ff89bf2811db0b9378fdf9bdae11}{roots}} () const
+\item 
+{\footnotesize template$<$typename Stl\+\_\+back\+\_\+insertion\+\_\+sequence $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a8dc272fb0a2139fd2b5454d1e947a7da}{real\+Roots}} (Stl\+\_\+back\+\_\+insertion\+\_\+sequence \&bi\+\_\+seq, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Root\+Type \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a6d8e134d014023b692b0cabea57b8d99}{greatest\+Root}} () const
+\item 
+const Root\+Type \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a7512d659658ff8b70f333768f9e4bdf6}{smallest\+Root}} () const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_ade5cd822a659dc18f4e8b674d477bec0}{abs\+Greatest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_ad2438282277bbb62960c3ad1f286052b}{abs\+Smallest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a85d21a3516e60e6af12898b36e7a016f}{greatest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_abacd1d52145ce7bdc6f070380eac3b2d}{smallest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a6995c5dc447a1dd48edc75458506ea25}\label{class_eigen_1_1_polynomial_solver_base_a6995c5dc447a1dd48edc75458506ea25}} 
+{\footnotesize template$<$typename Other\+Polynomial $>$ }\\{\bfseries Polynomial\+Solver\+Base} (const Other\+Polynomial \&poly)
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Roots\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_ae315ff89bf2811db0b9378fdf9bdae11}{roots}} () const
+\item 
+{\footnotesize template$<$typename Stl\+\_\+back\+\_\+insertion\+\_\+sequence $>$ }\\void \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a8dc272fb0a2139fd2b5454d1e947a7da}{real\+Roots}} (Stl\+\_\+back\+\_\+insertion\+\_\+sequence \&bi\+\_\+seq, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Root\+Type \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a6d8e134d014023b692b0cabea57b8d99}{greatest\+Root}} () const
+\item 
+const Root\+Type \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a7512d659658ff8b70f333768f9e4bdf6}{smallest\+Root}} () const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_ade5cd822a659dc18f4e8b674d477bec0}{abs\+Greatest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_ad2438282277bbb62960c3ad1f286052b}{abs\+Smallest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_a85d21a3516e60e6af12898b36e7a016f}{greatest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const Real\+Scalar \& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base_abacd1d52145ce7bdc6f070380eac3b2d}{smallest\+Real\+Root}} (bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a1fc7434815bfd7fc91072454332298a5}\label{class_eigen_1_1_polynomial_solver_base_a1fc7434815bfd7fc91072454332298a5}} 
+{\footnotesize template$<$typename Other\+Polynomial $>$ }\\void {\bfseries set\+Polynomial} (const Other\+Polynomial \&poly)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a840296d31e56c54d26d43a51caf270c2}\label{class_eigen_1_1_polynomial_solver_base_a840296d31e56c54d26d43a51caf270c2}} 
+{\footnotesize template$<$typename squared\+Norm\+Binary\+Predicate $>$ }\\const Root\+Type \& {\bfseries select\+Complex\+Root\+\_\+with\+Respect\+To\+Norm} (squared\+Norm\+Binary\+Predicate \&pred) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a892a4da25f03b971f64b8b6d56d7cfdd}\label{class_eigen_1_1_polynomial_solver_base_a892a4da25f03b971f64b8b6d56d7cfdd}} 
+{\footnotesize template$<$typename squared\+Real\+Part\+Binary\+Predicate $>$ }\\const Real\+Scalar \& {\bfseries select\+Real\+Root\+\_\+with\+Respect\+To\+Abs\+Real\+Part} (squared\+Real\+Part\+Binary\+Predicate \&pred, bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a604d09d75ba15a5af23188365fbb8fde}\label{class_eigen_1_1_polynomial_solver_base_a604d09d75ba15a5af23188365fbb8fde}} 
+{\footnotesize template$<$typename Real\+Part\+Binary\+Predicate $>$ }\\const Real\+Scalar \& {\bfseries select\+Real\+Root\+\_\+with\+Respect\+To\+Real\+Part} (Real\+Part\+Binary\+Predicate \&pred, bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a1fc7434815bfd7fc91072454332298a5}\label{class_eigen_1_1_polynomial_solver_base_a1fc7434815bfd7fc91072454332298a5}} 
+{\footnotesize template$<$typename Other\+Polynomial $>$ }\\void {\bfseries set\+Polynomial} (const Other\+Polynomial \&poly)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a840296d31e56c54d26d43a51caf270c2}\label{class_eigen_1_1_polynomial_solver_base_a840296d31e56c54d26d43a51caf270c2}} 
+{\footnotesize template$<$typename squared\+Norm\+Binary\+Predicate $>$ }\\const Root\+Type \& {\bfseries select\+Complex\+Root\+\_\+with\+Respect\+To\+Norm} (squared\+Norm\+Binary\+Predicate \&pred) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a892a4da25f03b971f64b8b6d56d7cfdd}\label{class_eigen_1_1_polynomial_solver_base_a892a4da25f03b971f64b8b6d56d7cfdd}} 
+{\footnotesize template$<$typename squared\+Real\+Part\+Binary\+Predicate $>$ }\\const Real\+Scalar \& {\bfseries select\+Real\+Root\+\_\+with\+Respect\+To\+Abs\+Real\+Part} (squared\+Real\+Part\+Binary\+Predicate \&pred, bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a604d09d75ba15a5af23188365fbb8fde}\label{class_eigen_1_1_polynomial_solver_base_a604d09d75ba15a5af23188365fbb8fde}} 
+{\footnotesize template$<$typename Real\+Part\+Binary\+Predicate $>$ }\\const Real\+Scalar \& {\bfseries select\+Real\+Root\+\_\+with\+Respect\+To\+Real\+Part} (Real\+Part\+Binary\+Predicate \&pred, bool \&has\+Areal\+Root, const Real\+Scalar \&abs\+Imaginary\+Threshold=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ad995a8122ef108adbb408cbd11aefe4f}\label{class_eigen_1_1_polynomial_solver_base_ad995a8122ef108adbb408cbd11aefe4f}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Roots\+Type}} {\bfseries m\+\_\+roots}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+\_\+, int Deg\+\_\+$>$\newline
+class Eigen\+::\+Polynomial\+Solver\+Base$<$ Scalar\+\_\+, Deg\+\_\+ $>$}
+
+Defined to be inherited by polynomial solvers\+: it provides convenient methods such as. 
+
+
+\begin{DoxyItemize}
+\item real roots,
+\item greatest, smallest complex roots,
+\item real roots with greatest, smallest absolute real value,
+\item greatest, smallest real roots.
+\end{DoxyItemize}
+
+It stores the set of roots as a vector of complexes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ade5cd822a659dc18f4e8b674d477bec0}\label{class_eigen_1_1_polynomial_solver_base_ade5cd822a659dc18f4e8b674d477bec0}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!absGreatestRealRoot@{absGreatestRealRoot}}
+\index{absGreatestRealRoot@{absGreatestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{absGreatestRealRoot()}{absGreatestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::abs\+Greatest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a real root with greatest absolute magnitude. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ade5cd822a659dc18f4e8b674d477bec0}\label{class_eigen_1_1_polynomial_solver_base_ade5cd822a659dc18f4e8b674d477bec0}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!absGreatestRealRoot@{absGreatestRealRoot}}
+\index{absGreatestRealRoot@{absGreatestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{absGreatestRealRoot()}{absGreatestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::abs\+Greatest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a real root with greatest absolute magnitude. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ad2438282277bbb62960c3ad1f286052b}\label{class_eigen_1_1_polynomial_solver_base_ad2438282277bbb62960c3ad1f286052b}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!absSmallestRealRoot@{absSmallestRealRoot}}
+\index{absSmallestRealRoot@{absSmallestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{absSmallestRealRoot()}{absSmallestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::abs\+Smallest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a real root with smallest absolute magnitude. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ad2438282277bbb62960c3ad1f286052b}\label{class_eigen_1_1_polynomial_solver_base_ad2438282277bbb62960c3ad1f286052b}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!absSmallestRealRoot@{absSmallestRealRoot}}
+\index{absSmallestRealRoot@{absSmallestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{absSmallestRealRoot()}{absSmallestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::abs\+Smallest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+a real root with smallest absolute magnitude. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a85d21a3516e60e6af12898b36e7a016f}\label{class_eigen_1_1_polynomial_solver_base_a85d21a3516e60e6af12898b36e7a016f}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!greatestRealRoot@{greatestRealRoot}}
+\index{greatestRealRoot@{greatestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{greatestRealRoot()}{greatestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::greatest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the real root with greatest value. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a85d21a3516e60e6af12898b36e7a016f}\label{class_eigen_1_1_polynomial_solver_base_a85d21a3516e60e6af12898b36e7a016f}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!greatestRealRoot@{greatestRealRoot}}
+\index{greatestRealRoot@{greatestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{greatestRealRoot()}{greatestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::greatest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the real root with greatest value. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a6d8e134d014023b692b0cabea57b8d99}\label{class_eigen_1_1_polynomial_solver_base_a6d8e134d014023b692b0cabea57b8d99}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!greatestRoot@{greatestRoot}}
+\index{greatestRoot@{greatestRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{greatestRoot()}{greatestRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Root\+Type\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::greatest\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the complex root with greatest norm. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a6d8e134d014023b692b0cabea57b8d99}\label{class_eigen_1_1_polynomial_solver_base_a6d8e134d014023b692b0cabea57b8d99}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!greatestRoot@{greatestRoot}}
+\index{greatestRoot@{greatestRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{greatestRoot()}{greatestRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Root\+Type\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::greatest\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the complex root with greatest norm. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a8dc272fb0a2139fd2b5454d1e947a7da}\label{class_eigen_1_1_polynomial_solver_base_a8dc272fb0a2139fd2b5454d1e947a7da}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!realRoots@{realRoots}}
+\index{realRoots@{realRoots}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{realRoots()}{realRoots()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+template$<$typename Stl\+\_\+back\+\_\+insertion\+\_\+sequence $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::real\+Roots (\begin{DoxyParamCaption}\item[{Stl\+\_\+back\+\_\+insertion\+\_\+sequence \&}]{bi\+\_\+seq,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear and fills the back insertion sequence with the real roots of the polynomial i.\+e. the real part of the complex roots that have an imaginary part which absolute value is smaller than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em bi\+\_\+seq} & \+: the back insertion sequence (stl concept) \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: the maximum bound of the imaginary part of a complex number that is considered as real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a8dc272fb0a2139fd2b5454d1e947a7da}\label{class_eigen_1_1_polynomial_solver_base_a8dc272fb0a2139fd2b5454d1e947a7da}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!realRoots@{realRoots}}
+\index{realRoots@{realRoots}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{realRoots()}{realRoots()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+template$<$typename Stl\+\_\+back\+\_\+insertion\+\_\+sequence $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::real\+Roots (\begin{DoxyParamCaption}\item[{Stl\+\_\+back\+\_\+insertion\+\_\+sequence \&}]{bi\+\_\+seq,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear and fills the back insertion sequence with the real roots of the polynomial i.\+e. the real part of the complex roots that have an imaginary part which absolute value is smaller than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em bi\+\_\+seq} & \+: the back insertion sequence (stl concept) \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: the maximum bound of the imaginary part of a complex number that is considered as real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ae315ff89bf2811db0b9378fdf9bdae11}\label{class_eigen_1_1_polynomial_solver_base_ae315ff89bf2811db0b9378fdf9bdae11}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!roots@{roots}}
+\index{roots@{roots}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{roots()}{roots()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Roots\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::roots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the complex roots of the polynomial 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_ae315ff89bf2811db0b9378fdf9bdae11}\label{class_eigen_1_1_polynomial_solver_base_ae315ff89bf2811db0b9378fdf9bdae11}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!roots@{roots}}
+\index{roots@{roots}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{roots()}{roots()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_matrix}{Roots\+Type}}\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::roots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the complex roots of the polynomial 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_abacd1d52145ce7bdc6f070380eac3b2d}\label{class_eigen_1_1_polynomial_solver_base_abacd1d52145ce7bdc6f070380eac3b2d}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!smallestRealRoot@{smallestRealRoot}}
+\index{smallestRealRoot@{smallestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{smallestRealRoot()}{smallestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::smallest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the real root with smallest value. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_abacd1d52145ce7bdc6f070380eac3b2d}\label{class_eigen_1_1_polynomial_solver_base_abacd1d52145ce7bdc6f070380eac3b2d}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!smallestRealRoot@{smallestRealRoot}}
+\index{smallestRealRoot@{smallestRealRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{smallestRealRoot()}{smallestRealRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Real\+Scalar\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::smallest\+Real\+Root (\begin{DoxyParamCaption}\item[{bool \&}]{has\+Areal\+Root,  }\item[{const Real\+Scalar \&}]{abs\+Imaginary\+Threshold = {\ttfamily \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+:\+:dummy\+\_\+precision()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the real root with smallest value. A real root is defined as the real part of a complex root with absolute imaginary part smallest than abs\+Imaginary\+Threshold. abs\+Imaginary\+Threshold takes the dummy\+\_\+precision associated with the Scalar\+\_\+ template parameter of the \mbox{\hyperlink{class_eigen_1_1_polynomial_solver}{Polynomial\+Solver}} class as the default value. If no real root is found the boolean has\+Areal\+Root is set to false and the real part of the root with smallest absolute imaginary part is returned instead.
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em has\+Areal\+Root} & \+: boolean true if a real root is found according to the abs\+Imaginary\+Threshold criterion, false otherwise. \\
+\hline
+\mbox{\texttt{ in}}  & {\em abs\+Imaginary\+Threshold} & \+: threshold on the absolute imaginary part to decide whether or not a root is real. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a7512d659658ff8b70f333768f9e4bdf6}\label{class_eigen_1_1_polynomial_solver_base_a7512d659658ff8b70f333768f9e4bdf6}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!smallestRoot@{smallestRoot}}
+\index{smallestRoot@{smallestRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{smallestRoot()}{smallestRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Root\+Type\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::smallest\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the complex root with smallest norm. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_polynomial_solver_base_a7512d659658ff8b70f333768f9e4bdf6}\label{class_eigen_1_1_polynomial_solver_base_a7512d659658ff8b70f333768f9e4bdf6}} 
+\index{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}!smallestRoot@{smallestRoot}}
+\index{smallestRoot@{smallestRoot}!Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$@{Eigen::PolynomialSolverBase$<$ Scalar\_, Deg\_ $>$}}
+\doxysubsubsection{\texorpdfstring{smallestRoot()}{smallestRoot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Deg\+\_\+$>$ \\
+const Root\+Type\& \mbox{\hyperlink{class_eigen_1_1_polynomial_solver_base}{Eigen\+::\+Polynomial\+Solver\+Base}}$<$ Scalar\+\_\+, Deg\+\_\+ $>$\+::smallest\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the complex root with smallest norm. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/src/\+Polynomials/Polynomial\+Solver.\+h\end{DoxyCompactItemize}

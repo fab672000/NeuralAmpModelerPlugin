@@ -1,0 +1,68 @@
+\hypertarget{classoboe_1_1_default_stream_values}{}\doxysection{oboe\+::Default\+Stream\+Values Class Reference}
+\label{classoboe_1_1_default_stream_values}\index{oboe::DefaultStreamValues@{oboe::DefaultStreamValues}}
+
+
+{\ttfamily \#include $<$Definitions.\+h$>$}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_default_stream_values_a46a5d9a653f2153f618cadcab764e1b1}{Sample\+Rate}} = 48000
+\item 
+static int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_default_stream_values_ab5ea5576699cebc56193f5c297d3e300}{Frames\+Per\+Burst}} = 192
+\item 
+static int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_default_stream_values_ad5dce538d5963c81bf58350ab730962d}{Channel\+Count}} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+On A\+PI 16 to 26 Open\+SL ES will be used. When using Open\+SL ES the optimal values for sample\+Rate and frames\+Per\+Burst are not known by the native code. On A\+PI 17+ these values should be obtained from the Audio\+Manager using this code\+:
+
+
+\begin{DoxyPre}{\ttfamily 
+// Note that this technique only works for built-\/in speakers and headphones.
+AudioManager myAudioMgr = (AudioManager) getSystemService(Context.AUDIO\_SERVICE);
+String sampleRateStr = myAudioMgr.getProperty(AudioManager.PROPERTY\_OUTPUT\_SAMPLE\_RATE);
+int defaultSampleRate = Integer.parseInt(sampleRateStr);
+String framesPerBurstStr = myAudioMgr.getProperty(AudioManager.PROPERTY\_OUTPUT\_FRAMES\_PER\_BUFFER);
+int defaultFramesPerBurst = Integer.parseInt(framesPerBurstStr);
+}\end{DoxyPre}
+
+
+It can then be passed down to Oboe through J\+NI.
+
+A\+Audio will get the optimal frames\+Per\+Burst from the H\+AL and will ignore this value. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoboe_1_1_default_stream_values_ad5dce538d5963c81bf58350ab730962d}\label{classoboe_1_1_default_stream_values_ad5dce538d5963c81bf58350ab730962d}} 
+\index{oboe::DefaultStreamValues@{oboe::DefaultStreamValues}!ChannelCount@{ChannelCount}}
+\index{ChannelCount@{ChannelCount}!oboe::DefaultStreamValues@{oboe::DefaultStreamValues}}
+\doxysubsubsection{\texorpdfstring{ChannelCount}{ChannelCount}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Default\+Stream\+Values\+::\+Channel\+Count = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+The default channel count to use when opening new audio streams \mbox{\Hypertarget{classoboe_1_1_default_stream_values_ab5ea5576699cebc56193f5c297d3e300}\label{classoboe_1_1_default_stream_values_ab5ea5576699cebc56193f5c297d3e300}} 
+\index{oboe::DefaultStreamValues@{oboe::DefaultStreamValues}!FramesPerBurst@{FramesPerBurst}}
+\index{FramesPerBurst@{FramesPerBurst}!oboe::DefaultStreamValues@{oboe::DefaultStreamValues}}
+\doxysubsubsection{\texorpdfstring{FramesPerBurst}{FramesPerBurst}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Default\+Stream\+Values\+::\+Frames\+Per\+Burst = 192\hspace{0.3cm}{\ttfamily [static]}}
+
+The default frames per burst to use when opening new audio streams \mbox{\Hypertarget{classoboe_1_1_default_stream_values_a46a5d9a653f2153f618cadcab764e1b1}\label{classoboe_1_1_default_stream_values_a46a5d9a653f2153f618cadcab764e1b1}} 
+\index{oboe::DefaultStreamValues@{oboe::DefaultStreamValues}!SampleRate@{SampleRate}}
+\index{SampleRate@{SampleRate}!oboe::DefaultStreamValues@{oboe::DefaultStreamValues}}
+\doxysubsubsection{\texorpdfstring{SampleRate}{SampleRate}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Default\+Stream\+Values\+::\+Sample\+Rate = 48000\hspace{0.3cm}{\ttfamily [static]}}
+
+The default sample rate to use when opening new audio streams
+
+The following default values are used when oboe does not have any better way of determining the optimal values for an audio stream. This can happen when\+:
+
+
+\begin{DoxyItemize}
+\item Client is creating a stream on A\+PI $<$ 26 (Open\+S\+L\+ES) but has not supplied the optimal sample rate and/or frames per burst
+\item Client is creating a stream on A\+PI 16 (Open\+S\+L\+ES) where Audio\+Manager.\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+$\ast$ values are not available 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/include/oboe/Definitions.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/src/common/Audio\+Stream\+Builder.\+cpp\end{DoxyCompactItemize}

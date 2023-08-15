@@ -1,0 +1,91 @@
+\hypertarget{class_sk_draw_looper}{}\doxysection{Sk\+Draw\+Looper Class Reference}
+\label{class_sk_draw_looper}\index{SkDrawLooper@{SkDrawLooper}}
+
+
+{\ttfamily \#include $<$Sk\+Draw\+Looper.\+h$>$}
+
+Inheritance diagram for Sk\+Draw\+Looper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_sk_draw_looper}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}}
+\item 
+class \mbox{\hyperlink{class_sk_draw_looper_1_1_context}{Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sk_draw_looper_1_1_context}{Context}} $\ast$ \mbox{\hyperlink{class_sk_draw_looper_ad835f1d5553a02b35caa96ec23ba105d}{make\+Context}} (\mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$) const =0
+\item 
+bool \mbox{\hyperlink{class_sk_draw_looper_a63480c43ddb90db22b712acccb562688}{can\+Compute\+Fast\+Bounds}} (const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint) const
+\item 
+\mbox{\Hypertarget{class_sk_draw_looper_aa1ec2d8fc6223c0190a7df6a44bcb567}\label{class_sk_draw_looper_aa1ec2d8fc6223c0190a7df6a44bcb567}} 
+void {\bfseries compute\+Fast\+Bounds} (const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&src, \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$dst) const
+\item 
+virtual bool \mbox{\hyperlink{class_sk_draw_looper_a4db94843787afbf82c62f268ce5f7255}{as\+A\+Blur\+Shadow}} (\mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}} $\ast$) const
+\item 
+\mbox{\Hypertarget{class_sk_draw_looper_aa614006029f74d20026ca5ce3ea4696a}\label{class_sk_draw_looper_aa614006029f74d20026ca5ce3ea4696a}} 
+Sk\+Flattenable\+::\+Type {\bfseries get\+Flattenable\+Type} () const override
+\item 
+\mbox{\Hypertarget{class_sk_draw_looper_af2517ae3eac826fb523ce3f73eaeac86}\label{class_sk_draw_looper_af2517ae3eac826fb523ce3f73eaeac86}} 
+void {\bfseries apply} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint, std\+::function$<$ void(\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&)$>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_draw_looper_aa486c03f504aa8b2fa58e7354e5b6423}\label{class_sk_draw_looper_aa486c03f504aa8b2fa58e7354e5b6423}} 
+static Sk\+Flattenable\+::\+Type {\bfseries Get\+Flattenable\+Type} ()
+\item 
+\mbox{\Hypertarget{class_sk_draw_looper_a6c3e7dc8b9c7f6b4d01ee2b0ad0722d3}\label{class_sk_draw_looper_a6c3e7dc8b9c7f6b4d01ee2b0ad0722d3}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_draw_looper}{Sk\+Draw\+Looper}} $>$ {\bfseries Deserialize} (const void $\ast$data, size\+\_\+t size, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+D\+E\+P\+R\+E\+C\+A\+T\+ED\+: No longer supported in Skia. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_draw_looper_a4db94843787afbf82c62f268ce5f7255}\label{class_sk_draw_looper_a4db94843787afbf82c62f268ce5f7255}} 
+\index{SkDrawLooper@{SkDrawLooper}!asABlurShadow@{asABlurShadow}}
+\index{asABlurShadow@{asABlurShadow}!SkDrawLooper@{SkDrawLooper}}
+\doxysubsubsection{\texorpdfstring{asABlurShadow()}{asABlurShadow()}}
+{\footnotesize\ttfamily virtual bool Sk\+Draw\+Looper\+::as\+A\+Blur\+Shadow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}} $\ast$}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+If this looper can be interpreted as having two layers, such that
+\begin{DoxyEnumerate}
+\item The first layer (bottom most) just has a blur and translate
+\item The second layer has no modifications to either paint or canvas
+\item No other layers. then return true, and if not null, fill out the \mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}}).
+\end{DoxyEnumerate}
+
+If any of the above are not met, return false and ignore the \mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}} parameter. 
+
+Reimplemented in \mbox{\hyperlink{class_sk_layer_draw_looper_ae9cfc3c8e44b887bd6569a1bbd3888b2}{Sk\+Layer\+Draw\+Looper}}.
+
+\mbox{\Hypertarget{class_sk_draw_looper_a63480c43ddb90db22b712acccb562688}\label{class_sk_draw_looper_a63480c43ddb90db22b712acccb562688}} 
+\index{SkDrawLooper@{SkDrawLooper}!canComputeFastBounds@{canComputeFastBounds}}
+\index{canComputeFastBounds@{canComputeFastBounds}!SkDrawLooper@{SkDrawLooper}}
+\doxysubsubsection{\texorpdfstring{canComputeFastBounds()}{canComputeFastBounds()}}
+{\footnotesize\ttfamily bool Sk\+Draw\+Looper\+::can\+Compute\+Fast\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&}]{paint }\end{DoxyParamCaption}) const}
+
+The fast bounds functions are used to enable the paint to be culled early in the drawing pipeline. If a subclass can support this feature it must return true for the \mbox{\hyperlink{class_sk_draw_looper_a63480c43ddb90db22b712acccb562688}{can\+Compute\+Fast\+Bounds()}} function. If that function returns false then compute\+Fast\+Bounds behavior is undefined otherwise it is expected to have the following behavior. Given the parent paint and the parent\textquotesingle{}s bounding rect the subclass must fill in and return the storage rect, where the storage rect is with the union of the src rect and the looper\textquotesingle{}s bounding rect. \mbox{\Hypertarget{class_sk_draw_looper_ad835f1d5553a02b35caa96ec23ba105d}\label{class_sk_draw_looper_ad835f1d5553a02b35caa96ec23ba105d}} 
+\index{SkDrawLooper@{SkDrawLooper}!makeContext@{makeContext}}
+\index{makeContext@{makeContext}!SkDrawLooper@{SkDrawLooper}}
+\doxysubsubsection{\texorpdfstring{makeContext()}{makeContext()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_sk_draw_looper_1_1_context}{Context}}$\ast$ Sk\+Draw\+Looper\+::make\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called right before something is being drawn. Returns a \mbox{\hyperlink{class_sk_draw_looper_1_1_context}{Context}} whose next() method should be called until it returns false. 
+
+Implemented in \mbox{\hyperlink{class_sk_layer_draw_looper_ad81c343c7d6530f5d5b456538a00cb92}{Sk\+Layer\+Draw\+Looper}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Draw\+Looper.\+h\end{DoxyCompactItemize}

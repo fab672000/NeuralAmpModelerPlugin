@@ -1,0 +1,71 @@
+\hypertarget{class_a_a_x___i_a_c_f_data_buffer}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer Class Reference}
+\label{class_a_a_x___i_a_c_f_data_buffer}\index{AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}}
+
+
+Versioned interface for reference counted data buffers.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_a_a_x___i_a_c_f_data_buffer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer_a1e06ebce506cd5218e3fee7305fd8468}{Type}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} $\ast$o\+Type) const =0
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer_a5c4c3ea3d74f683abf4af917e8db66f6}{Size}} (int32\+\_\+t $\ast$o\+Size) const =0
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer_adecd9038cdc13de9030bd6d53b6edef7}{Data}} (void const $\ast$$\ast$o\+Buffer) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Versioned interface for reference counted data buffers. 
+
+This interface is intended to be used for passing arbitrary blocks of data across the binary boundary and allowing the receiver to take ownership of the allocated memory. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_data_buffer_adecd9038cdc13de9030bd6d53b6edef7}\label{class_a_a_x___i_a_c_f_data_buffer_adecd9038cdc13de9030bd6d53b6edef7}} 
+\index{AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}!Data@{Data}}
+\index{Data@{Data}!AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer\+::\+Data (\begin{DoxyParamCaption}\item[{void const $\ast$$\ast$}]{o\+Buffer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The buffer of data 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_string_data_buffer_a26a6332616ad889fa1798638dbc20948}{A\+A\+X\+\_\+\+C\+String\+Data\+Buffer}}, and \mbox{\hyperlink{class_a_a_x___c_string_data_buffer_of_type_ada2c29ee81607fd2342dd1bf04a195b8}{A\+A\+X\+\_\+\+C\+String\+Data\+Buffer\+Of\+Type$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_data_buffer_a5c4c3ea3d74f683abf4af917e8db66f6}\label{class_a_a_x___i_a_c_f_data_buffer_a5c4c3ea3d74f683abf4af917e8db66f6}} 
+\index{AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}!Size@{Size}}
+\index{Size@{Size}!AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer\+::\+Size (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{o\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The number of bytes of data in this buffer 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_string_data_buffer_ac55e08023933ce380a83f346050091d3}{A\+A\+X\+\_\+\+C\+String\+Data\+Buffer}}, and \mbox{\hyperlink{class_a_a_x___c_string_data_buffer_of_type_a913a8500c51ef247240bdca932a559b8}{A\+A\+X\+\_\+\+C\+String\+Data\+Buffer\+Of\+Type$<$ T $>$}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_data_buffer_a1e06ebce506cd5218e3fee7305fd8468}\label{class_a_a_x___i_a_c_f_data_buffer_a1e06ebce506cd5218e3fee7305fd8468}} 
+\index{AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}!Type@{Type}}
+\index{Type@{Type}!AAX\_IACFDataBuffer@{AAX\_IACFDataBuffer}}
+\doxysubsubsection{\texorpdfstring{Type()}{Type()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer\+::\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} $\ast$}]{o\+Type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The type of data contained in this buffer
+
+This identifier must be sufficient for a client that knows the type to correctly interpret and use the data. 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_string_data_buffer_a60d05562260703eaeb21d70bdae3eab1}{A\+A\+X\+\_\+\+C\+String\+Data\+Buffer}}, and \mbox{\hyperlink{class_a_a_x___c_string_data_buffer_of_type_abf72ceb10ca64e765981da94fdc30939}{A\+A\+X\+\_\+\+C\+String\+Data\+Buffer\+Of\+Type$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_data_buffer_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer.\+h}}\end{DoxyCompactItemize}

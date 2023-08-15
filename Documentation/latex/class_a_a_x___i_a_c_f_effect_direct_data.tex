@@ -1,0 +1,113 @@
+\hypertarget{class_a_a_x___i_a_c_f_effect_direct_data}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data Class Reference}
+\label{class_a_a_x___i_a_c_f_effect_direct_data}\index{AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}}
+
+
+Optional interface for direct access to a plug-\/in\textquotesingle{}s alg memory.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_a_a_x___i_a_c_f_effect_direct_data}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Initialization and uninitialization}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_direct_data_adefbc617c71ea5ea6512fb79a116dbf7}{Initialize}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+Controller)=0
+\begin{DoxyCompactList}\small\item\em Main initialization. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_direct_data_ad56406a13dd691db6f1117ab97cfc90a}{Uninitialize}} ()=0
+\begin{DoxyCompactList}\small\item\em Main uninitialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Safe data update callbacks}\par
+{\em These callbacks provide a safe context from which to directly access the algorithm\textquotesingle{}s private data blocks. Each callback is called regularly with roughly the schedule of its corresponding \mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} counterpart.
+
+\begin{DoxyNote}{Note}
+Do not attempt to directly access the algorithm\textquotesingle{}s data from outside these callbacks. Instead, use the packet system to route data to the algorithm using the A\+AX host\textquotesingle{}s buffered data transfer facilities. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_direct_data_afb4fa2c566547d7bd303166cf50741bb}{Timer\+Wakeup}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$i\+Data\+Access\+Interface)=0
+\begin{DoxyCompactList}\small\item\em Periodic wakeup callback for idle-\/time operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Optional interface for direct access to a plug-\/in\textquotesingle{}s alg memory. 
+
+Direct data access allows a plug-\/in to directly manipulate the data in its algorithm\textquotesingle{}s private data blocks. The callback methods in this interface provide a safe context from which this kind of access may be attempted. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_direct_data_adefbc617c71ea5ea6512fb79a116dbf7}\label{class_a_a_x___i_a_c_f_effect_direct_data_adefbc617c71ea5ea6512fb79a116dbf7}} 
+\index{AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+::\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Main initialization. 
+
+Called when the interface is created
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Controller} & A versioned reference that resolves to an \mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}} interface \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_direct_data_ad89ee93781539d8df3b0710a186c7e0d}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_direct_data_afb4fa2c566547d7bd303166cf50741bb}\label{class_a_a_x___i_a_c_f_effect_direct_data_afb4fa2c566547d7bd303166cf50741bb}} 
+\index{AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}!TimerWakeup@{TimerWakeup}}
+\index{TimerWakeup@{TimerWakeup}!AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}}
+\doxysubsubsection{\texorpdfstring{TimerWakeup()}{TimerWakeup()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+::\+Timer\+Wakeup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{i\+Data\+Access\+Interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Periodic wakeup callback for idle-\/time operations. 
+
+Direct alg data updates must be triggered from this method.
+
+This method is called from the host using a non-\/main thread. In general, it should be driven at approximately one call per 30 ms. However, the wakeup is not guaranteed to be called at any regular interval -\/ for example, it could be held off by a high real-\/time processing load -\/ and there is no host contract regarding maximum latency between wakeup calls.
+
+This wakeup thread runs continuously and cannot be armed/disarmed or by the plug-\/in.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Data\+Access\+Interface} & Reference to the direct access interface. \begin{DoxyVerb}\note It is not safe to save this address or call
+the methods in this interface from other threads.
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_direct_data_a3ed665cfbece195524e208e61b4d1937}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_direct_data_ad56406a13dd691db6f1117ab97cfc90a}\label{class_a_a_x___i_a_c_f_effect_direct_data_ad56406a13dd691db6f1117ab97cfc90a}} 
+\index{AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}!Uninitialize@{Uninitialize}}
+\index{Uninitialize@{Uninitialize}!AAX\_IACFEffectDirectData@{AAX\_IACFEffectDirectData}}
+\doxysubsubsection{\texorpdfstring{Uninitialize()}{Uninitialize()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+::\+Uninitialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Main uninitialization. 
+
+Called when the interface is destroyed. 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___c_effect_direct_data_a49f02465aa623666f9e43a8646d9e56c}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_effect_direct_data_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data.\+h}}\end{DoxyCompactItemize}

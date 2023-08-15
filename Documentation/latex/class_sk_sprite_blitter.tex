@@ -1,0 +1,91 @@
+\hypertarget{class_sk_sprite_blitter}{}\doxysection{Sk\+Sprite\+Blitter Class Reference}
+\label{class_sk_sprite_blitter}\index{SkSpriteBlitter@{SkSpriteBlitter}}
+Inheritance diagram for Sk\+Sprite\+Blitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.555556cm]{class_sk_sprite_blitter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a0481016d3fbb4f2bafae5bc9c5ab7881}\label{class_sk_sprite_blitter_a0481016d3fbb4f2bafae5bc9c5ab7881}} 
+{\bfseries Sk\+Sprite\+Blitter} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&source)
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_ab88fb617e56d83c5f5d163275160b907}\label{class_sk_sprite_blitter_ab88fb617e56d83c5f5d163275160b907}} 
+virtual bool {\bfseries setup} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&dst, int left, int top, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&)
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a9d4234a198e9e9f3b3c7160e64704a14}\label{class_sk_sprite_blitter_a9d4234a198e9e9f3b3c7160e64704a14}} 
+void \mbox{\hyperlink{class_sk_sprite_blitter_a9d4234a198e9e9f3b3c7160e64704a14}{blitH}} (int x, int y, int width) override
+\begin{DoxyCompactList}\small\item\em Blit a horizontal run of one or more pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sk_sprite_blitter_a5422a44ae2eeef8751da75e7bd2b76fc}{blit\+AntiH}} (int x, int y, const \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} antialias\mbox{[}$\,$\mbox{]}, const int16\+\_\+t runs\mbox{[}$\,$\mbox{]}) override
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a8c1e4d7f039ae291e42fbaa635e4b233}\label{class_sk_sprite_blitter_a8c1e4d7f039ae291e42fbaa635e4b233}} 
+void \mbox{\hyperlink{class_sk_sprite_blitter_a8c1e4d7f039ae291e42fbaa635e4b233}{blitV}} (int x, int y, int height, \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} alpha) override
+\begin{DoxyCompactList}\small\item\em Blit a vertical run of pixels with a constant alpha value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sk_sprite_blitter_ade4d4e7aeb3a4b07cfa1a60ef05caacc}{blit\+Mask}} (const \mbox{\hyperlink{struct_sk_mask}{Sk\+Mask}} \&, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&clip) override
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a90adb97a8187181ece0e7e33df70f1d1}\label{class_sk_sprite_blitter_a90adb97a8187181ece0e7e33df70f1d1}} 
+void \mbox{\hyperlink{class_sk_sprite_blitter_a90adb97a8187181ece0e7e33df70f1d1}{blit\+Rect}} (int x, int y, int width, int height) override=0
+\begin{DoxyCompactList}\small\item\em Blit a solid rectangle one or more pixels wide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a241abf9127127e379e34e5b17d2c9301}\label{class_sk_sprite_blitter_a241abf9127127e379e34e5b17d2c9301}} 
+static \mbox{\hyperlink{class_sk_sprite_blitter}{Sk\+Sprite\+Blitter}} $\ast$ {\bfseries Choose\+L32} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&source, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&, \mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$)
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a699dc1fe309b6d4a3bf63ebcde41482b}\label{class_sk_sprite_blitter_a699dc1fe309b6d4a3bf63ebcde41482b}} 
+static \mbox{\hyperlink{class_sk_sprite_blitter}{Sk\+Sprite\+Blitter}} $\ast$ {\bfseries Choose\+L565} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&source, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&, \mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$)
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a28b9fc4c67a3848a513108eb3fd8a9e8}\label{class_sk_sprite_blitter_a28b9fc4c67a3848a513108eb3fd8a9e8}} 
+static \mbox{\hyperlink{class_sk_sprite_blitter}{Sk\+Sprite\+Blitter}} $\ast$ {\bfseries Choose\+L\+A8} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&source, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&, \mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a44bdf2ebe280c9c55d3af48d290fdff2}\label{class_sk_sprite_blitter_a44bdf2ebe280c9c55d3af48d290fdff2}} 
+\mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} {\bfseries f\+Dst}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a1057a6ec5d2bff74aca79887a793cbdc}\label{class_sk_sprite_blitter_a1057a6ec5d2bff74aca79887a793cbdc}} 
+const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} {\bfseries f\+Source}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a6df0ac13a83d7251bf35e7adf6da8eb9}\label{class_sk_sprite_blitter_a6df0ac13a83d7251bf35e7adf6da8eb9}} 
+int {\bfseries f\+Left}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a88d389ea5c9871200b47716686a8b56a}\label{class_sk_sprite_blitter_a88d389ea5c9871200b47716686a8b56a}} 
+int {\bfseries f\+Top}
+\item 
+\mbox{\Hypertarget{class_sk_sprite_blitter_a06074886699cfce96a997a5054e72b54}\label{class_sk_sprite_blitter_a06074886699cfce96a997a5054e72b54}} 
+const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$ {\bfseries f\+Paint}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_sprite_blitter_a5422a44ae2eeef8751da75e7bd2b76fc}\label{class_sk_sprite_blitter_a5422a44ae2eeef8751da75e7bd2b76fc}} 
+\index{SkSpriteBlitter@{SkSpriteBlitter}!blitAntiH@{blitAntiH}}
+\index{blitAntiH@{blitAntiH}!SkSpriteBlitter@{SkSpriteBlitter}}
+\doxysubsubsection{\texorpdfstring{blitAntiH()}{blitAntiH()}}
+{\footnotesize\ttfamily void Sk\+Sprite\+Blitter\+::blit\+AntiH (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}}}]{antialias\mbox{[}$\,$\mbox{]},  }\item[{const int16\+\_\+t}]{runs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blit a horizontal run of antialiased pixels; runs\mbox{[}\mbox{]} is a {\itshape sparse} zero-\/terminated run-\/length encoding of spans of constant alpha values. The runs\mbox{[}\mbox{]} and antialias\mbox{[}\mbox{]} work together to represent long runs of pixels with the same alphas. The runs\mbox{[}\mbox{]} contains the number of pixels with the same alpha, and antialias\mbox{[}\mbox{]} contain the coverage value for that number of pixels. The runs\mbox{[}\mbox{]} (and antialias\mbox{[}\mbox{]}) are encoded in a clever way. The runs array is zero terminated, and has enough entries for each pixel plus one, in most cases some of the entries will not contain valid data. An entry in the runs array contains the number of pixels (np) that have the same alpha value. The next np value is found np entries away. For example, if runs\mbox{[}0\mbox{]} = 7, then the next valid entry will by at runs\mbox{[}7\mbox{]}. The runs array and antialias\mbox{[}\mbox{]} are coupled by index. So, if the np entry is at runs\mbox{[}45\mbox{]} = 12 then the alpha value can be found at antialias\mbox{[}45\mbox{]} = 0x88. This would mean to use an alpha value of 0x88 for the next 12 pixels starting at pixel 45. 
+
+Implements \mbox{\hyperlink{class_sk_blitter_a9690b92ca395a44e130e60ef057a0bbd}{Sk\+Blitter}}.
+
+\mbox{\Hypertarget{class_sk_sprite_blitter_ade4d4e7aeb3a4b07cfa1a60ef05caacc}\label{class_sk_sprite_blitter_ade4d4e7aeb3a4b07cfa1a60ef05caacc}} 
+\index{SkSpriteBlitter@{SkSpriteBlitter}!blitMask@{blitMask}}
+\index{blitMask@{blitMask}!SkSpriteBlitter@{SkSpriteBlitter}}
+\doxysubsubsection{\texorpdfstring{blitMask()}{blitMask()}}
+{\footnotesize\ttfamily void Sk\+Sprite\+Blitter\+::blit\+Mask (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_mask}{Sk\+Mask}} \&}]{mask,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{clip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blit a pattern of pixels defined by a rectangle-\/clipped mask; typically used for text. 
+
+Reimplemented from \mbox{\hyperlink{class_sk_blitter_a8402f28f6d9527e228695a145fff19a1}{Sk\+Blitter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Sprite\+Blitter.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blitter\+\_\+\+Sprite.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Sprite\+Blitter\+\_\+\+A\+R\+G\+B32.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Sprite\+Blitter\+\_\+\+R\+G\+B565.\+cpp\end{DoxyCompactItemize}

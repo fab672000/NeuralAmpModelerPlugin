@@ -1,0 +1,70 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler}{}\doxysection{Steinberg\+::Vst\+::I\+Unit\+Handler Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_unit_handler}\index{Steinberg::Vst::IUnitHandler@{Steinberg::Vst::IUnitHandler}}
+
+
+{\ttfamily \#include $<$ivstunits.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Unit\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_unit_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler_a5e86e332f00092f0a1e365a9c4ab482b}{notify\+Unit\+Selection}} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_aebdb3f2c48a3693ee76feb85a514e067}{Unit\+ID}} unit\+Id)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler_aac3fcfce1cfffde7315278fa409524c3}{notify\+Program\+List\+Change}} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_aa3082a09d3b6414fefb66dccf5af6ce1}{Program\+List\+ID}} list\+Id, int32 program\+Index)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler_aa842a0d4c6f9bc11a72765e30db3f018}\label{class_steinberg_1_1_vst_1_1_i_unit_handler_aa842a0d4c6f9bc11a72765e30db3f018}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Host callback for unit support\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_handler}{Vst\+::\+I\+Unit\+Handler}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler}{I\+Component\+Handler}}\mbox{]}
+\item \mbox{[}released\+: 3.\+0.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+Host callback interface, used with \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_info}{I\+Unit\+Info}}. Retrieve via query\+Interface from \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler}{I\+Component\+Handler}}.
+
+\begin{DoxySeeAlso}{See also}
+vst3\+Units, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_unit_info}{I\+Unit\+Info}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler_aac3fcfce1cfffde7315278fa409524c3}\label{class_steinberg_1_1_vst_1_1_i_unit_handler_aac3fcfce1cfffde7315278fa409524c3}} 
+\index{Steinberg::Vst::IUnitHandler@{Steinberg::Vst::IUnitHandler}!notifyProgramListChange@{notifyProgramListChange}}
+\index{notifyProgramListChange@{notifyProgramListChange}!Steinberg::Vst::IUnitHandler@{Steinberg::Vst::IUnitHandler}}
+\doxysubsubsection{\texorpdfstring{notifyProgramListChange()}{notifyProgramListChange()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Unit\+Handler\+::notify\+Program\+List\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_aa3082a09d3b6414fefb66dccf5af6ce1}{Program\+List\+ID}}}]{list\+Id,  }\item[{int32}]{program\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Tell host that the plug-\/in controller changed a program list (rename, load, Pitch\+Name changes). 
+\begin{DoxyParams}{Parameters}
+{\em list\+Id} & is the specified program list ID to inform. \\
+\hline
+{\em program\+Index} & \+: when k\+All\+Program\+Invalid, all program information is invalid, otherwise only the program of given index. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_unit_handler_a5e86e332f00092f0a1e365a9c4ab482b}\label{class_steinberg_1_1_vst_1_1_i_unit_handler_a5e86e332f00092f0a1e365a9c4ab482b}} 
+\index{Steinberg::Vst::IUnitHandler@{Steinberg::Vst::IUnitHandler}!notifyUnitSelection@{notifyUnitSelection}}
+\index{notifyUnitSelection@{notifyUnitSelection}!Steinberg::Vst::IUnitHandler@{Steinberg::Vst::IUnitHandler}}
+\doxysubsubsection{\texorpdfstring{notifyUnitSelection()}{notifyUnitSelection()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Unit\+Handler\+::notify\+Unit\+Selection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_aebdb3f2c48a3693ee76feb85a514e067}{Unit\+ID}}}]{unit\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Notify host when a module is selected in plug-\/in \mbox{\hyperlink{class_g_u_i}{G\+UI}}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstunits.\+h\end{DoxyCompactItemize}

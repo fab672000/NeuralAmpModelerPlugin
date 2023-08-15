@@ -1,0 +1,104 @@
+\hypertarget{class_i_byte_chunk_reader}{}\doxysection{I\+Byte\+Chunk\+Reader Class Reference}
+\label{class_i_byte_chunk_reader}\index{IByteChunkReader@{IByteChunkReader}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Structs.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_byte_chunk_reader_ad05fa78275e3cfa2d1f273eb90911f18}\label{class_i_byte_chunk_reader_ad05fa78275e3cfa2d1f273eb90911f18}} 
+{\bfseries I\+Byte\+Chunk\+Reader} (const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&chunk, int start\+Pos=0)
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_reader_ab4f075aa8fa070ad61e30f9423621c77}{Get\+Bytes}} (void $\ast$p\+Buf, int n\+Bytes\+To\+Copy)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{class_i_byte_chunk_reader_a8baf002118238f50cf83c36b30f7e0c7}{Get}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$p\+Dst)
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_reader_ad8d45964364cd694363b00201a942c6c}{Get\+Str}} (\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&str)
+\item 
+int \mbox{\hyperlink{class_i_byte_chunk_reader_a4a0035a8a39a5265a7d25e08a6b805ae}{Tell}} () const
+\item 
+void \mbox{\hyperlink{class_i_byte_chunk_reader_a2f4a3aedd70e432a900c86b7aa1b3f9a}{Seek}} (int pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class to maintain a read position whilst extracting data from an \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_byte_chunk_reader_a8baf002118238f50cf83c36b30f7e0c7}\label{class_i_byte_chunk_reader_a8baf002118238f50cf83c36b30f7e0c7}} 
+\index{IByteChunkReader@{IByteChunkReader}!Get@{Get}}
+\index{Get@{Get}!IByteChunkReader@{IByteChunkReader}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int I\+Byte\+Chunk\+Reader\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{p\+Dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy arbitary typed data out of the managed \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} at the current position and update the position 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & type of the variable to get \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Dst} & Pointer to the destination where the value will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Next read position in the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_reader_ab4f075aa8fa070ad61e30f9423621c77}\label{class_i_byte_chunk_reader_ab4f075aa8fa070ad61e30f9423621c77}} 
+\index{IByteChunkReader@{IByteChunkReader}!GetBytes@{GetBytes}}
+\index{GetBytes@{GetBytes}!IByteChunkReader@{IByteChunkReader}}
+\doxysubsubsection{\texorpdfstring{GetBytes()}{GetBytes()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+Reader\+::\+Get\+Bytes (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Buf,  }\item[{int}]{n\+Bytes\+To\+Copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy {\ttfamily n\+Bytes\+To\+Copy} bytes from the managed \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} into {\ttfamily p\+Buf} . 
+\begin{DoxyParams}{Parameters}
+{\em p\+Buf} & Destination buffer \\
+\hline
+{\em n\+Bytes\+To\+Copy} & Number of bytes to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Next read position in the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_reader_ad8d45964364cd694363b00201a942c6c}\label{class_i_byte_chunk_reader_ad8d45964364cd694363b00201a942c6c}} 
+\index{IByteChunkReader@{IByteChunkReader}!GetStr@{GetStr}}
+\index{GetStr@{GetStr}!IByteChunkReader@{IByteChunkReader}}
+\doxysubsubsection{\texorpdfstring{GetStr()}{GetStr()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+Reader\+::\+Get\+Str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieve a string from the managed \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} and put it in {\ttfamily str} . 
+\begin{DoxyParams}{Parameters}
+{\em str} & Destination for the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Next read position in the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_byte_chunk_reader_a2f4a3aedd70e432a900c86b7aa1b3f9a}\label{class_i_byte_chunk_reader_a2f4a3aedd70e432a900c86b7aa1b3f9a}} 
+\index{IByteChunkReader@{IByteChunkReader}!Seek@{Seek}}
+\index{Seek@{Seek}!IByteChunkReader@{IByteChunkReader}}
+\doxysubsubsection{\texorpdfstring{Seek()}{Seek()}}
+{\footnotesize\ttfamily void I\+Byte\+Chunk\+Reader\+::\+Seek (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the current position in the managed \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}}. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & The new \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_byte_chunk_reader_a4a0035a8a39a5265a7d25e08a6b805ae}\label{class_i_byte_chunk_reader_a4a0035a8a39a5265a7d25e08a6b805ae}} 
+\index{IByteChunkReader@{IByteChunkReader}!Tell@{Tell}}
+\index{Tell@{Tell}!IByteChunkReader@{IByteChunkReader}}
+\doxysubsubsection{\texorpdfstring{Tell()}{Tell()}}
+{\footnotesize\ttfamily int I\+Byte\+Chunk\+Reader\+::\+Tell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the current position in the managed \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \begin{DoxyReturn}{Returns}
+The current position in the \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/I\+Plug\+Structs.\+h\end{DoxyCompactItemize}

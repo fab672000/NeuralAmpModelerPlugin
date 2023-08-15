@@ -1,0 +1,163 @@
+\hypertarget{classskia_1_1textlayout_1_1_text_line}{}\doxysection{skia\+::textlayout\+::Text\+Line Class Reference}
+\label{classskia_1_1textlayout_1_1_text_line}\index{skia::textlayout::TextLine@{skia::textlayout::TextLine}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structskia_1_1textlayout_1_1_text_line_1_1_clip_context}{Clip\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a5523f5b850f5ce00cbaede3f5273a286}\label{classskia_1_1textlayout_1_1_text_line_a5523f5b850f5ce00cbaede3f5273a286}} 
+using {\bfseries Run\+Visitor} = std\+::function$<$ bool(const \mbox{\hyperlink{classskia_1_1textlayout_1_1_run}{Run}} $\ast$run, Sk\+Scalar run\+Offset, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Range, Sk\+Scalar $\ast$width)$>$
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_adc6ffc6ab3f2de1c13071f2fef9acc1c}\label{classskia_1_1textlayout_1_1_text_line_adc6ffc6ab3f2de1c13071f2fef9acc1c}} 
+using {\bfseries Run\+Style\+Visitor} = std\+::function$<$ void(\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Range, const \mbox{\hyperlink{classskia_1_1textlayout_1_1_text_style}{Text\+Style}} \&style, const \mbox{\hyperlink{structskia_1_1textlayout_1_1_text_line_1_1_clip_context}{Clip\+Context}} \&context)$>$
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a3d9f6c24f1866c92f94a456dbbe555ff}\label{classskia_1_1textlayout_1_1_text_line_a3d9f6c24f1866c92f94a456dbbe555ff}} 
+using {\bfseries Clusters\+Visitor} = std\+::function$<$ bool(const \mbox{\hyperlink{classskia_1_1textlayout_1_1_cluster}{Cluster}} $\ast$cluster, bool ghost)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a085c8c99e28116eb73f9c3c8c6c0372d}\label{classskia_1_1textlayout_1_1_text_line_a085c8c99e28116eb73f9c3c8c6c0372d}} 
+{\bfseries Text\+Line} (const \mbox{\hyperlink{classskia_1_1textlayout_1_1_text_line}{Text\+Line}} \&)=delete
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a32c132e93636d921115b081ed4e0bc83}\label{classskia_1_1textlayout_1_1_text_line_a32c132e93636d921115b081ed4e0bc83}} 
+\mbox{\hyperlink{classskia_1_1textlayout_1_1_text_line}{Text\+Line}} \& {\bfseries operator=} (const \mbox{\hyperlink{classskia_1_1textlayout_1_1_text_line}{Text\+Line}} \&)=delete
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a36c9f889e9262d7bccb9e6988baaa789}\label{classskia_1_1textlayout_1_1_text_line_a36c9f889e9262d7bccb9e6988baaa789}} 
+{\bfseries Text\+Line} (\mbox{\hyperlink{classskia_1_1textlayout_1_1_text_line}{Text\+Line}} \&\&)=default
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a91d89fa3f07fc4d65102269bbdbfd475}\label{classskia_1_1textlayout_1_1_text_line_a91d89fa3f07fc4d65102269bbdbfd475}} 
+\mbox{\hyperlink{classskia_1_1textlayout_1_1_text_line}{Text\+Line}} \& {\bfseries operator=} (\mbox{\hyperlink{classskia_1_1textlayout_1_1_text_line}{Text\+Line}} \&\&)=default
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a35cceef22fdddc3b8858edd6480ce80c}\label{classskia_1_1textlayout_1_1_text_line_a35cceef22fdddc3b8858edd6480ce80c}} 
+{\bfseries Text\+Line} (\mbox{\hyperlink{classskia_1_1textlayout_1_1_paragraph_impl}{Paragraph\+Impl}} $\ast$owner, \mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} offset, \mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} advance, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Block\+Range}} blocks, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Excluding\+Spaces, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Including\+Newlines, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Cluster\+Range}} clusters, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Cluster\+Range}} clusters\+With\+Ghosts, Sk\+Scalar width\+With\+Spaces, \mbox{\hyperlink{classskia_1_1textlayout_1_1_internal_line_metrics}{Internal\+Line\+Metrics}} sizes)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a1bb7fd0a13998490e14bd98e00910ea6}\label{classskia_1_1textlayout_1_1_text_line_a1bb7fd0a13998490e14bd98e00910ea6}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} {\bfseries trimmed\+Text} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a06bfbd822493d0cfec53add6b98fb182}\label{classskia_1_1textlayout_1_1_text_line_a06bfbd822493d0cfec53add6b98fb182}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} {\bfseries text\+With\+Newlines} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_abc5a6d63f21e91ee9e4b9af8834474da}\label{classskia_1_1textlayout_1_1_text_line_abc5a6d63f21e91ee9e4b9af8834474da}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} {\bfseries text} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a9f6d6c52ffaf99015751a642934ef14f}\label{classskia_1_1textlayout_1_1_text_line_a9f6d6c52ffaf99015751a642934ef14f}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Cluster\+Range}} {\bfseries clusters} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_afbe384a2a76ad22a7c1f02962eb14dac}\label{classskia_1_1textlayout_1_1_text_line_afbe384a2a76ad22a7c1f02962eb14dac}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Cluster\+Range}} {\bfseries clusters\+With\+Spaces} ()
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a6ad09a5a8e9bb570400723eea423c699}\label{classskia_1_1textlayout_1_1_text_line_a6ad09a5a8e9bb570400723eea423c699}} 
+\mbox{\hyperlink{classskia_1_1textlayout_1_1_run}{Run}} $\ast$ {\bfseries ellipsis} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_af63bc57ab8add0007a1edc58f4a5371b}\label{classskia_1_1textlayout_1_1_text_line_af63bc57ab8add0007a1edc58f4a5371b}} 
+\mbox{\hyperlink{classskia_1_1textlayout_1_1_internal_line_metrics}{Internal\+Line\+Metrics}} {\bfseries sizes} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a4d93491567247a6ac84cadf4b5546e2e}\label{classskia_1_1textlayout_1_1_text_line_a4d93491567247a6ac84cadf4b5546e2e}} 
+bool {\bfseries empty} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a5d54fb29217cc503e696cb7734c8d72f}\label{classskia_1_1textlayout_1_1_text_line_a5d54fb29217cc503e696cb7734c8d72f}} 
+Sk\+Scalar {\bfseries spaces\+Width} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a40ee9dd09d856e046e21d77e82f85bb6}\label{classskia_1_1textlayout_1_1_text_line_a40ee9dd09d856e046e21d77e82f85bb6}} 
+Sk\+Scalar {\bfseries height} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_ab7822de0bf8c0788fb820678268297a8}\label{classskia_1_1textlayout_1_1_text_line_ab7822de0bf8c0788fb820678268297a8}} 
+Sk\+Scalar {\bfseries width} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a81a00a6d494ad25f62809d197856b27b}\label{classskia_1_1textlayout_1_1_text_line_a81a00a6d494ad25f62809d197856b27b}} 
+Sk\+Scalar {\bfseries shift} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a29b28d2a19fa210cae909eacdf36c478}\label{classskia_1_1textlayout_1_1_text_line_a29b28d2a19fa210cae909eacdf36c478}} 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Vector}} {\bfseries offset} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_add000ed16383589ea011107f1a6a3268}\label{classskia_1_1textlayout_1_1_text_line_add000ed16383589ea011107f1a6a3268}} 
+Sk\+Scalar {\bfseries alphabetic\+Baseline} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_ac47c8e5f121179cbf0bbfdcf28ee763f}\label{classskia_1_1textlayout_1_1_text_line_ac47c8e5f121179cbf0bbfdcf28ee763f}} 
+Sk\+Scalar {\bfseries ideographic\+Baseline} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_adf6315ee17aacfe83fe4ac1094499ea7}\label{classskia_1_1textlayout_1_1_text_line_adf6315ee17aacfe83fe4ac1094499ea7}} 
+Sk\+Scalar {\bfseries baseline} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_afb2814418ee302aed79e503ac533be02}\label{classskia_1_1textlayout_1_1_text_line_afb2814418ee302aed79e503ac533be02}} 
+void {\bfseries iterate\+Through\+Visual\+Runs} (bool including\+Ghost\+Spaces, const Run\+Visitor \&run\+Visitor) const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_ae1148b6378269f56ad6216e5c071e62e}\label{classskia_1_1textlayout_1_1_text_line_ae1148b6378269f56ad6216e5c071e62e}} 
+Sk\+Scalar {\bfseries iterate\+Through\+Single\+Run\+By\+Styles} (const \mbox{\hyperlink{classskia_1_1textlayout_1_1_run}{Run}} $\ast$run, Sk\+Scalar run\+Offset, \mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Range, Style\+Type style\+Type, const Run\+Style\+Visitor \&visitor) const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a82dcd64a5b7bd5cc92de19ee1db3e646}\label{classskia_1_1textlayout_1_1_text_line_a82dcd64a5b7bd5cc92de19ee1db3e646}} 
+void {\bfseries iterate\+Through\+Clusters\+In\+Glyphs\+Order} (bool reverse, bool include\+Ghosts, const Clusters\+Visitor \&visitor) const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a75d5fd110a3ba086635697a7910ee5a7}\label{classskia_1_1textlayout_1_1_text_line_a75d5fd110a3ba086635697a7910ee5a7}} 
+void {\bfseries format} (Text\+Align align, Sk\+Scalar max\+Width)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a2ed5b57228800b1a71d0001e84e19695}\label{classskia_1_1textlayout_1_1_text_line_a2ed5b57228800b1a71d0001e84e19695}} 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} {\bfseries paint} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, Sk\+Scalar x, Sk\+Scalar y)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a7e80fc4e4dbb8a948a3b272497899903}\label{classskia_1_1textlayout_1_1_text_line_a7e80fc4e4dbb8a948a3b272497899903}} 
+void {\bfseries visit} (Sk\+Scalar x, Sk\+Scalar y)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_aec4dd78b62b4df38126c6b49895c4d15}\label{classskia_1_1textlayout_1_1_text_line_aec4dd78b62b4df38126c6b49895c4d15}} 
+void {\bfseries ensure\+Text\+Blob\+Cache\+Populated} ()
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_aa69991a984c89bfe577a57fb2c627dab}\label{classskia_1_1textlayout_1_1_text_line_aa69991a984c89bfe577a57fb2c627dab}} 
+void {\bfseries create\+Ellipsis} (Sk\+Scalar max\+Width, const \mbox{\hyperlink{class_sk_string}{Sk\+String}} \&ellipsis, bool ltr)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a3f20e5a0b04bd15baef435c962ee67b8}\label{classskia_1_1textlayout_1_1_text_line_a3f20e5a0b04bd15baef435c962ee67b8}} 
+void {\bfseries scan\+Styles} (Style\+Type style, const Run\+Style\+Visitor \&visitor)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_aa3c4b0be44a250f60d992b8a61b4e11c}\label{classskia_1_1textlayout_1_1_text_line_aa3c4b0be44a250f60d992b8a61b4e11c}} 
+void {\bfseries set\+Max\+Run\+Metrics} (const \mbox{\hyperlink{classskia_1_1textlayout_1_1_internal_line_metrics}{Internal\+Line\+Metrics}} \&metrics)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_ad41e08085bf76abcac5f104720964ecd}\label{classskia_1_1textlayout_1_1_text_line_ad41e08085bf76abcac5f104720964ecd}} 
+\mbox{\hyperlink{classskia_1_1textlayout_1_1_internal_line_metrics}{Internal\+Line\+Metrics}} {\bfseries get\+Max\+Run\+Metrics} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_abe1e190ccc112163036a347a59f230f0}\label{classskia_1_1textlayout_1_1_text_line_abe1e190ccc112163036a347a59f230f0}} 
+bool {\bfseries is\+First\+Line} ()
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_aa17b1c070ade0332a1b4abbb35409d02}\label{classskia_1_1textlayout_1_1_text_line_aa17b1c070ade0332a1b4abbb35409d02}} 
+bool {\bfseries is\+Last\+Line} ()
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a9f1f69e879dc0764b9a070012f6bbdf2}\label{classskia_1_1textlayout_1_1_text_line_a9f1f69e879dc0764b9a070012f6bbdf2}} 
+void {\bfseries get\+Rects\+For\+Range} (\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Range, Rect\+Height\+Style rect\+Height\+Style, Rect\+Width\+Style rect\+Width\+Style, std\+::vector$<$ \mbox{\hyperlink{structskia_1_1textlayout_1_1_text_box}{Text\+Box}} $>$ \&boxes)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a1276cd8bee955dc53c9330b741947032}\label{classskia_1_1textlayout_1_1_text_line_a1276cd8bee955dc53c9330b741947032}} 
+void {\bfseries get\+Rects\+For\+Placeholders} (std\+::vector$<$ \mbox{\hyperlink{structskia_1_1textlayout_1_1_text_box}{Text\+Box}} $>$ \&boxes)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a923f5db1617d0240e74190ba610938b4}\label{classskia_1_1textlayout_1_1_text_line_a923f5db1617d0240e74190ba610938b4}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_position_with_affinity}{Position\+With\+Affinity}} {\bfseries get\+Glyph\+Position\+At\+Coordinate} (Sk\+Scalar dx)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a9f1bb5cae6c4fc05afa50799a290e020}\label{classskia_1_1textlayout_1_1_text_line_a9f1bb5cae6c4fc05afa50799a290e020}} 
+\mbox{\hyperlink{structskia_1_1textlayout_1_1_text_line_1_1_clip_context}{Clip\+Context}} {\bfseries measure\+Text\+Inside\+One\+Run} (\mbox{\hyperlink{structskia_1_1textlayout_1_1_sk_range}{Text\+Range}} text\+Range, const \mbox{\hyperlink{classskia_1_1textlayout_1_1_run}{Run}} $\ast$run, Sk\+Scalar run\+Offset\+In\+Line, Sk\+Scalar text\+Offset\+In\+Run\+In\+Line, bool include\+Ghost\+Spaces, bool limit\+To\+Graphemes) const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_af4db84c8aa6ed9e419edf44104b4d171}\label{classskia_1_1textlayout_1_1_text_line_af4db84c8aa6ed9e419edf44104b4d171}} 
+\mbox{\hyperlink{classskia_1_1textlayout_1_1_line_metrics}{Line\+Metrics}} {\bfseries get\+Metrics} () const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a109661c7b7d309cf91e9f7b9ce5afbf3}\label{classskia_1_1textlayout_1_1_text_line_a109661c7b7d309cf91e9f7b9ce5afbf3}} 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} {\bfseries extend\+Height} (const \mbox{\hyperlink{structskia_1_1textlayout_1_1_text_line_1_1_clip_context}{Clip\+Context}} \&context) const
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a0508e8f75200f14dbc016873a4f48e44}\label{classskia_1_1textlayout_1_1_text_line_a0508e8f75200f14dbc016873a4f48e44}} 
+Sk\+Scalar {\bfseries metrics\+Without\+Multiplier} (Text\+Height\+Behavior correction)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a67c4d4d49ac1a410b174428bee9d9cc9}\label{classskia_1_1textlayout_1_1_text_line_a67c4d4d49ac1a410b174428bee9d9cc9}} 
+void {\bfseries shift\+Vertically} (Sk\+Scalar shift)
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_a4e37d79fbc750905bc3e11fb820065c1}\label{classskia_1_1textlayout_1_1_text_line_a4e37d79fbc750905bc3e11fb820065c1}} 
+bool {\bfseries ends\+With\+Hard\+Line\+Break} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskia_1_1textlayout_1_1_text_line_ad80ab85846852a095bd295978d758b77}\label{classskia_1_1textlayout_1_1_text_line_ad80ab85846852a095bd295978d758b77}} 
+std\+::vector$<$ Text\+Blob\+Record $>$ {\bfseries f\+Text\+Blob\+Cache}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skparagraph/src/Text\+Line.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skparagraph/src/Text\+Line.\+cpp\end{DoxyCompactItemize}

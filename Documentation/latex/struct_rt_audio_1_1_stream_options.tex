@@ -1,0 +1,82 @@
+\hypertarget{struct_rt_audio_1_1_stream_options}{}\doxysection{Rt\+Audio\+::Stream\+Options Struct Reference}
+\label{struct_rt_audio_1_1_stream_options}\index{RtAudio::StreamOptions@{RtAudio::StreamOptions}}
+
+
+The structure for specifying stream options.  
+
+
+
+
+{\ttfamily \#include $<$Rt\+Audio.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_rt_audio_8h_a2c0f59b200dcec4d4e760f9166b29c41}{Rt\+Audio\+Stream\+Flags}} \mbox{\hyperlink{struct_rt_audio_1_1_stream_options_a0ecc98b031aa3af49d09b781643e298b}{flags}}
+\item 
+unsigned int \mbox{\hyperlink{struct_rt_audio_1_1_stream_options_a75a14cfab903d0e1c091bc16aec80240}{number\+Of\+Buffers}}
+\item 
+std\+::string \mbox{\hyperlink{struct_rt_audio_1_1_stream_options_a2a4b0b8d690c624d20f4e8f4be6ca9ba}{stream\+Name}}
+\item 
+int \mbox{\hyperlink{struct_rt_audio_1_1_stream_options_adfd267059434edb21573c584e6367def}{priority}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The structure for specifying stream options. 
+
+The following flags can be OR\textquotesingle{}ed together to allow a client to make changes to the default stream behavior\+:
+
+
+\begin{DoxyItemize}
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+N\+O\+N\+I\+N\+T\+E\+R\+L\+E\+A\+V\+ED\+:} Use non-\/interleaved buffers (default = interleaved).
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+M\+I\+N\+I\+M\+I\+Z\+E\+\_\+\+L\+A\+T\+E\+N\+CY\+:} Attempt to set stream parameters for lowest possible latency.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+H\+O\+G\+\_\+\+D\+E\+V\+I\+CE\+:} Attempt grab device for exclusive use.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+E\+A\+L\+T\+I\+ME\+:} Attempt to select realtime scheduling for callback thread.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+L\+S\+A\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT\+:} Use the \char`\"{}default\char`\"{} P\+CM device (A\+L\+SA only).
+\end{DoxyItemize}
+
+By default, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} streams pass and receive audio data from the client in an interleaved format. By passing the R\+T\+A\+U\+D\+I\+O\+\_\+\+N\+O\+N\+I\+N\+T\+E\+R\+L\+E\+A\+V\+ED flag to the \mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{open\+Stream()}} function, audio data will instead be presented in non-\/interleaved buffers. In this case, each buffer argument in the Rt\+Audio\+Callback function will point to a single array of data, with {\ttfamily n\+Frames} samples for each channel concatenated back-\/to-\/back. For example, the first sample of data for the second channel would be located at index {\ttfamily n\+Frames} (assuming the {\ttfamily buffer} pointer was recast to the correct data type for the stream).
+
+Certain audio A\+P\+Is offer a number of parameters that influence the I/O latency of a stream. By default, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} will attempt to set these parameters internally for robust (glitch-\/free) performance (though some A\+P\+Is, like Windows Direct\+Sound, make this difficult). By passing the R\+T\+A\+U\+D\+I\+O\+\_\+\+M\+I\+N\+I\+M\+I\+Z\+E\+\_\+\+L\+A\+T\+E\+N\+CY flag to the \mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{open\+Stream()}} function, internal stream settings will be influenced in an attempt to minimize stream latency, though possibly at the expense of stream performance.
+
+If the R\+T\+A\+U\+D\+I\+O\+\_\+\+H\+O\+G\+\_\+\+D\+E\+V\+I\+CE flag is set, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} will attempt to open the input and/or output stream device(s) for exclusive use. Note that this is not possible with all supported audio A\+P\+Is.
+
+If the R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+E\+A\+L\+T\+I\+ME flag is set, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} will attempt to select realtime scheduling (round-\/robin) for the callback thread. The {\ttfamily priority} parameter will only be used if the R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+E\+A\+L\+T\+I\+ME flag is set. It defines the thread\textquotesingle{}s realtime priority.
+
+If the R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+L\+S\+A\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT flag is set, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} will attempt to open the \char`\"{}default\char`\"{} P\+CM device when using the A\+L\+SA A\+PI. Note that this will override any specified input or output device id.
+
+The {\ttfamily number\+Of\+Buffers} parameter can be used to control stream latency in the Windows Direct\+Sound, Linux O\+SS, and Linux Alsa A\+P\+Is only. A value of two is usually the smallest allowed. Larger numbers can potentially result in more robust stream performance, though likely at the cost of stream latency. The value set by the user is replaced during execution of the \mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{Rt\+Audio\+::open\+Stream()}} function by the value actually used by the system.
+
+The {\ttfamily stream\+Name} parameter can be used to set the client name when using the Jack A\+PI. By default, the client name is set to Rt\+Api\+Jack. However, if you wish to create multiple instances of \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} with Jack, each instance must have a unique client name. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_rt_audio_1_1_stream_options_a0ecc98b031aa3af49d09b781643e298b}\label{struct_rt_audio_1_1_stream_options_a0ecc98b031aa3af49d09b781643e298b}} 
+\index{RtAudio::StreamOptions@{RtAudio::StreamOptions}!flags@{flags}}
+\index{flags@{flags}!RtAudio::StreamOptions@{RtAudio::StreamOptions}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_rt_audio_8h_a2c0f59b200dcec4d4e760f9166b29c41}{Rt\+Audio\+Stream\+Flags}} Rt\+Audio\+::\+Stream\+Options\+::flags}
+
+A bit-\/mask of stream flags (R\+T\+A\+U\+D\+I\+O\+\_\+\+N\+O\+N\+I\+N\+T\+E\+R\+L\+E\+A\+V\+ED, R\+T\+A\+U\+D\+I\+O\+\_\+\+M\+I\+N\+I\+M\+I\+Z\+E\+\_\+\+L\+A\+T\+E\+N\+CY, R\+T\+A\+U\+D\+I\+O\+\_\+\+H\+O\+G\+\_\+\+D\+E\+V\+I\+CE, R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+L\+S\+A\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT). \mbox{\Hypertarget{struct_rt_audio_1_1_stream_options_a75a14cfab903d0e1c091bc16aec80240}\label{struct_rt_audio_1_1_stream_options_a75a14cfab903d0e1c091bc16aec80240}} 
+\index{RtAudio::StreamOptions@{RtAudio::StreamOptions}!numberOfBuffers@{numberOfBuffers}}
+\index{numberOfBuffers@{numberOfBuffers}!RtAudio::StreamOptions@{RtAudio::StreamOptions}}
+\doxysubsubsection{\texorpdfstring{numberOfBuffers}{numberOfBuffers}}
+{\footnotesize\ttfamily unsigned int Rt\+Audio\+::\+Stream\+Options\+::number\+Of\+Buffers}
+
+Number of stream buffers. \mbox{\Hypertarget{struct_rt_audio_1_1_stream_options_adfd267059434edb21573c584e6367def}\label{struct_rt_audio_1_1_stream_options_adfd267059434edb21573c584e6367def}} 
+\index{RtAudio::StreamOptions@{RtAudio::StreamOptions}!priority@{priority}}
+\index{priority@{priority}!RtAudio::StreamOptions@{RtAudio::StreamOptions}}
+\doxysubsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily int Rt\+Audio\+::\+Stream\+Options\+::priority}
+
+Scheduling priority of callback thread (only used with flag R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+E\+A\+L\+T\+I\+ME). \mbox{\Hypertarget{struct_rt_audio_1_1_stream_options_a2a4b0b8d690c624d20f4e8f4be6ca9ba}\label{struct_rt_audio_1_1_stream_options_a2a4b0b8d690c624d20f4e8f4be6ca9ba}} 
+\index{RtAudio::StreamOptions@{RtAudio::StreamOptions}!streamName@{streamName}}
+\index{streamName@{streamName}!RtAudio::StreamOptions@{RtAudio::StreamOptions}}
+\doxysubsubsection{\texorpdfstring{streamName}{streamName}}
+{\footnotesize\ttfamily std\+::string Rt\+Audio\+::\+Stream\+Options\+::stream\+Name}
+
+A stream name (currently used only in Jack). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+R\+T\+Audio/\mbox{\hyperlink{_rt_audio_8h}{Rt\+Audio.\+h}}\end{DoxyCompactItemize}

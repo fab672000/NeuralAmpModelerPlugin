@@ -1,0 +1,248 @@
+\hypertarget{class_a_a_x___i_collection}{}\doxysection{A\+A\+X\+\_\+\+I\+Collection Class Reference}
+\label{class_a_a_x___i_collection}\index{AAX\_ICollection@{AAX\_ICollection}}
+
+
+Interface to represent a plug-\/in binary\textquotesingle{}s static description.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Collection.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Collection\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_a_x___i_collection}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_collection_afab70588134a065a5b4d6ea6ddd5ddff}{New\+Descriptor}} ()=0
+\begin{DoxyCompactList}\small\item\em Create a new Effect descriptor. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_collection_a5ff114b8c4da2081515186f2faf65c8c}{Add\+Effect}} (const char $\ast$in\+Effect\+ID, \mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}} $\ast$in\+Effect\+Descriptor)=0
+\begin{DoxyCompactList}\small\item\em Add an Effect description to the collection. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_collection_a7fbeab9630460b9bf4525512609855f0}{Set\+Manufacturer\+Name}} (const char $\ast$in\+Package\+Name)=0
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in manufacturer name. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_collection_acf7410e0d06cf64bea36bf7d18b3456c}{Add\+Package\+Name}} (const char $\ast$in\+Package\+Name)=0
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in package name. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_collection_a4e69ac93eaac9c285c2bc3ac5b25880b}{Set\+Package\+Version}} (uint32\+\_\+t in\+Version)=0
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in package version number. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_property_map}{A\+A\+X\+\_\+\+I\+Property\+Map}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_collection_a665bac1e4e4558e0998d15a030a57407}{New\+Property\+Map}} ()=0
+\begin{DoxyCompactList}\small\item\em Create a new property map. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_collection_a0cbb609eec2550f7db3a137a826ec436}{Set\+Properties}} (\mbox{\hyperlink{class_a_a_x___i_property_map}{A\+A\+X\+\_\+\+I\+Property\+Map}} $\ast$in\+Properties)=0
+\begin{DoxyCompactList}\small\item\em Set the properties of the collection. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_description_host}{A\+A\+X\+\_\+\+I\+Description\+Host}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_collection_aeed6374265a6c9b4c59f752644feba02}{Description\+Host}} ()=0
+\item 
+virtual const \mbox{\hyperlink{class_a_a_x___i_description_host}{A\+A\+X\+\_\+\+I\+Description\+Host}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_collection_a47ed935bdc38c43efa64ec36cee03a7c}{Description\+Host}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_i_a_c_f_definition}{I\+A\+C\+F\+Definition}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_collection_a8346a9084bf81e1834990aec2685640b}{Host\+Definition}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to represent a plug-\/in binary\textquotesingle{}s static description. 
+
+~\newline
+ \textbackslash{}hostimp
+
+The \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} interface provides a creation function for new plug-\/in descriptors, which in turn provides access to the various interfaces necessary for describing a plug-\/in. When a plug-\/in description is complete, it is added to the collection via the \mbox{\hyperlink{class_a_a_x___i_collection_a5ff114b8c4da2081515186f2faf65c8c}{Add\+Effect}} method. The \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} interface also provides some additional description methods that are used to describe the overall plug-\/in package. These methods can be used to describe the plug-\/in package\textquotesingle{}s name, the name of the plug-\/in\textquotesingle{}s manufacturer, and the plug-\/in package version.
+
+\textbackslash{}legacy The information in \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} is roughly analogous to the information provided by C\+Process\+Group in the legacy plug-\/in library 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_collection_a5ff114b8c4da2081515186f2faf65c8c}\label{class_a_a_x___i_collection_a5ff114b8c4da2081515186f2faf65c8c}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!AddEffect@{AddEffect}}
+\index{AddEffect@{AddEffect}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{AddEffect()}{AddEffect()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Collection\+::\+Add\+Effect (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in\+Effect\+ID,  }\item[{\mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}} $\ast$}]{in\+Effect\+Descriptor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add an Effect description to the collection. 
+
+\begin{DoxyVerb}Each Effect that a plug-in registers with \ref AAX_ICollection::AddEffect() is considered
+a completely different user-facing product. For example, in Avid's Dynamics III plug-in the
+Expander, Compressor, and DeEsser are each registered as separate Effects. All stem format
+variations within each Effect are registered within that Effect's \ref AAX_IEffectDescriptor
+using \ref AAX_IEffectDescriptor::AddComponent() "AddComponent()".
+
+The \ref AAX_eProperty_ProductID value for all ProcessProcs within a single Effect must be
+identical.
+
+This method passes ownership of an \ref AAX_IEffectDescriptor object to the
+\ref AAX_ICollection. The \ref AAX_IEffectDescriptor must not be deleted by the %AAX plug-in,
+nor should it be edited in any way after it is passed to the \ref AAX_ICollection.
+
+@param[in]  inEffectID
+            The effect ID.
+@param[in]  inEffectDescriptor
+            The Effect descriptor.
+\end{DoxyVerb}
+ 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a33db3bfe44af490cb86d174d083449fa}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_acf7410e0d06cf64bea36bf7d18b3456c}\label{class_a_a_x___i_collection_acf7410e0d06cf64bea36bf7d18b3456c}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!AddPackageName@{AddPackageName}}
+\index{AddPackageName@{AddPackageName}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{AddPackageName()}{AddPackageName()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Collection\+::\+Add\+Package\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in\+Package\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the plug-\/in package name. 
+
+\begin{DoxyVerb}May be called multiple times to add abbreviated package names.
+
+\note Every plug-in must include at least one name variant with 16
+or fewer characters, plus a null terminating character. Used for Presets folder.
+
+@param[in]  inPackageName
+            The name of the package.
+\end{DoxyVerb}
+ 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a20f5240a6e7c3f6b787fc6f6040f2258}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_a47ed935bdc38c43efa64ec36cee03a7c}\label{class_a_a_x___i_collection_a47ed935bdc38c43efa64ec36cee03a7c}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!DescriptionHost@{DescriptionHost}}
+\index{DescriptionHost@{DescriptionHost}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{DescriptionHost()}{DescriptionHost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_a_a_x___i_description_host}{A\+A\+X\+\_\+\+I\+Description\+Host}}$\ast$ A\+A\+X\+\_\+\+I\+Collection\+::\+Description\+Host (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+
+
+Get a pointer to an \mbox{\hyperlink{class_a_a_x___i_description_host}{A\+A\+X\+\_\+\+I\+Description\+Host}}, if supported by the host
+
+This interface is served by the \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} in order to avoid requiring a new method prototype for the Get\+Effect\+Descriptions() method called from the A\+AX Library.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_a_x___u_i_ds_8h}{A\+A\+X\+\_\+\+U\+I\+Ds.\+h}} for available feature U\+I\+Ds, e.\+g. A\+A\+X\+A\+T\+T\+R\+\_\+\+Client\+Feature\+\_\+\+Aux\+Output\+Stem 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_ac26e17d7bd1ec4be3bd178fdd0ff9be6}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_aeed6374265a6c9b4c59f752644feba02}\label{class_a_a_x___i_collection_aeed6374265a6c9b4c59f752644feba02}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!DescriptionHost@{DescriptionHost}}
+\index{DescriptionHost@{DescriptionHost}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{DescriptionHost()}{DescriptionHost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_a_x___i_description_host}{A\+A\+X\+\_\+\+I\+Description\+Host}}$\ast$ A\+A\+X\+\_\+\+I\+Collection\+::\+Description\+Host (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get a pointer to an \mbox{\hyperlink{class_a_a_x___i_description_host}{A\+A\+X\+\_\+\+I\+Description\+Host}}, if supported by the host
+
+This interface is served by the \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} in order to avoid requiring a new method prototype for the Get\+Effect\+Descriptions() method called from the A\+AX Library.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_a_x___u_i_ds_8h}{A\+A\+X\+\_\+\+U\+I\+Ds.\+h}} for available feature U\+I\+Ds, e.\+g. A\+A\+X\+A\+T\+T\+R\+\_\+\+Client\+Feature\+\_\+\+Aux\+Output\+Stem 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_aa9997a07f86f342766069d99c6742f94}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_a8346a9084bf81e1834990aec2685640b}\label{class_a_a_x___i_collection_a8346a9084bf81e1834990aec2685640b}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!HostDefinition@{HostDefinition}}
+\index{HostDefinition@{HostDefinition}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{HostDefinition()}{HostDefinition()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_i_a_c_f_definition}{I\+A\+C\+F\+Definition}}$\ast$ A\+A\+X\+\_\+\+I\+Collection\+::\+Host\+Definition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get a pointer to an \mbox{\hyperlink{class_i_a_c_f_definition}{I\+A\+C\+F\+Definition}}, if supported by the host
+
+This interface is served by the \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} in order to avoid requiring a new method prototype for the Get\+Effect\+Descriptions() method called from the A\+AX Library.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_a_x___u_i_ds_8h}{A\+A\+X\+\_\+\+U\+I\+Ds.\+h}} for available host attribute U\+I\+Ds, e.\+g. A\+A\+X\+A\+T\+T\+R\+\_\+\+Client\+\_\+\+Level
+\end{DoxySeeAlso}
+The implementation of \mbox{\hyperlink{class_a_a_x___i_collection}{A\+A\+X\+\_\+\+I\+Collection}} owns the referenced object. No Add\+Ref occurs.
+
+\mbox{\hyperlink{class_i_a_c_f_definition_abf9f28b14b95f0835857a9096d108989}{I\+A\+C\+F\+Definition\+::\+Define\+Attribute()}} is not supported on this object 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_af5f134b179f612dcd5531ba22ed8b262}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_afab70588134a065a5b4d6ea6ddd5ddff}\label{class_a_a_x___i_collection_afab70588134a065a5b4d6ea6ddd5ddff}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!NewDescriptor@{NewDescriptor}}
+\index{NewDescriptor@{NewDescriptor}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{NewDescriptor()}{NewDescriptor()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}}$\ast$ A\+A\+X\+\_\+\+I\+Collection\+::\+New\+Descriptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a new Effect descriptor. 
+
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a624b407fa5df723cf8b8bd6346c95360}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_a665bac1e4e4558e0998d15a030a57407}\label{class_a_a_x___i_collection_a665bac1e4e4558e0998d15a030a57407}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!NewPropertyMap@{NewPropertyMap}}
+\index{NewPropertyMap@{NewPropertyMap}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{NewPropertyMap()}{NewPropertyMap()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_a_x___i_property_map}{A\+A\+X\+\_\+\+I\+Property\+Map}}$\ast$ A\+A\+X\+\_\+\+I\+Collection\+::\+New\+Property\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a new property map. 
+
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a7441ec91e3e0f85ad1547e5dacd74ce2}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_a7fbeab9630460b9bf4525512609855f0}\label{class_a_a_x___i_collection_a7fbeab9630460b9bf4525512609855f0}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!SetManufacturerName@{SetManufacturerName}}
+\index{SetManufacturerName@{SetManufacturerName}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{SetManufacturerName()}{SetManufacturerName()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Collection\+::\+Set\+Manufacturer\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in\+Package\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the plug-\/in manufacturer name. 
+
+\begin{DoxyVerb}@param[in]  inPackageName
+            The name of the manufacturer.
+\end{DoxyVerb}
+ 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a34a70df2b1c4a6b2c13cbee18e463341}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_a4e69ac93eaac9c285c2bc3ac5b25880b}\label{class_a_a_x___i_collection_a4e69ac93eaac9c285c2bc3ac5b25880b}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!SetPackageVersion@{SetPackageVersion}}
+\index{SetPackageVersion@{SetPackageVersion}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{SetPackageVersion()}{SetPackageVersion()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Collection\+::\+Set\+Package\+Version (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{in\+Version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the plug-\/in package version number. 
+
+\begin{DoxyVerb}@param[in]  inVersion
+            The package version numner.
+\end{DoxyVerb}
+ 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a8c070ce17b8af89de1fbf543d746635c}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_collection_a0cbb609eec2550f7db3a137a826ec436}\label{class_a_a_x___i_collection_a0cbb609eec2550f7db3a137a826ec436}} 
+\index{AAX\_ICollection@{AAX\_ICollection}!SetProperties@{SetProperties}}
+\index{SetProperties@{SetProperties}!AAX\_ICollection@{AAX\_ICollection}}
+\doxysubsubsection{\texorpdfstring{SetProperties()}{SetProperties()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Collection\+::\+Set\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_a_x___i_property_map}{A\+A\+X\+\_\+\+I\+Property\+Map}} $\ast$}]{in\+Properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the properties of the collection. 
+
+\begin{DoxyVerb}@param[in]  inProperties
+            Collection properties
+\end{DoxyVerb}
+ 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_collection_a08afb5e984bac10864366e0f356ff687}{A\+A\+X\+\_\+\+V\+Collection}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_collection_8h}{A\+A\+X\+\_\+\+I\+Collection.\+h}}\end{DoxyCompactItemize}

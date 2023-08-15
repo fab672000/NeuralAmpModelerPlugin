@@ -1,0 +1,55 @@
+\hypertarget{class_sk_blit_row}{}\doxysection{Sk\+Blit\+Row Class Reference}
+\label{class_sk_blit_row}\index{SkBlitRow@{SkBlitRow}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_blit_row_af4bc830d3495d9a5c7280ff60000ef4b}\label{class_sk_blit_row_af4bc830d3495d9a5c7280ff60000ef4b}} 
+enum {\bfseries Flags32} \{ {\bfseries k\+Global\+Alpha\+\_\+\+Flag32} = 1 $<$$<$ 0, 
+{\bfseries k\+Src\+Pixel\+Alpha\+\_\+\+Flag32} = 1 $<$$<$ 1
+ \}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{class_sk_blit_row_af33a9f2a5fccaadbf19f68312edf95a1}{Proc32}}) (uint32\+\_\+t dst\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} src\mbox{[}$\,$\mbox{]}, int count, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} alpha)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_blit_row_ad93177eead39dd92e9423ae616932015}\label{class_sk_blit_row_ad93177eead39dd92e9423ae616932015}} 
+static \mbox{\hyperlink{class_sk_blit_row_af33a9f2a5fccaadbf19f68312edf95a1}{Proc32}} {\bfseries Factory32} (unsigned flags32)
+\item 
+static void \mbox{\hyperlink{class_sk_blit_row_aa2b032d852fd0e402ffecb19820f24fa}{Color32}} (\mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} dst\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} src\mbox{[}$\,$\mbox{]}, int count, \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_sk_blit_row_af33a9f2a5fccaadbf19f68312edf95a1}\label{class_sk_blit_row_af33a9f2a5fccaadbf19f68312edf95a1}} 
+\index{SkBlitRow@{SkBlitRow}!Proc32@{Proc32}}
+\index{Proc32@{Proc32}!SkBlitRow@{SkBlitRow}}
+\doxysubsubsection{\texorpdfstring{Proc32}{Proc32}}
+{\footnotesize\ttfamily typedef void($\ast$ Sk\+Blit\+Row\+::\+Proc32) (uint32\+\_\+t dst\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} src\mbox{[}$\,$\mbox{]}, int count, \mbox{\hyperlink{_sk_types_8h_a6882636f582abdb2a130b7e5ff38aa83}{U8\+C\+PU}} alpha)}
+
+Function pointer that blends 32bit colors onto a 32bit destination. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & array of dst 32bit colors \\
+\hline
+{\em src} & array of src 32bit colors (w/ or w/o alpha) \\
+\hline
+{\em count} & number of colors to blend \\
+\hline
+{\em alpha} & global alpha to be applied to all src colors \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_blit_row_aa2b032d852fd0e402ffecb19820f24fa}\label{class_sk_blit_row_aa2b032d852fd0e402ffecb19820f24fa}} 
+\index{SkBlitRow@{SkBlitRow}!Color32@{Color32}}
+\index{Color32@{Color32}!SkBlitRow@{SkBlitRow}}
+\doxysubsubsection{\texorpdfstring{Color32()}{Color32()}}
+{\footnotesize\ttfamily void Sk\+Blit\+Row\+::\+Color32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}}}]{dst\mbox{[}$\,$\mbox{]},  }\item[{const \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}}}]{src\mbox{[}$\,$\mbox{]},  }\item[{int}]{count,  }\item[{\mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}}}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Blend a single color onto a row of S32 pixels, writing the result into a row of D32 pixels. src and dst may be the same memory, but if they are not, they may not overlap. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blit\+Row.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blit\+Row\+\_\+\+D32.\+cpp\end{DoxyCompactItemize}

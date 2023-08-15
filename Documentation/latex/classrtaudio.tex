@@ -1,0 +1,98 @@
+\hypertarget{classrtaudio}{}\doxysection{rtaudio Struct Reference}
+\label{classrtaudio}\index{rtaudio@{rtaudio}}
+Inheritance diagram for rtaudio\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrtaudio}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrtaudio_af8bdf2758f76753f096a67064d666ffe}\label{classrtaudio_af8bdf2758f76753f096a67064d666ffe}} 
+{\bfseries rtaudio} (int srate, int bsize)
+\item 
+\mbox{\Hypertarget{classrtaudio_a8574276742e5fc3f7301ebc1e22ff0ad}\label{classrtaudio_a8574276742e5fc3f7301ebc1e22ff0ad}} 
+virtual bool {\bfseries init} (const char $\ast$name, \mbox{\hyperlink{classdsp}{dsp}} $\ast$\mbox{\hyperlink{class_d_s_p}{D\+SP}})
+\item 
+\mbox{\Hypertarget{classrtaudio_a808190a72006f74f5cd124e0ad852d61}\label{classrtaudio_a808190a72006f74f5cd124e0ad852d61}} 
+bool {\bfseries init} (const char $\ast$, int num\+Inputs, int num\+Outputs)
+\item 
+\mbox{\Hypertarget{classrtaudio_a3469a7cfda8f5041e21df8fdc61be7ff}\label{classrtaudio_a3469a7cfda8f5041e21df8fdc61be7ff}} 
+void {\bfseries set\+Dsp} (\mbox{\hyperlink{classdsp}{dsp}} $\ast$\mbox{\hyperlink{class_d_s_p}{D\+SP}})
+\item 
+\mbox{\Hypertarget{classrtaudio_a2e432b6de5b7421e8608cde8e32b32da}\label{classrtaudio_a2e432b6de5b7421e8608cde8e32b32da}} 
+virtual bool {\bfseries start} ()
+\item 
+\mbox{\Hypertarget{classrtaudio_af1b6048d5f6112a51e800354d3135785}\label{classrtaudio_af1b6048d5f6112a51e800354d3135785}} 
+virtual void {\bfseries stop} ()
+\item 
+\mbox{\Hypertarget{classrtaudio_ac66d5ecc81309cf33db06c83345bd243}\label{classrtaudio_ac66d5ecc81309cf33db06c83345bd243}} 
+virtual int {\bfseries get\+Buffer\+Size} ()
+\item 
+\mbox{\Hypertarget{classrtaudio_a9b29823d41d76a50975878382407eb29}\label{classrtaudio_a9b29823d41d76a50975878382407eb29}} 
+virtual int {\bfseries get\+Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{classrtaudio_a80d92c4218ecdf6d696be154b7700e1f}\label{classrtaudio_a80d92c4218ecdf6d696be154b7700e1f}} 
+virtual int {\bfseries get\+Num\+Inputs} ()
+\item 
+\mbox{\Hypertarget{classrtaudio_a26b9d7914f8139169cd87cf034ccdf14}\label{classrtaudio_a26b9d7914f8139169cd87cf034ccdf14}} 
+virtual int {\bfseries get\+Num\+Outputs} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrtaudio_a333f0794af5fdb88f367ae5622cf99c4}\label{classrtaudio_a333f0794af5fdb88f367ae5622cf99c4}} 
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} $\ast$ {\bfseries audio}
+\item 
+\mbox{\Hypertarget{classrtaudio_a8378fe846d9dc7fd32adec28d07073ee}\label{classrtaudio_a8378fe846d9dc7fd32adec28d07073ee}} 
+\mbox{\hyperlink{group___c-interface_ga2b225b83b25ea4025f60cef3ac97ca6f}{rtaudio\+\_\+cb\+\_\+t}} {\bfseries cb}
+\item 
+\mbox{\Hypertarget{classrtaudio_a91b94d2b89eefc5b18e39d0cf2174fb5}\label{classrtaudio_a91b94d2b89eefc5b18e39d0cf2174fb5}} 
+void $\ast$ {\bfseries userdata}
+\item 
+\mbox{\Hypertarget{classrtaudio_abb675b9f1dd403c1871b07af39cffdff}\label{classrtaudio_abb675b9f1dd403c1871b07af39cffdff}} 
+int {\bfseries has\+\_\+error}
+\item 
+\mbox{\Hypertarget{classrtaudio_a3b228748b64ae49ad629d73b8ec5996c}\label{classrtaudio_a3b228748b64ae49ad629d73b8ec5996c}} 
+char {\bfseries errmsg} \mbox{[}M\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+TH\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrtaudio_a10d9beff8b80fe439b39a6ae5e65cc8a}\label{classrtaudio_a10d9beff8b80fe439b39a6ae5e65cc8a}} 
+virtual int {\bfseries process\+Audio} (double stream\+Time, void $\ast$inbuf, void $\ast$outbuf, unsigned long frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrtaudio_aa7bcd640181bb5ee8262525f7a74f0ae}\label{classrtaudio_aa7bcd640181bb5ee8262525f7a74f0ae}} 
+static int {\bfseries audio\+Callback} (void $\ast$output\+Buffer, void $\ast$input\+Buffer, unsigned int n\+Buffer\+Frames, double stream\+Time, \mbox{\hyperlink{_rt_audio_8h_a80e306d363583da3b0a1b65d9b57c806}{Rt\+Audio\+Stream\+Status}} status, void $\ast$drv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrtaudio_a34f7b8a509928fbf84ceb22ec4b107e3}\label{classrtaudio_a34f7b8a509928fbf84ceb22ec4b107e3}} 
+\mbox{\hyperlink{classdsp}{dsp}} $\ast$ {\bfseries f\+Dsp}
+\item 
+\mbox{\Hypertarget{classrtaudio_ac13098cf4c782e5bf755c9bb4777a500}\label{classrtaudio_ac13098cf4c782e5bf755c9bb4777a500}} 
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} {\bfseries f\+Audio\+D\+AC}
+\item 
+\mbox{\Hypertarget{classrtaudio_a72a9ace9c5d2aa3fd9c2cb4cb34f263b}\label{classrtaudio_a72a9ace9c5d2aa3fd9c2cb4cb34f263b}} 
+unsigned int {\bfseries f\+Sample\+Rate}
+\item 
+\mbox{\Hypertarget{classrtaudio_aa5c24eecc5d827ff0c1b7fc1e456c4ad}\label{classrtaudio_aa5c24eecc5d827ff0c1b7fc1e456c4ad}} 
+unsigned int {\bfseries f\+Buffer\+Size}
+\item 
+\mbox{\Hypertarget{classrtaudio_a6801b7d0fb87a23766b0efe59fcb3198}\label{classrtaudio_a6801b7d0fb87a23766b0efe59fcb3198}} 
+int {\bfseries f\+Dev\+Num\+In\+Chans}
+\item 
+\mbox{\Hypertarget{classrtaudio_a9299c9e5870f050ddda155197ef760e1}\label{classrtaudio_a9299c9e5870f050ddda155197ef760e1}} 
+int {\bfseries f\+Dev\+Num\+Out\+Chans}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/audio/rtaudio-\/dsp.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+R\+T\+Audio/rtaudio\+\_\+c.\+cpp\end{DoxyCompactItemize}

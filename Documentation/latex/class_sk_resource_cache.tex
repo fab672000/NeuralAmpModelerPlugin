@@ -1,0 +1,228 @@
+\hypertarget{class_sk_resource_cache}{}\doxysection{Sk\+Resource\+Cache Class Reference}
+\label{class_sk_resource_cache}\index{SkResourceCache@{SkResourceCache}}
+
+
+{\ttfamily \#include $<$Sk\+Resource\+Cache.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_resource_cache_1_1_hash}{Hash}}
+\item 
+struct \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}}
+\item 
+struct \mbox{\hyperlink{struct_sk_resource_cache_1_1_purge_shared_i_d_message}{Purge\+Shared\+I\+D\+Message}}
+\item 
+struct \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}{Find\+Visitor}}) (const \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} \&, void $\ast$context)
+\item 
+typedef \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} $\ast$($\ast$ \mbox{\hyperlink{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}{Discardable\+Factory}}) (size\+\_\+t bytes)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_abf9f48dc917fdf1bd2fac547fc59898e}\label{class_sk_resource_cache_abf9f48dc917fdf1bd2fac547fc59898e}} 
+typedef void($\ast$ {\bfseries Visitor}) (const \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} \&, void $\ast$context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_resource_cache_a00642d549f2ac6eb0544a4bd3f1c75e5}{Sk\+Resource\+Cache}} (\mbox{\hyperlink{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}{Discardable\+Factory}})
+\item 
+\mbox{\hyperlink{class_sk_resource_cache_a6da3ff70c8d3621ddc24f87bb5c4f3cd}{Sk\+Resource\+Cache}} (size\+\_\+t byte\+Limit)
+\item 
+bool \mbox{\hyperlink{class_sk_resource_cache_a412d70a789d5cec7528e365e9ed07a56}{find}} (const \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}} \&, \mbox{\hyperlink{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}{Find\+Visitor}}, void $\ast$context)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_af4a25b433f15066507a1aca22c9d5637}\label{class_sk_resource_cache_af4a25b433f15066507a1aca22c9d5637}} 
+void {\bfseries add} (\mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} $\ast$, void $\ast$payload=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a161e57d73b09cc248f2936552520b3d1}\label{class_sk_resource_cache_a161e57d73b09cc248f2936552520b3d1}} 
+void {\bfseries visit\+All} (Visitor, void $\ast$context)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a15668527ee8b2dc20c4884733d3b5de0}\label{class_sk_resource_cache_a15668527ee8b2dc20c4884733d3b5de0}} 
+size\+\_\+t {\bfseries get\+Total\+Bytes\+Used} () const
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a0edf38876c7e61ea6932863360a70985}\label{class_sk_resource_cache_a0edf38876c7e61ea6932863360a70985}} 
+size\+\_\+t {\bfseries get\+Total\+Byte\+Limit} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_resource_cache_a9febe9b427f6391fb6babb10df85005f}{set\+Single\+Allocation\+Byte\+Limit}} (size\+\_\+t maximum\+Allocation\+Size)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a0c3e0c9eb12db3dc68eaa50b5c4d04cb}\label{class_sk_resource_cache_a0c3e0c9eb12db3dc68eaa50b5c4d04cb}} 
+size\+\_\+t {\bfseries get\+Single\+Allocation\+Byte\+Limit} () const
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_aa899bb14f4a49a9b5ac75d065f6aa1bd}\label{class_sk_resource_cache_aa899bb14f4a49a9b5ac75d065f6aa1bd}} 
+size\+\_\+t {\bfseries get\+Effective\+Single\+Allocation\+Byte\+Limit} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_resource_cache_a7d78f3a4164c7803d7644255b0d6712f}{set\+Total\+Byte\+Limit}} (size\+\_\+t new\+Limit)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a2fcbc839d5adc18614e9bf9f0f790847}\label{class_sk_resource_cache_a2fcbc839d5adc18614e9bf9f0f790847}} 
+void {\bfseries purge\+Shared\+ID} (uint64\+\_\+t shared\+ID)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_aa9eb542403913fda2e618c1758d94164}\label{class_sk_resource_cache_aa9eb542403913fda2e618c1758d94164}} 
+void {\bfseries purge\+All} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a135097cbeead410de5052cd956abd157}\label{class_sk_resource_cache_a135097cbeead410de5052cd956abd157}} 
+\mbox{\hyperlink{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}{Discardable\+Factory}} {\bfseries discardable\+Factory} () const
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a8177b1d5203061a1c6f580ace58da804}\label{class_sk_resource_cache_a8177b1d5203061a1c6f580ace58da804}} 
+\mbox{\hyperlink{class_sk_cached_data}{Sk\+Cached\+Data}} $\ast$ {\bfseries new\+Cached\+Data} (size\+\_\+t bytes)
+\item 
+void \mbox{\hyperlink{class_sk_resource_cache_a606d9047566c8475fd43d84c68578b0e}{dump}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_sk_resource_cache_a7533e1324b055168322b02e5b1cd9b29}{Find}} (const \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}} \&key, \mbox{\hyperlink{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}{Find\+Visitor}}, void $\ast$context)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a05f52341125c7646de15b1f32099516a}\label{class_sk_resource_cache_a05f52341125c7646de15b1f32099516a}} 
+static void {\bfseries Add} (\mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} $\ast$, void $\ast$payload=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a5c4ac7411b7539355402cf8b2e61cbce}\label{class_sk_resource_cache_a5c4ac7411b7539355402cf8b2e61cbce}} 
+static void {\bfseries Visit\+All} (Visitor, void $\ast$context)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a2c7d9ddb30be353bbeb900bd63761b68}\label{class_sk_resource_cache_a2c7d9ddb30be353bbeb900bd63761b68}} 
+static size\+\_\+t {\bfseries Get\+Total\+Bytes\+Used} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a6778dbf43423638f370fe8a802b0e5cd}\label{class_sk_resource_cache_a6778dbf43423638f370fe8a802b0e5cd}} 
+static size\+\_\+t {\bfseries Get\+Total\+Byte\+Limit} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_ac6db4a634900a8ddd25fd3d79fc1c6b9}\label{class_sk_resource_cache_ac6db4a634900a8ddd25fd3d79fc1c6b9}} 
+static size\+\_\+t {\bfseries Set\+Total\+Byte\+Limit} (size\+\_\+t new\+Limit)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a037e1b1e798da43f2f59632f6826e5da}\label{class_sk_resource_cache_a037e1b1e798da43f2f59632f6826e5da}} 
+static size\+\_\+t {\bfseries Set\+Single\+Allocation\+Byte\+Limit} (size\+\_\+t)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a58b68e9f2f406253bc1b8bd4931530fd}\label{class_sk_resource_cache_a58b68e9f2f406253bc1b8bd4931530fd}} 
+static size\+\_\+t {\bfseries Get\+Single\+Allocation\+Byte\+Limit} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a108717b4e5eb7690ba64cf8bafe1642d}\label{class_sk_resource_cache_a108717b4e5eb7690ba64cf8bafe1642d}} 
+static size\+\_\+t {\bfseries Get\+Effective\+Single\+Allocation\+Byte\+Limit} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a213219dff49af65f207ae301cd0647ae}\label{class_sk_resource_cache_a213219dff49af65f207ae301cd0647ae}} 
+static void {\bfseries Purge\+All} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a388f446f2b6ca0d44622180014b0e14d}\label{class_sk_resource_cache_a388f446f2b6ca0d44622180014b0e14d}} 
+static void {\bfseries Check\+Messages} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a7c65dfb2f522ee62148ee4ed9bba1483}\label{class_sk_resource_cache_a7c65dfb2f522ee62148ee4ed9bba1483}} 
+static void {\bfseries Test\+Dump\+Memory\+Statistics} ()
+\item 
+static void \mbox{\hyperlink{class_sk_resource_cache_a440ba8cd2dc304ebbab95ea980af63b0}{Dump\+Memory\+Statistics}} (\mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} $\ast$\mbox{\hyperlink{class_sk_resource_cache_a606d9047566c8475fd43d84c68578b0e}{dump}})
+\item 
+static \mbox{\hyperlink{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}{Discardable\+Factory}} \mbox{\hyperlink{class_sk_resource_cache_a38cd73a39c8f7e53339d0ce9db7f4cdf}{Get\+Discardable\+Factory}} ()
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a03f9ab8282fa60c7a4b16373e0f664c3}\label{class_sk_resource_cache_a03f9ab8282fa60c7a4b16373e0f664c3}} 
+static \mbox{\hyperlink{class_sk_cached_data}{Sk\+Cached\+Data}} $\ast$ {\bfseries New\+Cached\+Data} (size\+\_\+t bytes)
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a295eb70eb63797852471dd6bb21fd36c}\label{class_sk_resource_cache_a295eb70eb63797852471dd6bb21fd36c}} 
+static void {\bfseries Post\+Purge\+Shared\+ID} (uint64\+\_\+t shared\+ID)
+\item 
+static void \mbox{\hyperlink{class_sk_resource_cache_ac12c692c3173be2853e82cc8303ac454}{Dump}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_resource_cache_a31bac6d4f67564dd7cb4679aecf366b0}\label{class_sk_resource_cache_a31bac6d4f67564dd7cb4679aecf366b0}} 
+const typedef \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} $\ast$ {\bfseries ID}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cache object for bitmaps (with possible scale in X Y as part of the key).
+
+Multiple caches can be instantiated, but each instance is not implicitly thread-\/safe, so if a given instance is to be shared across threads, the caller must manage the access itself (e.\+g. via a mutex).
+
+As a convenience, a global instance is also defined, which can be safely access across threads via the static methods (e.\+g. Find\+And\+Lock, etc.). 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}\label{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}} 
+\index{SkResourceCache@{SkResourceCache}!DiscardableFactory@{DiscardableFactory}}
+\index{DiscardableFactory@{DiscardableFactory}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{DiscardableFactory}{DiscardableFactory}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}}$\ast$($\ast$ Sk\+Resource\+Cache\+::\+Discardable\+Factory) (size\+\_\+t bytes)}
+
+Returns a locked/pinned \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} instance for the specified number of bytes, or nullptr on failure. \mbox{\Hypertarget{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}\label{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}} 
+\index{SkResourceCache@{SkResourceCache}!FindVisitor@{FindVisitor}}
+\index{FindVisitor@{FindVisitor}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{FindVisitor}{FindVisitor}}
+{\footnotesize\ttfamily typedef bool($\ast$ Sk\+Resource\+Cache\+::\+Find\+Visitor) (const \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} \&, void $\ast$context)}
+
+Callback function for \mbox{\hyperlink{class_sk_resource_cache_a412d70a789d5cec7528e365e9ed07a56}{find()}}. If called, the cache will have found a match for the specified \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}}, and will pass in the corresponding \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}}, along with a caller-\/specified context. The function can read the data in \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}}, and copy whatever it likes into context (casting context to whatever it really is).
+
+The return value determines what the cache will do with the \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}}. If the function returns true, then the \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} is considered \char`\"{}valid\char`\"{}. If false is returned, the \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} will be considered \char`\"{}stale\char`\"{} and will be purged from the cache. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_resource_cache_a00642d549f2ac6eb0544a4bd3f1c75e5}\label{class_sk_resource_cache_a00642d549f2ac6eb0544a4bd3f1c75e5}} 
+\index{SkResourceCache@{SkResourceCache}!SkResourceCache@{SkResourceCache}}
+\index{SkResourceCache@{SkResourceCache}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{SkResourceCache()}{SkResourceCache()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sk\+Resource\+Cache\+::\+Sk\+Resource\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}{Discardable\+Factory}}}]{factory }\end{DoxyParamCaption})}
+
+Construct the cache to call Discardable\+Factory when it allocates memory for the pixels. In this mode, the cache has not explicit budget, and so methods like get\+Total\+Bytes\+Used() and get\+Total\+Byte\+Limit() will return 0, and set\+Total\+Byte\+Limit will ignore its argument and return 0. \mbox{\Hypertarget{class_sk_resource_cache_a6da3ff70c8d3621ddc24f87bb5c4f3cd}\label{class_sk_resource_cache_a6da3ff70c8d3621ddc24f87bb5c4f3cd}} 
+\index{SkResourceCache@{SkResourceCache}!SkResourceCache@{SkResourceCache}}
+\index{SkResourceCache@{SkResourceCache}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{SkResourceCache()}{SkResourceCache()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sk\+Resource\+Cache\+::\+Sk\+Resource\+Cache (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{byte\+Limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct the cache, allocating memory with malloc, and respect the byte\+Limit, purging automatically when a new image is added to the cache that pushes the total bytes\+Used over the limit. Note\+: The limit can be changed at runtime with set\+Total\+Byte\+Limit. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_resource_cache_ac12c692c3173be2853e82cc8303ac454}\label{class_sk_resource_cache_ac12c692c3173be2853e82cc8303ac454}} 
+\index{SkResourceCache@{SkResourceCache}!Dump@{Dump}}
+\index{Dump@{Dump}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{Dump()}{Dump()}}
+{\footnotesize\ttfamily void Sk\+Resource\+Cache\+::\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Call Sk\+Debugf() with diagnostic information about the state of the cache \mbox{\Hypertarget{class_sk_resource_cache_a606d9047566c8475fd43d84c68578b0e}\label{class_sk_resource_cache_a606d9047566c8475fd43d84c68578b0e}} 
+\index{SkResourceCache@{SkResourceCache}!dump@{dump}}
+\index{dump@{dump}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void Sk\+Resource\+Cache\+::dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Call Sk\+Debugf() with diagnostic information about the state of the cache \mbox{\Hypertarget{class_sk_resource_cache_a440ba8cd2dc304ebbab95ea980af63b0}\label{class_sk_resource_cache_a440ba8cd2dc304ebbab95ea980af63b0}} 
+\index{SkResourceCache@{SkResourceCache}!DumpMemoryStatistics@{DumpMemoryStatistics}}
+\index{DumpMemoryStatistics@{DumpMemoryStatistics}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{DumpMemoryStatistics()}{DumpMemoryStatistics()}}
+{\footnotesize\ttfamily void Sk\+Resource\+Cache\+::\+Dump\+Memory\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} $\ast$}]{dump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Dump memory usage statistics of every \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} in the cache using the \mbox{\hyperlink{class_sk_trace_memory_dump}{Sk\+Trace\+Memory\+Dump}} interface. \mbox{\Hypertarget{class_sk_resource_cache_a412d70a789d5cec7528e365e9ed07a56}\label{class_sk_resource_cache_a412d70a789d5cec7528e365e9ed07a56}} 
+\index{SkResourceCache@{SkResourceCache}!find@{find}}
+\index{find@{find}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily bool Sk\+Resource\+Cache\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}} \&}]{key,  }\item[{\mbox{\hyperlink{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}{Find\+Visitor}}}]{visitor,  }\item[{void $\ast$}]{context }\end{DoxyParamCaption})}
+
+Returns true if the visitor was called on a matching \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}}, and the visitor returned true.
+
+\mbox{\hyperlink{class_sk_resource_cache_a412d70a789d5cec7528e365e9ed07a56}{find()}} will search the cache for the specified \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}}. If no match is found, return false and do not call the Find\+Visitor. If a match is found, return whatever the visitor returns. Its return value is interpreted to mean\+: true \+: \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} is valid false \+: \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} is \char`\"{}stale\char`\"{} -- the cache will purge it. \mbox{\Hypertarget{class_sk_resource_cache_a7533e1324b055168322b02e5b1cd9b29}\label{class_sk_resource_cache_a7533e1324b055168322b02e5b1cd9b29}} 
+\index{SkResourceCache@{SkResourceCache}!Find@{Find}}
+\index{Find@{Find}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily bool Sk\+Resource\+Cache\+::\+Find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}} \&}]{key,  }\item[{\mbox{\hyperlink{class_sk_resource_cache_a972a2d04319dac82021d11ae98c2e502}{Find\+Visitor}}}]{visitor,  }\item[{void $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns true if the visitor was called on a matching \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}}, and the visitor returned true.
+
+\mbox{\hyperlink{class_sk_resource_cache_a7533e1324b055168322b02e5b1cd9b29}{Find()}} will search the cache for the specified \mbox{\hyperlink{struct_sk_resource_cache_1_1_key}{Key}}. If no match is found, return false and do not call the Find\+Visitor. If a match is found, return whatever the visitor returns. Its return value is interpreted to mean\+: true \+: \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} is valid false \+: \mbox{\hyperlink{struct_sk_resource_cache_1_1_rec}{Rec}} is \char`\"{}stale\char`\"{} -- the cache will purge it. \mbox{\Hypertarget{class_sk_resource_cache_a38cd73a39c8f7e53339d0ce9db7f4cdf}\label{class_sk_resource_cache_a38cd73a39c8f7e53339d0ce9db7f4cdf}} 
+\index{SkResourceCache@{SkResourceCache}!GetDiscardableFactory@{GetDiscardableFactory}}
+\index{GetDiscardableFactory@{GetDiscardableFactory}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{GetDiscardableFactory()}{GetDiscardableFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_resource_cache_a834ad5abf1c2569d16840d811fc5aa63}{Sk\+Resource\+Cache\+::\+Discardable\+Factory}} Sk\+Resource\+Cache\+::\+Get\+Discardable\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the Discardable\+Factory used by the global cache, or nullptr. \mbox{\Hypertarget{class_sk_resource_cache_a9febe9b427f6391fb6babb10df85005f}\label{class_sk_resource_cache_a9febe9b427f6391fb6babb10df85005f}} 
+\index{SkResourceCache@{SkResourceCache}!setSingleAllocationByteLimit@{setSingleAllocationByteLimit}}
+\index{setSingleAllocationByteLimit@{setSingleAllocationByteLimit}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{setSingleAllocationByteLimit()}{setSingleAllocationByteLimit()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Resource\+Cache\+::set\+Single\+Allocation\+Byte\+Limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{maximum\+Allocation\+Size }\end{DoxyParamCaption})}
+
+This is respected by Sk\+Bitmap\+Proc\+State\+::possibly\+Scale\+Image. 0 is no maximum at all; this is the default. \mbox{\hyperlink{class_sk_resource_cache_a9febe9b427f6391fb6babb10df85005f}{set\+Single\+Allocation\+Byte\+Limit()}} returns the previous value. \mbox{\Hypertarget{class_sk_resource_cache_a7d78f3a4164c7803d7644255b0d6712f}\label{class_sk_resource_cache_a7d78f3a4164c7803d7644255b0d6712f}} 
+\index{SkResourceCache@{SkResourceCache}!setTotalByteLimit@{setTotalByteLimit}}
+\index{setTotalByteLimit@{setTotalByteLimit}!SkResourceCache@{SkResourceCache}}
+\doxysubsubsection{\texorpdfstring{setTotalByteLimit()}{setTotalByteLimit()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Resource\+Cache\+::set\+Total\+Byte\+Limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{new\+Limit }\end{DoxyParamCaption})}
+
+Set the maximum number of bytes available to this cache. If the current cache exceeds this new value, it will be purged to try to fit within this new limit. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Resource\+Cache.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Resource\+Cache.\+cpp\end{DoxyCompactItemize}

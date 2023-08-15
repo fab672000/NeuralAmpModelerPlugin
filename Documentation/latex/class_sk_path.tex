@@ -1,0 +1,2117 @@
+\hypertarget{class_sk_path}{}\doxysection{Sk\+Path Class Reference}
+\label{class_sk_path}\index{SkPath@{SkPath}}
+
+
+{\ttfamily \#include $<$Sk\+Path.\+h$>$}
+
+Inheritance diagram for Sk\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_path}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_path_1_1_iter}{Iter}}
+\item 
+class \mbox{\hyperlink{class_sk_path_1_1_raw_iter}{Raw\+Iter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Arc\+Size}} \{ \mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125a06a198c5ed112cc37526f805f194a8ff}{k\+Small\+\_\+\+Arc\+Size}}, 
+\mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125adadb866d7c283778e9c495a141aeedc4}{k\+Large\+\_\+\+Arc\+Size}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}} \{ \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}}, 
+\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95a3eaffabb1ede7f0f7a99e7c85cfd2ae8}{k\+Extend\+\_\+\+Add\+Path\+Mode}}
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_path_a01e9993d5bbded1779493179ffc143a7}\label{class_sk_path_a01e9993d5bbded1779493179ffc143a7}} 
+enum {\bfseries Segment\+Mask} \{ {\bfseries k\+Line\+\_\+\+Segment\+Mask} = k\+Line\+\_\+\+Sk\+Path\+Segment\+Mask, 
+{\bfseries k\+Quad\+\_\+\+Segment\+Mask} = k\+Quad\+\_\+\+Sk\+Path\+Segment\+Mask, 
+{\bfseries k\+Conic\+\_\+\+Segment\+Mask} = k\+Conic\+\_\+\+Sk\+Path\+Segment\+Mask, 
+{\bfseries k\+Cubic\+\_\+\+Segment\+Mask} = k\+Cubic\+\_\+\+Sk\+Path\+Segment\+Mask
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_path_ac36f638ac96f3428626e993eacf84ff0}\label{class_sk_path_ac36f638ac96f3428626e993eacf84ff0}} 
+enum {\bfseries Verb} \{ \newline
+{\bfseries k\+Move\+\_\+\+Verb} = static\+\_\+cast$<$int$>$(Sk\+Path\+Verb\+::k\+Move), 
+{\bfseries k\+Line\+\_\+\+Verb} = static\+\_\+cast$<$int$>$(Sk\+Path\+Verb\+::k\+Line), 
+{\bfseries k\+Quad\+\_\+\+Verb} = static\+\_\+cast$<$int$>$(Sk\+Path\+Verb\+::k\+Quad), 
+{\bfseries k\+Conic\+\_\+\+Verb} = static\+\_\+cast$<$int$>$(Sk\+Path\+Verb\+::k\+Conic), 
+\newline
+{\bfseries k\+Cubic\+\_\+\+Verb} = static\+\_\+cast$<$int$>$(Sk\+Path\+Verb\+::k\+Cubic), 
+{\bfseries k\+Close\+\_\+\+Verb} = static\+\_\+cast$<$int$>$(Sk\+Path\+Verb\+::k\+Close), 
+{\bfseries k\+Done\+\_\+\+Verb} = k\+Close\+\_\+\+Verb + 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_path_a19453a0e80054e1cbdd389d31654bcc6}{Sk\+Path}} ()
+\item 
+\mbox{\hyperlink{class_sk_path_aa30a9363d49c092958d48e30608df367}{Sk\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path)
+\item 
+\mbox{\hyperlink{class_sk_path_a66ebfe13095d531f1d2bf1cbce725fd4}{$\sim$\+Sk\+Path}} ()
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a24e75e150a765d304e8d0c3d087ddc94}{operator=}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path)
+\item 
+bool \mbox{\hyperlink{class_sk_path_a78f7eed7de33a798a9859ab16e335fde}{is\+Interpolatable}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&compare) const
+\item 
+bool \mbox{\hyperlink{class_sk_path_a79332188cf437c46f294e77da89920b5}{interpolate}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&ending, Sk\+Scalar weight, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$out) const
+\item 
+Sk\+Path\+Fill\+Type \mbox{\hyperlink{class_sk_path_a382204722705384fb74b7abd3e5c3f95}{get\+Fill\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_sk_path_a3a562e1a9037c6a4cf676febe8073176}{set\+Fill\+Type}} (Sk\+Path\+Fill\+Type ft)
+\item 
+bool \mbox{\hyperlink{class_sk_path_a06b2fe32125d776c2274da5e735eb588}{is\+Inverse\+Fill\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_sk_path_a557a2b002743e15d9bd4f14b0aee3ea6}{toggle\+Inverse\+Fill\+Type}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_path_aa20544ae11a0b20b09565274ca4da740}{is\+Convex}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_a88cab201b805a4210074a632fab3e21c}{is\+Oval}} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$bounds) const
+\item 
+bool \mbox{\hyperlink{class_sk_path_ae8cac7a51ebe9607dbc1b3ddde5a4e5f}{is\+R\+Rect}} (\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$rrect) const
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a977497439155df168c935114be1fa148}{reset}} ()
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a704fc5e57bfbadd6a7560291fc7fc1fa}{rewind}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_path_a0289c6eed642e4d74c95fda08b0df63a}{is\+Empty}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_ac88bb37821fd59e93954de3c3d7ed9a9}{is\+Last\+Contour\+Closed}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_a244a91414b71bf2192825098b0216233}{is\+Finite}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}{is\+Volatile}} () const
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a5734897ba1c06cd48cd4f8726d3a3af6}{set\+Is\+Volatile}} (bool \mbox{\hyperlink{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}{is\+Volatile}})
+\item 
+bool \mbox{\hyperlink{class_sk_path_a2b79cc08d313b8e5f3f6b98281a9fd4e}{is\+Line}} (\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} line\mbox{[}2\mbox{]}) const
+\item 
+int \mbox{\hyperlink{class_sk_path_a18d1b347ac162821b37c26ff4ce75ba3}{count\+Points}} () const
+\item 
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \mbox{\hyperlink{class_sk_path_a28741ac1ee01f1f626b8537f327720c5}{get\+Point}} (int index) const
+\item 
+int \mbox{\hyperlink{class_sk_path_a3a5540ce3ec6f55b99e154a743de5d6b}{get\+Points}} (\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} points\mbox{[}$\,$\mbox{]}, int max) const
+\item 
+int \mbox{\hyperlink{class_sk_path_ac15ef795d4c26bf12bad01a194567934}{count\+Verbs}} () const
+\item 
+int \mbox{\hyperlink{class_sk_path_a94bc5e41461af1093d62e7bb4fba012e}{get\+Verbs}} (uint8\+\_\+t verbs\mbox{[}$\,$\mbox{]}, int max) const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_path_a5bbe80ea3d2514edc4094329a1faed28}{approximate\+Bytes\+Used}} () const
+\item 
+void \mbox{\hyperlink{class_sk_path_ad4ded6edd025942b925cc9be8e54732c}{swap}} (\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&other)
+\item 
+const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \& \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_sk_path_a6de7de42175fe3ce5ff92f3d2267ec2d}{update\+Bounds\+Cache}} () const
+\item 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \mbox{\hyperlink{class_sk_path_a597c8fcc5e4750542e2688b057a14e9e}{compute\+Tight\+Bounds}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_a1c796f9353ce45a7c41fa5c065ea4f2c}{conservatively\+Contains\+Rect}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&rect) const
+\item 
+void \mbox{\hyperlink{class_sk_path_a2efb0417f01be1c29e2ba9c173a1977c}{inc\+Reserve}} (int extra\+Pt\+Count)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a28dc5683b9a3e75ad55393cd233e8341}{move\+To}} (Sk\+Scalar x, Sk\+Scalar y)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a85ad85fdec8bb0d4c39d46c45f2d9581}{move\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a7923238a1ebf57f75020d0439744e434}{r\+Move\+To}} (Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}{line\+To}} (Sk\+Scalar x, Sk\+Scalar y)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a27c6505cd16db954d6f0268e2de5d87f}{line\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_af44de3514295effc0d1319d419b5a745}{r\+Line\+To}} (Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a9d554f5ea596598762ba7c903029bc2d}{quad\+To}} (Sk\+Scalar x1, Sk\+Scalar y1, Sk\+Scalar x2, Sk\+Scalar y2)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a95f346ea768b989b355f7922594f0399}{quad\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_acd57395bc59b3e2350490ddfe5cf8cc8}{r\+Quad\+To}} (Sk\+Scalar dx1, Sk\+Scalar dy1, Sk\+Scalar dx2, Sk\+Scalar dy2)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_ac8a605100b42d1192e8badc827ccd0b5}{conic\+To}} (Sk\+Scalar x1, Sk\+Scalar y1, Sk\+Scalar x2, Sk\+Scalar y2, Sk\+Scalar w)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a0a049ffb8ea45050736235712ec5a764}{conic\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2, Sk\+Scalar w)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a233092825009d8da04c52b2f62527b03}{r\+Conic\+To}} (Sk\+Scalar dx1, Sk\+Scalar dy1, Sk\+Scalar dx2, Sk\+Scalar dy2, Sk\+Scalar w)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_ac60d4fd3434c01c2763f86993e5f5bf0}{cubic\+To}} (Sk\+Scalar x1, Sk\+Scalar y1, Sk\+Scalar x2, Sk\+Scalar y2, Sk\+Scalar x3, Sk\+Scalar y3)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a95a7a69f1756f198d35171e00abb0c46}{cubic\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p3)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a4c3b1374fd88e0986ddaea3f3b0379db}{r\+Cubic\+To}} (Sk\+Scalar dx1, Sk\+Scalar dy1, Sk\+Scalar dx2, Sk\+Scalar dy2, Sk\+Scalar dx3, Sk\+Scalar dy3)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&oval, Sk\+Scalar start\+Angle, Sk\+Scalar sweep\+Angle, bool force\+Move\+To)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a23e519d08f7c192d6e6260ccb1d1c290}{arc\+To}} (Sk\+Scalar x1, Sk\+Scalar y1, Sk\+Scalar x2, Sk\+Scalar y2, Sk\+Scalar radius)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_ae98cabd97136bd55b70474622dc7ccae}{arc\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p2, Sk\+Scalar radius)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a56f69c180940e0be63060d18cbd30a75}{arc\+To}} (Sk\+Scalar rx, Sk\+Scalar ry, Sk\+Scalar x\+Axis\+Rotate, \mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Arc\+Size}} large\+Arc, Sk\+Path\+Direction sweep, Sk\+Scalar x, Sk\+Scalar y)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_ab07a8971e107e34be8004d874b01a043}{arc\+To}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} r, Sk\+Scalar x\+Axis\+Rotate, \mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Arc\+Size}} large\+Arc, Sk\+Path\+Direction sweep, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} xy)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a020cba27507f10809a57b8f26a0af35c}{r\+Arc\+To}} (Sk\+Scalar rx, Sk\+Scalar ry, Sk\+Scalar x\+Axis\+Rotate, \mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Arc\+Size}} large\+Arc, Sk\+Path\+Direction sweep, Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_ad2c03218bb3887585e28116684172c17}{close}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_path_ad6086fc1a35ef838b38f8730ae534762}{is\+Rect}} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$rect, bool $\ast$is\+Closed=nullptr, Sk\+Path\+Direction $\ast$direction=nullptr) const
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_af8e17b2b8b030d150edd71a4081db8f7}{add\+Rect}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&rect, Sk\+Path\+Direction dir, unsigned start)
+\item 
+\mbox{\Hypertarget{class_sk_path_a30259f7d64b3f0498f8262a467cdea8d}\label{class_sk_path_a30259f7d64b3f0498f8262a467cdea8d}} 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& {\bfseries add\+Rect} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&rect, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\Hypertarget{class_sk_path_abdc6949b738ef41ff6fa4e95ab43ea22}\label{class_sk_path_abdc6949b738ef41ff6fa4e95ab43ea22}} 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& {\bfseries add\+Rect} (Sk\+Scalar left, Sk\+Scalar top, Sk\+Scalar right, Sk\+Scalar bottom, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_ac39cb6c5b07d25431388f5011f2c2de9}{add\+Oval}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&oval, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a82a6311b780ee5ea7fade5d61b9d1415}{add\+Oval}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&oval, Sk\+Path\+Direction dir, unsigned start)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a2067a391815733504bb47c2523de8c3d}{add\+Circle}} (Sk\+Scalar x, Sk\+Scalar y, Sk\+Scalar radius, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a83f861c8385ab523a04e4907a11cfeed}{add\+Arc}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&oval, Sk\+Scalar start\+Angle, Sk\+Scalar sweep\+Angle)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a9f660f4fe89b00f7edcc3cb0ba6e7d89}{add\+Round\+Rect}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&rect, Sk\+Scalar rx, Sk\+Scalar ry, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_abd42bb437ff854792e3196dc4aafcd85}{add\+Round\+Rect}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&rect, const Sk\+Scalar radii\mbox{[}$\,$\mbox{]}, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a4b013ced8525d572291195b660527d9c}{add\+R\+Rect}} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&rrect, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a25f9ab392623374058c28001de9d16c2}{add\+R\+Rect}} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&rrect, Sk\+Path\+Direction dir, unsigned start)
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a3cd2dcd2f254df8c4e9bcb61ce4daadf}{add\+Poly}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pts\mbox{[}$\,$\mbox{]}, int count, bool \mbox{\hyperlink{class_sk_path_ad2c03218bb3887585e28116684172c17}{close}})
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_acbb9ff9b25a6ca5510b0727b8b2a9672}{add\+Poly}} (const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $>$ \&list, bool \mbox{\hyperlink{class_sk_path_ad2c03218bb3887585e28116684172c17}{close}})
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a50e791ed1bb4a6ca9faccb838cefe6e0}{add\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, Sk\+Scalar dx, Sk\+Scalar dy, \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}} mode=\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}})
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a9f4543638cafa6226c87d87a7e5ec727}{add\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}} mode=\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}})
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a905600494fca1eae24404228f45e7dff}{add\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&matrix, \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}} mode=\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}})
+\item 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& \mbox{\hyperlink{class_sk_path_a070aab0bed84e1137a186cef1f10192f}{reverse\+Add\+Path}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src)
+\item 
+void \mbox{\hyperlink{class_sk_path_a0b4a9414537a0df5e2354d521d8cf6aa}{offset}} (Sk\+Scalar dx, Sk\+Scalar dy, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$dst) const
+\item 
+void \mbox{\hyperlink{class_sk_path_a62a6ccd0f6608a0decb3af050d81da21}{offset}} (Sk\+Scalar dx, Sk\+Scalar dy)
+\item 
+void \mbox{\hyperlink{class_sk_path_ad814203ce342490f699698d9c308b889}{transform}} (const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&matrix, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$dst, Sk\+Apply\+Perspective\+Clip pc=Sk\+Apply\+Perspective\+Clip\+::k\+Yes) const
+\item 
+void \mbox{\hyperlink{class_sk_path_a8b555a598f122e7f2911334c1a4a9f51}{transform}} (const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&matrix, Sk\+Apply\+Perspective\+Clip pc=Sk\+Apply\+Perspective\+Clip\+::k\+Yes)
+\item 
+\mbox{\Hypertarget{class_sk_path_aeb61cc6b00906f4be9b9866460ba60b2}\label{class_sk_path_aeb61cc6b00906f4be9b9866460ba60b2}} 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries make\+Transform} (const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&m, Sk\+Apply\+Perspective\+Clip pc=Sk\+Apply\+Perspective\+Clip\+::k\+Yes) const
+\item 
+\mbox{\Hypertarget{class_sk_path_a7dae9554cd7a7fc9898ce879e00a300c}\label{class_sk_path_a7dae9554cd7a7fc9898ce879e00a300c}} 
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries make\+Scale} (Sk\+Scalar sx, Sk\+Scalar sy)
+\item 
+bool \mbox{\hyperlink{class_sk_path_a3068074d7295495def2671c36ad83361}{get\+Last\+Pt}} (\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$last\+Pt) const
+\item 
+void \mbox{\hyperlink{class_sk_path_a1ce8d91669e01e7724c27a4d453516fb}{set\+Last\+Pt}} (Sk\+Scalar x, Sk\+Scalar y)
+\item 
+void \mbox{\hyperlink{class_sk_path_a829354d382186c11a95b2214b40d1685}{set\+Last\+Pt}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_path_aac8e4461582ac723a866a4fe27031181}{get\+Segment\+Masks}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_af63b8abc6efff13607af2147ce6d7f8e}{contains}} (Sk\+Scalar x, Sk\+Scalar y) const
+\item 
+void \mbox{\hyperlink{class_sk_path_addb0662af45f3fd2cfb17380dd41a515}{dump}} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$stream, bool dump\+As\+Hex) const
+\item 
+\mbox{\Hypertarget{class_sk_path_a753ef4f01a674824b09613fc1ef2df6c}\label{class_sk_path_a753ef4f01a674824b09613fc1ef2df6c}} 
+void {\bfseries dump} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_aae379675bbca5c29419c97ecad0a135d}\label{class_sk_path_aae379675bbca5c29419c97ecad0a135d}} 
+void {\bfseries dump\+Hex} () const
+\item 
+\mbox{\Hypertarget{class_sk_path_ab6c31630475cd11cb98463ae7557a883}\label{class_sk_path_ab6c31630475cd11cb98463ae7557a883}} 
+void {\bfseries dump\+Arrays} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$stream, bool dump\+As\+Hex) const
+\item 
+\mbox{\Hypertarget{class_sk_path_a0542fd540552583eefcc132de053d704}\label{class_sk_path_a0542fd540552583eefcc132de053d704}} 
+void {\bfseries dump\+Arrays} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_path_ab34720f80c02d5854cc6b09675b5d907}{write\+To\+Memory}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_sk_path_aac8586ce1afff7e7f41e1e7bac0b418b}{serialize}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_path_a02f6fe6f7f3caf7212ed37b0d2712da2}{read\+From\+Memory}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t length)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_path_a07772c885789e0369c8b6817c93b6031}{get\+Generation\+ID}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_path_ad39cea91b553eec0446c1b62475612e3}{is\+Valid}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{class_sk_path_a86b3be3b522fc2b36044e4cb9c43e59f}{Make}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}\mbox{[}$\,$\mbox{]}, int point\+Count, const uint8\+\_\+t\mbox{[}$\,$\mbox{]}, int verb\+Count, const Sk\+Scalar\mbox{[}$\,$\mbox{]}, int conic\+Weight\+Count, Sk\+Path\+Fill\+Type, bool \mbox{\hyperlink{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}{is\+Volatile}}=false)
+\item 
+\mbox{\Hypertarget{class_sk_path_a1a980c32d7839dabcf60c87e30cf1d6a}\label{class_sk_path_a1a980c32d7839dabcf60c87e30cf1d6a}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Rect} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&, Sk\+Path\+Direction=Sk\+Path\+Direction\+::k\+CW, unsigned start\+Index=0)
+\item 
+\mbox{\Hypertarget{class_sk_path_ab2c8eba06f0a660b0776ad042844062d}\label{class_sk_path_ab2c8eba06f0a660b0776ad042844062d}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Oval} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&, Sk\+Path\+Direction=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\Hypertarget{class_sk_path_a1bd7ca7730e923b166dc93b8288bb62f}\label{class_sk_path_a1bd7ca7730e923b166dc93b8288bb62f}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Oval} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&, Sk\+Path\+Direction, unsigned start\+Index)
+\item 
+\mbox{\Hypertarget{class_sk_path_a9d2f399ed7bd99edd6f3682e4696c21d}\label{class_sk_path_a9d2f399ed7bd99edd6f3682e4696c21d}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Circle} (Sk\+Scalar center\+\_\+x, Sk\+Scalar center\+\_\+y, Sk\+Scalar radius, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\Hypertarget{class_sk_path_a0f091ba5681813d767b14f753b324262}\label{class_sk_path_a0f091ba5681813d767b14f753b324262}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries R\+Rect} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\Hypertarget{class_sk_path_a910e70e96a93207ed9ea7ae4962bc95b}\label{class_sk_path_a910e70e96a93207ed9ea7ae4962bc95b}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries R\+Rect} (const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&, Sk\+Path\+Direction, unsigned start\+Index)
+\item 
+\mbox{\Hypertarget{class_sk_path_a56f24d647bb451f48f4b18ee7159cc78}\label{class_sk_path_a56f24d647bb451f48f4b18ee7159cc78}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries R\+Rect} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&bounds, Sk\+Scalar rx, Sk\+Scalar ry, Sk\+Path\+Direction dir=Sk\+Path\+Direction\+::k\+CW)
+\item 
+\mbox{\Hypertarget{class_sk_path_ac4a6df040ebec70693e3d57dbd0c1a40}\label{class_sk_path_ac4a6df040ebec70693e3d57dbd0c1a40}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Polygon} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pts\mbox{[}$\,$\mbox{]}, int count, bool is\+Closed, Sk\+Path\+Fill\+Type=Sk\+Path\+Fill\+Type\+::k\+Winding, bool \mbox{\hyperlink{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}{is\+Volatile}}=false)
+\item 
+\mbox{\Hypertarget{class_sk_path_a8283c9336cbb76e7b2f819a6a67ebe93}\label{class_sk_path_a8283c9336cbb76e7b2f819a6a67ebe93}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Polygon} (const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $>$ \&list, bool is\+Closed, Sk\+Path\+Fill\+Type fill\+Type=Sk\+Path\+Fill\+Type\+::k\+Winding, bool \mbox{\hyperlink{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}{is\+Volatile}}=false)
+\item 
+\mbox{\Hypertarget{class_sk_path_af8736f631a168ccd70942cf7eaa01b94}\label{class_sk_path_af8736f631a168ccd70942cf7eaa01b94}} 
+static \mbox{\hyperlink{class_sk_path}{Sk\+Path}} {\bfseries Line} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} a, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} b)
+\item 
+static bool \mbox{\hyperlink{class_sk_path_a0d3dcaa99b0e0701944e2d5d6f45113a}{Is\+Line\+Degenerate}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2, bool exact)
+\item 
+static bool \mbox{\hyperlink{class_sk_path_a35bcc5d4d51e3f124e77d43093a49837}{Is\+Quad\+Degenerate}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p3, bool exact)
+\item 
+static bool \mbox{\hyperlink{class_sk_path_a46110bc288d9416e58dc216a5a475ebd}{Is\+Cubic\+Degenerate}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p3, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p4, bool exact)
+\item 
+static int \mbox{\hyperlink{class_sk_path_aa3b3d8db8d55498a9f4db710fe9990f7}{Convert\+Conic\+To\+Quads}} (const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p0, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p1, const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&p2, Sk\+Scalar w, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pts\mbox{[}$\,$\mbox{]}, int pow2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_path_a1aa9543a703214f24b87e027ccd38be5}\label{class_sk_path_a1aa9543a703214f24b87e027ccd38be5}} 
+class {\bfseries Iter}
+\item 
+\mbox{\Hypertarget{class_sk_path_a31a0490cef71e330bab1a82755e4ee48}\label{class_sk_path_a31a0490cef71e330bab1a82755e4ee48}} 
+class {\bfseries Sk\+Path\+Priv}
+\item 
+\mbox{\Hypertarget{class_sk_path_a4cb9cd113ecfc0af1df09076d0b14d2a}\label{class_sk_path_a4cb9cd113ecfc0af1df09076d0b14d2a}} 
+class {\bfseries Sk\+Path\+Stroker}
+\item 
+\mbox{\Hypertarget{class_sk_path_a94cde5f7b4b0d4068a6575b0bcdf8d21}\label{class_sk_path_a94cde5f7b4b0d4068a6575b0bcdf8d21}} 
+class {\bfseries Sk\+Auto\+Path\+Bounds\+Update}
+\item 
+\mbox{\Hypertarget{class_sk_path_aeea1010ec7b78381b906629988ac65a5}\label{class_sk_path_aeea1010ec7b78381b906629988ac65a5}} 
+class {\bfseries Sk\+Auto\+Disable\+Oval\+Check}
+\item 
+\mbox{\Hypertarget{class_sk_path_a75d0fe5caf2638b5ac36051b5d26de90}\label{class_sk_path_a75d0fe5caf2638b5ac36051b5d26de90}} 
+class {\bfseries Sk\+Auto\+Disable\+Direction\+Check}
+\item 
+\mbox{\Hypertarget{class_sk_path_af8d50b70a69e90cd8fd87e795b21d919}\label{class_sk_path_af8d50b70a69e90cd8fd87e795b21d919}} 
+class {\bfseries Sk\+Path\+Builder}
+\item 
+\mbox{\Hypertarget{class_sk_path_ab4192654d55ac9b14907c31021a997ea}\label{class_sk_path_ab4192654d55ac9b14907c31021a997ea}} 
+class {\bfseries Sk\+Path\+Edge\+Iter}
+\item 
+\mbox{\Hypertarget{class_sk_path_a861bde4a4253d171ad3a934c876bba00}\label{class_sk_path_a861bde4a4253d171ad3a934c876bba00}} 
+class {\bfseries Sk\+Path\+Writer}
+\item 
+\mbox{\Hypertarget{class_sk_path_a955acf6a147588ed5a0719716cfac68e}\label{class_sk_path_a955acf6a147588ed5a0719716cfac68e}} 
+class {\bfseries Sk\+Op\+Builder}
+\item 
+\mbox{\Hypertarget{class_sk_path_a186bc5b5e25c0d824d79dd7adab49506}\label{class_sk_path_a186bc5b5e25c0d824d79dd7adab49506}} 
+class {\bfseries Sk\+Bench\+\_\+\+Add\+Path\+Test}
+\item 
+\mbox{\Hypertarget{class_sk_path_a25cb1b9c410a1e9828ac9817e4988d20}\label{class_sk_path_a25cb1b9c410a1e9828ac9817e4988d20}} 
+class {\bfseries Path\+Test\+\_\+\+Private}
+\item 
+\mbox{\Hypertarget{class_sk_path_a51942369c3e4b3e574001c68f15541b9}\label{class_sk_path_a51942369c3e4b3e574001c68f15541b9}} 
+class {\bfseries Force\+Is\+R\+Rect\+\_\+\+Private}
+\item 
+\mbox{\Hypertarget{class_sk_path_a0bf4d311acd5b570b74c8df76151d52b}\label{class_sk_path_a0bf4d311acd5b570b74c8df76151d52b}} 
+class {\bfseries Fuzz\+Path}
+\item 
+S\+K\+\_\+\+A\+PI bool \mbox{\hyperlink{class_sk_path_a2ba232f3a5c2d5cf27c9ff846c0b830c}{operator==}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&a, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&b)
+\item 
+bool \mbox{\hyperlink{class_sk_path_a4f95dae0ce68ac158edb5bf7a5a19260}{operator!=}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&a, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} contain geometry. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may be empty, or contain one or more verbs that outline a figure. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} always starts with a move verb to a Cartesian coordinate, and may be followed by additional verbs that add lines or curves. Adding a close verb makes the geometry into a continuous loop, a closed contour. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may contain any number of contours, each beginning with a move verb.
+
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} contours may contain only a move verb, or may also contain lines, quadratic beziers, conics, and cubic beziers. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contours may be open or closed.
+
+When used to draw a filled area, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} describes whether the fill is inside or outside the geometry. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} also describes the winding rule used to fill overlapping contours.
+
+Internally, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} lazily computes metrics likes bounds and convexity. Call \mbox{\hyperlink{class_sk_path_a6de7de42175fe3ce5ff92f3d2267ec2d}{Sk\+Path\+::update\+Bounds\+Cache}} to make \mbox{\hyperlink{class_sk_path}{Sk\+Path}} thread safe. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_path_aac80e323d715e26af58106879e7f3d95}\label{class_sk_path_aac80e323d715e26af58106879e7f3d95}} 
+\index{SkPath@{SkPath}!AddPathMode@{AddPathMode}}
+\index{AddPathMode@{AddPathMode}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{AddPathMode}{AddPathMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Sk\+Path\+::\+Add\+Path\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAppend\_AddPathMode@{kAppend\_AddPathMode}!SkPath@{SkPath}}\index{SkPath@{SkPath}!kAppend\_AddPathMode@{kAppend\_AddPathMode}}}\mbox{\Hypertarget{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}\label{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}} 
+k\+Append\+\_\+\+Add\+Path\+Mode&appended to destination unaltered \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kExtend\_AddPathMode@{kExtend\_AddPathMode}!SkPath@{SkPath}}\index{SkPath@{SkPath}!kExtend\_AddPathMode@{kExtend\_AddPathMode}}}\mbox{\Hypertarget{class_sk_path_aac80e323d715e26af58106879e7f3d95a3eaffabb1ede7f0f7a99e7c85cfd2ae8}\label{class_sk_path_aac80e323d715e26af58106879e7f3d95a3eaffabb1ede7f0f7a99e7c85cfd2ae8}} 
+k\+Extend\+\_\+\+Add\+Path\+Mode&add line if prior contour is not closed \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}\label{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}} 
+\index{SkPath@{SkPath}!ArcSize@{ArcSize}}
+\index{ArcSize@{ArcSize}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{ArcSize}{ArcSize}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Sk\+Path\+::\+Arc\+Size}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSmall\_ArcSize@{kSmall\_ArcSize}!SkPath@{SkPath}}\index{SkPath@{SkPath}!kSmall\_ArcSize@{kSmall\_ArcSize}}}\mbox{\Hypertarget{class_sk_path_a968e6248ebe0a13e74c28e432ca59125a06a198c5ed112cc37526f805f194a8ff}\label{class_sk_path_a968e6248ebe0a13e74c28e432ca59125a06a198c5ed112cc37526f805f194a8ff}} 
+k\+Small\+\_\+\+Arc\+Size&smaller of arc pair \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLarge\_ArcSize@{kLarge\_ArcSize}!SkPath@{SkPath}}\index{SkPath@{SkPath}!kLarge\_ArcSize@{kLarge\_ArcSize}}}\mbox{\Hypertarget{class_sk_path_a968e6248ebe0a13e74c28e432ca59125adadb866d7c283778e9c495a141aeedc4}\label{class_sk_path_a968e6248ebe0a13e74c28e432ca59125adadb866d7c283778e9c495a141aeedc4}} 
+k\+Large\+\_\+\+Arc\+Size&larger of arc pair \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_path_a19453a0e80054e1cbdd389d31654bcc6}\label{class_sk_path_a19453a0e80054e1cbdd389d31654bcc6}} 
+\index{SkPath@{SkPath}!SkPath@{SkPath}}
+\index{SkPath@{SkPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{SkPath()}{SkPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sk\+Path\+::\+Sk\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs an empty \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. By default, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} has no verbs, no \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and no weights. Fill\+Type is set to k\+Winding.
+
+\begin{DoxyReturn}{Returns}
+empty \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_empty_constructor}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+empty\+\_\+constructor}} \mbox{\Hypertarget{class_sk_path_aa30a9363d49c092958d48e30608df367}\label{class_sk_path_aa30a9363d49c092958d48e30608df367}} 
+\index{SkPath@{SkPath}!SkPath@{SkPath}}
+\index{SkPath@{SkPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{SkPath()}{SkPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sk\+Path\+::\+Sk\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+Constructs a copy of an existing path. Copy constructor makes two paths identical by value. Internally, path and the returned result share pointer values. The underlying verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array and weights are copied when modified.
+
+Creating a \mbox{\hyperlink{class_sk_path}{Sk\+Path}} copy is very efficient and never allocates memory. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} are always copied by value from the interface; the underlying shared pointers are not exposed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to copy by value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_copy_const_SkPath}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+copy\+\_\+const\+\_\+\+Sk\+Path}} \mbox{\Hypertarget{class_sk_path_a66ebfe13095d531f1d2bf1cbce725fd4}\label{class_sk_path_a66ebfe13095d531f1d2bf1cbce725fd4}} 
+\index{SkPath@{SkPath}!````~SkPath@{$\sim$SkPath}}
+\index{````~SkPath@{$\sim$SkPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkPath()}{~SkPath()}}
+{\footnotesize\ttfamily Sk\+Path\+::$\sim$\+Sk\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Releases ownership of any shared data and deletes data if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is sole owner.
+
+example\+: \href{https://fiddle.skia.org/c/@Path_destructor}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+destructor}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_path_a83f861c8385ab523a04e4907a11cfeed}\label{class_sk_path_a83f861c8385ab523a04e4907a11cfeed}} 
+\index{SkPath@{SkPath}!addArc@{addArc}}
+\index{addArc@{addArc}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addArc()}{addArc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Arc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{oval,  }\item[{Sk\+Scalar}]{start\+Angle,  }\item[{Sk\+Scalar}]{sweep\+Angle }\end{DoxyParamCaption})}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, as the start of new contour. Arc added is part of ellipse bounded by oval, from start\+Angle through sweep\+Angle. Both start\+Angle and sweep\+Angle are measured in degrees, where zero degrees is aligned with the positive x-\/axis, and positive sweeps extends arc clockwise.
+
+If sweep\+Angle $<$= -\/360, or sweep\+Angle $>$= 360; and start\+Angle modulo 90 is nearly zero, append oval instead of arc. Otherwise, sweep\+Angle values are treated modulo 360, and arc may or may not draw depending on numeric rounding.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oval} & bounds of ellipse containing arc \\
+\hline
+{\em start\+Angle} & starting angle of arc in degrees \\
+\hline
+{\em sweep\+Angle} & sweep, in degrees. Positive is clockwise; treated modulo 360 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addArc}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+Arc}} \mbox{\Hypertarget{class_sk_path_a2067a391815733504bb47c2523de8c3d}\label{class_sk_path_a2067a391815733504bb47c2523de8c3d}} 
+\index{SkPath@{SkPath}!addCircle@{addCircle}}
+\index{addCircle@{addCircle}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addCircle()}{addCircle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Circle (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y,  }\item[{Sk\+Scalar}]{radius,  }\item[{Sk\+Path\+Direction}]{dir = {\ttfamily SkPathDirection\+:\+:kCW} }\end{DoxyParamCaption})}
+
+Adds circle centered at (x, y) of size radius to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, appending k\+Move\+\_\+\+Verb, four k\+Conic\+\_\+\+Verb, and k\+Close\+\_\+\+Verb. Circle begins at\+: (x + radius, y), continuing clockwise if dir is k\+C\+W\+\_\+\+Direction, and counterclockwise if dir is k\+C\+C\+W\+\_\+\+Direction.
+
+Has no effect if radius is zero or negative.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & center of circle \\
+\hline
+{\em y} & center of circle \\
+\hline
+{\em radius} & distance from center to edge \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind circle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a82a6311b780ee5ea7fade5d61b9d1415}\label{class_sk_path_a82a6311b780ee5ea7fade5d61b9d1415}} 
+\index{SkPath@{SkPath}!addOval@{addOval}}
+\index{addOval@{addOval}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addOval()}{addOval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Oval (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{oval,  }\item[{Sk\+Path\+Direction}]{dir,  }\item[{unsigned}]{start }\end{DoxyParamCaption})}
+
+Adds oval to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, appending k\+Move\+\_\+\+Verb, four k\+Conic\+\_\+\+Verb, and k\+Close\+\_\+\+Verb. Oval is upright ellipse bounded by \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} oval with radii equal to half oval width and half oval height. Oval begins at start and continues clockwise if dir is k\+C\+W\+\_\+\+Direction, counterclockwise if dir is k\+C\+C\+W\+\_\+\+Direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oval} & bounds of ellipse added \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind ellipse \\
+\hline
+{\em start} & index of initial point of ellipse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addOval_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+Oval\+\_\+2}} \mbox{\Hypertarget{class_sk_path_ac39cb6c5b07d25431388f5011f2c2de9}\label{class_sk_path_ac39cb6c5b07d25431388f5011f2c2de9}} 
+\index{SkPath@{SkPath}!addOval@{addOval}}
+\index{addOval@{addOval}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addOval()}{addOval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Oval (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{oval,  }\item[{Sk\+Path\+Direction}]{dir = {\ttfamily SkPathDirection\+:\+:kCW} }\end{DoxyParamCaption})}
+
+Adds oval to path, appending k\+Move\+\_\+\+Verb, four k\+Conic\+\_\+\+Verb, and k\+Close\+\_\+\+Verb. Oval is upright ellipse bounded by \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} oval with radii equal to half oval width and half oval height. Oval begins at (oval.\+f\+Right, oval.\+center\+Y()) and continues clockwise if dir is k\+C\+W\+\_\+\+Direction, counterclockwise if dir is k\+C\+C\+W\+\_\+\+Direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oval} & bounds of ellipse added \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind ellipse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addOval}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+Oval}} \mbox{\Hypertarget{class_sk_path_a9f4543638cafa6226c87d87a7e5ec727}\label{class_sk_path_a9f4543638cafa6226c87d87a7e5ec727}} 
+\index{SkPath@{SkPath}!addPath@{addPath}}
+\index{addPath@{addPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addPath()}{addPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::add\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src,  }\item[{\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}}}]{mode = {\ttfamily \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Appends src to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+If mode is k\+Append\+\_\+\+Add\+Path\+Mode, src verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and conic weights are added unaltered. If mode is k\+Extend\+\_\+\+Add\+Path\+Mode, add line before appending verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights to add \\
+\hline
+{\em mode} & k\+Append\+\_\+\+Add\+Path\+Mode or k\+Extend\+\_\+\+Add\+Path\+Mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a905600494fca1eae24404228f45e7dff}\label{class_sk_path_a905600494fca1eae24404228f45e7dff}} 
+\index{SkPath@{SkPath}!addPath@{addPath}}
+\index{addPath@{addPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addPath()}{addPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{matrix,  }\item[{\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}}}]{mode = {\ttfamily \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}}} }\end{DoxyParamCaption})}
+
+Appends src to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, transformed by matrix. Transformed curves may have different verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights.
+
+If mode is k\+Append\+\_\+\+Add\+Path\+Mode, src verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and conic weights are added unaltered. If mode is k\+Extend\+\_\+\+Add\+Path\+Mode, add line before appending verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights to add \\
+\hline
+{\em matrix} & transform applied to src \\
+\hline
+{\em mode} & k\+Append\+\_\+\+Add\+Path\+Mode or k\+Extend\+\_\+\+Add\+Path\+Mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a50e791ed1bb4a6ca9faccb838cefe6e0}\label{class_sk_path_a50e791ed1bb4a6ca9faccb838cefe6e0}} 
+\index{SkPath@{SkPath}!addPath@{addPath}}
+\index{addPath@{addPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addPath()}{addPath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src,  }\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy,  }\item[{\mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95}{Add\+Path\+Mode}}}]{mode = {\ttfamily \mbox{\hyperlink{class_sk_path_aac80e323d715e26af58106879e7f3d95af2b30d1984c8ddc895cc5e3fd52376ef}{k\+Append\+\_\+\+Add\+Path\+Mode}}} }\end{DoxyParamCaption})}
+
+Appends src to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, offset by (dx, dy).
+
+If mode is k\+Append\+\_\+\+Add\+Path\+Mode, src verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and conic weights are added unaltered. If mode is k\+Extend\+\_\+\+Add\+Path\+Mode, add line before appending verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights to add \\
+\hline
+{\em dx} & offset added to src \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array x-\/axis coordinates \\
+\hline
+{\em dy} & offset added to src \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array y-\/axis coordinates \\
+\hline
+{\em mode} & k\+Append\+\_\+\+Add\+Path\+Mode or k\+Extend\+\_\+\+Add\+Path\+Mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a3cd2dcd2f254df8c4e9bcb61ce4daadf}\label{class_sk_path_a3cd2dcd2f254df8c4e9bcb61ce4daadf}} 
+\index{SkPath@{SkPath}!addPoly@{addPoly}}
+\index{addPoly@{addPoly}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addPoly()}{addPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Poly (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{pts\mbox{[}$\,$\mbox{]},  }\item[{int}]{count,  }\item[{bool}]{close }\end{DoxyParamCaption})}
+
+Adds contour created from line array, adding (count -\/ 1) line segments. Contour added starts at pts\mbox{[}0\mbox{]}, then adds a line for every additional \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} in pts array. If close is true, appends k\+Close\+\_\+\+Verb to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, connecting pts\mbox{[}count -\/ 1\mbox{]} and pts\mbox{[}0\mbox{]}.
+
+If count is zero, append k\+Move\+\_\+\+Verb to path. Has no effect if count is less than one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pts} & array of line sharing end and start \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+{\em count} & length of \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array \\
+\hline
+{\em close} & true to add line connecting contour end and start \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addPoly}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+Poly}} \mbox{\Hypertarget{class_sk_path_acbb9ff9b25a6ca5510b0727b8b2a9672}\label{class_sk_path_acbb9ff9b25a6ca5510b0727b8b2a9672}} 
+\index{SkPath@{SkPath}!addPoly@{addPoly}}
+\index{addPoly@{addPoly}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addPoly()}{addPoly()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::add\+Poly (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $>$ \&}]{list,  }\item[{bool}]{close }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds contour created from list. Contour added starts at list\mbox{[}0\mbox{]}, then adds a line for every additional \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} in list. If close is true, appends k\+Close\+\_\+\+Verb to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, connecting last and first \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} in list.
+
+If list is empty, append k\+Move\+\_\+\+Verb to path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & array of \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+{\em close} & true to add line connecting contour end and start \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_af8e17b2b8b030d150edd71a4081db8f7}\label{class_sk_path_af8e17b2b8b030d150edd71a4081db8f7}} 
+\index{SkPath@{SkPath}!addRect@{addRect}}
+\index{addRect@{addRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addRect()}{addRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{Sk\+Path\+Direction}]{dir,  }\item[{unsigned}]{start }\end{DoxyParamCaption})}
+
+Adds a new contour to the path, defined by the rect, and wound in the specified direction. The verbs added to the path will be\+:
+
+k\+Move, k\+Line, k\+Line, k\+Line, k\+Close
+
+start specifies which corner to begin the contour\+: 0\+: upper-\/left corner 1\+: upper-\/right corner 2\+: lower-\/right corner 3\+: lower-\/left corner
+
+This start point also acts as the implied beginning of the subsequent, contour, if it does not have an explicit \mbox{\hyperlink{class_sk_path_a28dc5683b9a3e75ad55393cd233e8341}{move\+To()}}. e.\+g. \begin{DoxyVerb}path.addRect(...)
+\end{DoxyVerb}
+ if we don\textquotesingle{}t say \mbox{\hyperlink{class_sk_path_a28dc5683b9a3e75ad55393cd233e8341}{move\+To()}} here, we will use the rect\textquotesingle{}s start point path.\+line\+To(...)
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} to add as a closed contour \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to orient the new contour \\
+\hline
+{\em start} & initial corner of \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addRect_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+Rect\+\_\+2}} \mbox{\Hypertarget{class_sk_path_abd42bb437ff854792e3196dc4aafcd85}\label{class_sk_path_abd42bb437ff854792e3196dc4aafcd85}} 
+\index{SkPath@{SkPath}!addRoundRect@{addRoundRect}}
+\index{addRoundRect@{addRoundRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addRoundRect()}{addRoundRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Round\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{const Sk\+Scalar}]{radii\mbox{[}$\,$\mbox{]},  }\item[{Sk\+Path\+Direction}]{dir = {\ttfamily SkPathDirection\+:\+:kCW} }\end{DoxyParamCaption})}
+
+Appends \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, creating a new closed contour. \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} has bounds equal to rect; each corner is 90 degrees of an ellipse with radii from the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+{\em radii} & array of 8 Sk\+Scalar values, a radius pair for each corner \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a9f660f4fe89b00f7edcc3cb0ba6e7d89}\label{class_sk_path_a9f660f4fe89b00f7edcc3cb0ba6e7d89}} 
+\index{SkPath@{SkPath}!addRoundRect@{addRoundRect}}
+\index{addRoundRect@{addRoundRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addRoundRect()}{addRoundRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+Round\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect,  }\item[{Sk\+Scalar}]{rx,  }\item[{Sk\+Scalar}]{ry,  }\item[{Sk\+Path\+Direction}]{dir = {\ttfamily SkPathDirection\+:\+:kCW} }\end{DoxyParamCaption})}
+
+Appends \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, creating a new closed contour. \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} has bounds equal to rect; each corner is 90 degrees of an ellipse with radii (rx, ry). If dir is k\+C\+W\+\_\+\+Direction, \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} starts at top-\/left of the lower-\/left corner and winds clockwise. If dir is k\+C\+C\+W\+\_\+\+Direction, \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} starts at the bottom-\/left of the upper-\/left corner and winds counterclockwise.
+
+If either rx or ry is too large, rx and ry are scaled uniformly until the corners fit. If rx or ry is less than or equal to zero, \mbox{\hyperlink{class_sk_path_a9f660f4fe89b00f7edcc3cb0ba6e7d89}{add\+Round\+Rect()}} appends \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} rect to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+After appending, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may be empty, or may contain\+: \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}, oval, or \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & bounds of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+{\em rx} & x-\/axis radius of rounded corners on the \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+{\em ry} & y-\/axis radius of rounded corners on the \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a25f9ab392623374058c28001de9d16c2}\label{class_sk_path_a25f9ab392623374058c28001de9d16c2}} 
+\index{SkPath@{SkPath}!addRRect@{addRRect}}
+\index{addRRect@{addRRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addRRect()}{addRRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+R\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{rrect,  }\item[{Sk\+Path\+Direction}]{dir,  }\item[{unsigned}]{start }\end{DoxyParamCaption})}
+
+Adds rrect to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, creating a new closed contour. If dir is k\+C\+W\+\_\+\+Direction, rrect winds clockwise; if dir is k\+C\+C\+W\+\_\+\+Direction, rrect winds counterclockwise. start determines the first point of rrect to add.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rrect} & bounds and radii of rounded rectangle \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+{\em start} & index of initial point of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addRRect_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+R\+Rect\+\_\+2}} \mbox{\Hypertarget{class_sk_path_a4b013ced8525d572291195b660527d9c}\label{class_sk_path_a4b013ced8525d572291195b660527d9c}} 
+\index{SkPath@{SkPath}!addRRect@{addRRect}}
+\index{addRRect@{addRRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{addRRect()}{addRRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::add\+R\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \&}]{rrect,  }\item[{Sk\+Path\+Direction}]{dir = {\ttfamily SkPathDirection\+:\+:kCW} }\end{DoxyParamCaption})}
+
+Adds rrect to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, creating a new closed contour. If dir is k\+C\+W\+\_\+\+Direction, rrect starts at top-\/left of the lower-\/left corner and winds clockwise. If dir is k\+C\+C\+W\+\_\+\+Direction, rrect starts at the bottom-\/left of the upper-\/left corner and winds counterclockwise.
+
+After appending, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may be empty, or may contain\+: \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}, oval, or \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rrect} & bounds and radii of rounded rectangle \\
+\hline
+{\em dir} & Sk\+Path\+::\+Direction to wind \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_addRRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+add\+R\+Rect}} \mbox{\Hypertarget{class_sk_path_a5bbe80ea3d2514edc4094329a1faed28}\label{class_sk_path_a5bbe80ea3d2514edc4094329a1faed28}} 
+\index{SkPath@{SkPath}!approximateBytesUsed@{approximateBytesUsed}}
+\index{approximateBytesUsed@{approximateBytesUsed}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{approximateBytesUsed()}{approximateBytesUsed()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Path\+::approximate\+Bytes\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the approximate byte size of the \mbox{\hyperlink{class_sk_path}{Sk\+Path}} in memory.
+
+\begin{DoxyReturn}{Returns}
+approximate size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ae98cabd97136bd55b70474622dc7ccae}\label{class_sk_path_ae98cabd97136bd55b70474622dc7ccae}} 
+\index{SkPath@{SkPath}!arcTo@{arcTo}}
+\index{arcTo@{arcTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{arcTo()}{arcTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::arc\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{p2,  }\item[{Sk\+Scalar}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, after appending line if needed. Arc is implemented by conic weighted to describe part of circle. Arc is contained by tangent from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} point to p1, and tangent from p1 to p2. Arc is part of circle sized to radius, positioned so it touches both tangent lines.
+
+If last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} does not start arc, \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends connecting line to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. The length of vector from p1 to p2 does not affect arc.
+
+Arc sweep is always less than 180 degrees. If radius is zero, or if tangents are nearly parallel, \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends line from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} to p1.
+
+\mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends at most one line and one conic. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} implements the functionality of Post\+Script arct and H\+T\+ML Canvas arc\+To.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} common to pair of tangents \\
+\hline
+{\em p2} & end of second tangent \\
+\hline
+{\em radius} & distance from arc to circle center \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ab07a8971e107e34be8004d874b01a043}\label{class_sk_path_ab07a8971e107e34be8004d874b01a043}} 
+\index{SkPath@{SkPath}!arcTo@{arcTo}}
+\index{arcTo@{arcTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{arcTo()}{arcTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::arc\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{r,  }\item[{Sk\+Scalar}]{x\+Axis\+Rotate,  }\item[{\mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Arc\+Size}}}]{large\+Arc,  }\item[{Sk\+Path\+Direction}]{sweep,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. Arc is implemented by one or more conic weighted to describe part of oval with radii (r.\+fX, r.\+fY) rotated by x\+Axis\+Rotate degrees. Arc curves from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} to (xy.\+fX, xy.\+fY), choosing one of four possible routes\+: clockwise or counterclockwise, and smaller or larger.
+
+Arc sweep is always less than 360 degrees. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends line to xy if either radii are zero, or if last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} equals (xy.\+fX, xy.\+fY). \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} scales radii r to fit last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} and xy if both are greater than zero but too small to describe an arc.
+
+\mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends up to four conic curves. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} implements the functionality of S\+VG arc, although S\+VG sweep-\/flag value is opposite the integer value of sweep; S\+VG sweep-\/flag uses 1 for clockwise, while k\+C\+W\+\_\+\+Direction cast to int is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & radii on axes before x-\/axis rotation \\
+\hline
+{\em x\+Axis\+Rotate} & x-\/axis rotation in degrees; positive values are clockwise \\
+\hline
+{\em large\+Arc} & chooses smaller or larger arc \\
+\hline
+{\em sweep} & chooses clockwise or counterclockwise arc \\
+\hline
+{\em xy} & end of arc \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}\label{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}} 
+\index{SkPath@{SkPath}!arcTo@{arcTo}}
+\index{arcTo@{arcTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{arcTo()}{arcTo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::arc\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{oval,  }\item[{Sk\+Scalar}]{start\+Angle,  }\item[{Sk\+Scalar}]{sweep\+Angle,  }\item[{bool}]{force\+Move\+To }\end{DoxyParamCaption})}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. Arc added is part of ellipse bounded by oval, from start\+Angle through sweep\+Angle. Both start\+Angle and sweep\+Angle are measured in degrees, where zero degrees is aligned with the positive x-\/axis, and positive sweeps extends arc clockwise.
+
+\mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} adds line connecting \mbox{\hyperlink{class_sk_path}{Sk\+Path}} last \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} to initial arc \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} if force\+Move\+To is false and \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is not empty. Otherwise, added contour begins with first point of arc. Angles greater than -\/360 and less than 360 are treated modulo 360.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oval} & bounds of ellipse containing arc \\
+\hline
+{\em start\+Angle} & starting angle of arc in degrees \\
+\hline
+{\em sweep\+Angle} & sweep, in degrees. Positive is clockwise; treated modulo 360 \\
+\hline
+{\em force\+Move\+To} & true to start a new contour with arc \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_arcTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+arc\+To}} \mbox{\Hypertarget{class_sk_path_a56f69c180940e0be63060d18cbd30a75}\label{class_sk_path_a56f69c180940e0be63060d18cbd30a75}} 
+\index{SkPath@{SkPath}!arcTo@{arcTo}}
+\index{arcTo@{arcTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{arcTo()}{arcTo()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::arc\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{rx,  }\item[{Sk\+Scalar}]{ry,  }\item[{Sk\+Scalar}]{x\+Axis\+Rotate,  }\item[{\mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Sk\+Path\+::\+Arc\+Size}}}]{arc\+Large,  }\item[{Sk\+Path\+Direction}]{sweep,  }\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y }\end{DoxyParamCaption})}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. Arc is implemented by one or more conics weighted to describe part of oval with radii (rx, ry) rotated by x\+Axis\+Rotate degrees. Arc curves from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} to (x, y), choosing one of four possible routes\+: clockwise or counterclockwise, and smaller or larger.
+
+Arc sweep is always less than 360 degrees. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends line to (x, y) if either radii are zero, or if last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} equals (x, y). \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} scales radii (rx, ry) to fit last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} and (x, y) if both are greater than zero but too small.
+
+\mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends up to four conic curves. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} implements the functionality of S\+VG arc, although S\+VG sweep-\/flag value is opposite the integer value of sweep; S\+VG sweep-\/flag uses 1 for clockwise, while k\+C\+W\+\_\+\+Direction cast to int is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx} & radius on x-\/axis before x-\/axis rotation \\
+\hline
+{\em ry} & radius on y-\/axis before x-\/axis rotation \\
+\hline
+{\em x\+Axis\+Rotate} & x-\/axis rotation in degrees; positive values are clockwise \\
+\hline
+{\em large\+Arc} & chooses smaller or larger arc \\
+\hline
+{\em sweep} & chooses clockwise or counterclockwise arc \\
+\hline
+{\em x} & end of arc \\
+\hline
+{\em y} & end of arc \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a23e519d08f7c192d6e6260ccb1d1c290}\label{class_sk_path_a23e519d08f7c192d6e6260ccb1d1c290}} 
+\index{SkPath@{SkPath}!arcTo@{arcTo}}
+\index{arcTo@{arcTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{arcTo()}{arcTo()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::arc\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x1,  }\item[{Sk\+Scalar}]{y1,  }\item[{Sk\+Scalar}]{x2,  }\item[{Sk\+Scalar}]{y2,  }\item[{Sk\+Scalar}]{radius }\end{DoxyParamCaption})}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, after appending line if needed. Arc is implemented by conic weighted to describe part of circle. Arc is contained by tangent from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} point to (x1, y1), and tangent from (x1, y1) to (x2, y2). Arc is part of circle sized to radius, positioned so it touches both tangent lines.
+
+If last Path Point does not start Arc, arc\+To appends connecting Line to Path. The length of Vector from (x1, y1) to (x2, y2) does not affect Arc.
+
+Arc sweep is always less than 180 degrees. If radius is zero, or if tangents are nearly parallel, arc\+To appends Line from last Path Point to (x1, y1).
+
+arc\+To appends at most one Line and one conic. arc\+To implements the functionality of Post\+Script arct and H\+T\+ML Canvas arc\+To.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & x-\/axis value common to pair of tangents \\
+\hline
+{\em y1} & y-\/axis value common to pair of tangents \\
+\hline
+{\em x2} & x-\/axis value end of second tangent \\
+\hline
+{\em y2} & y-\/axis value end of second tangent \\
+\hline
+{\em radius} & distance from arc to circle center \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_arcTo_2_a}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+arc\+To\+\_\+2\+\_\+a}} example\+: \href{https://fiddle.skia.org/c/@Path_arcTo_2_b}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+arc\+To\+\_\+2\+\_\+b}} example\+: \href{https://fiddle.skia.org/c/@Path_arcTo_2_c}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+arc\+To\+\_\+2\+\_\+c}} \mbox{\Hypertarget{class_sk_path_ad2c03218bb3887585e28116684172c17}\label{class_sk_path_ad2c03218bb3887585e28116684172c17}} 
+\index{SkPath@{SkPath}!close@{close}}
+\index{close@{close}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Appends k\+Close\+\_\+\+Verb to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. A closed contour connects the first and last \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} with line, forming a continuous loop. Open and closed contour draw the same with \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fdab18888b04d1a69cee2f4b03f3191e611}{Sk\+Paint\+::k\+Fill\+\_\+\+Style}}. With \mbox{\hyperlink{class_sk_paint_a6f5b4ff088821b2940b148dd4cb6b9fda4bcc9f35fd6468ad92012c70daf7a495}{Sk\+Paint\+::k\+Stroke\+\_\+\+Style}}, open contour draws \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Sk\+Paint\+::\+Cap}} at contour start and end; closed contour draws \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Sk\+Paint\+::\+Join}} at contour start and end.
+
+\mbox{\hyperlink{class_sk_path_ad2c03218bb3887585e28116684172c17}{close()}} has no effect if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty or last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb.
+
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_close}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+close}} \mbox{\Hypertarget{class_sk_path_a597c8fcc5e4750542e2688b057a14e9e}\label{class_sk_path_a597c8fcc5e4750542e2688b057a14e9e}} 
+\index{SkPath@{SkPath}!computeTightBounds@{computeTightBounds}}
+\index{computeTightBounds@{computeTightBounds}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{computeTightBounds()}{computeTightBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} Sk\+Path\+::compute\+Tight\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns minimum and maximum axes values of the lines and curves in \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. Returns (0, 0, 0, 0) if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains no points. Returned bounds width and height may be larger or smaller than area affected when \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is drawn.
+
+Includes \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} associated with k\+Move\+\_\+\+Verb that define empty contours.
+
+Behaves identically to \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds()}} when \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains only lines. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains curves, computed bounds includes the maximum extent of the quad, conic, or cubic; is slower than \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds()}}; and unlike \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds()}}, does not cache the result.
+
+\begin{DoxyReturn}{Returns}
+tight bounds of curves in \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_computeTightBounds}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+compute\+Tight\+Bounds}} \mbox{\Hypertarget{class_sk_path_a0a049ffb8ea45050736235712ec5a764}\label{class_sk_path_a0a049ffb8ea45050736235712ec5a764}} 
+\index{SkPath@{SkPath}!conicTo@{conicTo}}
+\index{conicTo@{conicTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{conicTo()}{conicTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::conic\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2,  }\item[{Sk\+Scalar}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds conic from last point towards \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p2, weighted by w. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding conic.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed.
+
+If w is finite and not one, appends k\+Conic\+\_\+\+Verb to verb array; and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, p2 to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array; and w to conic weights.
+
+If w is one, appends k\+Quad\+\_\+\+Verb to verb array, and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, p2 to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+If w is not finite, appends k\+Line\+\_\+\+Verb twice to verb array, and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, p2 to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of added conic \\
+\hline
+{\em p2} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of added conic \\
+\hline
+{\em w} & weight of added conic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ac8a605100b42d1192e8badc827ccd0b5}\label{class_sk_path_ac8a605100b42d1192e8badc827ccd0b5}} 
+\index{SkPath@{SkPath}!conicTo@{conicTo}}
+\index{conicTo@{conicTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{conicTo()}{conicTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::conic\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x1,  }\item[{Sk\+Scalar}]{y1,  }\item[{Sk\+Scalar}]{x2,  }\item[{Sk\+Scalar}]{y2,  }\item[{Sk\+Scalar}]{w }\end{DoxyParamCaption})}
+
+Adds conic from last point towards (x1, y1), to (x2, y2), weighted by w. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding conic.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed.
+
+If w is finite and not one, appends k\+Conic\+\_\+\+Verb to verb array; and (x1, y1), (x2, y2) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array; and w to conic weights.
+
+If w is one, appends k\+Quad\+\_\+\+Verb to verb array, and (x1, y1), (x2, y2) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+If w is not finite, appends k\+Line\+\_\+\+Verb twice to verb array, and (x1, y1), (x2, y2) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of conic on x-\/axis \\
+\hline
+{\em y1} & control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of conic on y-\/axis \\
+\hline
+{\em x2} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of conic on x-\/axis \\
+\hline
+{\em y2} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of conic on y-\/axis \\
+\hline
+{\em w} & weight of added conic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a1c796f9353ce45a7c41fa5c065ea4f2c}\label{class_sk_path_a1c796f9353ce45a7c41fa5c065ea4f2c}} 
+\index{SkPath@{SkPath}!conservativelyContainsRect@{conservativelyContainsRect}}
+\index{conservativelyContainsRect@{conservativelyContainsRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{conservativelyContainsRect()}{conservativelyContainsRect()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::conservatively\+Contains\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{rect }\end{DoxyParamCaption}) const}
+
+Returns true if rect is contained by \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. May return false when rect is contained by \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+For now, only returns true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} has one contour and is convex. rect may share points and edges with \mbox{\hyperlink{class_sk_path}{Sk\+Path}} and be contained. Returns true if rect is empty, that is, it has zero width or height; and the \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} or line described by rect is contained by \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}, line, or \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} checked for containment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if rect is contained
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_conservativelyContainsRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+conservatively\+Contains\+Rect}} \mbox{\Hypertarget{class_sk_path_af63b8abc6efff13607af2147ce6d7f8e}\label{class_sk_path_af63b8abc6efff13607af2147ce6d7f8e}} 
+\index{SkPath@{SkPath}!contains@{contains}}
+\index{contains@{contains}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::contains (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y }\end{DoxyParamCaption}) const}
+
+Returns true if the point (x, y) is contained by \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, taking into account Fill\+Type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/axis value of containment test \\
+\hline
+{\em y} & y-\/axis value of containment test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} is in \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_contains}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+contains}} \mbox{\Hypertarget{class_sk_path_aa3b3d8db8d55498a9f4db710fe9990f7}\label{class_sk_path_aa3b3d8db8d55498a9f4db710fe9990f7}} 
+\index{SkPath@{SkPath}!ConvertConicToQuads@{ConvertConicToQuads}}
+\index{ConvertConicToQuads@{ConvertConicToQuads}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{ConvertConicToQuads()}{ConvertConicToQuads()}}
+{\footnotesize\ttfamily int Sk\+Path\+::\+Convert\+Conic\+To\+Quads (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p0,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2,  }\item[{Sk\+Scalar}]{w,  }\item[{\mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{pts\mbox{[}$\,$\mbox{]},  }\item[{int}]{pow2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Approximates conic with quad array. Conic is constructed from start \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p0, control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p2, and weight w. Quad array is stored in pts; this storage is supplied by caller. Maximum quad count is 2 to the pow2. Every third point in array shares last \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of previous quad and first \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of next quad. Maximum pts storage size is given by\+: (1 + 2 $\ast$ (1 $<$$<$ pow2)) $\ast$ sizeof(\+Sk\+Point).
+
+Returns quad count used the approximation, which may be smaller than the number requested.
+
+conic weight determines the amount of influence conic control point has on the curve. w less than one represents an elliptical section. w greater than one represents a hyperbolic section. w equal to one represents a parabolic section.
+
+Two quad curves are sufficient to approximate an elliptical conic with a sweep of up to 90 degrees; in this case, set pow2 to one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p0} & conic start \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+{\em p1} & conic control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+{\em p2} & conic end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+{\em w} & conic weight \\
+\hline
+{\em pts} & storage for quad array \\
+\hline
+{\em pow2} & quad count, as power of two, normally 0 to 5 (1 to 32 quad curves) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of quad curves written to pts 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a18d1b347ac162821b37c26ff4ce75ba3}\label{class_sk_path_a18d1b347ac162821b37c26ff4ce75ba3}} 
+\index{SkPath@{SkPath}!countPoints@{countPoints}}
+\index{countPoints@{countPoints}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{countPoints()}{countPoints()}}
+{\footnotesize\ttfamily int Sk\+Path\+::count\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of points in \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} count is initially zero.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array length
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_countPoints}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+count\+Points}} \mbox{\Hypertarget{class_sk_path_ac15ef795d4c26bf12bad01a194567934}\label{class_sk_path_ac15ef795d4c26bf12bad01a194567934}} 
+\index{SkPath@{SkPath}!countVerbs@{countVerbs}}
+\index{countVerbs@{countVerbs}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{countVerbs()}{countVerbs()}}
+{\footnotesize\ttfamily int Sk\+Path\+::count\+Verbs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the number of verbs\+: k\+Move\+\_\+\+Verb, k\+Line\+\_\+\+Verb, k\+Quad\+\_\+\+Verb, k\+Conic\+\_\+\+Verb, k\+Cubic\+\_\+\+Verb, and k\+Close\+\_\+\+Verb; added to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+\begin{DoxyReturn}{Returns}
+length of verb array
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_countVerbs}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+count\+Verbs}} \mbox{\Hypertarget{class_sk_path_a95a7a69f1756f198d35171e00abb0c46}\label{class_sk_path_a95a7a69f1756f198d35171e00abb0c46}} 
+\index{SkPath@{SkPath}!cubicTo@{cubicTo}}
+\index{cubicTo@{cubicTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{cubicTo()}{cubicTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::cubic\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds cubic from last point towards \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, then towards \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p2, ending at \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p3. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding cubic.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Cubic\+\_\+\+Verb to verb array; and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, p2, p3 to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic \\
+\hline
+{\em p2} & second control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic \\
+\hline
+{\em p3} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ac60d4fd3434c01c2763f86993e5f5bf0}\label{class_sk_path_ac60d4fd3434c01c2763f86993e5f5bf0}} 
+\index{SkPath@{SkPath}!cubicTo@{cubicTo}}
+\index{cubicTo@{cubicTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{cubicTo()}{cubicTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::cubic\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x1,  }\item[{Sk\+Scalar}]{y1,  }\item[{Sk\+Scalar}]{x2,  }\item[{Sk\+Scalar}]{y2,  }\item[{Sk\+Scalar}]{x3,  }\item[{Sk\+Scalar}]{y3 }\end{DoxyParamCaption})}
+
+Adds cubic from last point towards (x1, y1), then towards (x2, y2), ending at (x3, y3). If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding cubic.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Cubic\+\_\+\+Verb to verb array; and (x1, y1), (x2, y2), (x3, y3) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & first control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic on x-\/axis \\
+\hline
+{\em y1} & first control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic on y-\/axis \\
+\hline
+{\em x2} & second control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic on x-\/axis \\
+\hline
+{\em y2} & second control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic on y-\/axis \\
+\hline
+{\em x3} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic on x-\/axis \\
+\hline
+{\em y3} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of cubic on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_addb0662af45f3fd2cfb17380dd41a515}\label{class_sk_path_addb0662af45f3fd2cfb17380dd41a515}} 
+\index{SkPath@{SkPath}!dump@{dump}}
+\index{dump@{dump}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void Sk\+Path\+::dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$}]{stream,  }\item[{bool}]{dump\+As\+Hex }\end{DoxyParamCaption}) const}
+
+Writes text representation of \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to stream. If stream is nullptr, writes to standard output. Set dump\+As\+Hex true to generate exact binary representations of floating point numbers used in \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array and conic weights.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & writable \mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} receiving \mbox{\hyperlink{class_sk_path}{Sk\+Path}} text representation; may be nullptr \\
+\hline
+{\em dump\+As\+Hex} & true if Sk\+Scalar values are written as hexadecimal\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Path_dump}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+dump}} \mbox{\Hypertarget{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}\label{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}} 
+\index{SkPath@{SkPath}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}\& Sk\+Path\+::get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns minimum and maximum axes values of \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. Returns (0, 0, 0, 0) if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains no points. Returned bounds width and height may be larger or smaller than area affected when \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is drawn.
+
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} returned includes all \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} added to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, including \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} associated with k\+Move\+\_\+\+Verb that define empty contours.
+
+\begin{DoxyReturn}{Returns}
+bounds of all \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} in \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a382204722705384fb74b7abd3e5c3f95}\label{class_sk_path_a382204722705384fb74b7abd3e5c3f95}} 
+\index{SkPath@{SkPath}!getFillType@{getFillType}}
+\index{getFillType@{getFillType}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getFillType()}{getFillType()}}
+{\footnotesize\ttfamily Sk\+Path\+Fill\+Type Sk\+Path\+::get\+Fill\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns Sk\+Path\+Fill\+Type, the rule used to fill \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+\begin{DoxyReturn}{Returns}
+current Sk\+Path\+Fill\+Type setting 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a07772c885789e0369c8b6817c93b6031}\label{class_sk_path_a07772c885789e0369c8b6817c93b6031}} 
+\index{SkPath@{SkPath}!getGenerationID@{getGenerationID}}
+\index{getGenerationID@{getGenerationID}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getGenerationID()}{getGenerationID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Path\+::get\+Generation\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+(See Skia bug 1762.) Returns a non-\/zero, globally unique value. A different value is returned if verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, or conic weight changes.
+
+Setting Sk\+Path\+::\+Fill\+Type does not change generation identifier.
+
+Each time the path is modified, a different generation identifier will be returned. Sk\+Path\+::\+Fill\+Type does affect generation identifier on Android framework.
+
+\begin{DoxyReturn}{Returns}
+non-\/zero, globally unique value
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_getGenerationID}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+get\+Generation\+ID}} \mbox{\Hypertarget{class_sk_path_a3068074d7295495def2671c36ad83361}\label{class_sk_path_a3068074d7295495def2671c36ad83361}} 
+\index{SkPath@{SkPath}!getLastPt@{getLastPt}}
+\index{getLastPt@{getLastPt}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getLastPt()}{getLastPt()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::get\+Last\+Pt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} $\ast$}]{last\+Pt }\end{DoxyParamCaption}) const}
+
+Returns last point on \mbox{\hyperlink{class_sk_path}{Sk\+Path}} in last\+Pt. Returns false if \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array is empty, storing (0, 0) if last\+Pt is not nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Pt} & storage for final \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} in \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array contains one or more \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_getLastPt}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+get\+Last\+Pt}} \mbox{\Hypertarget{class_sk_path_a28741ac1ee01f1f626b8537f327720c5}\label{class_sk_path_a28741ac1ee01f1f626b8537f327720c5}} 
+\index{SkPath@{SkPath}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} Sk\+Path\+::get\+Point (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Returns \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} at index in \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. Valid range for index is 0 to \mbox{\hyperlink{class_sk_path_a18d1b347ac162821b37c26ff4ce75ba3}{count\+Points()}} -\/ 1. Returns (0, 0) if index is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array element selector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array value or (0, 0)
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_getPoint}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+get\+Point}} \mbox{\Hypertarget{class_sk_path_a3a5540ce3ec6f55b99e154a743de5d6b}\label{class_sk_path_a3a5540ce3ec6f55b99e154a743de5d6b}} 
+\index{SkPath@{SkPath}!getPoints@{getPoints}}
+\index{getPoints@{getPoints}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getPoints()}{getPoints()}}
+{\footnotesize\ttfamily int Sk\+Path\+::get\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{points\mbox{[}$\,$\mbox{]},  }\item[{int}]{max }\end{DoxyParamCaption}) const}
+
+Returns number of points in \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. Up to max points are copied. points may be nullptr; then, max must be zero. If max is greater than number of points, excess points storage is unaltered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & storage for \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. May be nullptr \\
+\hline
+{\em max} & maximum to copy; must be greater than or equal to zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array length
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_getPoints}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+get\+Points}} \mbox{\Hypertarget{class_sk_path_aac8e4461582ac723a866a4fe27031181}\label{class_sk_path_aac8e4461582ac723a866a4fe27031181}} 
+\index{SkPath@{SkPath}!getSegmentMasks@{getSegmentMasks}}
+\index{getSegmentMasks@{getSegmentMasks}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getSegmentMasks()}{getSegmentMasks()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Path\+::get\+Segment\+Masks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a mask, where each set bit corresponds to a Segment\+Mask constant if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains one or more verbs of that type. Returns zero if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains no lines, or curves\+: quads, conics, or cubics.
+
+\mbox{\hyperlink{class_sk_path_aac8e4461582ac723a866a4fe27031181}{get\+Segment\+Masks()}} returns a cached result; it is very fast.
+
+\begin{DoxyReturn}{Returns}
+Segment\+Mask bits or zero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a94bc5e41461af1093d62e7bb4fba012e}\label{class_sk_path_a94bc5e41461af1093d62e7bb4fba012e}} 
+\index{SkPath@{SkPath}!getVerbs@{getVerbs}}
+\index{getVerbs@{getVerbs}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{getVerbs()}{getVerbs()}}
+{\footnotesize\ttfamily int Sk\+Path\+::get\+Verbs (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{verbs\mbox{[}$\,$\mbox{]},  }\item[{int}]{max }\end{DoxyParamCaption}) const}
+
+Returns the number of verbs in the path. Up to max verbs are copied. The verbs are copied as one byte per verb.
+
+
+\begin{DoxyParams}{Parameters}
+{\em verbs} & storage for verbs, may be nullptr \\
+\hline
+{\em max} & maximum number to copy into verbs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the actual number of verbs in the path
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_getVerbs}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+get\+Verbs}} \mbox{\Hypertarget{class_sk_path_a2efb0417f01be1c29e2ba9c173a1977c}\label{class_sk_path_a2efb0417f01be1c29e2ba9c173a1977c}} 
+\index{SkPath@{SkPath}!incReserve@{incReserve}}
+\index{incReserve@{incReserve}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{incReserve()}{incReserve()}}
+{\footnotesize\ttfamily void Sk\+Path\+::inc\+Reserve (\begin{DoxyParamCaption}\item[{int}]{extra\+Pt\+Count }\end{DoxyParamCaption})}
+
+Grows \mbox{\hyperlink{class_sk_path}{Sk\+Path}} verb array and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array to contain extra\+Pt\+Count additional \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}. May improve performance and use less memory by reducing the number and size of allocations when creating \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em extra\+Pt\+Count} & number of additional \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} to allocate\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Path_incReserve}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+inc\+Reserve}} \mbox{\Hypertarget{class_sk_path_a79332188cf437c46f294e77da89920b5}\label{class_sk_path_a79332188cf437c46f294e77da89920b5}} 
+\index{SkPath@{SkPath}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{interpolate()}{interpolate()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::interpolate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{ending,  }\item[{Sk\+Scalar}]{weight,  }\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{out }\end{DoxyParamCaption}) const}
+
+Interpolates between \mbox{\hyperlink{class_sk_path}{Sk\+Path}} with \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array of equal size. Copy verb array and weights to out, and set out \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array to a weighted average of this \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array and ending \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, using the formula\+: (Path Point $\ast$ weight) + ending Point $\ast$ (1 -\/ weight).
+
+weight is most useful when between zero (ending \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array) and one (this Point\+\_\+\+Array); will work with values outside of this range.
+
+\mbox{\hyperlink{class_sk_path_a79332188cf437c46f294e77da89920b5}{interpolate()}} returns false and leaves out unchanged if \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array is not the same size as ending \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. Call \mbox{\hyperlink{class_sk_path_a78f7eed7de33a798a9859ab16e335fde}{is\+Interpolatable()}} to check \mbox{\hyperlink{class_sk_path}{Sk\+Path}} compatibility prior to calling \mbox{\hyperlink{class_sk_path_a79332188cf437c46f294e77da89920b5}{interpolate()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ending} & \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array averaged with this \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array \\
+\hline
+{\em weight} & contribution of this \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and one minus contribution of ending \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array \\
+\hline
+{\em out} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} replaced by interpolated averages \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contain same number of \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_interpolate}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+interpolate}} \mbox{\Hypertarget{class_sk_path_aa20544ae11a0b20b09565274ca4da740}\label{class_sk_path_aa20544ae11a0b20b09565274ca4da740}} 
+\index{SkPath@{SkPath}!isConvex@{isConvex}}
+\index{isConvex@{isConvex}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isConvex()}{isConvex()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Convex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the path is convex. If necessary, it will first compute the convexity. \mbox{\Hypertarget{class_sk_path_a46110bc288d9416e58dc216a5a475ebd}\label{class_sk_path_a46110bc288d9416e58dc216a5a475ebd}} 
+\index{SkPath@{SkPath}!IsCubicDegenerate@{IsCubicDegenerate}}
+\index{IsCubicDegenerate@{IsCubicDegenerate}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{IsCubicDegenerate()}{IsCubicDegenerate()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::\+Is\+Cubic\+Degenerate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p3,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p4,  }\item[{bool}]{exact }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tests if cubic is degenerate. Cubic with no length or that moves a very short distance is degenerate; it is treated as a point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & cubic start point \\
+\hline
+{\em p2} & cubic control point 1 \\
+\hline
+{\em p3} & cubic control point 2 \\
+\hline
+{\em p4} & cubic end point \\
+\hline
+{\em exact} & if true, returns true only if p1, p2, p3, and p4 are equal; if false, returns true if p1, p2, p3, and p4 are equal or nearly equal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if cubic is degenerate; its length is effectively zero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a0289c6eed642e4d74c95fda08b0df63a}\label{class_sk_path_a0289c6eed642e4d74c95fda08b0df63a}} 
+\index{SkPath@{SkPath}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty. Empty \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may have Fill\+Type but has no \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, Sk\+Path\+::\+Verb, or conic weight. \mbox{\hyperlink{class_sk_path_a19453a0e80054e1cbdd389d31654bcc6}{Sk\+Path()}} constructs empty \mbox{\hyperlink{class_sk_path}{Sk\+Path}}; \mbox{\hyperlink{class_sk_path_a977497439155df168c935114be1fa148}{reset()}} and \mbox{\hyperlink{class_sk_path_a704fc5e57bfbadd6a7560291fc7fc1fa}{rewind()}} make \mbox{\hyperlink{class_sk_path}{Sk\+Path}} empty.
+
+\begin{DoxyReturn}{Returns}
+true if the path contains no Sk\+Path\+::\+Verb array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a244a91414b71bf2192825098b0216233}\label{class_sk_path_a244a91414b71bf2192825098b0216233}} 
+\index{SkPath@{SkPath}!isFinite@{isFinite}}
+\index{isFinite@{isFinite}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isFinite()}{isFinite()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Finite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true for finite \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array values between negative S\+K\+\_\+\+Scalar\+Max and positive S\+K\+\_\+\+Scalar\+Max. Returns false for any \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array value of S\+K\+\_\+\+Scalar\+Infinity, S\+K\+\_\+\+Scalar\+Negative\+Infinity, or S\+K\+\_\+\+Scalar\+NaN.
+
+\begin{DoxyReturn}{Returns}
+true if all \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} values are finite 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a78f7eed7de33a798a9859ab16e335fde}\label{class_sk_path_a78f7eed7de33a798a9859ab16e335fde}} 
+\index{SkPath@{SkPath}!isInterpolatable@{isInterpolatable}}
+\index{isInterpolatable@{isInterpolatable}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isInterpolatable()}{isInterpolatable()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Interpolatable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{compare }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contain equal verbs and equal weights. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contain one or more conics, the weights must match.
+
+\mbox{\hyperlink{class_sk_path_ac8a605100b42d1192e8badc827ccd0b5}{conic\+To()}} may add different verbs depending on conic weight, so it is not trivial to interpolate a pair of \mbox{\hyperlink{class_sk_path}{Sk\+Path}} containing conics with different conic weight values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em compare} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} verb array and weights are equivalent
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_isInterpolatable}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+is\+Interpolatable}} \mbox{\Hypertarget{class_sk_path_a06b2fe32125d776c2274da5e735eb588}\label{class_sk_path_a06b2fe32125d776c2274da5e735eb588}} 
+\index{SkPath@{SkPath}!isInverseFillType@{isInverseFillType}}
+\index{isInverseFillType@{isInverseFillType}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isInverseFillType()}{isInverseFillType()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Inverse\+Fill\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns if Fill\+Type describes area outside \mbox{\hyperlink{class_sk_path}{Sk\+Path}} geometry. The inverse fill area extends indefinitely.
+
+\begin{DoxyReturn}{Returns}
+true if Fill\+Type is k\+Inverse\+Winding or k\+Inverse\+Even\+Odd 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ac88bb37821fd59e93954de3c3d7ed9a9}\label{class_sk_path_ac88bb37821fd59e93954de3c3d7ed9a9}} 
+\index{SkPath@{SkPath}!isLastContourClosed@{isLastContourClosed}}
+\index{isLastContourClosed@{isLastContourClosed}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isLastContourClosed()}{isLastContourClosed()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Last\+Contour\+Closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns if contour is closed. Contour is closed if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} Sk\+Path\+::\+Verb array was last modified by \mbox{\hyperlink{class_sk_path_ad2c03218bb3887585e28116684172c17}{close()}}. When stroked, closed contour draws \mbox{\hyperlink{class_sk_paint_ac582b0cbf59909c9056de34a6b977cca}{Sk\+Paint\+::\+Join}} instead of \mbox{\hyperlink{class_sk_paint_a0f78de8559b795defba93171f6cb6333}{Sk\+Paint\+::\+Cap}} at first and last \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}.
+
+\begin{DoxyReturn}{Returns}
+true if the last contour ends with a k\+Close\+\_\+\+Verb
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_isLastContourClosed}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+is\+Last\+Contour\+Closed}} \mbox{\Hypertarget{class_sk_path_a2b79cc08d313b8e5f3f6b98281a9fd4e}\label{class_sk_path_a2b79cc08d313b8e5f3f6b98281a9fd4e}} 
+\index{SkPath@{SkPath}!isLine@{isLine}}
+\index{isLine@{isLine}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isLine()}{isLine()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{line\mbox{[}2\mbox{]} }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains only one line; Sk\+Path\+::\+Verb array has two entries\+: k\+Move\+\_\+\+Verb, k\+Line\+\_\+\+Verb. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains one line and line is not nullptr, line is set to line start point and line end point. Returns false if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is not one line; line is unaltered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & storage for line. May be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains exactly one line
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_isLine}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+is\+Line}} \mbox{\Hypertarget{class_sk_path_a0d3dcaa99b0e0701944e2d5d6f45113a}\label{class_sk_path_a0d3dcaa99b0e0701944e2d5d6f45113a}} 
+\index{SkPath@{SkPath}!IsLineDegenerate@{IsLineDegenerate}}
+\index{IsLineDegenerate@{IsLineDegenerate}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{IsLineDegenerate()}{IsLineDegenerate()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::\+Is\+Line\+Degenerate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2,  }\item[{bool}]{exact }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tests if line between \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} pair is degenerate. Line with no length or that moves a very short distance is degenerate; it is treated as a point.
+
+exact changes the equality test. If true, returns true only if p1 equals p2. If false, returns true if p1 equals or nearly equals p2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & line start point \\
+\hline
+{\em p2} & line end point \\
+\hline
+{\em exact} & if false, allow nearly equals \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if line is degenerate; its length is effectively zero
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_IsLineDegenerate}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+\+Is\+Line\+Degenerate}} \mbox{\Hypertarget{class_sk_path_a88cab201b805a4210074a632fab3e21c}\label{class_sk_path_a88cab201b805a4210074a632fab3e21c}} 
+\index{SkPath@{SkPath}!isOval@{isOval}}
+\index{isOval@{isOval}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isOval()}{isOval()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Oval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{bounds }\end{DoxyParamCaption}) const}
+
+Returns true if this path is recognized as an oval or circle.
+
+bounds receives bounds of oval.
+
+bounds is unmodified if oval is not found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & storage for bounding \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} of oval; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is recognized as an oval or circle
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_isOval}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+is\+Oval}} \mbox{\Hypertarget{class_sk_path_a35bcc5d4d51e3f124e77d43093a49837}\label{class_sk_path_a35bcc5d4d51e3f124e77d43093a49837}} 
+\index{SkPath@{SkPath}!IsQuadDegenerate@{IsQuadDegenerate}}
+\index{IsQuadDegenerate@{IsQuadDegenerate}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{IsQuadDegenerate()}{IsQuadDegenerate()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::\+Is\+Quad\+Degenerate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p3,  }\item[{bool}]{exact }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tests if quad is degenerate. Quad with no length or that moves a very short distance is degenerate; it is treated as a point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & quad start point \\
+\hline
+{\em p2} & quad control point \\
+\hline
+{\em p3} & quad end point \\
+\hline
+{\em exact} & if true, returns true only if p1, p2, and p3 are equal; if false, returns true if p1, p2, and p3 are equal or nearly equal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if quad is degenerate; its length is effectively zero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_ad6086fc1a35ef838b38f8730ae534762}\label{class_sk_path_ad6086fc1a35ef838b38f8730ae534762}} 
+\index{SkPath@{SkPath}!isRect@{isRect}}
+\index{isRect@{isRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isRect()}{isRect()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{rect,  }\item[{bool $\ast$}]{is\+Closed = {\ttfamily nullptr},  }\item[{Sk\+Path\+Direction $\ast$}]{direction = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is equivalent to \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} when filled. If false\+: rect, is\+Closed, and direction are unchanged. If true\+: rect, is\+Closed, and direction are written to if not nullptr.
+
+rect may be smaller than the \mbox{\hyperlink{class_sk_path}{Sk\+Path}} bounds. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} bounds may include k\+Move\+\_\+\+Verb points that do not alter the area drawn by the returned rect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & storage for bounds of \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}; may be nullptr \\
+\hline
+{\em is\+Closed} & storage set to true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is closed; may be nullptr \\
+\hline
+{\em direction} & storage set to \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} direction; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_isRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+is\+Rect}} \mbox{\Hypertarget{class_sk_path_ae8cac7a51ebe9607dbc1b3ddde5a4e5f}\label{class_sk_path_ae8cac7a51ebe9607dbc1b3ddde5a4e5f}} 
+\index{SkPath@{SkPath}!isRRect@{isRRect}}
+\index{isRRect@{isRRect}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isRRect()}{isRRect()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+R\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} $\ast$}]{rrect }\end{DoxyParamCaption}) const}
+
+Returns true if path is representable as \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}. Returns false if path is representable as oval, circle, or \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}.
+
+rrect receives bounds of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}.
+
+rrect is unmodified if \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}} is not found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rrect} & storage for bounding \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} of \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} contains only \mbox{\hyperlink{class_sk_r_rect}{Sk\+R\+Rect}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_isRRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+is\+R\+Rect}} \mbox{\Hypertarget{class_sk_path_ad39cea91b553eec0446c1b62475612e3}\label{class_sk_path_ad39cea91b553eec0446c1b62475612e3}} 
+\index{SkPath@{SkPath}!isValid@{isValid}}
+\index{isValid@{isValid}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} data is consistent. Corrupt \mbox{\hyperlink{class_sk_path}{Sk\+Path}} data is detected if internal values are out of range or internal storage does not match array dimensions.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} data is consistent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}\label{class_sk_path_a6e82bf8ec4993ced919ddc1e54a8e07c}} 
+\index{SkPath@{SkPath}!isVolatile@{isVolatile}}
+\index{isVolatile@{isVolatile}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{isVolatile()}{isVolatile()}}
+{\footnotesize\ttfamily bool Sk\+Path\+::is\+Volatile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the path is volatile; it will not be altered or discarded by the caller after it is drawn. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} by default have volatile set false, allowing \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}} to attach a cache of data which speeds repeated drawing. If true, \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}} may not speed repeated drawing.
+
+\begin{DoxyReturn}{Returns}
+true if caller will alter \mbox{\hyperlink{class_sk_path}{Sk\+Path}} after drawing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a27c6505cd16db954d6f0268e2de5d87f}\label{class_sk_path_a27c6505cd16db954d6f0268e2de5d87f}} 
+\index{SkPath@{SkPath}!lineTo@{lineTo}}
+\index{lineTo@{lineTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{lineTo()}{lineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::line\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds line from last point to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding line.
+
+\mbox{\hyperlink{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}{line\+To()}} first appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed. \mbox{\hyperlink{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}{line\+To()}} then appends k\+Line\+\_\+\+Verb to verb array and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of added line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}\label{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}} 
+\index{SkPath@{SkPath}!lineTo@{lineTo}}
+\index{lineTo@{lineTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{lineTo()}{lineTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::line\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y }\end{DoxyParamCaption})}
+
+Adds line from last point to (x, y). If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding line.
+
+\mbox{\hyperlink{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}{line\+To()}} appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed. \mbox{\hyperlink{class_sk_path_a457f1f4f0d45339c6eb2d2ca15610a84}{line\+To()}} then appends k\+Line\+\_\+\+Verb to verb array and (x, y) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & end of added line on x-\/axis \\
+\hline
+{\em y} & end of added line on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_lineTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+line\+To}} \mbox{\Hypertarget{class_sk_path_a86b3be3b522fc2b36044e4cb9c43e59f}\label{class_sk_path_a86b3be3b522fc2b36044e4cb9c43e59f}} 
+\index{SkPath@{SkPath}!Make@{Make}}
+\index{Make@{Make}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} Sk\+Path\+::\+Make (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}}]{pts\mbox{[}$\,$\mbox{]},  }\item[{int}]{point\+Count,  }\item[{const uint8\+\_\+t}]{vbs\mbox{[}$\,$\mbox{]},  }\item[{int}]{verb\+Count,  }\item[{const Sk\+Scalar}]{ws\mbox{[}$\,$\mbox{]},  }\item[{int}]{conic\+Weight\+Count,  }\item[{Sk\+Path\+Fill\+Type}]{ft,  }\item[{bool}]{is\+Volatile = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a new path with the specified segments.
+
+The points and weights arrays are read in order, based on the sequence of verbs.
+
+Move 1 point Line 1 point Quad 2 points Conic 2 points and 1 weight Cubic 3 points Close 0 points
+
+If an illegal sequence of verbs is encountered, or the specified number of points or weights is not sufficient given the verbs, an empty Path is returned.
+
+A legal sequence of verbs consists of any number of Contours. A contour always begins with a Move verb, followed by 0 or more segments\+: Line, Quad, Conic, Cubic, followed by an optional Close. \mbox{\Hypertarget{class_sk_path_a85ad85fdec8bb0d4c39d46c45f2d9581}\label{class_sk_path_a85ad85fdec8bb0d4c39d46c45f2d9581}} 
+\index{SkPath@{SkPath}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::move\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds beginning of contour at \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & contour start \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a28dc5683b9a3e75ad55393cd233e8341}\label{class_sk_path_a28dc5683b9a3e75ad55393cd233e8341}} 
+\index{SkPath@{SkPath}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::move\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y }\end{DoxyParamCaption})}
+
+Adds beginning of contour at \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} (x, y).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/axis value of contour start \\
+\hline
+{\em y} & y-\/axis value of contour start \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_moveTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+move\+To}} \mbox{\Hypertarget{class_sk_path_a62a6ccd0f6608a0decb3af050d81da21}\label{class_sk_path_a62a6ccd0f6608a0decb3af050d81da21}} 
+\index{SkPath@{SkPath}!offset@{offset}}
+\index{offset@{offset}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{offset()}{offset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+Path\+::offset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Offsets \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array by (dx, dy). \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is replaced by offset data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & offset added to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array x-\/axis coordinates \\
+\hline
+{\em dy} & offset added to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array y-\/axis coordinates \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_path_a0b4a9414537a0df5e2354d521d8cf6aa}\label{class_sk_path_a0b4a9414537a0df5e2354d521d8cf6aa}} 
+\index{SkPath@{SkPath}!offset@{offset}}
+\index{offset@{offset}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{offset()}{offset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+Path\+::offset (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy,  }\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{dst }\end{DoxyParamCaption}) const}
+
+Offsets \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array by (dx, dy). Offset \mbox{\hyperlink{class_sk_path}{Sk\+Path}} replaces dst. If dst is nullptr, \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is replaced by offset data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & offset added to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array x-\/axis coordinates \\
+\hline
+{\em dy} & offset added to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array y-\/axis coordinates \\
+\hline
+{\em dst} & overwritten, translated copy of \mbox{\hyperlink{class_sk_path}{Sk\+Path}}; may be nullptr\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Path_offset}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+offset}} \mbox{\Hypertarget{class_sk_path_a24e75e150a765d304e8d0c3d087ddc94}\label{class_sk_path_a24e75e150a765d304e8d0c3d087ddc94}} 
+\index{SkPath@{SkPath}!operator=@{operator=}}
+\index{operator=@{operator=}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+Constructs a copy of an existing path. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} assignment makes two paths identical by value. Internally, assignment shares pointer values. The underlying verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array and weights are copied when modified.
+
+Copying \mbox{\hyperlink{class_sk_path}{Sk\+Path}} by assignment is very efficient and never allocates memory. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} are always copied by value from the interface; the underlying shared pointers are not exposed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, weights, and Sk\+Path\+::\+Fill\+Type to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} copied by value
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_copy_operator}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+copy\+\_\+operator}} \mbox{\Hypertarget{class_sk_path_a95f346ea768b989b355f7922594f0399}\label{class_sk_path_a95f346ea768b989b355f7922594f0399}} 
+\index{SkPath@{SkPath}!quadTo@{quadTo}}
+\index{quadTo@{quadTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{quadTo()}{quadTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::quad\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p1,  }\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds quad from last point towards \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p2. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding quad.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Quad\+\_\+\+Verb to verb array; and \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} p1, p2 to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of added quad \\
+\hline
+{\em p2} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of added quad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a9d554f5ea596598762ba7c903029bc2d}\label{class_sk_path_a9d554f5ea596598762ba7c903029bc2d}} 
+\index{SkPath@{SkPath}!quadTo@{quadTo}}
+\index{quadTo@{quadTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{quadTo()}{quadTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::quad\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x1,  }\item[{Sk\+Scalar}]{y1,  }\item[{Sk\+Scalar}]{x2,  }\item[{Sk\+Scalar}]{y2 }\end{DoxyParamCaption})}
+
+Adds quad from last point towards (x1, y1), to (x2, y2). If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding quad.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Quad\+\_\+\+Verb to verb array; and (x1, y1), (x2, y2) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of quad on x-\/axis \\
+\hline
+{\em y1} & control \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of quad on y-\/axis \\
+\hline
+{\em x2} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of quad on x-\/axis \\
+\hline
+{\em y2} & end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} of quad on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_quadTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+quad\+To}} \mbox{\Hypertarget{class_sk_path_a020cba27507f10809a57b8f26a0af35c}\label{class_sk_path_a020cba27507f10809a57b8f26a0af35c}} 
+\index{SkPath@{SkPath}!rArcTo@{rArcTo}}
+\index{rArcTo@{rArcTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rArcTo()}{rArcTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::r\+Arc\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{rx,  }\item[{Sk\+Scalar}]{ry,  }\item[{Sk\+Scalar}]{x\+Axis\+Rotate,  }\item[{\mbox{\hyperlink{class_sk_path_a968e6248ebe0a13e74c28e432ca59125}{Sk\+Path\+::\+Arc\+Size}}}]{large\+Arc,  }\item[{Sk\+Path\+Direction}]{sweep,  }\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})}
+
+Appends arc to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, relative to last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}. Arc is implemented by one or more conic, weighted to describe part of oval with radii (rx, ry) rotated by x\+Axis\+Rotate degrees. Arc curves from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} to relative end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}\+: (dx, dy), choosing one of four possible routes\+: clockwise or counterclockwise, and smaller or larger. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, the start arc \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} is (0, 0).
+
+Arc sweep is always less than 360 degrees. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends line to end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} if either radii are zero, or if last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} equals end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} scales radii (rx, ry) to fit last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} and end \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} if both are greater than zero but too small to describe an arc.
+
+\mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} appends up to four conic curves. \mbox{\hyperlink{class_sk_path_a22ec2323a5b6e45bf7f2420384f535e6}{arc\+To()}} implements the functionality of svg arc, although S\+VG \char`\"{}sweep-\/flag\char`\"{} value is opposite the integer value of sweep; S\+VG \char`\"{}sweep-\/flag\char`\"{} uses 1 for clockwise, while k\+C\+W\+\_\+\+Direction cast to int is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx} & radius before x-\/axis rotation \\
+\hline
+{\em ry} & radius before x-\/axis rotation \\
+\hline
+{\em x\+Axis\+Rotate} & x-\/axis rotation in degrees; positive values are clockwise \\
+\hline
+{\em large\+Arc} & chooses smaller or larger arc \\
+\hline
+{\em sweep} & chooses clockwise or counterclockwise arc \\
+\hline
+{\em dx} & x-\/axis offset end of arc from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+{\em dy} & y-\/axis offset end of arc from last \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a233092825009d8da04c52b2f62527b03}\label{class_sk_path_a233092825009d8da04c52b2f62527b03}} 
+\index{SkPath@{SkPath}!rConicTo@{rConicTo}}
+\index{rConicTo@{rConicTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rConicTo()}{rConicTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::r\+Conic\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx1,  }\item[{Sk\+Scalar}]{dy1,  }\item[{Sk\+Scalar}]{dx2,  }\item[{Sk\+Scalar}]{dy2,  }\item[{Sk\+Scalar}]{w }\end{DoxyParamCaption})}
+
+Adds conic from last point towards vector (dx1, dy1), to vector (dx2, dy2), weighted by w. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding conic.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed.
+
+If w is finite and not one, next appends k\+Conic\+\_\+\+Verb to verb array, and w is recorded as conic weight; otherwise, if w is one, appends k\+Quad\+\_\+\+Verb to verb array; or if w is not finite, appends k\+Line\+\_\+\+Verb twice to verb array.
+
+In all cases appends \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} control and end to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. control is last point plus vector (dx1, dy1). end is last point plus vector (dx2, dy2).
+
+Function name stands for \char`\"{}relative conic to\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx1} & offset from last point to conic control on x-\/axis \\
+\hline
+{\em dy1} & offset from last point to conic control on y-\/axis \\
+\hline
+{\em dx2} & offset from last point to conic end on x-\/axis \\
+\hline
+{\em dy2} & offset from last point to conic end on y-\/axis \\
+\hline
+{\em w} & weight of added conic \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a4c3b1374fd88e0986ddaea3f3b0379db}\label{class_sk_path_a4c3b1374fd88e0986ddaea3f3b0379db}} 
+\index{SkPath@{SkPath}!rCubicTo@{rCubicTo}}
+\index{rCubicTo@{rCubicTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rCubicTo()}{rCubicTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::r\+Cubic\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx1,  }\item[{Sk\+Scalar}]{dy1,  }\item[{Sk\+Scalar}]{dx2,  }\item[{Sk\+Scalar}]{dy2,  }\item[{Sk\+Scalar}]{dx3,  }\item[{Sk\+Scalar}]{dy3 }\end{DoxyParamCaption})}
+
+Adds cubic from last point towards vector (dx1, dy1), then towards vector (dx2, dy2), to vector (dx3, dy3). If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding cubic.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Cubic\+\_\+\+Verb to verb array; and appends cubic control and cubic end to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. Cubic control is last point plus vector (dx1, dy1). Cubic end is last point plus vector (dx2, dy2). Function name stands for \char`\"{}relative cubic to\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx1} & offset from last point to first cubic control on x-\/axis \\
+\hline
+{\em dy1} & offset from last point to first cubic control on y-\/axis \\
+\hline
+{\em dx2} & offset from last point to second cubic control on x-\/axis \\
+\hline
+{\em dy2} & offset from last point to second cubic control on y-\/axis \\
+\hline
+{\em dx3} & offset from last point to cubic end on x-\/axis \\
+\hline
+{\em dy3} & offset from last point to cubic end on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a02f6fe6f7f3caf7212ed37b0d2712da2}\label{class_sk_path_a02f6fe6f7f3caf7212ed37b0d2712da2}} 
+\index{SkPath@{SkPath}!readFromMemory@{readFromMemory}}
+\index{readFromMemory@{readFromMemory}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{readFromMemory()}{readFromMemory()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Path\+::read\+From\+Memory (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Initializes \mbox{\hyperlink{class_sk_path}{Sk\+Path}} from buffer of size length. Returns zero if the buffer is data is inconsistent, or the length is too small.
+
+Reads Sk\+Path\+::\+Fill\+Type, verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, conic weight, and additionally reads computed information like Sk\+Path\+::\+Convexity and bounds.
+
+Used only in concert with \mbox{\hyperlink{class_sk_path_ab34720f80c02d5854cc6b09675b5d907}{write\+To\+Memory()}}; the format used for \mbox{\hyperlink{class_sk_path}{Sk\+Path}} in memory is not guaranteed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & storage for \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \\
+\hline
+{\em length} & buffer size in bytes; must be multiple of 4 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes read, or zero on failure
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_readFromMemory}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+read\+From\+Memory}} \mbox{\Hypertarget{class_sk_path_a977497439155df168c935114be1fa148}\label{class_sk_path_a977497439155df168c935114be1fa148}} 
+\index{SkPath@{SkPath}!reset@{reset}}
+\index{reset@{reset}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to its initial state. Removes verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and weights, and sets Fill\+Type to k\+Winding. Internal storage associated with \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is released.
+
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_reset}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+reset}} \mbox{\Hypertarget{class_sk_path_a070aab0bed84e1137a186cef1f10192f}\label{class_sk_path_a070aab0bed84e1137a186cef1f10192f}} 
+\index{SkPath@{SkPath}!reverseAddPath@{reverseAddPath}}
+\index{reverseAddPath@{reverseAddPath}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{reverseAddPath()}{reverseAddPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::reverse\+Add\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{src }\end{DoxyParamCaption})}
+
+Appends src to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}, from back to front. Reversed src always appends a new contour to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} verbs, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}}, and conic weights to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_reverseAddPath}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+reverse\+Add\+Path}} \mbox{\Hypertarget{class_sk_path_a704fc5e57bfbadd6a7560291fc7fc1fa}\label{class_sk_path_a704fc5e57bfbadd6a7560291fc7fc1fa}} 
+\index{SkPath@{SkPath}!rewind@{rewind}}
+\index{rewind@{rewind}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rewind()}{rewind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::rewind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to its initial state, preserving internal storage. Removes verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and weights, and sets Fill\+Type to k\+Winding. Internal storage associated with \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is retained.
+
+Use \mbox{\hyperlink{class_sk_path_a704fc5e57bfbadd6a7560291fc7fc1fa}{rewind()}} instead of \mbox{\hyperlink{class_sk_path_a977497439155df168c935114be1fa148}{reset()}} if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} storage will be reused and performance is critical.
+
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_rewind}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+rewind}} \mbox{\Hypertarget{class_sk_path_af44de3514295effc0d1319d419b5a745}\label{class_sk_path_af44de3514295effc0d1319d419b5a745}} 
+\index{SkPath@{SkPath}!rLineTo@{rLineTo}}
+\index{rLineTo@{rLineTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rLineTo()}{rLineTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::r\+Line\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})}
+
+Adds line from last point to vector (dx, dy). If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding line.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Line\+\_\+\+Verb to verb array and line end to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. Line end is last point plus vector (dx, dy). Function name stands for \char`\"{}relative line to\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & offset from last point to line end on x-\/axis \\
+\hline
+{\em dy} & offset from last point to line end on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_rLineTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+r\+Line\+To}} example\+: \href{https://fiddle.skia.org/c/@Quad_a}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Quad\+\_\+a}} example\+: \href{https://fiddle.skia.org/c/@Quad_b}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Quad\+\_\+b}} \mbox{\Hypertarget{class_sk_path_a7923238a1ebf57f75020d0439744e434}\label{class_sk_path_a7923238a1ebf57f75020d0439744e434}} 
+\index{SkPath@{SkPath}!rMoveTo@{rMoveTo}}
+\index{rMoveTo@{rMoveTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rMoveTo()}{rMoveTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::r\+Move\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx,  }\item[{Sk\+Scalar}]{dy }\end{DoxyParamCaption})}
+
+Adds beginning of contour relative to last point. If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, starts contour at (dx, dy). Otherwise, start contour at last point offset by (dx, dy). Function name stands for \char`\"{}relative move to\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & offset from last point to contour start on x-\/axis \\
+\hline
+{\em dy} & offset from last point to contour start on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_rMoveTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+r\+Move\+To}} \mbox{\Hypertarget{class_sk_path_acd57395bc59b3e2350490ddfe5cf8cc8}\label{class_sk_path_acd57395bc59b3e2350490ddfe5cf8cc8}} 
+\index{SkPath@{SkPath}!rQuadTo@{rQuadTo}}
+\index{rQuadTo@{rQuadTo}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{rQuadTo()}{rQuadTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \& Sk\+Path\+::r\+Quad\+To (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{dx1,  }\item[{Sk\+Scalar}]{dy1,  }\item[{Sk\+Scalar}]{dx2,  }\item[{Sk\+Scalar}]{dy2 }\end{DoxyParamCaption})}
+
+Adds quad from last point towards vector (dx1, dy1), to vector (dx2, dy2). If \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is empty, or last Sk\+Path\+::\+Verb is k\+Close\+\_\+\+Verb, last point is set to (0, 0) before adding quad.
+
+Appends k\+Move\+\_\+\+Verb to verb array and (0, 0) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, if needed; then appends k\+Quad\+\_\+\+Verb to verb array; and appends quad control and quad end to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array. Quad control is last point plus vector (dx1, dy1). Quad end is last point plus vector (dx2, dy2). Function name stands for \char`\"{}relative quad to\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx1} & offset from last point to quad control on x-\/axis \\
+\hline
+{\em dy1} & offset from last point to quad control on y-\/axis \\
+\hline
+{\em dx2} & offset from last point to quad end on x-\/axis \\
+\hline
+{\em dy2} & offset from last point to quad end on y-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Conic_Weight_a}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Conic\+\_\+\+Weight\+\_\+a}} example\+: \href{https://fiddle.skia.org/c/@Conic_Weight_b}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Conic\+\_\+\+Weight\+\_\+b}} example\+: \href{https://fiddle.skia.org/c/@Conic_Weight_c}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Conic\+\_\+\+Weight\+\_\+c}} example\+: \href{https://fiddle.skia.org/c/@Path_rQuadTo}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+r\+Quad\+To}} \mbox{\Hypertarget{class_sk_path_aac8586ce1afff7e7f41e1e7bac0b418b}\label{class_sk_path_aac8586ce1afff7e7f41e1e7bac0b418b}} 
+\index{SkPath@{SkPath}!serialize@{serialize}}
+\index{serialize@{serialize}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ Sk\+Path\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Writes \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to buffer, returning the buffer written to, wrapped in \mbox{\hyperlink{class_sk_data}{Sk\+Data}}.
+
+\mbox{\hyperlink{class_sk_path_aac8586ce1afff7e7f41e1e7bac0b418b}{serialize()}} writes Sk\+Path\+::\+Fill\+Type, verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, conic weight, and additionally writes computed information like Sk\+Path\+::\+Convexity and bounds.
+
+\mbox{\hyperlink{class_sk_path_aac8586ce1afff7e7f41e1e7bac0b418b}{serialize()}} should only be used in concert with \mbox{\hyperlink{class_sk_path_a02f6fe6f7f3caf7212ed37b0d2712da2}{read\+From\+Memory()}}. The format used for \mbox{\hyperlink{class_sk_path}{Sk\+Path}} in memory is not guaranteed.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_path}{Sk\+Path}} data wrapped in \mbox{\hyperlink{class_sk_data}{Sk\+Data}} buffer
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_serialize}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+serialize}} \mbox{\Hypertarget{class_sk_path_a3a562e1a9037c6a4cf676febe8073176}\label{class_sk_path_a3a562e1a9037c6a4cf676febe8073176}} 
+\index{SkPath@{SkPath}!setFillType@{setFillType}}
+\index{setFillType@{setFillType}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{setFillType()}{setFillType()}}
+{\footnotesize\ttfamily void Sk\+Path\+::set\+Fill\+Type (\begin{DoxyParamCaption}\item[{Sk\+Path\+Fill\+Type}]{ft }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets Fill\+Type, the rule used to fill \mbox{\hyperlink{class_sk_path}{Sk\+Path}}. While there is no check that ft is legal, values outside of Fill\+Type are not supported. \mbox{\Hypertarget{class_sk_path_a5734897ba1c06cd48cd4f8726d3a3af6}\label{class_sk_path_a5734897ba1c06cd48cd4f8726d3a3af6}} 
+\index{SkPath@{SkPath}!setIsVolatile@{setIsVolatile}}
+\index{setIsVolatile@{setIsVolatile}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{setIsVolatile()}{setIsVolatile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_path}{Sk\+Path}}\& Sk\+Path\+::set\+Is\+Volatile (\begin{DoxyParamCaption}\item[{bool}]{is\+Volatile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Specifies whether \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is volatile; whether it will be altered or discarded by the caller after it is drawn. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} by default have volatile set false, allowing \mbox{\hyperlink{class_sk_base_device}{Sk\+Base\+Device}} to attach a cache of data which speeds repeated drawing.
+
+Mark temporary paths, discarded or modified after use, as volatile to inform \mbox{\hyperlink{class_sk_base_device}{Sk\+Base\+Device}} that the path need not be cached.
+
+Mark animating \mbox{\hyperlink{class_sk_path}{Sk\+Path}} volatile to improve performance. Mark unchanging \mbox{\hyperlink{class_sk_path}{Sk\+Path}} non-\/volatile to improve repeated rendering.
+
+raster surface \mbox{\hyperlink{class_sk_path}{Sk\+Path}} draws are affected by volatile for some shadows. G\+PU surface \mbox{\hyperlink{class_sk_path}{Sk\+Path}} draws are affected by volatile for some shadows and concave geometries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Volatile} & true if caller will alter \mbox{\hyperlink{class_sk_path}{Sk\+Path}} after drawing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a829354d382186c11a95b2214b40d1685}\label{class_sk_path_a829354d382186c11a95b2214b40d1685}} 
+\index{SkPath@{SkPath}!setLastPt@{setLastPt}}
+\index{setLastPt@{setLastPt}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{setLastPt()}{setLastPt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+Path\+::set\+Last\+Pt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the last point on the path. If \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array is empty, append k\+Move\+\_\+\+Verb to verb array and append p to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & set value of last point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_path_a1ce8d91669e01e7724c27a4d453516fb}\label{class_sk_path_a1ce8d91669e01e7724c27a4d453516fb}} 
+\index{SkPath@{SkPath}!setLastPt@{setLastPt}}
+\index{setLastPt@{setLastPt}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{setLastPt()}{setLastPt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+Path\+::set\+Last\+Pt (\begin{DoxyParamCaption}\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y }\end{DoxyParamCaption})}
+
+Sets last point to (x, y). If \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array is empty, append k\+Move\+\_\+\+Verb to verb array and append (x, y) to \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & set x-\/axis value of last point \\
+\hline
+{\em y} & set y-\/axis value of last point\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Path_setLastPt}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+set\+Last\+Pt}} \mbox{\Hypertarget{class_sk_path_ad4ded6edd025942b925cc9be8e54732c}\label{class_sk_path_ad4ded6edd025942b925cc9be8e54732c}} 
+\index{SkPath@{SkPath}!swap@{swap}}
+\index{swap@{swap}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void Sk\+Path\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{other }\end{DoxyParamCaption})}
+
+Exchanges the verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, weights, and Sk\+Path\+::\+Fill\+Type with other. Cached state is also exchanged. \mbox{\hyperlink{class_sk_path_ad4ded6edd025942b925cc9be8e54732c}{swap()}} internally exchanges pointers, so it is lightweight and does not allocate memory.
+
+\mbox{\hyperlink{class_sk_path_ad4ded6edd025942b925cc9be8e54732c}{swap()}} usage has largely been replaced by \mbox{\hyperlink{class_sk_path_a24e75e150a765d304e8d0c3d087ddc94}{operator=(const Sk\+Path\& path)}}. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} do not copy their content on assignment until they are written to, making assignment as efficient as \mbox{\hyperlink{class_sk_path_ad4ded6edd025942b925cc9be8e54732c}{swap()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} exchanged by value\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Path_swap}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+swap}} \mbox{\Hypertarget{class_sk_path_a557a2b002743e15d9bd4f14b0aee3ea6}\label{class_sk_path_a557a2b002743e15d9bd4f14b0aee3ea6}} 
+\index{SkPath@{SkPath}!toggleInverseFillType@{toggleInverseFillType}}
+\index{toggleInverseFillType@{toggleInverseFillType}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{toggleInverseFillType()}{toggleInverseFillType()}}
+{\footnotesize\ttfamily void Sk\+Path\+::toggle\+Inverse\+Fill\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Replaces Fill\+Type with its inverse. The inverse of Fill\+Type describes the area unmodified by the original Fill\+Type. \mbox{\Hypertarget{class_sk_path_a8b555a598f122e7f2911334c1a4a9f51}\label{class_sk_path_a8b555a598f122e7f2911334c1a4a9f51}} 
+\index{SkPath@{SkPath}!transform@{transform}}
+\index{transform@{transform}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sk\+Path\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{matrix,  }\item[{Sk\+Apply\+Perspective\+Clip}]{pc = {\ttfamily SkApplyPerspectiveClip\+:\+:kYes} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transforms verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and weight by matrix. transform may change verbs and increase their number. \mbox{\hyperlink{class_sk_path}{Sk\+Path}} is replaced by transformed data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} to apply to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \\
+\hline
+{\em pc} & whether to apply perspective clipping \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_path_ad814203ce342490f699698d9c308b889}\label{class_sk_path_ad814203ce342490f699698d9c308b889}} 
+\index{SkPath@{SkPath}!transform@{transform}}
+\index{transform@{transform}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+Path\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{matrix,  }\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{dst,  }\item[{Sk\+Apply\+Perspective\+Clip}]{pc = {\ttfamily SkApplyPerspectiveClip\+:\+:kYes} }\end{DoxyParamCaption}) const}
+
+Transforms verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and weight by matrix. transform may change verbs and increase their number. Transformed \mbox{\hyperlink{class_sk_path}{Sk\+Path}} replaces dst; if dst is nullptr, original data is replaced.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} to apply to \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \\
+\hline
+{\em dst} & overwritten, transformed copy of \mbox{\hyperlink{class_sk_path}{Sk\+Path}}; may be nullptr \\
+\hline
+{\em pc} & whether to apply perspective clipping\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Path_transform}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+transform}} \mbox{\Hypertarget{class_sk_path_a6de7de42175fe3ce5ff92f3d2267ec2d}\label{class_sk_path_a6de7de42175fe3ce5ff92f3d2267ec2d}} 
+\index{SkPath@{SkPath}!updateBoundsCache@{updateBoundsCache}}
+\index{updateBoundsCache@{updateBoundsCache}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{updateBoundsCache()}{updateBoundsCache()}}
+{\footnotesize\ttfamily void Sk\+Path\+::update\+Bounds\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Updates internal bounds so that subsequent calls to \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds()}} are instantaneous. Unaltered copies of \mbox{\hyperlink{class_sk_path}{Sk\+Path}} may also access cached bounds through \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds()}}.
+
+For now, identical to calling \mbox{\hyperlink{class_sk_path_ac60188dc6075d6ebb56b5398fbba0c10}{get\+Bounds()}} and ignoring the returned value.
+
+Call to prepare \mbox{\hyperlink{class_sk_path}{Sk\+Path}} subsequently drawn from multiple threads, to avoid a race condition where each draw separately computes the bounds. \mbox{\Hypertarget{class_sk_path_ab34720f80c02d5854cc6b09675b5d907}\label{class_sk_path_ab34720f80c02d5854cc6b09675b5d907}} 
+\index{SkPath@{SkPath}!writeToMemory@{writeToMemory}}
+\index{writeToMemory@{writeToMemory}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{writeToMemory()}{writeToMemory()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Path\+::write\+To\+Memory (\begin{DoxyParamCaption}\item[{void $\ast$}]{buffer }\end{DoxyParamCaption}) const}
+
+Writes \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to buffer, returning the number of bytes written. Pass nullptr to obtain the storage size.
+
+Writes Sk\+Path\+::\+Fill\+Type, verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, conic weight, and additionally writes computed information like Sk\+Path\+::\+Convexity and bounds.
+
+Use only be used in concert with \mbox{\hyperlink{class_sk_path_a02f6fe6f7f3caf7212ed37b0d2712da2}{read\+From\+Memory()}}; the format used for \mbox{\hyperlink{class_sk_path}{Sk\+Path}} in memory is not guaranteed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & storage for \mbox{\hyperlink{class_sk_path}{Sk\+Path}}; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size of storage required for \mbox{\hyperlink{class_sk_path}{Sk\+Path}}; always a multiple of 4
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Path_writeToMemory}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Path\+\_\+write\+To\+Memory}} 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_sk_path_a4f95dae0ce68ac158edb5bf7a5a19260}\label{class_sk_path_a4f95dae0ce68ac158edb5bf7a5a19260}} 
+\index{SkPath@{SkPath}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Compares a and b; returns true if Sk\+Path\+::\+Fill\+Type, verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and weights are not equivalent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to compare \\
+\hline
+{\em b} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} pair are not equivalent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_path_a2ba232f3a5c2d5cf27c9ff846c0b830c}\label{class_sk_path_a2ba232f3a5c2d5cf27c9ff846c0b830c}} 
+\index{SkPath@{SkPath}!operator==@{operator==}}
+\index{operator==@{operator==}!SkPath@{SkPath}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily S\+K\+\_\+\+A\+PI bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Compares a and b; returns true if Sk\+Path\+::\+Fill\+Type, verb array, \mbox{\hyperlink{struct_sk_point}{Sk\+Point}} array, and weights are equivalent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to compare \\
+\hline
+{\em b} & \mbox{\hyperlink{class_sk_path}{Sk\+Path}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_path}{Sk\+Path}} pair are equivalent 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Path.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path\+\_\+serial.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path\+Ref.\+cpp\end{DoxyCompactItemize}

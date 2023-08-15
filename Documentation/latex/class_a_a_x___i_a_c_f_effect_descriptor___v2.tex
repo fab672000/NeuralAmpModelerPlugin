@@ -1,0 +1,60 @@
+\hypertarget{class_a_a_x___i_a_c_f_effect_descriptor___v2}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2 Class Reference}
+\label{class_a_a_x___i_a_c_f_effect_descriptor___v2}\index{AAX\_IACFEffectDescriptor\_V2@{AAX\_IACFEffectDescriptor\_V2}}
+
+
+Versioned interface for an \mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}}.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_a_a_x___i_a_c_f_effect_descriptor___v2}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_descriptor___v2_a2ac5294b1db8881bb125e7ee6e4b4f4f}{Add\+Control\+M\+I\+D\+I\+Node}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} in\+Node\+ID, \mbox{\hyperlink{_a_a_x___enums_8h_a5e1dffce35d05990dbbad651702678e4}{A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type}} in\+Node\+Type, const char in\+Node\+Name\mbox{[}$\,$\mbox{]}, uint32\+\_\+t in\+Channel\+Mask)=0
+\begin{DoxyCompactList}\small\item\em Add a control M\+I\+DI node to the plug-\/in data model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Versioned interface for an \mbox{\hyperlink{class_a_a_x___i_effect_descriptor}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_effect_descriptor___v2_a2ac5294b1db8881bb125e7ee6e4b4f4f}\label{class_a_a_x___i_a_c_f_effect_descriptor___v2_a2ac5294b1db8881bb125e7ee6e4b4f4f}} 
+\index{AAX\_IACFEffectDescriptor\_V2@{AAX\_IACFEffectDescriptor\_V2}!AddControlMIDINode@{AddControlMIDINode}}
+\index{AddControlMIDINode@{AddControlMIDINode}!AAX\_IACFEffectDescriptor\_V2@{AAX\_IACFEffectDescriptor\_V2}}
+\doxysubsubsection{\texorpdfstring{AddControlMIDINode()}{AddControlMIDINode()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2\+::\+Add\+Control\+M\+I\+D\+I\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{in\+Node\+ID,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a5e1dffce35d05990dbbad651702678e4}{A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type}}}]{in\+Node\+Type,  }\item[{const char}]{in\+Node\+Name\mbox{[}$\,$\mbox{]},  }\item[{uint32\+\_\+t}]{in\+Channel\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a control M\+I\+DI node to the plug-\/in data model. 
+
+\begin{DoxyVerb}- This MIDI node may receive note data as well as control data.
+- To send MIDI data to the plug-in's algorithm, use
+  \ref AAX_IComponentDescriptor::AddMIDINode().
+
+\sa \ref AAX_IACFEffectParameters_V2::UpdateControlMIDINodes()
+
+@param[in]  inNodeID
+            The ID for the new control MIDI node.
+@param[in]  inNodeType
+            The type of the node.
+@param[in]  inNodeName
+            The name of the node.
+@param[in]  inChannelMask
+            The bit mask for required nodes channels (up to 16) or required global events for global node.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_effect_descriptor_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor.\+h}}\end{DoxyCompactItemize}

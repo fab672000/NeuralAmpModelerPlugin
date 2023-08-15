@@ -1,0 +1,95 @@
+\hypertarget{classjack__midi__handler}{}\doxysection{jack\+\_\+midi\+\_\+handler Class Reference}
+\label{classjack__midi__handler}\index{jack\_midi\_handler@{jack\_midi\_handler}}
+Inheritance diagram for jack\+\_\+midi\+\_\+handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classjack__midi__handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_aa4c2f954a34f35e00e3b1d708b5cb494}\label{classjack__midi__handler_aa4c2f954a34f35e00e3b1d708b5cb494}} 
+{\bfseries jack\+\_\+midi\+\_\+handler} (const std\+::string \&name=\char`\"{}J\+A\+C\+K\+Handler\char`\"{})
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a16cc34476af75b37257f6ace81fa6bc6}\label{classjack__midi__handler_a16cc34476af75b37257f6ace81fa6bc6}} 
+int {\bfseries recv\+Messages} (std\+::vector$<$ \mbox{\hyperlink{struct_m_i_d_i_message}{M\+I\+D\+I\+Message}} $>$ $\ast$messages)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_ad294b6d52bf355e86f8b5f9c47f1328e}\label{classjack__midi__handler_ad294b6d52bf355e86f8b5f9c47f1328e}} 
+void {\bfseries send\+Messages} (std\+::vector$<$ \mbox{\hyperlink{struct_m_i_d_i_message}{M\+I\+D\+I\+Message}} $>$ $\ast$messages, int count)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a87cd33698caa9163de8f019ed3f9cff7}\label{classjack__midi__handler_a87cd33698caa9163de8f019ed3f9cff7}} 
+\mbox{\hyperlink{class_map_u_i}{Map\+UI}} $\ast$ {\bfseries key\+On} (int channel, int pitch, int velocity)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_ae5bf6a42705c31deccf1a60d2d36afa3}\label{classjack__midi__handler_ae5bf6a42705c31deccf1a60d2d36afa3}} 
+void {\bfseries key\+Off} (int channel, int pitch, int velocity)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a52e60f15900df158fe8d4d571b2b3910}\label{classjack__midi__handler_a52e60f15900df158fe8d4d571b2b3910}} 
+void {\bfseries ctrl\+Change} (int channel, int ctrl, int val)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a9e3f10237208432f30952e161ed402fd}\label{classjack__midi__handler_a9e3f10237208432f30952e161ed402fd}} 
+void {\bfseries chan\+Press} (int channel, int press)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a9b84c485182f7a717fc2735b837123c0}\label{classjack__midi__handler_a9b84c485182f7a717fc2735b837123c0}} 
+void {\bfseries prog\+Change} (int channel, int pgm)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_ac8c10f8a4b26f5864eb04176d90581b7}\label{classjack__midi__handler_ac8c10f8a4b26f5864eb04176d90581b7}} 
+void {\bfseries key\+Press} (int channel, int pitch, int press)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a6d6cf79a5df9efcf523d279d4a29093e}\label{classjack__midi__handler_a6d6cf79a5df9efcf523d279d4a29093e}} 
+void {\bfseries pitch\+Wheel} (int channel, int wheel)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_af8b39a3b2648d65488df870e92a7b32b}\label{classjack__midi__handler_af8b39a3b2648d65488df870e92a7b32b}} 
+void {\bfseries ctrl\+Change14bits} (int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a3cf12522fa248ea6efe7524f6c8f77f4}\label{classjack__midi__handler_a3cf12522fa248ea6efe7524f6c8f77f4}} 
+void {\bfseries start\+Sync} (double date)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a6a3bb70068b68d7ae08780de9e08d82a}\label{classjack__midi__handler_a6a3bb70068b68d7ae08780de9e08d82a}} 
+void {\bfseries stop\+Sync} (double date)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a56ab0f585d908777c091386f03e75f2e}\label{classjack__midi__handler_a56ab0f585d908777c091386f03e75f2e}} 
+void {\bfseries clock} (double date)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a21df2ae679fcac7c67ba88ebda32c399}\label{classjack__midi__handler_a21df2ae679fcac7c67ba88ebda32c399}} 
+void {\bfseries sys\+Ex} (double date, std\+::vector$<$ unsigned char $>$ \&message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_aefbcbd349b388702cb18cede9a306fd7}\label{classjack__midi__handler_aefbcbd349b388702cb18cede9a306fd7}} 
+bool {\bfseries init\+Ports} (jack\+\_\+client\+\_\+t $\ast$client)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_ae6fae9d7f083e729db14afc7ff0fd48b}\label{classjack__midi__handler_ae6fae9d7f083e729db14afc7ff0fd48b}} 
+void {\bfseries write\+Message} (double date, unsigned char $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_aa1825b93d577ce3fd8d85370d973e81c}\label{classjack__midi__handler_aa1825b93d577ce3fd8d85370d973e81c}} 
+void {\bfseries process\+Midi\+In\+Buffer} (void $\ast$port\+\_\+buf\+\_\+in)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_af870abf4e46c4dd143ae56c8107227fb}\label{classjack__midi__handler_af870abf4e46c4dd143ae56c8107227fb}} 
+virtual void {\bfseries process\+Midi\+In} (jack\+\_\+nframes\+\_\+t nframes)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a124b16bd6a233c51ecab4ceb88ac891a}\label{classjack__midi__handler_a124b16bd6a233c51ecab4ceb88ac891a}} 
+void {\bfseries process\+Midi\+Out\+Buffer} (void $\ast$port\+\_\+buf\+\_\+out\+\_\+aux, bool reset=false)
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a1885e8f471e9871020c4a580ec2d4bb5}\label{classjack__midi__handler_a1885e8f471e9871020c4a580ec2d4bb5}} 
+virtual void {\bfseries process\+Midi\+Out} (jack\+\_\+nframes\+\_\+t nframes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a2544e8d345437afa1ea01da131e6454d}\label{classjack__midi__handler_a2544e8d345437afa1ea01da131e6454d}} 
+\mbox{\hyperlink{structringbuffer__t}{ringbuffer\+\_\+t}} $\ast$ {\bfseries f\+Out\+Buffer}
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_a85eb5347f1459f77b8cc5b3b371628ac}\label{classjack__midi__handler_a85eb5347f1459f77b8cc5b3b371628ac}} 
+jack\+\_\+port\+\_\+t $\ast$ {\bfseries f\+Input\+Midi\+Port}
+\item 
+\mbox{\Hypertarget{classjack__midi__handler_aae516a55ec79b8319d180843338c6977}\label{classjack__midi__handler_aae516a55ec79b8319d180843338c6977}} 
+jack\+\_\+port\+\_\+t $\ast$ {\bfseries f\+Output\+Midi\+Port}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/midi/jack-\/midi.\+h\end{DoxyCompactItemize}

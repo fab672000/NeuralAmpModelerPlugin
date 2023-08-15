@@ -1,0 +1,87 @@
+\hypertarget{class_i_plug_v_s_t3_processor_base}{}\doxysection{I\+Plug\+V\+S\+T3\+Processor\+Base Class Reference}
+\label{class_i_plug_v_s_t3_processor_base}\index{IPlugVST3ProcessorBase@{IPlugVST3ProcessorBase}}
+
+
+{\ttfamily \#include $<$I\+Plug\+V\+S\+T3\+\_\+\+Processor\+Base.\+h$>$}
+
+Inheritance diagram for I\+Plug\+V\+S\+T3\+Processor\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_plug_v_s_t3_processor_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a19fa282bfdc96f3f1e01c45c4bb91d85}\label{class_i_plug_v_s_t3_processor_base_a19fa282bfdc96f3f1e01c45c4bb91d85}} 
+{\bfseries I\+Plug\+V\+S\+T3\+Processor\+Base} (\mbox{\hyperlink{struct_config}{Config}} c, \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}} \&plug)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a300cb3ee75b1890ccc734e1dc10b44dd}\label{class_i_plug_v_s_t3_processor_base_a300cb3ee75b1890ccc734e1dc10b44dd}} 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries Initialize} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$p\+Plug)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a3d4fcd72d8fff4085cb3347018995af6}\label{class_i_plug_v_s_t3_processor_base_a3d4fcd72d8fff4085cb3347018995af6}} 
+void {\bfseries Process\+Midi\+In} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_event_list}{Steinberg\+::\+Vst\+::\+I\+Event\+List}} $\ast$p\+Event\+List, \mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&editor\+Queue, \mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&processor\+Queue)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a53d8cfc1fd5f1dbc5cb7a0f0cbb6ed99}\label{class_i_plug_v_s_t3_processor_base_a53d8cfc1fd5f1dbc5cb7a0f0cbb6ed99}} 
+void {\bfseries Process\+Midi\+Out} (\mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_sys_ex_data}{Sys\+Ex\+Data}} $>$ \&sys\+Ex\+Queue, \mbox{\hyperlink{struct_sys_ex_data}{Sys\+Ex\+Data}} \&sys\+Ex\+Buf, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_event_list}{Steinberg\+::\+Vst\+::\+I\+Event\+List}} $\ast$p\+Output\+Events, Steinberg\+::int32 num\+Samples)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a0838cb137cd2efdd8cc0af469f6be579}\label{class_i_plug_v_s_t3_processor_base_a0838cb137cd2efdd8cc0af469f6be579}} 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries Set\+Bus\+Arrangements} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$p\+Plug, \mbox{\hyperlink{namespace_steinberg_1_1_vst_adc3d27b66b0e01da7fbb69fdc32abaef}{Steinberg\+::\+Vst\+::\+Speaker\+Arrangement}} $\ast$p\+Input\+Bus\+Arrangements, Steinberg\+::int32 num\+In\+Buses, \mbox{\hyperlink{namespace_steinberg_1_1_vst_adc3d27b66b0e01da7fbb69fdc32abaef}{Steinberg\+::\+Vst\+::\+Speaker\+Arrangement}} $\ast$p\+Output\+Bus\+Arrangements, Steinberg\+::int32 num\+Out\+Buses)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_af6c8ca480b2da588f1a955352a55ead0}\label{class_i_plug_v_s_t3_processor_base_af6c8ca480b2da588f1a955352a55ead0}} 
+void {\bfseries Attach\+Buffers} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int idx, int n, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_audio_bus_buffers}{Steinberg\+::\+Vst\+::\+Audio\+Bus\+Buffers}} \&p\+Bus, int n\+Frames, Steinberg\+::int32 sample\+Size)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a794e9002d896f2f8be4db331f2374145}\label{class_i_plug_v_s_t3_processor_base_a794e9002d896f2f8be4db331f2374145}} 
+bool {\bfseries Setup\+Processing} (const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_setup}{Steinberg\+::\+Vst\+::\+Process\+Setup}} \&setup, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_setup}{Steinberg\+::\+Vst\+::\+Process\+Setup}} \&stored\+Setup)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_ae6c1a4318928ab4562b109dd7dddcf80}\label{class_i_plug_v_s_t3_processor_base_ae6c1a4318928ab4562b109dd7dddcf80}} 
+bool {\bfseries Can\+Process\+Sample\+Size} (Steinberg\+::int32 symbolic\+Sample\+Size)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a1efcaa63817314765c4ac98ade811fd1}\label{class_i_plug_v_s_t3_processor_base_a1efcaa63817314765c4ac98ade811fd1}} 
+bool {\bfseries Set\+Processing} (bool \mbox{\hyperlink{structstate}{state}})
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_aa1b8c0102816c877bac8590d551c5b05}\label{class_i_plug_v_s_t3_processor_base_aa1b8c0102816c877bac8590d551c5b05}} 
+void {\bfseries Prepare\+Process\+Context} (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_data}{Steinberg\+::\+Vst\+::\+Process\+Data}} \&data, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_setup}{Steinberg\+::\+Vst\+::\+Process\+Setup}} \&setup)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_ace48e52adb53923c337a697c9c5172ec}\label{class_i_plug_v_s_t3_processor_base_ace48e52adb53923c337a697c9c5172ec}} 
+void {\bfseries Process\+Parameter\+Changes} (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_data}{Steinberg\+::\+Vst\+::\+Process\+Data}} \&data, \mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&from\+Processor)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_a72d886f69e2189ce5913f310b65fefa8}\label{class_i_plug_v_s_t3_processor_base_a72d886f69e2189ce5913f310b65fefa8}} 
+void {\bfseries Process\+Audio} (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_data}{Steinberg\+::\+Vst\+::\+Process\+Data}} \&data, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_setup}{Steinberg\+::\+Vst\+::\+Process\+Setup}} \&setup, const \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_bus_list}{Steinberg\+::\+Vst\+::\+Bus\+List}} \&ins, const \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_bus_list}{Steinberg\+::\+Vst\+::\+Bus\+List}} \&outs)
+\item 
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_ae3b2842f05ca7e92e9785aab9204b0da}\label{class_i_plug_v_s_t3_processor_base_ae3b2842f05ca7e92e9785aab9204b0da}} 
+void {\bfseries Process} (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_data}{Steinberg\+::\+Vst\+::\+Process\+Data}} \&data, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_setup}{Steinberg\+::\+Vst\+::\+Process\+Setup}} \&setup, const \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_bus_list}{Steinberg\+::\+Vst\+::\+Bus\+List}} \&ins, const \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_bus_list}{Steinberg\+::\+Vst\+::\+Bus\+List}} \&outs, \mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&from\+Editor, \mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&from\+Processor, \mbox{\hyperlink{class_i_plug_queue}{I\+Plug\+Queue}}$<$ \mbox{\hyperlink{struct_sys_ex_data}{Sys\+Ex\+Data}} $>$ \&sys\+Ex\+From\+Editor, \mbox{\hyperlink{struct_sys_ex_data}{Sys\+Ex\+Data}} \&sys\+Ex\+Buf)
+\item 
+bool \mbox{\hyperlink{class_i_plug_v_s_t3_processor_base_ad123ab66833e9664c82cbd5e414697af}{Send\+Midi\+Msg}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Shared V\+S\+T3 processor code 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_plug_v_s_t3_processor_base_ad123ab66833e9664c82cbd5e414697af}\label{class_i_plug_v_s_t3_processor_base_ad123ab66833e9664c82cbd5e414697af}} 
+\index{IPlugVST3ProcessorBase@{IPlugVST3ProcessorBase}!SendMidiMsg@{SendMidiMsg}}
+\index{SendMidiMsg@{SendMidiMsg}!IPlugVST3ProcessorBase@{IPlugVST3ProcessorBase}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsg()}{SendMidiMsg()}}
+{\footnotesize\ttfamily bool I\+Plug\+V\+S\+T3\+Processor\+Base\+::\+Send\+Midi\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send a single M\+I\+DI message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_plug_processor_a4e9b417cee5b4baba70468cb15d927c3}{I\+Plug\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+V\+S\+T3/I\+Plug\+V\+S\+T3\+\_\+\+Processor\+Base.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+V\+S\+T3/I\+Plug\+V\+S\+T3\+\_\+\+Processor\+Base.\+cpp\end{DoxyCompactItemize}

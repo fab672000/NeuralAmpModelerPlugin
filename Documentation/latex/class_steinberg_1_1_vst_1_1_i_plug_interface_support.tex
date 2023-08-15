@@ -1,0 +1,72 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_plug_interface_support}{}\doxysection{Steinberg\+::Vst\+::I\+Plug\+Interface\+Support Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_plug_interface_support}\index{Steinberg::Vst::IPlugInterfaceSupport@{Steinberg::Vst::IPlugInterfaceSupport}}
+
+
+{\ttfamily \#include $<$ivstpluginterfacesupport.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Plug\+Interface\+Support\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_steinberg_1_1_vst_1_1_i_plug_interface_support}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_plug_interface_support_a7652d976bcb7e7ca35b5f414a2a49ef3}{is\+Plug\+Interface\+Supported}} (const \mbox{\hyperlink{namespace_steinberg_ac4aba4fb02cbc987a6e07183344dcf82}{T\+U\+ID}} \+\_\+iid)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_plug_interface_support_a44ca2863bb1c829992ea221be852dda8}\label{class_steinberg_1_1_vst_1_1_i_plug_interface_support_a44ca2863bb1c829992ea221be852dda8}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Host callback interface for an edit controller\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_plug_interface_support}{Vst\+::\+I\+Plug\+Interface\+Support}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}released\+: 3.\+6.\+12\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+Allows a plug-\/in to ask the host if a given plug-\/in interface is supported/used by the host. It is implemented by the host\+Context given when the component is initialized.\hypertarget{class_steinberg_1_1_vst_1_1_i_plug_interface_support_IPlugInterfaceSupportExample}{}\doxysubsection{Example}\label{class_steinberg_1_1_vst_1_1_i_plug_interface_support_IPlugInterfaceSupportExample}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{tresult PLUGIN\_API MyPluginController::initialize (FUnknown* context)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// ...}}
+\DoxyCodeLine{    FUnknownPtr<IPlugInterfaceSupport> plugInterfaceSupport (context);}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (plugInterfaceSupport)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (plugInterfaceSupport-\/>isPlugInterfaceSupported (IMidiMapping::iid) == kResultTrue)}
+\DoxyCodeLine{            \textcolor{comment}{// IMidiMapping is used by the host}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{comment}{// ...}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_i_plugin_base}{I\+Plugin\+Base}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_plug_interface_support_a7652d976bcb7e7ca35b5f414a2a49ef3}\label{class_steinberg_1_1_vst_1_1_i_plug_interface_support_a7652d976bcb7e7ca35b5f414a2a49ef3}} 
+\index{Steinberg::Vst::IPlugInterfaceSupport@{Steinberg::Vst::IPlugInterfaceSupport}!isPlugInterfaceSupported@{isPlugInterfaceSupported}}
+\index{isPlugInterfaceSupported@{isPlugInterfaceSupported}!Steinberg::Vst::IPlugInterfaceSupport@{Steinberg::Vst::IPlugInterfaceSupport}}
+\doxysubsubsection{\texorpdfstring{isPlugInterfaceSupported()}{isPlugInterfaceSupported()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Plug\+Interface\+Support\+::is\+Plug\+Interface\+Supported (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_steinberg_ac4aba4fb02cbc987a6e07183344dcf82}{T\+U\+ID}}}]{\+\_\+iid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns k\+Result\+True if the associated interface to the given \+\_\+iid is supported/used by the host. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_plug_interface_support_a957e64ca7974384974df0f22004ec6db}{Steinberg\+::\+Vst\+::\+Plug\+Interface\+Support}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstpluginterfacesupport.\+h\end{DoxyCompactItemize}

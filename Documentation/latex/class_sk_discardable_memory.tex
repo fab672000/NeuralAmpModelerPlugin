@@ -1,0 +1,84 @@
+\hypertarget{class_sk_discardable_memory}{}\doxysection{Sk\+Discardable\+Memory Class Reference}
+\label{class_sk_discardable_memory}\index{SkDiscardableMemory@{SkDiscardableMemory}}
+
+
+{\ttfamily \#include $<$Sk\+Discardable\+Memory.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_discardable_memory_1_1_factory}{Factory}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_sk_discardable_memory_afd78cf83bb5b49b19d1920a3b836e287}{$\sim$\+Sk\+Discardable\+Memory}} ()
+\item 
+virtual bool S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT \mbox{\hyperlink{class_sk_discardable_memory_ad691d77c2a9e7e40bafe88890565bb9f}{lock}} ()=0
+\item 
+virtual void $\ast$ \mbox{\hyperlink{class_sk_discardable_memory_a5f7cda74b1653b6b6804a215df846eb5}{data}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_sk_discardable_memory_a89f70e3e2746db5c3e7cf46f2a9ee090}{unlock}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} $\ast$ \mbox{\hyperlink{class_sk_discardable_memory_a6b22567ffb1135abe7170a4864ca8447}{Create}} (size\+\_\+t bytes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_discardable_memory_a17675ac99aaad241738ea9e15fbfb68f}\label{class_sk_discardable_memory_a17675ac99aaad241738ea9e15fbfb68f}} 
+{\bfseries Sk\+Discardable\+Memory} (const \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_sk_discardable_memory_abca57ecdca48e8ca497ca1da64972b49}\label{class_sk_discardable_memory_abca57ecdca48e8ca497ca1da64972b49}} 
+\mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} \&)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for discardable memory. Implementation is provided by the embedder. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_discardable_memory_afd78cf83bb5b49b19d1920a3b836e287}\label{class_sk_discardable_memory_afd78cf83bb5b49b19d1920a3b836e287}} 
+\index{SkDiscardableMemory@{SkDiscardableMemory}!````~SkDiscardableMemory@{$\sim$SkDiscardableMemory}}
+\index{````~SkDiscardableMemory@{$\sim$SkDiscardableMemory}!SkDiscardableMemory@{SkDiscardableMemory}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkDiscardableMemory()}{~SkDiscardableMemory()}}
+{\footnotesize\ttfamily virtual Sk\+Discardable\+Memory\+::$\sim$\+Sk\+Discardable\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Must not be called while locked. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_discardable_memory_a6b22567ffb1135abe7170a4864ca8447}\label{class_sk_discardable_memory_a6b22567ffb1135abe7170a4864ca8447}} 
+\index{SkDiscardableMemory@{SkDiscardableMemory}!Create@{Create}}
+\index{Create@{Create}!SkDiscardableMemory@{SkDiscardableMemory}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}}$\ast$ Sk\+Discardable\+Memory\+::\+Create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\hyperlink{class_sk_discardable_memory_1_1_factory}{Factory}} method that creates, initializes and locks an \mbox{\hyperlink{class_sk_discardable_memory}{Sk\+Discardable\+Memory}} object. If either of these steps fails, a nullptr pointer will be returned. \mbox{\Hypertarget{class_sk_discardable_memory_a5f7cda74b1653b6b6804a215df846eb5}\label{class_sk_discardable_memory_a5f7cda74b1653b6b6804a215df846eb5}} 
+\index{SkDiscardableMemory@{SkDiscardableMemory}!data@{data}}
+\index{data@{data}!SkDiscardableMemory@{SkDiscardableMemory}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily virtual void$\ast$ Sk\+Discardable\+Memory\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the current pointer for the discardable memory. This call is O\+N\+LY valid when the discardable memory object is locked. \mbox{\Hypertarget{class_sk_discardable_memory_ad691d77c2a9e7e40bafe88890565bb9f}\label{class_sk_discardable_memory_ad691d77c2a9e7e40bafe88890565bb9f}} 
+\index{SkDiscardableMemory@{SkDiscardableMemory}!lock@{lock}}
+\index{lock@{lock}!SkDiscardableMemory@{SkDiscardableMemory}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily virtual bool S\+K\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Sk\+Discardable\+Memory\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Locks the memory, prevent it from being discarded. Once locked. you may obtain a pointer to that memory using the \mbox{\hyperlink{class_sk_discardable_memory_a5f7cda74b1653b6b6804a215df846eb5}{data()}} method.
+
+\mbox{\hyperlink{class_sk_discardable_memory_ad691d77c2a9e7e40bafe88890565bb9f}{lock()}} may return false, indicating that the underlying memory was discarded and that the lock failed.
+
+Nested calls to lock are not allowed. \mbox{\Hypertarget{class_sk_discardable_memory_a89f70e3e2746db5c3e7cf46f2a9ee090}\label{class_sk_discardable_memory_a89f70e3e2746db5c3e7cf46f2a9ee090}} 
+\index{SkDiscardableMemory@{SkDiscardableMemory}!unlock@{unlock}}
+\index{unlock@{unlock}!SkDiscardableMemory@{SkDiscardableMemory}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily virtual void Sk\+Discardable\+Memory\+::unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Unlock the memory so that it can be purged by the system. Must be called after every successful lock call. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Discardable\+Memory.\+h\end{DoxyCompactItemize}

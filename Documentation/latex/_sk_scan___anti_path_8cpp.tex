@@ -1,0 +1,58 @@
+\hypertarget{_sk_scan___anti_path_8cpp}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/\+Sk\+Scan\+\_\+\+Anti\+Path.cpp File Reference}
+\label{_sk_scan___anti_path_8cpp}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/src/core/SkScan\_AntiPath.cpp@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/src/core/SkScan\_AntiPath.cpp}}
+{\ttfamily \#include \char`\"{}src/core/\+Sk\+Scan\+Priv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Path.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/core/\+Sk\+Region.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/private/\+Sk\+To.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/core/\+Sk\+Anti\+Run.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/core/\+Sk\+Blitter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/core/\+Sk\+Path\+Priv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}src/core/\+Sk\+Raster\+Clip.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_base_super_blitter}{Base\+Super\+Blitter}}
+\begin{DoxyCompactList}\small\item\em Base class for a single-\/pass supersampled blitter. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_super_blitter}{Super\+Blitter}}
+\begin{DoxyCompactList}\small\item\em Run-\/length-\/encoded supersampling antialiased blitter. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_mask_super_blitter}{Mask\+Super\+Blitter}}
+\begin{DoxyCompactList}\small\item\em Masked supersampling antialiased blitter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_sk_scan___anti_path_8cpp_ac179eef68bcc694aa0ef8dd1eb09950b}\label{_sk_scan___anti_path_8cpp_ac179eef68bcc694aa0ef8dd1eb09950b}} 
+\#define {\bfseries S\+H\+I\+FT}~S\+K\+\_\+\+S\+U\+P\+E\+R\+S\+A\+M\+P\+L\+E\+\_\+\+S\+H\+I\+FT
+\item 
+\mbox{\Hypertarget{_sk_scan___anti_path_8cpp_a0cbea62f1ce2043dd08108e65ed8de1d}\label{_sk_scan___anti_path_8cpp_a0cbea62f1ce2043dd08108e65ed8de1d}} 
+\#define {\bfseries S\+C\+A\+LE}~(1 $<$$<$ S\+H\+I\+FT)
+\item 
+\mbox{\Hypertarget{_sk_scan___anti_path_8cpp_ae7520c5477c11965aabeedc033c9862b}\label{_sk_scan___anti_path_8cpp_ae7520c5477c11965aabeedc033c9862b}} 
+\#define {\bfseries M\+A\+SK}~(S\+C\+A\+LE -\/ 1)
+\item 
+\mbox{\Hypertarget{_sk_scan___anti_path_8cpp_ab4855dbb6ca9f313bc80527d3d64f8cc}\label{_sk_scan___anti_path_8cpp_ab4855dbb6ca9f313bc80527d3d64f8cc}} 
+\#define {\bfseries M\+I\+N\+\_\+\+C\+O\+U\+N\+T\+\_\+\+F\+O\+R\+\_\+\+Q\+U\+A\+D\+\_\+\+L\+O\+OP}~16
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_sk_scan___anti_path_8cpp_a5aa31e63c56a30d8000e627428facc7f}\label{_sk_scan___anti_path_8cpp_a5aa31e63c56a30d8000e627428facc7f}} 
+constexpr int {\bfseries k\+Sample\+Size} = 8
+\item 
+\mbox{\Hypertarget{_sk_scan___anti_path_8cpp_aec52e9bcd79129bbde47043e4edb79bc}\label{_sk_scan___anti_path_8cpp_aec52e9bcd79129bbde47043e4edb79bc}} 
+constexpr Sk\+Scalar {\bfseries k\+Complexity\+Threshold} = 0.\+25
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+We have two techniques for capturing the output of the supersampler\+:
+\begin{DoxyItemize}
+\item S\+U\+P\+E\+R\+M\+A\+SK, which records a large mask-\/bitmap this is often faster for small, complex objects
+\item R\+LE, which records a rle-\/encoded scanline this is often faster for large objects with big spans
+\end{DoxyItemize}
+
+These blitters use two coordinate systems\+:
+\begin{DoxyItemize}
+\item destination coordinates, scale equal to the output -\/ often abbreviated with \textquotesingle{}i\textquotesingle{} or \textquotesingle{}\mbox{\hyperlink{struct_i}{I}}\textquotesingle{} in variable names
+\item supersampled coordinates, scale equal to the output $\ast$ S\+C\+A\+LE 
+\end{DoxyItemize}

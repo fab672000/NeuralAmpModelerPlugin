@@ -1,0 +1,102 @@
+\hypertarget{class_sk_t_lazy}{}\doxysection{Sk\+T\+Lazy$<$ T $>$ Class Template Reference}
+\label{class_sk_t_lazy}\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Sk\+T\+Lazy.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_aae833eef549d50ec5b550ff5fd023d36}\label{class_sk_t_lazy_aae833eef549d50ec5b550ff5fd023d36}} 
+{\bfseries Sk\+T\+Lazy} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$src)
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a5e8f18ff5678347fe27d611f07622705}\label{class_sk_t_lazy_a5e8f18ff5678347fe27d611f07622705}} 
+{\bfseries Sk\+T\+Lazy} (const \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} \&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a1ed6dc9395923af2286aa1dd75aba8fb}\label{class_sk_t_lazy_a1ed6dc9395923af2286aa1dd75aba8fb}} 
+{\bfseries Sk\+T\+Lazy} (\mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} \&\&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a7ce645ba1e0501a1350a93b2d3bbfacd}\label{class_sk_t_lazy_a7ce645ba1e0501a1350a93b2d3bbfacd}} 
+\mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} \&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a7c5479429be23f039b3383445c2ebac7}\label{class_sk_t_lazy_a7c5479429be23f039b3383445c2ebac7}} 
+\mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} \& {\bfseries operator=} (\mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} \&\&that)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{class_sk_t_lazy_a2bf373f9f3f981b44968279cd3d5140e}{init}} (Args \&\&... args)
+\item 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{class_sk_t_lazy_a3ed359399936ab6c0e884c927e505691}{set}} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&src)
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a467e03ed2e5f97182bafa37ee3407bb2}\label{class_sk_t_lazy_a467e03ed2e5f97182bafa37ee3407bb2}} 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ {\bfseries set} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&\&src)
+\item 
+void \mbox{\hyperlink{class_sk_t_lazy_aa818b91f6f93f48fe348ecc46a245639}{reset}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_t_lazy_ad4357011b61d7a3b4f6b53c4b63bf0bb}{is\+Valid}} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{class_sk_t_lazy_a6047cebbac0482dbe90af23ccb566807}{get}} () const
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a7b8489093cac563f3bfd5179517a8038}\label{class_sk_t_lazy_a7b8489093cac563f3bfd5179517a8038}} 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ {\bfseries operator-\/$>$} () const
+\item 
+\mbox{\Hypertarget{class_sk_t_lazy_a21441a2a706b883cfb4e7985e97912ed}\label{class_sk_t_lazy_a21441a2a706b883cfb4e7985e97912ed}} 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \& {\bfseries operator$\ast$} () const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{class_sk_t_lazy_a0a6f00ceac0e7876a5286ac801714dee}{get\+Maybe\+Null}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Sk\+T\+Lazy$<$ T $>$}
+
+Efficient way to defer allocating/initializing a class until it is needed (if ever). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_t_lazy_a6047cebbac0482dbe90af23ccb566807}\label{class_sk_t_lazy_a6047cebbac0482dbe90af23ccb566807}} 
+\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}!get@{get}}
+\index{get@{get}!SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the object. This version should only be called when the caller knows that the object has been initialized. \mbox{\Hypertarget{class_sk_t_lazy_a0a6f00ceac0e7876a5286ac801714dee}\label{class_sk_t_lazy_a0a6f00ceac0e7876a5286ac801714dee}} 
+\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}!getMaybeNull@{getMaybeNull}}
+\index{getMaybeNull@{getMaybeNull}!SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getMaybeNull()}{getMaybeNull()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::get\+Maybe\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Like above but doesn\textquotesingle{}t assert if object isn\textquotesingle{}t initialized (in which case nullptr is returned). \mbox{\Hypertarget{class_sk_t_lazy_a2bf373f9f3f981b44968279cd3d5140e}\label{class_sk_t_lazy_a2bf373f9f3f981b44968279cd3d5140e}} 
+\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}!init@{init}}
+\index{init@{init}!SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename... Args$>$ \\
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::\mbox{\hyperlink{structinit}{init}} (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return a pointer to an instance of the class initialized with \textquotesingle{}args\textquotesingle{}. If a previous instance had been initialized (either from \mbox{\hyperlink{class_sk_t_lazy_a2bf373f9f3f981b44968279cd3d5140e}{init()}} or \mbox{\hyperlink{class_sk_t_lazy_a3ed359399936ab6c0e884c927e505691}{set()}}) it will first be destroyed, so that a freshly initialized instance is always returned. \mbox{\Hypertarget{class_sk_t_lazy_ad4357011b61d7a3b4f6b53c4b63bf0bb}\label{class_sk_t_lazy_ad4357011b61d7a3b4f6b53c4b63bf0bb}} 
+\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if a valid object has been initialized in the \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}, false otherwise. \mbox{\Hypertarget{class_sk_t_lazy_aa818b91f6f93f48fe348ecc46a245639}\label{class_sk_t_lazy_aa818b91f6f93f48fe348ecc46a245639}} 
+\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}!reset@{reset}}
+\index{reset@{reset}!SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destroy the lazy object (if it was created via \mbox{\hyperlink{class_sk_t_lazy_a2bf373f9f3f981b44968279cd3d5140e}{init()}} or \mbox{\hyperlink{class_sk_t_lazy_a3ed359399936ab6c0e884c927e505691}{set()}}) \mbox{\Hypertarget{class_sk_t_lazy_a3ed359399936ab6c0e884c927e505691}\label{class_sk_t_lazy_a3ed359399936ab6c0e884c927e505691}} 
+\index{SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}!set@{set}}
+\index{set@{set}!SkTLazy$<$ T $>$@{SkTLazy$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy src into this, and return a pointer to a copy of it. Note this will always return the same pointer, so if it is called on a lazy that has already been initialized, then this will copy over the previous contents. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+T\+Lazy.\+h\end{DoxyCompactItemize}

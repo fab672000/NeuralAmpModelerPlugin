@@ -1,0 +1,82 @@
+\hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::Block\+Properties$<$ is\+\_\+transposed, is\+\_\+rhs\+\_\+, packet\+\_\+load\+\_\+, Packet\+Type $>$ Struct Template Reference}
+\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}\index{Eigen::TensorSycl::internal::BlockProperties$<$ is\_transposed, is\_rhs\_, packet\_load\_, PacketType $>$@{Eigen::TensorSycl::internal::BlockProperties$<$ is\_transposed, is\_rhs\_, packet\_load\_, PacketType $>$}}
+
+
+\mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{Block\+Properties}} is a template class that provides different characteristic of a block of each \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} processed by each workgroup.  
+
+
+
+
+{\ttfamily \#include $<$Tensor\+Contraction\+Sycl.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a76bbf20a8c24a38f079ad926b65e747f}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a76bbf20a8c24a38f079ad926b65e747f}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1unpacket__traits}{Eigen\+::internal\+::unpacket\+\_\+traits}}$<$ \mbox{\hyperlink{struct_eigen_1_1_packet_type}{Packet\+Type}} $>$\+::type {\bfseries Out\+Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a4b47fcb1b9af29b6d4153b0712b85acd}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a4b47fcb1b9af29b6d4153b0712b85acd}} 
+typedef std\+::conditional\+\_\+t$<$ packet\+\_\+load, \mbox{\hyperlink{struct_eigen_1_1_packet_type}{Packet\+Type}}, \mbox{\hyperlink{union_eigen_1_1internal_1_1_packet}{Out\+Scalar}} $>$ {\bfseries Out\+Type}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a76bbf20a8c24a38f079ad926b65e747f}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a76bbf20a8c24a38f079ad926b65e747f}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1unpacket__traits}{Eigen\+::internal\+::unpacket\+\_\+traits}}$<$ \mbox{\hyperlink{struct_eigen_1_1_packet_type}{Packet\+Type}} $>$\+::type {\bfseries Out\+Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a4b47fcb1b9af29b6d4153b0712b85acd}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a4b47fcb1b9af29b6d4153b0712b85acd}} 
+typedef std\+::conditional\+\_\+t$<$ packet\+\_\+load, \mbox{\hyperlink{struct_eigen_1_1_packet_type}{Packet\+Type}}, \mbox{\hyperlink{union_eigen_1_1internal_1_1_packet}{Out\+Scalar}} $>$ {\bfseries Out\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a60f63cf571a7e0e7a066025c490244df}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a60f63cf571a7e0e7a066025c490244df}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool {\bfseries packet\+\_\+load} = packet\+\_\+load\+\_\+
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a448ac824dc95d4befff02b89f57a48e0}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a448ac824dc95d4befff02b89f57a48e0}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool {\bfseries is\+\_\+rhs} = is\+\_\+rhs\+\_\+
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a44ba92f8b33c0c71b85ad6e863c0153a}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a44ba92f8b33c0c71b85ad6e863c0153a}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR int {\bfseries elements\+\_\+per\+\_\+access} = \mbox{\hyperlink{struct_eigen_1_1internal_1_1unpacket__traits}{Eigen\+::internal\+::unpacket\+\_\+traits}}$<$Out\+Type$>$\+::size
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a82181e36eeb17efd4bdea79096f0cb95}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a82181e36eeb17efd4bdea79096f0cb95}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR bool {\bfseries is\+\_\+coalesced\+\_\+layout} = !(is\+\_\+transposed $^\wedge$ is\+\_\+rhs)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a7f68662110c4e9f27f74877f3229db2c}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_a7f68662110c4e9f27f74877f3229db2c}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR int {\bfseries nc\+\_\+stride} = (is\+\_\+coalesced\+\_\+layout ? elements\+\_\+per\+\_\+access \+: 1)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_aaf29f75bb401bc298c1a5b6debafde7f}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties_aaf29f75bb401bc298c1a5b6debafde7f}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR int {\bfseries c\+\_\+stride} = (is\+\_\+coalesced\+\_\+layout ? 1 \+: elements\+\_\+per\+\_\+access)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$bool is\+\_\+transposed, bool is\+\_\+rhs\+\_\+, bool packet\+\_\+load\+\_\+, typename Packet\+Type$>$\newline
+struct Eigen\+::\+Tensor\+Sycl\+::internal\+::\+Block\+Properties$<$ is\+\_\+transposed, is\+\_\+rhs\+\_\+, packet\+\_\+load\+\_\+, Packet\+Type $>$}
+
+\mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_block_properties}{Block\+Properties}} is a template class that provides different characteristic of a block of each \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} processed by each workgroup. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em is\+\_\+transposed} & iff true, determines whether or not the block of the \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} is transposed\\
+\hline
+{\em packet\+\_\+load\+\_\+} & determines if the each element of this tensor block should be loaded in a packet mode\\
+\hline
+{\em \mbox{\hyperlink{struct_eigen_1_1_packet_type}{Packet\+Type}}} & determines the type of packet\\
+\hline
+{\em Out\+Type} & determines the type of each element for this block of tensor. If packet load is true, it will be packet\+Type; Otherwise it will be scalar Type\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em elements\+\_\+per\+\_\+access} & determines the size of each element based on Out\+Type\\
+\hline
+{\em is\+\_\+coalesced\+\_\+layout} & determines whether or not the \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} data in a memory can be access coalesced and vectorized when possible. Coalesced memory access is a key factor in Kernel performance. When a tensor is 2d and the contracting dimension is 1, it is always possible to accessed tensor data coalesced and vectorized. This is the case when R\+H\+S(right hand side) \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} is transposed or when L\+H\+S(left hand side) \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} is not transposed.\\
+\hline
+{\em nc\+\_\+stride} & determines the stride of non-\/contracting dimension to access the next adjustment element within the \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} \mbox{\hyperlink{class_eigen_1_1_block}{Block}} for each workgroup\\
+\hline
+{\em c\+\_\+stride} & determines the stride of contracting dimension to access the next adjustment element within the \mbox{\hyperlink{class_eigen_1_1_tensor}{Tensor}} \mbox{\hyperlink{class_eigen_1_1_block}{Block}} for each workgroup \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Contraction\+Sycl.\+h\end{DoxyCompactItemize}

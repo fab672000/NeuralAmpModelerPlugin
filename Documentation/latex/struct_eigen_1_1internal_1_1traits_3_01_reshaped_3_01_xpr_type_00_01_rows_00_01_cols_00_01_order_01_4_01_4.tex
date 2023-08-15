@@ -1,0 +1,90 @@
+\hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4}{}\doxysection{Eigen\+::internal\+::traits$<$ Reshaped$<$ Xpr\+Type, Rows, Cols, Order $>$ $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4}\index{Eigen::internal::traits$<$ Reshaped$<$ XprType, Rows, Cols, Order $>$ $>$@{Eigen::internal::traits$<$ Reshaped$<$ XprType, Rows, Cols, Order $>$ $>$}}
+Inheritance diagram for Eigen\+::internal\+::traits$<$ Reshaped$<$ Xpr\+Type, Rows, Cols, Order $>$ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a42ddc242ad2f055179725ecf42afb810}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a42ddc242ad2f055179725ecf42afb810}} 
+enum \{ \newline
+{\bfseries Matrix\+Rows} = traits$<$Xpr\+Type$>$\+::Rows\+At\+Compile\+Time, 
+{\bfseries Matrix\+Cols} = traits$<$Xpr\+Type$>$\+::Cols\+At\+Compile\+Time, 
+{\bfseries Rows\+At\+Compile\+Time} = Rows, 
+{\bfseries Cols\+At\+Compile\+Time} = Cols, 
+\newline
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Rows, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Cols, 
+{\bfseries Xpx\+Storage\+Order} = ((int(traits$<$Xpr\+Type$>$\+::Flags) \& Row\+Major\+Bit) == Row\+Major\+Bit) ? Row\+Major \+: Col\+Major, 
+{\bfseries Reshaped\+Storage\+Order}, 
+\newline
+{\bfseries Has\+Same\+Storage\+Order\+As\+Xpr\+Type} = (Reshaped\+Storage\+Order == Xpx\+Storage\+Order), 
+{\bfseries Inner\+Size} = (Reshaped\+Storage\+Order==int(Row\+Major)) ? int(Cols\+At\+Compile\+Time) \+: int(Rows\+At\+Compile\+Time), 
+{\bfseries Inner\+Stride\+At\+Compile\+Time}, 
+{\bfseries Outer\+Stride\+At\+Compile\+Time} = Dynamic, 
+\newline
+{\bfseries Has\+Direct\+Access}, 
+{\bfseries Mask\+Packet\+Access\+Bit}, 
+{\bfseries Flags\+Linear\+Access\+Bit} = (Rows\+At\+Compile\+Time == 1 $\vert$$\vert$ Cols\+At\+Compile\+Time == 1) ? Linear\+Access\+Bit \+: 0, 
+{\bfseries Flags\+Lvalue\+Bit} = is\+\_\+lvalue$<$Xpr\+Type$>$\+::value ? Lvalue\+Bit \+: 0, 
+\newline
+{\bfseries Flags\+Row\+Major\+Bit} = (Reshaped\+Storage\+Order==int(Row\+Major)) ? Row\+Major\+Bit \+: 0, 
+{\bfseries Flags\+Direct\+Access\+Bit} = Has\+Direct\+Access ? Direct\+Access\+Bit \+: 0, 
+{\bfseries Flags0} = traits$<$Xpr\+Type$>$\+::Flags \& ( (Hereditary\+Bits \& $\sim$\+Row\+Major\+Bit) $\vert$ Mask\+Packet\+Access\+Bit), 
+{\bfseries Flags} = (Flags0 $\vert$ Flags\+Linear\+Access\+Bit $\vert$ Flags\+Lvalue\+Bit $\vert$ Flags\+Row\+Major\+Bit $\vert$ Flags\+Direct\+Access\+Bit)
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_ad6fa1af098815add6858b4139dd0309b}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_ad6fa1af098815add6858b4139dd0309b}} 
+enum \{ \newline
+{\bfseries Matrix\+Rows} = traits$<$Xpr\+Type$>$\+::Rows\+At\+Compile\+Time, 
+{\bfseries Matrix\+Cols} = traits$<$Xpr\+Type$>$\+::Cols\+At\+Compile\+Time, 
+{\bfseries Rows\+At\+Compile\+Time} = Rows, 
+{\bfseries Cols\+At\+Compile\+Time} = Cols, 
+\newline
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Rows, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Cols, 
+{\bfseries Xpx\+Storage\+Order} = ((int(traits$<$Xpr\+Type$>$\+::Flags) \& Row\+Major\+Bit) == Row\+Major\+Bit) ? Row\+Major \+: Col\+Major, 
+{\bfseries Reshaped\+Storage\+Order}, 
+\newline
+{\bfseries Has\+Same\+Storage\+Order\+As\+Xpr\+Type} = (Reshaped\+Storage\+Order == Xpx\+Storage\+Order), 
+{\bfseries Inner\+Size} = (Reshaped\+Storage\+Order==int(Row\+Major)) ? int(Cols\+At\+Compile\+Time) \+: int(Rows\+At\+Compile\+Time), 
+{\bfseries Inner\+Stride\+At\+Compile\+Time}, 
+{\bfseries Outer\+Stride\+At\+Compile\+Time} = Dynamic, 
+\newline
+{\bfseries Has\+Direct\+Access}, 
+{\bfseries Mask\+Packet\+Access\+Bit}, 
+{\bfseries Flags\+Linear\+Access\+Bit} = (Rows\+At\+Compile\+Time == 1 $\vert$$\vert$ Cols\+At\+Compile\+Time == 1) ? Linear\+Access\+Bit \+: 0, 
+{\bfseries Flags\+Lvalue\+Bit} = is\+\_\+lvalue$<$Xpr\+Type$>$\+::value ? Lvalue\+Bit \+: 0, 
+\newline
+{\bfseries Flags\+Row\+Major\+Bit} = (Reshaped\+Storage\+Order==int(Row\+Major)) ? Row\+Major\+Bit \+: 0, 
+{\bfseries Flags\+Direct\+Access\+Bit} = Has\+Direct\+Access ? Direct\+Access\+Bit \+: 0, 
+{\bfseries Flags0} = traits$<$Xpr\+Type$>$\+::Flags \& ( (Hereditary\+Bits \& $\sim$\+Row\+Major\+Bit) $\vert$ Mask\+Packet\+Access\+Bit), 
+{\bfseries Flags} = (Flags0 $\vert$ Flags\+Linear\+Access\+Bit $\vert$ Flags\+Lvalue\+Bit $\vert$ Flags\+Row\+Major\+Bit $\vert$ Flags\+Direct\+Access\+Bit)
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_ae271fead1556753d94577c2cdc560f65}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_ae271fead1556753d94577c2cdc560f65}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6af33e32f58e0f551cd3c7b06a3f5f5d}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6af33e32f58e0f551cd3c7b06a3f5f5d}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a844d1bb0cfca7acdbf869ac0364afced}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a844d1bb0cfca7acdbf869ac0364afced}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$\+::Xpr\+Kind {\bfseries Xpr\+Kind}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_ae271fead1556753d94577c2cdc560f65}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_ae271fead1556753d94577c2cdc560f65}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6af33e32f58e0f551cd3c7b06a3f5f5d}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a6af33e32f58e0f551cd3c7b06a3f5f5d}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a844d1bb0cfca7acdbf869ac0364afced}\label{struct_eigen_1_1internal_1_1traits_3_01_reshaped_3_01_xpr_type_00_01_rows_00_01_cols_00_01_order_01_4_01_4_a844d1bb0cfca7acdbf869ac0364afced}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} $>$\+::Xpr\+Kind {\bfseries Xpr\+Kind}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Reshaped.\+h\end{DoxyCompactItemize}

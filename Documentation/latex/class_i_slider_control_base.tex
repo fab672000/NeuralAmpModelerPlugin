@@ -1,0 +1,166 @@
+\hypertarget{class_i_slider_control_base}{}\doxysection{I\+Slider\+Control\+Base Class Reference}
+\label{class_i_slider_control_base}\index{ISliderControlBase@{ISliderControlBase}}
+
+
+{\ttfamily \#include $<$I\+Control.\+h$>$}
+
+Inheritance diagram for I\+Slider\+Control\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_slider_control_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a046f84fc2718e59edc614571a252e401}\label{class_i_slider_control_base_a046f84fc2718e59edc614571a252e401}} 
+{\bfseries I\+Slider\+Control\+Base} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, int param\+Idx=k\+No\+Parameter, E\+Direction dir=E\+Direction\+::\+Vertical, double gearing=D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+A\+R\+I\+NG, float handle\+Size=0.f)
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a0cd4271649a80fd4878427a8b5a02a25}\label{class_i_slider_control_base_a0cd4271649a80fd4878427a8b5a02a25}} 
+{\bfseries I\+Slider\+Control\+Base} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, I\+Action\+Function aF=nullptr, E\+Direction dir=E\+Direction\+::\+Vertical, double gearing=D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+A\+R\+I\+NG, float handle\+Size=0.f)
+\item 
+void \mbox{\hyperlink{class_i_slider_control_base_aa54551d3f8fe6e17019f4c092c95b923}{On\+Resize}} () override
+\item 
+void \mbox{\hyperlink{class_i_slider_control_base_a9fcba3a9034c529f2a5e4b0b328d0a68}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_slider_control_base_aab8aa5c3c9af498765b287ab5f6344e4}{On\+Mouse\+Up}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_slider_control_base_a830573c007c67d788f742c10fc4cc854}{On\+Mouse\+Drag}} (float x, float y, float dX, float dY, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_slider_control_base_a2da3130279652d289dafe8812687bbe6}{On\+Mouse\+Wheel}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod, float d) override
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a898fc2a33cf6e7d98a835f6270c429f2}\label{class_i_slider_control_base_a898fc2a33cf6e7d98a835f6270c429f2}} 
+void {\bfseries Set\+Gearing} (double gearing)
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a8d1b4aa6feb3dc955650f5e1844bd032}\label{class_i_slider_control_base_a8d1b4aa6feb3dc955650f5e1844bd032}} 
+bool {\bfseries Is\+Fine\+Control} (const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod, bool wheel) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a4e0119c5ca0d4c3b09d2202f6959a9bd}\label{class_i_slider_control_base_a4e0119c5ca0d4c3b09d2202f6959a9bd}} 
+bool {\bfseries m\+Hide\+Cursor\+On\+Drag} = true
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a8af1ff75986fd8386133bda10862b3a2}\label{class_i_slider_control_base_a8af1ff75986fd8386133bda10862b3a2}} 
+E\+Direction {\bfseries m\+Direction}
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a2760488e9f30d3ee4bd2b0d7a55b0cfc}\label{class_i_slider_control_base_a2760488e9f30d3ee4bd2b0d7a55b0cfc}} 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} {\bfseries m\+Track\+Bounds}
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a5cf34bb3a547e3bda0d23c48872d6989}\label{class_i_slider_control_base_a5cf34bb3a547e3bda0d23c48872d6989}} 
+float {\bfseries m\+Handle\+Size}
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_a91cfbd1398e7f4d7057773578fb3b585}\label{class_i_slider_control_base_a91cfbd1398e7f4d7057773578fb3b585}} 
+double {\bfseries m\+Gearing}
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_aed732413cc0dd24712f770f48a056a14}\label{class_i_slider_control_base_aed732413cc0dd24712f770f48a056a14}} 
+bool {\bfseries m\+Mouse\+Down} = false
+\item 
+\mbox{\Hypertarget{class_i_slider_control_base_ad7834c3289ee407ab9c71c2bf9fcefd2}\label{class_i_slider_control_base_ad7834c3289ee407ab9c71c2bf9fcefd2}} 
+double {\bfseries m\+Mouse\+Drag\+Value}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A base class for slider/fader controls, to handle mouse action and Sender. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_slider_control_base_a9fcba3a9034c529f2a5e4b0b328d0a68}\label{class_i_slider_control_base_a9fcba3a9034c529f2a5e4b0b328d0a68}} 
+\index{ISliderControlBase@{ISliderControlBase}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!ISliderControlBase@{ISliderControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+Slider\+Control\+Base\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_slider_control_base_a830573c007c67d788f742c10fc4cc854}\label{class_i_slider_control_base_a830573c007c67d788f742c10fc4cc854}} 
+\index{ISliderControlBase@{ISliderControlBase}!OnMouseDrag@{OnMouseDrag}}
+\index{OnMouseDrag@{OnMouseDrag}!ISliderControlBase@{ISliderControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseDrag()}{OnMouseDrag()}}
+{\footnotesize\ttfamily void I\+Slider\+Control\+Base\+::\+On\+Mouse\+Drag (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse drag event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em dX} & The X delta (difference) since the last event \\
+\hline
+{\em dY} & The Y delta (difference) since the last event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab5b2fc14c84159cd5e0af3386a2a12e5}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_slider_control_base_aab8aa5c3c9af498765b287ab5f6344e4}\label{class_i_slider_control_base_aab8aa5c3c9af498765b287ab5f6344e4}} 
+\index{ISliderControlBase@{ISliderControlBase}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!ISliderControlBase@{ISliderControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void I\+Slider\+Control\+Base\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse up event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a919eb7860ce5559e589f95ceb3309df7}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_slider_control_base_a2da3130279652d289dafe8812687bbe6}\label{class_i_slider_control_base_a2da3130279652d289dafe8812687bbe6}} 
+\index{ISliderControlBase@{ISliderControlBase}!OnMouseWheel@{OnMouseWheel}}
+\index{OnMouseWheel@{OnMouseWheel}!ISliderControlBase@{ISliderControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseWheel()}{OnMouseWheel()}}
+{\footnotesize\ttfamily void I\+Slider\+Control\+Base\+::\+On\+Mouse\+Wheel (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod,  }\item[{float}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse wheel event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+{\em d} & The delta value (difference) since the last mouse wheel event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab79257a2b774c58eda9d3c4b5238abfb}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_slider_control_base_aa54551d3f8fe6e17019f4c092c95b923}\label{class_i_slider_control_base_aa54551d3f8fe6e17019f4c092c95b923}} 
+\index{ISliderControlBase@{ISliderControlBase}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!ISliderControlBase@{ISliderControlBase}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily void I\+Slider\+Control\+Base\+::\+On\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called when \mbox{\hyperlink{class_i_control}{I\+Control}} is constructed or resized using Set\+Rect(). N\+O\+TE\+: if you call \mbox{\hyperlink{class_i_control_af8c805c09b1a89f44aec43026fcb1fe7}{Set\+Dirty()}} in this method, you should call Set\+Dirty(false) to avoid triggering parameter changes 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a0c4927d3332fabe6f7626a03624f390f}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_control_8h}{I\+Control.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Control.\+cpp\end{DoxyCompactItemize}

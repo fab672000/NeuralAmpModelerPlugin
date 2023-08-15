@@ -1,0 +1,41 @@
+\hypertarget{class_sk_char_to_glyph_cache}{}\doxysection{Sk\+Char\+To\+Glyph\+Cache Class Reference}
+\label{class_sk_char_to_glyph_cache}\index{SkCharToGlyphCache@{SkCharToGlyphCache}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_char_to_glyph_cache_ad365e2f82e6b7a5af57da32c78557f76}\label{class_sk_char_to_glyph_cache_ad365e2f82e6b7a5af57da32c78557f76}} 
+int {\bfseries count} () const
+\item 
+\mbox{\Hypertarget{class_sk_char_to_glyph_cache_a2e0dba4257a29d21260dea57494768c6}\label{class_sk_char_to_glyph_cache_a2e0dba4257a29d21260dea57494768c6}} 
+void {\bfseries reset} ()
+\item 
+int \mbox{\hyperlink{class_sk_char_to_glyph_cache_a3013fa73bfca93f1ba252b6aad8bbdae}{find\+Glyph\+Index}} (\mbox{\hyperlink{_sk_types_8h_a0b73f568570c6560e0a4f2713cb36d06}{Sk\+Unichar}} c) const
+\item 
+void \mbox{\hyperlink{class_sk_char_to_glyph_cache_ad77be275674986e726f3f710c19bf2c4}{insert\+Char\+And\+Glyph}} (int index, \mbox{\hyperlink{_sk_types_8h_a0b73f568570c6560e0a4f2713cb36d06}{Sk\+Unichar}}, \mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}})
+\item 
+\mbox{\Hypertarget{class_sk_char_to_glyph_cache_af095f4542dd6f91ff4726ceee66e556a}\label{class_sk_char_to_glyph_cache_af095f4542dd6f91ff4726ceee66e556a}} 
+void {\bfseries add\+Char\+And\+Glyph} (\mbox{\hyperlink{_sk_types_8h_a0b73f568570c6560e0a4f2713cb36d06}{Sk\+Unichar}} unichar, \mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} glyph)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_char_to_glyph_cache_a3013fa73bfca93f1ba252b6aad8bbdae}\label{class_sk_char_to_glyph_cache_a3013fa73bfca93f1ba252b6aad8bbdae}} 
+\index{SkCharToGlyphCache@{SkCharToGlyphCache}!findGlyphIndex@{findGlyphIndex}}
+\index{findGlyphIndex@{findGlyphIndex}!SkCharToGlyphCache@{SkCharToGlyphCache}}
+\doxysubsubsection{\texorpdfstring{findGlyphIndex()}{findGlyphIndex()}}
+{\footnotesize\ttfamily int Sk\+Char\+To\+Glyph\+Cache\+::find\+Glyph\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_sk_types_8h_a0b73f568570c6560e0a4f2713cb36d06}{Sk\+Unichar}}}]{c }\end{DoxyParamCaption}) const}
+
+Given a unichar, return its glyph\+ID (if the return value is positive), else return $\sim$index of where to insert the computed glyph\+ID.
+
+int result = cache.\+char\+To\+Glyph(unichar); if (result $>$= 0) \{ glyph\+ID = result; \} else \{ glyph\+ID = compute\+\_\+glyph\+\_\+using\+\_\+typeface(unichar); cache.\+insert\+Char\+And\+Glyph($\sim$result, unichar, glyph\+ID); \} \mbox{\Hypertarget{class_sk_char_to_glyph_cache_ad77be275674986e726f3f710c19bf2c4}\label{class_sk_char_to_glyph_cache_ad77be275674986e726f3f710c19bf2c4}} 
+\index{SkCharToGlyphCache@{SkCharToGlyphCache}!insertCharAndGlyph@{insertCharAndGlyph}}
+\index{insertCharAndGlyph@{insertCharAndGlyph}!SkCharToGlyphCache@{SkCharToGlyphCache}}
+\doxysubsubsection{\texorpdfstring{insertCharAndGlyph()}{insertCharAndGlyph()}}
+{\footnotesize\ttfamily void Sk\+Char\+To\+Glyph\+Cache\+::insert\+Char\+And\+Glyph (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{\mbox{\hyperlink{_sk_types_8h_a0b73f568570c6560e0a4f2713cb36d06}{Sk\+Unichar}}}]{unichar,  }\item[{\mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}}}]{glyph }\end{DoxyParamCaption})}
+
+Insert a new char/glyph pair into the cache at the specified index. See char\+To\+Glyph() for how to compute the bit-\/not of the index. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Char\+To\+Glyph\+Cache.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Char\+To\+Glyph\+Cache.\+cpp\end{DoxyCompactItemize}

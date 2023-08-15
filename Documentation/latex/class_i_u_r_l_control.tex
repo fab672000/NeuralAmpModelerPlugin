@@ -1,0 +1,153 @@
+\hypertarget{class_i_u_r_l_control}{}\doxysection{I\+U\+R\+L\+Control Class Reference}
+\label{class_i_u_r_l_control}\index{IURLControl@{IURLControl}}
+
+
+{\ttfamily \#include $<$I\+Control.\+h$>$}
+
+Inheritance diagram for I\+U\+R\+L\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_u_r_l_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_u_r_l_control_ad8a3cc56cc2a951851b33647a7a3f654}\label{class_i_u_r_l_control_ad8a3cc56cc2a951851b33647a7a3f654}} 
+{\bfseries I\+U\+R\+L\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const char $\ast$str, const char $\ast$url, const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&text=D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+E\+XT, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&B\+G\+Color=D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+G\+C\+O\+L\+OR, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&M\+O\+Color=C\+O\+L\+O\+R\+\_\+\+W\+H\+I\+TE, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&C\+L\+Color=C\+O\+L\+O\+R\+\_\+\+B\+L\+UE)
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_ab8943387cebcee18ce1ae744eaee87e0}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_a54c6aaa389c6ea4fa48589139abac2b8}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_a78c4c2b0d6e8915e20d44fb7c5a2bf50}{On\+Mouse\+Over}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_a5496d4c6cb617a795ce08917849903ca}{On\+Mouse\+Out}} () override
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_a02b155328d0bc9a0ae73994745add44c}{Set\+Text}} (const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&) override
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_aeb29b40a95269557729565dc52476a40}{Set\+M\+O\+Color}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color)
+\item 
+void \mbox{\hyperlink{class_i_u_r_l_control_a2ab02af51538db6f4b6509b471ba888d}{Set\+C\+L\+Color}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_u_r_l_control_a2faea7b854b5457b2dec577a37e097fe}\label{class_i_u_r_l_control_a2faea7b854b5457b2dec577a37e097fe}} 
+\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} {\bfseries m\+U\+R\+L\+Str}
+\item 
+\mbox{\Hypertarget{class_i_u_r_l_control_a129c57eb1f0116f7475b38958cbf35e0}\label{class_i_u_r_l_control_a129c57eb1f0116f7475b38958cbf35e0}} 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} {\bfseries m\+Original\+Color}
+\item 
+\mbox{\Hypertarget{class_i_u_r_l_control_a2adea53289f3de66535da98c949dcd34}\label{class_i_u_r_l_control_a2adea53289f3de66535da98c949dcd34}} 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} {\bfseries m\+M\+O\+Color}
+\item 
+\mbox{\Hypertarget{class_i_u_r_l_control_aeacab1e525295f3a9f66e334dbd43f8e}\label{class_i_u_r_l_control_aeacab1e525295f3a9f66e334dbd43f8e}} 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} {\bfseries m\+C\+L\+Color}
+\item 
+\mbox{\Hypertarget{class_i_u_r_l_control_a93f3cd435103590b876e8fb4059b2d87}\label{class_i_u_r_l_control_a93f3cd435103590b876e8fb4059b2d87}} 
+bool {\bfseries m\+Clicked} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A control to show a clickable U\+RL, that changes color after clicking 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_u_r_l_control_ab8943387cebcee18ce1ae744eaee87e0}\label{class_i_u_r_l_control_ab8943387cebcee18ce1ae744eaee87e0}} 
+\index{IURLControl@{IURLControl}!Draw@{Draw}}
+\index{Draw@{Draw}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_text_control_a4284b3f2d4cf1574f4dba2f69862b0d8}{I\+Text\+Control}}.
+
+\mbox{\Hypertarget{class_i_u_r_l_control_a54c6aaa389c6ea4fa48589139abac2b8}\label{class_i_u_r_l_control_a54c6aaa389c6ea4fa48589139abac2b8}} 
+\index{IURLControl@{IURLControl}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_u_r_l_control_a5496d4c6cb617a795ce08917849903ca}\label{class_i_u_r_l_control_a5496d4c6cb617a795ce08917849903ca}} 
+\index{IURLControl@{IURLControl}!OnMouseOut@{OnMouseOut}}
+\index{OnMouseOut@{OnMouseOut}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseOut()}{OnMouseOut()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+On\+Mouse\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseout event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a2897e1dbb1dc32428cea7bad93e3c97e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_u_r_l_control_a78c4c2b0d6e8915e20d44fb7c5a2bf50}\label{class_i_u_r_l_control_a78c4c2b0d6e8915e20d44fb7c5a2bf50}} 
+\index{IURLControl@{IURLControl}!OnMouseOver@{OnMouseOver}}
+\index{OnMouseOver@{OnMouseOver}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseOver()}{OnMouseOver()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+On\+Mouse\+Over (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseover event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a39df22eddb4d9b0fd2f2504562556c49}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_u_r_l_control_a2ab02af51538db6f4b6509b471ba888d}\label{class_i_u_r_l_control_a2ab02af51538db6f4b6509b471ba888d}} 
+\index{IURLControl@{IURLControl}!SetCLColor@{SetCLColor}}
+\index{SetCLColor@{SetCLColor}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{SetCLColor()}{SetCLColor()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+Set\+C\+L\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the color of the text when the U\+RL has been clicked \mbox{\Hypertarget{class_i_u_r_l_control_aeb29b40a95269557729565dc52476a40}\label{class_i_u_r_l_control_aeb29b40a95269557729565dc52476a40}} 
+\index{IURLControl@{IURLControl}!SetMOColor@{SetMOColor}}
+\index{SetMOColor@{SetMOColor}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{SetMOColor()}{SetMOColor()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+Set\+M\+O\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the color of the text on Mouse Over \mbox{\Hypertarget{class_i_u_r_l_control_a02b155328d0bc9a0ae73994745add44c}\label{class_i_u_r_l_control_a02b155328d0bc9a0ae73994745add44c}} 
+\index{IURLControl@{IURLControl}!SetText@{SetText}}
+\index{SetText@{SetText}!IURLControl@{IURLControl}}
+\doxysubsubsection{\texorpdfstring{SetText()}{SetText()}}
+{\footnotesize\ttfamily void I\+U\+R\+L\+Control\+::\+Set\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&}]{txt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the Text object typically used to determine font/layout/size etc of the main text in a control 
+\begin{DoxyParams}{Parameters}
+{\em txt} & An \mbox{\hyperlink{struct_i_text}{I\+Text}} struct with the desired formatting \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a7e9a0001c315e066a1acdb9376fa11d1}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_control_8h}{I\+Control.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Control.\+cpp\end{DoxyCompactItemize}

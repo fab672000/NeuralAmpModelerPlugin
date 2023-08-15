@@ -1,0 +1,61 @@
+\hypertarget{struct_vst_midi_event}{}\doxysection{Vst\+Midi\+Event Struct Reference}
+\label{struct_vst_midi_event}\index{VstMidiEvent@{VstMidiEvent}}
+
+
+{\ttfamily \#include $<$aeffectx.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a2be8b05302836d6911c9d2b80c5c44a7}\label{struct_vst_midi_event_a2be8b05302836d6911c9d2b80c5c44a7}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_midi_event_a2be8b05302836d6911c9d2b80c5c44a7}{type}}
+\begin{DoxyCompactList}\small\item\em \#k\+Vst\+Midi\+Type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a94a05e6aeb9cb0b23dcae523bd42bf95}\label{struct_vst_midi_event_a94a05e6aeb9cb0b23dcae523bd42bf95}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_midi_event_a94a05e6aeb9cb0b23dcae523bd42bf95}{byte\+Size}}
+\begin{DoxyCompactList}\small\item\em sizeof (\mbox{\hyperlink{struct_vst_midi_event}{Vst\+Midi\+Event}}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a49cef10bde779e9eb4d3f7253905ae10}\label{struct_vst_midi_event_a49cef10bde779e9eb4d3f7253905ae10}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_midi_event_a49cef10bde779e9eb4d3f7253905ae10}{delta\+Frames}}
+\begin{DoxyCompactList}\small\item\em sample frames related to the current block start sample position \end{DoxyCompactList}\item 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_midi_event_abfff08988aeb7214421ca03f143c4085}{flags}}
+\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a20d4cb933881e72f0dac3f4f52eca263}\label{struct_vst_midi_event_a20d4cb933881e72f0dac3f4f52eca263}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_midi_event_a20d4cb933881e72f0dac3f4f52eca263}{note\+Length}}
+\begin{DoxyCompactList}\small\item\em (in sample frames) of entire note, if available, else 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_ae2ff00f67fe8af67c094232ae08cc8e8}\label{struct_vst_midi_event_ae2ff00f67fe8af67c094232ae08cc8e8}} 
+Vst\+Int32 \mbox{\hyperlink{struct_vst_midi_event_ae2ff00f67fe8af67c094232ae08cc8e8}{note\+Offset}}
+\begin{DoxyCompactList}\small\item\em offset (in sample frames) into note from note start if available, else 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a41ed861e773854a165eff6cfcdfd046b}\label{struct_vst_midi_event_a41ed861e773854a165eff6cfcdfd046b}} 
+char \mbox{\hyperlink{struct_vst_midi_event_a41ed861e773854a165eff6cfcdfd046b}{midi\+Data}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em 1 to 3 M\+I\+DI bytes; midi\+Data\mbox{[}3\mbox{]} is reserved (zero) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_af2123571b8c0a2d763ae005581583cd7}\label{struct_vst_midi_event_af2123571b8c0a2d763ae005581583cd7}} 
+char \mbox{\hyperlink{struct_vst_midi_event_af2123571b8c0a2d763ae005581583cd7}{detune}}
+\begin{DoxyCompactList}\small\item\em -\/64 to +63 cents; for scales other than \textquotesingle{}well-\/tempered\textquotesingle{} (\textquotesingle{}microtuning\textquotesingle{}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a64496ffbdd2c8c261042cd1d7b107438}\label{struct_vst_midi_event_a64496ffbdd2c8c261042cd1d7b107438}} 
+char \mbox{\hyperlink{struct_vst_midi_event_a64496ffbdd2c8c261042cd1d7b107438}{note\+Off\+Velocity}}
+\begin{DoxyCompactList}\small\item\em Note Off Velocity \mbox{[}0, 127\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a1e5ad2e468a403f0203039f88a0a9a47}\label{struct_vst_midi_event_a1e5ad2e468a403f0203039f88a0a9a47}} 
+char \mbox{\hyperlink{struct_vst_midi_event_a1e5ad2e468a403f0203039f88a0a9a47}{reserved1}}
+\begin{DoxyCompactList}\small\item\em zero (Reserved for future use) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_vst_midi_event_a94af5f8e5bb4a2bf11dc67f809f5680f}\label{struct_vst_midi_event_a94af5f8e5bb4a2bf11dc67f809f5680f}} 
+char \mbox{\hyperlink{struct_vst_midi_event_a94af5f8e5bb4a2bf11dc67f809f5680f}{reserved2}}
+\begin{DoxyCompactList}\small\item\em zero (Reserved for future use) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+M\+I\+DI Event (to be casted from \mbox{\hyperlink{struct_vst_event}{Vst\+Event}}). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_vst_midi_event_abfff08988aeb7214421ca03f143c4085}\label{struct_vst_midi_event_abfff08988aeb7214421ca03f143c4085}} 
+\index{VstMidiEvent@{VstMidiEvent}!flags@{flags}}
+\index{flags@{flags}!VstMidiEvent@{VstMidiEvent}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily Vst\+Int32 Vst\+Midi\+Event\+::flags}
+
+\begin{DoxySeeAlso}{See also}
+Vst\+Midi\+Event\+Flags 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/pluginterfaces/vst2.\+x/aeffectx.\+h\end{DoxyCompactItemize}

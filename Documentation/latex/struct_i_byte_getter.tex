@@ -1,0 +1,74 @@
+\hypertarget{struct_i_byte_getter}{}\doxysection{I\+Byte\+Getter Struct Reference}
+\label{struct_i_byte_getter}\index{IByteGetter@{IByteGetter}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Structs.\+h$>$}
+
+Inheritance diagram for I\+Byte\+Getter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_i_byte_getter}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{struct_i_byte_getter_a38bdb5f88a9d7e8ba580421d9b9e4e86}{Get\+Bytes}} (const uint8\+\_\+t $\ast$p\+Src, int src\+Size, void $\ast$p\+Dst, int n\+Bytes\+To\+Copy, int start\+Pos)
+\item 
+static int \mbox{\hyperlink{struct_i_byte_getter_a24d90f103a5c009b18b82d07e0cbe16c}{Get\+Str}} (const uint8\+\_\+t $\ast$p\+Src, int src\+Size, \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&str, int start\+Pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A helper class for \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} and \mbox{\hyperlink{class_i_byte_stream}{I\+Byte\+Stream}} that avoids code duplication 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_byte_getter_a38bdb5f88a9d7e8ba580421d9b9e4e86}\label{struct_i_byte_getter_a38bdb5f88a9d7e8ba580421d9b9e4e86}} 
+\index{IByteGetter@{IByteGetter}!GetBytes@{GetBytes}}
+\index{GetBytes@{GetBytes}!IByteGetter@{IByteGetter}}
+\doxysubsubsection{\texorpdfstring{GetBytes()}{GetBytes()}}
+{\footnotesize\ttfamily static int I\+Byte\+Getter\+::\+Get\+Bytes (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{p\+Src,  }\item[{int}]{src\+Size,  }\item[{void $\ast$}]{p\+Dst,  }\item[{int}]{n\+Bytes\+To\+Copy,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Copy raw bytes from a byte array, returning the new position for subsequent calls 
+\begin{DoxyParams}{Parameters}
+{\em p\+Src} & The source buffer \\
+\hline
+{\em dst\+Size} & The size of the source data in bytes \\
+\hline
+{\em p\+Dst} & The destination buffer \\
+\hline
+{\em n\+Bytes\+To\+Copy} & The number of bytes to copy from p\+Src \\
+\hline
+{\em start\+Pos} & The starting position in bytes in p\+Src \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in bytes after the copy, or -\/1 if the copy would have copied more data than in the src buffer ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_byte_getter_a24d90f103a5c009b18b82d07e0cbe16c}\label{struct_i_byte_getter_a24d90f103a5c009b18b82d07e0cbe16c}} 
+\index{IByteGetter@{IByteGetter}!GetStr@{GetStr}}
+\index{GetStr@{GetStr}!IByteGetter@{IByteGetter}}
+\doxysubsubsection{\texorpdfstring{GetStr()}{GetStr()}}
+{\footnotesize\ttfamily static int I\+Byte\+Getter\+::\+Get\+Str (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{p\+Src,  }\item[{int}]{src\+Size,  }\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{str,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Get a string from a byte array, to a \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}}, returning the new position for subsequent calls 
+\begin{DoxyParams}{Parameters}
+{\em p\+Src} & The source buffer \\
+\hline
+{\em dst\+Size} & The size of the source data in bytes \\
+\hline
+{\em str} & \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} to fill with the extracted string \\
+\hline
+{\em start\+Pos} & The starting position in bytes in p\+Src \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The end position in bytes after the copy, or -\/1 if the copy would have copied more data than in the src buffer ~\newline
+ 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/I\+Plug\+Structs.\+h\end{DoxyCompactItemize}

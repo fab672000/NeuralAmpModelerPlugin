@@ -1,0 +1,85 @@
+\hypertarget{class_sk_ptr_set}{}\doxysection{Sk\+Ptr\+Set Class Reference}
+\label{class_sk_ptr_set}\index{SkPtrSet@{SkPtrSet}}
+
+
+{\ttfamily \#include $<$Sk\+Ptr\+Recorder.\+h$>$}
+
+Inheritance diagram for Sk\+Ptr\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.148148cm]{class_sk_ptr_set}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_ptr_set_1_1_iter}{Iter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_ptr_set_a16042c563cfb3afef4d77e9c03f6a9c6}{find}} (void $\ast$) const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_ptr_set_a95f3eb5caf91364985f8db2e1baf7f24}{add}} (void $\ast$)
+\item 
+int \mbox{\hyperlink{class_sk_ptr_set_a1d7a07cb10b8d2e657cacbb896440761}{count}} () const
+\item 
+void \mbox{\hyperlink{class_sk_ptr_set_af492459c4dcdad6ce35dea30b86a4c89}{copy\+To\+Array}} (void $\ast$array\mbox{[}$\,$\mbox{]}) const
+\item 
+void \mbox{\hyperlink{class_sk_ptr_set_a2c3b1bf3dceadadbbc331a0ba05c6f5a}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_ptr_set_a0a51469f635a6ad5591d81ed48e8a076}\label{class_sk_ptr_set_a0a51469f635a6ad5591d81ed48e8a076}} 
+virtual void {\bfseries inc\+Ptr} (void $\ast$)
+\item 
+\mbox{\Hypertarget{class_sk_ptr_set_af96d35b727161d4c2855be2a5f1cb61f}\label{class_sk_ptr_set_af96d35b727161d4c2855be2a5f1cb61f}} 
+virtual void {\bfseries dec\+Ptr} (void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Maintains a set of ptrs, assigning each a unique ID \mbox{[}1...N\mbox{]}. Duplicate ptrs return the same ID (since its a set). Subclasses can override in\+Ptr() and dec\+Ptr(). inc\+Ptr() is called each time a unique ptr is added ot the set. dec\+Ptr() is called on each ptr when the set is destroyed or reset. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_ptr_set_a95f3eb5caf91364985f8db2e1baf7f24}\label{class_sk_ptr_set_a95f3eb5caf91364985f8db2e1baf7f24}} 
+\index{SkPtrSet@{SkPtrSet}!add@{add}}
+\index{add@{add}!SkPtrSet@{SkPtrSet}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Ptr\+Set\+::add (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+Add the specified ptr to the set, returning a unique 32bit ID for it \mbox{[}1...N\mbox{]}. Duplicate ptrs will return the same ID.
+
+If the ptr is nullptr, it is not added, and 0 is returned. \mbox{\Hypertarget{class_sk_ptr_set_af492459c4dcdad6ce35dea30b86a4c89}\label{class_sk_ptr_set_af492459c4dcdad6ce35dea30b86a4c89}} 
+\index{SkPtrSet@{SkPtrSet}!copyToArray@{copyToArray}}
+\index{copyToArray@{copyToArray}!SkPtrSet@{SkPtrSet}}
+\doxysubsubsection{\texorpdfstring{copyToArray()}{copyToArray()}}
+{\footnotesize\ttfamily void Sk\+Ptr\+Set\+::copy\+To\+Array (\begin{DoxyParamCaption}\item[{void $\ast$}]{array\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption}) const}
+
+Copy the ptrs in the set into the specified array (allocated by the caller). The ptrs are assgined to the array based on their corresponding ID. e.\+g. array\mbox{[}ptr.\+ID -\/ 1\mbox{]} = ptr.
+
+inc\+Ptr() and dec\+Ptr() are not called during this operation. \mbox{\Hypertarget{class_sk_ptr_set_a1d7a07cb10b8d2e657cacbb896440761}\label{class_sk_ptr_set_a1d7a07cb10b8d2e657cacbb896440761}} 
+\index{SkPtrSet@{SkPtrSet}!count@{count}}
+\index{count@{count}!SkPtrSet@{SkPtrSet}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily int Sk\+Ptr\+Set\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the number of (non-\/null) ptrs in the set. \mbox{\Hypertarget{class_sk_ptr_set_a16042c563cfb3afef4d77e9c03f6a9c6}\label{class_sk_ptr_set_a16042c563cfb3afef4d77e9c03f6a9c6}} 
+\index{SkPtrSet@{SkPtrSet}!find@{find}}
+\index{find@{find}!SkPtrSet@{SkPtrSet}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Ptr\+Set\+::find (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption}) const}
+
+Search for the specified ptr in the set. If it is found, return its 32bit ID \mbox{[}1..N\mbox{]}, or if not found, return 0. Always returns 0 for nullptr. \mbox{\Hypertarget{class_sk_ptr_set_a2c3b1bf3dceadadbbc331a0ba05c6f5a}\label{class_sk_ptr_set_a2c3b1bf3dceadadbbc331a0ba05c6f5a}} 
+\index{SkPtrSet@{SkPtrSet}!reset@{reset}}
+\index{reset@{reset}!SkPtrSet@{SkPtrSet}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Sk\+Ptr\+Set\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Call dec\+Ptr() on each ptr in the set, and the reset the size of the set to 0. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Ptr\+Recorder.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Ptr\+Recorder.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,184 @@
+\hypertarget{class_synth_voice}{}\doxysection{Synth\+Voice Class Reference}
+\label{class_synth_voice}\index{SynthVoice@{SynthVoice}}
+Inheritance diagram for Synth\+Voice\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_synth_voice}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_synth_voice_a96f96e8a0c34444a06ebf0a445707ebd}{Get\+Busy}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_synth_voice_a5b5451f7956d2aefdb75de29ee537bae}{Trigger}} (double level, bool is\+Retrigger)
+\item 
+virtual void \mbox{\hyperlink{class_synth_voice_a6584a3bddaf7c8ab2b38dfa919fc639f}{Release}} ()
+\item 
+virtual void \mbox{\hyperlink{class_synth_voice_a3bccffecf33fb97b3653b0b4b15b8fca}{Process\+Samples\+Accumulating}} (sample $\ast$$\ast$inputs, sample $\ast$$\ast$outputs, int n\+Inputs, int n\+Outputs, int start\+Idx, int n\+Frames)
+\item 
+virtual void \mbox{\hyperlink{class_synth_voice_acd94a7a6a057169546530123fdf8b005}{Set\+Sample\+Rate\+And\+Block\+Size}} (double sample\+Rate, int block\+Size)
+\item 
+virtual void \mbox{\hyperlink{class_synth_voice_ab8791d88f3a9bc691c1af50ca24c5391}{Set\+Program\+Number}} (int pgm)
+\item 
+virtual void \mbox{\hyperlink{class_synth_voice_a8c0c621cee511dbd69296f9f64b68276}{Set\+Control}} (int control\+Number, float value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_synth_voice_a2806287184703f8a20df49b728ed5c65}\label{class_synth_voice_a2806287184703f8a20df49b728ed5c65}} 
+Voice\+Inputs {\bfseries m\+Inputs}
+\item 
+\mbox{\Hypertarget{class_synth_voice_a4bf7daaa65df95c2ba1b756ba6de0f3e}\label{class_synth_voice_a4bf7daaa65df95c2ba1b756ba6de0f3e}} 
+int64\+\_\+t {\bfseries m\+Last\+Triggered\+Time} \{-\/1\}
+\item 
+\mbox{\Hypertarget{class_synth_voice_ad14561f9f2c0b9b74844de3e848052f1}\label{class_synth_voice_ad14561f9f2c0b9b74844de3e848052f1}} 
+uint8\+\_\+t {\bfseries m\+Voice\+Number} \{0\}
+\item 
+\mbox{\Hypertarget{class_synth_voice_aa11b71abec6a478f23131027bdcc60c0}\label{class_synth_voice_aa11b71abec6a478f23131027bdcc60c0}} 
+uint8\+\_\+t {\bfseries m\+Zone} \{0\}
+\item 
+\mbox{\Hypertarget{class_synth_voice_a7ed8c5abc2847d84ea095d231ded2624}\label{class_synth_voice_a7ed8c5abc2847d84ea095d231ded2624}} 
+uint8\+\_\+t {\bfseries m\+Channel} \{0\}
+\item 
+\mbox{\Hypertarget{class_synth_voice_ab79d38a272b63b88a5a5a5b4d92d7149}\label{class_synth_voice_ab79d38a272b63b88a5a5a5b4d92d7149}} 
+uint8\+\_\+t {\bfseries m\+Key} \{0\}
+\item 
+\mbox{\Hypertarget{class_synth_voice_ae4655a54d09a9a6f9930a1a3c3bab177}\label{class_synth_voice_ae4655a54d09a9a6f9930a1a3c3bab177}} 
+double {\bfseries m\+Base\+Pitch} \{0.\}
+\item 
+\mbox{\Hypertarget{class_synth_voice_a98d52fc125c4b1ca5d474a8fe5089ae9}\label{class_synth_voice_a98d52fc125c4b1ca5d474a8fe5089ae9}} 
+double {\bfseries m\+Gain} \{0.\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_synth_voice_a7cd9fd19081a9c29da02c038ceb4b6bf}\label{class_synth_voice_a7cd9fd19081a9c29da02c038ceb4b6bf}} 
+class {\bfseries Midi\+Synth}
+\item 
+\mbox{\Hypertarget{class_synth_voice_af1e7551dbe9c771888036d3884b0a613}\label{class_synth_voice_af1e7551dbe9c771888036d3884b0a613}} 
+class {\bfseries Voice\+Allocator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_synth_voice_a96f96e8a0c34444a06ebf0a445707ebd}\label{class_synth_voice_a96f96e8a0c34444a06ebf0a445707ebd}} 
+\index{SynthVoice@{SynthVoice}!GetBusy@{GetBusy}}
+\index{GetBusy@{GetBusy}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{GetBusy()}{GetBusy()}}
+{\footnotesize\ttfamily virtual bool Synth\+Voice\+::\+Get\+Busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if voice is generating any audio. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a4d5a78f43c2178e61ed128dd674c73d1}{I\+Plug\+Instrument\+D\+S\+P$<$ T $>$\+::\+Voice}}.
+
+\mbox{\Hypertarget{class_synth_voice_a3bccffecf33fb97b3653b0b4b15b8fca}\label{class_synth_voice_a3bccffecf33fb97b3653b0b4b15b8fca}} 
+\index{SynthVoice@{SynthVoice}!ProcessSamplesAccumulating@{ProcessSamplesAccumulating}}
+\index{ProcessSamplesAccumulating@{ProcessSamplesAccumulating}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{ProcessSamplesAccumulating()}{ProcessSamplesAccumulating()}}
+{\footnotesize\ttfamily virtual void Synth\+Voice\+::\+Process\+Samples\+Accumulating (\begin{DoxyParamCaption}\item[{sample $\ast$$\ast$}]{inputs,  }\item[{sample $\ast$$\ast$}]{outputs,  }\item[{int}]{n\+Inputs,  }\item[{int}]{n\+Outputs,  }\item[{int}]{start\+Idx,  }\item[{int}]{n\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Process a block of audio data for the voice 
+\begin{DoxyParams}{Parameters}
+{\em inputs} & Pointer to input channel arrays. Sometimes synthesisers have audio inputs. Alternatively you can pass in modulation from global L\+F\+Os etc here. \\
+\hline
+{\em outputs} & Pointer to output channel arrays. You should add to the existing data in these arrays (so that all the voices get summed) \\
+\hline
+{\em n\+Inputs} & The number of input channels that contain valid data \\
+\hline
+{\em n\+Outputs} & The number of output channels that contain valid data \\
+\hline
+{\em start\+Idx} & The start index of the block of samples to process \\
+\hline
+{\em n\+Frames} & The number of samples to process in this block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_synth_voice_a6584a3bddaf7c8ab2b38dfa919fc639f}\label{class_synth_voice_a6584a3bddaf7c8ab2b38dfa919fc639f}} 
+\index{SynthVoice@{SynthVoice}!Release@{Release}}
+\index{Release@{Release}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily virtual void Synth\+Voice\+::\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+As with Trigger, called to do optional tasks when a voice is released. 
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a346e39019981ce707366dd900447b313}{I\+Plug\+Instrument\+D\+S\+P$<$ T $>$\+::\+Voice}}.
+
+\mbox{\Hypertarget{class_synth_voice_a8c0c621cee511dbd69296f9f64b68276}\label{class_synth_voice_a8c0c621cee511dbd69296f9f64b68276}} 
+\index{SynthVoice@{SynthVoice}!SetControl@{SetControl}}
+\index{SetControl@{SetControl}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{SetControl()}{SetControl()}}
+{\footnotesize\ttfamily virtual void Synth\+Voice\+::\+Set\+Control (\begin{DoxyParamCaption}\item[{int}]{control\+Number,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Implement this to respond to control numbers for which there are not ramps. A synthesizer could use its own ramps internally if needed. 
+\begin{DoxyParams}{Parameters}
+{\em control\+Number} & The M\+I\+DI controller number \\
+\hline
+{\em value} & The normalized value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a588abb6902716899e808a89185d5b575}{I\+Plug\+Instrument\+D\+S\+P$<$ T $>$\+::\+Voice}}.
+
+\mbox{\Hypertarget{class_synth_voice_ab8791d88f3a9bc691c1af50ca24c5391}\label{class_synth_voice_ab8791d88f3a9bc691c1af50ca24c5391}} 
+\index{SynthVoice@{SynthVoice}!SetProgramNumber@{SetProgramNumber}}
+\index{SetProgramNumber@{SetProgramNumber}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{SetProgramNumber()}{SetProgramNumber()}}
+{\footnotesize\ttfamily virtual void Synth\+Voice\+::\+Set\+Program\+Number (\begin{DoxyParamCaption}\item[{int}]{pgm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Implement this to allow picking a sound program from an integer index, as with M\+I\+DI. 
+\begin{DoxyParams}{Parameters}
+{\em pgm} & The new program number \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a1b4dc8ea114a8442c6204c02f120bae7}{I\+Plug\+Instrument\+D\+S\+P$<$ T $>$\+::\+Voice}}.
+
+\mbox{\Hypertarget{class_synth_voice_acd94a7a6a057169546530123fdf8b005}\label{class_synth_voice_acd94a7a6a057169546530123fdf8b005}} 
+\index{SynthVoice@{SynthVoice}!SetSampleRateAndBlockSize@{SetSampleRateAndBlockSize}}
+\index{SetSampleRateAndBlockSize@{SetSampleRateAndBlockSize}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{SetSampleRateAndBlockSize()}{SetSampleRateAndBlockSize()}}
+{\footnotesize\ttfamily virtual void Synth\+Voice\+::\+Set\+Sample\+Rate\+And\+Block\+Size (\begin{DoxyParamCaption}\item[{double}]{sample\+Rate,  }\item[{int}]{block\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Implement this if you need to do work when the sample rate or block size changes. 
+\begin{DoxyParams}{Parameters}
+{\em sample\+Rate} & The new sample rate \\
+\hline
+{\em block\+Size} & The new block size in samples \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_af4c6dc6a2b00feee86b2da8ee59ee1a6}{I\+Plug\+Instrument\+D\+S\+P$<$ T $>$\+::\+Voice}}.
+
+\mbox{\Hypertarget{class_synth_voice_a5b5451f7956d2aefdb75de29ee537bae}\label{class_synth_voice_a5b5451f7956d2aefdb75de29ee537bae}} 
+\index{SynthVoice@{SynthVoice}!Trigger@{Trigger}}
+\index{Trigger@{Trigger}!SynthVoice@{SynthVoice}}
+\doxysubsubsection{\texorpdfstring{Trigger()}{Trigger()}}
+{\footnotesize\ttfamily virtual void Synth\+Voice\+::\+Trigger (\begin{DoxyParamCaption}\item[{double}]{level,  }\item[{bool}]{is\+Retrigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Trigger is called by the \mbox{\hyperlink{class_voice_allocator}{Voice\+Allocator}} when a new voice should start, or if the voice limit has been hit and an existing voice needs to re-\/trigger. While the Voice\+Inputs are sufficient to control a voice from the \mbox{\hyperlink{class_voice_allocator}{Voice\+Allocator}}, this method can be used to do additional tasks like resetting oscillators. 
+\begin{DoxyParams}{Parameters}
+{\em level} & Normalised starting level for this voice, derived from the velocity of the keypress, or in the case of a re-\/trigger the existing level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000173}{Todo}}]check \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Retrigger} & If this is {\ttfamily true} it means the voice is being re-\/triggered, and you should accommodate for this in your algorithm \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a5d7840fc58cf08871b219464c6406554}{I\+Plug\+Instrument\+D\+S\+P$<$ T $>$\+::\+Voice}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+Extras/\+Synth/\mbox{\hyperlink{_synth_voice_8h}{Synth\+Voice.\+h}}\end{DoxyCompactItemize}

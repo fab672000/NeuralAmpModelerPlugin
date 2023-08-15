@@ -1,0 +1,80 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_controller}{}\doxysection{Steinberg\+::Vst\+::I\+Note\+Expression\+Controller Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_note_expression_controller}\index{Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}}
+
+
+{\ttfamily \#include $<$ivstnoteexpression.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Note\+Expression\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_note_expression_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a0015bff381e7b1096b5140ed81c5bfb9}{get\+Note\+Expression\+Count}} (int32 bus\+Index, int16 channel)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a173e52cd4a84afc7ad5e9633e02ca9ab}{get\+Note\+Expression\+Info}} (int32 bus\+Index, int16 channel, int32 note\+Expression\+Index, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_note_expression_type_info}{Note\+Expression\+Type\+Info}} \&info)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a47c55a091402522e7482463ba8b63814}{get\+Note\+Expression\+String\+By\+Value}} (int32 bus\+Index, int16 channel, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a83c64b6b28833bdf0ce3dbd5923aff52}{Note\+Expression\+Type\+ID}} id, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a643cdf5e9530c8bf3f2f7d01ed5c1203}{Note\+Expression\+Value}} value\+Normalized, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a3304fa8513f23d66819bee647e6cb29c}{String128}} string)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_controller_aa27849a15b1abe897b90fb5b3b6097fd}{get\+Note\+Expression\+Value\+By\+String}} (int32 bus\+Index, int16 channel, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a83c64b6b28833bdf0ce3dbd5923aff52}{Note\+Expression\+Type\+ID}} id, const \mbox{\hyperlink{namespace_steinberg_1_1_vst_a3598b6ccf094d9d65342935206000b3a}{T\+Char}} $\ast$string, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a643cdf5e9530c8bf3f2f7d01ed5c1203}{Note\+Expression\+Value}} \&value\+Normalized)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_controller_af0b0741cdb36e581f592fa788a0481fa}\label{class_steinberg_1_1_vst_1_1_i_note_expression_controller_af0b0741cdb36e581f592fa788a0481fa}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extended plug-\/in interface \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}} for note expression event support\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_note_expression_controller}{Vst\+::\+I\+Note\+Expression\+Controller}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}}\mbox{]}
+\item \mbox{[}released\+: 3.\+5.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+With this plug-\/in interface, the host can retrieve all necessary note expression information supported by the plug-\/in. Note expression information (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_note_expression_type_info}{Note\+Expression\+Type\+Info}}) are specific for given channel and event bus.
+
+Note that there is only one Note\+Expression\+Type\+ID per given channel of an event bus.
+
+The method get\+Note\+Expression\+String\+By\+Value allows conversion from a normalized value to a string representation and the get\+Note\+Expression\+Value\+By\+String method from a string to a normalized value.
+
+When the note expression state changes (for example when switching presets) the plug-\/in needs to inform the host about it via \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler_a65e162e3686dbcd5f2739b6481f69186}{I\+Component\+Handler\+::restart\+Component}} (k\+Note\+Expression\+Changed). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a0015bff381e7b1096b5140ed81c5bfb9}\label{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a0015bff381e7b1096b5140ed81c5bfb9}} 
+\index{Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}!getNoteExpressionCount@{getNoteExpressionCount}}
+\index{getNoteExpressionCount@{getNoteExpressionCount}!Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}}
+\doxysubsubsection{\texorpdfstring{getNoteExpressionCount()}{getNoteExpressionCount()}}
+{\footnotesize\ttfamily virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Note\+Expression\+Controller\+::get\+Note\+Expression\+Count (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns number of supported note change types for event bus index and channel. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a173e52cd4a84afc7ad5e9633e02ca9ab}\label{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a173e52cd4a84afc7ad5e9633e02ca9ab}} 
+\index{Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}!getNoteExpressionInfo@{getNoteExpressionInfo}}
+\index{getNoteExpressionInfo@{getNoteExpressionInfo}!Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}}
+\doxysubsubsection{\texorpdfstring{getNoteExpressionInfo()}{getNoteExpressionInfo()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Note\+Expression\+Controller\+::get\+Note\+Expression\+Info (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel,  }\item[{int32}]{note\+Expression\+Index,  }\item[{\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_note_expression_type_info}{Note\+Expression\+Type\+Info}} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns note change type info. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a47c55a091402522e7482463ba8b63814}\label{class_steinberg_1_1_vst_1_1_i_note_expression_controller_a47c55a091402522e7482463ba8b63814}} 
+\index{Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}!getNoteExpressionStringByValue@{getNoteExpressionStringByValue}}
+\index{getNoteExpressionStringByValue@{getNoteExpressionStringByValue}!Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}}
+\doxysubsubsection{\texorpdfstring{getNoteExpressionStringByValue()}{getNoteExpressionStringByValue()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Note\+Expression\+Controller\+::get\+Note\+Expression\+String\+By\+Value (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_a83c64b6b28833bdf0ce3dbd5923aff52}{Note\+Expression\+Type\+ID}}}]{id,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_a643cdf5e9530c8bf3f2f7d01ed5c1203}{Note\+Expression\+Value}}}]{value\+Normalized,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_a3304fa8513f23d66819bee647e6cb29c}{String128}}}]{string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets a user readable representation of the normalized note change value. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_note_expression_controller_aa27849a15b1abe897b90fb5b3b6097fd}\label{class_steinberg_1_1_vst_1_1_i_note_expression_controller_aa27849a15b1abe897b90fb5b3b6097fd}} 
+\index{Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}!getNoteExpressionValueByString@{getNoteExpressionValueByString}}
+\index{getNoteExpressionValueByString@{getNoteExpressionValueByString}!Steinberg::Vst::INoteExpressionController@{Steinberg::Vst::INoteExpressionController}}
+\doxysubsubsection{\texorpdfstring{getNoteExpressionValueByString()}{getNoteExpressionValueByString()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Note\+Expression\+Controller\+::get\+Note\+Expression\+Value\+By\+String (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_a83c64b6b28833bdf0ce3dbd5923aff52}{Note\+Expression\+Type\+ID}}}]{id,  }\item[{const \mbox{\hyperlink{namespace_steinberg_1_1_vst_a3598b6ccf094d9d65342935206000b3a}{T\+Char}} $\ast$}]{string,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_a643cdf5e9530c8bf3f2f7d01ed5c1203}{Note\+Expression\+Value}} \&}]{value\+Normalized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Converts the user readable representation to the normalized note change value. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstnoteexpression.\+h\end{DoxyCompactItemize}

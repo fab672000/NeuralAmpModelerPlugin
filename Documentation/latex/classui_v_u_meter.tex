@@ -1,0 +1,102 @@
+\hypertarget{classui_v_u_meter}{}\doxysection{ui\+V\+U\+Meter Class Reference}
+\label{classui_v_u_meter}\index{uiVUMeter@{uiVUMeter}}
+
+
+Intern class for V\+U-\/meter.  
+
+
+
+
+{\ttfamily \#include $<$Juce\+G\+U\+I.\+h$>$}
+
+Inheritance diagram for ui\+V\+U\+Meter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.645833cm]{classui_v_u_meter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classui_v_u_meter_ab457886390fe24800517637a4294b055}{ui\+V\+U\+Meter}} (\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$gui, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$zone, F\+A\+U\+S\+T\+F\+L\+O\+AT w, F\+A\+U\+S\+T\+F\+L\+O\+AT h, String label, F\+A\+U\+S\+T\+F\+L\+O\+AT mini, F\+A\+U\+S\+T\+F\+L\+O\+AT maxi, String unit, String tooltip, V\+U\+Meter\+Type style, bool vert)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classui_v_u_meter_af84b2a8d6792ab0b66a0f58fafa3cc84}{timer\+Callback}} () override
+\item 
+void \mbox{\hyperlink{classui_v_u_meter_aec324583c9df26f016c426ce5e04f832}{paint}} (Graphics \&g) override
+\item 
+void \mbox{\hyperlink{classui_v_u_meter_a8c1f88ce56d334a1eda647cd8f2ec90b}{resized}} () override
+\item 
+\mbox{\Hypertarget{classui_v_u_meter_aec8e4ba99544b03a7b1806af7da0ebf3}\label{classui_v_u_meter_aec8e4ba99544b03a7b1806af7da0ebf3}} 
+void {\bfseries reflect\+Zone} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Intern class for V\+U-\/meter. 
+
+There is no J\+U\+CE widgets for V\+U-\/meter, so its fully designed in this class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_v_u_meter_ab457886390fe24800517637a4294b055}\label{classui_v_u_meter_ab457886390fe24800517637a4294b055}} 
+\index{uiVUMeter@{uiVUMeter}!uiVUMeter@{uiVUMeter}}
+\index{uiVUMeter@{uiVUMeter}!uiVUMeter@{uiVUMeter}}
+\doxysubsubsection{\texorpdfstring{uiVUMeter()}{uiVUMeter()}}
+{\footnotesize\ttfamily ui\+V\+U\+Meter\+::ui\+V\+U\+Meter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$}]{gui,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{zone,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{w,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{h,  }\item[{String}]{label,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{mini,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{maxi,  }\item[{String}]{unit,  }\item[{String}]{tooltip,  }\item[{V\+U\+Meter\+Type}]{style,  }\item[{bool}]{vert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Initialize the \mbox{\hyperlink{classui_component}{ui\+Component}} variables and the V\+U-\/meter specific ones.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gui,zone,w,h,tooltip,label} & \mbox{\hyperlink{classui_component}{ui\+Component}} variables. \\
+\hline
+{\em mini} & Minimal value of the V\+U-\/meter range. \\
+\hline
+{\em maxi} & Maximal value of the V\+U-\/meter range. \\
+\hline
+{\em unit} & Unit of the V\+U-\/meter (dB or not). \\
+\hline
+{\em style} & Type of the V\+U-\/meter (see V\+U\+Meter\+Type). \\
+\hline
+{\em vert} & True if vertical, false if horizontal. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_v_u_meter_aec324583c9df26f016c426ce5e04f832}\label{classui_v_u_meter_aec324583c9df26f016c426ce5e04f832}} 
+\index{uiVUMeter@{uiVUMeter}!paint@{paint}}
+\index{paint@{paint}!uiVUMeter@{uiVUMeter}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void ui\+V\+U\+Meter\+::paint (\begin{DoxyParamCaption}\item[{Graphics \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Call the appropriate drawing method according to the V\+U-\/meter style \begin{DoxySeeAlso}{See also}
+draw\+Led 
+
+draw\+Num\+Display 
+
+draw\+V\+Bargraph 
+
+draw\+H\+Bargraph 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classui_v_u_meter_a8c1f88ce56d334a1eda647cd8f2ec90b}\label{classui_v_u_meter_a8c1f88ce56d334a1eda647cd8f2ec90b}} 
+\index{uiVUMeter@{uiVUMeter}!resized@{resized}}
+\index{resized@{resized}!uiVUMeter@{uiVUMeter}}
+\doxysubsubsection{\texorpdfstring{resized()}{resized()}}
+{\footnotesize\ttfamily void ui\+V\+U\+Meter\+::resized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Set the Label position whenever the layout size changes. \mbox{\Hypertarget{classui_v_u_meter_af84b2a8d6792ab0b66a0f58fafa3cc84}\label{classui_v_u_meter_af84b2a8d6792ab0b66a0f58fafa3cc84}} 
+\index{uiVUMeter@{uiVUMeter}!timerCallback@{timerCallback}}
+\index{timerCallback@{timerCallback}!uiVUMeter@{uiVUMeter}}
+\doxysubsubsection{\texorpdfstring{timerCallback()}{timerCallback()}}
+{\footnotesize\ttfamily void ui\+V\+U\+Meter\+::timer\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Method called by the timer every 50ms, to refresh the V\+U-\/meter if it needs to 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Juce\+G\+U\+I.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{class_demo_sampler___parameters}{}\doxysection{Demo\+Sampler\+\_\+\+Parameters Class Reference}
+\label{class_demo_sampler___parameters}\index{DemoSampler\_Parameters@{DemoSampler\_Parameters}}
+Inheritance diagram for Demo\+Sampler\+\_\+\+Parameters\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_demo_sampler___parameters}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_demo_sampler___parameters_a6ee56487227d55d72ac7359886754e6f}{Effect\+Init}} () \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\begin{DoxyCompactList}\small\item\em Initialization helper routine. Called from \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_demo_sampler___parameters_aa05edfda968f2d92a50cde42b7a2482d}{Render\+Audio}} (\mbox{\hyperlink{struct_a_a_x___s_instrument_render_info}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}} $\ast$io\+Render\+Info, const T\+Param\+Val\+Pair $\ast$in\+Synchronized\+Param\+Values\mbox{[}$\,$\mbox{]}, int32\+\_\+t in\+Num\+Synchronized\+Param\+Values) \mbox{\hyperlink{_a_a_x_8h_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+DE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_demo_sampler___parameters_a3b562744d5291a0d89a58853abccc2e9}\label{class_demo_sampler___parameters_a3b562744d5291a0d89a58853abccc2e9}} 
+static \mbox{\hyperlink{class_a_a_x___c_effect_parameters}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}} $\ast$A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+CK {\bfseries Create} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_demo_sampler___parameters_a6ee56487227d55d72ac7359886754e6f}\label{class_demo_sampler___parameters_a6ee56487227d55d72ac7359886754e6f}} 
+\index{DemoSampler\_Parameters@{DemoSampler\_Parameters}!EffectInit@{EffectInit}}
+\index{EffectInit@{EffectInit}!DemoSampler\_Parameters@{DemoSampler\_Parameters}}
+\doxysubsubsection{\texorpdfstring{EffectInit()}{EffectInit()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result Demo\+Sampler\+\_\+\+Parameters\+::\+Effect\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialization helper routine. Called from \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a245f235300b04f1c8b4c83831d296e22}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize}}. 
+
+Override to add parameters, packets, meters, and to do any other custom initialization.
+
+Add custom parameters\+: \begin{DoxyItemize}
+\item Create an \mbox{\hyperlink{class_a_a_x___c_parameter}{A\+A\+X\+\_\+\+C\+Parameter}} for each parameter in the plug-\/in \item Call \mbox{\hyperlink{class_a_a_x___c_parameter_manager_ae2f9631b33c012f7a8c042df9655b28c}{A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Add\+Parameter()}} using m\+Parameter\+Manager to add parameters to the Parameter Manager\end{DoxyItemize}
+Register packets\+: \begin{DoxyItemize}
+\item Call A\+A\+X\+\_\+\+C\+Packet\+Dispatcher\+::\+Register\+Packet() using m\+Packet\+Dispatcher to register a packet and handling callback. \end{DoxyItemize}
+
+
+Reimplemented from \mbox{\hyperlink{class_a_a_x___c_effect_parameters_a2e302fd758d39a6a855023bf825fe148}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}.
+
+\mbox{\Hypertarget{class_demo_sampler___parameters_aa05edfda968f2d92a50cde42b7a2482d}\label{class_demo_sampler___parameters_aa05edfda968f2d92a50cde42b7a2482d}} 
+\index{DemoSampler\_Parameters@{DemoSampler\_Parameters}!RenderAudio@{RenderAudio}}
+\index{RenderAudio@{RenderAudio}!DemoSampler\_Parameters@{DemoSampler\_Parameters}}
+\doxysubsubsection{\texorpdfstring{RenderAudio()}{RenderAudio()}}
+{\footnotesize\ttfamily void Demo\+Sampler\+\_\+\+Parameters\+::\+Render\+Audio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_a_x___s_instrument_render_info}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}} $\ast$}]{io\+Render\+Info,  }\item[{const T\+Param\+Val\+Pair $\ast$}]{in\+Synchronized\+Param\+Values\mbox{[}$\,$\mbox{]},  }\item[{int32\+\_\+t}]{in\+Num\+Synchronized\+Param\+Values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Perform audio render
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em io\+Render\+Info} & State data for the current render buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Synchronized\+Param\+Values} & The parameter values which should be applied for the current render buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a1b23573e8aa3f8e64c61813b721559c2}{Add\+Synchronized\+Parameter}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Num\+Synchronized\+Param\+Values} & The number of parameter values provided in {\ttfamily in\+Synchronized\+Param\+Values} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_a_a_x___c_monolithic_parameters_a04f2f73d70ea28c17747c68fc3a20fc8}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Demo\+M\+I\+D\+I\+\_\+\+Sampler/\+Source/\mbox{\hyperlink{_demo_sampler___parameters_8h}{Demo\+Sampler\+\_\+\+Parameters.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Demo\+M\+I\+D\+I\+\_\+\+Sampler/\+Source/Demo\+Sampler\+\_\+\+Parameters.\+cpp\end{DoxyCompactItemize}

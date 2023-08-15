@@ -1,0 +1,64 @@
+\hypertarget{struct_tracked_visitor}{}\doxysection{Tracked\+Visitor$<$ T, Vectorizable $>$ Struct Template Reference}
+\label{struct_tracked_visitor}\index{TrackedVisitor$<$ T, Vectorizable $>$@{TrackedVisitor$<$ T, Vectorizable $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a98ed02853c5ba058f1716139a0edecc5}\label{struct_tracked_visitor_a98ed02853c5ba058f1716139a0edecc5}} 
+using {\bfseries Scalar} = typename \mbox{\hyperlink{class_eigen_1_1_dense_base}{Dense\+Base}}$<$ Derived $>$\+::Scalar
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a6093c93c89f76ed20a34843cee256719}\label{struct_tracked_visitor_a6093c93c89f76ed20a34843cee256719}} 
+void {\bfseries init} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} v, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a270f515bfeca526ee80a991208411075}\label{struct_tracked_visitor_a270f515bfeca526ee80a991208411075}} 
+void {\bfseries operator()} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} v, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a0f9eff03bdf5528d5440b996e020e751}\label{struct_tracked_visitor_a0f9eff03bdf5528d5440b996e020e751}} 
+{\footnotesize template$<$typename Packet $>$ }\\void {\bfseries packet} (\mbox{\hyperlink{class_eigen_1_1_triplet}{Packet}} p, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a07a024346ac308fbb3bb912ebbfba683}\label{struct_tracked_visitor_a07a024346ac308fbb3bb912ebbfba683}} 
+void {\bfseries init} (Scalar v, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a5bcb0e58a56b55fe3aacf5cf44afc712}\label{struct_tracked_visitor_a5bcb0e58a56b55fe3aacf5cf44afc712}} 
+{\footnotesize template$<$typename Packet $>$ }\\void {\bfseries initpacket} (\mbox{\hyperlink{class_eigen_1_1_triplet}{Packet}} p, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a17c54bedb033dc150410c349ced59fe9}\label{struct_tracked_visitor_a17c54bedb033dc150410c349ced59fe9}} 
+void {\bfseries operator()} (Scalar v, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a0f9eff03bdf5528d5440b996e020e751}\label{struct_tracked_visitor_a0f9eff03bdf5528d5440b996e020e751}} 
+{\footnotesize template$<$typename Packet $>$ }\\void {\bfseries packet} (\mbox{\hyperlink{class_eigen_1_1_triplet}{Packet}} p, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} i, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} j)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_aa5fa262e66cf9282e193e6ab6e05fb08}\label{struct_tracked_visitor_aa5fa262e66cf9282e193e6ab6e05fb08}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries visited}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a38d6d47f09f5196a6487be9a2575aa83}\label{struct_tracked_visitor_a38d6d47f09f5196a6487be9a2575aa83}} 
+bool {\bfseries vectorized}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a061e8674088afdb023a548cdd9254ef2}\label{struct_tracked_visitor_a061e8674088afdb023a548cdd9254ef2}} 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} $>$ $>$ {\bfseries visited}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_aefa91918ccd4b44c543eb55174b79669}\label{struct_tracked_visitor_aefa91918ccd4b44c543eb55174b79669}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries scalar\+Ops} = 0
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a1a8c171439d4b076dd71f2936a38a9b7}\label{struct_tracked_visitor_a1a8c171439d4b076dd71f2936a38a9b7}} 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries vector\+Ops} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_acdc0f34325746f028519149d13f199c9}\label{struct_tracked_visitor_acdc0f34325746f028519149d13f199c9}} 
+static constexpr int {\bfseries Packet\+Size} = \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{Eigen\+::internal\+::packet\+\_\+traits}}$<$Scalar$>$\+::size
+\item 
+\mbox{\Hypertarget{struct_tracked_visitor_a690f6dc197047d3b5c86dc3b14caec38}\label{struct_tracked_visitor_a690f6dc197047d3b5c86dc3b14caec38}} 
+static constexpr bool {\bfseries Row\+Major} = Derived\+::\+Is\+Row\+Major
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/test/visitor.\+cpp\end{DoxyCompactItemize}

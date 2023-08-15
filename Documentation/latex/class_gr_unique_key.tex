@@ -1,0 +1,102 @@
+\hypertarget{class_gr_unique_key}{}\doxysection{Gr\+Unique\+Key Class Reference}
+\label{class_gr_unique_key}\index{GrUniqueKey@{GrUniqueKey}}
+
+
+{\ttfamily \#include $<$Gr\+Resource\+Key.\+h$>$}
+
+Inheritance diagram for Gr\+Unique\+Key\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gr_unique_key}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_gr_unique_key_1_1_builder}{Builder}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_a69310417824795c2f3a110ea3c8895a4}\label{class_gr_unique_key_a69310417824795c2f3a110ea3c8895a4}} 
+typedef uint32\+\_\+t {\bfseries Domain}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gr_unique_key_a1385b075253d44d356c959e1119387c8}{Gr\+Unique\+Key}} ()
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_a6107a8a7ff7566335745aba76eaf07f7}\label{class_gr_unique_key_a6107a8a7ff7566335745aba76eaf07f7}} 
+{\bfseries Gr\+Unique\+Key} (const \mbox{\hyperlink{class_gr_unique_key}{Gr\+Unique\+Key}} \&that)
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_a04432050ef01ee46816c81bf2d147631}\label{class_gr_unique_key_a04432050ef01ee46816c81bf2d147631}} 
+\mbox{\hyperlink{class_gr_unique_key}{Gr\+Unique\+Key}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_gr_unique_key}{Gr\+Unique\+Key}} \&that)
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_aec6ae2a2c9024e0cead2d74b6c5be2df}\label{class_gr_unique_key_aec6ae2a2c9024e0cead2d74b6c5be2df}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_gr_unique_key}{Gr\+Unique\+Key}} \&that) const
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_ab457246a9e9fc4c4f0425484f91d96d0}\label{class_gr_unique_key_ab457246a9e9fc4c4f0425484f91d96d0}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{class_gr_unique_key}{Gr\+Unique\+Key}} \&that) const
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_ad205076ace1e6ef6e7833b96ab37e9d2}\label{class_gr_unique_key_ad205076ace1e6ef6e7833b96ab37e9d2}} 
+void {\bfseries set\+Custom\+Data} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_gr_resource_key_ab3e04c9465760f9a10843f3a0ae7ccd3}{data}})
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_af43541463c1e1fef1bb8ef69d52568ab}\label{class_gr_unique_key_af43541463c1e1fef1bb8ef69d52568ab}} 
+\mbox{\hyperlink{class_sk_data}{Sk\+Data}} $\ast$ {\bfseries get\+Custom\+Data} () const
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_aadf81dccb9194d271cf5352d8c01c17a}\label{class_gr_unique_key_aadf81dccb9194d271cf5352d8c01c17a}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ {\bfseries ref\+Custom\+Data} () const
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_a3b98f9026213c787d678c224c5ba98eb}\label{class_gr_unique_key_a3b98f9026213c787d678c224c5ba98eb}} 
+const char $\ast$ {\bfseries tag} () const
+\item 
+void \mbox{\hyperlink{class_gr_unique_key_ad333462b7032b6dc2cac91209a66fdf7}{reset}} ()
+\item 
+\mbox{\Hypertarget{class_gr_unique_key_a7f2d3e96eacd83c69643427df86a175f}\label{class_gr_unique_key_a7f2d3e96eacd83c69643427df86a175f}} 
+bool {\bfseries is\+Valid} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Domain \mbox{\hyperlink{class_gr_unique_key_adf819ad942bbc8108145a47a6959f29d}{Generate\+Domain}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A key that allows for exclusive use of a resource for a use case (A\+KA \char`\"{}domain\char`\"{}). There are three rules governing the use of unique keys\+:
+\begin{DoxyItemize}
+\item Only one resource can have a given unique key at a time. Hence, \char`\"{}unique\char`\"{}.
+\item A resource can have at most one unique key at a time.
+\item Unlike scratch keys, multiple requests for a unique key will return the same resource even if the resource already has refs. This key type allows a code path to create cached resources for which it is the exclusive user. The code path creates a domain which it sets on its keys. This guarantees that there are no cross-\/domain collisions.
+\end{DoxyItemize}
+
+Unique keys preempt scratch keys. While a resource has a unique key it is inaccessible via its scratch key. It can become scratch again if the unique key is removed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gr_unique_key_a1385b075253d44d356c959e1119387c8}\label{class_gr_unique_key_a1385b075253d44d356c959e1119387c8}} 
+\index{GrUniqueKey@{GrUniqueKey}!GrUniqueKey@{GrUniqueKey}}
+\index{GrUniqueKey@{GrUniqueKey}!GrUniqueKey@{GrUniqueKey}}
+\doxysubsubsection{\texorpdfstring{GrUniqueKey()}{GrUniqueKey()}}
+{\footnotesize\ttfamily Gr\+Unique\+Key\+::\+Gr\+Unique\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates an invalid unique key. It must be initialized using a \mbox{\hyperlink{class_gr_unique_key_1_1_builder}{Builder}} object before use. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gr_unique_key_adf819ad942bbc8108145a47a6959f29d}\label{class_gr_unique_key_adf819ad942bbc8108145a47a6959f29d}} 
+\index{GrUniqueKey@{GrUniqueKey}!GenerateDomain@{GenerateDomain}}
+\index{GenerateDomain@{GenerateDomain}!GrUniqueKey@{GrUniqueKey}}
+\doxysubsubsection{\texorpdfstring{GenerateDomain()}{GenerateDomain()}}
+{\footnotesize\ttfamily static Domain Gr\+Unique\+Key\+::\+Generate\+Domain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Generate a Domain for unique keys. \mbox{\Hypertarget{class_gr_unique_key_ad333462b7032b6dc2cac91209a66fdf7}\label{class_gr_unique_key_ad333462b7032b6dc2cac91209a66fdf7}} 
+\index{GrUniqueKey@{GrUniqueKey}!reset@{reset}}
+\index{reset@{reset}!GrUniqueKey@{GrUniqueKey}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Gr\+Resource\+Key\+::reset\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{class_gr_resource_key_ad333462b7032b6dc2cac91209a66fdf7}{reset()}} returns the key to the invalid state. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/Gr\+Resource\+Key.\+h\end{DoxyCompactItemize}

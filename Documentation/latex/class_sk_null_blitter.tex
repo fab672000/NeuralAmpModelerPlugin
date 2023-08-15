@@ -1,0 +1,85 @@
+\hypertarget{class_sk_null_blitter}{}\doxysection{Sk\+Null\+Blitter Class Reference}
+\label{class_sk_null_blitter}\index{SkNullBlitter@{SkNullBlitter}}
+
+
+{\ttfamily \#include $<$Sk\+Blitter.\+h$>$}
+
+Inheritance diagram for Sk\+Null\+Blitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_null_blitter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_null_blitter_ab458c5b7e37892ed1eb2814178ec1db2}\label{class_sk_null_blitter_ab458c5b7e37892ed1eb2814178ec1db2}} 
+void \mbox{\hyperlink{class_sk_null_blitter_ab458c5b7e37892ed1eb2814178ec1db2}{blitH}} (int x, int y, int width) override
+\begin{DoxyCompactList}\small\item\em Blit a horizontal run of one or more pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sk_null_blitter_ac53ae9a041298c886e8d777ea37cef19}{blit\+AntiH}} (int x, int y, const \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}}\mbox{[}$\,$\mbox{]}, const int16\+\_\+t runs\mbox{[}$\,$\mbox{]}) override
+\item 
+\mbox{\Hypertarget{class_sk_null_blitter_a25c1a197dd22bce223cdd86cb1a6eb91}\label{class_sk_null_blitter_a25c1a197dd22bce223cdd86cb1a6eb91}} 
+void \mbox{\hyperlink{class_sk_null_blitter_a25c1a197dd22bce223cdd86cb1a6eb91}{blitV}} (int x, int y, int height, \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} alpha) override
+\begin{DoxyCompactList}\small\item\em Blit a vertical run of pixels with a constant alpha value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sk_null_blitter_a49728282ab14717adabfcb78ee04173b}\label{class_sk_null_blitter_a49728282ab14717adabfcb78ee04173b}} 
+void \mbox{\hyperlink{class_sk_null_blitter_a49728282ab14717adabfcb78ee04173b}{blit\+Rect}} (int x, int y, int width, int height) override
+\begin{DoxyCompactList}\small\item\em Blit a solid rectangle one or more pixels wide. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sk_null_blitter_a10dc3f63991f7d9d2432f9bf8afc1934}{blit\+Mask}} (const \mbox{\hyperlink{struct_sk_mask}{Sk\+Mask}} \&, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&clip) override
+\item 
+const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} $\ast$ \mbox{\hyperlink{class_sk_null_blitter_ac42f3e50e6b55d8a2f85f92edf93e68e}{just\+An\+Opaque\+Color}} (uint32\+\_\+t $\ast$value) override
+\item 
+bool \mbox{\hyperlink{class_sk_null_blitter_a951d991cd7cf33a8f116505c764b811b}{is\+Null\+Blitter}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This blitter silently never draws anything. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_null_blitter_ac53ae9a041298c886e8d777ea37cef19}\label{class_sk_null_blitter_ac53ae9a041298c886e8d777ea37cef19}} 
+\index{SkNullBlitter@{SkNullBlitter}!blitAntiH@{blitAntiH}}
+\index{blitAntiH@{blitAntiH}!SkNullBlitter@{SkNullBlitter}}
+\doxysubsubsection{\texorpdfstring{blitAntiH()}{blitAntiH()}}
+{\footnotesize\ttfamily void Sk\+Null\+Blitter\+::blit\+AntiH (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const}]{antialias\mbox{[}$\,$\mbox{]},  }\item[{const int16\+\_\+t}]{runs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blit a horizontal run of antialiased pixels; runs\mbox{[}\mbox{]} is a {\itshape sparse} zero-\/terminated run-\/length encoding of spans of constant alpha values. The runs\mbox{[}\mbox{]} and antialias\mbox{[}\mbox{]} work together to represent long runs of pixels with the same alphas. The runs\mbox{[}\mbox{]} contains the number of pixels with the same alpha, and antialias\mbox{[}\mbox{]} contain the coverage value for that number of pixels. The runs\mbox{[}\mbox{]} (and antialias\mbox{[}\mbox{]}) are encoded in a clever way. The runs array is zero terminated, and has enough entries for each pixel plus one, in most cases some of the entries will not contain valid data. An entry in the runs array contains the number of pixels (np) that have the same alpha value. The next np value is found np entries away. For example, if runs\mbox{[}0\mbox{]} = 7, then the next valid entry will by at runs\mbox{[}7\mbox{]}. The runs array and antialias\mbox{[}\mbox{]} are coupled by index. So, if the np entry is at runs\mbox{[}45\mbox{]} = 12 then the alpha value can be found at antialias\mbox{[}45\mbox{]} = 0x88. This would mean to use an alpha value of 0x88 for the next 12 pixels starting at pixel 45. 
+
+Implements \mbox{\hyperlink{class_sk_blitter_a9690b92ca395a44e130e60ef057a0bbd}{Sk\+Blitter}}.
+
+\mbox{\Hypertarget{class_sk_null_blitter_a10dc3f63991f7d9d2432f9bf8afc1934}\label{class_sk_null_blitter_a10dc3f63991f7d9d2432f9bf8afc1934}} 
+\index{SkNullBlitter@{SkNullBlitter}!blitMask@{blitMask}}
+\index{blitMask@{blitMask}!SkNullBlitter@{SkNullBlitter}}
+\doxysubsubsection{\texorpdfstring{blitMask()}{blitMask()}}
+{\footnotesize\ttfamily void Sk\+Null\+Blitter\+::blit\+Mask (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_mask}{Sk\+Mask}} \&}]{mask,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{clip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blit a pattern of pixels defined by a rectangle-\/clipped mask; typically used for text. 
+
+Reimplemented from \mbox{\hyperlink{class_sk_blitter_a8402f28f6d9527e228695a145fff19a1}{Sk\+Blitter}}.
+
+\mbox{\Hypertarget{class_sk_null_blitter_a951d991cd7cf33a8f116505c764b811b}\label{class_sk_null_blitter_a951d991cd7cf33a8f116505c764b811b}} 
+\index{SkNullBlitter@{SkNullBlitter}!isNullBlitter@{isNullBlitter}}
+\index{isNullBlitter@{isNullBlitter}!SkNullBlitter@{SkNullBlitter}}
+\doxysubsubsection{\texorpdfstring{isNullBlitter()}{isNullBlitter()}}
+{\footnotesize\ttfamily bool Sk\+Null\+Blitter\+::is\+Null\+Blitter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Special method just to identify the null blitter, which is returned from Choose() if the request cannot be fulfilled. Default impl returns false. 
+
+Reimplemented from \mbox{\hyperlink{class_sk_blitter_a2ecbb36a5dd27b3884f5d0c20a86420b}{Sk\+Blitter}}.
+
+\mbox{\Hypertarget{class_sk_null_blitter_ac42f3e50e6b55d8a2f85f92edf93e68e}\label{class_sk_null_blitter_ac42f3e50e6b55d8a2f85f92edf93e68e}} 
+\index{SkNullBlitter@{SkNullBlitter}!justAnOpaqueColor@{justAnOpaqueColor}}
+\index{justAnOpaqueColor@{justAnOpaqueColor}!SkNullBlitter@{SkNullBlitter}}
+\doxysubsubsection{\texorpdfstring{justAnOpaqueColor()}{justAnOpaqueColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} $\ast$ Sk\+Null\+Blitter\+::just\+An\+Opaque\+Color (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If the blitter just sets a single value for each pixel, return the bitmap it draws into, and assign value. If not, return nullptr and ignore the value parameter. 
+
+Reimplemented from \mbox{\hyperlink{class_sk_blitter_a2c7339eac34e3bd95c0e5eaa1fa1c1e2}{Sk\+Blitter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blitter.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blitter.\+cpp\end{DoxyCompactItemize}

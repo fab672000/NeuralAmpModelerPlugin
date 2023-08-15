@@ -1,0 +1,66 @@
+\hypertarget{structfacebook_1_1yoga_1_1_event}{}\doxysection{facebook\+::yoga\+::Event Struct Reference}
+\label{structfacebook_1_1yoga_1_1_event}\index{facebook::yoga::Event@{facebook::yoga::Event}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfacebook_1_1yoga_1_1_event_1_1_data}{Data}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data}{Typed\+Data}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data_3_01_event_1_1_layout_pass_end_01_4}{Typed\+Data$<$ Event\+::\+Layout\+Pass\+End $>$}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data_3_01_event_1_1_layout_pass_start_01_4}{Typed\+Data$<$ Event\+::\+Layout\+Pass\+Start $>$}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data_3_01_event_1_1_measure_callback_end_01_4}{Typed\+Data$<$ Event\+::\+Measure\+Callback\+End $>$}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data_3_01_event_1_1_node_allocation_01_4}{Typed\+Data$<$ Event\+::\+Node\+Allocation $>$}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data_3_01_event_1_1_node_deallocation_01_4}{Typed\+Data$<$ Event\+::\+Node\+Deallocation $>$}}
+\item 
+struct \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data_3_01_event_1_1_node_layout_01_4}{Typed\+Data$<$ Event\+::\+Node\+Layout $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_ad7f90de731f89cf708110852f9376673}\label{structfacebook_1_1yoga_1_1_event_ad7f90de731f89cf708110852f9376673}} 
+enum {\bfseries Type} \{ \newline
+{\bfseries Node\+Allocation}, 
+{\bfseries Node\+Deallocation}, 
+{\bfseries Node\+Layout}, 
+{\bfseries Layout\+Pass\+Start}, 
+\newline
+{\bfseries Layout\+Pass\+End}, 
+{\bfseries Measure\+Callback\+Start}, 
+{\bfseries Measure\+Callback\+End}, 
+{\bfseries Node\+Baseline\+Start}, 
+\newline
+{\bfseries Node\+Baseline\+End}
+ \}
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_a04918589730856d8fe305a1ba3dd9322}\label{structfacebook_1_1yoga_1_1_event_a04918589730856d8fe305a1ba3dd9322}} 
+using {\bfseries Subscriber} = void(const \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node}} \&, Type, \mbox{\hyperlink{classfacebook_1_1yoga_1_1_event_1_1_data}{Data}})
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_a7ded6baefe9b7b075e5d165ff383d9f9}\label{structfacebook_1_1yoga_1_1_event_a7ded6baefe9b7b075e5d165ff383d9f9}} 
+using {\bfseries Subscribers} = std\+::vector$<$ std\+::function$<$ Subscriber $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_a0ef5b10d3128248b041c509b8ab6e285}\label{structfacebook_1_1yoga_1_1_event_a0ef5b10d3128248b041c509b8ab6e285}} 
+static void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_a2a4f653ce2a5adda931b20c0940debf2}\label{structfacebook_1_1yoga_1_1_event_a2a4f653ce2a5adda931b20c0940debf2}} 
+static void {\bfseries subscribe} (std\+::function$<$ Subscriber $>$ \&\&subscriber)
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_a2778f3503fe11595f2360a29cb184329}\label{structfacebook_1_1yoga_1_1_event_a2778f3503fe11595f2360a29cb184329}} 
+{\footnotesize template$<$Type E$>$ }\\static void {\bfseries publish} (const \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node}} \&node, const \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data}{Typed\+Data}}$<$ E $>$ \&event\+Data=\{\})
+\item 
+\mbox{\Hypertarget{structfacebook_1_1yoga_1_1_event_a8adc592a3ebc9f535b61091dc67ea357}\label{structfacebook_1_1yoga_1_1_event_a8adc592a3ebc9f535b61091dc67ea357}} 
+{\footnotesize template$<$Type E$>$ }\\static void {\bfseries publish} (const \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node}} $\ast$node, const \mbox{\hyperlink{structfacebook_1_1yoga_1_1_event_1_1_typed_data}{Typed\+Data}}$<$ E $>$ \&event\+Data=\{\})
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Graphics/yoga/yoga/event/event.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Graphics/yoga/yoga/event/event.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\hypertarget{class_a_a_x___fast_interpolated_table_lookup}{}\doxysection{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup$<$ T\+F\+L\+O\+AT, D\+F\+L\+O\+AT $>$ Class Template Reference}
+\label{class_a_a_x___fast_interpolated_table_lookup}\index{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$@{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_a_x___fast_interpolated_table_lookup_a74f25a087c55a337d8cdff14c73df7cb}{Set\+Parameters}} (int i\+Table\+Size, T\+F\+L\+O\+AT i\+Min=0.\+0, T\+F\+L\+O\+AT i\+Max=1.\+0, int i\+Num\+Tables=1)
+\begin{DoxyCompactList}\small\item\em Set the table lookup parameters. \end{DoxyCompactList}\item 
+D\+F\+L\+O\+AT \mbox{\hyperlink{class_a_a_x___fast_interpolated_table_lookup_aaad992e09c837d96ad715092fbefd91d}{Do\+Table\+Lookup\+Extra\+Fast}} (const T\+F\+L\+O\+AT $\ast$const i\+Table, D\+F\+L\+O\+AT i\+Value) const
+\begin{DoxyCompactList}\small\item\em Perform an extra fast table lookup \+:) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_a_x___fast_interpolated_table_lookup_a60e89d13066ca0606c8f71cf5313f0e3}\label{class_a_a_x___fast_interpolated_table_lookup_a60e89d13066ca0606c8f71cf5313f0e3}} 
+void {\bfseries Do\+Table\+Lookup\+Extra\+Fast\+Multi} (const T\+F\+L\+O\+AT $\ast$i\+Table, D\+F\+L\+O\+AT i\+Value, D\+F\+L\+O\+AT $\ast$o\+Values) const
+\item 
+\mbox{\Hypertarget{class_a_a_x___fast_interpolated_table_lookup_a11b9680510916ee500ced08d3da3fcb2}\label{class_a_a_x___fast_interpolated_table_lookup_a11b9680510916ee500ced08d3da3fcb2}} 
+void {\bfseries Do\+Table\+Lookup\+Extra\+Fast} (const T\+F\+L\+O\+AT $\ast$const i\+Table, const T\+F\+L\+O\+AT $\ast$const inp\+Buf, D\+F\+L\+O\+AT $\ast$const out\+Buf, int block\+Size)
+\item 
+\mbox{\Hypertarget{class_a_a_x___fast_interpolated_table_lookup_aabf15d98a86ea76bccbb0eab444bfab5}\label{class_a_a_x___fast_interpolated_table_lookup_aabf15d98a86ea76bccbb0eab444bfab5}} 
+T\+F\+L\+O\+AT {\bfseries Get\+Min} ()
+\item 
+\mbox{\Hypertarget{class_a_a_x___fast_interpolated_table_lookup_a7824f358e11c2ee1637f631230a8d967}\label{class_a_a_x___fast_interpolated_table_lookup_a7824f358e11c2ee1637f631230a8d967}} 
+T\+F\+L\+O\+AT {\bfseries Get\+Max\+Minus\+Min} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___fast_interpolated_table_lookup_aaad992e09c837d96ad715092fbefd91d}\label{class_a_a_x___fast_interpolated_table_lookup_aaad992e09c837d96ad715092fbefd91d}} 
+\index{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$@{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$}!DoTableLookupExtraFast@{DoTableLookupExtraFast}}
+\index{DoTableLookupExtraFast@{DoTableLookupExtraFast}!AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$@{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{DoTableLookupExtraFast()}{DoTableLookupExtraFast()}}
+{\footnotesize\ttfamily template$<$class T\+F\+L\+O\+AT , class D\+F\+L\+O\+AT $>$ \\
+D\+F\+L\+O\+AT \mbox{\hyperlink{class_a_a_x___fast_interpolated_table_lookup}{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}$<$ T\+F\+L\+O\+AT, D\+F\+L\+O\+AT $>$\+::Do\+Table\+Lookup\+Extra\+Fast (\begin{DoxyParamCaption}\item[{const T\+F\+L\+O\+AT $\ast$const}]{i\+Table,  }\item[{D\+F\+L\+O\+AT}]{i\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Perform an extra fast table lookup \+:) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Table} & Lookup table \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Value} & Table value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This version requires that the lookup table is padded with one extra location so we can avoid one of the checks to see if our pointers are out of bounds. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_a_a_x___fast_interpolated_table_lookup_a74f25a087c55a337d8cdff14c73df7cb}\label{class_a_a_x___fast_interpolated_table_lookup_a74f25a087c55a337d8cdff14c73df7cb}} 
+\index{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$@{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$}!SetParameters@{SetParameters}}
+\index{SetParameters@{SetParameters}!AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$@{AAX\_FastInterpolatedTableLookup$<$ TFLOAT, DFLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{SetParameters()}{SetParameters()}}
+{\footnotesize\ttfamily template$<$class T\+F\+L\+O\+AT , class D\+F\+L\+O\+AT $>$ \\
+void \mbox{\hyperlink{class_a_a_x___fast_interpolated_table_lookup}{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}$<$ T\+F\+L\+O\+AT, D\+F\+L\+O\+AT $>$\+::Set\+Parameters (\begin{DoxyParamCaption}\item[{int}]{i\+Table\+Size,  }\item[{T\+F\+L\+O\+AT}]{i\+Min = {\ttfamily 0.0},  }\item[{T\+F\+L\+O\+AT}]{i\+Max = {\ttfamily 1.0},  }\item[{int}]{i\+Num\+Tables = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the table lookup parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Table\+Size} & Size of the lookup table \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Min} & Minimum input value \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Max} & Maximum input value \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Num\+Tables} & Number of tables to index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For future use... 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+T\+I/\+Signal\+Processing/\mbox{\hyperlink{_a_a_x___fast_interpolated_table_lookup_8h}{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+T\+I/\+Signal\+Processing/A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup.\+hpp\end{DoxyCompactItemize}

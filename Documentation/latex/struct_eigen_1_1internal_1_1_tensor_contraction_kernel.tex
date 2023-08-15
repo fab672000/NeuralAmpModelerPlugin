@@ -1,0 +1,114 @@
+\hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel}{}\doxysection{Eigen\+::internal\+::Tensor\+Contraction\+Kernel$<$ Res\+Scalar, Lhs\+Scalar, Rhs\+Scalar, Storage\+Index, Output\+Mapper, Lhs\+Mapper, Rhs\+Mapper $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel}\index{Eigen::internal::TensorContractionKernel$<$ ResScalar, LhsScalar, RhsScalar, StorageIndex, OutputMapper, LhsMapper, RhsMapper $>$@{Eigen::internal::TensorContractionKernel$<$ ResScalar, LhsScalar, RhsScalar, StorageIndex, OutputMapper, LhsMapper, RhsMapper $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a4167e75e3d1aa745b593219d1d686f9f}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a4167e75e3d1aa745b593219d1d686f9f}} 
+enum \{ {\bfseries Has\+Beta} = false
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_adfe0cf2b3846bd4b0ae6c67a757833bf}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_adfe0cf2b3846bd4b0ae6c67a757833bf}} 
+enum \{ {\bfseries Has\+Beta} = false
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a17e6020899ab91ef10dd630d3cfbc53d}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a17e6020899ab91ef10dd630d3cfbc53d}} 
+typedef Lhs\+Scalar $\ast$ {\bfseries Lhs\+Block}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a23e8ad3258a67a6c6a08db93052fe6e6}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a23e8ad3258a67a6c6a08db93052fe6e6}} 
+typedef Rhs\+Scalar $\ast$ {\bfseries Rhs\+Block}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ada6c0183e718576c5449c5bb2b339eea}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ada6c0183e718576c5449c5bb2b339eea}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1_tensor_contraction_block_mem_allocator}{Tensor\+Contraction\+Block\+Mem\+Allocator}}$<$ Lhs\+Scalar, Rhs\+Scalar $>$ {\bfseries Block\+Mem\+Allocator}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ac8d414b7ef2cd7b7788ef18ca1c23ed1}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ac8d414b7ef2cd7b7788ef18ca1c23ed1}} 
+typedef Block\+Mem\+Allocator\+::\+Block\+Mem\+Handle {\bfseries Block\+Mem\+Handle}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad1d59d2424e82882b238991a32576ed9}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad1d59d2424e82882b238991a32576ed9}} 
+typedef \mbox{\hyperlink{class_eigen_1_1internal_1_1gebp__traits}{internal\+::gebp\+\_\+traits}}$<$ Lhs\+Scalar, Rhs\+Scalar $>$ {\bfseries Traits}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a7defa36812ec7b440df5d463931a0ba1}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a7defa36812ec7b440df5d463931a0ba1}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1gemm__pack__lhs}{internal\+::gemm\+\_\+pack\+\_\+lhs}}$<$ Lhs\+Scalar, Storage\+Index, typename Lhs\+Mapper\+::\+Sub\+Mapper, Traits\+::mr, Traits\+::\+Lhs\+Progress, typename Traits\+::\+Lhs\+Packet4\+Packing, \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}} $>$ {\bfseries Lhs\+Packer}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aa267bb0fe18940052185cbada55df9d4}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aa267bb0fe18940052185cbada55df9d4}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1gemm__pack__rhs}{internal\+::gemm\+\_\+pack\+\_\+rhs}}$<$ Rhs\+Scalar, Storage\+Index, typename Rhs\+Mapper\+::\+Sub\+Mapper, Traits\+::nr, \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}} $>$ {\bfseries Rhs\+Packer}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5f575bb604c45173baf8ec6d041f6e03}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5f575bb604c45173baf8ec6d041f6e03}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1gebp__kernel}{internal\+::gebp\+\_\+kernel}}$<$ Lhs\+Scalar, Rhs\+Scalar, Storage\+Index, Output\+Mapper, Traits\+::mr, Traits\+::nr, false, false $>$ {\bfseries Gebp\+Kernel}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a17e6020899ab91ef10dd630d3cfbc53d}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a17e6020899ab91ef10dd630d3cfbc53d}} 
+typedef Lhs\+Scalar $\ast$ {\bfseries Lhs\+Block}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a23e8ad3258a67a6c6a08db93052fe6e6}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a23e8ad3258a67a6c6a08db93052fe6e6}} 
+typedef Rhs\+Scalar $\ast$ {\bfseries Rhs\+Block}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ada6c0183e718576c5449c5bb2b339eea}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ada6c0183e718576c5449c5bb2b339eea}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1_tensor_contraction_block_mem_allocator}{Tensor\+Contraction\+Block\+Mem\+Allocator}}$<$ Lhs\+Scalar, Rhs\+Scalar $>$ {\bfseries Block\+Mem\+Allocator}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ac8d414b7ef2cd7b7788ef18ca1c23ed1}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ac8d414b7ef2cd7b7788ef18ca1c23ed1}} 
+typedef Block\+Mem\+Allocator\+::\+Block\+Mem\+Handle {\bfseries Block\+Mem\+Handle}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad1d59d2424e82882b238991a32576ed9}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad1d59d2424e82882b238991a32576ed9}} 
+typedef \mbox{\hyperlink{class_eigen_1_1internal_1_1gebp__traits}{internal\+::gebp\+\_\+traits}}$<$ Lhs\+Scalar, Rhs\+Scalar $>$ {\bfseries Traits}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a7defa36812ec7b440df5d463931a0ba1}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a7defa36812ec7b440df5d463931a0ba1}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1gemm__pack__lhs}{internal\+::gemm\+\_\+pack\+\_\+lhs}}$<$ Lhs\+Scalar, Storage\+Index, typename Lhs\+Mapper\+::\+Sub\+Mapper, Traits\+::mr, Traits\+::\+Lhs\+Progress, typename Traits\+::\+Lhs\+Packet4\+Packing, \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}} $>$ {\bfseries Lhs\+Packer}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aa267bb0fe18940052185cbada55df9d4}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aa267bb0fe18940052185cbada55df9d4}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1gemm__pack__rhs}{internal\+::gemm\+\_\+pack\+\_\+rhs}}$<$ Rhs\+Scalar, Storage\+Index, typename Rhs\+Mapper\+::\+Sub\+Mapper, Traits\+::nr, \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}} $>$ {\bfseries Rhs\+Packer}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5f575bb604c45173baf8ec6d041f6e03}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5f575bb604c45173baf8ec6d041f6e03}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1gebp__kernel}{internal\+::gebp\+\_\+kernel}}$<$ Lhs\+Scalar, Rhs\+Scalar, Storage\+Index, Output\+Mapper, Traits\+::mr, Traits\+::nr, false, false $>$ {\bfseries Gebp\+Kernel}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a4f2639cc69fc0cde3531ff61fbce7d6a}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a4f2639cc69fc0cde3531ff61fbce7d6a}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries Tensor\+Contraction\+Kernel} (Storage\+Index m\+\_\+, Storage\+Index k\+\_\+, Storage\+Index n\+\_\+, Storage\+Index bm\+\_\+, Storage\+Index bk\+\_\+, Storage\+Index bn\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad65f9b3208d5f78e4aa51dfeba24618a}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad65f9b3208d5f78e4aa51dfeba24618a}} 
+{\footnotesize template$<$typename Device $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Block\+Mem\+Handle {\bfseries allocate} (Device \&d, Lhs\+Block $\ast$lhs\+\_\+block, Rhs\+Block $\ast$rhs\+\_\+block)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a470a8951a85d2187b7d8be707e06b792}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a470a8951a85d2187b7d8be707e06b792}} 
+{\footnotesize template$<$typename Device $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Block\+Mem\+Handle {\bfseries allocate\+Slices} (Device \&d, const Storage\+Index num\+\_\+lhs, const Storage\+Index num\+\_\+rhs, const Storage\+Index num\+\_\+slices, std\+::vector$<$ Lhs\+Block $>$ $\ast$lhs\+\_\+blocks, std\+::vector$<$ Rhs\+Block $>$ $\ast$rhs\+\_\+blocks)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5dc8665ce1480671406d2542cecc873e}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5dc8665ce1480671406d2542cecc873e}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+D\+O\+N\+T\+\_\+\+I\+N\+L\+I\+NE void {\bfseries pack\+Lhs} (Lhs\+Block $\ast$lhs\+Block, const typename Lhs\+Mapper\+::\+Sub\+Mapper \&data\+\_\+mapper, const Storage\+Index depth, const Storage\+Index rows)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_af1a6c7b19173f7e521dc2d0059979bd0}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_af1a6c7b19173f7e521dc2d0059979bd0}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+D\+O\+N\+T\+\_\+\+I\+N\+L\+I\+NE void {\bfseries pack\+Rhs} (Rhs\+Block $\ast$rhs\+Block, const typename Rhs\+Mapper\+::\+Sub\+Mapper \&data\+\_\+mapper, const Storage\+Index depth, const Storage\+Index cols)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aaf4c8dbc6517ab304c4c252af2fca488}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aaf4c8dbc6517ab304c4c252af2fca488}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+D\+O\+N\+T\+\_\+\+I\+N\+L\+I\+NE void {\bfseries invoke} (const Output\+Mapper \&output\+\_\+mapper, const Lhs\+Block \&lhs\+Block, const Rhs\+Block \&rhs\+Block, const Storage\+Index rows, const Storage\+Index depth, const Storage\+Index cols, const Res\+Scalar alpha, const Res\+Scalar beta)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a4f2639cc69fc0cde3531ff61fbce7d6a}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a4f2639cc69fc0cde3531ff61fbce7d6a}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC {\bfseries Tensor\+Contraction\+Kernel} (Storage\+Index m\+\_\+, Storage\+Index k\+\_\+, Storage\+Index n\+\_\+, Storage\+Index bm\+\_\+, Storage\+Index bk\+\_\+, Storage\+Index bn\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad65f9b3208d5f78e4aa51dfeba24618a}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ad65f9b3208d5f78e4aa51dfeba24618a}} 
+{\footnotesize template$<$typename Device $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Block\+Mem\+Handle {\bfseries allocate} (Device \&d, Lhs\+Block $\ast$lhs\+\_\+block, Rhs\+Block $\ast$rhs\+\_\+block)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a470a8951a85d2187b7d8be707e06b792}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a470a8951a85d2187b7d8be707e06b792}} 
+{\footnotesize template$<$typename Device $>$ }\\E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC Block\+Mem\+Handle {\bfseries allocate\+Slices} (Device \&d, const Storage\+Index num\+\_\+lhs, const Storage\+Index num\+\_\+rhs, const Storage\+Index num\+\_\+slices, std\+::vector$<$ Lhs\+Block $>$ $\ast$lhs\+\_\+blocks, std\+::vector$<$ Rhs\+Block $>$ $\ast$rhs\+\_\+blocks)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5dc8665ce1480671406d2542cecc873e}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_a5dc8665ce1480671406d2542cecc873e}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+D\+O\+N\+T\+\_\+\+I\+N\+L\+I\+NE void {\bfseries pack\+Lhs} (Lhs\+Block $\ast$lhs\+Block, const typename Lhs\+Mapper\+::\+Sub\+Mapper \&data\+\_\+mapper, const Storage\+Index depth, const Storage\+Index rows)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_af1a6c7b19173f7e521dc2d0059979bd0}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_af1a6c7b19173f7e521dc2d0059979bd0}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+D\+O\+N\+T\+\_\+\+I\+N\+L\+I\+NE void {\bfseries pack\+Rhs} (Rhs\+Block $\ast$rhs\+Block, const typename Rhs\+Mapper\+::\+Sub\+Mapper \&data\+\_\+mapper, const Storage\+Index depth, const Storage\+Index cols)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aaf4c8dbc6517ab304c4c252af2fca488}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_aaf4c8dbc6517ab304c4c252af2fca488}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+D\+O\+N\+T\+\_\+\+I\+N\+L\+I\+NE void {\bfseries invoke} (const Output\+Mapper \&output\+\_\+mapper, const Lhs\+Block \&lhs\+Block, const Rhs\+Block \&rhs\+Block, const Storage\+Index rows, const Storage\+Index depth, const Storage\+Index cols, const Res\+Scalar alpha, const Res\+Scalar beta)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ab16231a4e07b0b4402489c9ead26eb37}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ab16231a4e07b0b4402489c9ead26eb37}} 
+{\footnotesize template$<$typename Device $>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries deallocate} (Device \&d, Block\+Mem\+Handle handle)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ab16231a4e07b0b4402489c9ead26eb37}\label{struct_eigen_1_1internal_1_1_tensor_contraction_kernel_ab16231a4e07b0b4402489c9ead26eb37}} 
+{\footnotesize template$<$typename Device $>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC void {\bfseries deallocate} (Device \&d, Block\+Mem\+Handle handle)
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Contraction.\+h\end{DoxyCompactItemize}

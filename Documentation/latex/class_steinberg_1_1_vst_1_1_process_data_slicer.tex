@@ -1,0 +1,87 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_process_data_slicer}{}\doxysection{Steinberg\+::Vst\+::Process\+Data\+Slicer Class Reference}
+\label{class_steinberg_1_1_vst_1_1_process_data_slicer}\index{Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}}
+
+
+{\ttfamily \#include $<$processdataslicer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_process_data_slicer_aae67ce4f3a125e625e7e22219661d3ea}{Process\+Data\+Slicer}} (int32 in\+Slice\+Size=8)
+\item 
+{\footnotesize template$<$Symbolic\+Sample\+Sizes Sample\+Size, typename Do\+Process\+Callback $>$ }\\void \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_process_data_slicer_a1f509f6c2971c82e91bcf8a3355abcd4}{process}} (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_data}{Process\+Data}} \&data, Do\+Process\+Callback do\+Processing) noexcept
+\item 
+void \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_process_data_slicer_a8891976bb4b6807b75547b7eaec542ee}{stop}} () noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Process Data Slicer
+
+Cuts the V\+ST process data into slices to process
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tresult PLUGIN\_API Processor::process (ProcessData\& data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_process_data_slicer_aae67ce4f3a125e625e7e22219661d3ea}{ProcessDataSlicer}} slicer (32);}
+\DoxyCodeLine{    slicer.process<SymbolicSampleSizes::kSample32> (data, [\&] (ProcessData\& data) \{}
+\DoxyCodeLine{        doSlicedProcessing (data); \textcolor{comment}{// data.numSamples <= 32}}
+\DoxyCodeLine{    \});}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_process_data_slicer_aae67ce4f3a125e625e7e22219661d3ea}\label{class_steinberg_1_1_vst_1_1_process_data_slicer_aae67ce4f3a125e625e7e22219661d3ea}} 
+\index{Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}!ProcessDataSlicer@{ProcessDataSlicer}}
+\index{ProcessDataSlicer@{ProcessDataSlicer}!Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}}
+\doxysubsubsection{\texorpdfstring{ProcessDataSlicer()}{ProcessDataSlicer()}}
+{\footnotesize\ttfamily Steinberg\+::\+Vst\+::\+Process\+Data\+Slicer\+::\+Process\+Data\+Slicer (\begin{DoxyParamCaption}\item[{int32}]{in\+Slice\+Size = {\ttfamily 8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Slice\+Sice} & slice size in samples \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_process_data_slicer_a1f509f6c2971c82e91bcf8a3355abcd4}\label{class_steinberg_1_1_vst_1_1_process_data_slicer_a1f509f6c2971c82e91bcf8a3355abcd4}} 
+\index{Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}!process@{process}}
+\index{process@{process}!Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily template$<$Symbolic\+Sample\+Sizes Sample\+Size, typename Do\+Process\+Callback $>$ \\
+void Steinberg\+::\+Vst\+::\+Process\+Data\+Slicer\+::process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_data}{Process\+Data}} \&}]{data,  }\item[{Do\+Process\+Callback}]{do\+Processing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+Process the data
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Sample\+Size} & sample size 32 or 64 bit processing \\
+\hline
+{\em Do\+Process\+Callback} & the callback proc \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Process data \\
+\hline
+{\em do\+Processing} & process callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_process_data_slicer_a8891976bb4b6807b75547b7eaec542ee}\label{class_steinberg_1_1_vst_1_1_process_data_slicer_a8891976bb4b6807b75547b7eaec542ee}} 
+\index{Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}!stop@{stop}}
+\index{stop@{stop}!Steinberg::Vst::ProcessDataSlicer@{Steinberg::Vst::ProcessDataSlicer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Steinberg\+::\+Vst\+::\+Process\+Data\+Slicer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+Stop the slice process
+
+If you want to break the slice processing early, you have to capture the slicer in the Do\+Process\+Callback and call the stop method. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/utility/processdataslicer.\+h\end{DoxyCompactItemize}

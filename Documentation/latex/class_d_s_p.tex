@@ -1,0 +1,80 @@
+\hypertarget{class_d_s_p}{}\doxysection{D\+SP Class Reference}
+\label{class_d_s_p}\index{DSP@{DSP}}
+Inheritance diagram for D\+SP\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_d_s_p}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s_p_aa5aec7c69fb38ce01fc9f7483fe022c5}\label{class_d_s_p_aa5aec7c69fb38ce01fc9f7483fe022c5}} 
+{\bfseries D\+SP} (const double expected\+\_\+sample\+\_\+rate=-\/1.\+0)
+\item 
+\mbox{\Hypertarget{class_d_s_p_a1166fff0bfb2326459b276dbf9a5f7d1}\label{class_d_s_p_a1166fff0bfb2326459b276dbf9a5f7d1}} 
+{\bfseries D\+SP} (const double loudness, const double expected\+\_\+sample\+\_\+rate=-\/1.\+0)
+\item 
+\mbox{\Hypertarget{class_d_s_p_afa49b77d9360d87717a04d8c9dbe5288}\label{class_d_s_p_afa49b77d9360d87717a04d8c9dbe5288}} 
+virtual void {\bfseries process} (N\+A\+M\+\_\+\+S\+A\+M\+P\+LE $\ast$$\ast$inputs, N\+A\+M\+\_\+\+S\+A\+M\+P\+LE $\ast$$\ast$outputs, const int num\+\_\+channels, const int num\+\_\+frames, const double input\+\_\+gain, const double output\+\_\+gain, const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&params)
+\item 
+\mbox{\Hypertarget{class_d_s_p_a33060068227057aca0e92128563aa506}\label{class_d_s_p_a33060068227057aca0e92128563aa506}} 
+virtual void {\bfseries finalize\+\_\+} (const int num\+\_\+frames)
+\item 
+\mbox{\Hypertarget{class_d_s_p_aa9161c509a22ba54aef2defb043ae8bd}\label{class_d_s_p_aa9161c509a22ba54aef2defb043ae8bd}} 
+double {\bfseries Get\+Expected\+Sample\+Rate} () const
+\item 
+\mbox{\Hypertarget{class_d_s_p_afe3e567b9f1ce11933ab6a9640f042ae}\label{class_d_s_p_afe3e567b9f1ce11933ab6a9640f042ae}} 
+bool {\bfseries Has\+Loudness} ()
+\item 
+\mbox{\Hypertarget{class_d_s_p_af36ec43e1e5174afaf205421ec79e95e}\label{class_d_s_p_af36ec43e1e5174afaf205421ec79e95e}} 
+void {\bfseries Set\+Normalize} (const bool normalize)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s_p_a6646f751d3ff4da898f39c9e1cc3868b}\label{class_d_s_p_a6646f751d3ff4da898f39c9e1cc3868b}} 
+void {\bfseries \+\_\+get\+\_\+params\+\_\+} (const std\+::unordered\+\_\+map$<$ std\+::string, double $>$ \&input\+\_\+params)
+\item 
+\mbox{\Hypertarget{class_d_s_p_a65693f5123821a45e4583039a85db99b}\label{class_d_s_p_a65693f5123821a45e4583039a85db99b}} 
+void {\bfseries \+\_\+apply\+\_\+input\+\_\+level\+\_\+} (N\+A\+M\+\_\+\+S\+A\+M\+P\+LE $\ast$$\ast$inputs, const int num\+\_\+channels, const int num\+\_\+frames, const double gain)
+\item 
+\mbox{\Hypertarget{class_d_s_p_aaeb16d086b6f113b7db48f6895f2cdc9}\label{class_d_s_p_aaeb16d086b6f113b7db48f6895f2cdc9}} 
+void {\bfseries \+\_\+ensure\+\_\+core\+\_\+dsp\+\_\+output\+\_\+ready\+\_\+} ()
+\item 
+\mbox{\Hypertarget{class_d_s_p_a647d2daf31e0a00d386412945cf0a24a}\label{class_d_s_p_a647d2daf31e0a00d386412945cf0a24a}} 
+virtual void {\bfseries \+\_\+process\+\_\+core\+\_\+} ()
+\item 
+\mbox{\Hypertarget{class_d_s_p_a37d42152952a550b6a7a064797b3f071}\label{class_d_s_p_a37d42152952a550b6a7a064797b3f071}} 
+void {\bfseries \+\_\+apply\+\_\+output\+\_\+level\+\_\+} (N\+A\+M\+\_\+\+S\+A\+M\+P\+LE $\ast$$\ast$outputs, const int num\+\_\+channels, const int num\+\_\+frames, const double gain)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_d_s_p_a8ea45b0573c512a54fb9acb9bcba3742}\label{class_d_s_p_a8ea45b0573c512a54fb9acb9bcba3742}} 
+double {\bfseries m\+Loudness}
+\item 
+\mbox{\Hypertarget{class_d_s_p_adff53694b6f605a0f896e5694edd7258}\label{class_d_s_p_adff53694b6f605a0f896e5694edd7258}} 
+double {\bfseries m\+Expected\+Sample\+Rate}
+\item 
+\mbox{\Hypertarget{class_d_s_p_a34457339f11d6ce7289d431dd6cf9a81}\label{class_d_s_p_a34457339f11d6ce7289d431dd6cf9a81}} 
+bool {\bfseries m\+Normalize\+Output\+Loudness}
+\item 
+\mbox{\Hypertarget{class_d_s_p_a1db1c2cf8e92ac58810d9b1e2ced25ea}\label{class_d_s_p_a1db1c2cf8e92ac58810d9b1e2ced25ea}} 
+std\+::unordered\+\_\+map$<$ std\+::string, double $>$ {\bfseries \+\_\+params}
+\item 
+\mbox{\Hypertarget{class_d_s_p_a07e6004fdcd795005f4a7b3995d926c8}\label{class_d_s_p_a07e6004fdcd795005f4a7b3995d926c8}} 
+bool {\bfseries \+\_\+stale\+\_\+params}
+\item 
+\mbox{\Hypertarget{class_d_s_p_a42a0e8e2e7c7017cbf407e28544415a6}\label{class_d_s_p_a42a0e8e2e7c7017cbf407e28544415a6}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+input\+\_\+post\+\_\+gain}
+\item 
+\mbox{\Hypertarget{class_d_s_p_aa0adaf5d12426e22147ef898a3d5c27f}\label{class_d_s_p_aa0adaf5d12426e22147ef898a3d5c27f}} 
+std\+::vector$<$ float $>$ {\bfseries \+\_\+core\+\_\+dsp\+\_\+output}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/\+Neural\+Amp\+Modeler\+Core/\+N\+A\+M/dsp.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/\+Neural\+Amp\+Modeler\+Core/\+N\+A\+M/dsp.\+cpp\end{DoxyCompactItemize}

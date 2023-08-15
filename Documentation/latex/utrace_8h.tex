@@ -1,0 +1,471 @@
+\hypertarget{utrace_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/utrace.h File Reference}
+\label{utrace_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/utrace.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/utrace.h}}
+
+
+C A\+PI\+: Definitions for I\+CU tracing/logging.  
+
+
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} enum \mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079}{U\+Trace\+Level}} \mbox{\hyperlink{utrace_8h_a1c9a998a4afd14b2288b6ce63e4a2d85}{U\+Trace\+Level}}
+\item 
+typedef enum \mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308}{U\+Trace\+Function\+Number}} \mbox{\hyperlink{utrace_8h_ae7cb0950d251b2ec8f8bf0c78dd96046}{U\+Trace\+Function\+Number}}
+\item 
+typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}{U\+Trace\+Entry}}(const void $\ast$context, int32\+\_\+t fn\+Number)
+\item 
+typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}{U\+Trace\+Exit}}(const void $\ast$context, int32\+\_\+t fn\+Number, const char $\ast$fmt, va\+\_\+list args)
+\item 
+typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} \mbox{\hyperlink{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}{U\+Trace\+Data}}(const void $\ast$context, int32\+\_\+t fn\+Number, int32\+\_\+t level, const char $\ast$fmt, va\+\_\+list args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079}{U\+Trace\+Level}} \{ \newline
+\mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079ad73020624fba9734da1067a92799a7fd}{U\+T\+R\+A\+C\+E\+\_\+\+O\+FF}} =-\/1, 
+\mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079a8e9415b7ad8550fa3d9dcc196f88fe98}{U\+T\+R\+A\+C\+E\+\_\+\+E\+R\+R\+OR}} =0, 
+\mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079a4329e6d348c1ce278aa5a70d9d678416}{U\+T\+R\+A\+C\+E\+\_\+\+W\+A\+R\+N\+I\+NG}} =3, 
+\mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079acf27fc8d57f1b0bd0a1700abcc48e9ad}{U\+T\+R\+A\+C\+E\+\_\+\+O\+P\+E\+N\+\_\+\+C\+L\+O\+SE}} =5, 
+\newline
+\mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079ae88684e6ac3d6f889b5d1603395c6bf1}{U\+T\+R\+A\+C\+E\+\_\+\+I\+N\+FO}} =7, 
+\mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079af0102c5618b566755d3d0315aeb18ff4}{U\+T\+R\+A\+C\+E\+\_\+\+V\+E\+R\+B\+O\+SE}} =9
+ \}
+\item 
+enum \mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308}{U\+Trace\+Function\+Number}} \{ \newline
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+T\+A\+RT} =0, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+\_\+\+I\+N\+IT} =U\+T\+R\+A\+C\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+S\+T\+A\+RT, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+\_\+\+C\+L\+E\+A\+N\+UP}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a16b8c7b99796a8346d55b8ba0299b6db}{U\+T\+R\+A\+C\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+L\+I\+M\+IT}}, 
+\newline
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+RT} =0x1000, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+O\+P\+EN} =U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+A\+RT, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+O\+P\+E\+N\+\_\+\+P\+A\+C\+K\+A\+GE}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+O\+P\+E\+N\+\_\+\+A\+L\+G\+O\+R\+I\+T\+H\+M\+IC}, 
+\newline
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+C\+L\+O\+NE}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+C\+L\+O\+SE}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+F\+L\+U\+S\+H\+\_\+\+C\+A\+C\+HE}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+L\+O\+AD}, 
+\newline
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+N\+V\+\_\+\+U\+N\+L\+O\+AD}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308ae5986fb60ce52a8e3928873176406bf5}{U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+L\+I\+M\+IT}}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+L\+L\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+RT} =0x2000, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+O\+P\+EN} =U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+L\+L\+A\+T\+I\+O\+N\+\_\+\+S\+T\+A\+RT, 
+\newline
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+C\+L\+O\+SE}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+S\+T\+R\+C\+O\+LL}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+G\+E\+T\+\_\+\+S\+O\+R\+T\+K\+EY}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+G\+E\+T\+L\+O\+C\+A\+LE}, 
+\newline
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+N\+E\+X\+T\+S\+O\+R\+T\+K\+E\+Y\+P\+A\+RT}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+S\+T\+R\+C\+O\+L\+L\+I\+T\+ER}, 
+{\bfseries U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+O\+P\+E\+N\+\_\+\+F\+R\+O\+M\+\_\+\+S\+H\+O\+R\+T\+\_\+\+S\+T\+R\+I\+NG}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a18dca4774f919146c684b8071fb976f2}{U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+S\+T\+R\+C\+O\+L\+L\+U\+T\+F8}}, 
+\newline
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a3b0b647c015de2cc2346797232ebc3a9}{U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+L\+L\+A\+T\+I\+O\+N\+\_\+\+L\+I\+M\+IT}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a86015e94c5e12f1eddc552036e678df2}{U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+S\+T\+A\+RT}} =0x3000, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a9ce49bcce73ecaf836ae6afb59fb8d38}{U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+R\+E\+S\+O\+U\+R\+CE}} =U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+S\+T\+A\+RT, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a4b61d026018526c7708e9d3b99e48133}{U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+B\+U\+N\+D\+LE}}, 
+\newline
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a85a65aacd75ea3ff72385deb9e0972f2}{U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+LE}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308ac08925b9fed621934d63325a9d1ea381}{U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+R\+E\+S\+\_\+\+F\+I\+LE}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308adc7c76609b5e07c3693c596ba27335a2}{U\+T\+R\+A\+C\+E\+\_\+\+R\+E\+S\+\_\+\+D\+A\+T\+A\+\_\+\+L\+I\+M\+IT}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a4e009d643b954d675880d288da512459}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+S\+T\+A\+RT}} =0x4000, 
+\newline
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308af5c0a7b71785aaa95443f79fb0f2b905}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER}} = U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+S\+T\+A\+RT, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a43b7d767e1efb264ef9552904d9f180f}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+W\+O\+RD}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a5108fe0fd5a171761c0f0d97657c7300}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+L\+I\+NE}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a773111da8901eb083eddbc4bf93230d3}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+S\+E\+N\+T\+E\+N\+CE}}, 
+\newline
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a97a23b1c2675dea309615a78b0dfbcb4}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+T\+I\+T\+LE}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a0d5758489b9feb53124ba77e17d07d74}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+B\+R\+E\+A\+K\+\_\+\+E\+N\+G\+I\+NE}}, 
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308a7d42702c04b0cd2c8d50f83a1f76986f}{U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+L\+I\+M\+IT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_a5d07c9a4cf9a8ba4a9c67f56e7d67ecd}{utrace\+\_\+set\+Level}} (int32\+\_\+t trace\+Level)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_ab40ab8fd1014c34c49ce000bd09164f5}{utrace\+\_\+get\+Level}} (void)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_a2549611e2c929a2470218d1f6342fb29}{utrace\+\_\+set\+Functions}} (const void $\ast$context, \mbox{\hyperlink{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}{U\+Trace\+Entry}} $\ast$e, \mbox{\hyperlink{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}{U\+Trace\+Exit}} $\ast$x, \mbox{\hyperlink{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}{U\+Trace\+Data}} $\ast$d)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_a4c64f72a4fb4d68b975f71ffc7769822}{utrace\+\_\+get\+Functions}} (const void $\ast$$\ast$context, \mbox{\hyperlink{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}{U\+Trace\+Entry}} $\ast$$\ast$e, \mbox{\hyperlink{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}{U\+Trace\+Exit}} $\ast$$\ast$x, \mbox{\hyperlink{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}{U\+Trace\+Data}} $\ast$$\ast$d)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_aee820c762d6d591b36a5c39068bd581c}{utrace\+\_\+vformat}} (char $\ast$out\+Buf, int32\+\_\+t capacity, int32\+\_\+t indent, const char $\ast$fmt, va\+\_\+list args)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_afe6af6acdb5857887be0c0c06c91ac4f}{utrace\+\_\+format}} (char $\ast$out\+Buf, int32\+\_\+t capacity, int32\+\_\+t indent, const char $\ast$fmt,...)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{utrace_8h_a2e1564b9536591c5616dee0325c0d94e}{utrace\+\_\+function\+Name}} (int32\+\_\+t fn\+Number)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Definitions for I\+CU tracing/logging. 
+
+This provides A\+PI for debugging the internals of I\+CU without the use of a traditional debugger.
+
+By default, tracing is disabled in I\+CU. If you need to debug I\+CU with tracing, please compile I\+CU with the --enable-\/tracing configure option. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}\label{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}} 
+\index{utrace.h@{utrace.h}!UTraceData@{UTraceData}}
+\index{UTraceData@{UTraceData}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceData}{UTraceData}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Trace\+Data(const void $\ast$context, int32\+\_\+t fn\+Number, int32\+\_\+t level, const char $\ast$fmt, va\+\_\+list args)}
+
+Type signature for the trace function to be called from within an I\+CU function to display data or messages. 
+\begin{DoxyParams}{Parameters}
+{\em context} & value supplied at the time the trace functions are set. \\
+\hline
+{\em fn\+Number} & Enum value indicating the I\+CU function being exited. \\
+\hline
+{\em level} & The current tracing level \\
+\hline
+{\em fmt} & A format string describing the tracing data that is supplied as variable args \\
+\hline
+{\em args} & The data being traced, passed as variable args. @stable I\+CU 2.\+8 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}\label{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}} 
+\index{utrace.h@{utrace.h}!UTraceEntry@{UTraceEntry}}
+\index{UTraceEntry@{UTraceEntry}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceEntry}{UTraceEntry}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Trace\+Entry(const void $\ast$context, int32\+\_\+t fn\+Number)}
+
+Type signature for the trace function to be called when entering a function. 
+\begin{DoxyParams}{Parameters}
+{\em context} & value supplied at the time the trace functions are set. \\
+\hline
+{\em fn\+Number} & Enum value indicating the I\+CU function being entered. @stable I\+CU 2.\+8 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}\label{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}} 
+\index{utrace.h@{utrace.h}!UTraceExit@{UTraceExit}}
+\index{UTraceExit@{UTraceExit}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceExit}{UTraceExit}}
+{\footnotesize\ttfamily typedef void \mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} U\+Trace\+Exit(const void $\ast$context, int32\+\_\+t fn\+Number, const char $\ast$fmt, va\+\_\+list args)}
+
+Type signature for the trace function to be called when exiting from a function. 
+\begin{DoxyParams}{Parameters}
+{\em context} & value supplied at the time the trace functions are set. \\
+\hline
+{\em fn\+Number} & Enum value indicating the I\+CU function being exited. \\
+\hline
+{\em fmt} & A formatting string that describes the number and types of arguments included with the variable args. The fmt string has the same form as the utrace\+\_\+vformat format string. \\
+\hline
+{\em args} & A variable arguments list. Contents are described by the fmt parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utrace_8h_aee820c762d6d591b36a5c39068bd581c}{utrace\+\_\+vformat}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utrace_8h_ae7cb0950d251b2ec8f8bf0c78dd96046}\label{utrace_8h_ae7cb0950d251b2ec8f8bf0c78dd96046}} 
+\index{utrace.h@{utrace.h}!UTraceFunctionNumber@{UTraceFunctionNumber}}
+\index{UTraceFunctionNumber@{UTraceFunctionNumber}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceFunctionNumber}{UTraceFunctionNumber}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308}{U\+Trace\+Function\+Number}} \mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308}{U\+Trace\+Function\+Number}}}
+
+These are the I\+CU functions that will be traced when tracing is enabled. @stable I\+CU 2.\+8 \mbox{\Hypertarget{utrace_8h_a1c9a998a4afd14b2288b6ce63e4a2d85}\label{utrace_8h_a1c9a998a4afd14b2288b6ce63e4a2d85}} 
+\index{utrace.h@{utrace.h}!UTraceLevel@{UTraceLevel}}
+\index{UTraceLevel@{UTraceLevel}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceLevel}{UTraceLevel}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} enum \mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079}{U\+Trace\+Level}} \mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079}{U\+Trace\+Level}}}
+
+\mbox{\hyperlink{class_trace}{Trace}} severity levels. Higher levels increase the verbosity of the trace output. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utrace_8h_a5d07c9a4cf9a8ba4a9c67f56e7d67ecd}{utrace\+\_\+set\+Level}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308}\label{utrace_8h_a6076ad13223437bd15a3266791905308}} 
+\index{utrace.h@{utrace.h}!UTraceFunctionNumber@{UTraceFunctionNumber}}
+\index{UTraceFunctionNumber@{UTraceFunctionNumber}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceFunctionNumber}{UTraceFunctionNumber}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308}{U\+Trace\+Function\+Number}}}
+
+These are the I\+CU functions that will be traced when tracing is enabled. @stable I\+CU 2.\+8 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_FUNCTION\_LIMIT@{UTRACE\_FUNCTION\_LIMIT}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_FUNCTION\_LIMIT@{UTRACE\_FUNCTION\_LIMIT}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a16b8c7b99796a8346d55b8ba0299b6db}\label{utrace_8h_a6076ad13223437bd15a3266791905308a16b8c7b99796a8346d55b8ba0299b6db}} 
+U\+T\+R\+A\+C\+E\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+L\+I\+M\+IT&One more than the highest normal collation trace location. \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000228}{Deprecated}}]I\+CU 58 The numeric value may change over time, see I\+CU ticket \#12420. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_CONVERSION\_LIMIT@{UTRACE\_CONVERSION\_LIMIT}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_CONVERSION\_LIMIT@{UTRACE\_CONVERSION\_LIMIT}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308ae5986fb60ce52a8e3928873176406bf5}\label{utrace_8h_a6076ad13223437bd15a3266791905308ae5986fb60ce52a8e3928873176406bf5}} 
+U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+\_\+\+L\+I\+M\+IT&One more than the highest normal collation trace location. \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000229}{Deprecated}}]I\+CU 58 The numeric value may change over time, see I\+CU ticket \#12420. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UCOL\_STRCOLLUTF8@{UTRACE\_UCOL\_STRCOLLUTF8}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UCOL\_STRCOLLUTF8@{UTRACE\_UCOL\_STRCOLLUTF8}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a18dca4774f919146c684b8071fb976f2}\label{utrace_8h_a6076ad13223437bd15a3266791905308a18dca4774f919146c684b8071fb976f2}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+C\+O\+L\+\_\+\+S\+T\+R\+C\+O\+L\+L\+U\+T\+F8&@stable I\+CU 50 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_COLLATION\_LIMIT@{UTRACE\_COLLATION\_LIMIT}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_COLLATION\_LIMIT@{UTRACE\_COLLATION\_LIMIT}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a3b0b647c015de2cc2346797232ebc3a9}\label{utrace_8h_a6076ad13223437bd15a3266791905308a3b0b647c015de2cc2346797232ebc3a9}} 
+U\+T\+R\+A\+C\+E\+\_\+\+C\+O\+L\+L\+A\+T\+I\+O\+N\+\_\+\+L\+I\+M\+IT&One more than the highest normal collation trace location. \begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000230}{Deprecated}}]I\+CU 58 The numeric value may change over time, see I\+CU ticket \#12420. \end{DoxyRefDesc}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UDATA\_START@{UTRACE\_UDATA\_START}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UDATA\_START@{UTRACE\_UDATA\_START}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a86015e94c5e12f1eddc552036e678df2}\label{utrace_8h_a6076ad13223437bd15a3266791905308a86015e94c5e12f1eddc552036e678df2}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+S\+T\+A\+RT&The lowest resource/data location. @stable I\+CU 65 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UDATA\_RESOURCE@{UTRACE\_UDATA\_RESOURCE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UDATA\_RESOURCE@{UTRACE\_UDATA\_RESOURCE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a9ce49bcce73ecaf836ae6afb59fb8d38}\label{utrace_8h_a6076ad13223437bd15a3266791905308a9ce49bcce73ecaf836ae6afb59fb8d38}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+R\+E\+S\+O\+U\+R\+CE&Indicates that a value was read from a resource bundle. Provides three C-\/style strings to U\+Trace\+Data\+: type, file name, and resource path. The possible types are\+:
+
+
+\begin{DoxyItemize}
+\item \char`\"{}string\char`\"{} (a string value was accessed)
+\item \char`\"{}binary\char`\"{} (a binary value was accessed)
+\item \char`\"{}intvector\char`\"{} (a integer vector value was accessed)
+\item \char`\"{}int\char`\"{} (a signed integer value was accessed)
+\item \char`\"{}uint\char`\"{} (a unsigned integer value was accessed)
+\item \char`\"{}get\char`\"{} (a path was loaded, but the value was not accessed)
+\item \char`\"{}getalias\char`\"{} (a path was loaded, and an alias was resolved)
+\end{DoxyItemize}
+
+@stable I\+CU 65 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UDATA\_BUNDLE@{UTRACE\_UDATA\_BUNDLE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UDATA\_BUNDLE@{UTRACE\_UDATA\_BUNDLE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a4b61d026018526c7708e9d3b99e48133}\label{utrace_8h_a6076ad13223437bd15a3266791905308a4b61d026018526c7708e9d3b99e48133}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+B\+U\+N\+D\+LE&Indicates that a resource bundle was opened.
+
+Provides one C-\/style string to U\+Trace\+Data\+: file name. @stable I\+CU 65 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UDATA\_DATA\_FILE@{UTRACE\_UDATA\_DATA\_FILE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UDATA\_DATA\_FILE@{UTRACE\_UDATA\_DATA\_FILE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a85a65aacd75ea3ff72385deb9e0972f2}\label{utrace_8h_a6076ad13223437bd15a3266791905308a85a65aacd75ea3ff72385deb9e0972f2}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+D\+A\+T\+A\+\_\+\+F\+I\+LE&Indicates that a data file was opened, but not $\ast$.res files.
+
+Provides one C-\/style string to U\+Trace\+Data\+: file name.
+
+@stable I\+CU 65 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UDATA\_RES\_FILE@{UTRACE\_UDATA\_RES\_FILE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UDATA\_RES\_FILE@{UTRACE\_UDATA\_RES\_FILE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308ac08925b9fed621934d63325a9d1ea381}\label{utrace_8h_a6076ad13223437bd15a3266791905308ac08925b9fed621934d63325a9d1ea381}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+R\+E\+S\+\_\+\+F\+I\+LE&Indicates that a $\ast$.res file was opened.
+
+This differs from U\+T\+R\+A\+C\+E\+\_\+\+U\+D\+A\+T\+A\+\_\+\+B\+U\+N\+D\+LE because a res file is typically opened only once per application runtime, but the bundle corresponding to that res file may be opened many times.
+
+Provides one C-\/style string to U\+Trace\+Data\+: file name.
+
+@stable I\+CU 65 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_RES\_DATA\_LIMIT@{UTRACE\_RES\_DATA\_LIMIT}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_RES\_DATA\_LIMIT@{UTRACE\_RES\_DATA\_LIMIT}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308adc7c76609b5e07c3693c596ba27335a2}\label{utrace_8h_a6076ad13223437bd15a3266791905308adc7c76609b5e07c3693c596ba27335a2}} 
+U\+T\+R\+A\+C\+E\+\_\+\+R\+E\+S\+\_\+\+D\+A\+T\+A\+\_\+\+L\+I\+M\+IT&One more than the highest normal resource/data trace location. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_START@{UTRACE\_UBRK\_START}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_START@{UTRACE\_UBRK\_START}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a4e009d643b954d675880d288da512459}\label{utrace_8h_a6076ad13223437bd15a3266791905308a4e009d643b954d675880d288da512459}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+S\+T\+A\+RT&The lowest break iterator location. @stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_CREATE\_CHARACTER@{UTRACE\_UBRK\_CREATE\_CHARACTER}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_CREATE\_CHARACTER@{UTRACE\_UBRK\_CREATE\_CHARACTER}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308af5c0a7b71785aaa95443f79fb0f2b905}\label{utrace_8h_a6076ad13223437bd15a3266791905308af5c0a7b71785aaa95443f79fb0f2b905}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+C\+H\+A\+R\+A\+C\+T\+ER&Indicates that a character instance of break iterator was created.
+
+@stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_CREATE\_WORD@{UTRACE\_UBRK\_CREATE\_WORD}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_CREATE\_WORD@{UTRACE\_UBRK\_CREATE\_WORD}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a43b7d767e1efb264ef9552904d9f180f}\label{utrace_8h_a6076ad13223437bd15a3266791905308a43b7d767e1efb264ef9552904d9f180f}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+W\+O\+RD&Indicates that a word instance of break iterator was created.
+
+@stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_CREATE\_LINE@{UTRACE\_UBRK\_CREATE\_LINE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_CREATE\_LINE@{UTRACE\_UBRK\_CREATE\_LINE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a5108fe0fd5a171761c0f0d97657c7300}\label{utrace_8h_a6076ad13223437bd15a3266791905308a5108fe0fd5a171761c0f0d97657c7300}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+L\+I\+NE&Indicates that a line instance of break iterator was created.
+
+Provides one C-\/style string to U\+Trace\+Data\+: the lb value (\char`\"{}\char`\"{}, \char`\"{}loose\char`\"{}, \char`\"{}strict\char`\"{}, or \char`\"{}normal\char`\"{}).
+
+@stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_CREATE\_SENTENCE@{UTRACE\_UBRK\_CREATE\_SENTENCE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_CREATE\_SENTENCE@{UTRACE\_UBRK\_CREATE\_SENTENCE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a773111da8901eb083eddbc4bf93230d3}\label{utrace_8h_a6076ad13223437bd15a3266791905308a773111da8901eb083eddbc4bf93230d3}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+S\+E\+N\+T\+E\+N\+CE&Indicates that a sentence instance of break iterator was created.
+
+@stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_CREATE\_TITLE@{UTRACE\_UBRK\_CREATE\_TITLE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_CREATE\_TITLE@{UTRACE\_UBRK\_CREATE\_TITLE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a97a23b1c2675dea309615a78b0dfbcb4}\label{utrace_8h_a6076ad13223437bd15a3266791905308a97a23b1c2675dea309615a78b0dfbcb4}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+T\+I\+T\+LE&Indicates that a title instance of break iterator was created.
+
+@stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_CREATE\_BREAK\_ENGINE@{UTRACE\_UBRK\_CREATE\_BREAK\_ENGINE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_CREATE\_BREAK\_ENGINE@{UTRACE\_UBRK\_CREATE\_BREAK\_ENGINE}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a0d5758489b9feb53124ba77e17d07d74}\label{utrace_8h_a6076ad13223437bd15a3266791905308a0d5758489b9feb53124ba77e17d07d74}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+C\+R\+E\+A\+T\+E\+\_\+\+B\+R\+E\+A\+K\+\_\+\+E\+N\+G\+I\+NE&Indicates that an internal dictionary break engine was created.
+
+Provides one C-\/style string to U\+Trace\+Data\+: the script code of what the break engine cover (\char`\"{}\+Hani\char`\"{}, \char`\"{}\+Khmr\char`\"{}, \char`\"{}\+Laoo\char`\"{}, \char`\"{}\+Mymr\char`\"{}, or \char`\"{}\+Thai\char`\"{}).
+
+@stable I\+CU 67 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_UBRK\_LIMIT@{UTRACE\_UBRK\_LIMIT}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_UBRK\_LIMIT@{UTRACE\_UBRK\_LIMIT}}}\mbox{\Hypertarget{utrace_8h_a6076ad13223437bd15a3266791905308a7d42702c04b0cd2c8d50f83a1f76986f}\label{utrace_8h_a6076ad13223437bd15a3266791905308a7d42702c04b0cd2c8d50f83a1f76986f}} 
+U\+T\+R\+A\+C\+E\+\_\+\+U\+B\+R\+K\+\_\+\+L\+I\+M\+IT&One more than the highest normal break iterator trace location. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079}} 
+\index{utrace.h@{utrace.h}!UTraceLevel@{UTraceLevel}}
+\index{UTraceLevel@{UTraceLevel}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{UTraceLevel}{UTraceLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{utrace_8h_a87213b0396d0aa046bd9116e89152079}{U\+Trace\+Level}}}
+
+\mbox{\hyperlink{class_trace}{Trace}} severity levels. Higher levels increase the verbosity of the trace output. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utrace_8h_a5d07c9a4cf9a8ba4a9c67f56e7d67ecd}{utrace\+\_\+set\+Level}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_OFF@{UTRACE\_OFF}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_OFF@{UTRACE\_OFF}}}\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079ad73020624fba9734da1067a92799a7fd}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079ad73020624fba9734da1067a92799a7fd}} 
+U\+T\+R\+A\+C\+E\+\_\+\+O\+FF&Disable all tracing @stable I\+CU 2.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_ERROR@{UTRACE\_ERROR}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_ERROR@{UTRACE\_ERROR}}}\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079a8e9415b7ad8550fa3d9dcc196f88fe98}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079a8e9415b7ad8550fa3d9dcc196f88fe98}} 
+U\+T\+R\+A\+C\+E\+\_\+\+E\+R\+R\+OR&\mbox{\hyperlink{class_trace}{Trace}} error conditions only @stable I\+CU 2.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_WARNING@{UTRACE\_WARNING}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_WARNING@{UTRACE\_WARNING}}}\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079a4329e6d348c1ce278aa5a70d9d678416}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079a4329e6d348c1ce278aa5a70d9d678416}} 
+U\+T\+R\+A\+C\+E\+\_\+\+W\+A\+R\+N\+I\+NG&\mbox{\hyperlink{class_trace}{Trace}} errors and warnings @stable I\+CU 2.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_OPEN\_CLOSE@{UTRACE\_OPEN\_CLOSE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_OPEN\_CLOSE@{UTRACE\_OPEN\_CLOSE}}}\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079acf27fc8d57f1b0bd0a1700abcc48e9ad}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079acf27fc8d57f1b0bd0a1700abcc48e9ad}} 
+U\+T\+R\+A\+C\+E\+\_\+\+O\+P\+E\+N\+\_\+\+C\+L\+O\+SE&\mbox{\hyperlink{class_trace}{Trace}} opens and closes of I\+CU services @stable I\+CU 2.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_INFO@{UTRACE\_INFO}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_INFO@{UTRACE\_INFO}}}\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079ae88684e6ac3d6f889b5d1603395c6bf1}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079ae88684e6ac3d6f889b5d1603395c6bf1}} 
+U\+T\+R\+A\+C\+E\+\_\+\+I\+N\+FO&\mbox{\hyperlink{class_trace}{Trace}} an intermediate number of I\+CU operations @stable I\+CU 2.\+8 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTRACE\_VERBOSE@{UTRACE\_VERBOSE}!utrace.h@{utrace.h}}\index{utrace.h@{utrace.h}!UTRACE\_VERBOSE@{UTRACE\_VERBOSE}}}\mbox{\Hypertarget{utrace_8h_a87213b0396d0aa046bd9116e89152079af0102c5618b566755d3d0315aeb18ff4}\label{utrace_8h_a87213b0396d0aa046bd9116e89152079af0102c5618b566755d3d0315aeb18ff4}} 
+U\+T\+R\+A\+C\+E\+\_\+\+V\+E\+R\+B\+O\+SE&\mbox{\hyperlink{class_trace}{Trace}} the maximum number of I\+CU operations @stable I\+CU 2.\+8 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utrace_8h_afe6af6acdb5857887be0c0c06c91ac4f}\label{utrace_8h_afe6af6acdb5857887be0c0c06c91ac4f}} 
+\index{utrace.h@{utrace.h}!utrace\_format@{utrace\_format}}
+\index{utrace\_format@{utrace\_format}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_format()}{utrace\_format()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+format (\begin{DoxyParamCaption}\item[{char $\ast$}]{out\+Buf,  }\item[{int32\+\_\+t}]{capacity,  }\item[{int32\+\_\+t}]{indent,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_trace}{Trace}} output Formatter. An application\textquotesingle{}s U\+Trace\+Data tracing functions may call this function to format any additional trace data, beyond that provided by default, in human readable form with the same formatting conventions used by \mbox{\hyperlink{utrace_8h_aee820c762d6d591b36a5c39068bd581c}{utrace\+\_\+vformat()}}. 
+\begin{DoxyParams}{Parameters}
+{\em out\+Buf} & pointer to a buffer to receive the formatted output. Output will be nul terminated if there is space in the buffer -\/ if the length of the requested output $<$ the output buffer size. \\
+\hline
+{\em capacity} & Length of the output buffer. \\
+\hline
+{\em indent} & Number of spaces to indent the output. Intended to allow data displayed from nested functions to be indented for readability. \\
+\hline
+{\em fmt} & Format specification for the data to output \\
+\hline
+{\em ...} & Data to be formatted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of formatted output, including the terminating N\+UL. If buffer capacity is insufficient, the required capacity is returned. @stable I\+CU 2.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utrace_8h_a2e1564b9536591c5616dee0325c0d94e}\label{utrace_8h_a2e1564b9536591c5616dee0325c0d94e}} 
+\index{utrace.h@{utrace.h}!utrace\_functionName@{utrace\_functionName}}
+\index{utrace\_functionName@{utrace\_functionName}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_functionName()}{utrace\_functionName()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+function\+Name (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{fn\+Number }\end{DoxyParamCaption})}
+
+Get the name of a function from its trace function number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fn\+Number} & The trace number for an I\+CU function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name string for the function.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{utrace_8h_a6076ad13223437bd15a3266791905308}{U\+Trace\+Function\+Number}} @stable I\+CU 2.\+8 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{utrace_8h_a4c64f72a4fb4d68b975f71ffc7769822}\label{utrace_8h_a4c64f72a4fb4d68b975f71ffc7769822}} 
+\index{utrace.h@{utrace.h}!utrace\_getFunctions@{utrace\_getFunctions}}
+\index{utrace\_getFunctions@{utrace\_getFunctions}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_getFunctions()}{utrace\_getFunctions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+get\+Functions (\begin{DoxyParamCaption}\item[{const void $\ast$$\ast$}]{context,  }\item[{\mbox{\hyperlink{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}{U\+Trace\+Entry}} $\ast$$\ast$}]{e,  }\item[{\mbox{\hyperlink{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}{U\+Trace\+Exit}} $\ast$$\ast$}]{x,  }\item[{\mbox{\hyperlink{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}{U\+Trace\+Data}} $\ast$$\ast$}]{d }\end{DoxyParamCaption})}
+
+Get the currently installed I\+CU tracing functions. Note that a null function pointer will be returned if no trace function has been set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The currently installed tracing context. \\
+\hline
+{\em e} & The currently installed U\+Trace\+Entry function. \\
+\hline
+{\em x} & The currently installed U\+Trace\+Exit function. \\
+\hline
+{\em d} & The currently installed U\+Trace\+Data function. @stable I\+CU 2.\+8 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utrace_8h_ab40ab8fd1014c34c49ce000bd09164f5}\label{utrace_8h_ab40ab8fd1014c34c49ce000bd09164f5}} 
+\index{utrace.h@{utrace.h}!utrace\_getLevel@{utrace\_getLevel}}
+\index{utrace\_getLevel@{utrace\_getLevel}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_getLevel()}{utrace\_getLevel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+get\+Level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Getter for the trace level. \begin{DoxyReturn}{Returns}
+The U\+Trace\+Level value being used by I\+CU. @stable I\+CU 2.\+8 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utrace_8h_a2549611e2c929a2470218d1f6342fb29}\label{utrace_8h_a2549611e2c929a2470218d1f6342fb29}} 
+\index{utrace.h@{utrace.h}!utrace\_setFunctions@{utrace\_setFunctions}}
+\index{utrace\_setFunctions@{utrace\_setFunctions}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_setFunctions()}{utrace\_setFunctions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+set\+Functions (\begin{DoxyParamCaption}\item[{const void $\ast$}]{context,  }\item[{\mbox{\hyperlink{utrace_8h_a71d1c44990c4b48df4ee495a6b3d2e89}{U\+Trace\+Entry}} $\ast$}]{e,  }\item[{\mbox{\hyperlink{utrace_8h_aae8ec40b576f3076709e460b3e363fbe}{U\+Trace\+Exit}} $\ast$}]{x,  }\item[{\mbox{\hyperlink{utrace_8h_a763bd43af28f1d07735652d45e4e2cfe}{U\+Trace\+Data}} $\ast$}]{d }\end{DoxyParamCaption})}
+
+Set I\+CU Tracing functions. Installs application-\/provided tracing functions into I\+CU. After doing this, subsequent I\+CU operations will call back to the installed functions, providing a trace of the use of I\+CU. Passing a N\+U\+LL pointer for a tracing function is allowed, and inhibits tracing action at points where that function would be called. 
+
+Tracing and Threads\+: Tracing functions are global to a process, and will be called in response to I\+CU operations performed by any thread. If tracing of an individual thread is desired, the tracing functions must themselves filter by checking that the current thread is the desired thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & an uninterpreted pointer. Whatever is passed in here will in turn be passed to each of the tracing functions U\+Trace\+Entry, U\+Trace\+Exit and U\+Trace\+Data. I\+CU does not use or alter this pointer. \\
+\hline
+{\em e} & Callback function to be called on entry to a a traced I\+CU function. \\
+\hline
+{\em x} & Callback function to be called on exit from a traced I\+CU function. \\
+\hline
+{\em d} & Callback function to be called from within a traced I\+CU function, for the purpose of providing data to the trace.\\
+\hline
+\end{DoxyParams}
+@stable I\+CU 2.\+8 \mbox{\Hypertarget{utrace_8h_a5d07c9a4cf9a8ba4a9c67f56e7d67ecd}\label{utrace_8h_a5d07c9a4cf9a8ba4a9c67f56e7d67ecd}} 
+\index{utrace.h@{utrace.h}!utrace\_setLevel@{utrace\_setLevel}}
+\index{utrace\_setLevel@{utrace\_setLevel}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_setLevel()}{utrace\_setLevel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+set\+Level (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{trace\+Level }\end{DoxyParamCaption})}
+
+Setter for the trace level. 
+\begin{DoxyParams}{Parameters}
+{\em trace\+Level} & A U\+Trace\+Level value. @stable I\+CU 2.\+8 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utrace_8h_aee820c762d6d591b36a5c39068bd581c}\label{utrace_8h_aee820c762d6d591b36a5c39068bd581c}} 
+\index{utrace.h@{utrace.h}!utrace\_vformat@{utrace\_vformat}}
+\index{utrace\_vformat@{utrace\_vformat}!utrace.h@{utrace.h}}
+\doxysubsubsection{\texorpdfstring{utrace\_vformat()}{utrace\_vformat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 utrace\+\_\+vformat (\begin{DoxyParamCaption}\item[{char $\ast$}]{out\+Buf,  }\item[{int32\+\_\+t}]{capacity,  }\item[{int32\+\_\+t}]{indent,  }\item[{const char $\ast$}]{fmt,  }\item[{va\+\_\+list}]{args }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_trace}{Trace}} output Formatter. An application\textquotesingle{}s U\+Trace\+Data tracing functions may call back to this function to format the trace output in a human readable form. Note that a U\+Trace\+Data function may choose to not format the data; it could, for example, save it in in the raw form it was received (more compact), leaving formatting for a later trace analysis tool. 
+\begin{DoxyParams}{Parameters}
+{\em out\+Buf} & pointer to a buffer to receive the formatted output. Output will be nul terminated if there is space in the buffer -\/ if the length of the requested output $<$ the output buffer size. \\
+\hline
+{\em capacity} & Length of the output buffer. \\
+\hline
+{\em indent} & Number of spaces to indent the output. Intended to allow data displayed from nested functions to be indented for readability. \\
+\hline
+{\em fmt} & Format specification for the data to output \\
+\hline
+{\em args} & Data to be formatted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of formatted output, including the terminating N\+UL. If buffer capacity is insufficient, the required capacity is returned. @stable I\+CU 2.\+8 
+\end{DoxyReturn}

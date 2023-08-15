@@ -1,0 +1,107 @@
+\hypertarget{class_a_a_x___i_a_c_f_view_container___v2}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container\+\_\+\+V2 Class Reference}
+\label{class_a_a_x___i_a_c_f_view_container___v2}\index{AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}}
+
+
+Supplemental interface for the A\+AX host\textquotesingle{}s view of a single instance of an effect. Used by both clients of the host app and by effect components.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container\+\_\+\+V2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_a_a_x___i_a_c_f_view_container___v2}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Host event handlers}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_view_container___v2_a38ba1d1e161cac126d34adf5d5b5f288}{Handle\+Multiple\+Parameters\+Mouse\+Down}} (const \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} $\ast$in\+Param\+I\+Ds, uint32\+\_\+t in\+Num\+Of\+Params, uint32\+\_\+t in\+Modifiers)=0
+\begin{DoxyCompactList}\small\item\em Alert the host to a mouse down event. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_view_container___v2_aab92e32e54f43a12e02e1449b1d5b664}{Handle\+Multiple\+Parameters\+Mouse\+Drag}} (const \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} $\ast$in\+Param\+I\+Ds, uint32\+\_\+t in\+Num\+Of\+Params, uint32\+\_\+t in\+Modifiers)=0
+\begin{DoxyCompactList}\small\item\em Alert the host to a mouse drag event. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_view_container___v2_a60e8745816704fe309ce9fa9de9d7d79}{Handle\+Multiple\+Parameters\+Mouse\+Up}} (const \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} $\ast$in\+Param\+I\+Ds, uint32\+\_\+t in\+Num\+Of\+Params, uint32\+\_\+t in\+Modifiers)=0
+\begin{DoxyCompactList}\small\item\em Alert the host to a mouse up event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Supplemental interface for the A\+AX host\textquotesingle{}s view of a single instance of an effect. Used by both clients of the host app and by effect components. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_view_container}{A\+A\+X\+\_\+\+I\+View\+Container}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_view_container___v2_a38ba1d1e161cac126d34adf5d5b5f288}\label{class_a_a_x___i_a_c_f_view_container___v2_a38ba1d1e161cac126d34adf5d5b5f288}} 
+\index{AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}!HandleMultipleParametersMouseDown@{HandleMultipleParametersMouseDown}}
+\index{HandleMultipleParametersMouseDown@{HandleMultipleParametersMouseDown}!AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}}
+\doxysubsubsection{\texorpdfstring{HandleMultipleParametersMouseDown()}{HandleMultipleParametersMouseDown()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container\+\_\+\+V2\+::\+Handle\+Multiple\+Parameters\+Mouse\+Down (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} $\ast$}]{in\+Param\+I\+Ds,  }\item[{uint32\+\_\+t}]{in\+Num\+Of\+Params,  }\item[{uint32\+\_\+t}]{in\+Modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Alert the host to a mouse down event. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Param\+I\+Ds} & I\+Ds of the parameters that belong to the same \mbox{\hyperlink{class_g_u_i}{G\+UI}} element whose controls are being edited \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Num\+Of\+Params} & Number of parameter I\+DS \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Modifiers} & A bitmask of \mbox{\hyperlink{_a_a_x___enums_8h_a47756e0a56d00468b7045eb26500cb78}{A\+A\+X\+\_\+\+E\+Modifiers}} values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_view_container___v2_aab92e32e54f43a12e02e1449b1d5b664}\label{class_a_a_x___i_a_c_f_view_container___v2_aab92e32e54f43a12e02e1449b1d5b664}} 
+\index{AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}!HandleMultipleParametersMouseDrag@{HandleMultipleParametersMouseDrag}}
+\index{HandleMultipleParametersMouseDrag@{HandleMultipleParametersMouseDrag}!AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}}
+\doxysubsubsection{\texorpdfstring{HandleMultipleParametersMouseDrag()}{HandleMultipleParametersMouseDrag()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container\+\_\+\+V2\+::\+Handle\+Multiple\+Parameters\+Mouse\+Drag (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} $\ast$}]{in\+Param\+I\+Ds,  }\item[{uint32\+\_\+t}]{in\+Num\+Of\+Params,  }\item[{uint32\+\_\+t}]{in\+Modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Alert the host to a mouse drag event. 
+
+\begin{DoxyWarning}{Warning}
+The host may return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED for this event even if the host did handle the corresponding mouse down event. A plug-\/in should ignore any following mouse drag and mouse up events that correspond to a host-\/managed mouse down event. (P\+T\+S\+W-\/195209)
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Param\+I\+Ds} & I\+Ds of the parameters that belong to the same \mbox{\hyperlink{class_g_u_i}{G\+UI}} element whose controls are being edited \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Num\+Of\+Params} & Number of parameter I\+DS \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Modifiers} & A bitmask of \mbox{\hyperlink{_a_a_x___enums_8h_a47756e0a56d00468b7045eb26500cb78}{A\+A\+X\+\_\+\+E\+Modifiers}} values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_view_container___v2_a60e8745816704fe309ce9fa9de9d7d79}\label{class_a_a_x___i_a_c_f_view_container___v2_a60e8745816704fe309ce9fa9de9d7d79}} 
+\index{AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}!HandleMultipleParametersMouseUp@{HandleMultipleParametersMouseUp}}
+\index{HandleMultipleParametersMouseUp@{HandleMultipleParametersMouseUp}!AAX\_IACFViewContainer\_V2@{AAX\_IACFViewContainer\_V2}}
+\doxysubsubsection{\texorpdfstring{HandleMultipleParametersMouseUp()}{HandleMultipleParametersMouseUp()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container\+\_\+\+V2\+::\+Handle\+Multiple\+Parameters\+Mouse\+Up (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_a_a_x_8h_ac072d714166242fde9366117a22a304d}{A\+A\+X\+\_\+\+C\+Param\+ID}} $\ast$}]{in\+Param\+I\+Ds,  }\item[{uint32\+\_\+t}]{in\+Num\+Of\+Params,  }\item[{uint32\+\_\+t}]{in\+Modifiers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Alert the host to a mouse up event. 
+
+\begin{DoxyWarning}{Warning}
+The host may return A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED for this event even if the host did handle the corresponding mouse down event. A plug-\/in should ignore any following mouse drag and mouse up events that correspond to a host-\/managed mouse down event. (P\+T\+S\+W-\/195209)
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Param\+I\+Ds} & I\+Ds of the parameters that belong to the same \mbox{\hyperlink{class_g_u_i}{G\+UI}} element whose controls are being edited \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Num\+Of\+Params} & Number of parameter I\+DS \\
+\hline
+\mbox{\texttt{ in}}  & {\em in\+Modifiers} & A bitmask of \mbox{\hyperlink{_a_a_x___enums_8h_a47756e0a56d00468b7045eb26500cb78}{A\+A\+X\+\_\+\+E\+Modifiers}} values \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_view_container_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+View\+Container.\+h}}\end{DoxyCompactItemize}

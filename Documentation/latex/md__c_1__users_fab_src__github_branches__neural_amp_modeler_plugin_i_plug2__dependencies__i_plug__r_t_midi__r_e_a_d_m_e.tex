@@ -1,0 +1,58 @@
+\href{https://travis-ci.org/thestk/rtmidi}{\texttt{ }}
+
+A set of C++ classes that provide a common A\+PI for realtime M\+I\+DI input/output across Linux (A\+L\+SA \& J\+A\+CK), Macintosh OS X (Core\+M\+I\+DI \& J\+A\+CK) and Windows (Multimedia).
+
+By Gary P. Scavone, 2003-\/2019.
+
+This distribution of \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} contains the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily doc}\+: \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} documentation (also online at \href{http://www.music.mcgill.ca/~gary/rtmidi/}{\texttt{ http\+://www.\+music.\+mcgill.\+ca/$\sim$gary/rtmidi/}})
+\item {\ttfamily tests}\+: example \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} programs
+\end{DoxyItemize}
+
+On Unix systems, type {\ttfamily ./configure} in the top level directory, then {\ttfamily make} in the {\ttfamily tests/} directory to compile the test programs. In Windows, open the Visual C++ workspace file located in the {\ttfamily tests/} directory.
+
+If you checked out the code from git, please run {\ttfamily ./autogen.sh} before {\ttfamily ./configure}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1363}{}\doxysection{Overview}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1363}
+\mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} is a set of C++ classes ({\ttfamily \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}}}, {\ttfamily \mbox{\hyperlink{class_rt_midi_out}{Rt\+Midi\+Out}}}, and A\+PI specific classes) that provide a common A\+PI (Application Programming Interface) for realtime M\+I\+DI input/output across Linux (A\+L\+SA, J\+A\+CK), Macintosh OS X (Core\+M\+I\+DI, J\+A\+CK), and Windows (Multimedia Library) operating systems. \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} significantly simplifies the process of interacting with computer M\+I\+DI hardware and software. It was designed with the following goals\+:
+
+
+\begin{DoxyItemize}
+\item object oriented C++ design
+\item simple, common A\+PI across all supported platforms
+\item only one header and one source file for easy inclusion in programming projects
+\item M\+I\+DI device enumeration
+\end{DoxyItemize}
+
+M\+I\+DI input and output functionality are separated into two classes, {\ttfamily \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}}} and {\ttfamily \mbox{\hyperlink{class_rt_midi_out}{Rt\+Midi\+Out}}}. Each class instance supports only a single M\+I\+DI connection. \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} does not provide timing functionality (i.\+e., output messages are sent immediately). Input messages are timestamped with delta times in seconds (via a {\ttfamily double} floating point type). M\+I\+DI data is passed to the user as raw bytes using an {\ttfamily std\+::vector$<$unsigned char$>$}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1364}{}\doxysection{Windows}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1364}
+In some cases, for example to use \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} with GS \mbox{\hyperlink{class_synth}{Synth}}, it may be necessary for your program to call {\ttfamily Co\+Initialize\+Ex} and {\ttfamily Co\+Uninitialize} on entry to and exit from the thread that uses \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1365}{}\doxysection{Further reading}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1365}
+For complete documentation on \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}}, see the {\ttfamily doc} directory of the distribution or surf to \href{http://www.music.mcgill.ca/~gary/rtmidi/}{\texttt{ http\+://www.\+music.\+mcgill.\+ca/$\sim$gary/rtmidi/}}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1366}{}\doxysection{Legal and ethical}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__r_t_midi__r_e_a_d_m_e_autotoc_md1366}
+The \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} license is similar to the M\+IT License, with the added {\itshape feature} that modifications be sent to the developer. \begin{DoxyVerb}RtMidi: realtime MIDI i/o C++ classes
+Copyright (c) 2003-2019 Gary P. Scavone
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation files
+(the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+Any person wishing to distribute modifications to the Software is
+asked to send the modifications to the original developer so that
+they can be incorporated into the canonical version.  This is,
+however, not a binding provision of this license.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
+ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+\end{DoxyVerb}
+ 

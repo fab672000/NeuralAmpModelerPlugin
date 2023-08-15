@@ -1,0 +1,31 @@
+\hypertarget{struct_sk_high_contrast_filter}{}\doxysection{Sk\+High\+Contrast\+Filter Struct Reference}
+\label{struct_sk_high_contrast_filter}\index{SkHighContrastFilter@{SkHighContrastFilter}}
+
+
+{\ttfamily \#include $<$Sk\+High\+Contrast\+Filter.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_high_contrast_filter_a967129dd32724fde5fe2c171d79dcf43}\label{struct_sk_high_contrast_filter_a967129dd32724fde5fe2c171d79dcf43}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_filter}{Sk\+Color\+Filter}} $>$ {\bfseries Make} (const \mbox{\hyperlink{struct_sk_high_contrast_config}{Sk\+High\+Contrast\+Config}} \&\mbox{\hyperlink{structconfig__s}{config}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Color filter that provides transformations to improve contrast for users with low vision.
+
+Applies the following transformations in this order. Each of these can be configured using \mbox{\hyperlink{struct_sk_high_contrast_config}{Sk\+High\+Contrast\+Config}}.
+
+
+\begin{DoxyItemize}
+\item Conversion to grayscale
+\item Color inversion (either in R\+GB or H\+SL space)
+\item Increasing the resulting contrast.
+\end{DoxyItemize}
+
+Calling Sk\+High\+Contrast\+Filter\+::\+Make will return nullptr if the config is not valid, e.\+g. if you try to call it with a contrast outside the range of -\/1.\+0 to 1.\+0. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/effects/Sk\+High\+Contrast\+Filter.\+h\end{DoxyCompactItemize}

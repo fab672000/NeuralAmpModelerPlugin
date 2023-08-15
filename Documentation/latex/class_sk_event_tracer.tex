@@ -1,0 +1,72 @@
+\hypertarget{class_sk_event_tracer}{}\doxysection{Sk\+Event\+Tracer Class Reference}
+\label{class_sk_event_tracer}\index{SkEventTracer@{SkEventTracer}}
+Inheritance diagram for Sk\+Event\+Tracer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_event_tracer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_afb96f2af8b772187ad750707486f0873}\label{class_sk_event_tracer_afb96f2af8b772187ad750707486f0873}} 
+enum {\bfseries Category\+Group\+Enabled\+Flags} \{ {\bfseries k\+Enabled\+For\+Recording\+\_\+\+Category\+Group\+Enabled\+Flags} = 1 $<$$<$ 0, 
+{\bfseries k\+Enabled\+For\+Monitoring\+\_\+\+Category\+Group\+Enabled\+Flags} = 1 $<$$<$ 1, 
+{\bfseries k\+Enabled\+For\+Event\+Callback\+\_\+\+Category\+Group\+Enabled\+Flags} = 1 $<$$<$ 2
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_a3c3112df9732f7b88191ba0c03a2020b}\label{class_sk_event_tracer_a3c3112df9732f7b88191ba0c03a2020b}} 
+typedef uint64\+\_\+t {\bfseries Handle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_a9862d5a0637239a19f225d64b659ee07}\label{class_sk_event_tracer_a9862d5a0637239a19f225d64b659ee07}} 
+virtual const uint8\+\_\+t $\ast$ {\bfseries get\+Category\+Group\+Enabled} (const char $\ast$name)=0
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_a38b9a8a70ce9d64a009077d90f61b27e}\label{class_sk_event_tracer_a38b9a8a70ce9d64a009077d90f61b27e}} 
+virtual const char $\ast$ {\bfseries get\+Category\+Group\+Name} (const uint8\+\_\+t $\ast$category\+Enabled\+Flag)=0
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_a16c36e567069d5255b6757cbf7a5ddf3}\label{class_sk_event_tracer_a16c36e567069d5255b6757cbf7a5ddf3}} 
+virtual Sk\+Event\+Tracer\+::\+Handle {\bfseries add\+Trace\+Event} (char phase, const uint8\+\_\+t $\ast$category\+Enabled\+Flag, const char $\ast$name, uint64\+\_\+t id, int32\+\_\+t num\+Args, const char $\ast$$\ast$arg\+Names, const uint8\+\_\+t $\ast$arg\+Types, const uint64\+\_\+t $\ast$arg\+Values, uint8\+\_\+t flags)=0
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_a004994c3af98c2a37a14550224b5a6ea}\label{class_sk_event_tracer_a004994c3af98c2a37a14550224b5a6ea}} 
+virtual void {\bfseries update\+Trace\+Event\+Duration} (const uint8\+\_\+t $\ast$category\+Enabled\+Flag, const char $\ast$name, Sk\+Event\+Tracer\+::\+Handle handle)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_sk_event_tracer_aa95b96e9df2ab17decb4bc18ef2650fc}{Set\+Instance}} (\mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} $\ast$)
+\item 
+static \mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} $\ast$ \mbox{\hyperlink{class_sk_event_tracer_a6351520cfb72c7857ae087f54cac36e2}{Get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_af60b16ab582e889c7d36c5383a290d50}\label{class_sk_event_tracer_af60b16ab582e889c7d36c5383a290d50}} 
+{\bfseries Sk\+Event\+Tracer} (const \mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_sk_event_tracer_a6be5c3616c9678abe624a1c7c86f2a73}\label{class_sk_event_tracer_a6be5c3616c9678abe624a1c7c86f2a73}} 
+\mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} \&)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_event_tracer_a6351520cfb72c7857ae087f54cac36e2}\label{class_sk_event_tracer_a6351520cfb72c7857ae087f54cac36e2}} 
+\index{SkEventTracer@{SkEventTracer}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!SkEventTracer@{SkEventTracer}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} $\ast$ Sk\+Event\+Tracer\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the event tracer. If this is the first call to Set\+Instance or Get\+Intance then a default event tracer is installed and returned. \mbox{\Hypertarget{class_sk_event_tracer_aa95b96e9df2ab17decb4bc18ef2650fc}\label{class_sk_event_tracer_aa95b96e9df2ab17decb4bc18ef2650fc}} 
+\index{SkEventTracer@{SkEventTracer}!SetInstance@{SetInstance}}
+\index{SetInstance@{SetInstance}!SkEventTracer@{SkEventTracer}}
+\doxysubsubsection{\texorpdfstring{SetInstance()}{SetInstance()}}
+{\footnotesize\ttfamily bool Sk\+Event\+Tracer\+::\+Set\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_event_tracer}{Sk\+Event\+Tracer}} $\ast$}]{tracer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+If this is the first call to Set\+Instance or Get\+Instance then the passed instance is installed and true is returned. Otherwise, false is returned. In either case ownership of the tracer is transferred and it will be deleted when no longer needed. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/utils/Sk\+Event\+Tracer.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Event\+Tracer.\+cpp\end{DoxyCompactItemize}

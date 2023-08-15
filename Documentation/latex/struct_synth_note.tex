@@ -1,0 +1,212 @@
+\hypertarget{struct_synth_note}{}\doxysection{Synth\+Note Struct Reference}
+\label{struct_synth_note}\index{SynthNote@{SynthNote}}
+Inheritance diagram for Synth\+Note\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_synth_note}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_synth_note_ae6d52c3858490c1069f6a9d244622871}\label{struct_synth_note_ae6d52c3858490c1069f6a9d244622871}} 
+virtual void {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_ac42de2730cc410066e45f3a030ff87a9}\label{struct_synth_note_ac42de2730cc410066e45f3a030ff87a9}} 
+virtual bool \mbox{\hyperlink{struct_synth_note_ac42de2730cc410066e45f3a030ff87a9}{Attack\+Note}} (\mbox{\hyperlink{class_synth_part_element}{Synth\+Part\+Element}} $\ast$in\+Part, \mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$in\+Group, Note\+Instance\+ID in\+Note\+ID, U\+Int64 in\+Absolute\+Sample\+Frame, U\+Int32 in\+Offset\+Sample\+Frame, const Music\+Device\+Note\+Params \&in\+Params)
+\begin{DoxyCompactList}\small\item\em Returns true if active note resulted from this call, otherwise false. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_synth_note_ab5253ee946ca826d47d7f254a2b89cf8}\label{struct_synth_note_ab5253ee946ca826d47d7f254a2b89cf8}} 
+virtual O\+S\+Status {\bfseries Render} (U\+Int64 in\+Absolute\+Sample\+Frame, U\+Int32 in\+Num\+Frames, Audio\+Buffer\+List $\ast$$\ast$in\+Buffer\+List, U\+Int32 in\+Out\+Bus\+Count)=0
+\item 
+\mbox{\Hypertarget{struct_synth_note_a8fcdc2a33f71b7773f7708931d0060bc}\label{struct_synth_note_a8fcdc2a33f71b7773f7708931d0060bc}} 
+virtual bool \mbox{\hyperlink{struct_synth_note_a8fcdc2a33f71b7773f7708931d0060bc}{Attack}} (const Music\+Device\+Note\+Params \&in\+Params)=0
+\begin{DoxyCompactList}\small\item\em Returns true if active note resulted from this call, otherwise false. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_synth_note_a1a308394cbd26832b412a5e448044313}\label{struct_synth_note_a1a308394cbd26832b412a5e448044313}} 
+virtual void {\bfseries Kill} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a4d2a4befa388356ff292f11c94114511}\label{struct_synth_note_a4d2a4befa388356ff292f11c94114511}} 
+virtual void {\bfseries Release} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a913c100b2ceff0d29132f3604a9ecae2}\label{struct_synth_note_a913c100b2ceff0d29132f3604a9ecae2}} 
+virtual void {\bfseries Fast\+Release} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a80dc4002001bd02c826e78e627247c65}\label{struct_synth_note_a80dc4002001bd02c826e78e627247c65}} 
+virtual Float32 {\bfseries Amplitude} ()=0
+\item 
+\mbox{\Hypertarget{struct_synth_note_a5c723d86bd0b751a43c578170df711e5}\label{struct_synth_note_a5c723d86bd0b751a43c578170df711e5}} 
+virtual void {\bfseries Note\+Ended} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a37eaffba5cd7aefe65471ba389e0dafc}\label{struct_synth_note_a37eaffba5cd7aefe65471ba389e0dafc}} 
+\mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$ {\bfseries Get\+Group} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a5ec95069e3498fca1566fb085dc7fa46}\label{struct_synth_note_a5ec95069e3498fca1566fb085dc7fa46}} 
+\mbox{\hyperlink{class_synth_part_element}{Synth\+Part\+Element}} $\ast$ {\bfseries Get\+Part} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a35cde0cfcb441d1f9e12ebd684b80e0d}\label{struct_synth_note_a35cde0cfcb441d1f9e12ebd684b80e0d}} 
+\mbox{\hyperlink{class_a_u_instrument_base}{A\+U\+Instrument\+Base}} $\ast$ {\bfseries Get\+Audio\+Unit} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_ad16bdf9f73d2ab094f29f19ee6833fe9}\label{struct_synth_note_ad16bdf9f73d2ab094f29f19ee6833fe9}} 
+Float32 {\bfseries Get\+Global\+Parameter} (Audio\+Unit\+Parameter\+ID in\+Param\+ID) const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aaf456f000d247a3179158f723bdedb43}\label{struct_synth_note_aaf456f000d247a3179158f723bdedb43}} 
+Note\+Instance\+ID {\bfseries Get\+Note\+ID} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a3231d60ed3480f25f9ed18ccecb7cdaf}\label{struct_synth_note_a3231d60ed3480f25f9ed18ccecb7cdaf}} 
+Synth\+Note\+State {\bfseries Get\+State} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_abbd1e032c59cd8074b77c5f5134e8467}\label{struct_synth_note_abbd1e032c59cd8074b77c5f5134e8467}} 
+U\+Int8 {\bfseries Get\+Midi\+Key} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a6744e2b4ff6daac50d6ef3789f549582}\label{struct_synth_note_a6744e2b4ff6daac50d6ef3789f549582}} 
+U\+Int8 {\bfseries Get\+Midi\+Velocity} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a398b555808ec679eac277e51110e53b5}\label{struct_synth_note_a398b555808ec679eac277e51110e53b5}} 
+Boolean {\bfseries Is\+Sounding} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_ab566b309d1d8f8137dc6c3ebf9a41979}\label{struct_synth_note_ab566b309d1d8f8137dc6c3ebf9a41979}} 
+Boolean {\bfseries Is\+Active} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_ae28f8ef126449913c9df73ba6316a77e}\label{struct_synth_note_ae28f8ef126449913c9df73ba6316a77e}} 
+U\+Int64 {\bfseries Get\+Absolute\+Start\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aef5ef9d1a4a758c5b0f73bd74c7bb206}\label{struct_synth_note_aef5ef9d1a4a758c5b0f73bd74c7bb206}} 
+S\+Int32 {\bfseries Get\+Relative\+Start\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a695ea7b50f535d71277495aedf9debe2}\label{struct_synth_note_a695ea7b50f535d71277495aedf9debe2}} 
+S\+Int32 {\bfseries Get\+Relative\+Release\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a3824238db83ed2fc6b26f0aa9fd699d7}\label{struct_synth_note_a3824238db83ed2fc6b26f0aa9fd699d7}} 
+S\+Int32 {\bfseries Get\+Relative\+Kill\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a8a9a3b70ed5cdce69baf2af5e66b8be7}\label{struct_synth_note_a8a9a3b70ed5cdce69baf2af5e66b8be7}} 
+void {\bfseries List\+Remove} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_aebb79a90b46426643e00316ca89f96f8}\label{struct_synth_note_aebb79a90b46426643e00316ca89f96f8}} 
+float {\bfseries Get\+Pitch\+Bend} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aa046a139e386cdc5886d1415778b370b}\label{struct_synth_note_aa046a139e386cdc5886d1415778b370b}} 
+double {\bfseries TuningA} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aaa8c8ce71901236ebebda6d62384dbc4}\label{struct_synth_note_aaa8c8ce71901236ebebda6d62384dbc4}} 
+virtual double {\bfseries Frequency} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_aa6ed2742d0be75d81ad1241791358b66}\label{struct_synth_note_aa6ed2742d0be75d81ad1241791358b66}} 
+virtual double {\bfseries Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_a3d76f8d474870fe30504ae11986567fb}\label{struct_synth_note_a3d76f8d474870fe30504ae11986567fb}} 
+virtual void {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_ad1eb6834ff1fe6ba6e29daf22230b57f}\label{struct_synth_note_ad1eb6834ff1fe6ba6e29daf22230b57f}} 
+virtual bool \mbox{\hyperlink{struct_synth_note_ad1eb6834ff1fe6ba6e29daf22230b57f}{Attack\+Note}} (\mbox{\hyperlink{class_synth_part_element}{Synth\+Part\+Element}} $\ast$in\+Part, \mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$in\+Group, Note\+Instance\+ID in\+Note\+ID, U\+Int64 in\+Absolute\+Sample\+Frame, U\+Int32 in\+Offset\+Sample\+Frame, const Music\+Device\+Note\+Params \&in\+Params)
+\begin{DoxyCompactList}\small\item\em Returns true if active note resulted from this call, otherwise false. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_synth_note_ab5253ee946ca826d47d7f254a2b89cf8}\label{struct_synth_note_ab5253ee946ca826d47d7f254a2b89cf8}} 
+virtual O\+S\+Status {\bfseries Render} (U\+Int64 in\+Absolute\+Sample\+Frame, U\+Int32 in\+Num\+Frames, Audio\+Buffer\+List $\ast$$\ast$in\+Buffer\+List, U\+Int32 in\+Out\+Bus\+Count)=0
+\item 
+\mbox{\Hypertarget{struct_synth_note_a8fcdc2a33f71b7773f7708931d0060bc}\label{struct_synth_note_a8fcdc2a33f71b7773f7708931d0060bc}} 
+virtual bool \mbox{\hyperlink{struct_synth_note_a8fcdc2a33f71b7773f7708931d0060bc}{Attack}} (const Music\+Device\+Note\+Params \&in\+Params)=0
+\begin{DoxyCompactList}\small\item\em Returns true if active note resulted from this call, otherwise false. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_synth_note_a64ed8e7225f0986c7f4883f66ffad940}\label{struct_synth_note_a64ed8e7225f0986c7f4883f66ffad940}} 
+virtual void {\bfseries Kill} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_ad777e3e66382f61a358114a0c184fb76}\label{struct_synth_note_ad777e3e66382f61a358114a0c184fb76}} 
+virtual void {\bfseries Release} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a14ef4515b275a60b439083589f59211c}\label{struct_synth_note_a14ef4515b275a60b439083589f59211c}} 
+virtual void {\bfseries Fast\+Release} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a80dc4002001bd02c826e78e627247c65}\label{struct_synth_note_a80dc4002001bd02c826e78e627247c65}} 
+virtual Float32 {\bfseries Amplitude} ()=0
+\item 
+\mbox{\Hypertarget{struct_synth_note_a8678ddb9942ad7e46f60343e85376d52}\label{struct_synth_note_a8678ddb9942ad7e46f60343e85376d52}} 
+virtual void {\bfseries Note\+Ended} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a37eaffba5cd7aefe65471ba389e0dafc}\label{struct_synth_note_a37eaffba5cd7aefe65471ba389e0dafc}} 
+\mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$ {\bfseries Get\+Group} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a5ec95069e3498fca1566fb085dc7fa46}\label{struct_synth_note_a5ec95069e3498fca1566fb085dc7fa46}} 
+\mbox{\hyperlink{class_synth_part_element}{Synth\+Part\+Element}} $\ast$ {\bfseries Get\+Part} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_afba43eae471e4ea78828682333ab6983}\label{struct_synth_note_afba43eae471e4ea78828682333ab6983}} 
+\mbox{\hyperlink{class_a_u_instrument_base}{A\+U\+Instrument\+Base}} $\ast$ {\bfseries Get\+Audio\+Unit} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_ad16bdf9f73d2ab094f29f19ee6833fe9}\label{struct_synth_note_ad16bdf9f73d2ab094f29f19ee6833fe9}} 
+Float32 {\bfseries Get\+Global\+Parameter} (Audio\+Unit\+Parameter\+ID in\+Param\+ID) const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aaf456f000d247a3179158f723bdedb43}\label{struct_synth_note_aaf456f000d247a3179158f723bdedb43}} 
+Note\+Instance\+ID {\bfseries Get\+Note\+ID} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a3231d60ed3480f25f9ed18ccecb7cdaf}\label{struct_synth_note_a3231d60ed3480f25f9ed18ccecb7cdaf}} 
+Synth\+Note\+State {\bfseries Get\+State} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_abbd1e032c59cd8074b77c5f5134e8467}\label{struct_synth_note_abbd1e032c59cd8074b77c5f5134e8467}} 
+U\+Int8 {\bfseries Get\+Midi\+Key} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a6744e2b4ff6daac50d6ef3789f549582}\label{struct_synth_note_a6744e2b4ff6daac50d6ef3789f549582}} 
+U\+Int8 {\bfseries Get\+Midi\+Velocity} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a398b555808ec679eac277e51110e53b5}\label{struct_synth_note_a398b555808ec679eac277e51110e53b5}} 
+Boolean {\bfseries Is\+Sounding} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_ab566b309d1d8f8137dc6c3ebf9a41979}\label{struct_synth_note_ab566b309d1d8f8137dc6c3ebf9a41979}} 
+Boolean {\bfseries Is\+Active} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_ae28f8ef126449913c9df73ba6316a77e}\label{struct_synth_note_ae28f8ef126449913c9df73ba6316a77e}} 
+U\+Int64 {\bfseries Get\+Absolute\+Start\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aef5ef9d1a4a758c5b0f73bd74c7bb206}\label{struct_synth_note_aef5ef9d1a4a758c5b0f73bd74c7bb206}} 
+S\+Int32 {\bfseries Get\+Relative\+Start\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a695ea7b50f535d71277495aedf9debe2}\label{struct_synth_note_a695ea7b50f535d71277495aedf9debe2}} 
+S\+Int32 {\bfseries Get\+Relative\+Release\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a3824238db83ed2fc6b26f0aa9fd699d7}\label{struct_synth_note_a3824238db83ed2fc6b26f0aa9fd699d7}} 
+S\+Int32 {\bfseries Get\+Relative\+Kill\+Frame} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a8a9a3b70ed5cdce69baf2af5e66b8be7}\label{struct_synth_note_a8a9a3b70ed5cdce69baf2af5e66b8be7}} 
+void {\bfseries List\+Remove} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_aebb79a90b46426643e00316ca89f96f8}\label{struct_synth_note_aebb79a90b46426643e00316ca89f96f8}} 
+float {\bfseries Get\+Pitch\+Bend} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_aa046a139e386cdc5886d1415778b370b}\label{struct_synth_note_aa046a139e386cdc5886d1415778b370b}} 
+double {\bfseries TuningA} () const
+\item 
+\mbox{\Hypertarget{struct_synth_note_a3aafaa80774630c26726ffd0a4bc52a0}\label{struct_synth_note_a3aafaa80774630c26726ffd0a4bc52a0}} 
+virtual double {\bfseries Frequency} ()
+\item 
+\mbox{\Hypertarget{struct_synth_note_acb5f6f4bf709c3ddebb62779e0601c4a}\label{struct_synth_note_acb5f6f4bf709c3ddebb62779e0601c4a}} 
+virtual double {\bfseries Sample\+Rate} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_synth_note_a5a3e57c90ef7fd0e1910e31ddd009de9}\label{struct_synth_note_a5a3e57c90ef7fd0e1910e31ddd009de9}} 
+\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries m\+Prev}
+\item 
+\mbox{\Hypertarget{struct_synth_note_a9ad1361f3f1be3b0c3b3b4eadf32c991}\label{struct_synth_note_a9ad1361f3f1be3b0c3b3b4eadf32c991}} 
+\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries m\+Next}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_synth_note_a1d4d7495eaefdaa70d982230ced5c748}\label{struct_synth_note_a1d4d7495eaefdaa70d982230ced5c748}} 
+void {\bfseries Set\+State} (Synth\+Note\+State in\+State)
+\item 
+\mbox{\Hypertarget{struct_synth_note_a1d4d7495eaefdaa70d982230ced5c748}\label{struct_synth_note_a1d4d7495eaefdaa70d982230ced5c748}} 
+void {\bfseries Set\+State} (Synth\+Note\+State in\+State)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_synth_note_aff23d909d7b94fdaf647adc7ad51050a}\label{struct_synth_note_aff23d909d7b94fdaf647adc7ad51050a}} 
+class {\bfseries Synth\+Group\+Element}
+\item 
+\mbox{\Hypertarget{struct_synth_note_ab6cdb323c9b0f2a6a2dac8f873db5e71}\label{struct_synth_note_ab6cdb323c9b0f2a6a2dac8f873db5e71}} 
+struct {\bfseries Synth\+Note\+List}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/\+A\+U/\+A\+U\+Public/\+A\+U\+Instrument\+Base/Synth\+Note.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/\+A\+U/\+A\+U\+Public/\+A\+U\+Instrument\+Base/Synth\+Note.\+cpp\end{DoxyCompactItemize}

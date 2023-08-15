@@ -1,0 +1,43 @@
+\hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833}{}\doxysection{Eigen\+::internal\+::redux\+\_\+impl$<$ Func, Evaluator, Linear\+Vectorized\+Traversal, Complete\+Unrolling $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833}\index{Eigen::internal::redux\_impl$<$ Func, Evaluator, LinearVectorizedTraversal, CompleteUnrolling $>$@{Eigen::internal::redux\_impl$<$ Func, Evaluator, LinearVectorizedTraversal, CompleteUnrolling $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a0700c57ca37016bbefbc7d6702d0caae}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a0700c57ca37016bbefbc7d6702d0caae}} 
+enum \{ {\bfseries Packet\+Size} = redux\+\_\+traits$<$Func, Evaluator$>$\+::Packet\+Size, 
+{\bfseries Size} = Evaluator\+::Size\+At\+Compile\+Time, 
+{\bfseries Vectorized\+Size} = (int(Size) / int(Packet\+Size)) $\ast$ int(Packet\+Size)
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a4ecc6e15f373a39a12adfd47f8b31ae3}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a4ecc6e15f373a39a12adfd47f8b31ae3}} 
+enum \{ {\bfseries Packet\+Size} = redux\+\_\+traits$<$Func, Evaluator$>$\+::Packet\+Size, 
+{\bfseries Size} = Evaluator\+::Size\+At\+Compile\+Time, 
+{\bfseries Vectorized\+Size} = (int(Size) / int(Packet\+Size)) $\ast$ int(Packet\+Size)
+ \}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a277902814ceeffbfda54a8dd238e77c2}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a277902814ceeffbfda54a8dd238e77c2}} 
+typedef Evaluator\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af7752d6b7c51a60f5df9829896c2cf3e}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af7752d6b7c51a60f5df9829896c2cf3e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1redux__traits}{redux\+\_\+traits}}$<$ Func, Evaluator $>$\+::Packet\+Type {\bfseries Packet\+Type}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a277902814ceeffbfda54a8dd238e77c2}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_a277902814ceeffbfda54a8dd238e77c2}} 
+typedef Evaluator\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af7752d6b7c51a60f5df9829896c2cf3e}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af7752d6b7c51a60f5df9829896c2cf3e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1redux__traits}{redux\+\_\+traits}}$<$ Func, Evaluator $>$\+::Packet\+Type {\bfseries Packet\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af9a3564540ddb235f7afb6283343c942}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af9a3564540ddb235f7afb6283343c942}} 
+{\footnotesize template$<$typename Xpr\+Type $>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar {\bfseries run} (const Evaluator \&\mbox{\hyperlink{struct_eigen_1_1internal_1_1eval}{eval}}, const Func \&\mbox{\hyperlink{structfunc}{func}}, const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \&xpr)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af9a3564540ddb235f7afb6283343c942}\label{struct_eigen_1_1internal_1_1redux__impl_3_01_func_00_01_evaluator_00_01_linear_vectorized_traver59e90806e36c9857da8150f4478a6833_af9a3564540ddb235f7afb6283343c942}} 
+{\footnotesize template$<$typename Xpr\+Type $>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Scalar {\bfseries run} (const Evaluator \&\mbox{\hyperlink{struct_eigen_1_1internal_1_1eval}{eval}}, const Func \&\mbox{\hyperlink{structfunc}{func}}, const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \&xpr)
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/Redux.\+h\end{DoxyCompactItemize}

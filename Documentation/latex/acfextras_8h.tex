@@ -1,0 +1,131 @@
+\hypertarget{acfextras_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\+A\+C\+F/acfextras.h File Reference}
+\label{acfextras_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/Interfaces/ACF/acfextras.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/Interfaces/ACF/acfextras.h}}
+
+
+acf\+U\+ID comparison operators. Utility and error checking Macros.  
+
+
+{\ttfamily \#include \char`\"{}acfbasetypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}acfresult.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+I\+D\+\_\+\+P\+P\+V\+\_\+\+A\+RG}(Type,  Expr)
+\item 
+\#define {\bfseries N\+S\+\_\+\+I\+I\+D\+\_\+\+P\+P\+V\+\_\+\+A\+RG}(Name\+Space,  Type,  Expr)
+\item 
+\#define \mbox{\hyperlink{acfextras_8h_a1baffb458b158e1464b01a4d27e315d3}{B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD}}
+\begin{DoxyCompactList}\small\item\em Opens a try block for A\+CF result codes. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{acfextras_8h_a50b5fa85eab51e74f8232dd78a63c73a}{E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD}}
+\begin{DoxyCompactList}\small\item\em closes a try block for A\+CF result codes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{acfextras_8h_a3a59b223aa9651a2f8ef37db25b530ac}\label{acfextras_8h_a3a59b223aa9651a2f8ef37db25b530ac}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&lhs, const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&rhs)
+\item 
+\mbox{\Hypertarget{acfextras_8h_aae08b63e965515f4bf4c2fc58f654c75}\label{acfextras_8h_aae08b63e965515f4bf4c2fc58f654c75}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&lhs, const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&rhs)
+\item 
+\mbox{\Hypertarget{acfextras_8h_aa671340dd3e227a594c581a28dba2fb9}\label{acfextras_8h_aa671340dd3e227a594c581a28dba2fb9}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&lhs, const \mbox{\hyperlink{_a_a_x_8h_ab19414382287ff80930c48a196145214}{acf\+U\+ID}} \&rhs)
+\item 
+void \mbox{\hyperlink{acfextras_8h_a01b64ee001eb51ff3d02accbd2698999}{acfcheck}} (A\+C\+F\+R\+E\+S\+U\+LT result)
+\begin{DoxyCompactList}\small\item\em acfcheck is a convenience function used for validating the success of returning A\+C\+F\+R\+E\+S\+U\+LT codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+acf\+U\+ID comparison operators. Utility and error checking Macros. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{acfextras_8h_a1baffb458b158e1464b01a4d27e315d3}\label{acfextras_8h_a1baffb458b158e1464b01a4d27e315d3}} 
+\index{acfextras.h@{acfextras.h}!BEGIN\_ACF\_METHOD@{BEGIN\_ACF\_METHOD}}
+\index{BEGIN\_ACF\_METHOD@{BEGIN\_ACF\_METHOD}!acfextras.h@{acfextras.h}}
+\doxysubsubsection{\texorpdfstring{BEGIN\_ACF\_METHOD}{BEGIN\_ACF\_METHOD}}
+{\footnotesize\ttfamily \#define B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ACFRESULT avx2methodresult = \mbox{\hyperlink{acfresult_8h_ab61e67dac2c7238f105d342eb5daa9f6}{ACF\_OK}};\(\backslash\)}
+\DoxyCodeLine{    try\(\backslash\)}
+\DoxyCodeLine{    \{}
+
+\end{DoxyCode}
+
+
+Opens a try block for A\+CF result codes. 
+
+{\bfseries{B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD}} \begin{DoxyRemark}{Remarks}
+B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD must be followed by a ~\newline
+ corresponding E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD. B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD is the try end of the exception block. These M\+A\+C\+R\+OS define a try and catch block for the handling A\+C\+F\+R\+E\+S\+U\+LT exceptions. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{acfextras_8h_a50b5fa85eab51e74f8232dd78a63c73a}\label{acfextras_8h_a50b5fa85eab51e74f8232dd78a63c73a}} 
+\index{acfextras.h@{acfextras.h}!END\_ACF\_METHOD@{END\_ACF\_METHOD}}
+\index{END\_ACF\_METHOD@{END\_ACF\_METHOD}!acfextras.h@{acfextras.h}}
+\doxysubsubsection{\texorpdfstring{END\_ACF\_METHOD}{END\_ACF\_METHOD}}
+{\footnotesize\ttfamily \#define E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    catch (ACFRESULT \& acfresultexception)\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        avx2methodresult = acfresultexception;\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    catch (...)\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        avx2methodresult = \mbox{\hyperlink{acfresult_8h_ac750d965c683b796428cf0c5ea25cbf2}{ACF\_E\_UNEXPECTED}};\(\backslash\)}
+\DoxyCodeLine{    \}\(\backslash\)}
+\DoxyCodeLine{    return avx2methodresult;}
+
+\end{DoxyCode}
+
+
+closes a try block for A\+CF result codes 
+
+{\bfseries{E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD}} \begin{DoxyRemark}{Remarks}
+E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD must be preceeded by a ~\newline
+ corresponding B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD. E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD is the catch end of the exception block.\+These M\+A\+C\+R\+OS define a try and catch block for the handling A\+C\+F\+R\+E\+S\+U\+LT exceptions. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{acfextras_8h_a9becc3b4a48048c572978af0281175b3}\label{acfextras_8h_a9becc3b4a48048c572978af0281175b3}} 
+\index{acfextras.h@{acfextras.h}!IID\_PPV\_ARG@{IID\_PPV\_ARG}}
+\index{IID\_PPV\_ARG@{IID\_PPV\_ARG}!acfextras.h@{acfextras.h}}
+\doxysubsubsection{\texorpdfstring{IID\_PPV\_ARG}{IID\_PPV\_ARG}}
+{\footnotesize\ttfamily \#define I\+I\+D\+\_\+\+P\+P\+V\+\_\+\+A\+RG(\begin{DoxyParamCaption}\item[{}]{Type,  }\item[{}]{Expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    IID\_\#\#Type, \(\backslash\)}
+\DoxyCodeLine{    reinterpret\_cast<void **>(\textcolor{keyword}{static\_cast<}Type **\textcolor{keyword}{>}(Expr))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{acfextras_8h_a60d912820b6847f1d2447b3d2c147d41}\label{acfextras_8h_a60d912820b6847f1d2447b3d2c147d41}} 
+\index{acfextras.h@{acfextras.h}!NS\_IID\_PPV\_ARG@{NS\_IID\_PPV\_ARG}}
+\index{NS\_IID\_PPV\_ARG@{NS\_IID\_PPV\_ARG}!acfextras.h@{acfextras.h}}
+\doxysubsubsection{\texorpdfstring{NS\_IID\_PPV\_ARG}{NS\_IID\_PPV\_ARG}}
+{\footnotesize\ttfamily \#define N\+S\+\_\+\+I\+I\+D\+\_\+\+P\+P\+V\+\_\+\+A\+RG(\begin{DoxyParamCaption}\item[{}]{Name\+Space,  }\item[{}]{Type,  }\item[{}]{Expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    NameSpace::IID\_\#\#Type, \(\backslash\)}
+\DoxyCodeLine{    reinterpret\_cast<void **>(\textcolor{keyword}{static\_cast<}NameSpace::Type **\textcolor{keyword}{>}(Expr))}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{acfextras_8h_a01b64ee001eb51ff3d02accbd2698999}\label{acfextras_8h_a01b64ee001eb51ff3d02accbd2698999}} 
+\index{acfextras.h@{acfextras.h}!acfcheck@{acfcheck}}
+\index{acfcheck@{acfcheck}!acfextras.h@{acfextras.h}}
+\doxysubsubsection{\texorpdfstring{acfcheck()}{acfcheck()}}
+{\footnotesize\ttfamily void acfcheck (\begin{DoxyParamCaption}\item[{A\+C\+F\+R\+E\+S\+U\+LT}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+acfcheck is a convenience function used for validating the success of returning A\+C\+F\+R\+E\+S\+U\+LT codes. 
+
+{\bfseries{acfcheck( result )}} \begin{DoxyRemark}{Remarks}
+if the return code is a comprised of a A\+C\+F\+F\+A\+I\+L\+ED code this function will throw an A\+C\+F\+R\+E\+S\+U\+LT exception. For this reason, use of the function should be wrapped in a try -- catch block that can handle the exception, such as the B\+E\+G\+I\+N\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD and E\+N\+D\+\_\+\+A\+C\+F\+\_\+\+M\+E\+T\+H\+OD macros. 
+\end{DoxyRemark}

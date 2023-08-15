@@ -1,0 +1,101 @@
+\hypertarget{class_sk_empty_picture}{}\doxysection{Sk\+Empty\+Picture Class Reference}
+\label{class_sk_empty_picture}\index{SkEmptyPicture@{SkEmptyPicture}}
+Inheritance diagram for Sk\+Empty\+Picture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sk_empty_picture}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sk_empty_picture_ad50bbc30ec741345b408f3998eda278c}{playback}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$, \mbox{\hyperlink{class_sk_picture_1_1_abort_callback}{Abort\+Callback}} $\ast$) const override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_empty_picture_ac67b58f41fa6df6495674288233e53cf}{approximate\+Bytes\+Used}} () const override
+\item 
+int \mbox{\hyperlink{class_sk_empty_picture_ad6e9eb6cbbaa50724fe79ffd90c696b0}{approximate\+Op\+Count}} (bool) const override
+\item 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \mbox{\hyperlink{class_sk_empty_picture_a3ccf43aaec60300ff05bfe3f7f1a4e16}{cull\+Rect}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_empty_picture_ac67b58f41fa6df6495674288233e53cf}\label{class_sk_empty_picture_ac67b58f41fa6df6495674288233e53cf}} 
+\index{SkEmptyPicture@{SkEmptyPicture}!approximateBytesUsed@{approximateBytesUsed}}
+\index{approximateBytesUsed@{approximateBytesUsed}!SkEmptyPicture@{SkEmptyPicture}}
+\doxysubsubsection{\texorpdfstring{approximateBytesUsed()}{approximateBytesUsed()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Empty\+Picture\+::approximate\+Bytes\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the approximate byte size of \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. Does not include large objects referenced by \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}.
+
+\begin{DoxyReturn}{Returns}
+approximate size
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_approximateBytesUsed}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+approximate\+Bytes\+Used}} 
+
+Implements \mbox{\hyperlink{class_sk_picture_aa33a229fb0f60042e816b103a0b3e428}{Sk\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_empty_picture_ad6e9eb6cbbaa50724fe79ffd90c696b0}\label{class_sk_empty_picture_ad6e9eb6cbbaa50724fe79ffd90c696b0}} 
+\index{SkEmptyPicture@{SkEmptyPicture}!approximateOpCount@{approximateOpCount}}
+\index{approximateOpCount@{approximateOpCount}!SkEmptyPicture@{SkEmptyPicture}}
+\doxysubsubsection{\texorpdfstring{approximateOpCount()}{approximateOpCount()}}
+{\footnotesize\ttfamily int Sk\+Empty\+Picture\+::approximate\+Op\+Count (\begin{DoxyParamCaption}\item[{bool}]{nested }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the approximate number of operations in \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. Returned value may be greater or less than the number of \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} calls recorded\+: some calls may be recorded as more than one operation, other calls may be optimized away.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nested} & if true, include the op-\/counts of nested pictures as well, else just return count the ops in the top-\/level picture. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximate operation count
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_approximateOpCount}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+approximate\+Op\+Count}} 
+
+Implements \mbox{\hyperlink{class_sk_picture_ae375e36a1aa8d35afe83a638c9b31abe}{Sk\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_empty_picture_a3ccf43aaec60300ff05bfe3f7f1a4e16}\label{class_sk_empty_picture_a3ccf43aaec60300ff05bfe3f7f1a4e16}} 
+\index{SkEmptyPicture@{SkEmptyPicture}!cullRect@{cullRect}}
+\index{cullRect@{cullRect}!SkEmptyPicture@{SkEmptyPicture}}
+\doxysubsubsection{\texorpdfstring{cullRect()}{cullRect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} Sk\+Empty\+Picture\+::cull\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns cull \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} for this picture, passed in when \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} was created. Returned \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} does not specify clipping \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} for \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}; cull is hint of \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} bounds.
+
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} is free to discard recorded drawing commands that fall outside cull.
+
+\begin{DoxyReturn}{Returns}
+bounds passed when \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} was created
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_cullRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+cull\+Rect}} 
+
+Implements \mbox{\hyperlink{class_sk_picture_a7dc1829ae04fc44d6717adefa56748ca}{Sk\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_empty_picture_ad50bbc30ec741345b408f3998eda278c}\label{class_sk_empty_picture_ad50bbc30ec741345b408f3998eda278c}} 
+\index{SkEmptyPicture@{SkEmptyPicture}!playback@{playback}}
+\index{playback@{playback}!SkEmptyPicture@{SkEmptyPicture}}
+\doxysubsubsection{\texorpdfstring{playback()}{playback()}}
+{\footnotesize\ttfamily void Sk\+Empty\+Picture\+::playback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas,  }\item[{\mbox{\hyperlink{class_sk_picture_1_1_abort_callback}{Abort\+Callback}} $\ast$}]{callback }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Replays the drawing commands on the specified canvas. In the case that the commands are recorded, each command in the \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} is sent separately to canvas.
+
+To add a single command to draw \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} to recording canvas, call \mbox{\hyperlink{class_sk_canvas_ae291eaf5243302d4d7f56195b0a0bb1d}{Sk\+Canvas\+::draw\+Picture}} instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & receiver of drawing commands \\
+\hline
+{\em callback} & allows interruption of playback\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Picture_playback}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+playback}} 
+
+Implements \mbox{\hyperlink{class_sk_picture_a9e5313999fc681ec64586dada8f5a259}{Sk\+Picture}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Mini\+Recorder.\+cpp\end{DoxyCompactItemize}

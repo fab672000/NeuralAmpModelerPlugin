@@ -1,0 +1,55 @@
+\hypertarget{class_i_v_peak_avg_meter_control}{}\doxysection{I\+V\+Peak\+Avg\+Meter\+Control$<$ M\+A\+X\+NC $>$ Class Template Reference}
+\label{class_i_v_peak_avg_meter_control}\index{IVPeakAvgMeterControl$<$ MAXNC $>$@{IVPeakAvgMeterControl$<$ MAXNC $>$}}
+
+
+{\ttfamily \#include $<$I\+V\+Meter\+Control.\+h$>$}
+
+Inheritance diagram for I\+V\+Peak\+Avg\+Meter\+Control$<$ M\+A\+X\+NC $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_i_v_peak_avg_meter_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_peak_avg_meter_control_a43fc69a7f220c6e9453aa98cbd0d876c}\label{class_i_v_peak_avg_meter_control_a43fc69a7f220c6e9453aa98cbd0d876c}} 
+{\bfseries I\+V\+Peak\+Avg\+Meter\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const char $\ast$label, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style=D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+Y\+LE, E\+Direction dir=E\+Direction\+::\+Vertical, std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ track\+Names=\{\}, int total\+N\+Segs=0, float low\+Range\+DB=-\/60.f, float high\+Range\+DB=12.f, std\+::initializer\+\_\+list$<$ int $>$ markers=\{0, -\/6, -\/12, -\/24, -\/48\})
+\item 
+\mbox{\Hypertarget{class_i_v_peak_avg_meter_control_aa61c54d4ef28bcac45d900be6bd0fb88}\label{class_i_v_peak_avg_meter_control_aa61c54d4ef28bcac45d900be6bd0fb88}} 
+void {\bfseries Draw\+Peak} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx, bool above\+Base\+Value) override
+\item 
+void \mbox{\hyperlink{class_i_v_peak_avg_meter_control_aaf8aa2e50feffdd8ceddb327463f6e10}{On\+Msg\+From\+Delegate}} (int msg\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_peak_avg_meter_control_a9e1187a4737b4c8ad2ce536f97199e57}\label{class_i_v_peak_avg_meter_control_a9e1187a4737b4c8ad2ce536f97199e57}} 
+std\+::array$<$ float, M\+A\+X\+NC $>$ {\bfseries m\+Peak\+Values}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$int M\+A\+X\+NC = 1$>$\newline
+class I\+V\+Peak\+Avg\+Meter\+Control$<$ M\+A\+X\+N\+C $>$}
+
+Vectorial multi-\/channel capable meter control, with log response, held-\/peaks and filled-\/average/rms Requires an \mbox{\hyperlink{class_i_peak_avg_sender}{I\+Peak\+Avg\+Sender}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_v_peak_avg_meter_control_aaf8aa2e50feffdd8ceddb327463f6e10}\label{class_i_v_peak_avg_meter_control_aaf8aa2e50feffdd8ceddb327463f6e10}} 
+\index{IVPeakAvgMeterControl$<$ MAXNC $>$@{IVPeakAvgMeterControl$<$ MAXNC $>$}!OnMsgFromDelegate@{OnMsgFromDelegate}}
+\index{OnMsgFromDelegate@{OnMsgFromDelegate}!IVPeakAvgMeterControl$<$ MAXNC $>$@{IVPeakAvgMeterControl$<$ MAXNC $>$}}
+\doxysubsubsection{\texorpdfstring{OnMsgFromDelegate()}{OnMsgFromDelegate()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1$>$ \\
+void \mbox{\hyperlink{class_i_v_peak_avg_meter_control}{I\+V\+Peak\+Avg\+Meter\+Control}}$<$ M\+A\+X\+NC $>$\+::On\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to receive messages sent to the control, see \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}\+:Send\+Control\+Msg\+From\+Delegate() 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a850af818653722be3d3a72c9558ff6a6}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_v_meter_control_8h}{I\+V\+Meter\+Control.\+h}}\end{DoxyCompactItemize}

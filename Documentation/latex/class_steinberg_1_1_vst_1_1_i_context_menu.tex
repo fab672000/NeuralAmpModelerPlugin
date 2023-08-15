@@ -1,0 +1,93 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu}{}\doxysection{Steinberg\+::Vst\+::I\+Context\+Menu Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_context_menu}\index{Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}}
+
+
+{\ttfamily \#include $<$ivstcontextmenu.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Context\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_context_menu}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_a30086c6599f76c61a363e656fe81081c}\label{class_steinberg_1_1_vst_1_1_i_context_menu_a30086c6599f76c61a363e656fe81081c}} 
+typedef \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{I\+Context\+Menu\+Item}} {\bfseries Item}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_aeef86f2be0ab6ad40d6c63d1b63ca89c}{get\+Item\+Count}} ()=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_a12120460e747fcea3e5081ba7985b204}{get\+Item}} (int32 index, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{Item}} \&item, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}} $\ast$$\ast$target)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_a5678c4c802350e4f204bd480c33e6663}{add\+Item}} (const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{Item}} \&item, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}} $\ast$target)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_a6b5bd91c0c048e20b829ea45b63f2d7f}{remove\+Item}} (const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{Item}} \&item, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}} $\ast$target)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_a740811258f789a6da82b3155f7191dac}{popup}} (\mbox{\hyperlink{namespace_steinberg_a91e26bd765c8845ae5e3cf7871c842e7}{U\+Coord}} x, \mbox{\hyperlink{namespace_steinberg_a91e26bd765c8845ae5e3cf7871c842e7}{U\+Coord}} y)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_a24912309578cbd78604daebb25a4ad3f}\label{class_steinberg_1_1_vst_1_1_i_context_menu_a24912309578cbd78604daebb25a4ad3f}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Context Menu interface\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{Vst\+::\+I\+Context\+Menu}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}create with \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler3_a99008d84976f9e136e3719afdb022f20}{I\+Component\+Handler3\+::create\+Context\+Menu}}(..)\mbox{]}
+\item \mbox{[}released\+: 3.\+5.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+A context menu is composed of Item (entry). A Item is defined by a name, a tag, a flag and a associated target (called when this item will be selected/executed). With \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu}{I\+Context\+Menu}} the plug-\/in can retrieve a Item, add a Item, remove a Item and pop-\/up the menu.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler3}{I\+Component\+Handler3}} for more information. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_a5678c4c802350e4f204bd480c33e6663}\label{class_steinberg_1_1_vst_1_1_i_context_menu_a5678c4c802350e4f204bd480c33e6663}} 
+\index{Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}!addItem@{addItem}}
+\index{addItem@{addItem}!Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Context\+Menu\+::add\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{Item}} \&}]{item,  }\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Adds a menu item and its target. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_a12120460e747fcea3e5081ba7985b204}\label{class_steinberg_1_1_vst_1_1_i_context_menu_a12120460e747fcea3e5081ba7985b204}} 
+\index{Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}!getItem@{getItem}}
+\index{getItem@{getItem}!Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}}
+\doxysubsubsection{\texorpdfstring{getItem()}{getItem()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Context\+Menu\+::get\+Item (\begin{DoxyParamCaption}\item[{int32}]{index,  }\item[{\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{Item}} \&}]{item,  }\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}} $\ast$$\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets a menu item and its target (target could be not assigned). \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_aeef86f2be0ab6ad40d6c63d1b63ca89c}\label{class_steinberg_1_1_vst_1_1_i_context_menu_aeef86f2be0ab6ad40d6c63d1b63ca89c}} 
+\index{Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}!getItemCount@{getItemCount}}
+\index{getItemCount@{getItemCount}!Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}}
+\doxysubsubsection{\texorpdfstring{getItemCount()}{getItemCount()}}
+{\footnotesize\ttfamily virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Context\+Menu\+::get\+Item\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Gets the number of menu items. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_a740811258f789a6da82b3155f7191dac}\label{class_steinberg_1_1_vst_1_1_i_context_menu_a740811258f789a6da82b3155f7191dac}} 
+\index{Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}!popup@{popup}}
+\index{popup@{popup}!Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}}
+\doxysubsubsection{\texorpdfstring{popup()}{popup()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Context\+Menu\+::popup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_steinberg_a91e26bd765c8845ae5e3cf7871c842e7}{U\+Coord}}}]{x,  }\item[{\mbox{\hyperlink{namespace_steinberg_a91e26bd765c8845ae5e3cf7871c842e7}{U\+Coord}}}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pop-\/ups the menu. Coordinates are relative to the top-\/left position of the plug-\/ins view. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_context_menu_a6b5bd91c0c048e20b829ea45b63f2d7f}\label{class_steinberg_1_1_vst_1_1_i_context_menu_a6b5bd91c0c048e20b829ea45b63f2d7f}} 
+\index{Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}!removeItem@{removeItem}}
+\index{removeItem@{removeItem}!Steinberg::Vst::IContextMenu@{Steinberg::Vst::IContextMenu}}
+\doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Context\+Menu\+::remove\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_i_context_menu_item}{Item}} \&}]{item,  }\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_context_menu_target}{I\+Context\+Menu\+Target}} $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Removes a menu item. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstcontextmenu.\+h\end{DoxyCompactItemize}

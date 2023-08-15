@@ -1,0 +1,26 @@
+\hypertarget{class_sk_drawable_1_1_gpu_draw_handler}{}\doxysection{Sk\+Drawable\+::Gpu\+Draw\+Handler Class Reference}
+\label{class_sk_drawable_1_1_gpu_draw_handler}\index{SkDrawable::GpuDrawHandler@{SkDrawable::GpuDrawHandler}}
+
+
+{\ttfamily \#include $<$Sk\+Drawable.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_drawable_1_1_gpu_draw_handler_abc79b03cd9bf22486499edd380a5495e}\label{class_sk_drawable_1_1_gpu_draw_handler_abc79b03cd9bf22486499edd380a5495e}} 
+virtual void {\bfseries draw} (const \mbox{\hyperlink{class_gr_backend_drawable_info}{Gr\+Backend\+Drawable\+Info}} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+When using the G\+PU backend it is possible for a drawable to execute using the underlying 3D A\+PI rather than the \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} A\+PI. It does so by creating a \mbox{\hyperlink{class_sk_drawable_1_1_gpu_draw_handler}{Gpu\+Draw\+Handler}}. The G\+PU backend is deferred so the handler will be given access to the 3D A\+PI at the correct point in the drawing stream as the G\+PU backend flushes. Since the drawable may mutate, each time it is drawn to a G\+P\+U-\/backed canvas a new handler is snapped, representing the drawable\textquotesingle{}s state at the time of the snap.
+
+When the G\+PU backend flushes to the 3D A\+PI it will call the draw method on the \mbox{\hyperlink{class_sk_drawable_1_1_gpu_draw_handler}{Gpu\+Draw\+Handler}}. At this time the drawable may add commands to the stream of G\+PU commands for the unerlying 3D A\+PI. The draw function takes a \mbox{\hyperlink{class_gr_backend_drawable_info}{Gr\+Backend\+Drawable\+Info}} which contains information about the current state of 3D A\+PI which the caller must respect. See \mbox{\hyperlink{class_gr_backend_drawable_info}{Gr\+Backend\+Drawable\+Info}} for more specific details on what information is sent and the requirements for different 3D A\+P\+Is.
+
+Additionaly there may be a slight delay from when the drawable adds its commands to when those commands are actually submitted to the G\+PU. Thus the drawable or \mbox{\hyperlink{class_sk_drawable_1_1_gpu_draw_handler}{Gpu\+Draw\+Handler}} is required to keep any resources that are used by its added commands alive and valid until those commands are submitted to the G\+PU. The \mbox{\hyperlink{class_sk_drawable_1_1_gpu_draw_handler}{Gpu\+Draw\+Handler}} will be kept alive and then deleted once the commands are submitted to the G\+PU. The dtor of the \mbox{\hyperlink{class_sk_drawable_1_1_gpu_draw_handler}{Gpu\+Draw\+Handler}} is the signal to the drawable that the commands have all been submitted. Different 3D A\+P\+Is may have additional requirements for certain resources which require waiting for the G\+PU to finish all work on those resources before reusing or deleting them. In this case, the drawable can use the dtor call of the \mbox{\hyperlink{class_sk_drawable_1_1_gpu_draw_handler}{Gpu\+Draw\+Handler}} to add a fence to the G\+PU to track when the G\+PU work has completed.
+
+Currently this is only supported for the G\+PU Vulkan backend. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Drawable.\+h\end{DoxyCompactItemize}

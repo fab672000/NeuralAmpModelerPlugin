@@ -1,0 +1,67 @@
+\hypertarget{group___iterative_linear_solvers___module}{}\doxysection{Iterative\+Linear\+Solvers\+\_\+\+Module}
+\label{group___iterative_linear_solvers___module}\index{IterativeLinearSolvers\_Module@{IterativeLinearSolvers\_Module}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1_diagonal_preconditioner}{Eigen\+::\+Diagonal\+Preconditioner$<$ Scalar\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A preconditioner based on the digonal entries. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_least_square_diagonal_preconditioner}{Eigen\+::\+Least\+Square\+Diagonal\+Preconditioner$<$ Scalar\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em Jacobi preconditioner for \mbox{\hyperlink{class_eigen_1_1_least_squares_conjugate_gradient}{Least\+Squares\+Conjugate\+Gradient}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_identity_preconditioner}{Eigen\+::\+Identity\+Preconditioner}}
+\begin{DoxyCompactList}\small\item\em A naive preconditioner which approximates any matrix as the identity matrix. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_bi_c_g_s_t_a_b}{Eigen\+::\+Bi\+C\+G\+S\+T\+A\+B$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A bi conjugate gradient stabilized solver for sparse square problems. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_conjugate_gradient}{Eigen\+::\+Conjugate\+Gradient$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A conjugate gradient solver for sparse (or dense) self-\/adjoint problems. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_iterative_solver_base}{Eigen\+::\+Iterative\+Solver\+Base$<$ Derived $>$}}
+\begin{DoxyCompactList}\small\item\em Base class for linear iterative solvers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_least_squares_conjugate_gradient}{Eigen\+::\+Least\+Squares\+Conjugate\+Gradient$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A conjugate gradient solver for sparse (or dense) least-\/square problems. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_d_g_m_r_e_s}{Eigen\+::\+D\+G\+M\+R\+E\+S$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A Restarted \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} with deflation. This class implements a modification of the \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} solver for sparse linear systems. The basis is built with modified Gram-\/\+Schmidt. At each restart, a few approximated eigenvectors corresponding to the smallest eigenvalues are used to build a preconditioner for the next cycle. This preconditioner for deflation can be combined with any other preconditioner, the \mbox{\hyperlink{class_eigen_1_1_incomplete_l_u_t}{Incomplete\+L\+UT}} for instance. The preconditioner is applied at right of the matrix and the combination is multiplicative. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{Eigen\+::\+G\+M\+R\+E\+S$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} solver for sparse square problems. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_i_d_r_s}{Eigen\+::\+I\+D\+R\+S$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em The Induced Dimension Reduction method (I\+D\+R(s)) is a short-\/recurrences Krylov method for sparse square problems. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_i_d_r_s_t_a_b_l}{Eigen\+::\+I\+D\+R\+S\+T\+A\+B\+L$<$ Matrix\+Type\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em The I\+D\+R(s)S\+T\+A\+B(l) is a combination of I\+D\+R(s) and Bi\+C\+G\+S\+T\+A\+B(l). It is a short-\/recurrences Krylov method for sparse square problems. It can outperform both I\+D\+R(s) and Bi\+C\+G\+S\+T\+A\+B(l). I\+D\+R(s)S\+T\+A\+B(l) generally closely follows the optimal \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}} convergence in terms of the number of Matrix-\/\+Vector products. However, without the increasing cost per iteration of \mbox{\hyperlink{class_eigen_1_1_g_m_r_e_s}{G\+M\+R\+ES}}. I\+D\+R(s)S\+T\+A\+B(l) is suitable for both indefinite systems and systems with complex eigenvalues. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_m_i_n_r_e_s}{Eigen\+::\+M\+I\+N\+R\+E\+S$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Preconditioner\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em A minimal residual solver for sparse symmetric problems. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_incomplete_l_u_t}{Eigen\+::\+Incomplete\+L\+U\+T$<$ Scalar\+\_\+, Storage\+Index\+\_\+ $>$}}
+\begin{DoxyCompactList}\small\item\em Incomplete LU factorization with dual-\/threshold strategy. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_solve_with_guess}{Eigen\+::\+Solve\+With\+Guess}}
+\begin{DoxyCompactList}\small\item\em Pseudo expression representing a solving operation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eigen_1_1_iteration_controller}{Eigen\+::\+Iteration\+Controller}}
+\begin{DoxyCompactList}\small\item\em Controls the iterations of the iterative solvers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename C\+Matrix , typename C\+I\+N\+V\+Matrix $>$ }\\void \mbox{\hyperlink{group___iterative_linear_solvers___module_ga58a0ccf0e71d88beeb5dcf72ed0bdd5f}{Eigen\+::internal\+::pseudo\+\_\+inverse}} (const C\+Matrix \&\mbox{\hyperlink{class_eigen_1_1_matrix}{C}}, C\+I\+N\+V\+Matrix \&C\+I\+NV)
+\item 
+{\footnotesize template$<$typename T\+Matrix , typename C\+Matrix , typename VectorX , typename VectorB , typename VectorF $>$ }\\void \mbox{\hyperlink{group___iterative_linear_solvers___module_ga1c2f99746877fd46158af4a6b7dce2f9}{Eigen\+::internal\+::constrained\+\_\+cg}} (const \mbox{\hyperlink{class_eigen_1_1_matrix}{T\+Matrix}} \&\mbox{\hyperlink{class_eigen_1_1_matrix}{A}}, const C\+Matrix \&\mbox{\hyperlink{class_eigen_1_1_matrix}{C}}, \mbox{\hyperlink{class_eigen_1_1_matrix}{VectorX}} \&x, const VectorB \&b, const VectorF \&f, \mbox{\hyperlink{class_eigen_1_1_iteration_controller}{Iteration\+Controller}} \&iter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___iterative_linear_solvers___module_ga1c2f99746877fd46158af4a6b7dce2f9}\label{group___iterative_linear_solvers___module_ga1c2f99746877fd46158af4a6b7dce2f9}} 
+\index{IterativeLinearSolvers\_Module@{IterativeLinearSolvers\_Module}!constrained\_cg@{constrained\_cg}}
+\index{constrained\_cg@{constrained\_cg}!IterativeLinearSolvers\_Module@{IterativeLinearSolvers\_Module}}
+\doxysubsubsection{\texorpdfstring{constrained\_cg()}{constrained\_cg()}}
+{\footnotesize\ttfamily template$<$typename T\+Matrix , typename C\+Matrix , typename VectorX , typename VectorB , typename VectorF $>$ \\
+void Eigen\+::internal\+::constrained\+\_\+cg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_matrix}{T\+Matrix}} \&}]{A,  }\item[{const C\+Matrix \&}]{C,  }\item[{\mbox{\hyperlink{class_eigen_1_1_matrix}{VectorX}} \&}]{x,  }\item[{const VectorB \&}]{b,  }\item[{const VectorF \&}]{f,  }\item[{\mbox{\hyperlink{class_eigen_1_1_iteration_controller}{Iteration\+Controller}} \&}]{iter }\end{DoxyParamCaption})}
+
+Constrained conjugate gradient
+
+Computes the minimum of $ 1/2((Ax).x) - bx $ under the constraint $ Cx \le f $ \mbox{\Hypertarget{group___iterative_linear_solvers___module_ga58a0ccf0e71d88beeb5dcf72ed0bdd5f}\label{group___iterative_linear_solvers___module_ga58a0ccf0e71d88beeb5dcf72ed0bdd5f}} 
+\index{IterativeLinearSolvers\_Module@{IterativeLinearSolvers\_Module}!pseudo\_inverse@{pseudo\_inverse}}
+\index{pseudo\_inverse@{pseudo\_inverse}!IterativeLinearSolvers\_Module@{IterativeLinearSolvers\_Module}}
+\doxysubsubsection{\texorpdfstring{pseudo\_inverse()}{pseudo\_inverse()}}
+{\footnotesize\ttfamily template$<$typename C\+Matrix , typename C\+I\+N\+V\+Matrix $>$ \\
+void Eigen\+::internal\+::pseudo\+\_\+inverse (\begin{DoxyParamCaption}\item[{const C\+Matrix \&}]{C,  }\item[{C\+I\+N\+V\+Matrix \&}]{C\+I\+NV }\end{DoxyParamCaption})}
+
+Compute the pseudo inverse of the non-\/square matrix C such that $ CINV = (C * C^T)^{-1} * C $ based on a conjugate gradient method.
+
+This function is internally used by constrained\+\_\+cg. 

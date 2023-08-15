@@ -1,0 +1,66 @@
+\hypertarget{class_a_a_x___i_a_c_f_host_services}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services Class Reference}
+\label{class_a_a_x___i_a_c_f_host_services}\index{AAX\_IACFHostServices@{AAX\_IACFHostServices}}
+
+
+Versioned interface to diagnostic and debugging services provided by the A\+AX host.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_a_a_x___i_a_c_f_host_services}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services_a49111de18abd12b671ae16138e244af3}{Assert}} (const char $\ast$i\+File, int32\+\_\+t i\+Line, const char $\ast$i\+Note)=0
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services_ac6a48553ca0643d2505ce23862921a80}{Trace}} (int32\+\_\+t i\+Priority, const char $\ast$i\+Message)=0
+\begin{DoxyCompactList}\small\item\em Log a trace message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Versioned interface to diagnostic and debugging services provided by the A\+AX host. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_host_services_a49111de18abd12b671ae16138e244af3}\label{class_a_a_x___i_a_c_f_host_services_a49111de18abd12b671ae16138e244af3}} 
+\index{AAX\_IACFHostServices@{AAX\_IACFHostServices}!Assert@{Assert}}
+\index{Assert@{Assert}!AAX\_IACFHostServices@{AAX\_IACFHostServices}}
+\doxysubsubsection{\texorpdfstring{Assert()}{Assert()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+::\+Assert (\begin{DoxyParamCaption}\item[{const char $\ast$}]{i\+File,  }\item[{int32\+\_\+t}]{i\+Line,  }\item[{const char $\ast$}]{i\+Note }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000271}{Deprecated}}]Legacy version of \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services___v3_aaaddbd89dd3d6dd2e9e9def5b99c579f}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3\+::\+Handle\+Assert\+Failure()}} implemented by older hosts\end{DoxyRefDesc}
+
+
+Prior to \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services___v3_aaaddbd89dd3d6dd2e9e9def5b99c579f}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3\+::\+Handle\+Assert\+Failure()}}, the A\+A\+X\+\_\+\+A\+S\+S\+E\+RT macro, a wrapper around \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services_a49111de18abd12b671ae16138e244af3}{Assert()}}, was only compiled into debug plug-\/in builds. A\+A\+X\+\_\+\+A\+S\+S\+E\+RT is now compiled in to all plug-\/in builds and the original debug-\/only form is available through A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+RT.
+
+Because the implementation of \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services_a49111de18abd12b671ae16138e244af3}{Assert()}} in the host is not aware of the plug-\/in\textquotesingle{}s build configuation, older hosts implemented this method with a warning dialog in all cases. Newer hosts -\/ those which implement \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services___v3_aaaddbd89dd3d6dd2e9e9def5b99c579f}{Handle\+Assert\+Failure()}} -\/ will log assertion failures but will not present any user dialog in shipping builds of the host software.
+
+In order to prevent assertion failure dialogs from appearing to users who run new builds of plug-\/ins containing A\+A\+X\+\_\+\+A\+S\+S\+E\+RT calls in older hosts the deprecated \mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services_a49111de18abd12b671ae16138e244af3}{Assert()}} method should only be called from debug plug-\/in builds. \mbox{\Hypertarget{class_a_a_x___i_a_c_f_host_services_ac6a48553ca0643d2505ce23862921a80}\label{class_a_a_x___i_a_c_f_host_services_ac6a48553ca0643d2505ce23862921a80}} 
+\index{AAX\_IACFHostServices@{AAX\_IACFHostServices}!Trace@{Trace}}
+\index{Trace@{Trace}!AAX\_IACFHostServices@{AAX\_IACFHostServices}}
+\doxysubsubsection{\texorpdfstring{Trace()}{Trace()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+::\+Trace (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Priority,  }\item[{const char $\ast$}]{i\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Log a trace message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Priority} & Priority of the trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_host_services_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services.\+h}}\end{DoxyCompactItemize}

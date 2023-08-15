@@ -1,0 +1,100 @@
+\hypertarget{class_a_a_x___c_host_services}{}\doxysection{A\+A\+X\+\_\+\+C\+Host\+Services Class Reference}
+\label{class_a_a_x___c_host_services}\index{AAX\_CHostServices@{AAX\_CHostServices}}
+
+
+Method access to a singleton implementation of the \mbox{\hyperlink{class_a_a_x___i_host_services}{A\+A\+X\+\_\+\+I\+Host\+Services}} interface.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Host\+Services.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_a_x___c_host_services_aeebd6bfb310df1c45f1f8e74b9f7d724}\label{class_a_a_x___c_host_services_aeebd6bfb310df1c45f1f8e74b9f7d724}} 
+static void {\bfseries Set} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$p\+Unk\+Host)
+\item 
+static A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_host_services_a2e595ad634d5d896070d11694151c8f1}{Handle\+Assert\+Failure}} (const char $\ast$i\+File, int32\+\_\+t i\+Line, const char $\ast$i\+Note, int32\+\_\+t i\+Flags=\mbox{\hyperlink{_a_a_x___enums_8h_ab87a565fcd58c3d860d50a210b264985a46c4ae37bd14e71bfd34781038f5f508}{A\+A\+X\+\_\+e\+Assert\+Flags\+\_\+\+Default}})
+\begin{DoxyCompactList}\small\item\em Handle an assertion failure. \end{DoxyCompactList}\item 
+static A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_host_services_af78e7e2022e683bc276747325babbd5c}{Trace}} (\mbox{\hyperlink{_a_a_x___enums_8h_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}} i\+Priority, const char $\ast$i\+Message,...)
+\begin{DoxyCompactList}\small\item\em Log a trace message. \end{DoxyCompactList}\item 
+static A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___c_host_services_abb0b3cc573c12aa6a1e174dc770a4976}{Stack\+Trace}} (\mbox{\hyperlink{_a_a_x___enums_8h_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}} i\+Trace\+Priority, \mbox{\hyperlink{_a_a_x___enums_8h_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}} i\+Stack\+Trace\+Priority, const char $\ast$i\+Message,...)
+\begin{DoxyCompactList}\small\item\em Log a trace message or a stack trace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Method access to a singleton implementation of the \mbox{\hyperlink{class_a_a_x___i_host_services}{A\+A\+X\+\_\+\+I\+Host\+Services}} interface. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___c_host_services_a2e595ad634d5d896070d11694151c8f1}\label{class_a_a_x___c_host_services_a2e595ad634d5d896070d11694151c8f1}} 
+\index{AAX\_CHostServices@{AAX\_CHostServices}!HandleAssertFailure@{HandleAssertFailure}}
+\index{HandleAssertFailure@{HandleAssertFailure}!AAX\_CHostServices@{AAX\_CHostServices}}
+\doxysubsubsection{\texorpdfstring{HandleAssertFailure()}{HandleAssertFailure()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Handle\+Assert\+Failure (\begin{DoxyParamCaption}\item[{const char $\ast$}]{i\+File,  }\item[{int32\+\_\+t}]{i\+Line,  }\item[{const char $\ast$}]{i\+Note,  }\item[{int32\+\_\+t}]{i\+Flags = {\ttfamily \mbox{\hyperlink{_a_a_x___enums_8h_ab87a565fcd58c3d860d50a210b264985a46c4ae37bd14e71bfd34781038f5f508}{A\+A\+X\+\_\+e\+Assert\+Flags\+\_\+\+Default}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handle an assertion failure. 
+
+Use this method to delegate assertion failure handling to the host
+
+Use {\ttfamily in\+Flags} to request that specific behavior be included when handling the failure. This request may not be fulfilled by the host, and absence of a flag does not preclude the host from using that behavior when handling the failure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+File} & The name of the file containing the assert check. Usually {\ttfamily {\bfseries{F\+I\+LE}}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Line} & The line number of the assert check. Usually {\ttfamily {\bfseries{L\+I\+NE}}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Note} & Text to display related to the assert. Usually the condition which failed \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Flags} & Bitfield of \mbox{\hyperlink{_a_a_x___enums_8h_ab87a565fcd58c3d860d50a210b264985}{A\+A\+X\+\_\+\+E\+Assert\+Flags}} to request specific handling behavior \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___c_host_services_abb0b3cc573c12aa6a1e174dc770a4976}\label{class_a_a_x___c_host_services_abb0b3cc573c12aa6a1e174dc770a4976}} 
+\index{AAX\_CHostServices@{AAX\_CHostServices}!StackTrace@{StackTrace}}
+\index{StackTrace@{StackTrace}!AAX\_CHostServices@{AAX\_CHostServices}}
+\doxysubsubsection{\texorpdfstring{StackTrace()}{StackTrace()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Stack\+Trace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}}}]{i\+Trace\+Priority,  }\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}}}]{i\+Stack\+Trace\+Priority,  }\item[{const char $\ast$}]{i\+Message,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Log a trace message or a stack trace. 
+
+If the logging output filtering is set to include logs with {\ttfamily i\+Stack\+Trace\+Priority} then both the logging message and a stack trace will be emitted, regardless of {\ttfamily i\+Trace\+Priority}.
+
+If the logging output filtering is set to include logs with {\ttfamily i\+Trace\+Priority} but to exclude logs with {\ttfamily i\+Stack\+Trace\+Priority} then this will emit a normal log with no stack trace.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Trace\+Priority} & Priority of the trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Stack\+Trace\+Priority} & Priority of the stack trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_a_x___c_host_services_af78e7e2022e683bc276747325babbd5c}\label{class_a_a_x___c_host_services_af78e7e2022e683bc276747325babbd5c}} 
+\index{AAX\_CHostServices@{AAX\_CHostServices}!Trace@{Trace}}
+\index{Trace@{Trace}!AAX\_CHostServices@{AAX\_CHostServices}}
+\doxysubsubsection{\texorpdfstring{Trace()}{Trace()}}
+{\footnotesize\ttfamily A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Trace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x___enums_8h_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}}}]{i\+Priority,  }\item[{const char $\ast$}]{i\+Message,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Log a trace message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Priority} & Priority of the trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___c_host_services_8h}{A\+A\+X\+\_\+\+C\+Host\+Services.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Libs/\+A\+A\+X\+Library/source/A\+A\+X\+\_\+\+C\+Host\+Services.\+cpp\end{DoxyCompactItemize}

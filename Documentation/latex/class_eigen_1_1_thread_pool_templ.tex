@@ -1,0 +1,79 @@
+\hypertarget{class_eigen_1_1_thread_pool_templ}{}\doxysection{Eigen\+::Thread\+Pool\+Templ$<$ Environment $>$ Class Template Reference}
+\label{class_eigen_1_1_thread_pool_templ}\index{Eigen::ThreadPoolTempl$<$ Environment $>$@{Eigen::ThreadPoolTempl$<$ Environment $>$}}
+Inheritance diagram for Eigen\+::Thread\+Pool\+Templ$<$ Environment $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_eigen_1_1_thread_pool_templ}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a0e1d2a0f7b97d6dcf28da9e0dd2611db}\label{class_eigen_1_1_thread_pool_templ_a0e1d2a0f7b97d6dcf28da9e0dd2611db}} 
+typedef Environment\+::\+Task {\bfseries Task}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_abcf946655af74ce4153008c443b8f082}\label{class_eigen_1_1_thread_pool_templ_abcf946655af74ce4153008c443b8f082}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_run_queue}{Run\+Queue}}$<$ Task, 1024 $>$ {\bfseries Queue}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a0e1d2a0f7b97d6dcf28da9e0dd2611db}\label{class_eigen_1_1_thread_pool_templ_a0e1d2a0f7b97d6dcf28da9e0dd2611db}} 
+typedef Environment\+::\+Task {\bfseries Task}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_abcf946655af74ce4153008c443b8f082}\label{class_eigen_1_1_thread_pool_templ_abcf946655af74ce4153008c443b8f082}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_run_queue}{Run\+Queue}}$<$ Task, 1024 $>$ {\bfseries Queue}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a9ac475e6b3df752a34c42a7d7cd5934a}\label{class_eigen_1_1_thread_pool_templ_a9ac475e6b3df752a34c42a7d7cd5934a}} 
+{\bfseries Thread\+Pool\+Templ} (int num\+\_\+threads, Environment env=Environment())
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a260a9bd9c0b4766c67d8c92f13539faf}\label{class_eigen_1_1_thread_pool_templ_a260a9bd9c0b4766c67d8c92f13539faf}} 
+{\bfseries Thread\+Pool\+Templ} (int num\+\_\+threads, bool allow\+\_\+spinning, Environment env=Environment())
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_aaee0c6db2ab7a56095944547ae81eabe}\label{class_eigen_1_1_thread_pool_templ_aaee0c6db2ab7a56095944547ae81eabe}} 
+void {\bfseries Set\+Steal\+Partitions} (const std\+::vector$<$ std\+::pair$<$ unsigned, unsigned $>$$>$ \&partitions)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a173a9316c1c44bfa16ea684d40d082e7}\label{class_eigen_1_1_thread_pool_templ_a173a9316c1c44bfa16ea684d40d082e7}} 
+void {\bfseries Schedule} (std\+::function$<$ void()$>$ fn) E\+I\+G\+E\+N\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a307298c025beb275281e24828822581c}\label{class_eigen_1_1_thread_pool_templ_a307298c025beb275281e24828822581c}} 
+void {\bfseries Schedule\+With\+Hint} (std\+::function$<$ void()$>$ fn, int start, int limit) override
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a0ad2d7bc31ee21c0d44cffd4934901c2}\label{class_eigen_1_1_thread_pool_templ_a0ad2d7bc31ee21c0d44cffd4934901c2}} 
+void {\bfseries Cancel} () E\+I\+G\+E\+N\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a834d2d2c52d326c78a04daa9e6c64ae4}\label{class_eigen_1_1_thread_pool_templ_a834d2d2c52d326c78a04daa9e6c64ae4}} 
+int {\bfseries Num\+Threads} () const E\+I\+G\+E\+N\+\_\+\+F\+I\+N\+AL
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a10e5996daf4278d48e419e19f8af2569}\label{class_eigen_1_1_thread_pool_templ_a10e5996daf4278d48e419e19f8af2569}} 
+int {\bfseries Current\+Thread\+Id} () const E\+I\+G\+E\+N\+\_\+\+F\+I\+N\+AL
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a9ac475e6b3df752a34c42a7d7cd5934a}\label{class_eigen_1_1_thread_pool_templ_a9ac475e6b3df752a34c42a7d7cd5934a}} 
+{\bfseries Thread\+Pool\+Templ} (int num\+\_\+threads, Environment env=Environment())
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a260a9bd9c0b4766c67d8c92f13539faf}\label{class_eigen_1_1_thread_pool_templ_a260a9bd9c0b4766c67d8c92f13539faf}} 
+{\bfseries Thread\+Pool\+Templ} (int num\+\_\+threads, bool allow\+\_\+spinning, Environment env=Environment())
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_aaee0c6db2ab7a56095944547ae81eabe}\label{class_eigen_1_1_thread_pool_templ_aaee0c6db2ab7a56095944547ae81eabe}} 
+void {\bfseries Set\+Steal\+Partitions} (const std\+::vector$<$ std\+::pair$<$ unsigned, unsigned $>$$>$ \&partitions)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a173a9316c1c44bfa16ea684d40d082e7}\label{class_eigen_1_1_thread_pool_templ_a173a9316c1c44bfa16ea684d40d082e7}} 
+void {\bfseries Schedule} (std\+::function$<$ void()$>$ fn) E\+I\+G\+E\+N\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a307298c025beb275281e24828822581c}\label{class_eigen_1_1_thread_pool_templ_a307298c025beb275281e24828822581c}} 
+void {\bfseries Schedule\+With\+Hint} (std\+::function$<$ void()$>$ fn, int start, int limit) override
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a0ad2d7bc31ee21c0d44cffd4934901c2}\label{class_eigen_1_1_thread_pool_templ_a0ad2d7bc31ee21c0d44cffd4934901c2}} 
+void {\bfseries Cancel} () E\+I\+G\+E\+N\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a834d2d2c52d326c78a04daa9e6c64ae4}\label{class_eigen_1_1_thread_pool_templ_a834d2d2c52d326c78a04daa9e6c64ae4}} 
+int {\bfseries Num\+Threads} () const E\+I\+G\+E\+N\+\_\+\+F\+I\+N\+AL
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_thread_pool_templ_a10e5996daf4278d48e419e19f8af2569}\label{class_eigen_1_1_thread_pool_templ_a10e5996daf4278d48e419e19f8af2569}} 
+int {\bfseries Current\+Thread\+Id} () const E\+I\+G\+E\+N\+\_\+\+F\+I\+N\+AL
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Thread\+Pool/Non\+Blocking\+Thread\+Pool.\+h\end{DoxyCompactItemize}

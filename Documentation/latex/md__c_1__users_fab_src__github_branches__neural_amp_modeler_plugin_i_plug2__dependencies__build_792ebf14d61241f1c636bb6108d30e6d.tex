@@ -1,0 +1,430 @@
+Oboe is a C++ library which makes it easy to build high-\/performance audio apps on Android. Apps communicate with Oboe by reading and writing data to streams.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md78}{}\doxysection{Audio streams}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md78}
+Oboe moves audio data between your app and the audio inputs and outputs on your Android device. Your app passes data in and out using a callback function or by reading from and writing to {\itshape audio streams}, represented by the class {\ttfamily Audio\+Stream}. The read/write calls can be blocking or non-\/blocking.
+
+A stream is defined by the following\+:
+
+
+\begin{DoxyItemize}
+\item The {\itshape audio} {\itshape device} that is the source or sink for the data in the stream.
+\item The {\itshape sharing mode} that determines whether a stream has exclusive access to an audio device that might otherwise be shared among multiple streams.
+\item The {\itshape format} of the audio data in the stream.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md79}{}\doxysubsection{Audio device}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md79}
+Each stream is attached to a single audio device.
+
+An audio device is a hardware interface or virtual endpoint that acts as a source or sink for a continuous stream of digital audio data. Don\textquotesingle{}t confuse an {\itshape audio device} (a built-\/in mic or bluetooth headset) with the {\itshape Android device} (the phone or watch) that is running your app.
+
+On A\+PI 23 and above you can use the {\ttfamily Audio\+Manager} method \href{https://developer.android.com/reference/android/media/AudioManager.html\#getDevices(int)}{\texttt{ get\+Devices()}} to discover the audio devices that are available on your Android device. The method returns information about the \href{https://developer.android.com/reference/android/media/AudioDeviceInfo.html}{\texttt{ type}} of each device.
+
+Each audio device has a unique ID on the Android device. You can use the ID to bind an audio stream to a specific audio device. However, in most cases you can let Oboe choose the default primary device rather than specifying one yourself.
+
+The audio device attached to a stream determines whether the stream is for input or output. A stream can only move data in one direction. When you define a stream you also set its direction. When you open a stream Android checks to ensure that the audio device and stream direction agree.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md80}{}\doxysubsection{Sharing mode}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md80}
+A stream has a sharing mode\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Sharing\+Mode\+::\+Exclusive} (available on A\+PI 26+) means the stream has exclusive access to an endpoint on its audio device; the endpoint cannot be used by any other audio stream. If the exclusive endpoint is already in use, it might not be possible for the stream to obtain access to it. Exclusive streams provide the lowest possible latency by bypassing the mixer stage, but they are also more likely to get disconnected. You should close exclusive streams as soon as you no longer need them, so that other apps can access that endpoint. Not all audio devices provide exclusive endpoints. System sounds and sounds from other apps can still be heard when an exclusive stream is in use as they use a different endpoint.
+\end{DoxyItemize}
+
+
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Sharing\+Mode\+::\+Shared} allows Oboe streams to share an endpoint. The operating system will mix all the shared streams assigned to the same endpoint on the audio device.
+\end{DoxyItemize}
+
+
+
+You can explicitly request the sharing mode when you create a stream, although you are not guaranteed to receive that mode. By default, the sharing mode is {\ttfamily Shared}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md81}{}\doxysubsection{Audio format}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md81}
+The data passed through a stream has the usual digital audio attributes, which you must specify when you define a stream. These are as follows\+:
+
+
+\begin{DoxyItemize}
+\item Sample format
+\item Samples per frame
+\item Sample rate
+\end{DoxyItemize}
+
+Oboe permits these sample formats\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Audio\+Format }&\cellcolor{\tableheadbgcolor}\textbf{ C data type }&\cellcolor{\tableheadbgcolor}\textbf{ Notes  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Audio\+Format }&\cellcolor{\tableheadbgcolor}\textbf{ C data type }&\cellcolor{\tableheadbgcolor}\textbf{ Notes  }\\\cline{1-3}
+\endhead
+I16 &int16\+\_\+t &common 16-\/bit samples, \href{https://source.android.com/devices/audio/data_formats\#androidFormats}{\texttt{ Q0.\+15 format}}  \\\cline{1-3}
+Float &float &-\/1.\+0 to +1.\+0  \\\cline{1-3}
+\end{longtabu}
+
+
+Oboe might perform sample conversion on its own. For example, if an app is writing Audio\+Format\+::\+Float data but the H\+AL uses Audio\+Format\+::\+I16, Oboe might convert the samples automatically. Conversion can happen in either direction. If your app processes audio input, it is wise to verify the input format and be prepared to convert data if necessary, as in this example\+: \begin{DoxyVerb}AudioFormat dataFormat = stream->getDataFormat();
+//... later
+if (dataFormat == AudioFormat::I16) {
+     convertFloatToPcm16(...)
+}
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md82}{}\doxysection{Creating an audio stream}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md82}
+The Oboe library follows a \href{https://en.wikipedia.org/wiki/Builder_pattern}{\texttt{ builder design pattern}} and provides the class {\ttfamily Audio\+Stream\+Builder}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md83}{}\doxysubsection{Set the audio stream configuration using an Audio\+Stream\+Builder.}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md83}
+Use the builder functions that correspond to the stream parameters. These optional set functions are available\+: \begin{DoxyVerb}AudioStreamBuilder streamBuilder;
+
+streamBuilder.setDeviceId(deviceId);
+streamBuilder.setDirection(direction);
+streamBuilder.setSharingMode(shareMode);
+streamBuilder.setSampleRate(sampleRate);
+streamBuilder.setChannelCount(channelCount);
+streamBuilder.setFormat(format);
+streamBuilder.setPerformanceMode(perfMode);
+\end{DoxyVerb}
+
+
+Note that these methods do not report errors, such as an undefined constant or value out of range. They will be checked when the stream is opened.
+
+If you do not specify the device\+Id, the default is the primary output device. If you do not specify the stream direction, the default is an output stream. For all parameters, you can explicitly set a value, or let the system assign the optimal value by not specifying the parameter at all or setting it to {\ttfamily k\+Unspecified}.
+
+To be safe, check the state of the audio stream after you create it, as explained in step 3, below.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md84}{}\doxysubsection{Open the Stream}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md84}
+After you\textquotesingle{}ve configured the {\ttfamily Audio\+Stream\+Builder}, call {\ttfamily open\+Stream()} to open the stream\+: \begin{DoxyVerb}Result result = streamBuilder.openStream(&stream_);
+if (result != OK){
+    __android_log_print(ANDROID_LOG_ERROR,
+                        "AudioEngine",
+                        "Error opening stream %s",
+                        convertToText(result));
+}
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md85}{}\doxysubsection{Verifying stream configuration and additional properties}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md85}
+You should verify the stream\textquotesingle{}s configuration after opening it.
+
+The following properties are guaranteed to be set. However, if these properties are unspecified, a default value will still be set, and should be queried by the appropriate accessor.
+
+
+\begin{DoxyItemize}
+\item callback
+\item frames\+Per\+Callback
+\item sample\+Rate
+\item channel\+Count
+\item format
+\item direction
+\end{DoxyItemize}
+
+The following properties may be changed by the underlying stream construction {\itshape even if explicitly set} and therefore should always be queried by the appropriate accessor. The property settings will depend on device capabilities.
+
+
+\begin{DoxyItemize}
+\item buffer\+Capacity\+In\+Frames
+\item sharing\+Mode (exclusive provides lowest latency)
+\item performance\+Mode
+\end{DoxyItemize}
+
+The following properties are only set by the underlying stream. They cannot be set by the application, but should be queried by the appropriate accessor.
+
+
+\begin{DoxyItemize}
+\item frames\+Per\+Burst
+\end{DoxyItemize}
+
+The following properties have unusual behavior
+
+
+\begin{DoxyItemize}
+\item device\+Id is respected when the underlying A\+PI is A\+Audio (A\+PI level $>$=28), but not when it is Open\+S\+L\+ES. It can be set regardless, but {\itshape will not} throw an error if an Open\+S\+L\+ES stream is used. The default device will be used, rather than whatever is specified.
+\item m\+Audio\+Api is only a property of the builder, however Audio\+Stream\+::get\+Audio\+Api() can be used to query the underlying A\+PI which the stream uses. The property set in the builder is not guaranteed, and in general, the A\+PI should be chosen by Oboe to allow for best performance and stability considerations. Since Oboe is designed to be as uniform across both A\+P\+Is as possible, this property should not generally be needed.
+\item m\+Buffer\+Size\+In\+Frames can only be set on an already open stream (as opposed to a builder), since it depends on run-\/time behavior. The actual size used may not be what was requested. Oboe or the underlyng A\+PI will limit the size between zero and the buffer capacity. It may also be limited further to reduce glitching on particular devices. This features is not supported when using Open\+SL ES callbacks.
+\end{DoxyItemize}
+
+Many of the stream\textquotesingle{}s properties may vary (whether or not you set them) depending on the capabilities of the audio device and the Android device on which it\textquotesingle{}s running. If you need to know these values then you must query them using the accessor after the stream has been opened. Additionally, the underlying parameters a stream is granted are useful to know if they have been left unspecified. As a matter of good defensive programming, you should check the stream\textquotesingle{}s configuration before using it.
+
+There are functions to retrieve the stream setting that corresponds to each builder setting\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Audio\+Stream\+Builder set methods }&\cellcolor{\tableheadbgcolor}\textbf{ Audio\+Stream get methods  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Audio\+Stream\+Builder set methods }&\cellcolor{\tableheadbgcolor}\textbf{ Audio\+Stream get methods  }\\\cline{1-2}
+\endhead
+{\ttfamily set\+Callback()} &{\ttfamily get\+Callback()}  \\\cline{1-2}
+{\ttfamily set\+Direction()} &{\ttfamily get\+Direction()}  \\\cline{1-2}
+{\ttfamily set\+Sharing\+Mode()} &{\ttfamily get\+Sharing\+Mode()}  \\\cline{1-2}
+{\ttfamily set\+Performance\+Mode()} &{\ttfamily get\+Performance\+Mode()}  \\\cline{1-2}
+{\ttfamily set\+Sample\+Rate()} &{\ttfamily get\+Sample\+Rate()}  \\\cline{1-2}
+{\ttfamily set\+Channel\+Count()} &{\ttfamily \mbox{\hyperlink{group__speaker_arrangements_gaa8258a29fe4e3164d9239869c1afc1e0}{get\+Channel\+Count()}}}  \\\cline{1-2}
+{\ttfamily set\+Format()} &{\ttfamily get\+Format()}  \\\cline{1-2}
+{\ttfamily set\+Buffer\+Capacity\+In\+Frames()} &{\ttfamily get\+Buffer\+Capacity\+In\+Frames()}  \\\cline{1-2}
+{\ttfamily set\+Frames\+Per\+Callback()} &{\ttfamily get\+Frames\+Per\+Callback()}  \\\cline{1-2}
+-- &{\ttfamily get\+Frames\+Per\+Burst()}  \\\cline{1-2}
+{\ttfamily set\+Device\+Id()} (not respected on Open\+S\+L\+ES) &{\ttfamily get\+Device\+Id()}  \\\cline{1-2}
+{\ttfamily set\+Audio\+Api()} (mainly for debugging) &{\ttfamily get\+Audio\+Api()}  \\\cline{1-2}
+\end{longtabu}
+
+
+The following Audio\+Stream\+Builder fields were added in A\+PI 28 to specify additional information about the Audio\+Stream to the device. Currently, they have little effect on the stream, but setting them helps applications interact better with other services.
+
+For more information see\+: \href{https://source.android.com/devices/audio/attributes}{\texttt{ Usage/\+Content\+Types}}. The Input\+Preset may be used by the device to process the input stream (such as gain control). By default it is set to Voice\+Recognition, which is optimized for low latency.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily set\+Usage(oboe\+::\+Usage usage)} -\/ The purpose for creating the stream.
+\item {\ttfamily set\+Content\+Type(oboe\+::\+Content\+Type content\+Type)} -\/ The type of content carried by the stream.
+\item {\ttfamily set\+Input\+Preset(oboe\+::\+Input\+Preset input\+Preset)} -\/ The recording configuration for an audio input.
+\item {\ttfamily set\+Session\+Id(\+Session\+Id session\+Id)} -\/ Allocate Session\+ID to connect to the Java Audio\+Effects A\+PI.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md86}{}\doxysection{Using an audio stream}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md86}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md87}{}\doxysubsection{State transitions}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md87}
+An Oboe stream is usually in one of five stable states (the error state, Disconnected, is described at the end of this section)\+:
+
+
+\begin{DoxyItemize}
+\item Open
+\item Started
+\item Paused
+\item Flushed
+\item Stopped
+\end{DoxyItemize}
+
+Data only flows through a stream when the stream is in the Started state. To move a stream between states, use one of the functions that request a state transition\+: \begin{DoxyVerb}Result result;
+result = stream->requestStart();
+result = stream->requestStop();
+result = stream->requestPause();
+result = stream->requestFlush();
+\end{DoxyVerb}
+
+
+Note that you can only request pause or flush on an output stream\+:
+
+These functions are asynchronous, and the state change doesn\textquotesingle{}t happen immediately. When you request a state change, the stream moves toone of the corresponding transient states\+:
+
+
+\begin{DoxyItemize}
+\item Starting
+\item Pausing
+\item Flushing
+\item Stopping
+\item Closing
+\end{DoxyItemize}
+
+The state diagram below shows the stable states as rounded rectangles, and the transient states as dotted rectangles. Though it\textquotesingle{}s not shown, you can call {\ttfamily close()} from any state
+
+
+
+Oboe doesn\textquotesingle{}t provide callbacks to alert you to state changes. One special function, {\ttfamily Audio\+Stream\+::wait\+For\+State\+Change()} can be used to wait for a state change. Note that most apps will not need to call {\ttfamily wait\+For\+State\+Change()} and can just request state changes whenever they are needed.
+
+The function does not detect a state change on its own, and does not wait for a specific state. It waits until the current state is {\itshape different} than {\ttfamily input\+State}, which you specify.
+
+For example, after requesting to pause, a stream should immediately enter the transient state Pausing, and arrive sometime later at the Paused state -\/ though there\textquotesingle{}s no guarantee it will. Since you can\textquotesingle{}t wait for the Paused state, use {\ttfamily wait\+For\+State\+Change()} to wait for {\itshape any state other than Pausing}. Here\textquotesingle{}s how that\textquotesingle{}s done\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{StreamState inputState = StreamState::Pausing;}
+\DoxyCodeLine{StreamState nextState = StreamState::Uninitialized;}
+\DoxyCodeLine{int64\_t timeoutNanos = 100 * kNanosPerMillisecond;}
+\DoxyCodeLine{result = stream-\/>requestPause();}
+\DoxyCodeLine{result = stream-\/>waitForStateChange(inputState, \&nextState, timeoutNanos);}
+\end{DoxyCode}
+
+
+If the stream\textquotesingle{}s state is not Pausing (the {\ttfamily input\+State}, which we assumed was the current state at call time), the function returns immediately. Otherwise, it blocks until the state is no longer Pausing or the timeout expires. When the function returns, the parameter {\ttfamily next\+State} shows the current state of the stream.
+
+You can use this same technique after calling request start, stop, or flush, using the corresponding transient state as the input\+State. Do not call {\ttfamily wait\+For\+State\+Change()} after calling {\ttfamily Audio\+Stream\+::close()} since the underlying stream resources will be deleted as soon as it closes. And do not call {\ttfamily close()} while {\ttfamily wait\+For\+State\+Change()} is running in another thread.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md88}{}\doxysubsection{Reading and writing to an audio stream}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md88}
+There are two ways to move data in or out of a stream. 1) Read from or write directly to the stream. 2) Specify a callback object that will get called when the stream is ready.
+
+The callback technique offers the lowest latency performance because the callback code can run in a high priority thread. Also, attempting to open a low latency output stream without an audio callback (with the intent to use writes) may result in a non low latency stream.
+
+The read/write technique may be easier when you do not need low latency. Or, when doing both input and output, it is common to use a callback for output and then just do a non-\/blocking read from the input stream. Then you have both the input and output data available in one high priority thread.
+
+After the stream is started you can read or write to it using the methods {\ttfamily Audio\+Stream\+::read(buffer, num\+Frames, timeout\+Nanos)} and {\ttfamily Audio\+Stream\+::write(buffer, num\+Frames, timeout\+Nanos)}.
+
+For a blocking read or write that transfers the specified number of frames, set timeout\+Nanos greater than zero. For a non-\/blocking call, set timeout\+Nanos to zero. In this case the result is the actual number of frames transferred.
+
+When you read input, you should verify the correct number of frames was read. If not, the buffer might contain unknown data that could cause an audio glitch. You can pad the buffer with zeros to create a silent dropout\+: \begin{DoxyVerb}Result result = stream.read(audioData, numFrames, timeout);
+if (result < 0) {
+    // Error!
+}
+if (result != numFrames) {
+    // pad the buffer with zeros
+    memset(static_cast<sample_type*>(audioData) + result * samplesPerFrame, 0,
+           (numFrames - result) * stream.getBytesPerFrame());
+}
+\end{DoxyVerb}
+
+
+You can prime the stream\textquotesingle{}s buffer before starting the stream by writing data or silence into it. This must be done in a non-\/blocking call with timeout\+Nanos set to zero.
+
+The data in the buffer must match the data format returned by {\ttfamily stream.\+get\+Data\+Format()}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md89}{}\doxysubsection{Closing an audio stream}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md89}
+When you are finished using a stream, close it\+: \begin{DoxyVerb}stream->close();
+\end{DoxyVerb}
+
+
+Do not close a stream while it is being written to or read from another thread as this will cause your app to crash. After you close a stream you should not call any of its methods except for quering it properties.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md90}{}\doxysubsection{Disconnected audio stream}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md90}
+An audio stream can become disconnected at any time if one of these events happens\+:
+
+
+\begin{DoxyItemize}
+\item The associated audio device is no longer connected (for example when headphones are unplugged).
+\item An error occurs internally.
+\item An audio device is no longer the primary audio device.
+\end{DoxyItemize}
+
+When a stream is disconnected, it has the state \char`\"{}\+Disconnected\char`\"{} and calls to {\ttfamily write()} or other functions will return {\ttfamily Result\+::\+Error\+Disconnected}. When a stream is disconnected, all you can do is close it.
+
+If you need to be informed when an audio device is disconnected, write a class which extends {\ttfamily Audio\+Stream\+Callback} and then register your class using {\ttfamily builder.\+set\+Callback(your\+Callback\+Class)}. If you register a callback, then it will automatically close the stream in a separate thread if the stream is disconnected. Note that registering this callback will enable callbacks for both data and errors. So {\ttfamily on\+Audio\+Ready()} will be called. See the \char`\"{}high priority callback\char`\"{} section below.
+
+Your callback can implement the following methods (called in a separate thread)\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily on\+Error\+Before\+Close(stream, error)} -\/ called when the stream has been disconnected but not yet closed, so you can still reference the underlying stream (e.\+g.{\ttfamily get\+X\+Run\+Count()}). You can also inform any other threads that may be calling the stream to stop doing so. Do not delete the stream or modify its stream state in this callback.
+\item {\ttfamily on\+Error\+After\+Close(stream, error)} -\/ called when the stream has been stopped and closed by Oboe so the stream cannot be used and calling get\+State() will return closed. During this callback, stream properties (those requested by the builder) can be queried, as well as frames written and read. The stream can be deleted at the end of this method (as long as it not referenced in other threads). Methods that reference the underlying stream should not be called (e.\+g. {\ttfamily get\+Timestamp()}, {\ttfamily get\+X\+Run\+Count()}, {\ttfamily read()}, {\ttfamily write()}, etc.). Opening a seperate stream is also a valid use of this callback, especially if the error received is {\ttfamily Error\+::\+Disconnected}. However, it is important to note that the new audio device may have vastly different properties than the stream that was disconnected.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md91}{}\doxysection{Optimizing performance}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md91}
+You can optimize the performance of an audio application by using special high-\/priority threads.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md92}{}\doxysubsection{Using a high priority callback}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md92}
+If your app reads or writes audio data from an ordinary thread, it may be preempted or experience timing jitter. This can cause audio glitches. Using larger buffers might guard against such glitches, but a large buffer also introduces longer audio latency. For applications that require low latency, an audio stream can use an asynchronous callback function to transfer data to and from your app. The callback runs in a high-\/priority thread that has better performance.
+
+Your code can access the callback mechanism by implementing the virtual class {\ttfamily Audio\+Stream\+Callback}. The stream periodically executes {\ttfamily on\+Audio\+Ready()} (the callback function) to acquire the data for its next burst. \begin{DoxyVerb}class AudioEngine : AudioStreamCallback {
+public:
+    DataCallbackResult AudioEngine::onAudioReady(
+            AudioStream *oboeStream,
+            void *audioData,
+            int32_t numFrames){
+        oscillator_->render(static_cast<float *>(audioData), numFrames);
+        return DataCallbackResult::Continue;
+    }
+
+    bool AudioEngine::start() {
+        ...
+        // register the callback
+        streamBuilder.setCallback(this);
+    }
+private:
+    // application data
+    Oscillator* oscillator_;
+}
+\end{DoxyVerb}
+
+
+Note that the callback must be registered on the stream with {\ttfamily set\+Callback}. Any application-\/specific data (such as {\ttfamily oscillator\+\_\+} in this case) can be included within the class itself.
+
+The callback function should not perform a read or write on the stream that invoked it. If the callback belongs to an input stream, your code should process the data that is supplied in the audio\+Data buffer (specified as the second argument). If the callback belongs to an output stream, your code should place data into the buffer.
+
+It is possible to process more than one stream in the callback. You can use one stream as the master, and pass pointers to other streams in the class\textquotesingle{}s private data. Register a callback for the master stream. Then use non-\/blocking I/O on the other streams. Here is an example of a round-\/trip callback that passes an input stream to an output stream. The master calling stream is the output stream. The input stream is included in the class.
+
+The callback does a non-\/blocking read from the input stream placing the data into the buffer of the output stream. \begin{DoxyVerb}class AudioEngine : AudioStreamCallback {
+public:
+
+    oboe_data_callback_result_t AudioEngine::onAudioReady(
+            AudioStream *oboeStream,
+            void *audioData,
+            int32_t numFrames) {
+        const int64_t timeoutNanos = 0; // for a non-blocking read
+        auto result = recordingStream->read(audioData, numFrames, timeoutNanos);
+        // result has type ResultWithValue<int32_t>, which for convenience is coerced
+        // to a Result type when compared with another Result.
+        if (result == Result::OK) {
+            if (result.value() < numFrames) {
+                // replace the missing data with silence
+                memset(static_cast<sample_type*>(audioData) + result.value() * samplesPerFrame, 0,
+                    (numFrames - result.value()) * oboeStream->getBytesPerFrame());
+
+            }
+            return DataCallbackResult::Continue;
+        }
+        return DataCallbackResult::Stop;
+    }
+
+    bool AudioEngine::start() {
+        ...
+        streamBuilder.setCallback(this);
+    }
+
+    void setRecordingStream(AudioStream *stream) {
+      recordingStream = stream;
+    }
+
+private:
+    AudioStream *recordingStream;
+}
+\end{DoxyVerb}
+
+
+Note that in this example it is assumed the input and output streams have the same number of channels, format and sample rate. The format of the streams can be mismatched -\/ as long as the code handles the translations properly.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md93}{}\doxysubsubsection{Callback do\textquotesingle{}s and don\textquotesingle{}ts}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md93}
+You should never perform an operation which could block inside {\ttfamily on\+Audio\+Ready}. Examples of blocking operations include\+:
+
+
+\begin{DoxyItemize}
+\item allocate memory using, for example, malloc() or new
+\item file operations such as opening, closing, reading or writing
+\item network operations such as streaming
+\item use mutexes or other synchronization primitives
+\item sleep
+\item stop or close the stream
+\item Call read() or write() on the stream which invoked it
+\end{DoxyItemize}
+
+The following methods are OK to call\+:
+
+
+\begin{DoxyItemize}
+\item Audio\+Stream\+::get$\ast$()
+\item oboe\+::convert\+Result\+To\+Text()
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md94}{}\doxysubsection{Setting performance mode}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md94}
+Every Audio\+Stream has a {\itshape performance mode} which has a large effect on your app\textquotesingle{}s behavior. There are three modes\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Performance\+Mode\+::\+None} is the default mode. It uses a basic stream that balances latency and power savings.
+\item {\ttfamily Performance\+Mode\+::\+Low\+Latency} uses smaller buffers and an optimized data path for reduced latency.
+\item {\ttfamily Performance\+Mode\+::\+Power\+Saving} uses larger internal buffers and a data path that trades off latency for lower power.
+\end{DoxyItemize}
+
+You can select the performance mode by calling {\ttfamily set\+Performance\+Mode()}, and discover the current mode by calling {\ttfamily get\+Performance\+Mode()}.
+
+If low latency is more important than power savings in your application, use {\ttfamily Performance\+Mode\+::\+Low\+Latency}. This is useful for apps that are very interactive, such as games or keyboard synthesizers.
+
+If saving power is more important than low latency in your application, use {\ttfamily Performance\+Mode\+::\+Power\+Saving}. This is typical for apps that play back previously generated music, such as streaming audio or M\+I\+DI file players.
+
+In the current version of Oboe, in order to achieve the lowest possible latency you must use the {\ttfamily Performance\+Mode\+::\+Low\+Latency} performance mode along with a high-\/priority callback. Follow this example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{// Create a callback object}
+\DoxyCodeLine{MyOboeStreamCallback myCallback;}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Create a stream builder}
+\DoxyCodeLine{AudioStreamBuilder builder;}
+\DoxyCodeLine{builder.setCallback(myCallback);}
+\DoxyCodeLine{builder.setPerformanceMode(PerformanceMode::LowLatency);}
+\DoxyCodeLine{}
+\DoxyCodeLine{// Use it to create the stream}
+\DoxyCodeLine{AudioStream *stream;}
+\DoxyCodeLine{builder.openStream(\&stream);}
+\end{DoxyCode}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md95}{}\doxysection{Thread safety}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md95}
+The Oboe A\+PI is not completely \href{https://en.wikipedia.org/wiki/Thread_safety}{\texttt{ thread safe}}. You cannot call some of the Oboe functions concurrently from more than one thread at a time. This is because Oboe avoids using mutexes, which can cause thread preemption and glitches.
+
+To be safe, don\textquotesingle{}t call {\ttfamily wait\+For\+State\+Change()} or read or write to the same stream from two different threads. Similarly, don\textquotesingle{}t close a stream in one thread while reading or writing to it in another thread.
+
+Calls that return stream settings, like {\ttfamily Audio\+Stream\+::get\+Sample\+Rate()} and {\ttfamily \mbox{\hyperlink{group__speaker_arrangements_gaa8258a29fe4e3164d9239869c1afc1e0}{Audio\+Stream\+::get\+Channel\+Count()}}}, are thread safe.
+
+These calls are also thread safe\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily convert\+To\+Text()}
+\item {\ttfamily Audio\+Stream\+::get$\ast$()} except for {\ttfamily get\+Timestamp()} and {\ttfamily get\+State()}
+\end{DoxyItemize}
+
+{\bfseries{Note\+:}} When a stream uses a callback function, it\textquotesingle{}s safe to read/write from the callback thread while also closing the stream from the thread in which it is running.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md96}{}\doxysection{Code samples}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md96}
+Code samples are available in the \href{../samples}{\texttt{ samples folder}}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md97}{}\doxysection{Known Issues}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_792ebf14d61241f1c636bb6108d30e6d_autotoc_md97}
+The following methods are defined, but will return {\ttfamily Result\+::\+Error\+Unimplemented} for Open\+S\+L\+ES streams\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily get\+Frames\+Read()}
+\item {\ttfamily get\+Frames\+Written()}
+\item {\ttfamily get\+Timestamp()}
+\end{DoxyItemize}
+
+Additionally, {\ttfamily set\+Device\+Id()} will not be respected by Open\+S\+L\+ES streams. 

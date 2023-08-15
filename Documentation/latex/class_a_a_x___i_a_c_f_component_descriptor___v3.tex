@@ -1,0 +1,85 @@
+\hypertarget{class_a_a_x___i_a_c_f_component_descriptor___v3}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V3 Class Reference}
+\label{class_a_a_x___i_a_c_f_component_descriptor___v3}\index{AAX\_IACFComponentDescriptor\_V3@{AAX\_IACFComponentDescriptor\_V3}}
+
+
+Versioned description interface for an A\+AX plug-\/in algorithm callback.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V3\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_a_a_x___i_a_c_f_component_descriptor___v3}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor___v3_aa42746bcccc0e91186464f86b39b8cff}{Add\+Process\+Proc}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$in\+Properties, \mbox{\hyperlink{_a_a_x_8h_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector}} $\ast$out\+Proc\+I\+Ds, int32\+\_\+t in\+Proc\+I\+Ds\+Size)=0
+\begin{DoxyCompactList}\small\item\em Registers one or more algorithm processing entrypoints (process procedures) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Versioned description interface for an A\+AX plug-\/in algorithm callback. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_component_descriptor___v3_aa42746bcccc0e91186464f86b39b8cff}\label{class_a_a_x___i_a_c_f_component_descriptor___v3_aa42746bcccc0e91186464f86b39b8cff}} 
+\index{AAX\_IACFComponentDescriptor\_V3@{AAX\_IACFComponentDescriptor\_V3}!AddProcessProc@{AddProcessProc}}
+\index{AddProcessProc@{AddProcessProc}!AAX\_IACFComponentDescriptor\_V3@{AAX\_IACFComponentDescriptor\_V3}}
+\doxysubsubsection{\texorpdfstring{AddProcessProc()}{AddProcessProc()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V3\+::\+Add\+Process\+Proc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$}]{in\+Properties,  }\item[{\mbox{\hyperlink{_a_a_x_8h_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector}} $\ast$}]{out\+Proc\+I\+Ds,  }\item[{int32\+\_\+t}]{in\+Proc\+I\+Ds\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers one or more algorithm processing entrypoints (process procedures) 
+
+Any non-\/overlapping set of processing entrypoints may be specified. Typically this can be used to specify both Native and TI entrypoints using the same call.
+
+The A\+AX Library implementation of this method includes backwards compatibility logic to complete the Process\+Proc registration on hosts which do not support this method. Therefore plug-\/in code may use this single registration routine instead of separate calls to \mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor_a4acfd619cfbd35ffd0ff20ca67bda305}{Add\+Process\+Proc\+\_\+\+Native()}}, \mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor_adf549e7f348c670b79bdb5f283798db2}{Add\+Process\+Proc\+\_\+\+T\+I()}}, etc. regardless of the host version.
+
+The following properties replace the input arguments to the platform-\/specific registration methods\+:
+
+\mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor_a4acfd619cfbd35ffd0ff20ca67bda305}{Add\+Process\+Proc\+\_\+\+Native()}} (\mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0da89ca3dd6e96895cda14976c1b1ceb826}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+Native}}, \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0dad3344696b8298a8b254add3d039ea927}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+Audio\+Suite}})
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{_a_a_x___callbacks_8h_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc}} {\ttfamily i\+Process\+Proc\+:} \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0da43e55994526d4623cab23fc3200d3762}{A\+A\+X\+\_\+e\+Property\+\_\+\+Native\+Process\+Proc}} (required)
+\item \mbox{\hyperlink{_a_a_x___callbacks_8h_a3963a850079d3186e08c97a1a4d0ef1c}{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}} {\ttfamily i\+Instance\+Init\+Proc\+:} \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0da0f182ea271ec0aa1a49dd9c995826ef5}{A\+A\+X\+\_\+e\+Property\+\_\+\+Native\+Instance\+Init\+Proc}} (optional)
+\item \mbox{\hyperlink{_a_a_x___callbacks_8h_aa64561d963284a3124a0821e7dc79c9a}{A\+A\+X\+\_\+\+C\+Background\+Proc}} {\ttfamily i\+Background\+Proc\+:} \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0daee9d07e634f3f31988e0bbcfa33a6222}{A\+A\+X\+\_\+e\+Property\+\_\+\+Native\+Background\+Proc}} (optional)
+\end{DoxyItemize}
+
+\mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor_adf549e7f348c670b79bdb5f283798db2}{Add\+Process\+Proc\+\_\+\+T\+I()}} (\mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0da75f174df4efbeca86eaada126c1d9214}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+TI}})
+\begin{DoxyItemize}
+\item {\ttfamily const char in\+D\+L\+L\+File\+Name\+U\+T\+F8\mbox{[}\mbox{]}}\+: \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0daa38d1dee38945c7b0f5333b6cec02819}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+D\+L\+L\+File\+Name}} (required)
+\item {\ttfamily const char i\+Process\+Proc\+Symbol\mbox{[}\mbox{]}}\+: \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0da1c4750cff6cd0dc467287edfb88ed495}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+Process\+Proc}} (required)
+\item {\ttfamily const char i\+Instance\+Init\+Proc\+Symbol\mbox{[}\mbox{]}}\+: \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0dace404ac7f105c8bca24cf14e26479265}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+Instance\+Init\+Proc}} (optional)
+\item {\ttfamily const char i\+Background\+Proc\+Symbol\mbox{[}\mbox{]}}\+: \mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0dafcf70d8ff9b7a5853ce6248b8deeaeef}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+Background\+Proc}} (optional)
+\end{DoxyItemize}
+
+If any platform-\/specific plug-\/in ID property is present in {\ttfamily i\+Properties} then \mbox{\hyperlink{class_a_a_x___i_a_c_f_component_descriptor___v3_aa42746bcccc0e91186464f86b39b8cff}{Add\+Process\+Proc()}} will check for the required properties for that platform.
+
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{_a_a_x___properties_8h_a13e384f22825afd3db6d68395b79ce0da34b1ae8c8edd3080aee6cd677bed9611}{A\+A\+X\+\_\+e\+Property\+\_\+\+Audio\+Buffer\+Length}} will be ignored for the Native and Audio\+Suite Process\+Procs since it should only be used for A\+AX \mbox{\hyperlink{class_d_s_p}{D\+SP}}.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Properties} & A property map for this processing callback. The property map\textquotesingle{}s values are copied by the host and associated with the new Process\+Proc. The property map contents are unchanged and the map may be re-\/used when registering additional Process\+Procs.\\
+\hline
+\mbox{\texttt{ out}}  & {\em out\+Proc\+I\+Ds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000047}{Todo}}]document this parameter Returned array will be N\+U\+L\+L-\/terminated\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Proc\+I\+Ds\+Size} & The size of the array provided to {\ttfamily o\+Proc\+I\+Ds}. If {\ttfamily o\+Proc\+I\+Ds} is non-\/\+N\+U\+LL but {\ttfamily i\+Proc\+I\+Ds\+Size} is not large enough for all of the registered Process\+Procs (plus one for N\+U\+LL termination) then this method will fail with \mbox{\hyperlink{_a_a_x___errors_8h_a5f8c7439f3a706c4f8315a9609811937af9fc41c647e2c9959ed6ebb45191be52}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+OW}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_a_c_f_component_descriptor_8h}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h}}\end{DoxyCompactItemize}

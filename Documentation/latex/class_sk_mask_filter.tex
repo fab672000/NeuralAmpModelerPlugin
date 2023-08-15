@@ -1,0 +1,69 @@
+\hypertarget{class_sk_mask_filter}{}\doxysection{Sk\+Mask\+Filter Class Reference}
+\label{class_sk_mask_filter}\index{SkMaskFilter@{SkMaskFilter}}
+
+
+{\ttfamily \#include $<$Sk\+Mask\+Filter.\+h$>$}
+
+Inheritance diagram for Sk\+Mask\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_sk_mask_filter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \mbox{\hyperlink{class_sk_mask_filter_aae302a10eec6097dd73273851d08f41a}{approximate\+Filtered\+Bounds}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&src) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $>$ \mbox{\hyperlink{class_sk_mask_filter_a6d2a9093ebca49f5c1a2118e5f4ef15f}{Make\+Blur}} (Sk\+Blur\+Style style, Sk\+Scalar sigma, bool respect\+C\+TM=true)
+\item 
+\mbox{\Hypertarget{class_sk_mask_filter_a425ca1cfc3d1816cbf41900189abb1fe}\label{class_sk_mask_filter_a425ca1cfc3d1816cbf41900189abb1fe}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $>$ {\bfseries Deserialize} (const void $\ast$data, size\+\_\+t size, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_mask_filter_a459103267d3029d0a5f21987ff71f49e}\label{class_sk_mask_filter_a459103267d3029d0a5f21987ff71f49e}} 
+class {\bfseries Sk\+Flattenable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} is the base class for object that perform transformations on the mask before drawing it. An example subclass is Blur. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_mask_filter_aae302a10eec6097dd73273851d08f41a}\label{class_sk_mask_filter_aae302a10eec6097dd73273851d08f41a}} 
+\index{SkMaskFilter@{SkMaskFilter}!approximateFilteredBounds@{approximateFilteredBounds}}
+\index{approximateFilteredBounds@{approximateFilteredBounds}!SkMaskFilter@{SkMaskFilter}}
+\doxysubsubsection{\texorpdfstring{approximateFilteredBounds()}{approximateFilteredBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} Sk\+Mask\+Filter\+::approximate\+Filtered\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{src }\end{DoxyParamCaption}) const}
+
+Returns the approximate bounds that would result from filtering the src rect. The actual result may be different, but it should be contained within the returned bounds. \mbox{\Hypertarget{class_sk_mask_filter_a6d2a9093ebca49f5c1a2118e5f4ef15f}\label{class_sk_mask_filter_a6d2a9093ebca49f5c1a2118e5f4ef15f}} 
+\index{SkMaskFilter@{SkMaskFilter}!MakeBlur@{MakeBlur}}
+\index{MakeBlur@{MakeBlur}!SkMaskFilter@{SkMaskFilter}}
+\doxysubsubsection{\texorpdfstring{MakeBlur()}{MakeBlur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_mask_filter}{Sk\+Mask\+Filter}} $>$ Sk\+Mask\+Filter\+::\+Make\+Blur (\begin{DoxyParamCaption}\item[{Sk\+Blur\+Style}]{style,  }\item[{Sk\+Scalar}]{sigma,  }\item[{bool}]{respect\+C\+TM = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a blur maskfilter. 
+\begin{DoxyParams}{Parameters}
+{\em style} & The Sk\+Blur\+Style to use \\
+\hline
+{\em sigma} & Standard deviation of the Gaussian blur to apply. Must be $>$ 0. \\
+\hline
+{\em respect\+C\+TM} & if true the blur\textquotesingle{}s sigma is modified by the C\+TM. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new blur maskfilter 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Mask\+Filter.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blur\+M\+F.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Mask\+Filter.\+cpp\end{DoxyCompactItemize}

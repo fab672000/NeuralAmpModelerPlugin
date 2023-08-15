@@ -1,0 +1,53 @@
+\hypertarget{class_sk_font_stream}{}\doxysection{Sk\+Font\+Stream Class Reference}
+\label{class_sk_font_stream}\index{SkFontStream@{SkFontStream}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_sk_font_stream_aee2d1f681ad4cd247edbd873e30a8412}{Count\+T\+T\+C\+Entries}} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$)
+\item 
+static int \mbox{\hyperlink{class_sk_font_stream_a692fa42a8466e0187efdc82c925971d2}{Get\+Table\+Tags}} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$, int ttc\+Index, Sk\+Font\+Table\+Tag tags\mbox{[}$\,$\mbox{]})
+\item 
+static size\+\_\+t \mbox{\hyperlink{class_sk_font_stream_a4c1f8c7712d016dfb297c984af390c18}{Get\+Table\+Data}} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$, int ttc\+Index, Sk\+Font\+Table\+Tag tag, size\+\_\+t offset, size\+\_\+t length, void $\ast$data)
+\item 
+\mbox{\Hypertarget{class_sk_font_stream_a734d33e440f39e37e07e427ee42a0270}\label{class_sk_font_stream_a734d33e440f39e37e07e427ee42a0270}} 
+static size\+\_\+t {\bfseries Get\+Table\+Size} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$stream, int ttc\+Index, Sk\+Font\+Table\+Tag tag)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_font_stream_aee2d1f681ad4cd247edbd873e30a8412}\label{class_sk_font_stream_aee2d1f681ad4cd247edbd873e30a8412}} 
+\index{SkFontStream@{SkFontStream}!CountTTCEntries@{CountTTCEntries}}
+\index{CountTTCEntries@{CountTTCEntries}!SkFontStream@{SkFontStream}}
+\doxysubsubsection{\texorpdfstring{CountTTCEntries()}{CountTTCEntries()}}
+{\footnotesize\ttfamily int Sk\+Font\+Stream\+::\+Count\+T\+T\+C\+Entries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return the number of shared directories inside a T\+TC sfnt, or return 1 if the stream is a normal sfnt (ttf). If there is an error or no directory is found, return 0.
+
+Note\+: the stream is rewound initially, but is returned at an arbitrary read offset. \mbox{\Hypertarget{class_sk_font_stream_a4c1f8c7712d016dfb297c984af390c18}\label{class_sk_font_stream_a4c1f8c7712d016dfb297c984af390c18}} 
+\index{SkFontStream@{SkFontStream}!GetTableData@{GetTableData}}
+\index{GetTableData@{GetTableData}!SkFontStream@{SkFontStream}}
+\doxysubsubsection{\texorpdfstring{GetTableData()}{GetTableData()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Font\+Stream\+::\+Get\+Table\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$}]{stream,  }\item[{int}]{ttc\+Index,  }\item[{Sk\+Font\+Table\+Tag}]{tag,  }\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ttc\+Index} & 0 for normal sfnts, or the index within a T\+TC sfnt.\\
+\hline
+\end{DoxyParams}
+Note\+: the stream is rewound initially, but is returned at an arbitrary read offset. \mbox{\Hypertarget{class_sk_font_stream_a692fa42a8466e0187efdc82c925971d2}\label{class_sk_font_stream_a692fa42a8466e0187efdc82c925971d2}} 
+\index{SkFontStream@{SkFontStream}!GetTableTags@{GetTableTags}}
+\index{GetTableTags@{GetTableTags}!SkFontStream@{SkFontStream}}
+\doxysubsubsection{\texorpdfstring{GetTableTags()}{GetTableTags()}}
+{\footnotesize\ttfamily int Sk\+Font\+Stream\+::\+Get\+Table\+Tags (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$}]{stream,  }\item[{int}]{ttc\+Index,  }\item[{Sk\+Font\+Table\+Tag}]{tags\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ttc\+Index} & 0 for normal sfnts, or the index within a T\+TC sfnt.\\
+\hline
+\end{DoxyParams}
+Note\+: the stream is rewound initially, but is returned at an arbitrary read offset. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Font\+Stream.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Font\+Stream.\+cpp\end{DoxyCompactItemize}

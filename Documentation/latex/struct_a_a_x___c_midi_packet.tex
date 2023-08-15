@@ -1,0 +1,39 @@
+\hypertarget{struct_a_a_x___c_midi_packet}{}\doxysection{A\+A\+X\+\_\+\+C\+Midi\+Packet Struct Reference}
+\label{struct_a_a_x___c_midi_packet}\index{AAX\_CMidiPacket@{AAX\_CMidiPacket}}
+
+
+Packet structure for M\+I\+DI data.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_a_a_x___c_midi_packet_a76df0e71968aa1416b93015ebf23ddc5}\label{struct_a_a_x___c_midi_packet_a76df0e71968aa1416b93015ebf23ddc5}} 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_a_x___c_midi_packet_a76df0e71968aa1416b93015ebf23ddc5}{m\+Timestamp}}
+\begin{DoxyCompactList}\small\item\em This is the playback time at which the M\+I\+DI event should occur, relative to the beginning of the current audio buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___c_midi_packet_aa0f16872a37737488aa42f1d9614d6a5}\label{struct_a_a_x___c_midi_packet_aa0f16872a37737488aa42f1d9614d6a5}} 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_a_x___c_midi_packet_aa0f16872a37737488aa42f1d9614d6a5}{m\+Length}}
+\begin{DoxyCompactList}\small\item\em The length of M\+I\+DI message, in terms of bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___c_midi_packet_aac7229afc36006bc673eb219b18d8220}\label{struct_a_a_x___c_midi_packet_aac7229afc36006bc673eb219b18d8220}} 
+unsigned char \mbox{\hyperlink{struct_a_a_x___c_midi_packet_aac7229afc36006bc673eb219b18d8220}{m\+Data}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The M\+I\+DI message itself. Each array element is one byte of the message, with the 0th element being the first byte. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___c_midi_packet_ab6fce0aee8fb08695ac8a112b3c3e7fa}\label{struct_a_a_x___c_midi_packet_ab6fce0aee8fb08695ac8a112b3c3e7fa}} 
+\mbox{\hyperlink{_a_a_x_8h_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}} \mbox{\hyperlink{struct_a_a_x___c_midi_packet_ab6fce0aee8fb08695ac8a112b3c3e7fa}{m\+Is\+Immediate}}
+\begin{DoxyCompactList}\small\item\em Indicates that the message is to be sent as soon as possible. \textbackslash{}compatibility This value is not currently set. Use {\ttfamily m\+Timestamp == 0} to detect immediate packets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Packet structure for M\+I\+DI data. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_a_a_x___c_midi_stream}{A\+A\+X\+\_\+\+C\+Midi\+Stream}}
+\end{DoxySeeAlso}
+\textbackslash{}legacy Corresponds to Direct\+Midi\+Packet in the legacy S\+DK 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x_8h}{A\+A\+X.\+h}}\end{DoxyCompactItemize}

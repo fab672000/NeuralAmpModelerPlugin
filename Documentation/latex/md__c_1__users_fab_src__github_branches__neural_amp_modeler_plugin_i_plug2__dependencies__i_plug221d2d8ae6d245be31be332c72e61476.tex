@@ -1,0 +1,80 @@
+This repository contains \mbox{\hyperlink{namespace_steinberg}{Steinberg}}\textquotesingle{}s \href{https://cmake.org/cmake/help/latest/manual/cmake-modules.7.html}{\texttt{ cmake modules}} and template files which can be used to create {\bfseries{V\+ST 3}} plug-\/ins for platforms like Windows, mac\+OS, i\+OS and Linux.
+
+For more information about cmake visit \href{https:://www.cmake.org/}{\texttt{ cmake.\+org}}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1371}{}\doxysection{Dependency map}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1371}
+In order to build a plug-\/in successfully, it only needs to link to {\ttfamily sdk} library. \href{https://steinbergmedia.github.io/vst3_dev_portal/pages/What+is+the+VST+3+SDK/VSTGUI.html}{\texttt{ V\+S\+T\+G\+UI}} is optional and can be used by linking to {\ttfamily vstgui\+\_\+support}.
+
+The following figure shows the dependency map by using A\+Gain, \href{https://steinbergmedia.github.io/vst3_dev_portal/pages/What+is+the+VST+3+SDK/EditorHost.html}{\texttt{ Editor\+Host}} and \href{https://steinbergmedia.github.io/vst3_dev_portal/pages/What+is+the+VST+3+SDK/VST3Inspector.html}{\texttt{ V\+S\+T3\+Inspector}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{again}
+\DoxyCodeLine{+-\/-\/ sdk}
+\DoxyCodeLine{|   +-\/-\/ sdk\_common}
+\DoxyCodeLine{|       +-\/-\/ base}
+\DoxyCodeLine{|       +-\/-\/ pluginterfaces}
+\DoxyCodeLine{|}
+\DoxyCodeLine{+-\/-\/ vstgui\_support}
+\DoxyCodeLine{    +-\/-\/ base}
+\DoxyCodeLine{    +-\/-\/ vstgui\_uidescription}
+\DoxyCodeLine{        +-\/-\/ vstgui}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{editorhost}
+\DoxyCodeLine{+-\/-\/ sdk\_hosting}
+\DoxyCodeLine{    +-\/-\/ sdk\_common}
+\DoxyCodeLine{        +-\/-\/ base}
+\DoxyCodeLine{        +-\/-\/ pluginterfaces}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{VST3Inspector}
+\DoxyCodeLine{+-\/-\/ vstgui\_uidescription}
+\DoxyCodeLine{|   +-\/-\/ vstgui}
+\DoxyCodeLine{+-\/-\/ vstgui\_standalone}
+\DoxyCodeLine{    +-\/-\/ vstgui}
+\end{DoxyCode}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1372}{}\doxysection{Naming conventions and guidelines}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1372}
+\mbox{\hyperlink{namespace_steinberg}{Steinberg}} module, macro, function and variable names have the prefix {\ttfamily S\+M\+T\+G\+\_\+} or {\ttfamily smtg\+\_\+} in order to avoid name clashes.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1373}{}\doxysubsection{File namings}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1373}
+\mbox{\hyperlink{namespace_steinberg}{Steinberg}} module names are written in camel case and have the prefix {\ttfamily S\+M\+T\+G\+\_\+}.
+
+Examples\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SMTG\_AddVST3Library.cmake}
+\DoxyCodeLine{SMTG\_DetectPlatform.cmake}
+\DoxyCodeLine{SMTG\_ConfigureCmakeGenerator.cmake}
+\end{DoxyCode}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1374}{}\doxysubsection{Macro and function namings}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1374}
+\mbox{\hyperlink{namespace_steinberg}{Steinberg}} macro and function names are written in lower case and have the prefix {\ttfamily smtg\+\_\+} followed by a verb.
+
+Examples\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{smtg\_detect\_platform}
+\DoxyCodeLine{smtg\_configure\_cmake\_generator}
+\DoxyCodeLine{smtg\_setup\_symbol\_visibility}
+\DoxyCodeLine{smtg\_detect\_xcode\_version}
+\end{DoxyCode}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1375}{}\doxysubsection{Variable namings}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1375}
+\mbox{\hyperlink{namespace_steinberg}{Steinberg}} variable names are written in upper case and have the prefix {\ttfamily S\+M\+T\+G\+\_\+}.
+
+Examples\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SMTG\_PLUGIN\_BINARY\_DIR}
+\DoxyCodeLine{SMTG\_PLUGIN\_EXTENSION}
+\DoxyCodeLine{SMTG\_PLUGIN\_PACKAGE\_NAME}
+\end{DoxyCode}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1376}{}\doxysection{License \& Usage guidelines}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug221d2d8ae6d245be31be332c72e61476_autotoc_md1376}
+More details can be found at \href{http://www.steinberg.net/sdklicenses_vst3}{\texttt{ www.\+steinberg.\+net/sdklicenses\+\_\+vst3}}
+
+\DoxyHorRuler{0}
+ Return to \href{https://github.com/steinbergmedia/vst3sdk}{\texttt{ V\+ST 3 S\+DK}} 

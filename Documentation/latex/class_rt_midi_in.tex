@@ -1,0 +1,484 @@
+\hypertarget{class_rt_midi_in}{}\doxysection{Rt\+Midi\+In Class Reference}
+\label{class_rt_midi_in}\index{RtMidiIn@{RtMidiIn}}
+
+
+A realtime M\+I\+DI input class.  
+
+
+
+
+{\ttfamily \#include $<$Rt\+Midi.\+h$>$}
+
+Inheritance diagram for Rt\+Midi\+In\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_rt_midi_in}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}\label{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}} 
+typedef void($\ast$ \mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+Callback}}) (double time\+Stamp, std\+::vector$<$ unsigned char $>$ $\ast$message, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em User callback function type definition. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}\label{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}} 
+typedef void($\ast$ \mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+Callback}}) (double time\+Stamp, std\+::vector$<$ unsigned char $>$ $\ast$message, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em User callback function type definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rt_midi_in_a10624dd7e8bc96e16e5943eca615996a}{Rt\+Midi\+In}} (\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} api=\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406a9cdcb7d7e8a98f6d0007b01a505763ce}{U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}, const std\+::string \&client\+Name=\char`\"{}Rt\+Midi Input Client\char`\"{}, unsigned int queue\+Size\+Limit=100)
+\begin{DoxyCompactList}\small\item\em Default constructor that allows an optional api, client name and queue size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_ae79f4da8a1b2e7efecdd1047670b27dc}\label{class_rt_midi_in_ae79f4da8a1b2e7efecdd1047670b27dc}} 
+\mbox{\hyperlink{class_rt_midi_in_ae79f4da8a1b2e7efecdd1047670b27dc}{$\sim$\+Rt\+Midi\+In}} (void)  throw ()
+\begin{DoxyCompactList}\small\item\em If a M\+I\+DI connection is still open, it will be closed by the destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}\label{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}} 
+\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} \mbox{\hyperlink{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}{get\+Current\+Api}} (void)  throw ()
+\begin{DoxyCompactList}\small\item\em Returns the M\+I\+DI A\+PI specifier for the current instance of \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}{open\+Port}} (unsigned int port\+Number=0, const std\+::string \&port\+Name=std\+::string(\char`\"{}Rt\+Midi Input\char`\"{}))
+\begin{DoxyCompactList}\small\item\em Open a M\+I\+DI input connection given by enumeration number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_a9484f3af0c0d1c6f255af9b91f55b3e2}{open\+Virtual\+Port}} (const std\+::string \&port\+Name=std\+::string(\char`\"{}Rt\+Midi Input\char`\"{}))
+\begin{DoxyCompactList}\small\item\em Create a virtual input port, with optional name, to allow software connections (OS X, J\+A\+CK and A\+L\+SA only). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}{set\+Callback}} (\mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+Callback}} callback, void $\ast$user\+Data=0)
+\begin{DoxyCompactList}\small\item\em Set a callback function to be invoked for incoming M\+I\+DI messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}{cancel\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Cancel use of the current callback function (if one exists). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_a55bacf0d228fd8e3be6a79d12fd1dc39}\label{class_rt_midi_in_a55bacf0d228fd8e3be6a79d12fd1dc39}} 
+void \mbox{\hyperlink{class_rt_midi_in_a55bacf0d228fd8e3be6a79d12fd1dc39}{close\+Port}} (void)
+\begin{DoxyCompactList}\small\item\em Close an open M\+I\+DI connection (if one exists). \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_rt_midi_in_aa91ef67e71a19010e16acd0be0eb3ce7}{is\+Port\+Open}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if a port is open and false if not. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_rt_midi_in_a62b1b38aa8e5f11cd66f03d59228f4e4}{get\+Port\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Return the number of available M\+I\+DI input ports. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_rt_midi_in_af2961fff09fa01a3d5bc0f0c5a042aaf}{get\+Port\+Name}} (unsigned int port\+Number=0)
+\begin{DoxyCompactList}\small\item\em Return a string identifier for the specified M\+I\+DI input port number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}{ignore\+Types}} (bool midi\+Sysex=true, bool midi\+Time=true, bool midi\+Sense=true)
+\begin{DoxyCompactList}\small\item\em Specify whether certain M\+I\+DI message types should be queued or ignored during input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}{get\+Message}} (std\+::vector$<$ unsigned char $>$ $\ast$message)
+\begin{DoxyCompactList}\small\item\em Fill the user-\/provided vector with the data bytes for the next available M\+I\+DI message in the input queue and return the event delta-\/time in seconds. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_rt_midi_in_ad70189a24427b3169d81fcc69f6441e0}{set\+Error\+Callback}} (\mbox{\hyperlink{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}{Rt\+Midi\+Error\+Callback}} error\+Callback=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}, void $\ast$user\+Data=0)
+\begin{DoxyCompactList}\small\item\em Set an error callback function to be invoked when an error has occured. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rt_midi_in_a99b82138df456d43a805bf895bad8d17}{Rt\+Midi\+In}} (\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} api=\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406a9cdcb7d7e8a98f6d0007b01a505763ce}{U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}, const std\+::string \&client\+Name=\char`\"{}Rt\+Midi Input Client\char`\"{}, unsigned int queue\+Size\+Limit=100)
+\begin{DoxyCompactList}\small\item\em Default constructor that allows an optional api, client name and queue size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_ae79f4da8a1b2e7efecdd1047670b27dc}\label{class_rt_midi_in_ae79f4da8a1b2e7efecdd1047670b27dc}} 
+\mbox{\hyperlink{class_rt_midi_in_ae79f4da8a1b2e7efecdd1047670b27dc}{$\sim$\+Rt\+Midi\+In}} (void)  throw ()
+\begin{DoxyCompactList}\small\item\em If a M\+I\+DI connection is still open, it will be closed by the destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}\label{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}} 
+\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} \mbox{\hyperlink{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}{get\+Current\+Api}} (void)  throw ()
+\begin{DoxyCompactList}\small\item\em Returns the M\+I\+DI A\+PI specifier for the current instance of \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}{open\+Port}} (unsigned int port\+Number=0, const std\+::string \&port\+Name=std\+::string(\char`\"{}Rt\+Midi Input\char`\"{}))
+\begin{DoxyCompactList}\small\item\em Open a M\+I\+DI input connection given by enumeration number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_a9484f3af0c0d1c6f255af9b91f55b3e2}{open\+Virtual\+Port}} (const std\+::string \&port\+Name=std\+::string(\char`\"{}Rt\+Midi Input\char`\"{}))
+\begin{DoxyCompactList}\small\item\em Create a virtual input port, with optional name, to allow software connections (OS X, J\+A\+CK and A\+L\+SA only). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}{set\+Callback}} (\mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+Callback}} callback, void $\ast$user\+Data=0)
+\begin{DoxyCompactList}\small\item\em Set a callback function to be invoked for incoming M\+I\+DI messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}{cancel\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Cancel use of the current callback function (if one exists). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rt_midi_in_a55bacf0d228fd8e3be6a79d12fd1dc39}\label{class_rt_midi_in_a55bacf0d228fd8e3be6a79d12fd1dc39}} 
+void \mbox{\hyperlink{class_rt_midi_in_a55bacf0d228fd8e3be6a79d12fd1dc39}{close\+Port}} (void)
+\begin{DoxyCompactList}\small\item\em Close an open M\+I\+DI connection (if one exists). \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_rt_midi_in_aac3deeaacd97e8a61551177bb66fc0a2}{is\+Port\+Open}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if a port is open and false if not. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_rt_midi_in_a62b1b38aa8e5f11cd66f03d59228f4e4}{get\+Port\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Return the number of available M\+I\+DI input ports. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_rt_midi_in_af2961fff09fa01a3d5bc0f0c5a042aaf}{get\+Port\+Name}} (unsigned int port\+Number=0)
+\begin{DoxyCompactList}\small\item\em Return a string identifier for the specified M\+I\+DI input port number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}{ignore\+Types}} (bool midi\+Sysex=true, bool midi\+Time=true, bool midi\+Sense=true)
+\begin{DoxyCompactList}\small\item\em Specify whether certain M\+I\+DI message types should be queued or ignored during input. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}{get\+Message}} (std\+::vector$<$ unsigned char $>$ $\ast$message)
+\begin{DoxyCompactList}\small\item\em Fill the user-\/provided vector with the data bytes for the next available M\+I\+DI message in the input queue and return the event delta-\/time in seconds. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_rt_midi_in_a60c36b361f1111f4ba1f499b6827acdd}{set\+Error\+Callback}} (\mbox{\hyperlink{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}{Rt\+Midi\+Error\+Callback}} error\+Callback=\mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}, void $\ast$user\+Data=0)
+\begin{DoxyCompactList}\small\item\em Set an error callback function to be invoked when an error has occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rt_midi_in_a31efee4e529ec09ace0fa997cd6690df}\label{class_rt_midi_in_a31efee4e529ec09ace0fa997cd6690df}} 
+void {\bfseries open\+Midi\+Api} (\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} api, const std\+::string \&client\+Name, unsigned int queue\+Size\+Limit)
+\item 
+\mbox{\Hypertarget{class_rt_midi_in_a31efee4e529ec09ace0fa997cd6690df}\label{class_rt_midi_in_a31efee4e529ec09ace0fa997cd6690df}} 
+void {\bfseries open\+Midi\+Api} (\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} api, const std\+::string \&client\+Name, unsigned int queue\+Size\+Limit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A realtime M\+I\+DI input class. 
+
+This class provides a common, platform-\/independent A\+PI for realtime M\+I\+DI input. It allows access to a single M\+I\+DI input port. Incoming M\+I\+DI messages are either saved to a queue for retrieval using the \mbox{\hyperlink{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}{get\+Message()}} function or immediately passed to a user-\/specified callback function. Create multiple instances of this class to connect to more than one M\+I\+DI device at the same time. With the O\+S-\/X, Linux A\+L\+SA, and J\+A\+CK M\+I\+DI A\+P\+Is, it is also possible to open a virtual input port to which other M\+I\+DI software clients can connect.
+
+by Gary P. Scavone, 2003-\/2017.
+
+This class provides a common, platform-\/independent A\+PI for realtime M\+I\+DI input. It allows access to a single M\+I\+DI input port. Incoming M\+I\+DI messages are either saved to a queue for retrieval using the \mbox{\hyperlink{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}{get\+Message()}} function or immediately passed to a user-\/specified callback function. Create multiple instances of this class to connect to more than one M\+I\+DI device at the same time. With the O\+S-\/X, Linux A\+L\+SA, and J\+A\+CK M\+I\+DI A\+P\+Is, it is also possible to open a virtual input port to which other M\+I\+DI software clients can connect. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rt_midi_in_a10624dd7e8bc96e16e5943eca615996a}\label{class_rt_midi_in_a10624dd7e8bc96e16e5943eca615996a}} 
+\index{RtMidiIn@{RtMidiIn}!RtMidiIn@{RtMidiIn}}
+\index{RtMidiIn@{RtMidiIn}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{RtMidiIn()}{RtMidiIn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+\_\+\+D\+L\+L\+\_\+\+P\+U\+B\+L\+IC Rt\+Midi\+In\+::\+Rt\+Midi\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}}}]{api = {\ttfamily \mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406a9cdcb7d7e8a98f6d0007b01a505763ce}{U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}},  }\item[{const std\+::string \&}]{client\+Name = {\ttfamily \char`\"{}RtMidi~Input~Client\char`\"{}},  }\item[{unsigned int}]{queue\+Size\+Limit = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Default constructor that allows an optional api, client name and queue size. 
+
+An exception will be thrown if a M\+I\+DI system initialization error occurs. The queue size defines the maximum number of messages that can be held in the M\+I\+DI queue (when not using a callback function). If the queue size limit is reached, incoming messages will be ignored.
+
+If no A\+PI argument is specified and multiple A\+PI support has been compiled, the default order of use is A\+L\+SA, J\+A\+CK (Linux) and C\+O\+RE, J\+A\+CK (O\+S-\/X).
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & An optional A\+PI id can be specified. \\
+\hline
+{\em client\+Name} & An optional client name can be specified. This will be used to group the ports that are created by the application. \\
+\hline
+{\em queue\+Size\+Limit} & An optional size of the M\+I\+DI input queue can be specified. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rt_midi_in_a99b82138df456d43a805bf895bad8d17}\label{class_rt_midi_in_a99b82138df456d43a805bf895bad8d17}} 
+\index{RtMidiIn@{RtMidiIn}!RtMidiIn@{RtMidiIn}}
+\index{RtMidiIn@{RtMidiIn}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{RtMidiIn()}{RtMidiIn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rt\+Midi\+In\+::\+Rt\+Midi\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}}}]{api = {\ttfamily \mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406a9cdcb7d7e8a98f6d0007b01a505763ce}{U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}},  }\item[{const std\+::string \&}]{client\+Name = {\ttfamily \char`\"{}RtMidi~Input~Client\char`\"{}},  }\item[{unsigned int}]{queue\+Size\+Limit = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Default constructor that allows an optional api, client name and queue size. 
+
+An exception will be thrown if a M\+I\+DI system initialization error occurs. The queue size defines the maximum number of messages that can be held in the M\+I\+DI queue (when not using a callback function). If the queue size limit is reached, incoming messages will be ignored.
+
+If no A\+PI argument is specified and multiple A\+PI support has been compiled, the default order of use is A\+L\+SA, J\+A\+CK (Linux) and C\+O\+RE, J\+A\+CK (O\+S-\/X).
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & An optional A\+PI id can be specified. \\
+\hline
+{\em client\+Name} & An optional client name can be specified. This will be used to group the ports that are created by the application. \\
+\hline
+{\em queue\+Size\+Limit} & An optional size of the M\+I\+DI input queue can be specified. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}\label{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}} 
+\index{RtMidiIn@{RtMidiIn}!cancelCallback@{cancelCallback}}
+\index{cancelCallback@{cancelCallback}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{cancelCallback()}{cancelCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::cancel\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cancel use of the current callback function (if one exists). 
+
+Subsequent incoming M\+I\+DI messages will be written to the queue and can be retrieved with the {\itshape get\+Message} function. \mbox{\Hypertarget{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}\label{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}} 
+\index{RtMidiIn@{RtMidiIn}!cancelCallback@{cancelCallback}}
+\index{cancelCallback@{cancelCallback}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{cancelCallback()}{cancelCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::cancel\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cancel use of the current callback function (if one exists). 
+
+Subsequent incoming M\+I\+DI messages will be written to the queue and can be retrieved with the {\itshape get\+Message} function. \mbox{\Hypertarget{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}\label{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}} 
+\index{RtMidiIn@{RtMidiIn}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Rt\+Midi\+In\+::get\+Message (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ $\ast$}]{message }\end{DoxyParamCaption})}
+
+
+
+Fill the user-\/provided vector with the data bytes for the next available M\+I\+DI message in the input queue and return the event delta-\/time in seconds. 
+
+This function returns immediately whether a new message is available or not. A valid message is indicated by a non-\/zero vector size. An exception is thrown if an error occurs during message retrieval or an input connection was not previously established. \mbox{\Hypertarget{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}\label{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}} 
+\index{RtMidiIn@{RtMidiIn}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Rt\+Midi\+In\+::get\+Message (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fill the user-\/provided vector with the data bytes for the next available M\+I\+DI message in the input queue and return the event delta-\/time in seconds. 
+
+This function returns immediately whether a new message is available or not. A valid message is indicated by a non-\/zero vector size. An exception is thrown if an error occurs during message retrieval or an input connection was not previously established. \mbox{\Hypertarget{class_rt_midi_in_a62b1b38aa8e5f11cd66f03d59228f4e4}\label{class_rt_midi_in_a62b1b38aa8e5f11cd66f03d59228f4e4}} 
+\index{RtMidiIn@{RtMidiIn}!getPortCount@{getPortCount}}
+\index{getPortCount@{getPortCount}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{getPortCount()}{getPortCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int Rt\+Midi\+In\+::get\+Port\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return the number of available M\+I\+DI input ports. 
+
+\begin{DoxyReturn}{Returns}
+This function returns the number of M\+I\+DI ports of the selected A\+PI. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a9a49ef73a1e6007444019a7ae095e195}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_a62b1b38aa8e5f11cd66f03d59228f4e4}\label{class_rt_midi_in_a62b1b38aa8e5f11cd66f03d59228f4e4}} 
+\index{RtMidiIn@{RtMidiIn}!getPortCount@{getPortCount}}
+\index{getPortCount@{getPortCount}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{getPortCount()}{getPortCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Rt\+Midi\+In\+::get\+Port\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the number of available M\+I\+DI input ports. 
+
+\begin{DoxyReturn}{Returns}
+This function returns the number of M\+I\+DI ports of the selected A\+PI. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a9a49ef73a1e6007444019a7ae095e195}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_af2961fff09fa01a3d5bc0f0c5a042aaf}\label{class_rt_midi_in_af2961fff09fa01a3d5bc0f0c5a042aaf}} 
+\index{RtMidiIn@{RtMidiIn}!getPortName@{getPortName}}
+\index{getPortName@{getPortName}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{getPortName()}{getPortName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Rt\+Midi\+In\+::get\+Port\+Name (\begin{DoxyParamCaption}\item[{unsigned int}]{port\+Number = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return a string identifier for the specified M\+I\+DI input port number. 
+
+\begin{DoxyReturn}{Returns}
+The name of the port with the given Id is returned. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em An} & empty string is returned if an invalid port specifier is provided. User code should assume a U\+T\+F-\/8 encoding. \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a799e2b9f4df39b298518f2b394db3391}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_af2961fff09fa01a3d5bc0f0c5a042aaf}\label{class_rt_midi_in_af2961fff09fa01a3d5bc0f0c5a042aaf}} 
+\index{RtMidiIn@{RtMidiIn}!getPortName@{getPortName}}
+\index{getPortName@{getPortName}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{getPortName()}{getPortName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Rt\+Midi\+In\+::get\+Port\+Name (\begin{DoxyParamCaption}\item[{unsigned int}]{port\+Number = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return a string identifier for the specified M\+I\+DI input port number. 
+
+\begin{DoxyReturn}{Returns}
+The name of the port with the given Id is returned. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em An} & empty string is returned if an invalid port specifier is provided. User code should assume a U\+T\+F-\/8 encoding. \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a799e2b9f4df39b298518f2b394db3391}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}\label{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}} 
+\index{RtMidiIn@{RtMidiIn}!ignoreTypes@{ignoreTypes}}
+\index{ignoreTypes@{ignoreTypes}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{ignoreTypes()}{ignoreTypes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::ignore\+Types (\begin{DoxyParamCaption}\item[{bool}]{midi\+Sysex = {\ttfamily true},  }\item[{bool}]{midi\+Time = {\ttfamily true},  }\item[{bool}]{midi\+Sense = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Specify whether certain M\+I\+DI message types should be queued or ignored during input. 
+
+By default, M\+I\+DI timing and active sensing messages are ignored during message input because of their relative high data rates. M\+I\+DI sysex messages are ignored by default as well. Variable values of \char`\"{}true\char`\"{} imply that the respective message type will be ignored. \mbox{\Hypertarget{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}\label{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}} 
+\index{RtMidiIn@{RtMidiIn}!ignoreTypes@{ignoreTypes}}
+\index{ignoreTypes@{ignoreTypes}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{ignoreTypes()}{ignoreTypes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::ignore\+Types (\begin{DoxyParamCaption}\item[{bool}]{midi\+Sysex = {\ttfamily true},  }\item[{bool}]{midi\+Time = {\ttfamily true},  }\item[{bool}]{midi\+Sense = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Specify whether certain M\+I\+DI message types should be queued or ignored during input. 
+
+By default, M\+I\+DI timing and active sensing messages are ignored during message input because of their relative high data rates. M\+I\+DI sysex messages are ignored by default as well. Variable values of \char`\"{}true\char`\"{} imply that the respective message type will be ignored. \mbox{\Hypertarget{class_rt_midi_in_aac3deeaacd97e8a61551177bb66fc0a2}\label{class_rt_midi_in_aac3deeaacd97e8a61551177bb66fc0a2}} 
+\index{RtMidiIn@{RtMidiIn}!isPortOpen@{isPortOpen}}
+\index{isPortOpen@{isPortOpen}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{isPortOpen()}{isPortOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Rt\+Midi\+In\+::is\+Port\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns true if a port is open and false if not. 
+
+Note that this only applies to connections made with the \mbox{\hyperlink{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}{open\+Port()}} function, not to virtual ports. 
+
+Implements \mbox{\hyperlink{class_rt_midi_a74fc50ce1aec6b8ecb0c31094b3024a9}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_aa91ef67e71a19010e16acd0be0eb3ce7}\label{class_rt_midi_in_aa91ef67e71a19010e16acd0be0eb3ce7}} 
+\index{RtMidiIn@{RtMidiIn}!isPortOpen@{isPortOpen}}
+\index{isPortOpen@{isPortOpen}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{isPortOpen()}{isPortOpen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Rt\+Midi\+In\+::is\+Port\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns true if a port is open and false if not. 
+
+Note that this only applies to connections made with the \mbox{\hyperlink{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}{open\+Port()}} function, not to virtual ports. 
+
+Implements \mbox{\hyperlink{class_rt_midi_a74fc50ce1aec6b8ecb0c31094b3024a9}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}\label{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}} 
+\index{RtMidiIn@{RtMidiIn}!openPort@{openPort}}
+\index{openPort@{openPort}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{openPort()}{openPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::open\+Port (\begin{DoxyParamCaption}\item[{unsigned int}]{port\+Number = {\ttfamily 0},  }\item[{const std\+::string \&}]{port\+Name = {\ttfamily std\+:\+:string(\char`\"{}RtMidi~Input\char`\"{})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Open a M\+I\+DI input connection given by enumeration number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Number} & An optional port number greater than 0 can be specified. Otherwise, the default or first port found is opened. \\
+\hline
+{\em port\+Name} & An optional name for the application port that is used to connect to port\+Id can be specified. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a4834507ff21017d3b022422dbb8f6104}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}\label{class_rt_midi_in_a466c94692550aa109d9e7536bf5d9add}} 
+\index{RtMidiIn@{RtMidiIn}!openPort@{openPort}}
+\index{openPort@{openPort}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{openPort()}{openPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::open\+Port (\begin{DoxyParamCaption}\item[{unsigned int}]{port\+Number = {\ttfamily 0},  }\item[{const std\+::string \&}]{port\+Name = {\ttfamily std\+:\+:string(~\char`\"{}RtMidi~Input\char`\"{}~)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Open a M\+I\+DI input connection given by enumeration number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Number} & An optional port number greater than 0 can be specified. Otherwise, the default or first port found is opened. \\
+\hline
+{\em port\+Name} & An optional name for the application port that is used to connect to port\+Id can be specified. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a4834507ff21017d3b022422dbb8f6104}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_a9484f3af0c0d1c6f255af9b91f55b3e2}\label{class_rt_midi_in_a9484f3af0c0d1c6f255af9b91f55b3e2}} 
+\index{RtMidiIn@{RtMidiIn}!openVirtualPort@{openVirtualPort}}
+\index{openVirtualPort@{openVirtualPort}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{openVirtualPort()}{openVirtualPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::open\+Virtual\+Port (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{port\+Name = {\ttfamily std\+:\+:string(\char`\"{}RtMidi~Input\char`\"{})} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a virtual input port, with optional name, to allow software connections (OS X, J\+A\+CK and A\+L\+SA only). 
+
+This function creates a virtual M\+I\+DI input port to which other software applications can connect. This type of functionality is currently only supported by the Macintosh O\+S-\/X, any J\+A\+CK, and Linux A\+L\+SA A\+P\+Is (the function returns an error for the other A\+P\+Is).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & An optional name for the application port that is used to connect to port\+Id can be specified. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a2fcf7bceb243f3da51d2322a7a5ae11f}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_a9484f3af0c0d1c6f255af9b91f55b3e2}\label{class_rt_midi_in_a9484f3af0c0d1c6f255af9b91f55b3e2}} 
+\index{RtMidiIn@{RtMidiIn}!openVirtualPort@{openVirtualPort}}
+\index{openVirtualPort@{openVirtualPort}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{openVirtualPort()}{openVirtualPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::open\+Virtual\+Port (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{port\+Name = {\ttfamily std\+:\+:string(~\char`\"{}RtMidi~Input\char`\"{}~)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Create a virtual input port, with optional name, to allow software connections (OS X, J\+A\+CK and A\+L\+SA only). 
+
+This function creates a virtual M\+I\+DI input port to which other software applications can connect. This type of functionality is currently only supported by the Macintosh O\+S-\/X, any J\+A\+CK, and Linux A\+L\+SA A\+P\+Is (the function returns an error for the other A\+P\+Is).
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & An optional name for the application port that is used to connect to port\+Id can be specified. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_rt_midi_a2fcf7bceb243f3da51d2322a7a5ae11f}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}\label{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}} 
+\index{RtMidiIn@{RtMidiIn}!setCallback@{setCallback}}
+\index{setCallback@{setCallback}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{setCallback()}{setCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::set\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+Callback}}}]{callback,  }\item[{void $\ast$}]{user\+Data = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Set a callback function to be invoked for incoming M\+I\+DI messages. 
+
+The callback function will be called whenever an incoming M\+I\+DI message is received. While not absolutely necessary, it is best to set the callback function before opening a M\+I\+DI port to avoid leaving some messages in the queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A callback function must be given. \\
+\hline
+{\em user\+Data} & Optionally, a pointer to additional data can be passed to the callback function whenever it is called. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}\label{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}} 
+\index{RtMidiIn@{RtMidiIn}!setCallback@{setCallback}}
+\index{setCallback@{setCallback}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{setCallback()}{setCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::set\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+Callback}}}]{callback,  }\item[{void $\ast$}]{user\+Data = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a callback function to be invoked for incoming M\+I\+DI messages. 
+
+The callback function will be called whenever an incoming M\+I\+DI message is received. While not absolutely necessary, it is best to set the callback function before opening a M\+I\+DI port to avoid leaving some messages in the queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A callback function must be given. \\
+\hline
+{\em user\+Data} & Optionally, a pointer to additional data can be passed to the callback function whenever it is called. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rt_midi_in_a60c36b361f1111f4ba1f499b6827acdd}\label{class_rt_midi_in_a60c36b361f1111f4ba1f499b6827acdd}} 
+\index{RtMidiIn@{RtMidiIn}!setErrorCallback@{setErrorCallback}}
+\index{setErrorCallback@{setErrorCallback}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{setErrorCallback()}{setErrorCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Rt\+Midi\+In\+::set\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}{Rt\+Midi\+Error\+Callback}}}]{error\+Callback = {\ttfamily \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}},  }\item[{void $\ast$}]{user\+Data = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set an error callback function to be invoked when an error has occured. 
+
+The callback function will be called whenever an error has occured. It is best to set the error callback function before opening a port. 
+
+Implements \mbox{\hyperlink{class_rt_midi_aa6d6f2e0d06c64268c8898aa15f3a5df}{Rt\+Midi}}.
+
+\mbox{\Hypertarget{class_rt_midi_in_ad70189a24427b3169d81fcc69f6441e0}\label{class_rt_midi_in_ad70189a24427b3169d81fcc69f6441e0}} 
+\index{RtMidiIn@{RtMidiIn}!setErrorCallback@{setErrorCallback}}
+\index{setErrorCallback@{setErrorCallback}!RtMidiIn@{RtMidiIn}}
+\doxysubsubsection{\texorpdfstring{setErrorCallback()}{setErrorCallback()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rt\+Midi\+In\+::set\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}{Rt\+Midi\+Error\+Callback}}}]{error\+Callback = {\ttfamily \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}},  }\item[{void $\ast$}]{user\+Data = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set an error callback function to be invoked when an error has occured. 
+
+The callback function will be called whenever an error has occured. It is best to set the error callback function before opening a port. 
+
+Implements \mbox{\hyperlink{class_rt_midi_aa6d6f2e0d06c64268c8898aa15f3a5df}{Rt\+Midi}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/midi/\mbox{\hyperlink{_build_2win_2_faust_2include_2faust_2midi_2_rt_midi_8h}{Rt\+Midi.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/midi/Rt\+Midi.\+cpp\end{DoxyCompactItemize}

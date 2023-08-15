@@ -1,0 +1,56 @@
+\hypertarget{struct_a_a_x___s_plug_in_chunk_header}{}\doxysection{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header Struct Reference}
+\label{struct_a_a_x___s_plug_in_chunk_header}\index{AAX\_SPlugInChunkHeader@{AAX\_SPlugInChunkHeader}}
+
+
+Plug-\/in chunk header.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_abaea87174a6d0dd1260644f6440591a6}\label{struct_a_a_x___s_plug_in_chunk_header_abaea87174a6d0dd1260644f6440591a6}} 
+int32\+\_\+t \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_abaea87174a6d0dd1260644f6440591a6}{f\+Size}}
+\begin{DoxyCompactList}\small\item\em The size of the chunk\textquotesingle{}s \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_abc76d66fffa4a59ee5cfdbdd992c532c}{f\+Data}} member. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_a543b3299cad8fd9a4de599d97a069a35}\label{struct_a_a_x___s_plug_in_chunk_header_a543b3299cad8fd9a4de599d97a069a35}} 
+int32\+\_\+t \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_a543b3299cad8fd9a4de599d97a069a35}{f\+Version}}
+\begin{DoxyCompactList}\small\item\em The chunk\textquotesingle{}s version. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_a569567884784354c6be2824199ccb194}\label{struct_a_a_x___s_plug_in_chunk_header_a569567884784354c6be2824199ccb194}} 
+\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_a569567884784354c6be2824199ccb194}{f\+Manufacturer\+ID}}
+\begin{DoxyCompactList}\small\item\em The Plug-\/\+In\textquotesingle{}s manufacturer ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_afbed1db12ae1f7cb3204dad3fd66070e}\label{struct_a_a_x___s_plug_in_chunk_header_afbed1db12ae1f7cb3204dad3fd66070e}} 
+\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_afbed1db12ae1f7cb3204dad3fd66070e}{f\+Product\+ID}}
+\begin{DoxyCompactList}\small\item\em The Plug-\/\+In file\textquotesingle{}s product ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_a34e98621d17821659efb8ecdb4847ec5}\label{struct_a_a_x___s_plug_in_chunk_header_a34e98621d17821659efb8ecdb4847ec5}} 
+\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_a34e98621d17821659efb8ecdb4847ec5}{f\+Plug\+In\+ID}}
+\begin{DoxyCompactList}\small\item\em The ID of a particular Plug-\/\+In within the file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_a01307400067d1777c304624ffb5e0a8c}\label{struct_a_a_x___s_plug_in_chunk_header_a01307400067d1777c304624ffb5e0a8c}} 
+\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_a01307400067d1777c304624ffb5e0a8c}{f\+Chunk\+ID}}
+\begin{DoxyCompactList}\small\item\em The ID of a particular Plug-\/\+In chunk. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_a_a_x___s_plug_in_chunk_header_a84bee19fce5aeb2c429d872430cb8dab}\label{struct_a_a_x___s_plug_in_chunk_header_a84bee19fce5aeb2c429d872430cb8dab}} 
+unsigned char \mbox{\hyperlink{struct_a_a_x___s_plug_in_chunk_header_a84bee19fce5aeb2c429d872430cb8dab}{f\+Name}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em A user defined name for this chunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plug-\/in chunk header. 
+
+\textbackslash{}legacy To ensure compatibility with T\+D\+M/\+R\+T\+AS plug-\/ins whose implementation requires {\ttfamily f\+Size} to be equal to the size of the chunk\textquotesingle{}s header plus its data, A\+AE performs some behind-\/the-\/scenes record keeping. ~\newline
+ ~\newline
+ The following actions are only taken for A\+AX plug-\/ins, so, e.\+g., if a chunk is stored by an R\+T\+AS or T\+DM plug-\/in that reports data+header size in {\ttfamily f\+Size} and this chunk is then loaded by the A\+AX version of the plug-\/in, the header size will be cached as-\/is from the legacy plug-\/in and will be subtracted out before the chunk data is passed to the A\+AX plug-\/in. If a chunk is stored by an A\+AX plug-\/in and is then loaded by a legacy plug-\/in, the legacy plug-\/in will receive the cached plug-\/in header with {\ttfamily f\+Size} equal to the data+header size. ~\newline
+ ~\newline
+ These are the special actions that A\+AE takes to ensure backwards-\/compatibility when handling A\+AX chunk data\+:
+\begin{DoxyItemize}
+\item When A\+AE retrieves the size of a chunk from an A\+AX plug-\/in using \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_aa986711cd372febcaae803e86ae08f63}{Get\+Chunk\+Size()}}, it adds the chunk header size to the amount of memory that it allocates for the chunk ~\newline
+
+\item When A\+AE retrieves a chunk from an A\+AX plug-\/in using \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_ab977041a440a9cd6f3e631c059ee8b99}{Get\+Chunk()}}, it adds the chunk header size to {\ttfamily f\+Chunk\+Size} before caching the chunk ~\newline
+
+\item Before calling \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a2d780ebc594683e24302871b809602e8}{Set\+Chunk()}} or \mbox{\hyperlink{class_a_a_x___i_a_c_f_effect_parameters_a1e86f849e970c9998313fc7d451ccf85}{Compare\+Active\+Chunk()}}, A\+AE subtracts the chunk header size from the cached chunk\textquotesingle{}s header\textquotesingle{}s {\ttfamily f\+Chunk\+Size} member 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x_8h}{A\+A\+X.\+h}}\end{DoxyCompactItemize}

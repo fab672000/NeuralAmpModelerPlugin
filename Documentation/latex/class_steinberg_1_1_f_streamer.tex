@@ -1,0 +1,250 @@
+\hypertarget{class_steinberg_1_1_f_streamer}{}\doxysection{Steinberg\+::F\+Streamer Class Reference}
+\label{class_steinberg_1_1_f_streamer}\index{Steinberg::FStreamer@{Steinberg::FStreamer}}
+
+
+{\ttfamily \#include $<$fstreamer.\+h$>$}
+
+Inheritance diagram for Steinberg\+::F\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_f_streamer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a301ed53c6588c8c809dc7d26bc12bcf9}\label{class_steinberg_1_1_f_streamer_a301ed53c6588c8c809dc7d26bc12bcf9}} 
+{\bfseries F\+Streamer} (int16 byte\+Order=B\+Y\+T\+E\+O\+R\+D\+ER)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a627cdfa1f322ba9bcf3d1e072f6990dd}\label{class_steinberg_1_1_f_streamer_a627cdfa1f322ba9bcf3d1e072f6990dd}} 
+bool {\bfseries skip} (uint32 bytes)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_abe8999c03a7c40d77fda0b72d616faf9}\label{class_steinberg_1_1_f_streamer_abe8999c03a7c40d77fda0b72d616faf9}} 
+bool {\bfseries pad} (uint32 bytes)
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Implementing class must override.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ad8aebfac6b1f08dc8cdcbb78c525ab68}\label{class_steinberg_1_1_f_streamer_ad8aebfac6b1f08dc8cdcbb78c525ab68}} 
+virtual T\+Size \mbox{\hyperlink{class_steinberg_1_1_f_streamer_ad8aebfac6b1f08dc8cdcbb78c525ab68}{read\+Raw}} (void $\ast$, T\+Size)=0
+\begin{DoxyCompactList}\small\item\em Read one buffer of size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a10f885da0459d75193b2bbcc0316edb7}\label{class_steinberg_1_1_f_streamer_a10f885da0459d75193b2bbcc0316edb7}} 
+virtual T\+Size \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a10f885da0459d75193b2bbcc0316edb7}{write\+Raw}} (const void $\ast$, T\+Size)=0
+\begin{DoxyCompactList}\small\item\em Write one buffer of size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a5420f0f11c3316b105f96cb11b4a3c20}\label{class_steinberg_1_1_f_streamer_a5420f0f11c3316b105f96cb11b4a3c20}} 
+virtual int64 \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a5420f0f11c3316b105f96cb11b4a3c20}{seek}} (int64, F\+Seek\+Mode)=0
+\begin{DoxyCompactList}\small\item\em Set file position for stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a67140eb6002bd85b3beda733badd6c92}\label{class_steinberg_1_1_f_streamer_a67140eb6002bd85b3beda733badd6c92}} 
+virtual int64 \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a67140eb6002bd85b3beda733badd6c92}{tell}} ()=0
+\begin{DoxyCompactList}\small\item\em Return current file position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Streams are byte\+Order aware.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ab1edc5880775506a54d9f50412d2bd6c}\label{class_steinberg_1_1_f_streamer_ab1edc5880775506a54d9f50412d2bd6c}} 
+void {\bfseries set\+Byte\+Order} (int32 e)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a76d7ff229b1d2f9dff3b4e108af58f81}\label{class_steinberg_1_1_f_streamer_a76d7ff229b1d2f9dff3b4e108af58f81}} 
+int32 {\bfseries get\+Byte\+Order} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write int8 and char.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a79476fda4b7d1697450252307e714b3c}\label{class_steinberg_1_1_f_streamer_a79476fda4b7d1697450252307e714b3c}} 
+bool {\bfseries write\+Char8} (char8)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a20e3582b0c25551e972869a7244aba0a}\label{class_steinberg_1_1_f_streamer_a20e3582b0c25551e972869a7244aba0a}} 
+bool {\bfseries read\+Char8} (char8 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a3994dd931c189b69caa2ac4db5f20369}\label{class_steinberg_1_1_f_streamer_a3994dd931c189b69caa2ac4db5f20369}} 
+bool {\bfseries write\+U\+Char8} (unsigned char)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ab467b25f655bdb0e3918e35453747701}\label{class_steinberg_1_1_f_streamer_ab467b25f655bdb0e3918e35453747701}} 
+bool {\bfseries read\+U\+Char8} (unsigned char \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ad1b92ab189c1f3fcc69a29f4709e3e63}\label{class_steinberg_1_1_f_streamer_ad1b92ab189c1f3fcc69a29f4709e3e63}} 
+bool {\bfseries write\+Char16} (char16 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ab0650f4858c6f11dabcb34abf49b272d}\label{class_steinberg_1_1_f_streamer_ab0650f4858c6f11dabcb34abf49b272d}} 
+bool {\bfseries read\+Char16} (char16 \&c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ad5a3189856206e73cd0ebbf8391986bc}\label{class_steinberg_1_1_f_streamer_ad5a3189856206e73cd0ebbf8391986bc}} 
+bool {\bfseries write\+Int8} (int8 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a649b01b85a227b71d15b0890f06432e2}\label{class_steinberg_1_1_f_streamer_a649b01b85a227b71d15b0890f06432e2}} 
+bool {\bfseries read\+Int8} (int8 \&c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a4d83095933c3937f907fb8e7c0c828ad}\label{class_steinberg_1_1_f_streamer_a4d83095933c3937f907fb8e7c0c828ad}} 
+bool {\bfseries write\+Int8u} (uint8 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a7779f9f613933650b384d1c6691db2a6}\label{class_steinberg_1_1_f_streamer_a7779f9f613933650b384d1c6691db2a6}} 
+bool {\bfseries read\+Int8u} (uint8 \&c)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write int16.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a60a97a23f36124616357636553a6bff5}\label{class_steinberg_1_1_f_streamer_a60a97a23f36124616357636553a6bff5}} 
+bool {\bfseries write\+Int16} (int16)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a9b7f5133c349ca3d436b1b25b3d2820e}\label{class_steinberg_1_1_f_streamer_a9b7f5133c349ca3d436b1b25b3d2820e}} 
+bool {\bfseries read\+Int16} (int16 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a806df69e8b570e90da58d218c8aadac2}\label{class_steinberg_1_1_f_streamer_a806df69e8b570e90da58d218c8aadac2}} 
+bool {\bfseries write\+Int16\+Array} (const int16 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ace24d43831543d5f453973e1cd10295a}\label{class_steinberg_1_1_f_streamer_ace24d43831543d5f453973e1cd10295a}} 
+bool {\bfseries read\+Int16\+Array} (int16 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a6e9e24e4447b148949207631a4b38d47}\label{class_steinberg_1_1_f_streamer_a6e9e24e4447b148949207631a4b38d47}} 
+bool {\bfseries write\+Int16u} (uint16)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a3cfa37ec2c5ca93dc5d3ec1c7605635d}\label{class_steinberg_1_1_f_streamer_a3cfa37ec2c5ca93dc5d3ec1c7605635d}} 
+bool {\bfseries read\+Int16u} (uint16 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_adaa3a8addcae6c802fd6e8fe89f895d5}\label{class_steinberg_1_1_f_streamer_adaa3a8addcae6c802fd6e8fe89f895d5}} 
+bool {\bfseries write\+Int16u\+Array} (const uint16 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a4d5159638ea2e53ca136ca9ebf1f9a0b}\label{class_steinberg_1_1_f_streamer_a4d5159638ea2e53ca136ca9ebf1f9a0b}} 
+bool {\bfseries read\+Int16u\+Array} (uint16 $\ast$array, int32 count)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write int32.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a119ca016d3fe7ba8a15b8118f5a4dc8c}\label{class_steinberg_1_1_f_streamer_a119ca016d3fe7ba8a15b8118f5a4dc8c}} 
+bool {\bfseries write\+Int32} (int32)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a703cc94edf589387dab18c6ee451ad35}\label{class_steinberg_1_1_f_streamer_a703cc94edf589387dab18c6ee451ad35}} 
+bool {\bfseries read\+Int32} (int32 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_afc319825faa8ce5c4141b4c5deed7e03}\label{class_steinberg_1_1_f_streamer_afc319825faa8ce5c4141b4c5deed7e03}} 
+bool {\bfseries write\+Int32\+Array} (const int32 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a41561774dd14a515217e5231325dcaa7}\label{class_steinberg_1_1_f_streamer_a41561774dd14a515217e5231325dcaa7}} 
+bool {\bfseries read\+Int32\+Array} (int32 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_aa96b10c589a0381d09fd60b129cb895a}\label{class_steinberg_1_1_f_streamer_aa96b10c589a0381d09fd60b129cb895a}} 
+bool {\bfseries write\+Int32u} (uint32)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_acc1dd6cdf61e82d73ddf1eb3efb4c339}\label{class_steinberg_1_1_f_streamer_acc1dd6cdf61e82d73ddf1eb3efb4c339}} 
+bool {\bfseries read\+Int32u} (uint32 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a99a538fe627595f987f05d4edeed677b}\label{class_steinberg_1_1_f_streamer_a99a538fe627595f987f05d4edeed677b}} 
+bool {\bfseries write\+Int32u\+Array} (const uint32 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a9c323b20ae5c3371ecaba76aa310fab4}\label{class_steinberg_1_1_f_streamer_a9c323b20ae5c3371ecaba76aa310fab4}} 
+bool {\bfseries read\+Int32u\+Array} (uint32 $\ast$array, int32 count)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write int64.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a177c8e03fd9c8d7362d6839957a0cfd6}\label{class_steinberg_1_1_f_streamer_a177c8e03fd9c8d7362d6839957a0cfd6}} 
+bool {\bfseries write\+Int64} (int64)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a7ea10c48e9e565f3b0796ed00d38a020}\label{class_steinberg_1_1_f_streamer_a7ea10c48e9e565f3b0796ed00d38a020}} 
+bool {\bfseries read\+Int64} (int64 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a828dd8b8bd8ac92119b2e39203d8f2d9}\label{class_steinberg_1_1_f_streamer_a828dd8b8bd8ac92119b2e39203d8f2d9}} 
+bool {\bfseries write\+Int64\+Array} (const int64 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_aa8cab25bc720cddac4e9032a5797427e}\label{class_steinberg_1_1_f_streamer_aa8cab25bc720cddac4e9032a5797427e}} 
+bool {\bfseries read\+Int64\+Array} (int64 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a8b625744af2661b9014a09e2ad5a6d65}\label{class_steinberg_1_1_f_streamer_a8b625744af2661b9014a09e2ad5a6d65}} 
+bool {\bfseries write\+Int64u} (uint64)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a2cf60a4d963d936b2b8e85014402a5d2}\label{class_steinberg_1_1_f_streamer_a2cf60a4d963d936b2b8e85014402a5d2}} 
+bool {\bfseries read\+Int64u} (uint64 \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_abc49211e75d7acaf54e92f0b4e8fc523}\label{class_steinberg_1_1_f_streamer_abc49211e75d7acaf54e92f0b4e8fc523}} 
+bool {\bfseries write\+Int64u\+Array} (const uint64 $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a5bc45cdd1d700a23252adab44b17a2d3}\label{class_steinberg_1_1_f_streamer_a5bc45cdd1d700a23252adab44b17a2d3}} 
+bool {\bfseries read\+Int64u\+Array} (uint64 $\ast$array, int32 count)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write float and float array.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ae0cb8df6165603b84fd9d1349d8d0575}\label{class_steinberg_1_1_f_streamer_ae0cb8df6165603b84fd9d1349d8d0575}} 
+bool {\bfseries write\+Float} (float)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ac8e5fc779bac1d55562dc0bec144cf6c}\label{class_steinberg_1_1_f_streamer_ac8e5fc779bac1d55562dc0bec144cf6c}} 
+bool {\bfseries read\+Float} (float \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ac3cafa192451d6270cf86b8e5d572385}\label{class_steinberg_1_1_f_streamer_ac3cafa192451d6270cf86b8e5d572385}} 
+bool {\bfseries write\+Float\+Array} (const float $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ab8f0286d556398a04615049e847a61fe}\label{class_steinberg_1_1_f_streamer_ab8f0286d556398a04615049e847a61fe}} 
+bool {\bfseries read\+Float\+Array} (float $\ast$array, int32 count)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write double and double array.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_add76b4ea83c1c4dce3c069aed2eac5be}\label{class_steinberg_1_1_f_streamer_add76b4ea83c1c4dce3c069aed2eac5be}} 
+bool {\bfseries write\+Double} (double)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a1ab3976e634c0f20b9dfec10b24a21f2}\label{class_steinberg_1_1_f_streamer_a1ab3976e634c0f20b9dfec10b24a21f2}} 
+bool {\bfseries read\+Double} (double \&)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_af766b571fad4e2c829fed7c84deba220}\label{class_steinberg_1_1_f_streamer_af766b571fad4e2c829fed7c84deba220}} 
+bool {\bfseries write\+Double\+Array} (const double $\ast$array, int32 count)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ae747ddd7ca1440c2e550813bac18debe}\label{class_steinberg_1_1_f_streamer_ae747ddd7ca1440c2e550813bac18debe}} 
+bool {\bfseries read\+Double\+Array} (double $\ast$array, int32 count)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ read and write Boolean.}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_aa9903bad24fbb8d13899977397f8c202}\label{class_steinberg_1_1_f_streamer_aa9903bad24fbb8d13899977397f8c202}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_f_streamer_aa9903bad24fbb8d13899977397f8c202}{write\+Bool}} (bool)
+\begin{DoxyCompactList}\small\item\em Write one boolean. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ae3cee113a9c489450c70132aa5f1f3e0}\label{class_steinberg_1_1_f_streamer_ae3cee113a9c489450c70132aa5f1f3e0}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_f_streamer_ae3cee113a9c489450c70132aa5f1f3e0}{read\+Bool}} (bool \&)
+\begin{DoxyCompactList}\small\item\em Read one bool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a295d59b519752587560fe88a63c0aef9}\label{class_steinberg_1_1_f_streamer_a295d59b519752587560fe88a63c0aef9}} 
+int16 {\bfseries byte\+Order}
+\end{DoxyCompactItemize}
+\doxysubsection*{read and write Strings.}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a2178984cfabbbe6d6bc5934ac9e480f0}\label{class_steinberg_1_1_f_streamer_a2178984cfabbbe6d6bc5934ac9e480f0}} 
+T\+Size \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a2178984cfabbbe6d6bc5934ac9e480f0}{write\+String8}} (const char8 $\ast$ptr, bool terminate=false)
+\begin{DoxyCompactList}\small\item\em a direct output function writing only one string (ascii 8bit) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a5cc34aa566602c24b2dcf8b70704110d}\label{class_steinberg_1_1_f_streamer_a5cc34aa566602c24b2dcf8b70704110d}} 
+T\+Size \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a5cc34aa566602c24b2dcf8b70704110d}{read\+String8}} (char8 $\ast$ptr, T\+Size size)
+\begin{DoxyCompactList}\small\item\em a direct input function reading only one string (ascii) (ended by a ~\newline
+ or \textbackslash{}0 or eof) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_ae10cccfd5f9f2e7f17cab8961a19443b}\label{class_steinberg_1_1_f_streamer_ae10cccfd5f9f2e7f17cab8961a19443b}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_f_streamer_ae10cccfd5f9f2e7f17cab8961a19443b}{write\+Str8}} (const char8 $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em write a string length (strlen) and string itself \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a0c30550f9aa79f10730623f1454bd42f}\label{class_steinberg_1_1_f_streamer_a0c30550f9aa79f10730623f1454bd42f}} 
+char8 $\ast$ \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a0c30550f9aa79f10730623f1454bd42f}{read\+Str8}} ()
+\begin{DoxyCompactList}\small\item\em read a string length and string text (The return string must be deleted when use is finished) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a998ff91c07a41b6e5dfb688a249ed4b9}\label{class_steinberg_1_1_f_streamer_a998ff91c07a41b6e5dfb688a249ed4b9}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a998ff91c07a41b6e5dfb688a249ed4b9}{write\+String\+Utf8}} (const tchar $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em always terminated, converts to utf8 if non ascii characters are in string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a4ee7e3c5b339b04e5e12bdb06db9fb21}\label{class_steinberg_1_1_f_streamer_a4ee7e3c5b339b04e5e12bdb06db9fb21}} 
+int32 \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a4ee7e3c5b339b04e5e12bdb06db9fb21}{read\+String\+Utf8}} (tchar $\ast$ptr, int32 max\+Size)
+\begin{DoxyCompactList}\small\item\em read a U\+T\+F8 string \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_streamer_a909a6c2aa6cf4aa9597e97d512f2efdf}\label{class_steinberg_1_1_f_streamer_a909a6c2aa6cf4aa9597e97d512f2efdf}} 
+static int32 \mbox{\hyperlink{class_steinberg_1_1_f_streamer_a909a6c2aa6cf4aa9597e97d512f2efdf}{get\+Str8\+Size}} (const char8 $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em returns the size of a saved string \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Byteorder-\/aware base class for typed stream i/o. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fstreamer.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fstreamer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,132 @@
+\hypertarget{class_a_p_i_bitmap}{}\doxysection{A\+P\+I\+Bitmap Class Reference}
+\label{class_a_p_i_bitmap}\index{APIBitmap@{APIBitmap}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Private.\+h$>$}
+
+Inheritance diagram for A\+P\+I\+Bitmap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_p_i_bitmap}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap_a8a0071da3f2f6b904ad09b3bf1c6c841}{A\+P\+I\+Bitmap}} (Bitmap\+Data p\+Bitmap, int w, int h, float scale, float draw\+Scale)
+\item 
+\mbox{\Hypertarget{class_a_p_i_bitmap_a7e4cb84b00caa36e1a1eb984658ca0fe}\label{class_a_p_i_bitmap_a7e4cb84b00caa36e1a1eb984658ca0fe}} 
+{\bfseries A\+P\+I\+Bitmap} (const \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_a_p_i_bitmap_a25445a1e6bd0141a24e8c0740de4205d}\label{class_a_p_i_bitmap_a25445a1e6bd0141a24e8c0740de4205d}} 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} \&)=delete
+\item 
+void \mbox{\hyperlink{class_a_p_i_bitmap_ac270de5f19579e23b3651ddb5ecc1b52}{Set\+Bitmap}} (Bitmap\+Data p\+Bitmap, int w, int h, float scale, float draw\+Scale)
+\item 
+Bitmap\+Data \mbox{\hyperlink{class_a_p_i_bitmap_a8cbde88cc5ba66a1dff6ec025d39071f}{Get\+Bitmap}} () const
+\item 
+int \mbox{\hyperlink{class_a_p_i_bitmap_aed966b4a83c8b2b3f332b147e0243dfa}{Get\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_a_p_i_bitmap_ae3ff09cbb51372140e79318e8b3d6d4e}{Get\+Height}} () const
+\item 
+float \mbox{\hyperlink{class_a_p_i_bitmap_a5f03cfafe3518157da6217c7c3f58171}{Get\+Scale}} () const
+\item 
+float \mbox{\hyperlink{class_a_p_i_bitmap_aeb0c58a4d254838d768783bb1ce45f38}{Get\+Draw\+Scale}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A base class interface for a bitmap abstraction around the different drawing back end bitmap representations. In most cases it does own the bitmap data, the exception being with Nano\+VG, where the image is loaded onto the G\+PU as a texture, but still needs to be freed. Most of the time end-\/users will deal with \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} rather than \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}}, which is used behind the scenes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_p_i_bitmap_a8a0071da3f2f6b904ad09b3bf1c6c841}\label{class_a_p_i_bitmap_a8a0071da3f2f6b904ad09b3bf1c6c841}} 
+\index{APIBitmap@{APIBitmap}!APIBitmap@{APIBitmap}}
+\index{APIBitmap@{APIBitmap}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{APIBitmap()}{APIBitmap()}}
+{\footnotesize\ttfamily A\+P\+I\+Bitmap\+::\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{Bitmap\+Data}]{p\+Bitmap,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{float}]{scale,  }\item[{float}]{draw\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} constructor 
+\begin{DoxyParams}{Parameters}
+{\em p\+Bitmap} & pointer or integer index (Nano\+VG) to the image data \\
+\hline
+{\em w} & The width of the bitmap \\
+\hline
+{\em h} & The height of the bitmap \\
+\hline
+{\em scale} & An integer representing the scale of this bitmap in relation to a 1\+:1 pixel screen, e.\+g. 2 for an @2x bitmap \\
+\hline
+{\em draw\+Scale} & The draw scale at which this A\+PI bitmap was created (used in the context of layers) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_p_i_bitmap_a8cbde88cc5ba66a1dff6ec025d39071f}\label{class_a_p_i_bitmap_a8cbde88cc5ba66a1dff6ec025d39071f}} 
+\index{APIBitmap@{APIBitmap}!GetBitmap@{GetBitmap}}
+\index{GetBitmap@{GetBitmap}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{GetBitmap()}{GetBitmap()}}
+{\footnotesize\ttfamily Bitmap\+Data A\+P\+I\+Bitmap\+::\+Get\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Bitmap\+Data Get the Bitmap data linked to this \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_p_i_bitmap_aeb0c58a4d254838d768783bb1ce45f38}\label{class_a_p_i_bitmap_aeb0c58a4d254838d768783bb1ce45f38}} 
+\index{APIBitmap@{APIBitmap}!GetDrawScale@{GetDrawScale}}
+\index{GetDrawScale@{GetDrawScale}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{GetDrawScale()}{GetDrawScale()}}
+{\footnotesize\ttfamily float A\+P\+I\+Bitmap\+::\+Get\+Draw\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the draw scale of the bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_p_i_bitmap_ae3ff09cbb51372140e79318e8b3d6d4e}\label{class_a_p_i_bitmap_ae3ff09cbb51372140e79318e8b3d6d4e}} 
+\index{APIBitmap@{APIBitmap}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int A\+P\+I\+Bitmap\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the height of the bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_p_i_bitmap_a5f03cfafe3518157da6217c7c3f58171}\label{class_a_p_i_bitmap_a5f03cfafe3518157da6217c7c3f58171}} 
+\index{APIBitmap@{APIBitmap}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily float A\+P\+I\+Bitmap\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the scale of the bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_p_i_bitmap_aed966b4a83c8b2b3f332b147e0243dfa}\label{class_a_p_i_bitmap_aed966b4a83c8b2b3f332b147e0243dfa}} 
+\index{APIBitmap@{APIBitmap}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int A\+P\+I\+Bitmap\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the width of the bitmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_p_i_bitmap_ac270de5f19579e23b3651ddb5ecc1b52}\label{class_a_p_i_bitmap_ac270de5f19579e23b3651ddb5ecc1b52}} 
+\index{APIBitmap@{APIBitmap}!SetBitmap@{SetBitmap}}
+\index{SetBitmap@{SetBitmap}!APIBitmap@{APIBitmap}}
+\doxysubsubsection{\texorpdfstring{SetBitmap()}{SetBitmap()}}
+{\footnotesize\ttfamily void A\+P\+I\+Bitmap\+::\+Set\+Bitmap (\begin{DoxyParamCaption}\item[{Bitmap\+Data}]{p\+Bitmap,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{float}]{scale,  }\item[{float}]{draw\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Used to initialise the members after construction 
+\begin{DoxyParams}{Parameters}
+{\em p\+Bitmap} & pointer or integer index (Nano\+VG) to the image data \\
+\hline
+{\em w} & The width of the bitmap \\
+\hline
+{\em h} & The height of the bitmap \\
+\hline
+{\em scale} & The scale of this bitmap in relation to a 1\+:1 pixel screen, e.\+g. 2 for an @2x bitmap \\
+\hline
+{\em draw\+Scale} & The draw scale at which this A\+PI bitmap was created (used in the context of layers) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Graphics\+Private.\+h\end{DoxyCompactItemize}

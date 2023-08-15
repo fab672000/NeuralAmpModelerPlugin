@@ -1,0 +1,959 @@
+\hypertarget{group___c-interface}{}\doxysection{C-\/interface}
+\label{group___c-interface}\index{C-\/interface@{C-\/interface}}
+
+
+C interface to realtime audio i/o C++ classes.  
+
+
+\doxysubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{rtaudio__c_8h}{rtaudio\+\_\+c.\+h}}
+\item 
+file \mbox{\hyperlink{rtmidi__c_8h}{rtmidi\+\_\+c.\+h}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrtaudio__device__info}{rtaudio\+\_\+device\+\_\+info}}
+\item 
+struct \mbox{\hyperlink{structrtaudio__stream__parameters}{rtaudio\+\_\+stream\+\_\+parameters}}
+\item 
+struct \mbox{\hyperlink{structrtaudio__stream__options}{rtaudio\+\_\+stream\+\_\+options}}
+\item 
+struct \mbox{\hyperlink{struct_rt_midi_wrapper}{Rt\+Midi\+Wrapper}}
+\begin{DoxyCompactList}\small\item\em Wraps an \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} object for C function return statuses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga0771ce8ba002ee15667d8de36853187b}\label{group___c-interface_ga0771ce8ba002ee15667d8de36853187b}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+A\+PI}
+\item 
+\mbox{\Hypertarget{group___c-interface_gab9e2a34277e0b4ed317c66d232657cef}\label{group___c-interface_gab9e2a34277e0b4ed317c66d232657cef}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T8}~0x01
+\item 
+\mbox{\Hypertarget{group___c-interface_gaaaa4d581e4cf0eff6eaf5ac9a6b45778}\label{group___c-interface_gaaaa4d581e4cf0eff6eaf5ac9a6b45778}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T16}~0x02
+\item 
+\mbox{\Hypertarget{group___c-interface_ga7d904a963158a16bbd4c8b24ea57b1aa}\label{group___c-interface_ga7d904a963158a16bbd4c8b24ea57b1aa}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T24}~0x04
+\item 
+\mbox{\Hypertarget{group___c-interface_ga14c098c777def4f39300c6fe11eb9862}\label{group___c-interface_ga14c098c777def4f39300c6fe11eb9862}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T32}~0x08
+\item 
+\mbox{\Hypertarget{group___c-interface_gadd0e6f41e5460e9ceb58bf564a9e5eec}\label{group___c-interface_gadd0e6f41e5460e9ceb58bf564a9e5eec}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+A\+T32}~0x10
+\item 
+\mbox{\Hypertarget{group___c-interface_ga7147f285a0b5a32268627582a0240a6d}\label{group___c-interface_ga7147f285a0b5a32268627582a0240a6d}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+A\+T64}~0x20
+\item 
+\mbox{\Hypertarget{group___c-interface_ga16708ded005d51158cc3f23e6b8ac858}\label{group___c-interface_ga16708ded005d51158cc3f23e6b8ac858}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+N\+O\+N\+I\+N\+T\+E\+R\+L\+E\+A\+V\+ED}~0x1
+\item 
+\mbox{\Hypertarget{group___c-interface_gaf662d4f1e6518b5b827c43b84297c5cc}\label{group___c-interface_gaf662d4f1e6518b5b827c43b84297c5cc}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+I\+N\+I\+M\+I\+Z\+E\+\_\+\+L\+A\+T\+E\+N\+CY}~0x2
+\item 
+\mbox{\Hypertarget{group___c-interface_ga59316d7cf88ff908fd09443980e672be}\label{group___c-interface_ga59316d7cf88ff908fd09443980e672be}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+H\+O\+G\+\_\+\+D\+E\+V\+I\+CE}~0x4
+\item 
+\mbox{\Hypertarget{group___c-interface_ga6212a51d6314cd3b79273586b26aa36c}\label{group___c-interface_ga6212a51d6314cd3b79273586b26aa36c}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+R\+E\+A\+L\+T\+I\+ME}~0x8
+\item 
+\mbox{\Hypertarget{group___c-interface_ga041f0fd6c8f305e3ea36686ab760d4e0}\label{group___c-interface_ga041f0fd6c8f305e3ea36686ab760d4e0}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+A\+L\+S\+A\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}~0x10
+\item 
+\mbox{\Hypertarget{group___c-interface_ga4891c752ab45a2145b389715c86d7c0e}\label{group___c-interface_ga4891c752ab45a2145b389715c86d7c0e}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+J\+A\+C\+K\+\_\+\+D\+O\+N\+T\+\_\+\+C\+O\+N\+N\+E\+CT}~= 0x20
+\item 
+\mbox{\Hypertarget{group___c-interface_gaa5cd1224a36391b761b9789cb34dcbbb}\label{group___c-interface_gaa5cd1224a36391b761b9789cb34dcbbb}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+P\+U\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW}~0x1
+\item 
+\mbox{\Hypertarget{group___c-interface_ga6e6ad1455ba34e64a26a406d19270013}\label{group___c-interface_ga6e6ad1455ba34e64a26a406d19270013}} 
+\#define {\bfseries R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW}~0x2
+\item 
+\mbox{\Hypertarget{group___c-interface_ga8d20ebaed37d00a3661d553294cc3230}\label{group___c-interface_ga8d20ebaed37d00a3661d553294cc3230}} 
+\#define {\bfseries N\+U\+M\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+ES}~16
+\item 
+\mbox{\Hypertarget{group___c-interface_ga0c397a708cec89c74029582574516b30}\label{group___c-interface_ga0c397a708cec89c74029582574516b30}} 
+\#define {\bfseries M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH}~512
+\item 
+\mbox{\Hypertarget{group___c-interface_ga88abcd94c0cdbb508f88038de32e8f20}\label{group___c-interface_ga88abcd94c0cdbb508f88038de32e8f20}} 
+\#define {\bfseries R\+T\+M\+I\+D\+I\+A\+PI}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long \mbox{\hyperlink{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}{rtaudio\+\_\+format\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} data format type. \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{group___c-interface_ga7e1c8d44ba9c9314121595ea8eff0dd6}{rtaudio\+\_\+stream\+\_\+flags\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} stream option flags. \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{group___c-interface_ga48cb0fae904c57c8830f5e9b12a31f53}{rtaudio\+\_\+stream\+\_\+status\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} stream status (over-\/ or underflow) flags. \end{DoxyCompactList}\item 
+typedef int($\ast$ \mbox{\hyperlink{group___c-interface_ga2b225b83b25ea4025f60cef3ac97ca6f}{rtaudio\+\_\+cb\+\_\+t}}) (void $\ast$out, void $\ast$in, unsigned int n\+Frames, double stream\+\_\+time, \mbox{\hyperlink{group___c-interface_ga48cb0fae904c57c8830f5e9b12a31f53}{rtaudio\+\_\+stream\+\_\+status\+\_\+t}} status, void $\ast$userdata)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} callback function prototype. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}{rtaudio\+\_\+error}} \mbox{\hyperlink{group___c-interface_ga759f170fb2ad2ac36756dfe9e34aa017}{rtaudio\+\_\+error\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Error codes for \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{group___c-interface_ga26693f7a608d23607f7263fac26ff4dd}{rtaudio\+\_\+error\+\_\+cb\+\_\+t}}) (\mbox{\hyperlink{group___c-interface_ga759f170fb2ad2ac36756dfe9e34aa017}{rtaudio\+\_\+error\+\_\+t}} err, const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} error callback function prototype. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gab79575ad94617f6894600589868123f2}\label{group___c-interface_gab79575ad94617f6894600589868123f2}} 
+typedef enum \mbox{\hyperlink{group___c-interface_ga17de303e97d3e7ce0c59fa1f0d9c0712}{rtaudio\+\_\+api}} \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Audio A\+PI specifier. See \mbox{\hyperlink{class_rt_audio_ac9b6f625da88249d08a8409a9db0d849}{Rt\+Audio\+::\+Api}}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structrtaudio__device__info}{rtaudio\+\_\+device\+\_\+info}} \mbox{\hyperlink{group___c-interface_ga2b99c42e8e5ab5aafa394b4c285605aa}{rtaudio\+\_\+device\+\_\+info\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structrtaudio__stream__parameters}{rtaudio\+\_\+stream\+\_\+parameters}} \mbox{\hyperlink{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}{rtaudio\+\_\+stream\+\_\+parameters\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structrtaudio__stream__options}{rtaudio\+\_\+stream\+\_\+options}} \mbox{\hyperlink{group___c-interface_gac58b9e385df56eb5060af1c7de13eb7f}{rtaudio\+\_\+stream\+\_\+options\+\_\+t}}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga978248544e67d220d78c166de6d5e15b}\label{group___c-interface_ga978248544e67d220d78c166de6d5e15b}} 
+typedef struct \mbox{\hyperlink{classrtaudio}{rtaudio}} $\ast$ {\bfseries rtaudio\+\_\+t}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}\label{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}} 
+typedef struct \mbox{\hyperlink{struct_rt_midi_wrapper}{Rt\+Midi\+Wrapper}} $\ast$ \mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Typedef for a generic \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga1bac533c7d0601655f54993af442aef5}\label{group___c-interface_ga1bac533c7d0601655f54993af442aef5}} 
+typedef struct \mbox{\hyperlink{struct_rt_midi_wrapper}{Rt\+Midi\+Wrapper}} $\ast$ \mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Typedef for a generic \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}} pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}\label{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}} 
+typedef struct \mbox{\hyperlink{struct_rt_midi_wrapper}{Rt\+Midi\+Wrapper}} $\ast$ \mbox{\hyperlink{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}{Rt\+Midi\+Out\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Typedef for a generic \mbox{\hyperlink{class_rt_midi_out}{Rt\+Midi\+Out}} pointer. \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{group___c-interface_gad5a6c6988a90da73b6ec4dd9c6da24a1}{Rt\+Midi\+C\+Callback}}) (double time\+Stamp, const unsigned char $\ast$message, size\+\_\+t message\+Size, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em The type of a \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}{rtaudio\+\_\+error}} \{ \newline
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa697f28648fbadc0171475d02480d8aae}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+A\+R\+N\+I\+NG}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa2cd3e22164780e12a06b9cfec4301146}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+B\+U\+G\+\_\+\+W\+A\+R\+N\+I\+NG}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aacbff947eb35674efdd2a8349f4795159}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa953569aa743c7e0c39375cd04a6836db}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+D\+E\+V\+I\+C\+E\+S\+\_\+\+F\+O\+U\+ND}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa71b7beddb4ff61e48f533af8a116e133}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+E\+V\+I\+CE}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa456aef88d3c8c90f8d4a90cd9567edc3}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa5e2f92a0af3084647650bdff8a92aa6f}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa0d6d301c35ee4fb4408eb8c9c0f5bf85}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+SE}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aab5a7b5d261dbb6ac6ebca2856ebaeb43}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aabb4ffa55ed1db42ece7294b3efcde3cb}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa5fc71ac7cd30cd34cb2933aff646b8b7}{R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+E\+R\+R\+OR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Error codes for \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___c-interface_ga17de303e97d3e7ce0c59fa1f0d9c0712}{rtaudio\+\_\+api}} \{ \newline
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ac4bd2a7b73dad32e9aa22f73da3f4598}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a28ffa86e0ae126de98a4455400839a5e}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+L\+SA}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a23207e1644958a0970ab18fa37390270}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+P\+U\+L\+SE}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ab578b52f570c1869e28b7a86bff5cd62}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+SS}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ad724e2bc19429cc39927445cd8197016}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+U\+N\+I\+X\+\_\+\+J\+A\+CK}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a2a38e1f259894aada62abbf0e7b5200c}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+M\+A\+C\+O\+S\+X\+\_\+\+C\+O\+RE}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a6f7450e85ca0a79aa6768318882bb8de}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+W\+A\+S\+A\+PI}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712aebc68f5b5912e13b9e853e3fea12cb95}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+A\+S\+IO}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a25fdbfceeedec5db1b2c7c15a61c6cec}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+DS}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ad79cd0bd25311fd839b99edde779eda8}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+D\+U\+M\+MY}}, 
+\mbox{\hyperlink{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a9e474b0be5f332b2db9c0eff057151bd}{R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+N\+UM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Audio A\+PI specifier. See \mbox{\hyperlink{class_rt_audio_ac9b6f625da88249d08a8409a9db0d849}{Rt\+Audio\+::\+Api}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} \{ \newline
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604abd429985cbc09751238d00540b7f95ee}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}, 
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a6e7fc83baaf1dd658640da663d545216}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+M\+A\+C\+O\+S\+X\+\_\+\+C\+O\+RE}}, 
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a284b8b6aede16ae6d1c35d8846bf28de}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+L\+SA}}, 
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604abff5e15cdd9410255e138dbbf5cb2e0c}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+U\+N\+I\+X\+\_\+\+J\+A\+CK}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a4639f65f6d058918a9a191e6d77707ba}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+MM}}, 
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a877bb273d1cfa58b6819f9137865d238}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+R\+T\+M\+I\+D\+I\+\_\+\+D\+U\+M\+MY}}, 
+\mbox{\hyperlink{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a03f179fc13e3643c0ffa47e7ddab327e}{R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+N\+UM}}
+ \}
+\begin{DoxyCompactList}\small\item\em M\+I\+DI A\+PI specifier arguments. See \mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___c-interface_ga1f43737fc38ff6251f5199d2568a5a14}{Rt\+Midi\+Error\+Type}} \{ \newline
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a80384dd0a07aa6f800cd02c5953e3ab5}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+A\+R\+N\+I\+NG}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a77af2b2f5085cebde724330239237576}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+B\+U\+G\+\_\+\+W\+A\+R\+N\+I\+NG}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a37e96f8021604757cfba1745109a6a54}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a925009fc17a5e2e251a61393c3d61b72}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+D\+E\+V\+I\+C\+E\+S\+\_\+\+F\+O\+U\+ND}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14aa3e9d9d7bb3ecc40a254b2029f2f10d2}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+E\+V\+I\+CE}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a17ebabb8b1fa859c18dfc1ea38865d0a}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a046f874fbe6c5cf15a9265e7063d3e5e}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a3bad6b6fe1630aa176139d1c87dfdcb8}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+SE}}, 
+\newline
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a504e54d3eb431339cad9dae1fc7abb45}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a86ba057c1a20c29290f1febf950111b7}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14abee7b09df66d91d05892e86f6da09089}{R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+E\+R\+R\+OR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defined \mbox{\hyperlink{class_rt_midi_error}{Rt\+Midi\+Error}} types. See \mbox{\hyperlink{class_rt_midi_error_a741314057cec5fb8c743c12f284905ee}{Rt\+Midi\+Error\+::\+Type}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___c-interface_gade172e7bab22b1b18d600c3ee7ade808}\label{group___c-interface_gade172e7bab22b1b18d600c3ee7ade808}} 
+const R\+T\+A\+U\+D\+I\+O\+A\+PI char $\ast$ \mbox{\hyperlink{group___c-interface_gade172e7bab22b1b18d600c3ee7ade808}{rtaudio\+\_\+version}} (void)
+\begin{DoxyCompactList}\small\item\em Determine the current \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} version. See \mbox{\hyperlink{class_rt_audio_a5b8f67e95949664ffc63ec88ac38cd54}{Rt\+Audio\+::get\+Version()}}. \end{DoxyCompactList}\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int \mbox{\hyperlink{group___c-interface_gacadc4f44e7b85d9bb29db053a57bf2df}{rtaudio\+\_\+get\+\_\+num\+\_\+compiled\+\_\+apis}} (void)
+\item 
+const R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} $\ast$ \mbox{\hyperlink{group___c-interface_ga334b7090c494ab171d78f23bc700f9fa}{rtaudio\+\_\+compiled\+\_\+api}} (void)
+\item 
+const R\+T\+A\+U\+D\+I\+O\+A\+PI char $\ast$ \mbox{\hyperlink{group___c-interface_ga3bcc546b10d70968457e468937e434c0}{rtaudio\+\_\+api\+\_\+name}} (\mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} api)
+\item 
+const R\+T\+A\+U\+D\+I\+O\+A\+PI char $\ast$ \mbox{\hyperlink{group___c-interface_gaa84f9da0c387c52658b5e4e282891ce3}{rtaudio\+\_\+api\+\_\+display\+\_\+name}} (\mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} api)
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} \mbox{\hyperlink{group___c-interface_ga4dce7eeeff0075021069a7a90a0b9341}{rtaudio\+\_\+compiled\+\_\+api\+\_\+by\+\_\+name}} (const char $\ast$name)
+\item 
+\mbox{\Hypertarget{group___c-interface_ga54dd2654a31ce78f8bcfc1ab7931d378}\label{group___c-interface_ga54dd2654a31ce78f8bcfc1ab7931d378}} 
+const R\+T\+A\+U\+D\+I\+O\+A\+PI char $\ast$ {\bfseries rtaudio\+\_\+error} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+\mbox{\Hypertarget{group___c-interface_ga1f7d47134090e0e79aaff1df2ef2f24e}\label{group___c-interface_ga1f7d47134090e0e79aaff1df2ef2f24e}} 
+R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{group___c-interface_ga1f7d47134090e0e79aaff1df2ef2f24e}{rtaudio\+\_\+create}} (\mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} api)
+\begin{DoxyCompactList}\small\item\em Create an instance of struct rtaudio. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga3220c9da3f86951ab81a9103a88af27a}\label{group___c-interface_ga3220c9da3f86951ab81a9103a88af27a}} 
+R\+T\+A\+U\+D\+I\+O\+A\+PI void \mbox{\hyperlink{group___c-interface_ga3220c9da3f86951ab81a9103a88af27a}{rtaudio\+\_\+destroy}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\begin{DoxyCompactList}\small\item\em Free an instance of struct rtaudio. \end{DoxyCompactList}\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} \mbox{\hyperlink{group___c-interface_ga9bb4f8a21d20ace68a824c76e8468a0b}{rtaudio\+\_\+current\+\_\+api}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_gaa4fd619bef85630758187a79f47969e4}{rtaudio\+\_\+device\+\_\+count}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_ga2b99c42e8e5ab5aafa394b4c285605aa}{rtaudio\+\_\+device\+\_\+info\+\_\+t}} \mbox{\hyperlink{group___c-interface_ga8731aacc0cf4220a5d78cb1b39631b58}{rtaudio\+\_\+get\+\_\+device\+\_\+info}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}}, int i)
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int \mbox{\hyperlink{group___c-interface_gad989cd0e88238dc97002eea25d692a4a}{rtaudio\+\_\+get\+\_\+default\+\_\+output\+\_\+device}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int \mbox{\hyperlink{group___c-interface_ga45d0c4e90a6ea9ccc8e0f85959ccf3f9}{rtaudio\+\_\+get\+\_\+default\+\_\+input\+\_\+device}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_ga7d26eb9dafd5a89f5bcf70b42c0ed1b8}{rtaudio\+\_\+open\+\_\+stream}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}}, \mbox{\hyperlink{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}{rtaudio\+\_\+stream\+\_\+parameters\+\_\+t}} $\ast$output\+\_\+params, \mbox{\hyperlink{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}{rtaudio\+\_\+stream\+\_\+parameters\+\_\+t}} $\ast$input\+\_\+params, \mbox{\hyperlink{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}{rtaudio\+\_\+format\+\_\+t}} format, unsigned int sample\+\_\+rate, unsigned int $\ast$buffer\+\_\+frames, \mbox{\hyperlink{group___c-interface_ga2b225b83b25ea4025f60cef3ac97ca6f}{rtaudio\+\_\+cb\+\_\+t}} cb, void $\ast$userdata, \mbox{\hyperlink{group___c-interface_gac58b9e385df56eb5060af1c7de13eb7f}{rtaudio\+\_\+stream\+\_\+options\+\_\+t}} $\ast$options, \mbox{\hyperlink{group___c-interface_ga26693f7a608d23607f7263fac26ff4dd}{rtaudio\+\_\+error\+\_\+cb\+\_\+t}} errcb)
+\item 
+\mbox{\Hypertarget{group___c-interface_ga355430fbf0873c647ed59ecf4a6a0b7f}\label{group___c-interface_ga355430fbf0873c647ed59ecf4a6a0b7f}} 
+R\+T\+A\+U\+D\+I\+O\+A\+PI void \mbox{\hyperlink{group___c-interface_ga355430fbf0873c647ed59ecf4a6a0b7f}{rtaudio\+\_\+close\+\_\+stream}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\begin{DoxyCompactList}\small\item\em Closes a stream and frees any associated stream memory. See \mbox{\hyperlink{class_rt_audio_a90d599002ad32cf250a4cb866f2cc93a}{Rt\+Audio\+::close\+Stream()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga2a8f0855c482d3fc578bdf05fc0849cf}\label{group___c-interface_ga2a8f0855c482d3fc578bdf05fc0849cf}} 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_ga2a8f0855c482d3fc578bdf05fc0849cf}{rtaudio\+\_\+start\+\_\+stream}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\begin{DoxyCompactList}\small\item\em Starts a stream. See \mbox{\hyperlink{class_rt_audio_aec017a89629ccef66a90b60be22a2f80}{Rt\+Audio\+::start\+Stream()}}. \end{DoxyCompactList}\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_ga946fcd647bee26848fc1cab8c547ed9a}{rtaudio\+\_\+stop\+\_\+stream}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_ga33cbf4836571575348a68b0bd700d195}{rtaudio\+\_\+abort\+\_\+stream}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+\mbox{\Hypertarget{group___c-interface_ga4bad19084ceb293d50d98330e7efa56c}\label{group___c-interface_ga4bad19084ceb293d50d98330e7efa56c}} 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_ga4bad19084ceb293d50d98330e7efa56c}{rtaudio\+\_\+is\+\_\+stream\+\_\+open}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\begin{DoxyCompactList}\small\item\em Returns 1 if a stream is open and false if not. See \mbox{\hyperlink{class_rt_audio_a9c191aa5401a60e5438291b117bbf8c4}{Rt\+Audio\+::is\+Stream\+Open()}}. \end{DoxyCompactList}\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_gad3e1070f8bed653d440216963008c99a}{rtaudio\+\_\+is\+\_\+stream\+\_\+running}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI double \mbox{\hyperlink{group___c-interface_gaadd28df756bf38321b990a3a57f33001}{rtaudio\+\_\+get\+\_\+stream\+\_\+time}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI void \mbox{\hyperlink{group___c-interface_ga64aab7ae4cc5ecbcd8239118f456c516}{rtaudio\+\_\+set\+\_\+stream\+\_\+time}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}}, double time)
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI int \mbox{\hyperlink{group___c-interface_ga8667ecbfbaecbb9dd81079d132dd72ca}{rtaudio\+\_\+get\+\_\+stream\+\_\+latency}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int \mbox{\hyperlink{group___c-interface_ga8cb9042c7b93d1e4ff6450a699eaebbc}{rtaudio\+\_\+get\+\_\+stream\+\_\+sample\+\_\+rate}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}})
+\item 
+R\+T\+A\+U\+D\+I\+O\+A\+PI void \mbox{\hyperlink{group___c-interface_ga45a955f5e79d3a300828017a9b3ca7ef}{rtaudio\+\_\+show\+\_\+warnings}} (\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}} \mbox{\hyperlink{classaudio}{audio}}, int show)
+\item 
+R\+T\+M\+I\+D\+I\+A\+PI int \mbox{\hyperlink{group___c-interface_ga6de5323d3515532ce9beedc5bd0b48f4}{rtmidi\+\_\+get\+\_\+compiled\+\_\+api}} (enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} $\ast$apis, unsigned int apis\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Determine the available compiled M\+I\+DI A\+P\+Is. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga491284872385a85682c4e79389c30675}\label{group___c-interface_ga491284872385a85682c4e79389c30675}} 
+const R\+T\+M\+I\+D\+I\+A\+PI char $\ast$ \mbox{\hyperlink{group___c-interface_ga491284872385a85682c4e79389c30675}{rtmidi\+\_\+api\+\_\+name}} (enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} api)
+\begin{DoxyCompactList}\small\item\em Return the name of a specified compiled M\+I\+DI A\+PI. See \mbox{\hyperlink{class_rt_midi_a853d52bec07c3f4132debc403435d3e4}{Rt\+Midi\+::get\+Api\+Name()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gaaaf698f3b37e947c4d511c5f98c67de7}\label{group___c-interface_gaaaf698f3b37e947c4d511c5f98c67de7}} 
+const R\+T\+M\+I\+D\+I\+A\+PI char $\ast$ \mbox{\hyperlink{group___c-interface_gaaaf698f3b37e947c4d511c5f98c67de7}{rtmidi\+\_\+api\+\_\+display\+\_\+name}} (enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} api)
+\begin{DoxyCompactList}\small\item\em Return the display name of a specified compiled M\+I\+DI A\+PI. See \mbox{\hyperlink{class_rt_midi_a1f88bbf6977d0c52fda010792d3708ca}{Rt\+Midi\+::get\+Api\+Display\+Name()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gaf5fd1cbce38cbe6baa500eba176cf62f}\label{group___c-interface_gaf5fd1cbce38cbe6baa500eba176cf62f}} 
+R\+T\+M\+I\+D\+I\+A\+PI enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} \mbox{\hyperlink{group___c-interface_gaf5fd1cbce38cbe6baa500eba176cf62f}{rtmidi\+\_\+compiled\+\_\+api\+\_\+by\+\_\+name}} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Return the compiled M\+I\+DI A\+PI having the given name. See \mbox{\hyperlink{class_rt_midi_a79e1d52ec3ac1e46d63f479775d372d9}{Rt\+Midi\+::get\+Compiled\+Api\+By\+Name()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga2698185f1e7db82bd8f2dcc2b5b282d2}\label{group___c-interface_ga2698185f1e7db82bd8f2dcc2b5b282d2}} 
+R\+T\+M\+I\+D\+I\+A\+PI void {\bfseries rtmidi\+\_\+error} (enum \mbox{\hyperlink{group___c-interface_ga1f43737fc38ff6251f5199d2568a5a14}{Rt\+Midi\+Error\+Type}} type, const char $\ast$error\+String)
+\item 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_ga869ef855df9bf207f0da9293468a7684}{rtmidi\+\_\+open\+\_\+port}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device, unsigned int port\+Number, const char $\ast$port\+Name)
+\begin{DoxyCompactList}\small\item\em Open a M\+I\+DI port. \end{DoxyCompactList}\item 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_ga32cac5ccdcb952f45986d56edf33c05e}{rtmidi\+\_\+open\+\_\+virtual\+\_\+port}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device, const char $\ast$port\+Name)
+\begin{DoxyCompactList}\small\item\em Creates a virtual M\+I\+DI port to which other software applications can connect. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga404cb4d2a5dfd173467f9fa4611821e7}\label{group___c-interface_ga404cb4d2a5dfd173467f9fa4611821e7}} 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_ga404cb4d2a5dfd173467f9fa4611821e7}{rtmidi\+\_\+close\+\_\+port}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Close a M\+I\+DI connection. See \mbox{\hyperlink{class_rt_midi_a36125c4fa16550345b57f4a4927f5b4a}{Rt\+Midi\+::close\+Port()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gada755738a808422df44ee9bb4b5ff857}\label{group___c-interface_gada755738a808422df44ee9bb4b5ff857}} 
+R\+T\+M\+I\+D\+I\+A\+PI unsigned int \mbox{\hyperlink{group___c-interface_gada755738a808422df44ee9bb4b5ff857}{rtmidi\+\_\+get\+\_\+port\+\_\+count}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Return the number of available M\+I\+DI ports. See \mbox{\hyperlink{class_rt_midi_a9a49ef73a1e6007444019a7ae095e195}{Rt\+Midi\+::get\+Port\+Count()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga4892c71810b36ba5f0d3f6e558b5eea1}\label{group___c-interface_ga4892c71810b36ba5f0d3f6e558b5eea1}} 
+const R\+T\+M\+I\+D\+I\+A\+PI char $\ast$ \mbox{\hyperlink{group___c-interface_ga4892c71810b36ba5f0d3f6e558b5eea1}{rtmidi\+\_\+get\+\_\+port\+\_\+name}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device, unsigned int port\+Number)
+\begin{DoxyCompactList}\small\item\em Return a string identifier for the specified M\+I\+DI input port number. See \mbox{\hyperlink{class_rt_midi_a799e2b9f4df39b298518f2b394db3391}{Rt\+Midi\+::get\+Port\+Name()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga3cc10ced64e5192bf44ebbc8142161e3}\label{group___c-interface_ga3cc10ced64e5192bf44ebbc8142161e3}} 
+R\+T\+M\+I\+D\+I\+A\+PI \mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} \mbox{\hyperlink{group___c-interface_ga3cc10ced64e5192bf44ebbc8142161e3}{rtmidi\+\_\+in\+\_\+create\+\_\+default}} (void)
+\begin{DoxyCompactList}\small\item\em Create a default Rt\+Midi\+In\+Ptr value, with no initialization. \end{DoxyCompactList}\item 
+R\+T\+M\+I\+D\+I\+A\+PI \mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} \mbox{\hyperlink{group___c-interface_gaafde5effcdb5a1cfa3d553ff3f5be0e0}{rtmidi\+\_\+in\+\_\+create}} (enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} api, const char $\ast$client\+Name, unsigned int queue\+Size\+Limit)
+\begin{DoxyCompactList}\small\item\em Create a Rt\+Midi\+In\+Ptr value, with given api, client\+Name and queue\+Size\+Limit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gab511a837b2f9e23a1e674a9b2ea46a55}\label{group___c-interface_gab511a837b2f9e23a1e674a9b2ea46a55}} 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_gab511a837b2f9e23a1e674a9b2ea46a55}{rtmidi\+\_\+in\+\_\+free}} (\mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Free the given Rt\+Midi\+In\+Ptr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga030d996fbf611a83e40910673883f2d4}\label{group___c-interface_ga030d996fbf611a83e40910673883f2d4}} 
+R\+T\+M\+I\+D\+I\+A\+PI enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} \mbox{\hyperlink{group___c-interface_ga030d996fbf611a83e40910673883f2d4}{rtmidi\+\_\+in\+\_\+get\+\_\+current\+\_\+api}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Returns the M\+I\+DI A\+PI specifier for the given instance of \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}}. See \mbox{\hyperlink{class_rt_midi_in_a6475a11eeb0c8bf22157c3887b100164}{Rt\+Midi\+In\+::get\+Current\+Api()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga0207ebdd9388cacf5473460aadb3a480}\label{group___c-interface_ga0207ebdd9388cacf5473460aadb3a480}} 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_ga0207ebdd9388cacf5473460aadb3a480}{rtmidi\+\_\+in\+\_\+set\+\_\+callback}} (\mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} device, \mbox{\hyperlink{group___c-interface_gad5a6c6988a90da73b6ec4dd9c6da24a1}{Rt\+Midi\+C\+Callback}} callback, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em Set a callback function to be invoked for incoming M\+I\+DI messages. See \mbox{\hyperlink{class_rt_midi_in_a7590563461c7467608a4b3806406b32d}{Rt\+Midi\+In\+::set\+Callback()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga8087e16895fe66ba63184cf258f9ce14}\label{group___c-interface_ga8087e16895fe66ba63184cf258f9ce14}} 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_ga8087e16895fe66ba63184cf258f9ce14}{rtmidi\+\_\+in\+\_\+cancel\+\_\+callback}} (\mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Cancel use of the current callback function (if one exists). See \mbox{\hyperlink{class_rt_midi_in_ade23832a66c1ed56965c26325602543e}{Rt\+Midi\+In\+::cancel\+Callback()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga5328fe8d1289adcc6ffa0741f2341680}\label{group___c-interface_ga5328fe8d1289adcc6ffa0741f2341680}} 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_ga5328fe8d1289adcc6ffa0741f2341680}{rtmidi\+\_\+in\+\_\+ignore\+\_\+types}} (\mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} device, bool midi\+Sysex, bool midi\+Time, bool midi\+Sense)
+\begin{DoxyCompactList}\small\item\em Specify whether certain M\+I\+DI message types should be queued or ignored during input. See \mbox{\hyperlink{class_rt_midi_in_af9507125aaa42276ccc01df576fc3533}{Rt\+Midi\+In\+::ignore\+Types()}}. \end{DoxyCompactList}\item 
+R\+T\+M\+I\+D\+I\+A\+PI double \mbox{\hyperlink{group___c-interface_ga38e058cf55f6f89c3f25874583748927}{rtmidi\+\_\+in\+\_\+get\+\_\+message}} (\mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} device, unsigned char $\ast$message, size\+\_\+t $\ast$size)
+\item 
+\mbox{\Hypertarget{group___c-interface_gafcb18372284a1da8d340260ebf3ff57a}\label{group___c-interface_gafcb18372284a1da8d340260ebf3ff57a}} 
+R\+T\+M\+I\+D\+I\+A\+PI \mbox{\hyperlink{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}{Rt\+Midi\+Out\+Ptr}} \mbox{\hyperlink{group___c-interface_gafcb18372284a1da8d340260ebf3ff57a}{rtmidi\+\_\+out\+\_\+create\+\_\+default}} (void)
+\begin{DoxyCompactList}\small\item\em Create a default Rt\+Midi\+In\+Ptr value, with no initialization. \end{DoxyCompactList}\item 
+R\+T\+M\+I\+D\+I\+A\+PI \mbox{\hyperlink{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}{Rt\+Midi\+Out\+Ptr}} \mbox{\hyperlink{group___c-interface_ga74b49e64c4c1b07421bb2355a8dc026b}{rtmidi\+\_\+out\+\_\+create}} (enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} api, const char $\ast$client\+Name)
+\begin{DoxyCompactList}\small\item\em Create a Rt\+Midi\+Out\+Ptr value, with given and client\+Name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gaa1afc37e4d40846195bf176c1e34d7c7}\label{group___c-interface_gaa1afc37e4d40846195bf176c1e34d7c7}} 
+R\+T\+M\+I\+D\+I\+A\+PI void \mbox{\hyperlink{group___c-interface_gaa1afc37e4d40846195bf176c1e34d7c7}{rtmidi\+\_\+out\+\_\+free}} (\mbox{\hyperlink{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}{Rt\+Midi\+Out\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Free the given Rt\+Midi\+Out\+Ptr. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_gae06f17b7e41cd15d734c01ea4d4cdecc}\label{group___c-interface_gae06f17b7e41cd15d734c01ea4d4cdecc}} 
+R\+T\+M\+I\+D\+I\+A\+PI enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} \mbox{\hyperlink{group___c-interface_gae06f17b7e41cd15d734c01ea4d4cdecc}{rtmidi\+\_\+out\+\_\+get\+\_\+current\+\_\+api}} (\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}} device)
+\begin{DoxyCompactList}\small\item\em Returns the M\+I\+DI A\+PI specifier for the given instance of \mbox{\hyperlink{class_rt_midi_out}{Rt\+Midi\+Out}}. See \mbox{\hyperlink{class_rt_midi_out_a532b5712e305bd8afb65a3ad14138e0f}{Rt\+Midi\+Out\+::get\+Current\+Api()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga9c3a86432a91590af196403bf52e58bc}\label{group___c-interface_ga9c3a86432a91590af196403bf52e58bc}} 
+R\+T\+M\+I\+D\+I\+A\+PI int \mbox{\hyperlink{group___c-interface_ga9c3a86432a91590af196403bf52e58bc}{rtmidi\+\_\+out\+\_\+send\+\_\+message}} (\mbox{\hyperlink{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}{Rt\+Midi\+Out\+Ptr}} device, const unsigned char $\ast$message, int length)
+\begin{DoxyCompactList}\small\item\em Immediately send a single message out an open M\+I\+DI output port. See \mbox{\hyperlink{class_rt_midi_out_a19c7049a840a0181a0ddd4b14e99c651}{Rt\+Midi\+Out\+::send\+Message()}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga19d015665f2a8b7d196740e5cf79f827}\label{group___c-interface_ga19d015665f2a8b7d196740e5cf79f827}} 
+int {\bfseries rtaudio\+\_\+device\+\_\+info\+::probed}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga0f900099e37f9dd61fcf4417c103b660}\label{group___c-interface_ga0f900099e37f9dd61fcf4417c103b660}} 
+unsigned int {\bfseries rtaudio\+\_\+device\+\_\+info\+::output\+\_\+channels}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga4c7588fda1868ac343b4a3e33c939559}\label{group___c-interface_ga4c7588fda1868ac343b4a3e33c939559}} 
+unsigned int {\bfseries rtaudio\+\_\+device\+\_\+info\+::input\+\_\+channels}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga35413b6c18bba8340a6f9c36fed56fbf}\label{group___c-interface_ga35413b6c18bba8340a6f9c36fed56fbf}} 
+unsigned int {\bfseries rtaudio\+\_\+device\+\_\+info\+::duplex\+\_\+channels}
+\item 
+\mbox{\Hypertarget{group___c-interface_gac7644fc279761d15ee831c7e339a8334}\label{group___c-interface_gac7644fc279761d15ee831c7e339a8334}} 
+int {\bfseries rtaudio\+\_\+device\+\_\+info\+::is\+\_\+default\+\_\+output}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga685bdff88b315707a41d0b8701120d45}\label{group___c-interface_ga685bdff88b315707a41d0b8701120d45}} 
+int {\bfseries rtaudio\+\_\+device\+\_\+info\+::is\+\_\+default\+\_\+input}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga86a9af7fa7d97e13773e4e05618214f5}\label{group___c-interface_ga86a9af7fa7d97e13773e4e05618214f5}} 
+\mbox{\hyperlink{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}{rtaudio\+\_\+format\+\_\+t}} {\bfseries rtaudio\+\_\+device\+\_\+info\+::native\+\_\+formats}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga854e4ca9f6ec635b437326bcf79283bf}\label{group___c-interface_ga854e4ca9f6ec635b437326bcf79283bf}} 
+unsigned int {\bfseries rtaudio\+\_\+device\+\_\+info\+::preferred\+\_\+sample\+\_\+rate}
+\item 
+\mbox{\Hypertarget{group___c-interface_gacbb39d81d483b3b51cbcbc79ea021c9b}\label{group___c-interface_gacbb39d81d483b3b51cbcbc79ea021c9b}} 
+int {\bfseries rtaudio\+\_\+device\+\_\+info\+::sample\+\_\+rates} \mbox{[}N\+U\+M\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+ES\mbox{]}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga4e869f2e1c528dcda6454074a0895f3c}\label{group___c-interface_ga4e869f2e1c528dcda6454074a0895f3c}} 
+char {\bfseries rtaudio\+\_\+device\+\_\+info\+::name} \mbox{[}M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH\mbox{]}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga317a69f5757d1f8a63b397e96963c613}\label{group___c-interface_ga317a69f5757d1f8a63b397e96963c613}} 
+unsigned int {\bfseries rtaudio\+\_\+stream\+\_\+parameters\+::device\+\_\+id}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga0b950df40edcedbe99b0fef2b92f88b9}\label{group___c-interface_ga0b950df40edcedbe99b0fef2b92f88b9}} 
+unsigned int {\bfseries rtaudio\+\_\+stream\+\_\+parameters\+::num\+\_\+channels}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga9a8737400f16e0dbd2cf92a9f74b54c0}\label{group___c-interface_ga9a8737400f16e0dbd2cf92a9f74b54c0}} 
+unsigned int {\bfseries rtaudio\+\_\+stream\+\_\+parameters\+::first\+\_\+channel}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga1707548193de939ce55dd223a163729b}\label{group___c-interface_ga1707548193de939ce55dd223a163729b}} 
+\mbox{\hyperlink{group___c-interface_ga7e1c8d44ba9c9314121595ea8eff0dd6}{rtaudio\+\_\+stream\+\_\+flags\+\_\+t}} {\bfseries rtaudio\+\_\+stream\+\_\+options\+::flags}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga307af8e4d7c72c971698ab699391972c}\label{group___c-interface_ga307af8e4d7c72c971698ab699391972c}} 
+unsigned int {\bfseries rtaudio\+\_\+stream\+\_\+options\+::num\+\_\+buffers}
+\item 
+\mbox{\Hypertarget{group___c-interface_gaef9e24d7ea3186cbe0f0550de551b177}\label{group___c-interface_gaef9e24d7ea3186cbe0f0550de551b177}} 
+int {\bfseries rtaudio\+\_\+stream\+\_\+options\+::priority}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga8fd002080bd4561f731f2ca2d953345c}\label{group___c-interface_ga8fd002080bd4561f731f2ca2d953345c}} 
+char {\bfseries rtaudio\+\_\+stream\+\_\+options\+::name} \mbox{[}M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH\mbox{]}
+\item 
+\mbox{\Hypertarget{group___c-interface_ga322d5d3b56493807e7372607908b33a3}\label{group___c-interface_ga322d5d3b56493807e7372607908b33a3}} 
+void $\ast$ \mbox{\hyperlink{group___c-interface_ga322d5d3b56493807e7372607908b33a3}{Rt\+Midi\+Wrapper\+::ptr}}
+\begin{DoxyCompactList}\small\item\em The wrapped \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga772b0f5fdf94c1c75136ba2dfe54966d}\label{group___c-interface_ga772b0f5fdf94c1c75136ba2dfe54966d}} 
+void $\ast$ {\bfseries Rt\+Midi\+Wrapper\+::data}
+\item 
+\mbox{\Hypertarget{group___c-interface_gab995f707d2cdb0d92faa88ac15eb76b1}\label{group___c-interface_gab995f707d2cdb0d92faa88ac15eb76b1}} 
+bool \mbox{\hyperlink{group___c-interface_gab995f707d2cdb0d92faa88ac15eb76b1}{Rt\+Midi\+Wrapper\+::ok}}
+\begin{DoxyCompactList}\small\item\em True when the last function call was OK. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c-interface_ga3f664f3099416385393b908ed436b956}\label{group___c-interface_ga3f664f3099416385393b908ed436b956}} 
+const char $\ast$ \mbox{\hyperlink{group___c-interface_ga3f664f3099416385393b908ed436b956}{Rt\+Midi\+Wrapper\+::msg}}
+\begin{DoxyCompactList}\small\item\em If an error occured (ok != true), set to an error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C interface to realtime audio i/o C++ classes. 
+
+C interface to realtime M\+I\+DI input/output C++ classes.
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} offers a C-\/style interface, principally for use in binding \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} to other programming languages. All structs, enums, and functions listed here have direct analogs (and simply call to) items in the C++ \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} class and its supporting classes and types
+
+\mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} offers a C-\/style interface, principally for use in binding \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} to other programming languages. All structs, enums, and functions listed here have direct analogs (and simply call to) items in the C++ \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} class and its supporting classes and types 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group___c-interface_ga2b225b83b25ea4025f60cef3ac97ca6f}\label{group___c-interface_ga2b225b83b25ea4025f60cef3ac97ca6f}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_cb\_t@{rtaudio\_cb\_t}}
+\index{rtaudio\_cb\_t@{rtaudio\_cb\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_cb\_t}{rtaudio\_cb\_t}}
+{\footnotesize\ttfamily typedef int($\ast$ rtaudio\+\_\+cb\+\_\+t) (void $\ast$out, void $\ast$in, unsigned int n\+Frames, double stream\+\_\+time, \mbox{\hyperlink{group___c-interface_ga48cb0fae904c57c8830f5e9b12a31f53}{rtaudio\+\_\+stream\+\_\+status\+\_\+t}} status, void $\ast$userdata)}
+
+
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} callback function prototype. 
+
+All \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} clients must create a function of this type to read and/or write data from/to the audio stream. When the underlying audio system is ready for new input or output data, this function will be invoked.
+
+See \mbox{\hyperlink{_rt_audio_8h_aa96e52a4e057d224cda0c39926e5c652}{Rt\+Audio\+Callback}}. \mbox{\Hypertarget{group___c-interface_ga2b99c42e8e5ab5aafa394b4c285605aa}\label{group___c-interface_ga2b99c42e8e5ab5aafa394b4c285605aa}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_device\_info\_t@{rtaudio\_device\_info\_t}}
+\index{rtaudio\_device\_info\_t@{rtaudio\_device\_info\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_device\_info\_t}{rtaudio\_device\_info\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structrtaudio__device__info}{rtaudio\+\_\+device\+\_\+info}} \mbox{\hyperlink{group___c-interface_ga2b99c42e8e5ab5aafa394b4c285605aa}{rtaudio\+\_\+device\+\_\+info\+\_\+t}}}
+
+The public device information structure for returning queried values. See \mbox{\hyperlink{struct_rt_audio_1_1_device_info}{Rt\+Audio\+::\+Device\+Info}}. \mbox{\Hypertarget{group___c-interface_ga26693f7a608d23607f7263fac26ff4dd}\label{group___c-interface_ga26693f7a608d23607f7263fac26ff4dd}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_error\_cb\_t@{rtaudio\_error\_cb\_t}}
+\index{rtaudio\_error\_cb\_t@{rtaudio\_error\_cb\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_error\_cb\_t}{rtaudio\_error\_cb\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ rtaudio\+\_\+error\+\_\+cb\+\_\+t) (\mbox{\hyperlink{group___c-interface_ga759f170fb2ad2ac36756dfe9e34aa017}{rtaudio\+\_\+error\+\_\+t}} err, const char $\ast$msg)}
+
+
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} error callback function prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em err} & Type of error. \\
+\hline
+{\em msg} & Error description.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{_rt_audio_8h_a255b480e1e3c2818d838fb12d13f3123}{Rt\+Audio\+Error\+Callback}}. \mbox{\Hypertarget{group___c-interface_ga759f170fb2ad2ac36756dfe9e34aa017}\label{group___c-interface_ga759f170fb2ad2ac36756dfe9e34aa017}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_error\_t@{rtaudio\_error\_t}}
+\index{rtaudio\_error\_t@{rtaudio\_error\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_error\_t}{rtaudio\_error\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}{rtaudio\+\_\+error}} \mbox{\hyperlink{group___c-interface_ga759f170fb2ad2ac36756dfe9e34aa017}{rtaudio\+\_\+error\+\_\+t}}}
+
+
+
+Error codes for \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}. 
+
+See \mbox{\hyperlink{class_rt_audio_error}{Rt\+Audio\+Error}}. \mbox{\Hypertarget{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}\label{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_format\_t@{rtaudio\_format\_t}}
+\index{rtaudio\_format\_t@{rtaudio\_format\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_format\_t}{rtaudio\_format\_t}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}{rtaudio\+\_\+format\+\_\+t}}}
+
+
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} data format type. 
+
+
+\begin{DoxyItemize}
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T8\+:} 8-\/bit signed integer.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T16\+:} 16-\/bit signed integer.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T24\+:} 24-\/bit signed integer.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+I\+N\+T32\+:} 32-\/bit signed integer.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+A\+T32\+:} Normalized between plus/minus 1.\+0.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+A\+T64\+:} Normalized between plus/minus 1.\+0.
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{_rt_audio_8h_aafca92882d25915560018873221e44b8}{Rt\+Audio\+Format}}. \mbox{\Hypertarget{group___c-interface_ga7e1c8d44ba9c9314121595ea8eff0dd6}\label{group___c-interface_ga7e1c8d44ba9c9314121595ea8eff0dd6}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_stream\_flags\_t@{rtaudio\_stream\_flags\_t}}
+\index{rtaudio\_stream\_flags\_t@{rtaudio\_stream\_flags\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_stream\_flags\_t}{rtaudio\_stream\_flags\_t}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{group___c-interface_ga7e1c8d44ba9c9314121595ea8eff0dd6}{rtaudio\+\_\+stream\+\_\+flags\+\_\+t}}}
+
+
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} stream option flags. 
+
+The following flags can be OR\textquotesingle{}ed together to allow a client to make changes to the default stream behavior\+:
+
+
+\begin{DoxyItemize}
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+N\+O\+N\+I\+N\+T\+E\+R\+L\+E\+A\+V\+ED\+:} Use non-\/interleaved buffers (default = interleaved).
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+M\+I\+N\+I\+M\+I\+Z\+E\+\_\+\+L\+A\+T\+E\+N\+CY\+:} Attempt to set stream parameters for lowest possible latency.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+H\+O\+G\+\_\+\+D\+E\+V\+I\+CE\+:} Attempt grab device for exclusive use.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+A\+L\+S\+A\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT\+:} Use the \char`\"{}default\char`\"{} P\+CM device (A\+L\+SA only).
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+F\+L\+A\+G\+S\+\_\+\+J\+A\+C\+K\+\_\+\+D\+O\+N\+T\+\_\+\+C\+O\+N\+N\+E\+CT\+:} Do not automatically connect ports (J\+A\+CK only).
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{_rt_audio_8h_a2c0f59b200dcec4d4e760f9166b29c41}{Rt\+Audio\+Stream\+Flags}}. \mbox{\Hypertarget{group___c-interface_gac58b9e385df56eb5060af1c7de13eb7f}\label{group___c-interface_gac58b9e385df56eb5060af1c7de13eb7f}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_stream\_options\_t@{rtaudio\_stream\_options\_t}}
+\index{rtaudio\_stream\_options\_t@{rtaudio\_stream\_options\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_stream\_options\_t}{rtaudio\_stream\_options\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structrtaudio__stream__options}{rtaudio\+\_\+stream\+\_\+options}} \mbox{\hyperlink{group___c-interface_gac58b9e385df56eb5060af1c7de13eb7f}{rtaudio\+\_\+stream\+\_\+options\+\_\+t}}}
+
+The structure for specifying stream options. See \mbox{\hyperlink{struct_rt_audio_1_1_stream_options}{Rt\+Audio\+::\+Stream\+Options}}. \mbox{\Hypertarget{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}\label{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_stream\_parameters\_t@{rtaudio\_stream\_parameters\_t}}
+\index{rtaudio\_stream\_parameters\_t@{rtaudio\_stream\_parameters\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_stream\_parameters\_t}{rtaudio\_stream\_parameters\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structrtaudio__stream__parameters}{rtaudio\+\_\+stream\+\_\+parameters}} \mbox{\hyperlink{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}{rtaudio\+\_\+stream\+\_\+parameters\+\_\+t}}}
+
+The structure for specifying input or ouput stream parameters. See \mbox{\hyperlink{struct_rt_audio_1_1_stream_parameters}{Rt\+Audio\+::\+Stream\+Parameters}}. \mbox{\Hypertarget{group___c-interface_ga48cb0fae904c57c8830f5e9b12a31f53}\label{group___c-interface_ga48cb0fae904c57c8830f5e9b12a31f53}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_stream\_status\_t@{rtaudio\_stream\_status\_t}}
+\index{rtaudio\_stream\_status\_t@{rtaudio\_stream\_status\_t}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_stream\_status\_t}{rtaudio\_stream\_status\_t}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{group___c-interface_ga48cb0fae904c57c8830f5e9b12a31f53}{rtaudio\+\_\+stream\+\_\+status\+\_\+t}}}
+
+
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} stream status (over-\/ or underflow) flags. 
+
+Notification of a stream over-\/ or underflow is indicated by a non-\/zero stream {\ttfamily status} argument in the Rt\+Audio\+Callback function. The stream status can be one of the following two options, depending on whether the stream is open for output and/or input\+:
+
+
+\begin{DoxyItemize}
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+P\+U\+T\+\_\+\+O\+V\+E\+R\+F\+L\+OW\+:} Input data was discarded because of an overflow condition at the driver.
+\item {\itshape R\+T\+A\+U\+D\+I\+O\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+U\+N\+D\+E\+R\+F\+L\+OW\+:} The output buffer ran low, likely producing a break in the output sound.
+\end{DoxyItemize}
+
+See \mbox{\hyperlink{_rt_audio_8h_a80e306d363583da3b0a1b65d9b57c806}{Rt\+Audio\+Stream\+Status}}. \mbox{\Hypertarget{group___c-interface_gad5a6c6988a90da73b6ec4dd9c6da24a1}\label{group___c-interface_gad5a6c6988a90da73b6ec4dd9c6da24a1}} 
+\index{C-\/interface@{C-\/interface}!RtMidiCCallback@{RtMidiCCallback}}
+\index{RtMidiCCallback@{RtMidiCCallback}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{RtMidiCCallback}{RtMidiCCallback}}
+{\footnotesize\ttfamily typedef void($\ast$ Rt\+Midi\+C\+Callback) (double time\+Stamp, const unsigned char $\ast$message, size\+\_\+t message\+Size, void $\ast$user\+Data)}
+
+
+
+The type of a \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} callback function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Stamp} & The time at which the message has been received. \\
+\hline
+{\em message} & The midi message. \\
+\hline
+{\em user\+Data} & Additional user data for the callback.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{class_rt_midi_in_aac5c0da1ec6f97fe43d5189bad00caef}{Rt\+Midi\+In\+::\+Rt\+Midi\+Callback}}. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___c-interface_ga17de303e97d3e7ce0c59fa1f0d9c0712}\label{group___c-interface_ga17de303e97d3e7ce0c59fa1f0d9c0712}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_api@{rtaudio\_api}}
+\index{rtaudio\_api@{rtaudio\_api}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_api}{rtaudio\_api}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___c-interface_ga17de303e97d3e7ce0c59fa1f0d9c0712}{rtaudio\+\_\+api}}}
+
+
+
+Audio A\+PI specifier. See \mbox{\hyperlink{class_rt_audio_ac9b6f625da88249d08a8409a9db0d849}{Rt\+Audio\+::\+Api}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_UNSPECIFIED@{RTAUDIO\_API\_UNSPECIFIED}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_UNSPECIFIED@{RTAUDIO\_API\_UNSPECIFIED}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ac4bd2a7b73dad32e9aa22f73da3f4598}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ac4bd2a7b73dad32e9aa22f73da3f4598}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED&Search for a working compiled A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_LINUX\_ALSA@{RTAUDIO\_API\_LINUX\_ALSA}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_LINUX\_ALSA@{RTAUDIO\_API\_LINUX\_ALSA}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a28ffa86e0ae126de98a4455400839a5e}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a28ffa86e0ae126de98a4455400839a5e}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+L\+SA&The Advanced Linux Sound Architecture A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_LINUX\_PULSE@{RTAUDIO\_API\_LINUX\_PULSE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_LINUX\_PULSE@{RTAUDIO\_API\_LINUX\_PULSE}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a23207e1644958a0970ab18fa37390270}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a23207e1644958a0970ab18fa37390270}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+P\+U\+L\+SE&The Linux Pulse\+Audio A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_LINUX\_OSS@{RTAUDIO\_API\_LINUX\_OSS}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_LINUX\_OSS@{RTAUDIO\_API\_LINUX\_OSS}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ab578b52f570c1869e28b7a86bff5cd62}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ab578b52f570c1869e28b7a86bff5cd62}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+O\+SS&The Linux Open Sound System A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_UNIX\_JACK@{RTAUDIO\_API\_UNIX\_JACK}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_UNIX\_JACK@{RTAUDIO\_API\_UNIX\_JACK}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ad724e2bc19429cc39927445cd8197016}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ad724e2bc19429cc39927445cd8197016}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+U\+N\+I\+X\+\_\+\+J\+A\+CK&The Jack Low-\/\+Latency Audio Server A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_MACOSX\_CORE@{RTAUDIO\_API\_MACOSX\_CORE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_MACOSX\_CORE@{RTAUDIO\_API\_MACOSX\_CORE}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a2a38e1f259894aada62abbf0e7b5200c}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a2a38e1f259894aada62abbf0e7b5200c}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+M\+A\+C\+O\+S\+X\+\_\+\+C\+O\+RE&Macintosh O\+S-\/X Core Audio A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_WINDOWS\_WASAPI@{RTAUDIO\_API\_WINDOWS\_WASAPI}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_WINDOWS\_WASAPI@{RTAUDIO\_API\_WINDOWS\_WASAPI}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a6f7450e85ca0a79aa6768318882bb8de}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a6f7450e85ca0a79aa6768318882bb8de}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+W\+A\+S\+A\+PI&The Microsoft W\+A\+S\+A\+PI A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_WINDOWS\_ASIO@{RTAUDIO\_API\_WINDOWS\_ASIO}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_WINDOWS\_ASIO@{RTAUDIO\_API\_WINDOWS\_ASIO}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712aebc68f5b5912e13b9e853e3fea12cb95}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712aebc68f5b5912e13b9e853e3fea12cb95}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+A\+S\+IO&The \mbox{\hyperlink{namespace_steinberg}{Steinberg}} Audio Stream I/O A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_WINDOWS\_DS@{RTAUDIO\_API\_WINDOWS\_DS}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_WINDOWS\_DS@{RTAUDIO\_API\_WINDOWS\_DS}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a25fdbfceeedec5db1b2c7c15a61c6cec}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a25fdbfceeedec5db1b2c7c15a61c6cec}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+DS&The Microsoft Direct\+Sound A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_DUMMY@{RTAUDIO\_API\_DUMMY}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_DUMMY@{RTAUDIO\_API\_DUMMY}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ad79cd0bd25311fd839b99edde779eda8}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712ad79cd0bd25311fd839b99edde779eda8}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+D\+U\+M\+MY&A compilable but non-\/functional A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_API\_NUM@{RTAUDIO\_API\_NUM}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_API\_NUM@{RTAUDIO\_API\_NUM}}}\mbox{\Hypertarget{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a9e474b0be5f332b2db9c0eff057151bd}\label{group___c-interface_gga17de303e97d3e7ce0c59fa1f0d9c0712a9e474b0be5f332b2db9c0eff057151bd}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+A\+P\+I\+\_\+\+N\+UM&Number of values in this enum. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}\label{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_error@{rtaudio\_error}}
+\index{rtaudio\_error@{rtaudio\_error}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_error}{rtaudio\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}{rtaudio\+\_\+error}}}
+
+
+
+Error codes for \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}. 
+
+See \mbox{\hyperlink{class_rt_audio_error}{Rt\+Audio\+Error}}. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_WARNING@{RTAUDIO\_ERROR\_WARNING}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_WARNING@{RTAUDIO\_ERROR\_WARNING}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa697f28648fbadc0171475d02480d8aae}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa697f28648fbadc0171475d02480d8aae}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+A\+R\+N\+I\+NG&A non-\/critical error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_DEBUG\_WARNING@{RTAUDIO\_ERROR\_DEBUG\_WARNING}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_DEBUG\_WARNING@{RTAUDIO\_ERROR\_DEBUG\_WARNING}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa2cd3e22164780e12a06b9cfec4301146}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa2cd3e22164780e12a06b9cfec4301146}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+B\+U\+G\+\_\+\+W\+A\+R\+N\+I\+NG&A non-\/critical error which might be useful for debugging. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_UNSPECIFIED@{RTAUDIO\_ERROR\_UNSPECIFIED}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_UNSPECIFIED@{RTAUDIO\_ERROR\_UNSPECIFIED}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aacbff947eb35674efdd2a8349f4795159}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aacbff947eb35674efdd2a8349f4795159}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED&The default, unspecified error type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_NO\_DEVICES\_FOUND@{RTAUDIO\_ERROR\_NO\_DEVICES\_FOUND}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_NO\_DEVICES\_FOUND@{RTAUDIO\_ERROR\_NO\_DEVICES\_FOUND}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa953569aa743c7e0c39375cd04a6836db}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa953569aa743c7e0c39375cd04a6836db}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+D\+E\+V\+I\+C\+E\+S\+\_\+\+F\+O\+U\+ND&No devices found on system. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_INVALID\_DEVICE@{RTAUDIO\_ERROR\_INVALID\_DEVICE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_INVALID\_DEVICE@{RTAUDIO\_ERROR\_INVALID\_DEVICE}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa71b7beddb4ff61e48f533af8a116e133}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa71b7beddb4ff61e48f533af8a116e133}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+E\+V\+I\+CE&An invalid device ID was specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_MEMORY\_ERROR@{RTAUDIO\_ERROR\_MEMORY\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_MEMORY\_ERROR@{RTAUDIO\_ERROR\_MEMORY\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa456aef88d3c8c90f8d4a90cd9567edc3}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa456aef88d3c8c90f8d4a90cd9567edc3}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+E\+R\+R\+OR&An error occured during memory allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_INVALID\_PARAMETER@{RTAUDIO\_ERROR\_INVALID\_PARAMETER}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_INVALID\_PARAMETER@{RTAUDIO\_ERROR\_INVALID\_PARAMETER}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa5e2f92a0af3084647650bdff8a92aa6f}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa5e2f92a0af3084647650bdff8a92aa6f}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER&An invalid parameter was specified to a function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_INVALID\_USE@{RTAUDIO\_ERROR\_INVALID\_USE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_INVALID\_USE@{RTAUDIO\_ERROR\_INVALID\_USE}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa0d6d301c35ee4fb4408eb8c9c0f5bf85}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa0d6d301c35ee4fb4408eb8c9c0f5bf85}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+SE&The function was called incorrectly. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_DRIVER\_ERROR@{RTAUDIO\_ERROR\_DRIVER\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_DRIVER\_ERROR@{RTAUDIO\_ERROR\_DRIVER\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aab5a7b5d261dbb6ac6ebca2856ebaeb43}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aab5a7b5d261dbb6ac6ebca2856ebaeb43}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR&A system driver error occured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_SYSTEM\_ERROR@{RTAUDIO\_ERROR\_SYSTEM\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_SYSTEM\_ERROR@{RTAUDIO\_ERROR\_SYSTEM\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aabb4ffa55ed1db42ece7294b3efcde3cb}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aabb4ffa55ed1db42ece7294b3efcde3cb}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR&A system error occured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTAUDIO\_ERROR\_THREAD\_ERROR@{RTAUDIO\_ERROR\_THREAD\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTAUDIO\_ERROR\_THREAD\_ERROR@{RTAUDIO\_ERROR\_THREAD\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa5fc71ac7cd30cd34cb2933aff646b8b7}\label{group___c-interface_gga2c752021c89e582bd3fa8195e0de406aa5fc71ac7cd30cd34cb2933aff646b8b7}} 
+R\+T\+A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+E\+R\+R\+OR&A thread error occured. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}\label{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}} 
+\index{C-\/interface@{C-\/interface}!RtMidiApi@{RtMidiApi}}
+\index{RtMidiApi@{RtMidiApi}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{RtMidiApi}{RtMidiApi}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}}}
+
+
+
+M\+I\+DI A\+PI specifier arguments. See \mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_UNSPECIFIED@{RTMIDI\_API\_UNSPECIFIED}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_UNSPECIFIED@{RTMIDI\_API\_UNSPECIFIED}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604abd429985cbc09751238d00540b7f95ee}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604abd429985cbc09751238d00540b7f95ee}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED&Search for a working compiled A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_MACOSX\_CORE@{RTMIDI\_API\_MACOSX\_CORE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_MACOSX\_CORE@{RTMIDI\_API\_MACOSX\_CORE}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a6e7fc83baaf1dd658640da663d545216}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a6e7fc83baaf1dd658640da663d545216}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+M\+A\+C\+O\+S\+X\+\_\+\+C\+O\+RE&Macintosh O\+S-\/X Core\+M\+I\+DI A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_LINUX\_ALSA@{RTMIDI\_API\_LINUX\_ALSA}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_LINUX\_ALSA@{RTMIDI\_API\_LINUX\_ALSA}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a284b8b6aede16ae6d1c35d8846bf28de}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a284b8b6aede16ae6d1c35d8846bf28de}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+L\+I\+N\+U\+X\+\_\+\+A\+L\+SA&The Advanced Linux Sound Architecture A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_UNIX\_JACK@{RTMIDI\_API\_UNIX\_JACK}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_UNIX\_JACK@{RTMIDI\_API\_UNIX\_JACK}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604abff5e15cdd9410255e138dbbf5cb2e0c}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604abff5e15cdd9410255e138dbbf5cb2e0c}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+U\+N\+I\+X\+\_\+\+J\+A\+CK&The Jack Low-\/\+Latency M\+I\+DI Server A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_WINDOWS\_MM@{RTMIDI\_API\_WINDOWS\_MM}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_WINDOWS\_MM@{RTMIDI\_API\_WINDOWS\_MM}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a4639f65f6d058918a9a191e6d77707ba}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a4639f65f6d058918a9a191e6d77707ba}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+MM&The Microsoft Multimedia M\+I\+DI A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_RTMIDI\_DUMMY@{RTMIDI\_API\_RTMIDI\_DUMMY}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_RTMIDI\_DUMMY@{RTMIDI\_API\_RTMIDI\_DUMMY}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a877bb273d1cfa58b6819f9137865d238}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a877bb273d1cfa58b6819f9137865d238}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+R\+T\+M\+I\+D\+I\+\_\+\+D\+U\+M\+MY&A compilable but non-\/functional A\+PI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_API\_NUM@{RTMIDI\_API\_NUM}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_API\_NUM@{RTMIDI\_API\_NUM}}}\mbox{\Hypertarget{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a03f179fc13e3643c0ffa47e7ddab327e}\label{group___c-interface_gga08ce30fe672e25220cfc817f3396f604a03f179fc13e3643c0ffa47e7ddab327e}} 
+R\+T\+M\+I\+D\+I\+\_\+\+A\+P\+I\+\_\+\+N\+UM&Number of values in this enum. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group___c-interface_ga1f43737fc38ff6251f5199d2568a5a14}\label{group___c-interface_ga1f43737fc38ff6251f5199d2568a5a14}} 
+\index{C-\/interface@{C-\/interface}!RtMidiErrorType@{RtMidiErrorType}}
+\index{RtMidiErrorType@{RtMidiErrorType}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{RtMidiErrorType}{RtMidiErrorType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___c-interface_ga1f43737fc38ff6251f5199d2568a5a14}{Rt\+Midi\+Error\+Type}}}
+
+
+
+Defined \mbox{\hyperlink{class_rt_midi_error}{Rt\+Midi\+Error}} types. See \mbox{\hyperlink{class_rt_midi_error_a741314057cec5fb8c743c12f284905ee}{Rt\+Midi\+Error\+::\+Type}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_WARNING@{RTMIDI\_ERROR\_WARNING}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_WARNING@{RTMIDI\_ERROR\_WARNING}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a80384dd0a07aa6f800cd02c5953e3ab5}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a80384dd0a07aa6f800cd02c5953e3ab5}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+A\+R\+N\+I\+NG&A non-\/critical error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_DEBUG\_WARNING@{RTMIDI\_ERROR\_DEBUG\_WARNING}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_DEBUG\_WARNING@{RTMIDI\_ERROR\_DEBUG\_WARNING}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a77af2b2f5085cebde724330239237576}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a77af2b2f5085cebde724330239237576}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+E\+B\+U\+G\+\_\+\+W\+A\+R\+N\+I\+NG&A non-\/critical error which might be useful for debugging. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_UNSPECIFIED@{RTMIDI\_ERROR\_UNSPECIFIED}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_UNSPECIFIED@{RTMIDI\_ERROR\_UNSPECIFIED}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a37e96f8021604757cfba1745109a6a54}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a37e96f8021604757cfba1745109a6a54}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+S\+P\+E\+C\+I\+F\+I\+ED&The default, unspecified error type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_NO\_DEVICES\_FOUND@{RTMIDI\_ERROR\_NO\_DEVICES\_FOUND}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_NO\_DEVICES\_FOUND@{RTMIDI\_ERROR\_NO\_DEVICES\_FOUND}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a925009fc17a5e2e251a61393c3d61b72}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a925009fc17a5e2e251a61393c3d61b72}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+D\+E\+V\+I\+C\+E\+S\+\_\+\+F\+O\+U\+ND&No devices found on system. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_INVALID\_DEVICE@{RTMIDI\_ERROR\_INVALID\_DEVICE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_INVALID\_DEVICE@{RTMIDI\_ERROR\_INVALID\_DEVICE}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14aa3e9d9d7bb3ecc40a254b2029f2f10d2}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14aa3e9d9d7bb3ecc40a254b2029f2f10d2}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+E\+V\+I\+CE&An invalid device ID was specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_MEMORY\_ERROR@{RTMIDI\_ERROR\_MEMORY\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_MEMORY\_ERROR@{RTMIDI\_ERROR\_MEMORY\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a17ebabb8b1fa859c18dfc1ea38865d0a}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a17ebabb8b1fa859c18dfc1ea38865d0a}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+E\+R\+R\+OR&An error occured during memory allocation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_INVALID\_PARAMETER@{RTMIDI\_ERROR\_INVALID\_PARAMETER}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_INVALID\_PARAMETER@{RTMIDI\_ERROR\_INVALID\_PARAMETER}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a046f874fbe6c5cf15a9265e7063d3e5e}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a046f874fbe6c5cf15a9265e7063d3e5e}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER&An invalid parameter was specified to a function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_INVALID\_USE@{RTMIDI\_ERROR\_INVALID\_USE}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_INVALID\_USE@{RTMIDI\_ERROR\_INVALID\_USE}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a3bad6b6fe1630aa176139d1c87dfdcb8}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a3bad6b6fe1630aa176139d1c87dfdcb8}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+SE&The function was called incorrectly. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_DRIVER\_ERROR@{RTMIDI\_ERROR\_DRIVER\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_DRIVER\_ERROR@{RTMIDI\_ERROR\_DRIVER\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a504e54d3eb431339cad9dae1fc7abb45}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a504e54d3eb431339cad9dae1fc7abb45}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+E\+R\+R\+OR&A system driver error occured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_SYSTEM\_ERROR@{RTMIDI\_ERROR\_SYSTEM\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_SYSTEM\_ERROR@{RTMIDI\_ERROR\_SYSTEM\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a86ba057c1a20c29290f1febf950111b7}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14a86ba057c1a20c29290f1febf950111b7}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR&A system error occured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RTMIDI\_ERROR\_THREAD\_ERROR@{RTMIDI\_ERROR\_THREAD\_ERROR}!C-\/interface@{C-\/interface}}\index{C-\/interface@{C-\/interface}!RTMIDI\_ERROR\_THREAD\_ERROR@{RTMIDI\_ERROR\_THREAD\_ERROR}}}\mbox{\Hypertarget{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14abee7b09df66d91d05892e86f6da09089}\label{group___c-interface_gga1f43737fc38ff6251f5199d2568a5a14abee7b09df66d91d05892e86f6da09089}} 
+R\+T\+M\+I\+D\+I\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+E\+R\+R\+OR&A thread error occured. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___c-interface_ga33cbf4836571575348a68b0bd700d195}\label{group___c-interface_ga33cbf4836571575348a68b0bd700d195}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_abort\_stream@{rtaudio\_abort\_stream}}
+\index{rtaudio\_abort\_stream@{rtaudio\_abort\_stream}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_abort\_stream()}{rtaudio\_abort\_stream()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI int rtaudio\+\_\+abort\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Stop a stream, discarding any samples remaining in the input/output queue. See \mbox{\hyperlink{class_rt_audio_ad0586b47cd6bb9591a80b4052815991f}{Rt\+Audio\+::abort\+Stream()}}. \mbox{\Hypertarget{group___c-interface_gaa84f9da0c387c52658b5e4e282891ce3}\label{group___c-interface_gaa84f9da0c387c52658b5e4e282891ce3}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_api\_display\_name@{rtaudio\_api\_display\_name}}
+\index{rtaudio\_api\_display\_name@{rtaudio\_api\_display\_name}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_api\_display\_name()}{rtaudio\_api\_display\_name()}}
+{\footnotesize\ttfamily const R\+T\+A\+U\+D\+I\+O\+A\+PI char$\ast$ rtaudio\+\_\+api\+\_\+display\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}}}]{api }\end{DoxyParamCaption})}
+
+Return the display name of a specified rtaudio\+\_\+api\+\_\+t. See \mbox{\hyperlink{class_rt_audio_a1e89804a0dc2a88cec7fbcb74fa3ea94}{Rt\+Audio\+::get\+Api\+Display\+Name()}}. \mbox{\Hypertarget{group___c-interface_ga3bcc546b10d70968457e468937e434c0}\label{group___c-interface_ga3bcc546b10d70968457e468937e434c0}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_api\_name@{rtaudio\_api\_name}}
+\index{rtaudio\_api\_name@{rtaudio\_api\_name}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_api\_name()}{rtaudio\_api\_name()}}
+{\footnotesize\ttfamily const R\+T\+A\+U\+D\+I\+O\+A\+PI char$\ast$ rtaudio\+\_\+api\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}}}]{api }\end{DoxyParamCaption})}
+
+Return the name of a specified rtaudio\+\_\+api\+\_\+t. This string can be used to look up an A\+PI by \mbox{\hyperlink{group___c-interface_ga4dce7eeeff0075021069a7a90a0b9341}{rtaudio\+\_\+compiled\+\_\+api\+\_\+by\+\_\+name()}}. See \mbox{\hyperlink{class_rt_audio_a9c2a1f565f6378ac71e3c4e99a3a307e}{Rt\+Audio\+::get\+Api\+Name()}}. \mbox{\Hypertarget{group___c-interface_ga334b7090c494ab171d78f23bc700f9fa}\label{group___c-interface_ga334b7090c494ab171d78f23bc700f9fa}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_compiled\_api@{rtaudio\_compiled\_api}}
+\index{rtaudio\_compiled\_api@{rtaudio\_compiled\_api}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_compiled\_api()}{rtaudio\_compiled\_api()}}
+{\footnotesize\ttfamily const R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}}$\ast$ rtaudio\+\_\+compiled\+\_\+api (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return an array of rtaudio\+\_\+api\+\_\+t compiled into this instance of \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}. This array is static (do not free it) and has the length returned by \mbox{\hyperlink{group___c-interface_gacadc4f44e7b85d9bb29db053a57bf2df}{rtaudio\+\_\+get\+\_\+num\+\_\+compiled\+\_\+apis()}}. See \mbox{\hyperlink{class_rt_audio_a1df0b60d45637f65dab961b658056503}{Rt\+Audio\+::get\+Compiled\+Api()}}. \mbox{\Hypertarget{group___c-interface_ga4dce7eeeff0075021069a7a90a0b9341}\label{group___c-interface_ga4dce7eeeff0075021069a7a90a0b9341}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_compiled\_api\_by\_name@{rtaudio\_compiled\_api\_by\_name}}
+\index{rtaudio\_compiled\_api\_by\_name@{rtaudio\_compiled\_api\_by\_name}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_compiled\_api\_by\_name()}{rtaudio\_compiled\_api\_by\_name()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} rtaudio\+\_\+compiled\+\_\+api\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Return the rtaudio\+\_\+api\+\_\+t having the given name. See \mbox{\hyperlink{class_rt_audio_a8eba52e12d1e4ff55092ce05d6cdc14e}{Rt\+Audio\+::get\+Compiled\+Api\+By\+Name()}}. \mbox{\Hypertarget{group___c-interface_ga9bb4f8a21d20ace68a824c76e8468a0b}\label{group___c-interface_ga9bb4f8a21d20ace68a824c76e8468a0b}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_current\_api@{rtaudio\_current\_api}}
+\index{rtaudio\_current\_api@{rtaudio\_current\_api}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_current\_api()}{rtaudio\_current\_api()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_gab79575ad94617f6894600589868123f2}{rtaudio\+\_\+api\+\_\+t}} rtaudio\+\_\+current\+\_\+api (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns the audio A\+PI specifier for the current instance of \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}. See \mbox{\hyperlink{class_rt_audio_a83687634795792b2c47e4ae1cf8a5246}{Rt\+Audio\+::get\+Current\+Api()}}. \mbox{\Hypertarget{group___c-interface_gaa4fd619bef85630758187a79f47969e4}\label{group___c-interface_gaa4fd619bef85630758187a79f47969e4}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_device\_count@{rtaudio\_device\_count}}
+\index{rtaudio\_device\_count@{rtaudio\_device\_count}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_device\_count()}{rtaudio\_device\_count()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI int rtaudio\+\_\+device\+\_\+count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Queries for the number of audio devices available. See \mbox{\hyperlink{class_rt_audio_a747ce2d73803641bbb66d6e78092aa1a}{Rt\+Audio\+::get\+Device\+Count()}}. \mbox{\Hypertarget{group___c-interface_ga45d0c4e90a6ea9ccc8e0f85959ccf3f9}\label{group___c-interface_ga45d0c4e90a6ea9ccc8e0f85959ccf3f9}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_default\_input\_device@{rtaudio\_get\_default\_input\_device}}
+\index{rtaudio\_get\_default\_input\_device@{rtaudio\_get\_default\_input\_device}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_default\_input\_device()}{rtaudio\_get\_default\_input\_device()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int rtaudio\+\_\+get\+\_\+default\+\_\+input\+\_\+device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns the index of the default input device. See \mbox{\hyperlink{class_rt_audio_aad8b94edd3cd379ee300b125750ac6ce}{Rt\+Audio\+::get\+Default\+Input\+Device()}}. \mbox{\Hypertarget{group___c-interface_gad989cd0e88238dc97002eea25d692a4a}\label{group___c-interface_gad989cd0e88238dc97002eea25d692a4a}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_default\_output\_device@{rtaudio\_get\_default\_output\_device}}
+\index{rtaudio\_get\_default\_output\_device@{rtaudio\_get\_default\_output\_device}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_default\_output\_device()}{rtaudio\_get\_default\_output\_device()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int rtaudio\+\_\+get\+\_\+default\+\_\+output\+\_\+device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns the index of the default output device. See \mbox{\hyperlink{class_rt_audio_a3a3f3dbe13ea696b521e49cdaaa357bc}{Rt\+Audio\+::get\+Default\+Output\+Device()}}. \mbox{\Hypertarget{group___c-interface_ga8731aacc0cf4220a5d78cb1b39631b58}\label{group___c-interface_ga8731aacc0cf4220a5d78cb1b39631b58}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_device\_info@{rtaudio\_get\_device\_info}}
+\index{rtaudio\_get\_device\_info@{rtaudio\_get\_device\_info}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_device\_info()}{rtaudio\_get\_device\_info()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI \mbox{\hyperlink{group___c-interface_ga2b99c42e8e5ab5aafa394b4c285605aa}{rtaudio\+\_\+device\+\_\+info\+\_\+t}} rtaudio\+\_\+get\+\_\+device\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+Return a struct \mbox{\hyperlink{structrtaudio__device__info}{rtaudio\+\_\+device\+\_\+info}} for a specified device number. See \mbox{\hyperlink{class_rt_audio_a02d7ff44ad1d7eae22283a052f3dfda8}{Rt\+Audio\+::get\+Device\+Info()}}. \mbox{\Hypertarget{group___c-interface_gacadc4f44e7b85d9bb29db053a57bf2df}\label{group___c-interface_gacadc4f44e7b85d9bb29db053a57bf2df}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_num\_compiled\_apis@{rtaudio\_get\_num\_compiled\_apis}}
+\index{rtaudio\_get\_num\_compiled\_apis@{rtaudio\_get\_num\_compiled\_apis}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_num\_compiled\_apis()}{rtaudio\_get\_num\_compiled\_apis()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int rtaudio\+\_\+get\+\_\+num\+\_\+compiled\+\_\+apis (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Determine the number of available compiled audio A\+P\+Is, the length of the array returned by \mbox{\hyperlink{group___c-interface_ga334b7090c494ab171d78f23bc700f9fa}{rtaudio\+\_\+compiled\+\_\+api()}}. See \mbox{\hyperlink{class_rt_audio_a1df0b60d45637f65dab961b658056503}{Rt\+Audio\+::get\+Compiled\+Api()}}. \mbox{\Hypertarget{group___c-interface_ga8667ecbfbaecbb9dd81079d132dd72ca}\label{group___c-interface_ga8667ecbfbaecbb9dd81079d132dd72ca}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_stream\_latency@{rtaudio\_get\_stream\_latency}}
+\index{rtaudio\_get\_stream\_latency@{rtaudio\_get\_stream\_latency}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_stream\_latency()}{rtaudio\_get\_stream\_latency()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI int rtaudio\+\_\+get\+\_\+stream\+\_\+latency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns the internal stream latency in sample frames. See \mbox{\hyperlink{class_rt_audio_a843c989d9f501c71bc2f2c5ca18df9f3}{Rt\+Audio\+::get\+Stream\+Latency()}}. \mbox{\Hypertarget{group___c-interface_ga8cb9042c7b93d1e4ff6450a699eaebbc}\label{group___c-interface_ga8cb9042c7b93d1e4ff6450a699eaebbc}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_stream\_sample\_rate@{rtaudio\_get\_stream\_sample\_rate}}
+\index{rtaudio\_get\_stream\_sample\_rate@{rtaudio\_get\_stream\_sample\_rate}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_stream\_sample\_rate()}{rtaudio\_get\_stream\_sample\_rate()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI unsigned int rtaudio\+\_\+get\+\_\+stream\+\_\+sample\+\_\+rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns actual sample rate in use by the stream. See \mbox{\hyperlink{class_rt_audio_a28214b8b05d60b45c24ee6fae7b2a0b5}{Rt\+Audio\+::get\+Stream\+Sample\+Rate()}}. \mbox{\Hypertarget{group___c-interface_gaadd28df756bf38321b990a3a57f33001}\label{group___c-interface_gaadd28df756bf38321b990a3a57f33001}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_get\_stream\_time@{rtaudio\_get\_stream\_time}}
+\index{rtaudio\_get\_stream\_time@{rtaudio\_get\_stream\_time}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_get\_stream\_time()}{rtaudio\_get\_stream\_time()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI double rtaudio\+\_\+get\+\_\+stream\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns the number of elapsed seconds since the stream was started. See \mbox{\hyperlink{class_rt_audio_a344e59a62353c5791db4621b985cb2ca}{Rt\+Audio\+::get\+Stream\+Time()}}. \mbox{\Hypertarget{group___c-interface_gad3e1070f8bed653d440216963008c99a}\label{group___c-interface_gad3e1070f8bed653d440216963008c99a}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_is\_stream\_running@{rtaudio\_is\_stream\_running}}
+\index{rtaudio\_is\_stream\_running@{rtaudio\_is\_stream\_running}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_is\_stream\_running()}{rtaudio\_is\_stream\_running()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI int rtaudio\+\_\+is\+\_\+stream\+\_\+running (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Returns 1 if a stream is running and false if it is stopped or not open. See \mbox{\hyperlink{class_rt_audio_a471118c62add0eee90b298e8519bf80e}{Rt\+Audio\+::is\+Stream\+Running()}}. \mbox{\Hypertarget{group___c-interface_ga7d26eb9dafd5a89f5bcf70b42c0ed1b8}\label{group___c-interface_ga7d26eb9dafd5a89f5bcf70b42c0ed1b8}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_open\_stream@{rtaudio\_open\_stream}}
+\index{rtaudio\_open\_stream@{rtaudio\_open\_stream}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_open\_stream()}{rtaudio\_open\_stream()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI int rtaudio\+\_\+open\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio,  }\item[{\mbox{\hyperlink{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}{rtaudio\+\_\+stream\+\_\+parameters\+\_\+t}} $\ast$}]{output\+\_\+params,  }\item[{\mbox{\hyperlink{group___c-interface_ga25b4efb46fc2378ae1d752037444560c}{rtaudio\+\_\+stream\+\_\+parameters\+\_\+t}} $\ast$}]{input\+\_\+params,  }\item[{\mbox{\hyperlink{group___c-interface_ga8112de6cf25107cf0abda69ea4973b8a}{rtaudio\+\_\+format\+\_\+t}}}]{format,  }\item[{unsigned int}]{sample\+\_\+rate,  }\item[{unsigned int $\ast$}]{buffer\+\_\+frames,  }\item[{\mbox{\hyperlink{group___c-interface_ga2b225b83b25ea4025f60cef3ac97ca6f}{rtaudio\+\_\+cb\+\_\+t}}}]{cb,  }\item[{void $\ast$}]{userdata,  }\item[{\mbox{\hyperlink{group___c-interface_gac58b9e385df56eb5060af1c7de13eb7f}{rtaudio\+\_\+stream\+\_\+options\+\_\+t}} $\ast$}]{options,  }\item[{\mbox{\hyperlink{group___c-interface_ga26693f7a608d23607f7263fac26ff4dd}{rtaudio\+\_\+error\+\_\+cb\+\_\+t}}}]{errcb }\end{DoxyParamCaption})}
+
+Opens a stream with the specified parameters. See \mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{Rt\+Audio\+::open\+Stream()}}. \begin{DoxyReturn}{Returns}
+an \mbox{\hyperlink{group___c-interface_ga2c752021c89e582bd3fa8195e0de406a}{rtaudio\+\_\+error}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___c-interface_ga64aab7ae4cc5ecbcd8239118f456c516}\label{group___c-interface_ga64aab7ae4cc5ecbcd8239118f456c516}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_set\_stream\_time@{rtaudio\_set\_stream\_time}}
+\index{rtaudio\_set\_stream\_time@{rtaudio\_set\_stream\_time}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_set\_stream\_time()}{rtaudio\_set\_stream\_time()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI void rtaudio\+\_\+set\+\_\+stream\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio,  }\item[{double}]{time }\end{DoxyParamCaption})}
+
+Set the stream time to a time in seconds greater than or equal to 0.\+0. See \mbox{\hyperlink{class_rt_audio_abc6e50e612251882b5a5a8d5462e406e}{Rt\+Audio\+::set\+Stream\+Time()}}. \mbox{\Hypertarget{group___c-interface_ga45a955f5e79d3a300828017a9b3ca7ef}\label{group___c-interface_ga45a955f5e79d3a300828017a9b3ca7ef}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_show\_warnings@{rtaudio\_show\_warnings}}
+\index{rtaudio\_show\_warnings@{rtaudio\_show\_warnings}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_show\_warnings()}{rtaudio\_show\_warnings()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI void rtaudio\+\_\+show\+\_\+warnings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio,  }\item[{int}]{show }\end{DoxyParamCaption})}
+
+Specify whether warning messages should be printed to stderr. See \mbox{\hyperlink{class_rt_audio_af0752ee51cce3dd90a3bd009f9fdbe77}{Rt\+Audio\+::show\+Warnings()}}. \mbox{\Hypertarget{group___c-interface_ga946fcd647bee26848fc1cab8c547ed9a}\label{group___c-interface_ga946fcd647bee26848fc1cab8c547ed9a}} 
+\index{C-\/interface@{C-\/interface}!rtaudio\_stop\_stream@{rtaudio\_stop\_stream}}
+\index{rtaudio\_stop\_stream@{rtaudio\_stop\_stream}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtaudio\_stop\_stream()}{rtaudio\_stop\_stream()}}
+{\footnotesize\ttfamily R\+T\+A\+U\+D\+I\+O\+A\+PI int rtaudio\+\_\+stop\+\_\+stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrtaudio}{rtaudio\+\_\+t}}}]{audio }\end{DoxyParamCaption})}
+
+Stop a stream, allowing any samples remaining in the output queue to be played. See \mbox{\hyperlink{class_rt_audio_af4c241ff86936ecc8108f0d9dfe3efdd}{Rt\+Audio\+::stop\+Stream()}}. \mbox{\Hypertarget{group___c-interface_ga6de5323d3515532ce9beedc5bd0b48f4}\label{group___c-interface_ga6de5323d3515532ce9beedc5bd0b48f4}} 
+\index{C-\/interface@{C-\/interface}!rtmidi\_get\_compiled\_api@{rtmidi\_get\_compiled\_api}}
+\index{rtmidi\_get\_compiled\_api@{rtmidi\_get\_compiled\_api}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtmidi\_get\_compiled\_api()}{rtmidi\_get\_compiled\_api()}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+A\+PI int rtmidi\+\_\+get\+\_\+compiled\+\_\+api (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}} $\ast$}]{apis,  }\item[{unsigned int}]{apis\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Determine the available compiled M\+I\+DI A\+P\+Is. 
+
+If the given {\ttfamily apis} parameter is null, returns the number of available A\+P\+Is. Otherwise, fill the given apis array with the \mbox{\hyperlink{class_rt_midi_aac66af04a85fe5c5f07c360574a19406}{Rt\+Midi\+::\+Api}} values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em apis} & An array or a null value. \\
+\hline
+{\em apis\+\_\+size} & Number of elements pointed to by apis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of items needed for apis array if apis==N\+U\+LL, or number of items written to apis array otherwise. A negative return value indicates an error.
+\end{DoxyReturn}
+See \mbox{\hyperlink{class_rt_midi_a39204d17dea25683456b49db648bfb8b}{Rt\+Midi\+::get\+Compiled\+Api()}}. \mbox{\Hypertarget{group___c-interface_gaafde5effcdb5a1cfa3d553ff3f5be0e0}\label{group___c-interface_gaafde5effcdb5a1cfa3d553ff3f5be0e0}} 
+\index{C-\/interface@{C-\/interface}!rtmidi\_in\_create@{rtmidi\_in\_create}}
+\index{rtmidi\_in\_create@{rtmidi\_in\_create}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtmidi\_in\_create()}{rtmidi\_in\_create()}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+A\+PI \mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}} rtmidi\+\_\+in\+\_\+create (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}}}]{api,  }\item[{const char $\ast$}]{client\+Name,  }\item[{unsigned int}]{queue\+Size\+Limit }\end{DoxyParamCaption})}
+
+
+
+Create a Rt\+Midi\+In\+Ptr value, with given api, client\+Name and queue\+Size\+Limit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & An optional A\+PI id can be specified. \\
+\hline
+{\em client\+Name} & An optional client name can be specified. This will be used to group the ports that are created by the application. \\
+\hline
+{\em queue\+Size\+Limit} & An optional size of the M\+I\+DI input queue can be specified.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{class_rt_midi_in_a10624dd7e8bc96e16e5943eca615996a}{Rt\+Midi\+In\+::\+Rt\+Midi\+In()}}. \mbox{\Hypertarget{group___c-interface_ga38e058cf55f6f89c3f25874583748927}\label{group___c-interface_ga38e058cf55f6f89c3f25874583748927}} 
+\index{C-\/interface@{C-\/interface}!rtmidi\_in\_get\_message@{rtmidi\_in\_get\_message}}
+\index{rtmidi\_in\_get\_message@{rtmidi\_in\_get\_message}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtmidi\_in\_get\_message()}{rtmidi\_in\_get\_message()}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+A\+PI double rtmidi\+\_\+in\+\_\+get\+\_\+message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___c-interface_ga1bac533c7d0601655f54993af442aef5}{Rt\+Midi\+In\+Ptr}}}]{device,  }\item[{unsigned char $\ast$}]{message,  }\item[{size\+\_\+t $\ast$}]{size }\end{DoxyParamCaption})}
+
+Fill the user-\/provided array with the data bytes for the next available M\+I\+DI message in the input queue and return the event delta-\/time in seconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Must point to a char$\ast$ that is already allocated. S\+Y\+S\+EX messages maximum size being 1024, a statically allocated array could be sufficient. \\
+\hline
+{\em size} & Is used to return the size of the message obtained.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{class_rt_midi_in_a1ba10ecd276b30a8579c7d60a9c890eb}{Rt\+Midi\+In\+::get\+Message()}}. \mbox{\Hypertarget{group___c-interface_ga869ef855df9bf207f0da9293468a7684}\label{group___c-interface_ga869ef855df9bf207f0da9293468a7684}} 
+\index{C-\/interface@{C-\/interface}!rtmidi\_open\_port@{rtmidi\_open\_port}}
+\index{rtmidi\_open\_port@{rtmidi\_open\_port}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtmidi\_open\_port()}{rtmidi\_open\_port()}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+A\+PI void rtmidi\+\_\+open\+\_\+port (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}}}]{device,  }\item[{unsigned int}]{port\+Number,  }\item[{const char $\ast$}]{port\+Name }\end{DoxyParamCaption})}
+
+
+
+Open a M\+I\+DI port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Must be greater than 0 \\
+\hline
+{\em port\+Name} & Name for the application port.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{class_rt_midi_a4834507ff21017d3b022422dbb8f6104}{Rt\+Midi\+::open\+Port()}}. \mbox{\Hypertarget{group___c-interface_ga32cac5ccdcb952f45986d56edf33c05e}\label{group___c-interface_ga32cac5ccdcb952f45986d56edf33c05e}} 
+\index{C-\/interface@{C-\/interface}!rtmidi\_open\_virtual\_port@{rtmidi\_open\_virtual\_port}}
+\index{rtmidi\_open\_virtual\_port@{rtmidi\_open\_virtual\_port}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtmidi\_open\_virtual\_port()}{rtmidi\_open\_virtual\_port()}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+A\+PI void rtmidi\+\_\+open\+\_\+virtual\+\_\+port (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___c-interface_ga34d8d5acd1c68fa0c6a51259aa3d8a6e}{Rt\+Midi\+Ptr}}}]{device,  }\item[{const char $\ast$}]{port\+Name }\end{DoxyParamCaption})}
+
+
+
+Creates a virtual M\+I\+DI port to which other software applications can connect. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & Name for the application port.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{class_rt_midi_a2fcf7bceb243f3da51d2322a7a5ae11f}{Rt\+Midi\+::open\+Virtual\+Port()}}. \mbox{\Hypertarget{group___c-interface_ga74b49e64c4c1b07421bb2355a8dc026b}\label{group___c-interface_ga74b49e64c4c1b07421bb2355a8dc026b}} 
+\index{C-\/interface@{C-\/interface}!rtmidi\_out\_create@{rtmidi\_out\_create}}
+\index{rtmidi\_out\_create@{rtmidi\_out\_create}!C-\/interface@{C-\/interface}}
+\doxysubsubsection{\texorpdfstring{rtmidi\_out\_create()}{rtmidi\_out\_create()}}
+{\footnotesize\ttfamily R\+T\+M\+I\+D\+I\+A\+PI \mbox{\hyperlink{group___c-interface_ga1029d35c6e864a19a814340ff76daaa9}{Rt\+Midi\+Out\+Ptr}} rtmidi\+\_\+out\+\_\+create (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{group___c-interface_ga08ce30fe672e25220cfc817f3396f604}{Rt\+Midi\+Api}}}]{api,  }\item[{const char $\ast$}]{client\+Name }\end{DoxyParamCaption})}
+
+
+
+Create a Rt\+Midi\+Out\+Ptr value, with given and client\+Name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em api} & An optional A\+PI id can be specified. \\
+\hline
+{\em client\+Name} & An optional client name can be specified. This will be used to group the ports that are created by the application.\\
+\hline
+\end{DoxyParams}
+See \mbox{\hyperlink{class_rt_midi_out_a89b093298cf2cb2b3c38ae202ce97831}{Rt\+Midi\+Out\+::\+Rt\+Midi\+Out()}}. 

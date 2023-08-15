@@ -1,0 +1,142 @@
+faust2nodejs can be used to generate Faust-\/based nodejs native addons. The generated addons can embed most of the audio engines supported by \mbox{\hyperlink{struct_faust}{Faust}}\+: alsa, J\+A\+CK, Core\+Audio, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}}, Port\+Audio, etc. Since faust2nodejs essentially acts as a wrapper to faust2api, it offers the same features than this system (M\+I\+DI and O\+SC suport, polyphony, separate effect file, etc.).\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md298}{}\doxysection{Requirements}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md298}
+The latest version of \href{https://nodejs.org}{\texttt{ nodejs}} should be installed on your system. Additionally, you should make sure that {\ttfamily node-\/gyp} is available on your computer.
+
+On the mac\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo npm install node-\/gyp -\/g}
+\end{DoxyCode}
+
+
+On Linux\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install node-\/gyp \&\& npm install node-\/gyp -\/g}
+\end{DoxyCode}
+
+
+As for other \mbox{\hyperlink{struct_faust}{Faust}} architectures, the various S\+D\+Ks/development files associated with the targeted audio engine should also be installed. For example, if creating a nodejs addon with a J\+A\+CK driver, libjack should be installed, etc.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md299}{}\doxysection{Generating a Faust Nodejs Native Addon}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md299}
+In a terminal window, just call\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{faust2nodejs [DRIVER] [OPTIONS] faustFile.dsp}
+\end{DoxyCode}
+
+
+With \mbox{[}D\+R\+I\+V\+ER\mbox{]}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/coreaudio}\+: coreaudio audio engine
+\item {\ttfamily -\/alsa}\+: alsa audio engine
+\item {\ttfamily -\/jack}\+: J\+A\+CK audio engine
+\item {\ttfamily -\/portaudio}\+: portaudio audio engine
+\item {\ttfamily -\/rtaudio}\+: rtaudio audio engine
+\item {\ttfamily -\/dummy}\+: dummy audio engine
+\end{DoxyItemize}
+
+and with \href{mostly inherited from [faust2api](https://ccrma.stanford.edu/~rmichon/faust2api/)}{\texttt{ O\+P\+T\+I\+ON}}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/nvoices N}\+: creates a polyphonic object with N voices.
+\item {\ttfamily -\/effect $<$effect.\+dsp$>$}\+: adds an effect to the polyphonic synth (this option is ignored if {\ttfamily -\/nvoices} is not specified).
+\item {\ttfamily -\/midi}\+: add built-\/in \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} support to the A\+PI.
+\item {\ttfamily -\/osc}\+: add built-\/in O\+SC support to the A\+PI.
+\item {\ttfamily -\/source}\+: generates the source of the addon without compiling it.
+\item {\ttfamily -\/electronv $<$V\+E\+R\+S\+I\+ON$>$}\+: allows to specify the current version of electron if generating an addon for this framework.
+\item {\ttfamily -\/debug}\+: prints compilation output.
+\end{DoxyItemize}
+
+The generated addon will take the \mbox{\hyperlink{class_d_s_p}{D\+SP}} name.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md300}{}\doxysection{Using the Generated Addon}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md300}
+Generated \mbox{\hyperlink{struct_faust}{Faust}} addons use essentially the same A\+PI than \href{https://ccrma.stanford.edu/~rmichon/faust2api/}{\texttt{ faust2api}} (click on the link for an exhaustive overview of the A\+PI). Typically, the \char`\"{}life cycle\char`\"{} of an addon will look like\+:
+
+First load it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{const faust = require('./faustFile');}
+\end{DoxyCode}
+
+
+instantiate it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var dspFaustNode = new faust.DspFaustNode(); // for audio engines where the sampling rate and the buffer length are imposed (e.g., JACK, etc.) }
+\DoxyCodeLine{var dspFaustNode = new faust.DspFaustNode(44100,512); // for audio engines where the sampling rate and the buffer length are chosen by the user (e.g., Alsa, CoreAudio, etc.)}
+\end{DoxyCode}
+
+
+start it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dspFaustNode.start();}
+\end{DoxyCode}
+
+
+change some parameters\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dspFaustNode.setParamValue("paramAddress",value);}
+\DoxyCodeLine{// or}
+\DoxyCodeLine{dspFaustNode.setParamValue(paramID,value);}
+\end{DoxyCode}
+
+
+Parameters address and ID can be easily with\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{for(i=0;i<dspFaustNode.getParamsCount();i++)\{}
+\DoxyCodeLine{  console.log("ID: " + i + " Address: " + dspFaustNode.getParamAddress(i));}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+stop it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dspFaustNode.stop();}
+\end{DoxyCode}
+
+
+destroy it (forces garbage collection -\/ necessary in most cases)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dspFaustNode.destroy();}
+\end{DoxyCode}
+
+
+Several addons can possibly be loaded and used at the same time. This is especially interesting when using the J\+A\+CK driver, since each of them will appear as a separated J\+A\+CK client. ~\newline
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md301}{}\doxysection{Know Issues}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_c3442267ddbfbd47e4c796048a15972b_autotoc_md301}
+For now, even though Alsa native nodejs and addons can be generated and compiled without any issue, they crash during the constructor call with\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pcm\_misc.c:380: snd\_pcm\_format\_size: Assertion `0' failed.}
+\end{DoxyCode}
+
+
+Weirdly, Alsa audio engines generated with faust2api are fine when called from a test C++ program. It seems that the problem comes from the setting of the sample format in {\ttfamily \mbox{\hyperlink{alsa-dsp_8h_source}{alsa-\/dsp.\+h}}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{// search for 32-\/bits or 16-\/bits format}
+\DoxyCodeLine{err = snd\_pcm\_hw\_params\_set\_format (stream, params, SND\_PCM\_FORMAT\_S32);}
+\DoxyCodeLine{if (err) \{}
+\DoxyCodeLine{  err = snd\_pcm\_hw\_params\_set\_format (stream, params, SND\_PCM\_FORMAT\_S16);}
+\DoxyCodeLine{  check\_error\_msg(err, "unable to set format to either 32-\/bits or 16-\/bits");}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{snd\_pcm\_hw\_params\_get\_format(params, \&fSampleFormat);}
+\end{DoxyCode}
+
+
+For some reasons, even though {\ttfamily snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+format} doesn\textquotesingle{}t return an error, it doesn\textquotesingle{}t seem to set the desired sample format ({\ttfamily f\+Sample\+Format} is always equal to {\ttfamily S8} while it should be {\ttfamily S32\+\_\+\+LE}). 

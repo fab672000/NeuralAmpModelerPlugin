@@ -1,0 +1,90 @@
+\hypertarget{class_i_layer}{}\doxysection{I\+Layer Class Reference}
+\label{class_i_layer}\index{ILayer@{ILayer}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Structs.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_layer_a588a3a0106992b954bbc06e8c871f452}{I\+Layer}} (\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$p\+Bitmap, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&layer\+Rect, \mbox{\hyperlink{class_i_control}{I\+Control}} $\ast$p\+Control, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&control\+Rect)
+\item 
+\mbox{\Hypertarget{class_i_layer_aa46fa18f079a05270b6823d5142624a8}\label{class_i_layer_aa46fa18f079a05270b6823d5142624a8}} 
+{\bfseries I\+Layer} (const \mbox{\hyperlink{class_i_layer}{I\+Layer}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_i_layer_a694434d310bbab6873664a61c8ff4b32}\label{class_i_layer_a694434d310bbab6873664a61c8ff4b32}} 
+\mbox{\hyperlink{class_i_layer}{I\+Layer}} {\bfseries operator=} (const \mbox{\hyperlink{class_i_layer}{I\+Layer}} \&)=delete
+\item 
+void \mbox{\hyperlink{class_i_layer_a92a1222ea69da36c20b9cb506623f1cf}{Invalidate}} ()
+\item 
+const \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_layer_a207b82015cd633308339772a7991d6b7}{Get\+A\+P\+I\+Bitmap}} () const
+\item 
+\mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \mbox{\hyperlink{class_i_layer_aa77b1e18dab3afa10d1f738963453110}{Get\+Bitmap}} () const
+\item 
+const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \& \mbox{\hyperlink{class_i_layer_a7ebe4f9304a72fdb915c3d97d106b765}{Bounds}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstraction that is used to store a temporary raster image/framebuffer. The layer is drawn with a specific offset to the graphics context. I\+Layers take ownership of the underlying bitmaps In G\+P\+U-\/based backends (Nano\+VG), this is a texture. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_layer_a588a3a0106992b954bbc06e8c871f452}\label{class_i_layer_a588a3a0106992b954bbc06e8c871f452}} 
+\index{ILayer@{ILayer}!ILayer@{ILayer}}
+\index{ILayer@{ILayer}!ILayer@{ILayer}}
+\doxysubsubsection{\texorpdfstring{ILayer()}{ILayer()}}
+{\footnotesize\ttfamily I\+Layer\+::\+I\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$}]{p\+Bitmap,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{layer\+Rect,  }\item[{\mbox{\hyperlink{class_i_control}{I\+Control}} $\ast$}]{p\+Control,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{control\+Rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a layer/offscreen context (used internally) 
+\begin{DoxyParams}{Parameters}
+{\em p\+Bitmap} & The \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} to use for the layer \\
+\hline
+{\em layer\+Rect} & The bounds of the layer withing the graphics context \\
+\hline
+{\em p\+Control} & The control that the layer belongs to \\
+\hline
+{\em control\+Rect} & The bounds of the control \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_layer_a7ebe4f9304a72fdb915c3d97d106b765}\label{class_i_layer_a7ebe4f9304a72fdb915c3d97d106b765}} 
+\index{ILayer@{ILayer}!Bounds@{Bounds}}
+\index{Bounds@{Bounds}!ILayer@{ILayer}}
+\doxysubsubsection{\texorpdfstring{Bounds()}{Bounds()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}}\& I\+Layer\+::\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}}\& The bounds of the layer withing the graphics context 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_layer_a207b82015cd633308339772a7991d6b7}\label{class_i_layer_a207b82015cd633308339772a7991d6b7}} 
+\index{ILayer@{ILayer}!GetAPIBitmap@{GetAPIBitmap}}
+\index{GetAPIBitmap@{GetAPIBitmap}!ILayer@{ILayer}}
+\doxysubsubsection{\texorpdfstring{GetAPIBitmap()}{GetAPIBitmap()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}}$\ast$ I\+Layer\+::\+Get\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+const A\+P\+I\+Bitmap$\ast$ The A\+PI bitmap for the layer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_layer_aa77b1e18dab3afa10d1f738963453110}\label{class_i_layer_aa77b1e18dab3afa10d1f738963453110}} 
+\index{ILayer@{ILayer}!GetBitmap@{GetBitmap}}
+\index{GetBitmap@{GetBitmap}!ILayer@{ILayer}}
+\doxysubsubsection{\texorpdfstring{GetBitmap()}{GetBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} I\+Layer\+::\+Get\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} An \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} to use the layer directly 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_layer_a92a1222ea69da36c20b9cb506623f1cf}\label{class_i_layer_a92a1222ea69da36c20b9cb506623f1cf}} 
+\index{ILayer@{ILayer}!Invalidate@{Invalidate}}
+\index{Invalidate@{Invalidate}!ILayer@{ILayer}}
+\doxysubsubsection{\texorpdfstring{Invalidate()}{Invalidate()}}
+{\footnotesize\ttfamily void I\+Layer\+::\+Invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Mark the layer as needing its contents redrawn ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Graphics\+Structs.\+h\end{DoxyCompactItemize}

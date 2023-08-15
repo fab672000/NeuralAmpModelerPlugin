@@ -1,0 +1,83 @@
+\hypertarget{class_test_s_v_g_control}{}\doxysection{Test\+S\+V\+G\+Control Class Reference}
+\label{class_test_s_v_g_control}\index{TestSVGControl@{TestSVGControl}}
+
+
+{\ttfamily \#include $<$Test\+S\+V\+G\+Control.\+h$>$}
+
+Inheritance diagram for Test\+S\+V\+G\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_test_s_v_g_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_s_v_g_control_a0bb46c28cebb5dd78569d750c62066c0}\label{class_test_s_v_g_control_a0bb46c28cebb5dd78569d750c62066c0}} 
+{\bfseries Test\+S\+V\+G\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const \mbox{\hyperlink{struct_i_s_v_g}{I\+S\+VG}} \&svg)
+\item 
+void \mbox{\hyperlink{class_test_s_v_g_control_acd49fd8729542275a365ca65ccb783b5}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_test_s_v_g_control_ae612b574b6ca55b85e902e5ee273b3c6}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_test_s_v_g_control_ae1b5ef73c17f6e34a2fe9f25d67f5c15}{On\+Drop}} (const char $\ast$str) override
+\item 
+\mbox{\Hypertarget{class_test_s_v_g_control_a15409e4188b1c68fe76ab7f28f28897f}\label{class_test_s_v_g_control_a15409e4188b1c68fe76ab7f28f28897f}} 
+void {\bfseries Set\+S\+VG} (const \mbox{\hyperlink{struct_i_s_v_g}{I\+S\+VG}} \&svg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_control}{Control}} to test drawing S\+V\+Gs 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_s_v_g_control_acd49fd8729542275a365ca65ccb783b5}\label{class_test_s_v_g_control_acd49fd8729542275a365ca65ccb783b5}} 
+\index{TestSVGControl@{TestSVGControl}!Draw@{Draw}}
+\index{Draw@{Draw}!TestSVGControl@{TestSVGControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Test\+S\+V\+G\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_s_v_g_control_ae1b5ef73c17f6e34a2fe9f25d67f5c15}\label{class_test_s_v_g_control_ae1b5ef73c17f6e34a2fe9f25d67f5c15}} 
+\index{TestSVGControl@{TestSVGControl}!OnDrop@{OnDrop}}
+\index{OnDrop@{OnDrop}!TestSVGControl@{TestSVGControl}}
+\doxysubsubsection{\texorpdfstring{OnDrop()}{OnDrop()}}
+{\footnotesize\ttfamily void Test\+S\+V\+G\+Control\+::\+On\+Drop (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to do something when something was drag \textquotesingle{}n dropped onto this control 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a5e9270b8ce6d321130bbff7821c63d0d}{I\+Control}}.
+
+\mbox{\Hypertarget{class_test_s_v_g_control_ae612b574b6ca55b85e902e5ee273b3c6}\label{class_test_s_v_g_control_ae612b574b6ca55b85e902e5ee273b3c6}} 
+\index{TestSVGControl@{TestSVGControl}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!TestSVGControl@{TestSVGControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void Test\+S\+V\+G\+Control\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\+Test/\mbox{\hyperlink{_test_s_v_g_control_8h}{Test\+S\+V\+G\+Control.\+h}}\end{DoxyCompactItemize}

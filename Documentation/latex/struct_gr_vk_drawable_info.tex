@@ -1,0 +1,43 @@
+\hypertarget{struct_gr_vk_drawable_info}{}\doxysection{Gr\+Vk\+Drawable\+Info Struct Reference}
+\label{struct_gr_vk_drawable_info}\index{GrVkDrawableInfo@{GrVkDrawableInfo}}
+
+
+{\ttfamily \#include $<$Gr\+Vk\+Types.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_gr_vk_drawable_info_af23d2284560a1d10496ca3d2922098fb}\label{struct_gr_vk_drawable_info_af23d2284560a1d10496ca3d2922098fb}} 
+Vk\+Command\+Buffer {\bfseries f\+Secondary\+Command\+Buffer}
+\item 
+\mbox{\Hypertarget{struct_gr_vk_drawable_info_a82b563db168bbb8e1af06b59720d0f56}\label{struct_gr_vk_drawable_info_a82b563db168bbb8e1af06b59720d0f56}} 
+uint32\+\_\+t {\bfseries f\+Color\+Attachment\+Index}
+\item 
+\mbox{\Hypertarget{struct_gr_vk_drawable_info_a866cbc6eda70aa132b292785b0e0735e}\label{struct_gr_vk_drawable_info_a866cbc6eda70aa132b292785b0e0735e}} 
+Vk\+Render\+Pass {\bfseries f\+Compatible\+Render\+Pass}
+\item 
+\mbox{\Hypertarget{struct_gr_vk_drawable_info_a30d034747f458dbefb75b9620f734785}\label{struct_gr_vk_drawable_info_a30d034747f458dbefb75b9620f734785}} 
+Vk\+Format {\bfseries f\+Format}
+\item 
+\mbox{\Hypertarget{struct_gr_vk_drawable_info_a1252f844f2ccc5f8a31884c4a2f3ec92}\label{struct_gr_vk_drawable_info_a1252f844f2ccc5f8a31884c4a2f3ec92}} 
+\mbox{\hyperlink{struct_vk_rect2_d}{Vk\+Rect2D}} $\ast$ {\bfseries f\+Draw\+Bounds}
+\item 
+\mbox{\Hypertarget{struct_gr_vk_drawable_info_a5e47091de8df140de412f76fbd79c78f}\label{struct_gr_vk_drawable_info_a5e47091de8df140de412f76fbd79c78f}} 
+Vk\+Image {\bfseries f\+Image}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This object is wrapped in a \mbox{\hyperlink{class_gr_backend_drawable_info}{Gr\+Backend\+Drawable\+Info}} and passed in as an argument to draw\+Backend\+Gpu() calls on an \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}}. The drawable will use this info to inject direct Vulkan calls into our stream of G\+PU draws.
+
+The \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} is given a secondary Vk\+Command\+Buffer in which to record draws. The G\+PU backend will then execute that command buffer within a render pass it is using for its own draws. The drawable is also given the attachment of the color index, a compatible Vk\+Render\+Pass, and the Vk\+Format of the color attachment so that it can make Vk\+Pipeline objects for the draws. The \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} must not alter the state of the Vk\+Renderpass or sub pass.
+
+Additionally, the \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} may fill in the passed in f\+Draw\+Bounds with the bounds of the draws that it submits to the command buffer. This will be used by the G\+PU backend for setting the bounds in vk\+Cmd\+Begin\+Render\+Pass. If f\+Draw\+Bounds is not updated, we will assume that the entire attachment may have been written to.
+
+The \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} is always allowed to create its own command buffers and submit them to the queue to render offscreen textures which will be sampled in draws added to the passed in Vk\+Command\+Buffer. If this is done the \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} is in charge of adding the required memory barriers to the queue for the sampled images since the Skia backend will not do this.
+
+The Vk\+Image is informational only and should not be used or modified in any ways. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/gpu/vk/Gr\+Vk\+Types.\+h\end{DoxyCompactItemize}

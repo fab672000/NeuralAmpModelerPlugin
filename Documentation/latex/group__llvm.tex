@@ -1,0 +1,641 @@
+\hypertarget{group__llvm}{}\doxysection{C interface for compiling Faust code. Note that the A\+PI is not thread safe \+: use \textquotesingle{}start\+M\+T\+D\+S\+P\+Factories/stop\+M\+T\+D\+S\+P\+Factories\textquotesingle{} to use it in a multi-\/thread context.}
+\label{group__llvm}\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}
+\item 
+class \mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{group__llvm_ga4dc6a8a1408922d179a375f4625c9411}{get\+C\+Lib\+Faust\+Version}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga613fde5fad90a5cc7057cf74c9063806}{get\+C\+D\+S\+P\+Machine\+Target}} ()
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_gaa7d0bd232d1fcfecbcb882e7f897b269}{get\+C\+D\+S\+P\+Factory\+From\+S\+H\+A\+Key}} (const char $\ast$sha\+\_\+key)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_ga516cf21fa426f6f7222a97d32592ff09}{create\+C\+D\+S\+P\+Factory\+From\+File}} (const char $\ast$filename, int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]}, const char $\ast$target, char $\ast$error\+\_\+msg, int opt\+\_\+level)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_ga8c39af685d693971a5986418cebd65e7}{create\+C\+D\+S\+P\+Factory\+From\+String}} (const char $\ast$name\+\_\+app, const char $\ast$dsp\+\_\+content, int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]}, const char $\ast$target, char $\ast$error\+\_\+msg, int opt\+\_\+level)
+\item 
+bool \mbox{\hyperlink{group__llvm_ga91685e0600457cd998d5bad2031e4412}{delete\+C\+D\+S\+P\+Factory}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga872a7c72d2a94f122fd645397a03098e}{get\+C\+Name}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga5d3b6dce974a1c674c4697acdd196089}{get\+C\+S\+H\+A\+Key}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga81fe965fe43004077ea504f917cfd864}{get\+C\+D\+S\+P\+Code}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga742204a5dd92f0f8f9a1e542aee556d1}{get\+C\+D\+S\+P\+Factory\+Compile\+Options}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga44c75348facf7cfd6a72192dfb765063}{get\+C\+Target}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+const char $\ast$$\ast$ \mbox{\hyperlink{group__llvm_gaa3938e8a42c1aa985d9f45383f73cf46}{get\+C\+D\+S\+P\+Factory\+Library\+List}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+const char $\ast$$\ast$ \mbox{\hyperlink{group__llvm_ga60042089f42a210d68a436f901dcb5d5}{get\+C\+D\+S\+P\+Factory\+Include\+Pathnames}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+void \mbox{\hyperlink{group__llvm_gaafad2f3dafa99211b7a040c1ae0540c0}{delete\+All\+C\+D\+S\+P\+Factories}} ()
+\item 
+const char $\ast$$\ast$ \mbox{\hyperlink{group__llvm_ga721027c70913caababa25c340c8de327}{get\+All\+C\+D\+S\+P\+Factories}} ()
+\item 
+bool \mbox{\hyperlink{group__llvm_ga11cc140b8daed2b941c4fba9bfa066a9}{start\+M\+T\+D\+S\+P\+Factories}} ()
+\item 
+void \mbox{\hyperlink{group__llvm_gaec77a539b5c02d32965968a453c3626a}{stop\+M\+T\+D\+S\+P\+Factories}} ()
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_ga83bfc0e61b1c10148f71bb1272ebd01c}{read\+C\+D\+S\+P\+Factory\+From\+Bitcode}} (const char $\ast$bit\+\_\+code, const char $\ast$target, char $\ast$error\+\_\+msg, int opt\+\_\+level)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga83297bb1300a9b104c83838e5845af48}{write\+C\+D\+S\+P\+Factory\+To\+Bitcode}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_gab4d9cbb9e53ab1b514cbb9318a6667a5}{read\+C\+D\+S\+P\+Factory\+From\+Bitcode\+File}} (const char $\ast$bit\+\_\+code\+\_\+path, const char $\ast$target, char $\ast$error\+\_\+msg, int opt\+\_\+level)
+\item 
+bool \mbox{\hyperlink{group__llvm_ga196c67a537d91bf5f6bb485e02439077}{write\+C\+D\+S\+P\+Factory\+To\+Bitcode\+File}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory, const char $\ast$bit\+\_\+code\+\_\+path)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_gae3fcb574277be648a99b63cc5a7e9c0d}{read\+C\+D\+S\+P\+Factory\+From\+IR}} (const char $\ast$ir\+\_\+code, const char $\ast$target, char $\ast$error\+\_\+msg, int opt\+\_\+level)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga55119d0ea98094966f4bf85cce9714c4}{write\+C\+D\+S\+P\+Factory\+To\+IR}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_ga4eff35fedd4113cbc6dcbe54d7b510c8}{read\+C\+D\+S\+P\+Factory\+From\+I\+R\+File}} (const char $\ast$ir\+\_\+code\+\_\+path, const char $\ast$target, char $\ast$error\+\_\+msg, int opt\+\_\+level)
+\item 
+bool \mbox{\hyperlink{group__llvm_ga70a1b7bade383544668284f1708d7e2f}{write\+C\+D\+S\+P\+Factory\+To\+I\+R\+File}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory, const char $\ast$ir\+\_\+code\+\_\+path)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_gab1a82d7ead99c4a82bc907c6260521fa}{read\+C\+D\+S\+P\+Factory\+From\+Machine}} (const char $\ast$machine\+\_\+code, char $\ast$error\+\_\+msg, const char $\ast$target)
+\item 
+char $\ast$ \mbox{\hyperlink{group__llvm_ga71605e18c01e22ed1e091fa9b3005b01}{write\+C\+D\+S\+P\+Factory\+To\+Machine}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory, const char $\ast$target)
+\item 
+\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$ \mbox{\hyperlink{group__llvm_ga6046af111e4a2a385deca98a27d0b4d0}{read\+C\+D\+S\+P\+Factory\+From\+Machine\+File}} (const char $\ast$machine\+\_\+code\+\_\+path, const char $\ast$target, char $\ast$error\+\_\+msg)
+\item 
+bool \mbox{\hyperlink{group__llvm_gaea475031a5d7cce515b159de29f6c689}{write\+C\+D\+S\+P\+Factory\+To\+Machine\+File}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory, const char $\ast$machine\+\_\+code\+\_\+path, const char $\ast$target)
+\item 
+int \mbox{\hyperlink{group__llvm_gaa64a14c8f7f4b5e8a383ece913674aff}{get\+Num\+Inputs\+C\+D\+S\+P\+Instance}} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\item 
+\mbox{\Hypertarget{group__llvm_gadb5f725a514e09e3acb10176d39ff489}\label{group__llvm_gadb5f725a514e09e3acb10176d39ff489}} 
+int {\bfseries get\+Num\+Outputs\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\item 
+\mbox{\Hypertarget{group__llvm_ga63cd422d3374a1d4ff5ab36625c17361}\label{group__llvm_ga63cd422d3374a1d4ff5ab36625c17361}} 
+void {\bfseries build\+User\+Interface\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}}, \mbox{\hyperlink{struct_u_i_glue}{U\+I\+Glue}} $\ast$interface)
+\item 
+\mbox{\Hypertarget{group__llvm_ga6cb7a4b4acfe9797b0d99d4c7a345513}\label{group__llvm_ga6cb7a4b4acfe9797b0d99d4c7a345513}} 
+int {\bfseries get\+Sample\+Rate\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\item 
+\mbox{\Hypertarget{group__llvm_ga9fe343516a4a83d844a1e755c18c80fd}\label{group__llvm_ga9fe343516a4a83d844a1e755c18c80fd}} 
+void {\bfseries init\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}}, int sample\+\_\+rate)
+\item 
+\mbox{\Hypertarget{group__llvm_gafa0d6ca5d3fc9b694e008f198e4858b0}\label{group__llvm_gafa0d6ca5d3fc9b694e008f198e4858b0}} 
+void {\bfseries instance\+Init\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}}, int sample\+\_\+rate)
+\item 
+\mbox{\Hypertarget{group__llvm_gab981f9e8e43373fabb0c97835ca24f87}\label{group__llvm_gab981f9e8e43373fabb0c97835ca24f87}} 
+void {\bfseries instance\+Constants\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}}, int sample\+\_\+rate)
+\item 
+\mbox{\Hypertarget{group__llvm_gacf9151d855845bd1515d23a6d9afc0d9}\label{group__llvm_gacf9151d855845bd1515d23a6d9afc0d9}} 
+void {\bfseries instance\+Reset\+User\+Interface\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\item 
+\mbox{\Hypertarget{group__llvm_ga9f1a5ed95fe0ddd9ef6975d0defbe6b3}\label{group__llvm_ga9f1a5ed95fe0ddd9ef6975d0defbe6b3}} 
+void {\bfseries instance\+Clear\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\item 
+\mbox{\Hypertarget{group__llvm_ga90bb04ed41ade75d6b5cc200750c57e0}\label{group__llvm_ga90bb04ed41ade75d6b5cc200750c57e0}} 
+\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$ {\bfseries clone\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\item 
+\mbox{\Hypertarget{group__llvm_gafab12e4b220b1b948b9021026982b62b}\label{group__llvm_gafab12e4b220b1b948b9021026982b62b}} 
+void {\bfseries metadata\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}}, \mbox{\hyperlink{struct_meta_glue}{Meta\+Glue}} $\ast$meta)
+\item 
+\mbox{\Hypertarget{group__llvm_ga360637cc7484fa63e09d02119b4c6dc9}\label{group__llvm_ga360637cc7484fa63e09d02119b4c6dc9}} 
+void {\bfseries compute\+C\+D\+S\+P\+Instance} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}}, int count, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$input, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$output)
+\item 
+\mbox{\Hypertarget{group__llvm_gac3e9e3362c0ef5eabc6edc62f36ad4d7}\label{group__llvm_gac3e9e3362c0ef5eabc6edc62f36ad4d7}} 
+void {\bfseries set\+C\+Memory\+Manager} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory, \mbox{\hyperlink{struct_memory_manager_glue}{Memory\+Manager\+Glue}} $\ast$manager)
+\item 
+\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$ \mbox{\hyperlink{group__llvm_ga9b6c8928af2796b18a20f5736a03f4bd}{create\+C\+D\+S\+P\+Instance}} (\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$factory)
+\item 
+void \mbox{\hyperlink{group__llvm_gac2fc97bc0cb9d409cd2ab575b105edd1}{delete\+C\+D\+S\+P\+Instance}} (\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$\mbox{\hyperlink{classdsp}{dsp}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__llvm_ga516cf21fa426f6f7222a97d32592ff09}\label{group__llvm_ga516cf21fa426f6f7222a97d32592ff09}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!createCDSPFactoryFromFile@{createCDSPFactoryFromFile}}
+\index{createCDSPFactoryFromFile@{createCDSPFactoryFromFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{createCDSPFactoryFromFile()}{createCDSPFactoryFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ create\+C\+D\+S\+P\+Factory\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{int}]{opt\+\_\+level }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a \mbox{\hyperlink{class_d_s_p}{D\+SP}} source code as a file. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is same source code and same set of \textquotesingle{}normalized\textquotesingle{} compilations options) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} filename \\
+\hline
+{\em argc} & -\/ the number of parameters in argv array \\
+\hline
+{\em argv} & -\/ the array of parameters (Warning \+: aux files generation options will be filtered (-\/svg, ...) -\/-\/$>$ use generate\+Aux\+Files) \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em opt\+\_\+level} & -\/ L\+L\+VM IR to IR optimization level (from -\/1 to 4, -\/1 means \textquotesingle{}maximum possible value\textquotesingle{} since the maximum value may change with new L\+L\+VM versions)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga8c39af685d693971a5986418cebd65e7}\label{group__llvm_ga8c39af685d693971a5986418cebd65e7}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!createCDSPFactoryFromString@{createCDSPFactoryFromString}}
+\index{createCDSPFactoryFromString@{createCDSPFactoryFromString}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{createCDSPFactoryFromString()}{createCDSPFactoryFromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ create\+C\+D\+S\+P\+Factory\+From\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name\+\_\+app,  }\item[{const char $\ast$}]{dsp\+\_\+content,  }\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{int}]{opt\+\_\+level }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a \mbox{\hyperlink{class_d_s_p}{D\+SP}} source code as a string. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is same source code and same set of \textquotesingle{}normalized\textquotesingle{} compilations options) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+\_\+app} & -\/ the name of the \mbox{\hyperlink{struct_faust}{Faust}} program \\
+\hline
+{\em dsp\+\_\+content} & -\/ the \mbox{\hyperlink{struct_faust}{Faust}} program as a string \\
+\hline
+{\em argc} & -\/ the number of parameters in argv array \\
+\hline
+{\em argv} & -\/ the array of parameters (Warning \+: aux files generation options will be filtered (-\/svg, ...) -\/-\/$>$ use generate\+Aux\+Files) \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em opt\+\_\+level} & -\/ L\+L\+VM IR to IR optimization level (from -\/1 to 4, -\/1 means \textquotesingle{}maximum possible value\textquotesingle{} since the maximum value may change with new L\+L\+VM versions)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga9b6c8928af2796b18a20f5736a03f4bd}\label{group__llvm_ga9b6c8928af2796b18a20f5736a03f4bd}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!createCDSPInstance@{createCDSPInstance}}
+\index{createCDSPInstance@{createCDSPInstance}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{createCDSPInstance()}{createCDSPInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}}$\ast$ create\+C\+D\+S\+P\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} instance on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gaafad2f3dafa99211b7a040c1ae0540c0}\label{group__llvm_gaafad2f3dafa99211b7a040c1ae0540c0}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!deleteAllCDSPFactories@{deleteAllCDSPFactories}}
+\index{deleteAllCDSPFactories@{deleteAllCDSPFactories}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{deleteAllCDSPFactories()}{deleteAllCDSPFactories()}}
+{\footnotesize\ttfamily void delete\+All\+C\+D\+S\+P\+Factories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Delete all \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factories kept in the library cache. Beware \+: all kept factory pointers (in local variables...) thus become invalid. \mbox{\Hypertarget{group__llvm_ga91685e0600457cd998d5bad2031e4412}\label{group__llvm_ga91685e0600457cd998d5bad2031e4412}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!deleteCDSPFactory@{deleteCDSPFactory}}
+\index{deleteCDSPFactory@{deleteCDSPFactory}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{deleteCDSPFactory()}{deleteCDSPFactory()}}
+{\footnotesize\ttfamily bool delete\+C\+D\+S\+P\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Delete a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory, that is decrements it\textquotesingle{}s reference counter, possibly really deleting the internal pointer. Possibly also delete \mbox{\hyperlink{class_d_s_p}{D\+SP}} pointers associated with this factory, if they were not explicitly deleted with delete\+C\+D\+S\+P\+Instance. Beware \+: all kept factories and \mbox{\hyperlink{class_d_s_p}{D\+SP}} pointers (in local variables...) thus become invalid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory to be deleted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the factory internal pointer was really deleted, and false if only \textquotesingle{}decremented\textquotesingle{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gac2fc97bc0cb9d409cd2ab575b105edd1}\label{group__llvm_gac2fc97bc0cb9d409cd2ab575b105edd1}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!deleteCDSPInstance@{deleteCDSPInstance}}
+\index{deleteCDSPInstance@{deleteCDSPInstance}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{deleteCDSPInstance()}{deleteCDSPInstance()}}
+{\footnotesize\ttfamily void delete\+C\+D\+S\+P\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$}]{dsp }\end{DoxyParamCaption})}
+
+Delete a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dsp} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} instance to be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__llvm_ga721027c70913caababa25c340c8de327}\label{group__llvm_ga721027c70913caababa25c340c8de327}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getAllCDSPFactories@{getAllCDSPFactories}}
+\index{getAllCDSPFactories@{getAllCDSPFactories}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getAllCDSPFactories()}{getAllCDSPFactories()}}
+{\footnotesize\ttfamily const char$\ast$$\ast$ get\+All\+C\+D\+S\+P\+Factories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factories of the library cache as a null-\/terminated array of their S\+HA keys.
+
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factories (the array and it\textquotesingle{}s content has to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga81fe965fe43004077ea504f917cfd864}\label{group__llvm_ga81fe965fe43004077ea504f917cfd864}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCDSPCode@{getCDSPCode}}
+\index{getCDSPCode@{getCDSPCode}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCDSPCode()}{getCDSPCode()}}
+{\footnotesize\ttfamily char$\ast$ get\+C\+D\+S\+P\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Get the expanded \mbox{\hyperlink{class_d_s_p}{D\+SP}} code of the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the expanded \mbox{\hyperlink{class_d_s_p}{D\+SP}} code string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga742204a5dd92f0f8f9a1e542aee556d1}\label{group__llvm_ga742204a5dd92f0f8f9a1e542aee556d1}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCDSPFactoryCompileOptions@{getCDSPFactoryCompileOptions}}
+\index{getCDSPFactoryCompileOptions@{getCDSPFactoryCompileOptions}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCDSPFactoryCompileOptions()}{getCDSPFactoryCompileOptions()}}
+{\footnotesize\ttfamily char$\ast$ get\+C\+D\+S\+P\+Factory\+Compile\+Options (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Get the compile options of the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the L\+L\+VM compile options as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gaa7d0bd232d1fcfecbcb882e7f897b269}\label{group__llvm_gaa7d0bd232d1fcfecbcb882e7f897b269}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCDSPFactoryFromSHAKey@{getCDSPFactoryFromSHAKey}}
+\index{getCDSPFactoryFromSHAKey@{getCDSPFactoryFromSHAKey}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCDSPFactoryFromSHAKey()}{getCDSPFactoryFromSHAKey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ get\+C\+D\+S\+P\+Factory\+From\+S\+H\+A\+Key (\begin{DoxyParamCaption}\item[{const char $\ast$}]{sha\+\_\+key }\end{DoxyParamCaption})}
+
+Get the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory associated with a given S\+HA key (created from the \textquotesingle{}expanded\textquotesingle{} \mbox{\hyperlink{class_d_s_p}{D\+SP}} source), if already allocated in the factories cache and increment it\textquotesingle{}s reference counter. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement the reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sha\+\_\+key} & -\/ the S\+HA key for an already created factory, kept in the factory cache\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory if one is associated with the S\+HA key, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga60042089f42a210d68a436f901dcb5d5}\label{group__llvm_ga60042089f42a210d68a436f901dcb5d5}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCDSPFactoryIncludePathnames@{getCDSPFactoryIncludePathnames}}
+\index{getCDSPFactoryIncludePathnames@{getCDSPFactoryIncludePathnames}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCDSPFactoryIncludePathnames()}{getCDSPFactoryIncludePathnames()}}
+{\footnotesize\ttfamily const char$\ast$$\ast$ get\+C\+D\+S\+P\+Factory\+Include\+Pathnames (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Get the list of all used includes as a null-\/terminated array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the includes list (the array and it\textquotesingle{}s content has to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gaa3938e8a42c1aa985d9f45383f73cf46}\label{group__llvm_gaa3938e8a42c1aa985d9f45383f73cf46}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCDSPFactoryLibraryList@{getCDSPFactoryLibraryList}}
+\index{getCDSPFactoryLibraryList@{getCDSPFactoryLibraryList}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCDSPFactoryLibraryList()}{getCDSPFactoryLibraryList()}}
+{\footnotesize\ttfamily const char$\ast$$\ast$ get\+C\+D\+S\+P\+Factory\+Library\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Get the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory list of library dependancies as a null-\/terminated array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the library dependancies (the array and it\textquotesingle{}s content has to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga613fde5fad90a5cc7057cf74c9063806}\label{group__llvm_ga613fde5fad90a5cc7057cf74c9063806}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCDSPMachineTarget@{getCDSPMachineTarget}}
+\index{getCDSPMachineTarget@{getCDSPMachineTarget}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCDSPMachineTarget()}{getCDSPMachineTarget()}}
+{\footnotesize\ttfamily char$\ast$ get\+C\+D\+S\+P\+Machine\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the target (triple + C\+PU) of the machine.
+
+\begin{DoxyReturn}{Returns}
+the target as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga4dc6a8a1408922d179a375f4625c9411}\label{group__llvm_ga4dc6a8a1408922d179a375f4625c9411}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCLibFaustVersion@{getCLibFaustVersion}}
+\index{getCLibFaustVersion@{getCLibFaustVersion}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCLibFaustVersion()}{getCLibFaustVersion()}}
+{\footnotesize\ttfamily const char$\ast$ get\+C\+Lib\+Faust\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the library version.
+
+\begin{DoxyReturn}{Returns}
+the library version as a static string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga872a7c72d2a94f122fd645397a03098e}\label{group__llvm_ga872a7c72d2a94f122fd645397a03098e}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCName@{getCName}}
+\index{getCName@{getCName}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCName()}{getCName()}}
+{\footnotesize\ttfamily char$\ast$ get\+C\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Returns factory name \+: either the name declared in \mbox{\hyperlink{class_d_s_p}{D\+SP}} with \mbox{[}declare name \char`\"{}foo\char`\"{}\mbox{]} syntax or \textquotesingle{}filename\textquotesingle{} (if create\+D\+S\+P\+Factory\+From\+File is used) or \textquotesingle{}name\+\_\+app\textquotesingle{} (if create\+D\+S\+P\+Factory\+From\+String is used)
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga5d3b6dce974a1c674c4697acdd196089}\label{group__llvm_ga5d3b6dce974a1c674c4697acdd196089}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCSHAKey@{getCSHAKey}}
+\index{getCSHAKey@{getCSHAKey}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCSHAKey()}{getCSHAKey()}}
+{\footnotesize\ttfamily char$\ast$ get\+C\+S\+H\+A\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Get the S\+HA Key of the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the S\+HA key as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga44c75348facf7cfd6a72192dfb765063}\label{group__llvm_ga44c75348facf7cfd6a72192dfb765063}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getCTarget@{getCTarget}}
+\index{getCTarget@{getCTarget}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getCTarget()}{getCTarget()}}
+{\footnotesize\ttfamily char$\ast$ get\+C\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Get the L\+L\+VM target of the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the L\+L\+VM target as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gaa64a14c8f7f4b5e8a383ece913674aff}\label{group__llvm_gaa64a14c8f7f4b5e8a383ece913674aff}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!getNumInputsCDSPInstance@{getNumInputsCDSPInstance}}
+\index{getNumInputsCDSPInstance@{getNumInputsCDSPInstance}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{getNumInputsCDSPInstance()}{getNumInputsCDSPInstance()}}
+{\footnotesize\ttfamily int get\+Num\+Inputs\+C\+D\+S\+P\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp}{llvm\+\_\+dsp}} $\ast$}]{dsp }\end{DoxyParamCaption})}
+
+Instance functions. \mbox{\Hypertarget{group__llvm_ga83bfc0e61b1c10148f71bb1272ebd01c}\label{group__llvm_ga83bfc0e61b1c10148f71bb1272ebd01c}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!readCDSPFactoryFromBitcode@{readCDSPFactoryFromBitcode}}
+\index{readCDSPFactoryFromBitcode@{readCDSPFactoryFromBitcode}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{readCDSPFactoryFromBitcode()}{readCDSPFactoryFromBitcode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ read\+C\+D\+S\+P\+Factory\+From\+Bitcode (\begin{DoxyParamCaption}\item[{const char $\ast$}]{bit\+\_\+code,  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{int}]{opt\+\_\+level }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a base64 encoded L\+L\+VM bitcode string. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is the same L\+L\+VM bitcode string) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+code} & -\/ the L\+L\+VM bitcode string \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em opt\+\_\+level} & -\/ L\+L\+VM IR to IR optimization level (from -\/1 to 4, -\/1 means \textquotesingle{}maximum possible value\textquotesingle{} since the maximum value may change with new L\+L\+VM versions), a higher value than the one used when calling create\+D\+S\+P\+Factory can possibly be used.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gab4d9cbb9e53ab1b514cbb9318a6667a5}\label{group__llvm_gab4d9cbb9e53ab1b514cbb9318a6667a5}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!readCDSPFactoryFromBitcodeFile@{readCDSPFactoryFromBitcodeFile}}
+\index{readCDSPFactoryFromBitcodeFile@{readCDSPFactoryFromBitcodeFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{readCDSPFactoryFromBitcodeFile()}{readCDSPFactoryFromBitcodeFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ read\+C\+D\+S\+P\+Factory\+From\+Bitcode\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{bit\+\_\+code\+\_\+path,  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{int}]{opt\+\_\+level }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a L\+L\+VM bitcode file. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is the same L\+L\+VM bitcode file) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+code\+\_\+path} & -\/ the L\+L\+VM bitcode file pathname \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em opt\+\_\+level} & -\/ L\+L\+VM IR to IR optimization level (from -\/1 to 4, -\/1 means \textquotesingle{}maximum possible value\textquotesingle{} since the maximum value may change with new L\+L\+VM versions). A higher value than the one used when calling create\+D\+S\+P\+Factory can possibly be used.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gae3fcb574277be648a99b63cc5a7e9c0d}\label{group__llvm_gae3fcb574277be648a99b63cc5a7e9c0d}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!readCDSPFactoryFromIR@{readCDSPFactoryFromIR}}
+\index{readCDSPFactoryFromIR@{readCDSPFactoryFromIR}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{readCDSPFactoryFromIR()}{readCDSPFactoryFromIR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ read\+C\+D\+S\+P\+Factory\+From\+IR (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ir\+\_\+code,  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{int}]{opt\+\_\+level }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a L\+L\+VM IR (textual) string. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is the same L\+L\+VM IR string) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ir\+\_\+code} & -\/ the L\+L\+VM IR (textual) string \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em opt\+\_\+level} & -\/ L\+L\+VM IR to IR optimization level (from -\/1 to 4, -\/1 means \textquotesingle{}maximum possible value\textquotesingle{}). A higher value than the one used when calling create\+D\+S\+P\+Factory can possibly be used\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga4eff35fedd4113cbc6dcbe54d7b510c8}\label{group__llvm_ga4eff35fedd4113cbc6dcbe54d7b510c8}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!readCDSPFactoryFromIRFile@{readCDSPFactoryFromIRFile}}
+\index{readCDSPFactoryFromIRFile@{readCDSPFactoryFromIRFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{readCDSPFactoryFromIRFile()}{readCDSPFactoryFromIRFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ read\+C\+D\+S\+P\+Factory\+From\+I\+R\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ir\+\_\+code\+\_\+path,  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{int}]{opt\+\_\+level }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a L\+L\+VM IR (textual) file. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is the same L\+L\+VM IR file) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ir\+\_\+code\+\_\+path} & -\/ the L\+L\+VM IR (textual) file pathname \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em opt\+\_\+level} & -\/ L\+L\+VM IR to IR optimization level (from -\/1 to 4, -\/1 means \textquotesingle{}maximum possible value\textquotesingle{} since the maximum value may change with new L\+L\+VM versions). A higher value than the one used when calling create\+D\+S\+P\+Factory can possibly be used.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gab1a82d7ead99c4a82bc907c6260521fa}\label{group__llvm_gab1a82d7ead99c4a82bc907c6260521fa}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!readCDSPFactoryFromMachine@{readCDSPFactoryFromMachine}}
+\index{readCDSPFactoryFromMachine@{readCDSPFactoryFromMachine}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{readCDSPFactoryFromMachine()}{readCDSPFactoryFromMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ read\+C\+D\+S\+P\+Factory\+From\+Machine (\begin{DoxyParamCaption}\item[{const char $\ast$}]{machine\+\_\+code,  }\item[{char $\ast$}]{error\+\_\+msg,  }\item[{const char $\ast$}]{target }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a base64 encoded machine code string. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is the same machine code string) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em machine\+\_\+code} & -\/ the machine code string \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga6046af111e4a2a385deca98a27d0b4d0}\label{group__llvm_ga6046af111e4a2a385deca98a27d0b4d0}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!readCDSPFactoryFromMachineFile@{readCDSPFactoryFromMachineFile}}
+\index{readCDSPFactoryFromMachineFile@{readCDSPFactoryFromMachineFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{readCDSPFactoryFromMachineFile()}{readCDSPFactoryFromMachineFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}}$\ast$ read\+C\+D\+S\+P\+Factory\+From\+Machine\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{machine\+\_\+code\+\_\+path,  }\item[{const char $\ast$}]{target,  }\item[{char $\ast$}]{error\+\_\+msg }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory from a machine code file. Note that the library keeps an internal cache of all allocated factories so that the compilation of the same \mbox{\hyperlink{class_d_s_p}{D\+SP}} code (that is the same machine code file) will return the same (reference counted) factory pointer. You will have to explicitly use delete\+C\+D\+S\+P\+Factory to properly decrement reference counter when the factory is no more needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em machine\+\_\+code\+\_\+path} & -\/ the machine code file pathname \\
+\hline
+{\em error\+\_\+msg} & -\/ the error string to be filled, has to be 4096 characters long \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory on success, otherwise a null pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga11cc140b8daed2b941c4fba9bfa066a9}\label{group__llvm_ga11cc140b8daed2b941c4fba9bfa066a9}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!startMTDSPFactories@{startMTDSPFactories}}
+\index{startMTDSPFactories@{startMTDSPFactories}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{startMTDSPFactories()}{startMTDSPFactories()}}
+{\footnotesize\ttfamily bool start\+M\+T\+D\+S\+P\+Factories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Start multi-\/thread access mode (since by default the library is not \textquotesingle{}multi-\/thread\textquotesingle{} safe).
+
+\begin{DoxyReturn}{Returns}
+true if \textquotesingle{}multi-\/thread\textquotesingle{} safe access is started. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gaec77a539b5c02d32965968a453c3626a}\label{group__llvm_gaec77a539b5c02d32965968a453c3626a}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!stopMTDSPFactories@{stopMTDSPFactories}}
+\index{stopMTDSPFactories@{stopMTDSPFactories}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{stopMTDSPFactories()}{stopMTDSPFactories()}}
+{\footnotesize\ttfamily void stop\+M\+T\+D\+S\+P\+Factories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stop multi-\/thread access mode. \mbox{\Hypertarget{group__llvm_ga83297bb1300a9b104c83838e5845af48}\label{group__llvm_ga83297bb1300a9b104c83838e5845af48}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!writeCDSPFactoryToBitcode@{writeCDSPFactoryToBitcode}}
+\index{writeCDSPFactoryToBitcode@{writeCDSPFactoryToBitcode}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{writeCDSPFactoryToBitcode()}{writeCDSPFactoryToBitcode()}}
+{\footnotesize\ttfamily char$\ast$ write\+C\+D\+S\+P\+Factory\+To\+Bitcode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Write a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory into a base64 encoded L\+L\+VM bitcode string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the L\+L\+VM bitcode as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga196c67a537d91bf5f6bb485e02439077}\label{group__llvm_ga196c67a537d91bf5f6bb485e02439077}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!writeCDSPFactoryToBitcodeFile@{writeCDSPFactoryToBitcodeFile}}
+\index{writeCDSPFactoryToBitcodeFile@{writeCDSPFactoryToBitcodeFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{writeCDSPFactoryToBitcodeFile()}{writeCDSPFactoryToBitcodeFile()}}
+{\footnotesize\ttfamily bool write\+C\+D\+S\+P\+Factory\+To\+Bitcode\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory,  }\item[{const char $\ast$}]{bit\+\_\+code\+\_\+path }\end{DoxyParamCaption})}
+
+Write a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory into a L\+L\+VM bitcode file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory \\
+\hline
+{\em bit\+\_\+code\+\_\+path} & -\/ the L\+L\+VM bitcode file pathname\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga55119d0ea98094966f4bf85cce9714c4}\label{group__llvm_ga55119d0ea98094966f4bf85cce9714c4}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!writeCDSPFactoryToIR@{writeCDSPFactoryToIR}}
+\index{writeCDSPFactoryToIR@{writeCDSPFactoryToIR}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{writeCDSPFactoryToIR()}{writeCDSPFactoryToIR()}}
+{\footnotesize\ttfamily char$\ast$ write\+C\+D\+S\+P\+Factory\+To\+IR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Write a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory into a L\+L\+VM IR (textual) string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the L\+L\+VM IR (textual) as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga70a1b7bade383544668284f1708d7e2f}\label{group__llvm_ga70a1b7bade383544668284f1708d7e2f}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!writeCDSPFactoryToIRFile@{writeCDSPFactoryToIRFile}}
+\index{writeCDSPFactoryToIRFile@{writeCDSPFactoryToIRFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{writeCDSPFactoryToIRFile()}{writeCDSPFactoryToIRFile()}}
+{\footnotesize\ttfamily bool write\+C\+D\+S\+P\+Factory\+To\+I\+R\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory,  }\item[{const char $\ast$}]{ir\+\_\+code\+\_\+path }\end{DoxyParamCaption})}
+
+Write a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory into a L\+L\+VM IR (textual) file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory \\
+\hline
+{\em ir\+\_\+code\+\_\+path} & -\/ the L\+L\+VM bitcode file pathname.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_ga71605e18c01e22ed1e091fa9b3005b01}\label{group__llvm_ga71605e18c01e22ed1e091fa9b3005b01}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!writeCDSPFactoryToMachine@{writeCDSPFactoryToMachine}}
+\index{writeCDSPFactoryToMachine@{writeCDSPFactoryToMachine}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{writeCDSPFactoryToMachine()}{writeCDSPFactoryToMachine()}}
+{\footnotesize\ttfamily char$\ast$ write\+C\+D\+S\+P\+Factory\+To\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory,  }\item[{const char $\ast$}]{target }\end{DoxyParamCaption})}
+
+Write a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory into a base64 encoded machine code string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the machine code as a string (to be deleted by the caller using free\+C\+Memory). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__llvm_gaea475031a5d7cce515b159de29f6c689}\label{group__llvm_gaea475031a5d7cce515b159de29f6c689}} 
+\index{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}!writeCDSPFactoryToMachineFile@{writeCDSPFactoryToMachineFile}}
+\index{writeCDSPFactoryToMachineFile@{writeCDSPFactoryToMachineFile}!C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.@{C interface for compiling Faust code. Note that the API is not thread safe : use \textquotesingle{}startMTDSPFactories/stopMTDSPFactories\textquotesingle{} to use it in a multi-\/thread context.}}
+\doxysubsubsection{\texorpdfstring{writeCDSPFactoryToMachineFile()}{writeCDSPFactoryToMachineFile()}}
+{\footnotesize\ttfamily bool write\+C\+D\+S\+P\+Factory\+To\+Machine\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structllvm__dsp__factory}{llvm\+\_\+dsp\+\_\+factory}} $\ast$}]{factory,  }\item[{const char $\ast$}]{machine\+\_\+code\+\_\+path,  }\item[{const char $\ast$}]{target }\end{DoxyParamCaption})}
+
+Write a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory into a machine code file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & -\/ the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} factory \\
+\hline
+{\em machine\+\_\+code\+\_\+path} & -\/ the machine code file pathname \\
+\hline
+{\em target} & -\/ the L\+L\+VM machine target\+: like \textquotesingle{}i386-\/apple-\/macosx10.\+6.\+0\+:opteron\textquotesingle{}, using an empty string takes the current machine settings, and i386-\/apple-\/macosx10.\+6.\+0\+:generic kind of syntax for a generic processor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false on failure. 
+\end{DoxyReturn}

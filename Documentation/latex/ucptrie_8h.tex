@@ -1,0 +1,743 @@
+\hypertarget{ucptrie_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ucptrie.h File Reference}
+\label{ucptrie_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ucptrie.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ucptrie.h}}
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/ucpmap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/utf8.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_u_c_p_trie_data}{U\+C\+P\+Trie\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_ad8a8583a1ba1f1d43049d11c24be45ca}{U\+C\+P\+T\+R\+I\+E\+\_\+16}}(trie,  i)~((trie)-\/$>$data.\+ptr16\mbox{[}i\mbox{]})
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_ac483af4cb261ba7d72e5d64f0e121d6a}{U\+C\+P\+T\+R\+I\+E\+\_\+32}}(trie,  i)~((trie)-\/$>$data.\+ptr32\mbox{[}i\mbox{]})
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a21da8c1396f9ebbd3f612c8cc222d240}{U\+C\+P\+T\+R\+I\+E\+\_\+8}}(trie,  i)~((trie)-\/$>$data.\+ptr8\mbox{[}i\mbox{]})
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a46017f54183600938e79ba84b9bcd178}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+G\+ET}}(trie,  data\+Access,  c)~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+C\+P\+\_\+\+I\+N\+D\+EX}}(trie, 0xffff, c))
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a7a87c5c6cb0b1233e10f063413f9d003}{U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+G\+ET}}(trie,  data\+Access,  c)~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+C\+P\+\_\+\+I\+N\+D\+EX}}(trie, U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+M\+AX, c))
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a8dec4ebf430a0322953b0de5d50179e8}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U16\+\_\+\+N\+E\+XT}}(trie,  data\+Access,  src,  limit,  c,  result)
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a932a432c7936a1b03cc2f453e8d3836e}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U16\+\_\+\+P\+R\+EV}}(trie,  data\+Access,  start,  src,  c,  result)
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_ab75bf3d4d7b9d698464fac7e83bf7c2c}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U8\+\_\+\+N\+E\+XT}}(trie,  data\+Access,  src,  limit,  result)
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a194bc0279a0c22564199e2b5eef130ad}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U8\+\_\+\+P\+R\+EV}}(trie,  data\+Access,  start,  src,  result)
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_ac02216670afc74dc60cc91161c63913b}{U\+C\+P\+T\+R\+I\+E\+\_\+\+A\+S\+C\+I\+I\+\_\+\+G\+ET}}(trie,  data\+Access,  c)~data\+Access(trie, c)
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_ad33ea71b55eb2570bbc48faa51e58806}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+B\+M\+P\+\_\+\+G\+ET}}(trie,  data\+Access,  c)~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+I\+N\+D\+EX}}(trie, c))
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a14732d865095e395373bb9a8f43b7ef2}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+S\+U\+P\+P\+\_\+\+G\+ET}}(trie,  data\+Access,  c)~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+I\+N\+D\+EX}}(trie, c))
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+I\+N\+D\+EX}}(trie,  c)~((int32\+\_\+t)(trie)-\/$>$index\mbox{[}(c) $>$$>$ U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+S\+H\+I\+FT\mbox{]} + ((c) \& \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a293ed7da81b9423ad6290cc02ecaf9f3}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+M\+A\+SK}}))
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+I\+N\+D\+EX}}(trie,  c)
+\item 
+\#define \mbox{\hyperlink{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+C\+P\+\_\+\+I\+N\+D\+EX}}(trie,  fast\+Max,  c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ucptrie_8h_af27c110650f733a43034ca49ba60ff05}\label{ucptrie_8h_af27c110650f733a43034ca49ba60ff05}} 
+typedef union \mbox{\hyperlink{union_u_c_p_trie_data}{U\+C\+P\+Trie\+Data}} {\bfseries U\+C\+P\+Trie\+Data}
+\item 
+\mbox{\Hypertarget{ucptrie_8h_a944cdfca114a5a0468fbd6c8f5f75e85}\label{ucptrie_8h_a944cdfca114a5a0468fbd6c8f5f75e85}} 
+typedef struct \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} {\bfseries U\+C\+P\+Trie}
+\item 
+\mbox{\Hypertarget{ucptrie_8h_a65d6bcb1f5ffac4f99cda32dc8d45267}\label{ucptrie_8h_a65d6bcb1f5ffac4f99cda32dc8d45267}} 
+typedef enum \mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}} {\bfseries U\+C\+P\+Trie\+Type}
+\item 
+\mbox{\Hypertarget{ucptrie_8h_a9af17b5797f678e997163085f8754bc1}\label{ucptrie_8h_a9af17b5797f678e997163085f8754bc1}} 
+typedef enum \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}} {\bfseries U\+C\+P\+Trie\+Value\+Width}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}} \{ \mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465ae4474d990fe030905ffb0c11f3454b90}{U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+NY}} = -\/1, 
+\mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465a0fc3f23899946bd2df3ff03adafbb032}{U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST}}, 
+\mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465a75efbaba0dfeabdce18f7adff32f74f5}{U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+M\+A\+LL}}
+ \}
+\item 
+enum \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}} \{ \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea03c8d65a443bf9af5fbf8c321c764285}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+\+A\+NY}} = -\/1, 
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea8aedbe482494a508cb3e703efe873aa7}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+16}}, 
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ead3835bbac363a881d36886afb4a91698}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+32}}, 
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea04f3f0f8a4777631d6de33be33cd722e}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+8}}
+ \}
+\item 
+enum \{ \newline
+{\bfseries U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+S\+H\+I\+FT} = 6, 
+\mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a4471b6b2154c7b004a037e13f0fc7887}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH}} = 1 $<$$<$ U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+S\+H\+I\+FT, 
+\mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a293ed7da81b9423ad6290cc02ecaf9f3}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+M\+A\+SK}} = U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH -\/ 1, 
+{\bfseries U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+M\+AX} = 0xfff, 
+\newline
+\mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}{U\+C\+P\+T\+R\+I\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+V\+A\+L\+U\+E\+\_\+\+N\+E\+G\+\_\+\+D\+A\+T\+A\+\_\+\+O\+F\+F\+S\+ET}} = 1, 
+\mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a88b4fb07ca1e3cd2d3346e80ac2caf56}{U\+C\+P\+T\+R\+I\+E\+\_\+\+H\+I\+G\+H\+\_\+\+V\+A\+L\+U\+E\+\_\+\+N\+E\+G\+\_\+\+D\+A\+T\+A\+\_\+\+O\+F\+F\+S\+ET}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary}} (\mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}} type, \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}} value\+Width, const void $\ast$data, int32\+\_\+t length, int32\+\_\+t $\ast$p\+Actual\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_ab6f5b8ade1e1d8328b7202f312898ddc}{ucptrie\+\_\+close}} (\mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_ac5c3a74beb0bdc8a19178f8507ebdb23}{ucptrie\+\_\+get\+Type}} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_a7433748ced09723024c265ea9fcfc5df}{ucptrie\+\_\+get\+Value\+Width}} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_a5c16c96db177d21975903f09af68de83}{ucptrie\+\_\+get}} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_a8501108c00e34242da52283017ee8ca3}{ucptrie\+\_\+get\+Range}} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} start, \mbox{\hyperlink{ucpmap_8h_aa32ef75912d4bbf21792256d17f16b9c}{U\+C\+P\+Map\+Range\+Option}} \mbox{\hyperlink{structoption}{option}}, uint32\+\_\+t surrogate\+Value, \mbox{\hyperlink{ucpmap_8h_a7e235b224b87244fb548304f9f15b3e9}{U\+C\+P\+Map\+Value\+Filter}} $\ast$filter, const void $\ast$context, uint32\+\_\+t $\ast$p\+Value)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_afdea3c6d0cec0b665f6495d57532014e}{ucptrie\+\_\+to\+Binary}} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie, void $\ast$data, int32\+\_\+t capacity, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\Hypertarget{ucptrie_8h_a78779c0cec2ff957264f29822c3853c3}\label{ucptrie_8h_a78779c0cec2ff957264f29822c3853c3}} 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 {\bfseries ucptrie\+\_\+internal\+Small\+Index} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c)
+\item 
+\mbox{\Hypertarget{ucptrie_8h_ad738fb672ba646bc2a1350f681c79fc2}\label{ucptrie_8h_ad738fb672ba646bc2a1350f681c79fc2}} 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 {\bfseries ucptrie\+\_\+internal\+Small\+U8\+Index} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie, int32\+\_\+t lt1, uint8\+\_\+t t2, uint8\+\_\+t t3)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucptrie_8h_a6bd7f4445c27fddaebe93dde4c6c6881}{ucptrie\+\_\+internal\+U8\+Prev\+Index}} (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$trie, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c, const uint8\+\_\+t $\ast$start, const uint8\+\_\+t $\ast$src)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines an immutable Unicode code point trie.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} 
+
+\mbox{\hyperlink{umutablecptrie_8h_ad8945cf34ca9d40596a66a1395baa19b}{U\+Mutable\+C\+P\+Trie}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}\label{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}} 
+\index{ucptrie.h@{ucptrie.h}!\_UCPTRIE\_CP\_INDEX@{\_UCPTRIE\_CP\_INDEX}}
+\index{\_UCPTRIE\_CP\_INDEX@{\_UCPTRIE\_CP\_INDEX}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{\_UCPTRIE\_CP\_INDEX}{\_UCPTRIE\_CP\_INDEX}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+C\+P\+\_\+\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{fast\+Max,  }\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}})(c) <= (\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}})(fastMax) ? \(\backslash\)}
+\DoxyCodeLine{        \_UCPTRIE\_FAST\_INDEX(trie, c) : \(\backslash\)}
+\DoxyCodeLine{        (uint32\_t)(c) <= 0x10ffff ? \(\backslash\)}
+\DoxyCodeLine{            \mbox{\hyperlink{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}{\_UCPTRIE\_SMALL\_INDEX}}(trie, c) : \(\backslash\)}
+\DoxyCodeLine{            (trie)-\/>dataLength -\/ \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET}})}
+
+\end{DoxyCode}
+Internal trie getter for a code point, with checking that c is in U+0000..10F\+F\+FF. Returns the data index. \mbox{\Hypertarget{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}\label{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}} 
+\index{ucptrie.h@{ucptrie.h}!\_UCPTRIE\_FAST\_INDEX@{\_UCPTRIE\_FAST\_INDEX}}
+\index{\_UCPTRIE\_FAST\_INDEX@{\_UCPTRIE\_FAST\_INDEX}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{\_UCPTRIE\_FAST\_INDEX}{\_UCPTRIE\_FAST\_INDEX}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{c }\end{DoxyParamCaption})~((int32\+\_\+t)(trie)-\/$>$index\mbox{[}(c) $>$$>$ U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+S\+H\+I\+FT\mbox{]} + ((c) \& \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a293ed7da81b9423ad6290cc02ecaf9f3}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+M\+A\+SK}}))}
+
+Internal trie getter for a code point below the fast limit. Returns the data index. \mbox{\Hypertarget{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}\label{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}} 
+\index{ucptrie.h@{ucptrie.h}!\_UCPTRIE\_SMALL\_INDEX@{\_UCPTRIE\_SMALL\_INDEX}}
+\index{\_UCPTRIE\_SMALL\_INDEX@{\_UCPTRIE\_SMALL\_INDEX}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{\_UCPTRIE\_SMALL\_INDEX}{\_UCPTRIE\_SMALL\_INDEX}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+I\+N\+D\+EX(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{c }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    ((c) >= (trie)-\/>highStart ? \(\backslash\)}
+\DoxyCodeLine{        (trie)-\/>dataLength -\/ \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a88b4fb07ca1e3cd2d3346e80ac2caf56}{UCPTRIE\_HIGH\_VALUE\_NEG\_DATA\_OFFSET}} : \(\backslash\)}
+\DoxyCodeLine{        ucptrie\_internalSmallIndex(trie, c))}
+
+\end{DoxyCode}
+Internal trie getter for a code point at or above the fast limit. Returns the data index. \mbox{\Hypertarget{ucptrie_8h_ad8a8583a1ba1f1d43049d11c24be45ca}\label{ucptrie_8h_ad8a8583a1ba1f1d43049d11c24be45ca}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_16@{UCPTRIE\_16}}
+\index{UCPTRIE\_16@{UCPTRIE\_16}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_16}{UCPTRIE\_16}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+16(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{i }\end{DoxyParamCaption})~((trie)-\/$>$data.\+ptr16\mbox{[}i\mbox{]})}
+
+Macro parameter value for a trie with 16-\/bit data values. Use the name of this macro as a \char`\"{}data\+Access\char`\"{} parameter in other macros. Do not use this macro in any other way.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea8aedbe482494a508cb3e703efe873aa7}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+16}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucptrie_8h_ac483af4cb261ba7d72e5d64f0e121d6a}\label{ucptrie_8h_ac483af4cb261ba7d72e5d64f0e121d6a}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_32@{UCPTRIE\_32}}
+\index{UCPTRIE\_32@{UCPTRIE\_32}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_32}{UCPTRIE\_32}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+32(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{i }\end{DoxyParamCaption})~((trie)-\/$>$data.\+ptr32\mbox{[}i\mbox{]})}
+
+Macro parameter value for a trie with 32-\/bit data values. Use the name of this macro as a \char`\"{}data\+Access\char`\"{} parameter in other macros. Do not use this macro in any other way.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ead3835bbac363a881d36886afb4a91698}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+32}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucptrie_8h_a21da8c1396f9ebbd3f612c8cc222d240}\label{ucptrie_8h_a21da8c1396f9ebbd3f612c8cc222d240}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_8@{UCPTRIE\_8}}
+\index{UCPTRIE\_8@{UCPTRIE\_8}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_8}{UCPTRIE\_8}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+8(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{i }\end{DoxyParamCaption})~((trie)-\/$>$data.\+ptr8\mbox{[}i\mbox{]})}
+
+Macro parameter value for a trie with 8-\/bit data values. Use the name of this macro as a \char`\"{}data\+Access\char`\"{} parameter in other macros. Do not use this macro in any other way.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea04f3f0f8a4777631d6de33be33cd722e}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+8}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucptrie_8h_ac02216670afc74dc60cc91161c63913b}\label{ucptrie_8h_ac02216670afc74dc60cc91161c63913b}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_ASCII\_GET@{UCPTRIE\_ASCII\_GET}}
+\index{UCPTRIE\_ASCII\_GET@{UCPTRIE\_ASCII\_GET}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_ASCII\_GET}{UCPTRIE\_ASCII\_GET}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+A\+S\+C\+I\+I\+\_\+\+G\+ET(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{c }\end{DoxyParamCaption})~data\+Access(trie, c)}
+
+Returns a trie value for an A\+S\+C\+II code point, without range checking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie (of either fast or small type) \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em c} & (U\+Char32, in) the input code point; must be U+0000..U+007F \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The A\+S\+C\+II code point\textquotesingle{}s trie value. @stable I\+CU 63 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucptrie_8h_ad33ea71b55eb2570bbc48faa51e58806}\label{ucptrie_8h_ad33ea71b55eb2570bbc48faa51e58806}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_BMP\_GET@{UCPTRIE\_FAST\_BMP\_GET}}
+\index{UCPTRIE\_FAST\_BMP\_GET@{UCPTRIE\_FAST\_BMP\_GET}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_BMP\_GET}{UCPTRIE\_FAST\_BMP\_GET}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+B\+M\+P\+\_\+\+G\+ET(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{c }\end{DoxyParamCaption})~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+I\+N\+D\+EX}}(trie, c))}
+
+Returns a trie value for a B\+MP code point (U+0000..U+\+F\+F\+FF), without range checking. Can be used to look up a value for a U\+T\+F-\/16 code unit if other parts of the string processing check for surrogates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em c} & (U\+Char32, in) the input code point, must be U+0000..U+\+F\+F\+FF \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The B\+MP code point\textquotesingle{}s trie value. @stable I\+CU 63 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucptrie_8h_a46017f54183600938e79ba84b9bcd178}\label{ucptrie_8h_a46017f54183600938e79ba84b9bcd178}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_GET@{UCPTRIE\_FAST\_GET}}
+\index{UCPTRIE\_FAST\_GET@{UCPTRIE\_FAST\_GET}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_GET}{UCPTRIE\_FAST\_GET}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+G\+ET(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{c }\end{DoxyParamCaption})~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+C\+P\+\_\+\+I\+N\+D\+EX}}(trie, 0xffff, c))}
+
+Returns a trie value for a code point, with range checking. Returns the trie error value if c is not in the range 0..U+10\+F\+F\+FF.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em c} & (U\+Char32, in) the input code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The code point\textquotesingle{}s trie value. @stable I\+CU 63 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucptrie_8h_a14732d865095e395373bb9a8f43b7ef2}\label{ucptrie_8h_a14732d865095e395373bb9a8f43b7ef2}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_SUPP\_GET@{UCPTRIE\_FAST\_SUPP\_GET}}
+\index{UCPTRIE\_FAST\_SUPP\_GET@{UCPTRIE\_FAST\_SUPP\_GET}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_SUPP\_GET}{UCPTRIE\_FAST\_SUPP\_GET}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+S\+U\+P\+P\+\_\+\+G\+ET(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{c }\end{DoxyParamCaption})~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+I\+N\+D\+EX}}(trie, c))}
+
+Returns a trie value for a supplementary code point (U+10000..U+10\+F\+F\+FF), without range checking.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em c} & (U\+Char32, in) the input code point, must be U+10000..U+10\+F\+F\+FF \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The supplementary code point\textquotesingle{}s trie value. @stable I\+CU 63 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucptrie_8h_a8dec4ebf430a0322953b0de5d50179e8}\label{ucptrie_8h_a8dec4ebf430a0322953b0de5d50179e8}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_U16\_NEXT@{UCPTRIE\_FAST\_U16\_NEXT}}
+\index{UCPTRIE\_FAST\_U16\_NEXT@{UCPTRIE\_FAST\_U16\_NEXT}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_U16\_NEXT}{UCPTRIE\_FAST\_U16\_NEXT}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U16\+\_\+\+N\+E\+XT(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{src,  }\item[{}]{limit,  }\item[{}]{c,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{umachine_8h_abfdc26d020b4fab3ed5ca2b98fe5df43}{UPRV\_BLOCK\_MACRO\_BEGIN}} \{ \(\backslash\)}
+\DoxyCodeLine{    (c) = *(src)++; \(\backslash\)}
+\DoxyCodeLine{    int32\_t \_\_index; \(\backslash\)}
+\DoxyCodeLine{    if (!\mbox{\hyperlink{utf16_8h_ac25b589c0c9b60160d357770fad39cea}{U16\_IS\_SURROGATE}}(c)) \{ \(\backslash\)}
+\DoxyCodeLine{        \_\_index = \mbox{\hyperlink{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}{\_UCPTRIE\_FAST\_INDEX}}(trie, c); \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{        uint16\_t \_\_c2; \(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{utf16_8h_a6e141a548138e8c24822d219b7e06cb4}{U16\_IS\_SURROGATE\_LEAD}}(c) \&\& (src) != (limit) \&\& \mbox{\hyperlink{utf16_8h_afe8d9f450b9297897f018c2f23eb0724}{U16\_IS\_TRAIL}}(\_\_c2 = *(src))) \{ \(\backslash\)}
+\DoxyCodeLine{            ++(src); \(\backslash\)}
+\DoxyCodeLine{            (c) = \mbox{\hyperlink{utf16_8h_ac1deffbf1956d9fe696129515e88f006}{U16\_GET\_SUPPLEMENTARY}}((c), \_\_c2); \(\backslash\)}
+\DoxyCodeLine{            \_\_index = \mbox{\hyperlink{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}{\_UCPTRIE\_SMALL\_INDEX}}(trie, c); \(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{            \_\_index = (trie)-\/>dataLength -\/ \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET}}; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    (result) = dataAccess(trie, \_\_index); \(\backslash\)}
+\DoxyCodeLine{\} \mbox{\hyperlink{umachine_8h_a983e6cc57f8c1b0c5b9ad9ceb290418a}{UPRV\_BLOCK\_MACRO\_END}}}
+
+\end{DoxyCode}
+U\+T\+F-\/16\+: Reads the next code point (U\+Char32 c, out), post-\/increments src, and gets a value from the trie. Sets the trie error value if c is an unpaired surrogate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em src} & (const U\+Char $\ast$, in/out) the source text pointer \\
+\hline
+{\em limit} & (const U\+Char $\ast$, in) the limit pointer for the text, or N\+U\+LL if N\+U\+L-\/terminated \\
+\hline
+{\em c} & (U\+Char32, out) variable for the code point \\
+\hline
+{\em result} & (out) variable for the trie lookup result @stable I\+CU 63 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ucptrie_8h_a932a432c7936a1b03cc2f453e8d3836e}\label{ucptrie_8h_a932a432c7936a1b03cc2f453e8d3836e}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_U16\_PREV@{UCPTRIE\_FAST\_U16\_PREV}}
+\index{UCPTRIE\_FAST\_U16\_PREV@{UCPTRIE\_FAST\_U16\_PREV}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_U16\_PREV}{UCPTRIE\_FAST\_U16\_PREV}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U16\+\_\+\+P\+R\+EV(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{start,  }\item[{}]{src,  }\item[{}]{c,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{umachine_8h_abfdc26d020b4fab3ed5ca2b98fe5df43}{UPRV\_BLOCK\_MACRO\_BEGIN}} \{ \(\backslash\)}
+\DoxyCodeLine{    (c) = *-\/-\/(src); \(\backslash\)}
+\DoxyCodeLine{    int32\_t \_\_index; \(\backslash\)}
+\DoxyCodeLine{    if (!\mbox{\hyperlink{utf16_8h_ac25b589c0c9b60160d357770fad39cea}{U16\_IS\_SURROGATE}}(c)) \{ \(\backslash\)}
+\DoxyCodeLine{        \_\_index = \mbox{\hyperlink{ucptrie_8h_aeb38fc7622a9684b38982cea5d9c2b99}{\_UCPTRIE\_FAST\_INDEX}}(trie, c); \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{        uint16\_t \_\_c2; \(\backslash\)}
+\DoxyCodeLine{        if (\mbox{\hyperlink{utf16_8h_a1da8c1409deafe3ac32a8ab506086c10}{U16\_IS\_SURROGATE\_TRAIL}}(c) \&\& (src) != (start) \&\& \mbox{\hyperlink{utf16_8h_ace839ae31a801fd9c53fa67c5f8b9144}{U16\_IS\_LEAD}}(\_\_c2 = *((src) -\/ 1))) \{ \(\backslash\)}
+\DoxyCodeLine{            -\/-\/(src); \(\backslash\)}
+\DoxyCodeLine{            (c) = \mbox{\hyperlink{utf16_8h_ac1deffbf1956d9fe696129515e88f006}{U16\_GET\_SUPPLEMENTARY}}(\_\_c2, (c)); \(\backslash\)}
+\DoxyCodeLine{            \_\_index = \mbox{\hyperlink{ucptrie_8h_abda83db54cad2f44596294cd5a87ce01}{\_UCPTRIE\_SMALL\_INDEX}}(trie, c); \(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{            \_\_index = (trie)-\/>dataLength -\/ \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET}}; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    (result) = dataAccess(trie, \_\_index); \(\backslash\)}
+\DoxyCodeLine{\} \mbox{\hyperlink{umachine_8h_a983e6cc57f8c1b0c5b9ad9ceb290418a}{UPRV\_BLOCK\_MACRO\_END}}}
+
+\end{DoxyCode}
+U\+T\+F-\/16\+: Reads the previous code point (U\+Char32 c, out), pre-\/decrements src, and gets a value from the trie. Sets the trie error value if c is an unpaired surrogate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em start} & (const U\+Char $\ast$, in) the start pointer for the text \\
+\hline
+{\em src} & (const U\+Char $\ast$, in/out) the source text pointer \\
+\hline
+{\em c} & (U\+Char32, out) variable for the code point \\
+\hline
+{\em result} & (out) variable for the trie lookup result @stable I\+CU 63 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ucptrie_8h_ab75bf3d4d7b9d698464fac7e83bf7c2c}\label{ucptrie_8h_ab75bf3d4d7b9d698464fac7e83bf7c2c}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_U8\_NEXT@{UCPTRIE\_FAST\_U8\_NEXT}}
+\index{UCPTRIE\_FAST\_U8\_NEXT@{UCPTRIE\_FAST\_U8\_NEXT}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_U8\_NEXT}{UCPTRIE\_FAST\_U8\_NEXT}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U8\+\_\+\+N\+E\+XT(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{src,  }\item[{}]{limit,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{umachine_8h_abfdc26d020b4fab3ed5ca2b98fe5df43}{UPRV\_BLOCK\_MACRO\_BEGIN}} \{ \(\backslash\)}
+\DoxyCodeLine{    int32\_t \_\_lead = (\mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}})*(src)++; \(\backslash\)}
+\DoxyCodeLine{    if (!\mbox{\hyperlink{utf8_8h_a8f3a9427d880458a9fa6b169a3cc1b3c}{U8\_IS\_SINGLE}}(\_\_lead)) \{ \(\backslash\)}
+\DoxyCodeLine{        uint8\_t \_\_t1, \_\_t2, \_\_t3; \(\backslash\)}
+\DoxyCodeLine{        if ((src) != (limit) \&\& \(\backslash\)}
+\DoxyCodeLine{            (\_\_lead >= 0xe0 ? \(\backslash\)}
+\DoxyCodeLine{                \_\_lead < 0xf0 ?  \textcolor{comment}{/* U+0800..U+FFFF except surrogates */} \(\backslash\)}
+\DoxyCodeLine{                    \mbox{\hyperlink{utf8_8h_aabfe8ee746b8025ec80ed1977e8ae3c6}{U8\_LEAD3\_T1\_BITS}}[\_\_lead \&= 0xf] \& (1 << ((\_\_t1 = *(src)) >> 5)) \&\& \(\backslash\)}
+\DoxyCodeLine{                    ++(src) != (limit) \&\& (\_\_t2 = *(src) -\/ 0x80) <= 0x3f \&\& \(\backslash\)}
+\DoxyCodeLine{                    (\_\_lead = ((int32\_t)(trie)-\/>index[(\_\_lead << 6) + (\_\_t1 \& 0x3f)]) + \_\_t2, 1) \(\backslash\)}
+\DoxyCodeLine{                :  \textcolor{comment}{/* U+10000..U+10FFFF */} \(\backslash\)}
+\DoxyCodeLine{                    (\_\_lead -\/= 0xf0) <= 4 \&\& \(\backslash\)}
+\DoxyCodeLine{                    \mbox{\hyperlink{utf8_8h_ab7b00ab82ca3e89d24c4088b2b4e9416}{U8\_LEAD4\_T1\_BITS}}[(\_\_t1 = *(src)) >> 4] \& (1 << \_\_lead) \&\& \(\backslash\)}
+\DoxyCodeLine{                    (\_\_lead = (\_\_lead << 6) | (\_\_t1 \& 0x3f), ++(src) != (limit)) \&\& \(\backslash\)}
+\DoxyCodeLine{                    (\_\_t2 = *(src) -\/ 0x80) <= 0x3f \&\& \(\backslash\)}
+\DoxyCodeLine{                    ++(src) != (limit) \&\& (\_\_t3 = *(src) -\/ 0x80) <= 0x3f \&\& \(\backslash\)}
+\DoxyCodeLine{                    (\_\_lead = \_\_lead >= (trie)-\/>shifted12HighStart ? \(\backslash\)}
+\DoxyCodeLine{                        (trie)-\/>dataLength -\/ \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a88b4fb07ca1e3cd2d3346e80ac2caf56}{UCPTRIE\_HIGH\_VALUE\_NEG\_DATA\_OFFSET}} : \(\backslash\)}
+\DoxyCodeLine{                        ucptrie\_internalSmallU8Index((trie), \_\_lead, \_\_t2, \_\_t3), 1) \(\backslash\)}
+\DoxyCodeLine{            :  \textcolor{comment}{/* U+0080..U+07FF */} \(\backslash\)}
+\DoxyCodeLine{                \_\_lead >= 0xc2 \&\& (\_\_t1 = *(src) -\/ 0x80) <= 0x3f \&\& \(\backslash\)}
+\DoxyCodeLine{                (\_\_lead = (int32\_t)(trie)-\/>index[\_\_lead \& 0x1f] + \_\_t1, 1))) \{ \(\backslash\)}
+\DoxyCodeLine{            ++(src); \(\backslash\)}
+\DoxyCodeLine{        \} \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{            \_\_lead = (trie)-\/>dataLength -\/ \mbox{\hyperlink{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET}};  \textcolor{comment}{/* ill-\/formed*/} \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    (result) = dataAccess(trie, \_\_lead); \(\backslash\)}
+\DoxyCodeLine{\} \mbox{\hyperlink{umachine_8h_a983e6cc57f8c1b0c5b9ad9ceb290418a}{UPRV\_BLOCK\_MACRO\_END}}}
+
+\end{DoxyCode}
+U\+T\+F-\/8\+: Post-\/increments src and gets a value from the trie. Sets the trie error value for an ill-\/formed byte sequence.
+
+Unlike \mbox{\hyperlink{ucptrie_8h_a8dec4ebf430a0322953b0de5d50179e8}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U16\+\_\+\+N\+E\+X\+T()}} this U\+T\+F-\/8 macro does not provide the code point because it would be more work to do so and is often not needed. If the trie value differs from the error value, then the byte sequence is well-\/formed, and the code point can be assembled without revalidation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em src} & (const char $\ast$, in/out) the source text pointer \\
+\hline
+{\em limit} & (const char $\ast$, in) the limit pointer for the text (must not be N\+U\+LL) \\
+\hline
+{\em result} & (out) variable for the trie lookup result @stable I\+CU 63 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ucptrie_8h_a194bc0279a0c22564199e2b5eef130ad}\label{ucptrie_8h_a194bc0279a0c22564199e2b5eef130ad}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_U8\_PREV@{UCPTRIE\_FAST\_U8\_PREV}}
+\index{UCPTRIE\_FAST\_U8\_PREV@{UCPTRIE\_FAST\_U8\_PREV}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_FAST\_U8\_PREV}{UCPTRIE\_FAST\_U8\_PREV}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U8\+\_\+\+P\+R\+EV(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{start,  }\item[{}]{src,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \mbox{\hyperlink{umachine_8h_abfdc26d020b4fab3ed5ca2b98fe5df43}{UPRV\_BLOCK\_MACRO\_BEGIN}} \{ \(\backslash\)}
+\DoxyCodeLine{    int32\_t \_\_index = (\mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}})*-\/-\/(src); \(\backslash\)}
+\DoxyCodeLine{    if (!\mbox{\hyperlink{utf8_8h_a8f3a9427d880458a9fa6b169a3cc1b3c}{U8\_IS\_SINGLE}}(\_\_index)) \{ \(\backslash\)}
+\DoxyCodeLine{        \_\_index = \mbox{\hyperlink{ucptrie_8h_a6bd7f4445c27fddaebe93dde4c6c6881}{ucptrie\_internalU8PrevIndex}}((trie), \_\_index, (\textcolor{keyword}{const} uint8\_t *)(start), \(\backslash\)}
+\DoxyCodeLine{                                              (\textcolor{keyword}{const} uint8\_t *)(src)); \(\backslash\)}
+\DoxyCodeLine{        (src) -\/= \_\_index \& 7; \(\backslash\)}
+\DoxyCodeLine{        \_\_index >>= 3; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    (result) = dataAccess(trie, \_\_index); \(\backslash\)}
+\DoxyCodeLine{\} \mbox{\hyperlink{umachine_8h_a983e6cc57f8c1b0c5b9ad9ceb290418a}{UPRV\_BLOCK\_MACRO\_END}}}
+
+\end{DoxyCode}
+U\+T\+F-\/8\+: Pre-\/decrements src and gets a value from the trie. Sets the trie error value for an ill-\/formed byte sequence.
+
+Unlike \mbox{\hyperlink{ucptrie_8h_a932a432c7936a1b03cc2f453e8d3836e}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U16\+\_\+\+P\+R\+E\+V()}} this U\+T\+F-\/8 macro does not provide the code point because it would be more work to do so and is often not needed. If the trie value differs from the error value, then the byte sequence is well-\/formed, and the code point can be assembled without revalidation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em start} & (const char $\ast$, in) the start pointer for the text \\
+\hline
+{\em src} & (const char $\ast$, in/out) the source text pointer \\
+\hline
+{\em result} & (out) variable for the trie lookup result @stable I\+CU 63 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ucptrie_8h_a7a87c5c6cb0b1233e10f063413f9d003}\label{ucptrie_8h_a7a87c5c6cb0b1233e10f063413f9d003}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_SMALL\_GET@{UCPTRIE\_SMALL\_GET}}
+\index{UCPTRIE\_SMALL\_GET@{UCPTRIE\_SMALL\_GET}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTRIE\_SMALL\_GET}{UCPTRIE\_SMALL\_GET}}
+{\footnotesize\ttfamily \#define U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+G\+ET(\begin{DoxyParamCaption}\item[{}]{trie,  }\item[{}]{data\+Access,  }\item[{}]{c }\end{DoxyParamCaption})~data\+Access(trie, \mbox{\hyperlink{ucptrie_8h_a9b0b0a213ca30162fb8ef4c0197b6b51}{\+\_\+\+U\+C\+P\+T\+R\+I\+E\+\_\+\+C\+P\+\_\+\+I\+N\+D\+EX}}(trie, U\+C\+P\+T\+R\+I\+E\+\_\+\+S\+M\+A\+L\+L\+\_\+\+M\+AX, c))}
+
+Returns a 16-\/bit trie value for a code point, with range checking. Returns the trie error value if c is not in the range U+0000..U+10\+F\+F\+FF.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & (const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$, in) the trie; must have type U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+M\+A\+LL \\
+\hline
+{\em data\+Access} & U\+C\+P\+T\+R\+I\+E\+\_\+16, U\+C\+P\+T\+R\+I\+E\+\_\+32, or U\+C\+P\+T\+R\+I\+E\+\_\+8 according to the trie’s value width \\
+\hline
+{\em c} & (U\+Char32, in) the input code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The code point\textquotesingle{}s trie value. @stable I\+CU 63 
+\end{DoxyReturn}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13}\label{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Internal implementation constants. These are needed for the A\+PI macros, but users should not use these directly. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_FAST\_DATA\_BLOCK\_LENGTH@{UCPTRIE\_FAST\_DATA\_BLOCK\_LENGTH}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_DATA\_BLOCK\_LENGTH@{UCPTRIE\_FAST\_DATA\_BLOCK\_LENGTH}}}\mbox{\Hypertarget{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a4471b6b2154c7b004a037e13f0fc7887}\label{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a4471b6b2154c7b004a037e13f0fc7887}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+B\+L\+O\+C\+K\+\_\+\+L\+E\+N\+G\+TH&Number of entries in a data block for code points below the fast limit. 64=0x40 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_FAST\_DATA\_MASK@{UCPTRIE\_FAST\_DATA\_MASK}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_FAST\_DATA\_MASK@{UCPTRIE\_FAST\_DATA\_MASK}}}\mbox{\Hypertarget{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a293ed7da81b9423ad6290cc02ecaf9f3}\label{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a293ed7da81b9423ad6290cc02ecaf9f3}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+M\+A\+SK&Mask for getting the lower bits for the in-\/fast-\/data-\/block offset. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET@{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET@{UCPTRIE\_ERROR\_VALUE\_NEG\_DATA\_OFFSET}}}\mbox{\Hypertarget{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}\label{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13acc914a396e5e0ba8a836136c009adb36}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+V\+A\+L\+U\+E\+\_\+\+N\+E\+G\+\_\+\+D\+A\+T\+A\+\_\+\+O\+F\+F\+S\+ET&Offset from data\+Length (to be subtracted) for fetching the value returned for out-\/of-\/range code points and ill-\/formed U\+T\+F-\/8/16. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_HIGH\_VALUE\_NEG\_DATA\_OFFSET@{UCPTRIE\_HIGH\_VALUE\_NEG\_DATA\_OFFSET}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_HIGH\_VALUE\_NEG\_DATA\_OFFSET@{UCPTRIE\_HIGH\_VALUE\_NEG\_DATA\_OFFSET}}}\mbox{\Hypertarget{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a88b4fb07ca1e3cd2d3346e80ac2caf56}\label{ucptrie_8h_a0ac0b7994a7d738aa77d2c1cfe8d6d13a88b4fb07ca1e3cd2d3346e80ac2caf56}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+H\+I\+G\+H\+\_\+\+V\+A\+L\+U\+E\+\_\+\+N\+E\+G\+\_\+\+D\+A\+T\+A\+\_\+\+O\+F\+F\+S\+ET&Offset from data\+Length (to be subtracted) for fetching the value returned for code points high\+Start..U+10\+F\+F\+FF. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}\label{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTrieType@{UCPTrieType}}
+\index{UCPTrieType@{UCPTrieType}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTrieType}{UCPTrieType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}}}
+
+Selectors for the type of a \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}}. Different trade-\/offs for size vs. speed.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{umutablecptrie_8h_a5e58c4844c962d9ba3f7416c257faafd}{umutablecptrie\+\_\+build\+Immutable}} 
+
+\mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary}} 
+
+\mbox{\hyperlink{ucptrie_8h_ac5c3a74beb0bdc8a19178f8507ebdb23}{ucptrie\+\_\+get\+Type}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_TYPE\_ANY@{UCPTRIE\_TYPE\_ANY}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_TYPE\_ANY@{UCPTRIE\_TYPE\_ANY}}}\mbox{\Hypertarget{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465ae4474d990fe030905ffb0c11f3454b90}\label{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465ae4474d990fe030905ffb0c11f3454b90}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+NY&For \mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary()}} to accept any type. \mbox{\hyperlink{ucptrie_8h_ac5c3a74beb0bdc8a19178f8507ebdb23}{ucptrie\+\_\+get\+Type()}} will return the actual type. @stable I\+CU 63 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_TYPE\_FAST@{UCPTRIE\_TYPE\_FAST}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_TYPE\_FAST@{UCPTRIE\_TYPE\_FAST}}}\mbox{\Hypertarget{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465a0fc3f23899946bd2df3ff03adafbb032}\label{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465a0fc3f23899946bd2df3ff03adafbb032}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+A\+ST&Fast/simple/larger B\+MP data structure. Use functions and \char`\"{}fast\char`\"{} macros. @stable I\+CU 63 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_TYPE\_SMALL@{UCPTRIE\_TYPE\_SMALL}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_TYPE\_SMALL@{UCPTRIE\_TYPE\_SMALL}}}\mbox{\Hypertarget{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465a75efbaba0dfeabdce18f7adff32f74f5}\label{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465a75efbaba0dfeabdce18f7adff32f74f5}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+M\+A\+LL&Small/slower B\+MP data structure. Use functions and \char`\"{}small\char`\"{} macros. @stable I\+CU 63 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}\label{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}} 
+\index{ucptrie.h@{ucptrie.h}!UCPTrieValueWidth@{UCPTrieValueWidth}}
+\index{UCPTrieValueWidth@{UCPTrieValueWidth}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{UCPTrieValueWidth}{UCPTrieValueWidth}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}}}
+
+Selectors for the number of bits in a \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} data value.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{umutablecptrie_8h_a5e58c4844c962d9ba3f7416c257faafd}{umutablecptrie\+\_\+build\+Immutable}} 
+
+\mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary}} 
+
+\mbox{\hyperlink{ucptrie_8h_a7433748ced09723024c265ea9fcfc5df}{ucptrie\+\_\+get\+Value\+Width}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_VALUE\_BITS\_ANY@{UCPTRIE\_VALUE\_BITS\_ANY}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_VALUE\_BITS\_ANY@{UCPTRIE\_VALUE\_BITS\_ANY}}}\mbox{\Hypertarget{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea03c8d65a443bf9af5fbf8c321c764285}\label{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea03c8d65a443bf9af5fbf8c321c764285}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+\+A\+NY&For \mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary()}} to accept any data value width. \mbox{\hyperlink{ucptrie_8h_a7433748ced09723024c265ea9fcfc5df}{ucptrie\+\_\+get\+Value\+Width()}} will return the actual data value width. @stable I\+CU 63 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_VALUE\_BITS\_16@{UCPTRIE\_VALUE\_BITS\_16}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_VALUE\_BITS\_16@{UCPTRIE\_VALUE\_BITS\_16}}}\mbox{\Hypertarget{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea8aedbe482494a508cb3e703efe873aa7}\label{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea8aedbe482494a508cb3e703efe873aa7}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+16&The trie stores 16 bits per data value. It returns them as unsigned values 0..0xffff=65535. @stable I\+CU 63 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_VALUE\_BITS\_32@{UCPTRIE\_VALUE\_BITS\_32}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_VALUE\_BITS\_32@{UCPTRIE\_VALUE\_BITS\_32}}}\mbox{\Hypertarget{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ead3835bbac363a881d36886afb4a91698}\label{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ead3835bbac363a881d36886afb4a91698}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+32&The trie stores 32 bits per data value. @stable I\+CU 63 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UCPTRIE\_VALUE\_BITS\_8@{UCPTRIE\_VALUE\_BITS\_8}!ucptrie.h@{ucptrie.h}}\index{ucptrie.h@{ucptrie.h}!UCPTRIE\_VALUE\_BITS\_8@{UCPTRIE\_VALUE\_BITS\_8}}}\mbox{\Hypertarget{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea04f3f0f8a4777631d6de33be33cd722e}\label{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea04f3f0f8a4777631d6de33be33cd722e}} 
+U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+8&The trie stores 8 bits per data value. It returns them as unsigned values 0..0xff=255. @stable I\+CU 63 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ucptrie_8h_ab6f5b8ade1e1d8328b7202f312898ddc}\label{ucptrie_8h_ab6f5b8ade1e1d8328b7202f312898ddc}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_close@{ucptrie\_close}}
+\index{ucptrie\_close@{ucptrie\_close}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_close()}{ucptrie\_close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie }\end{DoxyParamCaption})}
+
+Closes a trie and releases associated memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & the trie @stable I\+CU 63 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ucptrie_8h_a5c16c96db177d21975903f09af68de83}\label{ucptrie_8h_a5c16c96db177d21975903f09af68de83}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_get@{ucptrie\_get}}
+\index{ucptrie\_get@{ucptrie\_get}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_get()}{ucptrie\_get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} uint32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{c }\end{DoxyParamCaption})}
+
+Returns the value for a code point as stored in the trie, with range checking. Returns the trie error value if c is not in the range 0..U+10\+F\+F\+FF.
+
+Easier to use than \mbox{\hyperlink{ucptrie_8h_a46017f54183600938e79ba84b9bcd178}{U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+G\+E\+T()}} and similar macros but slower. Easier to use because, unlike the macros, this function works on all \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} objects, for all types and value widths.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & the trie \\
+\hline
+{\em c} & the code point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the trie value, or the trie error value if the code point is not in the range 0..U+10\+F\+F\+FF @stable I\+CU 63 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucptrie_8h_a8501108c00e34242da52283017ee8ca3}\label{ucptrie_8h_a8501108c00e34242da52283017ee8ca3}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_getRange@{ucptrie\_getRange}}
+\index{ucptrie\_getRange@{ucptrie\_getRange}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_getRange()}{ucptrie\_getRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+get\+Range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{start,  }\item[{\mbox{\hyperlink{ucpmap_8h_aa32ef75912d4bbf21792256d17f16b9c}{U\+C\+P\+Map\+Range\+Option}}}]{option,  }\item[{uint32\+\_\+t}]{surrogate\+Value,  }\item[{\mbox{\hyperlink{ucpmap_8h_a7e235b224b87244fb548304f9f15b3e9}{U\+C\+P\+Map\+Value\+Filter}} $\ast$}]{filter,  }\item[{const void $\ast$}]{context,  }\item[{uint32\+\_\+t $\ast$}]{p\+Value }\end{DoxyParamCaption})}
+
+Returns the last code point such that all those from start to there have the same value. Can be used to efficiently iterate over all same-\/value ranges in a trie. (This is normally faster than iterating over code points and get()ting each value, but much slower than a data structure that stores ranges directly.)
+
+If the U\+C\+P\+Map\+Value\+Filter function pointer is not N\+U\+LL, then the value to be delivered is passed through that function, and the return value is the end of the range where all values are modified to the same actual value. The value is unchanged if that function pointer is N\+U\+LL.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{UChar32}} start = 0, end;}
+\DoxyCodeLine{uint32\_t value;}
+\DoxyCodeLine{\textcolor{keywordflow}{while} ((end = \mbox{\hyperlink{ucptrie_8h_a8501108c00e34242da52283017ee8ca3}{ucptrie\_getRange}}(trie, start, \mbox{\hyperlink{ucpmap_8h_aa32ef75912d4bbf21792256d17f16b9ca3013a1d6bd08b42e51c8042326148292}{UCPMAP\_RANGE\_NORMAL}}, 0,}
+\DoxyCodeLine{                               \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}, \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}, \&value)) >= 0) \{}
+\DoxyCodeLine{    \textcolor{comment}{// Work with the range start..end and its value.}}
+\DoxyCodeLine{    start = end + 1;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & the trie \\
+\hline
+{\em start} & range start \\
+\hline
+{\em option} & defines whether surrogates are treated normally, or as having the surrogate\+Value; usually U\+C\+P\+M\+A\+P\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+R\+M\+AL \\
+\hline
+{\em surrogate\+Value} & value for surrogates; ignored if option==U\+C\+P\+M\+A\+P\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+R\+M\+AL \\
+\hline
+{\em filter} & a pointer to a function that may modify the trie data value, or N\+U\+LL if the values from the trie are to be used unmodified \\
+\hline
+{\em context} & an opaque pointer that is passed on to the filter function \\
+\hline
+{\em p\+Value} & if not N\+U\+LL, receives the value that every code point start..end has; may have been modified by filter(context, trie value) if that function pointer is not N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the range end code point, or -\/1 if start is not a valid code point @stable I\+CU 63 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ucptrie_8h_ac5c3a74beb0bdc8a19178f8507ebdb23}\label{ucptrie_8h_ac5c3a74beb0bdc8a19178f8507ebdb23}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_getType@{ucptrie\_getType}}
+\index{ucptrie\_getType@{ucptrie\_getType}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_getType()}{ucptrie\_getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}} U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+get\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie }\end{DoxyParamCaption})}
+
+Returns the trie type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & the trie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the trie type 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary}} 
+
+\mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465ae4474d990fe030905ffb0c11f3454b90}{U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+NY}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucptrie_8h_a7433748ced09723024c265ea9fcfc5df}\label{ucptrie_8h_a7433748ced09723024c265ea9fcfc5df}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_getValueWidth@{ucptrie\_getValueWidth}}
+\index{ucptrie\_getValueWidth@{ucptrie\_getValueWidth}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_getValueWidth()}{ucptrie\_getValueWidth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}} U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+get\+Value\+Width (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie }\end{DoxyParamCaption})}
+
+Returns the number of bits in a trie data value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & the trie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bits in a trie data value 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary}} 
+
+\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6ea03c8d65a443bf9af5fbf8c321c764285}{U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+\+A\+NY}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucptrie_8h_a6bd7f4445c27fddaebe93dde4c6c6881}\label{ucptrie_8h_a6bd7f4445c27fddaebe93dde4c6c6881}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_internalU8PrevIndex@{ucptrie\_internalU8PrevIndex}}
+\index{ucptrie\_internalU8PrevIndex@{ucptrie\_internalU8PrevIndex}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_internalU8PrevIndex()}{ucptrie\_internalU8PrevIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+internal\+U8\+Prev\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{c,  }\item[{const uint8\+\_\+t $\ast$}]{start,  }\item[{const uint8\+\_\+t $\ast$}]{src }\end{DoxyParamCaption})}
+
+Internal function for part of the U\+C\+P\+T\+R\+I\+E\+\_\+\+F\+A\+S\+T\+\_\+\+U8\+\_\+\+P\+R\+E\+Vxx() macro implementations. Do not call directly. \mbox{\Hypertarget{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}\label{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_openFromBinary@{ucptrie\_openFromBinary}}
+\index{ucptrie\_openFromBinary@{ucptrie\_openFromBinary}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_openFromBinary()}{ucptrie\_openFromBinary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+open\+From\+Binary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucptrie_8h_a0736c5a35aefa6f366f5847a7b9d1465}{U\+C\+P\+Trie\+Type}}}]{type,  }\item[{\mbox{\hyperlink{ucptrie_8h_aed67816e547cf6f2eeba67d73f319b6e}{U\+C\+P\+Trie\+Value\+Width}}}]{value\+Width,  }\item[{const void $\ast$}]{data,  }\item[{int32\+\_\+t}]{length,  }\item[{int32\+\_\+t $\ast$}]{p\+Actual\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Opens a trie from its binary form, stored in 32-\/bit-\/aligned memory. Inverse of \mbox{\hyperlink{ucptrie_8h_afdea3c6d0cec0b665f6495d57532014e}{ucptrie\+\_\+to\+Binary()}}.
+
+The memory must remain valid and unchanged as long as the trie is used. You must \mbox{\hyperlink{ucptrie_8h_ab6f5b8ade1e1d8328b7202f312898ddc}{ucptrie\+\_\+close()}} the trie once you are done using it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & selects the trie type; results in an U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+OR if it does not match the binary data; use U\+C\+P\+T\+R\+I\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+A\+NY to accept any type \\
+\hline
+{\em value\+Width} & selects the number of bits in a data value; results in an U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+E\+R\+R\+OR if it does not match the binary data; use U\+C\+P\+T\+R\+I\+E\+\_\+\+V\+A\+L\+U\+E\+\_\+\+B\+I\+T\+S\+\_\+\+A\+NY to accept any data value width \\
+\hline
+{\em data} & a pointer to 32-\/bit-\/aligned memory containing the binary data of a \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} \\
+\hline
+{\em length} & the number of bytes available at data; can be more than necessary \\
+\hline
+{\em p\+Actual\+Length} & receives the actual number of bytes at data taken up by the trie data; can be N\+U\+LL \\
+\hline
+{\em p\+Error\+Code} & an in/out I\+CU U\+Error\+Code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the trie
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{umutablecptrie_8h_a9206420f7b4b7f68d0a54ee01f52722a}{umutablecptrie\+\_\+open}} 
+
+\mbox{\hyperlink{umutablecptrie_8h_a5e58c4844c962d9ba3f7416c257faafd}{umutablecptrie\+\_\+build\+Immutable}} 
+
+\mbox{\hyperlink{ucptrie_8h_afdea3c6d0cec0b665f6495d57532014e}{ucptrie\+\_\+to\+Binary}} @stable I\+CU 63 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ucptrie_8h_afdea3c6d0cec0b665f6495d57532014e}\label{ucptrie_8h_afdea3c6d0cec0b665f6495d57532014e}} 
+\index{ucptrie.h@{ucptrie.h}!ucptrie\_toBinary@{ucptrie\_toBinary}}
+\index{ucptrie\_toBinary@{ucptrie\_toBinary}!ucptrie.h@{ucptrie.h}}
+\doxysubsubsection{\texorpdfstring{ucptrie\_toBinary()}{ucptrie\_toBinary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 ucptrie\+\_\+to\+Binary (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_c_p_trie}{U\+C\+P\+Trie}} $\ast$}]{trie,  }\item[{void $\ast$}]{data,  }\item[{int32\+\_\+t}]{capacity,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Writes a memory-\/mappable form of the trie into 32-\/bit aligned memory. Inverse of \mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em trie} & the trie \\
+\hline
+{\em data} & a pointer to 32-\/bit-\/aligned memory to be filled with the trie data; can be N\+U\+LL if capacity==0 \\
+\hline
+{\em capacity} & the number of bytes available at data, or 0 for pure preflighting \\
+\hline
+{\em p\+Error\+Code} & an in/out I\+CU U\+Error\+Code; U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR if the capacity is too small \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes written or (if buffer overflow) needed for the trie
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ucptrie_8h_a1153e6bc776016bacfd2e27d4d6b7bb1}{ucptrie\+\_\+open\+From\+Binary()}} @stable I\+CU 63 
+\end{DoxySeeAlso}

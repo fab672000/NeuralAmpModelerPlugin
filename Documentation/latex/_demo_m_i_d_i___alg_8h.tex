@@ -1,0 +1,49 @@
+\hypertarget{_demo_m_i_d_i___alg_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Demo\+M\+I\+D\+I\+\_\+\+Note\+On/\+Source/\+Demo\+M\+I\+D\+I\+\_\+\+Alg.h File Reference}
+\label{_demo_m_i_d_i___alg_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/ExamplePlugIns/DemoMIDI\_NoteOn/Source/DemoMIDI\_Alg.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/ExamplePlugIns/DemoMIDI\_NoteOn/Source/DemoMIDI\_Alg.h}}
+
+
+Algorithm component definitions for Demo\+Delay.  
+
+
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_m_i_d_i___note_bits}{S\+Demo\+M\+I\+D\+I\+\_\+\+Note\+Bits}}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_m_i_d_i___alg___context}{S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_demo_m_i_d_i___alg_8h_a2a3dceb1eb26f4bc93aa9db74411d669}\label{_demo_m_i_d_i___alg_8h_a2a3dceb1eb26f4bc93aa9db74411d669}} 
+enum {\bfseries E\+Demo\+M\+I\+D\+I\+\_\+\+Meter\+Taps} \{ {\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}
+ \}
+\item 
+\mbox{\Hypertarget{_demo_m_i_d_i___alg_8h_ad92a5e3a40090e664dd980e17939cef9}\label{_demo_m_i_d_i___alg_8h_ad92a5e3a40090e664dd980e17939cef9}} 
+enum {\bfseries E\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Port\+ID} \{ \newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+GainP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Hold\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+HoldP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+M\+I\+D\+I\+Node\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+M\+I\+D\+I\+Node\+InP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+M\+I\+D\+I\+Node\+Out\+PT} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+M\+I\+D\+I\+Node\+Out\+Pass\+ThroughP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Is\+On} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Is\+On), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+SizeP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+M\+I\+D\+I\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP)
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Algorithm component definitions for Demo\+Delay. 
+
+\begin{DoxyAuthor}{Author}
+Danny Plazas 
+\end{DoxyAuthor}

@@ -1,0 +1,73 @@
+\hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator}{}\doxysection{Eigen\+::internal\+::Compressed\+Storage\+Iterator$<$ Scalar, Storage\+Index $>$ Class Template Reference}
+\label{class_eigen_1_1internal_1_1_compressed_storage_iterator}\index{Eigen::internal::CompressedStorageIterator$<$ Scalar, StorageIndex $>$@{Eigen::internal::CompressedStorageIterator$<$ Scalar, StorageIndex $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_aad65894ab71bd7c15e9716e67ce20f6d}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_aad65894ab71bd7c15e9716e67ce20f6d}} 
+using {\bfseries iterator\+\_\+category} = std\+::random\+\_\+access\+\_\+iterator\+\_\+tag
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a2523b9006b846ad5eca3436a85563af4}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a2523b9006b846ad5eca3436a85563af4}} 
+using {\bfseries reference} = \mbox{\hyperlink{class_eigen_1_1internal_1_1_storage_ref}{Storage\+Ref}}$<$ Scalar, Storage\+Index $>$
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a88fbb0e28f8a73fa850cc31442bfe2d5}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a88fbb0e28f8a73fa850cc31442bfe2d5}} 
+using {\bfseries difference\+\_\+type} = \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_ab3e0a4c7b5b527e4067c028c2ba176b9}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_ab3e0a4c7b5b527e4067c028c2ba176b9}} 
+using {\bfseries value\+\_\+type} = typename \mbox{\hyperlink{class_eigen_1_1internal_1_1_storage_val}{reference\+::value\+\_\+type}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a688c29efb8ad49e19efa3d7ce697c734}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a688c29efb8ad49e19efa3d7ce697c734}} 
+using {\bfseries pointer} = value\+\_\+type $\ast$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_ad24e7d70080345622d6c333b1409a1d4}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_ad24e7d70080345622d6c333b1409a1d4}} 
+{\bfseries Compressed\+Storage\+Iterator} (difference\+\_\+type index, Storage\+Index $\ast$inner\+Index\+Ptr, Scalar $\ast$value\+Ptr)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a6d366f95277e68ddcc762bda639cde5b}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a6d366f95277e68ddcc762bda639cde5b}} 
+{\bfseries Compressed\+Storage\+Iterator} (difference\+\_\+type index, \mbox{\hyperlink{class_eigen_1_1internal_1_1_storage_ref}{reference}} data)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa224bb1a560627d5da02e5cec126151a}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa224bb1a560627d5da02e5cec126151a}} 
+{\bfseries Compressed\+Storage\+Iterator} (const \mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a1cb072695884a6a3be2c105637a2892c}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a1cb072695884a6a3be2c105637a2892c}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa09dca3b62674e02cdabfcdcf22ed952}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa09dca3b62674e02cdabfcdcf22ed952}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} {\bfseries operator+} (difference\+\_\+type offset) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a8b57670da132fce1650fd2817d1005a8}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a8b57670da132fce1650fd2817d1005a8}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} {\bfseries operator-\/} (difference\+\_\+type offset) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa4ab3f3722d2f1203a07ca01de9cc163}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa4ab3f3722d2f1203a07ca01de9cc163}} 
+difference\+\_\+type {\bfseries operator-\/} (const \mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_ad741fd480b46e032e04e1bfbec252bf7}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_ad741fd480b46e032e04e1bfbec252bf7}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \& {\bfseries operator++} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a70f0fbef3de9a69b45c24262a8991f42}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a70f0fbef3de9a69b45c24262a8991f42}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \& {\bfseries operator-\/-\/} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa0295f21dfde0b2eb16c5f808af1f531}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_aa0295f21dfde0b2eb16c5f808af1f531}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \& {\bfseries operator+=} (difference\+\_\+type offset)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a72a27ad01a2c212061ecc38af07a3157}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a72a27ad01a2c212061ecc38af07a3157}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_compressed_storage_iterator}{Compressed\+Storage\+Iterator}} \& {\bfseries operator-\/=} (difference\+\_\+type offset)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a3c323d71fa2759e13611e86ad95a490c}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a3c323d71fa2759e13611e86ad95a490c}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_storage_ref}{reference}} {\bfseries operator$\ast$} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_ab1595d85aeacd349d5cb7304d4b20191}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_ab1595d85aeacd349d5cb7304d4b20191}} 
+difference\+\_\+type {\bfseries m\+\_\+index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1_compressed_storage_iterator_a1ebf84b8af1490c36e84a7c8582c35b1}\label{class_eigen_1_1internal_1_1_compressed_storage_iterator_a1ebf84b8af1490c36e84a7c8582c35b1}} 
+\mbox{\hyperlink{class_eigen_1_1internal_1_1_storage_ref}{reference}} {\bfseries m\+\_\+data}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/\+Neural\+Amp\+Modeler\+Core/\+Dependencies/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Compressed\+Base.\+h\end{DoxyCompactItemize}

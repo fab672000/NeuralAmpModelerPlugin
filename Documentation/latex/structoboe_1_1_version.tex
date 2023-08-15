@@ -1,0 +1,60 @@
+\hypertarget{structoboe_1_1_version}{}\doxysection{oboe\+::Version Struct Reference}
+\label{structoboe_1_1_version}\index{oboe::Version@{oboe::Version}}
+
+
+{\ttfamily \#include $<$Version.\+h$>$}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{structoboe_1_1_version_ab085bcb1c19da38ced4c847c7ba991ed}{Major}} = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR
+\item 
+static constexpr uint8\+\_\+t \mbox{\hyperlink{structoboe_1_1_version_a2cf33b278f74cfcb5ddc8494078c5227}{Minor}} = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR
+\item 
+static constexpr uint16\+\_\+t \mbox{\hyperlink{structoboe_1_1_version_a4123d88585166cb63084d6d842281851}{Patch}} = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+P\+A\+T\+CH
+\item 
+static constexpr const char $\ast$ \mbox{\hyperlink{structoboe_1_1_version_ac497c3f5cb305f762d81ee129c2d6c99}{Text}} = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+T\+E\+XT
+\item 
+static constexpr uint32\+\_\+t \mbox{\hyperlink{structoboe_1_1_version_af1b194381846f04a6e79dab591979224}{Number}} = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Oboe versioning object 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structoboe_1_1_version_ab085bcb1c19da38ced4c847c7ba991ed}\label{structoboe_1_1_version_ab085bcb1c19da38ced4c847c7ba991ed}} 
+\index{oboe::Version@{oboe::Version}!Major@{Major}}
+\index{Major@{Major}!oboe::Version@{oboe::Version}}
+\doxysubsubsection{\texorpdfstring{Major}{Major}}
+{\footnotesize\ttfamily static constexpr uint8\+\_\+t Version\+::\+Major = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+This is incremented when we make breaking A\+PI changes. Based loosely on \href{https://semver.org/}{\texttt{ https\+://semver.\+org/}}. \mbox{\Hypertarget{structoboe_1_1_version_a2cf33b278f74cfcb5ddc8494078c5227}\label{structoboe_1_1_version_a2cf33b278f74cfcb5ddc8494078c5227}} 
+\index{oboe::Version@{oboe::Version}!Minor@{Minor}}
+\index{Minor@{Minor}!oboe::Version@{oboe::Version}}
+\doxysubsubsection{\texorpdfstring{Minor}{Minor}}
+{\footnotesize\ttfamily static constexpr uint8\+\_\+t Version\+::\+Minor = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+This is incremented when we add backwards compatible functionality. Or set to zero when M\+A\+J\+OR is incremented. \mbox{\Hypertarget{structoboe_1_1_version_af1b194381846f04a6e79dab591979224}\label{structoboe_1_1_version_af1b194381846f04a6e79dab591979224}} 
+\index{oboe::Version@{oboe::Version}!Number@{Number}}
+\index{Number@{Number}!oboe::Version@{oboe::Version}}
+\doxysubsubsection{\texorpdfstring{Number}{Number}}
+{\footnotesize\ttfamily static constexpr uint32\+\_\+t Version\+::\+Number = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+U\+M\+B\+ER\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+Integer representation of the current Oboe library version. This will always increase when the version number changes so can be compared using integer comparison. \mbox{\Hypertarget{structoboe_1_1_version_a4123d88585166cb63084d6d842281851}\label{structoboe_1_1_version_a4123d88585166cb63084d6d842281851}} 
+\index{oboe::Version@{oboe::Version}!Patch@{Patch}}
+\index{Patch@{Patch}!oboe::Version@{oboe::Version}}
+\doxysubsubsection{\texorpdfstring{Patch}{Patch}}
+{\footnotesize\ttfamily static constexpr uint16\+\_\+t Version\+::\+Patch = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+P\+A\+T\+CH\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+This is incremented when we make backwards compatible bug fixes. Or set to zero when M\+I\+N\+OR is incremented. \mbox{\Hypertarget{structoboe_1_1_version_ac497c3f5cb305f762d81ee129c2d6c99}\label{structoboe_1_1_version_ac497c3f5cb305f762d81ee129c2d6c99}} 
+\index{oboe::Version@{oboe::Version}!Text@{Text}}
+\index{Text@{Text}!oboe::Version@{oboe::Version}}
+\doxysubsubsection{\texorpdfstring{Text}{Text}}
+{\footnotesize\ttfamily static constexpr const char $\ast$ Version\+::\+Text = O\+B\+O\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+T\+E\+XT\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\hyperlink{structoboe_1_1_version}{Version}} string in the form M\+A\+J\+O\+R.\+M\+I\+N\+O\+R.\+P\+A\+T\+CH. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/include/oboe/Version.\+h\end{DoxyCompactItemize}

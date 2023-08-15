@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['data_38573',['data',['../structwave__t.html#a0b5d6d3655b464b1ec2f818b1e7e66bf',1,'wave_t::data()'],['../struct_vst_event.html#a800bf10957e6923de684144585e6f004',1,'VstEvent::data()'],['../structfx_program.html#a9acd39247ff962ec93a0a70828ffcf73',1,'fxProgram::data()'],['../structfx_bank.html#a53763aa5414f07068ebe1b606055e5cf',1,'fxBank::data()'],['../class_steinberg_1_1_f_malloc_releaser.html#ad985a1c5f294878b32a7e834f8a6e191',1,'Steinberg::FMallocReleaser::data()'],['../struct_steinberg_1_1_vst_1_1_event.html#a0582be49175d35c41e4ad84dc2eb2cc3',1,'Steinberg::Vst::Event::data()']]],
+  ['dataformat_38574',['dataFormat',['../struct_u_data_info.html#a479aff545723a4e6ba645dbd54807094',1,'UDataInfo']]],
+  ['datanulloffset_38575',['dataNullOffset',['../struct_u_c_p_trie.html#a0cbc612f0d8db1a57ccb3bd017636410',1,'UCPTrie']]],
+  ['dataversion_38576',['dataVersion',['../struct_u_data_info.html#a76c9e51f168e69f70b68976cc65e88a2',1,'UDataInfo']]],
+  ['defaultnormalizedvalue_38577',['defaultNormalizedValue',['../struct_steinberg_1_1_vst_1_1_parameter_info.html#a537c03b24c259c00724235b0ff48a5b4',1,'Steinberg::Vst::ParameterInfo']]],
+  ['defaultvalue_38578',['defaultValue',['../struct_steinberg_1_1_vst_1_1_note_expression_value_description.html#a9f89535f467e51016105082224cfa6fc',1,'Steinberg::Vst::NoteExpressionValueDescription']]],
+  ['deltaframes_38579',['deltaFrames',['../struct_vst_event.html#ae4d622dda728c50c361abeaa105199f4',1,'VstEvent::deltaFrames()'],['../struct_vst_midi_event.html#a49cef10bde779e9eb4d3f7253905ae10',1,'VstMidiEvent::deltaFrames()'],['../struct_vst_midi_sysex_event.html#a836c8bb7812e064f7a9b48bade1f8a6f',1,'VstMidiSysexEvent::deltaFrames()']]],
+  ['desc_38580',['desc',['../structjack__driver__desc__t.html#a2b722f6929604d8ce2a7aa0a3187cbc1',1,'jack_driver_desc_t']]],
+  ['destinationformat_38581',['destinationFormat',['../struct_vst_offline_task.html#ac2c0bd787de7bdfd806f5b858f5bd615',1,'VstOfflineTask']]],
+  ['destinationsamplerate_38582',['destinationSampleRate',['../struct_vst_offline_task.html#ab830437b8ac184d4184e5afe55b08620',1,'VstOfflineTask']]],
+  ['detune_38583',['detune',['../struct_vst_midi_event.html#af2123571b8c0a2d763ae005581583cd7',1,'VstMidiEvent']]],
+  ['deviceid_38584',['deviceId',['../struct_rt_audio_1_1_stream_parameters.html#ab3c72bcf3ef12149ae9a4fb597cc5489',1,'RtAudio::StreamParameters']]],
+  ['directaccessbit_38585',['DirectAccessBit',['../group__flags.html#gabf1e9d0516a933445a4c307ad8f14915',1,'Eigen']]],
+  ['direction_38586',['direction',['../struct_steinberg_1_1_vst_1_1_bus_info.html#a3bdb8602ef40daba20cb053cc3f6c551',1,'Steinberg::Vst::BusInfo']]],
+  ['dispatcher_38587',['dispatcher',['../struct_a_effect.html#aacdc461d88a2cff696c8459de6748ffc',1,'AEffect']]],
+  ['displayindex_38588',['displayIndex',['../struct_vst_parameter_properties.html#a593d356a58edef7d65c2b43da197e425',1,'VstParameterProperties']]],
+  ['dostype_38589',['dosType',['../struct_vst_file_type.html#a2cb02b96e8f9d172e9704b20f0917a12',1,'VstFileType']]],
+  ['dumpbytes_38590',['dumpBytes',['../struct_vst_midi_sysex_event.html#ab2d755b4ae9f57a225de067b8465e224',1,'VstMidiSysexEvent']]],
+  ['duplexchannels_38591',['duplexChannels',['../struct_rt_audio_1_1_device_info.html#a3e8ad34c2d14e24293a0beafc26186e7',1,'RtAudio::DeviceInfo']]],
+  ['dynamic_38592',['Dynamic',['../namespace_eigen.html#ad81fa7195215a0ce30017dfac309f0b2',1,'Eigen']]],
+  ['dynamicindex_38593',['DynamicIndex',['../namespace_eigen.html#a73c597189a4a99127175e8167c456fff',1,'Eigen']]]
+];

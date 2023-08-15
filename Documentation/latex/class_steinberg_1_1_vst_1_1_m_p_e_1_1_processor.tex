@@ -1,0 +1,78 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor}{}\doxysection{Steinberg\+::Vst\+::M\+PE\+::Processor Class Reference}
+\label{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor}\index{Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}}
+
+
+{\ttfamily \#include $<$mpeprocessor.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_1_1_impl}{Impl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a5587a7b9a91cb24300d28699e0b17f53}\label{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a5587a7b9a91cb24300d28699e0b17f53}} 
+{\bfseries Processor} (\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_m_p_e_1_1_handler}{Handler}} $\ast$delegate, size\+\_\+t max\+Notes\+Per\+Channel=16)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_ab854a4479efe2061e6c11737c4c46e2a}\label{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_ab854a4479efe2061e6c11737c4c46e2a}} 
+const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_m_p_e_1_1_setup}{Setup}} \& {\bfseries get\+Setup} () const
+\item 
+void \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_ae882040e6652da2e144c8e3542a4a6ee}{change\+Setup}} (const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_m_p_e_1_1_setup}{Setup}} \&setup)
+\item 
+void \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a2f021f3fad7dd0f4c47dfdd467b9b09b}{reset}} ()
+\item 
+void \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a54f68368eba8aaf2e4d26930ad878d9b}{process\+M\+I\+D\+I\+Input}} (const uint8\+\_\+t $\ast$data, size\+\_\+t data\+Size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+M\+PE Decompose \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor}{Processor}}
+
+decomposes M\+PE M\+I\+DI messages 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_ae882040e6652da2e144c8e3542a4a6ee}\label{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_ae882040e6652da2e144c8e3542a4a6ee}} 
+\index{Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}!changeSetup@{changeSetup}}
+\index{changeSetup@{changeSetup}!Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}}
+\doxysubsubsection{\texorpdfstring{changeSetup()}{changeSetup()}}
+{\footnotesize\ttfamily void Processor\+::change\+Setup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_m_p_e_1_1_setup}{Setup}} \&}]{setup }\end{DoxyParamCaption})}
+
+change the M\+PE setup
+
+make sure that M\+I\+DI processing is stopped while this is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em setup} & new setup \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a54f68368eba8aaf2e4d26930ad878d9b}\label{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a54f68368eba8aaf2e4d26930ad878d9b}} 
+\index{Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}!processMIDIInput@{processMIDIInput}}
+\index{processMIDIInput@{processMIDIInput}!Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}}
+\doxysubsubsection{\texorpdfstring{processMIDIInput()}{processMIDIInput()}}
+{\footnotesize\ttfamily void Processor\+::process\+M\+I\+D\+I\+Input (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{data\+Size }\end{DoxyParamCaption})}
+
+feed new native M\+I\+DI data
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & M\+I\+DI data buffer \\
+\hline
+{\em data\+Size} & data buffer size in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a2f021f3fad7dd0f4c47dfdd467b9b09b}\label{class_steinberg_1_1_vst_1_1_m_p_e_1_1_processor_a2f021f3fad7dd0f4c47dfdd467b9b09b}} 
+\index{Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}!reset@{reset}}
+\index{reset@{reset}!Steinberg::Vst::MPE::Processor@{Steinberg::Vst::MPE::Processor}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Processor\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reset all notes
+
+All playing notes will be stopped and note identifiers are released. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/utility/mpeprocessor.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/utility/mpeprocessor.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,168 @@
+\hypertarget{class_a_a_x___i_task}{}\doxysection{A\+A\+X\+\_\+\+I\+Task Class Reference}
+\label{class_a_a_x___i_task}\index{AAX\_ITask@{AAX\_ITask}}
+
+
+Interface representing a request to perform a task.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Task.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Task\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_a_x___i_task}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_task_aa0fc480241f3d3ea30fa5424318c3650}{Get\+Type}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} $\ast$o\+Type) const =0
+\item 
+virtual const \mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_task_aef9afa2286711ede6bd61208e34cbffc}{Get\+Argument\+Of\+Type}} (\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} i\+Type) const =0
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_task_a3ebb644b6e2972db23c8af1d683312f7}{Set\+Progress}} (float i\+Progress)=0
+\item 
+virtual float \mbox{\hyperlink{class_a_a_x___i_task_a74b2d3af3e862db07ab9442ef32390ba}{Get\+Progress}} () const =0
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_task_aa8d9d069296346d40bc105a9a01fb0c1}{Add\+Result}} (\mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer}} const $\ast$i\+Result)=0
+\begin{DoxyCompactList}\small\item\em Attach result data to this task. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_a_a_x___i_task}{A\+A\+X\+\_\+\+I\+Task}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_task_a5fcd36f2deeba6c0841a3ae742cf3eae}{Set\+Done}} (\mbox{\hyperlink{_a_a_x___i_a_c_f_task_8h_a101aaf82fd3a9c6a445b5312e9551ba1}{A\+A\+X\+\_\+\+Task\+Completion\+Status}} i\+Status)=0
+\begin{DoxyCompactList}\small\item\em Inform the host that the task is completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface representing a request to perform a task. 
+
+\textbackslash{}hostimp
+
+Used by the \mbox{\hyperlink{class_a_a_x___i_task_agent}{task agent}}.
+
+This interface describes a task request and provides a way for the agent to express one or more results of the task as well as the progress of the task.
+
+This interface is open-\/ended for both inputs and outputs. The host and agent must use common definitions for specific task types, their possible arguments, and the expected results. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_task_aa8d9d069296346d40bc105a9a01fb0c1}\label{class_a_a_x___i_task_aa8d9d069296346d40bc105a9a01fb0c1}} 
+\index{AAX\_ITask@{AAX\_ITask}!AddResult@{AddResult}}
+\index{AddResult@{AddResult}!AAX\_ITask@{AAX\_ITask}}
+\doxysubsubsection{\texorpdfstring{AddResult()}{AddResult()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Task\+::\+Add\+Result (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer}} const $\ast$}]{i\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attach result data to this task. 
+
+This can be called multiple times to add multiple types of results to a single task.
+
+The host may process the result data immediately or may wait for the task to complete.
+
+The plug-\/in is expected to release the data buffer upon making this call. At a minimum, the data buffer must not be changed after this call is made. See {\ttfamily \mbox{\hyperlink{class_a_c_f_ptr_a59abf9c9e2d8c845615ee70cdb76eba6}{A\+C\+F\+Ptr\+::in\+Arg()}}} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Result} & A buffer containing the result data. Expected result types, if any, and their data buffer format must be defined per task type. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_task_a814416712ed46ecb9843132b5e14862b}{A\+A\+X\+\_\+\+V\+Task}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_task_aef9afa2286711ede6bd61208e34cbffc}\label{class_a_a_x___i_task_aef9afa2286711ede6bd61208e34cbffc}} 
+\index{AAX\_ITask@{AAX\_ITask}!GetArgumentOfType@{GetArgumentOfType}}
+\index{GetArgumentOfType@{GetArgumentOfType}!AAX\_ITask@{AAX\_ITask}}
+\doxysubsubsection{\texorpdfstring{GetArgumentOfType()}{GetArgumentOfType()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_a_a_x___i_a_c_f_data_buffer}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Data\+Buffer}}$\ast$ A\+A\+X\+\_\+\+I\+Task\+::\+Get\+Argument\+Of\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}}}]{i\+Type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Additional information defining the request, depending on the task type
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Type} & The type of argument requested. Possible argument types, if any, and the resulting data buffer format must be defined per task type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested argument data, or nullptr. This data buffer\textquotesingle{}s type ID is expected to match {\ttfamily i\+Type} . The caller takes ownership of this object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_task_ac851f53672b47126b418943e12319cd3}{A\+A\+X\+\_\+\+V\+Task}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_task_a74b2d3af3e862db07ab9442ef32390ba}\label{class_a_a_x___i_task_a74b2d3af3e862db07ab9442ef32390ba}} 
+\index{AAX\_ITask@{AAX\_ITask}!GetProgress@{GetProgress}}
+\index{GetProgress@{GetProgress}!AAX\_ITask@{AAX\_ITask}}
+\doxysubsubsection{\texorpdfstring{GetProgress()}{GetProgress()}}
+{\footnotesize\ttfamily virtual float A\+A\+X\+\_\+\+I\+Task\+::\+Get\+Progress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the current progress 
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_task_a7f84e83c867d2964be281a9d3d6b2207}{A\+A\+X\+\_\+\+V\+Task}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_task_aa0fc480241f3d3ea30fa5424318c3650}\label{class_a_a_x___i_task_aa0fc480241f3d3ea30fa5424318c3650}} 
+\index{AAX\_ITask@{AAX\_ITask}!GetType@{GetType}}
+\index{GetType@{GetType}!AAX\_ITask@{AAX\_ITask}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Task\+::\+Get\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x_8h_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+ID}} $\ast$}]{o\+Type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+An identifier defining the type of the requested task
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em o\+Type} & The type of this task request \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_task_a189e0e0752d4afe12364ddc396005876}{A\+A\+X\+\_\+\+V\+Task}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_task_a5fcd36f2deeba6c0841a3ae742cf3eae}\label{class_a_a_x___i_task_a5fcd36f2deeba6c0841a3ae742cf3eae}} 
+\index{AAX\_ITask@{AAX\_ITask}!SetDone@{SetDone}}
+\index{SetDone@{SetDone}!AAX\_ITask@{AAX\_ITask}}
+\doxysubsubsection{\texorpdfstring{SetDone()}{SetDone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_a_x___i_task}{A\+A\+X\+\_\+\+I\+Task}}$\ast$ A\+A\+X\+\_\+\+I\+Task\+::\+Set\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x___i_a_c_f_task_8h_a101aaf82fd3a9c6a445b5312e9551ba1}{A\+A\+X\+\_\+\+Task\+Completion\+Status}}}]{i\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Inform the host that the task is completed. 
+
+If successful, returns a null pointer. Otherwise, returns a pointer back to the same object. This is the expected usage pattern\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// release the task on success, retain it on failure}}
+\DoxyCodeLine{myTask = myTask-\/>SetDone(status);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Status} & The final status of the task. This indicates to the host whether or not the task was performed as requested. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_task_ac515ee37a16bc5e6d5cf3f5e92165373}{A\+A\+X\+\_\+\+V\+Task}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_task_a3ebb644b6e2972db23c8af1d683312f7}\label{class_a_a_x___i_task_a3ebb644b6e2972db23c8af1d683312f7}} 
+\index{AAX\_ITask@{AAX\_ITask}!SetProgress@{SetProgress}}
+\index{SetProgress@{SetProgress}!AAX\_ITask@{AAX\_ITask}}
+\doxysubsubsection{\texorpdfstring{SetProgress()}{SetProgress()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Task\+::\+Set\+Progress (\begin{DoxyParamCaption}\item[{float}]{i\+Progress }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Inform the host about the current status of the task
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Progress} & A value between 0 (no progress) and 1 (complete) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_task_a23be0e1f610bd14a331fea4a9bccac38}{A\+A\+X\+\_\+\+V\+Task}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_task_8h}{A\+A\+X\+\_\+\+I\+Task.\+h}}\end{DoxyCompactItemize}

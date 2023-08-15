@@ -1,0 +1,65 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation}{}\doxysection{Steinberg\+::Vst\+::I\+Component\+Handler\+Bus\+Activation Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation}\index{Steinberg::Vst::IComponentHandlerBusActivation@{Steinberg::Vst::IComponentHandlerBusActivation}}
+
+
+{\ttfamily \#include $<$ivsteditcontroller.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Component\+Handler\+Bus\+Activation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation_aa924adc1c6ebeb1c6ec29b1c1cf4a181}{request\+Bus\+Activation}} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_af32ccd03779e5cbfd4a348a61edd474f}{Media\+Type}} type, \mbox{\hyperlink{namespace_steinberg_1_1_vst_ab6726c6370253c99cb4f6cc939870b02}{Bus\+Direction}} dir, int32 index, T\+Bool \mbox{\hyperlink{structstate}{state}})=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation_a9ee32b00b8a2d579eea9b3dbef6e98f7}\label{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation_a9ee32b00b8a2d579eea9b3dbef6e98f7}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extended host callback interface for an edit controller\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation}{Vst\+::\+I\+Component\+Handler\+Bus\+Activation}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler}{I\+Component\+Handler}}\mbox{]}
+\item \mbox{[}released\+: 3.\+6.\+8\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+Allows the plug-\/in to request the host to activate or deactivate a specific bus. If the host accepts this request, it will call later on \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_ac58e1a76dd961bfee3795994a0a442bc}{I\+Component\+::activate\+Bus}}. This is particularly useful for instruments with more than 1 outputs, where the user could request from the plug-\/in \mbox{\hyperlink{class_u_i}{UI}} a given output bus activation.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// somewhere in your code when you need to inform the host to enable a specific Bus.}}
+\DoxyCodeLine{FUnknownPtr<IComponentHandlerBusActivation> busActivation (componentHandler);}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (busActivation)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{// here we want to activate our audio input sidechain (the 2cd input bus: index 1)}}
+\DoxyCodeLine{    busActivation-\/>requestBusActivation (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a824e5129bad36c3d9da5f76cbcfb272aa2a15439e003372dda8d94ea3b73b15e4}{kAudio}}, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a04ba14395371c3f140e3907486f43377acfe34dfd2f08180712ae4d3d5aebfa2e}{kInput}}, 1, \textcolor{keyword}{true});}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_component_handler}{I\+Component\+Handler}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation_aa924adc1c6ebeb1c6ec29b1c1cf4a181}\label{class_steinberg_1_1_vst_1_1_i_component_handler_bus_activation_aa924adc1c6ebeb1c6ec29b1c1cf4a181}} 
+\index{Steinberg::Vst::IComponentHandlerBusActivation@{Steinberg::Vst::IComponentHandlerBusActivation}!requestBusActivation@{requestBusActivation}}
+\index{requestBusActivation@{requestBusActivation}!Steinberg::Vst::IComponentHandlerBusActivation@{Steinberg::Vst::IComponentHandlerBusActivation}}
+\doxysubsubsection{\texorpdfstring{requestBusActivation()}{requestBusActivation()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Component\+Handler\+Bus\+Activation\+::request\+Bus\+Activation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_af32ccd03779e5cbfd4a348a61edd474f}{Media\+Type}}}]{type,  }\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_ab6726c6370253c99cb4f6cc939870b02}{Bus\+Direction}}}]{dir,  }\item[{int32}]{index,  }\item[{T\+Bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+request the host to activate or deactivate a specific bus. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivsteditcontroller.\+h\end{DoxyCompactItemize}

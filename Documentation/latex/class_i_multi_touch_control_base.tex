@@ -1,0 +1,64 @@
+\hypertarget{class_i_multi_touch_control_base}{}\doxysection{I\+Multi\+Touch\+Control\+Base Class Reference}
+\label{class_i_multi_touch_control_base}\index{IMultiTouchControlBase@{IMultiTouchControlBase}}
+
+
+{\ttfamily \#include $<$I\+Control.\+h$>$}
+
+Inheritance diagram for I\+Multi\+Touch\+Control\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_multi_touch_control_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_multi_touch_control_base_1_1_tracked_touch}{Tracked\+Touch}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_a1eb2f8e5293745f293ab0b85f7683f8a}\label{class_i_multi_touch_control_base_a1eb2f8e5293745f293ab0b85f7683f8a}} 
+virtual void {\bfseries Add\+Touch} (I\+Touch\+ID touch\+ID, float x, float y, float radius)
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_acb4db791fad371d70f924b070c5e9ff2}\label{class_i_multi_touch_control_base_acb4db791fad371d70f924b070c5e9ff2}} 
+virtual void {\bfseries Release\+Touch} (I\+Touch\+ID touch\+ID)
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_aed182103a5fa6138c32d0419c7f96bad}\label{class_i_multi_touch_control_base_aed182103a5fa6138c32d0419c7f96bad}} 
+virtual void {\bfseries Update\+Touch} (I\+Touch\+ID touch\+ID, float x, float y, float radius)
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_a3f0fe639d4fc77ed864b14c8f74b5d6c}\label{class_i_multi_touch_control_base_a3f0fe639d4fc77ed864b14c8f74b5d6c}} 
+void {\bfseries Clear\+All\+Touches} ()
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_a259ab757d14e48e85b5a56a8142f2f7d}\label{class_i_multi_touch_control_base_a259ab757d14e48e85b5a56a8142f2f7d}} 
+int {\bfseries N\+Tracked\+Touches} () const
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_ad46da5d5aa583262633a713c5683f765}\label{class_i_multi_touch_control_base_ad46da5d5aa583262633a713c5683f765}} 
+\mbox{\hyperlink{struct_i_multi_touch_control_base_1_1_tracked_touch}{Tracked\+Touch}} $\ast$ {\bfseries Get\+Touch} (int index)
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_ab871a07f78042efe11f9ebedf4467ad5}\label{class_i_multi_touch_control_base_ab871a07f78042efe11f9ebedf4467ad5}} 
+\mbox{\hyperlink{struct_i_multi_touch_control_base_1_1_tracked_touch}{Tracked\+Touch}} $\ast$ {\bfseries Get\+Touch\+With\+Identifier} (I\+Touch\+ID touch\+ID)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_ab75e896cf8d04631a3c39e416741e47b}\label{class_i_multi_touch_control_base_ab75e896cf8d04631a3c39e416741e47b}} 
+std\+::unordered\+\_\+map$<$ I\+Touch\+ID, \mbox{\hyperlink{struct_i_multi_touch_control_base_1_1_tracked_touch}{Tracked\+Touch}} $>$ {\bfseries m\+Tracked\+Touches}
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_a169c4d2c1a48e1fdda70ed72a20be201}\label{class_i_multi_touch_control_base_a169c4d2c1a48e1fdda70ed72a20be201}} 
+bool {\bfseries m\+Touch\+Status} \mbox{[}M\+A\+X\+\_\+\+T\+O\+U\+C\+H\+ES\mbox{]} = \{ 0 \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_multi_touch_control_base_a1e2485b6bcc2197504f4020d18b67c89}\label{class_i_multi_touch_control_base_a1e2485b6bcc2197504f4020d18b67c89}} 
+static constexpr int {\bfseries M\+A\+X\+\_\+\+T\+O\+U\+C\+H\+ES} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A base class for controls that can do do multitouch 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_control_8h}{I\+Control.\+h}}\end{DoxyCompactItemize}

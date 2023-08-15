@@ -1,0 +1,95 @@
+\hypertarget{class_eigen_1_1_tensor_f_f_t_op}{}\doxysection{Eigen\+::Tensor\+F\+F\+T\+Op$<$ F\+FT, Xpr\+Type, F\+F\+T\+Result\+Type, F\+F\+T\+Dir $>$ Class Template Reference}
+\label{class_eigen_1_1_tensor_f_f_t_op}\index{Eigen::TensorFFTOp$<$ FFT, XprType, FFTResultType, FFTDir $>$@{Eigen::TensorFFTOp$<$ FFT, XprType, FFTResultType, FFTDir $>$}}
+Inheritance diagram for Eigen\+::Tensor\+F\+F\+T\+Op$<$ F\+FT, Xpr\+Type, F\+F\+T\+Result\+Type, F\+F\+T\+Dir $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.863561cm]{class_eigen_1_1_tensor_f_f_t_op}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a41c31bc5b2663f3aa414eee476d751e2}\label{class_eigen_1_1_tensor_f_f_t_op_a41c31bc5b2663f3aa414eee476d751e2}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{Eigen\+::internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a2f6a551fc7a95c7af958f0515147e2ad}\label{class_eigen_1_1_tensor_f_f_t_op_a2f6a551fc7a95c7af958f0515147e2ad}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Eigen\+::\+Num\+Traits}}$<$ Scalar $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_af114f71d2090c30a157d240186939507}\label{class_eigen_1_1_tensor_f_f_t_op_af114f71d2090c30a157d240186939507}} 
+typedef std\+::complex$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{Real\+Scalar}} $>$ {\bfseries Complex\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_adf6aab796e2f724c2d289a256cfe21be}\label{class_eigen_1_1_tensor_f_f_t_op_adf6aab796e2f724c2d289a256cfe21be}} 
+typedef std\+::conditional\+\_\+t$<$ F\+F\+T\+Result\+Type==Real\+Part$\vert$$\vert$F\+F\+T\+Result\+Type==Imag\+Part, \mbox{\hyperlink{class_eigen_1_1_triplet}{Real\+Scalar}}, Complex\+Scalar $>$ {\bfseries Output\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a23c5558eace2f251a1ac35156e7ce0ae}\label{class_eigen_1_1_tensor_f_f_t_op_a23c5558eace2f251a1ac35156e7ce0ae}} 
+typedef Output\+Scalar {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a0f69abadae5374d1e6c497e1b733cdc4}\label{class_eigen_1_1_tensor_f_f_t_op_a0f69abadae5374d1e6c497e1b733cdc4}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1nested}{Eigen\+::internal\+::nested}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::type {\bfseries Nested}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_abb09aa5d4df7dd031d5ef79de31cfe7e}\label{class_eigen_1_1_tensor_f_f_t_op_abb09aa5d4df7dd031d5ef79de31cfe7e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{Eigen\+::internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_adf9bb1cf7f6e471410a59f8b752d9a80}\label{class_eigen_1_1_tensor_f_f_t_op_adf9bb1cf7f6e471410a59f8b752d9a80}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{Eigen\+::internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::Index {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a41c31bc5b2663f3aa414eee476d751e2}\label{class_eigen_1_1_tensor_f_f_t_op_a41c31bc5b2663f3aa414eee476d751e2}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{Eigen\+::internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a2f6a551fc7a95c7af958f0515147e2ad}\label{class_eigen_1_1_tensor_f_f_t_op_a2f6a551fc7a95c7af958f0515147e2ad}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Eigen\+::\+Num\+Traits}}$<$ Scalar $>$\+::Real {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_af114f71d2090c30a157d240186939507}\label{class_eigen_1_1_tensor_f_f_t_op_af114f71d2090c30a157d240186939507}} 
+typedef std\+::complex$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{Real\+Scalar}} $>$ {\bfseries Complex\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_adf6aab796e2f724c2d289a256cfe21be}\label{class_eigen_1_1_tensor_f_f_t_op_adf6aab796e2f724c2d289a256cfe21be}} 
+typedef std\+::conditional\+\_\+t$<$ F\+F\+T\+Result\+Type==Real\+Part$\vert$$\vert$F\+F\+T\+Result\+Type==Imag\+Part, \mbox{\hyperlink{class_eigen_1_1_triplet}{Real\+Scalar}}, Complex\+Scalar $>$ {\bfseries Output\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a23c5558eace2f251a1ac35156e7ce0ae}\label{class_eigen_1_1_tensor_f_f_t_op_a23c5558eace2f251a1ac35156e7ce0ae}} 
+typedef Output\+Scalar {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a0f69abadae5374d1e6c497e1b733cdc4}\label{class_eigen_1_1_tensor_f_f_t_op_a0f69abadae5374d1e6c497e1b733cdc4}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1nested}{Eigen\+::internal\+::nested}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::type {\bfseries Nested}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_abb09aa5d4df7dd031d5ef79de31cfe7e}\label{class_eigen_1_1_tensor_f_f_t_op_abb09aa5d4df7dd031d5ef79de31cfe7e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{Eigen\+::internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_adf9bb1cf7f6e471410a59f8b752d9a80}\label{class_eigen_1_1_tensor_f_f_t_op_adf9bb1cf7f6e471410a59f8b752d9a80}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{Eigen\+::internal\+::traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_tensor_f_f_t_op}{Tensor\+F\+F\+T\+Op}} $>$\+::Index {\bfseries Index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a5bb21f2518c1b9e816ecae06bc0158cf}\label{class_eigen_1_1_tensor_f_f_t_op_a5bb21f2518c1b9e816ecae06bc0158cf}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+F\+F\+T\+Op} (const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \&expr, const F\+FT \&fft)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a345b3ef47d6b57bea6ddbb4b8ae6285e}\label{class_eigen_1_1_tensor_f_f_t_op_a345b3ef47d6b57bea6ddbb4b8ae6285e}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC F\+FT \& {\bfseries fft} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_ad8977f1844fa7e5713f42a12fdc80a4f}\label{class_eigen_1_1_tensor_f_f_t_op_ad8977f1844fa7e5713f42a12fdc80a4f}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC internal\+::remove\+\_\+all\+\_\+t$<$ typename Xpr\+Type\+::\+Nested $>$ \& {\bfseries expression} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a5bb21f2518c1b9e816ecae06bc0158cf}\label{class_eigen_1_1_tensor_f_f_t_op_a5bb21f2518c1b9e816ecae06bc0158cf}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Tensor\+F\+F\+T\+Op} (const \mbox{\hyperlink{class_eigen_1_1_cwise_binary_op}{Xpr\+Type}} \&expr, const F\+FT \&fft)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a345b3ef47d6b57bea6ddbb4b8ae6285e}\label{class_eigen_1_1_tensor_f_f_t_op_a345b3ef47d6b57bea6ddbb4b8ae6285e}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC F\+FT \& {\bfseries fft} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_ad8977f1844fa7e5713f42a12fdc80a4f}\label{class_eigen_1_1_tensor_f_f_t_op_ad8977f1844fa7e5713f42a12fdc80a4f}} 
+const E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC internal\+::remove\+\_\+all\+\_\+t$<$ typename Xpr\+Type\+::\+Nested $>$ \& {\bfseries expression} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_af3a22e4cb4a5eaad317f3ea1311cb1f8}\label{class_eigen_1_1_tensor_f_f_t_op_af3a22e4cb4a5eaad317f3ea1311cb1f8}} 
+Xpr\+Type\+::\+Nested {\bfseries m\+\_\+xpr}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_tensor_f_f_t_op_a02a74e5936ac84a41b54e0e22dcdfc75}\label{class_eigen_1_1_tensor_f_f_t_op_a02a74e5936ac84a41b54e0e22dcdfc75}} 
+const F\+FT {\bfseries m\+\_\+fft}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+F\+F\+T.\+h\end{DoxyCompactItemize}

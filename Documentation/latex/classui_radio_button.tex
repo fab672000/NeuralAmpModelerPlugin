@@ -1,0 +1,95 @@
+\hypertarget{classui_radio_button}{}\doxysection{ui\+Radio\+Button Class Reference}
+\label{classui_radio_button}\index{uiRadioButton@{uiRadioButton}}
+
+
+{\ttfamily \#include $<$Juce\+G\+U\+I.\+h$>$}
+
+Inheritance diagram for ui\+Radio\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.861111cm]{classui_radio_button}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classui_radio_button_addaddadc19265ec4b0f6e2195ba69c2a}{ui\+Radio\+Button}} (\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$gui, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$zone, String label, F\+A\+U\+S\+T\+F\+L\+O\+AT w, F\+A\+U\+S\+T\+F\+L\+O\+AT h, F\+A\+U\+S\+T\+F\+L\+O\+AT cur, F\+A\+U\+S\+T\+F\+L\+O\+AT lo, F\+A\+U\+S\+T\+F\+L\+O\+AT hi, bool vert, std\+::vector$<$ std\+::string $>$ \&names, std\+::vector$<$ double $>$ \&values, String tooltip, int radio\+Group\+ID)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classui_radio_button_aef11b89a53f12969752a8ae2aa0458cb}\label{classui_radio_button_aef11b89a53f12969752a8ae2aa0458cb}} 
+virtual void {\bfseries reflect\+Zone} () override
+\item 
+virtual void \mbox{\hyperlink{classui_radio_button_afd8717747911b9ec9fe84eca7b06d55e}{resized}} () override
+\item 
+virtual void \mbox{\hyperlink{classui_radio_button_ac08f853670cbdb52cc3f7d4ca21f4dd5}{paint}} (Graphics \&g) override
+\item 
+void \mbox{\hyperlink{classui_radio_button_a349af9495261c8f99fc5681ba3a74d2b}{button\+Clicked}} (Button $\ast$button) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Intern class for Radio\+Button 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classui_radio_button_addaddadc19265ec4b0f6e2195ba69c2a}\label{classui_radio_button_addaddadc19265ec4b0f6e2195ba69c2a}} 
+\index{uiRadioButton@{uiRadioButton}!uiRadioButton@{uiRadioButton}}
+\index{uiRadioButton@{uiRadioButton}!uiRadioButton@{uiRadioButton}}
+\doxysubsubsection{\texorpdfstring{uiRadioButton()}{uiRadioButton()}}
+{\footnotesize\ttfamily ui\+Radio\+Button\+::ui\+Radio\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_u_i}{G\+UI}} $\ast$}]{gui,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$}]{zone,  }\item[{String}]{label,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{w,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{h,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{cur,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{lo,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT}]{hi,  }\item[{bool}]{vert,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{names,  }\item[{std\+::vector$<$ double $>$ \&}]{values,  }\item[{String}]{tooltip,  }\item[{int}]{radio\+Group\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Initialize the \mbox{\hyperlink{classui_component}{ui\+Component}} variables, and the Radio\+Button specific variables and parameters. Works in a similar way to the Menu, because it is a special kind of sliders in the faust logic. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classui_menu}{ui\+Menu}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em gui,zone,tooltip,label} & \mbox{\hyperlink{classui_component}{ui\+Component}} variables. \\
+\hline
+{\em w} & \mbox{\hyperlink{classui_component}{ui\+Component}} variable and width of the Radio\+Button widget. \\
+\hline
+{\em h} & \mbox{\hyperlink{classui_component}{ui\+Component}} variable and height of the Radio\+Button widget. \\
+\hline
+{\em cur} & Current \char`\"{}value\char`\"{} associated with the item selected. \\
+\hline
+{\em low} & Lowest \char`\"{}value\char`\"{} possible. \\
+\hline
+{\em hi} & Highest \char`\"{}value\char`\"{} possible. \\
+\hline
+{\em vert} & True if vertical, false if horizontal. \\
+\hline
+{\em names} & Contain the names of the different items. \\
+\hline
+{\em values} & Contain the \char`\"{}values\char`\"{} of the different items. \\
+\hline
+{\em f\+Radio\+Group\+ID} & Radio\+Button being multiple Check\+Button in J\+U\+CE, we need an ID to know which are linked together. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classui_radio_button_a349af9495261c8f99fc5681ba3a74d2b}\label{classui_radio_button_a349af9495261c8f99fc5681ba3a74d2b}} 
+\index{uiRadioButton@{uiRadioButton}!buttonClicked@{buttonClicked}}
+\index{buttonClicked@{buttonClicked}!uiRadioButton@{uiRadioButton}}
+\doxysubsubsection{\texorpdfstring{buttonClicked()}{buttonClicked()}}
+{\footnotesize\ttfamily void ui\+Radio\+Button\+::button\+Clicked (\begin{DoxyParamCaption}\item[{Button $\ast$}]{button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+Check which button is checked, and give its \char`\"{}value\char`\"{} to the F\+A\+U\+ST module \mbox{\Hypertarget{classui_radio_button_ac08f853670cbdb52cc3f7d4ca21f4dd5}\label{classui_radio_button_ac08f853670cbdb52cc3f7d4ca21f4dd5}} 
+\index{uiRadioButton@{uiRadioButton}!paint@{paint}}
+\index{paint@{paint}!uiRadioButton@{uiRadioButton}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily virtual void ui\+Radio\+Button\+::paint (\begin{DoxyParamCaption}\item[{Graphics \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Display the Radio\+Button name \mbox{\Hypertarget{classui_radio_button_afd8717747911b9ec9fe84eca7b06d55e}\label{classui_radio_button_afd8717747911b9ec9fe84eca7b06d55e}} 
+\index{uiRadioButton@{uiRadioButton}!resized@{resized}}
+\index{resized@{resized}!uiRadioButton@{uiRadioButton}}
+\doxysubsubsection{\texorpdfstring{resized()}{resized()}}
+{\footnotesize\ttfamily virtual void ui\+Radio\+Button\+::resized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handle the placement of each juce\+::\+Toggle\+Button everytime the layout size is changed. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Juce\+G\+U\+I.\+h\end{DoxyCompactItemize}

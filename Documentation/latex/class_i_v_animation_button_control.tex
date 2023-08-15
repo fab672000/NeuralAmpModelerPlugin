@@ -1,0 +1,134 @@
+\hypertarget{class_i_v_animation_button_control}{}\doxysection{I\+V\+Animation\+Button\+Control Class Reference}
+\label{class_i_v_animation_button_control}\index{IVAnimationButtonControl@{IVAnimationButtonControl}}
+
+
+{\ttfamily \#include $<$I\+Controls.\+h$>$}
+
+Inheritance diagram for I\+V\+Animation\+Button\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_v_animation_button_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_v_animation_button_control_a2a2ff9cda6d342abcd7cbd03aa425e44}{I\+V\+Animation\+Button\+Control}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, int param\+Idx, const char $\ast$label=\char`\"{}\char`\"{}, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style=D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+Y\+LE, E\+V\+Shape shape=E\+V\+Shape\+::\+Rectangle, I\+Action\+Function aF=\mbox{\hyperlink{group___i_graphics_structs_ga4811fc1cdfe2f505c6ad07024731bc41}{Splash\+Click\+Action\+Func}})
+\item 
+void \mbox{\hyperlink{class_i_v_animation_button_control_ac0f00204d2c9099e816ce4efee172cce}{On\+Popup\+Menu\+Selection}} (\mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$p\+Selected\+Menu, int val\+Idx) override
+\item 
+void \mbox{\hyperlink{class_i_v_animation_button_control_a206c9e7669d51afca4d37f748a2e57c7}{Set\+Value\+From\+User\+Input}} (double value, int val\+Idx=0) override
+\item 
+void \mbox{\hyperlink{class_i_v_animation_button_control_a5eeffa575726c3ea43a4179f308175bd}{Set\+Value\+From\+Delegate}} (double value, int val\+Idx=0) override
+\item 
+void \mbox{\hyperlink{class_i_v_animation_button_control_ab8d34f6a22ebfec5c4aebba99aa316f2}{Set\+Style}} (const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A meta control that has a single \mbox{\hyperlink{class_i_v_button_control}{I\+V\+Button\+Control}} child. It allows an animated button to trigger parameter changes, which otherwise wouldn\textquotesingle{}t work After the animation function has ended \mbox{\hyperlink{class_i_control_a8adc93eefc60c189e4baffc21d21916e}{Prompt\+User\+Input()}} is called on the (invisible) parent control which is the one linked to the parameter 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_v_animation_button_control_a2a2ff9cda6d342abcd7cbd03aa425e44}\label{class_i_v_animation_button_control_a2a2ff9cda6d342abcd7cbd03aa425e44}} 
+\index{IVAnimationButtonControl@{IVAnimationButtonControl}!IVAnimationButtonControl@{IVAnimationButtonControl}}
+\index{IVAnimationButtonControl@{IVAnimationButtonControl}!IVAnimationButtonControl@{IVAnimationButtonControl}}
+\doxysubsubsection{\texorpdfstring{IVAnimationButtonControl()}{IVAnimationButtonControl()}}
+{\footnotesize\ttfamily I\+V\+Animation\+Button\+Control\+::\+I\+V\+Animation\+Button\+Control (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{int}]{param\+Idx,  }\item[{const char $\ast$}]{label = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&}]{style = {\ttfamily DEFAULT\+\_\+STYLE},  }\item[{E\+V\+Shape}]{shape = {\ttfamily EVShape\+:\+:Rectangle},  }\item[{I\+Action\+Function}]{aF = {\ttfamily \mbox{\hyperlink{group___i_graphics_structs_ga4811fc1cdfe2f505c6ad07024731bc41}{Splash\+Click\+Action\+Func}}} }\end{DoxyParamCaption})}
+
+Constructs a vector button control 
+\begin{DoxyParams}{Parameters}
+{\em bounds} & The control\textquotesingle{}s bounds \\
+\hline
+{\em param\+Idx} & The parameter index to link this control to \\
+\hline
+{\em label} & The label for the vector control, leave empty for no label \\
+\hline
+{\em style} & The styling of this vector control \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & The shape of the button \\
+\hline
+{\em aF} & The animation triggering action\+Func that is passed to the \mbox{\hyperlink{class_i_v_button_control}{I\+V\+Button\+Control}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_v_animation_button_control_ac0f00204d2c9099e816ce4efee172cce}\label{class_i_v_animation_button_control_ac0f00204d2c9099e816ce4efee172cce}} 
+\index{IVAnimationButtonControl@{IVAnimationButtonControl}!OnPopupMenuSelection@{OnPopupMenuSelection}}
+\index{OnPopupMenuSelection@{OnPopupMenuSelection}!IVAnimationButtonControl@{IVAnimationButtonControl}}
+\doxysubsubsection{\texorpdfstring{OnPopupMenuSelection()}{OnPopupMenuSelection()}}
+{\footnotesize\ttfamily void I\+V\+Animation\+Button\+Control\+::\+On\+Popup\+Menu\+Selection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$}]{p\+Selected\+Menu,  }\item[{int}]{val\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to handle popup menu selection after \mbox{\hyperlink{class_i_graphics_a1e810f7c16d23717ad4e9e546f4f522b}{I\+Graphics\+::\+Create\+Popup\+Menu}}/\+I\+Control\+::\+Prompt\+User\+Input 
+\begin{DoxyParams}{Parameters}
+{\em p\+Selected\+Menu} & If p\+Selected\+Menu is invalid it means the user didn\textquotesingle{}t select anything \\
+\hline
+{\em val\+Idx} & An index that indicates which of the control\textquotesingle{}s vals the menu relates to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a48e5538db6500f5856d919d204a89418}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_animation_button_control_ab8d34f6a22ebfec5c4aebba99aa316f2}\label{class_i_v_animation_button_control_ab8d34f6a22ebfec5c4aebba99aa316f2}} 
+\index{IVAnimationButtonControl@{IVAnimationButtonControl}!SetStyle@{SetStyle}}
+\index{SetStyle@{SetStyle}!IVAnimationButtonControl@{IVAnimationButtonControl}}
+\doxysubsubsection{\texorpdfstring{SetStyle()}{SetStyle()}}
+{\footnotesize\ttfamily void I\+V\+Animation\+Button\+Control\+::\+Set\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&}]{style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the Style of this I\+V\+Control 
+\begin{DoxyParams}{Parameters}
+{\em style} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_vector_base_a4ac44b67f485489130d2afee9c28dae4}{I\+Vector\+Base}}.
+
+\mbox{\Hypertarget{class_i_v_animation_button_control_a5eeffa575726c3ea43a4179f308175bd}\label{class_i_v_animation_button_control_a5eeffa575726c3ea43a4179f308175bd}} 
+\index{IVAnimationButtonControl@{IVAnimationButtonControl}!SetValueFromDelegate@{SetValueFromDelegate}}
+\index{SetValueFromDelegate@{SetValueFromDelegate}!IVAnimationButtonControl@{IVAnimationButtonControl}}
+\doxysubsubsection{\texorpdfstring{SetValueFromDelegate()}{SetValueFromDelegate()}}
+{\footnotesize\ttfamily void I\+V\+Animation\+Button\+Control\+::\+Set\+Value\+From\+Delegate (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{val\+Idx = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the control\textquotesingle{}s value from the delegate This method is called from the class implementing the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} interface in order to update a control\textquotesingle{}s value members and set it to be marked dirty for redraw. 
+\begin{DoxyParams}{Parameters}
+{\em value} & Normalised incoming value \\
+\hline
+{\em val\+Idx} & The index of the value to set, which should be between 0 and \mbox{\hyperlink{class_i_control_aeaddaffd7a530a015b6992fb9aef13db}{N\+Vals()}} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a41578daf3fcc6fff87eec86ef56051a7}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_animation_button_control_a206c9e7669d51afca4d37f748a2e57c7}\label{class_i_v_animation_button_control_a206c9e7669d51afca4d37f748a2e57c7}} 
+\index{IVAnimationButtonControl@{IVAnimationButtonControl}!SetValueFromUserInput@{SetValueFromUserInput}}
+\index{SetValueFromUserInput@{SetValueFromUserInput}!IVAnimationButtonControl@{IVAnimationButtonControl}}
+\doxysubsubsection{\texorpdfstring{SetValueFromUserInput()}{SetValueFromUserInput()}}
+{\footnotesize\ttfamily void I\+V\+Animation\+Button\+Control\+::\+Set\+Value\+From\+User\+Input (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{val\+Idx = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Set the control\textquotesingle{}s value after user input. This method is called after a text entry or popup menu prompt triggered by \mbox{\hyperlink{class_i_control_a8adc93eefc60c189e4baffc21d21916e}{Prompt\+User\+Input()}}, calling Set\+Dirty(true), which will mean that the new value gets sent back to the delegate 
+\begin{DoxyParams}{Parameters}
+{\em value} & the normalised value after user input via text entry or pop-\/up menu \\
+\hline
+{\em val\+Idx} & An index to choose which of the control\textquotesingle{}s linked parameters to retrieve. N\+O\+TE\+: since controls usually have only 1 parameter you can omit this argument and use the default index of 0 \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4c1c9f3f537fa2f56ad8f62ba4000b73}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_controls_8h}{I\+Controls.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_controls_8cpp}{I\+Controls.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,500 @@
+{\ttfamily faust2smartkeyb} is a tool to generate ready-\/to-\/use musical Android and i\+OS applications using the \href{http://faust.grame.fr}{\texttt{ Faust programming language}}. Unlike \href{https://ccrma.stanford.edu/~rmichon/faust2android/}{\texttt{ {\ttfamily faust2android}}} and {\ttfamily faust2ios}, {\ttfamily faust2smartkeyb} ignores the standard user interface (\mbox{\hyperlink{class_u_i}{UI}}) declared in the \mbox{\hyperlink{struct_faust}{Faust}} code (e.\+g., {\ttfamily hslider}, {\ttfamily button}, etc.), and replaces it by a {\ttfamily Smart\+Keyboard} \mbox{\hyperlink{class_u_i}{UI}}.
+
+The {\ttfamily Smart\+Keyboard} \mbox{\hyperlink{class_u_i}{UI}} allows to implement a wide range of controllers (basic keyboards, isomorphic keyboards, pads, X/Y controllers, etc.) on a touch-\/screen and can be configured directly in the \mbox{\hyperlink{struct_faust}{Faust}} code using the {\ttfamily Smart\+Keyboard} metadata.
+
+This documentation demonstrates how to use {\ttfamily faust2smartkeyb} and provides \href{\#additional-resources}{\texttt{ a series of links to tutorials on how to turn mobile devices into musical instruments}}.
+
+{\ttfamily faust2smartkeyb} is part of the \href{https://github.com/grame-cncm/faust}{\texttt{ Faust distribution}} and will be automatically installed on your system with the latest version of \mbox{\hyperlink{struct_faust}{Faust}}.
+
+W\+A\+R\+N\+I\+NG\+: this tool is still being beta tested and there are probably a few bugs. If you find a bug, please report it to rmichon\+\_\+at\+\_\+ccrma\+\_\+dot\+\_\+stanford\+\_\+dot\+\_\+edu.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md518}{}\doxysection{Compatibility}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md518}
+Apps generated with {\ttfamily faust2smartkeyb} should work on any i\+OS device running a \char`\"{}reasonably recent\char`\"{} version of i\+OS (less than 4 years old). Things are a bit more restrictive on Android and target devices must run at least on {\itshape Jelly Bean} (version 4.\+1). However, for optimal performances (especially regarding latency), we recommend you to be at least on {\itshape Kit\+Kat} (5.\+0). Interested readers might want to read \href{https://source.android.com/devices/audio/latency_measurements.html}{\texttt{ this page on Android audio latency}} to learn more about this topic.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md519}{}\doxysection{Setting Up Your System}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md519}
+This section shows how to configure your system to use the various features of {\ttfamily faust2smartkeyb}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md520}{}\doxysubsection{i\+OS}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md520}
+Aaaaah i\+OS... This OS has been (and still is, even though Android is catching up fast) by far the best one to make musical apps involving real-\/time audio \mbox{\hyperlink{class_d_s_p}{D\+SP}}. However, Apple likes to make the life of developers hard, and in order to develop apps for this platform, you used to need to have an Apple developer account (\$100/year, yes). Things changed since then, and it is now possible to develop i\+OS apps and upload them on your device for free! However, the number of apps you can install using this technique is very limited (5, if \mbox{\hyperlink{struct_i}{I}} remember correctly). Oh, and needless to say that Y\+OU W\+I\+LL N\+E\+ED A M\+AC to generate i\+OS apps with {\ttfamily faust2smartkeyb}.
+
+In any case, to use {\ttfamily faust2smartkeyb} (as well as {\ttfamily faust2ios}) or to do any kind of i\+OS development in general, you will either need a \char`\"{}pro\char`\"{} Apple developer account or a free one. This documentation doesn\textquotesingle{}t show how to take care of that. For more information about this, visit the \href{https://developer.apple.com/}{\texttt{ Apple website}}. Good luck!
+
+Once you took care of this, make sure that Xcode is properly installed on your system (using the Apple Store, not some weird technique) and that it is U\+P-\/\+T\+O-\/\+D\+A\+TE. A little bit more Apple c\mbox{[}...\mbox{]}p\+: if the i\+OS device you\textquotesingle{}re using is running the latest version of i\+OS, then you will need to have the latest version of the i\+OS S\+DK installed on your system. Unfortunately, the only way to do that is to also have the latest version Xcode which will require the latest version of O\+S\+X! Once again, good luck!
+
+After all these steps, you should be ready to go.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md521}{}\doxysubsection{Android}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md521}
+Android apps can be developed on all major platforms (Windows, O\+SX and Linux). Unlike Apple (see previous section), Google provides a lot more flexibility to app developers and it is not required to sign up for any developer account in order to install apps on your device. On the other hand, the installation of the Android development tool chain is a little bit more complex than on i\+OS. It should be quite similar on Linux and O\+SX and we describe it below. We don\textquotesingle{}t provide information for Windows since {\ttfamily faust2smartkeyb} will probably not work at all on this platform (sorry).
+
+First, install \href{https://developer.android.com/studio/index.html}{\texttt{ Android studio}}. When you run it for the first time, we advise you to choose the option where you don\textquotesingle{}t import previous settings (unless you know what you\textquotesingle{}re doing, of course). Then, during the configuration process, choose a \char`\"{}\+Standard\char`\"{} setup. The sdk installation path should be prompted to you after that. Take note of it as we\textquotesingle{}ll need it later (should be {\ttfamily $\sim$/\+Library/\+Android/sdk} on O\+SX). Once Android studio finished setting up, click on \char`\"{}\+Configure\char`\"{} and then \char`\"{}\+S\+D\+K Manager\char`\"{} (you might have to go in \char`\"{}\+Tools/\+Android/\+S\+D\+K Manager\char`\"{} on Linux). In the {\ttfamily S\+DK Tools} tab, install the \href{https://developer.android.com/ndk/index.html}{\texttt{ N\+DK (Native Development Kit)}} which is necessary to compile apps generated by {\ttfamily faust2smartkeyb} ({\ttfamily faust2smartkeyb} uses {\ttfamily faust2api} internally, if you want to get more details about why you need to do all that, have a look at the \href{https://ccrma.stanford.edu/~rmichon/faust2api/}{\texttt{ {\ttfamily faust2api} documentation}}).
+
+In order to be able to compile Android apps in your terminal, you must configure the {\ttfamily A\+N\+D\+R\+O\+I\+D\+\_\+\+H\+O\+ME} and {\ttfamily A\+N\+D\+R\+O\+I\+D\+\_\+\+N\+D\+K\+\_\+\+H\+O\+ME} environment variables so that they point to where the {\ttfamily sdk} and the {\ttfamily ndk} are installed. To do this, add the following line to {\ttfamily $\sim$/.bashrc} on Linux or {\ttfamily $\sim$/.bash\+\_\+profile} on O\+SX (if this file doesn\textquotesingle{}t exist, create it)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export ANDROID\_HOME=/home/r/Android/Sdk}
+\DoxyCodeLine{export ANDROID\_NDK\_HOME=\$ANDROID\_HOME/ndk-\/bundle}
+\end{DoxyCode}
+
+
+where paths should be replaced with the ones on your system, of course.
+
+Finally, if you want to be able to install the generated Android apps directly from {\ttfamily faust2smartkeyb}, you will have to install {\ttfamily adb} on your system using your package manager.
+
+That\textquotesingle{}s it! You\textquotesingle{}re now ready to forge Android apps with {\ttfamily faust2smartkeyb}!\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md522}{}\doxysection{Quick Tour\+: From a Simple Faust Code to a Working App}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md522}
+{\ttfamily faust2smartkeyb} uses {\ttfamily faust2api} internally. Thus, \mbox{\hyperlink{struct_faust}{Faust}} codes provided to {\ttfamily faust2smartkeyb} must respect the same standards as for {\ttfamily faust2api} (check the \href{https://ccrma.stanford.edu/~rmichon/faust2api/}{\texttt{ {\ttfamily faust2api} documentation}} for more information about this).
+
+The following code is similar to the one presented in the \href{https://ccrma.stanford.edu/~rmichon/faust2api/}{\texttt{ {\ttfamily faust2api} documentation}} in the \href{https://ccrma.stanford.edu/~rmichon/faust2api/\#midi-enabled-polyphonic-object}{\texttt{ M\+I\+DI Enabled Polyphonic Object}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{import("stdfaust.lib");}
+\DoxyCodeLine{freq = nentry("freq",200,40,2000,0.01);}
+\DoxyCodeLine{gain = nentry("gain",1,0,1,0.01);}
+\DoxyCodeLine{gate = button("gate");}
+\DoxyCodeLine{cutoff = 1000;}
+\DoxyCodeLine{envelope = gate*gate : si.smoo;}
+\DoxyCodeLine{process = os.sawtooth(freq)*envelope : fi.lowpass(3,cutoff) : *(0.25) <: \_,\_;}
+\end{DoxyCode}
+
+
+It implements a simple synthesizer based on a filtered sawtooth wave and it is polyphony-\/compatible thanks to its {\ttfamily freq}, {\ttfamily gain}, and {\ttfamily gate} parameters. Note, that the gain of the synth is scaled. This is done to prevent clicking if several polyphony voices are played at the same time. When using an effect with a synth, it\textquotesingle{}s better practice to carry out this type of gain scaling in the effect section to save up computation (see \href{\#effect}{\texttt{ {\ttfamily effect}}}).
+
+If this code is provided as such to {\ttfamily faust2smartkeyb}, its \mbox{\hyperlink{class_u_i}{UI}} declaration will be ignored and replaced by the default {\ttfamily Smart\+Keyboard} interface. This interface can be configured at the beginning of the \mbox{\hyperlink{struct_faust}{Faust}} code using the {\ttfamily Smart\+Keyboard} metadata\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{declare interface "SmartKeyboard\{}
+\DoxyCodeLine{    // configuration keys}
+\DoxyCodeLine{\}";}
+\end{DoxyCode}
+
+
+and by placing a set of \href{\#smartkeyboard-configuration-keys}{\texttt{ key/value pairs}} between the two curly brackets. For example,
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{declare interface "SmartKeyboard\{}
+\DoxyCodeLine{    'Number of Keyboards':'2',}
+\DoxyCodeLine{    'Keyboard 0 -\/ Number of Keys':'13',}
+\DoxyCodeLine{    'Keyboard 1 -\/ Number of Keys':'13',}
+\DoxyCodeLine{    'Keyboard 0 -\/ Lowest Key':'72',}
+\DoxyCodeLine{    'Keyboard 1 -\/ Lowest Key':'60'}
+\DoxyCodeLine{\}";}
+\end{DoxyCode}
+
+
+will create an interface with 2 keyboards of 13 keys each. The lowest note of the top keyboard will be M\+I\+DI note 72 (C4), and the lowest note of the other keyboard will be 60 (C3).
+
+A {\ttfamily Smart\+Keyboard} interface can stream a set of \href{\#smartkeyboard-standard-parameters}{\texttt{ standard Faust parameters}} to control the given \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}}. For example, the cutoff frequency of the lowpass filter of the previous \mbox{\hyperlink{struct_faust}{Faust}} code can be controlled with the Y position of the finger on the key simply by adding `\textquotesingle{}Keyboard 0 -\/ Send Y'\+:\textquotesingle{}1\textquotesingle{},\textquotesingle{}Keyboard 1 -\/ Send Y\textquotesingle{}\+:\textquotesingle{}1\textquotesingle{}{\ttfamily to the interface declaration and by using the associated standard \mbox{[}}y\`{}\mbox{]}(\#y) parameter\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{fingerY = nentry("y",0.5,0,1,0.01) : si.smoo; // y is always normalized between 0 and 1}
+\DoxyCodeLine{cutoff = fingerY*1960+40; // mapping}
+\end{DoxyCode}
+
+
+The two following sections give an overview of the different \href{\#smartkeyboard-configuration-keys}{\texttt{ configuration keys}} and \href{\#smartkeyboard-standard-parameters}{\texttt{ standard parameters}} that can be used with {\ttfamily Smart\+Keyboard} interfaces. Also, the \href{\#additional-resources}{\texttt{ Additional Resources}} section provides links to tutorials on how to design various kinds of instruments using this system. We recommend you to check these resources since complex mappings (that are not presented here) can be created by combining different interface configurations with specific uses of standard parameters. Example codes can be found in the {\ttfamily /examples/smart\+Keyboard} folder of the \mbox{\hyperlink{struct_faust}{Faust}} distribution. Finally, the \href{\#compilation}{\texttt{ Compilation}} section demonstrates how to compile \mbox{\hyperlink{struct_faust}{Faust}} codes such as the one presented above using {\ttfamily faust2smartkeyb}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md523}{}\doxysection{Smart\+Keyboard Configuration Keys}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md523}
+This section presents the different configurations keys of {\ttfamily Smart\+Keyboard} and their function. For practical use cases, check the \href{\#additional-resources}{\texttt{ Additional Resources}} section.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md524}{}\doxysubsection{$<$tt$>$\+Inter-\/\+Keyboard Slide$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md524}
+When 1, fingers can slide between keyboards.
+
+Default value\+: 1
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md526}{}\doxysubsection{$<$tt$>$\+Keyboard M -\/ Key N -\/ Label$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md526}
+Allows to set the text inside a key on a specific keyboard. The corresponding value should be a string.
+
+Default value\+: null
+
+This is a keyboard and key specific parameter where {\ttfamily M} is the keyboard number and {\ttfamily N} the key number.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md528}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Lowest Key$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md528}
+Defines the M\+I\+DI note number of the lowest key on a specific keyboard.
+
+Default value\+: 48
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Lowest Key} and the {\ttfamily Keyboard 1 -\/ Lowest Key} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md530}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Number of Keys$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md530}
+Defines the number of keys of a specific keyboard in the interface.
+
+Default value\+: 13
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Number of Keys} and the {\ttfamily Keyboard 1 -\/ Number of Keys} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md532}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Orientation$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md532}
+Defines the orientation of a specific keyboard\+: left to right when 0 and right to left when 1.
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Orientation} and the {\ttfamily Keyboard 1 -\/ Orientation} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md534}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Piano Keyboard$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md534}
+When 1, note names are displayed and black and white keys are differentiated (if 0, all keys are white).
+
+Default value\+: 1
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Piano Keyboard} and the {\ttfamily Keyboard 1 -\/ Piano Keyboard} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md536}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Root Position$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md536}
+Position of the root (as a key number starting from 0) on a specific keyboard. This parameter is very useful when dealing with \href{\#keyboard-n---scale}{\texttt{ specific scales}}.
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Root Position} and the {\ttfamily Keyboard 1 -\/ Root Position} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md538}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Scale$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md538}
+Defines the scale of a specific keyboard.
+
+Default value\+: 0
+
+With\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Keyboard N -\/ Scale = 0}\+: Chromatic scale, note names are displayed
+\item {\ttfamily Keyboard N -\/ Scale = 1}\+: Chromatic scale, note names are not displayed
+\item {\ttfamily Keyboard N -\/ Scale = 2}\+: Major scale, note names are not displayed
+\item {\ttfamily Keyboard N -\/ Scale = 3}\+: Harmonic minor scale, note names are not displayed
+\end{DoxyItemize}
+
+Custom scales can be created by specifying an array of intervals. For example, the chromatic scale can be defined as {\ttfamily Keyboard N -\/ Scale = \{1,1,1,1,1,1,1,1,1,1,1,1\}} where the {\ttfamily 1}s are the intervals in semitones between each note. The only rule is that the sum of the intervals specified in the array must always be equal to 12. For example, the major scale can be declared as {\ttfamily Keyboard N -\/ Scale = \{2,2,1,2,2,2,1\}}.
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Scale} and the {\ttfamily Keyboard 1 -\/ Scale} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md540}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Freq$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md540}
+When 1, the \href{\#freq}{\texttt{ {\ttfamily freq}}} and \href{\#bend}{\texttt{ {\ttfamily bend}}} parameters are computed and sent to the \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} object.
+
+Default value\+: 1
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Freq} and the {\ttfamily Keyboard 1 -\/ Send Freq} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md542}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Key X$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md542}
+When 1, send the normalized X position of the finger in the current key (associated with the \href{\#kbmknx}{\texttt{ {\ttfamily kb\+Mk\+Nx}}} standard parameter where {\ttfamily M} is the current keyboard and {\ttfamily N} is the current key).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Key X} and the {\ttfamily Keyboard 1 -\/ Send Key X} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md544}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Key Y$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md544}
+When 1, send the normalized Y position of the finger in the current key (associated with the \href{\#kbmkny}{\texttt{ {\ttfamily kb\+Mk\+Ny}}} standard parameter where {\ttfamily M} is the current keyboard and {\ttfamily N} is the current key).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Key Y} and the {\ttfamily Keyboard 1 -\/ Send Key Y} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md546}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Key Status$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md546}
+When 1, send the status of the current key (associated with the \href{\#kbmknstatus}{\texttt{ {\ttfamily kb\+Mk\+Nstatus}}}).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Key Status} and the {\ttfamily Keyboard 1 -\/ Send Key Status} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md548}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Numbered X$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md548}
+When 1, send the normalized X position of the finger in the current key for a specific finger (associated with the \href{\#xn}{\texttt{ {\ttfamily xN}}} standard parameter).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Numbered X} and the {\ttfamily Keyboard 1 -\/ Send Numbered X} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md550}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Numbered Y$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md550}
+When 1, send the normalized Y position of the finger in the current key for a specific finger (associated with the \href{\#yn}{\texttt{ {\ttfamily yN}}} standard parameter).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Numbered Y} and the {\ttfamily Keyboard 1 -\/ Send Numbered Y} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md552}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send X$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md552}
+When 1, send the normalized x position of the finger in the current key (associated with the \href{\#x}{\texttt{ {\ttfamily x}}} standard parameter).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send X} and the {\ttfamily Keyboard 1 -\/ Send X} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md554}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Send Y$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md554}
+When 1, send the normalized y position of the finger in the current key (associated with the \href{\#y}{\texttt{ {\ttfamily y}}} standard parameter).
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Send Y} and the {\ttfamily Keyboard 1 -\/ Send Y} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md556}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Show Labels$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md556}
+When 1, shows note names on a specific keyboard. This parameter is overridden if \href{\#keyboard-n---piano-keyboard}{\texttt{ {\ttfamily Keyboard N -\/ Piano Keyboard}}} is defined.
+
+Default value\+: 1
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Show Labels} and the {\ttfamily Keyboard 1 -\/ Show Labels} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md558}{}\doxysubsection{$<$tt$>$\+Keyboard N -\/ Static Mode$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md558}
+When 1, keys don\textquotesingle{}t change color when touched.
+
+Default value\+: 0
+
+This is a keyboard-\/specific parameter. For example, if {\ttfamily Number of Keyboards = 2}, then there are 2 keyboards in the interface that can be configured independently with the {\ttfamily Keyboard 0 -\/ Static Mode} and the {\ttfamily Keyboard 1 -\/ Static Mode} keys.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md560}{}\doxysubsection{$<$tt$>$\+Number of Keyboards$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md560}
+Defines the number of keyboards in the interface.
+
+Default value\+: 1
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md562}{}\doxysubsection{$<$tt$>$\+Max Fingers$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md562}
+Defines the maximum number of fingers allowed on the touch-\/screen. This parameter is independent from the number of polyphony voices of the \mbox{\hyperlink{class_d_s_p}{D\+SP}} object.
+
+Default value\+: 10.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md564}{}\doxysubsection{$<$tt$>$\+Max Keyboard Polyphony$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md564}
+Defines the number of polyphony voices of each keyboard (and more, see below).
+
+Default value\+: 16
+
+This parameter has some special cases\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Max Keyboard Polyphony = 1}\+: in that case, keyboards are monophonic. Monophonic mode can be configured using the \href{\#mono-mode}{\texttt{ {\ttfamily Mono Mode}}} key.
+\item {\ttfamily Max Keyboard Polyphony = 0}\+: the first voice of the \mbox{\hyperlink{class_d_s_p}{D\+SP}} object is activated. This is very convenient to create an app generating a continuous sound or based on a physical model of a musical instrument. The voice allocation system is deactivated in that case (although the {\ttfamily freq} and {\ttfamily bend} parameters can still be sent using the \href{\#keyboard-n---send-freq}{\texttt{ {\ttfamily Keyboard N -\/ Send Freq}}} option).
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md566}{}\doxysubsection{$<$tt$>$\+Mono Mode$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md566}
+Configures the way monophonic keyboards work. Keyboards are made monophonic by setting \href{\#max-keyboard-polyphony}{\texttt{ {\ttfamily Max Keyboard Polyphony}}} to 1.
+
+Default value\+: 1
+
+With\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Mono Mode = 0}\+: the finger currently on the keyboard keeps priority\+: all other fingers are ignored.
+\item {\ttfamily Mono Mode = 1}\+: priority goes to any new finger on the keyboard. When the finger holding the note leaves the keyboard, the note is transferred to the closest finger on the same keyboard. This mode is probably the most natural one to implement a guitar interface, for example.
+\item {\ttfamily Mono Mode = 2}\+: priority goes to any new finger on the keyboard. When the finger holding the note leaves the keyboard, the note is terminated.
+\item {\ttfamily Mono Mode = 3}\+: same as {\ttfamily Mono Mode = 1}, but priority is given to new fingers only if they are at higher pitch than the current note.
+\item {\ttfamily Mono Mode = 4}\+: same as {\ttfamily Mono Mode = 1}, but priority is given to new fingers only if they are at lower pitch than the current note.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md568}{}\doxysubsection{$<$tt$>$\+Rounding Cycles$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md568}
+The number of cycles before rounding is activated.
+
+Default value\+: 5
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md570}{}\doxysubsection{$<$tt$>$\+Rounding Mode$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md570}
+Configures the way the \href{\#bend}{\texttt{ {\ttfamily bend}}} parameter associated with the current finger is quantized.
+
+Default value\+: 0
+
+With\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Rounding Mode = 0}\+: keys are rounded to the nearest integer\+: \href{\#bend}{\texttt{ {\ttfamily bend}}} is always equal to zero.
+\item {\ttfamily Rounding Mode = 1}\+: \href{\#bend}{\texttt{ {\ttfamily bend}}} is continuous (new notes might sound out of tune).
+\item {\ttfamily Rounding Mode = 2}\+: keys are rounded to the nearest integer when the finger is not moving or when a new note is started but become continuous when fast movement are happening. The behavior of this system can be fine-\/tuned using the \href{\#rounding-update-speed}{\texttt{ {\ttfamily Rounding Update Speed}}}, \href{\#rounding-smooth}{\texttt{ {\ttfamily Rounding Smooth}}}, \href{\#rounding-threshold}{\texttt{ {\ttfamily Rounding Threshold}}} and \href{\#rounding-cycles}{\texttt{ {\ttfamily Rounding Cycles}}} parameters.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md572}{}\doxysubsection{$<$tt$>$\+Rounding Smooth$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md572}
+The pole of the integrators used for smoothing movements during rounding.
+
+Default value\+: 0.\+9
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md574}{}\doxysubsection{$<$tt$>$\+Rounding Threshold$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md574}
+Rounding is deactivated when the output of the smoothers (see \href{\#rounding-threshold}{\texttt{ {\ttfamily Rounding Threshold}}}) goes above this value.
+
+Default value\+: 3
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md576}{}\doxysubsection{$<$tt$>$\+Rounding Update Speed$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md576}
+Speed in seconds at which the rounding loop is updated.
+
+Default value\+: 0.\+06
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md578}{}\doxysubsection{$<$tt$>$\+Send Current Key$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md578}
+When 1, send the number of the current key in the current keyboard (associated with the \href{\#key}{\texttt{ {\ttfamily key}}} standard parameter).
+
+Default value\+: 1
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md580}{}\doxysubsection{$<$tt$>$\+Send Current Keyboard$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md580}
+When 1, send the number of the current keyboard (associated with the \href{\#keyboard}{\texttt{ {\ttfamily keyboard}}} standard parameter).
+
+Default value\+: 1
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md582}{}\doxysubsection{$<$tt$>$\+Send Fingers Count$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md582}
+Send the number of fingers present on each keyboard using the \href{\#kbnfingers}{\texttt{ {\ttfamily kb\+Nfingers} standard parameter}} where {\ttfamily N} is the keyboard number.
+
+Default value\+: 0
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md584}{}\doxysubsection{$<$tt$>$\+Send Sensors$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md584}
+When 1, sends the raw sensor (accelerometer and gyroscope) values to the \mbox{\hyperlink{class_d_s_p}{D\+SP}} object. If the {\ttfamily acc} metedata is declared with one of the parameters, sensors data will be used to control this parameter through a specified mapping.
+
+Default value\+: 1
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md586}{}\doxysection{Smart\+Keyboard Standard Parameters}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md586}
+This section presents the different standard \mbox{\hyperlink{struct_faust}{Faust}} parameters that can be used with {\ttfamily Smart\+Keyboard} interfaces. For practical use cases, check the \href{\#additional-resources}{\texttt{ Additional Resources}} section. Also, example codes can be found in the {\ttfamily /examples/smart\+Keyboard} folder of \href{https://github.com/grame-cncm/faust}{\texttt{ the Faust distribution}}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md587}{}\doxysubsection{$<$tt$>$freq$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md587}
+The reference frequency in Hz of the current event. This value is provided at the same time than \href{\#gate}{\texttt{ {\ttfamily gate}}} and only once. To implement continuous pitch control such as slides, vibrato, etc. use the \href{\#bend}{\texttt{ {\ttfamily bend}}} parameter.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md589}{}\doxysubsection{$<$tt$>$bend$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md589}
+A coefficient to multiply to {\ttfamily freq} to bend it ({\ttfamily bend = 1} corresponds to no bend so {\ttfamily continuous\+Freq = freq$\ast$bend}). This parameter can be used to implement vibrato, slides, etc. It heavily relies on \href{\#rounding-mode}{\texttt{ {\ttfamily Rounding Mode}}}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md591}{}\doxysubsection{$<$tt$>$gate$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md591}
+The trigger signal sent when a finger touches the screen (1) or when it stops touching it (0). If {\ttfamily Rounding Mode = 0}, then \char`\"{}0\char`\"{} and \char`\"{}1\char`\"{} are sent everytime a finger slides to a new key (a new voice is allocated everytime).
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md593}{}\doxysubsection{$<$tt$>$key$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md593}
+The key ID in the current keyboard.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md595}{}\doxysubsection{$<$tt$>$keyboard$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md595}
+The ID of the current keyboard.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md597}{}\doxysubsection{$<$tt$>$kb\+Nfingers$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md597}
+The number of fingers present on a specific keyboard {\ttfamily N}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md599}{}\doxysubsection{$<$tt$>$kb\+Mk\+Nstatus$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md599}
+Status of the current key {\ttfamily N} in keyboard {\ttfamily M} with\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily status==0}\+: finger up on the key
+\item {\ttfamily status==1}\+: finger down on the key
+\item {\ttfamily status==2}\+: finger is moving inside the key
+\item {\ttfamily status==3}\+: finger moved to another key
+\item {\ttfamily status==4}\+: finger moved from one key to the current key
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md601}{}\doxysubsection{$<$tt$>$kb\+Mk\+Nx$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md601}
+The normalized (0-\/1) X position of the finger in a specific key where {\ttfamily M} is the current keyboard and {\ttfamily N} is the current key.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md603}{}\doxysubsection{$<$tt$>$kb\+Mk\+Ny$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md603}
+The normalized (0-\/1) Y position of the finger in a specific key where {\ttfamily M} is the current keyboard and {\ttfamily N} is the current key.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md605}{}\doxysubsection{$<$tt$>$x$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md605}
+The normalized (0-\/1) X position of the finger in the current key.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md607}{}\doxysubsection{$<$tt$>$y$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md607}
+The normalized (0-\/1) Y position of the finger in the current key.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md609}{}\doxysubsection{$<$tt$>$x\+N$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md609}
+The normalized (0-\/1) X position of the finger in the current key for a specific finger where {\ttfamily N} is the finger ID in order of appearance on the screen starting from 0 (e.\+g., {\ttfamily x0} for the X position of the first active finger to touch the screen, {\ttfamily x1} for the X position of the second active finger to touch the screen, etc.).
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md611}{}\doxysubsection{$<$tt$>$y\+N$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md611}
+The normalized (0-\/1) Y position of the finger in the current key for a specific finger where {\ttfamily N} is the finger ID in order of appearance on the screen starting from 0 (e.\+g., {\ttfamily y0} for the Y position of the first active finger to touch the screen, {\ttfamily y1} for the Y position of the second active finger to touch the screen, etc.).
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md613}{}\doxysection{Compilation}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md613}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md614}{}\doxysubsection{Overview}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md614}
+We assume that you followed the steps described in the \href{\#setting-up-your-system}{\texttt{ Setting-\/\+Up Your System}} section before reading this. Only 2 arguments are required to use {\ttfamily faust2smartkeyb}\+: the target platform (i\+OS or Android) and a \mbox{\hyperlink{struct_faust}{Faust}} code\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{faust2smartkeyb -\/ios mySynth.dsp}
+\end{DoxyCode}
+
+
+will compile {\ttfamily my\+Synth.\+dsp} into an i\+OS app ({\ttfamily my\+Synth.\+app}) with a {\ttfamily Smart\+Keyboard} interface and
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{faust2smartkeyb -\/android mySynth.dsp}
+\end{DoxyCode}
+
+
+will do the same for Android ({\ttfamily my\+Synth.\+apk}).
+
+While this should be very smooth on Android if your followed the steps in \href{\#setting-up-your-system}{\texttt{ Setting-\/\+Up Your System}}, this will probably not work on i\+OS. Why? Because the bundle identifier associated with the template app used to compile a {\ttfamily Smart\+Keyboard} app for i\+OS is not yours. So unless you change it directly in the source code of the \mbox{\hyperlink{struct_faust}{Faust}} distribution ({\ttfamily /architecture/smart\+Keyboard/i\+O\+S/\+Faust.xcodeproj}) and re-\/install \mbox{\hyperlink{struct_faust}{Faust}}, it will not work (yes, we know, we know... \+:( ).
+
+However, in practice, you\textquotesingle{}ll rarely want to compile directly your \mbox{\hyperlink{struct_faust}{Faust}} code into an app package. Instead, you might prefer to create an Android Studio on an Xcode project associated to your \mbox{\hyperlink{struct_faust}{Faust}} code and update it when necessary. This is a much better solution because compiling an app from scratch every time (especially on Android) takes a lot of time ($>$1 minute in most cases). To do this, you can use the \href{\#source}{\texttt{ {\ttfamily -\/source}}} option in combination with \href{\#reuse}{\texttt{ {\ttfamily -\/reuse}}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{faust2smartkeyb -\/android -\/source -\/reuse mySynth.dsp}
+\end{DoxyCode}
+
+
+In that case, {\ttfamily faust2smartkeyb} will not compile {\ttfamily my\+Synth.\+dsp} to an app but will create a folder called {\ttfamily faustsmartkeyb.\+my\+Synth} in the current folder containing an Android Studio project. Every time the previous command will be run, the portion of the app source code corresponding to {\ttfamily my\+Synth.\+dsp} will be updated (if we only used {\ttfamily -\/source} without {\ttfamily -\/reuse} then {\ttfamily faustsmartkeyb.\+my\+Synth} would be erased and re-\/created). The same steps can be followed when using {\ttfamily -\/ios}.
+
+The app can be easily installed on your device from Xcode or Android Studio. On i\+OS, bundle identifier issues can be fixed directly in the Xcode project contained in {\ttfamily faustsmartkeyb.\+my\+Synth} which is more convenient than doing it in the \mbox{\hyperlink{struct_faust}{Faust}} source code.
+
+The end of this section gives an overview of the different options that can be used with {\ttfamily faust2smartkeyb}.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md615}{}\doxysubsection{$<$tt$>$-\/android$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md615}
+Asks {\ttfamily faust2smartkeyb} to generate an Android application.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md617}{}\doxysubsection{$<$tt$>$-\/debug$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md617}
+Debug mode\+: prints all the details.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md619}{}\doxysubsection{$<$tt$>$-\/effect$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md619}
+Allows to specify an effect \mbox{\hyperlink{struct_faust}{Faust}} file to be connect to the provided synth file. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{faust2smartkeyb -\/android -\/effect effect.dsp synth.dsp}
+\end{DoxyCode}
+
+
+Will compile an app where {\ttfamily synth.\+dsp} is the \mbox{\hyperlink{struct_faust}{Faust}} code containing the source for the polyphonic synthesizer and {\ttfamily effect.\+dsp} the effect chain that will be connected to the output of the polyphonic synth. Indeed, in most cases, it is not necessary to have a different effect chain for each voice.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md621}{}\doxysubsection{$<$tt$>$-\/help$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md621}
+Prints the documentation of {\ttfamily faust2smartkeyb}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md623}{}\doxysubsection{$<$tt$>$-\/install$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md623}
+Installs the generated app on any device connected to the computer. This option is only available on Android and requires {\ttfamily adb} to be installed on your system.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md625}{}\doxysubsection{$<$tt$>$-\/ios$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md625}
+Asks {\ttfamily faust2smartkeyb} to generate an i\+OS application.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md627}{}\doxysubsection{$<$tt$>$-\/nvoices$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md627}
+Allows to specify the maximum number of voices of polyphony of the generated synth. This option is only used as a safeguard since only active voices are allocated and computed.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md629}{}\doxysubsection{$<$tt$>$-\/reuse$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md629}
+Asks {\ttfamily faust2smartkeyb} to reuse the same project and to only update its portion corresponding to the provided \mbox{\hyperlink{struct_faust}{Faust}} code. This option will not prevent compilation from happening. Instead, use \href{\#source}{\texttt{ {\ttfamily -\/source}}} for that.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md631}{}\doxysubsection{$<$tt$>$-\/source$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md631}
+Asks {\ttfamily faust2smartkeyb} to only generate the source of the app and to not compile it. The source of the app will be placed in a folder called {\ttfamily faustsmartkeyb.\+faust\+File\+Name}.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md633}{}\doxysection{Additional Resources}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md633}
+
+\begin{DoxyItemize}
+\item \href{https://ccrma.stanford.edu/~rmichon/faustTutorials/\#what-is-faust}{\texttt{ What Is Faust?}}
+\item \href{https://ccrma.stanford.edu/~rmichon/faustTutorials/\#faust-hero-in-2-hours}{\texttt{ Faust Hero in 2 Hours}}
+\item \href{https://ccrma.stanford.edu/~rmichon/faustTutorials/\#making-faust-based-smartphone-musical-instruments}{\texttt{ Making Faust-\/\+Based Smartphone Musical Instruments ({\ttfamily faust2smartkeyb} Tutorials)}}
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md634}{}\doxysection{Version/\+License}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_d208f9949a2ceccf359bbf9ea7e18f24_autotoc_md634}
+\mbox{\hyperlink{struct_version}{Version}} 0.\+0.
+
+See {\ttfamily L\+I\+C\+E\+N\+C\+E.\+md} in the {\ttfamily Smart\+Keyboard} source code ({\ttfamily faust/architecture/smart\+Keyboard}). 

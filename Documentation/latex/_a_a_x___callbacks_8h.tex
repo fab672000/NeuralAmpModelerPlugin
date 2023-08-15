@@ -1,0 +1,193 @@
+\hypertarget{_a_a_x___callbacks_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\+A\+A\+X\+\_\+\+Callbacks.h File Reference}
+\label{_a_a_x___callbacks_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/Interfaces/AAX\_Callbacks.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/Interfaces/AAX\_Callbacks.h}}
+
+
+A\+AX callback prototypes and Proc\+Ptr definitions  
+
+
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component$<$ a\+Context\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Empty class containing type declarations for the A\+AX algorithm and associated callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_ad02e57363d002e60ca822c728896a3c4}\label{_a_a_x___callbacks_8h_ad02e57363d002e60ca822c728896a3c4}} 
+typedef \mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+CK $\ast$ {\bfseries A\+A\+X\+Create\+Object\+Proc}(void)
+\item 
+typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$ void $>$\+::C\+Process\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc}}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback that A\+AX calls to process data packets and/or audio. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$ void $>$\+::C\+Packet\+Allocator \mbox{\hyperlink{_a_a_x___callbacks_8h_a5c9c7cdc36d5459fa77e5dedb06d161a}{A\+A\+X\+\_\+\+C\+Packet\+Allocator}}
+\begin{DoxyCompactList}\small\item\em Used by A\+A\+X\+\_\+\+Schedule\+Packet() \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$ void $>$\+::C\+Instance\+Init\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_a3963a850079d3186e08c97a1a4d0ef1c}{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback that A\+AX calls to notify the component that an instance is being added or removed. ~\newline
+ \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$ void $>$\+::C\+Background\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_aa64561d963284a3124a0821e7dc79c9a}{A\+A\+X\+\_\+\+C\+Background\+Proc}}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback that A\+AX calls in the A\+AX Idle time. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$ void $>$\+::C\+Init\+Private\+Data\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback to initialize a private data block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892}{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+ID}} \{ \newline
+\mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters}} = 0, 
+\mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+UI}} = 1, 
+\mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a04ce687ba05b8c7c2cce0b32d868f3db}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor}} = 3, 
+\mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data}} = 5, 
+\newline
+\mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892aeba711809f385408668d73d0f20d59eb}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Task\+Agent}} = 6
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A\+AX callback prototypes and Proc\+Ptr definitions 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_aa64561d963284a3124a0821e7dc79c9a}\label{_a_a_x___callbacks_8h_aa64561d963284a3124a0821e7dc79c9a}} 
+\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!AAX\_CBackgroundProc@{AAX\_CBackgroundProc}}
+\index{AAX\_CBackgroundProc@{AAX\_CBackgroundProc}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_CBackgroundProc}{AAX\_CBackgroundProc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$void$>$\+::C\+Background\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_aa64561d963284a3124a0821e7dc79c9a}{A\+A\+X\+\_\+\+C\+Background\+Proc}}}
+
+
+
+A user-\/defined callback that A\+AX calls in the A\+AX Idle time. 
+
+This optional callback allows the component to do background processing in whatever manner the plug-\/in developer desires
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Should} & return 0 on success, anything else on failure. Failure will cause the A\+AX host to signal an error up the callchain. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}\label{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}} 
+\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!AAX\_CInitPrivateDataProc@{AAX\_CInitPrivateDataProc}}
+\index{AAX\_CInitPrivateDataProc@{AAX\_CInitPrivateDataProc}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_CInitPrivateDataProc}{AAX\_CInitPrivateDataProc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$void$>$\+::C\+Init\+Private\+Data\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}}}
+
+
+
+A user-\/defined callback to initialize a private data block. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000260}{Deprecated}}]\end{DoxyRefDesc}
+
+
+A component that requires private data supplies \mbox{\hyperlink{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}} callbacks to set its private data to the state it should be in at the start of audio. The component first declares one or more pointers to private data in its context. It then registers each such field with A\+AX along with its data size, various other attributes, and a \mbox{\hyperlink{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}}. The A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc always runs on the host system, not the \mbox{\hyperlink{class_d_s_p}{D\+SP}}. A\+AX allocates storage for each private data block and calls its associated \mbox{\hyperlink{_a_a_x___callbacks_8h_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}} to initialize it. If the component\textquotesingle{}s \mbox{\hyperlink{_a_a_x___callbacks_8h_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc}} runs on external hardware, A\+AX initializes private data blocks on the host system and copies them to the remote system.
+
+\begin{DoxySeeAlso}{See also}
+alg\+\_\+pd\+\_\+init
+\end{DoxySeeAlso}
+\begin{DoxyParagraph}{in\+Field\+Index}
+The port ID of the block to be initialized, as generated by \mbox{\hyperlink{_a_a_x_8h_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X()}}. A component can register a separate A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc for each of its private data blocks, or it can use fewer functions that switch on {\ttfamily in\+Field\+Index}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{in\+New\+Block}
+A pointer to the block to be initialized. If the component runs externally, A\+AX will copy this block to the remote system after it is initialized.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{in\+Size}
+The size of the block to be initialized. If a component has multiple private blocks that only need to be zeroed out, say, it can use a single A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc for all of these blocks that zeroes them out according to {\ttfamily in\+Size}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{in\+Controller}
+A pointer to the current Effect instance\textquotesingle{}s \mbox{\hyperlink{class_a_a_x___i_controller}{A\+A\+X\+\_\+\+I\+Controller}}. 
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Do not directly reference data from this interface when populating {\ttfamily i\+New\+Block}. The data in this block must be fully self-\/contained to ensure portability to a new device or memory space. 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000261}{Deprecated}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_a3963a850079d3186e08c97a1a4d0ef1c}\label{_a_a_x___callbacks_8h_a3963a850079d3186e08c97a1a4d0ef1c}} 
+\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!AAX\_CInstanceInitProc@{AAX\_CInstanceInitProc}}
+\index{AAX\_CInstanceInitProc@{AAX\_CInstanceInitProc}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_CInstanceInitProc}{AAX\_CInstanceInitProc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$void$>$\+::C\+Instance\+Init\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_a3963a850079d3186e08c97a1a4d0ef1c}{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}}}
+
+
+
+A user-\/defined callback that A\+AX calls to notify the component that an instance is being added or removed. ~\newline
+ 
+
+This optional callback allows the component to keep per-\/instance data. It\textquotesingle{}s called before the instance appears in the list supplied to C\+Process\+Proc, and then after the instance is removed from the list.
+
+\begin{DoxyParagraph}{i\+Instance\+Context\+Ptr}
+A pointer to the context data structure of the instance being added or removed from the processing list.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{i\+Action}
+Indicates the action that triggered the init callback, e.\+g. whether the instance is being added or removed.
+\end{DoxyParagraph}
+
+\begin{DoxyRetVals}{Return values}
+{\em Should} & return 0 on success, anything else on failure. Failure will prevent the instance from being created. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_a5c9c7cdc36d5459fa77e5dedb06d161a}\label{_a_a_x___callbacks_8h_a5c9c7cdc36d5459fa77e5dedb06d161a}} 
+\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!AAX\_CPacketAllocator@{AAX\_CPacketAllocator}}
+\index{AAX\_CPacketAllocator@{AAX\_CPacketAllocator}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_CPacketAllocator}{AAX\_CPacketAllocator}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$void$>$\+::C\+Packet\+Allocator \mbox{\hyperlink{_a_a_x___callbacks_8h_a5c9c7cdc36d5459fa77e5dedb06d161a}{A\+A\+X\+\_\+\+C\+Packet\+Allocator}}}
+
+
+
+Used by A\+A\+X\+\_\+\+Schedule\+Packet() 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000259}{Deprecated}}]\end{DoxyRefDesc}
+
+
+A A\+A\+X\+\_\+\+C\+Process\+Proc that calls A\+A\+X\+\_\+\+Schedule\+Packet() must include a A\+A\+X\+\_\+\+C\+Packet\+Allocator field in its context and register that field with A\+AX. A\+AX will then populate that field with a A\+A\+X\+\_\+\+C\+Packet\+Allocator to pass to A\+A\+X\+\_\+\+Schedule\+Packet().
+
+\begin{DoxySeeAlso}{See also}
+A\+A\+X\+\_\+\+Schedule\+Packet() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_ad6dd5e1aa5bd2f8462966685e3b26a6e}\label{_a_a_x___callbacks_8h_ad6dd5e1aa5bd2f8462966685e3b26a6e}} 
+\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!AAX\_CProcessProc@{AAX\_CProcessProc}}
+\index{AAX\_CProcessProc@{AAX\_CProcessProc}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_CProcessProc}{AAX\_CProcessProc}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_a_a_x___component}{A\+A\+X\+\_\+\+Component}}$<$void$>$\+::C\+Process\+Proc \mbox{\hyperlink{_a_a_x___callbacks_8h_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc}}}
+
+
+
+A user-\/defined callback that A\+AX calls to process data packets and/or audio. 
+
+\begin{DoxyParagraph}{i\+Context\+Ptrs\+Begin}
+A vector of context pointers. Each element points to the context for one instance of this component. {\ttfamily i\+Context\+Ptrs\+End} gives the upper bound of the vector and {\ttfamily (in\+Context\+Ptrs\+End -\/ in\+Context\+Ptrs\+Begin)} gives the count.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{i\+Context\+Ptrs\+End}
+The upper bound of the vector at {\ttfamily i\+Context\+Ptrs\+Begin}. {\ttfamily (in\+Context\+Ptrs\+End -\/ i\+Context\+Ptrs\+Begin)} gives the count of this vector.
+\end{DoxyParagraph}
+The instance vector was originally N\+U\+L\+L-\/terminated in earlier versions of this A\+PI. However, the S\+T\+L-\/style begin/end pattern was suggested as a more general representation that could, for instance, allow a vector to be split for parallel processing. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892}\label{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892}} 
+\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!AAX\_CProcPtrID@{AAX\_CProcPtrID}}
+\index{AAX\_CProcPtrID@{AAX\_CProcPtrID}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}
+\doxysubsubsection{\texorpdfstring{AAX\_CProcPtrID}{AAX\_CProcPtrID}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892}{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+ID}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAAX\_ProcPtrID\_Create\_EffectParameters@{kAAX\_ProcPtrID\_Create\_EffectParameters}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!kAAX\_ProcPtrID\_Create\_EffectParameters@{kAAX\_ProcPtrID\_Create\_EffectParameters}}}\mbox{\Hypertarget{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}\label{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}} 
+k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters&\mbox{\hyperlink{class_a_a_x___i_effect_parameters}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}} creation procedure \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAAX\_ProcPtrID\_Create\_EffectGUI@{kAAX\_ProcPtrID\_Create\_EffectGUI}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!kAAX\_ProcPtrID\_Create\_EffectGUI@{kAAX\_ProcPtrID\_Create\_EffectGUI}}}\mbox{\Hypertarget{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}\label{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}} 
+k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+UI&\mbox{\hyperlink{class_a_a_x___i_effect_g_u_i}{A\+A\+X\+\_\+\+I\+Effect\+G\+UI}} creation procedure \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAAX\_ProcPtrID\_Create\_HostProcessor@{kAAX\_ProcPtrID\_Create\_HostProcessor}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!kAAX\_ProcPtrID\_Create\_HostProcessor@{kAAX\_ProcPtrID\_Create\_HostProcessor}}}\mbox{\Hypertarget{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a04ce687ba05b8c7c2cce0b32d868f3db}\label{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a04ce687ba05b8c7c2cce0b32d868f3db}} 
+k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor&\mbox{\hyperlink{class_a_a_x___i_host_processor}{A\+A\+X\+\_\+\+I\+Host\+Processor}} creation procedure \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAAX\_ProcPtrID\_Create\_EffectDirectData@{kAAX\_ProcPtrID\_Create\_EffectDirectData}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!kAAX\_ProcPtrID\_Create\_EffectDirectData@{kAAX\_ProcPtrID\_Create\_EffectDirectData}}}\mbox{\Hypertarget{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}\label{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}} 
+k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data&\mbox{\hyperlink{class_a_a_x___i_effect_direct_data}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data}} creation procedure, used by plug-\/ins that want direct access to their alg memory \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAAX\_ProcPtrID\_Create\_TaskAgent@{kAAX\_ProcPtrID\_Create\_TaskAgent}!AAX\_Callbacks.h@{AAX\_Callbacks.h}}\index{AAX\_Callbacks.h@{AAX\_Callbacks.h}!kAAX\_ProcPtrID\_Create\_TaskAgent@{kAAX\_ProcPtrID\_Create\_TaskAgent}}}\mbox{\Hypertarget{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892aeba711809f385408668d73d0f20d59eb}\label{_a_a_x___callbacks_8h_af0682195d377392ad356fd2b00c36892aeba711809f385408668d73d0f20d59eb}} 
+k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Task\+Agent&\mbox{\hyperlink{class_a_a_x___i_task_agent}{A\+A\+X\+\_\+\+I\+Task\+Agent}} creation procedure, used by plug-\/ins that want to process task requests made by the host. \\
+\hline
+
+\end{DoxyEnumFields}

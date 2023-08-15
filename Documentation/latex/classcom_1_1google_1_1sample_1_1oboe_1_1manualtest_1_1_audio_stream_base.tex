@@ -1,0 +1,365 @@
+\hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base}{}\doxysection{com.\+google.\+sample.\+oboe.\+manualtest.\+Audio\+Stream\+Base Class Reference}
+\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base}\index{com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}}
+
+
+Inherited by com.\+google.\+sample.\+oboe.\+manualtest.\+Oboe\+Audio\+Stream.
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Stream\+Status}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}} 
+Stream\+Status {\bfseries get\+Stream\+Status} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}{open}} (\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} requested\+Configuration, \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} actual\+Configuration, int buffer\+Size\+In\+Frames)  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}} 
+abstract boolean {\bfseries is\+Input} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}} 
+void {\bfseries start\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}} 
+void {\bfseries stop\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}} 
+abstract int {\bfseries write} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{structbuffer}{buffer}}, int offset, int length)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}} 
+abstract void {\bfseries close} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}} 
+int {\bfseries get\+Channel\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}} 
+int {\bfseries get\+Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}} 
+int {\bfseries get\+Frames\+Per\+Burst} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}} 
+int {\bfseries get\+Buffer\+Capacity\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}} 
+int {\bfseries get\+Buffer\+Size\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}} 
+int {\bfseries set\+Buffer\+Size\+In\+Frames} (int buffer\+Size)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}} 
+long {\bfseries get\+Callback\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}} 
+long {\bfseries get\+Frames\+Written} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}} 
+long {\bfseries get\+Frames\+Read} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}} 
+double {\bfseries get\+Latency} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}} 
+double {\bfseries get\+Cpu\+Load} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}} 
+int {\bfseries get\+State} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}} 
+boolean {\bfseries is\+Threshold\+Supported} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}} 
+void {\bfseries set\+Workload} (double workload)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}} 
+abstract int {\bfseries get\+X\+Run\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}} 
+Stream\+Status {\bfseries get\+Stream\+Status} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}{open}} (\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} requested\+Configuration, \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} actual\+Configuration, int buffer\+Size\+In\+Frames)  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}} 
+abstract boolean {\bfseries is\+Input} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}} 
+void {\bfseries start\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}} 
+void {\bfseries stop\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}} 
+abstract int {\bfseries write} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{structbuffer}{buffer}}, int offset, int length)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}} 
+abstract void {\bfseries close} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}} 
+int {\bfseries get\+Channel\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}} 
+int {\bfseries get\+Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}} 
+int {\bfseries get\+Frames\+Per\+Burst} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}} 
+int {\bfseries get\+Buffer\+Capacity\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}} 
+int {\bfseries get\+Buffer\+Size\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}} 
+int {\bfseries set\+Buffer\+Size\+In\+Frames} (int buffer\+Size)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}} 
+long {\bfseries get\+Callback\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}} 
+long {\bfseries get\+Frames\+Written} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}} 
+long {\bfseries get\+Frames\+Read} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}} 
+double {\bfseries get\+Latency} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}} 
+double {\bfseries get\+Cpu\+Load} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}} 
+int {\bfseries get\+State} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}} 
+boolean {\bfseries is\+Threshold\+Supported} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}} 
+void {\bfseries set\+Workload} (double workload)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}} 
+abstract int {\bfseries get\+X\+Run\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}} 
+Stream\+Status {\bfseries get\+Stream\+Status} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}{open}} (\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} requested\+Configuration, \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} actual\+Configuration, int buffer\+Size\+In\+Frames)  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}} 
+abstract boolean {\bfseries is\+Input} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}} 
+void {\bfseries start\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}} 
+void {\bfseries stop\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}} 
+abstract int {\bfseries write} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{structbuffer}{buffer}}, int offset, int length)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}} 
+abstract void {\bfseries close} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}} 
+int {\bfseries get\+Channel\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}} 
+int {\bfseries get\+Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}} 
+int {\bfseries get\+Frames\+Per\+Burst} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}} 
+int {\bfseries get\+Buffer\+Capacity\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}} 
+int {\bfseries get\+Buffer\+Size\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}} 
+int {\bfseries set\+Buffer\+Size\+In\+Frames} (int buffer\+Size)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}} 
+long {\bfseries get\+Callback\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}} 
+long {\bfseries get\+Frames\+Written} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}} 
+long {\bfseries get\+Frames\+Read} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}} 
+double {\bfseries get\+Latency} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}} 
+double {\bfseries get\+Cpu\+Load} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}} 
+int {\bfseries get\+State} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}} 
+boolean {\bfseries is\+Threshold\+Supported} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}} 
+void {\bfseries set\+Workload} (double workload)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}} 
+abstract int {\bfseries get\+X\+Run\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2afd9d154b2e228d77dbc2e1ab1b5048}} 
+Stream\+Status {\bfseries get\+Stream\+Status} ()
+\item 
+void \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}{open}} (\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} requested\+Configuration, \mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}} actual\+Configuration, int buffer\+Size\+In\+Frames)  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5e782c4f8facaa8e786950286b881d2f}} 
+abstract boolean {\bfseries is\+Input} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae92a58f49697ef5dd677bc3edaecb394}} 
+void {\bfseries start\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a6b822333571f0d4d44d3d134afab2569}} 
+void {\bfseries stop\+Playback} ()  throws I\+O\+Exception 
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5be314f4676ff6d1bd419a1eeef6d574}} 
+abstract int {\bfseries write} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{structbuffer}{buffer}}, int offset, int length)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a5d55f42759587aabf99a30fa408eb588}} 
+abstract void {\bfseries close} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ab4cb004d018b524b9c4f87bfb1c7386c}} 
+int {\bfseries get\+Channel\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0c1f2f55318910e360904042d3f78108}} 
+int {\bfseries get\+Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a3185ad5b1a7537d04f077a25788a3518}} 
+int {\bfseries get\+Frames\+Per\+Burst} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2df7cad6f06e12dd33d0d7a20bce7ed5}} 
+int {\bfseries get\+Buffer\+Capacity\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a2198434e1c2690e33a85e3510176d630}} 
+int {\bfseries get\+Buffer\+Size\+In\+Frames} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a34b17a76fa4ec8a3b602606502d0f6e5}} 
+int {\bfseries set\+Buffer\+Size\+In\+Frames} (int buffer\+Size)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a683870322561255be03b72569e3b1b81}} 
+long {\bfseries get\+Callback\+Count} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_ae55dcf856f596e20e91173a011d8099b}} 
+long {\bfseries get\+Frames\+Written} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_aeba051d27ac36216374f2184e119d289}} 
+long {\bfseries get\+Frames\+Read} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a24ced235071b5d0c76f24a13d276b6fe}} 
+double {\bfseries get\+Latency} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a0721fc4e659ee0d4d6bc254f585dc2d2}} 
+double {\bfseries get\+Cpu\+Load} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a94e5a0476bb4c10cec5553a6a27c1e9b}} 
+int {\bfseries get\+State} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a777eece2f0994b019fdfd127961bae80}} 
+boolean {\bfseries is\+Threshold\+Supported} ()
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a88643191b82806562dce09268a0a8ef6}} 
+void {\bfseries set\+Workload} (double workload)
+\item 
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_add5ebc0d817779411c3a640dfb4edd9b}} 
+abstract int {\bfseries get\+X\+Run\+Count} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for any audio input or output. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}} 
+\index{com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}!open@{open}}
+\index{open@{open}!com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void com.\+google.\+sample.\+oboe.\+manualtest.\+Audio\+Stream\+Base.\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{requested\+Configuration,  }\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{actual\+Configuration,  }\item[{int}]{buffer\+Size\+In\+Frames }\end{DoxyParamCaption}) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Configuration} & \\
+\hline
+{\em actual\+Configuration} & \\
+\hline
+{\em buffer\+Size\+In\+Frames} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}} 
+\index{com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}!open@{open}}
+\index{open@{open}!com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void com.\+google.\+sample.\+oboe.\+manualtest.\+Audio\+Stream\+Base.\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{requested\+Configuration,  }\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{actual\+Configuration,  }\item[{int}]{buffer\+Size\+In\+Frames }\end{DoxyParamCaption}) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Configuration} & \\
+\hline
+{\em actual\+Configuration} & \\
+\hline
+{\em buffer\+Size\+In\+Frames} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}} 
+\index{com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}!open@{open}}
+\index{open@{open}!com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void com.\+google.\+sample.\+oboe.\+manualtest.\+Audio\+Stream\+Base.\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{requested\+Configuration,  }\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{actual\+Configuration,  }\item[{int}]{buffer\+Size\+In\+Frames }\end{DoxyParamCaption}) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Configuration} & \\
+\hline
+{\em actual\+Configuration} & \\
+\hline
+{\em buffer\+Size\+In\+Frames} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}\label{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_audio_stream_base_a8f1544471cefe9b4031d68a3fa2ea6a4}} 
+\index{com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}!open@{open}}
+\index{open@{open}!com.google.sample.oboe.manualtest.AudioStreamBase@{com.google.sample.oboe.manualtest.AudioStreamBase}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void com.\+google.\+sample.\+oboe.\+manualtest.\+Audio\+Stream\+Base.\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{requested\+Configuration,  }\item[{\mbox{\hyperlink{classcom_1_1google_1_1sample_1_1oboe_1_1manualtest_1_1_stream_configuration}{Stream\+Configuration}}}]{actual\+Configuration,  }\item[{int}]{buffer\+Size\+In\+Frames }\end{DoxyParamCaption}) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Configuration} & \\
+\hline
+{\em actual\+Configuration} & \\
+\hline
+{\em buffer\+Size\+In\+Frames} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\+O\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/apps/\+Oboe\+Tester/app/src/main/java/com/google/sample/oboe/manualtest/Audio\+Stream\+Base.\+java\end{DoxyCompactItemize}

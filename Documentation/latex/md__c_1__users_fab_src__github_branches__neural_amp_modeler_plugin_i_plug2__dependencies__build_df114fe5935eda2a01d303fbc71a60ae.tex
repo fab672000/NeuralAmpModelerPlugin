@@ -1,0 +1,48 @@
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_df114fe5935eda2a01d303fbc71a60ae_autotoc_md900}{}\doxysection{Description}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_df114fe5935eda2a01d303fbc71a60ae_autotoc_md900}
+The Chorus effect makes copies of its input sound and remixes them to the stereo field using differently modulated delays, thus simulating a chorus of nearly identical sound sources.
+
+The Chorus output is always stereo, while its input may be either mono or stereo. To minimize C\+PU usage, place the Chorus at the point in your effects chain where the effects are mono to the left and stereo to the right.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_df114fe5935eda2a01d303fbc71a60ae_autotoc_md901}{}\doxysection{Parameters}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_df114fe5935eda2a01d303fbc71a60ae_autotoc_md901}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \# }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Physical \mbox{\hyperlink{struct_control}{Control}}  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \# }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Physical \mbox{\hyperlink{struct_control}{Control}}  }\\\cline{1-4}
+\endhead
+{\bfseries{Enable}} &{\ttfamily C\+C-\/105} &Turn on/off the effect &switch{\ttfamily S\+W-\/4}  \\\cline{1-4}
+{\bfseries{Rate}} &{\ttfamily C\+C-\/2} &The Chorus Rate (performable) sets the highest frequency used in its L\+F\+Os for modulating the delay-\/line lengths &knob{\ttfamily H\+A\+D\+C-\/0}  \\\cline{1-4}
+{\bfseries{Depth}} &{\ttfamily C\+C-\/3} &The Depth parameter (performable) controls the mixture of the input sound with the delayed-\/and-\/scaled copies of itself\+: 0 means input only (no chorus effect), 1/2 means equal balance (maximum incidental \char`\"{}flanging\char`\"{} effects), and 1 means modulated delay-\/line outputs only (pure chorus effect containing only scaling, onset spreading, and decorrelated Doppler shift). &knob{\ttfamily H\+A\+D\+C-\/1}  \\\cline{1-4}
+{\bfseries{Delay}} &{\ttfamily C\+C-\/4} &The variable delays range between zero and this value &knob{\ttfamily H\+A\+D\+C-\/2}  \\\cline{1-4}
+{\bfseries{Deviation}} &{\ttfamily C\+C-\/58} &The Chorus Deviation sets the amplitude of its L\+F\+Os and therefore the range of delay-\/line length variation. The Deviation and Rate together determine the maximum Doppler shift applied to the sound. &\\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_df114fe5935eda2a01d303fbc71a60ae_autotoc_md902}{}\doxysection{Building the Example}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_df114fe5935eda2a01d303fbc71a60ae_autotoc_md902}
+The faust code (.dsp) in this directory has been compiled using faust2sam into chorus-\/sam
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\% faust2sam -\/midi chorus.dsp}
+\end{DoxyCode}
+
+
+The result of this compile is a zip file {\ttfamily chorus-\/sam.\+zip} containing the following three files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily fast\+\_\+pow2.\+h}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+cpp}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+h}
+\end{DoxyItemize}
+
+These 3 files should be placed into the directory {\ttfamily sam\+\_\+baremetal\+\_\+framework\+\_\+core1/src/faust}
+
+In addition there is a header file that is common across all cores called {\ttfamily audio\+\_\+system\+\_\+config.\+h}. In this file the following pre-\/processor variables should be set in the following way. The example below indicates that a \mbox{\hyperlink{struct_faust}{Faust}} algorithm will only be running on Core1 and that Core2 will be simply passing audio to the codec.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE1           TRUE}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE2           FALSE}
+\end{DoxyCode}
+ 

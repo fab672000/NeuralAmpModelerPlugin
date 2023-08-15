@@ -1,0 +1,407 @@
+\hypertarget{class_eigen_1_1_cholmod_base}{}\doxysection{Eigen\+::Cholmod\+Base$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$ Class Template Reference}
+\label{class_eigen_1_1_cholmod_base}\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+
+
+The base class for the direct Cholesky factorization of Cholmod.  
+
+
+
+
+{\ttfamily \#include $<$Cholmod\+Support.\+h$>$}
+
+Inheritance diagram for Eigen\+::Cholmod\+Base$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_eigen_1_1_cholmod_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a4df523c80a269233ca132673415e3461}\label{class_eigen_1_1_cholmod_base_a4df523c80a269233ca132673415e3461}} 
+enum \{ {\bfseries Up\+Lo} = Up\+Lo\+\_\+
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_abeef8b69a056ddd005cd2b612b76cf13}\label{class_eigen_1_1_cholmod_base_abeef8b69a056ddd005cd2b612b76cf13}} 
+enum \{ {\bfseries Cols\+At\+Compile\+Time} = Matrix\+Type\+::Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Matrix\+Type\+::Max\+Cols\+At\+Compile\+Time
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a61b724f4caad12f556b327608ea76f28}\label{class_eigen_1_1_cholmod_base_a61b724f4caad12f556b327608ea76f28}} 
+enum \{ {\bfseries Up\+Lo} = Up\+Lo\+\_\+
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a183210cf663c3715dc0b6481e30b6175}\label{class_eigen_1_1_cholmod_base_a183210cf663c3715dc0b6481e30b6175}} 
+enum \{ {\bfseries Cols\+At\+Compile\+Time} = Matrix\+Type\+::Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Matrix\+Type\+::Max\+Cols\+At\+Compile\+Time
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aea150d32e8a9bf9ae64f27604c0646b3}\label{class_eigen_1_1_cholmod_base_aea150d32e8a9bf9ae64f27604c0646b3}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a4d6efbd11a3e21e34a83fe235035cd65}\label{class_eigen_1_1_cholmod_base_a4d6efbd11a3e21e34a83fe235035cd65}} 
+typedef Matrix\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a56a058ce4ace458c1f9ab43837243545}\label{class_eigen_1_1_cholmod_base_a56a058ce4ace458c1f9ab43837243545}} 
+typedef Matrix\+Type\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a092bfdb48048f8d6821799d39a4fc931}\label{class_eigen_1_1_cholmod_base_a092bfdb48048f8d6821799d39a4fc931}} 
+typedef Matrix\+Type {\bfseries Chol\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_acae2c36a159d0f29ea39d38613c57397}\label{class_eigen_1_1_cholmod_base_acae2c36a159d0f29ea39d38613c57397}} 
+typedef Matrix\+Type\+::\+Storage\+Index {\bfseries Storage\+Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aea150d32e8a9bf9ae64f27604c0646b3}\label{class_eigen_1_1_cholmod_base_aea150d32e8a9bf9ae64f27604c0646b3}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a4d6efbd11a3e21e34a83fe235035cd65}\label{class_eigen_1_1_cholmod_base_a4d6efbd11a3e21e34a83fe235035cd65}} 
+typedef Matrix\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a56a058ce4ace458c1f9ab43837243545}\label{class_eigen_1_1_cholmod_base_a56a058ce4ace458c1f9ab43837243545}} 
+typedef Matrix\+Type\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a092bfdb48048f8d6821799d39a4fc931}\label{class_eigen_1_1_cholmod_base_a092bfdb48048f8d6821799d39a4fc931}} 
+typedef Matrix\+Type {\bfseries Chol\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_acae2c36a159d0f29ea39d38613c57397}\label{class_eigen_1_1_cholmod_base_acae2c36a159d0f29ea39d38613c57397}} 
+typedef Matrix\+Type\+::\+Storage\+Index {\bfseries Storage\+Index}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a43c5a9fb2924179cc51a54e1c5ee8333}\label{class_eigen_1_1_cholmod_base_a43c5a9fb2924179cc51a54e1c5ee8333}} 
+{\bfseries Cholmod\+Base} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a649b93641352fd7bf7e0f424e7e75e3e}\label{class_eigen_1_1_cholmod_base_a649b93641352fd7bf7e0f424e7e75e3e}} 
+Storage\+Index {\bfseries cols} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aa51f3bba82b4c061ceef69b3f6bd31d7}\label{class_eigen_1_1_cholmod_base_aa51f3bba82b4c061ceef69b3f6bd31d7}} 
+Storage\+Index {\bfseries rows} () const
+\item 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a1e372842975eec7c20fc40142576f9d6}{info}} () const
+\begin{DoxyCompactList}\small\item\em Reports whether previous computation was successful. \end{DoxyCompactList}\item 
+Derived \& \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a73c65accbedee9ccdf36f89de01149c1}{compute}} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}{analyze\+Pattern}} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}{factorize}} (const Matrix\+Type \&matrix)
+\item 
+cholmod\+\_\+common \& \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a2fe05e78f3d9502669eb77431b36de24}{cholmod}} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aceb732e0eddf21acce1db3c5420b89f0}\label{class_eigen_1_1_cholmod_base_aceb732e0eddf21acce1db3c5420b89f0}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Rhs $>$ \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a7882961ac4e6fc66919bc0f976862aa1}\label{class_eigen_1_1_cholmod_base_a7882961ac4e6fc66919bc0f976862aa1}} 
+{\footnotesize template$<$typename Rhs\+Derived , typename Dest\+Derived $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Rhs\+Derived $>$ \&b, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Dest\+Derived $>$ \&dest) const
+\item 
+Derived \& \mbox{\hyperlink{class_eigen_1_1_cholmod_base_ac6c4872290c6eac877c9c8fdb105f97c}{set\+Shift}} (const Real\+Scalar \&offset)
+\item 
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a315bc06aca534380e1e40e0492537a3c}{determinant}} () const
+\item 
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a74a0d57f33425bff622db5591e6b32b8}{log\+Determinant}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ab208485510e53af91972edbbd8493c47}\label{class_eigen_1_1_cholmod_base_ab208485510e53af91972edbbd8493c47}} 
+{\footnotesize template$<$typename Stream $>$ }\\void {\bfseries dump\+Memory} (Stream \&)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a43c5a9fb2924179cc51a54e1c5ee8333}\label{class_eigen_1_1_cholmod_base_a43c5a9fb2924179cc51a54e1c5ee8333}} 
+{\bfseries Cholmod\+Base} (const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a649b93641352fd7bf7e0f424e7e75e3e}\label{class_eigen_1_1_cholmod_base_a649b93641352fd7bf7e0f424e7e75e3e}} 
+Storage\+Index {\bfseries cols} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aa51f3bba82b4c061ceef69b3f6bd31d7}\label{class_eigen_1_1_cholmod_base_aa51f3bba82b4c061ceef69b3f6bd31d7}} 
+Storage\+Index {\bfseries rows} () const
+\item 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a1e372842975eec7c20fc40142576f9d6}{info}} () const
+\begin{DoxyCompactList}\small\item\em Reports whether previous computation was successful. \end{DoxyCompactList}\item 
+Derived \& \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a73c65accbedee9ccdf36f89de01149c1}{compute}} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}{analyze\+Pattern}} (const Matrix\+Type \&matrix)
+\item 
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}{factorize}} (const Matrix\+Type \&matrix)
+\item 
+cholmod\+\_\+common \& \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a2fe05e78f3d9502669eb77431b36de24}{cholmod}} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aceb732e0eddf21acce1db3c5420b89f0}\label{class_eigen_1_1_cholmod_base_aceb732e0eddf21acce1db3c5420b89f0}} 
+{\footnotesize template$<$typename Rhs , typename Dest $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Rhs $>$ \&b, \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Dest $>$ \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a7882961ac4e6fc66919bc0f976862aa1}\label{class_eigen_1_1_cholmod_base_a7882961ac4e6fc66919bc0f976862aa1}} 
+{\footnotesize template$<$typename Rhs\+Derived , typename Dest\+Derived $>$ }\\void {\bfseries \+\_\+solve\+\_\+impl} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Rhs\+Derived $>$ \&b, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Dest\+Derived $>$ \&dest) const
+\item 
+Derived \& \mbox{\hyperlink{class_eigen_1_1_cholmod_base_ac6c4872290c6eac877c9c8fdb105f97c}{set\+Shift}} (const Real\+Scalar \&offset)
+\item 
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a315bc06aca534380e1e40e0492537a3c}{determinant}} () const
+\item 
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base_a74a0d57f33425bff622db5591e6b32b8}{log\+Determinant}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ab208485510e53af91972edbbd8493c47}\label{class_eigen_1_1_cholmod_base_ab208485510e53af91972edbbd8493c47}} 
+{\footnotesize template$<$typename Stream $>$ }\\void {\bfseries dump\+Memory} (Stream \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a37464d4f0ce9779135fa6edffaf56397}\label{class_eigen_1_1_cholmod_base_a37464d4f0ce9779135fa6edffaf56397}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_solver_base}{Sparse\+Solver\+Base}}$<$ Derived $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a37464d4f0ce9779135fa6edffaf56397}\label{class_eigen_1_1_cholmod_base_a37464d4f0ce9779135fa6edffaf56397}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_solver_base}{Sparse\+Solver\+Base}}$<$ Derived $>$ {\bfseries Base}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}\label{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}} 
+Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}\label{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}} 
+const Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}\label{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}} 
+Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}\label{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}} 
+const Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}\label{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}} 
+Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}\label{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}} 
+const Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}\label{class_eigen_1_1_cholmod_base_ad213fb2c2199ca597b96f1f79653637f}} 
+Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}\label{class_eigen_1_1_cholmod_base_af5f23a7e048060c3082c5a1ddfa91932}} 
+const Derived \& {\bfseries derived} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ac9bc113b543f5cbd1408f970f17629c2}\label{class_eigen_1_1_cholmod_base_ac9bc113b543f5cbd1408f970f17629c2}} 
+cholmod\+\_\+common {\bfseries m\+\_\+cholmod}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_aafdc74a5b580ac623803f16aa73dc086}\label{class_eigen_1_1_cholmod_base_aafdc74a5b580ac623803f16aa73dc086}} 
+cholmod\+\_\+factor $\ast$ {\bfseries m\+\_\+cholmod\+Factor}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a118119adfaa63ddfecaa22c84915f792}\label{class_eigen_1_1_cholmod_base_a118119adfaa63ddfecaa22c84915f792}} 
+double {\bfseries m\+\_\+shift\+Offset} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a749b446cd518982e91a1cbadc3e74627}\label{class_eigen_1_1_cholmod_base_a749b446cd518982e91a1cbadc3e74627}} 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} {\bfseries m\+\_\+info}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a01eaf756b373c8d1a6fcf0955c16c970}\label{class_eigen_1_1_cholmod_base_a01eaf756b373c8d1a6fcf0955c16c970}} 
+int {\bfseries m\+\_\+factorization\+Is\+Ok}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ae05a6d257d3aa2c81290070afdd3307d}\label{class_eigen_1_1_cholmod_base_ae05a6d257d3aa2c81290070afdd3307d}} 
+int {\bfseries m\+\_\+analysis\+Is\+Ok}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ac52101f69d048d5c4b036eadf1f13673}\label{class_eigen_1_1_cholmod_base_ac52101f69d048d5c4b036eadf1f13673}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ac52101f69d048d5c4b036eadf1f13673}\label{class_eigen_1_1_cholmod_base_ac52101f69d048d5c4b036eadf1f13673}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\+Type\+\_\+, int Up\+Lo\+\_\+, typename Derived$>$\newline
+class Eigen\+::\+Cholmod\+Base$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$}
+
+The base class for the direct Cholesky factorization of Cholmod. 
+
+\begin{DoxySeeAlso}{See also}
+class \mbox{\hyperlink{class_eigen_1_1_cholmod_supernodal_l_l_t}{Cholmod\+Supernodal\+L\+LT}}, class \mbox{\hyperlink{class_eigen_1_1_cholmod_simplicial_l_d_l_t}{Cholmod\+Simplicial\+L\+D\+LT}}, class \mbox{\hyperlink{class_eigen_1_1_cholmod_simplicial_l_l_t}{Cholmod\+Simplicial\+L\+LT}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}\label{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!analyzePattern@{analyzePattern}}
+\index{analyzePattern@{analyzePattern}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{analyzePattern()}{analyzePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::analyze\+Pattern (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a symbolic decomposition on the sparsity pattern of {\itshape matrix}.
+
+This function is particularly useful when solving for several problems having the same structure.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}{factorize()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}\label{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!analyzePattern@{analyzePattern}}
+\index{analyzePattern@{analyzePattern}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{analyzePattern()}{analyzePattern()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::analyze\+Pattern (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a symbolic decomposition on the sparsity pattern of {\itshape matrix}.
+
+This function is particularly useful when solving for several problems having the same structure.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}{factorize()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a2fe05e78f3d9502669eb77431b36de24}\label{class_eigen_1_1_cholmod_base_a2fe05e78f3d9502669eb77431b36de24}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!cholmod@{cholmod}}
+\index{cholmod@{cholmod}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{cholmod()}{cholmod()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+cholmod\+\_\+common\& \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::cholmod (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the Cholmod\textquotesingle{}s configuration structure to get a full control over the performed operations. See the Cholmod user guide for details. \mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a2fe05e78f3d9502669eb77431b36de24}\label{class_eigen_1_1_cholmod_base_a2fe05e78f3d9502669eb77431b36de24}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!cholmod@{cholmod}}
+\index{cholmod@{cholmod}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{cholmod()}{cholmod()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+cholmod\+\_\+common\& \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::cholmod (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the Cholmod\textquotesingle{}s configuration structure to get a full control over the performed operations. See the Cholmod user guide for details. \mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a73c65accbedee9ccdf36f89de01149c1}\label{class_eigen_1_1_cholmod_base_a73c65accbedee9ccdf36f89de01149c1}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!compute@{compute}}
+\index{compute@{compute}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Derived\& \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::compute (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes the sparse Cholesky decomposition of {\itshape matrix} \mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a73c65accbedee9ccdf36f89de01149c1}\label{class_eigen_1_1_cholmod_base_a73c65accbedee9ccdf36f89de01149c1}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!compute@{compute}}
+\index{compute@{compute}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Derived\& \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::compute (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes the sparse Cholesky decomposition of {\itshape matrix} \mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a315bc06aca534380e1e40e0492537a3c}\label{class_eigen_1_1_cholmod_base_a315bc06aca534380e1e40e0492537a3c}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the determinant of the underlying matrix from the current factorization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a315bc06aca534380e1e40e0492537a3c}\label{class_eigen_1_1_cholmod_base_a315bc06aca534380e1e40e0492537a3c}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!determinant@{determinant}}
+\index{determinant@{determinant}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the determinant of the underlying matrix from the current factorization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}\label{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!factorize@{factorize}}
+\index{factorize@{factorize}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{factorize()}{factorize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::factorize (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a numeric decomposition of {\itshape matrix} 
+
+The given matrix must have the same sparsity pattern as the matrix on which the symbolic decomposition has been performed.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}{analyze\+Pattern()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}\label{class_eigen_1_1_cholmod_base_a0a0f049c294dc9272346bc5ad392226c}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!factorize@{factorize}}
+\index{factorize@{factorize}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{factorize()}{factorize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+void \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::factorize (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Performs a numeric decomposition of {\itshape matrix} 
+
+The given matrix must have the same sparsity pattern as the matrix on which the symbolic decomposition has been performed.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_cholmod_base_afaef6b0ac26a75ad83dd445c77bc4892}{analyze\+Pattern()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a1e372842975eec7c20fc40142576f9d6}\label{class_eigen_1_1_cholmod_base_a1e372842975eec7c20fc40142576f9d6}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!info@{info}}
+\index{info@{info}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reports whether previous computation was successful. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily Success} if computation was successful, {\ttfamily Numerical\+Issue} if the matrix.\+appears to be negative. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a1e372842975eec7c20fc40142576f9d6}\label{class_eigen_1_1_cholmod_base_a1e372842975eec7c20fc40142576f9d6}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!info@{info}}
+\index{info@{info}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reports whether previous computation was successful. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily Success} if computation was successful, {\ttfamily Numerical\+Issue} if the matrix.\+appears to be negative. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a74a0d57f33425bff622db5591e6b32b8}\label{class_eigen_1_1_cholmod_base_a74a0d57f33425bff622db5591e6b32b8}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!logDeterminant@{logDeterminant}}
+\index{logDeterminant@{logDeterminant}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{logDeterminant()}{logDeterminant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::log\+Determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the log determinant of the underlying matrix from the current factorization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_a74a0d57f33425bff622db5591e6b32b8}\label{class_eigen_1_1_cholmod_base_a74a0d57f33425bff622db5591e6b32b8}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!logDeterminant@{logDeterminant}}
+\index{logDeterminant@{logDeterminant}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{logDeterminant()}{logDeterminant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Scalar \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::log\+Determinant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the log determinant of the underlying matrix from the current factorization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ac6c4872290c6eac877c9c8fdb105f97c}\label{class_eigen_1_1_cholmod_base_ac6c4872290c6eac877c9c8fdb105f97c}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!setShift@{setShift}}
+\index{setShift@{setShift}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{setShift()}{setShift()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Derived\& \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::set\+Shift (\begin{DoxyParamCaption}\item[{const Real\+Scalar \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the shift parameter that will be used to adjust the diagonal coefficients during the numerical factorization.
+
+During the numerical factorization, an offset term is added to the diagonal coefficients\+:~\newline
+{\ttfamily d\+\_\+ii} = {\itshape offset} + {\ttfamily d\+\_\+ii} 
+
+The default is {\itshape offset=0}.
+
+\begin{DoxyReturn}{Returns}
+a reference to {\ttfamily $\ast$this}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_cholmod_base_ac6c4872290c6eac877c9c8fdb105f97c}\label{class_eigen_1_1_cholmod_base_ac6c4872290c6eac877c9c8fdb105f97c}} 
+\index{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}!setShift@{setShift}}
+\index{setShift@{setShift}!Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$@{Eigen::CholmodBase$<$ MatrixType\_, UpLo\_, Derived $>$}}
+\doxysubsubsection{\texorpdfstring{setShift()}{setShift()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Matrix\+Type\+\_\+ , int Up\+Lo\+\_\+, typename Derived $>$ \\
+Derived\& \mbox{\hyperlink{class_eigen_1_1_cholmod_base}{Eigen\+::\+Cholmod\+Base}}$<$ Matrix\+Type\+\_\+, Up\+Lo\+\_\+, Derived $>$\+::set\+Shift (\begin{DoxyParamCaption}\item[{const Real\+Scalar \&}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the shift parameter that will be used to adjust the diagonal coefficients during the numerical factorization.
+
+During the numerical factorization, an offset term is added to the diagonal coefficients\+:~\newline
+{\ttfamily d\+\_\+ii} = {\itshape offset} + {\ttfamily d\+\_\+ii} 
+
+The default is {\itshape offset=0}.
+
+\begin{DoxyReturn}{Returns}
+a reference to {\ttfamily $\ast$this}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Cholmod\+Support/Cholmod\+Support.\+h\end{DoxyCompactItemize}

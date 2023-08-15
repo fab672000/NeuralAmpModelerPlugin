@@ -1,0 +1,144 @@
+\hypertarget{class_i_plug_instrument_d_s_p_1_1_voice}{}\doxysection{I\+Plug\+Instrument\+D\+SP$<$ T $>$\+::Voice Class Reference}
+\label{class_i_plug_instrument_d_s_p_1_1_voice}\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+Inheritance diagram for I\+Plug\+Instrument\+D\+SP$<$ T $>$\+::Voice\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_plug_instrument_d_s_p_1_1_voice}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a4d5a78f43c2178e61ed128dd674c73d1}{Get\+Busy}} () const override
+\item 
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a5d7840fc58cf08871b219464c6406554}{Trigger}} (double level, bool is\+Retrigger) override
+\item 
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a346e39019981ce707366dd900447b313}{Release}} () override
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a2e5e959d5f25287f828ed50ed3ab4e73}\label{class_i_plug_instrument_d_s_p_1_1_voice_a2e5e959d5f25287f828ed50ed3ab4e73}} 
+void {\bfseries Process\+Samples\+Accumulating} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$$\ast$inputs, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$$\ast$outputs, int n\+Inputs, int n\+Outputs, int start\+Idx, int n\+Frames) override
+\item 
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_af4c6dc6a2b00feee86b2da8ee59ee1a6}{Set\+Sample\+Rate\+And\+Block\+Size}} (double sample\+Rate, int block\+Size) override
+\item 
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a1b4dc8ea114a8442c6204c02f120bae7}{Set\+Program\+Number}} (int pgm) override
+\item 
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p_1_1_voice_a588abb6902716899e808a89185d5b575}{Set\+Control}} (int control\+Number, float value) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a845aa5fd5a3199b4e2a984deb6525d1e}\label{class_i_plug_instrument_d_s_p_1_1_voice_a845aa5fd5a3199b4e2a984deb6525d1e}} 
+\mbox{\hyperlink{class_fast_sin_oscillator}{Fast\+Sin\+Oscillator}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ {\bfseries m\+O\+SC}
+\item 
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_ac79dca4233525d0299256efcf35b03e9}\label{class_i_plug_instrument_d_s_p_1_1_voice_ac79dca4233525d0299256efcf35b03e9}} 
+\mbox{\hyperlink{class_a_d_s_r_envelope}{A\+D\+S\+R\+Envelope}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ {\bfseries m\+A\+M\+P\+Env}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a4d5a78f43c2178e61ed128dd674c73d1}\label{class_i_plug_instrument_d_s_p_1_1_voice_a4d5a78f43c2178e61ed128dd674c73d1}} 
+\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}!GetBusy@{GetBusy}}
+\index{GetBusy@{GetBusy}!IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+\doxysubsubsection{\texorpdfstring{GetBusy()}{GetBusy()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_i_plug_instrument_d_s_p}{I\+Plug\+Instrument\+D\+SP}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Voice\+::\+Get\+Busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if voice is generating any audio. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_synth_voice_a96f96e8a0c34444a06ebf0a445707ebd}{Synth\+Voice}}.
+
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a346e39019981ce707366dd900447b313}\label{class_i_plug_instrument_d_s_p_1_1_voice_a346e39019981ce707366dd900447b313}} 
+\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}!Release@{Release}}
+\index{Release@{Release}!IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p}{I\+Plug\+Instrument\+D\+SP}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Voice\+::\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+As with Trigger, called to do optional tasks when a voice is released. 
+
+Reimplemented from \mbox{\hyperlink{class_synth_voice_a6584a3bddaf7c8ab2b38dfa919fc639f}{Synth\+Voice}}.
+
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a588abb6902716899e808a89185d5b575}\label{class_i_plug_instrument_d_s_p_1_1_voice_a588abb6902716899e808a89185d5b575}} 
+\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}!SetControl@{SetControl}}
+\index{SetControl@{SetControl}!IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+\doxysubsubsection{\texorpdfstring{SetControl()}{SetControl()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p}{I\+Plug\+Instrument\+D\+SP}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Voice\+::\+Set\+Control (\begin{DoxyParamCaption}\item[{int}]{control\+Number,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this to respond to control numbers for which there are not ramps. A synthesizer could use its own ramps internally if needed. 
+\begin{DoxyParams}{Parameters}
+{\em control\+Number} & The M\+I\+DI controller number \\
+\hline
+{\em value} & The normalized value \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_synth_voice_a8c0c621cee511dbd69296f9f64b68276}{Synth\+Voice}}.
+
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a1b4dc8ea114a8442c6204c02f120bae7}\label{class_i_plug_instrument_d_s_p_1_1_voice_a1b4dc8ea114a8442c6204c02f120bae7}} 
+\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}!SetProgramNumber@{SetProgramNumber}}
+\index{SetProgramNumber@{SetProgramNumber}!IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+\doxysubsubsection{\texorpdfstring{SetProgramNumber()}{SetProgramNumber()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p}{I\+Plug\+Instrument\+D\+SP}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Voice\+::\+Set\+Program\+Number (\begin{DoxyParamCaption}\item[{int}]{pgm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this to allow picking a sound program from an integer index, as with M\+I\+DI. 
+\begin{DoxyParams}{Parameters}
+{\em pgm} & The new program number \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_synth_voice_ab8791d88f3a9bc691c1af50ca24c5391}{Synth\+Voice}}.
+
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_af4c6dc6a2b00feee86b2da8ee59ee1a6}\label{class_i_plug_instrument_d_s_p_1_1_voice_af4c6dc6a2b00feee86b2da8ee59ee1a6}} 
+\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}!SetSampleRateAndBlockSize@{SetSampleRateAndBlockSize}}
+\index{SetSampleRateAndBlockSize@{SetSampleRateAndBlockSize}!IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+\doxysubsubsection{\texorpdfstring{SetSampleRateAndBlockSize()}{SetSampleRateAndBlockSize()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p}{I\+Plug\+Instrument\+D\+SP}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Voice\+::\+Set\+Sample\+Rate\+And\+Block\+Size (\begin{DoxyParamCaption}\item[{double}]{sample\+Rate,  }\item[{int}]{block\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this if you need to do work when the sample rate or block size changes. 
+\begin{DoxyParams}{Parameters}
+{\em sample\+Rate} & The new sample rate \\
+\hline
+{\em block\+Size} & The new block size in samples \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_synth_voice_acd94a7a6a057169546530123fdf8b005}{Synth\+Voice}}.
+
+\mbox{\Hypertarget{class_i_plug_instrument_d_s_p_1_1_voice_a5d7840fc58cf08871b219464c6406554}\label{class_i_plug_instrument_d_s_p_1_1_voice_a5d7840fc58cf08871b219464c6406554}} 
+\index{IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}!Trigger@{Trigger}}
+\index{Trigger@{Trigger}!IPlugInstrumentDSP$<$ T $>$::Voice@{IPlugInstrumentDSP$<$ T $>$::Voice}}
+\doxysubsubsection{\texorpdfstring{Trigger()}{Trigger()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_i_plug_instrument_d_s_p}{I\+Plug\+Instrument\+D\+SP}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Voice\+::\+Trigger (\begin{DoxyParamCaption}\item[{double}]{level,  }\item[{bool}]{is\+Retrigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Trigger is called by the \mbox{\hyperlink{class_voice_allocator}{Voice\+Allocator}} when a new voice should start, or if the voice limit has been hit and an existing voice needs to re-\/trigger. While the Voice\+Inputs are sufficient to control a voice from the \mbox{\hyperlink{class_voice_allocator}{Voice\+Allocator}}, this method can be used to do additional tasks like resetting oscillators. 
+\begin{DoxyParams}{Parameters}
+{\em level} & Normalised starting level for this voice, derived from the velocity of the keypress, or in the case of a re-\/trigger the existing level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000173}{Todo}}]check \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Retrigger} & If this is {\ttfamily true} it means the voice is being re-\/triggered, and you should accommodate for this in your algorithm \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_synth_voice_a5b5451f7956d2aefdb75de29ee537bae}{Synth\+Voice}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Examples/\+I\+Plug\+Instrument/I\+Plug\+Instrument\+\_\+\+D\+S\+P.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\hypertarget{class_sk_shaper_j_s_o_n_writer}{}\doxysection{Sk\+Shaper\+J\+S\+O\+N\+Writer Class Reference}
+\label{class_sk_shaper_j_s_o_n_writer}\index{SkShaperJSONWriter@{SkShaperJSONWriter}}
+Inheritance diagram for Sk\+Shaper\+J\+S\+O\+N\+Writer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_shaper_j_s_o_n_writer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_ade966beec5a34d17c86174eb320722ec}\label{class_sk_shaper_j_s_o_n_writer_ade966beec5a34d17c86174eb320722ec}} 
+using {\bfseries Breakup\+Cluasters\+Callback} = std\+::function$<$ void(size\+\_\+t, size\+\_\+t, uint32\+\_\+t, uint32\+\_\+t)$>$
+\item 
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_a0d70378b3f7821158014f047dd24222c}\label{class_sk_shaper_j_s_o_n_writer_a0d70378b3f7821158014f047dd24222c}} 
+using {\bfseries Visualize\+Clusters\+Callback} = std\+::function$<$ void(size\+\_\+t, \mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ const char $>$, \mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ const \mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} $>$)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_a0fb156668bb1c9c952bd9e59a636174a}\label{class_sk_shaper_j_s_o_n_writer_a0fb156668bb1c9c952bd9e59a636174a}} 
+{\bfseries Sk\+Shaper\+J\+S\+O\+N\+Writer} (\mbox{\hyperlink{class_sk_j_s_o_n_writer}{Sk\+J\+S\+O\+N\+Writer}} $\ast$J\+S\+O\+N\+Writer, const char $\ast$utf8, size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_ab2258893122041e1318865c9e91868a2}{begin\+Line}} () override
+\item 
+void \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_aa4df8a21e960f0063c321b0901d4a825}{run\+Info}} (const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&info) override
+\item 
+void \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_a01326598eed717d36f2529401cd1559f}{commit\+Run\+Info}} () override
+\item 
+\mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_buffer}{Buffer}} \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_abec29bd41e6850396174dafdb5973c6f}{run\+Buffer}} (const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&info) override
+\item 
+void \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_a9a844084a75ede4a0070cb4bb5093d99}{commit\+Run\+Buffer}} (const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&info) override
+\item 
+void \mbox{\hyperlink{class_sk_shaper_j_s_o_n_writer_ab7dbd6b41ac68510b2ca483432b8701b}{commit\+Line}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_a1eac37b166f5e0b263cb469054f577df}\label{class_sk_shaper_j_s_o_n_writer_a1eac37b166f5e0b263cb469054f577df}} 
+static void {\bfseries Breakup\+Clusters} (size\+\_\+t utf8\+Begin, size\+\_\+t utf8\+End, \mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ const uint32\+\_\+t $>$ clusters, const Breakup\+Cluasters\+Callback \&process\+M\+ToN)
+\item 
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_af94c4d21669907b531de8a2b93ffe3ca}\label{class_sk_shaper_j_s_o_n_writer_af94c4d21669907b531de8a2b93ffe3ca}} 
+static void {\bfseries Visualize\+Clusters} (const char utf8\mbox{[}$\,$\mbox{]}, size\+\_\+t utf8\+Begin, size\+\_\+t utf8\+End, \mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ const \mbox{\hyperlink{_sk_types_8h_a1d5e8bd1d16e0484508ec693933b0a54}{Sk\+Glyph\+ID}} $>$ glyph\+I\+Ds, \mbox{\hyperlink{class_sk_span}{Sk\+Span}}$<$ const uint32\+\_\+t $>$ clusters, const Visualize\+Clusters\+Callback \&process\+M\+ToN)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_ab2258893122041e1318865c9e91868a2}\label{class_sk_shaper_j_s_o_n_writer_ab2258893122041e1318865c9e91868a2}} 
+\index{SkShaperJSONWriter@{SkShaperJSONWriter}!beginLine@{beginLine}}
+\index{beginLine@{beginLine}!SkShaperJSONWriter@{SkShaperJSONWriter}}
+\doxysubsubsection{\texorpdfstring{beginLine()}{beginLine()}}
+{\footnotesize\ttfamily void Sk\+Shaper\+J\+S\+O\+N\+Writer\+::begin\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called when beginning a line. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a2a8f99db2fc3f8d2f3bf30acc541299f}{Sk\+Shaper\+::\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_ab7dbd6b41ac68510b2ca483432b8701b}\label{class_sk_shaper_j_s_o_n_writer_ab7dbd6b41ac68510b2ca483432b8701b}} 
+\index{SkShaperJSONWriter@{SkShaperJSONWriter}!commitLine@{commitLine}}
+\index{commitLine@{commitLine}!SkShaperJSONWriter@{SkShaperJSONWriter}}
+\doxysubsubsection{\texorpdfstring{commitLine()}{commitLine()}}
+{\footnotesize\ttfamily void Sk\+Shaper\+J\+S\+O\+N\+Writer\+::commit\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called when ending a line. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a301461bffec8aa25ca75cad6fa28256e}{Sk\+Shaper\+::\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_a9a844084a75ede4a0070cb4bb5093d99}\label{class_sk_shaper_j_s_o_n_writer_a9a844084a75ede4a0070cb4bb5093d99}} 
+\index{SkShaperJSONWriter@{SkShaperJSONWriter}!commitRunBuffer@{commitRunBuffer}}
+\index{commitRunBuffer@{commitRunBuffer}!SkShaperJSONWriter@{SkShaperJSONWriter}}
+\doxysubsubsection{\texorpdfstring{commitRunBuffer()}{commitRunBuffer()}}
+{\footnotesize\ttfamily void Sk\+Shaper\+J\+S\+O\+N\+Writer\+::commit\+Run\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after each run\+Buffer is filled out. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a15b6354e7c09a497d55446d92114ff80}{Sk\+Shaper\+::\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_a01326598eed717d36f2529401cd1559f}\label{class_sk_shaper_j_s_o_n_writer_a01326598eed717d36f2529401cd1559f}} 
+\index{SkShaperJSONWriter@{SkShaperJSONWriter}!commitRunInfo@{commitRunInfo}}
+\index{commitRunInfo@{commitRunInfo}!SkShaperJSONWriter@{SkShaperJSONWriter}}
+\doxysubsubsection{\texorpdfstring{commitRunInfo()}{commitRunInfo()}}
+{\footnotesize\ttfamily void Sk\+Shaper\+J\+S\+O\+N\+Writer\+::commit\+Run\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after all run\+Info calls for a line. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a5b5d3fe0afa0140226d4b2aeb7471269}{Sk\+Shaper\+::\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_abec29bd41e6850396174dafdb5973c6f}\label{class_sk_shaper_j_s_o_n_writer_abec29bd41e6850396174dafdb5973c6f}} 
+\index{SkShaperJSONWriter@{SkShaperJSONWriter}!runBuffer@{runBuffer}}
+\index{runBuffer@{runBuffer}!SkShaperJSONWriter@{SkShaperJSONWriter}}
+\doxysubsubsection{\texorpdfstring{runBuffer()}{runBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_buffer}{Sk\+Shaper\+::\+Run\+Handler\+::\+Buffer}} Sk\+Shaper\+J\+S\+O\+N\+Writer\+::run\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called for each run in a line after commit\+Run\+Info. The buffer will be filled out. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_aa280e5db0d4779f59df9cbd6226aee28}{Sk\+Shaper\+::\+Run\+Handler}}.
+
+\mbox{\Hypertarget{class_sk_shaper_j_s_o_n_writer_aa4df8a21e960f0063c321b0901d4a825}\label{class_sk_shaper_j_s_o_n_writer_aa4df8a21e960f0063c321b0901d4a825}} 
+\index{SkShaperJSONWriter@{SkShaperJSONWriter}!runInfo@{runInfo}}
+\index{runInfo@{runInfo}!SkShaperJSONWriter@{SkShaperJSONWriter}}
+\doxysubsubsection{\texorpdfstring{runInfo()}{runInfo()}}
+{\footnotesize\ttfamily void Sk\+Shaper\+J\+S\+O\+N\+Writer\+::run\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_shaper_1_1_run_handler_1_1_run_info}{Run\+Info}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called once for each run in a line. Can compute baselines and offsets. 
+
+Implements \mbox{\hyperlink{class_sk_shaper_1_1_run_handler_a5d0a2e6812423d1a4b1d1b1ce53395df}{Sk\+Shaper\+::\+Run\+Handler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Shaper\+J\+S\+O\+N\+Writer.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/utils/Sk\+Shaper\+J\+S\+O\+N\+Writer.\+cpp\end{DoxyCompactItemize}

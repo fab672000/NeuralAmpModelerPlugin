@@ -1,0 +1,66 @@
+\hypertarget{class_a_a_x___i_description_host}{}\doxysection{A\+A\+X\+\_\+\+I\+Description\+Host Class Reference}
+\label{class_a_a_x___i_description_host}\index{AAX\_IDescriptionHost@{AAX\_IDescriptionHost}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Description\+Host.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Description\+Host\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_a_x___i_description_host}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const \mbox{\hyperlink{class_a_a_x___i_feature_info}{A\+A\+X\+\_\+\+I\+Feature\+Info}} $\ast$ \mbox{\hyperlink{class_a_a_x___i_description_host_aa0d9e27d0207113f98c217d870bfa5e9}{Acquire\+Feature\+Properties}} (const \mbox{\hyperlink{_a_a_x_8h_a53d6cf8a08224b3e813333e411ce798e}{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+ID}} \&in\+Feature\+ID) const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to host services provided during plug-\/in description 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_description_host_aa0d9e27d0207113f98c217d870bfa5e9}\label{class_a_a_x___i_description_host_aa0d9e27d0207113f98c217d870bfa5e9}} 
+\index{AAX\_IDescriptionHost@{AAX\_IDescriptionHost}!AcquireFeatureProperties@{AcquireFeatureProperties}}
+\index{AcquireFeatureProperties@{AcquireFeatureProperties}!AAX\_IDescriptionHost@{AAX\_IDescriptionHost}}
+\doxysubsubsection{\texorpdfstring{AcquireFeatureProperties()}{AcquireFeatureProperties()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_a_a_x___i_feature_info}{A\+A\+X\+\_\+\+I\+Feature\+Info}}$\ast$ A\+A\+X\+\_\+\+I\+Description\+Host\+::\+Acquire\+Feature\+Properties (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_a_a_x_8h_a53d6cf8a08224b3e813333e411ce798e}{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+ID}} \&}]{in\+Feature\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the client\textquotesingle{}s feature object for a given feature ID
+
+Similar to {\ttfamily Query\+Interface()} but uses a feature identifier rather than a true I\+ID
+
+Ownership of the returned object is passed to the caller; the caller is responsible for destroying the object, e.\+g. by capturing the returned object in a smart pointer.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// AAX\_IDescriptionHost* descHost}}
+\DoxyCodeLine{std::unique\_ptr<const AAX\_IFeatureInfo> featureInfoPtr(descHost-\/>AcquireFeatureProperties(someFeatureUID);}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{class_a_a_x___i_feature_info}{A\+A\+X\+\_\+\+I\+Feature\+Info}} interface with access to the host\textquotesingle{}s feature properties for this feature. 
+
+{\ttfamily N\+U\+LL} if the desired feature was not found or if an error occurred
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+May return an \mbox{\hyperlink{class_a_a_x___i_feature_info}{A\+A\+X\+\_\+\+I\+Feature\+Info}} object with limited method support, which would return an error such as A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+O\+B\+J\+E\+CT or A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED to interface calls.
+
+If no \mbox{\hyperlink{class_a_a_x___i_feature_info}{A\+A\+X\+\_\+\+I\+Feature\+Info}} is provided then that may mean that the host is unaware of the feature, or it may mean that the host is aware of the feature but has not implemented the A\+AX feature support interface for this feature yet.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em in\+Feature\+ID} & Identifier of the requested feature \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_description_host_a4a411e8ce27c839bef672291d8d69c9a}{A\+A\+X\+\_\+\+V\+Description\+Host}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/A\+A\+X\+\_\+\+I\+Description\+Host.\+h\end{DoxyCompactItemize}

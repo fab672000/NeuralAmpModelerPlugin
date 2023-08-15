@@ -1,0 +1,108 @@
+\hypertarget{class_steinberg_1_1_i_update_handler}{}\doxysection{Steinberg\+::I\+Update\+Handler Class Reference}
+\label{class_steinberg_1_1_i_update_handler}\index{Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}}
+
+
+{\ttfamily \#include $<$iupdatehandler.\+h$>$}
+
+Inheritance diagram for Steinberg\+::I\+Update\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_steinberg_1_1_i_update_handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_update_handler_a7cbf607f408fd9f6aeb0239f415c3e7d}{add\+Dependent}} (\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$object, \mbox{\hyperlink{class_steinberg_1_1_i_dependent}{I\+Dependent}} $\ast$dependent)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_update_handler_a6be80b27e4e3f9a8fccf4171ac92052f}{remove\+Dependent}} (\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$object, \mbox{\hyperlink{class_steinberg_1_1_i_dependent}{I\+Dependent}} $\ast$dependent)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_update_handler_a6fd37c823825d5b98812ecdb74427ad7}{trigger\+Updates}} (\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$object, int32 message)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_update_handler_a4c31c4a70bef5f8a4b22d3cef97af175}{defer\+Updates}} (\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$object, int32 message)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_update_handler_a6e1edd36b0af079b284030a3a87ab794}\label{class_steinberg_1_1_i_update_handler_a6e1edd36b0af079b284030a3a87ab794}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Host implements dependency handling for plugins.
+\begin{DoxyItemize}
+\item \mbox{[}host imp\mbox{]}
+\item \mbox{[}get this interface from I\+Host\+Classes\mbox{]}
+\item \mbox{[}released N3.\+1\mbox{]}
+\item Install/\+Remove change notifications
+\item Trigger updates when an object has changed
+\end{DoxyItemize}
+
+Can be used between host-\/objects and the Plug-\/\+In or inside the Plug-\/\+In to handle internal updates!
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_i_dependent}{I\+Dependent}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_i_update_handler_a7cbf607f408fd9f6aeb0239f415c3e7d}\label{class_steinberg_1_1_i_update_handler_a7cbf607f408fd9f6aeb0239f415c3e7d}} 
+\index{Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}!addDependent@{addDependent}}
+\index{addDependent@{addDependent}!Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}}
+\doxysubsubsection{\texorpdfstring{addDependent()}{addDependent()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Update\+Handler\+::add\+Dependent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$}]{object,  }\item[{\mbox{\hyperlink{class_steinberg_1_1_i_dependent}{I\+Dependent}} $\ast$}]{dependent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Install update notification for given object. It is essential to remove all dependencies again using \textquotesingle{}remove\+Dependent\textquotesingle{}! Dependencies are not removed automatically when the \textquotesingle{}object\textquotesingle{} is released! 
+\begin{DoxyParams}{Parameters}
+{\em object} & \+: interface to object that sends change notifications \\
+\hline
+{\em dependent} & \+: interface through which the update is passed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_update_handler_a0b42bf4830ebb840c0f32667fb44588c}{Steinberg\+::\+Update\+Handler}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_update_handler_a4c31c4a70bef5f8a4b22d3cef97af175}\label{class_steinberg_1_1_i_update_handler_a4c31c4a70bef5f8a4b22d3cef97af175}} 
+\index{Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}!deferUpdates@{deferUpdates}}
+\index{deferUpdates@{deferUpdates}!Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}}
+\doxysubsubsection{\texorpdfstring{deferUpdates()}{deferUpdates()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Update\+Handler\+::defer\+Updates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$}]{object,  }\item[{int32}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Same as trigger\+Updates, but delivered in idle (usefull to collect updates). 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_update_handler_af1d04fb06d3ad5ccb973f08e242ed7f3}{Steinberg\+::\+Update\+Handler}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_update_handler_a6be80b27e4e3f9a8fccf4171ac92052f}\label{class_steinberg_1_1_i_update_handler_a6be80b27e4e3f9a8fccf4171ac92052f}} 
+\index{Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}!removeDependent@{removeDependent}}
+\index{removeDependent@{removeDependent}!Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}}
+\doxysubsubsection{\texorpdfstring{removeDependent()}{removeDependent()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Update\+Handler\+::remove\+Dependent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$}]{object,  }\item[{\mbox{\hyperlink{class_steinberg_1_1_i_dependent}{I\+Dependent}} $\ast$}]{dependent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Remove a previously installed dependency. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_update_handler_ae47bcd0c43668370fcd137affb3d2fe0}{Steinberg\+::\+Update\+Handler}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_update_handler_a6fd37c823825d5b98812ecdb74427ad7}\label{class_steinberg_1_1_i_update_handler_a6fd37c823825d5b98812ecdb74427ad7}} 
+\index{Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}!triggerUpdates@{triggerUpdates}}
+\index{triggerUpdates@{triggerUpdates}!Steinberg::IUpdateHandler@{Steinberg::IUpdateHandler}}
+\doxysubsubsection{\texorpdfstring{triggerUpdates()}{triggerUpdates()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Update\+Handler\+::trigger\+Updates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$}]{object,  }\item[{int32}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Inform all dependents, that object has changed. 
+\begin{DoxyParams}{Parameters}
+{\em object} & is the object that has changed \\
+\hline
+{\em message} & is a value of enum I\+Dependent\+::\+Change\+Message, usually I\+Dependent\+::k\+Changed -\/ can be a private message as well (only known to sender and dependent) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_update_handler_ad1c2d79db20a22d3aa7c47487fa0b768}{Steinberg\+::\+Update\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/base/iupdatehandler.\+h\end{DoxyCompactItemize}

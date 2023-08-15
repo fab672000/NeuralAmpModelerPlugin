@@ -1,0 +1,76 @@
+\hypertarget{struct_steinberg_1_1_vst_1_1_r_t_transfer_t}{}\doxysection{Steinberg\+::Vst\+::R\+T\+TransferT$<$ ObjectT, Deleter $>$ Struct Template Reference}
+\label{struct_steinberg_1_1_vst_1_1_r_t_transfer_t}\index{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}}
+
+
+{\ttfamily \#include $<$rttransfer.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_ac61c70b0fb96f13d0242778c2562071b}\label{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_ac61c70b0fb96f13d0242778c2562071b}} 
+using {\bfseries Object\+Type} = ObjectT
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a57d506358cbfac00bc035e0bb3578148}\label{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a57d506358cbfac00bc035e0bb3578148}} 
+using {\bfseries Object\+Type\+Ptr} = std\+::unique\+\_\+ptr$<$ Object\+Type, Deleter $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Proc $>$ }\\void \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a39566c68b40948f6d65eb91e08df8e19}{access\+Transfer\+Object\+\_\+rt}} (Proc proc) noexcept
+\item 
+void \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a2044d1bc1dbc3b1cb1160df2cd52da3a}{transfer\+Object\+\_\+ui}} (Object\+Type\+Ptr \&\&new\+Object\+Ptr)
+\item 
+void \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a425314cec8c97cef2b30a8faa2f63c22}{clear\+\_\+ui}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename ObjectT, typename Deleter = std\+::default\+\_\+delete$<$\+Object\+T$>$$>$\newline
+struct Steinberg\+::\+Vst\+::\+R\+T\+Transfer\+T$<$ Object\+T, Deleter $>$}
+
+Transfer objects from a non realtime thread to a realtime one
+
+You have to use it from two threads, the realtime context thread where you are not allowed to block and a non realtime thread from where the object is coming.
+
+It\textquotesingle{}s guaranteed that the function you should only call in the realtime context is wait free and does not do any allocations or deallocations 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a39566c68b40948f6d65eb91e08df8e19}\label{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a39566c68b40948f6d65eb91e08df8e19}} 
+\index{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}!accessTransferObject\_rt@{accessTransferObject\_rt}}
+\index{accessTransferObject\_rt@{accessTransferObject\_rt}!Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{accessTransferObject\_rt()}{accessTransferObject\_rt()}}
+{\footnotesize\ttfamily template$<$typename ObjectT , typename Deleter  = std\+::default\+\_\+delete$<$\+Object\+T$>$$>$ \\
+template$<$typename Proc $>$ \\
+void \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_r_t_transfer_t}{Steinberg\+::\+Vst\+::\+R\+T\+TransferT}}$<$ ObjectT, Deleter $>$\+::access\+Transfer\+Object\+\_\+rt (\begin{DoxyParamCaption}\item[{Proc}]{proc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+Access the transfer object.
+
+If there\textquotesingle{}s a new object, the proc is called with the new object. The object is only valid inside the proc.
+
+To be called from the realtime context. \mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a425314cec8c97cef2b30a8faa2f63c22}\label{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a425314cec8c97cef2b30a8faa2f63c22}} 
+\index{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}!clear\_ui@{clear\_ui}}
+\index{clear\_ui@{clear\_ui}!Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{clear\_ui()}{clear\_ui()}}
+{\footnotesize\ttfamily template$<$typename ObjectT , typename Deleter  = std\+::default\+\_\+delete$<$\+Object\+T$>$$>$ \\
+void \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_r_t_transfer_t}{Steinberg\+::\+Vst\+::\+R\+T\+TransferT}}$<$ ObjectT, Deleter $>$\+::clear\+\_\+ui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clear the transfer.
+
+To be called from the non realtime context. \mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a2044d1bc1dbc3b1cb1160df2cd52da3a}\label{struct_steinberg_1_1_vst_1_1_r_t_transfer_t_a2044d1bc1dbc3b1cb1160df2cd52da3a}} 
+\index{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}!transferObject\_ui@{transferObject\_ui}}
+\index{transferObject\_ui@{transferObject\_ui}!Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$@{Steinberg::Vst::RTTransferT$<$ ObjectT, Deleter $>$}}
+\doxysubsubsection{\texorpdfstring{transferObject\_ui()}{transferObject\_ui()}}
+{\footnotesize\ttfamily template$<$typename ObjectT , typename Deleter  = std\+::default\+\_\+delete$<$\+Object\+T$>$$>$ \\
+void \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_r_t_transfer_t}{Steinberg\+::\+Vst\+::\+R\+T\+TransferT}}$<$ ObjectT, Deleter $>$\+::transfer\+Object\+\_\+ui (\begin{DoxyParamCaption}\item[{Object\+Type\+Ptr \&\&}]{new\+Object\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Transfer an object to the realtime context.
+
+The ownership of new\+Object is transfered to this object and the Deleter is used to free the memory of it afterwards.
+
+If there\textquotesingle{}s already an object in transfer the previous object will be deallocated and replaced with the new one without passing to the realtime context.
+
+To be called from the non realtime context. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/utility/rttransfer.\+h\end{DoxyCompactItemize}

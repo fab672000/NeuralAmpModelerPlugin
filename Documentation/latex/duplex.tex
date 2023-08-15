@@ -1,0 +1,74 @@
+Finally, it is easy to use \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} for simultaneous audio input/output, or duplex operation. In this example, we simply pass the input data back to the output.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{_rt_audio_8h}{RtAudio.h}}"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Pass-\/through function.}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} inout( \textcolor{keywordtype}{void} *outputBuffer, \textcolor{keywordtype}{void} *inputBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nBufferFrames,}
+\DoxyCodeLine{           \textcolor{keywordtype}{double} streamTime, \mbox{\hyperlink{_rt_audio_8h_a80e306d363583da3b0a1b65d9b57c806}{RtAudioStreamStatus}} status, \textcolor{keywordtype}{void} *data )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// Since the number of input and output channels is equal, we can do}}
+\DoxyCodeLine{  \textcolor{comment}{// a simple buffer copy operation here.}}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( status ) std::cout << \textcolor{stringliteral}{"Stream over/underflow detected."} << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *bytes = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *) data;}
+\DoxyCodeLine{  memcpy( outputBuffer, inputBuffer, *bytes );}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \mbox{\hyperlink{class_rt_audio}{RtAudio}} adac;}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( adac.\mbox{\hyperlink{class_rt_audio_a747ce2d73803641bbb66d6e78092aa1a}{getDeviceCount}}() < 1 ) \{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"\(\backslash\)nNo audio devices found!\(\backslash\)n"};}
+\DoxyCodeLine{    exit( 0 );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// Set the same number of channels for both input and output.}}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bufferBytes, bufferFrames = 512;}
+\DoxyCodeLine{  \mbox{\hyperlink{struct_rt_audio_1_1_stream_parameters}{RtAudio::StreamParameters}} iParams, oParams;}
+\DoxyCodeLine{  iParams.deviceId = 0; \textcolor{comment}{// first available device}}
+\DoxyCodeLine{  iParams.nChannels = 2;}
+\DoxyCodeLine{  oParams.deviceId = 0; \textcolor{comment}{// first available device}}
+\DoxyCodeLine{  oParams.nChannels = 2;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    adac.\mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{openStream}}( \&oParams, \&iParams, RTAUDIO\_SINT32, 44100, \&bufferFrames, \&inout, (\textcolor{keywordtype}{void} *)\&bufferBytes );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{catch} ( \mbox{\hyperlink{class_rt_audio_error}{RtAudioError}}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}} ) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}.printMessage();}
+\DoxyCodeLine{    exit( 0 );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  bufferBytes = bufferFrames * 2 * 4;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    adac.\mbox{\hyperlink{class_rt_audio_aec017a89629ccef66a90b60be22a2f80}{startStream}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordtype}{char} input;}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"\(\backslash\)nRunning ... press <enter> to quit.\(\backslash\)n"};}
+\DoxyCodeLine{    std::cin.get(input);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Stop the stream.}}
+\DoxyCodeLine{    adac.\mbox{\hyperlink{class_rt_audio_af4c241ff86936ecc8108f0d9dfe3efdd}{stopStream}}();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{catch} ( \mbox{\hyperlink{class_rt_audio_error}{RtAudioError}}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}} ) \{}
+\DoxyCodeLine{    \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}.printMessage();}
+\DoxyCodeLine{    \textcolor{keywordflow}{goto} cleanup;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ cleanup:}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( adac.\mbox{\hyperlink{class_rt_audio_a9c191aa5401a60e5438291b117bbf8c4}{isStreamOpen}}() ) adac.\mbox{\hyperlink{class_rt_audio_a90d599002ad32cf250a4cb866f2cc93a}{closeStream}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+In this example, audio recorded by the stream input will be played out during the next round of audio processing.
+
+Note that a duplex stream can make use of two different devices (except when using the Linux Jack and Windows A\+S\+IO A\+P\+Is). However, this may cause timing problems due to possible device clock variations, unless a common external \char`\"{}sync\char`\"{} is provided. 

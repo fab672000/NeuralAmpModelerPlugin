@@ -1,0 +1,45 @@
+The next step in using \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} is to open a stream with particular device and parameter settings.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{_rt_audio_8h}{RtAudio.h}}"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \mbox{\hyperlink{class_rt_audio}{RtAudio}} dac;}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( dac.getDeviceCount() == 0 ) exit( 0 );}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{struct_rt_audio_1_1_stream_parameters}{RtAudio::StreamParameters}} parameters;}
+\DoxyCodeLine{  parameters.deviceId = dac.getDefaultOutputDevice();}
+\DoxyCodeLine{  parameters.nChannels = 2;}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sampleRate = 44100;}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bufferFrames = 256; \textcolor{comment}{// 256 sample frames}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{struct_rt_audio_1_1_stream_options}{RtAudio::StreamOptions}} options;}
+\DoxyCodeLine{  options.\mbox{\hyperlink{struct_rt_audio_1_1_stream_options_a0ecc98b031aa3af49d09b781643e298b}{flags}} = RTAUDIO\_NONINTERLEAVED;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{    dac.openStream( \&parameters, \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}, RTAUDIO\_FLOAT32,}
+\DoxyCodeLine{                    sampleRate, \&bufferFrames, \&myCallback, \mbox{\hyperlink{utypes_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}, \&options );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  \textcolor{keywordflow}{catch} ( \mbox{\hyperlink{class_rt_audio_error}{RtAudioError}}\& \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}} ) \{}
+\DoxyCodeLine{    std::cout << \textcolor{charliteral}{'\(\backslash\)n'} << \mbox{\hyperlink{group__gtc__constants_ga4b7956eb6e2fbedfc7cf2e46e85c5139}{e}}.getMessage() << \textcolor{charliteral}{'\(\backslash\)n'} << std::endl;}
+\DoxyCodeLine{    exit( 0 );}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+The \mbox{\hyperlink{class_rt_audio_a6907539d2527775df778ebce32ef1e3b}{Rt\+Audio\+::open\+Stream()}} function attempts to open a stream with a specified set of parameter values. In the above example, we attempt to open a two channel playback stream using the default output device, 32-\/bit floating point data, a sample rate of 44100 Hz, and a frame rate of 256 sample frames per output buffer. If the user specifies an invalid parameter value (such as a device id greater than or equal to the number of enumerated devices), an \mbox{\hyperlink{class_rt_audio_error}{Rt\+Audio\+Error}} is thrown of type = I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+SE. If a system error occurs or the device does not support the specified parameter values, an \mbox{\hyperlink{class_rt_audio_error}{Rt\+Audio\+Error}} of type = S\+Y\+S\+T\+E\+M\+\_\+\+E\+R\+R\+OR is thrown. In either case, a descriptive error message is bundled with the exception and can be queried with the \mbox{\hyperlink{class_rt_audio_error_a4dd8629dcb6a18052733135410183188}{Rt\+Audio\+Error\+::get\+Message()}} or Rt\+Audio\+Error\+::what() functions.
+
+\mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} provides four signed integer and two floating point data formats which can be specified using the Rt\+Audio\+Format parameter values mentioned earlier. If the opened device does not natively support the given format, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} will automatically perform the necessary data format conversion.
+
+The {\ttfamily buffer\+Frames} parameter specifies the desired number of sample frames that will be written to and/or read from a device per write/read operation. This parameter can be used to control stream latency though there is no guarantee that the passed value will be that used by a device. In general, a lower {\ttfamily buffer\+Frames} value will produce less latency but perhaps less robust performance. A value of zero can be specified, in which case the smallest allowable value will be used. The {\ttfamily buffer\+Frames} parameter is passed as a pointer and the actual value used by the stream is set during the device setup procedure. {\ttfamily buffer\+Frames} values should be a power of two. Optimal and allowable buffer values tend to vary between systems and devices. Stream latency can also be controlled via the optional \mbox{\hyperlink{struct_rt_audio_1_1_stream_options}{Rt\+Audio\+::\+Stream\+Options}} member {\ttfamily number\+Of\+Buffers} (not used in the example above), though this tends to be more system dependent. In particular, the {\ttfamily number\+Of\+Buffers} parameter is ignored when using the O\+S-\/X Core Audio, Jack, and the Windows A\+S\+IO A\+P\+Is.
+
+As noted earlier, the device capabilities reported by a driver or underlying audio A\+PI are not always accurate and/or may be dependent on a combination of device settings. Because of this, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} does not attempt to query a device\textquotesingle{}s capabilities or use previously reported values when opening a device. Instead, \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} simply attempts to set the given parameters on a specified device and then checks whether the setup is successful or not.
+
+The Rt\+Audio\+Callback parameter above is a pointer to a user-\/defined function that will be called whenever the audio system is ready for new output data or has new input data to be read. Further details on the use of a callback function are provided in the next section.
+
+Several stream options are available to fine-\/tune the behavior of an audio stream. In the example above, we specify that data will be written by the user in a {\itshape non-\/interleaved} format via the \mbox{\hyperlink{struct_rt_audio_1_1_stream_options}{Rt\+Audio\+::\+Stream\+Options}} member {\ttfamily flags}. That is, all {\ttfamily buffer\+Frames} of the first channel should be written consecutively, followed by all {\ttfamily buffer\+Frames} of the second channel. By default (when no option is specified), \mbox{\hyperlink{class_rt_audio}{Rt\+Audio}} expects data to be written in an {\itshape interleaved} format. 

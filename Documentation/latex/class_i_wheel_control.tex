@@ -1,0 +1,164 @@
+\hypertarget{class_i_wheel_control}{}\doxysection{I\+Wheel\+Control Class Reference}
+\label{class_i_wheel_control}\index{IWheelControl@{IWheelControl}}
+
+
+{\ttfamily \#include $<$I\+V\+Keyboard\+Control.\+h$>$}
+
+Inheritance diagram for I\+Wheel\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_wheel_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_wheel_control_af1954dbfc1ab06f68ba16a9171ab8e2d}{I\+Wheel\+Control}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, \mbox{\hyperlink{struct_i_midi_msg_a5c7470ad2de287bf93ba38a715fae1f4}{I\+Midi\+Msg\+::\+E\+Control\+Change\+Msg}} cc=I\+Midi\+Msg\+::\+E\+Control\+Change\+Msg\+::k\+No\+CC, int init\+Bend\+Range=12)
+\item 
+void \mbox{\hyperlink{class_i_wheel_control_a930c915cb4a0aa8962c37c43d3daadaf}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_wheel_control_a1a21fcdb4a6ee6fb60814eada8947cf6}{On\+Midi}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg) override
+\item 
+void \mbox{\hyperlink{class_i_wheel_control_ae68cab63cdc500f0a414ddd73bba8f41}{On\+Mouse\+Wheel}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod, float d) override
+\item 
+void \mbox{\hyperlink{class_i_wheel_control_a40a03ea411da5e187bb4c7cbb982b14e}{On\+Popup\+Menu\+Selection}} (\mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$p\+Selected\+Menu, int) override
+\item 
+void \mbox{\hyperlink{class_i_wheel_control_a828c1481122a7524cd568bedc4890d9e}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_wheel_control_ae2bf3ecb65ea641b02c7c98564e673e4}{On\+Mouse\+Up}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_wheel_control_a55ea3a96e21011e69bd7c0810817a383}\label{class_i_wheel_control_a55ea3a96e21011e69bd7c0810817a383}} 
+static constexpr int {\bfseries k\+Message\+Tag\+Set\+Pitch\+Bend\+Range} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Vectorial \char`\"{}wheel\char`\"{} control for pitchbender/modwheel 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_wheel_control_af1954dbfc1ab06f68ba16a9171ab8e2d}\label{class_i_wheel_control_af1954dbfc1ab06f68ba16a9171ab8e2d}} 
+\index{IWheelControl@{IWheelControl}!IWheelControl@{IWheelControl}}
+\index{IWheelControl@{IWheelControl}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{IWheelControl()}{IWheelControl()}}
+{\footnotesize\ttfamily I\+Wheel\+Control\+::\+I\+Wheel\+Control (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{\mbox{\hyperlink{struct_i_midi_msg_a5c7470ad2de287bf93ba38a715fae1f4}{I\+Midi\+Msg\+::\+E\+Control\+Change\+Msg}}}]{cc = {\ttfamily IMidiMsg\+:\+:EControlChangeMsg\+:\+:kNoCC},  }\item[{int}]{init\+Bend\+Range = {\ttfamily 12} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a Wheel\+Control 
+\begin{DoxyParams}{Parameters}
+{\em bounds} & The control\textquotesingle{}s bounds \\
+\hline
+{\em cc} & A Midi CC to link, defaults to k\+No\+CC which is interpreted as pitch bend \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_wheel_control_a930c915cb4a0aa8962c37c43d3daadaf}\label{class_i_wheel_control_a930c915cb4a0aa8962c37c43d3daadaf}} 
+\index{IWheelControl@{IWheelControl}!Draw@{Draw}}
+\index{Draw@{Draw}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+Wheel\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_wheel_control_a1a21fcdb4a6ee6fb60814eada8947cf6}\label{class_i_wheel_control_a1a21fcdb4a6ee6fb60814eada8947cf6}} 
+\index{IWheelControl@{IWheelControl}!OnMidi@{OnMidi}}
+\index{OnMidi@{OnMidi}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{OnMidi()}{OnMidi()}}
+{\footnotesize\ttfamily void I\+Wheel\+Control\+::\+On\+Midi (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to receive M\+I\+DI messages sent to the control if m\+Wants\+Midi == true, see \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}\+:Send\+Midi\+Msg\+From\+Delegate() 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_abf0b18b0edf97cd3d92364edd02aa48a}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_wheel_control_a828c1481122a7524cd568bedc4890d9e}\label{class_i_wheel_control_a828c1481122a7524cd568bedc4890d9e}} 
+\index{IWheelControl@{IWheelControl}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+Wheel\+Control\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_wheel_control_ae2bf3ecb65ea641b02c7c98564e673e4}\label{class_i_wheel_control_ae2bf3ecb65ea641b02c7c98564e673e4}} 
+\index{IWheelControl@{IWheelControl}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void I\+Wheel\+Control\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse up event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a919eb7860ce5559e589f95ceb3309df7}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_wheel_control_ae68cab63cdc500f0a414ddd73bba8f41}\label{class_i_wheel_control_ae68cab63cdc500f0a414ddd73bba8f41}} 
+\index{IWheelControl@{IWheelControl}!OnMouseWheel@{OnMouseWheel}}
+\index{OnMouseWheel@{OnMouseWheel}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseWheel()}{OnMouseWheel()}}
+{\footnotesize\ttfamily void I\+Wheel\+Control\+::\+On\+Mouse\+Wheel (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod,  }\item[{float}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse wheel event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+{\em d} & The delta value (difference) since the last mouse wheel event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab79257a2b774c58eda9d3c4b5238abfb}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_wheel_control_a40a03ea411da5e187bb4c7cbb982b14e}\label{class_i_wheel_control_a40a03ea411da5e187bb4c7cbb982b14e}} 
+\index{IWheelControl@{IWheelControl}!OnPopupMenuSelection@{OnPopupMenuSelection}}
+\index{OnPopupMenuSelection@{OnPopupMenuSelection}!IWheelControl@{IWheelControl}}
+\doxysubsubsection{\texorpdfstring{OnPopupMenuSelection()}{OnPopupMenuSelection()}}
+{\footnotesize\ttfamily void I\+Wheel\+Control\+::\+On\+Popup\+Menu\+Selection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$}]{p\+Selected\+Menu,  }\item[{int}]{val\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to handle popup menu selection after \mbox{\hyperlink{class_i_graphics_a1e810f7c16d23717ad4e9e546f4f522b}{I\+Graphics\+::\+Create\+Popup\+Menu}}/\+I\+Control\+::\+Prompt\+User\+Input 
+\begin{DoxyParams}{Parameters}
+{\em p\+Selected\+Menu} & If p\+Selected\+Menu is invalid it means the user didn\textquotesingle{}t select anything \\
+\hline
+{\em val\+Idx} & An index that indicates which of the control\textquotesingle{}s vals the menu relates to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a48e5538db6500f5856d919d204a89418}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_v_keyboard_control_8h}{I\+V\+Keyboard\+Control.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\hypertarget{class_sk_png_chunk_reader}{}\doxysection{Sk\+Png\+Chunk\+Reader Class Reference}
+\label{class_sk_png_chunk_reader}\index{SkPngChunkReader@{SkPngChunkReader}}
+
+
+{\ttfamily \#include $<$Sk\+Png\+Chunk\+Reader.\+h$>$}
+
+Inheritance diagram for Sk\+Png\+Chunk\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sk_png_chunk_reader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_sk_png_chunk_reader_a07eef77983b7bab5b7d09a8a4ecd512b}{read\+Chunk}} (const char tag\mbox{[}$\,$\mbox{]}, const void $\ast$data, size\+\_\+t length)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_png_chunk_reader}{Sk\+Png\+Chunk\+Reader}}
+
+Base class for optional callbacks to retrieve meta/chunk data out of a P\+NG encoded image as it is being decoded. Used by \mbox{\hyperlink{class_sk_codec}{Sk\+Codec}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_png_chunk_reader_a07eef77983b7bab5b7d09a8a4ecd512b}\label{class_sk_png_chunk_reader_a07eef77983b7bab5b7d09a8a4ecd512b}} 
+\index{SkPngChunkReader@{SkPngChunkReader}!readChunk@{readChunk}}
+\index{readChunk@{readChunk}!SkPngChunkReader@{SkPngChunkReader}}
+\doxysubsubsection{\texorpdfstring{readChunk()}{readChunk()}}
+{\footnotesize\ttfamily virtual bool Sk\+Png\+Chunk\+Reader\+::read\+Chunk (\begin{DoxyParamCaption}\item[{const char}]{tag\mbox{[}$\,$\mbox{]},  }\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This will be called by the decoder when it sees an unknown chunk.
+
+Use by \mbox{\hyperlink{class_sk_codec}{Sk\+Codec}}\+: Depending on the location of the unknown chunks, this callback may be called by
+\begin{DoxyItemize}
+\item the factory (New\+From\+Stream/\+New\+From\+Data)
+\item get\+Pixels
+\item start\+Scanline\+Decode
+\item the first call to get\+Scanlines/skip\+Scanlines The callback may be called from a different thread (e.\+g. if the \mbox{\hyperlink{class_sk_codec}{Sk\+Codec}} is passed to another thread), and it may be called multiple times, if the \mbox{\hyperlink{class_sk_codec}{Sk\+Codec}} is used multiple times.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & Name for this type of chunk. \\
+\hline
+{\em data} & Data to be interpreted by the subclass. \\
+\hline
+{\em length} & Number of bytes of data in the chunk. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true to continue decoding, or false to indicate an error, which will cause the decoder to not return the image. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Png\+Chunk\+Reader.\+h\end{DoxyCompactItemize}

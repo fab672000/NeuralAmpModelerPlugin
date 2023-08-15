@@ -1,0 +1,86 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_edit_controller2}{}\doxysection{Steinberg\+::Vst\+::I\+Edit\+Controller2 Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_edit_controller2}\index{Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}}
+
+
+{\ttfamily \#include $<$ivsteditcontroller.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Edit\+Controller2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_steinberg_1_1_vst_1_1_i_edit_controller2}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller2_a17fc6b1da550f09d77053564b934b19c}{set\+Knob\+Mode}} (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a172ece08cf751b8dc9e6c86731d8ba9b}{Knob\+Mode}} mode)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller2_a9a12f3f48c7a902b0d5f9bccf36c4c14}{open\+Help}} (T\+Bool only\+Check)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller2_a3f2cdbce3355e2c7cbe80c2cf0acc049}{open\+About\+Box}} (T\+Bool only\+Check)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_edit_controller2_a1b82ab82c28c76e32bd72663439a5c31}\label{class_steinberg_1_1_vst_1_1_i_edit_controller2_a1b82ab82c28c76e32bd72663439a5c31}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Edit controller component interface extension\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller2}{Vst\+::\+I\+Edit\+Controller2}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}}\mbox{]}
+\item \mbox{[}released\+: 3.\+1.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+Extension to allow the host to inform the plug-\/in about the host Knob Mode, and to open the plug-\/in about box or help documentation.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller}{Edit\+Controller}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_edit_controller2_a3f2cdbce3355e2c7cbe80c2cf0acc049}\label{class_steinberg_1_1_vst_1_1_i_edit_controller2_a3f2cdbce3355e2c7cbe80c2cf0acc049}} 
+\index{Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}!openAboutBox@{openAboutBox}}
+\index{openAboutBox@{openAboutBox}!Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}}
+\doxysubsubsection{\texorpdfstring{openAboutBox()}{openAboutBox()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Edit\+Controller2\+::open\+About\+Box (\begin{DoxyParamCaption}\item[{T\+Bool}]{only\+Check }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Host could ask to open the plug-\/in about box. The host could call it with only\+Check set to true for testing support of open About\+Box. Return k\+Result\+False means not supported function. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_a101a4692d58e2edf787507025ff730f4}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_edit_controller2_a9a12f3f48c7a902b0d5f9bccf36c4c14}\label{class_steinberg_1_1_vst_1_1_i_edit_controller2_a9a12f3f48c7a902b0d5f9bccf36c4c14}} 
+\index{Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}!openHelp@{openHelp}}
+\index{openHelp@{openHelp}!Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}}
+\doxysubsubsection{\texorpdfstring{openHelp()}{openHelp()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Edit\+Controller2\+::open\+Help (\begin{DoxyParamCaption}\item[{T\+Bool}]{only\+Check }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Host could ask to open the plug-\/in help (could be\+: opening a P\+DF document or link to a web page). The host could call it with only\+Check set to true for testing support of open Help. Return k\+Result\+False means not supported function. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_aaba88b86156a09e9c687bf43790338b6}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_edit_controller2_a17fc6b1da550f09d77053564b934b19c}\label{class_steinberg_1_1_vst_1_1_i_edit_controller2_a17fc6b1da550f09d77053564b934b19c}} 
+\index{Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}!setKnobMode@{setKnobMode}}
+\index{setKnobMode@{setKnobMode}!Steinberg::Vst::IEditController2@{Steinberg::Vst::IEditController2}}
+\doxysubsubsection{\texorpdfstring{setKnobMode()}{setKnobMode()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Edit\+Controller2\+::set\+Knob\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_steinberg_1_1_vst_a172ece08cf751b8dc9e6c86731d8ba9b}{Knob\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Host could set the Knob Mode for the plug-\/in. Return k\+Result\+False means not supported mode. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{namespace_steinberg_1_1_vst_afaa87ac0212690a13e6a9784492822be}{Knob\+Modes}}. 
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_a2b34aef01c7ddbd683460b2fb449664a}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivsteditcontroller.\+h\end{DoxyCompactItemize}

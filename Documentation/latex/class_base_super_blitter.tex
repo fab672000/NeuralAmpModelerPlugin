@@ -1,0 +1,64 @@
+\hypertarget{class_base_super_blitter}{}\doxysection{Base\+Super\+Blitter Class Reference}
+\label{class_base_super_blitter}\index{BaseSuperBlitter@{BaseSuperBlitter}}
+
+
+Base class for a single-\/pass supersampled blitter.  
+
+
+Inheritance diagram for Base\+Super\+Blitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_base_super_blitter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_super_blitter_ab39af9773a837ef779a66af55a43516b}\label{class_base_super_blitter_ab39af9773a837ef779a66af55a43516b}} 
+{\bfseries Base\+Super\+Blitter} (\mbox{\hyperlink{class_sk_blitter}{Sk\+Blitter}} $\ast$real\+Blitter, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&ir, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&clip\+Bounds, bool is\+Inverse)
+\item 
+\mbox{\Hypertarget{class_base_super_blitter_a09d33a0d51da2731266bd86dbbd0e42b}\label{class_base_super_blitter_a09d33a0d51da2731266bd86dbbd0e42b}} 
+void \mbox{\hyperlink{class_base_super_blitter_a09d33a0d51da2731266bd86dbbd0e42b}{blit\+AntiH}} (int x, int y, const \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} antialias\mbox{[}$\,$\mbox{]}, const int16\+\_\+t runs\mbox{[}$\,$\mbox{]}) override
+\begin{DoxyCompactList}\small\item\em Must be explicitly defined on subclasses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_super_blitter_ae08e79b3129cb3215bd8c06dae103f64}\label{class_base_super_blitter_ae08e79b3129cb3215bd8c06dae103f64}} 
+void \mbox{\hyperlink{class_base_super_blitter_ae08e79b3129cb3215bd8c06dae103f64}{blitV}} (int x, int y, int height, \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} alpha) override
+\begin{DoxyCompactList}\small\item\em May not be called on \mbox{\hyperlink{class_base_super_blitter}{Base\+Super\+Blitter}} because it blits out of order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_super_blitter_ab4ea8ba94e2b3682b1653a3e6235cae3}\label{class_base_super_blitter_ab4ea8ba94e2b3682b1653a3e6235cae3}} 
+\mbox{\hyperlink{class_base_super_blitter_ab4ea8ba94e2b3682b1653a3e6235cae3}{Sk\+D\+E\+B\+U\+G\+C\+O\+DE}} (int f\+CurrX;) int f\+CurrY
+\begin{DoxyCompactList}\small\item\em Current y coordinate in supersampled coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_super_blitter_a2dd827660c0763219d020a0c1eef6fa9}\label{class_base_super_blitter_a2dd827660c0763219d020a0c1eef6fa9}} 
+\mbox{\hyperlink{class_sk_blitter}{Sk\+Blitter}} $\ast$ {\bfseries f\+Real\+Blitter}
+\item 
+\mbox{\Hypertarget{class_base_super_blitter_a7b937923c27d31c3393d83fc6fb77c10}\label{class_base_super_blitter_a7b937923c27d31c3393d83fc6fb77c10}} 
+int \mbox{\hyperlink{class_base_super_blitter_a7b937923c27d31c3393d83fc6fb77c10}{f\+Curr\+IY}}
+\begin{DoxyCompactList}\small\item\em Current y coordinate, in destination coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_super_blitter_a29b37472cfe2e2b9e97339bf49ff4e41}\label{class_base_super_blitter_a29b37472cfe2e2b9e97339bf49ff4e41}} 
+int \mbox{\hyperlink{class_base_super_blitter_a29b37472cfe2e2b9e97339bf49ff4e41}{f\+Width}}
+\begin{DoxyCompactList}\small\item\em Widest row of region to be blitted, in destination coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_super_blitter_ab9d6951109387764edfc6f6b9c403276}\label{class_base_super_blitter_ab9d6951109387764edfc6f6b9c403276}} 
+int \mbox{\hyperlink{class_base_super_blitter_ab9d6951109387764edfc6f6b9c403276}{f\+Left}}
+\begin{DoxyCompactList}\small\item\em Leftmost x coordinate in any row, in destination coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_super_blitter_a4703fc3a1feae74c508de94a6f5c901e}\label{class_base_super_blitter_a4703fc3a1feae74c508de94a6f5c901e}} 
+int \mbox{\hyperlink{class_base_super_blitter_a4703fc3a1feae74c508de94a6f5c901e}{f\+Super\+Left}}
+\begin{DoxyCompactList}\small\item\em Leftmost x coordinate in any row, in supersampled coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_super_blitter_ab4b303c564b3f375cd6bd667e46636ef}\label{class_base_super_blitter_ab4b303c564b3f375cd6bd667e46636ef}} 
+int \mbox{\hyperlink{class_base_super_blitter_ab4b303c564b3f375cd6bd667e46636ef}{f\+Top}}
+\begin{DoxyCompactList}\small\item\em Initial y coordinate (top of bounds). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_base_super_blitter_a0225c7986396bbff928d8dd667c87085}\label{class_base_super_blitter_a0225c7986396bbff928d8dd667c87085}} 
+\mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} {\bfseries f\+Sect\+Bounds}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for a single-\/pass supersampled blitter. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/\mbox{\hyperlink{_sk_scan___anti_path_8cpp}{Sk\+Scan\+\_\+\+Anti\+Path.\+cpp}}\end{DoxyCompactItemize}

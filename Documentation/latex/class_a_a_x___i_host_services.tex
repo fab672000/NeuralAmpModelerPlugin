@@ -1,0 +1,121 @@
+\hypertarget{class_a_a_x___i_host_services}{}\doxysection{A\+A\+X\+\_\+\+I\+Host\+Services Class Reference}
+\label{class_a_a_x___i_host_services}\index{AAX\_IHostServices@{AAX\_IHostServices}}
+
+
+Interface to diagnostic and debugging services provided by the A\+AX host.  
+
+
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Host\+Services.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Host\+Services\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_a_x___i_host_services}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_host_services_a0ee94b4e4e98eed868a28f39d6fbe675}{Handle\+Assert\+Failure}} (const char $\ast$i\+File, int32\+\_\+t i\+Line, const char $\ast$i\+Note, int32\+\_\+t i\+Flags) const =0
+\begin{DoxyCompactList}\small\item\em Handle an assertion failure. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_host_services_a87ecb31633740f1c2c2e9afda6a0068b}{Trace}} (int32\+\_\+t i\+Priority, const char $\ast$i\+Message) const =0
+\begin{DoxyCompactList}\small\item\em Log a trace message. \end{DoxyCompactList}\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_host_services_a1b55424be317b91810c70b0b1917934f}{Stack\+Trace}} (int32\+\_\+t i\+Trace\+Priority, int32\+\_\+t i\+Stack\+Trace\+Priority, const char $\ast$i\+Message) const =0
+\begin{DoxyCompactList}\small\item\em Log a trace message or a stack trace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to diagnostic and debugging services provided by the A\+AX host. 
+
+\textbackslash{}hostimp
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_a_c_f_host_services}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_host_services_a0ee94b4e4e98eed868a28f39d6fbe675}\label{class_a_a_x___i_host_services_a0ee94b4e4e98eed868a28f39d6fbe675}} 
+\index{AAX\_IHostServices@{AAX\_IHostServices}!HandleAssertFailure@{HandleAssertFailure}}
+\index{HandleAssertFailure@{HandleAssertFailure}!AAX\_IHostServices@{AAX\_IHostServices}}
+\doxysubsubsection{\texorpdfstring{HandleAssertFailure()}{HandleAssertFailure()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Host\+Services\+::\+Handle\+Assert\+Failure (\begin{DoxyParamCaption}\item[{const char $\ast$}]{i\+File,  }\item[{int32\+\_\+t}]{i\+Line,  }\item[{const char $\ast$}]{i\+Note,  }\item[{int32\+\_\+t}]{i\+Flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handle an assertion failure. 
+
+Use this method to delegate assertion failure handling to the host
+
+Use {\ttfamily in\+Flags} to request that specific behavior be included when handling the failure. This request may not be fulfilled by the host, and absence of a flag does not preclude the host from using that behavior when handling the failure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+File} & The name of the file containing the assert check. Usually {\ttfamily {\bfseries{F\+I\+LE}}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Line} & The line number of the assert check. Usually {\ttfamily {\bfseries{L\+I\+NE}}} \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Note} & Text to display related to the assert. Usually the condition which failed \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Flags} & Bitfield of \mbox{\hyperlink{_a_a_x___enums_8h_ab87a565fcd58c3d860d50a210b264985}{A\+A\+X\+\_\+\+E\+Assert\+Flags}} to request specific handling behavior \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_host_services_a1954560345e7983d1cf7ccee7af97c22}{A\+A\+X\+\_\+\+V\+Host\+Services}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_host_services_a1b55424be317b91810c70b0b1917934f}\label{class_a_a_x___i_host_services_a1b55424be317b91810c70b0b1917934f}} 
+\index{AAX\_IHostServices@{AAX\_IHostServices}!StackTrace@{StackTrace}}
+\index{StackTrace@{StackTrace}!AAX\_IHostServices@{AAX\_IHostServices}}
+\doxysubsubsection{\texorpdfstring{StackTrace()}{StackTrace()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Host\+Services\+::\+Stack\+Trace (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Trace\+Priority,  }\item[{int32\+\_\+t}]{i\+Stack\+Trace\+Priority,  }\item[{const char $\ast$}]{i\+Message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Log a trace message or a stack trace. 
+
+If the logging output filtering is set to include logs with {\ttfamily i\+Stack\+Trace\+Priority} then both the logging message and a stack trace will be emitted, regardless of {\ttfamily i\+Trace\+Priority}.
+
+If the logging output filtering is set to include logs with {\ttfamily i\+Trace\+Priority} but to exclude logs with {\ttfamily i\+Stack\+Trace\+Priority} then this will emit a normal log with no stack trace.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Trace\+Priority} & Priority of the trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Stack\+Trace\+Priority} & Priority of the stack trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_host_services_a4219edd9b129f3b3182b216cf1062985}{A\+A\+X\+\_\+\+V\+Host\+Services}}.
+
+\mbox{\Hypertarget{class_a_a_x___i_host_services_a87ecb31633740f1c2c2e9afda6a0068b}\label{class_a_a_x___i_host_services_a87ecb31633740f1c2c2e9afda6a0068b}} 
+\index{AAX\_IHostServices@{AAX\_IHostServices}!Trace@{Trace}}
+\index{Trace@{Trace}!AAX\_IHostServices@{AAX\_IHostServices}}
+\doxysubsubsection{\texorpdfstring{Trace()}{Trace()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+Host\+Services\+::\+Trace (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i\+Priority,  }\item[{const char $\ast$}]{i\+Message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Log a trace message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Priority} & Priority of the trace, used for log filtering. One of k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal, k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_a_a_x___v_host_services_a242c6853b5f92661b77b774bbccd0e5f}{A\+A\+X\+\_\+\+V\+Host\+Services}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\mbox{\hyperlink{_a_a_x___i_host_services_8h}{A\+A\+X\+\_\+\+I\+Host\+Services.\+h}}\end{DoxyCompactItemize}

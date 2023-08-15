@@ -1,0 +1,25 @@
+\hypertarget{class_sk_dash_path_effect}{}\doxysection{Sk\+Dash\+Path\+Effect Class Reference}
+\label{class_sk_dash_path_effect}\index{SkDashPathEffect@{SkDashPathEffect}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ \mbox{\hyperlink{class_sk_dash_path_effect_a650d8a71eb8c88bb9dafbe2f8fb5bfdb}{Make}} (const Sk\+Scalar intervals\mbox{[}$\,$\mbox{]}, int count, Sk\+Scalar phase)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_dash_path_effect_a650d8a71eb8c88bb9dafbe2f8fb5bfdb}\label{class_sk_dash_path_effect_a650d8a71eb8c88bb9dafbe2f8fb5bfdb}} 
+\index{SkDashPathEffect@{SkDashPathEffect}!Make@{Make}}
+\index{Make@{Make}!SkDashPathEffect@{SkDashPathEffect}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}$>$ Sk\+Dash\+Path\+Effect\+::\+Make (\begin{DoxyParamCaption}\item[{const Sk\+Scalar}]{intervals\mbox{[}$\,$\mbox{]},  }\item[{int}]{count,  }\item[{Sk\+Scalar}]{phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+intervals\+: array containing an even number of entries ($>$=2), with the even indices specifying the length of \char`\"{}on\char`\"{} intervals, and the odd indices specifying the length of \char`\"{}off\char`\"{} intervals. This array will be copied in Make, and can be disposed of freely after. count\+: number of elements in the intervals array phase\+: offset into the intervals array (mod the sum of all of the intervals).
+
+For example\+: if intervals\mbox{[}\mbox{]} = \{10, 20\}, count = 2, and phase = 25, this will set up a dashed path like so\+: 5 pixels off 10 pixels on 20 pixels off 10 pixels on 20 pixels off ... A phase of -\/5, 25, 55, 85, etc. would all result in the same path, because the sum of all the intervals is 30.
+
+Note\+: only affects stroked paths. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/effects/Sk\+Dash\+Path\+Effect.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,241 @@
+\hypertarget{class_i_graphics_live_edit}{}\doxysection{I\+Graphics\+Live\+Edit Class Reference}
+\label{class_i_graphics_live_edit}\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Live\+Edit.\+h$>$}
+
+Inheritance diagram for I\+Graphics\+Live\+Edit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_graphics_live_edit}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_graphics_live_edit_ab1b4b1a23f76342426bb55860f978e16}\label{class_i_graphics_live_edit_ab1b4b1a23f76342426bb55860f978e16}} 
+{\bfseries I\+Graphics\+Live\+Edit} (bool mouse\+Overs\+Enabled)
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_a62ee4397355c2dd3553f55291ddffaf3}{On\+Init}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_abf0b11c185defab7dd4d0dba2c857b1e}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_a829d435477caaddf32a34a58dc9ea595}{On\+Mouse\+Up}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_ae77f3e52ac7387849f08fca8bd9f19ef}{On\+Mouse\+Dbl\+Click}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_a1830a2bbc3bc4ba3ffb38d45795f306f}{On\+Mouse\+Over}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_a2eb1093325830f617e405b12863f02d2}{On\+Mouse\+Drag}} (float x, float y, float dX, float dY, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_live_edit_a108ca3c9cec05c97fd4f42574b87c722}{On\+Key\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_key_press}{I\+Key\+Press}} \&key) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_a5877543452e4575d628d383b79ab1bce}{On\+Popup\+Menu\+Selection}} (\mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$p\+Selected\+Menu, int val\+Idx) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_afcf24c0378abd13b0a5ab49e4fecbb45}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_live_edit_a0e0db1ceb23a9f30a0f63c0d62e93691}{On\+Resize}} () override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_live_edit_affa44bd71535d25ccf93613260bb53cd}{Is\+Dirty}} () override
+\item 
+\mbox{\Hypertarget{class_i_graphics_live_edit_a2e74b41ecebd1651fa112882cd154eb1}\label{class_i_graphics_live_edit_a2e74b41ecebd1651fa112882cd154eb1}} 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} {\bfseries Get\+Handle\+Rect} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r)
+\item 
+\mbox{\Hypertarget{class_i_graphics_live_edit_aa21952ca73f60ee06ceb5207c2019a62}\label{class_i_graphics_live_edit_aa21952ca73f60ee06ceb5207c2019a62}} 
+float {\bfseries Snap\+To\+Grid} (float input)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A control to enable live modification of control layout in an \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} context in debug builds This is based on the work of Youlean, who first included it in i\+Plug-\/\+Youlean The lives outside the main \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} control stack and it can be added with \mbox{\hyperlink{class_i_graphics_a637237470659702554f53061b91c8d86}{I\+Graphics\+::\+Enable\+Live\+Edit()}}. It should not be used in the main control stack. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_graphics_live_edit_afcf24c0378abd13b0a5ab49e4fecbb45}\label{class_i_graphics_live_edit_afcf24c0378abd13b0a5ab49e4fecbb45}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!Draw@{Draw}}
+\index{Draw@{Draw}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_affa44bd71535d25ccf93613260bb53cd}\label{class_i_graphics_live_edit_affa44bd71535d25ccf93613260bb53cd}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!IsDirty@{IsDirty}}
+\index{IsDirty@{IsDirty}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{IsDirty()}{IsDirty()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Live\+Edit\+::\+Is\+Dirty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called at each display refresh by the \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} draw loop, after I\+Control\+::\+Animate(), to determine if the control is marked as dirty. \begin{DoxyReturn}{Returns}
+{\ttfamily true} if the control is marked dirty. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a5169582ea732d3d7c7352d0ed88d7957}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a62ee4397355c2dd3553f55291ddffaf3}\label{class_i_graphics_live_edit_a62ee4397355c2dd3553f55291ddffaf3}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnInit@{OnInit}}
+\index{OnInit@{OnInit}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnInit()}{OnInit()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called just prior to when the control is attached, after its delegate and graphics member variable set 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_acd7d00c3219eacdcc1b5dfd5996ffcae}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a108ca3c9cec05c97fd4f42574b87c722}\label{class_i_graphics_live_edit_a108ca3c9cec05c97fd4f42574b87c722}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnKeyDown@{OnKeyDown}}
+\index{OnKeyDown@{OnKeyDown}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnKeyDown()}{OnKeyDown()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Live\+Edit\+::\+On\+Key\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_key_press}{I\+Key\+Press}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a key down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse at the time of this key down event \\
+\hline
+{\em y} & The Y coordinate of the mouse at the time of this key down event \\
+\hline
+{\em key} & Info about the keypress \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a6eb800c82d6960baab8e691bb5222680}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_ae77f3e52ac7387849f08fca8bd9f19ef}\label{class_i_graphics_live_edit_ae77f3e52ac7387849f08fca8bd9f19ef}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnMouseDblClick@{OnMouseDblClick}}
+\index{OnMouseDblClick@{OnMouseDblClick}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnMouseDblClick()}{OnMouseDblClick()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Mouse\+Dbl\+Click (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse double click event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a82331ea6cbdead5fc2a7ce6df7c97d40}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_abf0b11c185defab7dd4d0dba2c857b1e}\label{class_i_graphics_live_edit_abf0b11c185defab7dd4d0dba2c857b1e}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a2eb1093325830f617e405b12863f02d2}\label{class_i_graphics_live_edit_a2eb1093325830f617e405b12863f02d2}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnMouseDrag@{OnMouseDrag}}
+\index{OnMouseDrag@{OnMouseDrag}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnMouseDrag()}{OnMouseDrag()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Mouse\+Drag (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse drag event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em dX} & The X delta (difference) since the last event \\
+\hline
+{\em dY} & The Y delta (difference) since the last event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab5b2fc14c84159cd5e0af3386a2a12e5}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a1830a2bbc3bc4ba3ffb38d45795f306f}\label{class_i_graphics_live_edit_a1830a2bbc3bc4ba3ffb38d45795f306f}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnMouseOver@{OnMouseOver}}
+\index{OnMouseOver@{OnMouseOver}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnMouseOver()}{OnMouseOver()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Mouse\+Over (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseover event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a39df22eddb4d9b0fd2f2504562556c49}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a829d435477caaddf32a34a58dc9ea595}\label{class_i_graphics_live_edit_a829d435477caaddf32a34a58dc9ea595}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse up event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a919eb7860ce5559e589f95ceb3309df7}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a5877543452e4575d628d383b79ab1bce}\label{class_i_graphics_live_edit_a5877543452e4575d628d383b79ab1bce}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnPopupMenuSelection@{OnPopupMenuSelection}}
+\index{OnPopupMenuSelection@{OnPopupMenuSelection}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnPopupMenuSelection()}{OnPopupMenuSelection()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Popup\+Menu\+Selection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_popup_menu}{I\+Popup\+Menu}} $\ast$}]{p\+Selected\+Menu,  }\item[{int}]{val\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to handle popup menu selection after \mbox{\hyperlink{class_i_graphics_a1e810f7c16d23717ad4e9e546f4f522b}{I\+Graphics\+::\+Create\+Popup\+Menu}}/\+I\+Control\+::\+Prompt\+User\+Input 
+\begin{DoxyParams}{Parameters}
+{\em p\+Selected\+Menu} & If p\+Selected\+Menu is invalid it means the user didn\textquotesingle{}t select anything \\
+\hline
+{\em val\+Idx} & An index that indicates which of the control\textquotesingle{}s vals the menu relates to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a48e5538db6500f5856d919d204a89418}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_graphics_live_edit_a0e0db1ceb23a9f30a0f63c0d62e93691}\label{class_i_graphics_live_edit_a0e0db1ceb23a9f30a0f63c0d62e93691}} 
+\index{IGraphicsLiveEdit@{IGraphicsLiveEdit}!OnResize@{OnResize}}
+\index{OnResize@{OnResize}!IGraphicsLiveEdit@{IGraphicsLiveEdit}}
+\doxysubsubsection{\texorpdfstring{OnResize()}{OnResize()}}
+{\footnotesize\ttfamily void I\+Graphics\+Live\+Edit\+::\+On\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called when \mbox{\hyperlink{class_i_control}{I\+Control}} is constructed or resized using Set\+Rect(). N\+O\+TE\+: if you call \mbox{\hyperlink{class_i_control_af8c805c09b1a89f44aec43026fcb1fe7}{Set\+Dirty()}} in this method, you should call Set\+Dirty(false) to avoid triggering parameter changes 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a0c4927d3332fabe6f7626a03624f390f}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_graphics_live_edit_8h}{I\+Graphics\+Live\+Edit.\+h}}\end{DoxyCompactItemize}

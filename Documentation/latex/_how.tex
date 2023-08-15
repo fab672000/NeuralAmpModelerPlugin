@@ -1,0 +1,73 @@
+It is possible to run your own tests when the validator checks your plug-\/in.
+
+First you have to register a test factory in your plugin factory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/vst/utility/testing.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{BEGIN\_FACTORY\_DEF(...}
+\DoxyCodeLine{}
+\DoxyCodeLine{DEF\_CLASS2 (Your \mbox{\hyperlink{class_plugin}{Plugin}} Processor)}
+\DoxyCodeLine{DEF\_CLASS2 (Your \mbox{\hyperlink{class_plugin}{Plugin}} Controller)}
+\DoxyCodeLine{}
+\DoxyCodeLine{DEF\_CLASS2 (INLINE\_UID\_FROM\_FUID (\mbox{\hyperlink{namespace_steinberg_1_1_vst_a42678eb936f6fd039de3af4027213ac9}{getTestFactoryUID}} ()), PClassInfo::kManyInstances, kTestClass,}
+\DoxyCodeLine{           \textcolor{stringliteral}{"Test Factory"}, 0, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""}, \mbox{\hyperlink{namespace_steinberg_1_1_vst_a5376c80324dc1db352c25d9195012249}{createTestFactoryInstance}})}
+\DoxyCodeLine{}
+\DoxyCodeLine{END\_FACTORY}
+\end{DoxyCode}
+
+
+Second\+: write your tests\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/main/moduleinit.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/vst/utility/testing.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{static} ModuleInitializer InitMyTests ([] () \{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespace_steinberg_1_1_vst_a50464150f0711c5b1e4668271d8ea37c}{registerTest}} (\textcolor{stringliteral}{"MyTests"}, STR (\textcolor{stringliteral}{"two plus two is four"}), [] (ITestResult* testResult) \{}
+\DoxyCodeLine{        \textcolor{keyword}{auto} result = 2 + 2;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (result == 4)}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{        testResult-\/>addErrorMessage (STR (\textcolor{stringliteral}{"Unexpected universe change where 2+2 != 4."}));}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{    \});}
+\DoxyCodeLine{\});}
+\end{DoxyCode}
+
+
+If you need access to your audio effect or edit controller you can write your tests as done in the adelay example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/main/moduleinit.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/vst/testsuite/vsttestsuite.h"}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "public.sdk/source/vst/utility/testing.h"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{static} ModuleInitializer InitMyTests ([] () \{}
+\DoxyCodeLine{    \mbox{\hyperlink{namespace_steinberg_1_1_vst_a50464150f0711c5b1e4668271d8ea37c}{registerTest}} (\textcolor{stringliteral}{"MyTests"}, STR (\textcolor{stringliteral}{"check one two three"}), [] (FUnknown* context, ITestResult*}
+\DoxyCodeLine{                                                              testResult)}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        FUnknownPtr<ITestPlugProvider> plugProvider (context);}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (plugProvider)}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            \textcolor{keyword}{auto} controller = plugProvider-\/>getController ();}
+\DoxyCodeLine{            FUnknownPtr<IDelayTestController> testController (controller);}
+\DoxyCodeLine{            \textcolor{keywordflow}{if} (!controller)}
+\DoxyCodeLine{            \{}
+\DoxyCodeLine{                testResult-\/>addErrorMessage (String (\textcolor{stringliteral}{"Unknown IEditController"}));}
+\DoxyCodeLine{                \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{            \}}
+\DoxyCodeLine{            \textcolor{keywordtype}{bool} result = testController-\/>doTest ();}
+\DoxyCodeLine{            plugProvider-\/>releasePlugIn (\textcolor{keyword}{nullptr}, controller);}
+\DoxyCodeLine{}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} (result);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{    \});}
+\DoxyCodeLine{\});}
+\end{DoxyCode}
+
+
+After that recompile and if the validator does not run automatically after every build, start the validator manually and let it check your plug-\/in. 

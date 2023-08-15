@@ -1,0 +1,83 @@
+\hypertarget{struct_y_g_config}{}\doxysection{Y\+G\+Config Struct Reference}
+\label{struct_y_g_config}\index{YGConfig@{YGConfig}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a98a1bb314763a0e2cde162af9696a7cf}\label{struct_y_g_config_a98a1bb314763a0e2cde162af9696a7cf}} 
+using {\bfseries Log\+With\+Context\+Fn} = int($\ast$)(\mbox{\hyperlink{struct_y_g_config}{Y\+G\+Config\+Ref}} \mbox{\hyperlink{structconfig__s}{config}}, \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} node, Y\+G\+Log\+Level level, void $\ast$context, const char $\ast$format, va\+\_\+list args)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a06698ec86a4342159856187a15f75d2a}\label{struct_y_g_config_a06698ec86a4342159856187a15f75d2a}} 
+using {\bfseries Clone\+With\+Context\+Fn} = \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}}($\ast$)(\mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} node, \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} owner, int child\+Index, void $\ast$clone\+Context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a2eb927b19635c3e8f9451d49729fca8c}\label{struct_y_g_config_a2eb927b19635c3e8f9451d49729fca8c}} 
+{\bfseries Y\+G\+Config} (Y\+G\+Logger logger)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_af1d451a4c5964e84a249c4ab0a818fd5}\label{struct_y_g_config_af1d451a4c5964e84a249c4ab0a818fd5}} 
+void {\bfseries log} (\mbox{\hyperlink{struct_y_g_config}{Y\+G\+Config}} $\ast$, \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node}} $\ast$, Y\+G\+Log\+Level, void $\ast$, const char $\ast$, va\+\_\+list)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_ad1d87e37d80ff21c64dcd7a4b3f28b5f}\label{struct_y_g_config_ad1d87e37d80ff21c64dcd7a4b3f28b5f}} 
+void {\bfseries set\+Logger} (Y\+G\+Logger logger)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a3585084d26429123b2e05a3b5dc2f0d5}\label{struct_y_g_config_a3585084d26429123b2e05a3b5dc2f0d5}} 
+void {\bfseries set\+Logger} (Log\+With\+Context\+Fn logger)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a64157a128d988000530224e720032e1d}\label{struct_y_g_config_a64157a128d988000530224e720032e1d}} 
+void {\bfseries set\+Logger} (std\+::nullptr\+\_\+t)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a0810d942527545f03c62df6565f2db31}\label{struct_y_g_config_a0810d942527545f03c62df6565f2db31}} 
+\mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} {\bfseries clone\+Node} (\mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} node, \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} owner, int child\+Index, void $\ast$clone\+Context)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a7e28afde8f0213b40677d721b92405b2}\label{struct_y_g_config_a7e28afde8f0213b40677d721b92405b2}} 
+void {\bfseries set\+Clone\+Node\+Callback} (Y\+G\+Clone\+Node\+Func clone\+Node)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_aafe744fa5bee2daf7e8d6e478126cfb8}\label{struct_y_g_config_aafe744fa5bee2daf7e8d6e478126cfb8}} 
+void {\bfseries set\+Clone\+Node\+Callback} (Clone\+With\+Context\+Fn clone\+Node)
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a685cb9faa55a1502647486d35b200371}\label{struct_y_g_config_a685cb9faa55a1502647486d35b200371}} 
+void {\bfseries set\+Clone\+Node\+Callback} (std\+::nullptr\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a2396ffe31dac04101c6a67b1d4f27720}\label{struct_y_g_config_a2396ffe31dac04101c6a67b1d4f27720}} 
+bool {\bfseries use\+Web\+Defaults} = false
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a0f7df3a9a77cffa78d04f0c5b87704cf}\label{struct_y_g_config_a0f7df3a9a77cffa78d04f0c5b87704cf}} 
+bool {\bfseries use\+Legacy\+Stretch\+Behaviour} = false
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a74dee681a3edac7dbe79ac639b194446}\label{struct_y_g_config_a74dee681a3edac7dbe79ac639b194446}} 
+bool {\bfseries should\+Diff\+Layout\+Without\+Legacy\+Stretch\+Behaviour} = false
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a2d532ef47e4cadeea6bf126b5c7639dc}\label{struct_y_g_config_a2d532ef47e4cadeea6bf126b5c7639dc}} 
+bool {\bfseries print\+Tree} = false
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a226ea47d10a2ac793999519225288b5d}\label{struct_y_g_config_a226ea47d10a2ac793999519225288b5d}} 
+float {\bfseries point\+Scale\+Factor} = 1.\+0f
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a44934000b7052aa51a79b65409ac678d}\label{struct_y_g_config_a44934000b7052aa51a79b65409ac678d}} 
+std\+::array$<$ bool, facebook\+::yoga\+::enums\+::count$<$ Y\+G\+Experimental\+Feature $>$)$>$ {\bfseries experimental\+Features} = \{\}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a6b38f60a78a06193cc5e483b306bf85e}\label{struct_y_g_config_a6b38f60a78a06193cc5e483b306bf85e}} 
+void $\ast$ {\bfseries context} = nullptr
+\item 
+\mbox{\Hypertarget{struct_y_g_config_aedcfb53f7200be5d6d553d4a6087b88d}\label{struct_y_g_config_aedcfb53f7200be5d6d553d4a6087b88d}} 
+Clone\+With\+Context\+Fn {\bfseries with\+Context}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a467bf8b9bb29e3c9d320619a02ca3676}\label{struct_y_g_config_a467bf8b9bb29e3c9d320619a02ca3676}} 
+Y\+G\+Clone\+Node\+Func {\bfseries no\+Context}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_a97d814ec909f5b141a627c794e213885}\label{struct_y_g_config_a97d814ec909f5b141a627c794e213885}} 
+Log\+With\+Context\+Fn {\bfseries with\+Context}
+\item 
+\mbox{\Hypertarget{struct_y_g_config_ac3ef4a817c4c8611588bc782ea497a71}\label{struct_y_g_config_ac3ef4a817c4c8611588bc782ea497a71}} 
+Y\+G\+Logger {\bfseries no\+Context}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Graphics/yoga/yoga/Y\+G\+Config.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Graphics/yoga/yoga/Y\+G\+Config.\+cpp\end{DoxyCompactItemize}

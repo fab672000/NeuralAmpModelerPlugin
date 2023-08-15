@@ -1,0 +1,72 @@
+\hypertarget{class_sk_local_matrix_image_filter}{}\doxysection{Sk\+Local\+Matrix\+Image\+Filter Class Reference}
+\label{class_sk_local_matrix_image_filter}\index{SkLocalMatrixImageFilter@{SkLocalMatrixImageFilter}}
+
+
+{\ttfamily \#include $<$Sk\+Local\+Matrix\+Image\+Filter.\+h$>$}
+
+Inheritance diagram for Sk\+Local\+Matrix\+Image\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_sk_local_matrix_image_filter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_local_matrix_image_filter_aba038801e36be20a7320fc3f39bb3e37}\label{class_sk_local_matrix_image_filter_aba038801e36be20a7320fc3f39bb3e37}} 
+\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} {\bfseries compute\+Fast\+Bounds} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_local_matrix_image_filter_a25b6c6579deacde4c92f42deb3592b67}\label{class_sk_local_matrix_image_filter_a25b6c6579deacde4c92f42deb3592b67}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $>$ {\bfseries Make} (const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&localM, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $>$ input)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sk_local_matrix_image_filter_a9cf1fafef8e09035ece66ac6f701fba9}{flatten}} (\mbox{\hyperlink{class_sk_write_buffer}{Sk\+Write\+Buffer}} \&) const override
+\item 
+\mbox{\Hypertarget{class_sk_local_matrix_image_filter_ae99cbaacb38c4b6eac7706f16a4914bb}\label{class_sk_local_matrix_image_filter_ae99cbaacb38c4b6eac7706f16a4914bb}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} $>$ {\bfseries on\+Filter\+Image} (const \mbox{\hyperlink{classskif_1_1_context}{Context}} \&, \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} $\ast$offset) const override
+\item 
+\mbox{\Hypertarget{class_sk_local_matrix_image_filter_a36a2d51234b4c309976eda8f34d60a5a}\label{class_sk_local_matrix_image_filter_a36a2d51234b4c309976eda8f34d60a5a}} 
+\mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} {\bfseries on\+Filter\+Bounds} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&src, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&ctm, Map\+Direction, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} $\ast$input\+Rect) const override
+\item 
+\mbox{\hyperlink{class_sk_image_filter___base_afb1450e7f4bbbeff48ceb3e518057415}{Matrix\+Capability}} \mbox{\hyperlink{class_sk_local_matrix_image_filter_a674089e85838a0663c79e8c1864a4c41}{on\+Get\+C\+T\+M\+Capability}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Wraps another imagefilter + matrix, such that using this filter will give the same result as using the wrapped filter with the matrix applied to its context. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_local_matrix_image_filter_a9cf1fafef8e09035ece66ac6f701fba9}\label{class_sk_local_matrix_image_filter_a9cf1fafef8e09035ece66ac6f701fba9}} 
+\index{SkLocalMatrixImageFilter@{SkLocalMatrixImageFilter}!flatten@{flatten}}
+\index{flatten@{flatten}!SkLocalMatrixImageFilter@{SkLocalMatrixImageFilter}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily void Sk\+Local\+Matrix\+Image\+Filter\+::flatten (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_write_buffer}{Sk\+Write\+Buffer}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Override this if your subclass needs to record data that it will need to recreate itself from its Create\+Proc (returned by \mbox{\hyperlink{class_sk_flattenable_afe739ff6d2a6737b05dad084f523cd87}{get\+Factory()}}).
+
+D\+E\+P\+R\+E\+C\+A\+T\+ED public \+: will move to protected ... use serialize() instead 
+
+Reimplemented from \mbox{\hyperlink{class_sk_image_filter___base_a639c6f0433f24ed7cdb120af659a8a82}{Sk\+Image\+Filter\+\_\+\+Base}}.
+
+\mbox{\Hypertarget{class_sk_local_matrix_image_filter_a674089e85838a0663c79e8c1864a4c41}\label{class_sk_local_matrix_image_filter_a674089e85838a0663c79e8c1864a4c41}} 
+\index{SkLocalMatrixImageFilter@{SkLocalMatrixImageFilter}!onGetCTMCapability@{onGetCTMCapability}}
+\index{onGetCTMCapability@{onGetCTMCapability}!SkLocalMatrixImageFilter@{SkLocalMatrixImageFilter}}
+\doxysubsubsection{\texorpdfstring{onGetCTMCapability()}{onGetCTMCapability()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_image_filter___base_afb1450e7f4bbbeff48ceb3e518057415}{Matrix\+Capability}} Sk\+Local\+Matrix\+Image\+Filter\+::on\+Get\+C\+T\+M\+Capability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Return the most complex matrix type this filter can support (mapping from its parameter space to a layer space). If this returns anything less than k\+Complex, the filter only needs to worry about mapping from parameter to layer using a matrix that is constrained in that way (eg, scale+translate). 
+
+Reimplemented from \mbox{\hyperlink{class_sk_image_filter___base}{Sk\+Image\+Filter\+\_\+\+Base}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Local\+Matrix\+Image\+Filter.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Local\+Matrix\+Image\+Filter.\+cpp\end{DoxyCompactItemize}

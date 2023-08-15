@@ -1,0 +1,76 @@
+\hypertarget{class_c_simple_synth}{}\doxysection{C\+Simple\+Synth Class Reference}
+\label{class_c_simple_synth}\index{CSimpleSynth@{CSimpleSynth}}
+
+
+A simple polyphonic synthesizer class.  
+
+
+
+
+{\ttfamily \#include $<$C\+Simple\+Synth.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a5da23810b356791ee91f953bac54960d}\label{class_c_simple_synth_a5da23810b356791ee91f953bac54960d}} 
+enum {\bfseries E\+Wave\+Type} \{ \newline
+{\bfseries e\+Wave\+Type\+\_\+\+Begin} = 0, 
+{\bfseries e\+Wave\+Type\+\_\+\+Saw} = e\+Wave\+Type\+\_\+\+Begin, 
+{\bfseries e\+Wave\+Type\+\_\+\+Tri} = 1, 
+{\bfseries e\+Wave\+Type\+\_\+\+Square} = 2, 
+\newline
+{\bfseries e\+Wave\+Type\+\_\+\+End}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_aeba8c8839a4cc8810e89d5de7675cd56}\label{class_c_simple_synth_aeba8c8839a4cc8810e89d5de7675cd56}} 
+void {\bfseries Set\+Bypass} (bool in\+Bypass)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a86f1610f9abeca8979cef0781656a7b3}\label{class_c_simple_synth_a86f1610f9abeca8979cef0781656a7b3}} 
+void {\bfseries Set\+Gain} (float in\+Gain)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_afe0e35db8074cbc5ab140852a87f33f0}\label{class_c_simple_synth_afe0e35db8074cbc5ab140852a87f33f0}} 
+void {\bfseries Set\+Wave\+Type} (E\+Wave\+Type in\+Wave\+Type)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a2ead8a806d2c1170eacf8f72b81c37ad}\label{class_c_simple_synth_a2ead8a806d2c1170eacf8f72b81c37ad}} 
+void {\bfseries Set\+Tuning} (float in\+A\+Hz)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a5df47616ce3ec75b8c809f6ecc972d9f}\label{class_c_simple_synth_a5df47616ce3ec75b8c809f6ecc972d9f}} 
+void {\bfseries Initialize\+Voices} (float in\+Sample\+Rate, float in\+A\+Hz)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a56021f172d8cf1d960507a10c4d8f3ae}\label{class_c_simple_synth_a56021f172d8cf1d960507a10c4d8f3ae}} 
+int32\+\_\+t {\bfseries Max\+Num\+Voices} () const
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a438db535137453a25e65895d326444c2}\label{class_c_simple_synth_a438db535137453a25e65895d326444c2}} 
+void {\bfseries Get\+Samples} (float $\ast$out\+Buffer, int32\+\_\+t out\+Buffer\+Size)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_ab4db153d9d4066ef821ae6c1177cb57f}\label{class_c_simple_synth_ab4db153d9d4066ef821ae6c1177cb57f}} 
+void {\bfseries Handle\+Note\+On} (unsigned char in\+Note, unsigned char in\+Velocity)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a413acdb4a79dbf031064eb2cd9871d89}\label{class_c_simple_synth_a413acdb4a79dbf031064eb2cd9871d89}} 
+void {\bfseries Handle\+Note\+Off} (unsigned char in\+Note, unsigned char in\+Velocity)
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a23467a255e95040347684e6d6a010d94}\label{class_c_simple_synth_a23467a255e95040347684e6d6a010d94}} 
+void {\bfseries Handle\+All\+Notes\+Off} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_simple_synth_a80c4fed439da7996e8b175a5f058388c}\label{class_c_simple_synth_a80c4fed439da7996e8b175a5f058388c}} 
+static const char $\ast$ {\bfseries Get\+Wave\+Type\+Name} (E\+Wave\+Type in\+Wave\+Type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple polyphonic synthesizer class. 
+
+Uses\+: \mbox{\hyperlink{class_c_simple_tone}{C\+Simple\+Tone}}
+
+This class is decoupled from any A\+A\+X-\/specific details. This example is designed to mimic the kind of custom processing class that is often created for cross-\/format plug-\/in development. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Common/\+Processing\+Classes/\mbox{\hyperlink{_c_simple_synth_8h}{C\+Simple\+Synth.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Common/\+Processing\+Classes/C\+Simple\+Synth.\+cpp\end{DoxyCompactItemize}

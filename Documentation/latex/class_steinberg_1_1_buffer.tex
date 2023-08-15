@@ -1,0 +1,423 @@
+\hypertarget{class_steinberg_1_1_buffer}{}\doxysection{Steinberg\+::Buffer Class Reference}
+\label{class_steinberg_1_1_buffer}\index{Steinberg::Buffer@{Steinberg::Buffer}}
+
+
+{\ttfamily \#include $<$fbuffer.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a4d707b08dfff523ed328ecd34f6b741e}\label{class_steinberg_1_1_buffer_a4d707b08dfff523ed328ecd34f6b741e}} 
+enum {\bfseries swap\+Size} \{ {\bfseries k\+Swap16} = 2, 
+{\bfseries k\+Swap32} = 4, 
+{\bfseries k\+Swap64} = 8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_buffer_ae7ef2cd201190fde551dcb902627112b}{Buffer}} ()
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_buffer_a37ea799d6160eeb56d83567424a96848}{Buffer}} (const void $\ast$b, uint32 size)
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_buffer_a67b65b3b97bb4f0992cbe33261e9ff48}{Buffer}} (uint32 size, uint8 init\+Val)
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_buffer_af6405591e6b4baefe24d17bf2a560d8d}{Buffer}} (uint32 size)
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_buffer_a415402e644722bafef5d876603d6b172}{Buffer}} (const \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&buff)
+\item 
+virtual \mbox{\hyperlink{class_steinberg_1_1_buffer_a59b8743e4a5f731bdd0c4185c9ef263b}{$\sim$\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{class_steinberg_1_1_buffer_a1fcd29f64f7c25edff2e2cc95e337e5d}{operator=}} (const \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&buff)
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a52c0fe11c6ca9074ea10b83956b30b43}{operator==}} (const \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&buff) const
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a38b970507f486266e4d0ab0d8978481e}{set\+Size}} (uint32 new\+Size)
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_aafb3e82f09f7689b18f0754a526b207a}{grow}} (uint32 mem\+Size)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a6de0131b7e867751095e234c2e55a2d8}\label{class_steinberg_1_1_buffer_a6de0131b7e867751095e234c2e55a2d8}} 
+void \mbox{\hyperlink{class_steinberg_1_1_buffer_a6de0131b7e867751095e234c2e55a2d8}{fillup}} (uint8 init\+Val=0)
+\begin{DoxyCompactList}\small\item\em set from fill\+Size to end \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a21a68f96a7c54eb6385e7d875f1c8d3d}\label{class_steinberg_1_1_buffer_a21a68f96a7c54eb6385e7d875f1c8d3d}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a21a68f96a7c54eb6385e7d875f1c8d3d}{set\+Fill\+Size}} (uint32 c)
+\begin{DoxyCompactList}\small\item\em sets a new fill size, does not change any memory \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a5930f9b6c21505de50a6c42796a70497}{truncate\+To\+Fill\+Size}} ()
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a717c748df495b54a9826ee9a54c1568e}\label{class_steinberg_1_1_buffer_a717c748df495b54a9826ee9a54c1568e}} 
+void \mbox{\hyperlink{class_steinberg_1_1_buffer_a717c748df495b54a9826ee9a54c1568e}{shift\+At}} (uint32 position, int32 amount)
+\begin{DoxyCompactList}\small\item\em moves memory starting at the given position \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aa8db115a1e3b72dcb09e805e6af22645}\label{class_steinberg_1_1_buffer_aa8db115a1e3b72dcb09e805e6af22645}} 
+void \mbox{\hyperlink{class_steinberg_1_1_buffer_aa8db115a1e3b72dcb09e805e6af22645}{move}} (int32 amount, uint8 init\+Val=0)
+\begin{DoxyCompactList}\small\item\em shifts memory at start without growing the buffer, so data is lost and initialized with init val \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a39ebd4eb34ed183681797f7a3a132508}\label{class_steinberg_1_1_buffer_a39ebd4eb34ed183681797f7a3a132508}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a39ebd4eb34ed183681797f7a3a132508}{copy}} (uint32 from, uint32 to, uint32 bytes)
+\begin{DoxyCompactList}\small\item\em copies a number of bytes from one position to another, the size may be adapted \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a30ea4896c7bd18e843be3189eb097fac}\label{class_steinberg_1_1_buffer_a30ea4896c7bd18e843be3189eb097fac}} 
+uint32 \mbox{\hyperlink{class_steinberg_1_1_buffer_a30ea4896c7bd18e843be3189eb097fac}{get}} (void $\ast$b, uint32 size)
+\begin{DoxyCompactList}\small\item\em copy to buffer from fill\+Size, and shift fill\+Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a4df6dfc09c9705fa30d3e6bfd0813b4a}\label{class_steinberg_1_1_buffer_a4df6dfc09c9705fa30d3e6bfd0813b4a}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a4df6dfc09c9705fa30d3e6bfd0813b4a}{put}} (uint8)
+\begin{DoxyCompactList}\small\item\em append value at end, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_adc8614429f3b3462d113163a4313015f}\label{class_steinberg_1_1_buffer_adc8614429f3b3462d113163a4313015f}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_adc8614429f3b3462d113163a4313015f}{put}} (char16 c)
+\begin{DoxyCompactList}\small\item\em append value at end, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_af16a9b10a17f1e23a37e638faf15df8e}\label{class_steinberg_1_1_buffer_af16a9b10a17f1e23a37e638faf15df8e}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_af16a9b10a17f1e23a37e638faf15df8e}{put}} (char c)
+\begin{DoxyCompactList}\small\item\em append value at end, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a134e1e00b667ac0deb9b847bb762cdfc}\label{class_steinberg_1_1_buffer_a134e1e00b667ac0deb9b847bb762cdfc}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a134e1e00b667ac0deb9b847bb762cdfc}{put}} (const void $\ast$, uint32 size)
+\begin{DoxyCompactList}\small\item\em append bytes from a given buffer, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a385a165cc96aed201756fd899e324ff6}\label{class_steinberg_1_1_buffer_a385a165cc96aed201756fd899e324ff6}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a385a165cc96aed201756fd899e324ff6}{put}} (void $\ast$, uint32 size)
+\begin{DoxyCompactList}\small\item\em append bytes from a given buffer, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a8199435d267adae59ceba5b99119cd10}\label{class_steinberg_1_1_buffer_a8199435d267adae59ceba5b99119cd10}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a8199435d267adae59ceba5b99119cd10}{put}} (uint8 $\ast$, uint32 size)
+\begin{DoxyCompactList}\small\item\em append bytes from a given buffer, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a384b695cae37a9f19cde7f8810e08437}\label{class_steinberg_1_1_buffer_a384b695cae37a9f19cde7f8810e08437}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a384b695cae37a9f19cde7f8810e08437}{put}} (char8 $\ast$, uint32 size)
+\begin{DoxyCompactList}\small\item\em append bytes from a given buffer, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a081de9731e1d294823ea30a967a7d6f0}\label{class_steinberg_1_1_buffer_a081de9731e1d294823ea30a967a7d6f0}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a081de9731e1d294823ea30a967a7d6f0}{put}} (const uint8 $\ast$, uint32 size)
+\begin{DoxyCompactList}\small\item\em append bytes from a given buffer, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_adb5b13af18179b14cdee5d92dcd47d09}\label{class_steinberg_1_1_buffer_adb5b13af18179b14cdee5d92dcd47d09}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_adb5b13af18179b14cdee5d92dcd47d09}{put}} (const char8 $\ast$, uint32 size)
+\begin{DoxyCompactList}\small\item\em append bytes from a given buffer, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a3d1c8b3e5d928e43025477b2b53a2926}\label{class_steinberg_1_1_buffer_a3d1c8b3e5d928e43025477b2b53a2926}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a3d1c8b3e5d928e43025477b2b53a2926}{put}} (const \mbox{\hyperlink{class_steinberg_1_1_string}{String}} \&)
+\begin{DoxyCompactList}\small\item\em append \mbox{\hyperlink{class_steinberg_1_1_string}{String}} at end, grows \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} if necessary \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a9bcf71788473f070451dc95dd93f6131}\label{class_steinberg_1_1_buffer_a9bcf71788473f070451dc95dd93f6131}} 
+void \mbox{\hyperlink{class_steinberg_1_1_buffer_a9bcf71788473f070451dc95dd93f6131}{set}} (uint8 value)
+\begin{DoxyCompactList}\small\item\em fills complete \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} with given value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a697343e7a9526007af97a58d71ad9ab3}\label{class_steinberg_1_1_buffer_a697343e7a9526007af97a58d71ad9ab3}} 
+bool {\bfseries append\+String} (const tchar $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a103b523ecc42b3df9d54272e752c1083}\label{class_steinberg_1_1_buffer_a103b523ecc42b3df9d54272e752c1083}} 
+bool {\bfseries append\+String} (tchar $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a6605d8084459232469c316d698f7e33e}\label{class_steinberg_1_1_buffer_a6605d8084459232469c316d698f7e33e}} 
+bool {\bfseries append\+String} (tchar c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a7baa405f591228c3f8b38cfa7969a390}\label{class_steinberg_1_1_buffer_a7baa405f591228c3f8b38cfa7969a390}} 
+bool {\bfseries append\+String8} (const char8 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ada982f9d65b9c612c40ca76f929207f0}\label{class_steinberg_1_1_buffer_ada982f9d65b9c612c40ca76f929207f0}} 
+bool {\bfseries append\+String16} (const char16 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_acf54b24fc89b22218e6c0d2ec5581a0d}\label{class_steinberg_1_1_buffer_acf54b24fc89b22218e6c0d2ec5581a0d}} 
+bool {\bfseries append\+String8} (char8 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ac394bbc39c270541088b0db03ffd3a2f}\label{class_steinberg_1_1_buffer_ac394bbc39c270541088b0db03ffd3a2f}} 
+bool {\bfseries append\+String8} (unsigned char $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aa96d13735d5a575bdcd23e7c0d03fabc}\label{class_steinberg_1_1_buffer_aa96d13735d5a575bdcd23e7c0d03fabc}} 
+bool {\bfseries append\+String8} (const unsigned char $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_acc987472a5b4145f7a171290330bdeba}\label{class_steinberg_1_1_buffer_acc987472a5b4145f7a171290330bdeba}} 
+bool {\bfseries append\+String8} (char8 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aa41e17faab961032673480f96c7a9387}\label{class_steinberg_1_1_buffer_aa41e17faab961032673480f96c7a9387}} 
+bool {\bfseries append\+String8} (unsigned char c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ae746a5b45acaa891ec4d4b3af541eb4e}\label{class_steinberg_1_1_buffer_ae746a5b45acaa891ec4d4b3af541eb4e}} 
+bool {\bfseries append\+String16} (char16 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_abc28882cf7be9a0c1be6ebe5b88a8fd2}\label{class_steinberg_1_1_buffer_abc28882cf7be9a0c1be6ebe5b88a8fd2}} 
+bool {\bfseries append\+String16} (char16 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a8b687052f276b7be5deedd517e0aafe0}\label{class_steinberg_1_1_buffer_a8b687052f276b7be5deedd517e0aafe0}} 
+bool {\bfseries prepend\+String} (const tchar $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a86c1b28a1d6b5fce66aef29054a3f41c}\label{class_steinberg_1_1_buffer_a86c1b28a1d6b5fce66aef29054a3f41c}} 
+bool {\bfseries prepend\+String} (tchar $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ab87276d2cc10015de9f8fd1d50127f7d}\label{class_steinberg_1_1_buffer_ab87276d2cc10015de9f8fd1d50127f7d}} 
+bool {\bfseries prepend\+String} (tchar c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aca49b1246ab3d2b82da1f96b2d554aff}\label{class_steinberg_1_1_buffer_aca49b1246ab3d2b82da1f96b2d554aff}} 
+bool {\bfseries prepend\+String8} (const char8 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ad4f373d959847e731507dacfaccb94ac}\label{class_steinberg_1_1_buffer_ad4f373d959847e731507dacfaccb94ac}} 
+bool {\bfseries prepend\+String16} (const char16 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ad9e5a8e7dca0f308154864c0ecd23442}\label{class_steinberg_1_1_buffer_ad9e5a8e7dca0f308154864c0ecd23442}} 
+bool {\bfseries prepend\+String8} (char8 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a05a30c4e6a2be549322ed10dddeeed4e}\label{class_steinberg_1_1_buffer_a05a30c4e6a2be549322ed10dddeeed4e}} 
+bool {\bfseries prepend\+String8} (unsigned char c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a68c649a89b1fab49cbb35c0c2d65cf76}\label{class_steinberg_1_1_buffer_a68c649a89b1fab49cbb35c0c2d65cf76}} 
+bool {\bfseries prepend\+String8} (char8 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ab140a82eb5f49a67eb7cbc2f5aa5ecd2}\label{class_steinberg_1_1_buffer_ab140a82eb5f49a67eb7cbc2f5aa5ecd2}} 
+bool {\bfseries prepend\+String8} (unsigned char $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ae30a652f886aef75ad5332c2b0458e7e}\label{class_steinberg_1_1_buffer_ae30a652f886aef75ad5332c2b0458e7e}} 
+bool {\bfseries prepend\+String8} (const unsigned char $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ad30dece8229208f444a61faa57c392f7}\label{class_steinberg_1_1_buffer_ad30dece8229208f444a61faa57c392f7}} 
+bool {\bfseries prepend\+String16} (char16 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a668810bfe2dfa66edd4c56d49270aecf}\label{class_steinberg_1_1_buffer_a668810bfe2dfa66edd4c56d49270aecf}} 
+bool {\bfseries prepend\+String16} (char16 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a6d3001578227c50d9a125f071905e9ae}\label{class_steinberg_1_1_buffer_a6d3001578227c50d9a125f071905e9ae}} 
+bool {\bfseries operator+=} (const char $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a2ebcc06f12cc8e10784849607fc53600}\label{class_steinberg_1_1_buffer_a2ebcc06f12cc8e10784849607fc53600}} 
+bool {\bfseries operator+=} (char c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a26925acb14c083b976fe19b7561d38e4}\label{class_steinberg_1_1_buffer_a26925acb14c083b976fe19b7561d38e4}} 
+bool {\bfseries operator+=} (const char16 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a8288e77b0455e2f17eee82d25b3d2d96}\label{class_steinberg_1_1_buffer_a8288e77b0455e2f17eee82d25b3d2d96}} 
+bool {\bfseries operator+=} (char16 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_adb672a67422e74a38c64613c37030bec}\label{class_steinberg_1_1_buffer_adb672a67422e74a38c64613c37030bec}} 
+bool {\bfseries operator=} (const char $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a589275ab46d0630a900804b259263383}\label{class_steinberg_1_1_buffer_a589275ab46d0630a900804b259263383}} 
+bool {\bfseries operator=} (const char16 $\ast$s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aaa4b1d119f14a563c451cdad68e51d8f}\label{class_steinberg_1_1_buffer_aaa4b1d119f14a563c451cdad68e51d8f}} 
+bool {\bfseries operator=} (char8 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a0d63c21129a5d41505bd31a9dc83d746}\label{class_steinberg_1_1_buffer_a0d63c21129a5d41505bd31a9dc83d746}} 
+bool {\bfseries operator=} (char16 c)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_adc5e0b57e15c5b2727f34caf03c5e931}\label{class_steinberg_1_1_buffer_adc5e0b57e15c5b2727f34caf03c5e931}} 
+void {\bfseries end\+String} ()
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a80b72945bd715a26d019880ba65fa68e}\label{class_steinberg_1_1_buffer_a80b72945bd715a26d019880ba65fa68e}} 
+void {\bfseries end\+String8} ()
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_acd09f6f3fa5ea932212eea948e561654}\label{class_steinberg_1_1_buffer_acd09f6f3fa5ea932212eea948e561654}} 
+void {\bfseries end\+String16} ()
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ac10a5206106d964680104c70fec74cde}\label{class_steinberg_1_1_buffer_ac10a5206106d964680104c70fec74cde}} 
+bool {\bfseries make\+Hex\+String} (\mbox{\hyperlink{class_steinberg_1_1_string}{String}} \&result)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a9f43f968269ea1317e071a91a7c5a380}\label{class_steinberg_1_1_buffer_a9f43f968269ea1317e071a91a7c5a380}} 
+bool {\bfseries from\+Hex\+String} (const char8 $\ast$string)
+\item 
+int8 $\ast$ \mbox{\hyperlink{class_steinberg_1_1_buffer_a6d3e97c1820fb2826689890fb2d24641}{operator+}} (uint32 i)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a0d742adae067990aa5a633ac1e99dcb5}\label{class_steinberg_1_1_buffer_a0d742adae067990aa5a633ac1e99dcb5}} 
+int32 {\bfseries operator!} ()
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a85d6fd2880da99240af945b11557e272}\label{class_steinberg_1_1_buffer_a85d6fd2880da99240af945b11557e272}} 
+bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a85d6fd2880da99240af945b11557e272}{swap}} (int16 swap\+Size)
+\begin{DoxyCompactList}\small\item\em swap all bytes of this \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} by the given swap\+Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ab005f9edbe2a7624d9c00c2cf0ab51b1}\label{class_steinberg_1_1_buffer_ab005f9edbe2a7624d9c00c2cf0ab51b1}} 
+void \mbox{\hyperlink{class_steinberg_1_1_buffer_ab005f9edbe2a7624d9c00c2cf0ab51b1}{take}} (\mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&from)
+\begin{DoxyCompactList}\small\item\em takes another \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s memory, frees the current \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s memory \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a5d7dde142e107f4c1c411612c5653717}\label{class_steinberg_1_1_buffer_a5d7dde142e107f4c1c411612c5653717}} 
+int8 $\ast$ \mbox{\hyperlink{class_steinberg_1_1_buffer_a5d7dde142e107f4c1c411612c5653717}{pass}} ()
+\begin{DoxyCompactList}\small\item\em pass the current \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s memory \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_steinberg_1_1_buffer_a18eba617ca7468e3608d26c5469529a9}{to\+Wide\+String}} (int32 source\+Code\+Page)
+\item 
+virtual bool \mbox{\hyperlink{class_steinberg_1_1_buffer_af96e095702a0f7b9f9fd20a733c2713e}{to\+Multibyte\+String}} (int32 dest\+Code\+Page)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ab042ae6c275b2f328438c196254e9117}\label{class_steinberg_1_1_buffer_ab042ae6c275b2f328438c196254e9117}} 
+static bool \mbox{\hyperlink{class_steinberg_1_1_buffer_ab042ae6c275b2f328438c196254e9117}{swap}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, uint32 buffer\+Size, int16 swap\+Size)
+\begin{DoxyCompactList}\small\item\em utility, swap given number of bytes in given buffer by the given swap\+Size \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ab46512f27227f005be04292bb3330162}\label{class_steinberg_1_1_buffer_ab46512f27227f005be04292bb3330162}} 
+int8 $\ast$ {\bfseries buffer}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a3b637140848e18367e6ef1c27909587f}\label{class_steinberg_1_1_buffer_a3b637140848e18367e6ef1c27909587f}} 
+uint32 {\bfseries mem\+Size}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a7bbe4777b1afddcfda4f890bafeafe8c}\label{class_steinberg_1_1_buffer_a7bbe4777b1afddcfda4f890bafeafe8c}} 
+uint32 {\bfseries fill\+Size}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_af8afe3141bcf8d39ca3d9035e5dd6798}\label{class_steinberg_1_1_buffer_af8afe3141bcf8d39ca3d9035e5dd6798}} 
+uint32 {\bfseries delta}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aa6fbd9e78d9cd1665f2dd80b6172308f}\label{class_steinberg_1_1_buffer_aa6fbd9e78d9cd1665f2dd80b6172308f}} 
+static const uint32 {\bfseries default\+Delta} = 0x1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}.
+
+A \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} is an object-\/oriented wrapper for a piece of memory. It adds several utility functions, e.\+g. for managing the size of the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}, appending or prepending values or strings to it. Internally it uses the standard memory functions malloc(), free(), etc. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_ae7ef2cd201190fde551dcb902627112b}\label{class_steinberg_1_1_buffer_ae7ef2cd201190fde551dcb902627112b}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor, allocates no memory at all. \mbox{\Hypertarget{class_steinberg_1_1_buffer_a37ea799d6160eeb56d83567424a96848}\label{class_steinberg_1_1_buffer_a37ea799d6160eeb56d83567424a96848}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{const void $\ast$}]{b,  }\item[{uint32}]{size }\end{DoxyParamCaption})}
+
+Constructor -\/ creates a new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} with a given size and copies contents from optional memory pointer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em b} & \+: optional memory pointer with the size of at least the given size \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & \+: the size of the new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} to be allocated, in bytes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a67b65b3b97bb4f0992cbe33261e9ff48}\label{class_steinberg_1_1_buffer_a67b65b3b97bb4f0992cbe33261e9ff48}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{uint32}]{size,  }\item[{uint8}]{init\+Val }\end{DoxyParamCaption})}
+
+Constructor -\/ creates a new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} with a given size and fills it all with a given value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & \+: the size of the new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} to be allocated, in bytes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em init\+Val} & \+: the initial value the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} will be completely filled with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_af6405591e6b4baefe24d17bf2a560d8d}\label{class_steinberg_1_1_buffer_af6405591e6b4baefe24d17bf2a560d8d}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{uint32}]{size }\end{DoxyParamCaption})}
+
+Constructor -\/ creates a new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} with a given size. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em size} & \+: the size of the new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} to be allocated, in bytes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a415402e644722bafef5d876603d6b172}\label{class_steinberg_1_1_buffer_a415402e644722bafef5d876603d6b172}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{Buffer()}{Buffer()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&}]{buff }\end{DoxyParamCaption})}
+
+Copy constructor -\/ creates a new \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} from a given \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buff} & \+: the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} from which all memory will be copied to the new one \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a59b8743e4a5f731bdd0c4185c9ef263b}\label{class_steinberg_1_1_buffer_a59b8743e4a5f731bdd0c4185c9ef263b}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!````~Buffer@{$\sim$Buffer}}
+\index{````~Buffer@{$\sim$Buffer}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{$\sim$Buffer()}{~Buffer()}}
+{\footnotesize\ttfamily Buffer\+::$\sim$\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor -\/ deallocates the internal memory. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_aafb3e82f09f7689b18f0754a526b207a}\label{class_steinberg_1_1_buffer_aafb3e82f09f7689b18f0754a526b207a}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!grow@{grow}}
+\index{grow@{grow}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{grow()}{grow()}}
+{\footnotesize\ttfamily bool Buffer\+::grow (\begin{DoxyParamCaption}\item[{uint32}]{mem\+Size }\end{DoxyParamCaption})}
+
+Increases the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} to the next block, block size given by delta. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mem\+Size} & \+: the new minimum size of the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}, new\+Size maybe zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} could be grown successfully, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a6d3e97c1820fb2826689890fb2d24641}\label{class_steinberg_1_1_buffer_a6d3e97c1820fb2826689890fb2d24641}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!operator+@{operator+}}
+\index{operator+@{operator+}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily int8 $\ast$ Buffer\+::operator+ (\begin{DoxyParamCaption}\item[{uint32}]{i }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the internal \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s address plus the given offset i, zero if offset is out of range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a1fcd29f64f7c25edff2e2cc95e337e5d}\label{class_steinberg_1_1_buffer_a1fcd29f64f7c25edff2e2cc95e337e5d}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!operator=@{operator=}}
+\index{operator=@{operator=}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Buffer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&}]{buff }\end{DoxyParamCaption})}
+
+Assignment operator -\/ copies contents from a given \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} and increases the size if necessary. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buff} & \+: the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} from which all memory will be copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a52c0fe11c6ca9074ea10b83956b30b43}\label{class_steinberg_1_1_buffer_a52c0fe11c6ca9074ea10b83956b30b43}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!operator==@{operator==}}
+\index{operator==@{operator==}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Buffer\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} \&}]{buff }\end{DoxyParamCaption}) const}
+
+Comparison operator -\/ copies contents from a given \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} and increases the size if necessary. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buff} & \+: the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} to be compared to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the given \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s content is equal to this one, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a38b970507f486266e4d0ab0d8978481e}\label{class_steinberg_1_1_buffer_a38b970507f486266e4d0ab0d8978481e}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!setSize@{setSize}}
+\index{setSize@{setSize}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily bool Buffer\+::set\+Size (\begin{DoxyParamCaption}\item[{uint32}]{new\+Size }\end{DoxyParamCaption})}
+
+Sets a new size for this \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}, keeping as much content as possible. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em new\+Size} & \+: the new size for the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}, in bytes, new\+Size maybe zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the new size could be adapted, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_af96e095702a0f7b9f9fd20a733c2713e}\label{class_steinberg_1_1_buffer_af96e095702a0f7b9f9fd20a733c2713e}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!toMultibyteString@{toMultibyteString}}
+\index{toMultibyteString@{toMultibyteString}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{toMultibyteString()}{toMultibyteString()}}
+{\footnotesize\ttfamily bool Buffer\+::to\+Multibyte\+String (\begin{DoxyParamCaption}\item[{int32}]{dest\+Code\+Page }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts a \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s content from U\+T\+F-\/16 to a given multi-\/byte code page, \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} must contain U\+T\+F-\/16 encoded characters. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em dest\+Code\+Page} & \+: the desired code page to convert the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s content to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the conversion was successful, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a18eba617ca7468e3608d26c5469529a9}\label{class_steinberg_1_1_buffer_a18eba617ca7468e3608d26c5469529a9}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!toWideString@{toWideString}}
+\index{toWideString@{toWideString}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{toWideString()}{toWideString()}}
+{\footnotesize\ttfamily bool Buffer\+::to\+Wide\+String (\begin{DoxyParamCaption}\item[{int32}]{source\+Code\+Page }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Converts a \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s content to U\+T\+F-\/16 from a given multi-\/byte code page, \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} must contain char8 of given encoding. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source\+Code\+Page} & \+: the actual code page of the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}}\textquotesingle{}s content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if the conversion was successful, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_steinberg_1_1_buffer_a5930f9b6c21505de50a6c42796a70497}\label{class_steinberg_1_1_buffer_a5930f9b6c21505de50a6c42796a70497}} 
+\index{Steinberg::Buffer@{Steinberg::Buffer}!truncateToFillSize@{truncateToFillSize}}
+\index{truncateToFillSize@{truncateToFillSize}!Steinberg::Buffer@{Steinberg::Buffer}}
+\doxysubsubsection{\texorpdfstring{truncateToFillSize()}{truncateToFillSize()}}
+{\footnotesize\ttfamily bool Buffer\+::truncate\+To\+Fill\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+always true, truncates the size of the \mbox{\hyperlink{class_steinberg_1_1_buffer}{Buffer}} to the actual fill size 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fbuffer.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fbuffer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,309 @@
+\hypertarget{class_sk_picture}{}\doxysection{Sk\+Picture Class Reference}
+\label{class_sk_picture}\index{SkPicture@{SkPicture}}
+
+
+{\ttfamily \#include $<$Sk\+Picture.\+h$>$}
+
+Inheritance diagram for Sk\+Picture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sk_picture}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_picture_1_1_abort_callback}{Abort\+Callback}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_sk_picture_a9e5313999fc681ec64586dada8f5a259}{playback}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, \mbox{\hyperlink{class_sk_picture_1_1_abort_callback}{Abort\+Callback}} $\ast$callback=nullptr) const =0
+\item 
+virtual \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \mbox{\hyperlink{class_sk_picture_a7dc1829ae04fc44d6717adefa56748ca}{cull\+Rect}} () const =0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_picture_a3ffe5d2d9a6efeffd51ea6cf30ea3659}{unique\+ID}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_sk_picture_a7cd0503012a62099e1c39983503956e6}{serialize}} (const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} $\ast$procs=nullptr) const
+\item 
+void \mbox{\hyperlink{class_sk_picture_acf74717bee9b6e98658ae7dfa5c1b013}{serialize}} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$stream, const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} $\ast$procs=nullptr) const
+\item 
+virtual int \mbox{\hyperlink{class_sk_picture_ae375e36a1aa8d35afe83a638c9b31abe}{approximate\+Op\+Count}} (bool nested=false) const =0
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_sk_picture_aa33a229fb0f60042e816b103a0b3e428}{approximate\+Bytes\+Used}} () const =0
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ \mbox{\hyperlink{class_sk_picture_a41f14a3d374444c8b7f3615c175aa107}{make\+Shader}} (Sk\+Tile\+Mode tmx, Sk\+Tile\+Mode tmy, Sk\+Filter\+Mode mode, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$local\+Matrix, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$tile\+Rect) const
+\item 
+\mbox{\Hypertarget{class_sk_picture_a6d1933e5ec8ec8718a756d46803ebc8f}\label{class_sk_picture_a6d1933e5ec8ec8718a756d46803ebc8f}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ {\bfseries make\+Shader} (Sk\+Tile\+Mode tmx, Sk\+Tile\+Mode tmy, Sk\+Filter\+Mode mode) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ \mbox{\hyperlink{class_sk_picture_ad872d7e11fee2f2c6c4b5b6ff565999e}{Make\+From\+Stream}} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$stream, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ \mbox{\hyperlink{class_sk_picture_a7eb89ec761c34dca8f26e73eac8954b7}{Make\+From\+Data}} (const \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $\ast$data, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ \mbox{\hyperlink{class_sk_picture_acd404b2a2cb3b159a1f67ac7ee5d04df}{Make\+From\+Data}} (const void $\ast$data, size\+\_\+t size, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ \mbox{\hyperlink{class_sk_picture_ad135883edc4b42ebab6778eb6d7e5d03}{Make\+Placeholder}} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} cull)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_picture_ae7528ab86223d0e86e5efaefb2d26d70}\label{class_sk_picture_ae7528ab86223d0e86e5efaefb2d26d70}} 
+class {\bfseries Sk\+Big\+Picture}
+\item 
+\mbox{\Hypertarget{class_sk_picture_ac7e22ca0656f712f0183ee5d831b2ee1}\label{class_sk_picture_ac7e22ca0656f712f0183ee5d831b2ee1}} 
+class {\bfseries Sk\+Empty\+Picture}
+\item 
+\mbox{\Hypertarget{class_sk_picture_aaf180a3c154724db29c4eac8f882bf04}\label{class_sk_picture_aaf180a3c154724db29c4eac8f882bf04}} 
+class {\bfseries Sk\+Picture\+Priv}
+\item 
+\mbox{\Hypertarget{class_sk_picture_a2fc408a6426e71b6df1b86a8007889d1}\label{class_sk_picture_a2fc408a6426e71b6df1b86a8007889d1}} 
+{\footnotesize template$<$typename $>$ }\\class {\bfseries Sk\+Mini\+Picture}
+\item 
+\mbox{\Hypertarget{class_sk_picture_a109507ce176bb1dc1a28856c1f92fa1a}\label{class_sk_picture_a109507ce176bb1dc1a28856c1f92fa1a}} 
+class {\bfseries Sk\+Picture\+Data}
+\item 
+\mbox{\Hypertarget{class_sk_picture_affa518e227b5cc03c1fb70ab167fbeaa}\label{class_sk_picture_affa518e227b5cc03c1fb70ab167fbeaa}} 
+struct {\bfseries Sk\+Path\+Counter}
+\item 
+\mbox{\Hypertarget{class_sk_picture_a9625dc6a77e33710490712f59bf496aa}\label{class_sk_picture_a9625dc6a77e33710490712f59bf496aa}} 
+bool {\bfseries Sk\+Picture\+\_\+\+Stream\+Is\+S\+KP} (\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$, struct \mbox{\hyperlink{struct_sk_pict_info}{Sk\+Pict\+Info}} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} records drawing commands made to \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}}. The command stream may be played in whole or in part at a later time.
+
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} is an abstract class. \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} may be generated by \mbox{\hyperlink{class_sk_picture_recorder}{Sk\+Picture\+Recorder}} or \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}}, or from \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} previously saved to \mbox{\hyperlink{class_sk_data}{Sk\+Data}} or \mbox{\hyperlink{class_sk_stream}{Sk\+Stream}}.
+
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} may contain any \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} drawing command, as well as one or more \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} matrix or \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} clip. \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} has a cull \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}, which is used as a bounding box hint. To limit \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} bounds, use \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} clip when recording or drawing \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_picture_aa33a229fb0f60042e816b103a0b3e428}\label{class_sk_picture_aa33a229fb0f60042e816b103a0b3e428}} 
+\index{SkPicture@{SkPicture}!approximateBytesUsed@{approximateBytesUsed}}
+\index{approximateBytesUsed@{approximateBytesUsed}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{approximateBytesUsed()}{approximateBytesUsed()}}
+{\footnotesize\ttfamily virtual size\+\_\+t Sk\+Picture\+::approximate\+Bytes\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the approximate byte size of \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. Does not include large objects referenced by \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}.
+
+\begin{DoxyReturn}{Returns}
+approximate size
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_approximateBytesUsed}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+approximate\+Bytes\+Used}} 
+
+Implemented in \mbox{\hyperlink{class_sk_mini_picture_a940448117de943dd11901f835b25ba69}{Sk\+Mini\+Picture$<$ T $>$}}, \mbox{\hyperlink{class_sk_big_picture_adb9d58974bf6f6e1a257a4b43db1f92c}{Sk\+Big\+Picture}}, and \mbox{\hyperlink{class_sk_empty_picture_ac67b58f41fa6df6495674288233e53cf}{Sk\+Empty\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_picture_ae375e36a1aa8d35afe83a638c9b31abe}\label{class_sk_picture_ae375e36a1aa8d35afe83a638c9b31abe}} 
+\index{SkPicture@{SkPicture}!approximateOpCount@{approximateOpCount}}
+\index{approximateOpCount@{approximateOpCount}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{approximateOpCount()}{approximateOpCount()}}
+{\footnotesize\ttfamily virtual int Sk\+Picture\+::approximate\+Op\+Count (\begin{DoxyParamCaption}\item[{bool}]{nested = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the approximate number of operations in \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. Returned value may be greater or less than the number of \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} calls recorded\+: some calls may be recorded as more than one operation, other calls may be optimized away.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nested} & if true, include the op-\/counts of nested pictures as well, else just return count the ops in the top-\/level picture. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximate operation count
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_approximateOpCount}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+approximate\+Op\+Count}} 
+
+Implemented in \mbox{\hyperlink{class_sk_mini_picture_aa69135cb8710894643bd2e8488eee1db}{Sk\+Mini\+Picture$<$ T $>$}}, \mbox{\hyperlink{class_sk_empty_picture_ad6e9eb6cbbaa50724fe79ffd90c696b0}{Sk\+Empty\+Picture}}, and \mbox{\hyperlink{class_sk_big_picture_afa14a0bad4e7bb2938b53ad541b6dc00}{Sk\+Big\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_picture_a7dc1829ae04fc44d6717adefa56748ca}\label{class_sk_picture_a7dc1829ae04fc44d6717adefa56748ca}} 
+\index{SkPicture@{SkPicture}!cullRect@{cullRect}}
+\index{cullRect@{cullRect}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{cullRect()}{cullRect()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} Sk\+Picture\+::cull\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns cull \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} for this picture, passed in when \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} was created. Returned \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} does not specify clipping \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} for \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}; cull is hint of \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} bounds.
+
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} is free to discard recorded drawing commands that fall outside cull.
+
+\begin{DoxyReturn}{Returns}
+bounds passed when \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} was created
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_cullRect}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+cull\+Rect}} 
+
+Implemented in \mbox{\hyperlink{class_sk_mini_picture_af76187aacb76daa179d50d1494d0fabd}{Sk\+Mini\+Picture$<$ T $>$}}, \mbox{\hyperlink{class_sk_big_picture_a27a2cf9e8cda6dae0c4011d2ea3bf38f}{Sk\+Big\+Picture}}, and \mbox{\hyperlink{class_sk_empty_picture_a3ccf43aaec60300ff05bfe3f7f1a4e16}{Sk\+Empty\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_picture_a7eb89ec761c34dca8f26e73eac8954b7}\label{class_sk_picture_a7eb89ec761c34dca8f26e73eac8954b7}} 
+\index{SkPicture@{SkPicture}!MakeFromData@{MakeFromData}}
+\index{MakeFromData@{MakeFromData}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{MakeFromData()}{MakeFromData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ Sk\+Picture\+::\+Make\+From\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$}]{procs = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Recreates \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} that was serialized into data. Returns constructed \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} if successful; otherwise, returns nullptr. Fails if data does not permit constructing valid \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}.
+
+procs-\/$>$f\+Picture\+Proc permits supplying a custom function to decode \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. If procs-\/$>$f\+Picture\+Proc is nullptr, default decoding is used. procs-\/$>$f\+Picture\+Ctx may be used to provide user context to procs-\/$>$f\+Picture\+Proc; procs-\/$>$f\+Picture\+Proc is called with a pointer to data, data byte length, and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container for serial data \\
+\hline
+{\em procs} & custom serial data decoders; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} constructed from data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_picture_acd404b2a2cb3b159a1f67ac7ee5d04df}\label{class_sk_picture_acd404b2a2cb3b159a1f67ac7ee5d04df}} 
+\index{SkPicture@{SkPicture}!MakeFromData@{MakeFromData}}
+\index{MakeFromData@{MakeFromData}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{MakeFromData()}{MakeFromData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ Sk\+Picture\+::\+Make\+From\+Data (\begin{DoxyParamCaption}\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$}]{procs = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to serial data \\
+\hline
+{\em size} & size of data \\
+\hline
+{\em procs} & custom serial data decoders; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} constructed from data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_picture_ad872d7e11fee2f2c6c4b5b6ff565999e}\label{class_sk_picture_ad872d7e11fee2f2c6c4b5b6ff565999e}} 
+\index{SkPicture@{SkPicture}!MakeFromStream@{MakeFromStream}}
+\index{MakeFromStream@{MakeFromStream}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{MakeFromStream()}{MakeFromStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ Sk\+Picture\+::\+Make\+From\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_stream}{Sk\+Stream}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$}]{procs = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Recreates \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} that was serialized into a stream. Returns constructed \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} if successful; otherwise, returns nullptr. Fails if data does not permit constructing valid \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}.
+
+procs-\/$>$f\+Picture\+Proc permits supplying a custom function to decode \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. If procs-\/$>$f\+Picture\+Proc is nullptr, default decoding is used. procs-\/$>$f\+Picture\+Ctx may be used to provide user context to procs-\/$>$f\+Picture\+Proc; procs-\/$>$f\+Picture\+Proc is called with a pointer to data, data byte length, and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & container for serial data \\
+\hline
+{\em procs} & custom serial data decoders; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} constructed from stream data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_picture_ad135883edc4b42ebab6778eb6d7e5d03}\label{class_sk_picture_ad135883edc4b42ebab6778eb6d7e5d03}} 
+\index{SkPicture@{SkPicture}!MakePlaceholder@{MakePlaceholder}}
+\index{MakePlaceholder@{MakePlaceholder}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{MakePlaceholder()}{MakePlaceholder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ Sk\+Picture\+::\+Make\+Placeholder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}}]{cull }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a placeholder \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. Result does not draw, and contains only cull \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}}, a hint of its bounds. Result is immutable; it cannot be changed later. Result identifier is unique.
+
+Returned placeholder can be intercepted during playback to insert other commands into \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} draw stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cull} & placeholder dimensions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+placeholder with unique identifier
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_MakePlaceholder}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+\+Make\+Placeholder}} \mbox{\Hypertarget{class_sk_picture_a41f14a3d374444c8b7f3615c175aa107}\label{class_sk_picture_a41f14a3d374444c8b7f3615c175aa107}} 
+\index{SkPicture@{SkPicture}!makeShader@{makeShader}}
+\index{makeShader@{makeShader}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{makeShader()}{makeShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}$>$ Sk\+Picture\+::make\+Shader (\begin{DoxyParamCaption}\item[{Sk\+Tile\+Mode}]{tmx,  }\item[{Sk\+Tile\+Mode}]{tmy,  }\item[{Sk\+Filter\+Mode}]{mode,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$}]{local\+Matrix,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{tile\+Rect }\end{DoxyParamCaption}) const}
+
+Return a new shader that will draw with this picture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmx} & The tiling mode to use when sampling in the x-\/direction. \\
+\hline
+{\em tmy} & The tiling mode to use when sampling in the y-\/direction. \\
+\hline
+{\em mode} & How to filter the tiles \\
+\hline
+{\em local\+Matrix} & Optional matrix used when sampling \\
+\hline
+{\em tile} & The tile rectangle in picture coordinates\+: this represents the subset (or superset) of the picture used when building a tile. It is not affected by local\+Matrix and does not imply scaling (only translation and cropping). If null, the tile rect is considered equal to the picture bounds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a new shader object. Note\+: this function never returns null. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_picture_a9e5313999fc681ec64586dada8f5a259}\label{class_sk_picture_a9e5313999fc681ec64586dada8f5a259}} 
+\index{SkPicture@{SkPicture}!playback@{playback}}
+\index{playback@{playback}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{playback()}{playback()}}
+{\footnotesize\ttfamily virtual void Sk\+Picture\+::playback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas,  }\item[{\mbox{\hyperlink{class_sk_picture_1_1_abort_callback}{Abort\+Callback}} $\ast$}]{callback = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Replays the drawing commands on the specified canvas. In the case that the commands are recorded, each command in the \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} is sent separately to canvas.
+
+To add a single command to draw \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} to recording canvas, call \mbox{\hyperlink{class_sk_canvas_ae291eaf5243302d4d7f56195b0a0bb1d}{Sk\+Canvas\+::draw\+Picture}} instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & receiver of drawing commands \\
+\hline
+{\em callback} & allows interruption of playback\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Picture_playback}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+playback}} 
+
+Implemented in \mbox{\hyperlink{class_sk_mini_picture_ac07003cb404f70176fa2b847cb1062c1}{Sk\+Mini\+Picture$<$ T $>$}}, \mbox{\hyperlink{class_sk_big_picture_a34130a2f77ecb3eb469059ac543ceddd}{Sk\+Big\+Picture}}, and \mbox{\hyperlink{class_sk_empty_picture_ad50bbc30ec741345b408f3998eda278c}{Sk\+Empty\+Picture}}.
+
+\mbox{\Hypertarget{class_sk_picture_a7cd0503012a62099e1c39983503956e6}\label{class_sk_picture_a7cd0503012a62099e1c39983503956e6}} 
+\index{SkPicture@{SkPicture}!serialize@{serialize}}
+\index{serialize@{serialize}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ Sk\+Picture\+::serialize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} $\ast$}]{procs = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Returns storage containing \mbox{\hyperlink{class_sk_data}{Sk\+Data}} describing \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}, using optional custom encoders.
+
+procs-\/$>$f\+Picture\+Proc permits supplying a custom function to encode \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. If procs-\/$>$f\+Picture\+Proc is nullptr, default encoding is used. procs-\/$>$f\+Picture\+Ctx may be used to provide user context to procs-\/$>$f\+Picture\+Proc; procs-\/$>$f\+Picture\+Proc is called with a pointer to \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em procs} & custom serial data encoders; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+storage containing serialized \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Picture_serialize}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+serialize}} \mbox{\Hypertarget{class_sk_picture_acf74717bee9b6e98658ae7dfa5c1b013}\label{class_sk_picture_acf74717bee9b6e98658ae7dfa5c1b013}} 
+\index{SkPicture@{SkPicture}!serialize@{serialize}}
+\index{serialize@{serialize}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sk\+Picture\+::serialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} $\ast$}]{procs = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Writes picture to stream, using optional custom encoders.
+
+procs-\/$>$f\+Picture\+Proc permits supplying a custom function to encode \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}. If procs-\/$>$f\+Picture\+Proc is nullptr, default encoding is used. procs-\/$>$f\+Picture\+Ctx may be used to provide user context to procs-\/$>$f\+Picture\+Proc; procs-\/$>$f\+Picture\+Proc is called with a pointer to \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} and user context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & writable serial data stream \\
+\hline
+{\em procs} & custom serial data encoders; may be nullptr\\
+\hline
+\end{DoxyParams}
+example\+: \href{https://fiddle.skia.org/c/@Picture_serialize_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Picture\+\_\+serialize\+\_\+2}} \mbox{\Hypertarget{class_sk_picture_a3ffe5d2d9a6efeffd51ea6cf30ea3659}\label{class_sk_picture_a3ffe5d2d9a6efeffd51ea6cf30ea3659}} 
+\index{SkPicture@{SkPicture}!uniqueID@{uniqueID}}
+\index{uniqueID@{uniqueID}!SkPicture@{SkPicture}}
+\doxysubsubsection{\texorpdfstring{uniqueID()}{uniqueID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Picture\+::unique\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a non-\/zero value unique among \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} in Skia process.
+
+\begin{DoxyReturn}{Returns}
+identifier for \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Picture.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Picture.\+cpp\end{DoxyCompactItemize}

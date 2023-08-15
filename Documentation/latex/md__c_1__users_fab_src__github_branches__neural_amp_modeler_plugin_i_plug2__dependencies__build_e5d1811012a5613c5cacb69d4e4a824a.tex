@@ -1,0 +1,47 @@
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_e5d1811012a5613c5cacb69d4e4a824a_autotoc_md916}{}\doxysection{Description}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_e5d1811012a5613c5cacb69d4e4a824a_autotoc_md916}
+A reverberator creates a sense of space. Classic guitar amps use a \char`\"{}spring reverb\char`\"{}, which is one or more metal springs through which the sound propagates and disperses. Geo\+Shred uses a more modern design from the field of Computer Music based on delay lines and Schroeder allpass filters
+
+Freeverb is always stereo. It is normally placed last in the effects chain.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_e5d1811012a5613c5cacb69d4e4a824a_autotoc_md917}{}\doxysection{Parameters}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_e5d1811012a5613c5cacb69d4e4a824a_autotoc_md917}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \# }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Physical \mbox{\hyperlink{struct_control}{Control}}  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \# }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Physical \mbox{\hyperlink{struct_control}{Control}}  }\\\cline{1-4}
+\endhead
+Enable &{\ttfamily C\+C-\/105} &Turn the effect on or off &switch{\ttfamily S\+W-\/4}  \\\cline{1-4}
+Dry/\+Wet &{\ttfamily C\+C-\/2} &Level is the \char`\"{}dry/wet mix\char`\"{}\+: 0 for \char`\"{}dry\char`\"{} (no reverb), and 1 for \char`\"{}wet\char`\"{} (pure reverberator output). Note that stereo imaging is normally reduced by reverberation, because the reverberated sound is supposed sound like it\textquotesingle{}s coming from all directions. Reduce the Reverb Level to better preserve stereo imaging. &knob{\ttfamily H\+A\+D\+C-\/0}  \\\cline{1-4}
+Room\+Size &{\ttfamily C\+C-\/3} &Increasing the Room Size parameter lengthens the delay lines used in the reverberator, corresponding to longer path lengths between reflections in an acoustic space. &knob{\ttfamily H\+A\+D\+C-\/1}  \\\cline{1-4}
+Damp &{\ttfamily C\+C-\/4} &Increasing the damping decreases the reverberation time. &knob\`{}\+H\+A\+D\+C-\/02  \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_e5d1811012a5613c5cacb69d4e4a824a_autotoc_md918}{}\doxysection{Building the Example}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_e5d1811012a5613c5cacb69d4e4a824a_autotoc_md918}
+The faust code (.dsp) in this directory has been compiled using {\ttfamily faust2sam} into {\ttfamily freeverb-\/sam}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\% faust2sam -\/midi freeverb.dsp}
+\end{DoxyCode}
+
+
+The result of this compile is a zip file {\ttfamily freeverb-\/sam.\+zip} which contains the following three files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily fast\+\_\+pow2.\+h}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+cpp}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+h}
+\end{DoxyItemize}
+
+These 3 files should be placed into the directory {\ttfamily sam\+\_\+baremetal\+\_\+framework\+\_\+core1/src/faust}
+
+In addition there is a header file that is common across all cores called {\ttfamily audio\+\_\+system\+\_\+config.\+h}. In this file the following pre-\/processor variables should be set in the following way. The example below indicates that a \mbox{\hyperlink{struct_faust}{Faust}} algorithm will only be running on Core1 and that Core2 will be simply passing audio to the codec.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE1           TRUE}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE2           FALSE}
+\end{DoxyCode}
+ 

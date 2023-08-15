@@ -1,0 +1,763 @@
+\hypertarget{class_i_editor_delegate}{}\doxysection{I\+Editor\+Delegate Class Reference}
+\label{class_i_editor_delegate}\index{IEditorDelegate@{IEditorDelegate}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Editor\+Delegate.\+h$>$}
+
+Inheritance diagram for I\+Editor\+Delegate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_editor_delegate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a83daad27efc4228696b9b26e6a747d6d}\label{class_i_editor_delegate_a83daad27efc4228696b9b26e6a747d6d}} 
+{\bfseries I\+Editor\+Delegate} (int n\+Params)
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a43261666e9c9d0f8a1bfb3e31fb6fcf6}\label{class_i_editor_delegate_a43261666e9c9d0f8a1bfb3e31fb6fcf6}} 
+{\bfseries I\+Editor\+Delegate} (const \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_ab27d26bb3a34d3e2654038771236ef42}\label{class_i_editor_delegate_ab27d26bb3a34d3e2654038771236ef42}} 
+\mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \&)=delete
+\item 
+\mbox{\hyperlink{class_i_param}{I\+Param}} $\ast$ \mbox{\hyperlink{class_i_editor_delegate_a673beffcbf686d33760785d20883575b}{Add\+Param}} ()
+\item 
+void \mbox{\hyperlink{class_i_editor_delegate_a74676da51f314fedbe3c0df95d116ba1}{Remove\+Param}} (int idx)
+\item 
+\mbox{\hyperlink{class_i_param}{I\+Param}} $\ast$ \mbox{\hyperlink{class_i_editor_delegate_af0cbc14738af908eb83bb89521b5257e}{Get\+Param}} (int param\+Idx)
+\item 
+const \mbox{\hyperlink{class_i_param}{I\+Param}} $\ast$ \mbox{\hyperlink{class_i_editor_delegate_a405db713d9c2b20defdba252bd93d584}{Get\+Param}} (int param\+Idx) const
+\item 
+int \mbox{\hyperlink{class_i_editor_delegate_a093f1d5c684bfe5e1a43081adb360933}{N\+Params}} () const
+\item 
+virtual void $\ast$ \mbox{\hyperlink{class_i_editor_delegate_ac0a1ac1fc3b4ddf78a7fe9c4e5488c6b}{Open\+Window}} (void $\ast$p\+Parent)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a4e002963a0e50d2222ef4b9400403b3b}{Close\+Window}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_aeca6f53c6985ee47df7e65e025645b94}{On\+Parent\+Window\+Resize}} (int width, int height)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_af00da854c73caaa96da911fbdbf8f13f}{On\+U\+I\+Open}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a17de950550de680a2d0e521d20f58d6c}{On\+U\+I\+Close}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a2a937fc0ea51cd6100a5be56a26dfba3}{On\+Param\+Change}} (int param\+Idx, \mbox{\hyperlink{group___i_plug_constants_ga0ffe9e97c910636e31bad47d4877bc6e}{E\+Param\+Source}} source, int sample\+Offset=-\/1)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a303a683abe847e28f16963f5207a5c56}{On\+Param\+Change}} (int param\+Idx)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a318f42e0744520eeedd2e21081979b4e}{On\+Param\+Change\+UI}} (int param\+Idx, \mbox{\hyperlink{group___i_plug_constants_ga0ffe9e97c910636e31bad47d4877bc6e}{E\+Param\+Source}} source=k\+Unknown)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a131f1da0697471444aa2ac655f1e8898}{On\+Param\+Reset}} (\mbox{\hyperlink{group___i_plug_constants_ga0ffe9e97c910636e31bad47d4877bc6e}{E\+Param\+Source}} source)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a49ff38d310445f482dd69dd32e49e4d3}{On\+Midi\+Msg\+UI}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a0a19a1af6f13fe055054f742e01a3fc8}{On\+Sysex\+Msg\+UI}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg)
+\item 
+virtual bool \mbox{\hyperlink{class_i_editor_delegate_aa769b48fa0ecfd59a6ab45c19244a571}{On\+Message}} (int msg\+Tag, int ctrl\+Tag, int data\+Size, const void $\ast$p\+Data)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_ae68e29d81678affb1911e7787430c123}{On\+Restore\+State}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_i_editor_delegate_abc3ab8f425c820d3e5c67d78b717e989}{On\+Key\+Down}} (const \mbox{\hyperlink{struct_i_key_press}{I\+Key\+Press}} \&key)
+\item 
+virtual bool \mbox{\hyperlink{class_i_editor_delegate_aa8898cf282f32a34b89cf9e32b834207}{On\+Key\+Up}} (const \mbox{\hyperlink{struct_i_key_press}{I\+Key\+Press}} \&key)
+\item 
+void \mbox{\hyperlink{class_i_editor_delegate_a6de7961ce51f65d5112aa357210444ab}{Send\+Current\+Param\+Values\+From\+Delegate}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a4005eb1239e0e22e73c80e1fc97f5bb8}{Send\+Control\+Value\+From\+Delegate}} (int ctrl\+Tag, double normalized\+Value)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a7d0211abb930c3f9b1e549461fb71ffc}{Send\+Control\+Msg\+From\+Delegate}} (int ctrl\+Tag, int msg\+Tag, int data\+Size=0, const void $\ast$p\+Data=nullptr)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_ac25ccbe2f2ebda0366cc9a51f2eb3f5f}{Send\+Arbitrary\+Msg\+From\+Delegate}} (int msg\+Tag, int data\+Size=0, const void $\ast$p\+Data=nullptr)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_ad4725e10bb4ec6338c31e80f0042ab12}{Send\+Midi\+Msg\+From\+Delegate}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_ae966860f91073870f13579cee83b7bbe}{Send\+Sysex\+Msg\+From\+Delegate}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a95810d70d8183bcd29c24e7b76bdb492}{Send\+Parameter\+Value\+From\+Delegate}} (int param\+Idx, double value, bool normalized)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_aafaa0005d6c99271370dc0dee042dcb0}{Dirty\+Parameters\+From\+UI}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a271106e21e3e2d7869d152d99c155cad}{Begin\+Inform\+Host\+Of\+Param\+Change\+From\+UI}} (int param\+Idx)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a3380ddd2695a51657b30862487dc7cf7}{Send\+Parameter\+Value\+From\+UI}} (int param\+Idx, double normalized\+Value)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a36eeb4c645a684ceae07edbe7685fbd0}{End\+Inform\+Host\+Of\+Param\+Change\+From\+UI}} (int param\+Idx)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_editor_delegate_ae669dfa47ef62529053e816b87fa6118}{Editor\+Resize\+From\+UI}} (int view\+Width, int view\+Height, bool needs\+Platform\+Resize)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a42747917c3106035b7265145e4bc624e}{Send\+Midi\+Msg\+From\+UI}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_ab0a2c692543f2793bf68b3f24b20b8fa}{Send\+Sysex\+Msg\+From\+UI}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_aa5b4aa88ab199c88796c1df421c5f8c3}{Send\+Arbitrary\+Msg\+From\+UI}} (int msg\+Tag, int ctrl\+Tag=k\+No\+Tag, int data\+Size=0, const void $\ast$p\+Data=nullptr)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a781a47a19d4d2817273a6859a8bc62fe}{Defer\+Midi\+Msg}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a80c2aa40c58119237663735e4d1cda31}{Defer\+Sysex\+Msg}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg)
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a787a79aaae0a471906b92a4b9c93aeac}\label{class_i_editor_delegate_a787a79aaae0a471906b92a4b9c93aeac}} 
+void {\bfseries Set\+Editor\+Size} (int width, int height)
+\item 
+void \mbox{\hyperlink{class_i_editor_delegate_a7210e7a0b067602ee62941a53b6d0e29}{Set\+Size\+Constraints}} (int width\+Lo, int width\+Hi, int height\+Lo, int height\+Hi)
+\item 
+int \mbox{\hyperlink{class_i_editor_delegate_ac22075cdea78bd44f48db4fca95c3198}{Get\+Editor\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_i_editor_delegate_aa8a2c6505f34efed86eb8f08bee02826}{Get\+Editor\+Height}} () const
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a2f64bd7f88591cf4d8943b567414f98c}\label{class_i_editor_delegate_a2f64bd7f88591cf4d8943b567414f98c}} 
+int {\bfseries Get\+Min\+Width} () const
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a234a1b9314f65e62d0a7cb2d805a5c29}\label{class_i_editor_delegate_a234a1b9314f65e62d0a7cb2d805a5c29}} 
+int {\bfseries Get\+Max\+Width} () const
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a131143d0f164f0e21a4994dcff38a6eb}\label{class_i_editor_delegate_a131143d0f164f0e21a4994dcff38a6eb}} 
+int {\bfseries Get\+Min\+Height} () const
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a7a050bd8139f379b2eb122119510b3a4}\label{class_i_editor_delegate_a7a050bd8139f379b2eb122119510b3a4}} 
+int {\bfseries Get\+Max\+Height} () const
+\item 
+bool \mbox{\hyperlink{class_i_editor_delegate_ab8499b0ace19da20c87f974359b7daf6}{Constrain\+Editor\+Resize}} (int \&w, int \&h) const
+\item 
+virtual bool \mbox{\hyperlink{class_i_editor_delegate_a920d231251e6f14e63f5b09c521ca171}{Serialize\+Editor\+State}} (\mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&chunk) const
+\item 
+virtual int \mbox{\hyperlink{class_i_editor_delegate_a113c528f4ada7dc7bb7482f3bf2804b7}{Unserialize\+Editor\+State}} (const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&chunk, int start\+Pos)
+\item 
+virtual void \mbox{\hyperlink{class_i_editor_delegate_a61cbf1b020b83d5e74f3e9a6b51f7b40}{Set\+Screen\+Scale}} (float scale)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a3dc8cd5929ca11815573a878606bdd64}\label{class_i_editor_delegate_a3dc8cd5929ca11815573a878606bdd64}} 
+class {\bfseries I\+Plug\+A\+PP}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a2d792ce8b470d17b76999214543b6eaa}\label{class_i_editor_delegate_a2d792ce8b470d17b76999214543b6eaa}} 
+class {\bfseries I\+Plug\+A\+AX}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_ae14abfce0ee35201f3954d26268394be}\label{class_i_editor_delegate_ae14abfce0ee35201f3954d26268394be}} 
+class {\bfseries I\+Plug\+V\+S\+T2}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a873e6adc857a87add86bed4bc298ba6a}\label{class_i_editor_delegate_a873e6adc857a87add86bed4bc298ba6a}} 
+class {\bfseries I\+Plug\+V\+S\+T3}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a6cde1f0b7309ac65cd827a376d4687e5}\label{class_i_editor_delegate_a6cde1f0b7309ac65cd827a376d4687e5}} 
+class {\bfseries I\+Plug\+V\+S\+T3\+Controller}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a7b24152fe67563fae7749429c0b59bf3}\label{class_i_editor_delegate_a7b24152fe67563fae7749429c0b59bf3}} 
+class {\bfseries I\+Plug\+V\+S\+T3\+Processor}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a77303c99d57dce893000d7f4fbf62ad1}\label{class_i_editor_delegate_a77303c99d57dce893000d7f4fbf62ad1}} 
+class {\bfseries I\+Plug\+AU}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_af8fb52625b14a52862183fe93c8365d1}\label{class_i_editor_delegate_af8fb52625b14a52862183fe93c8365d1}} 
+class {\bfseries I\+Plug\+A\+Uv3}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a3fa1421720653a92c2cfe94eb231dc41}\label{class_i_editor_delegate_a3fa1421720653a92c2cfe94eb231dc41}} 
+class {\bfseries I\+Plug\+W\+EB}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a2d4fc6b14a76b015f28958e3c22ac175}\label{class_i_editor_delegate_a2d4fc6b14a76b015f28958e3c22ac175}} 
+class {\bfseries I\+Plug\+W\+AM}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_adf2ebab201f0f6a55f2433db0273b13f}\label{class_i_editor_delegate_adf2ebab201f0f6a55f2433db0273b13f}} 
+class {\bfseries I\+Plug\+A\+P\+I\+Base}
+\item 
+\mbox{\Hypertarget{class_i_editor_delegate_a2efd394150c4f9fb6b24faae3a4e36c1}\label{class_i_editor_delegate_a2efd394150c4f9fb6b24faae3a4e36c1}} 
+class {\bfseries I\+Plugin\+Base}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This pure virtual interface delegates communication in both directions between a \mbox{\hyperlink{class_u_i}{UI}} editor and something else (which is usually a plug-\/in) It is also the class that owns parameter objects (for historical reasons) -\/ although it\textquotesingle{}s not necessary to allocate them
+
+This is the lowest level base class in i\+Plug 2 that facilitates distributing editor and \mbox{\hyperlink{class_d_s_p}{D\+SP}} parts for plug-\/in formats that need that, but also allowing non-\/distributed plug-\/ins to use the same A\+PI. In distributed plug-\/in architectures certain methods will be overridden in order to pipe messages to various places, using whatever mechanism that plug-\/in format requires. In this case, there are actually two classes that implement the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} interface, but only one which is directly connected to the user interface (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} etc.), the other being connected to a class inheriting \mbox{\hyperlink{class_i_plug_a_p_i_base}{I\+Plug\+A\+P\+I\+Base}} that deals with processing audio, see for example \mbox{\hyperlink{class_i_plug_v_s_t3_processor}{I\+Plug\+V\+S\+T3\+Processor}}
+
+Note on method names\+:
+\begin{DoxyItemize}
+\item \char`\"{}\+From\+U\+I\char`\"{} in a method name, means that that method is called by something in the \mbox{\hyperlink{class_u_i}{UI}} i.\+e. when the user interacts with a control.
+\item \char`\"{}\+From\+Delegate\char`\"{} in a method name means that method is called from a class that implements the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} interface, which is usually your plug-\/in base class, but may not be in the case of an isolated editor class, or if you are using \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} without I\+Plug, and your \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} is not a plug-\/in
+\end{DoxyItemize}
+
+N\+O\+T\+ES\+: A parameter V\+A\+L\+UE is a floating point number linked to an integer parameter index. T\+O\+DO\+: Normalised ? A parameter O\+B\+J\+E\+CT (\mbox{\hyperlink{class_i_param}{I\+Param}}) is an instance of the \mbox{\hyperlink{class_i_param}{I\+Param}} class as defined in \mbox{\hyperlink{_i_plug_parameter_8h}{I\+Plug\+Parameter.\+h}} A parameter O\+B\+J\+E\+CT is also referred to as a \char`\"{}param\char`\"{}, in method names such as \mbox{\hyperlink{class_i_editor_delegate_af0cbc14738af908eb83bb89521b5257e}{I\+Editor\+Delegate\+::\+Get\+Param(int param\+Idx)}} and \mbox{\hyperlink{class_i_control_abbfdd75f0f84648d23c70dc19f197585}{I\+Control\+::\+Get\+Param()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_editor_delegate_a673beffcbf686d33760785d20883575b}\label{class_i_editor_delegate_a673beffcbf686d33760785d20883575b}} 
+\index{IEditorDelegate@{IEditorDelegate}!AddParam@{AddParam}}
+\index{AddParam@{AddParam}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{AddParam()}{AddParam()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_param}{I\+Param}}$\ast$ I\+Editor\+Delegate\+::\+Add\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds an \mbox{\hyperlink{class_i_param}{I\+Param}} to the parameters ptr list Note\+: This is only used in special circumstances, since most plug-\/in formats don\textquotesingle{}t support dynamic parameters \begin{DoxyReturn}{Returns}
+Ptr to the newly created \mbox{\hyperlink{class_i_param}{I\+Param}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_a271106e21e3e2d7869d152d99c155cad}\label{class_i_editor_delegate_a271106e21e3e2d7869d152d99c155cad}} 
+\index{IEditorDelegate@{IEditorDelegate}!BeginInformHostOfParamChangeFromUI@{BeginInformHostOfParamChangeFromUI}}
+\index{BeginInformHostOfParamChangeFromUI@{BeginInformHostOfParamChangeFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{BeginInformHostOfParamChangeFromUI()}{BeginInformHostOfParamChangeFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Begin\+Inform\+Host\+Of\+Param\+Change\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called by the \mbox{\hyperlink{class_u_i}{UI}} at the beginning of a parameter change gesture, in order to notify the host (via a call in the A\+PI class) that the parameter is going to be modified The host may be trying to automate the parameter as well, so it needs to relinquish control when the user is modifying something in the user interface. 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter that is changing value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_editor_delegate_a4e002963a0e50d2222ef4b9400403b3b}\label{class_i_editor_delegate_a4e002963a0e50d2222ef4b9400403b3b}} 
+\index{IEditorDelegate@{IEditorDelegate}!CloseWindow@{CloseWindow}}
+\index{CloseWindow@{CloseWindow}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{CloseWindow()}{CloseWindow()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Close\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+If you are not using \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} you can if you need to free resources etc when the window closes. Call base implementation. 
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_a491dc8ef11e76a03245961be50c106ce}{Web\+View\+Editor\+Delegate}}, \mbox{\hyperlink{class_cocoa_editor_delegate_aa3a95b46746570d9fe148009150f9ee1}{Cocoa\+Editor\+Delegate}}, and \mbox{\hyperlink{class_i_g_editor_delegate_aeace55d6bc036f1f5dbbb44a08c4e43c}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_ab8499b0ace19da20c87f974359b7daf6}\label{class_i_editor_delegate_ab8499b0ace19da20c87f974359b7daf6}} 
+\index{IEditorDelegate@{IEditorDelegate}!ConstrainEditorResize@{ConstrainEditorResize}}
+\index{ConstrainEditorResize@{ConstrainEditorResize}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{ConstrainEditorResize()}{ConstrainEditorResize()}}
+{\footnotesize\ttfamily bool I\+Editor\+Delegate\+::\+Constrain\+Editor\+Resize (\begin{DoxyParamCaption}\item[{int \&}]{w,  }\item[{int \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constrain the incoming editor width and height values based on the minimum and maximum 
+\begin{DoxyParams}{Parameters}
+{\em w} & the incoming width value to test/set if clipping needed \\
+\hline
+{\em h} & the incoming height value to test/set if clipping needed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the parameters fell withing the permitted range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_a781a47a19d4d2817273a6859a8bc62fe}\label{class_i_editor_delegate_a781a47a19d4d2817273a6859a8bc62fe}} 
+\index{IEditorDelegate@{IEditorDelegate}!DeferMidiMsg@{DeferMidiMsg}}
+\index{DeferMidiMsg@{DeferMidiMsg}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{DeferMidiMsg()}{DeferMidiMsg()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Defer\+Midi\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is needed, for remote editors to avoid a feedback loop \mbox{\Hypertarget{class_i_editor_delegate_a80c2aa40c58119237663735e4d1cda31}\label{class_i_editor_delegate_a80c2aa40c58119237663735e4d1cda31}} 
+\index{IEditorDelegate@{IEditorDelegate}!DeferSysexMsg@{DeferSysexMsg}}
+\index{DeferSysexMsg@{DeferSysexMsg}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{DeferSysexMsg()}{DeferSysexMsg()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Defer\+Sysex\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This method is needed, for remote editors to avoid a feedback loop \mbox{\Hypertarget{class_i_editor_delegate_aafaa0005d6c99271370dc0dee042dcb0}\label{class_i_editor_delegate_aafaa0005d6c99271370dc0dee042dcb0}} 
+\index{IEditorDelegate@{IEditorDelegate}!DirtyParametersFromUI@{DirtyParametersFromUI}}
+\index{DirtyParametersFromUI@{DirtyParametersFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{DirtyParametersFromUI()}{DirtyParametersFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Dirty\+Parameters\+From\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+When modifying a range of parameters in the editor, it can be necessary to broadcast that fact via the host, for instance in a distributed plug-\/in. You can use it if you restore a preset using a custom preset mechanism. \mbox{\Hypertarget{class_i_editor_delegate_ae669dfa47ef62529053e816b87fa6118}\label{class_i_editor_delegate_ae669dfa47ef62529053e816b87fa6118}} 
+\index{IEditorDelegate@{IEditorDelegate}!EditorResizeFromUI@{EditorResizeFromUI}}
+\index{EditorResizeFromUI@{EditorResizeFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{EditorResizeFromUI()}{EditorResizeFromUI()}}
+{\footnotesize\ttfamily virtual bool I\+Editor\+Delegate\+::\+Editor\+Resize\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{view\+Width,  }\item[{int}]{view\+Height,  }\item[{bool}]{needs\+Platform\+Resize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+If the editor changes \mbox{\hyperlink{class_u_i}{UI}} dimensions, e.\+g. from clicking a button to choose a size or dragging a corner resizer, it needs to call into the plug-\/in A\+PI to resize the window in the plugin returns a bool to indicate whether the D\+AW or plugin class has resized the host window \mbox{\Hypertarget{class_i_editor_delegate_a36eeb4c645a684ceae07edbe7685fbd0}\label{class_i_editor_delegate_a36eeb4c645a684ceae07edbe7685fbd0}} 
+\index{IEditorDelegate@{IEditorDelegate}!EndInformHostOfParamChangeFromUI@{EndInformHostOfParamChangeFromUI}}
+\index{EndInformHostOfParamChangeFromUI@{EndInformHostOfParamChangeFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{EndInformHostOfParamChangeFromUI()}{EndInformHostOfParamChangeFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+End\+Inform\+Host\+Of\+Param\+Change\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called by the user interface at the end of a parameter change gesture, in order to notify the host (via a call in the A\+PI class) that the parameter is no longer being modified The host may be trying to automate the parameter as well, so it needs to relinquish control when the user is modifying something in the user interface. 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter that is changing value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_editor_delegate_aa8a2c6505f34efed86eb8f08bee02826}\label{class_i_editor_delegate_aa8a2c6505f34efed86eb8f08bee02826}} 
+\index{IEditorDelegate@{IEditorDelegate}!GetEditorHeight@{GetEditorHeight}}
+\index{GetEditorHeight@{GetEditorHeight}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{GetEditorHeight()}{GetEditorHeight()}}
+{\footnotesize\ttfamily int I\+Editor\+Delegate\+::\+Get\+Editor\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The height of the plug-\/in editor in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_ac22075cdea78bd44f48db4fca95c3198}\label{class_i_editor_delegate_ac22075cdea78bd44f48db4fca95c3198}} 
+\index{IEditorDelegate@{IEditorDelegate}!GetEditorWidth@{GetEditorWidth}}
+\index{GetEditorWidth@{GetEditorWidth}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{GetEditorWidth()}{GetEditorWidth()}}
+{\footnotesize\ttfamily int I\+Editor\+Delegate\+::\+Get\+Editor\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The width of the plug-\/in editor in pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_af0cbc14738af908eb83bb89521b5257e}\label{class_i_editor_delegate_af0cbc14738af908eb83bb89521b5257e}} 
+\index{IEditorDelegate@{IEditorDelegate}!GetParam@{GetParam}}
+\index{GetParam@{GetParam}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{GetParam()}{GetParam()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_param}{I\+Param}}$\ast$ I\+Editor\+Delegate\+::\+Get\+Param (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a pointer to one of the delegate\textquotesingle{}s \mbox{\hyperlink{class_i_param}{I\+Param}} objects 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter object to be got \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{class_i_param}{I\+Param}} object at param\+Idx or nullptr if param\+Idx is invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_a405db713d9c2b20defdba252bd93d584}\label{class_i_editor_delegate_a405db713d9c2b20defdba252bd93d584}} 
+\index{IEditorDelegate@{IEditorDelegate}!GetParam@{GetParam}}
+\index{GetParam@{GetParam}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{GetParam()}{GetParam()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_i_param}{I\+Param}}$\ast$ I\+Editor\+Delegate\+::\+Get\+Param (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a const pointer to one of the delegate\textquotesingle{}s \mbox{\hyperlink{class_i_param}{I\+Param}} objects (for const methods) 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter object to be got \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{class_i_param}{I\+Param}} object at param\+Idx or nullptr if param\+Idx is invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_a093f1d5c684bfe5e1a43081adb360933}\label{class_i_editor_delegate_a093f1d5c684bfe5e1a43081adb360933}} 
+\index{IEditorDelegate@{IEditorDelegate}!NParams@{NParams}}
+\index{NParams@{NParams}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{NParams()}{NParams()}}
+{\footnotesize\ttfamily int I\+Editor\+Delegate\+::\+N\+Params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Returns the number of parameters that belong to the plug-\/in. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_editor_delegate_abc3ab8f425c820d3e5c67d78b717e989}\label{class_i_editor_delegate_abc3ab8f425c820d3e5c67d78b717e989}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnKeyDown@{OnKeyDown}}
+\index{OnKeyDown@{OnKeyDown}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnKeyDown()}{OnKeyDown()}}
+{\footnotesize\ttfamily virtual bool I\+Editor\+Delegate\+::\+On\+Key\+Down (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_key_press}{I\+Key\+Press}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Key\+Down handler, in order to get keystrokes from certain hosts/plugin formats that send key press messages through the plug-\/in A\+PI, rather than the view 
+\begin{DoxyParams}{Parameters}
+{\em key} & Information about the key that was pressed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the key was handled by the plug-\/in 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_a50865a8ae914be867a94b435fbf887fa}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_aa8898cf282f32a34b89cf9e32b834207}\label{class_i_editor_delegate_aa8898cf282f32a34b89cf9e32b834207}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnKeyUp@{OnKeyUp}}
+\index{OnKeyUp@{OnKeyUp}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnKeyUp()}{OnKeyUp()}}
+{\footnotesize\ttfamily virtual bool I\+Editor\+Delegate\+::\+On\+Key\+Up (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_key_press}{I\+Key\+Press}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Key\+Down handler, in order to get keystrokes from certain hosts/plugin formats that send key press messages through the plug-\/in A\+PI rather than the view 
+\begin{DoxyParams}{Parameters}
+{\em key} & Information about the key that was released \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the key was handled by the plug-\/in 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_adbb3577db44956483e8fdf2f79a319a1}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_aa769b48fa0ecfd59a6ab45c19244a571}\label{class_i_editor_delegate_aa769b48fa0ecfd59a6ab45c19244a571}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnMessage@{OnMessage}}
+\index{OnMessage@{OnMessage}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnMessage()}{OnMessage()}}
+{\footnotesize\ttfamily virtual bool I\+Editor\+Delegate\+::\+On\+Message (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{ctrl\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This could be implemented in either \mbox{\hyperlink{class_d_s_p}{D\+SP}} or E\+D\+I\+T\+OR to receive a message from the other one 
+
+Reimplemented in \mbox{\hyperlink{class_cocoa_editor_delegate_aa997d1d596771ad3370914df46191e3c}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a49ff38d310445f482dd69dd32e49e4d3}\label{class_i_editor_delegate_a49ff38d310445f482dd69dd32e49e4d3}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnMidiMsgUI@{OnMidiMsgUI}}
+\index{OnMidiMsgUI@{OnMidiMsgUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnMidiMsgUI()}{OnMidiMsgUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Midi\+Msg\+UI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Handle incoming M\+I\+DI messages sent to the user interface 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The M\+I\+DI message to process ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_cocoa_editor_delegate_aaaaac1dc1de7282fddd01549a198a318}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a303a683abe847e28f16963f5207a5c56}\label{class_i_editor_delegate_a303a683abe847e28f16963f5207a5c56}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnParamChange@{OnParamChange}}
+\index{OnParamChange@{OnParamChange}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnParamChange()}{OnParamChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Param\+Change (\begin{DoxyParamCaption}\item[{int}]{param\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Another version of the On\+Param\+Change method without an E\+Param\+Source, for backwards compatibility / simplicity. W\+A\+R\+N\+I\+NG\+: this method can in some cases be called on the realtime audio thread \mbox{\Hypertarget{class_i_editor_delegate_a2a937fc0ea51cd6100a5be56a26dfba3}\label{class_i_editor_delegate_a2a937fc0ea51cd6100a5be56a26dfba3}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnParamChange@{OnParamChange}}
+\index{OnParamChange@{OnParamChange}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnParamChange()}{OnParamChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Param\+Change (\begin{DoxyParamCaption}\item[{int}]{param\+Idx,  }\item[{\mbox{\hyperlink{group___i_plug_constants_ga0ffe9e97c910636e31bad47d4877bc6e}{E\+Param\+Source}}}]{source,  }\item[{int}]{sample\+Offset = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this method to do something to your \mbox{\hyperlink{class_d_s_p}{D\+SP}} when a parameter changes. W\+A\+R\+N\+I\+NG\+: this method can in some cases be called on the realtime audio thread 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter that changed \\
+\hline
+{\em source} & One of the E\+Param\+Source options to indicate where the parameter change came from. \\
+\hline
+{\em sample\+Offset} & For sample accurate parameter changes -\/ index into current block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_editor_delegate_a318f42e0744520eeedd2e21081979b4e}\label{class_i_editor_delegate_a318f42e0744520eeedd2e21081979b4e}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnParamChangeUI@{OnParamChangeUI}}
+\index{OnParamChangeUI@{OnParamChangeUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnParamChangeUI()}{OnParamChangeUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Param\+Change\+UI (\begin{DoxyParamCaption}\item[{int}]{param\+Idx,  }\item[{\mbox{\hyperlink{group___i_plug_constants_ga0ffe9e97c910636e31bad47d4877bc6e}{E\+Param\+Source}}}]{source = {\ttfamily kUnknown} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this method to do something when a parameter changes on the main/\+UI thread Like On\+Param\+Change, On\+Param\+Change\+UI will be called when a parameter changes. However, whereas On\+Param\+Change may be called on the audio thread and should be used to update \mbox{\hyperlink{class_d_s_p}{D\+SP}} state, On\+Param\+Change\+UI is always called on the low-\/priority thread, should be used to update \mbox{\hyperlink{class_u_i}{UI}} (e.\+g. for hiding or showing controls). You should not update parameter objects using this method. 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter that changed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_cocoa_editor_delegate_abf73ebeea67001c445782e6e0e1164c5}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a131f1da0697471444aa2ac655f1e8898}\label{class_i_editor_delegate_a131f1da0697471444aa2ac655f1e8898}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnParamReset@{OnParamReset}}
+\index{OnParamReset@{OnParamReset}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnParamReset()}{OnParamReset()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Param\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga0ffe9e97c910636e31bad47d4877bc6e}{E\+Param\+Source}}}]{source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called when parameters have changed to inform the plugin of the changes Override only if you need to handle notifications and updates in a specialist manner (e.\+g. if the ordering of updating parameters has an effect or if you need to avoid multiple settings of linked parameters). This must update both \mbox{\hyperlink{class_d_s_p}{D\+SP}} and \mbox{\hyperlink{class_u_i}{UI}}. The default implementation calls \mbox{\hyperlink{class_i_editor_delegate_a2a937fc0ea51cd6100a5be56a26dfba3}{On\+Param\+Change()}} and \mbox{\hyperlink{class_i_editor_delegate_a318f42e0744520eeedd2e21081979b4e}{On\+Param\+Change\+U\+I()}} for each parameter. 
+\begin{DoxyParams}{Parameters}
+{\em source} & Specifies the source of the parameter changes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_editor_delegate_aeca6f53c6985ee47df7e65e025645b94}\label{class_i_editor_delegate_aeca6f53c6985ee47df7e65e025645b94}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnParentWindowResize@{OnParentWindowResize}}
+\index{OnParentWindowResize@{OnParentWindowResize}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnParentWindowResize()}{OnParentWindowResize()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Parent\+Window\+Resize (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called by app wrappers when the OS window scaling buttons/resizers are used \mbox{\Hypertarget{class_i_editor_delegate_ae68e29d81678affb1911e7787430c123}\label{class_i_editor_delegate_ae68e29d81678affb1911e7787430c123}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnRestoreState@{OnRestoreState}}
+\index{OnRestoreState@{OnRestoreState}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnRestoreState()}{OnRestoreState()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Restore\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+This is called by A\+PI classes after restoring state and by \mbox{\hyperlink{class_i_plugin_base_a90ca1aad38c99a2ce6f4e6d7b7dab46b}{I\+Plugin\+Base\+::\+Restore\+Preset()}}. Typically used to update user interface, where multiple parameter values have changed. If you need to do something when state is restored you can override it If you override this method you should call this parent, or implement the same functionality in order to get controls to update, when state is restored. \mbox{\Hypertarget{class_i_editor_delegate_a0a19a1af6f13fe055054f742e01a3fc8}\label{class_i_editor_delegate_a0a19a1af6f13fe055054f742e01a3fc8}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnSysexMsgUI@{OnSysexMsgUI}}
+\index{OnSysexMsgUI@{OnSysexMsgUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnSysexMsgUI()}{OnSysexMsgUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+Sysex\+Msg\+UI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Handle incoming Sys\+Ex messages sent to the user interface 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The Sys\+Ex message to process \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_cocoa_editor_delegate_a432f6dde34795b37b09733fa7c766b04}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a17de950550de680a2d0e521d20f58d6c}\label{class_i_editor_delegate_a17de950550de680a2d0e521d20f58d6c}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnUIClose@{OnUIClose}}
+\index{OnUIClose@{OnUIClose}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnUIClose()}{OnUIClose()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+U\+I\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this method to do something before the \mbox{\hyperlink{class_u_i}{UI}} is closed. \mbox{\Hypertarget{class_i_editor_delegate_af00da854c73caaa96da911fbdbf8f13f}\label{class_i_editor_delegate_af00da854c73caaa96da911fbdbf8f13f}} 
+\index{IEditorDelegate@{IEditorDelegate}!OnUIOpen@{OnUIOpen}}
+\index{OnUIOpen@{OnUIOpen}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OnUIOpen()}{OnUIOpen()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+On\+U\+I\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this method to do something before the \mbox{\hyperlink{class_u_i}{UI}} is opened. You must call the base implementation to make sure controls linked to parameters get updated correctly. \mbox{\Hypertarget{class_i_editor_delegate_ac0a1ac1fc3b4ddf78a7fe9c4e5488c6b}\label{class_i_editor_delegate_ac0a1ac1fc3b4ddf78a7fe9c4e5488c6b}} 
+\index{IEditorDelegate@{IEditorDelegate}!OpenWindow@{OpenWindow}}
+\index{OpenWindow@{OpenWindow}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{OpenWindow()}{OpenWindow()}}
+{\footnotesize\ttfamily virtual void$\ast$ I\+Editor\+Delegate\+::\+Open\+Window (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+If you are not using \mbox{\hyperlink{class_i_graphics}{I\+Graphics}}, you can implement this method to attach to the native parent view e.\+g. N\+S\+View, U\+I\+View, H\+W\+ND. Defer calling \mbox{\hyperlink{class_i_editor_delegate_af00da854c73caaa96da911fbdbf8f13f}{On\+U\+I\+Open()}} if necessary. 
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_aa69b9cebaf6aad315117c52e6791db2b}{Web\+View\+Editor\+Delegate}}, \mbox{\hyperlink{class_cocoa_editor_delegate_a944b3165b866bdfdc8eb1637feee5803}{Cocoa\+Editor\+Delegate}}, and \mbox{\hyperlink{class_i_g_editor_delegate_a1d80c734f07d464527459000c117157f}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a74676da51f314fedbe3c0df95d116ba1}\label{class_i_editor_delegate_a74676da51f314fedbe3c0df95d116ba1}} 
+\index{IEditorDelegate@{IEditorDelegate}!RemoveParam@{RemoveParam}}
+\index{RemoveParam@{RemoveParam}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{RemoveParam()}{RemoveParam()}}
+{\footnotesize\ttfamily void I\+Editor\+Delegate\+::\+Remove\+Param (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove an \mbox{\hyperlink{class_i_param}{I\+Param}} at a particular index Note\+: This is only used in special circumstances, since most plug-\/in formats don\textquotesingle{}t support dynamic parameters 
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index of the parameter to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_editor_delegate_ac25ccbe2f2ebda0366cc9a51f2eb3f5f}\label{class_i_editor_delegate_ac25ccbe2f2ebda0366cc9a51f2eb3f5f}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendArbitraryMsgFromDelegate@{SendArbitraryMsgFromDelegate}}
+\index{SendArbitraryMsgFromDelegate@{SendArbitraryMsgFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendArbitraryMsgFromDelegate()}{SendArbitraryMsgFromDelegate()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Arbitrary\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size = {\ttfamily 0},  }\item[{const void $\ast$}]{p\+Data = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Arbitrary\+Msg\+From\+Delegate (Abbreviation\+: S\+A\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send opaque data from a class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} connected to the user interface The message can be handled at the destination via \mbox{\hyperlink{class_i_editor_delegate_aa769b48fa0ecfd59a6ab45c19244a571}{I\+Editor\+Delegate\+::\+On\+Message()}} 
+\begin{DoxyParams}{Parameters}
+{\em msg\+Tag} & A unique tag to identify the message \\
+\hline
+{\em data\+Size} & The size in bytes of the data payload pointed to by p\+Data. Note\+: if this is nonzero, p\+Data must be valid. \\
+\hline
+{\em p\+Data} & Ptr to the opaque data payload for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_a29cb9774d5824c470f49a5f1915ef3a6}{Web\+View\+Editor\+Delegate}}, and \mbox{\hyperlink{class_i_websocket_editor_delegate_aa9c48a6891382c35c9709dc680e72b70}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_aa5b4aa88ab199c88796c1df421c5f8c3}\label{class_i_editor_delegate_aa5b4aa88ab199c88796c1df421c5f8c3}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendArbitraryMsgFromUI@{SendArbitraryMsgFromUI}}
+\index{SendArbitraryMsgFromUI@{SendArbitraryMsgFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendArbitraryMsgFromUI()}{SendArbitraryMsgFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Arbitrary\+Msg\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{ctrl\+Tag = {\ttfamily kNoTag},  }\item[{int}]{data\+Size = {\ttfamily 0},  }\item[{const void $\ast$}]{p\+Data = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Arbitrary\+Msg\+From\+UI (Abbreviation\+: S\+A\+M\+F\+UI) 
+\begin{DoxyParams}{Parameters}
+{\em msg\+Tag} & A unique tag to identify the message \\
+\hline
+{\em ctrl\+Tag} & A unique tag to identify the control that sent the message, if desired \\
+\hline
+{\em data\+Size} & The size in bytes of the data payload pointed to by p\+Data. Note\+: if this is nonzero, p\+Data must be valid. \\
+\hline
+{\em p\+Data} & Ptr to the opaque data payload for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_websocket_editor_delegate_a0ee1a917b0094df480c9b3d195f54a9c}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a7d0211abb930c3f9b1e549461fb71ffc}\label{class_i_editor_delegate_a7d0211abb930c3f9b1e549461fb71ffc}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendControlMsgFromDelegate@{SendControlMsgFromDelegate}}
+\index{SendControlMsgFromDelegate@{SendControlMsgFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendControlMsgFromDelegate()}{SendControlMsgFromDelegate()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Control\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{ctrl\+Tag,  }\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size = {\ttfamily 0},  }\item[{const void $\ast$}]{p\+Data = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Control\+Msg\+From\+Delegate (Abbreviation\+: S\+C\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send opaque data from a class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to a specific control in the user interface. The message can be handled in the destination control via \mbox{\hyperlink{class_i_control_a850af818653722be3d3a72c9558ff6a6}{I\+Control\+::\+On\+Msg\+From\+Delegate}} 
+\begin{DoxyParams}{Parameters}
+{\em ctrl\+Tag} & A unique tag to identify the control that is the destination of the message \\
+\hline
+{\em msg\+Tag} & A unique tag to identify the message \\
+\hline
+{\em data\+Size} & The size in bytes of the data payload pointed to by p\+Data. Note\+: if this is nonzero, p\+Data must be valid. \\
+\hline
+{\em p\+Data} & Ptr to the opaque data payload for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_ad03c176bac3611c3b5c14cd6458963e8}{I\+G\+Editor\+Delegate}}, \mbox{\hyperlink{class_web_view_editor_delegate_aa9b035f30a92813c4b1e52016b5a97de}{Web\+View\+Editor\+Delegate}}, \mbox{\hyperlink{class_i_websocket_editor_delegate_a0fafcd9b8fb93f7a2936904b7012a82f}{I\+Websocket\+Editor\+Delegate}}, and \mbox{\hyperlink{class_cocoa_editor_delegate_af675af28184f31ab40abf46a3aa0e4b1}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a4005eb1239e0e22e73c80e1fc97f5bb8}\label{class_i_editor_delegate_a4005eb1239e0e22e73c80e1fc97f5bb8}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendControlValueFromDelegate@{SendControlValueFromDelegate}}
+\index{SendControlValueFromDelegate@{SendControlValueFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendControlValueFromDelegate()}{SendControlValueFromDelegate()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Control\+Value\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{ctrl\+Tag,  }\item[{double}]{normalized\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Control\+Value\+From\+Delegate (Abbreviation\+: S\+C\+V\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. In \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} plug-\/ins, this method is used to update controls in the user interface from a class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}, when the control is not linked to a parameter. A typical use case would be a meter control. In On\+Idle() your plug-\/in would call this method to update the \mbox{\hyperlink{class_i_control}{I\+Control}}\textquotesingle{}s value. 
+\begin{DoxyParams}{Parameters}
+{\em ctrl\+Tag} & A tag for the control \\
+\hline
+{\em normalized\+Value} & The normalised value to set the control to. This will modify I\+Control\+::m\+Value; \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_a60a3dfc2d4178c5ada397ec3e11c821b}{I\+G\+Editor\+Delegate}}, \mbox{\hyperlink{class_web_view_editor_delegate_a6e1c32db19e77206d34ca69c5d5951d7}{Web\+View\+Editor\+Delegate}}, \mbox{\hyperlink{class_i_websocket_editor_delegate_aabc9dbada6a7a3638969afdd10cba86d}{I\+Websocket\+Editor\+Delegate}}, and \mbox{\hyperlink{class_cocoa_editor_delegate_a98259b2a852a528c27fc4e26fbf43268}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a6de7961ce51f65d5112aa357210444ab}\label{class_i_editor_delegate_a6de7961ce51f65d5112aa357210444ab}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendCurrentParamValuesFromDelegate@{SendCurrentParamValuesFromDelegate}}
+\index{SendCurrentParamValuesFromDelegate@{SendCurrentParamValuesFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendCurrentParamValuesFromDelegate()}{SendCurrentParamValuesFromDelegate()}}
+{\footnotesize\ttfamily void I\+Editor\+Delegate\+::\+Send\+Current\+Param\+Values\+From\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Loops through all parameters, calling \mbox{\hyperlink{class_i_editor_delegate_a95810d70d8183bcd29c24e7b76bdb492}{Send\+Parameter\+Value\+From\+Delegate()}} with the current value of the parameter This is important when modifying groups of parameters, restoring state and opening the \mbox{\hyperlink{class_u_i}{UI}}, in order to update it with the latest values \mbox{\Hypertarget{class_i_editor_delegate_ad4725e10bb4ec6338c31e80f0042ab12}\label{class_i_editor_delegate_ad4725e10bb4ec6338c31e80f0042ab12}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendMidiMsgFromDelegate@{SendMidiMsgFromDelegate}}
+\index{SendMidiMsgFromDelegate@{SendMidiMsgFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsgFromDelegate()}{SendMidiMsgFromDelegate()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Midi\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Midi\+Msg\+From\+Delegate (Abbreviation\+: S\+M\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send regular M\+I\+DI data from the class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to the user interface The message can be handled at the destination via \mbox{\hyperlink{class_i_editor_delegate_a49ff38d310445f482dd69dd32e49e4d3}{I\+Editor\+Delegate\+::\+On\+Midi\+Msg\+U\+I()}} 
+\begin{DoxyParams}{Parameters}
+{\em msg} & an \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} Containing the M\+I\+DI message to send to the user interface. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_a2e9dd0ce06c50a11a847912627ee2e58}{Web\+View\+Editor\+Delegate}}, \mbox{\hyperlink{class_i_g_editor_delegate_a651791fe19097b1003f0006bc6901505}{I\+G\+Editor\+Delegate}}, and \mbox{\hyperlink{class_i_websocket_editor_delegate_af944379ff1787433a3d968ec214e8500}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a42747917c3106035b7265145e4bc624e}\label{class_i_editor_delegate_a42747917c3106035b7265145e4bc624e}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendMidiMsgFromUI@{SendMidiMsgFromUI}}
+\index{SendMidiMsgFromUI@{SendMidiMsgFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsgFromUI()}{SendMidiMsgFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Midi\+Msg\+From\+UI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Midi\+Msg\+From\+UI (Abbreviation\+: S\+M\+M\+F\+UI) This method should be used when sending a M\+I\+DI message from the \mbox{\hyperlink{class_u_i}{UI}}. For example clicking on a key in a virtual keyboard. Eventually the M\+I\+DI message can be handled in \mbox{\hyperlink{class_i_plug_processor_a3118afd2386fc7244ad4f7eeefcbb9b4}{I\+Plug\+Processor\+::\+Process\+Midi\+Msg()}}, from where it can be used to trigger sound and or forwarded to the A\+PI\textquotesingle{}s M\+I\+DI output. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The M\+I\+DI message to send. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_websocket_editor_delegate_a981d00f84a265ec85addf2e15b171e7c}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a95810d70d8183bcd29c24e7b76bdb492}\label{class_i_editor_delegate_a95810d70d8183bcd29c24e7b76bdb492}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendParameterValueFromDelegate@{SendParameterValueFromDelegate}}
+\index{SendParameterValueFromDelegate@{SendParameterValueFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendParameterValueFromDelegate()}{SendParameterValueFromDelegate()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Parameter\+Value\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{param\+Idx,  }\item[{double}]{value,  }\item[{bool}]{normalized }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Parameter\+Value\+From\+Delegate (Abbreviation\+: S\+P\+V\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method is called by the class implementing the delegate interface (not the plug-\/in A\+PI class) in order to update the user interface with the new parameter values, typically after automation. The similarly named \mbox{\hyperlink{class_i_plug_a_p_i_base_aa9f50bef5f022a2dedf2d58cee8c8707}{I\+Plug\+A\+P\+I\+Base\+::\+Send\+Parameter\+Value\+From\+A\+P\+I()}} should take care of queueing and deferring, if there is no main thread notification from the A\+PI If you override this method you should call the base class implementation to make sure On\+Param\+Change\+UI gets triggered In \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} plug-\/ins, this will update any I\+Controls that have their m\+Param\+Idx set $>$ -\/1 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter to be updated \\
+\hline
+{\em value} & The new value of the parameter \\
+\hline
+{\em normalized} & {\ttfamily true} if value is normalised \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_af50344a827a8206e62fa22b4092348a3}{I\+G\+Editor\+Delegate}}, \mbox{\hyperlink{class_web_view_editor_delegate_adb29414df401e46b05a36a0669831c79}{Web\+View\+Editor\+Delegate}}, and \mbox{\hyperlink{class_cocoa_editor_delegate_ad58564cec54b3610f91a9042e83fdcf6}{Cocoa\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a3380ddd2695a51657b30862487dc7cf7}\label{class_i_editor_delegate_a3380ddd2695a51657b30862487dc7cf7}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendParameterValueFromUI@{SendParameterValueFromUI}}
+\index{SendParameterValueFromUI@{SendParameterValueFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendParameterValueFromUI()}{SendParameterValueFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Parameter\+Value\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{param\+Idx,  }\item[{double}]{normalized\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+S\+P\+V\+F\+UI Called by the \mbox{\hyperlink{class_u_i}{UI}} during a parameter change gesture, in order to notify the host of the new value (via a call in the A\+PI class) If you override this method you should call the base class implementation to make sure On\+Param\+Change\+UI gets triggered 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter that is changing value \\
+\hline
+{\em normalized\+Value} & The new normalised value of the parameter \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_websocket_editor_delegate_acc4efa526327c3df0406d1de833f36bf}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_ae966860f91073870f13579cee83b7bbe}\label{class_i_editor_delegate_ae966860f91073870f13579cee83b7bbe}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendSysexMsgFromDelegate@{SendSysexMsgFromDelegate}}
+\index{SendSysexMsgFromDelegate@{SendSysexMsgFromDelegate}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendSysexMsgFromDelegate()}{SendSysexMsgFromDelegate()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Sysex\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Sysex\+Msg\+From\+Delegate (Abbreviation\+: S\+S\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send Sys\+Ex data from the class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to the user interface The message can be handled at the destination via \mbox{\hyperlink{class_i_editor_delegate_a0a19a1af6f13fe055054f742e01a3fc8}{I\+Editor\+Delegate\+::\+On\+Sysex\+Msg\+U\+I()}} 
+\begin{DoxyParams}{Parameters}
+{\em msg} & an \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} Containing the Sys\+Ex data to send to the user interface. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_websocket_editor_delegate_a4a6cd64f16a823d44e13af13bb3b36f4}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_ab0a2c692543f2793bf68b3f24b20b8fa}\label{class_i_editor_delegate_ab0a2c692543f2793bf68b3f24b20b8fa}} 
+\index{IEditorDelegate@{IEditorDelegate}!SendSysexMsgFromUI@{SendSysexMsgFromUI}}
+\index{SendSysexMsgFromUI@{SendSysexMsgFromUI}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendSysexMsgFromUI()}{SendSysexMsgFromUI()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Send\+Sysex\+Msg\+From\+UI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send\+Midi\+Msg\+From\+UI (Abbreviation\+: S\+S\+M\+F\+UI) If a plug-\/in can send Sysex data as a result of actions in the user interface, this method can be used. Unlike Send\+Midi\+Msg\+From\+UI, Sysex messages will not be received in I\+Plug\+Processor\+::\+Process\+Sysex() Since it is extremely unlikely that you would want to use Sysex to communicate between editor and processor \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000176}{Todo}}]is this correct? \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The Sysex message to send. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_websocket_editor_delegate_a35c1a8b7a4a3a84c89a62ecde1edfebd}{I\+Websocket\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a920d231251e6f14e63f5b09c521ca171}\label{class_i_editor_delegate_a920d231251e6f14e63f5b09c521ca171}} 
+\index{IEditorDelegate@{IEditorDelegate}!SerializeEditorState@{SerializeEditorState}}
+\index{SerializeEditorState@{SerializeEditorState}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SerializeEditorState()}{SerializeEditorState()}}
+{\footnotesize\ttfamily virtual bool I\+Editor\+Delegate\+::\+Serialize\+Editor\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&}]{chunk }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Serializes the editor state (such as scale) into a binary chunk. 
+\begin{DoxyParams}{Parameters}
+{\em chunk} & The output chunk to serialize to. Will append data if the chunk has already been started. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the serialization was successful 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_a5a1b7051d97c8b4225aef6d4b81afcd5}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a61cbf1b020b83d5e74f3e9a6b51f7b40}\label{class_i_editor_delegate_a61cbf1b020b83d5e74f3e9a6b51f7b40}} 
+\index{IEditorDelegate@{IEditorDelegate}!SetScreenScale@{SetScreenScale}}
+\index{SetScreenScale@{SetScreenScale}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SetScreenScale()}{SetScreenScale()}}
+{\footnotesize\ttfamily virtual void I\+Editor\+Delegate\+::\+Set\+Screen\+Scale (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Can be used by a host A\+PI to inform the editor of screen scale changes 
+\begin{DoxyParams}{Parameters}
+{\em scale} & The new screen scale \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_a4ee1d776b1c601f86823a7c5c69a646e}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_editor_delegate_a7210e7a0b067602ee62941a53b6d0e29}\label{class_i_editor_delegate_a7210e7a0b067602ee62941a53b6d0e29}} 
+\index{IEditorDelegate@{IEditorDelegate}!SetSizeConstraints@{SetSizeConstraints}}
+\index{SetSizeConstraints@{SetSizeConstraints}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SetSizeConstraints()}{SetSizeConstraints()}}
+{\footnotesize\ttfamily void I\+Editor\+Delegate\+::\+Set\+Size\+Constraints (\begin{DoxyParamCaption}\item[{int}]{width\+Lo,  }\item[{int}]{width\+Hi,  }\item[{int}]{height\+Lo,  }\item[{int}]{height\+Hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000177}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em width\+Lo} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000178}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em width\+Hi} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000179}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em height\+Lo} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000180}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em height\+Hi} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000181}{Todo}}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{class_i_editor_delegate_a113c528f4ada7dc7bb7482f3bf2804b7}\label{class_i_editor_delegate_a113c528f4ada7dc7bb7482f3bf2804b7}} 
+\index{IEditorDelegate@{IEditorDelegate}!UnserializeEditorState@{UnserializeEditorState}}
+\index{UnserializeEditorState@{UnserializeEditorState}!IEditorDelegate@{IEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{UnserializeEditorState()}{UnserializeEditorState()}}
+{\footnotesize\ttfamily virtual int I\+Editor\+Delegate\+::\+Unserialize\+Editor\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_byte_chunk}{I\+Byte\+Chunk}} \&}]{chunk,  }\item[{int}]{start\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Unserializes editor state (such as scale). 
+\begin{DoxyParams}{Parameters}
+{\em chunk} & The incoming chunk where editor data is stored to unserialize \\
+\hline
+{\em start\+Pos} & The start position in the chunk where parameter values are stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new chunk position (end\+Pos) 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_g_editor_delegate_a7d6588ee94116e011ed6133d68da7881}{I\+G\+Editor\+Delegate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\mbox{\hyperlink{_i_plug_editor_delegate_8h}{I\+Plug\+Editor\+Delegate.\+h}}\end{DoxyCompactItemize}

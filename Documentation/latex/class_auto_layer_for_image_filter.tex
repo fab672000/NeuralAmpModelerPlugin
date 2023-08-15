@@ -1,0 +1,38 @@
+\hypertarget{class_auto_layer_for_image_filter}{}\doxysection{Auto\+Layer\+For\+Image\+Filter Class Reference}
+\label{class_auto_layer_for_image_filter}\index{AutoLayerForImageFilter@{AutoLayerForImageFilter}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_auto_layer_for_image_filter_a82cd5e591e5dc1f453e947e33bd6bbb3}\label{class_auto_layer_for_image_filter_a82cd5e591e5dc1f453e947e33bd6bbb3}} 
+{\bfseries Auto\+Layer\+For\+Image\+Filter} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$raw\+Bounds=nullptr)
+\item 
+\mbox{\Hypertarget{class_auto_layer_for_image_filter_a7be5aacf9c248c9606818c945d22993d}\label{class_auto_layer_for_image_filter_a7be5aacf9c248c9606818c945d22993d}} 
+{\bfseries Auto\+Layer\+For\+Image\+Filter} (const \mbox{\hyperlink{class_auto_layer_for_image_filter}{Auto\+Layer\+For\+Image\+Filter}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_auto_layer_for_image_filter_a62d58c08f3532cfad2f78c3582b1d13b}\label{class_auto_layer_for_image_filter_a62d58c08f3532cfad2f78c3582b1d13b}} 
+\mbox{\hyperlink{class_auto_layer_for_image_filter}{Auto\+Layer\+For\+Image\+Filter}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_auto_layer_for_image_filter}{Auto\+Layer\+For\+Image\+Filter}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_auto_layer_for_image_filter_aac5e532bd51e59fd18b4581b5d8d5fb6}\label{class_auto_layer_for_image_filter_aac5e532bd51e59fd18b4581b5d8d5fb6}} 
+{\bfseries Auto\+Layer\+For\+Image\+Filter} (\mbox{\hyperlink{class_auto_layer_for_image_filter}{Auto\+Layer\+For\+Image\+Filter}} \&\&)=default
+\item 
+\mbox{\Hypertarget{class_auto_layer_for_image_filter_a48f387fb13350d229bad1d99a86c9231}\label{class_auto_layer_for_image_filter_a48f387fb13350d229bad1d99a86c9231}} 
+\mbox{\hyperlink{class_auto_layer_for_image_filter}{Auto\+Layer\+For\+Image\+Filter}} \& {\bfseries operator=} (\mbox{\hyperlink{class_auto_layer_for_image_filter}{Auto\+Layer\+For\+Image\+Filter}} \&\&)=default
+\item 
+\mbox{\Hypertarget{class_auto_layer_for_image_filter_ac86c4f5503f4ea7a419e1fcf183db926}\label{class_auto_layer_for_image_filter_ac86c4f5503f4ea7a419e1fcf183db926}} 
+const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \& {\bfseries paint} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+We implement Image\+Filters for a given draw by creating a layer, then applying the imagefilter to the pixels of that layer (its backing surface/image), and then we call restore() to xfer that layer to the main canvas.
+
+
+\begin{DoxyEnumerate}
+\item Save\+Layer (with a paint containing the current imagefilter and xfermode)
+\item Generate the src pixels\+: Remove the imagefilter and the xfermode from the paint that we (Auto\+Draw\+Looper) return (f\+Paint). We then draw the primitive (using srcover) into a cleared buffer/surface.
+\item Restore the layer created in \#1 The imagefilter is passed the buffer/surface from the layer (now filled with the src pixels of the primitive). It returns a new \char`\"{}filtered\char`\"{} buffer, which we draw onto the previous layer using the xfermode from the original paint. 
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Canvas.\+cpp\end{DoxyCompactItemize}

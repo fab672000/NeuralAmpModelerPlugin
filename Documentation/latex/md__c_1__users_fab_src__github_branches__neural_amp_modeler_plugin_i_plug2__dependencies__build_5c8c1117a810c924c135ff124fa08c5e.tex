@@ -1,0 +1,120 @@
+
+
+{\ttfamily faust2android} is a tool to convert a \mbox{\hyperlink{struct_faust}{Faust}} code into a fully functional Android application. It is part of the \href{https://github.com/grame-cncm/faust}{\texttt{ Faust distribution}} and it is based on \href{https://ccrma.stanford.edu/~rmichon/faust2api}{\texttt{ {\ttfamily faust2api}}}.
+
+This documentation shows how to install and use this tool.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md206}{}\doxysection{Installing and Using $<$tt$>$faust2android$<$/tt$>$}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md206}
+Although {\ttfamily faust2android} can be used directly on your computer, it might be easier to compile your apps using the \href{http://faust.grame.fr/onlinecompiler/}{\texttt{ Faust Online Compiler}}. Indeed, {\ttfamily faust2android} relies on an important number of dependencies that you might not want to install on your system. If you\textquotesingle{}re brave enough for this, read the following instructions!
+
+{\bfseries{Note\+:}} {\ttfamily faust2android} will only work on Linux and O\+SX. If you use Windows, use the \href{http://faust.grame.fr/onlinecompiler/}{\texttt{ Online Compiler}}.
+
+Installation instructions should be the same for Linux and O\+SX.
+
+First, \mbox{\hyperlink{struct_faust}{Faust}} (0 or 2) must be installed on your system. If it\textquotesingle{}s not already the case, read the \href{https://github.com/grame-cncm/faust/blob/master/README.md}{\texttt{ Faust R\+E\+A\+D\+ME}} to learn how to do this.
+
+Next, \href{https://developer.android.com/studio/index.html}{\texttt{ Download Android Studio}} and extract it somewhere on your computer. We recommend creating an {\ttfamily /\+Android} folder in your home directory and place {\ttfamily android-\/studio} in it.
+
+Add {\ttfamily android-\/studio/bin} to your path, e.\+g.\+: \begin{DoxyVerb}export PATH=$PATH:/home/you/Android/android-studio/bin
+\end{DoxyVerb}
+
+
+Now you should be able to run Android Studio from your terminal simply by calling\+: \begin{DoxyVerb}studio.sh
+\end{DoxyVerb}
+
+
+In Android Studio, in {\ttfamily Tools/\+Android/\+S\+DK Manager}, make sure that you have the latest S\+DK installed (Android 7.\+1.\+1 as of Dec. 8, 2016). Next click on the \char`\"{}\+S\+D\+K Tools\char`\"{} tab and install {\ttfamily C\+Make} and the {\ttfamily N\+DK}. Android Studio should automatically create an {\ttfamily /\+Sdk} folder in your {\ttfamily /\+Android} folder ({\ttfamily /\+Android/\+Sdk})
+
+Create dynamic links to {\ttfamily /\+Android/\+Sdk/ndk-\/bundle} and {\ttfamily /\+Android/\+Sdk} as follows\+: \begin{DoxyVerb}ln -s ~/Android/Sdk/ndk-bundle ndk
+ln -s ~/Android/Sdk sdk
+\end{DoxyVerb}
+
+
+This is very important since {\ttfamily faust2android} will be looking for these folder. Alternatively, you could modify the source code of {\ttfamily faust2android} to make sure that it\textquotesingle{}s looking in the right folder but that\textquotesingle{}s a more complicated option...
+
+On Linux, make sure that J\+A\+VA is properly installed on your system. At the very least, the following packages should be installed\+: \begin{DoxyVerb}openjdk-8-jdk
+openjdk-8-jdk-headless
+openjdk-8-jdk-jre
+openjdk-8-jre-headless
+\end{DoxyVerb}
+
+
+We noticed some issues with {\ttfamily openjdk-\/9} when compiling Android apps from the terminal which is why we suggest you to install version 8 here. Although you might want to give a try to version 9\+: it\textquotesingle{}s up to you!
+
+Finally, make sure that the {\ttfamily J\+A\+V\+A\+\_\+\+H\+O\+ME} environment variable is properly configured on your system, e.\+g\+: \begin{DoxyVerb}JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md207}{}\doxysection{Generating an App}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md207}
+{\ttfamily faust2android} can simply be called from the command line\+: \begin{DoxyVerb}faust2android faustFile.dsp
+\end{DoxyVerb}
+
+
+where {\ttfamily faust\+File.\+dsp} is a \mbox{\hyperlink{struct_faust}{Faust}} program. This will generate a {\ttfamily .apk} file ready to be installed on any Android device!
+
+The following options are available\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/install}\+: once compilation is over, installs the generated app on the Android device connected to the computer
+\item {\ttfamily -\/source}\+: creates an eclipse project of the app in the current directory.
+\item {\ttfamily -\/swig}\+: regenerate the C++ and the J\+A\+VA interface for the native portion of the app. $\ast${\ttfamily -\/faust}\+: only carries out the \mbox{\hyperlink{struct_faust}{Faust}} compilation and install the generated C++ file in the J\+NI folder.
+\item {\ttfamily -\/reuse}\+: keep build directory and reuse it to speedup compilation.
+\item {\ttfamily -\/debug}\+: verbose output.
+\end{DoxyItemize}
+
+Any other options are considered as \mbox{\hyperlink{struct_faust}{Faust}} options. To get a list of the \mbox{\hyperlink{struct_faust}{Faust}} options type\+: {\ttfamily faust -\/h}
+
+For example\+: \begin{DoxyVerb}faust2android -install faustFile.dsp    
+\end{DoxyVerb}
+
+
+will both create an app and install it on any device connected to your computer.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md208}{}\doxysection{Features}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md208}
+Any standard \mbox{\hyperlink{struct_faust}{Faust}} code can be used with {\ttfamily faust2android} and all the usual user interface elements are available (groups, hsliders, vsliders, knobs, buttons, check boxes, drop down menus, bar graphs, radio buttons, numerical entries, etc.). In addition to that, a set of meta data specific to {\ttfamily faust2android} can be used.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md209}{}\doxysubsection{Accelerometer Assignment}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md209}
+All the continuous user interface elements of faust2android apps can be controlled using the built-\/in accelerometers of the device either by assigning them manually through the app interface or from the \mbox{\hyperlink{struct_faust}{Faust}} code using meta data (check \href{https://ccrma.stanford.edu/~rmichon/faustTutorials/\#using-built-in-sensors-to-control-parameters}{\texttt{ this tutorial}} to learn how to do that).
+
+From the app interface, make sure that the lock at the top right corner is unlocked and hold the name of the parameter you want to control for more than two seconds and the following interface should show up\+:
+
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md210}{}\doxysubsection{Keyboard Interface}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md210}
+When used in the top group of a \mbox{\hyperlink{struct_faust}{Faust}} code, {\ttfamily \mbox{[}style\+:keyboard\mbox{]}} assigns a polyphonic piano keyboard to the {\ttfamily freq}, {\ttfamily gain} and {\ttfamily gate} parameters of the object. For example, the following code\+: \begin{DoxyVerb}import("stdfaust.lib");
+freqMod = hslider("h:Modulator/Frequency", 777, 20, 15000, 1) : si.smoo;
+modIndex = hslider("h:Modulator/Modulation Index", 1000, 0, 10000, 1) : si.smoo;
+freq = hslider("h:General Parameters/freq", 440, 20, 8000, 1) : si.smoo;
+gain = hslider("gain", 1, 0, 1, 0.01) : si.smoo;
+gate = button("gate") : si.smoo;
+process = vgroup("FMsynth [style:keyboard]",os.osc(freqMod)*modIndex + freq : os.osc*gate*gain <: _,_);
+\end{DoxyVerb}
+
+
+will generate an app with the following interface\+:
+
+
+
+Notice that the {\ttfamily freq}, {\ttfamily gain} and {\ttfamily gate} parameters were automatically removed from the main interface.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md211}{}\doxysubsection{\char`\"{}\+Multi\char`\"{} Interface}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md211}
+Similarly to {\ttfamily \mbox{[}style\+:keyboard\mbox{]}}, {\ttfamily \mbox{[}style\+:multi\mbox{]}} should be placed in the top group of a \mbox{\hyperlink{struct_faust}{Faust}} object. This will create a 2 dimensional interface where parameters are represented by dots. One dot can control 2 parameters (X and Y axis). Parameters in the \mbox{\hyperlink{struct_faust}{Faust}} code should be linked to the interface using the {\ttfamily \mbox{[}multi\+:x\mbox{]}} meta data where \char`\"{}x\char`\"{} is the parameter number in the interface. For example, adapting the \mbox{\hyperlink{struct_faust}{Faust}} code presented previously\+: \begin{DoxyVerb}import("stdfaust.lib");
+freqMod = hslider("h:Modulator/Frequency [multi:0]", 777, 20, 15000, 1) : si.smoo;
+modIndex = hslider("h:Modulator/Modulation Index [multi:1]", 1000, 0, 10000, 1) : si.smoo;
+freq = hslider("h:General Parameters/freq [multi:2]", 440, 20, 8000, 1) : si.smoo;
+gain = hslider("gain [multi:3]", 1, 0, 1, 0.01) : si.smoo;
+gate = checkbox("gate") : si.smoo;
+process = vgroup("FMsynth [style:multi]",os.osc(freqMod)*modIndex + freq : os.osc*gate*gain <: *_,_);
+\end{DoxyVerb}
+
+
+will generate an app with the following interface\+:
+
+
+
+{\ttfamily \mbox{[}multi\+:0\mbox{]}} assigns the parameter to the X axis of the first dot. {\ttfamily \mbox{[}multi\+:1\mbox{]}} assigns the parameter to the Y axis of the second dot. {\ttfamily \mbox{[}multi\+:2\mbox{]}} assigns the parameter to the X axis of the second dot and so on. If {\ttfamily \mbox{[}multi\+:x\mbox{]}} is not used anywhere, the interface will be empty.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md212}{}\doxysubsection{\char`\"{}\+Multi-\/\+Keyboard\char`\"{} Interface}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5c8c1117a810c924c135ff124fa08c5e_autotoc_md212}
+Combines the {\ttfamily multi} and the {\ttfamily keyboard} interfaces. For example, the following code\+: \begin{DoxyVerb}import("stdfaust.lib");
+freqMod = hslider("h:Modulator/Frequency [multi:0]", 777, 20, 15000, 1) : si.smoo;
+modIndex = hslider("h:Modulator/Modulation Index [multi:1]", 1000, 0, 10000, 1) : si.smoo;
+freq = hslider("h:General Parameters/freq", 440, 20, 8000, 1) : si.smoo);
+gain = hslider("gain", 1, 0, 1, 0.01) : si.smoo;
+gate = button("gate") : si.smoo;
+process = vgroup("FMsynth [style:multikeyboard]",os.osc(freqMod)*modIndex + freq : os.osc*gate*gain <: _,_);
+\end{DoxyVerb}
+
+
+will generate an app with the following interface\+:
+
+
+
+A similar tool exists for i\+OS ({\ttfamily faust2ios}) and is part of the distribution too. While it works in a similar way than {\ttfamily faust2android}, it is unfortunately not documented. 

@@ -1,0 +1,145 @@
+\hypertarget{classwasm__dsp}{}\doxysection{wasm\+\_\+dsp Class Reference}
+\label{classwasm__dsp}\index{wasm\_dsp@{wasm\_dsp}}
+
+
+{\ttfamily \#include $<$wasm-\/dsp.\+h$>$}
+
+Inheritance diagram for wasm\+\_\+dsp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classwasm__dsp}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwasm__dsp_ae1075ebee41f02067c677163068854f4}\label{classwasm__dsp_ae1075ebee41f02067c677163068854f4}} 
+int {\bfseries get\+Num\+Inputs} ()
+\item 
+\mbox{\Hypertarget{classwasm__dsp_ada42f2a6d2f2cd7ebf3f586155727866}\label{classwasm__dsp_ada42f2a6d2f2cd7ebf3f586155727866}} 
+int {\bfseries get\+Num\+Outputs} ()
+\item 
+\mbox{\Hypertarget{classwasm__dsp_a47ad4fc992548905488c8c2927fbb48c}\label{classwasm__dsp_a47ad4fc992548905488c8c2927fbb48c}} 
+void {\bfseries build\+User\+Interface} (\mbox{\hyperlink{class_u_i}{UI}} $\ast$ui\+\_\+interface)
+\item 
+\mbox{\Hypertarget{classwasm__dsp_a1b39e1cbb89792a07b525bbc74848df9}\label{classwasm__dsp_a1b39e1cbb89792a07b525bbc74848df9}} 
+int {\bfseries get\+Sample\+Rate} ()
+\item 
+\mbox{\Hypertarget{classwasm__dsp_a1294a253670400208fdad2ea4a088eac}\label{classwasm__dsp_a1294a253670400208fdad2ea4a088eac}} 
+void {\bfseries init} (int sample\+\_\+rate)
+\item 
+void \mbox{\hyperlink{classwasm__dsp_adbf11480a03de04f71a9eaa5cf788183}{instance\+Init}} (int sample\+\_\+rate)
+\item 
+void \mbox{\hyperlink{classwasm__dsp_a60d4100115cbafcbe389d15ab8d7fa7b}{instance\+Constants}} (int sample\+\_\+rate)
+\item 
+\mbox{\Hypertarget{classwasm__dsp_a0e434a31365ad18b005ed4082ec22ab0}\label{classwasm__dsp_a0e434a31365ad18b005ed4082ec22ab0}} 
+void {\bfseries instance\+Reset\+User\+Interface} ()
+\item 
+\mbox{\Hypertarget{classwasm__dsp_a66a14b4999c51f9db0ff03ba8009d976}\label{classwasm__dsp_a66a14b4999c51f9db0ff03ba8009d976}} 
+void {\bfseries instance\+Clear} ()
+\item 
+\mbox{\hyperlink{classwasm__dsp}{wasm\+\_\+dsp}} $\ast$ \mbox{\hyperlink{classwasm__dsp_aed7e646b1bf75cf1b3a0368ca1c8e5fb}{clone}} ()
+\item 
+void \mbox{\hyperlink{classwasm__dsp_a5b7ffff1686d1381b0d1edb0987bca93}{metadata}} (\mbox{\hyperlink{struct_meta}{Meta}} $\ast$m)
+\item 
+void \mbox{\hyperlink{classwasm__dsp_ab4b67913d10b6731cf4b1edb9ec79c7e}{compute}} (int count, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$input, F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$output)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_d_s_p}{D\+SP}} instance class with methods. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwasm__dsp_aed7e646b1bf75cf1b3a0368ca1c8e5fb}\label{classwasm__dsp_aed7e646b1bf75cf1b3a0368ca1c8e5fb}} 
+\index{wasm\_dsp@{wasm\_dsp}!clone@{clone}}
+\index{clone@{clone}!wasm\_dsp@{wasm\_dsp}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwasm__dsp}{wasm\+\_\+dsp}}$\ast$ wasm\+\_\+dsp\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Return a clone of the instance.
+
+\begin{DoxyReturn}{Returns}
+a copy of the instance on success, otherwise a null pointer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classdsp_a6cb4848b6d78e10e27bac4d5c77fb30b}{dsp}}.
+
+\mbox{\Hypertarget{classwasm__dsp_ab4b67913d10b6731cf4b1edb9ec79c7e}\label{classwasm__dsp_ab4b67913d10b6731cf4b1edb9ec79c7e}} 
+\index{wasm\_dsp@{wasm\_dsp}!compute@{compute}}
+\index{compute@{compute}!wasm\_dsp@{wasm\_dsp}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily void wasm\+\_\+dsp\+::compute (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$}]{inputs,  }\item[{F\+A\+U\+S\+T\+F\+L\+O\+AT $\ast$$\ast$}]{outputs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\hyperlink{class_d_s_p}{D\+SP}} instance computation, to be called with successive in/out audio buffers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & -\/ the number of frames to compute \\
+\hline
+{\em inputs} & -\/ the input audio buffers as an array of non-\/interleaved F\+A\+U\+S\+T\+F\+L\+O\+AT samples (eiher float, double or quad) \\
+\hline
+{\em outputs} & -\/ the output audio buffers as an array of non-\/interleaved F\+A\+U\+S\+T\+F\+L\+O\+AT samples (eiher float, double or quad) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classdsp_a6b1431a48300dedd89f7b8d316a30a3f}{dsp}}.
+
+\mbox{\Hypertarget{classwasm__dsp_a60d4100115cbafcbe389d15ab8d7fa7b}\label{classwasm__dsp_a60d4100115cbafcbe389d15ab8d7fa7b}} 
+\index{wasm\_dsp@{wasm\_dsp}!instanceConstants@{instanceConstants}}
+\index{instanceConstants@{instanceConstants}!wasm\_dsp@{wasm\_dsp}}
+\doxysubsubsection{\texorpdfstring{instanceConstants()}{instanceConstants()}}
+{\footnotesize\ttfamily void wasm\+\_\+dsp\+::instance\+Constants (\begin{DoxyParamCaption}\item[{int}]{sample\+\_\+rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init instance constant state
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+rate} & -\/ the sampling rate in Hertz \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classdsp_a60075986fa0134cdc3b0b17016b80b56}{dsp}}.
+
+\mbox{\Hypertarget{classwasm__dsp_adbf11480a03de04f71a9eaa5cf788183}\label{classwasm__dsp_adbf11480a03de04f71a9eaa5cf788183}} 
+\index{wasm\_dsp@{wasm\_dsp}!instanceInit@{instanceInit}}
+\index{instanceInit@{instanceInit}!wasm\_dsp@{wasm\_dsp}}
+\doxysubsubsection{\texorpdfstring{instanceInit()}{instanceInit()}}
+{\footnotesize\ttfamily void wasm\+\_\+dsp\+::instance\+Init (\begin{DoxyParamCaption}\item[{int}]{sample\+\_\+rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Init instance state
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+rate} & -\/ the sampling rate in Hertz \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classdsp_a8ab4470608110ca176a9b38308b84390}{dsp}}.
+
+\mbox{\Hypertarget{classwasm__dsp_a5b7ffff1686d1381b0d1edb0987bca93}\label{classwasm__dsp_a5b7ffff1686d1381b0d1edb0987bca93}} 
+\index{wasm\_dsp@{wasm\_dsp}!metadata@{metadata}}
+\index{metadata@{metadata}!wasm\_dsp@{wasm\_dsp}}
+\doxysubsubsection{\texorpdfstring{metadata()}{metadata()}}
+{\footnotesize\ttfamily void wasm\+\_\+dsp\+::metadata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_meta}{Meta}} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Trigger the Meta$\ast$ parameter with instance specific calls to \textquotesingle{}declare\textquotesingle{} (key, value) metadata.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & -\/ the Meta$\ast$ meta user \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classdsp_afdcda87c3e7d3036ff7f8a1ba5505469}{dsp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/dsp/wasm-\/dsp.\+h\end{DoxyCompactItemize}

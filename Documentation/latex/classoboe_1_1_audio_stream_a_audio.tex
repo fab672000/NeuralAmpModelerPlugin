@@ -1,0 +1,1747 @@
+\hypertarget{classoboe_1_1_audio_stream_a_audio}{}\doxysection{oboe\+::Audio\+Stream\+A\+Audio Class Reference}
+\label{classoboe_1_1_audio_stream_a_audio}\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+
+
+{\ttfamily \#include $<$Audio\+Stream\+A\+Audio.\+h$>$}
+
+Inheritance diagram for oboe\+::Audio\+Stream\+A\+Audio\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classoboe_1_1_audio_stream_a_audio}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}\label{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}} 
+{\bfseries Audio\+Stream\+A\+Audio} (const \mbox{\hyperlink{classoboe_1_1_audio_stream_builder}{Audio\+Stream\+Builder}} \&builder)
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}{close}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}{request\+Start}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}{request\+Pause}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}{request\+Flush}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}{request\+Stop}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a335698d7135b2c24c87a2fd88163b845}{write}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a5203bd78d02daef74bfcaadd5cf6b0f5}{read}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a618fbac4c8677ea3b5bfee9b25d7d2de}{set\+Buffer\+Size\+In\+Frames}} (int32\+\_\+t requested\+Frames) override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}{get\+Buffer\+Size\+In\+Frames}} () override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}{get\+Frames\+Per\+Burst}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}{get\+X\+Run\+Count}} () const override
+\item 
+bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}{is\+X\+Run\+Count\+Supported}} () const override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ double $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_acc3c8fb4affd322a0bd6dda6547eda5b}{calculate\+Latency\+Millis}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}{wait\+For\+State\+Change}} (\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} current\+State, \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$next\+State, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp}} (clockid\+\_\+t clock\+Id, int64\+\_\+t $\ast$frame\+Position, int64\+\_\+t $\ast$time\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{get\+State}} () const override
+\item 
+\mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}{get\+Audio\+Api}} () const override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}\label{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}} 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{Data\+Callback\+Result}} {\bfseries call\+On\+Audio\+Ready} (A\+Audio\+Stream $\ast$stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}\label{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}} 
+bool {\bfseries is\+M\+Map\+Used} ()
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}\label{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}} 
+{\bfseries Audio\+Stream\+A\+Audio} (const \mbox{\hyperlink{classoboe_1_1_audio_stream_builder}{Audio\+Stream\+Builder}} \&builder)
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}{close}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}{request\+Start}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}{request\+Pause}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}{request\+Flush}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}{request\+Stop}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}{write}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}{read}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}{set\+Buffer\+Size\+In\+Frames}} (int32\+\_\+t requested\+Frames) override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}{get\+Buffer\+Size\+In\+Frames}} () override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}{get\+Frames\+Per\+Burst}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}{get\+X\+Run\+Count}} () const override
+\item 
+bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}{is\+X\+Run\+Count\+Supported}} () const override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ double $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}{calculate\+Latency\+Millis}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}{wait\+For\+State\+Change}} (\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} current\+State, \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$next\+State, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp}} (clockid\+\_\+t clock\+Id, int64\+\_\+t $\ast$frame\+Position, int64\+\_\+t $\ast$time\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{get\+State}} () const override
+\item 
+\mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}{get\+Audio\+Api}} () const override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}\label{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}} 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{Data\+Callback\+Result}} {\bfseries call\+On\+Audio\+Ready} (A\+Audio\+Stream $\ast$stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}\label{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}} 
+bool {\bfseries is\+M\+Map\+Used} ()
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}\label{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}} 
+{\bfseries Audio\+Stream\+A\+Audio} (const \mbox{\hyperlink{classoboe_1_1_audio_stream_builder}{Audio\+Stream\+Builder}} \&builder)
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}{close}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}{request\+Start}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}{request\+Pause}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}{request\+Flush}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}{request\+Stop}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}{write}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}{read}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}{set\+Buffer\+Size\+In\+Frames}} (int32\+\_\+t requested\+Frames) override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}{get\+Buffer\+Size\+In\+Frames}} () override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}{get\+Frames\+Per\+Burst}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}{get\+X\+Run\+Count}} () const override
+\item 
+bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}{is\+X\+Run\+Count\+Supported}} () const override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ double $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}{calculate\+Latency\+Millis}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}{wait\+For\+State\+Change}} (\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} current\+State, \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$next\+State, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp}} (clockid\+\_\+t clock\+Id, int64\+\_\+t $\ast$frame\+Position, int64\+\_\+t $\ast$time\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{get\+State}} () const override
+\item 
+\mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}{get\+Audio\+Api}} () const override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}\label{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}} 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{Data\+Callback\+Result}} {\bfseries call\+On\+Audio\+Ready} (A\+Audio\+Stream $\ast$stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}\label{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}} 
+bool {\bfseries is\+M\+Map\+Used} ()
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}\label{classoboe_1_1_audio_stream_a_audio_a63b3569a7c0000d1afc4f5b8d9bde610}} 
+{\bfseries Audio\+Stream\+A\+Audio} (const \mbox{\hyperlink{classoboe_1_1_audio_stream_builder}{Audio\+Stream\+Builder}} \&builder)
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}{close}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}{request\+Start}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}{request\+Pause}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}{request\+Flush}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}{request\+Stop}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}{write}} (const void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}{read}} (void $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32\+\_\+t num\+Frames, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}{set\+Buffer\+Size\+In\+Frames}} (int32\+\_\+t requested\+Frames) override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}{get\+Buffer\+Size\+In\+Frames}} () override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}{get\+Frames\+Per\+Burst}} () override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}{get\+X\+Run\+Count}} () const override
+\item 
+bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}{is\+X\+Run\+Count\+Supported}} () const override
+\item 
+\mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ double $>$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}{calculate\+Latency\+Millis}} () override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}{wait\+For\+State\+Change}} (\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} current\+State, \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$next\+State, int64\+\_\+t timeout\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp}} (clockid\+\_\+t clock\+Id, int64\+\_\+t $\ast$frame\+Position, int64\+\_\+t $\ast$time\+Nanoseconds) override
+\item 
+\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{get\+State}} () const override
+\item 
+\mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}{get\+Audio\+Api}} () const override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}\label{classoboe_1_1_audio_stream_a_audio_aa8bd876ad7f2173d7af5a932cf941a64}} 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{Data\+Callback\+Result}} {\bfseries call\+On\+Audio\+Ready} (A\+Audio\+Stream $\ast$stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}\label{classoboe_1_1_audio_stream_a_audio_aa68e63179fe07749d29bc31bb03bc6b9}} 
+bool {\bfseries is\+M\+Map\+Used} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_affa6df6e0721b47ba0de62d07e2603bd}{is\+Supported}} ()
+\item 
+static bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}{is\+Supported}} ()
+\item 
+static bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}{is\+Supported}} ()
+\item 
+static bool \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}{is\+Supported}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}{get\+Underlying\+Stream}} () const override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}{update\+Frames\+Read}} () override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}{update\+Frames\+Written}} () override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}\label{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}} 
+void {\bfseries log\+Unsupported\+Attributes} ()
+\item 
+void $\ast$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}{get\+Underlying\+Stream}} () const override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}{update\+Frames\+Read}} () override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}{update\+Frames\+Written}} () override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}\label{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}} 
+void {\bfseries log\+Unsupported\+Attributes} ()
+\item 
+void $\ast$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}{get\+Underlying\+Stream}} () const override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}{update\+Frames\+Read}} () override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}{update\+Frames\+Written}} () override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}\label{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}} 
+void {\bfseries log\+Unsupported\+Attributes} ()
+\item 
+void $\ast$ \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}{get\+Underlying\+Stream}} () const override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}{update\+Frames\+Read}} () override
+\item 
+void \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}{update\+Frames\+Written}} () override
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}\label{classoboe_1_1_audio_stream_a_audio_ace4fb95cdb9cad8eb1118a69461fd2a0}} 
+void {\bfseries log\+Unsupported\+Attributes} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a6f02dfa061f261c385b511dfe7601db3}\label{classoboe_1_1_audio_stream_a_audio_a6f02dfa061f261c385b511dfe7601db3}} 
+static void {\bfseries internal\+Error\+Callback} (A\+Audio\+Stream $\ast$stream, void $\ast$user\+Data, aaudio\+\_\+result\+\_\+t error)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa2a7a7accebfda4c3bd991f81244b8b4}\label{classoboe_1_1_audio_stream_a_audio_aa2a7a7accebfda4c3bd991f81244b8b4}} 
+static void {\bfseries internal\+Error\+Callback} (A\+Audio\+Stream $\ast$stream, void $\ast$user\+Data, aaudio\+\_\+result\+\_\+t error)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa2a7a7accebfda4c3bd991f81244b8b4}\label{classoboe_1_1_audio_stream_a_audio_aa2a7a7accebfda4c3bd991f81244b8b4}} 
+static void {\bfseries internal\+Error\+Callback} (A\+Audio\+Stream $\ast$stream, void $\ast$user\+Data, aaudio\+\_\+result\+\_\+t error)
+\item 
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa2a7a7accebfda4c3bd991f81244b8b4}\label{classoboe_1_1_audio_stream_a_audio_aa2a7a7accebfda4c3bd991f81244b8b4}} 
+static void {\bfseries internal\+Error\+Callback} (A\+Audio\+Stream $\ast$stream, void $\ast$user\+Data, aaudio\+\_\+result\+\_\+t error)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementation of Oboe\+Stream that uses A\+Audio.
+
+Do not create this class directly. Use an Oboe\+Stream\+Builder to create one. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_acc3c8fb4affd322a0bd6dda6547eda5b}\label{classoboe_1_1_audio_stream_a_audio_acc3c8fb4affd322a0bd6dda6547eda5b}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!calculateLatencyMillis@{calculateLatencyMillis}}
+\index{calculateLatencyMillis@{calculateLatencyMillis}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{calculateLatencyMillis()}{calculateLatencyMillis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ double $>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::calculate\+Latency\+Millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Calculate the latency of a stream based on \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp()}}.
+
+Output latency is the time it takes for a given frame to travel from the app to some type of digital-\/to-\/analog converter. If the D\+AC is external, for example in a U\+SB interface or a TV connected by H\+D\+MI, then there may be additional latency that the Android device is unaware of.
+
+Input latency is the time it takes to a given frame to travel from an analog-\/to-\/digital converter (A\+DC) to the app.
+
+Note that the latency of an O\+U\+T\+P\+UT stream will increase abruptly when you write data to it and then decrease slowly over time as the data is consumed.
+
+The latency of an I\+N\+P\+UT stream will decrease abruptly when you read data from it and then increase slowly over time as more data arrives.
+
+The latency of an O\+U\+T\+P\+UT stream is generally higher than the I\+N\+P\+UT latency because an app generally tries to keep the O\+U\+T\+P\+UT buffer full and the I\+N\+P\+UT buffer empty.
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the latency in milliseconds, or a result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ae023cb001f3261d064f423101798d6be}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}\label{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!calculateLatencyMillis@{calculateLatencyMillis}}
+\index{calculateLatencyMillis@{calculateLatencyMillis}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{calculateLatencyMillis()}{calculateLatencyMillis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$double$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::calculate\+Latency\+Millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Calculate the latency of a stream based on \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp()}}.
+
+Output latency is the time it takes for a given frame to travel from the app to some type of digital-\/to-\/analog converter. If the D\+AC is external, for example in a U\+SB interface or a TV connected by H\+D\+MI, then there may be additional latency that the Android device is unaware of.
+
+Input latency is the time it takes to a given frame to travel from an analog-\/to-\/digital converter (A\+DC) to the app.
+
+Note that the latency of an O\+U\+T\+P\+UT stream will increase abruptly when you write data to it and then decrease slowly over time as the data is consumed.
+
+The latency of an I\+N\+P\+UT stream will decrease abruptly when you read data from it and then increase slowly over time as more data arrives.
+
+The latency of an O\+U\+T\+P\+UT stream is generally higher than the I\+N\+P\+UT latency because an app generally tries to keep the O\+U\+T\+P\+UT buffer full and the I\+N\+P\+UT buffer empty.
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the latency in milliseconds, or a result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ae023cb001f3261d064f423101798d6be}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}\label{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!calculateLatencyMillis@{calculateLatencyMillis}}
+\index{calculateLatencyMillis@{calculateLatencyMillis}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{calculateLatencyMillis()}{calculateLatencyMillis()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$double$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::calculate\+Latency\+Millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Calculate the latency of a stream based on \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp()}}.
+
+Output latency is the time it takes for a given frame to travel from the app to some type of digital-\/to-\/analog converter. If the D\+AC is external, for example in a U\+SB interface or a TV connected by H\+D\+MI, then there may be additional latency that the Android device is unaware of.
+
+Input latency is the time it takes to a given frame to travel from an analog-\/to-\/digital converter (A\+DC) to the app.
+
+Note that the latency of an O\+U\+T\+P\+UT stream will increase abruptly when you write data to it and then decrease slowly over time as the data is consumed.
+
+The latency of an I\+N\+P\+UT stream will decrease abruptly when you read data from it and then increase slowly over time as more data arrives.
+
+The latency of an O\+U\+T\+P\+UT stream is generally higher than the I\+N\+P\+UT latency because an app generally tries to keep the O\+U\+T\+P\+UT buffer full and the I\+N\+P\+UT buffer empty.
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the latency in milliseconds, or a result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ae023cb001f3261d064f423101798d6be}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}\label{classoboe_1_1_audio_stream_a_audio_ac4fe01baaeac924b0b2f8ae55f97463d}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!calculateLatencyMillis@{calculateLatencyMillis}}
+\index{calculateLatencyMillis@{calculateLatencyMillis}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{calculateLatencyMillis()}{calculateLatencyMillis()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$double$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::calculate\+Latency\+Millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Calculate the latency of a stream based on \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}{get\+Timestamp()}}.
+
+Output latency is the time it takes for a given frame to travel from the app to some type of digital-\/to-\/analog converter. If the D\+AC is external, for example in a U\+SB interface or a TV connected by H\+D\+MI, then there may be additional latency that the Android device is unaware of.
+
+Input latency is the time it takes to a given frame to travel from an analog-\/to-\/digital converter (A\+DC) to the app.
+
+Note that the latency of an O\+U\+T\+P\+UT stream will increase abruptly when you write data to it and then decrease slowly over time as the data is consumed.
+
+The latency of an I\+N\+P\+UT stream will decrease abruptly when you read data from it and then increase slowly over time as more data arrives.
+
+The latency of an O\+U\+T\+P\+UT stream is generally higher than the I\+N\+P\+UT latency because an app generally tries to keep the O\+U\+T\+P\+UT buffer full and the I\+N\+P\+UT buffer empty.
+
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the latency in milliseconds, or a result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ae023cb001f3261d064f423101798d6be}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}\label{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!close@{close}}
+\index{close@{close}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close the stream and deallocate any resources from the \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open()}} call. 
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a24a528b443aa10e5c3e9125999c188c6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}\label{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!close@{close}}
+\index{close@{close}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close the stream and deallocate any resources from the \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open()}} call. 
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a24a528b443aa10e5c3e9125999c188c6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}\label{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!close@{close}}
+\index{close@{close}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close the stream and deallocate any resources from the \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open()}} call. 
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a24a528b443aa10e5c3e9125999c188c6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}\label{classoboe_1_1_audio_stream_a_audio_a0f4c297432622748a249cc094dc958f6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!close@{close}}
+\index{close@{close}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close the stream and deallocate any resources from the \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}{open()}} call. 
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a24a528b443aa10e5c3e9125999c188c6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}\label{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getAudioApi@{getAudioApi}}
+\index{getAudioApi@{getAudioApi}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getAudioApi()}{getAudioApi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Audio\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the underlying audio A\+PI which the stream uses.
+
+\begin{DoxyReturn}{Returns}
+the A\+PI that this stream uses. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a2b7a3cee7444114843dbdd1fc705f6bb}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}\label{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getAudioApi@{getAudioApi}}
+\index{getAudioApi@{getAudioApi}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getAudioApi()}{getAudioApi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Audio\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the underlying audio A\+PI which the stream uses.
+
+\begin{DoxyReturn}{Returns}
+the A\+PI that this stream uses. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a2b7a3cee7444114843dbdd1fc705f6bb}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}\label{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getAudioApi@{getAudioApi}}
+\index{getAudioApi@{getAudioApi}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getAudioApi()}{getAudioApi()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Audio\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the underlying audio A\+PI which the stream uses.
+
+\begin{DoxyReturn}{Returns}
+the A\+PI that this stream uses. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a2b7a3cee7444114843dbdd1fc705f6bb}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}\label{classoboe_1_1_audio_stream_a_audio_acedde7d7c9708b8977a171597e041425}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getAudioApi@{getAudioApi}}
+\index{getAudioApi@{getAudioApi}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getAudioApi()}{getAudioApi()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a92972414867c81d5974cb2ed7abefbf6}{Audio\+Api}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Audio\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the underlying audio A\+PI which the stream uses.
+
+\begin{DoxyReturn}{Returns}
+the A\+PI that this stream uses. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a2b7a3cee7444114843dbdd1fc705f6bb}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}\label{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getBufferSizeInFrames@{getBufferSizeInFrames}}
+\index{getBufferSizeInFrames@{getBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getBufferSizeInFrames()}{getBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the maximum number of frames that can be filled without blocking. If the stream has been closed the last known value will be returned.
+
+\begin{DoxyReturn}{Returns}
+buffer size 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_base_af5217ab05bfde0d7637024b599302d0b}{oboe\+::\+Audio\+Stream\+Base}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}\label{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getBufferSizeInFrames@{getBufferSizeInFrames}}
+\index{getBufferSizeInFrames@{getBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getBufferSizeInFrames()}{getBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the maximum number of frames that can be filled without blocking. If the stream has been closed the last known value will be returned.
+
+\begin{DoxyReturn}{Returns}
+buffer size 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_base_af5217ab05bfde0d7637024b599302d0b}{oboe\+::\+Audio\+Stream\+Base}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}\label{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getBufferSizeInFrames@{getBufferSizeInFrames}}
+\index{getBufferSizeInFrames@{getBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getBufferSizeInFrames()}{getBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the maximum number of frames that can be filled without blocking. If the stream has been closed the last known value will be returned.
+
+\begin{DoxyReturn}{Returns}
+buffer size 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_base_af5217ab05bfde0d7637024b599302d0b}{oboe\+::\+Audio\+Stream\+Base}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}\label{classoboe_1_1_audio_stream_a_audio_ae82151bbe15bc3c9cfd8dcfb7e06a8c9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getBufferSizeInFrames@{getBufferSizeInFrames}}
+\index{getBufferSizeInFrames@{getBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getBufferSizeInFrames()}{getBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the maximum number of frames that can be filled without blocking. If the stream has been closed the last known value will be returned.
+
+\begin{DoxyReturn}{Returns}
+buffer size 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_base_af5217ab05bfde0d7637024b599302d0b}{oboe\+::\+Audio\+Stream\+Base}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}\label{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getFramesPerBurst@{getFramesPerBurst}}
+\index{getFramesPerBurst@{getFramesPerBurst}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getFramesPerBurst()}{getFramesPerBurst()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Frames\+Per\+Burst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the number of frames that are read or written by the endpoint at one time.
+
+\begin{DoxyReturn}{Returns}
+burst size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_ac160acb656515814fa6fdd157c131a0a}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}\label{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getFramesPerBurst@{getFramesPerBurst}}
+\index{getFramesPerBurst@{getFramesPerBurst}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getFramesPerBurst()}{getFramesPerBurst()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Frames\+Per\+Burst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the number of frames that are read or written by the endpoint at one time.
+
+\begin{DoxyReturn}{Returns}
+burst size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_ac160acb656515814fa6fdd157c131a0a}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}\label{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getFramesPerBurst@{getFramesPerBurst}}
+\index{getFramesPerBurst@{getFramesPerBurst}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getFramesPerBurst()}{getFramesPerBurst()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Frames\+Per\+Burst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the number of frames that are read or written by the endpoint at one time.
+
+\begin{DoxyReturn}{Returns}
+burst size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_ac160acb656515814fa6fdd157c131a0a}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}\label{classoboe_1_1_audio_stream_a_audio_ab4efdc5ebdef121f019db09958195f38}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getFramesPerBurst@{getFramesPerBurst}}
+\index{getFramesPerBurst@{getFramesPerBurst}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getFramesPerBurst()}{getFramesPerBurst()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily int32\+\_\+t oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Frames\+Per\+Burst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the number of frames that are read or written by the endpoint at one time.
+
+\begin{DoxyReturn}{Returns}
+burst size 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_ac160acb656515814fa6fdd157c131a0a}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}\label{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getState@{getState}}
+\index{getState@{getState}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the current state, eg. Stream\+State\+::\+Pausing
+
+\begin{DoxyReturn}{Returns}
+state or a negative error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a9d37cc6513823c685ae892626ff83ea8}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}\label{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getState@{getState}}
+\index{getState@{getState}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the current state, eg. Stream\+State\+::\+Pausing
+
+\begin{DoxyReturn}{Returns}
+state or a negative error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a9d37cc6513823c685ae892626ff83ea8}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}\label{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getState@{getState}}
+\index{getState@{getState}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the current state, eg. Stream\+State\+::\+Pausing
+
+\begin{DoxyReturn}{Returns}
+state or a negative error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a9d37cc6513823c685ae892626ff83ea8}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}\label{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getState@{getState}}
+\index{getState@{getState}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Query the current state, eg. Stream\+State\+::\+Pausing
+
+\begin{DoxyReturn}{Returns}
+state or a negative error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a9d37cc6513823c685ae892626ff83ea8}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}\label{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Timestamp (\begin{DoxyParamCaption}\item[{clockid\+\_\+t}]{,  }\item[{int64\+\_\+t $\ast$}]{,  }\item[{int64\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the estimated time that the frame at {\ttfamily frame\+Position} entered or left the audio processing pipeline.
+
+This can be used to coordinate events and interactions with the external environment, and to estimate the latency of an audio stream. An example of usage can be found in the hello-\/oboe sample (search for \char`\"{}calculate\+Current\+Output\+Latency\+Millis\char`\"{}).
+
+The time is based on the implementation\textquotesingle{}s best effort, using whatever knowledge is available to the system, but cannot account for any delay unknown to the implementation.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000242}{Deprecated}}]since 1.\+0, use \mbox{\hyperlink{classoboe_1_1_audio_stream_a672e813af2c2b6953d0414bbe5c09d65}{Audio\+Stream\+::get\+Timestamp(clockid\+\_\+t clock\+Id)}} instead, which returns \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+Id} & the type of clock to use e.\+g. C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC \\
+\hline
+{\em frame\+Position} & the frame number to query \\
+\hline
+{\em time\+Nanoseconds} & an output parameter which will contain the presentation timestamp \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_acb8edbc17ff79993a8ed996d216fe6f3}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}\label{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Timestamp (\begin{DoxyParamCaption}\item[{clockid\+\_\+t}]{,  }\item[{int64\+\_\+t $\ast$}]{,  }\item[{int64\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the estimated time that the frame at {\ttfamily frame\+Position} entered or left the audio processing pipeline.
+
+This can be used to coordinate events and interactions with the external environment, and to estimate the latency of an audio stream. An example of usage can be found in the hello-\/oboe sample (search for \char`\"{}calculate\+Current\+Output\+Latency\+Millis\char`\"{}).
+
+The time is based on the implementation\textquotesingle{}s best effort, using whatever knowledge is available to the system, but cannot account for any delay unknown to the implementation.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000242}{Deprecated}}]since 1.\+0, use \mbox{\hyperlink{classoboe_1_1_audio_stream_a672e813af2c2b6953d0414bbe5c09d65}{Audio\+Stream\+::get\+Timestamp(clockid\+\_\+t clock\+Id)}} instead, which returns \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+Id} & the type of clock to use e.\+g. C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC \\
+\hline
+{\em frame\+Position} & the frame number to query \\
+\hline
+{\em time\+Nanoseconds} & an output parameter which will contain the presentation timestamp \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_acb8edbc17ff79993a8ed996d216fe6f3}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}\label{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Timestamp (\begin{DoxyParamCaption}\item[{clockid\+\_\+t}]{,  }\item[{int64\+\_\+t $\ast$}]{,  }\item[{int64\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the estimated time that the frame at {\ttfamily frame\+Position} entered or left the audio processing pipeline.
+
+This can be used to coordinate events and interactions with the external environment, and to estimate the latency of an audio stream. An example of usage can be found in the hello-\/oboe sample (search for \char`\"{}calculate\+Current\+Output\+Latency\+Millis\char`\"{}).
+
+The time is based on the implementation\textquotesingle{}s best effort, using whatever knowledge is available to the system, but cannot account for any delay unknown to the implementation.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000242}{Deprecated}}]since 1.\+0, use \mbox{\hyperlink{classoboe_1_1_audio_stream_a672e813af2c2b6953d0414bbe5c09d65}{Audio\+Stream\+::get\+Timestamp(clockid\+\_\+t clock\+Id)}} instead, which returns \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+Id} & the type of clock to use e.\+g. C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC \\
+\hline
+{\em frame\+Position} & the frame number to query \\
+\hline
+{\em time\+Nanoseconds} & an output parameter which will contain the presentation timestamp \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_acb8edbc17ff79993a8ed996d216fe6f3}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}\label{classoboe_1_1_audio_stream_a_audio_aa7dda173622af670d6f9c4616aff2c19}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Timestamp (\begin{DoxyParamCaption}\item[{clockid\+\_\+t}]{,  }\item[{int64\+\_\+t $\ast$}]{,  }\item[{int64\+\_\+t $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the estimated time that the frame at {\ttfamily frame\+Position} entered or left the audio processing pipeline.
+
+This can be used to coordinate events and interactions with the external environment, and to estimate the latency of an audio stream. An example of usage can be found in the hello-\/oboe sample (search for \char`\"{}calculate\+Current\+Output\+Latency\+Millis\char`\"{}).
+
+The time is based on the implementation\textquotesingle{}s best effort, using whatever knowledge is available to the system, but cannot account for any delay unknown to the implementation.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000242}{Deprecated}}]since 1.\+0, use \mbox{\hyperlink{classoboe_1_1_audio_stream_a672e813af2c2b6953d0414bbe5c09d65}{Audio\+Stream\+::get\+Timestamp(clockid\+\_\+t clock\+Id)}} instead, which returns \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em clock\+Id} & the type of clock to use e.\+g. C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC \\
+\hline
+{\em frame\+Position} & the frame number to query \\
+\hline
+{\em time\+Nanoseconds} & an output parameter which will contain the presentation timestamp \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_acb8edbc17ff79993a8ed996d216fe6f3}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}\label{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getUnderlyingStream@{getUnderlyingStream}}
+\index{getUnderlyingStream@{getUnderlyingStream}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getUnderlyingStream()}{getUnderlyingStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void$\ast$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Underlying\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Only for debugging. Do not use in production. If you need to call this method something is wrong. If you think you need it for production then please let us know so we can modify Oboe so that you don\textquotesingle{}t need this.
+
+\begin{DoxyReturn}{Returns}
+nullptr or a pointer to a stream from the system A\+PI 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a5458d7130415eb4defe3dbc11d479e2f}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}\label{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getUnderlyingStream@{getUnderlyingStream}}
+\index{getUnderlyingStream@{getUnderlyingStream}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getUnderlyingStream()}{getUnderlyingStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void$\ast$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Underlying\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Only for debugging. Do not use in production. If you need to call this method something is wrong. If you think you need it for production then please let us know so we can modify Oboe so that you don\textquotesingle{}t need this.
+
+\begin{DoxyReturn}{Returns}
+nullptr or a pointer to a stream from the system A\+PI 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a5458d7130415eb4defe3dbc11d479e2f}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}\label{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getUnderlyingStream@{getUnderlyingStream}}
+\index{getUnderlyingStream@{getUnderlyingStream}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getUnderlyingStream()}{getUnderlyingStream()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void$\ast$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Underlying\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Only for debugging. Do not use in production. If you need to call this method something is wrong. If you think you need it for production then please let us know so we can modify Oboe so that you don\textquotesingle{}t need this.
+
+\begin{DoxyReturn}{Returns}
+nullptr or a pointer to a stream from the system A\+PI 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a5458d7130415eb4defe3dbc11d479e2f}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}\label{classoboe_1_1_audio_stream_a_audio_a212a697dddfff01609d82ba81e7036b3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getUnderlyingStream@{getUnderlyingStream}}
+\index{getUnderlyingStream@{getUnderlyingStream}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getUnderlyingStream()}{getUnderlyingStream()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void$\ast$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+Underlying\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Only for debugging. Do not use in production. If you need to call this method something is wrong. If you think you need it for production then please let us know so we can modify Oboe so that you don\textquotesingle{}t need this.
+
+\begin{DoxyReturn}{Returns}
+nullptr or a pointer to a stream from the system A\+PI 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a5458d7130415eb4defe3dbc11d479e2f}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}\label{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getXRunCount@{getXRunCount}}
+\index{getXRunCount@{getXRunCount}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getXRunCount()}{getXRunCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+X\+Run\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+An X\+Run is an Underrun or an Overrun. During playing, an underrun will occur if the stream is not written in time and the system runs out of valid data. During recording, an overrun will occur if the stream is not read in time and there is no place to put the incoming data so it is discarded.
+
+An underrun or overrun can cause an audible \char`\"{}pop\char`\"{} or \char`\"{}glitch\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+a result which is either Result\+::\+OK with the x\+Run count as the value, or a Result\+::\+Error$\ast$ code 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ad1a1d3bbf3b348ed92b7ed18ce9cc261}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}\label{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getXRunCount@{getXRunCount}}
+\index{getXRunCount@{getXRunCount}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getXRunCount()}{getXRunCount()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+X\+Run\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+An X\+Run is an Underrun or an Overrun. During playing, an underrun will occur if the stream is not written in time and the system runs out of valid data. During recording, an overrun will occur if the stream is not read in time and there is no place to put the incoming data so it is discarded.
+
+An underrun or overrun can cause an audible \char`\"{}pop\char`\"{} or \char`\"{}glitch\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+a result which is either Result\+::\+OK with the x\+Run count as the value, or a Result\+::\+Error$\ast$ code 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ad1a1d3bbf3b348ed92b7ed18ce9cc261}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}\label{classoboe_1_1_audio_stream_a_audio_ab168144911083fd4b9108d1be905de05}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getXRunCount@{getXRunCount}}
+\index{getXRunCount@{getXRunCount}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getXRunCount()}{getXRunCount()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+X\+Run\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+An X\+Run is an Underrun or an Overrun. During playing, an underrun will occur if the stream is not written in time and the system runs out of valid data. During recording, an overrun will occur if the stream is not read in time and there is no place to put the incoming data so it is discarded.
+
+An underrun or overrun can cause an audible \char`\"{}pop\char`\"{} or \char`\"{}glitch\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+a result which is either Result\+::\+OK with the x\+Run count as the value, or a Result\+::\+Error$\ast$ code 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ad1a1d3bbf3b348ed92b7ed18ce9cc261}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}\label{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!getXRunCount@{getXRunCount}}
+\index{getXRunCount@{getXRunCount}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{getXRunCount()}{getXRunCount()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::get\+X\+Run\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+An X\+Run is an Underrun or an Overrun. During playing, an underrun will occur if the stream is not written in time and the system runs out of valid data. During recording, an overrun will occur if the stream is not read in time and there is no place to put the incoming data so it is discarded.
+
+An underrun or overrun can cause an audible \char`\"{}pop\char`\"{} or \char`\"{}glitch\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+a result which is either Result\+::\+OK with the x\+Run count as the value, or a Result\+::\+Error$\ast$ code 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_ad1a1d3bbf3b348ed92b7ed18ce9cc261}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}\label{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isSupported@{isSupported}}
+\index{isSupported@{isSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isSupported()}{isSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+true if A\+Audio is supported on this device. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}\label{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isSupported@{isSupported}}
+\index{isSupported@{isSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isSupported()}{isSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+true if A\+Audio is supported on this device. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_affa6df6e0721b47ba0de62d07e2603bd}\label{classoboe_1_1_audio_stream_a_audio_affa6df6e0721b47ba0de62d07e2603bd}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isSupported@{isSupported}}
+\index{isSupported@{isSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isSupported()}{isSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+true if A\+Audio is supported on this device. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}\label{classoboe_1_1_audio_stream_a_audio_a501ff0410b590b63222ff18871efeb89}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isSupported@{isSupported}}
+\index{isSupported@{isSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isSupported()}{isSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily static bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+true if A\+Audio is supported on this device. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}\label{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isXRunCountSupported@{isXRunCountSupported}}
+\index{isXRunCountSupported@{isXRunCountSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isXRunCountSupported()}{isXRunCountSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+X\+Run\+Count\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if X\+Run counts are supported on the stream 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a43d8a098440cde28f4ee8bedd6d107c4}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}\label{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isXRunCountSupported@{isXRunCountSupported}}
+\index{isXRunCountSupported@{isXRunCountSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isXRunCountSupported()}{isXRunCountSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+X\+Run\+Count\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if X\+Run counts are supported on the stream 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a43d8a098440cde28f4ee8bedd6d107c4}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}\label{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isXRunCountSupported@{isXRunCountSupported}}
+\index{isXRunCountSupported@{isXRunCountSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isXRunCountSupported()}{isXRunCountSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+X\+Run\+Count\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if X\+Run counts are supported on the stream 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a43d8a098440cde28f4ee8bedd6d107c4}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}\label{classoboe_1_1_audio_stream_a_audio_aa4b01b21030d1b9e813af8ed21222ad3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!isXRunCountSupported@{isXRunCountSupported}}
+\index{isXRunCountSupported@{isXRunCountSupported}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{isXRunCountSupported()}{isXRunCountSupported()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool oboe\+::\+Audio\+Stream\+A\+Audio\+::is\+X\+Run\+Count\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if X\+Run counts are supported on the stream 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a43d8a098440cde28f4ee8bedd6d107c4}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}\label{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!open@{open}}
+\index{open@{open}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Open a stream based on the current settings.
+
+Note that we do not recommend re-\/opening a stream that has been closed. T\+O\+DO Should we prevent re-\/opening?
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a686c6ce8a29051c858fd1de386805dc6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}\label{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!open@{open}}
+\index{open@{open}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Open a stream based on the current settings.
+
+Note that we do not recommend re-\/opening a stream that has been closed. T\+O\+DO Should we prevent re-\/opening?
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a686c6ce8a29051c858fd1de386805dc6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}\label{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!open@{open}}
+\index{open@{open}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Open a stream based on the current settings.
+
+Note that we do not recommend re-\/opening a stream that has been closed. T\+O\+DO Should we prevent re-\/opening?
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a686c6ce8a29051c858fd1de386805dc6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}\label{classoboe_1_1_audio_stream_a_audio_a86b1a9511f4f0e5229329505608ec7b5}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!open@{open}}
+\index{open@{open}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Open a stream based on the current settings.
+
+Note that we do not recommend re-\/opening a stream that has been closed. T\+O\+DO Should we prevent re-\/opening?
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a686c6ce8a29051c858fd1de386805dc6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a5203bd78d02daef74bfcaadd5cf6b0f5}\label{classoboe_1_1_audio_stream_a_audio_a5203bd78d02daef74bfcaadd5cf6b0f5}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!read@{read}}
+\index{read@{read}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read data into the supplied buffer from the stream. This method will block until the read is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to read. Only complete frames will be read. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually read, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a8089f0a0cb68d4039cf33e6584129978}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}\label{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!read@{read}}
+\index{read@{read}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read data into the supplied buffer from the stream. This method will block until the read is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to read. Only complete frames will be read. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually read, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a8089f0a0cb68d4039cf33e6584129978}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}\label{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!read@{read}}
+\index{read@{read}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read data into the supplied buffer from the stream. This method will block until the read is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to read. Only complete frames will be read. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually read, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a8089f0a0cb68d4039cf33e6584129978}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}\label{classoboe_1_1_audio_stream_a_audio_a2207e46d2fbf9eef26534fce18e6b313}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!read@{read}}
+\index{read@{read}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Read data into the supplied buffer from the stream. This method will block until the read is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to read. Only complete frames will be read. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually read, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a8089f0a0cb68d4039cf33e6584129978}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}\label{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestFlush@{requestFlush}}
+\index{requestFlush@{requestFlush}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestFlush()}{requestFlush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Flush the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily flush(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a6bd5d633ff999e4da1faf3cd949aa602}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}\label{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestFlush@{requestFlush}}
+\index{requestFlush@{requestFlush}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestFlush()}{requestFlush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Flush the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily flush(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a6bd5d633ff999e4da1faf3cd949aa602}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}\label{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestFlush@{requestFlush}}
+\index{requestFlush@{requestFlush}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestFlush()}{requestFlush()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Flush the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily flush(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a6bd5d633ff999e4da1faf3cd949aa602}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}\label{classoboe_1_1_audio_stream_a_audio_a457c83d292ebf950d0b9d5536b4fee0b}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestFlush@{requestFlush}}
+\index{requestFlush@{requestFlush}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestFlush()}{requestFlush()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Flush the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily flush(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a6bd5d633ff999e4da1faf3cd949aa602}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}\label{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestPause@{requestPause}}
+\index{requestPause@{requestPause}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestPause()}{requestPause()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pause the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily pause(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a7f18bb3cc5490fd7fbc1f6da63c730f6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}\label{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestPause@{requestPause}}
+\index{requestPause@{requestPause}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestPause()}{requestPause()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pause the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily pause(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a7f18bb3cc5490fd7fbc1f6da63c730f6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}\label{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestPause@{requestPause}}
+\index{requestPause@{requestPause}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestPause()}{requestPause()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pause the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily pause(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a7f18bb3cc5490fd7fbc1f6da63c730f6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}\label{classoboe_1_1_audio_stream_a_audio_a83a3e6645ca9f2cc84667a9938504624}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestPause@{requestPause}}
+\index{requestPause@{requestPause}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestPause()}{requestPause()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Pause the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily pause(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a7f18bb3cc5490fd7fbc1f6da63c730f6}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}\label{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStart@{requestStart}}
+\index{requestStart@{requestStart}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStart()}{requestStart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Start the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily start(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a3c484e314dee8dfed1d419f487b5d601}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}\label{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStart@{requestStart}}
+\index{requestStart@{requestStart}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStart()}{requestStart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Start the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily start(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a3c484e314dee8dfed1d419f487b5d601}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}\label{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStart@{requestStart}}
+\index{requestStart@{requestStart}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStart()}{requestStart()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Start the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily start(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a3c484e314dee8dfed1d419f487b5d601}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}\label{classoboe_1_1_audio_stream_a_audio_a8c01f5f9303b734f054e7f5b9a7c89f9}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStart@{requestStart}}
+\index{requestStart@{requestStart}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStart()}{requestStart()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Start the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily start(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a3c484e314dee8dfed1d419f487b5d601}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}\label{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStop@{requestStop}}
+\index{requestStop@{requestStop}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStop()}{requestStop()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily stop(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a820e634f741e6b5efdcef8104cecb919}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}\label{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStop@{requestStop}}
+\index{requestStop@{requestStop}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStop()}{requestStop()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily stop(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a820e634f741e6b5efdcef8104cecb919}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}\label{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStop@{requestStop}}
+\index{requestStop@{requestStop}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStop()}{requestStop()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily stop(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a820e634f741e6b5efdcef8104cecb919}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}\label{classoboe_1_1_audio_stream_a_audio_a223e0d757e20d4e5dafa84653b7f80f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!requestStop@{requestStop}}
+\index{requestStop@{requestStop}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{requestStop()}{requestStop()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::request\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stop the stream asynchronously. Returns immediately (does not block). Equivalent to calling {\ttfamily stop(0)}. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a820e634f741e6b5efdcef8104cecb919}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}\label{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!setBufferSizeInFrames@{setBufferSizeInFrames}}
+\index{setBufferSizeInFrames@{setBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{setBufferSizeInFrames()}{setBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::set\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This can be used to adjust the latency of the buffer by changing the threshold where blocking will occur. By combining this with \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}{get\+X\+Run\+Count()}}, the latency can be tuned at run-\/time for each device.
+
+This cannot be set higher than get\+Buffer\+Capacity().
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Frames} & requested number of frames that can be filled without blocking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting buffer size in frames (obtained using value()) or an error (obtained using error()) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a06e3f9e133b3a75515e7793939d1cd03}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}\label{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!setBufferSizeInFrames@{setBufferSizeInFrames}}
+\index{setBufferSizeInFrames@{setBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{setBufferSizeInFrames()}{setBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::set\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This can be used to adjust the latency of the buffer by changing the threshold where blocking will occur. By combining this with \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}{get\+X\+Run\+Count()}}, the latency can be tuned at run-\/time for each device.
+
+This cannot be set higher than get\+Buffer\+Capacity().
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Frames} & requested number of frames that can be filled without blocking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting buffer size in frames (obtained using value()) or an error (obtained using error()) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a06e3f9e133b3a75515e7793939d1cd03}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}\label{classoboe_1_1_audio_stream_a_audio_ad05ae3bf360bd85ae269273e4839c1d6}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!setBufferSizeInFrames@{setBufferSizeInFrames}}
+\index{setBufferSizeInFrames@{setBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{setBufferSizeInFrames()}{setBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::set\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This can be used to adjust the latency of the buffer by changing the threshold where blocking will occur. By combining this with \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}{get\+X\+Run\+Count()}}, the latency can be tuned at run-\/time for each device.
+
+This cannot be set higher than get\+Buffer\+Capacity().
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Frames} & requested number of frames that can be filled without blocking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting buffer size in frames (obtained using value()) or an error (obtained using error()) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a06e3f9e133b3a75515e7793939d1cd03}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a618fbac4c8677ea3b5bfee9b25d7d2de}\label{classoboe_1_1_audio_stream_a_audio_a618fbac4c8677ea3b5bfee9b25d7d2de}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!setBufferSizeInFrames@{setBufferSizeInFrames}}
+\index{setBufferSizeInFrames@{setBufferSizeInFrames}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{setBufferSizeInFrames()}{setBufferSizeInFrames()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::set\+Buffer\+Size\+In\+Frames (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This can be used to adjust the latency of the buffer by changing the threshold where blocking will occur. By combining this with \mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a53576e7998db92356c91fdec1458e2a9}{get\+X\+Run\+Count()}}, the latency can be tuned at run-\/time for each device.
+
+This cannot be set higher than get\+Buffer\+Capacity().
+
+
+\begin{DoxyParams}{Parameters}
+{\em requested\+Frames} & requested number of frames that can be filled without blocking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting buffer size in frames (obtained using value()) or an error (obtained using error()) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a06e3f9e133b3a75515e7793939d1cd03}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}\label{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesRead@{updateFramesRead}}
+\index{updateFramesRead@{updateFramesRead}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesRead()}{updateFramesRead()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Read. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a462358ddab709c79d1a7968d6d55b727}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}\label{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesRead@{updateFramesRead}}
+\index{updateFramesRead@{updateFramesRead}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesRead()}{updateFramesRead()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Read. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a462358ddab709c79d1a7968d6d55b727}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}\label{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesRead@{updateFramesRead}}
+\index{updateFramesRead@{updateFramesRead}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesRead()}{updateFramesRead()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Read. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a462358ddab709c79d1a7968d6d55b727}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}\label{classoboe_1_1_audio_stream_a_audio_a8117ebbffaf75b4c8bffa123502e08f3}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesRead@{updateFramesRead}}
+\index{updateFramesRead@{updateFramesRead}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesRead()}{updateFramesRead()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Read. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a462358ddab709c79d1a7968d6d55b727}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}\label{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesWritten@{updateFramesWritten}}
+\index{updateFramesWritten@{updateFramesWritten}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesWritten()}{updateFramesWritten()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Written (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Written. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a64ad978c5f70ced17ef5a96605496515}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}\label{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesWritten@{updateFramesWritten}}
+\index{updateFramesWritten@{updateFramesWritten}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesWritten()}{updateFramesWritten()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Written (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Written. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a64ad978c5f70ced17ef5a96605496515}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}\label{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesWritten@{updateFramesWritten}}
+\index{updateFramesWritten@{updateFramesWritten}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesWritten()}{updateFramesWritten()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Written (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Written. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a64ad978c5f70ced17ef5a96605496515}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}\label{classoboe_1_1_audio_stream_a_audio_ac2ff0d10d16e23281d27f5e5c3d4bfce}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!updateFramesWritten@{updateFramesWritten}}
+\index{updateFramesWritten@{updateFramesWritten}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{updateFramesWritten()}{updateFramesWritten()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void oboe\+::\+Audio\+Stream\+A\+Audio\+::update\+Frames\+Written (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Update m\+Frames\+Written. For internal use only. 
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a64ad978c5f70ced17ef5a96605496515}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}\label{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!waitForStateChange@{waitForStateChange}}
+\index{waitForStateChange@{waitForStateChange}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{waitForStateChange()}{waitForStateChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::wait\+For\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}}}]{input\+State,  }\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$}]{next\+State,  }\item[{int64\+\_\+t}]{timeout\+Nanoseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Wait until the stream\textquotesingle{}s current state no longer matches the input state. The input state is passed to avoid race conditions caused by the state changing between calls.
+
+Note that generally applications do not need to call this. It is considered an advanced technique and is mostly used for testing.
+
+
+\begin{DoxyPre}{\ttfamily 
+int64\_t timeoutNanos = 500 * kNanosPerMillisecond; // arbitrary 1/2 second
+StreamState currentState = stream-\/>\mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{getState()}};
+StreamState nextState = StreamState::Unknown;
+while (result == Result::OK \&\& currentState != StreamState::Paused) \{
+    result = stream-\/>waitForStateChange(
+                                  currentState, \&nextState, timeoutNanos);
+    currentState = nextState;
+\}
+}\end{DoxyPre}
+
+
+If the state does not change within the timeout period then it will return Error\+Timeout. This is true even if timeout\+Nanoseconds is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+State} & The state we want to change away from. \\
+\hline
+{\em next\+State} & Pointer to a variable that will be set to the new state. \\
+\hline
+{\em timeout\+Nanoseconds} & The maximum time to wait in nanoseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result\+::\+OK or a Result\+::\+Error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a0c865a5501f369d959c39d8ab8b46a07}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}\label{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!waitForStateChange@{waitForStateChange}}
+\index{waitForStateChange@{waitForStateChange}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{waitForStateChange()}{waitForStateChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::wait\+For\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}}}]{input\+State,  }\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$}]{next\+State,  }\item[{int64\+\_\+t}]{timeout\+Nanoseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Wait until the stream\textquotesingle{}s current state no longer matches the input state. The input state is passed to avoid race conditions caused by the state changing between calls.
+
+Note that generally applications do not need to call this. It is considered an advanced technique and is mostly used for testing.
+
+
+\begin{DoxyPre}{\ttfamily 
+int64\_t timeoutNanos = 500 * kNanosPerMillisecond; // arbitrary 1/2 second
+StreamState currentState = stream-\/>\mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{getState()}};
+StreamState nextState = StreamState::Unknown;
+while (result == Result::OK \&\& currentState != StreamState::Paused) \{
+    result = stream-\/>waitForStateChange(
+                                  currentState, \&nextState, timeoutNanos);
+    currentState = nextState;
+\}
+}\end{DoxyPre}
+
+
+If the state does not change within the timeout period then it will return Error\+Timeout. This is true even if timeout\+Nanoseconds is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+State} & The state we want to change away from. \\
+\hline
+{\em next\+State} & Pointer to a variable that will be set to the new state. \\
+\hline
+{\em timeout\+Nanoseconds} & The maximum time to wait in nanoseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result\+::\+OK or a Result\+::\+Error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a0c865a5501f369d959c39d8ab8b46a07}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}\label{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!waitForStateChange@{waitForStateChange}}
+\index{waitForStateChange@{waitForStateChange}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{waitForStateChange()}{waitForStateChange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::wait\+For\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}}}]{input\+State,  }\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$}]{next\+State,  }\item[{int64\+\_\+t}]{timeout\+Nanoseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Wait until the stream\textquotesingle{}s current state no longer matches the input state. The input state is passed to avoid race conditions caused by the state changing between calls.
+
+Note that generally applications do not need to call this. It is considered an advanced technique and is mostly used for testing.
+
+
+\begin{DoxyPre}{\ttfamily 
+int64\_t timeoutNanos = 500 * kNanosPerMillisecond; // arbitrary 1/2 second
+StreamState currentState = stream-\/>\mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{getState()}};
+StreamState nextState = StreamState::Unknown;
+while (result == Result::OK \&\& currentState != StreamState::Paused) \{
+    result = stream-\/>waitForStateChange(
+                                  currentState, \&nextState, timeoutNanos);
+    currentState = nextState;
+\}
+}\end{DoxyPre}
+
+
+If the state does not change within the timeout period then it will return Error\+Timeout. This is true even if timeout\+Nanoseconds is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+State} & The state we want to change away from. \\
+\hline
+{\em next\+State} & Pointer to a variable that will be set to the new state. \\
+\hline
+{\em timeout\+Nanoseconds} & The maximum time to wait in nanoseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result\+::\+OK or a Result\+::\+Error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a0c865a5501f369d959c39d8ab8b46a07}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}\label{classoboe_1_1_audio_stream_a_audio_a4a34fe906f8090630a40028e2db2c6b2}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!waitForStateChange@{waitForStateChange}}
+\index{waitForStateChange@{waitForStateChange}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{waitForStateChange()}{waitForStateChange()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{Result}} oboe\+::\+Audio\+Stream\+A\+Audio\+::wait\+For\+State\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}}}]{input\+State,  }\item[{\mbox{\hyperlink{namespaceoboe_a89fa2ce046723764618c29db737917f6}{Stream\+State}} $\ast$}]{next\+State,  }\item[{int64\+\_\+t}]{timeout\+Nanoseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Wait until the stream\textquotesingle{}s current state no longer matches the input state. The input state is passed to avoid race conditions caused by the state changing between calls.
+
+Note that generally applications do not need to call this. It is considered an advanced technique and is mostly used for testing.
+
+
+\begin{DoxyPre}{\ttfamily 
+int64\_t timeoutNanos = 500 * kNanosPerMillisecond; // arbitrary 1/2 second
+StreamState currentState = stream-\/>\mbox{\hyperlink{classoboe_1_1_audio_stream_a_audio_a9fb88bdd975e9fe5cca2faaf828250d9}{getState()}};
+StreamState nextState = StreamState::Unknown;
+while (result == Result::OK \&\& currentState != StreamState::Paused) \{
+    result = stream-\/>waitForStateChange(
+                                  currentState, \&nextState, timeoutNanos);
+    currentState = nextState;
+\}
+}\end{DoxyPre}
+
+
+If the state does not change within the timeout period then it will return Error\+Timeout. This is true even if timeout\+Nanoseconds is zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+State} & The state we want to change away from. \\
+\hline
+{\em next\+State} & Pointer to a variable that will be set to the new state. \\
+\hline
+{\em timeout\+Nanoseconds} & The maximum time to wait in nanoseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result\+::\+OK or a Result\+::\+Error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_a0c865a5501f369d959c39d8ab8b46a07}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}\label{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!write@{write}}
+\index{write@{write}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Write data from the supplied buffer into the stream. This method will block until the write is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to write. Only complete frames will be written. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually written, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a3612c05ed6b01a213dde67d913c07e11}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}\label{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!write@{write}}
+\index{write@{write}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Write data from the supplied buffer into the stream. This method will block until the write is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to write. Only complete frames will be written. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually written, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a3612c05ed6b01a213dde67d913c07e11}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}\label{classoboe_1_1_audio_stream_a_audio_a8f9f9f2e2084fa3ef7540fa8425649ca}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!write@{write}}
+\index{write@{write}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$int32\+\_\+t$>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Write data from the supplied buffer into the stream. This method will block until the write is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to write. Only complete frames will be written. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually written, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a3612c05ed6b01a213dde67d913c07e11}{oboe\+::\+Audio\+Stream}}.
+
+\mbox{\Hypertarget{classoboe_1_1_audio_stream_a_audio_a335698d7135b2c24c87a2fd88163b845}\label{classoboe_1_1_audio_stream_a_audio_a335698d7135b2c24c87a2fd88163b845}} 
+\index{oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}!write@{write}}
+\index{write@{write}!oboe::AudioStreamAAudio@{oboe::AudioStreamAAudio}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}}$<$ int32\+\_\+t $>$ oboe\+::\+Audio\+Stream\+A\+Audio\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{,  }\item[{int32\+\_\+t}]{,  }\item[{int64\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Write data from the supplied buffer into the stream. This method will block until the write is complete or it runs out of time.
+
+If {\ttfamily timeout\+Nanoseconds} is zero then this call will not wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The address of the first sample. \\
+\hline
+{\em num\+Frames} & Number of frames to write. Only complete frames will be written. \\
+\hline
+{\em timeout\+Nanoseconds} & Maximum number of nanoseconds to wait for completion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classoboe_1_1_result_with_value}{Result\+With\+Value}} which has a result of Result\+::\+OK and a value containing the number of frames actually written, or result of Result\+::\+Error$\ast$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_a3612c05ed6b01a213dde67d913c07e11}{oboe\+::\+Audio\+Stream}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/src/aaudio/Audio\+Stream\+A\+Audio.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/src/aaudio/Audio\+Stream\+A\+Audio.\+cpp\end{DoxyCompactItemize}

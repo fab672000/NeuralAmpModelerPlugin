@@ -1,0 +1,61 @@
+\hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::Second\+Step\+Partial\+Reduction$<$ Out\+Scalar, Index, Input\+Accessor, Output\+Accessor, Op\+Type $>$ Struct Template Reference}
+\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction}\index{Eigen::TensorSycl::internal::SecondStepPartialReduction$<$ OutScalar, Index, InputAccessor, OutputAccessor, OpType $>$@{Eigen::TensorSycl::internal::SecondStepPartialReduction$<$ OutScalar, Index, InputAccessor, OutputAccessor, OpType $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a93955c7a79b6a68934238e591ee0e7b3}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a93955c7a79b6a68934238e591ee0e7b3}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_op_definer}{Op\+Definer}}$<$ Op\+Type, Out\+Scalar, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}, false $>$ {\bfseries Op\+Def}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_af2cab387aaab3fe23bd60498d6eb415e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_af2cab387aaab3fe23bd60498d6eb415e}} 
+typedef Op\+Def\+::type {\bfseries Op}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a81989ba8bddcb4795492ba197ed0ea5c}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a81989ba8bddcb4795492ba197ed0ea5c}} 
+typedef cl\+::sycl\+::accessor$<$ Out\+Scalar, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Scratch\+Accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a93955c7a79b6a68934238e591ee0e7b3}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a93955c7a79b6a68934238e591ee0e7b3}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_op_definer}{Op\+Definer}}$<$ Op\+Type, Out\+Scalar, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}, false $>$ {\bfseries Op\+Def}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_af2cab387aaab3fe23bd60498d6eb415e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_af2cab387aaab3fe23bd60498d6eb415e}} 
+typedef Op\+Def\+::type {\bfseries Op}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a81989ba8bddcb4795492ba197ed0ea5c}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a81989ba8bddcb4795492ba197ed0ea5c}} 
+typedef cl\+::sycl\+::accessor$<$ Out\+Scalar, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Scratch\+Accessor}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_acf15f6b7b83b7fd4935693589d5f90bd}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_acf15f6b7b83b7fd4935693589d5f90bd}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Second\+Step\+Partial\+Reduction} (Scratch\+Accessor, Input\+Accessor input\+\_\+accessor\+\_\+, Output\+Accessor output\+\_\+accessor\+\_\+, Op\+Type op\+\_\+, const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} num\+\_\+coeffs\+\_\+to\+\_\+preserve\+\_\+, const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} num\+\_\+coeffs\+\_\+to\+\_\+reduce\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a49f9cac036451b79c9a3d5f9b28f9cd1}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a49f9cac036451b79c9a3d5f9b28f9cd1}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_acf15f6b7b83b7fd4935693589d5f90bd}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_acf15f6b7b83b7fd4935693589d5f90bd}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Second\+Step\+Partial\+Reduction} (Scratch\+Accessor, Input\+Accessor input\+\_\+accessor\+\_\+, Output\+Accessor output\+\_\+accessor\+\_\+, Op\+Type op\+\_\+, const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} num\+\_\+coeffs\+\_\+to\+\_\+preserve\+\_\+, const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} num\+\_\+coeffs\+\_\+to\+\_\+reduce\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a3f7987be547a9b91ef27efda0bbb5c17}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a3f7987be547a9b91ef27efda0bbb5c17}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_acf36492898fdcc8c13aa1082331b98d2}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_acf36492898fdcc8c13aa1082331b98d2}} 
+Input\+Accessor {\bfseries input\+\_\+accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a02c40f01e752e3c2f09ce464e2ebcd74}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a02c40f01e752e3c2f09ce464e2ebcd74}} 
+Output\+Accessor {\bfseries output\+\_\+accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a9e67c8e6a1d4349a1d2fdb0cef72d2ea}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a9e67c8e6a1d4349a1d2fdb0cef72d2ea}} 
+Op {\bfseries op}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a7fd8455afbdd93d74995b7a3d451da5e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a7fd8455afbdd93d74995b7a3d451da5e}} 
+const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries num\+\_\+coeffs\+\_\+to\+\_\+preserve}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a9d1ed8de69f631f82ffa0fc5a9b47620}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_partial_reduction_a9d1ed8de69f631f82ffa0fc5a9b47620}} 
+const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} {\bfseries num\+\_\+coeffs\+\_\+to\+\_\+reduce}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Reduction\+Sycl.\+h\end{DoxyCompactItemize}

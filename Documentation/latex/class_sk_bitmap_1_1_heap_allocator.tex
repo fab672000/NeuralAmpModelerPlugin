@@ -1,0 +1,47 @@
+\hypertarget{class_sk_bitmap_1_1_heap_allocator}{}\doxysection{Sk\+Bitmap\+::Heap\+Allocator Class Reference}
+\label{class_sk_bitmap_1_1_heap_allocator}\index{SkBitmap::HeapAllocator@{SkBitmap::HeapAllocator}}
+
+
+{\ttfamily \#include $<$Sk\+Bitmap.\+h$>$}
+
+Inheritance diagram for Sk\+Bitmap\+::Heap\+Allocator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_bitmap_1_1_heap_allocator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_sk_bitmap_1_1_heap_allocator_a45215b3c4f59c552660f6ef9b83becea}{alloc\+Pixel\+Ref}} (\mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} $\ast$bitmap) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subclass of \mbox{\hyperlink{class_sk_bitmap_1_1_allocator}{Sk\+Bitmap\+::\+Allocator}} that returns a \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} that allocates its pixel memory from the heap. This is the default \mbox{\hyperlink{class_sk_bitmap_1_1_allocator}{Sk\+Bitmap\+::\+Allocator}} invoked by \mbox{\hyperlink{class_sk_bitmap_a661fb8fb976b7e45e4e384ac3faacf86}{alloc\+Pixels()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_bitmap_1_1_heap_allocator_a45215b3c4f59c552660f6ef9b83becea}\label{class_sk_bitmap_1_1_heap_allocator_a45215b3c4f59c552660f6ef9b83becea}} 
+\index{SkBitmap::HeapAllocator@{SkBitmap::HeapAllocator}!allocPixelRef@{allocPixelRef}}
+\index{allocPixelRef@{allocPixelRef}!SkBitmap::HeapAllocator@{SkBitmap::HeapAllocator}}
+\doxysubsubsection{\texorpdfstring{allocPixelRef()}{allocPixelRef()}}
+{\footnotesize\ttfamily bool Sk\+Bitmap\+::\+Heap\+Allocator\+::alloc\+Pixel\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Allocates the pixel memory for the bitmap, given its dimensions and Sk\+Color\+Type. Returns true on success, where success means either \mbox{\hyperlink{class_sk_bitmap_a7d1fd7195b02e7a36e37e03d2ff4d43f}{set\+Pixels()}} or \mbox{\hyperlink{class_sk_bitmap_ae255f6121d2c030fa49b70b9055ad54f}{set\+Pixel\+Ref()}} was called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} containing \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} as input, and \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} as output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if pixels are allocated
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Bitmap_HeapAllocator_allocPixelRef}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Bitmap\+\_\+\+Heap\+Allocator\+\_\+alloc\+Pixel\+Ref}}
+
+We explicitly use the same allocator for our pixels that \mbox{\hyperlink{struct_sk_mask}{Sk\+Mask}} does, so that we can freely assign memory allocated by one class to the other. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Bitmap.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Bitmap.\+cpp\end{DoxyCompactItemize}

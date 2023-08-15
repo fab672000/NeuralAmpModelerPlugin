@@ -1,0 +1,86 @@
+\hypertarget{struct_steinberg_1_1_vst_1_1_chord}{}\doxysection{Steinberg\+::Vst\+::Chord Struct Reference}
+\label{struct_steinberg_1_1_vst_1_1_chord}\index{Steinberg::Vst::Chord@{Steinberg::Vst::Chord}}
+
+
+ 
+
+
+
+
+{\ttfamily \#include $<$ivstprocesscontext.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ad}{Masks}} \{ \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ada1dbb9b6783cbcc175ac1b553f7219a7f}{k\+Chord\+Mask}} = 0x0\+F\+FF, 
+\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ada8f7d246045443cd1fa131d07eeb92da3}{k\+Reserved\+Mask}} = 0x\+F000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_chord_a1a365f882a5dfa9cacd52d15eff46c33}\label{struct_steinberg_1_1_vst_1_1_chord_a1a365f882a5dfa9cacd52d15eff46c33}} 
+uint8 \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_a1a365f882a5dfa9cacd52d15eff46c33}{key\+Note}}
+\begin{DoxyCompactList}\small\item\em key note in chord \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_chord_ab84d43db5c57b4ebd807772441955545}\label{struct_steinberg_1_1_vst_1_1_chord_ab84d43db5c57b4ebd807772441955545}} 
+uint8 \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_ab84d43db5c57b4ebd807772441955545}{root\+Note}}
+\begin{DoxyCompactList}\small\item\em lowest note in chord \end{DoxyCompactList}\item 
+int16 \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_ab7cb7b61493706a20cb589b4d30eac69}{chord\+Mask}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Description of a chord. A chord is described with a key note, a root note and the Bitmask of a chord. ~\newline
+1st bit set\+: minor second; 2nd bit set\+: major second, and so on. ~\newline
+There is {\bfseries{no}} bit for the keynote (root of the chord) because it is inherently always present. ~\newline
+Examples\+:
+\begin{DoxyItemize}
+\item X\+X\+XX 0000 0100 1000 (= 0x0048) -\/$>$ major chord
+\item X\+X\+XX 0000 0100 0100 (= 0x0044) -\/$>$ minor chord
+\item X\+X\+XX 0010 0100 0100 (= 0x0244) -\/$>$ minor chord with minor seventh \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_process_context}{Process\+Context}} 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ad}\label{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ad}} 
+\index{Steinberg::Vst::Chord@{Steinberg::Vst::Chord}!Masks@{Masks}}
+\index{Masks@{Masks}!Steinberg::Vst::Chord@{Steinberg::Vst::Chord}}
+\doxysubsubsection{\texorpdfstring{Masks}{Masks}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ad}{Steinberg\+::\+Vst\+::\+Chord\+::\+Masks}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kChordMask@{kChordMask}!Steinberg::Vst::Chord@{Steinberg::Vst::Chord}}\index{Steinberg::Vst::Chord@{Steinberg::Vst::Chord}!kChordMask@{kChordMask}}}\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ada1dbb9b6783cbcc175ac1b553f7219a7f}\label{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ada1dbb9b6783cbcc175ac1b553f7219a7f}} 
+k\+Chord\+Mask&mask for chord\+Mask \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kReservedMask@{kReservedMask}!Steinberg::Vst::Chord@{Steinberg::Vst::Chord}}\index{Steinberg::Vst::Chord@{Steinberg::Vst::Chord}!kReservedMask@{kReservedMask}}}\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ada8f7d246045443cd1fa131d07eeb92da3}\label{struct_steinberg_1_1_vst_1_1_chord_a19cee6aafe8a856a97baa7ae198b40ada8f7d246045443cd1fa131d07eeb92da3}} 
+k\+Reserved\+Mask&reserved for future use \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_vst_1_1_chord_ab7cb7b61493706a20cb589b4d30eac69}\label{struct_steinberg_1_1_vst_1_1_chord_ab7cb7b61493706a20cb589b4d30eac69}} 
+\index{Steinberg::Vst::Chord@{Steinberg::Vst::Chord}!chordMask@{chordMask}}
+\index{chordMask@{chordMask}!Steinberg::Vst::Chord@{Steinberg::Vst::Chord}}
+\doxysubsubsection{\texorpdfstring{chordMask}{chordMask}}
+{\footnotesize\ttfamily int16 Steinberg\+::\+Vst\+::\+Chord\+::chord\+Mask}
+
+Bitmask of a chord. ~\newline
+1st bit set\+: minor second; 2nd bit set\+: major second, and so on. ~\newline
+There is {\bfseries{no}} bit for the keynote (root of the chord) because it is inherently always present. ~\newline
+Examples\+:
+\begin{DoxyItemize}
+\item X\+X\+XX 0000 0100 1000 (= 0x0048) -\/$>$ major chord
+\item X\+X\+XX 0000 0100 0100 (= 0x0044) -\/$>$ minor chord
+\item X\+X\+XX 0010 0100 0100 (= 0x0244) -\/$>$ minor chord with minor seventh 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstprocesscontext.\+h\end{DoxyCompactItemize}

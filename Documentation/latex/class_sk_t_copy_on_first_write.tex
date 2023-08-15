@@ -1,0 +1,80 @@
+\hypertarget{class_sk_t_copy_on_first_write}{}\doxysection{Sk\+T\+Copy\+On\+First\+Write$<$ T $>$ Class Template Reference}
+\label{class_sk_t_copy_on_first_write}\index{SkTCopyOnFirstWrite$<$ T $>$@{SkTCopyOnFirstWrite$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Sk\+T\+Lazy.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_ad6d98e35841714ade7a4efb4af5882e1}\label{class_sk_t_copy_on_first_write_ad6d98e35841714ade7a4efb4af5882e1}} 
+{\bfseries Sk\+T\+Copy\+On\+First\+Write} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&initial)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_ab68b98fc3dbe273aab65241357bd9efc}\label{class_sk_t_copy_on_first_write_ab68b98fc3dbe273aab65241357bd9efc}} 
+{\bfseries Sk\+T\+Copy\+On\+First\+Write} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$initial)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_a7ddaec977db9e5dfd749d192a3e54ffe}\label{class_sk_t_copy_on_first_write_a7ddaec977db9e5dfd749d192a3e54ffe}} 
+{\bfseries Sk\+T\+Copy\+On\+First\+Write} (const \mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}} \&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_ab2a46a07cbe7a6090af04a4c65a734a0}\label{class_sk_t_copy_on_first_write_ab2a46a07cbe7a6090af04a4c65a734a0}} 
+{\bfseries Sk\+T\+Copy\+On\+First\+Write} (\mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}} \&\&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_aaf133862c814070dc740c069fbb712c2}\label{class_sk_t_copy_on_first_write_aaf133862c814070dc740c069fbb712c2}} 
+\mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}} \&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_afe860e2b16f097d2e4d9731610de8afb}\label{class_sk_t_copy_on_first_write_afe860e2b16f097d2e4d9731610de8afb}} 
+\mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}} \& {\bfseries operator=} (\mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}} \&\&that)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_adbdc456802fa372be1ca1af657bd558f}\label{class_sk_t_copy_on_first_write_adbdc456802fa372be1ca1af657bd558f}} 
+void {\bfseries init} (const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \&initial)
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_a1aa0d7449711e0f685be92bb6fa76066}\label{class_sk_t_copy_on_first_write_a1aa0d7449711e0f685be92bb6fa76066}} 
+{\footnotesize template$<$typename... Args$>$ }\\void {\bfseries init\+If\+Needed} (Args \&\&... args)
+\item 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{class_sk_t_copy_on_first_write_a493e37fc8c97e278c3fc18f59c2d4e0e}{writable}} ()
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_a45a61bf496574fbfce1c387afc9d5cb8}\label{class_sk_t_copy_on_first_write_a45a61bf496574fbfce1c387afc9d5cb8}} 
+const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ {\bfseries get} () const
+\item 
+const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{class_sk_t_copy_on_first_write_a27c54c6bda8742ecd91105c6c581c39c}{operator-\/$>$}} () const
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_abb53e5fee0bcae84de511e3fa47e324c}\label{class_sk_t_copy_on_first_write_abb53e5fee0bcae84de511e3fa47e324c}} 
+{\bfseries operator const T $\ast$} () const
+\item 
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_ac12818074035550ab1170bfb97741f59}\label{class_sk_t_copy_on_first_write_ac12818074035550ab1170bfb97741f59}} 
+const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} \& {\bfseries operator$\ast$} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Sk\+T\+Copy\+On\+First\+Write$<$ T $>$}
+
+A helper built on top of \mbox{\hyperlink{class_sk_t_lazy}{Sk\+T\+Lazy}} to do copy-\/on-\/first-\/write. The object is initialized with a const pointer but provides a non-\/const pointer accessor. The first time the accessor is called (if ever) the object is cloned.
+
+In the following example at most one copy of const\+Thing is made\+:
+
+Sk\+T\+Copy\+On\+First\+Write$<$\+Thing$>$ thing(\&const\+Thing); ... function\+\_\+that\+\_\+takes\+\_\+a\+\_\+const\+\_\+thing\+\_\+ptr(thing); // const\+Thing is passed ... if (need\+\_\+to\+\_\+modify\+\_\+thing()) \{ thing.\+writable()-\/$>$modify\+Me(); // makes a copy of const\+Thing \} ... x = thing-\/$>$read\+Something(); ... if (need\+\_\+to\+\_\+modify\+\_\+thing\+\_\+now()) \{ thing.\+writable()-\/$>$change\+Me(); // makes a copy of const\+Thing if we didn\textquotesingle{}t call modify\+Me() \}
+
+consume\+\_\+a\+\_\+thing(thing); // could be const\+Thing or a modified copy. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_t_copy_on_first_write_a27c54c6bda8742ecd91105c6c581c39c}\label{class_sk_t_copy_on_first_write_a27c54c6bda8742ecd91105c6c581c39c}} 
+\index{SkTCopyOnFirstWrite$<$ T $>$@{SkTCopyOnFirstWrite$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!SkTCopyOnFirstWrite$<$ T $>$@{SkTCopyOnFirstWrite$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ \mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operators for treating this as though it were a const pointer. \mbox{\Hypertarget{class_sk_t_copy_on_first_write_a493e37fc8c97e278c3fc18f59c2d4e0e}\label{class_sk_t_copy_on_first_write_a493e37fc8c97e278c3fc18f59c2d4e0e}} 
+\index{SkTCopyOnFirstWrite$<$ T $>$@{SkTCopyOnFirstWrite$<$ T $>$}!writable@{writable}}
+\index{writable@{writable}!SkTCopyOnFirstWrite$<$ T $>$@{SkTCopyOnFirstWrite$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{writable()}{writable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}}$\ast$ \mbox{\hyperlink{class_sk_t_copy_on_first_write}{Sk\+T\+Copy\+On\+First\+Write}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::writable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a writable T$\ast$. The first time this is called the initial object is cloned. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+T\+Lazy.\+h\end{DoxyCompactItemize}

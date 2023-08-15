@@ -1,0 +1,392 @@
+\hypertarget{class_audio_effect}{}\doxysection{Audio\+Effect Class Reference}
+\label{class_audio_effect}\index{AudioEffect@{AudioEffect}}
+
+
+{\ttfamily \#include $<$audioeffect.\+h$>$}
+
+Inheritance diagram for Audio\+Effect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_audio_effect}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_audio_effect_af4c7918732aa2661a753c688cbb8a0a9}{Audio\+Effect}} (audio\+Master\+Callback \mbox{\hyperlink{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}{audio\+Master}}, Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a709e60e18ecca1108fdb3a4d04f68dc3}{num\+Programs}}, Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a597a9d9a5edb95e486bb3b238c570ce8}{num\+Params}})
+\begin{DoxyCompactList}\small\item\em Create an {\itshape \mbox{\hyperlink{class_audio_effect}{Audio\+Effect}}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a59f79a6e59e2fb1d264789cb8fcb517e}\label{class_audio_effect_a59f79a6e59e2fb1d264789cb8fcb517e}} 
+virtual \mbox{\hyperlink{class_audio_effect_a59f79a6e59e2fb1d264789cb8fcb517e}{$\sim$\+Audio\+Effect}} ()
+\begin{DoxyCompactList}\small\item\em Destroy an {\itshape \mbox{\hyperlink{class_audio_effect}{Audio\+Effect}}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a6ffb32933237b851fe37be7ea0039371}\label{class_audio_effect_a6ffb32933237b851fe37be7ea0039371}} 
+virtual Vst\+Int\+Ptr \mbox{\hyperlink{class_audio_effect_a6ffb32933237b851fe37be7ea0039371}{dispatcher}} (Vst\+Int32 opcode, Vst\+Int32 index, Vst\+Int\+Ptr value, void $\ast$ptr, float opt)
+\begin{DoxyCompactList}\small\item\em Opcodes dispatcher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Processing}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_audio_effect_adc6e2f1db03219622654a36aafd6b391}{process\+Replacing}} (float $\ast$$\ast$inputs, float $\ast$$\ast$outputs, Vst\+Int32 sample\+Frames)=0
+\begin{DoxyCompactList}\small\item\em Process 32 bit (single precision) floats (always in a resume state) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Parameters}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_audio_effect_acb72754ddd451320b6805e1170b53aea}{set\+Parameter\+Automated}} (Vst\+Int32 index, float value)
+\begin{DoxyCompactList}\small\item\em Called after a control has changed in the editor and when the associated parameter should be automated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Internal Setup}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_audio_effect_a7923cadb4e6418d7f5f48ab7a3d2b49f}{can\+Process\+Replacing}} (bool \mbox{\hyperlink{structstate}{state}}=true)
+\begin{DoxyCompactList}\small\item\em Tells that \mbox{\hyperlink{class_audio_effect_adc6e2f1db03219622654a36aafd6b391}{process\+Replacing()}} could be used. Mandatory in V\+ST 2.\+4! \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_a6abed68ffa97fcc925a61d1262bb3862}{programs\+Are\+Chunks}} (bool \mbox{\hyperlink{structstate}{state}}=true)
+\begin{DoxyCompactList}\small\item\em Program data is handled in formatless chunks (using get\+Chunk-\/set\+Chunks) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_a308ba136993debd560510c8b6c4329b2}{set\+Initial\+Delay}} (Vst\+Int32 delay)
+\begin{DoxyCompactList}\small\item\em Use to report the plug-\/in\textquotesingle{}s latency (Group Delay) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Editor}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_audio_effect_ab9c6c4329708bf0b304ad7ba2d45484d}\label{class_audio_effect_ab9c6c4329708bf0b304ad7ba2d45484d}} 
+void \mbox{\hyperlink{class_audio_effect_ab9c6c4329708bf0b304ad7ba2d45484d}{set\+Editor}} (\mbox{\hyperlink{class_a_eff_editor}{A\+Eff\+Editor}} $\ast$\mbox{\hyperlink{class_audio_effect_ad0992174789898d99908f787a57fac50}{editor}})
+\begin{DoxyCompactList}\small\item\em Should be called if you want to define your own editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Host Communication}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_ae5cfc9ff27e9142fef561bf6a034899e}{get\+Master\+Version}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Host\textquotesingle{}s version (for example 2400 for V\+ST 2.\+4) \end{DoxyCompactList}\item 
+virtual Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a21dc68d4af794b86c2c81ae54f3652a0}{get\+Current\+Unique\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns current unique identifier when loading shell plug-\/ins. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_aa168b672c7c25289208c1c0f73be4d1c}{master\+Idle}} ()
+\begin{DoxyCompactList}\small\item\em Give idle time to Host application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Tools (helpers)}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}\label{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}} 
+audio\+Master\+Callback \mbox{\hyperlink{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}{audio\+Master}}
+\begin{DoxyCompactList}\small\item\em Host callback. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_ad0992174789898d99908f787a57fac50}\label{class_audio_effect_ad0992174789898d99908f787a57fac50}} 
+\mbox{\hyperlink{class_a_eff_editor}{A\+Eff\+Editor}} $\ast$ \mbox{\hyperlink{class_audio_effect_ad0992174789898d99908f787a57fac50}{editor}}
+\begin{DoxyCompactList}\small\item\em Pointer to the plug-\/in\textquotesingle{}s editor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a7be681e266f96c221ca341a85ba9ed15}\label{class_audio_effect_a7be681e266f96c221ca341a85ba9ed15}} 
+float \mbox{\hyperlink{class_audio_effect_a7be681e266f96c221ca341a85ba9ed15}{sample\+Rate}}
+\begin{DoxyCompactList}\small\item\em Current sample rate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a87738bc57bad2139df99681f652952a9}\label{class_audio_effect_a87738bc57bad2139df99681f652952a9}} 
+Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a87738bc57bad2139df99681f652952a9}{block\+Size}}
+\begin{DoxyCompactList}\small\item\em Maximum block size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a709e60e18ecca1108fdb3a4d04f68dc3}\label{class_audio_effect_a709e60e18ecca1108fdb3a4d04f68dc3}} 
+Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a709e60e18ecca1108fdb3a4d04f68dc3}{num\+Programs}}
+\begin{DoxyCompactList}\small\item\em Number of programs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a597a9d9a5edb95e486bb3b238c570ce8}\label{class_audio_effect_a597a9d9a5edb95e486bb3b238c570ce8}} 
+Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a597a9d9a5edb95e486bb3b238c570ce8}{num\+Params}}
+\begin{DoxyCompactList}\small\item\em Number of parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a54e60e86082216310387c0edc2e2a8df}\label{class_audio_effect_a54e60e86082216310387c0edc2e2a8df}} 
+Vst\+Int32 \mbox{\hyperlink{class_audio_effect_a54e60e86082216310387c0edc2e2a8df}{cur\+Program}}
+\begin{DoxyCompactList}\small\item\em Current program. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_audio_effect_a8352ee8b691d2e544e856b3f4497d90b}\label{class_audio_effect_a8352ee8b691d2e544e856b3f4497d90b}} 
+\mbox{\hyperlink{struct_a_effect}{A\+Effect}} \mbox{\hyperlink{class_audio_effect_a8352ee8b691d2e544e856b3f4497d90b}{c\+Effect}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_a_effect}{A\+Effect}} object \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_a26de334b3b2c156caae05160f21b1870}{d\+B2string}} (float value, char $\ast$text, Vst\+Int32 max\+Len)
+\begin{DoxyCompactList}\small\item\em Stuffs {\itshape text} with an amplitude on the \mbox{[}0.\+0, 1.\+0\mbox{]} scale converted to its value in decibels. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_ae54e8902cb4b723cad43299e38df7cb4}{Hz2string}} (float samples, char $\ast$text, Vst\+Int32 max\+Len)
+\begin{DoxyCompactList}\small\item\em Stuffs {\itshape text} with the frequency in Hertz that has a period of {\itshape samples}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_aadbd41c50e734150997885f6fc44650a}{ms2string}} (float samples, char $\ast$text, Vst\+Int32 max\+Len)
+\begin{DoxyCompactList}\small\item\em Stuffs {\itshape text} with the duration in milliseconds of {\itshape samples} frames. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_ae32d07f2ba52af7ad4dfb704ab09fc36}{float2string}} (float value, char $\ast$text, Vst\+Int32 max\+Len)
+\begin{DoxyCompactList}\small\item\em Stuffs {\itshape text} with a string representation on the floating point {\itshape value}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_audio_effect_a204367b34f0bbbea9eb67d1a11682663}{int2string}} (Vst\+Int32 value, char $\ast$text, Vst\+Int32 max\+Len)
+\begin{DoxyCompactList}\small\item\em Stuffs {\itshape text} with a string representation on the integer {\itshape value}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+V\+ST Effect Base Class (V\+ST 1.\+0). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_audio_effect_af4c7918732aa2661a753c688cbb8a0a9}\label{class_audio_effect_af4c7918732aa2661a753c688cbb8a0a9}} 
+\index{AudioEffect@{AudioEffect}!AudioEffect@{AudioEffect}}
+\index{AudioEffect@{AudioEffect}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{AudioEffect()}{AudioEffect()}}
+{\footnotesize\ttfamily Audio\+Effect\+::\+Audio\+Effect (\begin{DoxyParamCaption}\item[{audio\+Master\+Callback}]{audio\+Master,  }\item[{Vst\+Int32}]{num\+Programs,  }\item[{Vst\+Int32}]{num\+Params }\end{DoxyParamCaption})}
+
+
+
+Create an {\itshape \mbox{\hyperlink{class_audio_effect}{Audio\+Effect}}} object. 
+
+\begin{DoxyVerb}The constructor of your class is passed a parameter of the type \e audioMasterCallback. The actual 
+mechanism in which your class gets constructed is not important right now. Effectively your class is 
+constructed by the hosting application, which passes an object of type \e audioMasterCallback that 
+handles the interaction with the plug-in. You pass this on to the base class' constructor and then 
+can forget about it.
+
+\param audioMaster Passed by the Host and handles interaction
+\param numPrograms Pass the number of programs the plug-in provides
+\param numParams Pass the number of parameters the plug-in provides
+\end{DoxyVerb}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MyPlug::MyPlug (audioMasterCallback \mbox{\hyperlink{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}{audioMaster}})}
+\DoxyCodeLine{: \mbox{\hyperlink{class_audio_effect_x}{AudioEffectX}} (\mbox{\hyperlink{class_audio_effect_ad7f8e277feedf57b182f0d23b8e9dcaf}{audioMaster}}, 1, 1)    \textcolor{comment}{// 1 program, 1 parameter only}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    setNumInputs (2); \textcolor{comment}{// stereo in}}
+\DoxyCodeLine{    setNumOutputs (2); \textcolor{comment}{// stereo out}}
+\DoxyCodeLine{    setUniqueID (\textcolor{stringliteral}{'MyPl'}); \textcolor{comment}{// you must change this for other plug-\/ins!}}
+\DoxyCodeLine{    canProcessReplacing (); \textcolor{comment}{// supports replacing mode}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ \begin{DoxyVerb}\sa setNumInputs, setNumOutputs, setUniqueID, canProcessReplacing
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_audio_effect_a7923cadb4e6418d7f5f48ab7a3d2b49f}\label{class_audio_effect_a7923cadb4e6418d7f5f48ab7a3d2b49f}} 
+\index{AudioEffect@{AudioEffect}!canProcessReplacing@{canProcessReplacing}}
+\index{canProcessReplacing@{canProcessReplacing}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{canProcessReplacing()}{canProcessReplacing()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::can\+Process\+Replacing (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Tells that \mbox{\hyperlink{class_audio_effect_adc6e2f1db03219622654a36aafd6b391}{process\+Replacing()}} could be used. Mandatory in V\+ST 2.\+4! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Set to {\itshape true} if supported\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Needs to be called in the plug-\/in\textquotesingle{}s constructor 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_audio_effect_a26de334b3b2c156caae05160f21b1870}\label{class_audio_effect_a26de334b3b2c156caae05160f21b1870}} 
+\index{AudioEffect@{AudioEffect}!dB2string@{dB2string}}
+\index{dB2string@{dB2string}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{dB2string()}{dB2string()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::d\+B2string (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{char $\ast$}]{text,  }\item[{Vst\+Int32}]{max\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stuffs {\itshape text} with an amplitude on the \mbox{[}0.\+0, 1.\+0\mbox{]} scale converted to its value in decibels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to convert \\
+\hline
+{\em text} & String up to length char \\
+\hline
+{\em max\+Len} & Maximal length of the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_ae32d07f2ba52af7ad4dfb704ab09fc36}\label{class_audio_effect_ae32d07f2ba52af7ad4dfb704ab09fc36}} 
+\index{AudioEffect@{AudioEffect}!float2string@{float2string}}
+\index{float2string@{float2string}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{float2string()}{float2string()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::float2string (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{char $\ast$}]{text,  }\item[{Vst\+Int32}]{max\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stuffs {\itshape text} with a string representation on the floating point {\itshape value}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to convert \\
+\hline
+{\em text} & String up to length char \\
+\hline
+{\em max\+Len} & Maximal length of the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_a21dc68d4af794b86c2c81ae54f3652a0}\label{class_audio_effect_a21dc68d4af794b86c2c81ae54f3652a0}} 
+\index{AudioEffect@{AudioEffect}!getCurrentUniqueId@{getCurrentUniqueId}}
+\index{getCurrentUniqueId@{getCurrentUniqueId}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{getCurrentUniqueId()}{getCurrentUniqueId()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+::get\+Current\+Unique\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns current unique identifier when loading shell plug-\/ins. 
+
+\begin{DoxySeeAlso}{See also}
+Audio\+Effect\+X\+::get\+Next\+Shell\+Plugin 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_audio_effect_ae5cfc9ff27e9142fef561bf6a034899e}\label{class_audio_effect_ae5cfc9ff27e9142fef561bf6a034899e}} 
+\index{AudioEffect@{AudioEffect}!getMasterVersion@{getMasterVersion}}
+\index{getMasterVersion@{getMasterVersion}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{getMasterVersion()}{getMasterVersion()}}
+{\footnotesize\ttfamily Vst\+Int32 Audio\+Effect\+::get\+Master\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Host\textquotesingle{}s version (for example 2400 for V\+ST 2.\+4) 
+
+Use to ask for the Host\textquotesingle{}s version \begin{DoxyReturn}{Returns}
+The Host\textquotesingle{}s version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_audio_effect_ae54e8902cb4b723cad43299e38df7cb4}\label{class_audio_effect_ae54e8902cb4b723cad43299e38df7cb4}} 
+\index{AudioEffect@{AudioEffect}!Hz2string@{Hz2string}}
+\index{Hz2string@{Hz2string}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{Hz2string()}{Hz2string()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::\+Hz2string (\begin{DoxyParamCaption}\item[{float}]{samples,  }\item[{char $\ast$}]{text,  }\item[{Vst\+Int32}]{max\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stuffs {\itshape text} with the frequency in Hertz that has a period of {\itshape samples}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Number of samples \\
+\hline
+{\em text} & String up to length char \\
+\hline
+{\em max\+Len} & Maximal length of the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_a204367b34f0bbbea9eb67d1a11682663}\label{class_audio_effect_a204367b34f0bbbea9eb67d1a11682663}} 
+\index{AudioEffect@{AudioEffect}!int2string@{int2string}}
+\index{int2string@{int2string}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{int2string()}{int2string()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::int2string (\begin{DoxyParamCaption}\item[{Vst\+Int32}]{value,  }\item[{char $\ast$}]{text,  }\item[{Vst\+Int32}]{max\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stuffs {\itshape text} with a string representation on the integer {\itshape value}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to convert \\
+\hline
+{\em text} & String up to length char \\
+\hline
+{\em max\+Len} & Maximal length of the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_aa168b672c7c25289208c1c0f73be4d1c}\label{class_audio_effect_aa168b672c7c25289208c1c0f73be4d1c}} 
+\index{AudioEffect@{AudioEffect}!masterIdle@{masterIdle}}
+\index{masterIdle@{masterIdle}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{masterIdle()}{masterIdle()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::master\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Give idle time to Host application. 
+
+Give idle time to Host application, e.\+g. if plug-\/in editor is doing mouse tracking in a modal loop. \mbox{\Hypertarget{class_audio_effect_aadbd41c50e734150997885f6fc44650a}\label{class_audio_effect_aadbd41c50e734150997885f6fc44650a}} 
+\index{AudioEffect@{AudioEffect}!ms2string@{ms2string}}
+\index{ms2string@{ms2string}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{ms2string()}{ms2string()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::ms2string (\begin{DoxyParamCaption}\item[{float}]{samples,  }\item[{char $\ast$}]{text,  }\item[{Vst\+Int32}]{max\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stuffs {\itshape text} with the duration in milliseconds of {\itshape samples} frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Number of samples \\
+\hline
+{\em text} & String up to length char \\
+\hline
+{\em max\+Len} & Maximal length of the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_adc6e2f1db03219622654a36aafd6b391}\label{class_audio_effect_adc6e2f1db03219622654a36aafd6b391}} 
+\index{AudioEffect@{AudioEffect}!processReplacing@{processReplacing}}
+\index{processReplacing@{processReplacing}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{processReplacing()}{processReplacing()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::process\+Replacing (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{inputs,  }\item[{float $\ast$$\ast$}]{outputs,  }\item[{Vst\+Int32}]{sample\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Process 32 bit (single precision) floats (always in a resume state) 
+
+This process method must be provided. It takes input data, applies its pocessing algorithm, and then puts the result to the output by overwriting the output buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & An array of pointers to the data \\
+\hline
+{\em outputs} & An array of pointers to where the data can be written to \\
+\hline
+{\em sample\+Frames} & Number of sample frames to process\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Never call any Mac OS 9 functions (or other functions which call into the OS) inside your audio process function! This will crash the system when your plug-\/in is run in MP (multiprocessor) mode. If you must call into the OS, you must use M\+P\+Remote\+Call () (see Apples\textquotesingle{} documentation), or explicitly use functions which are documented by Apple to be MP safe. On Mac OS X read the system header files to be sure that you only call thread safe functions. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{class_v_s_t_wrapper_ac46d0de25203a28418809912dbd91861}{V\+S\+T\+Wrapper}}, and \mbox{\hyperlink{class_v_s_t_wrapper_a7d52ff43a7409cd43f31a5da2021bf76}{V\+S\+T\+Wrapper}}.
+
+\mbox{\Hypertarget{class_audio_effect_a6abed68ffa97fcc925a61d1262bb3862}\label{class_audio_effect_a6abed68ffa97fcc925a61d1262bb3862}} 
+\index{AudioEffect@{AudioEffect}!programsAreChunks@{programsAreChunks}}
+\index{programsAreChunks@{programsAreChunks}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{programsAreChunks()}{programsAreChunks()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::programs\+Are\+Chunks (\begin{DoxyParamCaption}\item[{bool}]{state = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Program data is handled in formatless chunks (using get\+Chunk-\/set\+Chunks) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Set to {\itshape true} if supported\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Needs to be called in the plug-\/in\textquotesingle{}s constructor
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Set {\itshape true} if programs are chunks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Needs to be called in the plug-\/in\textquotesingle{}s constructor 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_audio_effect_a308ba136993debd560510c8b6c4329b2}\label{class_audio_effect_a308ba136993debd560510c8b6c4329b2}} 
+\index{AudioEffect@{AudioEffect}!setInitialDelay@{setInitialDelay}}
+\index{setInitialDelay@{setInitialDelay}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{setInitialDelay()}{setInitialDelay()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::set\+Initial\+Delay (\begin{DoxyParamCaption}\item[{Vst\+Int32}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Use to report the plug-\/in\textquotesingle{}s latency (Group Delay) 
+
+Use to report the Plug-\/in\textquotesingle{}s latency (Group Delay)
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & Plug-\/ins delay in samples \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_audio_effect_acb72754ddd451320b6805e1170b53aea}\label{class_audio_effect_acb72754ddd451320b6805e1170b53aea}} 
+\index{AudioEffect@{AudioEffect}!setParameterAutomated@{setParameterAutomated}}
+\index{setParameterAutomated@{setParameterAutomated}!AudioEffect@{AudioEffect}}
+\doxysubsubsection{\texorpdfstring{setParameterAutomated()}{setParameterAutomated()}}
+{\footnotesize\ttfamily void Audio\+Effect\+::set\+Parameter\+Automated (\begin{DoxyParamCaption}\item[{Vst\+Int32}]{index,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called after a control has changed in the editor and when the associated parameter should be automated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & parameter index \\
+\hline
+{\em float} & parameter value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+An important thing to notice is that if the user changes a parameter in your editor, which is out of the Host\textquotesingle{}s control if you are not using the default string based interface, you should call set\+Parameter\+Automated (). This ensures that the Host is notified of the parameter change, which allows it to record these changes for automation.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+set\+Parameter 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/public.\+sdk/source/vst2.\+x/audioeffect.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/public.\+sdk/source/vst2.\+x/audioeffect.\+cpp\end{DoxyCompactItemize}

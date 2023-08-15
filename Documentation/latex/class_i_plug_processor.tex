@@ -1,0 +1,744 @@
+\hypertarget{class_i_plug_processor}{}\doxysection{I\+Plug\+Processor Class Reference}
+\label{class_i_plug_processor}\index{IPlugProcessor@{IPlugProcessor}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Processor.\+h$>$}
+
+Inheritance diagram for I\+Plug\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.272727cm]{class_i_plug_processor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_plug_processor_a7cf28ba673629cac18a071329456df91}{I\+Plug\+Processor}} (const \mbox{\hyperlink{struct_config}{Config}} \&\mbox{\hyperlink{structconfig__s}{config}}, E\+A\+PI plug\+A\+PI)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_af596b10187f19daacb20b733b110e7aa}\label{class_i_plug_processor_af596b10187f19daacb20b733b110e7aa}} 
+{\bfseries I\+Plug\+Processor} (const \mbox{\hyperlink{class_i_plug_processor}{I\+Plug\+Processor}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a37a1ee402c715c6b49c536c6e0cb4636}\label{class_i_plug_processor_a37a1ee402c715c6b49c536c6e0cb4636}} 
+\mbox{\hyperlink{class_i_plug_processor}{I\+Plug\+Processor}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_i_plug_processor}{I\+Plug\+Processor}} \&)=delete
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}{Process\+Block}} (sample $\ast$$\ast$inputs, sample $\ast$$\ast$outputs, int n\+Frames)
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_a3118afd2386fc7244ad4f7eeefcbb9b4}{Process\+Midi\+Msg}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_ae2b522b2995c5b72b94b1aa4ff27af8a}{Process\+Sys\+Ex}} (\mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg)
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_af41a0640ec2c16542ad88c272eb22f27}{On\+Reset}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_ae2fc42ddaa7c979c61ed2f6247296cf4}{On\+Activate}} (bool active)
+\item 
+virtual bool \mbox{\hyperlink{class_i_plug_processor_a4e9b417cee5b4baba70468cb15d927c3}{Send\+Midi\+Msg}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_plug_processor_a0283210dcd86bc9cf13cb2cf790d769e}{Send\+Midi\+Msgs}} (\mbox{\hyperlink{class_w_d_l___typed_buf}{W\+D\+L\+\_\+\+Typed\+Buf}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&msgs)
+\item 
+virtual bool \mbox{\hyperlink{class_i_plug_processor_a195e1f95d847cfb5d5cc665b2143d10a}{Send\+Sys\+Ex}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg)
+\item 
+double \mbox{\hyperlink{class_i_plug_processor_a8732c6f4199a3f653d58c1c3668f2633}{Get\+Sample\+Rate}} () const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a8da311b9dc1af92e7b291a8596039b20}{Get\+Block\+Size}} () const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_ae5e3ea6bb26f3719f69d8bcfa359263e}{Get\+Latency}} () const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a2232b7074aa265211b395b8fc3bc2387}{Get\+Tail\+Size}} ()
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a980bfd5a219fe62f1ca3cd065c653f9b}{Get\+Bypassed}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a64dbfd9d587fa9098717dfe17202058c}{Get\+Rendering\+Offline}} () const
+\item 
+double \mbox{\hyperlink{class_i_plug_processor_a2d2d56c81c0bbfc3b0f30334a057aa65}{Get\+Sample\+Pos}} () const
+\item 
+double \mbox{\hyperlink{class_i_plug_processor_a8c5b9d8614472720ba754d4eeeccec73}{Get\+Tempo}} () const
+\item 
+double \mbox{\hyperlink{class_i_plug_processor_afb9b83341c94443b05c4e06dabb48b35}{Get\+P\+P\+Q\+Pos}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a292d4bd43c802505a52dd509e583f18b}{Get\+Transport\+Is\+Running}} () const
+\item 
+double \mbox{\hyperlink{class_i_plug_processor_afd468ae41218cdbc529281ed2c984cdf}{Get\+Samples\+Per\+Beat}} () const
+\item 
+void \mbox{\hyperlink{class_i_plug_processor_ae0ec71ad0615682f44a98e30a0108514}{Get\+Time\+Sig}} (int \&numerator, int \&denominator) const
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_a3b558377490dc5fea51bfd3c009d18c9}{Get\+Bus\+Name}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int bus\+Idx, int n\+Buses, \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&str) const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a9890c0c4e7f5490af81b5d67e6dc4f71}{N\+I\+O\+Configs}} () const
+\item 
+const \mbox{\hyperlink{struct_i_o_config}{I\+O\+Config}} $\ast$ \mbox{\hyperlink{class_i_plug_processor_aeeaf3f968ccc1823f0bb056337ac9523}{Get\+I\+O\+Config}} (int idx) const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a8c7dedcc12b4bf205d1d0dc3d03083eb}{Get\+I\+O\+Config\+With\+Chan\+Counts}} (std\+::vector$<$ int $>$ \&input\+Buses, std\+::vector$<$ int $>$ \&output\+Buses)
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a4b9440ca11ef64f790a9b00b24fe6be0}{Max\+N\+Buses}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int $\ast$p\+Config\+Idx\+With\+The\+Most\+Buses=nullptr) const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a8ebad632c98f35da8cd5d5dba01d73cf}{Max\+N\+Channels\+For\+Bus}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int bus\+Idx) const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_ab293edf73c931ea7d372474aa8dc7d94}{Has\+Wildcard\+Bus}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction) const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_acb0943c20c855b881cfbaaa291d5e776}{Max\+N\+Channels}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction) const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a8984adbd4cbd494b5ee857fd669b5318}{Is\+Channel\+Connected}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int ch\+Idx) const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a860d6224d83fad1d479c9ae2fd3c201e}{N\+Channels\+Connected}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction) const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_ac6626a7d0156157a4035a66770871f40}{N\+In\+Chans\+Connected}} () const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a3a81ec2ca88a2df6b8237560748a86f8}{N\+Out\+Chans\+Connected}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a3520085081beba44295f0c4fcc0367c4}{Legal\+IO}} (int N\+Input\+Chans, int N\+Output\+Chans) const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a3ac385983e4ff5772be8509de6177e21}{Has\+Sidechain\+Input}} () const
+\item 
+void \mbox{\hyperlink{class_i_plug_processor_ad14277b09f84672b1cb0b8977ef6cad7}{Limit\+To\+Stereo\+IO}} ()
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a46595836779cd88926cc878bc1ef7afd}{Is\+Instrument}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a446a979fea07f7e21a3c8e60cde1e7e6}{Is\+Midi\+Effect}} () const
+\item 
+int \mbox{\hyperlink{class_i_plug_processor_a7b9c169b6a822d9de61d0ee916538a24}{Get\+A\+U\+Plugin\+Type}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a81a67a6bf4bb9ffec859fadf2d6c5fd6}{Does\+M\+I\+D\+I\+In}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_aee97466c42af33d84d18e60b3ed9d6ae}{Does\+M\+I\+D\+I\+Out}} () const
+\item 
+bool \mbox{\hyperlink{class_i_plug_processor_a6b8efebb342f9c8dbec505a1649af8ee}{Does\+M\+PE}} () const
+\item 
+void \mbox{\hyperlink{class_i_plug_processor_a6d4fe70e66218ec62f8afe800a6c3e48}{Set\+Channel\+Label}} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int idx, const char $\ast$format\+Str, bool zero\+Based=false)
+\item 
+virtual void \mbox{\hyperlink{class_i_plug_processor_a3c5c2a1b80ba384c50a2bb4888b63461}{Set\+Latency}} (int latency)
+\item 
+void \mbox{\hyperlink{class_i_plug_processor_a0fa7d4d472915d7f2aff449a4d9158de}{Set\+Tail\+Size}} (int tail\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_i_plug_processor_af1478c7e743583ab9e94b9b9cc4d8676}{Parse\+Channel\+I\+O\+Str}} (const char $\ast$I\+O\+Str, \mbox{\hyperlink{class_w_d_l___ptr_list}{W\+D\+L\+\_\+\+Ptr\+List}}$<$ \mbox{\hyperlink{struct_i_o_config}{I\+O\+Config}} $>$ \&channel\+I\+O\+List, int \&total\+N\+In\+Chans, int \&total\+N\+Out\+Chans, int \&total\+N\+In\+Buses, int \&total\+N\+Out\+Buses)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a510a8d22f5145f08184a464c89e47e31}\label{class_i_plug_processor_a510a8d22f5145f08184a464c89e47e31}} 
+void {\bfseries Set\+Channel\+Connections} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int idx, int n, bool connected)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a7fcf753a00f37c6e30abd863db973008}\label{class_i_plug_processor_a7fcf753a00f37c6e30abd863db973008}} 
+void {\bfseries Attach\+Buffers} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int idx, int n, P\+L\+U\+G\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+D\+ST $\ast$$\ast$pp\+Data, int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_ae57047fb41f68b41afa9ee28903831b7}\label{class_i_plug_processor_ae57047fb41f68b41afa9ee28903831b7}} 
+void {\bfseries Attach\+Buffers} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int idx, int n, P\+L\+U\+G\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+S\+RC $\ast$$\ast$pp\+Data, int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_aff5f563d8e65255ffb1a50c2e8e3c01d}\label{class_i_plug_processor_aff5f563d8e65255ffb1a50c2e8e3c01d}} 
+void {\bfseries Pass\+Through\+Buffers} (P\+L\+U\+G\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+S\+RC type, int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a113daa2d4cdfc195cf5cc705aa795bbb}\label{class_i_plug_processor_a113daa2d4cdfc195cf5cc705aa795bbb}} 
+void {\bfseries Pass\+Through\+Buffers} (P\+L\+U\+G\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+D\+ST type, int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a7be4c622a15e4a2d9e1e704c658a55f0}\label{class_i_plug_processor_a7be4c622a15e4a2d9e1e704c658a55f0}} 
+void {\bfseries Process\+Buffers} (P\+L\+U\+G\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+S\+RC type, int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a7942e239fb157a4137fa770546e8bbca}\label{class_i_plug_processor_a7942e239fb157a4137fa770546e8bbca}} 
+void {\bfseries Process\+Buffers} (P\+L\+U\+G\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+D\+ST type, int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a98e0fa2e5bbfc37ccc5ab5f336f5436c}\label{class_i_plug_processor_a98e0fa2e5bbfc37ccc5ab5f336f5436c}} 
+void {\bfseries Process\+Buffers\+Accumulating} (int n\+Frames)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_ab3694bb90a7cafdb5ba08bb809a0538c}\label{class_i_plug_processor_ab3694bb90a7cafdb5ba08bb809a0538c}} 
+void {\bfseries Zero\+Scratch\+Buffers} ()
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_aa3bf4e255a888cd49878032106546a35}\label{class_i_plug_processor_aa3bf4e255a888cd49878032106546a35}} 
+void {\bfseries Set\+Sample\+Rate} (double sample\+Rate)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_ac45c4104a25e7f3e5176a566385acab8}\label{class_i_plug_processor_ac45c4104a25e7f3e5176a566385acab8}} 
+void {\bfseries Set\+Block\+Size} (int block\+Size)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a6ec996ca53692814945e751cbe3cfe38}\label{class_i_plug_processor_a6ec996ca53692814945e751cbe3cfe38}} 
+void {\bfseries Set\+Bypassed} (bool bypassed)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_aee4b41827f7c66c145ac8e29032c8bef}\label{class_i_plug_processor_aee4b41827f7c66c145ac8e29032c8bef}} 
+void {\bfseries Set\+Time\+Info} (const \mbox{\hyperlink{struct_i_time_info}{I\+Time\+Info}} \&time\+Info)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a5f212fee093cdd7360728c82f62e7147}\label{class_i_plug_processor_a5f212fee093cdd7360728c82f62e7147}} 
+void {\bfseries Set\+Rendering\+Offline} (bool rendering\+Offline)
+\item 
+\mbox{\Hypertarget{class_i_plug_processor_a22346a7cca1fe82c33b7c207a734fa5f}\label{class_i_plug_processor_a22346a7cca1fe82c33b7c207a734fa5f}} 
+const \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \& {\bfseries Get\+Channel\+Label} (\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}} direction, int idx)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_n_chan_delay_line}{N\+Chan\+Delay\+Line}}$<$ sample $>$ $>$ \mbox{\hyperlink{class_i_plug_processor_a80e1561a975a0b02af687aa9dacde08b}{m\+Latency\+Delay}} = nullptr
+\item 
+\mbox{\hyperlink{struct_i_time_info}{I\+Time\+Info}} \mbox{\hyperlink{class_i_plug_processor_a906e0289e8c91899bc39cae4755dc4ed}{m\+Time\+Info}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for I\+Plug Audio Processing. It knows nothing about presets or parameters or user interface. ~\newline
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_plug_processor_a7cf28ba673629cac18a071329456df91}\label{class_i_plug_processor_a7cf28ba673629cac18a071329456df91}} 
+\index{IPlugProcessor@{IPlugProcessor}!IPlugProcessor@{IPlugProcessor}}
+\index{IPlugProcessor@{IPlugProcessor}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{IPlugProcessor()}{IPlugProcessor()}}
+{\footnotesize\ttfamily I\+Plug\+Processor\+::\+I\+Plug\+Processor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_config}{Config}} \&}]{config,  }\item[{E\+A\+PI}]{plug\+A\+PI }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_i_plug_processor}{I\+Plug\+Processor}} constructor 
+\begin{DoxyParams}{Parameters}
+{\em config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000182}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em plug\+A\+PI} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000183}{Todo}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_plug_processor_a81a67a6bf4bb9ffec859fadf2d6c5fd6}\label{class_i_plug_processor_a81a67a6bf4bb9ffec859fadf2d6c5fd6}} 
+\index{IPlugProcessor@{IPlugProcessor}!DoesMIDIIn@{DoesMIDIIn}}
+\index{DoesMIDIIn@{DoesMIDIIn}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{DoesMIDIIn()}{DoesMIDIIn()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Does\+M\+I\+D\+I\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plug-\/in was configured to receive midi at compile time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_aee97466c42af33d84d18e60b3ed9d6ae}\label{class_i_plug_processor_aee97466c42af33d84d18e60b3ed9d6ae}} 
+\index{IPlugProcessor@{IPlugProcessor}!DoesMIDIOut@{DoesMIDIOut}}
+\index{DoesMIDIOut@{DoesMIDIOut}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{DoesMIDIOut()}{DoesMIDIOut()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Does\+M\+I\+D\+I\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plug-\/in was configured to receive midi at compile time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a6b8efebb342f9c8dbec505a1649af8ee}\label{class_i_plug_processor_a6b8efebb342f9c8dbec505a1649af8ee}} 
+\index{IPlugProcessor@{IPlugProcessor}!DoesMPE@{DoesMPE}}
+\index{DoesMPE@{DoesMPE}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{DoesMPE()}{DoesMPE()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Does\+M\+PE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plug-\/in was configured to support midi polyphonic expression at compile time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a7b9c169b6a822d9de61d0ee916538a24}\label{class_i_plug_processor_a7b9c169b6a822d9de61d0ee916538a24}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetAUPluginType@{GetAUPluginType}}
+\index{GetAUPluginType@{GetAUPluginType}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetAUPluginType()}{GetAUPluginType()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Get\+A\+U\+Plugin\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+int The 4Char identifier for the type of audiounit plugin, e.\+g. \textquotesingle{}aufx\textquotesingle{} for an effect audiounit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a8da311b9dc1af92e7b291a8596039b20}\label{class_i_plug_processor_a8da311b9dc1af92e7b291a8596039b20}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetBlockSize@{GetBlockSize}}
+\index{GetBlockSize@{GetBlockSize}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetBlockSize()}{GetBlockSize()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Get\+Block\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Maximum block size in samples, actual blocksize may vary each \mbox{\hyperlink{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}{Process\+Block()}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a3b558377490dc5fea51bfd3c009d18c9}\label{class_i_plug_processor_a3b558377490dc5fea51bfd3c009d18c9}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetBusName@{GetBusName}}
+\index{GetBusName@{GetBusName}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetBusName()}{GetBusName()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Get\+Bus\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction,  }\item[{int}]{bus\+Idx,  }\item[{int}]{n\+Buses,  }\item[{\mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}} \&}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get the name for a particular bus 
+\begin{DoxyParams}{Parameters}
+{\em direction} & Input or output bus \\
+\hline
+{\em bus\+Idx} & The index of the bus \\
+\hline
+{\em n\+Buses} & The total number of buses for this direction \\
+\hline
+{\em str} & String to fill with the bus name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_plug_processor_a980bfd5a219fe62f1ca3cd065c653f9b}\label{class_i_plug_processor_a980bfd5a219fe62f1ca3cd065c653f9b}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetBypassed@{GetBypassed}}
+\index{GetBypassed@{GetBypassed}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetBypassed()}{GetBypassed()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Get\+Bypassed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plugin is currently bypassed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_aeeaf3f968ccc1823f0bb056337ac9523}\label{class_i_plug_processor_aeeaf3f968ccc1823f0bb056337ac9523}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetIOConfig@{GetIOConfig}}
+\index{GetIOConfig@{GetIOConfig}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetIOConfig()}{GetIOConfig()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_i_o_config}{I\+O\+Config}}$\ast$ I\+Plug\+Processor\+::\+Get\+I\+O\+Config (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+const Pointer to an \mbox{\hyperlink{struct_i_o_config}{I\+O\+Config}} at idx. Can return nullptr if idx is invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a8c7dedcc12b4bf205d1d0dc3d03083eb}\label{class_i_plug_processor_a8c7dedcc12b4bf205d1d0dc3d03083eb}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetIOConfigWithChanCounts@{GetIOConfigWithChanCounts}}
+\index{GetIOConfigWithChanCounts@{GetIOConfigWithChanCounts}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetIOConfigWithChanCounts()}{GetIOConfigWithChanCounts()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Get\+I\+O\+Config\+With\+Chan\+Counts (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{input\+Buses,  }\item[{std\+::vector$<$ int $>$ \&}]{output\+Buses }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Index of \mbox{\hyperlink{struct_i_o_config}{I\+O\+Config}} that matches input and output bus vectors. Can return -\/1 if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_ae5e3ea6bb26f3719f69d8bcfa359263e}\label{class_i_plug_processor_ae5e3ea6bb26f3719f69d8bcfa359263e}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetLatency@{GetLatency}}
+\index{GetLatency@{GetLatency}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetLatency()}{GetLatency()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Get\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_plugin}{Plugin}} latency (in samples) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_afb9b83341c94443b05c4e06dabb48b35}\label{class_i_plug_processor_afb9b83341c94443b05c4e06dabb48b35}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetPPQPos@{GetPPQPos}}
+\index{GetPPQPos@{GetPPQPos}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetPPQPos()}{GetPPQPos()}}
+{\footnotesize\ttfamily double I\+Plug\+Processor\+::\+Get\+P\+P\+Q\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The number of beats elapsed since start of project timeline. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a64dbfd9d587fa9098717dfe17202058c}\label{class_i_plug_processor_a64dbfd9d587fa9098717dfe17202058c}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetRenderingOffline@{GetRenderingOffline}}
+\index{GetRenderingOffline@{GetRenderingOffline}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetRenderingOffline()}{GetRenderingOffline()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Get\+Rendering\+Offline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plugin is currently rendering off-\/line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a2d2d56c81c0bbfc3b0f30334a057aa65}\label{class_i_plug_processor_a2d2d56c81c0bbfc3b0f30334a057aa65}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetSamplePos@{GetSamplePos}}
+\index{GetSamplePos@{GetSamplePos}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetSamplePos()}{GetSamplePos()}}
+{\footnotesize\ttfamily double I\+Plug\+Processor\+::\+Get\+Sample\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The number of samples elapsed since start of project timeline. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a8732c6f4199a3f653d58c1c3668f2633}\label{class_i_plug_processor_a8732c6f4199a3f653d58c1c3668f2633}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetSampleRate@{GetSampleRate}}
+\index{GetSampleRate@{GetSampleRate}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetSampleRate()}{GetSampleRate()}}
+{\footnotesize\ttfamily double I\+Plug\+Processor\+::\+Get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Sample rate (in Hz) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_afd468ae41218cdbc529281ed2c984cdf}\label{class_i_plug_processor_afd468ae41218cdbc529281ed2c984cdf}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetSamplesPerBeat@{GetSamplesPerBeat}}
+\index{GetSamplesPerBeat@{GetSamplesPerBeat}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetSamplesPerBeat()}{GetSamplesPerBeat()}}
+{\footnotesize\ttfamily double I\+Plug\+Processor\+::\+Get\+Samples\+Per\+Beat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The number of samples in a beat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a2232b7074aa265211b395b8fc3bc2387}\label{class_i_plug_processor_a2232b7074aa265211b395b8fc3bc2387}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetTailSize@{GetTailSize}}
+\index{GetTailSize@{GetTailSize}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetTailSize()}{GetTailSize()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Get\+Tail\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The tail size in samples (useful for reverberation plug-\/ins, that may need to decay after the transport stops or an audio item ends) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a8c5b9d8614472720ba754d4eeeccec73}\label{class_i_plug_processor_a8c5b9d8614472720ba754d4eeeccec73}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetTempo@{GetTempo}}
+\index{GetTempo@{GetTempo}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetTempo()}{GetTempo()}}
+{\footnotesize\ttfamily double I\+Plug\+Processor\+::\+Get\+Tempo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The tempo in beats per minute 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_ae0ec71ad0615682f44a98e30a0108514}\label{class_i_plug_processor_ae0ec71ad0615682f44a98e30a0108514}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetTimeSig@{GetTimeSig}}
+\index{GetTimeSig@{GetTimeSig}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetTimeSig()}{GetTimeSig()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Get\+Time\+Sig (\begin{DoxyParamCaption}\item[{int \&}]{numerator,  }\item[{int \&}]{denominator }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em numerator} & The upper part of the current time signature e.\+g \char`\"{}6\char`\"{} in the time signature 6/8 \\
+\hline
+{\em denominator} & The lower part of the current time signature e.\+g \char`\"{}8\char`\"{} in the time signature 6/8 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_plug_processor_a292d4bd43c802505a52dd509e583f18b}\label{class_i_plug_processor_a292d4bd43c802505a52dd509e583f18b}} 
+\index{IPlugProcessor@{IPlugProcessor}!GetTransportIsRunning@{GetTransportIsRunning}}
+\index{GetTransportIsRunning@{GetTransportIsRunning}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{GetTransportIsRunning()}{GetTransportIsRunning()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Get\+Transport\+Is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the transport is running 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a3ac385983e4ff5772be8509de6177e21}\label{class_i_plug_processor_a3ac385983e4ff5772be8509de6177e21}} 
+\index{IPlugProcessor@{IPlugProcessor}!HasSidechainInput@{HasSidechainInput}}
+\index{HasSidechainInput@{HasSidechainInput}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{HasSidechainInput()}{HasSidechainInput()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Has\+Sidechain\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this plug-\/in has a side-\/chain input, which may not necessarily be active in the current I/O config 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_ab293edf73c931ea7d372474aa8dc7d94}\label{class_i_plug_processor_ab293edf73c931ea7d372474aa8dc7d94}} 
+\index{IPlugProcessor@{IPlugProcessor}!HasWildcardBus@{HasWildcardBus}}
+\index{HasWildcardBus@{HasWildcardBus}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{HasWildcardBus()}{HasWildcardBus()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Has\+Wildcard\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if we have any wildcard characters in the channel I/O configs 
+\begin{DoxyParams}{Parameters}
+{\em direction} & Return input or output bus count \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the bus has a wildcard, meaning it should work on any number of channels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a8984adbd4cbd494b5ee857fd669b5318}\label{class_i_plug_processor_a8984adbd4cbd494b5ee857fd669b5318}} 
+\index{IPlugProcessor@{IPlugProcessor}!IsChannelConnected@{IsChannelConnected}}
+\index{IsChannelConnected@{IsChannelConnected}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{IsChannelConnected()}{IsChannelConnected()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Is\+Channel\+Connected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction,  }\item[{int}]{ch\+Idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Whether you want to test inputs or outputs \\
+\hline
+{\em ch\+Idx} & channel index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the host has connected this channel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a46595836779cd88926cc878bc1ef7afd}\label{class_i_plug_processor_a46595836779cd88926cc878bc1ef7afd}} 
+\index{IPlugProcessor@{IPlugProcessor}!IsInstrument@{IsInstrument}}
+\index{IsInstrument@{IsInstrument}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{IsInstrument()}{IsInstrument()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Is\+Instrument (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plug-\/in was configured as an instrument at compile time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a446a979fea07f7e21a3c8e60cde1e7e6}\label{class_i_plug_processor_a446a979fea07f7e21a3c8e60cde1e7e6}} 
+\index{IPlugProcessor@{IPlugProcessor}!IsMidiEffect@{IsMidiEffect}}
+\index{IsMidiEffect@{IsMidiEffect}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{IsMidiEffect()}{IsMidiEffect()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Is\+Midi\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the plug-\/in was configured as an M\+FX at compile time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a3520085081beba44295f0c4fcc0367c4}\label{class_i_plug_processor_a3520085081beba44295f0c4fcc0367c4}} 
+\index{IPlugProcessor@{IPlugProcessor}!LegalIO@{LegalIO}}
+\index{LegalIO@{LegalIO}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{LegalIO()}{LegalIO()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Legal\+IO (\begin{DoxyParamCaption}\item[{int}]{N\+Input\+Chans,  }\item[{int}]{N\+Output\+Chans }\end{DoxyParamCaption}) const}
+
+Check if a certain configuration of input channels and output channels is allowed based on the channel I/O configs 
+\begin{DoxyParams}{Parameters}
+{\em N\+Input\+Chans} & Number of inputs to test, if set to -\/1 = check N\+Output\+Chans only \\
+\hline
+{\em N\+Output\+Chans} & Number of outputs to test, if set to -\/1 = check N\+Input\+Chans only \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the configurations is valid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_ad14277b09f84672b1cb0b8977ef6cad7}\label{class_i_plug_processor_ad14277b09f84672b1cb0b8977ef6cad7}} 
+\index{IPlugProcessor@{IPlugProcessor}!LimitToStereoIO@{LimitToStereoIO}}
+\index{LimitToStereoIO@{LimitToStereoIO}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{LimitToStereoIO()}{LimitToStereoIO()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Limit\+To\+Stereo\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is called by I\+Plug\+V\+ST in order to limit a plug-\/in to stereo I/O for certain picky hosts \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000184}{Todo}}]may no longer be relevant \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_i_plug_processor_a4b9440ca11ef64f790a9b00b24fe6be0}\label{class_i_plug_processor_a4b9440ca11ef64f790a9b00b24fe6be0}} 
+\index{IPlugProcessor@{IPlugProcessor}!MaxNBuses@{MaxNBuses}}
+\index{MaxNBuses@{MaxNBuses}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{MaxNBuses()}{MaxNBuses()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Max\+N\+Buses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction,  }\item[{int $\ast$}]{p\+Config\+Idx\+With\+The\+Most\+Buses = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Used to determine the maximum number of input or output buses based on what was specified in the channel I/O config string 
+\begin{DoxyParams}{Parameters}
+{\em direction} & Return input or output bus count \\
+\hline
+{\em p\+Config\+Idx\+With\+The\+Most\+Buses} & Optional ptr to report the index of the config with the max bus count, if multiple configs have the same bus count, this should report the one with the higher channel count \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The maximum bus count across all channel I/O configs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_acb0943c20c855b881cfbaaa291d5e776}\label{class_i_plug_processor_acb0943c20c855b881cfbaaa291d5e776}} 
+\index{IPlugProcessor@{IPlugProcessor}!MaxNChannels@{MaxNChannels}}
+\index{MaxNChannels@{MaxNChannels}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{MaxNChannels()}{MaxNChannels()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Max\+N\+Channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Whether you want to test inputs or outputs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total number of input or output channel buffers (not necessarily connected) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a8ebad632c98f35da8cd5d5dba01d73cf}\label{class_i_plug_processor_a8ebad632c98f35da8cd5d5dba01d73cf}} 
+\index{IPlugProcessor@{IPlugProcessor}!MaxNChannelsForBus@{MaxNChannelsForBus}}
+\index{MaxNChannelsForBus@{MaxNChannelsForBus}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{MaxNChannelsForBus()}{MaxNChannelsForBus()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Max\+N\+Channels\+For\+Bus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction,  }\item[{int}]{bus\+Idx }\end{DoxyParamCaption}) const}
+
+For a given input or output bus what is the maximum possible number of channels. This method is not Realtime safe. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & Return input or output bus count \\
+\hline
+{\em bus\+Idx} & The index of the bus to look up \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return The maximum number of channels on that bus 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a860d6224d83fad1d479c9ae2fd3c201e}\label{class_i_plug_processor_a860d6224d83fad1d479c9ae2fd3c201e}} 
+\index{IPlugProcessor@{IPlugProcessor}!NChannelsConnected@{NChannelsConnected}}
+\index{NChannelsConnected@{NChannelsConnected}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{NChannelsConnected()}{NChannelsConnected()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+N\+Channels\+Connected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Whether you want to test inputs or outputs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of channels connected for input/output. W\+A\+R\+N\+I\+NG\+: this assumes consecutive channel connections 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_ac6626a7d0156157a4035a66770871f40}\label{class_i_plug_processor_ac6626a7d0156157a4035a66770871f40}} 
+\index{IPlugProcessor@{IPlugProcessor}!NInChansConnected@{NInChansConnected}}
+\index{NInChansConnected@{NInChansConnected}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{NInChansConnected()}{NInChansConnected()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+N\+In\+Chans\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convenience method to find out how many input channels are connected \begin{DoxyReturn}{Returns}
+The number of channels connected for input. W\+A\+R\+N\+I\+NG\+: this assumes consecutive channel connections 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a9890c0c4e7f5490af81b5d67e6dc4f71}\label{class_i_plug_processor_a9890c0c4e7f5490af81b5d67e6dc4f71}} 
+\index{IPlugProcessor@{IPlugProcessor}!NIOConfigs@{NIOConfigs}}
+\index{NIOConfigs@{NIOConfigs}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{NIOConfigs()}{NIOConfigs()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+N\+I\+O\+Configs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The number of channel I/O configs derived from the channel io string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_a3a81ec2ca88a2df6b8237560748a86f8}\label{class_i_plug_processor_a3a81ec2ca88a2df6b8237560748a86f8}} 
+\index{IPlugProcessor@{IPlugProcessor}!NOutChansConnected@{NOutChansConnected}}
+\index{NOutChansConnected@{NOutChansConnected}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{NOutChansConnected()}{NOutChansConnected()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+N\+Out\+Chans\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convenience method to find out how many output channels are connected \begin{DoxyReturn}{Returns}
+The number of channels connected for output. W\+A\+R\+N\+I\+NG\+: this assumes consecutive channel connections 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_ae2fc42ddaa7c979c61ed2f6247296cf4}\label{class_i_plug_processor_ae2fc42ddaa7c979c61ed2f6247296cf4}} 
+\index{IPlugProcessor@{IPlugProcessor}!OnActivate@{OnActivate}}
+\index{OnActivate@{OnActivate}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{OnActivate()}{OnActivate()}}
+{\footnotesize\ttfamily virtual void I\+Plug\+Processor\+::\+On\+Activate (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override \mbox{\hyperlink{class_i_plug_processor_ae2fc42ddaa7c979c61ed2f6247296cf4}{On\+Activate()}} which should be called by the A\+PI class when a plug-\/in is \char`\"{}switched on\char`\"{} by the host on a track when the channel count is known. This may not work reliably because different hosts have different interpretations of \char`\"{}activate\char`\"{}. Unlike \mbox{\hyperlink{class_i_plug_processor_af41a0640ec2c16542ad88c272eb22f27}{On\+Reset()}} which called when the transport is reset or the sample rate changes \mbox{\hyperlink{class_i_plug_processor_ae2fc42ddaa7c979c61ed2f6247296cf4}{On\+Activate()}} is a good place to handle change of I/O connections. 
+\begin{DoxyParams}{Parameters}
+{\em active} & {\ttfamily true} if the host has activated the plug-\/in \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_plug_processor_af41a0640ec2c16542ad88c272eb22f27}\label{class_i_plug_processor_af41a0640ec2c16542ad88c272eb22f27}} 
+\index{IPlugProcessor@{IPlugProcessor}!OnReset@{OnReset}}
+\index{OnReset@{OnReset}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{OnReset()}{OnReset()}}
+{\footnotesize\ttfamily virtual void I\+Plug\+Processor\+::\+On\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this method in your plug-\/in class to do something prior to playback etc. (e.\+g.\+clear buffers, update internal \mbox{\hyperlink{class_d_s_p}{D\+SP}} with the latest sample rate) \mbox{\Hypertarget{class_i_plug_processor_af1478c7e743583ab9e94b9b9cc4d8676}\label{class_i_plug_processor_af1478c7e743583ab9e94b9b9cc4d8676}} 
+\index{IPlugProcessor@{IPlugProcessor}!ParseChannelIOStr@{ParseChannelIOStr}}
+\index{ParseChannelIOStr@{ParseChannelIOStr}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{ParseChannelIOStr()}{ParseChannelIOStr()}}
+{\footnotesize\ttfamily int I\+Plug\+Processor\+::\+Parse\+Channel\+I\+O\+Str (\begin{DoxyParamCaption}\item[{const char $\ast$}]{I\+O\+Str,  }\item[{\mbox{\hyperlink{class_w_d_l___ptr_list}{W\+D\+L\+\_\+\+Ptr\+List}}$<$ \mbox{\hyperlink{struct_i_o_config}{I\+O\+Config}} $>$ \&}]{channel\+I\+O\+List,  }\item[{int \&}]{total\+N\+In\+Chans,  }\item[{int \&}]{total\+N\+Out\+Chans,  }\item[{int \&}]{total\+N\+In\+Buses,  }\item[{int \&}]{total\+N\+Out\+Buses }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A static method to parse the config.\+h channel I/O string. 
+\begin{DoxyParams}{Parameters}
+{\em I\+O\+Str} & Space separated cstring list of I/O configurations for this plug-\/in in the format ninchans-\/noutchans. A hypen character {\ttfamily }(-\/) deliminates input-\/output. Supports multiple buses, which are indicated using a period {\ttfamily }(.) character. For instance plug-\/in that supports mono input and mono output with a mono side-\/chain input could have a channel io string of \char`\"{}1.\+1-\/1\char`\"{}. A drum synthesiser with four stereo output busses could be configured with a io string of \char`\"{}0-\/2.\+2.\+2.\+2\char`\"{}; \\
+\hline
+{\em channel\+I\+O\+List} & A list of pointers to Channel\+IO structs, where we will store here \\
+\hline
+{\em total\+N\+In\+Chans} & The total number of input channels across all buses will be stored here \\
+\hline
+{\em total\+N\+Out\+Chans} & The total number of output channels across all buses will be stored here \\
+\hline
+{\em total\+N\+In\+Buses} & The total number of input buses across all channel I/O configs will be stored here \\
+\hline
+{\em total\+N\+Out\+Buses} & The total number of output buses across all channel I/O configs will be stored here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of space separated channel I/O configs that have been detected in I\+O\+Str 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}\label{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}} 
+\index{IPlugProcessor@{IPlugProcessor}!ProcessBlock@{ProcessBlock}}
+\index{ProcessBlock@{ProcessBlock}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessBlock()}{ProcessBlock()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Process\+Block (\begin{DoxyParamCaption}\item[{sample $\ast$$\ast$}]{inputs,  }\item[{sample $\ast$$\ast$}]{outputs,  }\item[{int}]{n\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Override in your plug-\/in class to process audio In Process\+Block you are always guaranteed to get valid pointers to all the channels the plugin requested (the maximum possible input channel count and the maximum possible output channel count including multiple buses). If the host hasn\textquotesingle{}t connected all the pins, the unconnected channels will be full of zeros. T\+H\+IS M\+E\+T\+H\+OD IS C\+A\+L\+L\+ED BY T\+HE H\+I\+GH P\+R\+I\+O\+R\+I\+TY A\+U\+D\+IO T\+H\+R\+E\+AD -\/ You should be careful not to do any unbounded, blocking operations such as file I/O which could cause audio dropouts 
+\begin{DoxyParams}{Parameters}
+{\em inputs} & Two-\/dimensional array containing the non-\/interleaved input buffers of audio samples for all channels \\
+\hline
+{\em outputs} & Two-\/dimensional array for audio output (non-\/interleaved). \\
+\hline
+{\em n\+Frames} & The block size for this block\+: number of samples per channel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_plug_processor_a3118afd2386fc7244ad4f7eeefcbb9b4}\label{class_i_plug_processor_a3118afd2386fc7244ad4f7eeefcbb9b4}} 
+\index{IPlugProcessor@{IPlugProcessor}!ProcessMidiMsg@{ProcessMidiMsg}}
+\index{ProcessMidiMsg@{ProcessMidiMsg}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessMidiMsg()}{ProcessMidiMsg()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Process\+Midi\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Override this method to handle incoming M\+I\+DI messages. The method is called prior to \mbox{\hyperlink{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}{Process\+Block()}}. You can use \mbox{\hyperlink{class_i_midi_queue}{I\+Midi\+Queue}} in combination with this method in order to queue the message and process at the appropriate time in \mbox{\hyperlink{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}{Process\+Block()}} T\+H\+IS M\+E\+T\+H\+OD IS C\+A\+L\+L\+ED BY T\+HE H\+I\+GH P\+R\+I\+O\+R\+I\+TY A\+U\+D\+IO T\+H\+R\+E\+AD -\/ You should be careful not to do any unbounded, blocking operations such as file I/O which could cause audio dropouts 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The incoming midi message (includes a timestamp to indicate the offset in the forthcoming block of audio to be processed in \mbox{\hyperlink{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}{Process\+Block()}}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_plug_processor_ae2b522b2995c5b72b94b1aa4ff27af8a}\label{class_i_plug_processor_ae2b522b2995c5b72b94b1aa4ff27af8a}} 
+\index{IPlugProcessor@{IPlugProcessor}!ProcessSysEx@{ProcessSysEx}}
+\index{ProcessSysEx@{ProcessSysEx}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{ProcessSysEx()}{ProcessSysEx()}}
+{\footnotesize\ttfamily virtual void I\+Plug\+Processor\+::\+Process\+Sys\+Ex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this method to handle incoming M\+I\+DI System Exclusive (Sys\+Ex) messages. The method is called prior to \mbox{\hyperlink{class_i_plug_processor_afc06f101745ced19a01d8309e79b56de}{Process\+Block()}}. T\+H\+IS M\+E\+T\+H\+OD IS C\+A\+L\+L\+ED BY T\+HE H\+I\+GH P\+R\+I\+O\+R\+I\+TY A\+U\+D\+IO T\+H\+R\+E\+AD -\/ You should be careful not to do any unbounded, blocking operations such as file I/O which could cause audio dropouts \mbox{\Hypertarget{class_i_plug_processor_a4e9b417cee5b4baba70468cb15d927c3}\label{class_i_plug_processor_a4e9b417cee5b4baba70468cb15d927c3}} 
+\index{IPlugProcessor@{IPlugProcessor}!SendMidiMsg@{SendMidiMsg}}
+\index{SendMidiMsg@{SendMidiMsg}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsg()}{SendMidiMsg()}}
+{\footnotesize\ttfamily virtual bool I\+Plug\+Processor\+::\+Send\+Midi\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Send a single M\+I\+DI message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_i_plug_v_s_t3_processor_base_ad123ab66833e9664c82cbd5e414697af}{I\+Plug\+V\+S\+T3\+Processor\+Base}}, \mbox{\hyperlink{class_i_plug_a_a_x_a05a84cb84b8102c0d95af1238f0d9fbe}{I\+Plug\+A\+AX}}, \mbox{\hyperlink{class_i_plug_a_u_a728ccf09551b1b5ce1900e6a642c873c}{I\+Plug\+AU}}, \mbox{\hyperlink{class_i_plug_a_uv3_a539af1c9e36f09b251eb7c0e64cb16c6}{I\+Plug\+A\+Uv3}}, \mbox{\hyperlink{class_i_plug_a_p_p_a215e72927e405b3cf2c02ff06ed39209}{I\+Plug\+A\+PP}}, \mbox{\hyperlink{class_i_plug_v_s_t2_a1fc6db66c5e9bd9dcd3b09cbabf71215}{I\+Plug\+V\+S\+T2}}, and \mbox{\hyperlink{class_i_plug_w_a_m_a0ae41aa509f8f7bcc4dcb44a21816253}{I\+Plug\+W\+AM}}.
+
+\mbox{\Hypertarget{class_i_plug_processor_a0283210dcd86bc9cf13cb2cf790d769e}\label{class_i_plug_processor_a0283210dcd86bc9cf13cb2cf790d769e}} 
+\index{IPlugProcessor@{IPlugProcessor}!SendMidiMsgs@{SendMidiMsgs}}
+\index{SendMidiMsgs@{SendMidiMsgs}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsgs()}{SendMidiMsgs()}}
+{\footnotesize\ttfamily bool I\+Plug\+Processor\+::\+Send\+Midi\+Msgs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_w_d_l___typed_buf}{W\+D\+L\+\_\+\+Typed\+Buf}}$<$ \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} $>$ \&}]{msgs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Send a collection of M\+I\+DI messages // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msgs} & The \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_u_ac3c652af05ed22dfc7838a025f1d7ddc}{I\+Plug\+AU}}.
+
+\mbox{\Hypertarget{class_i_plug_processor_a195e1f95d847cfb5d5cc665b2143d10a}\label{class_i_plug_processor_a195e1f95d847cfb5d5cc665b2143d10a}} 
+\index{IPlugProcessor@{IPlugProcessor}!SendSysEx@{SendSysEx}}
+\index{SendSysEx@{SendSysEx}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{SendSysEx()}{SendSysEx()}}
+{\footnotesize\ttfamily virtual bool I\+Plug\+Processor\+::\+Send\+Sys\+Ex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Send a single M\+I\+DI System Exclusive (Sys\+Ex) message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_u_aeee58fb2dcd5ae7ca73abdc0211bebe5}{I\+Plug\+AU}}, \mbox{\hyperlink{class_i_plug_a_uv3_a2cf91bcf63bbb5f18cd529afad285aeb}{I\+Plug\+A\+Uv3}}, \mbox{\hyperlink{class_i_plug_a_p_p_a0afb62394c388ecd7654be6378c0c1f0}{I\+Plug\+A\+PP}}, \mbox{\hyperlink{class_i_plug_v_s_t2_ab19e3e35e32d2c1b47c5d25ea77c33c6}{I\+Plug\+V\+S\+T2}}, and \mbox{\hyperlink{class_i_plug_w_a_m_aa47fe866748000dc8899f5d263e25352}{I\+Plug\+W\+AM}}.
+
+\mbox{\Hypertarget{class_i_plug_processor_a6d4fe70e66218ec62f8afe800a6c3e48}\label{class_i_plug_processor_a6d4fe70e66218ec62f8afe800a6c3e48}} 
+\index{IPlugProcessor@{IPlugProcessor}!SetChannelLabel@{SetChannelLabel}}
+\index{SetChannelLabel@{SetChannelLabel}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{SetChannelLabel()}{SetChannelLabel()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Set\+Channel\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_plug_constants_ga2d2950b86093091e6a4fcf3fa7c6732a}{E\+Route}}}]{direction,  }\item[{int}]{idx,  }\item[{const char $\ast$}]{format\+Str,  }\item[{bool}]{zero\+Based = {\ttfamily false} }\end{DoxyParamCaption})}
+
+This allows you to label input/output channels in supporting V\+S\+T2 hosts.
+\begin{DoxyItemize}
+\item For example a 4 channel plug-\/in that deals with Fu\+Ma B\+Format first order ambisonic material, might label these channels \char`\"{}\+W\char`\"{}, \char`\"{}\+X\char`\"{}, \char`\"{}\+Y\char`\"{}, \char`\"{}\+Z\char`\"{}, rather than the default \char`\"{}input 1\char`\"{}, \char`\"{}input 2\char`\"{}, \char`\"{}input 3\char`\"{}, \char`\"{}input 4\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index of the channel that you wish to label \\
+\hline
+{\em format\+Str} & printf style format string to compose label for the channel -\/ where i will be the channel index \\
+\hline
+{\em zero\+Based} & If {\ttfamily true} the index in the format string will be zero based \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{class_i_plug_processor_a3c5c2a1b80ba384c50a2bb4888b63461}\label{class_i_plug_processor_a3c5c2a1b80ba384c50a2bb4888b63461}} 
+\index{IPlugProcessor@{IPlugProcessor}!SetLatency@{SetLatency}}
+\index{SetLatency@{SetLatency}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{SetLatency()}{SetLatency()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Set\+Latency (\begin{DoxyParamCaption}\item[{int}]{latency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Call this if the latency of your plug-\/in changes after initialization (perhaps from \mbox{\hyperlink{class_i_plug_processor_af41a0640ec2c16542ad88c272eb22f27}{On\+Reset()}} ) This may not be supported by the host. The method is virtual because it\textquotesingle{}s overridden in A\+PI classes. 
+\begin{DoxyParams}{Parameters}
+{\em latency} & Latency in samples \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_a_a_x_ac32027bd9cfa9caa9efd169ee9583f35}{I\+Plug\+A\+AX}}, \mbox{\hyperlink{class_i_plug_a_u_aca151d30c7cfe77a318a7053c79f45ef}{I\+Plug\+AU}}, \mbox{\hyperlink{class_i_plug_v_s_t3_a240d891b8258b019d6e9a2a313f0be1c}{I\+Plug\+V\+S\+T3}}, \mbox{\hyperlink{class_i_plug_v_s_t2_a6bfc0b7db23a8d84adb0c1a1ac584e20}{I\+Plug\+V\+S\+T2}}, and \mbox{\hyperlink{class_i_plug_w_a_m_aca74eaaee0212128d0dd69ebcc595487}{I\+Plug\+W\+AM}}.
+
+\mbox{\Hypertarget{class_i_plug_processor_a0fa7d4d472915d7f2aff449a4d9158de}\label{class_i_plug_processor_a0fa7d4d472915d7f2aff449a4d9158de}} 
+\index{IPlugProcessor@{IPlugProcessor}!SetTailSize@{SetTailSize}}
+\index{SetTailSize@{SetTailSize}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{SetTailSize()}{SetTailSize()}}
+{\footnotesize\ttfamily void I\+Plug\+Processor\+::\+Set\+Tail\+Size (\begin{DoxyParamCaption}\item[{int}]{tail\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Call this method if you need to update the tail size at runtime, for example if the decay time of your reverb effect changes Some apis have special interpretations of certain numbers. For V\+S\+T3 set to 0xffffffff for infinite tail, or 0 for none (default) For V\+S\+T2 setting to 1 means no tail 
+\begin{DoxyParams}{Parameters}
+{\em tail\+Size} & the new tailsize in samples \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i_plug_processor_a80e1561a975a0b02af687aa9dacde08b}\label{class_i_plug_processor_a80e1561a975a0b02af687aa9dacde08b}} 
+\index{IPlugProcessor@{IPlugProcessor}!mLatencyDelay@{mLatencyDelay}}
+\index{mLatencyDelay@{mLatencyDelay}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{mLatencyDelay}{mLatencyDelay}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_n_chan_delay_line}{N\+Chan\+Delay\+Line}}$<$sample$>$ $>$ I\+Plug\+Processor\+::m\+Latency\+Delay = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+A multi-\/channel delay line used to delay the bypassed signal when a plug-\/in with latency is bypassed. \mbox{\Hypertarget{class_i_plug_processor_a906e0289e8c91899bc39cae4755dc4ed}\label{class_i_plug_processor_a906e0289e8c91899bc39cae4755dc4ed}} 
+\index{IPlugProcessor@{IPlugProcessor}!mTimeInfo@{mTimeInfo}}
+\index{mTimeInfo@{mTimeInfo}!IPlugProcessor@{IPlugProcessor}}
+\doxysubsubsection{\texorpdfstring{mTimeInfo}{mTimeInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_time_info}{I\+Time\+Info}} I\+Plug\+Processor\+::m\+Time\+Info\hspace{0.3cm}{\ttfamily [protected]}}
+
+Contains detailed information about the transport state 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\mbox{\hyperlink{_i_plug_processor_8h}{I\+Plug\+Processor.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\mbox{\hyperlink{_i_plug_processor_8cpp}{I\+Plug\+Processor.\+cpp}}\end{DoxyCompactItemize}

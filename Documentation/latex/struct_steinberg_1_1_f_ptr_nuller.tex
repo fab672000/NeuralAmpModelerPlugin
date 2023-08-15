@@ -1,0 +1,55 @@
+\hypertarget{struct_steinberg_1_1_f_ptr_nuller}{}\doxysection{Steinberg\+::F\+Ptr\+Nuller$<$ T $>$ Struct Template Reference}
+\label{struct_steinberg_1_1_f_ptr_nuller}\index{Steinberg::FPtrNuller$<$ T $>$@{Steinberg::FPtrNuller$<$ T $>$}}
+
+
+{\ttfamily \#include $<$fcleanup.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller_a27b97b683dab19c40934ffb519be60c5}{F\+Ptr\+Nuller}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$\&\+\_\+to\+Null)
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_ptr_nuller_a8d1dd433e1491d8894344c9f2857c428}\label{struct_steinberg_1_1_f_ptr_nuller_a8d1dd433e1491d8894344c9f2857c428}} 
+\mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller_a8d1dd433e1491d8894344c9f2857c428}{$\sim$\+F\+Ptr\+Nuller}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Calls delete\mbox{[}\mbox{]} on the at construction time passed pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_ptr_nuller_a20369e247944a06bf5fd6b65538790bd}\label{struct_steinberg_1_1_f_ptr_nuller_a20369e247944a06bf5fd6b65538790bd}} 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$\& \mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller_a20369e247944a06bf5fd6b65538790bd}{to\+Null}}
+\begin{DoxyCompactList}\small\item\em Remembers the pointer that is to be set to N\+U\+LL during destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+struct Steinberg\+::\+F\+Ptr\+Nuller$<$ T $>$}
+
+Template definition for classes that help guarding against dangling pointers. A stack allocated object of this type automatically resets an at construction time passed pointer to null when it reaches the end of its scope. ~\newline
+~\newline
+Intended usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}* pointerToInt = 0;}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{    pointerToInt = \&i;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller}{Steinberg::FPtrNuller<int>}} ptrNuller (pointerToInt);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Do something with pointerToInt.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\} \textcolor{comment}{// No dangling pointer here, pointerToInt is reset to 0 by destructor of ptrNuller.}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_f_ptr_nuller_a27b97b683dab19c40934ffb519be60c5}\label{struct_steinberg_1_1_f_ptr_nuller_a27b97b683dab19c40934ffb519be60c5}} 
+\index{Steinberg::FPtrNuller$<$ T $>$@{Steinberg::FPtrNuller$<$ T $>$}!FPtrNuller@{FPtrNuller}}
+\index{FPtrNuller@{FPtrNuller}!Steinberg::FPtrNuller$<$ T $>$@{Steinberg::FPtrNuller$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FPtrNuller()}{FPtrNuller()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller}{Steinberg\+::\+F\+Ptr\+Nuller}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::\mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller}{F\+Ptr\+Nuller}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$\&}]{\+\_\+to\+Null }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \+\_\+to\+Null is a reference to the pointer that is to be reset to N\+U\+LL when this \mbox{\hyperlink{struct_steinberg_1_1_f_ptr_nuller}{F\+Ptr\+Nuller}} object\textquotesingle{}s destructor is executed. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fcleanup.\+h\end{DoxyCompactItemize}

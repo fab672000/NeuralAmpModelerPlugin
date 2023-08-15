@@ -1,0 +1,155 @@
+\hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Example\+Plug\+Ins/\+Demo\+Gain\+\_\+\+Linked\+Parameters/\+Source/\+Demo\+Gain\+\_\+\+Alg.h File Reference}
+\label{_linked_parameters_2_source_2_demo_gain___alg_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/ExamplePlugIns/DemoGain\_LinkedParameters/Source/DemoGain\_Alg.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/ExamplePlugIns/DemoGain\_LinkedParameters/Source/DemoGain\_Alg.h}}
+
+
+Algorithm component definitions for Demo\+Gain\+\_\+\+Linked\+Parameters.  
+
+
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_gain___coefs_gain}{S\+Demo\+Gain\+\_\+\+Coefs\+Gain}}
+\item 
+struct \mbox{\hyperlink{struct_s_demo_gain___alg___context}{S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h_a20f3879b05a154784d94d0e4a4bdf178}\label{_linked_parameters_2_source_2_demo_gain___alg_8h_a20f3879b05a154784d94d0e4a4bdf178}} 
+enum {\bfseries E\+Demo\+Gain\+\_\+\+Meter\+Taps} \{ \newline
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+\newline
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+\newline
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}, 
+\newline
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain\+\_\+L} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain\+\_\+R}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain\+\_\+L}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain\+\_\+R}, 
+\newline
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}, 
+\newline
+{\bfseries e\+Meter\+Tap\+\_\+\+Pre\+Gain} = 0, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Post\+Gain}, 
+{\bfseries e\+Meter\+Tap\+\_\+\+Count}
+ \}
+\item 
+\mbox{\Hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h_aa873c9253a3f6737635500e8465e981f}\label{_linked_parameters_2_source_2_demo_gain___alg_8h_aa873c9253a3f6737635500e8465e981f}} 
+enum {\bfseries Demo\+Gain\+\_\+\+E\+Type} \{ {\bfseries e\+Type\+\_\+\+Pan} = 0, 
+{\bfseries e\+Type\+\_\+\+Gain}, 
+{\bfseries e\+Type\+\_\+\+Num\+Types}
+ \}
+\item 
+\mbox{\Hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h_ad2d86aa552fce2a79d129390649c2f72}\label{_linked_parameters_2_source_2_demo_gain___alg_8h_ad2d86aa552fce2a79d129390649c2f72}} 
+enum {\bfseries Demo\+Gain\+\_\+\+E\+Side} \{ {\bfseries e\+Side\+\_\+\+Left} = 0, 
+{\bfseries e\+Side\+\_\+\+Right}, 
+{\bfseries e\+Side\+\_\+\+Num\+Sides}
+ \}
+\item 
+\mbox{\Hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h_aeea70251c9d05a40f18b469cb653d80d}\label{_linked_parameters_2_source_2_demo_gain___alg_8h_aeea70251c9d05a40f18b469cb653d80d}} 
+enum {\bfseries E\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Port\+ID} \{ \newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+Size), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+B\+G\+Buffer} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+B\+G\+BufferP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Cur\+Gain} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Cur\+GainP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Delay\+Samples} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Delay\+SamplesP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Instance\+Index} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Instance\+IndexP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+SizeP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Burst\+\_\+\+Dma\+Burst} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+D\+M\+A\+Burst\+\_\+\+Alg\+\_\+\+Context, ext.\+m\+Dma\+BurstP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Burst\+\_\+\+D\+M\+A\+Audio\+Buffer} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+D\+M\+A\+Burst\+\_\+\+Alg\+\_\+\+Context, ext.\+m\+D\+M\+A\+Audio\+BufferP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Burst\+\_\+\+D\+M\+A\+Local\+Data} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+D\+M\+A\+Burst\+\_\+\+Alg\+\_\+\+Context, ext.\+m\+D\+M\+A\+Local\+DataP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+Size), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+Size), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+SizeP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+Size), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Target\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Target\+Coefs\+GainP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Cur\+Coefs\+Gain} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Cur\+Coefs\+GainP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+\newline
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+Size), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Sample\+Rate} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Sample\+Rate), 
+{\bfseries e\+Alg\+Field\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Audio\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Input\+PP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Audio\+Out} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Output\+PP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Buffer\+Size} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Buffer\+SizeP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Bypass\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Ctrl\+BypassP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Coefs\+Gain\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Coefs\+GainP), 
+\newline
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Routing\+Map\+In} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Routing\+MapP), 
+{\bfseries e\+Alg\+Port\+I\+D\+\_\+\+Meters} = A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+EX (S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context, m\+Meters\+PP)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h_a16ada1b93c66ba294f245cf8a69f5583}\label{_linked_parameters_2_source_2_demo_gain___alg_8h_a16ada1b93c66ba294f245cf8a69f5583}} 
+{\bfseries A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+CK} (Demo\+Gain\+\_\+\+E\+Type)
+\item 
+\mbox{\Hypertarget{_linked_parameters_2_source_2_demo_gain___alg_8h_ab2efdd6c14aa1a24da19ff5d5a1f1390}\label{_linked_parameters_2_source_2_demo_gain___alg_8h_ab2efdd6c14aa1a24da19ff5d5a1f1390}} 
+void A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+CK {\bfseries Demo\+Gain\+\_\+\+Algorithm\+Process\+Function} (\mbox{\hyperlink{struct_s_demo_gain___alg___context}{S\+Demo\+Gain\+\_\+\+Alg\+\_\+\+Context}} $\ast$const in\+Instances\+Begin\mbox{[}$\,$\mbox{]}, const void $\ast$in\+Instances\+End)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Algorithm component definitions for Demo\+Gain\+\_\+\+Linked\+Parameters. 
+
+\begin{DoxyAuthor}{Author}
+Rob Majors 
+\end{DoxyAuthor}

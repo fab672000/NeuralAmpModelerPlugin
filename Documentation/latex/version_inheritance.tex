@@ -1,0 +1,67 @@
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+Unlike C++ classes, {\bfseries{V\+S\+T-\/\+MA}} interfaces do not use inheritance to express specializations of objects. Usually all interfaces are derived from F\+Unknown. This is because interfaces must {\bfseries{never}} change after they have been released. The V\+ST Module Architecture Interfaces use inheritance only for versioning! All specializations will be modeled as separate interfaces!
+
+For example the C++ classes 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }Shape}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} setPosition (\textcolor{keywordtype}{long} x, \textcolor{keywordtype}{long} y);}
+\DoxyCodeLine{\textcolor{keyword}{protected}:}
+\DoxyCodeLine{    \textcolor{keywordtype}{long} x;}
+\DoxyCodeLine{    \textcolor{keywordtype}{long} y;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{class }Rect : \textcolor{keyword}{public} Shape}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} setDimension (\textcolor{keywordtype}{long} width, \textcolor{keywordtype}{long} height);}
+\DoxyCodeLine{\textcolor{keyword}{protected}:}
+\DoxyCodeLine{    \textcolor{keywordtype}{long} width;}
+\DoxyCodeLine{    \textcolor{keywordtype}{long} height;}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+expressed in {\bfseries{V\+S\+T-\/\+MA}}, define an interface for each inheritance level\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }IShape : \textcolor{keyword}{public} FUnknown}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setPosition (\textcolor{keywordtype}{long} x, \textcolor{keywordtype}{long} y) = 0;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{class }IRect : \textcolor{keyword}{public} FUnknown}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setDimension (\textcolor{keywordtype}{long} width, \textcolor{keywordtype}{long} height) = 0;}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+In the next program version there need to be changes to the {\ttfamily Shape} class that look like this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }Shape}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} setPosition (\textcolor{keywordtype}{long} x, \textcolor{keywordtype}{long} y);}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} setColor (Color color);}
+\DoxyCodeLine{\textcolor{keyword}{protected}:}
+\DoxyCodeLine{    \textcolor{keywordtype}{long} x;}
+\DoxyCodeLine{    \textcolor{keywordtype}{long} y;}
+\DoxyCodeLine{    Color color;}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+The {\bfseries{V\+S\+T-\/\+MA}} representation now reflect the changes to Shape by adding a new interface that inherits from I\+Shape and looks like the following code, while the former interface definitions remain the same\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }IShape2 : \textcolor{keyword}{public} IShape}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} setColor (Color color) = 0;}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ 

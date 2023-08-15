@@ -1,0 +1,54 @@
+{\bfseries{faust2juce}} transforms a \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} program into a fully working J\+U\+CE standalone application or plugin, which can possibly be controlled with M\+I\+DI or O\+SC messages. Polyphonic instruments are automatically created from polyphonic aware \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_d_s_p}{D\+SP}} code, which contains interface parameters with the following {\ttfamily freq}, {\ttfamily gain} and {\ttfamily gate} names. The metadata {\bfseries{declare nvoices \char`\"{}8\char`\"{};}} kind of line with a desired value of voices can be added in the source code. See \href{http://faust.grame.fr/news/2016/01/13/polyphonic-instruments.html}{\texttt{ Creating polyphonic instruments}}.
+
+Polyphonic synthesiser can be created using J\+U\+CE Synthesiser model or \mbox{\hyperlink{struct_faust}{Faust}} own polyphonic architecture file (using the \textquotesingle{}\mbox{\hyperlink{classmydsp__poly}{mydsp\+\_\+poly}}\textquotesingle{} class). The {\ttfamily -\/jsynth} parameter has to be used to choose the J\+U\+CE model.
+
+{\bfseries{faust2juce}} uses several \mbox{\hyperlink{class_u_i}{UI}} interfaces, subclasses of the base \mbox{\hyperlink{class_u_i}{UI}} class (defined in the architecture/faust/gui/\+U\+I.\+h header) to link to various J\+U\+CE components\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{_juce_g_u_i_8h_source}{Juce\+G\+U\+I.\+h}}}\+: contains the main \mbox{\hyperlink{class_juce_g_u_i}{Juce\+G\+UI}} class (and additional helpers classes) to display \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_u_i}{UI}} components (buttons, sliders, bargraphs...) using J\+U\+CE widgets
+\item {\ttfamily \mbox{\hyperlink{_juce_o_s_c_u_i_8h_source}{Juce\+O\+S\+C\+U\+I.\+h}}}\+: allows to link \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_u_i}{UI}} components (buttons, sliders, bargraphs...) to the J\+U\+CE O\+SC messaging system, allowing to control them in both directions
+\item {\ttfamily \mbox{\hyperlink{_juce_parameter_u_i_8h_source}{Juce\+Parameter\+U\+I.\+h}}}\+: allows to link \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_u_i}{UI}} components (buttons, sliders, bargraphs...) with the J\+U\+CE Audio\+Parameter\+Float/\+Audio\+Parameter\+Float classes
+\item {\ttfamily \mbox{\hyperlink{_juce_state_u_i_8h_source}{Juce\+State\+U\+I.\+h}}}\+: allows to save/restore \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_u_i}{UI}} components (buttons, sliders, bargraphs...) values using the J\+U\+CE state management system (Memory\+Input\+Stream/\+Memory\+Output\+Stream classes)
+\end{DoxyItemize}
+
+Some additional files are needed for soundfile and M\+I\+DI support\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{_juce_reader_8h_source}{Juce\+Reader.\+h}}}\+: contains code to load audio files using J\+U\+CE code, that will be used when the {\ttfamily soundfile} primitive is used in the \mbox{\hyperlink{struct_faust}{Faust}} code
+\item {\ttfamily \mbox{\hyperlink{juce-midi_8h_source}{juce-\/midi.\+h}}}\+: allows to link \mbox{\hyperlink{struct_faust}{Faust}} \mbox{\hyperlink{class_u_i}{UI}} components (buttons, sliders, bargraphs...) to the J\+U\+CE M\+I\+DI messaging system (for inputs and outputs)
+\end{DoxyItemize}
+
+Two different achitecture files will be used to glue the previously described files with the \mbox{\hyperlink{struct_faust}{Faust}} C++ generated class\+:
+\begin{DoxyItemize}
+\item {\ttfamily juce-\/plugin.\+cpp}\+: is used to create a J\+U\+CE plugin
+\item {\ttfamily juce-\/standalone.\+cpp}\+: is used to create a J\+U\+CE stanalone application
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5f567ebd34cb8879590fcba1cc50121e_autotoc_md936}{}\doxysection{How to use}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5f567ebd34cb8879590fcba1cc50121e_autotoc_md936}
+{\bfseries{faust2juce}} is used with the following command\+:
+
+{\ttfamily faust2juce \mbox{[}-\/standalone\mbox{]} \mbox{[}-\/nvoices $<$num$>$\mbox{]} \mbox{[}-\/effect auto$\vert$$<$effect.\+dsp$>$\mbox{]} \mbox{[}-\/jucemodulesdir $<$dir$>$\mbox{]} \mbox{[}-\/jsynth\mbox{]} \mbox{[}-\/midi\mbox{]} \mbox{[}-\/osc\mbox{]} \mbox{[}-\/llvm\mbox{]} \mbox{[}-\/soundfile\mbox{]} \mbox{[}additional \mbox{\hyperlink{struct_faust}{Faust}} options (-\/vec -\/vs 8...)\mbox{]} file.\+dsp}
+
+By default it will create a plugin project, with a folder named with the dsp file name, containing a .jucer project with a Faust\+Plugin\+Processor.\+cpp file to be used by J\+U\+CE.
+
+When using {\ttfamily -\/standalone} mode, it will create a standalone project, with a folder named with the dsp file name, containing a .jucer project with a Faust\+Audio\+Application.\+cpp file to be used by J\+U\+CE.
+
+The resulting folder has to be moved on the \char`\"{}examples\char`\"{} folder of your J\+U\+CE installation, the .jucer file has to be opened, and projects for specific native platforms can be generated.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5f567ebd34cb8879590fcba1cc50121e_autotoc_md937}{}\doxysection{Options}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_5f567ebd34cb8879590fcba1cc50121e_autotoc_md937}
+The following options are available\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily -\/standalone} \+: to produce a standalone project, otherwise a plugin project is generated
+\item {\ttfamily -\/nvoices $<$num$>$} \+: to produce a polyphonic self-\/contained \mbox{\hyperlink{class_d_s_p}{D\+SP}} with $<$num$>$ voices, ready to be used with M\+I\+DI or O\+SC
+\item {\ttfamily -\/effect $<$effect.\+dsp$>$} \+: to produce a polyphonic \mbox{\hyperlink{class_d_s_p}{D\+SP}} connected to a global output effect, ready to be used with M\+I\+DI or O\+SC
+\item {\ttfamily -\/effect auto} \+: to produce a polyphonic \mbox{\hyperlink{class_d_s_p}{D\+SP}} connected to a global output effect defined as \textquotesingle{}effect\textquotesingle{} in $<$file.\+dsp$>$, ready to be used with M\+I\+DI or O\+SC
+\item {\ttfamily -\/jucemodulesdir $<$folder$>$} \+: to set J\+U\+CE modules directory to {\ttfamily $<$folder$>$}, such as $\sim$/\+J\+U\+C\+E/modules
+\item {\ttfamily -\/jsynth} \+: to use J\+U\+CE polyphonic Synthesizer instead of \mbox{\hyperlink{struct_faust}{Faust}} polyphonic code
+\item {\ttfamily -\/midi} \+: activates M\+I\+DI control
+\item {\ttfamily -\/osc} \+: activates O\+SC control
+\item {\ttfamily -\/llvm} \+: to use the L\+L\+VM compilation chain (O\+SX and Linux for now)
+\item {\ttfamily -\/soundfile} \+: when compiling \mbox{\hyperlink{class_d_s_p}{D\+SP}} using \textquotesingle{}soundfile\textquotesingle{} primitive, to add needed resources
+\item {\ttfamily -\/help or -\/h} \+: shows the different options
+\end{DoxyItemize}
+
+As usual with faust2xx tools, other \mbox{\hyperlink{struct_faust}{Faust}} compiler specific options can be given to {\bfseries{faust2juce}}, like {\ttfamily -\/cn name} to give a name to the generated \mbox{\hyperlink{class_d_s_p}{D\+SP}} class, or {\ttfamily -\/vec -\/lv 1 -\/lv 1} to compile in vector mode... 

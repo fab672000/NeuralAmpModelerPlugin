@@ -1,0 +1,49 @@
+These guidelines exist in order to try and tidy up the I\+Plug code base. Every developer has their own preferences, here we are stuck with some legacy choices that may not be the best/most modern approaches, but are used widely. We want to aim for consistency across the code base.
+
+
+\begin{DoxyItemize}
+\item Indentation uses 2 spaces -\/ no tabs ~\newline
+
+\item Files should be unix format line endings, unless they are windows specific
+\item C++11 stuff\+: {\ttfamily override} keyword, {\ttfamily final} keyword, {\ttfamily auto} where sensible
+\item Do not use the S\+TL, unless A\+PI classes depend on it. {\ttfamily \mbox{\hyperlink{class_w_d_l___string}{W\+D\+L\+\_\+\+String}}} is used rather than {\ttfamily std\+::string}, setters that require string arguments take {\ttfamily const char$\ast$} U\+T\+F8 cstrings
+\item I\+Plug should be able to produce very small binaries, and not include large dependencies or unnecessary code
+\item Doxygen description uses J\+A\+V\+A\+D\+OC brief style.
+\item Variables are declared with camel case with the first letter non-\/capitalised
+\item Pointer arguments and local variables should be prefixed with the letter p e.\+g. {\ttfamily p\+Camel\+Case}
+\item Member variables prefixed with the letter m e.\+g. {\ttfamily m\+Control}
+\item Member variables that are pointers do not need a \char`\"{}p\char`\"{}
+\item Member methods that should not be called by the \char`\"{}\+I\+Plug User\char`\"{}, but are still accessible, for whatever reason prefixed with an underscore
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000063}{Todo}}]Expand this\end{DoxyRefDesc}
+
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__documentation_codingstyle_autotoc_md1392}{}\doxysubsection{An example class\+:}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__documentation_codingstyle_autotoc_md1392}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }MyClass}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  MyClass()}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \string~MyClass()}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} MyFunction(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str, \mbox{\hyperlink{class_i_control}{IControl}}* pControl, \mbox{\hyperlink{class_w_d_l___string}{WDL\_String}}\& fileName)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\textcolor{keyword}{  }\{}
+\DoxyCodeLine{    \textcolor{keyword}{const} \textcolor{keywordtype}{double} myVarible = 0.5; \textcolor{comment}{// const where relevant}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{//single line if statements should look like this}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (0.5 > 0.4)}
+\DoxyCodeLine{      printf(\textcolor{stringliteral}{"hello world\(\backslash\)n"});}
+\DoxyCodeLine{      }
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{  \mbox{\hyperlink{class_i_control}{IControl}}* mControl; \textcolor{comment}{// member variables have prefix mCamelCase}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

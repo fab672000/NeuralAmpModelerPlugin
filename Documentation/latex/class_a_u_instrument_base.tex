@@ -1,0 +1,662 @@
+\hypertarget{class_a_u_instrument_base}{}\doxysection{A\+U\+Instrument\+Base Class Reference}
+\label{class_a_u_instrument_base}\index{AUInstrumentBase@{AUInstrumentBase}}
+Inheritance diagram for A\+U\+Instrument\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_a_u_instrument_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_af3a74a70f42fa21e7c1647e69ebf098a}\label{class_a_u_instrument_base_af3a74a70f42fa21e7c1647e69ebf098a}} 
+{\bfseries A\+U\+Instrument\+Base} (Audio\+Component\+Instance in\+Instance, U\+Int32 num\+Inputs, U\+Int32 num\+Outputs, U\+Int32 num\+Groups=16, U\+Int32 num\+Parts=1)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a118e461617d2c532eed7c682fa11c3d3}{Initialize}} ()
+\item 
+\mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}} \& \mbox{\hyperlink{class_a_u_instrument_base_a5031c165730e9ff2f6a1a569d45a73ee}{Parts}} ()
+\item 
+\mbox{\hyperlink{class_a_u_element}{A\+U\+Element}} $\ast$ \mbox{\hyperlink{class_a_u_instrument_base_af3d7310b02da7e8dbbc97ff46d1f0e6f}{Get\+Part}} (Audio\+Unit\+Element in\+Element)
+\item 
+virtual \mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}} $\ast$ \mbox{\hyperlink{class_a_u_instrument_base_a474f93061d5c5e287512564e2aad925c}{Get\+Scope\+Extended}} (Audio\+Unit\+Scope in\+Scope)
+\item 
+virtual \mbox{\hyperlink{class_a_u_element}{A\+U\+Element}} $\ast$ \mbox{\hyperlink{class_a_u_instrument_base_a30df4cc0ba08933d238d5969bc1f3e2f}{Create\+Element}} (Audio\+Unit\+Scope in\+Scope, Audio\+Unit\+Element in\+Element)
+\item 
+virtual void \mbox{\hyperlink{class_a_u_instrument_base_af08a99aa49aa2f853e4bdd18010dadb3}{Create\+Extended\+Elements}} ()
+\item 
+virtual void \mbox{\hyperlink{class_a_u_instrument_base_ad69579d209fbfb839c5f1c267068f767}{Cleanup}} ()
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a7103418310f4de7527a47ef3f6a52aaa}{Reset}} (Audio\+Unit\+Scope in\+Scope, Audio\+Unit\+Element in\+Element)
+\item 
+virtual bool \mbox{\hyperlink{class_a_u_instrument_base_a4782eaaaab1bd51c8f3bb7f6758d6d97}{Valid\+Format}} (Audio\+Unit\+Scope in\+Scope, Audio\+Unit\+Element in\+Element, const \mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \&in\+New\+Format)
+\item 
+virtual bool \mbox{\hyperlink{class_a_u_instrument_base_a276de9d2f2957f0ffec8438998ea6bb3}{Stream\+Format\+Writable}} (Audio\+Unit\+Scope scope, Audio\+Unit\+Element element)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a1d7f9e27daa11b96261ad88c49aab5b3}{Render}} (Audio\+Unit\+Render\+Action\+Flags \&io\+Action\+Flags, const Audio\+Time\+Stamp \&in\+Time\+Stamp, U\+Int32 in\+Number\+Frames)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a84b29f6587c68291f0ac99b26d4ee1c5}{Start\+Note}} (Music\+Device\+Instrument\+ID in\+Instrument, Music\+Device\+Group\+ID in\+Group\+ID, Note\+Instance\+ID $\ast$out\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame, const Music\+Device\+Note\+Params \&in\+Params)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a3be5320c9c0ac8e0dc3c7e86a2108116}{Stop\+Note}} (Music\+Device\+Group\+ID in\+Group\+ID, Note\+Instance\+ID in\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ac12718523eefa63e284a151bfb4a28c1}\label{class_a_u_instrument_base_ac12718523eefa63e284a151bfb4a28c1}} 
+virtual O\+S\+Status {\bfseries Real\+Time\+Start\+Note} (\mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$in\+Group, Note\+Instance\+ID in\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame, const Music\+Device\+Note\+Params \&in\+Params)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ad4aaee8661cc7850fe363d1dfef3a33c}\label{class_a_u_instrument_base_ad4aaee8661cc7850fe363d1dfef3a33c}} 
+virtual O\+S\+Status {\bfseries Real\+Time\+Stop\+Note} (Music\+Device\+Group\+ID in\+Group\+ID, Note\+Instance\+ID in\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_ab168d4cbc4e931972d7028092148a360}{Handle\+Control\+Change}} (U\+Int8 in\+Channel, U\+Int8 in\+Controller, U\+Int8 in\+Value, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_aa86f6d941cd95545dd83f32b7e43ad76}{Handle\+Pitch\+Wheel}} (U\+Int8 in\+Channel, U\+Int8 in\+Pitch1, U\+Int8 in\+Pitch2, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_acf2dddc2119bc2c3c401a52628093c53}{Handle\+Channel\+Pressure}} (U\+Int8 in\+Channel, U\+Int8 in\+Value, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a8d991899a310716adb7f8ff8c1f92a96}{Handle\+Program\+Change}} (U\+Int8 in\+Channel, U\+Int8 in\+Value)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_afab982832733d804e74b55f4e02a4b78}{Handle\+Poly\+Pressure}} (U\+Int8 in\+Channel, U\+Int8 in\+Key, U\+Int8 in\+Value, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_ac02dfe4e4e6065a1f6b00de345cb325d}{Handle\+Reset\+All\+Controllers}} (U\+Int8 in\+Channel)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_abeb0db726be2f66e842c44ec516c4ea2}{Handle\+All\+Notes\+Off}} (U\+Int8 in\+Channel)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a79ae5e41486e10d8b9d4db74ea12c46e}{Handle\+All\+Sound\+Off}} (U\+Int8 in\+Channel)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a530a28303a3f2ae31defe8c90b515357}\label{class_a_u_instrument_base_a530a28303a3f2ae31defe8c90b515357}} 
+\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries Get\+Note} (U\+Int32 in\+Index)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a92ff3a9b768e98a8cc57362be0c1a4df}\label{class_a_u_instrument_base_a92ff3a9b768e98a8cc57362be0c1a4df}} 
+\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries Get\+A\+Free\+Note} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ac82b6aaa301fb2189b304692d04363bb}\label{class_a_u_instrument_base_ac82b6aaa301fb2189b304692d04363bb}} 
+void {\bfseries Add\+Free\+Note} (\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$in\+Note)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_af3a74a70f42fa21e7c1647e69ebf098a}\label{class_a_u_instrument_base_af3a74a70f42fa21e7c1647e69ebf098a}} 
+{\bfseries A\+U\+Instrument\+Base} (Audio\+Component\+Instance in\+Instance, U\+Int32 num\+Inputs, U\+Int32 num\+Outputs, U\+Int32 num\+Groups=16, U\+Int32 num\+Parts=1)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a9bec132bf1b58df395b28ab216c75a21}{Initialize}} ()
+\item 
+\mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}} \& \mbox{\hyperlink{class_a_u_instrument_base_a5031c165730e9ff2f6a1a569d45a73ee}{Parts}} ()
+\item 
+\mbox{\hyperlink{class_a_u_element}{A\+U\+Element}} $\ast$ \mbox{\hyperlink{class_a_u_instrument_base_af3d7310b02da7e8dbbc97ff46d1f0e6f}{Get\+Part}} (Audio\+Unit\+Element in\+Element)
+\item 
+virtual \mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}} $\ast$ \mbox{\hyperlink{class_a_u_instrument_base_afe3326c2e1876e919e3d1bdef6b9a745}{Get\+Scope\+Extended}} (Audio\+Unit\+Scope in\+Scope)
+\item 
+virtual \mbox{\hyperlink{class_a_u_element}{A\+U\+Element}} $\ast$ \mbox{\hyperlink{class_a_u_instrument_base_a9803722ffc5d9ea19f1bd463676ff52e}{Create\+Element}} (Audio\+Unit\+Scope in\+Scope, Audio\+Unit\+Element in\+Element)
+\item 
+virtual void \mbox{\hyperlink{class_a_u_instrument_base_a54478751cce620d8ed70d8a65c756295}{Create\+Extended\+Elements}} ()
+\item 
+virtual void \mbox{\hyperlink{class_a_u_instrument_base_a42867e581786ecdf936966531e83f413}{Cleanup}} ()
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a38e74f3b251e41468be60c7242094d36}{Reset}} (Audio\+Unit\+Scope in\+Scope, Audio\+Unit\+Element in\+Element)
+\item 
+virtual bool \mbox{\hyperlink{class_a_u_instrument_base_abeff471d4bea875ccc900823fb70b54a}{Valid\+Format}} (Audio\+Unit\+Scope in\+Scope, Audio\+Unit\+Element in\+Element, const \mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \&in\+New\+Format)
+\item 
+virtual bool \mbox{\hyperlink{class_a_u_instrument_base_af95823d446d6f067a99158cc0a2eb6e6}{Stream\+Format\+Writable}} (Audio\+Unit\+Scope scope, Audio\+Unit\+Element element)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a98b96b4ceffb749af63fc015c3b03bfb}{Render}} (Audio\+Unit\+Render\+Action\+Flags \&io\+Action\+Flags, const Audio\+Time\+Stamp \&in\+Time\+Stamp, U\+Int32 in\+Number\+Frames)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a76706be709613a7b903fd47b7d5935db}{Start\+Note}} (Music\+Device\+Instrument\+ID in\+Instrument, Music\+Device\+Group\+ID in\+Group\+ID, Note\+Instance\+ID $\ast$out\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame, const Music\+Device\+Note\+Params \&in\+Params)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a76de0afc8301637c29979c2bbc8075b8}{Stop\+Note}} (Music\+Device\+Group\+ID in\+Group\+ID, Note\+Instance\+ID in\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a18c61bbab24eece8611e11b349e60245}\label{class_a_u_instrument_base_a18c61bbab24eece8611e11b349e60245}} 
+virtual O\+S\+Status {\bfseries Real\+Time\+Start\+Note} (\mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$in\+Group, Note\+Instance\+ID in\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame, const Music\+Device\+Note\+Params \&in\+Params)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_aed9dbddc1359725a5dde63d2aba832f3}\label{class_a_u_instrument_base_aed9dbddc1359725a5dde63d2aba832f3}} 
+virtual O\+S\+Status {\bfseries Real\+Time\+Stop\+Note} (Music\+Device\+Group\+ID in\+Group\+ID, Note\+Instance\+ID in\+Note\+Instance\+ID, U\+Int32 in\+Offset\+Sample\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_afe9b63777a5b62eba9fc6201f6796acb}{Handle\+Control\+Change}} (U\+Int8 in\+Channel, U\+Int8 in\+Controller, U\+Int8 in\+Value, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_aca1703a3f3d7f27fe250b62b9679776f}{Handle\+Pitch\+Wheel}} (U\+Int8 in\+Channel, U\+Int8 in\+Pitch1, U\+Int8 in\+Pitch2, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a20864c434ad90fe6ff266caefbf9ab68}{Handle\+Channel\+Pressure}} (U\+Int8 in\+Channel, U\+Int8 in\+Value, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a7e2517213e30d7b57458ea2bf6244738}{Handle\+Program\+Change}} (U\+Int8 in\+Channel, U\+Int8 in\+Value)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a67d55609488c8a66f402d801350466fd}{Handle\+Poly\+Pressure}} (U\+Int8 in\+Channel, U\+Int8 in\+Key, U\+Int8 in\+Value, U\+Int32 in\+Start\+Frame)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_adb8a49d6561c4d20670fcd4e6811f4d4}{Handle\+Reset\+All\+Controllers}} (U\+Int8 in\+Channel)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a5340eb0820f3855c16b194980d5dfc66}{Handle\+All\+Notes\+Off}} (U\+Int8 in\+Channel)
+\item 
+virtual O\+S\+Status \mbox{\hyperlink{class_a_u_instrument_base_a97deda25de26d407783af47d03305131}{Handle\+All\+Sound\+Off}} (U\+Int8 in\+Channel)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a530a28303a3f2ae31defe8c90b515357}\label{class_a_u_instrument_base_a530a28303a3f2ae31defe8c90b515357}} 
+\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries Get\+Note} (U\+Int32 in\+Index)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a0b2d037204925fa5bb2796e9a25005ef}\label{class_a_u_instrument_base_a0b2d037204925fa5bb2796e9a25005ef}} 
+\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries Get\+A\+Free\+Note} (U\+Int32 in\+Frame)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ac82b6aaa301fb2189b304692d04363bb}\label{class_a_u_instrument_base_ac82b6aaa301fb2189b304692d04363bb}} 
+void {\bfseries Add\+Free\+Note} (\mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$in\+Note)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a413caa7090889a377c802d120dc4982f}\label{class_a_u_instrument_base_a413caa7090889a377c802d120dc4982f}} 
+U\+Int32 {\bfseries Next\+Note\+ID} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a6e6e06e00e6e8c97c60abd7e3472f2c1}\label{class_a_u_instrument_base_a6e6e06e00e6e8c97c60abd7e3472f2c1}} 
+void {\bfseries Set\+Notes} (U\+Int32 in\+Num\+Notes, U\+Int32 in\+Max\+Active\+Notes, \mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$in\+Notes, U\+Int32 in\+Note\+Size)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_af5dcc0baef184119b4874115cdeda0dd}\label{class_a_u_instrument_base_af5dcc0baef184119b4874115cdeda0dd}} 
+void {\bfseries Perform\+Events} (const Audio\+Time\+Stamp \&in\+Time\+Stamp)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a50df8a69fdb1e2b4f7fd41e6810b3cde}\label{class_a_u_instrument_base_a50df8a69fdb1e2b4f7fd41e6810b3cde}} 
+O\+S\+Status {\bfseries Send\+Pedal\+Event} (Music\+Device\+Group\+ID in\+Group\+ID, U\+Int32 in\+Event\+Type, U\+Int32 in\+Offset\+Sample\+Frame)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a1234bcbe66cc377e6aa63d0156e70636}\label{class_a_u_instrument_base_a1234bcbe66cc377e6aa63d0156e70636}} 
+virtual \mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries Voice\+Stealing} (U\+Int32 in\+Frame, bool in\+Kill\+It)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_aa7c6809735bd4ed567550d8b83d84f87}\label{class_a_u_instrument_base_aa7c6809735bd4ed567550d8b83d84f87}} 
+U\+Int32 {\bfseries Max\+Active\+Notes} () const
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a20325ce88a1e76baa716b58568742979}\label{class_a_u_instrument_base_a20325ce88a1e76baa716b58568742979}} 
+U\+Int32 {\bfseries Num\+Active\+Notes} () const
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a9878c86b23b8596a5d1ed139fa62293a}\label{class_a_u_instrument_base_a9878c86b23b8596a5d1ed139fa62293a}} 
+void {\bfseries Inc\+Num\+Active\+Notes} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ad1b00c46e01349fc0466fa2c2e81a7fa}\label{class_a_u_instrument_base_ad1b00c46e01349fc0466fa2c2e81a7fa}} 
+void {\bfseries Dec\+Num\+Active\+Notes} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a7bf7de3a3c5474686640873811d7b36e}\label{class_a_u_instrument_base_a7bf7de3a3c5474686640873811d7b36e}} 
+U\+Int32 {\bfseries Count\+Active\+Notes} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a3035922abdf436135423697b615b7e46}\label{class_a_u_instrument_base_a3035922abdf436135423697b615b7e46}} 
+\mbox{\hyperlink{class_synth_part_element}{Synth\+Part\+Element}} $\ast$ {\bfseries Get\+Part\+Element} (Audio\+Unit\+Element in\+Part\+Element)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a9d891c45034f93b2042bcdc86094595b}\label{class_a_u_instrument_base_a9d891c45034f93b2042bcdc86094595b}} 
+virtual \mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$ {\bfseries Get\+El\+For\+Group\+ID} (Music\+Device\+Group\+ID in\+Group\+ID)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_aa0690387d687e57d12517a3f3f831af3}\label{class_a_u_instrument_base_aa0690387d687e57d12517a3f3f831af3}} 
+virtual \mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$ {\bfseries Get\+El\+For\+Note\+ID} (Note\+Instance\+ID in\+Note\+ID)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a413caa7090889a377c802d120dc4982f}\label{class_a_u_instrument_base_a413caa7090889a377c802d120dc4982f}} 
+U\+Int32 {\bfseries Next\+Note\+ID} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a6e6e06e00e6e8c97c60abd7e3472f2c1}\label{class_a_u_instrument_base_a6e6e06e00e6e8c97c60abd7e3472f2c1}} 
+void {\bfseries Set\+Notes} (U\+Int32 in\+Num\+Notes, U\+Int32 in\+Max\+Active\+Notes, \mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$in\+Notes, U\+Int32 in\+Note\+Size)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_af5dcc0baef184119b4874115cdeda0dd}\label{class_a_u_instrument_base_af5dcc0baef184119b4874115cdeda0dd}} 
+void {\bfseries Perform\+Events} (const Audio\+Time\+Stamp \&in\+Time\+Stamp)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a50df8a69fdb1e2b4f7fd41e6810b3cde}\label{class_a_u_instrument_base_a50df8a69fdb1e2b4f7fd41e6810b3cde}} 
+O\+S\+Status {\bfseries Send\+Pedal\+Event} (Music\+Device\+Group\+ID in\+Group\+ID, U\+Int32 in\+Event\+Type, U\+Int32 in\+Offset\+Sample\+Frame)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_adca88bbb927047439d83ccaf7aec6c66}\label{class_a_u_instrument_base_adca88bbb927047439d83ccaf7aec6c66}} 
+virtual \mbox{\hyperlink{struct_synth_note}{Synth\+Note}} $\ast$ {\bfseries Voice\+Stealing} (U\+Int32 in\+Frame, bool in\+Kill\+It)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_aa7c6809735bd4ed567550d8b83d84f87}\label{class_a_u_instrument_base_aa7c6809735bd4ed567550d8b83d84f87}} 
+U\+Int32 {\bfseries Max\+Active\+Notes} () const
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a20325ce88a1e76baa716b58568742979}\label{class_a_u_instrument_base_a20325ce88a1e76baa716b58568742979}} 
+U\+Int32 {\bfseries Num\+Active\+Notes} () const
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a9878c86b23b8596a5d1ed139fa62293a}\label{class_a_u_instrument_base_a9878c86b23b8596a5d1ed139fa62293a}} 
+void {\bfseries Inc\+Num\+Active\+Notes} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ad1b00c46e01349fc0466fa2c2e81a7fa}\label{class_a_u_instrument_base_ad1b00c46e01349fc0466fa2c2e81a7fa}} 
+void {\bfseries Dec\+Num\+Active\+Notes} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a7bf7de3a3c5474686640873811d7b36e}\label{class_a_u_instrument_base_a7bf7de3a3c5474686640873811d7b36e}} 
+U\+Int32 {\bfseries Count\+Active\+Notes} ()
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_ac55f556967f55cadff6ddc180eb5a0f2}\label{class_a_u_instrument_base_ac55f556967f55cadff6ddc180eb5a0f2}} 
+\mbox{\hyperlink{class_synth_part_element}{Synth\+Part\+Element}} $\ast$ {\bfseries Get\+Part\+Element} (Audio\+Unit\+Element in\+Part\+Element)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a3635e4103e3ee5fc8eae646401787c99}\label{class_a_u_instrument_base_a3635e4103e3ee5fc8eae646401787c99}} 
+virtual \mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$ {\bfseries Get\+El\+For\+Group\+ID} (Music\+Device\+Group\+ID in\+Group\+ID)
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_aae0096912e07f615d37a3bd954d1734a}\label{class_a_u_instrument_base_aae0096912e07f615d37a3bd954d1734a}} 
+virtual \mbox{\hyperlink{class_synth_group_element}{Synth\+Group\+Element}} $\ast$ {\bfseries Get\+El\+For\+Note\+ID} (Note\+Instance\+ID in\+Note\+ID)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_a1a1aeb98b9ca3e058c26750d5c1c9017}\label{class_a_u_instrument_base_a1a1aeb98b9ca3e058c26750d5c1c9017}} 
+S\+Int64 {\bfseries m\+Absolute\+Sample\+Frame}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_u_instrument_base_aff23d909d7b94fdaf647adc7ad51050a}\label{class_a_u_instrument_base_aff23d909d7b94fdaf647adc7ad51050a}} 
+class {\bfseries Synth\+Group\+Element}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_u_instrument_base_a42867e581786ecdf936966531e83f413}\label{class_a_u_instrument_base_a42867e581786ecdf936966531e83f413}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Cleanup()}{Cleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void A\+U\+Instrument\+Base\+::\+Cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Cleanup 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_af5857d1ff186aadc47b3d588def8785f}{A\+U\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_faust_a_u_instrument_a7a82fe2080cedd8362cd890272c65c7a}{Faust\+A\+U\+Instrument}}, and \mbox{\hyperlink{class_faust_a_u_instrument_a573f4be82b76db58b02ec31417ad502c}{Faust\+A\+U\+Instrument}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_ad69579d209fbfb839c5f1c267068f767}\label{class_a_u_instrument_base_ad69579d209fbfb839c5f1c267068f767}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Cleanup()}{Cleanup()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+U\+Instrument\+Base\+::\+Cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Cleanup 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_af5857d1ff186aadc47b3d588def8785f}{A\+U\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_faust_a_u_instrument_a7a82fe2080cedd8362cd890272c65c7a}{Faust\+A\+U\+Instrument}}, and \mbox{\hyperlink{class_faust_a_u_instrument_a573f4be82b76db58b02ec31417ad502c}{Faust\+A\+U\+Instrument}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a9803722ffc5d9ea19f1bd463676ff52e}\label{class_a_u_instrument_base_a9803722ffc5d9ea19f1bd463676ff52e}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!CreateElement@{CreateElement}}
+\index{CreateElement@{CreateElement}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{CreateElement()}{CreateElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_u_element}{A\+U\+Element}}$\ast$ A\+U\+Instrument\+Base\+::\+Create\+Element (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{scope,  }\item[{Audio\+Unit\+Element}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Create\+Element 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a0e91c297a99994297b335204c17ea57d}{A\+U\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_faust_a_u_instrument_a6a3c1fed3e48b03096d2032bb93fa3db}{Faust\+A\+U\+Instrument}}, and \mbox{\hyperlink{class_faust_a_u_instrument_aa4dfdc375d4c9e0a109763b60e7cbe8d}{Faust\+A\+U\+Instrument}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a30df4cc0ba08933d238d5969bc1f3e2f}\label{class_a_u_instrument_base_a30df4cc0ba08933d238d5969bc1f3e2f}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!CreateElement@{CreateElement}}
+\index{CreateElement@{CreateElement}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{CreateElement()}{CreateElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_u_element}{A\+U\+Element}} $\ast$ A\+U\+Instrument\+Base\+::\+Create\+Element (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{scope,  }\item[{Audio\+Unit\+Element}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Create\+Element 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a0e91c297a99994297b335204c17ea57d}{A\+U\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_faust_a_u_instrument_a6a3c1fed3e48b03096d2032bb93fa3db}{Faust\+A\+U\+Instrument}}, and \mbox{\hyperlink{class_faust_a_u_instrument_aa4dfdc375d4c9e0a109763b60e7cbe8d}{Faust\+A\+U\+Instrument}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a54478751cce620d8ed70d8a65c756295}\label{class_a_u_instrument_base_a54478751cce620d8ed70d8a65c756295}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!CreateExtendedElements@{CreateExtendedElements}}
+\index{CreateExtendedElements@{CreateExtendedElements}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{CreateExtendedElements()}{CreateExtendedElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void A\+U\+Instrument\+Base\+::\+Create\+Extended\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Create\+Extended\+Elements 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_ad0469d752e006bbc20fc6cf70795cd85}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_af08a99aa49aa2f853e4bdd18010dadb3}\label{class_a_u_instrument_base_af08a99aa49aa2f853e4bdd18010dadb3}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!CreateExtendedElements@{CreateExtendedElements}}
+\index{CreateExtendedElements@{CreateExtendedElements}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{CreateExtendedElements()}{CreateExtendedElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void A\+U\+Instrument\+Base\+::\+Create\+Extended\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Create\+Extended\+Elements 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_ad0469d752e006bbc20fc6cf70795cd85}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_af3d7310b02da7e8dbbc97ff46d1f0e6f}\label{class_a_u_instrument_base_af3d7310b02da7e8dbbc97ff46d1f0e6f}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!GetPart@{GetPart}}
+\index{GetPart@{GetPart}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{GetPart()}{GetPart()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_u_element}{A\+U\+Element}}$\ast$ A\+U\+Instrument\+Base\+::\+Get\+Part (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Element}]{in\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@method Get\+Part \mbox{\Hypertarget{class_a_u_instrument_base_af3d7310b02da7e8dbbc97ff46d1f0e6f}\label{class_a_u_instrument_base_af3d7310b02da7e8dbbc97ff46d1f0e6f}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!GetPart@{GetPart}}
+\index{GetPart@{GetPart}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{GetPart()}{GetPart()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_u_element}{A\+U\+Element}}$\ast$ A\+U\+Instrument\+Base\+::\+Get\+Part (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Element}]{in\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@method Get\+Part \mbox{\Hypertarget{class_a_u_instrument_base_a474f93061d5c5e287512564e2aad925c}\label{class_a_u_instrument_base_a474f93061d5c5e287512564e2aad925c}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!GetScopeExtended@{GetScopeExtended}}
+\index{GetScopeExtended@{GetScopeExtended}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{GetScopeExtended()}{GetScopeExtended()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}} $\ast$ A\+U\+Instrument\+Base\+::\+Get\+Scope\+Extended (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{in\+Scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Get\+Scope\+Extended 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_abae52481d99e10724930246cab237b3f}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_afe3326c2e1876e919e3d1bdef6b9a745}\label{class_a_u_instrument_base_afe3326c2e1876e919e3d1bdef6b9a745}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!GetScopeExtended@{GetScopeExtended}}
+\index{GetScopeExtended@{GetScopeExtended}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{GetScopeExtended()}{GetScopeExtended()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}}$\ast$ A\+U\+Instrument\+Base\+::\+Get\+Scope\+Extended (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{in\+Scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Get\+Scope\+Extended 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_abae52481d99e10724930246cab237b3f}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_abeb0db726be2f66e842c44ec516c4ea2}\label{class_a_u_instrument_base_abeb0db726be2f66e842c44ec516c4ea2}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleAllNotesOff@{HandleAllNotesOff}}
+\index{HandleAllNotesOff@{HandleAllNotesOff}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleAllNotesOff()}{HandleAllNotesOff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+All\+Notes\+Off (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+All\+Notes\+Off 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a513e4a266bfb32c8a76bbd2fc3da553a}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a5340eb0820f3855c16b194980d5dfc66}\label{class_a_u_instrument_base_a5340eb0820f3855c16b194980d5dfc66}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleAllNotesOff@{HandleAllNotesOff}}
+\index{HandleAllNotesOff@{HandleAllNotesOff}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleAllNotesOff()}{HandleAllNotesOff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+All\+Notes\+Off (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+All\+Notes\+Off 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a513e4a266bfb32c8a76bbd2fc3da553a}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a79ae5e41486e10d8b9d4db74ea12c46e}\label{class_a_u_instrument_base_a79ae5e41486e10d8b9d4db74ea12c46e}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleAllSoundOff@{HandleAllSoundOff}}
+\index{HandleAllSoundOff@{HandleAllSoundOff}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleAllSoundOff()}{HandleAllSoundOff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+All\+Sound\+Off (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+All\+Sound\+Off 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a8f55f35dddd0a334f0179c3a6e24ffe0}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a97deda25de26d407783af47d03305131}\label{class_a_u_instrument_base_a97deda25de26d407783af47d03305131}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleAllSoundOff@{HandleAllSoundOff}}
+\index{HandleAllSoundOff@{HandleAllSoundOff}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleAllSoundOff()}{HandleAllSoundOff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+All\+Sound\+Off (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+All\+Sound\+Off 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a8f55f35dddd0a334f0179c3a6e24ffe0}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_acf2dddc2119bc2c3c401a52628093c53}\label{class_a_u_instrument_base_acf2dddc2119bc2c3c401a52628093c53}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleChannelPressure@{HandleChannelPressure}}
+\index{HandleChannelPressure@{HandleChannelPressure}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleChannelPressure()}{HandleChannelPressure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Channel\+Pressure (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Value,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Channel\+Pressure 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a00613fa1938f80db4731e7b54b670ca2}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a20864c434ad90fe6ff266caefbf9ab68}\label{class_a_u_instrument_base_a20864c434ad90fe6ff266caefbf9ab68}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleChannelPressure@{HandleChannelPressure}}
+\index{HandleChannelPressure@{HandleChannelPressure}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleChannelPressure()}{HandleChannelPressure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Channel\+Pressure (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Value,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Channel\+Pressure 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a00613fa1938f80db4731e7b54b670ca2}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_ab168d4cbc4e931972d7028092148a360}\label{class_a_u_instrument_base_ab168d4cbc4e931972d7028092148a360}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleControlChange@{HandleControlChange}}
+\index{HandleControlChange@{HandleControlChange}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleControlChange()}{HandleControlChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Control\+Change (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Controller,  }\item[{U\+Int8}]{in\+Value,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Control\+Change 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a753134176e884609b942e88ec56f133a}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_afe9b63777a5b62eba9fc6201f6796acb}\label{class_a_u_instrument_base_afe9b63777a5b62eba9fc6201f6796acb}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleControlChange@{HandleControlChange}}
+\index{HandleControlChange@{HandleControlChange}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleControlChange()}{HandleControlChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Control\+Change (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Controller,  }\item[{U\+Int8}]{in\+Value,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Control\+Change 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a753134176e884609b942e88ec56f133a}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_aa86f6d941cd95545dd83f32b7e43ad76}\label{class_a_u_instrument_base_aa86f6d941cd95545dd83f32b7e43ad76}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandlePitchWheel@{HandlePitchWheel}}
+\index{HandlePitchWheel@{HandlePitchWheel}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandlePitchWheel()}{HandlePitchWheel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Pitch\+Wheel (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Pitch1,  }\item[{U\+Int8}]{in\+Pitch2,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Pitch\+Wheel 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a6ead08ed758633c076d36812d6112ea8}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_aca1703a3f3d7f27fe250b62b9679776f}\label{class_a_u_instrument_base_aca1703a3f3d7f27fe250b62b9679776f}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandlePitchWheel@{HandlePitchWheel}}
+\index{HandlePitchWheel@{HandlePitchWheel}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandlePitchWheel()}{HandlePitchWheel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Pitch\+Wheel (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Pitch1,  }\item[{U\+Int8}]{in\+Pitch2,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Pitch\+Wheel 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a6ead08ed758633c076d36812d6112ea8}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_afab982832733d804e74b55f4e02a4b78}\label{class_a_u_instrument_base_afab982832733d804e74b55f4e02a4b78}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandlePolyPressure@{HandlePolyPressure}}
+\index{HandlePolyPressure@{HandlePolyPressure}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandlePolyPressure()}{HandlePolyPressure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Poly\+Pressure (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Key,  }\item[{U\+Int8}]{in\+Value,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Poly\+Pressure 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_ab28ae4a55c69deb51d6b25bbd13cab81}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a67d55609488c8a66f402d801350466fd}\label{class_a_u_instrument_base_a67d55609488c8a66f402d801350466fd}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandlePolyPressure@{HandlePolyPressure}}
+\index{HandlePolyPressure@{HandlePolyPressure}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandlePolyPressure()}{HandlePolyPressure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Poly\+Pressure (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Key,  }\item[{U\+Int8}]{in\+Value,  }\item[{U\+Int32}]{in\+Start\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Poly\+Pressure 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_ab28ae4a55c69deb51d6b25bbd13cab81}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a7e2517213e30d7b57458ea2bf6244738}\label{class_a_u_instrument_base_a7e2517213e30d7b57458ea2bf6244738}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleProgramChange@{HandleProgramChange}}
+\index{HandleProgramChange@{HandleProgramChange}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleProgramChange()}{HandleProgramChange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Program\+Change (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Program\+Change 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a551834dbef16ff89a4d405e57ef16290}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a8d991899a310716adb7f8ff8c1f92a96}\label{class_a_u_instrument_base_a8d991899a310716adb7f8ff8c1f92a96}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleProgramChange@{HandleProgramChange}}
+\index{HandleProgramChange@{HandleProgramChange}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleProgramChange()}{HandleProgramChange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Program\+Change (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel,  }\item[{U\+Int8}]{in\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Program\+Change 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a551834dbef16ff89a4d405e57ef16290}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_ac02dfe4e4e6065a1f6b00de345cb325d}\label{class_a_u_instrument_base_ac02dfe4e4e6065a1f6b00de345cb325d}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleResetAllControllers@{HandleResetAllControllers}}
+\index{HandleResetAllControllers@{HandleResetAllControllers}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleResetAllControllers()}{HandleResetAllControllers()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Reset\+All\+Controllers (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Reset\+All\+Controllers 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a4ab6e7958f6d6bbcef1d077b59981350}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_adb8a49d6561c4d20670fcd4e6811f4d4}\label{class_a_u_instrument_base_adb8a49d6561c4d20670fcd4e6811f4d4}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!HandleResetAllControllers@{HandleResetAllControllers}}
+\index{HandleResetAllControllers@{HandleResetAllControllers}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{HandleResetAllControllers()}{HandleResetAllControllers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Handle\+Reset\+All\+Controllers (\begin{DoxyParamCaption}\item[{U\+Int8}]{in\+Channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Handle\+Reset\+All\+Controllers 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_m_i_d_i_base_a4ab6e7958f6d6bbcef1d077b59981350}{A\+U\+M\+I\+D\+I\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a9bec132bf1b58df395b28ab216c75a21}\label{class_a_u_instrument_base_a9bec132bf1b58df395b28ab216c75a21}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Initialize 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a7300a2c2ad9dab1b751ea576f1366910}{A\+U\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_faust_a_u_instrument_ae6c45c99d6ed3ad9baf9f858d6e7ff6e}{Faust\+A\+U\+Instrument}}, and \mbox{\hyperlink{class_faust_a_u_instrument_aa4d6307891a46163e3954bdabe0ab917}{Faust\+A\+U\+Instrument}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a118e461617d2c532eed7c682fa11c3d3}\label{class_a_u_instrument_base_a118e461617d2c532eed7c682fa11c3d3}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Initialize 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a7300a2c2ad9dab1b751ea576f1366910}{A\+U\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_faust_a_u_instrument_ae6c45c99d6ed3ad9baf9f858d6e7ff6e}{Faust\+A\+U\+Instrument}}, and \mbox{\hyperlink{class_faust_a_u_instrument_aa4d6307891a46163e3954bdabe0ab917}{Faust\+A\+U\+Instrument}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a5031c165730e9ff2f6a1a569d45a73ee}\label{class_a_u_instrument_base_a5031c165730e9ff2f6a1a569d45a73ee}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Parts@{Parts}}
+\index{Parts@{Parts}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Parts()}{Parts()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}}\& A\+U\+Instrument\+Base\+::\+Parts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@method Parts \mbox{\Hypertarget{class_a_u_instrument_base_a5031c165730e9ff2f6a1a569d45a73ee}\label{class_a_u_instrument_base_a5031c165730e9ff2f6a1a569d45a73ee}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Parts@{Parts}}
+\index{Parts@{Parts}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Parts()}{Parts()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_u_scope}{A\+U\+Scope}}\& A\+U\+Instrument\+Base\+::\+Parts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@method Parts \mbox{\Hypertarget{class_a_u_instrument_base_a1d7f9e27daa11b96261ad88c49aab5b3}\label{class_a_u_instrument_base_a1d7f9e27daa11b96261ad88c49aab5b3}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Render@{Render}}
+\index{Render@{Render}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Render (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Render\+Action\+Flags \&}]{io\+Action\+Flags,  }\item[{const Audio\+Time\+Stamp \&}]{in\+Time\+Stamp,  }\item[{U\+Int32}]{in\+Number\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Render 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a4b4837eee6f60c27d3139d1937fcece3}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a98b96b4ceffb749af63fc015c3b03bfb}\label{class_a_u_instrument_base_a98b96b4ceffb749af63fc015c3b03bfb}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Render@{Render}}
+\index{Render@{Render}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Render (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Render\+Action\+Flags \&}]{io\+Action\+Flags,  }\item[{const Audio\+Time\+Stamp \&}]{in\+Time\+Stamp,  }\item[{U\+Int32}]{in\+Number\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Render 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a4b4837eee6f60c27d3139d1937fcece3}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a38e74f3b251e41468be60c7242094d36}\label{class_a_u_instrument_base_a38e74f3b251e41468be60c7242094d36}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Reset@{Reset}}
+\index{Reset@{Reset}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Reset (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{in\+Scope,  }\item[{Audio\+Unit\+Element}]{in\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Reset 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a5fd821c5d72861b2f9605e66ba3e149b}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a7103418310f4de7527a47ef3f6a52aaa}\label{class_a_u_instrument_base_a7103418310f4de7527a47ef3f6a52aaa}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!Reset@{Reset}}
+\index{Reset@{Reset}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Reset (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{in\+Scope,  }\item[{Audio\+Unit\+Element}]{in\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Reset 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a5fd821c5d72861b2f9605e66ba3e149b}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a84b29f6587c68291f0ac99b26d4ee1c5}\label{class_a_u_instrument_base_a84b29f6587c68291f0ac99b26d4ee1c5}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!StartNote@{StartNote}}
+\index{StartNote@{StartNote}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{StartNote()}{StartNote()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Start\+Note (\begin{DoxyParamCaption}\item[{Music\+Device\+Instrument\+ID}]{in\+Instrument,  }\item[{Music\+Device\+Group\+ID}]{in\+Group\+ID,  }\item[{Note\+Instance\+ID $\ast$}]{out\+Note\+Instance\+ID,  }\item[{U\+Int32}]{in\+Offset\+Sample\+Frame,  }\item[{const Music\+Device\+Note\+Params \&}]{in\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Start\+Note 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a3fdfaab273b03ac42e1a82156b7c549e}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a76706be709613a7b903fd47b7d5935db}\label{class_a_u_instrument_base_a76706be709613a7b903fd47b7d5935db}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!StartNote@{StartNote}}
+\index{StartNote@{StartNote}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{StartNote()}{StartNote()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Start\+Note (\begin{DoxyParamCaption}\item[{Music\+Device\+Instrument\+ID}]{in\+Instrument,  }\item[{Music\+Device\+Group\+ID}]{in\+Group\+ID,  }\item[{Note\+Instance\+ID $\ast$}]{out\+Note\+Instance\+ID,  }\item[{U\+Int32}]{in\+Offset\+Sample\+Frame,  }\item[{const Music\+Device\+Note\+Params \&}]{in\+Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Start\+Note 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a3fdfaab273b03ac42e1a82156b7c549e}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a3be5320c9c0ac8e0dc3c7e86a2108116}\label{class_a_u_instrument_base_a3be5320c9c0ac8e0dc3c7e86a2108116}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!StopNote@{StopNote}}
+\index{StopNote@{StopNote}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{StopNote()}{StopNote()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily O\+S\+Status A\+U\+Instrument\+Base\+::\+Stop\+Note (\begin{DoxyParamCaption}\item[{Music\+Device\+Group\+ID}]{in\+Group\+ID,  }\item[{Note\+Instance\+ID}]{in\+Note\+Instance\+ID,  }\item[{U\+Int32}]{in\+Offset\+Sample\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Stop\+Note 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a1ba96a49915602447c3be5482a6347e7}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a76de0afc8301637c29979c2bbc8075b8}\label{class_a_u_instrument_base_a76de0afc8301637c29979c2bbc8075b8}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!StopNote@{StopNote}}
+\index{StopNote@{StopNote}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{StopNote()}{StopNote()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual O\+S\+Status A\+U\+Instrument\+Base\+::\+Stop\+Note (\begin{DoxyParamCaption}\item[{Music\+Device\+Group\+ID}]{in\+Group\+ID,  }\item[{Note\+Instance\+ID}]{in\+Note\+Instance\+ID,  }\item[{U\+Int32}]{in\+Offset\+Sample\+Frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Stop\+Note 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_a1ba96a49915602447c3be5482a6347e7}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_af95823d446d6f067a99158cc0a2eb6e6}\label{class_a_u_instrument_base_af95823d446d6f067a99158cc0a2eb6e6}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!StreamFormatWritable@{StreamFormatWritable}}
+\index{StreamFormatWritable@{StreamFormatWritable}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{StreamFormatWritable()}{StreamFormatWritable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool A\+U\+Instrument\+Base\+::\+Stream\+Format\+Writable (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{scope,  }\item[{Audio\+Unit\+Element}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Stream\+Format\+Writable 
+
+Implements \mbox{\hyperlink{class_a_u_base_a8c956b223f2a6c5dd961da772c4b2480}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a276de9d2f2957f0ffec8438998ea6bb3}\label{class_a_u_instrument_base_a276de9d2f2957f0ffec8438998ea6bb3}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!StreamFormatWritable@{StreamFormatWritable}}
+\index{StreamFormatWritable@{StreamFormatWritable}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{StreamFormatWritable()}{StreamFormatWritable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool A\+U\+Instrument\+Base\+::\+Stream\+Format\+Writable (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{scope,  }\item[{Audio\+Unit\+Element}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Stream\+Format\+Writable 
+
+Implements \mbox{\hyperlink{class_a_u_base_a8c956b223f2a6c5dd961da772c4b2480}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_abeff471d4bea875ccc900823fb70b54a}\label{class_a_u_instrument_base_abeff471d4bea875ccc900823fb70b54a}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!ValidFormat@{ValidFormat}}
+\index{ValidFormat@{ValidFormat}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{ValidFormat()}{ValidFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool A\+U\+Instrument\+Base\+::\+Valid\+Format (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{in\+Scope,  }\item[{Audio\+Unit\+Element}]{in\+Element,  }\item[{const \mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \&}]{in\+New\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Valid\+Format 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_ae3fd6e3287d47d0c075a4e3888b800eb}{A\+U\+Base}}.
+
+\mbox{\Hypertarget{class_a_u_instrument_base_a4782eaaaab1bd51c8f3bb7f6758d6d97}\label{class_a_u_instrument_base_a4782eaaaab1bd51c8f3bb7f6758d6d97}} 
+\index{AUInstrumentBase@{AUInstrumentBase}!ValidFormat@{ValidFormat}}
+\index{ValidFormat@{ValidFormat}!AUInstrumentBase@{AUInstrumentBase}}
+\doxysubsubsection{\texorpdfstring{ValidFormat()}{ValidFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool A\+U\+Instrument\+Base\+::\+Valid\+Format (\begin{DoxyParamCaption}\item[{Audio\+Unit\+Scope}]{in\+Scope,  }\item[{Audio\+Unit\+Element}]{in\+Element,  }\item[{const \mbox{\hyperlink{class_c_a_stream_basic_description}{C\+A\+Stream\+Basic\+Description}} \&}]{in\+New\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+@method Valid\+Format 
+
+Reimplemented from \mbox{\hyperlink{class_a_u_base_ae3fd6e3287d47d0c075a4e3888b800eb}{A\+U\+Base}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/\+A\+U/\+A\+U\+Public/\+A\+U\+Instrument\+Base/A\+U\+Instrument\+Base.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/\+A\+U/\+A\+U\+Public/\+A\+U\+Instrument\+Base/A\+U\+Instrument\+Base.\+cpp\end{DoxyCompactItemize}

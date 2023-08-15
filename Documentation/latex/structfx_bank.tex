@@ -1,0 +1,60 @@
+\hypertarget{structfx_bank}{}\doxysection{fx\+Bank Struct Reference}
+\label{structfx_bank}\index{fxBank@{fxBank}}
+
+
+{\ttfamily \#include $<$vstfxstore.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structfx_bank_ac42cd4d9201cf236899c960a59f1ea15}\label{structfx_bank_ac42cd4d9201cf236899c960a59f1ea15}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_ac42cd4d9201cf236899c960a59f1ea15}{chunk\+Magic}}
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}CcnK\textquotesingle{} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_a11a7699d173e49c5094f4ef0645e0082}\label{structfx_bank_a11a7699d173e49c5094f4ef0645e0082}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_a11a7699d173e49c5094f4ef0645e0082}{byte\+Size}}
+\begin{DoxyCompactList}\small\item\em size of this chunk, excl. magic + byte\+Size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_a862d4385bae1c11b1be4237084feb770}\label{structfx_bank_a862d4385bae1c11b1be4237084feb770}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_a862d4385bae1c11b1be4237084feb770}{fx\+Magic}}
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}Fx\+Bk\textquotesingle{} (regular) or \textquotesingle{}F\+B\+Ch\textquotesingle{} (opaque chunk) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_aadb5f176af10c38c8fd2b78898f6c3b3}\label{structfx_bank_aadb5f176af10c38c8fd2b78898f6c3b3}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_aadb5f176af10c38c8fd2b78898f6c3b3}{version}}
+\begin{DoxyCompactList}\small\item\em format version (1 or 2) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_ae3c99a01ef3332d674cb6c7e8fb9371d}\label{structfx_bank_ae3c99a01ef3332d674cb6c7e8fb9371d}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_ae3c99a01ef3332d674cb6c7e8fb9371d}{fx\+ID}}
+\begin{DoxyCompactList}\small\item\em fx unique ID \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_aae7722ac564904b75493ade6e8eadd30}\label{structfx_bank_aae7722ac564904b75493ade6e8eadd30}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_aae7722ac564904b75493ade6e8eadd30}{fx\+Version}}
+\begin{DoxyCompactList}\small\item\em fx version \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_a1ebbcd2c15464eca1186a3ccd99876bd}\label{structfx_bank_a1ebbcd2c15464eca1186a3ccd99876bd}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_a1ebbcd2c15464eca1186a3ccd99876bd}{num\+Programs}}
+\begin{DoxyCompactList}\small\item\em number of programs \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_a5ec27101bc13995518c3d6a9ebd0d708}\label{structfx_bank_a5ec27101bc13995518c3d6a9ebd0d708}} 
+Vst\+Int32 \mbox{\hyperlink{structfx_bank_a5ec27101bc13995518c3d6a9ebd0d708}{current\+Program}}
+\begin{DoxyCompactList}\small\item\em version 2\+: current program number \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_a737637bcecbe179c939d5f5139019173}\label{structfx_bank_a737637bcecbe179c939d5f5139019173}} 
+char \mbox{\hyperlink{structfx_bank_a737637bcecbe179c939d5f5139019173}{future}} \mbox{[}124\mbox{]}
+\begin{DoxyCompactList}\small\item\em reserved, should be zero \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structfx_bank_ac53b2b935c42ceacb7a410d3c1e1f438}\label{structfx_bank_ac53b2b935c42ceacb7a410d3c1e1f438}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{structfx_program}{fxProgram}} \mbox{\hyperlink{structfx_bank_a3d6d61b451e7eb2dcb0e610b0325528d}{programs}} \mbox{[}1\mbox{]}\\
+\>\>{\em variable number of programs }\\
+\>struct \{\\
+\>\>VstInt32 \mbox{\hyperlink{structfx_bank_ab4ba73a4b9335f46346aeaf66f2970a0}{size}}\\
+\>\>\>{\em size of bank data }\\
+\>\>char \mbox{\hyperlink{structfx_bank_a69ab8d9fc976ca2fbdf9bb9d12db449b}{chunk}} \mbox{[}1\mbox{]}\\
+\>\>\>{\em variable sized array with opaque bank data }\\
+\>\} \mbox{\hyperlink{structfx_bank_a53763aa5414f07068ebe1b606055e5cf}{data}}\\
+\>\>\>{\em bank chunk data }\\
+\} \mbox{\hyperlink{structfx_bank_ac53b2b935c42ceacb7a410d3c1e1f438}{content}}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em bank content depending on fx\+Magic \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bank (fxb) structure. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T2\+\_\+\+S\+D\+K/pluginterfaces/vst2.\+x/vstfxstore.\+h\end{DoxyCompactItemize}

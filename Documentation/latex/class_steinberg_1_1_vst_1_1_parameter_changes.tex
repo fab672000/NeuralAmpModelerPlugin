@@ -1,0 +1,82 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes}{}\doxysection{Steinberg\+::Vst\+::Parameter\+Changes Class Reference}
+\label{class_steinberg_1_1_vst_1_1_parameter_changes}\index{Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}}
+
+
+{\ttfamily \#include $<$parameterchanges.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::Parameter\+Changes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_steinberg_1_1_vst_1_1_parameter_changes}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_a28655d8e4c9323f7261d0177776cdc7e}\label{class_steinberg_1_1_vst_1_1_parameter_changes_a28655d8e4c9323f7261d0177776cdc7e}} 
+{\bfseries Parameter\+Changes} (int32 max\+Parameters=0)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_a7e23b5c2999b3c43033b43541339b34b}\label{class_steinberg_1_1_vst_1_1_parameter_changes_a7e23b5c2999b3c43033b43541339b34b}} 
+void {\bfseries clear\+Queue} ()
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_ae3b68e86aa09bf598d6ff89ab2794ac1}\label{class_steinberg_1_1_vst_1_1_parameter_changes_ae3b68e86aa09bf598d6ff89ab2794ac1}} 
+void {\bfseries set\+Max\+Parameters} (int32 max\+Parameters)
+\item 
+int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter_changes_a377a345aae739b432d6f252550d38f5f}{get\+Parameter\+Count}} () S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_param_value_queue}{I\+Param\+Value\+Queue}} $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter_changes_a1c8938380615fed5b20ea343f15062f4}{get\+Parameter\+Data}} (int32 index) S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_param_value_queue}{I\+Param\+Value\+Queue}} $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter_changes_a048c4959de4d4295683da1bf8dbc9813}{add\+Parameter\+Data}} (const \mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{Param\+ID}} \&pid, int32 \&index) S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_a0ead57ebe7f32e5754b036b2c6af0507}\label{class_steinberg_1_1_vst_1_1_parameter_changes_a0ead57ebe7f32e5754b036b2c6af0507}} 
+std\+::vector$<$ \mbox{\hyperlink{class_steinberg_1_1_i_ptr}{I\+Ptr}}$<$ \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter_value_queue}{Parameter\+Value\+Queue}} $>$ $>$ {\bfseries queues}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_ab9efa40fd469465552ac000594da7020}\label{class_steinberg_1_1_vst_1_1_parameter_changes_ab9efa40fd469465552ac000594da7020}} 
+int32 {\bfseries used\+Queue\+Count} \{0\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementation\textquotesingle{}s example of \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_parameter_changes}{I\+Parameter\+Changes}} -\/ not threadsave!. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_a048c4959de4d4295683da1bf8dbc9813}\label{class_steinberg_1_1_vst_1_1_parameter_changes_a048c4959de4d4295683da1bf8dbc9813}} 
+\index{Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}!addParameterData@{addParameterData}}
+\index{addParameterData@{addParameterData}!Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}}
+\doxysubsubsection{\texorpdfstring{addParameterData()}{addParameterData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_param_value_queue}{I\+Param\+Value\+Queue}} $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+Parameter\+Changes\+::add\+Parameter\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_steinberg_1_1_vst_a280d91906cce82932a36c0a92bcbeae0}{Param\+ID}} \&}]{id,  }\item[{int32 \&}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Adds a new parameter queue with a given ID at the end of the list, returns it and its index in the parameter changes list. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_parameter_changes_a2983e2e7d46df69be7851aa2c46545b0}{Steinberg\+::\+Vst\+::\+I\+Parameter\+Changes}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_a377a345aae739b432d6f252550d38f5f}\label{class_steinberg_1_1_vst_1_1_parameter_changes_a377a345aae739b432d6f252550d38f5f}} 
+\index{Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}!getParameterCount@{getParameterCount}}
+\index{getParameterCount@{getParameterCount}!Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}}
+\doxysubsubsection{\texorpdfstring{getParameterCount()}{getParameterCount()}}
+{\footnotesize\ttfamily int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+Parameter\+Changes\+::get\+Parameter\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns count of \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_parameter}{Parameter}} changes in the list. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_parameter_changes_a904aab281352b3dec022dc31e2c609d9}{Steinberg\+::\+Vst\+::\+I\+Parameter\+Changes}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_parameter_changes_a1c8938380615fed5b20ea343f15062f4}\label{class_steinberg_1_1_vst_1_1_parameter_changes_a1c8938380615fed5b20ea343f15062f4}} 
+\index{Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}!getParameterData@{getParameterData}}
+\index{getParameterData@{getParameterData}!Steinberg::Vst::ParameterChanges@{Steinberg::Vst::ParameterChanges}}
+\doxysubsubsection{\texorpdfstring{getParameterData()}{getParameterData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_param_value_queue}{I\+Param\+Value\+Queue}} $\ast$P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+Parameter\+Changes\+::get\+Parameter\+Data (\begin{DoxyParamCaption}\item[{int32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the queue at a given index. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_parameter_changes_a644dca48d865dac5a804a714c48e51e7}{Steinberg\+::\+Vst\+::\+I\+Parameter\+Changes}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/parameterchanges.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/hosting/parameterchanges.\+cpp\end{DoxyCompactItemize}

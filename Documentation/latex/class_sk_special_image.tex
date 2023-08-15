@@ -1,0 +1,156 @@
+\hypertarget{class_sk_special_image}{}\doxysection{Sk\+Special\+Image Class Reference}
+\label{class_sk_special_image}\index{SkSpecialImage@{SkSpecialImage}}
+
+
+{\ttfamily \#include $<$Sk\+Special\+Image.\+h$>$}
+
+Inheritance diagram for Sk\+Special\+Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_sk_special_image}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_special_image_ae942399dee23086acc230294286a50a3}\label{class_sk_special_image_ae942399dee23086acc230294286a50a3}} 
+typedef void $\ast$ {\bfseries Release\+Context}
+\item 
+\mbox{\Hypertarget{class_sk_special_image_ab497a20937ea92529ae765564520da4e}\label{class_sk_special_image_ab497a20937ea92529ae765564520da4e}} 
+typedef void($\ast$ {\bfseries Raster\+Release\+Proc}) (void $\ast$pixels, Release\+Context)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a409db13f22a6983b2a36edc63fb57f32}\label{class_sk_special_image_a409db13f22a6983b2a36edc63fb57f32}} 
+const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \& {\bfseries props} () const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a010711faa62f203f3b296637ba430e60}\label{class_sk_special_image_a010711faa62f203f3b296637ba430e60}} 
+int {\bfseries width} () const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a3356bbf1383c3d0946fe121c216e5ef0}\label{class_sk_special_image_a3356bbf1383c3d0946fe121c216e5ef0}} 
+int {\bfseries height} () const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_afc6e92dc30462ab78810ea88cf51f7e0}\label{class_sk_special_image_afc6e92dc30462ab78810ea88cf51f7e0}} 
+const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \& {\bfseries subset} () const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a8bc2f36b848acbbc373bd3d8a4c82daf}\label{class_sk_special_image_a8bc2f36b848acbbc373bd3d8a4c82daf}} 
+\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$ {\bfseries get\+Color\+Space} () const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a94e72e5045b9bcf9153865f50e364e51}\label{class_sk_special_image_a94e72e5045b9bcf9153865f50e364e51}} 
+uint32\+\_\+t {\bfseries unique\+ID} () const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a7a89939847fce7d47f9640b39cc2c7f0}\label{class_sk_special_image_a7a89939847fce7d47f9640b39cc2c7f0}} 
+virtual Sk\+Alpha\+Type {\bfseries alpha\+Type} () const =0
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a49ea83ba0a61cef557b6d865e30cbb99}\label{class_sk_special_image_a49ea83ba0a61cef557b6d865e30cbb99}} 
+virtual Sk\+Color\+Type {\bfseries color\+Type} () const =0
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a028fbdc078877bef0b772d681b494578}\label{class_sk_special_image_a028fbdc078877bef0b772d681b494578}} 
+virtual size\+\_\+t {\bfseries get\+Size} () const =0
+\item 
+void \mbox{\hyperlink{class_sk_special_image_ae7badd58ab873d77b17367cb2ab5632d}{draw}} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$, Sk\+Scalar x, Sk\+Scalar y, const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$) const
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a9e4727864ab827e7167cd73a0b8b8eae}\label{class_sk_special_image_a9e4727864ab827e7167cd73a0b8b8eae}} 
+void {\bfseries draw} (\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$canvas, Sk\+Scalar x, Sk\+Scalar y) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_surface}{Sk\+Special\+Surface}} $>$ \mbox{\hyperlink{class_sk_special_image_aa2ed5894d79af1c8d2a4a4aa95cd123d}{make\+Surface}} (Sk\+Color\+Type color\+Type, const \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$color\+Space, const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&size, Sk\+Alpha\+Type, const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}} $>$ \mbox{\hyperlink{class_sk_special_image_ac5bcaf6da3b3753dedcc1b7d198f435a}{make\+Tight\+Surface}} (Sk\+Color\+Type color\+Type, const \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$color\+Space, const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&size, Sk\+Alpha\+Type at=k\+Premul\+\_\+\+Sk\+Alpha\+Type) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} $>$ \mbox{\hyperlink{class_sk_special_image_a2627805052b5c6a94c23a4f57eb6ac31}{make\+Subset}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_special_image_a39e51f29fb8496309473a93219801618}{as\+Image}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} $\ast$subset=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_sk_special_image_ab8e26bc61e7d980cf165fcd94eb4ae52}{is\+Texture\+Backed}} () const
+\item 
+\mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$ \mbox{\hyperlink{class_sk_special_image_afc64cf9f2d27830e93c004d6431b6457}{get\+Context}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_special_image_aeb62ea0ef3aff85ae3ff74637539311d}{get\+R\+O\+Pixels}} (\mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} $\ast$) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_special_image_addd3053d5e14987a9446398e070eebaa}\label{class_sk_special_image_addd3053d5e14987a9446398e070eebaa}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} $>$ {\bfseries Make\+From\+Image} (\mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$, const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&)
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a472afd8e03b6448403ea22d044f46e8a}\label{class_sk_special_image_a472afd8e03b6448403ea22d044f46e8a}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} $>$ {\bfseries Make\+From\+Raster} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset, const \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} \&, const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&)
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a95b83e3ec21d9ed756c70aab6d975644}\label{class_sk_special_image_a95b83e3ec21d9ed756c70aab6d975644}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} $>$ {\bfseries Copy\+From\+Raster} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset, const \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} \&, const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_special_image_a185cfcaa267ab88992528ef327ddf29c}\label{class_sk_special_image_a185cfcaa267ab88992528ef327ddf29c}} 
+{\bfseries Sk\+Special\+Image} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset, uint32\+\_\+t unique\+ID, const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a restricted form of \mbox{\hyperlink{class_sk_image}{Sk\+Image}} solely intended for internal use. It differs from \mbox{\hyperlink{class_sk_image}{Sk\+Image}} in that\+:
+\begin{DoxyItemize}
+\item it can only be backed by raster or gpu (no generators)
+\item it can be backed by a Gr\+Texture\+Proxy larger than its nominal bounds
+\item it can\textquotesingle{}t be drawn tiled
+\item it can\textquotesingle{}t be drawn with M\+I\+P\+M\+A\+Ps It is similar to \mbox{\hyperlink{class_sk_image}{Sk\+Image}} in that it abstracts how the pixels are stored/represented.
+\end{DoxyItemize}
+
+Note\+: the contents of the backing storage outside of the subset rect are undefined. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_special_image_a39e51f29fb8496309473a93219801618}\label{class_sk_special_image_a39e51f29fb8496309473a93219801618}} 
+\index{SkSpecialImage@{SkSpecialImage}!asImage@{asImage}}
+\index{asImage@{asImage}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{asImage()}{asImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ Sk\+Special\+Image\+::as\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} $\ast$}]{subset = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Create an \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from the contents of this special image optionally extracting a subset. It may or may not point to the same backing memory. Note\+: when no \textquotesingle{}subset\textquotesingle{} parameter is specified the the entire \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} will be returned -\/ including whatever extra padding may have resulted from a loose fit! When the \textquotesingle{}subset\textquotesingle{} parameter is specified the returned image will be tight even if that entails a copy! The \textquotesingle{}subset\textquotesingle{} is relative to this special image\textquotesingle{}s content rect. \mbox{\Hypertarget{class_sk_special_image_ae7badd58ab873d77b17367cb2ab5632d}\label{class_sk_special_image_ae7badd58ab873d77b17367cb2ab5632d}} 
+\index{SkSpecialImage@{SkSpecialImage}!draw@{draw}}
+\index{draw@{draw}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Sk\+Special\+Image\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$}]{canvas,  }\item[{Sk\+Scalar}]{x,  }\item[{Sk\+Scalar}]{y,  }\item[{const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&}]{sampling,  }\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$}]{paint }\end{DoxyParamCaption}) const}
+
+Draw this Special\+Image into the canvas, automatically taking into account the image\textquotesingle{}s subset \mbox{\Hypertarget{class_sk_special_image_afc64cf9f2d27830e93c004d6431b6457}\label{class_sk_special_image_afc64cf9f2d27830e93c004d6431b6457}} 
+\index{SkSpecialImage@{SkSpecialImage}!getContext@{getContext}}
+\index{getContext@{getContext}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$ Sk\+Special\+Image\+::get\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the \mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} if the \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} is Gr\+Texture-\/backed \mbox{\Hypertarget{class_sk_special_image_aeb62ea0ef3aff85ae3ff74637539311d}\label{class_sk_special_image_aeb62ea0ef3aff85ae3ff74637539311d}} 
+\index{SkSpecialImage@{SkSpecialImage}!getROPixels@{getROPixels}}
+\index{getROPixels@{getROPixels}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{getROPixels()}{getROPixels()}}
+{\footnotesize\ttfamily bool Sk\+Special\+Image\+::get\+R\+O\+Pixels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} $\ast$}]{bm }\end{DoxyParamCaption}) const}
+
+Regardless of the underlying backing store, return the contents as an \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}}. The returned bitmap represents the subset accessed by this image, thus (0,0) refers to the top-\/left corner of \textquotesingle{}subset\textquotesingle{}. \mbox{\Hypertarget{class_sk_special_image_ab8e26bc61e7d980cf165fcd94eb4ae52}\label{class_sk_special_image_ab8e26bc61e7d980cf165fcd94eb4ae52}} 
+\index{SkSpecialImage@{SkSpecialImage}!isTextureBacked@{isTextureBacked}}
+\index{isTextureBacked@{isTextureBacked}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{isTextureBacked()}{isTextureBacked()}}
+{\footnotesize\ttfamily bool Sk\+Special\+Image\+::is\+Texture\+Backed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+If the Special\+Image is backed by a gpu texture, return true. \mbox{\Hypertarget{class_sk_special_image_a2627805052b5c6a94c23a4f57eb6ac31}\label{class_sk_special_image_a2627805052b5c6a94c23a4f57eb6ac31}} 
+\index{SkSpecialImage@{SkSpecialImage}!makeSubset@{makeSubset}}
+\index{makeSubset@{makeSubset}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{makeSubset()}{makeSubset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_image}{Sk\+Special\+Image}} $>$ Sk\+Special\+Image\+::make\+Subset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{subset }\end{DoxyParamCaption}) const}
+
+Extract a subset of this special image and return it as a special image. It may or may not point to the same backing memory. The input \textquotesingle{}subset\textquotesingle{} is relative to the special image\textquotesingle{}s content rect. \mbox{\Hypertarget{class_sk_special_image_aa2ed5894d79af1c8d2a4a4aa95cd123d}\label{class_sk_special_image_aa2ed5894d79af1c8d2a4a4aa95cd123d}} 
+\index{SkSpecialImage@{SkSpecialImage}!makeSurface@{makeSurface}}
+\index{makeSurface@{makeSurface}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{makeSurface()}{makeSurface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_special_surface}{Sk\+Special\+Surface}} $>$ Sk\+Special\+Image\+::make\+Surface (\begin{DoxyParamCaption}\item[{Sk\+Color\+Type}]{color\+Type,  }\item[{const \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$}]{color\+Space,  }\item[{const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&}]{size,  }\item[{Sk\+Alpha\+Type}]{at,  }\item[{const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&}]{props }\end{DoxyParamCaption}) const}
+
+Create a new special surface with a backend that is compatible with this special image. \mbox{\Hypertarget{class_sk_special_image_ac5bcaf6da3b3753dedcc1b7d198f435a}\label{class_sk_special_image_ac5bcaf6da3b3753dedcc1b7d198f435a}} 
+\index{SkSpecialImage@{SkSpecialImage}!makeTightSurface@{makeTightSurface}}
+\index{makeTightSurface@{makeTightSurface}!SkSpecialImage@{SkSpecialImage}}
+\doxysubsubsection{\texorpdfstring{makeTightSurface()}{makeTightSurface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}} $>$ Sk\+Special\+Image\+::make\+Tight\+Surface (\begin{DoxyParamCaption}\item[{Sk\+Color\+Type}]{color\+Type,  }\item[{const \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$}]{color\+Space,  }\item[{const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&}]{size,  }\item[{Sk\+Alpha\+Type}]{at = {\ttfamily kPremul\+\_\+SkAlphaType} }\end{DoxyParamCaption}) const}
+
+Create a new surface with a backend that is compatible with this special image. T\+O\+DO\+: switch this to make\+Surface once we resolved the naming issue T\+O\+DO (michaelludwig) -\/ This is only used by Sk\+Tile\+Image\+Filter, which appears should be updated to work correctly with subsets and then \mbox{\hyperlink{class_sk_special_image_ac5bcaf6da3b3753dedcc1b7d198f435a}{make\+Tight\+Surface()}} can go away entirely. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Special\+Image.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Special\+Image.\+cpp\end{DoxyCompactItemize}

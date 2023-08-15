@@ -1,0 +1,117 @@
+\hypertarget{classmidi}{}\doxysection{midi Class Reference}
+\label{classmidi}\index{midi@{midi}}
+Inheritance diagram for midi\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classmidi}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmidi_a7c9c55a6253d50ca9db9b4a8093b96bd}\label{classmidi_a7c9c55a6253d50ca9db9b4a8093b96bd}} 
+enum {\bfseries Midi\+Status} \{ \newline
+{\bfseries M\+I\+D\+I\+\_\+\+N\+O\+T\+E\+\_\+\+O\+FF} = 0x80, 
+{\bfseries M\+I\+D\+I\+\_\+\+N\+O\+T\+E\+\_\+\+ON} = 0x90, 
+{\bfseries M\+I\+D\+I\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+H\+A\+N\+GE} = 0x\+B0, 
+{\bfseries M\+I\+D\+I\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+C\+H\+A\+N\+GE} = 0x\+C0, 
+\newline
+{\bfseries M\+I\+D\+I\+\_\+\+P\+I\+T\+C\+H\+\_\+\+B\+E\+ND} = 0x\+E0, 
+{\bfseries M\+I\+D\+I\+\_\+\+A\+F\+T\+E\+R\+T\+O\+U\+CH} = 0x\+D0, 
+{\bfseries M\+I\+D\+I\+\_\+\+P\+O\+L\+Y\+\_\+\+A\+F\+T\+E\+R\+T\+O\+U\+CH} = 0x\+A0, 
+{\bfseries M\+I\+D\+I\+\_\+\+C\+L\+O\+CK} = 0x\+F8, 
+\newline
+{\bfseries M\+I\+D\+I\+\_\+\+S\+T\+A\+RT} = 0x\+FA, 
+{\bfseries M\+I\+D\+I\+\_\+\+C\+O\+NT} = 0x\+FB, 
+{\bfseries M\+I\+D\+I\+\_\+\+S\+T\+OP} = 0x\+FC, 
+{\bfseries M\+I\+D\+I\+\_\+\+S\+Y\+S\+E\+X\+\_\+\+S\+T\+A\+RT} = 0x\+F0, 
+\newline
+{\bfseries M\+I\+D\+I\+\_\+\+S\+Y\+S\+E\+X\+\_\+\+S\+T\+OP} = 0x\+F7
+ \}
+\item 
+\mbox{\Hypertarget{classmidi_a17566712470a62b6dd79346d703ad4d9}\label{classmidi_a17566712470a62b6dd79346d703ad4d9}} 
+enum {\bfseries Midi\+Ctrl} \{ {\bfseries A\+L\+L\+\_\+\+N\+O\+T\+E\+S\+\_\+\+O\+FF} = 123, 
+{\bfseries A\+L\+L\+\_\+\+S\+O\+U\+N\+D\+\_\+\+O\+FF} = 120
+ \}
+\item 
+\mbox{\Hypertarget{classmidi_af88c58c039f99563628118aac0b5bcf5}\label{classmidi_af88c58c039f99563628118aac0b5bcf5}} 
+enum {\bfseries Midi\+N\+PN} \{ {\bfseries P\+I\+T\+C\+H\+\_\+\+B\+E\+N\+D\+\_\+\+R\+A\+N\+GE} = 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmidi_af8e2e98ae13096fc5adaa889bff48ab8}\label{classmidi_af8e2e98ae13096fc5adaa889bff48ab8}} 
+virtual \mbox{\hyperlink{class_map_u_i}{Map\+UI}} $\ast$ {\bfseries key\+On} (double, int channel, int pitch, int velocity)
+\item 
+\mbox{\Hypertarget{classmidi_a82d8e15f71d4e64d0ccc12d293fba129}\label{classmidi_a82d8e15f71d4e64d0ccc12d293fba129}} 
+virtual void {\bfseries key\+Off} (double, int channel, int pitch, int velocity=127)
+\item 
+\mbox{\Hypertarget{classmidi_a26ea431c40b3261a4bd52807dc9ced3f}\label{classmidi_a26ea431c40b3261a4bd52807dc9ced3f}} 
+virtual void {\bfseries key\+Press} (double, int channel, int pitch, int press)
+\item 
+\mbox{\Hypertarget{classmidi_a77d795aa5decb95129a8f6cf06eb3831}\label{classmidi_a77d795aa5decb95129a8f6cf06eb3831}} 
+virtual void {\bfseries chan\+Press} (double date, int channel, int press)
+\item 
+\mbox{\Hypertarget{classmidi_aa9d54c0d0e88cb56b21848d419764e19}\label{classmidi_aa9d54c0d0e88cb56b21848d419764e19}} 
+virtual void {\bfseries pitch\+Wheel} (double, int channel, int wheel)
+\item 
+\mbox{\Hypertarget{classmidi_ac9d5e40507d9db6c4c34ae1973959862}\label{classmidi_ac9d5e40507d9db6c4c34ae1973959862}} 
+virtual void {\bfseries ctrl\+Change} (double, int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classmidi_afa847e34470c124e67447e7820332cb1}\label{classmidi_afa847e34470c124e67447e7820332cb1}} 
+virtual void {\bfseries ctrl\+Change14bits} (double, int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classmidi_a12643718ba62fbfccee49e795e801c99}\label{classmidi_a12643718ba62fbfccee49e795e801c99}} 
+virtual void {\bfseries rpn} (double, int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classmidi_aa5f79707b688f51eec96af898c9d2e13}\label{classmidi_aa5f79707b688f51eec96af898c9d2e13}} 
+virtual void {\bfseries prog\+Change} (double, int channel, int pgm)
+\item 
+\mbox{\Hypertarget{classmidi_a8f451b4e2491189a23f9b99a6af089a7}\label{classmidi_a8f451b4e2491189a23f9b99a6af089a7}} 
+virtual void {\bfseries sys\+Ex} (double, std\+::vector$<$ unsigned char $>$ \&message)
+\item 
+\mbox{\Hypertarget{classmidi_aef6be4e4a4a4ea83bd1330fd3b91f199}\label{classmidi_aef6be4e4a4a4ea83bd1330fd3b91f199}} 
+virtual void {\bfseries start\+Sync} (double date)
+\item 
+\mbox{\Hypertarget{classmidi_a53334309d011ce35d4dfa1507c71f7ee}\label{classmidi_a53334309d011ce35d4dfa1507c71f7ee}} 
+virtual void {\bfseries stop\+Sync} (double date)
+\item 
+\mbox{\Hypertarget{classmidi_a3e1dbe4d67426ce31a180175321a4561}\label{classmidi_a3e1dbe4d67426ce31a180175321a4561}} 
+virtual void {\bfseries clock} (double date)
+\item 
+\mbox{\Hypertarget{classmidi_a63226e589df6eaccd9165c3496eb8031}\label{classmidi_a63226e589df6eaccd9165c3496eb8031}} 
+virtual \mbox{\hyperlink{class_map_u_i}{Map\+UI}} $\ast$ {\bfseries key\+On} (int channel, int pitch, int velocity)
+\item 
+\mbox{\Hypertarget{classmidi_ad6dfc5c4615c438f5c573af773b312d5}\label{classmidi_ad6dfc5c4615c438f5c573af773b312d5}} 
+virtual void {\bfseries key\+Off} (int channel, int pitch, int velocity)
+\item 
+\mbox{\Hypertarget{classmidi_a5a0f78e390f6b6ec00d5a166f347beb5}\label{classmidi_a5a0f78e390f6b6ec00d5a166f347beb5}} 
+virtual void {\bfseries key\+Press} (int channel, int pitch, int press)
+\item 
+\mbox{\Hypertarget{classmidi_a2a3bcb14aadd3832ac24b2d13ee76b16}\label{classmidi_a2a3bcb14aadd3832ac24b2d13ee76b16}} 
+virtual void {\bfseries chan\+Press} (int channel, int press)
+\item 
+\mbox{\Hypertarget{classmidi_a0093a9561e2b55348898864ef95496a9}\label{classmidi_a0093a9561e2b55348898864ef95496a9}} 
+virtual void {\bfseries ctrl\+Change} (int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classmidi_ab36d6f238ce00cd7743b2cba42028fbc}\label{classmidi_ab36d6f238ce00cd7743b2cba42028fbc}} 
+virtual void {\bfseries ctrl\+Change14bits} (int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classmidi_ab6403efda57a36b27c964433e23baa78}\label{classmidi_ab6403efda57a36b27c964433e23baa78}} 
+virtual void {\bfseries rpn} (int channel, int ctrl, int value)
+\item 
+\mbox{\Hypertarget{classmidi_ad1501167fb7d131eae52503f2ad26ac8}\label{classmidi_ad1501167fb7d131eae52503f2ad26ac8}} 
+virtual void {\bfseries pitch\+Wheel} (int channel, int wheel)
+\item 
+\mbox{\Hypertarget{classmidi_ab28af6392dc5a9128efd6831343dc2dd}\label{classmidi_ab28af6392dc5a9128efd6831343dc2dd}} 
+virtual void {\bfseries prog\+Change} (int channel, int pgm)
+\item 
+\mbox{\Hypertarget{classmidi_aee125a55ef4bf6f61b50456a3473bb47}\label{classmidi_aee125a55ef4bf6f61b50456a3473bb47}} 
+virtual void {\bfseries sys\+Ex} (std\+::vector$<$ unsigned char $>$ \&message)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/midi/midi.\+h\end{DoxyCompactItemize}

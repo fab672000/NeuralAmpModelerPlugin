@@ -1,0 +1,277 @@
+\hypertarget{struct_v_s_t_plugin}{}\doxysection{V\+S\+T\+Plugin Struct Reference}
+\label{struct_v_s_t_plugin}\index{VSTPlugin@{VSTPlugin}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a17075268a80c6e55538de4ed5f803cdd}\label{struct_v_s_t_plugin_a17075268a80c6e55538de4ed5f803cdd}} 
+{\bfseries V\+S\+T\+Plugin} (const int num\+\_\+voices, const int sr)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a161006dbb0e2ac25ddbed8f5ac80d890}\label{struct_v_s_t_plugin_a161006dbb0e2ac25ddbed8f5ac80d890}} 
+int {\bfseries alloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a0c93e5a4df5d0ebcb3053724f8bad5b5}\label{struct_v_s_t_plugin_a0c93e5a4df5d0ebcb3053724f8bad5b5}} 
+int {\bfseries dealloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_af2492b90415b2408571d05010354799b}\label{struct_v_s_t_plugin_af2492b90415b2408571d05010354799b}} 
+float {\bfseries midicps} (int8\+\_\+t note, uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_affdead71d12946ead87aafa577c4c07b}\label{struct_v_s_t_plugin_affdead71d12946ead87aafa577c4c07b}} 
+void {\bfseries voice\+\_\+on} (int i, int8\+\_\+t note, int8\+\_\+t vel, uint8\+\_\+t ch)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ad0471d0fada2fbdc9bbc32037dcdb54c}\label{struct_v_s_t_plugin_ad0471d0fada2fbdc9bbc32037dcdb54c}} 
+void {\bfseries voice\+\_\+off} (int i)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a4706758c5cae7a819e23947545c31a6b}\label{struct_v_s_t_plugin_a4706758c5cae7a819e23947545c31a6b}} 
+void {\bfseries update\+\_\+voices} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ae1ee581743c6017dc002064fc269d245}\label{struct_v_s_t_plugin_ae1ee581743c6017dc002064fc269d245}} 
+void {\bfseries all\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_add7ae5632e5e36cd75dd66950484f76b}\label{struct_v_s_t_plugin_add7ae5632e5e36cd75dd66950484f76b}} 
+void {\bfseries all\+\_\+notes\+\_\+off} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a931614bb247f48477e84cd36bd665e54}\label{struct_v_s_t_plugin_a931614bb247f48477e84cd36bd665e54}} 
+void {\bfseries queued\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a10a7301264627e611ec59f516759f5ca}\label{struct_v_s_t_plugin_a10a7301264627e611ec59f516759f5ca}} 
+void {\bfseries suspend} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a2f1ab43beeb198169733dc53b3049ac0}\label{struct_v_s_t_plugin_a2f1ab43beeb198169733dc53b3049ac0}} 
+void {\bfseries resume} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a61e83daa6d5394052ae5071f38907f65}\label{struct_v_s_t_plugin_a61e83daa6d5394052ae5071f38907f65}} 
+void {\bfseries set\+\_\+rate} (int sr)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_adc9d7e1d7913f12a04f9ba0886c77871}\label{struct_v_s_t_plugin_adc9d7e1d7913f12a04f9ba0886c77871}} 
+void {\bfseries process\+\_\+audio} (int blocksz, float $\ast$$\ast$inputs, float $\ast$$\ast$outputs)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a6d27b8dcd18448aefda4cb31df64153e}\label{struct_v_s_t_plugin_a6d27b8dcd18448aefda4cb31df64153e}} 
+void {\bfseries process\+\_\+midi} (unsigned char $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a9913fd38a79d8092c02295a4b77caa6e}\label{struct_v_s_t_plugin_a9913fd38a79d8092c02295a4b77caa6e}} 
+void {\bfseries process\+\_\+sysex} (uint8\+\_\+t $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a36d043e5f9de0d477378574cde91ece9}\label{struct_v_s_t_plugin_a36d043e5f9de0d477378574cde91ece9}} 
+void {\bfseries change\+\_\+tuning} (int num)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a17075268a80c6e55538de4ed5f803cdd}\label{struct_v_s_t_plugin_a17075268a80c6e55538de4ed5f803cdd}} 
+{\bfseries V\+S\+T\+Plugin} (const int num\+\_\+voices, const int sr)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a161006dbb0e2ac25ddbed8f5ac80d890}\label{struct_v_s_t_plugin_a161006dbb0e2ac25ddbed8f5ac80d890}} 
+int {\bfseries alloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a0c93e5a4df5d0ebcb3053724f8bad5b5}\label{struct_v_s_t_plugin_a0c93e5a4df5d0ebcb3053724f8bad5b5}} 
+int {\bfseries dealloc\+\_\+voice} (uint8\+\_\+t ch, int8\+\_\+t note, int8\+\_\+t vel)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_af2492b90415b2408571d05010354799b}\label{struct_v_s_t_plugin_af2492b90415b2408571d05010354799b}} 
+float {\bfseries midicps} (int8\+\_\+t note, uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_affdead71d12946ead87aafa577c4c07b}\label{struct_v_s_t_plugin_affdead71d12946ead87aafa577c4c07b}} 
+void {\bfseries voice\+\_\+on} (int i, int8\+\_\+t note, int8\+\_\+t vel, uint8\+\_\+t ch)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ad0471d0fada2fbdc9bbc32037dcdb54c}\label{struct_v_s_t_plugin_ad0471d0fada2fbdc9bbc32037dcdb54c}} 
+void {\bfseries voice\+\_\+off} (int i)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a4706758c5cae7a819e23947545c31a6b}\label{struct_v_s_t_plugin_a4706758c5cae7a819e23947545c31a6b}} 
+void {\bfseries update\+\_\+voices} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ae1ee581743c6017dc002064fc269d245}\label{struct_v_s_t_plugin_ae1ee581743c6017dc002064fc269d245}} 
+void {\bfseries all\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_add7ae5632e5e36cd75dd66950484f76b}\label{struct_v_s_t_plugin_add7ae5632e5e36cd75dd66950484f76b}} 
+void {\bfseries all\+\_\+notes\+\_\+off} (uint8\+\_\+t chan)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a931614bb247f48477e84cd36bd665e54}\label{struct_v_s_t_plugin_a931614bb247f48477e84cd36bd665e54}} 
+void {\bfseries queued\+\_\+notes\+\_\+off} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a10a7301264627e611ec59f516759f5ca}\label{struct_v_s_t_plugin_a10a7301264627e611ec59f516759f5ca}} 
+void {\bfseries suspend} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a2f1ab43beeb198169733dc53b3049ac0}\label{struct_v_s_t_plugin_a2f1ab43beeb198169733dc53b3049ac0}} 
+void {\bfseries resume} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a61e83daa6d5394052ae5071f38907f65}\label{struct_v_s_t_plugin_a61e83daa6d5394052ae5071f38907f65}} 
+void {\bfseries set\+\_\+rate} (int sr)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_adc9d7e1d7913f12a04f9ba0886c77871}\label{struct_v_s_t_plugin_adc9d7e1d7913f12a04f9ba0886c77871}} 
+void {\bfseries process\+\_\+audio} (int blocksz, float $\ast$$\ast$inputs, float $\ast$$\ast$outputs)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a6d27b8dcd18448aefda4cb31df64153e}\label{struct_v_s_t_plugin_a6d27b8dcd18448aefda4cb31df64153e}} 
+void {\bfseries process\+\_\+midi} (unsigned char $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a9913fd38a79d8092c02295a4b77caa6e}\label{struct_v_s_t_plugin_a9913fd38a79d8092c02295a4b77caa6e}} 
+void {\bfseries process\+\_\+sysex} (uint8\+\_\+t $\ast$data, int sz)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a36d043e5f9de0d477378574cde91ece9}\label{struct_v_s_t_plugin_a36d043e5f9de0d477378574cde91ece9}} 
+void {\bfseries change\+\_\+tuning} (int num)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a5a3d31a8c7b40e2643202e32ad00bf29}\label{struct_v_s_t_plugin_a5a3d31a8c7b40e2643202e32ad00bf29}} 
+static void {\bfseries init\+\_\+meta} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a5643184086d0e90f89127c659fd160f6}\label{struct_v_s_t_plugin_a5643184086d0e90f89127c659fd160f6}} 
+static const char $\ast$ {\bfseries meta\+\_\+get} (const char $\ast$key, const char $\ast$deflt)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ac542e4e7576f546af3d87a0803a88342}\label{struct_v_s_t_plugin_ac542e4e7576f546af3d87a0803a88342}} 
+static const char $\ast$ {\bfseries plugin\+Name} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a260eaa079cc62ec3c053b628aca6273f}\label{struct_v_s_t_plugin_a260eaa079cc62ec3c053b628aca6273f}} 
+static const char $\ast$ {\bfseries plugin\+Author} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a15e0c74fd78036b44397f5564e9d6baa}\label{struct_v_s_t_plugin_a15e0c74fd78036b44397f5564e9d6baa}} 
+static const char $\ast$ {\bfseries plugin\+Description} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a42b070d3c8618a981e9c8d0faaafcbf5}\label{struct_v_s_t_plugin_a42b070d3c8618a981e9c8d0faaafcbf5}} 
+static const char $\ast$ {\bfseries plugin\+Version} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a018685fe38da833a2ab462352947f1c9}\label{struct_v_s_t_plugin_a018685fe38da833a2ab462352947f1c9}} 
+static \mbox{\hyperlink{struct_m_t_s_tunings}{M\+T\+S\+Tunings}} $\ast$ {\bfseries load\+\_\+sysex\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ad55e361c6aa6d94e12f09abeab41ed30}\label{struct_v_s_t_plugin_ad55e361c6aa6d94e12f09abeab41ed30}} 
+static int {\bfseries num\+Voices} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a75404342f29d815dae439e96312e08b0}\label{struct_v_s_t_plugin_a75404342f29d815dae439e96312e08b0}} 
+static int {\bfseries num\+Controls} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a5a3d31a8c7b40e2643202e32ad00bf29}\label{struct_v_s_t_plugin_a5a3d31a8c7b40e2643202e32ad00bf29}} 
+static void {\bfseries init\+\_\+meta} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a5643184086d0e90f89127c659fd160f6}\label{struct_v_s_t_plugin_a5643184086d0e90f89127c659fd160f6}} 
+static const char $\ast$ {\bfseries meta\+\_\+get} (const char $\ast$key, const char $\ast$deflt)
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ac542e4e7576f546af3d87a0803a88342}\label{struct_v_s_t_plugin_ac542e4e7576f546af3d87a0803a88342}} 
+static const char $\ast$ {\bfseries plugin\+Name} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a260eaa079cc62ec3c053b628aca6273f}\label{struct_v_s_t_plugin_a260eaa079cc62ec3c053b628aca6273f}} 
+static const char $\ast$ {\bfseries plugin\+Author} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a15e0c74fd78036b44397f5564e9d6baa}\label{struct_v_s_t_plugin_a15e0c74fd78036b44397f5564e9d6baa}} 
+static const char $\ast$ {\bfseries plugin\+Description} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a42b070d3c8618a981e9c8d0faaafcbf5}\label{struct_v_s_t_plugin_a42b070d3c8618a981e9c8d0faaafcbf5}} 
+static const char $\ast$ {\bfseries plugin\+Version} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a018685fe38da833a2ab462352947f1c9}\label{struct_v_s_t_plugin_a018685fe38da833a2ab462352947f1c9}} 
+static \mbox{\hyperlink{struct_m_t_s_tunings}{M\+T\+S\+Tunings}} $\ast$ {\bfseries load\+\_\+sysex\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ad55e361c6aa6d94e12f09abeab41ed30}\label{struct_v_s_t_plugin_ad55e361c6aa6d94e12f09abeab41ed30}} 
+static int {\bfseries num\+Voices} ()
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a75404342f29d815dae439e96312e08b0}\label{struct_v_s_t_plugin_a75404342f29d815dae439e96312e08b0}} 
+static int {\bfseries num\+Controls} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a6b3517d1eaf6a109bce2371a217c0552}\label{struct_v_s_t_plugin_a6b3517d1eaf6a109bce2371a217c0552}} 
+const int {\bfseries maxvoices}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_aff927c80755e9b1c2d832ee906f6936c}\label{struct_v_s_t_plugin_aff927c80755e9b1c2d832ee906f6936c}} 
+const int {\bfseries ndsps}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a3cdca1cae84636c45fa9de9158f1f5ea}\label{struct_v_s_t_plugin_a3cdca1cae84636c45fa9de9158f1f5ea}} 
+int {\bfseries nvoices}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ab3a3a5a87888a692fe7ce55807e832fb}\label{struct_v_s_t_plugin_ab3a3a5a87888a692fe7ce55807e832fb}} 
+bool {\bfseries active}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a6f93becaa0e6264cb44a24cfa332a274}\label{struct_v_s_t_plugin_a6f93becaa0e6264cb44a24cfa332a274}} 
+bool {\bfseries modified}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a93a2ba6632e48d156640163879e5acba}\label{struct_v_s_t_plugin_a93a2ba6632e48d156640163879e5acba}} 
+int {\bfseries rate}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a87dd975c4c3bab4963be4011a0950d08}\label{struct_v_s_t_plugin_a87dd975c4c3bab4963be4011a0950d08}} 
+\mbox{\hyperlink{classmydsp}{mydsp}} $\ast$$\ast$ {\bfseries dsp}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a7fabf9b88e3cc47044af7cb4d798c3e7}\label{struct_v_s_t_plugin_a7fabf9b88e3cc47044af7cb4d798c3e7}} 
+\mbox{\hyperlink{class_v_s_t_u_i}{V\+S\+T\+UI}} $\ast$$\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a09e3503670c6c9bd1b1ed24a2396ea66}\label{struct_v_s_t_plugin_a09e3503670c6c9bd1b1ed24a2396ea66}} 
+int {\bfseries n\+\_\+in}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a065d56420077aa42b120dd6d8abfbc82}\label{struct_v_s_t_plugin_a065d56420077aa42b120dd6d8abfbc82}} 
+int {\bfseries n\+\_\+out}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ac410ccbfb04ba7e6e80c4e8688b28de8}\label{struct_v_s_t_plugin_ac410ccbfb04ba7e6e80c4e8688b28de8}} 
+int {\bfseries poly}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_aa4644be170077a1c7f2a90aef63d3f61}\label{struct_v_s_t_plugin_aa4644be170077a1c7f2a90aef63d3f61}} 
+int {\bfseries tuning}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a42cc2d91698849c829542fee2c0ccc5e}\label{struct_v_s_t_plugin_a42cc2d91698849c829542fee2c0ccc5e}} 
+int $\ast$ {\bfseries ctrls}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_acd1654178341874f14c2ecd100ed859b}\label{struct_v_s_t_plugin_acd1654178341874f14c2ecd100ed859b}} 
+float $\ast$ {\bfseries ports}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a562cb136c2d4623b5600dd2d0b8ccd81}\label{struct_v_s_t_plugin_a562cb136c2d4623b5600dd2d0b8ccd81}} 
+float $\ast$ {\bfseries portvals}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a93788811dcc0d6cebbf7a9c8ceabb868}\label{struct_v_s_t_plugin_a93788811dcc0d6cebbf7a9c8ceabb868}} 
+float $\ast$ {\bfseries midivals} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a1fd659163b0baaf4f6a2f74a5c054e09}\label{struct_v_s_t_plugin_a1fd659163b0baaf4f6a2f74a5c054e09}} 
+int $\ast$ {\bfseries inctrls}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a363abbd95d6453ece6a3bd68c22c7d92}\label{struct_v_s_t_plugin_a363abbd95d6453ece6a3bd68c22c7d92}} 
+int $\ast$ {\bfseries outctrls}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ad551cd60bbcb787b543090dcc24f9be7}\label{struct_v_s_t_plugin_ad551cd60bbcb787b543090dcc24f9be7}} 
+int {\bfseries freq}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a5fd702fb070dc0f231f895356a53074a}\label{struct_v_s_t_plugin_a5fd702fb070dc0f231f895356a53074a}} 
+int {\bfseries gain}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_aaf646dbeffb84e91c277c236858e9c66}\label{struct_v_s_t_plugin_aaf646dbeffb84e91c277c236858e9c66}} 
+int {\bfseries gate}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a262c6185d42511de4f896b31f5d557fc}\label{struct_v_s_t_plugin_a262c6185d42511de4f896b31f5d557fc}} 
+const char $\ast$$\ast$ {\bfseries units}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ab6adb25acad0245b927f64b493c2cf73}\label{struct_v_s_t_plugin_ab6adb25acad0245b927f64b493c2cf73}} 
+unsigned {\bfseries n\+\_\+samples}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_aaf72f435ee0f1491b6dbef099131d295}\label{struct_v_s_t_plugin_aaf72f435ee0f1491b6dbef099131d295}} 
+float $\ast$$\ast$ {\bfseries outbuf}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a11c6ef1d803b7e2917cac309eea05311}\label{struct_v_s_t_plugin_a11c6ef1d803b7e2917cac309eea05311}} 
+float $\ast$$\ast$ {\bfseries inbuf}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a89c19eb9d855922994ebaea7fc466fb1}\label{struct_v_s_t_plugin_a89c19eb9d855922994ebaea7fc466fb1}} 
+std\+::map$<$ uint8\+\_\+t, int $>$ {\bfseries ctrlmap}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a527a89668f3aeaac8f40db2d3f1c7d0d}\label{struct_v_s_t_plugin_a527a89668f3aeaac8f40db2d3f1c7d0d}} 
+uint8\+\_\+t {\bfseries rpn\+\_\+msb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_ab0e33a0bc5b139b9ef56b0175e7f2700}\label{struct_v_s_t_plugin_ab0e33a0bc5b139b9ef56b0175e7f2700}} 
+uint8\+\_\+t {\bfseries rpn\+\_\+lsb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a170798a5539d81d9a32397accd1e2a2f}\label{struct_v_s_t_plugin_a170798a5539d81d9a32397accd1e2a2f}} 
+uint8\+\_\+t {\bfseries data\+\_\+msb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a4486c14257419e1ef7b8c07bc5fbd006}\label{struct_v_s_t_plugin_a4486c14257419e1ef7b8c07bc5fbd006}} 
+uint8\+\_\+t {\bfseries data\+\_\+lsb} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_aa658375f49eaaa6ea45cb42b2b86afb0}\label{struct_v_s_t_plugin_aa658375f49eaaa6ea45cb42b2b86afb0}} 
+\mbox{\hyperlink{struct_voice_data}{Voice\+Data}} $\ast$ {\bfseries vd}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a2ecedbda0e522717ec08418734fe417b}\label{struct_v_s_t_plugin_a2ecedbda0e522717ec08418734fe417b}} 
+static \mbox{\hyperlink{struct_meta}{Meta}} $\ast$ {\bfseries meta} = 0
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_af0b50bf0ae48ad5f7016a388707f6ae1}\label{struct_v_s_t_plugin_af0b50bf0ae48ad5f7016a388707f6ae1}} 
+static int {\bfseries n\+\_\+tunings} = 0
+\item 
+\mbox{\Hypertarget{struct_v_s_t_plugin_a7b29823fca2eebbc75e145b60d7eb7fb}\label{struct_v_s_t_plugin_a7b29823fca2eebbc75e145b60d7eb7fb}} 
+static \mbox{\hyperlink{struct_m_t_s_tunings}{M\+T\+S\+Tunings}} $\ast$ {\bfseries mts} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/faustvst.\+cpp\end{DoxyCompactItemize}

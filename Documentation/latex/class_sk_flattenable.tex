@@ -1,0 +1,120 @@
+\hypertarget{class_sk_flattenable}{}\doxysection{Sk\+Flattenable Class Reference}
+\label{class_sk_flattenable}\index{SkFlattenable@{SkFlattenable}}
+
+
+{\ttfamily \#include $<$Sk\+Flattenable.\+h$>$}
+
+Inheritance diagram for Sk\+Flattenable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=11.000000cm]{class_sk_flattenable}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_flattenable_1_1_private_initializer}{Private\+Initializer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_aedae69723cf1657f04fa4acf862749c7}\label{class_sk_flattenable_aedae69723cf1657f04fa4acf862749c7}} 
+enum {\bfseries Type} \{ \newline
+{\bfseries k\+Sk\+Color\+Filter\+\_\+\+Type}, 
+{\bfseries k\+Sk\+Blender\+\_\+\+Type}, 
+{\bfseries k\+Sk\+Drawable\+\_\+\+Type}, 
+{\bfseries k\+Sk\+Draw\+Looper\+\_\+\+Type}, 
+\newline
+{\bfseries k\+Sk\+Image\+Filter\+\_\+\+Type}, 
+{\bfseries k\+Sk\+Mask\+Filter\+\_\+\+Type}, 
+{\bfseries k\+Sk\+Path\+Effect\+\_\+\+Type}, 
+{\bfseries k\+Sk\+Shader\+\_\+\+Type}
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_a03476e3dd32c999a6a7ed9d53c7f65e7}\label{class_sk_flattenable_a03476e3dd32c999a6a7ed9d53c7f65e7}} 
+typedef \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_flattenable}{Sk\+Flattenable}} $>$($\ast$ {\bfseries Factory}) (\mbox{\hyperlink{class_sk_read_buffer}{Sk\+Read\+Buffer}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Factory \mbox{\hyperlink{class_sk_flattenable_afe739ff6d2a6737b05dad084f523cd87}{get\+Factory}} () const =0
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_sk_flattenable_a307ef2a249668fc3d6eeb23ba4418dbf}{get\+Type\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_sk_flattenable_a12ed60c16e646c9d2acdcb7c47bb5cd0}{flatten}} (\mbox{\hyperlink{class_sk_write_buffer}{Sk\+Write\+Buffer}} \&) const
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_a79c9c19a863bdddabb7a0d92084d6f01}\label{class_sk_flattenable_a79c9c19a863bdddabb7a0d92084d6f01}} 
+virtual Type {\bfseries get\+Flattenable\+Type} () const =0
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_ace6ed50bb8d1d40b81a8091bfc64a7bd}\label{class_sk_flattenable_ace6ed50bb8d1d40b81a8091bfc64a7bd}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ {\bfseries serialize} (const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} $\ast$=nullptr) const
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_aede953169e6d21067087a88d5bca9e05}\label{class_sk_flattenable_aede953169e6d21067087a88d5bca9e05}} 
+size\+\_\+t {\bfseries serialize} (void $\ast$memory, size\+\_\+t memory\+\_\+size, const \mbox{\hyperlink{struct_sk_serial_procs}{Sk\+Serial\+Procs}} $\ast$=nullptr) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_af7f3e417e64bad60aa3e6063712f2701}\label{class_sk_flattenable_af7f3e417e64bad60aa3e6063712f2701}} 
+static Factory {\bfseries Name\+To\+Factory} (const char name\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_a8ff4a752ca98819ddc867e2080b1ac69}\label{class_sk_flattenable_a8ff4a752ca98819ddc867e2080b1ac69}} 
+static const char $\ast$ {\bfseries Factory\+To\+Name} (Factory)
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_ae154a03c690f1729221196d3fd9decba}\label{class_sk_flattenable_ae154a03c690f1729221196d3fd9decba}} 
+static void {\bfseries Register} (const char name\mbox{[}$\,$\mbox{]}, Factory)
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_ad2f718968ac9be263256338208cb558e}\label{class_sk_flattenable_ad2f718968ac9be263256338208cb558e}} 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_flattenable}{Sk\+Flattenable}} $>$ {\bfseries Deserialize} (Type, const void $\ast$data, size\+\_\+t length, const \mbox{\hyperlink{struct_sk_deserial_procs}{Sk\+Deserial\+Procs}} $\ast$procs=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_flattenable_ab4c9ef55f848e41a1b8c3e31f12f971d}\label{class_sk_flattenable_ab4c9ef55f848e41a1b8c3e31f12f971d}} 
+class {\bfseries Sk\+Graphics}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_flattenable}{Sk\+Flattenable}} is the base class for objects that need to be flattened into a data stream for either transport or as part of the key to the font cache. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_flattenable_a12ed60c16e646c9d2acdcb7c47bb5cd0}\label{class_sk_flattenable_a12ed60c16e646c9d2acdcb7c47bb5cd0}} 
+\index{SkFlattenable@{SkFlattenable}!flatten@{flatten}}
+\index{flatten@{flatten}!SkFlattenable@{SkFlattenable}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily virtual void Sk\+Flattenable\+::flatten (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_write_buffer}{Sk\+Write\+Buffer}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Override this if your subclass needs to record data that it will need to recreate itself from its Create\+Proc (returned by \mbox{\hyperlink{class_sk_flattenable_afe739ff6d2a6737b05dad084f523cd87}{get\+Factory()}}).
+
+D\+E\+P\+R\+E\+C\+A\+T\+ED public \+: will move to protected ... use serialize() instead 
+
+Reimplemented in \mbox{\hyperlink{struct_sk_working_format_color_filter_a10b91a77f6ee2b32997ee0c14ec1106a}{Sk\+Working\+Format\+Color\+Filter}}, \mbox{\hyperlink{class_sk_s_r_g_b_gamma_color_filter_af3514b0e0f8d2623b0d50a0a877c14ca}{Sk\+S\+R\+G\+B\+Gamma\+Color\+Filter}}, \mbox{\hyperlink{class_sk_compose_color_filter_ac8e3c2b4cfcc3b3a1be3f44edd8115cb}{Sk\+Compose\+Color\+Filter}}, \mbox{\hyperlink{class_sk_pair_path_effect_a906df1fe313ea8176d374b300c8ed729}{Sk\+Pair\+Path\+Effect}}, \mbox{\hyperlink{class_sk_recorded_drawable_af1a5687dbcb47bb95241cb014a45cf72}{Sk\+Recorded\+Drawable}}, \mbox{\hyperlink{class_sk_image_filter___base_a639c6f0433f24ed7cdb120af659a8a82}{Sk\+Image\+Filter\+\_\+\+Base}}, \mbox{\hyperlink{class_sk_layer_draw_looper_a1bedf3fbb4be4f95b127fed732703816}{Sk\+Layer\+Draw\+Looper}}, \mbox{\hyperlink{class_sk_gaussian_color_filter_a4259bbeb3ae3ebfcb8dd2f52ebb5336d}{Sk\+Gaussian\+Color\+Filter}}, \mbox{\hyperlink{class_sk_matrix_image_filter_aeede25b34bea6ec173ceb47ba0938fa6}{Sk\+Matrix\+Image\+Filter}}, \mbox{\hyperlink{class_sk_mode_color_filter_ab67f85c6ef0fecb9af8a6aa94c54445d}{Sk\+Mode\+Color\+Filter}}, and \mbox{\hyperlink{class_sk_local_matrix_image_filter_a9cf1fafef8e09035ece66ac6f701fba9}{Sk\+Local\+Matrix\+Image\+Filter}}.
+
+\mbox{\Hypertarget{class_sk_flattenable_afe739ff6d2a6737b05dad084f523cd87}\label{class_sk_flattenable_afe739ff6d2a6737b05dad084f523cd87}} 
+\index{SkFlattenable@{SkFlattenable}!getFactory@{getFactory}}
+\index{getFactory@{getFactory}!SkFlattenable@{SkFlattenable}}
+\doxysubsubsection{\texorpdfstring{getFactory()}{getFactory()}}
+{\footnotesize\ttfamily virtual Factory Sk\+Flattenable\+::get\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Implement this to return a factory function pointer that can be called to recreate your class given a buffer (previously written to by your override of \mbox{\hyperlink{class_sk_flattenable_a12ed60c16e646c9d2acdcb7c47bb5cd0}{flatten()}}. 
+
+Implemented in \mbox{\hyperlink{class_sk_drawable_adfd6e7a9c0f0511e94449a88270fa178}{Sk\+Drawable}}.
+
+\mbox{\Hypertarget{class_sk_flattenable_a307ef2a249668fc3d6eeb23ba4418dbf}\label{class_sk_flattenable_a307ef2a249668fc3d6eeb23ba4418dbf}} 
+\index{SkFlattenable@{SkFlattenable}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!SkFlattenable@{SkFlattenable}}
+\doxysubsubsection{\texorpdfstring{getTypeName()}{getTypeName()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Sk\+Flattenable\+::get\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the name of the object\textquotesingle{}s class. 
+
+Implemented in \mbox{\hyperlink{class_sk_drawable_ac9cb373e9ee5e6d8848eb46259b23a04}{Sk\+Drawable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Flattenable.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Flattenable.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Global\+Initialization\+\_\+core.\+cpp\end{DoxyCompactItemize}

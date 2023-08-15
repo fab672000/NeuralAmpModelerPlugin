@@ -1,0 +1,48 @@
+\hypertarget{namespace_eigen_1_1symbolic}{}\doxysection{Eigen\+::symbolic Namespace Reference}
+\label{namespace_eigen_1_1symbolic}\index{Eigen::symbolic@{Eigen::symbolic}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_add_expr}{Add\+Expr}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_base_expr}{Base\+Expr}}
+\item 
+struct \mbox{\hyperlink{struct_eigen_1_1symbolic_1_1is__symbolic}{is\+\_\+symbolic}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_negate_expr}{Negate\+Expr}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_product_expr}{Product\+Expr}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_quotient_expr}{Quotient\+Expr}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_symbol}{Symbol}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_symbol_expr}{Symbol\+Expr}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_symbol_value}{Symbol\+Value}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_value_expr}{Value\+Expr}}
+\item 
+class \mbox{\hyperlink{class_eigen_1_1symbolic_1_1_value_expr_3_01internal_1_1_fixed_int_3_01_n_01_4_01_4}{Value\+Expr$<$ internal\+::\+Fixed\+Int$<$ N $>$ $>$}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This namespace defines a set of classes and functions to build and evaluate symbolic expressions of scalar type Index. Here is a simple example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// First step, defines symbols:}}
+\DoxyCodeLine{\textcolor{keyword}{struct }x\_tag \{\};  \textcolor{keyword}{static} \textcolor{keyword}{const} symbolic::SymbolExpr<x\_tag> x;}
+\DoxyCodeLine{\textcolor{keyword}{struct }y\_tag \{\};  \textcolor{keyword}{static} \textcolor{keyword}{const} symbolic::SymbolExpr<y\_tag> y;}
+\DoxyCodeLine{\textcolor{keyword}{struct }z\_tag \{\};  \textcolor{keyword}{static} \textcolor{keyword}{const} symbolic::SymbolExpr<z\_tag> z;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Defines an expression:}}
+\DoxyCodeLine{\textcolor{keyword}{auto} expr = (x+3)/y+z;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// And evaluate it: (c++14)}}
+\DoxyCodeLine{std::cout << expr.eval(x=6,y=3,z=-\/13) << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\end{DoxyCode}
+
+
+It is currently only used internally to define and manipulate the Eigen\+::placeholders\+::last and Eigen\+::placeholders\+::lastp1 symbols in Eigen\+::seq and \mbox{\hyperlink{namespace_eigen_a3a3c346d2a61d1e8e86e6fb4cf57fbda}{Eigen\+::seqN}}. 

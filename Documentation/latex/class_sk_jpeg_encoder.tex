@@ -1,0 +1,89 @@
+\hypertarget{class_sk_jpeg_encoder}{}\doxysection{Sk\+Jpeg\+Encoder Class Reference}
+\label{class_sk_jpeg_encoder}\index{SkJpegEncoder@{SkJpegEncoder}}
+Inheritance diagram for Sk\+Jpeg\+Encoder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sk_jpeg_encoder}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_jpeg_encoder_1_1_options}{Options}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_jpeg_encoder_acac6633f501e27370e5dd5b30f2afada}\label{class_sk_jpeg_encoder_acac6633f501e27370e5dd5b30f2afada}} 
+enum {\bfseries Alpha\+Option} \{ {\bfseries k\+Ignore}, 
+{\bfseries k\+Blend\+On\+Black}
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdc}{Downsample}} \{ \mbox{\hyperlink{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdca1718092b4e12aa6a5b952c5750890f7b}{Downsample\+::k420}}, 
+\mbox{\hyperlink{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdca723eb8b067af2e70189c46a58b582630}{Downsample\+::k422}}, 
+\mbox{\hyperlink{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdcab654be5737275dbe641ec8bdf756f4eb}{Downsample\+::k444}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_sk_jpeg_encoder_a7668fa132a08bbc8bbbc92b7c874fe03}{Encode}} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$dst, const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&src, const \mbox{\hyperlink{struct_sk_jpeg_encoder_1_1_options}{Options}} \&options)
+\item 
+static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_encoder}{Sk\+Encoder}} $>$ \mbox{\hyperlink{class_sk_jpeg_encoder_acb4a6f620d893fb9240e24859cfc7337}{Make}} (\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$dst, const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&src, const \mbox{\hyperlink{struct_sk_jpeg_encoder_1_1_options}{Options}} \&options)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_jpeg_encoder_ae4bede7775b9fcb973ca6362e77548e1}\label{class_sk_jpeg_encoder_ae4bede7775b9fcb973ca6362e77548e1}} 
+bool {\bfseries on\+Encode\+Rows} (int num\+Rows) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdc}\label{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdc}} 
+\index{SkJpegEncoder@{SkJpegEncoder}!Downsample@{Downsample}}
+\index{Downsample@{Downsample}!SkJpegEncoder@{SkJpegEncoder}}
+\doxysubsubsection{\texorpdfstring{Downsample}{Downsample}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdc}{Sk\+Jpeg\+Encoder\+::\+Downsample}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k420@{k420}!SkJpegEncoder@{SkJpegEncoder}}\index{SkJpegEncoder@{SkJpegEncoder}!k420@{k420}}}\mbox{\Hypertarget{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdca1718092b4e12aa6a5b952c5750890f7b}\label{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdca1718092b4e12aa6a5b952c5750890f7b}} 
+k420&Reduction by a factor of two in both the horizontal and vertical directions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k422@{k422}!SkJpegEncoder@{SkJpegEncoder}}\index{SkJpegEncoder@{SkJpegEncoder}!k422@{k422}}}\mbox{\Hypertarget{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdca723eb8b067af2e70189c46a58b582630}\label{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdca723eb8b067af2e70189c46a58b582630}} 
+k422&Reduction by a factor of two in the horizontal direction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{k444@{k444}!SkJpegEncoder@{SkJpegEncoder}}\index{SkJpegEncoder@{SkJpegEncoder}!k444@{k444}}}\mbox{\Hypertarget{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdcab654be5737275dbe641ec8bdf756f4eb}\label{class_sk_jpeg_encoder_a0f9f3ad6783cbfee084ce950a92f4cdcab654be5737275dbe641ec8bdf756f4eb}} 
+k444&No downsampling. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_jpeg_encoder_a7668fa132a08bbc8bbbc92b7c874fe03}\label{class_sk_jpeg_encoder_a7668fa132a08bbc8bbbc92b7c874fe03}} 
+\index{SkJpegEncoder@{SkJpegEncoder}!Encode@{Encode}}
+\index{Encode@{Encode}!SkJpegEncoder@{SkJpegEncoder}}
+\doxysubsubsection{\texorpdfstring{Encode()}{Encode()}}
+{\footnotesize\ttfamily static bool Sk\+Jpeg\+Encoder\+::\+Encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{src,  }\item[{const \mbox{\hyperlink{struct_sk_jpeg_encoder_1_1_options}{Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Encode the $\vert$src$\vert$ pixels to the $\vert$dst$\vert$ stream. $\vert$options$\vert$ may be used to control the encoding behavior.
+
+Returns true on success. Returns false on an invalid or unsupported $\vert$src$\vert$. \mbox{\Hypertarget{class_sk_jpeg_encoder_acb4a6f620d893fb9240e24859cfc7337}\label{class_sk_jpeg_encoder_acb4a6f620d893fb9240e24859cfc7337}} 
+\index{SkJpegEncoder@{SkJpegEncoder}!Make@{Make}}
+\index{Make@{Make}!SkJpegEncoder@{SkJpegEncoder}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily static std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_sk_encoder}{Sk\+Encoder}}$>$ Sk\+Jpeg\+Encoder\+::\+Make (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_w_stream}{Sk\+W\+Stream}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{src,  }\item[{const \mbox{\hyperlink{struct_sk_jpeg_encoder_1_1_options}{Options}} \&}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a jpeg encoder that will encode the $\vert$src$\vert$ pixels to the $\vert$dst$\vert$ stream. $\vert$options$\vert$ may be used to control the encoding behavior.
+
+$\vert$dst$\vert$ is unowned but must remain valid for the lifetime of the object.
+
+This returns nullptr on an invalid or unsupported $\vert$src$\vert$. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/encode/Sk\+Jpeg\+Encoder.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,73 @@
+\hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c}{}\doxysection{Eigen\+::internal\+::qr\+\_\+preconditioner\+\_\+impl$<$ Matrix\+Type, Options, Householder\+Q\+R\+Preconditioner, Precondition\+If\+More\+Cols\+Than\+Rows, true $>$ Class Template Reference}
+\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c}\index{Eigen::internal::qr\_preconditioner\_impl$<$ MatrixType, Options, HouseholderQRPreconditioner, PreconditionIfMoreColsThanRows, true $>$@{Eigen::internal::qr\_preconditioner\_impl$<$ MatrixType, Options, HouseholderQRPreconditioner, PreconditionIfMoreColsThanRows, true $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_aef65e4d12b1e54a3c2c2f63aae0f6144}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_aef65e4d12b1e54a3c2c2f63aae0f6144}} 
+enum \{ \newline
+{\bfseries Rows\+At\+Compile\+Time} = Matrix\+Type\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Matrix\+Type\+::Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Matrix\+Type\+::Max\+Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Matrix\+Type\+::Max\+Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Matrix\+Options} = Matrix\+Type\+::Options, 
+{\bfseries Workspace\+Size} = internal\+::traits$<$S\+V\+D\+Type$>$\+::Matrix\+V\+Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Workspace\+Size} = internal\+::traits$<$S\+V\+D\+Type$>$\+::Matrix\+V\+Max\+Cols\+At\+Compile\+Time
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_ae228ce4d2c2b508db1866ee047bd4e42}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_ae228ce4d2c2b508db1866ee047bd4e42}} 
+enum \{ \newline
+{\bfseries Rows\+At\+Compile\+Time} = Matrix\+Type\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Matrix\+Type\+::Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Matrix\+Type\+::Max\+Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Matrix\+Type\+::Max\+Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Matrix\+Options} = Matrix\+Type\+::Options, 
+{\bfseries Workspace\+Size} = internal\+::traits$<$S\+V\+D\+Type$>$\+::Matrix\+V\+Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Workspace\+Size} = internal\+::traits$<$S\+V\+D\+Type$>$\+::Matrix\+V\+Max\+Cols\+At\+Compile\+Time
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a698eb311b028d2c154bc89effc081571}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a698eb311b028d2c154bc89effc081571}} 
+typedef Matrix\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a9e23d5a34a0505e40f3bb88e614812ab}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a9e23d5a34a0505e40f3bb88e614812ab}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}$<$ Matrix\+Type, Options $>$ {\bfseries S\+V\+D\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a569ac67d2eeb904aa88f600494694fba}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a569ac67d2eeb904aa88f600494694fba}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, Workspace\+Size, 1, \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}}, Max\+Workspace\+Size, 1 $>$ {\bfseries Workspace\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8e05c27fe5a2437c7cf61ac8db5296ea}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8e05c27fe5a2437c7cf61ac8db5296ea}} 
+typedef \mbox{\hyperlink{class_eigen_1_1internal_1_1make__proper__matrix__type}{internal\+::make\+\_\+proper\+\_\+matrix\+\_\+type}}$<$ Scalar, Cols\+At\+Compile\+Time, Rows\+At\+Compile\+Time, Matrix\+Options, Max\+Cols\+At\+Compile\+Time, Max\+Rows\+At\+Compile\+Time $>$\+::type {\bfseries Transpose\+Type\+With\+Same\+Storage\+Order}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a698eb311b028d2c154bc89effc081571}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a698eb311b028d2c154bc89effc081571}} 
+typedef Matrix\+Type\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a9e23d5a34a0505e40f3bb88e614812ab}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a9e23d5a34a0505e40f3bb88e614812ab}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}$<$ Matrix\+Type, Options $>$ {\bfseries S\+V\+D\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a569ac67d2eeb904aa88f600494694fba}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a569ac67d2eeb904aa88f600494694fba}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, Workspace\+Size, 1, \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}}, Max\+Workspace\+Size, 1 $>$ {\bfseries Workspace\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8e05c27fe5a2437c7cf61ac8db5296ea}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8e05c27fe5a2437c7cf61ac8db5296ea}} 
+typedef \mbox{\hyperlink{class_eigen_1_1internal_1_1make__proper__matrix__type}{internal\+::make\+\_\+proper\+\_\+matrix\+\_\+type}}$<$ Scalar, Cols\+At\+Compile\+Time, Rows\+At\+Compile\+Time, Matrix\+Options, Max\+Cols\+At\+Compile\+Time, Max\+Rows\+At\+Compile\+Time $>$\+::type {\bfseries Transpose\+Type\+With\+Same\+Storage\+Order}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8b15fd86b85ba18554af6b983b99d035}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8b15fd86b85ba18554af6b983b99d035}} 
+void {\bfseries allocate} (const \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{S\+V\+D\+Type}} \&svd)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_abfcb963d84241952c4fbba803010f2ba}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_abfcb963d84241952c4fbba803010f2ba}} 
+bool {\bfseries run} (\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{S\+V\+D\+Type}} \&svd, const Matrix\+Type \&matrix)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8b15fd86b85ba18554af6b983b99d035}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_a8b15fd86b85ba18554af6b983b99d035}} 
+void {\bfseries allocate} (const \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{S\+V\+D\+Type}} \&svd)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_abfcb963d84241952c4fbba803010f2ba}\label{class_eigen_1_1internal_1_1qr__preconditioner__impl_3_01_matrix_type_00_01_options_00_01_househo1cdd7f451adec2b136a2a55e8236198c_abfcb963d84241952c4fbba803010f2ba}} 
+bool {\bfseries run} (\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{S\+V\+D\+Type}} \&svd, const Matrix\+Type \&matrix)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+S\+V\+D/Jacobi\+S\+V\+D.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,21 @@
+extract {\bfseries{A\+A\+X\+\_\+\+S\+D\+K\+\_\+2p3p2.\+zip}} here\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__a_a_x__s_d_k__r_e_a_d_m_e_autotoc_md1355}{}\doxysection{mac\+OS}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__a_a_x__s_d_k__r_e_a_d_m_e_autotoc_md1355}
+
+\begin{DoxyItemize}
+\item You need to modify the A\+A\+Xlibrary project in order to compile with the same S\+DK as your plug-\/ins
+\item set S\+D\+K\+R\+O\+OT to macosx10.\+x for debug and release targets of A\+A\+X\+Library static lib
+\item modify {\bfseries{Example\+Plug\+Ins/\+Common/\+Mac/\+Common\+Debug\+Settings.\+xcconfig}} and {\bfseries{Example\+Plug\+Ins/\+Common/\+Mac/\+Common\+Release\+Settings.\+xcconfig}}...
+\end{DoxyItemize}
+
+G\+C\+C\+\_\+\+V\+E\+R\+S\+I\+ON = com.\+apple.\+compilers.\+llvm.\+clang ~\newline
+ S\+D\+K\+R\+O\+OT = macosx10.\+X ~\newline
+ M\+A\+C\+O\+S\+X\+\_\+\+D\+E\+P\+L\+O\+Y\+M\+E\+N\+T\+\_\+\+T\+A\+R\+G\+ET = 10.\+X ~\newline
+ A\+R\+C\+HS = x86\+\_\+64 ~\newline
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__a_a_x__s_d_k__r_e_a_d_m_e_autotoc_md1356}{}\doxysection{Windows}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__i_plug__a_a_x__s_d_k__r_e_a_d_m_e_autotoc_md1356}
+On Windows you will need to
+
+
+\begin{DoxyItemize}
+\item Open {\bfseries{msvc/\+A\+A\+X\+\_\+\+S\+D\+K.\+sln}} in Visual Studio 2019. You should be prompted to retarget the solution, agree to that to upgrade the compiler and VS projects for V\+S2019
+\item Right click the \char`\"{}\+A\+A\+X\+Library\char`\"{} project in the solution explorer and select \char`\"{}\+Properties\char`\"{}. Navigate to {\bfseries{Configurations Properties -\/$>$ C/\+C++ -\/$>$ Code Generation -\/$>$ Runtime Library}} . For the Configurations/\+Platform Debug/x64 this should be set to {\bfseries{Multi-\/threaded Debug (/\+M\+Td)}}, change it and click apply. For the Release/x64 platform it should be set to {\bfseries{Multi-\/threaded (/\+MT)}}, change it and click apply.
+\item Now build both Debug and Release versions of the A\+A\+X\+Library project. 
+\end{DoxyItemize}

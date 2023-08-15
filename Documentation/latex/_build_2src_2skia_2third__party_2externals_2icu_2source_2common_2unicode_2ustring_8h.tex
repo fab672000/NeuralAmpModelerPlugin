@@ -1,0 +1,1841 @@
+\hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ustring.h File Reference}
+\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ustring.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ustring.h}}
+
+
+C A\+PI\+: Unicode string handling functions.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/putil.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/uiter.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a08c0431a8c9c65e9578b12978681bbc8}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a08c0431a8c9c65e9578b12978681bbc8}} 
+\#define {\bfseries U\+B\+R\+K\+\_\+\+T\+Y\+P\+E\+D\+E\+F\+\_\+\+U\+B\+R\+E\+A\+K\+\_\+\+I\+T\+E\+R\+A\+T\+OR}
+\item 
+\#define \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adf24e553d2f30e3bde48ff98d9b0e6bc}{U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+D\+E\+CL}}(var,  cs,  length)~static const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} var\mbox{[}(length)+1\mbox{]}=L \#\# cs
+\item 
+\#define \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af0dccce2caf6c8c657b65112f393a75b}{U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+I\+N\+IT}}(var,  cs,  length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adc0f4fbe442327835c37e086a38f3bdd}{u\+\_\+strlen}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a048e04b514d3310b55d191975dba2368}{u\+\_\+count\+Char32}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, int32\+\_\+t length)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7cf9cc3906b4edce0c59b6411600da01}{u\+\_\+str\+Has\+More\+Char32\+Than}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, int32\+\_\+t length, int32\+\_\+t number)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a15185351cfd90039c84616ee45dceb1d}{u\+\_\+strcat}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dst, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5d738cb24207e5c69f311463617e647f}{u\+\_\+strncat}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dst, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t n)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}{u\+\_\+strstr}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$substring)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, int32\+\_\+t length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$substring, int32\+\_\+t sub\+Length)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aab9b8a7de99e7b7c85ff8a8d97b2293d}{u\+\_\+strchr}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} c)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5069294ac2d3a9c2da93805cb05bae25}{u\+\_\+strchr32}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa322d15624e3929157040b0ddbffac1a}{u\+\_\+strrstr}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$substring)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, int32\+\_\+t length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$substring, int32\+\_\+t sub\+Length)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a578a38c2122404f3996b6a6c217e6af4}{u\+\_\+strrchr}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} c)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa7c00ce46124152c466bf00f8eeb4bc3}{u\+\_\+strrchr32}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afbc9ca12508a04870f49fec1c0156227}{u\+\_\+strpbrk}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$string, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$match\+Set)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5c027d2544dc961866d0ab14387ab77e}{u\+\_\+strcspn}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$string, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$match\+Set)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a85d90fae5ba72c495bc67e67bff3d5eb}{u\+\_\+strspn}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$string, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$match\+Set)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a36320afbd723a64b44ab32763435471c}{u\+\_\+strtok\+\_\+r}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$delim, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$$\ast$save\+State)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8a228bc8a31f8f1bd06ca2545f9123a9}{u\+\_\+strcmp}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa4a5c83260cd39d266803fbd7ee277eb}{u\+\_\+strcmp\+Code\+Point\+Order}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}{u\+\_\+str\+Compare}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, int32\+\_\+t length1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, int32\+\_\+t length2, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} code\+Point\+Order)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a97cdd2d837e76a0e2b5eca76d44defb5}{u\+\_\+str\+Compare\+Iter}} (\mbox{\hyperlink{struct_u_char_iterator}{U\+Char\+Iterator}} $\ast$iter1, \mbox{\hyperlink{struct_u_char_iterator}{U\+Char\+Iterator}} $\ast$iter2, \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} code\+Point\+Order)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8fe1bad15747dd072d0a5d2a51d443e6}{u\+\_\+str\+Case\+Compare}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, int32\+\_\+t length1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, int32\+\_\+t length2, uint32\+\_\+t options, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8645f191523e7f57d08896951eb4c490}{u\+\_\+strncmp}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$ucs1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$ucs2, int32\+\_\+t n)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab06fd530273da52a4032c545fb15c588}{u\+\_\+strncmp\+Code\+Point\+Order}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, int32\+\_\+t n)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a41cdd462ae410f0eaef712d9a32be9c2}{u\+\_\+strcasecmp}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, uint32\+\_\+t options)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a818d9f3b2fb9895f70eb48913611d3bf}{u\+\_\+strncasecmp}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, int32\+\_\+t n, uint32\+\_\+t options)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a3385bde43743b9588e0e4129a52afdd5}{u\+\_\+memcasecmp}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, int32\+\_\+t length, uint32\+\_\+t options)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a579ffdcb901770e97378b5ec7a2e0bcc}{u\+\_\+strcpy}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dst, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac31c6e30747e62c11bb677009abdc353}{u\+\_\+strncpy}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dst, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t n)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_acd4abc03bfe7ecd6a5804fb2fd95e51d}{u\+\_\+uastrcpy}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dst, const char $\ast$src)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af9d311233cc2116518f12b3b5eceb81f}{u\+\_\+uastrncpy}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dst, const char $\ast$src, int32\+\_\+t n)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a674cea3783aa222190ab3c976965cdbd}{u\+\_\+austrcpy}} (char $\ast$dst, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab679ef98a7df770d7a42a3078efcf897}{u\+\_\+austrncpy}} (char $\ast$dst, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t n)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0408b4af06635c70ce587878a7329ae0}{u\+\_\+memcpy}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abc57cecfefa0d95e0e9ebcaf08cd8571}{u\+\_\+memmove}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a52eb3018262ddf08557fc308bd669bc4}{u\+\_\+memset}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} c, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afa1950d6891561462c122717809f14db}{u\+\_\+memcmp}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$buf1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$buf2, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a3ade86fc9cba1d8a2e88d1a2235743df}{u\+\_\+memcmp\+Code\+Point\+Order}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s1, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s2, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af49ed2d7d1608612cc2d828a0777fe10}{u\+\_\+memchr}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} c, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad01e7d64db08ab0932b13f59eb8bfbbb}{u\+\_\+memchr32}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a754eac82f584d485ca5168b77cc7f1ed}{u\+\_\+memrchr}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} c, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac9bbf8f215d78d839149728c0a76729f}{u\+\_\+memrchr32}} (const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} c, int32\+\_\+t count)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab6e0ad733203571c3245a9ab1af41d0c}{u\+\_\+unescape}} (const char $\ast$src, \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity)
+\item 
+\mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} typedef \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aba21ae6407ec5fc560be58bbc35af6a2}{U\+Char}} (\mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} $\ast$U\+N\+E\+S\+C\+A\+P\+E\+\_\+\+C\+H\+A\+R\+\_\+\+AT)(int32\+\_\+t offset
+\item 
+\mbox{\hyperlink{umachine_8h_a1a820e5c6cbe8ac1742b654e6bf9ed7d}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+E\+ND}} \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At}} (U\+N\+E\+S\+C\+A\+P\+E\+\_\+\+C\+H\+A\+R\+\_\+\+AT char\+At, int32\+\_\+t $\ast$offset, int32\+\_\+t length, void $\ast$context)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a9b03fbdbaf7cc03d53fd3334a600d6e0}{u\+\_\+str\+To\+Upper}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a748e339012d814138b9163acfb15497a}{u\+\_\+str\+To\+Lower}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}{u\+\_\+str\+To\+Title}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$title\+Iter, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af3625d1217d94b88da0f061414788083}{u\+\_\+str\+Fold\+Case}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, uint32\+\_\+t options, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} wchar\+\_\+t $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab66f484552e57d6bf89bddd6150d93b7}{u\+\_\+str\+To\+W\+CS}} (wchar\+\_\+t $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab598cb1b3e2d14f61bc36de909a5b9e6}{u\+\_\+str\+From\+W\+CS}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const wchar\+\_\+t $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8}} (char $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}{u\+\_\+str\+To\+U\+T\+F8\+With\+Sub}} (char $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} subchar, int32\+\_\+t $\ast$p\+Num\+Substitutions, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}{u\+\_\+str\+From\+U\+T\+F8\+With\+Sub}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} subchar, int32\+\_\+t $\ast$p\+Num\+Substitutions, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0cea563bf85e6f557d7dac281dbf1c34}{u\+\_\+str\+From\+U\+T\+F8\+Lenient}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}{u\+\_\+str\+To\+U\+T\+F32}} (\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}{u\+\_\+str\+From\+U\+T\+F32}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7571dbb4d2291aec69e6fec9eb870b36}{u\+\_\+str\+To\+U\+T\+F32\+With\+Sub}} (\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} subchar, int32\+\_\+t $\ast$p\+Num\+Substitutions, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a4634c4b09e4450c9a96deb6e2a6e6650}{u\+\_\+str\+From\+U\+T\+F32\+With\+Sub}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} subchar, int32\+\_\+t $\ast$p\+Num\+Substitutions, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a89062de304dd7c066f8ab700deb046d4}{u\+\_\+str\+To\+Java\+Modified\+U\+T\+F8}} (char $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af35ceef0be9e1d4d7ededb053b7a3fbc}{u\+\_\+str\+From\+Java\+Modified\+U\+T\+F8\+With\+Sub}} (\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$dest, int32\+\_\+t dest\+Capacity, int32\+\_\+t $\ast$p\+Dest\+Length, const char $\ast$src, int32\+\_\+t src\+Length, \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} subchar, int32\+\_\+t $\ast$p\+Num\+Substitutions, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$p\+Error\+Code)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a74d84f88a14c68a4e733d56943bf886a}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a74d84f88a14c68a4e733d56943bf886a}} 
+\mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} typedef void $\ast$ {\bfseries context}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Unicode string handling functions. 
+
+These C A\+PI functions provide general Unicode string handling.
+
+Some functions are equivalent in name, signature, and behavior to the A\+N\+SI C $<$string.\+h$>$ functions. (For example, they do not check for bad arguments like N\+U\+LL string pointers.) In some cases, only the thread-\/safe variant of such a function is implemented here (see \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a36320afbd723a64b44ab32763435471c}{u\+\_\+strtok\+\_\+r()}}).
+
+Other functions provide more Unicode-\/specific functionality like locale-\/specific upper/lower-\/casing and string comparison in code point order.
+
+I\+CU uses 16-\/bit Unicode (U\+T\+F-\/16) in the form of arrays of U\+Char code units. U\+T\+F-\/16 encodes each Unicode code point with either one or two U\+Char code units. (This is the default form of Unicode, and a forward-\/compatible extension of the original, fixed-\/width form that was known as U\+C\+S-\/2. U\+T\+F-\/16 superseded U\+C\+S-\/2 with Unicode 2.\+0 in 1996.)
+
+Some A\+P\+Is accept a 32-\/bit U\+Char32 value for a single code point.
+
+I\+CU also handles 16-\/bit Unicode text with unpaired surrogates. Such text is not well-\/formed U\+T\+F-\/16. Code-\/point-\/related functions treat unpaired surrogates as surrogate code points, i.\+e., as separate units.
+
+Although U\+T\+F-\/16 is a variable-\/width encoding form (like some legacy multi-\/byte encodings), it is much more efficient even for random access because the code unit values for single-\/unit characters vs. lead units vs. trail units are completely disjoint. This means that it is easy to determine character (code point) boundaries from random offsets in the string.
+
+Unicode (U\+T\+F-\/16) string processing is optimized for the single-\/unit case. Although it is important to support supplementary characters (which use pairs of lead/trail code units called \char`\"{}surrogates\char`\"{}), their occurrence is rare. Almost all characters in modern use require only a single U\+Char code unit (i.\+e., their code point values are $<$=0xffff).
+
+For more details see the User Guide Strings chapter (\href{http://icu-project.org/userguide/strings.html}{\texttt{ http\+://icu-\/project.\+org/userguide/strings.\+html}}). For a discussion of the handling of unpaired surrogates see also Jitterbug 2145 and its icu mailing list proposal on 2002-\/sep-\/18. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adf24e553d2f30e3bde48ff98d9b0e6bc}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adf24e553d2f30e3bde48ff98d9b0e6bc}} 
+\index{ustring.h@{ustring.h}!U\_STRING\_DECL@{U\_STRING\_DECL}}
+\index{U\_STRING\_DECL@{U\_STRING\_DECL}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{U\_STRING\_DECL}{U\_STRING\_DECL}}
+{\footnotesize\ttfamily \#define U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+D\+E\+CL(\begin{DoxyParamCaption}\item[{}]{var,  }\item[{}]{cs,  }\item[{}]{length }\end{DoxyParamCaption})~static const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} var\mbox{[}(length)+1\mbox{]}=L \#\# cs}
+
+Unicode String literals in C. We need one macro to declare a variable for the string and to statically preinitialize it if possible, and a second macro to dynamically initialize such a string variable if necessary.
+
+The macros are defined for maximum performance. They work only for strings that contain \char`\"{}invariant characters\char`\"{}, i.\+e., only latin letters, digits, and some punctuation. See \mbox{\hyperlink{utypes_8h}{utypes.\+h}} for details.
+
+A pair of macros for a single string must be used with the same parameters. The string parameter must be a C string literal. The length of the string, not including the terminating {\ttfamily N\+UL}, must be specified as a constant. The U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+D\+E\+CL macro should be invoked exactly once for one such string variable before it is used.
+
+Usage\+: \begin{DoxyVerb}U_STRING_DECL(ustringVar1, "Quick-Fox 2", 11);
+U_STRING_DECL(ustringVar2, "jumps 5%", 8);
+static UBool didInit=false;
+
+int32_t function() {
+    if(!didInit) {
+        U_STRING_INIT(ustringVar1, "Quick-Fox 2", 11);
+        U_STRING_INIT(ustringVar2, "jumps 5%", 8);
+        didInit=true;
+    }
+    return u_strcmp(ustringVar1, ustringVar2);
+}
+\end{DoxyVerb}
+
+
+Note that the macros will N\+OT consistently work if their argument is another \#{\ttfamily define}. The following will not work on all platforms, don\textquotesingle{}t use it. \begin{DoxyVerb}#define GLUCK "Mr. Gluck"
+U_STRING_DECL(var, GLUCK, 9)
+U_STRING_INIT(var, GLUCK, 9)
+\end{DoxyVerb}
+
+
+Instead, use the string literal \char`\"{}\+Mr. Gluck\char`\"{} as the argument to both macro calls.
+
+@stable I\+CU 2.\+0 \mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af0dccce2caf6c8c657b65112f393a75b}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af0dccce2caf6c8c657b65112f393a75b}} 
+\index{ustring.h@{ustring.h}!U\_STRING\_INIT@{U\_STRING\_INIT}}
+\index{U\_STRING\_INIT@{U\_STRING\_INIT}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{U\_STRING\_INIT}{U\_STRING\_INIT}}
+{\footnotesize\ttfamily \#define U\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+I\+N\+IT(\begin{DoxyParamCaption}\item[{}]{var,  }\item[{}]{cs,  }\item[{}]{length }\end{DoxyParamCaption})}
+
+@stable I\+CU 2.\+0 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adb85bb46d5f93c87098e11deab50bef4}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adb85bb46d5f93c87098e11deab50bef4}} 
+\index{ustring.h@{ustring.h}!UBreakIterator@{UBreakIterator}}
+\index{UBreakIterator@{UBreakIterator}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{UBreakIterator}{UBreakIterator}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} \mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}}}
+
+Simple declaration for \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}{u\+\_\+str\+To\+Title()}} to avoid including \mbox{\hyperlink{ubrk_8h}{unicode/ubrk.\+h}}. @stable I\+CU 2.\+1 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a674cea3783aa222190ab3c976965cdbd}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a674cea3783aa222190ab3c976965cdbd}} 
+\index{ustring.h@{ustring.h}!u\_austrcpy@{u\_austrcpy}}
+\index{u\_austrcpy@{u\_austrcpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_austrcpy()}{u\_austrcpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+austrcpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Copy ustring to a byte string encoded in the default codepage. Adds a null terminator. Performs a U\+Char to host byte conversion
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab679ef98a7df770d7a42a3078efcf897}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab679ef98a7df770d7a42a3078efcf897}} 
+\index{ustring.h@{ustring.h}!u\_austrncpy@{u\_austrncpy}}
+\index{u\_austrncpy@{u\_austrncpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_austrncpy()}{u\_austrncpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+austrncpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Copy ustring to a byte string encoded in the default codepage. Copies at most {\ttfamily n} characters. The result will be null terminated if the length of {\ttfamily src} is less than {\ttfamily n}. Performs a U\+Char to host byte conversion
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string. \\
+\hline
+{\em n} & The maximum number of characters to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a048e04b514d3310b55d191975dba2368}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a048e04b514d3310b55d191975dba2368}} 
+\index{ustring.h@{ustring.h}!u\_countChar32@{u\_countChar32}}
+\index{u\_countChar32@{u\_countChar32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_countChar32()}{u\_countChar32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+count\+Char32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{int32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Count Unicode code points in the length U\+Char code units of the string. A code point may occupy either one or two U\+Char code units. Counting code points involves reading all code units.
+
+This functions is basically the inverse of the \mbox{\hyperlink{utf16_8h_ad70d5a679bd03c63131219c7808d9de9}{U16\+\_\+\+F\+W\+D\+\_\+\+N()}} macro (see \mbox{\hyperlink{utf_8h}{utf.\+h}}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The input string. \\
+\hline
+{\em length} & The number of U\+Char code units to be checked, or -\/1 to count all code points before the first N\+UL (U+0000). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of code points in the specified code units. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a3385bde43743b9588e0e4129a52afdd5}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a3385bde43743b9588e0e4129a52afdd5}} 
+\index{ustring.h@{ustring.h}!u\_memcasecmp@{u\_memcasecmp}}
+\index{u\_memcasecmp@{u\_memcasecmp}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memcasecmp()}{u\_memcasecmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memcasecmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{int32\+\_\+t}]{length,  }\item[{uint32\+\_\+t}]{options }\end{DoxyParamCaption})}
+
+Compare two strings case-\/insensitively using full case folding. This is equivalent to u\+\_\+strcmp(u\+\_\+str\+Fold\+Case(s1, n, options), u\+\_\+str\+Fold\+Case(s2, n, options)).
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+{\em length} & The number of characters in each string to case-\/fold and then compare. \\
+\hline
+{\em options} & A bit set of options\+:
+\begin{DoxyItemize}
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT or 0 is used for default options\+: Comparison in code unit order with default case folding.
+\item U\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+C\+O\+D\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+D\+ER Set to choose code point order instead of code unit order (see u\+\_\+str\+Compare for details).
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A negative, zero, or positive integer indicating the comparison result. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af49ed2d7d1608612cc2d828a0777fe10}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af49ed2d7d1608612cc2d828a0777fe10}} 
+\index{ustring.h@{ustring.h}!u\_memchr@{u\_memchr}}
+\index{u\_memchr@{u\_memchr}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memchr()}{u\_memchr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memchr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}}]{c,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Find the first occurrence of a B\+MP code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (contains {\ttfamily count} U\+Chars). \\
+\hline
+{\em c} & The B\+MP code point to find. \\
+\hline
+{\em count} & The length of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+0
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aab9b8a7de99e7b7c85ff8a8d97b2293d}{u\+\_\+strchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad01e7d64db08ab0932b13f59eb8bfbbb}{u\+\_\+memchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad01e7d64db08ab0932b13f59eb8bfbbb}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad01e7d64db08ab0932b13f59eb8bfbbb}} 
+\index{ustring.h@{ustring.h}!u\_memchr32@{u\_memchr32}}
+\index{u\_memchr32@{u\_memchr32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memchr32()}{u\_memchr32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memchr32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{c,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Find the first occurrence of a code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (contains {\ttfamily count} U\+Chars). \\
+\hline
+{\em c} & The code point to find. \\
+\hline
+{\em count} & The length of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+0
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5069294ac2d3a9c2da93805cb05bae25}{u\+\_\+strchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af49ed2d7d1608612cc2d828a0777fe10}{u\+\_\+memchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afa1950d6891561462c122717809f14db}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afa1950d6891561462c122717809f14db}} 
+\index{ustring.h@{ustring.h}!u\_memcmp@{u\_memcmp}}
+\index{u\_memcmp@{u\_memcmp}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memcmp()}{u\_memcmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memcmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{buf1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{buf2,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Compare the first {\ttfamily count} U\+Chars of each buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf1} & The first string to compare. \\
+\hline
+{\em buf2} & The second string to compare. \\
+\hline
+{\em count} & The maximum number of U\+Chars to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+When buf1 $<$ buf2, a negative number is returned. When buf1 == buf2, 0 is returned. When buf1 $>$ buf2, a positive number is returned. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a3ade86fc9cba1d8a2e88d1a2235743df}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a3ade86fc9cba1d8a2e88d1a2235743df}} 
+\index{ustring.h@{ustring.h}!u\_memcmpCodePointOrder@{u\_memcmpCodePointOrder}}
+\index{u\_memcmpCodePointOrder@{u\_memcmpCodePointOrder}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memcmpCodePointOrder()}{u\_memcmpCodePointOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memcmp\+Code\+Point\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Compare two Unicode strings in code point order. This is different in U\+T\+F-\/16 from \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afa1950d6891561462c122717809f14db}{u\+\_\+memcmp()}} if supplementary characters are present. For details, see \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}{u\+\_\+str\+Compare()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+{\em count} & The maximum number of characters to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a negative/zero/positive integer corresponding to whether the first string is less than/equal to/greater than the second one in code point order @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0408b4af06635c70ce587878a7329ae0}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0408b4af06635c70ce587878a7329ae0}} 
+\index{ustring.h@{ustring.h}!u\_memcpy@{u\_memcpy}}
+\index{u\_memcpy@{u\_memcpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memcpy()}{u\_memcpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memcpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Synonym for memcpy(), but with U\+Chars only. 
+\begin{DoxyParams}{Parameters}
+{\em dest} & The destination string \\
+\hline
+{\em src} & The source string (can be N\+U\+L\+L/invalid if count$<$=0) \\
+\hline
+{\em count} & The number of characters to copy; no-\/op if $<$=0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dest} @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abc57cecfefa0d95e0e9ebcaf08cd8571}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abc57cecfefa0d95e0e9ebcaf08cd8571}} 
+\index{ustring.h@{ustring.h}!u\_memmove@{u\_memmove}}
+\index{u\_memmove@{u\_memmove}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memmove()}{u\_memmove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memmove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Synonym for memmove(), but with U\+Chars only. 
+\begin{DoxyParams}{Parameters}
+{\em dest} & The destination string \\
+\hline
+{\em src} & The source string (can be N\+U\+L\+L/invalid if count$<$=0) \\
+\hline
+{\em count} & The number of characters to move; no-\/op if $<$=0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dest} @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a754eac82f584d485ca5168b77cc7f1ed}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a754eac82f584d485ca5168b77cc7f1ed}} 
+\index{ustring.h@{ustring.h}!u\_memrchr@{u\_memrchr}}
+\index{u\_memrchr@{u\_memrchr}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memrchr()}{u\_memrchr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memrchr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}}]{c,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Find the last occurrence of a B\+MP code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (contains {\ttfamily count} U\+Chars). \\
+\hline
+{\em c} & The B\+MP code point to find. \\
+\hline
+{\em count} & The length of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a578a38c2122404f3996b6a6c217e6af4}{u\+\_\+strrchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac9bbf8f215d78d839149728c0a76729f}{u\+\_\+memrchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac9bbf8f215d78d839149728c0a76729f}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac9bbf8f215d78d839149728c0a76729f}} 
+\index{ustring.h@{ustring.h}!u\_memrchr32@{u\_memrchr32}}
+\index{u\_memrchr32@{u\_memrchr32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memrchr32()}{u\_memrchr32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memrchr32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{c,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Find the last occurrence of a code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (contains {\ttfamily count} U\+Chars). \\
+\hline
+{\em c} & The code point to find. \\
+\hline
+{\em count} & The length of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa7c00ce46124152c466bf00f8eeb4bc3}{u\+\_\+strrchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a754eac82f584d485ca5168b77cc7f1ed}{u\+\_\+memrchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a52eb3018262ddf08557fc308bd669bc4}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a52eb3018262ddf08557fc308bd669bc4}} 
+\index{ustring.h@{ustring.h}!u\_memset@{u\_memset}}
+\index{u\_memset@{u\_memset}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_memset()}{u\_memset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+memset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}}]{c,  }\item[{int32\+\_\+t}]{count }\end{DoxyParamCaption})}
+
+Initialize {\ttfamily count} characters of {\ttfamily dest} to {\ttfamily c}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The destination string. \\
+\hline
+{\em c} & The character to initialize the string. \\
+\hline
+{\em count} & The maximum number of characters to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dest}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a41cdd462ae410f0eaef712d9a32be9c2}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a41cdd462ae410f0eaef712d9a32be9c2}} 
+\index{ustring.h@{ustring.h}!u\_strcasecmp@{u\_strcasecmp}}
+\index{u\_strcasecmp@{u\_strcasecmp}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strcasecmp()}{u\_strcasecmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strcasecmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{uint32\+\_\+t}]{options }\end{DoxyParamCaption})}
+
+Compare two strings case-\/insensitively using full case folding. This is equivalent to u\+\_\+strcmp(u\+\_\+str\+Fold\+Case(s1, options), u\+\_\+str\+Fold\+Case(s2, options)).
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+{\em options} & A bit set of options\+:
+\begin{DoxyItemize}
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT or 0 is used for default options\+: Comparison in code unit order with default case folding.
+\item U\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+C\+O\+D\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+D\+ER Set to choose code point order instead of code unit order (see u\+\_\+str\+Compare for details).
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A negative, zero, or positive integer indicating the comparison result. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8fe1bad15747dd072d0a5d2a51d443e6}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8fe1bad15747dd072d0a5d2a51d443e6}} 
+\index{ustring.h@{ustring.h}!u\_strCaseCompare@{u\_strCaseCompare}}
+\index{u\_strCaseCompare@{u\_strCaseCompare}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strCaseCompare()}{u\_strCaseCompare()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Case\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{int32\+\_\+t}]{length1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{int32\+\_\+t}]{length2,  }\item[{uint32\+\_\+t}]{options,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Compare two strings case-\/insensitively using full case folding. This is equivalent to u\+\_\+str\+Compare(u\+\_\+str\+Fold\+Case(s1, options), u\+\_\+str\+Fold\+Case(s2, options), (options\&U\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+C\+O\+D\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+D\+ER)!=0).
+
+The comparison can be done in U\+T\+F-\/16 code unit order or in code point order. They differ only when comparing supplementary code points (U+10000..U+10ffff) to B\+MP code points near the end of the B\+MP (i.\+e., U+e000..U+ffff). In code unit order, high B\+MP code points sort after supplementary code points because they are stored as pairs of surrogates which are at U+d800..U+dfff.
+
+This functions works with strings of different explicitly specified lengths unlike the A\+N\+SI C-\/like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8a228bc8a31f8f1bd06ca2545f9123a9}{u\+\_\+strcmp()}} and \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afa1950d6891561462c122717809f14db}{u\+\_\+memcmp()}} etc. N\+U\+L-\/terminated strings are possible with length arguments of -\/1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & First source string. \\
+\hline
+{\em length1} & Length of first source string, or -\/1 if N\+U\+L-\/terminated.\\
+\hline
+{\em s2} & Second source string. \\
+\hline
+{\em length2} & Length of second source string, or -\/1 if N\+U\+L-\/terminated.\\
+\hline
+{\em options} & A bit set of options\+:
+\begin{DoxyItemize}
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT or 0 is used for default options\+: Comparison in code unit order with default case folding.
+\item U\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+C\+O\+D\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+D\+ER Set to choose code point order instead of code unit order (see u\+\_\+str\+Compare for details).
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I
+\end{DoxyItemize}\\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$0 or 0 or $>$0 as usual for string comparisons
+\end{DoxyReturn}
+@stable I\+CU 2.\+2 \mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a15185351cfd90039c84616ee45dceb1d}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a15185351cfd90039c84616ee45dceb1d}} 
+\index{ustring.h@{ustring.h}!u\_strcat@{u\_strcat}}
+\index{u\_strcat@{u\_strcat}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strcat()}{u\_strcat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strcat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Concatenate two ustrings. Appends a copy of {\ttfamily src}, including the null terminator, to {\ttfamily dst}. The initial copied character from {\ttfamily src} overwrites the null terminator in {\ttfamily dst}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aab9b8a7de99e7b7c85ff8a8d97b2293d}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aab9b8a7de99e7b7c85ff8a8d97b2293d}} 
+\index{ustring.h@{ustring.h}!u\_strchr@{u\_strchr}}
+\index{u\_strchr@{u\_strchr}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strchr()}{u\_strchr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strchr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}}]{c }\end{DoxyParamCaption})}
+
+Find the first occurrence of a B\+MP code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (N\+U\+L-\/terminated). \\
+\hline
+{\em c} & The B\+MP code point to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+0
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5069294ac2d3a9c2da93805cb05bae25}{u\+\_\+strchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af49ed2d7d1608612cc2d828a0777fe10}{u\+\_\+memchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}{u\+\_\+strstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5069294ac2d3a9c2da93805cb05bae25}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5069294ac2d3a9c2da93805cb05bae25}} 
+\index{ustring.h@{ustring.h}!u\_strchr32@{u\_strchr32}}
+\index{u\_strchr32@{u\_strchr32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strchr32()}{u\_strchr32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strchr32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{c }\end{DoxyParamCaption})}
+
+Find the first occurrence of a code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (N\+U\+L-\/terminated). \\
+\hline
+{\em c} & The code point to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+0
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aab9b8a7de99e7b7c85ff8a8d97b2293d}{u\+\_\+strchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad01e7d64db08ab0932b13f59eb8bfbbb}{u\+\_\+memchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}{u\+\_\+strstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8a228bc8a31f8f1bd06ca2545f9123a9}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8a228bc8a31f8f1bd06ca2545f9123a9}} 
+\index{ustring.h@{ustring.h}!u\_strcmp@{u\_strcmp}}
+\index{u\_strcmp@{u\_strcmp}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strcmp()}{u\_strcmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strcmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+Compare two Unicode strings for bitwise equality (code unit order).
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if {\ttfamily s1} and {\ttfamily s2} are bitwise equal; a negative value if {\ttfamily s1} is bitwise less than {\ttfamily s2,}; a positive value if {\ttfamily s1} is bitwise greater than {\ttfamily s2}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa4a5c83260cd39d266803fbd7ee277eb}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa4a5c83260cd39d266803fbd7ee277eb}} 
+\index{ustring.h@{ustring.h}!u\_strcmpCodePointOrder@{u\_strcmpCodePointOrder}}
+\index{u\_strcmpCodePointOrder@{u\_strcmpCodePointOrder}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strcmpCodePointOrder()}{u\_strcmpCodePointOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strcmp\+Code\+Point\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+Compare two Unicode strings in code point order. See u\+\_\+str\+Compare for details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a negative/zero/positive integer corresponding to whether the first string is less than/equal to/greater than the second one in code point order @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}} 
+\index{ustring.h@{ustring.h}!u\_strCompare@{u\_strCompare}}
+\index{u\_strCompare@{u\_strCompare}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strCompare()}{u\_strCompare()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{int32\+\_\+t}]{length1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{int32\+\_\+t}]{length2,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{code\+Point\+Order }\end{DoxyParamCaption})}
+
+Compare two Unicode strings (binary order).
+
+The comparison can be done in code unit order or in code point order. They differ only in U\+T\+F-\/16 when comparing supplementary code points (U+10000..U+10ffff) to B\+MP code points near the end of the B\+MP (i.\+e., U+e000..U+ffff). In code unit order, high B\+MP code points sort after supplementary code points because they are stored as pairs of surrogates which are at U+d800..U+dfff.
+
+This functions works with strings of different explicitly specified lengths unlike the A\+N\+SI C-\/like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8a228bc8a31f8f1bd06ca2545f9123a9}{u\+\_\+strcmp()}} and \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afa1950d6891561462c122717809f14db}{u\+\_\+memcmp()}} etc. N\+U\+L-\/terminated strings are possible with length arguments of -\/1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & First source string. \\
+\hline
+{\em length1} & Length of first source string, or -\/1 if N\+U\+L-\/terminated.\\
+\hline
+{\em s2} & Second source string. \\
+\hline
+{\em length2} & Length of second source string, or -\/1 if N\+U\+L-\/terminated.\\
+\hline
+{\em code\+Point\+Order} & Choose between code unit order (false) and code point order (true).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$0 or 0 or $>$0 as usual for string comparisons
+\end{DoxyReturn}
+@stable I\+CU 2.\+2 \mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a97cdd2d837e76a0e2b5eca76d44defb5}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a97cdd2d837e76a0e2b5eca76d44defb5}} 
+\index{ustring.h@{ustring.h}!u\_strCompareIter@{u\_strCompareIter}}
+\index{u\_strCompareIter@{u\_strCompareIter}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strCompareIter()}{u\_strCompareIter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Compare\+Iter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_char_iterator}{U\+Char\+Iterator}} $\ast$}]{iter1,  }\item[{\mbox{\hyperlink{struct_u_char_iterator}{U\+Char\+Iterator}} $\ast$}]{iter2,  }\item[{\mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}}}]{code\+Point\+Order }\end{DoxyParamCaption})}
+
+Compare two Unicode strings (binary order) as presented by \mbox{\hyperlink{struct_u_char_iterator}{U\+Char\+Iterator}} objects. Works otherwise just like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}{u\+\_\+str\+Compare()}}.
+
+Both iterators are reset to their start positions. When the function returns, it is undefined where the iterators have stopped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter1} & First source string iterator. \\
+\hline
+{\em iter2} & Second source string iterator. \\
+\hline
+{\em code\+Point\+Order} & Choose between code unit order (false) and code point order (true).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$0 or 0 or $>$0 as usual for string comparisons
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}{u\+\_\+str\+Compare}}
+\end{DoxySeeAlso}
+@stable I\+CU 2.\+6 \mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a579ffdcb901770e97378b5ec7a2e0bcc}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a579ffdcb901770e97378b5ec7a2e0bcc}} 
+\index{ustring.h@{ustring.h}!u\_strcpy@{u\_strcpy}}
+\index{u\_strcpy@{u\_strcpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strcpy()}{u\_strcpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strcpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Copy a ustring. Adds a null terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5c027d2544dc961866d0ab14387ab77e}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5c027d2544dc961866d0ab14387ab77e}} 
+\index{ustring.h@{ustring.h}!u\_strcspn@{u\_strcspn}}
+\index{u\_strcspn@{u\_strcspn}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strcspn()}{u\_strcspn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strcspn (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{string,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{match\+Set }\end{DoxyParamCaption})}
+
+Returns the number of consecutive characters in {\ttfamily string}, beginning with the first, that do not occur somewhere in {\ttfamily match\+Set}. Works just like C\textquotesingle{}s strcspn but with Unicode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string in which to search, N\+U\+L-\/terminated. \\
+\hline
+{\em match\+Set} & A N\+U\+L-\/terminated string defining a set of code points for which to search in the text string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of initial characters in {\ttfamily string} that do not occur in {\ttfamily match\+Set}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a85d90fae5ba72c495bc67e67bff3d5eb}{u\+\_\+strspn}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}} 
+\index{ustring.h@{ustring.h}!u\_strFindFirst@{u\_strFindFirst}}
+\index{u\_strFindFirst@{u\_strFindFirst}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFindFirst()}{u\_strFindFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Find\+First (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{int32\+\_\+t}]{length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{substring,  }\item[{int32\+\_\+t}]{sub\+Length }\end{DoxyParamCaption})}
+
+Find the first occurrence of a substring in a string. The substring is found at code point boundaries. That means that if the substring begins with a trail surrogate or ends with a lead surrogate, then it is found only if these surrogates stand alone in the text. Otherwise, the substring edge units would be matched against halves of surrogate pairs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search. \\
+\hline
+{\em length} & The length of s (number of U\+Chars), or -\/1 if it is N\+U\+L-\/terminated. \\
+\hline
+{\em substring} & The substring to find (N\+U\+L-\/terminated). \\
+\hline
+{\em sub\+Length} & The length of substring (number of U\+Chars), or -\/1 if it is N\+U\+L-\/terminated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence of {\ttfamily substring} in {\ttfamily s}, or {\ttfamily s} itself if the {\ttfamily substring} is empty, or {\ttfamily N\+U\+LL} if {\ttfamily substring} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}{u\+\_\+strstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}} 
+\index{ustring.h@{ustring.h}!u\_strFindLast@{u\_strFindLast}}
+\index{u\_strFindLast@{u\_strFindLast}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFindLast()}{u\_strFindLast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Find\+Last (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{int32\+\_\+t}]{length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{substring,  }\item[{int32\+\_\+t}]{sub\+Length }\end{DoxyParamCaption})}
+
+Find the last occurrence of a substring in a string. The substring is found at code point boundaries. That means that if the substring begins with a trail surrogate or ends with a lead surrogate, then it is found only if these surrogates stand alone in the text. Otherwise, the substring edge units would be matched against halves of surrogate pairs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search. \\
+\hline
+{\em length} & The length of s (number of U\+Chars), or -\/1 if it is N\+U\+L-\/terminated. \\
+\hline
+{\em substring} & The substring to find (N\+U\+L-\/terminated). \\
+\hline
+{\em sub\+Length} & The length of substring (number of U\+Chars), or -\/1 if it is N\+U\+L-\/terminated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last occurrence of {\ttfamily substring} in {\ttfamily s}, or {\ttfamily s} itself if the {\ttfamily substring} is empty, or {\ttfamily N\+U\+LL} if {\ttfamily substring} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}{u\+\_\+strstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af3625d1217d94b88da0f061414788083}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af3625d1217d94b88da0f061414788083}} 
+\index{ustring.h@{ustring.h}!u\_strFoldCase@{u\_strFoldCase}}
+\index{u\_strFoldCase@{u\_strFoldCase}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFoldCase()}{u\_strFoldCase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Fold\+Case (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{uint32\+\_\+t}]{options,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Case-\/folds the characters in a string.
+
+Case-\/folding is locale-\/independent and not context-\/sensitive, but there is an option for whether to include or exclude mappings for dotted \mbox{\hyperlink{struct_i}{I}} and dotless i that are marked with \textquotesingle{}T\textquotesingle{} in Case\+Folding.\+txt.
+
+The result may be longer or shorter than the original. The source string and the destination buffer are allowed to overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em options} & Either U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT or U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string. It may be greater than dest\+Capacity. In that case, only some of the result was written to the destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af35ceef0be9e1d4d7ededb053b7a3fbc}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af35ceef0be9e1d4d7ededb053b7a3fbc}} 
+\index{ustring.h@{ustring.h}!u\_strFromJavaModifiedUTF8WithSub@{u\_strFromJavaModifiedUTF8WithSub}}
+\index{u\_strFromJavaModifiedUTF8WithSub@{u\_strFromJavaModifiedUTF8WithSub}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromJavaModifiedUTF8WithSub()}{u\_strFromJavaModifiedUTF8WithSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+Java\+Modified\+U\+T\+F8\+With\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{subchar,  }\item[{int32\+\_\+t $\ast$}]{p\+Num\+Substitutions,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a Java Modified U\+T\+F-\/8 string to a 16-\/bit Unicode string. If the input string is not well-\/formed and no substitution char is specified, then the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code is set.
+
+This function behaves according to the documentation for Java Data\+Input.\+read\+U\+T\+F() except that it takes a length parameter rather than interpreting the first two input bytes as the length. See \href{http://java.sun.com/javase/6/docs/api/java/io/DataInput.html\#readUTF()}{\texttt{ http\+://java.\+sun.\+com/javase/6/docs/api/java/io/\+Data\+Input.\+html\#read\+U\+T\+F()}}
+
+The output string may not be well-\/formed U\+T\+F-\/16.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em subchar} & The substitution character to use in place of an illegal input sequence, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL if the function is to return with U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND instead. A substitution character can be any valid Unicode code point (up to U+10\+F\+F\+FF) except for surrogate code points (U+\+D800..U+\+D\+F\+FF). The recommended value is U+\+F\+F\+FD \char`\"{}\+R\+E\+P\+L\+A\+C\+E\+M\+E\+N\+T C\+H\+A\+R\+A\+C\+T\+E\+R\char`\"{}. \\
+\hline
+{\em p\+Num\+Substitutions} & Output parameter receiving the number of substitutions if subchar$>$=0. Set to 0 if no substitutions occur or subchar$<$0. p\+Num\+Substitutions can be N\+U\+LL. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}{u\+\_\+str\+From\+U\+T\+F8\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0cea563bf85e6f557d7dac281dbf1c34}{u\+\_\+str\+From\+U\+T\+F8\+Lenient}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a89062de304dd7c066f8ab700deb046d4}{u\+\_\+str\+To\+Java\+Modified\+U\+T\+F8}} @stable I\+CU 4.\+4 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}} 
+\index{ustring.h@{ustring.h}!u\_strFromUTF32@{u\_strFromUTF32}}
+\index{u\_strFromUTF32@{u\_strFromUTF32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromUTF32()}{u\_strFromUTF32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+U\+T\+F32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/32 string to U\+T\+F-\/16. If the input string is not well-\/formed, then the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code is set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a4634c4b09e4450c9a96deb6e2a6e6650}{u\+\_\+str\+From\+U\+T\+F32\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}{u\+\_\+str\+To\+U\+T\+F32}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a4634c4b09e4450c9a96deb6e2a6e6650}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a4634c4b09e4450c9a96deb6e2a6e6650}} 
+\index{ustring.h@{ustring.h}!u\_strFromUTF32WithSub@{u\_strFromUTF32WithSub}}
+\index{u\_strFromUTF32WithSub@{u\_strFromUTF32WithSub}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromUTF32WithSub()}{u\_strFromUTF32WithSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+U\+T\+F32\+With\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{subchar,  }\item[{int32\+\_\+t $\ast$}]{p\+Num\+Substitutions,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/32 string to U\+T\+F-\/16.
+
+Same as \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}{u\+\_\+str\+From\+U\+T\+F32()}} except for the additional subchar which is output for illegal input sequences, instead of stopping with the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code. With subchar==U\+\_\+\+S\+E\+N\+T\+I\+N\+EL, this function behaves exactly like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}{u\+\_\+str\+From\+U\+T\+F32()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em subchar} & The substitution character to use in place of an illegal input sequence, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL if the function is to return with U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND instead. A substitution character can be any valid Unicode code point (up to U+10\+F\+F\+FF) except for surrogate code points (U+\+D800..U+\+D\+F\+FF). The recommended value is U+\+F\+F\+FD \char`\"{}\+R\+E\+P\+L\+A\+C\+E\+M\+E\+N\+T C\+H\+A\+R\+A\+C\+T\+E\+R\char`\"{}. \\
+\hline
+{\em p\+Num\+Substitutions} & Output parameter receiving the number of substitutions if subchar$>$=0. Set to 0 if no substitutions occur or subchar$<$0. p\+Num\+Substitutions can be N\+U\+LL. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}{u\+\_\+str\+From\+U\+T\+F32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7571dbb4d2291aec69e6fec9eb870b36}{u\+\_\+str\+To\+U\+T\+F32\+With\+Sub}} @stable I\+CU 4.\+2 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}} 
+\index{ustring.h@{ustring.h}!u\_strFromUTF8@{u\_strFromUTF8}}
+\index{u\_strFromUTF8@{u\_strFromUTF8}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromUTF8()}{u\_strFromUTF8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/8 string to U\+T\+F-\/16. If the input string is not well-\/formed, then the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code is set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}{u\+\_\+str\+From\+U\+T\+F8\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0cea563bf85e6f557d7dac281dbf1c34}{u\+\_\+str\+From\+U\+T\+F8\+Lenient}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0cea563bf85e6f557d7dac281dbf1c34}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0cea563bf85e6f557d7dac281dbf1c34}} 
+\index{ustring.h@{ustring.h}!u\_strFromUTF8Lenient@{u\_strFromUTF8Lenient}}
+\index{u\_strFromUTF8Lenient@{u\_strFromUTF8Lenient}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromUTF8Lenient()}{u\_strFromUTF8Lenient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+U\+T\+F8\+Lenient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/8 string to U\+T\+F-\/16.
+
+Same as \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8()}} except that this function is designed to be very fast, which it achieves by being lenient about malformed U\+T\+F-\/8 sequences. This function is intended for use in environments where U\+T\+F-\/8 text is expected to be well-\/formed.
+
+Its semantics are\+:
+\begin{DoxyItemize}
+\item Well-\/formed U\+T\+F-\/8 text is correctly converted to well-\/formed U\+T\+F-\/16 text.
+\item The function will not read beyond the input string, nor write beyond the dest\+Capacity.
+\item Malformed U\+T\+F-\/8 results in \char`\"{}garbage\char`\"{} 16-\/bit Unicode strings which may not be well-\/formed U\+T\+F-\/16. The function will resynchronize to valid code point boundaries within a small number of code points after an illegal sequence.
+\item Non-\/shortest forms are not detected and will result in \char`\"{}spoofing\char`\"{} output.
+\end{DoxyItemize}
+
+For further performance improvement, if src\+Length is given ($>$=0), then it must be dest\+Capacity$>$=src\+Length.
+
+There is no inverse u\+\_\+str\+To\+U\+T\+F8\+Lenient() function because there is practically no performance gain from not checking that a U\+T\+F-\/16 string is well-\/formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). Unlike for other I\+CU functions, if src\+Length$>$=0 then it must be dest\+Capacity$>$=src\+Length. \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. Unlike for other I\+CU functions, if src\+Length$>$=0 but dest\+Capacity$<$src\+Length, then $\ast$p\+Dest\+Length will be set to src\+Length (and U\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+R\+R\+OR will be set) regardless of the actual result length. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}{u\+\_\+str\+From\+U\+T\+F8\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}{u\+\_\+str\+To\+U\+T\+F8\+With\+Sub}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}} 
+\index{ustring.h@{ustring.h}!u\_strFromUTF8WithSub@{u\_strFromUTF8WithSub}}
+\index{u\_strFromUTF8WithSub@{u\_strFromUTF8WithSub}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromUTF8WithSub()}{u\_strFromUTF8WithSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+U\+T\+F8\+With\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{subchar,  }\item[{int32\+\_\+t $\ast$}]{p\+Num\+Substitutions,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/8 string to U\+T\+F-\/16.
+
+Same as \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8()}} except for the additional subchar which is output for illegal input sequences, instead of stopping with the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code. With subchar==U\+\_\+\+S\+E\+N\+T\+I\+N\+EL, this function behaves exactly like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em subchar} & The substitution character to use in place of an illegal input sequence, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL if the function is to return with U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND instead. A substitution character can be any valid Unicode code point (up to U+10\+F\+F\+FF) except for surrogate code points (U+\+D800..U+\+D\+F\+FF). The recommended value is U+\+F\+F\+FD \char`\"{}\+R\+E\+P\+L\+A\+C\+E\+M\+E\+N\+T C\+H\+A\+R\+A\+C\+T\+E\+R\char`\"{}. \\
+\hline
+{\em p\+Num\+Substitutions} & Output parameter receiving the number of substitutions if subchar$>$=0. Set to 0 if no substitutions occur or subchar$<$0. p\+Num\+Substitutions can be N\+U\+LL. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a0cea563bf85e6f557d7dac281dbf1c34}{u\+\_\+str\+From\+U\+T\+F8\+Lenient}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}{u\+\_\+str\+To\+U\+T\+F8\+With\+Sub}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab598cb1b3e2d14f61bc36de909a5b9e6}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab598cb1b3e2d14f61bc36de909a5b9e6}} 
+\index{ustring.h@{ustring.h}!u\_strFromWCS@{u\_strFromWCS}}
+\index{u\_strFromWCS@{u\_strFromWCS}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strFromWCS()}{u\_strFromWCS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+From\+W\+CS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const wchar\+\_\+t $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a wchar\+\_\+t string to U\+T\+F-\/16. If it is known at compile time that wchar\+\_\+t strings are in U\+T\+F-\/16 or U\+T\+F-\/32, then this function simply calls the fast, dedicated function for that. Otherwise, two conversions wchar\+\_\+t$\ast$ -\/$>$ default charset -\/$>$ U\+T\+F-\/16 are performed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7cf9cc3906b4edce0c59b6411600da01}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7cf9cc3906b4edce0c59b6411600da01}} 
+\index{ustring.h@{ustring.h}!u\_strHasMoreChar32Than@{u\_strHasMoreChar32Than}}
+\index{u\_strHasMoreChar32Than@{u\_strHasMoreChar32Than}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strHasMoreChar32Than()}{u\_strHasMoreChar32Than()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a349ef00011f20ccd1d3b424445681aa5}{U\+Bool}} U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+Has\+More\+Char32\+Than (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{int32\+\_\+t}]{length,  }\item[{int32\+\_\+t}]{number }\end{DoxyParamCaption})}
+
+Check if the string contains more Unicode code points than a certain number. This is more efficient than counting all code points in the entire string and comparing that number with a threshold. This function may not need to scan the string at all if the length is known (not -\/1 for N\+U\+L-\/termination) and falls within a certain range, and never needs to count more than \textquotesingle{}number+1\textquotesingle{} code points. Logically equivalent to (u\+\_\+count\+Char32(s, length)$>$number). A Unicode code point may occupy either one or two U\+Char code units.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The input string. \\
+\hline
+{\em length} & The length of the string, or -\/1 if it is N\+U\+L-\/terminated. \\
+\hline
+{\em number} & The number of code points in the string is compared against the \textquotesingle{}number\textquotesingle{} parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value for whether the string contains more Unicode code points than \textquotesingle{}number\textquotesingle{}. Same as (u\+\_\+count\+Char32(s, length)$>$number). @stable I\+CU 2.\+4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adc0f4fbe442327835c37e086a38f3bdd}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_adc0f4fbe442327835c37e086a38f3bdd}} 
+\index{ustring.h@{ustring.h}!u\_strlen@{u\_strlen}}
+\index{u\_strlen@{u\_strlen}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strlen()}{u\_strlen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strlen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+Determine the length of an array of U\+Char.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The array of U\+Chars, N\+U\+LL (U+0000) terminated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of U\+Chars in {\ttfamily chars}, minus the terminator. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a818d9f3b2fb9895f70eb48913611d3bf}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a818d9f3b2fb9895f70eb48913611d3bf}} 
+\index{ustring.h@{ustring.h}!u\_strncasecmp@{u\_strncasecmp}}
+\index{u\_strncasecmp@{u\_strncasecmp}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strncasecmp()}{u\_strncasecmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strncasecmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{int32\+\_\+t}]{n,  }\item[{uint32\+\_\+t}]{options }\end{DoxyParamCaption})}
+
+Compare two strings case-\/insensitively using full case folding. This is equivalent to u\+\_\+strcmp(u\+\_\+str\+Fold\+Case(s1, at most n, options), u\+\_\+str\+Fold\+Case(s2, at most n, options)).
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+{\em n} & The maximum number of characters each string to case-\/fold and then compare. \\
+\hline
+{\em options} & A bit set of options\+:
+\begin{DoxyItemize}
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT or 0 is used for default options\+: Comparison in code unit order with default case folding.
+\item U\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+C\+O\+D\+E\+\_\+\+P\+O\+I\+N\+T\+\_\+\+O\+R\+D\+ER Set to choose code point order instead of code unit order (see u\+\_\+str\+Compare for details).
+\item U\+\_\+\+F\+O\+L\+D\+\_\+\+C\+A\+S\+E\+\_\+\+E\+X\+C\+L\+U\+D\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+I
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A negative, zero, or positive integer indicating the comparison result. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5d738cb24207e5c69f311463617e647f}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5d738cb24207e5c69f311463617e647f}} 
+\index{ustring.h@{ustring.h}!u\_strncat@{u\_strncat}}
+\index{u\_strncat@{u\_strncat}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strncat()}{u\_strncat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strncat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Concatenate two ustrings. ~\newline
+ Appends at most {\ttfamily n} characters from {\ttfamily src} to {\ttfamily dst}. Adds a terminating N\+UL. If src is too long, then only {\ttfamily n-\/1} characters will be copied before the terminating N\+UL. If {\ttfamily n$<$=0} then dst is not modified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string (can be N\+U\+L\+L/invalid if n$<$=0). \\
+\hline
+{\em n} & The maximum number of characters to append; no-\/op if $<$=0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8645f191523e7f57d08896951eb4c490}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8645f191523e7f57d08896951eb4c490}} 
+\index{ustring.h@{ustring.h}!u\_strncmp@{u\_strncmp}}
+\index{u\_strncmp@{u\_strncmp}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strncmp()}{u\_strncmp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strncmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{ucs1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{ucs2,  }\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Compare two ustrings for bitwise equality. Compares at most {\ttfamily n} characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ucs1} & A string to compare (can be N\+U\+L\+L/invalid if n$<$=0). \\
+\hline
+{\em ucs2} & A string to compare (can be N\+U\+L\+L/invalid if n$<$=0). \\
+\hline
+{\em n} & The maximum number of characters to compare; always returns 0 if n$<$=0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if {\ttfamily s1} and {\ttfamily s2} are bitwise equal; a negative value if {\ttfamily s1} is bitwise less than {\ttfamily s2}; a positive value if {\ttfamily s1} is bitwise greater than {\ttfamily s2}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab06fd530273da52a4032c545fb15c588}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab06fd530273da52a4032c545fb15c588}} 
+\index{ustring.h@{ustring.h}!u\_strncmpCodePointOrder@{u\_strncmpCodePointOrder}}
+\index{u\_strncmpCodePointOrder@{u\_strncmpCodePointOrder}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strncmpCodePointOrder()}{u\_strncmpCodePointOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strncmp\+Code\+Point\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s1,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s2,  }\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Compare two Unicode strings in code point order. This is different in U\+T\+F-\/16 from \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a8645f191523e7f57d08896951eb4c490}{u\+\_\+strncmp()}} if supplementary characters are present. For details, see \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad42d9389ec9c60c40aa8423b28c0a492}{u\+\_\+str\+Compare()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & A string to compare. \\
+\hline
+{\em s2} & A string to compare. \\
+\hline
+{\em n} & The maximum number of characters to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a negative/zero/positive integer corresponding to whether the first string is less than/equal to/greater than the second one in code point order @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac31c6e30747e62c11bb677009abdc353}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac31c6e30747e62c11bb677009abdc353}} 
+\index{ustring.h@{ustring.h}!u\_strncpy@{u\_strncpy}}
+\index{u\_strncpy@{u\_strncpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strncpy()}{u\_strncpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strncpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dst,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Copy a ustring. Copies at most {\ttfamily n} characters. The result will be null terminated if the length of {\ttfamily src} is less than {\ttfamily n}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string (can be N\+U\+L\+L/invalid if n$<$=0). \\
+\hline
+{\em n} & The maximum number of characters to copy; no-\/op if $<$=0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afbc9ca12508a04870f49fec1c0156227}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_afbc9ca12508a04870f49fec1c0156227}} 
+\index{ustring.h@{ustring.h}!u\_strpbrk@{u\_strpbrk}}
+\index{u\_strpbrk@{u\_strpbrk}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strpbrk()}{u\_strpbrk()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strpbrk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{string,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{match\+Set }\end{DoxyParamCaption})}
+
+Locates the first occurrence in the string {\ttfamily string} of any of the characters in the string {\ttfamily match\+Set}. Works just like C\textquotesingle{}s strpbrk but with Unicode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string in which to search, N\+U\+L-\/terminated. \\
+\hline
+{\em match\+Set} & A N\+U\+L-\/terminated string defining a set of code points for which to search in the text string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the character in {\ttfamily string} that matches one of the characters in {\ttfamily match\+Set}, or N\+U\+LL if no such character is found. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a578a38c2122404f3996b6a6c217e6af4}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a578a38c2122404f3996b6a6c217e6af4}} 
+\index{ustring.h@{ustring.h}!u\_strrchr@{u\_strrchr}}
+\index{u\_strrchr@{u\_strrchr}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strrchr()}{u\_strrchr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strrchr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}}]{c }\end{DoxyParamCaption})}
+
+Find the last occurrence of a B\+MP code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (N\+U\+L-\/terminated). \\
+\hline
+{\em c} & The B\+MP code point to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa7c00ce46124152c466bf00f8eeb4bc3}{u\+\_\+strrchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a754eac82f584d485ca5168b77cc7f1ed}{u\+\_\+memrchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa322d15624e3929157040b0ddbffac1a}{u\+\_\+strrstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa7c00ce46124152c466bf00f8eeb4bc3}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa7c00ce46124152c466bf00f8eeb4bc3}} 
+\index{ustring.h@{ustring.h}!u\_strrchr32@{u\_strrchr32}}
+\index{u\_strrchr32@{u\_strrchr32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strrchr32()}{u\_strrchr32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strrchr32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{c }\end{DoxyParamCaption})}
+
+Find the last occurrence of a code point in a string. A surrogate code point is found only if its match in the text is not part of a surrogate pair. A N\+UL character is found at the string terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (N\+U\+L-\/terminated). \\
+\hline
+{\em c} & The code point to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last occurrence of {\ttfamily c} in {\ttfamily s} or {\ttfamily N\+U\+LL} if {\ttfamily c} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a578a38c2122404f3996b6a6c217e6af4}{u\+\_\+strrchr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad01e7d64db08ab0932b13f59eb8bfbbb}{u\+\_\+memchr32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa322d15624e3929157040b0ddbffac1a}{u\+\_\+strrstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa322d15624e3929157040b0ddbffac1a}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa322d15624e3929157040b0ddbffac1a}} 
+\index{ustring.h@{ustring.h}!u\_strrstr@{u\_strrstr}}
+\index{u\_strrstr@{u\_strrstr}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strrstr()}{u\_strrstr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strrstr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{substring }\end{DoxyParamCaption})}
+
+Find the last occurrence of a substring in a string. The substring is found at code point boundaries. That means that if the substring begins with a trail surrogate or ends with a lead surrogate, then it is found only if these surrogates stand alone in the text. Otherwise, the substring edge units would be matched against halves of surrogate pairs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (N\+U\+L-\/terminated). \\
+\hline
+{\em substring} & The substring to find (N\+U\+L-\/terminated). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the last occurrence of {\ttfamily substring} in {\ttfamily s}, or {\ttfamily s} itself if the {\ttfamily substring} is empty, or {\ttfamily N\+U\+LL} if {\ttfamily substring} is not in {\ttfamily s}. @stable I\+CU 2.\+4
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}{u\+\_\+strstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a85d90fae5ba72c495bc67e67bff3d5eb}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a85d90fae5ba72c495bc67e67bff3d5eb}} 
+\index{ustring.h@{ustring.h}!u\_strspn@{u\_strspn}}
+\index{u\_strspn@{u\_strspn}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strspn()}{u\_strspn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strspn (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{string,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{match\+Set }\end{DoxyParamCaption})}
+
+Returns the number of consecutive characters in {\ttfamily string}, beginning with the first, that occur somewhere in {\ttfamily match\+Set}. Works just like C\textquotesingle{}s strspn but with Unicode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string in which to search, N\+U\+L-\/terminated. \\
+\hline
+{\em match\+Set} & A N\+U\+L-\/terminated string defining a set of code points for which to search in the text string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of initial characters in {\ttfamily string} that do occur in {\ttfamily match\+Set}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a5c027d2544dc961866d0ab14387ab77e}{u\+\_\+strcspn}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ad58120d24340c387356668e4c1c257db}} 
+\index{ustring.h@{ustring.h}!u\_strstr@{u\_strstr}}
+\index{u\_strstr@{u\_strstr}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strstr()}{u\_strstr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strstr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{substring }\end{DoxyParamCaption})}
+
+Find the first occurrence of a substring in a string. The substring is found at code point boundaries. That means that if the substring begins with a trail surrogate or ends with a lead surrogate, then it is found only if these surrogates stand alone in the text. Otherwise, the substring edge units would be matched against halves of surrogate pairs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to search (N\+U\+L-\/terminated). \\
+\hline
+{\em substring} & The substring to find (N\+U\+L-\/terminated). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first occurrence of {\ttfamily substring} in {\ttfamily s}, or {\ttfamily s} itself if the {\ttfamily substring} is empty, or {\ttfamily N\+U\+LL} if {\ttfamily substring} is not in {\ttfamily s}. @stable I\+CU 2.\+0
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aa322d15624e3929157040b0ddbffac1a}{u\+\_\+strrstr}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a6963e9cdb73f01bad5ef31c50116a4b1}{u\+\_\+str\+Find\+First}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a13c374beb570c9239e40accf8098b896}{u\+\_\+str\+Find\+Last}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a89062de304dd7c066f8ab700deb046d4}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a89062de304dd7c066f8ab700deb046d4}} 
+\index{ustring.h@{ustring.h}!u\_strToJavaModifiedUTF8@{u\_strToJavaModifiedUTF8}}
+\index{u\_strToJavaModifiedUTF8@{u\_strToJavaModifiedUTF8}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToJavaModifiedUTF8()}{u\_strToJavaModifiedUTF8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+Java\+Modified\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a 16-\/bit Unicode string to Java Modified U\+T\+F-\/8. See \href{http://java.sun.com/javase/6/docs/api/java/io/DataInput.html\#modified-utf-8}{\texttt{ http\+://java.\+sun.\+com/javase/6/docs/api/java/io/\+Data\+Input.\+html\#modified-\/utf-\/8}}
+
+This function behaves according to the documentation for Java Data\+Output.\+write\+U\+T\+F() except that it does not encode the output length in the destination buffer and does not have an output length restriction. See \href{http://java.sun.com/javase/6/docs/api/java/io/DataOutput.html\#writeUTF(java.lang.String)}{\texttt{ http\+://java.\+sun.\+com/javase/6/docs/api/java/io/\+Data\+Output.\+html\#write\+U\+T\+F(java.\+lang.\+String)}}
+
+The input string need not be well-\/formed U\+T\+F-\/16. (Therefore there is no subchar parameter.)
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. @stable I\+CU 4.\+4 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}{u\+\_\+str\+To\+U\+T\+F8\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af35ceef0be9e1d4d7ededb053b7a3fbc}{u\+\_\+str\+From\+Java\+Modified\+U\+T\+F8\+With\+Sub}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a36320afbd723a64b44ab32763435471c}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a36320afbd723a64b44ab32763435471c}} 
+\index{ustring.h@{ustring.h}!u\_strtok\_r@{u\_strtok\_r}}
+\index{u\_strtok\_r@{u\_strtok\_r}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strtok\_r()}{u\_strtok\_r()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+strtok\+\_\+r (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{delim,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$$\ast$}]{save\+State }\end{DoxyParamCaption})}
+
+The string tokenizer A\+PI allows an application to break a string into tokens. Unlike strtok(), the save\+State (the current pointer within the original string) is maintained in save\+State. In the first call, the argument src is a pointer to the string. In subsequent calls to return successive tokens of that string, src must be specified as N\+U\+LL. The value save\+State is set by this function to maintain the function\textquotesingle{}s position within the string, and on each subsequent call you must give this argument the same variable. This function does handle surrogate pairs. This function is similar to the strtok\+\_\+r() the P\+O\+S\+IX Threads Extension (1003.\+1c-\/1995) version.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & String containing token(s). This string will be modified. After the first call to \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a36320afbd723a64b44ab32763435471c}{u\+\_\+strtok\+\_\+r()}}, this argument must be N\+U\+LL to get to the next token. \\
+\hline
+{\em delim} & Set of delimiter characters (Unicode code points). \\
+\hline
+{\em save\+State} & The current pointer within the original string, which is set by this function. The save\+State parameter should the address of a local variable of type U\+Char $\ast$. (i.\+e. defined \char`\"{}\+U\+Char $\ast$my\+Local\+Save\+State\char`\"{} and use \&my\+Local\+Save\+State for this parameter). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the next token found in src, or N\+U\+LL when there are no more tokens. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a748e339012d814138b9163acfb15497a}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a748e339012d814138b9163acfb15497a}} 
+\index{ustring.h@{ustring.h}!u\_strToLower@{u\_strToLower}}
+\index{u\_strToLower@{u\_strToLower}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToLower()}{u\_strToLower()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+Lower (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Lowercase the characters in a string. Casing is locale-\/dependent and context-\/sensitive. The result may be longer or shorter than the original. The source string and the destination buffer are allowed to overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em locale} & The locale to consider, or \char`\"{}\char`\"{} for the root locale or N\+U\+LL for the default locale. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string. It may be greater than dest\+Capacity. In that case, only some of the result was written to the destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a81e8e65862b8e170889ddca2c44e3f7d}} 
+\index{ustring.h@{ustring.h}!u\_strToTitle@{u\_strToTitle}}
+\index{u\_strToTitle@{u\_strToTitle}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToTitle()}{u\_strToTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{ubrk_8h_adb85bb46d5f93c87098e11deab50bef4}{U\+Break\+Iterator}} $\ast$}]{title\+Iter,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Titlecase a string. Casing is locale-\/dependent and context-\/sensitive. Titlecasing uses a break iterator to find the first characters of words that are to be titlecased. It titlecases those characters and lowercases all others.
+
+The titlecase break iterator can be provided to customize for arbitrary styles, using rules and dictionaries beyond the standard iterators. It may be more efficient to always provide an iterator to avoid opening and closing one for each string. The standard titlecase iterator for the root locale implements the algorithm of Unicode TR 21.
+
+This function uses only the set\+Text(), first() and next() methods of the provided break iterator.
+
+The result may be longer or shorter than the original. The source string and the destination buffer are allowed to overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em title\+Iter} & A break iterator to find the first characters of words that are to be titlecased. If none is provided (N\+U\+LL), then a standard titlecase break iterator is opened. \\
+\hline
+{\em locale} & The locale to consider, or \char`\"{}\char`\"{} for the root locale or N\+U\+LL for the default locale. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string. It may be greater than dest\+Capacity. In that case, only some of the result was written to the destination buffer. @stable I\+CU 2.\+1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a9b03fbdbaf7cc03d53fd3334a600d6e0}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a9b03fbdbaf7cc03d53fd3334a600d6e0}} 
+\index{ustring.h@{ustring.h}!u\_strToUpper@{u\_strToUpper}}
+\index{u\_strToUpper@{u\_strToUpper}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToUpper()}{u\_strToUpper()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+Upper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Uppercase the characters in a string. Casing is locale-\/dependent and context-\/sensitive. The result may be longer or shorter than the original. The source string and the destination buffer are allowed to overlap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string. \\
+\hline
+{\em src} & The original string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em locale} & The locale to consider, or \char`\"{}\char`\"{} for the root locale or N\+U\+LL for the default locale. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the result string. It may be greater than dest\+Capacity. In that case, only some of the result was written to the destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}} 
+\index{ustring.h@{ustring.h}!u\_strToUTF32@{u\_strToUTF32}}
+\index{u\_strToUTF32@{u\_strToUTF32}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToUTF32()}{u\_strToUTF32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+U\+T\+F32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/16 string to U\+T\+F-\/32. If the input string is not well-\/formed, then the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code is set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Char32s). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7571dbb4d2291aec69e6fec9eb870b36}{u\+\_\+str\+To\+U\+T\+F32\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ace4bd1987e4b60231e4b3b1c5d0ce08f}{u\+\_\+str\+From\+U\+T\+F32}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7571dbb4d2291aec69e6fec9eb870b36}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a7571dbb4d2291aec69e6fec9eb870b36}} 
+\index{ustring.h@{ustring.h}!u\_strToUTF32WithSub@{u\_strToUTF32WithSub}}
+\index{u\_strToUTF32WithSub@{u\_strToUTF32WithSub}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToUTF32WithSub()}{u\_strToUTF32WithSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+U\+T\+F32\+With\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{subchar,  }\item[{int32\+\_\+t $\ast$}]{p\+Num\+Substitutions,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/16 string to U\+T\+F-\/32.
+
+Same as \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}{u\+\_\+str\+To\+U\+T\+F32()}} except for the additional subchar which is output for illegal input sequences, instead of stopping with the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code. With subchar==U\+\_\+\+S\+E\+N\+T\+I\+N\+EL, this function behaves exactly like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}{u\+\_\+str\+To\+U\+T\+F32()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of U\+Char32s). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em subchar} & The substitution character to use in place of an illegal input sequence, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL if the function is to return with U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND instead. A substitution character can be any valid Unicode code point (up to U+10\+F\+F\+FF) except for surrogate code points (U+\+D800..U+\+D\+F\+FF). The recommended value is U+\+F\+F\+FD \char`\"{}\+R\+E\+P\+L\+A\+C\+E\+M\+E\+N\+T C\+H\+A\+R\+A\+C\+T\+E\+R\char`\"{}. \\
+\hline
+{\em p\+Num\+Substitutions} & Output parameter receiving the number of substitutions if subchar$>$=0. Set to 0 if no substitutions occur or subchar$<$0. p\+Num\+Substitutions can be N\+U\+LL. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af6bd704fd6a17e4deef5d604737eaf4d}{u\+\_\+str\+To\+U\+T\+F32}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_a4634c4b09e4450c9a96deb6e2a6e6650}{u\+\_\+str\+From\+U\+T\+F32\+With\+Sub}} @stable I\+CU 4.\+2 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}} 
+\index{ustring.h@{ustring.h}!u\_strToUTF8@{u\_strToUTF8}}
+\index{u\_strToUTF8@{u\_strToUTF8}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToUTF8()}{u\_strToUTF8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+U\+T\+F8 (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/16 string to U\+T\+F-\/8. If the input string is not well-\/formed, then the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code is set.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}{u\+\_\+str\+To\+U\+T\+F8\+With\+Sub}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af47bfaedc043c23e8a28fa599fa0c904}{u\+\_\+str\+From\+U\+T\+F8}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ac7ab94d2a1203bab14ad0d762fc3354f}} 
+\index{ustring.h@{ustring.h}!u\_strToUTF8WithSub@{u\_strToUTF8WithSub}}
+\index{u\_strToUTF8WithSub@{u\_strToUTF8WithSub}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToUTF8WithSub()}{u\_strToUTF8WithSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} char$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+U\+T\+F8\+With\+Sub (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}}}]{subchar,  }\item[{int32\+\_\+t $\ast$}]{p\+Num\+Substitutions,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/16 string to U\+T\+F-\/8.
+
+Same as \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8()}} except for the additional subchar which is output for illegal input sequences, instead of stopping with the U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND error code. With subchar==U\+\_\+\+S\+E\+N\+T\+I\+N\+EL, this function behaves exactly like \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of chars). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em subchar} & The substitution character to use in place of an illegal input sequence, or U\+\_\+\+S\+E\+N\+T\+I\+N\+EL if the function is to return with U\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+R\+\_\+\+F\+O\+U\+ND instead. A substitution character can be any valid Unicode code point (up to U+10\+F\+F\+FF) except for surrogate code points (U+\+D800..U+\+D\+F\+FF). The recommended value is U+\+F\+F\+FD \char`\"{}\+R\+E\+P\+L\+A\+C\+E\+M\+E\+N\+T C\+H\+A\+R\+A\+C\+T\+E\+R\char`\"{}. \\
+\hline
+{\em p\+Num\+Substitutions} & Output parameter receiving the number of substitutions if subchar$>$=0. Set to 0 if no substitutions occur or subchar$<$0. p\+Num\+Substitutions can be N\+U\+LL. \\
+\hline
+{\em p\+Error\+Code} & Pointer to a standard I\+CU error code. Its input value must pass the \mbox{\hyperlink{utypes_8h_a527f2c69e6b2e3b2c53ad8a99fb36711}{U\+\_\+\+S\+U\+C\+C\+E\+S\+S()}} test, or else the function returns immediately. Check for \mbox{\hyperlink{utypes_8h_a4d202200b6aa6f3c965ea370e0c8155f}{U\+\_\+\+F\+A\+I\+L\+U\+R\+E()}} on output or use with function chaining. (See User Guide for details.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ae7042f02c2fe5a8d4f94e5476a1a4546}{u\+\_\+str\+To\+U\+T\+F8}} 
+
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_abb2aabd4ebac0cdc969229e0c8e1e90f}{u\+\_\+str\+From\+U\+T\+F8\+With\+Sub}} @stable I\+CU 3.\+6 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab66f484552e57d6bf89bddd6150d93b7}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab66f484552e57d6bf89bddd6150d93b7}} 
+\index{ustring.h@{ustring.h}!u\_strToWCS@{u\_strToWCS}}
+\index{u\_strToWCS@{u\_strToWCS}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_strToWCS()}{u\_strToWCS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} wchar\+\_\+t$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+str\+To\+W\+CS (\begin{DoxyParamCaption}\item[{wchar\+\_\+t $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity,  }\item[{int32\+\_\+t $\ast$}]{p\+Dest\+Length,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{src,  }\item[{int32\+\_\+t}]{src\+Length,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{p\+Error\+Code }\end{DoxyParamCaption})}
+
+Convert a U\+T\+F-\/16 string to a wchar\+\_\+t string. If it is known at compile time that wchar\+\_\+t strings are in U\+T\+F-\/16 or U\+T\+F-\/32, then this function simply calls the fast, dedicated function for that. Otherwise, two conversions U\+T\+F-\/16 -\/$>$ default charset -\/$>$ wchar\+\_\+t$\ast$ are performed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A buffer for the result string. The result will be zero-\/terminated if the buffer is large enough. \\
+\hline
+{\em dest\+Capacity} & The size of the buffer (number of wchar\+\_\+t\textquotesingle{}s). If it is 0, then dest may be N\+U\+LL and the function will only return the length of the result without writing any of the result string (pre-\/flighting). \\
+\hline
+{\em p\+Dest\+Length} & A pointer to receive the number of units written to the destination. If p\+Dest\+Length!=N\+U\+LL then $\ast$p\+Dest\+Length is always set to the number of output units corresponding to the transformation of all the input units, even in case of a buffer overflow. \\
+\hline
+{\em src} & The original source string \\
+\hline
+{\em src\+Length} & The length of the original string. If -\/1, then src must be zero-\/terminated. \\
+\hline
+{\em p\+Error\+Code} & Must be a valid pointer to an error code value, which must not indicate a failure before the function call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to destination buffer. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_acd4abc03bfe7ecd6a5804fb2fd95e51d}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_acd4abc03bfe7ecd6a5804fb2fd95e51d}} 
+\index{ustring.h@{ustring.h}!u\_uastrcpy@{u\_uastrcpy}}
+\index{u\_uastrcpy@{u\_uastrcpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_uastrcpy()}{u\_uastrcpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+uastrcpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dst,  }\item[{const char $\ast$}]{src }\end{DoxyParamCaption})}
+
+Copy a byte string encoded in the default codepage to a ustring. Adds a null terminator. Performs a host byte to U\+Char conversion
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af9d311233cc2116518f12b3b5eceb81f}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af9d311233cc2116518f12b3b5eceb81f}} 
+\index{ustring.h@{ustring.h}!u\_uastrncpy@{u\_uastrncpy}}
+\index{u\_uastrncpy@{u\_uastrncpy}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_uastrncpy()}{u\_uastrncpy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+uastrncpy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dst,  }\item[{const char $\ast$}]{src,  }\item[{int32\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Copy a byte string encoded in the default codepage to a ustring. Copies at most {\ttfamily n} characters. The result will be null terminated if the length of {\ttfamily src} is less than {\ttfamily n}. Performs a host byte to U\+Char conversion
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination string. \\
+\hline
+{\em src} & The source string. \\
+\hline
+{\em n} & The maximum number of characters to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to {\ttfamily dst}. @stable I\+CU 2.\+0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab6e0ad733203571c3245a9ab1af41d0c}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab6e0ad733203571c3245a9ab1af41d0c}} 
+\index{ustring.h@{ustring.h}!u\_unescape@{u\_unescape}}
+\index{u\_unescape@{u\_unescape}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_unescape()}{u\_unescape()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} int32\+\_\+t U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+unescape (\begin{DoxyParamCaption}\item[{const char $\ast$}]{src,  }\item[{\mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{dest,  }\item[{int32\+\_\+t}]{dest\+Capacity }\end{DoxyParamCaption})}
+
+Unescape a string of characters and write the resulting Unicode characters to the destination buffer. The following escape sequences are recognized\+:
+
+\textbackslash{}uhhhh 4 hex digits; h in \mbox{[}0-\/9A-\/\+Fa-\/f\mbox{]} \textbackslash{}Uhhhhhhhh 8 hex digits \textbackslash{}xhh 1-\/2 hex digits \textbackslash{}x\{h...\} 1-\/8 hex digits \textbackslash{}ooo 1-\/3 octal digits; o in \mbox{[}0-\/7\mbox{]} \textbackslash{}cX control-\/X; X is masked with 0x1F
+
+as well as the standard A\+N\+SI C escapes\+:
+
+\textbackslash{}a =$>$ U+0007, \textbackslash{}b =$>$ U+0008, \textbackslash{}t =$>$ U+0009, \textbackslash{}n =$>$ U+000A, \textbackslash{}v =$>$ U+000B, \textbackslash{}f =$>$ U+000C, \textbackslash{}r =$>$ U+000D, \textbackslash{}e =$>$ U+001B, \textbackslash{}" =$>$ U+0022, \textbackslash{}\textquotesingle{} =$>$ U+0027, \textbackslash{}? =$>$ U+003F, \textbackslash{}\textbackslash{} =$>$ U+005C
+
+Anything else following a backslash is generically escaped. For example, \char`\"{}\mbox{[}a\textbackslash{}\textbackslash{}-\/z\mbox{]}\char`\"{} returns \char`\"{}\mbox{[}a-\/z\mbox{]}\char`\"{}.
+
+If an escape sequence is ill-\/formed, this method returns an empty string. An example of an ill-\/formed sequence is \char`\"{}\textbackslash{}\textbackslash{}u\char`\"{} followed by fewer than 4 hex digits.
+
+The above characters are recognized in the compiler\textquotesingle{}s codepage, that is, they are coded as \textquotesingle{}u\textquotesingle{}, \textquotesingle{}\textbackslash{}\textquotesingle{}, etc. Characters that are not parts of escape sequences are converted using \mbox{\hyperlink{putil_8h_a7bd8767e1af91399b4acad12df88e645}{u\+\_\+chars\+To\+U\+Chars()}}.
+
+This function is similar to Unicode\+String\+::unescape() but not identical to it. The latter takes a source Unicode\+String, so it does escape recognition but no conversion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & a zero-\/terminated string of invariant characters \\
+\hline
+{\em dest} & pointer to buffer to receive converted and unescaped text and, if there is room, a zero terminator. May be N\+U\+LL for preflighting, in which case no U\+Chars will be written, but the return value will still be valid. On error, an empty string is stored here (if possible). \\
+\hline
+{\em dest\+Capacity} & the number of U\+Chars that may be written at dest. Ignored if dest == N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of unescaped string. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At}} 
+
+Unicode\+String\+::unescape() 
+
+Unicode\+String\+::unescape\+At() @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}} 
+\index{ustring.h@{ustring.h}!u\_unescapeAt@{u\_unescapeAt}}
+\index{u\_unescapeAt@{u\_unescapeAt}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{u\_unescapeAt()}{u\_unescapeAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a1a820e5c6cbe8ac1742b654e6bf9ed7d}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+E\+ND}} \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a09fff5c3b5a5b015324dc3ec3cf92809}{U\+Char32}} U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+unescape\+At (\begin{DoxyParamCaption}\item[{U\+N\+E\+S\+C\+A\+P\+E\+\_\+\+C\+H\+A\+R\+\_\+\+AT}]{char\+At,  }\item[{int32\+\_\+t $\ast$}]{offset,  }\item[{int32\+\_\+t}]{length,  }\item[{void $\ast$}]{context }\end{DoxyParamCaption})}
+
+Unescape a single sequence. The character at offset-\/1 is assumed (without checking) to be a backslash. This method takes a callback pointer to a function that returns the U\+Char at a given offset. By varying this callback, I\+CU functions are able to unescape char$\ast$ strings, Unicode\+String objects, and U\+F\+I\+LE pointers.
+
+If offset is out of range, or if the escape sequence is ill-\/formed, (U\+Char32)0x\+F\+F\+F\+F\+F\+F\+FF is returned. See documentation of \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab6e0ad733203571c3245a9ab1af41d0c}{u\+\_\+unescape()}} for a list of recognized sequences.
+
+
+\begin{DoxyParams}{Parameters}
+{\em char\+At} & callback function that returns a U\+Char of the source text given an offset and a context pointer. \\
+\hline
+{\em offset} & pointer to the offset that will be passed to char\+At. The offset value will be updated upon return to point after the last parsed character of the escape sequence. On error the offset is unchanged. \\
+\hline
+{\em length} & the number of characters in the source text. The last character of the source text is considered to be at offset length-\/1. \\
+\hline
+{\em context} & an opaque pointer passed directly into char\+At. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the character represented by the escape sequence at offset, or (U\+Char32)0x\+F\+F\+F\+F\+F\+F\+FF on error. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_ab6e0ad733203571c3245a9ab1af41d0c}{u\+\_\+unescape()}} 
+
+Unicode\+String\+::unescape() 
+
+Unicode\+String\+::unescape\+At() @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aba21ae6407ec5fc560be58bbc35af6a2}\label{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_aba21ae6407ec5fc560be58bbc35af6a2}} 
+\index{ustring.h@{ustring.h}!UChar@{UChar}}
+\index{UChar@{UChar}!ustring.h@{ustring.h}}
+\doxysubsubsection{\texorpdfstring{UChar()}{UChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} typedef \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2platform_8h_a1fae478cb5a46c7e4a0673d267626696}{U\+\_\+\+C\+A\+L\+L\+C\+O\+NV}} $\ast$}]{U\+N\+E\+S\+C\+A\+P\+E\+\_\+\+C\+H\+A\+R\+\_\+\+AT }\end{DoxyParamCaption})}
+
+Callback function for \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At()}} that returns a character of the source text given an offset and a context pointer. The context pointer will be whatever is passed into \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & pointer to the offset that will be passed to \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At()}}. \\
+\hline
+{\em context} & an opaque pointer passed directly into \mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At()}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the character represented by the escape sequence at offset 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_build_2src_2skia_2third__party_2externals_2icu_2source_2common_2unicode_2ustring_8h_af8b0c2c40c2b262476eb438d8a8d71af}{u\+\_\+unescape\+At}} @stable I\+CU 2.\+0 
+\end{DoxySeeAlso}

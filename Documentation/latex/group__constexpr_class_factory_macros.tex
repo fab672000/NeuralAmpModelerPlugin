@@ -1,0 +1,86 @@
+\hypertarget{group__constexpr_class_factory_macros}{}\doxysection{Macros for defining the compile time class factory}
+\label{group__constexpr_class_factory_macros}\index{Macros for defining the compile time class factory@{Macros for defining the compile time class factory}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries B\+E\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y\+\_\+\+D\+EF}(company,  url,  email,  no\+Classes)
+\item 
+\#define {\bfseries D\+E\+F\+\_\+\+C\+L\+A\+SS}(cid,  cardinality,  category,  name,  class\+Flags,  sub\+Categories,  version,  sdk\+Version,  create\+Method,  create\+Context)
+\item 
+\#define {\bfseries E\+N\+D\+\_\+\+F\+A\+C\+T\+O\+RY}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+{\bfseries{Example\+:}} 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static} constexpr \textcolor{keywordtype}{size\_t} numberOfClasses = 1;}
+\DoxyCodeLine{\textcolor{keyword}{static} DECLARE\_UID (TestPluginUID, 0x00000001, 0x00000002, 0x00000003, 0x00000004);}
+\DoxyCodeLine{}
+\DoxyCodeLine{BEGIN\_FACTORY\_DEF (\textcolor{stringliteral}{"MyCompany"}, \textcolor{stringliteral}{"mycompany.com"}, \textcolor{stringliteral}{"info@mycompany.com"}, numberOfClasses)}
+\DoxyCodeLine{}
+\DoxyCodeLine{    DEF\_CLASS (TestPluginUID,}
+\DoxyCodeLine{               PClassInfo::kManyInstances,}
+\DoxyCodeLine{               \textcolor{stringliteral}{"PlugIn"},}
+\DoxyCodeLine{               \textcolor{stringliteral}{"Test PlugIn"},}
+\DoxyCodeLine{               0,}
+\DoxyCodeLine{               \textcolor{stringliteral}{"SubCategory"},}
+\DoxyCodeLine{               \textcolor{stringliteral}{"1.0.0"},}
+\DoxyCodeLine{               stringSDKVersion,}
+\DoxyCodeLine{               TestPlugin::newInstance,}
+\DoxyCodeLine{               \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{}
+\DoxyCodeLine{END\_FACTORY}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__constexpr_class_factory_macros_ga34c1a3909dade5be13a5fffa0c498703}\label{group__constexpr_class_factory_macros_ga34c1a3909dade5be13a5fffa0c498703}} 
+\index{Macros for defining the compile time class factory@{Macros for defining the compile time class factory}!BEGIN\_FACTORY\_DEF@{BEGIN\_FACTORY\_DEF}}
+\index{BEGIN\_FACTORY\_DEF@{BEGIN\_FACTORY\_DEF}!Macros for defining the compile time class factory@{Macros for defining the compile time class factory}}
+\doxysubsubsection{\texorpdfstring{BEGIN\_FACTORY\_DEF}{BEGIN\_FACTORY\_DEF}}
+{\footnotesize\ttfamily \#define B\+E\+G\+I\+N\+\_\+\+F\+A\+C\+T\+O\+R\+Y\+\_\+\+D\+EF(\begin{DoxyParamCaption}\item[{}]{company,  }\item[{}]{url,  }\item[{}]{email,  }\item[{}]{no\+Classes }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{struct }SMTG\_HIDDEN\_SYMBOL FactoryData                                                     \(\backslash\)}
+\DoxyCodeLine{    \{                                                                                         \(\backslash\)}
+\DoxyCodeLine{        static constexpr \mbox{\hyperlink{struct_steinberg_1_1_p_factory_info}{Steinberg::PFactoryInfo}} factoryInfo = \{                              \(\backslash\)}
+\DoxyCodeLine{            company, url, email, \mbox{\hyperlink{struct_steinberg_1_1_p_factory_info_a507d22f3b229b2022f993bc7a7b59978aa4303207da7cb8c310c7a9170b75c809}{Steinberg::PFactoryInfo::kUnicode}}\};                          \(\backslash\)}
+\DoxyCodeLine{                                                                                              \(\backslash\)}
+\DoxyCodeLine{        static constexpr std::array<\mbox{\hyperlink{struct_steinberg_1_1_plugin_factory_detail_1_1_class_info2_with_create_func}{Steinberg::PluginFactoryDetail::ClassInfo2WithCreateFunc}}, \(\backslash\)}
+\DoxyCodeLine{                                    noClasses>                                                \(\backslash\)}
+\DoxyCodeLine{            classInfos = \{}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__constexpr_class_factory_macros_gac38f5fd5ba69e3506baf96a2fb86b6e7}\label{group__constexpr_class_factory_macros_gac38f5fd5ba69e3506baf96a2fb86b6e7}} 
+\index{Macros for defining the compile time class factory@{Macros for defining the compile time class factory}!DEF\_CLASS@{DEF\_CLASS}}
+\index{DEF\_CLASS@{DEF\_CLASS}!Macros for defining the compile time class factory@{Macros for defining the compile time class factory}}
+\doxysubsubsection{\texorpdfstring{DEF\_CLASS}{DEF\_CLASS}}
+{\footnotesize\ttfamily \#define D\+E\+F\+\_\+\+C\+L\+A\+SS(\begin{DoxyParamCaption}\item[{}]{cid,  }\item[{}]{cardinality,  }\item[{}]{category,  }\item[{}]{name,  }\item[{}]{class\+Flags,  }\item[{}]{sub\+Categories,  }\item[{}]{version,  }\item[{}]{sdk\+Version,  }\item[{}]{create\+Method,  }\item[{}]{create\+Context }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    Steinberg::PluginFactoryDetail::makeClassInfo2 (cid, cardinality, category, name, classFlags, \(\backslash\)}
+\DoxyCodeLine{                                                    subCategories, \textcolor{keyword}{nullptr}, version, sdkVersion,  \(\backslash\)}
+\DoxyCodeLine{                                                    createMethod, createContext),}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__constexpr_class_factory_macros_ga962bbf29e9f424c00fd43493fb8f9489}\label{group__constexpr_class_factory_macros_ga962bbf29e9f424c00fd43493fb8f9489}} 
+\index{Macros for defining the compile time class factory@{Macros for defining the compile time class factory}!END\_FACTORY@{END\_FACTORY}}
+\index{END\_FACTORY@{END\_FACTORY}!Macros for defining the compile time class factory@{Macros for defining the compile time class factory}}
+\doxysubsubsection{\texorpdfstring{END\_FACTORY}{END\_FACTORY}}
+{\footnotesize\ttfamily \#define E\+N\+D\+\_\+\+F\+A\+C\+T\+O\+RY}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \};\};                                                                         \(\backslash\)}
+\DoxyCodeLine{    SMTG\_EXPORT\_SYMBOL \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{Steinberg::IPluginFactory}}* PLUGIN\_API \mbox{\hyperlink{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}{GetPluginFactory}} () \(\backslash\)}
+\DoxyCodeLine{    \{                                                                            \(\backslash\)}
+\DoxyCodeLine{        static \mbox{\hyperlink{class_steinberg_1_1_plugin_factory}{Steinberg::PluginFactory<FactoryData>}} factory;                    \(\backslash\)}
+\DoxyCodeLine{        return \&factory;                                                         \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}

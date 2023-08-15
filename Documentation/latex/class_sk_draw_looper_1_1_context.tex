@@ -1,0 +1,39 @@
+\hypertarget{class_sk_draw_looper_1_1_context}{}\doxysection{Sk\+Draw\+Looper\+::Context Class Reference}
+\label{class_sk_draw_looper_1_1_context}\index{SkDrawLooper::Context@{SkDrawLooper::Context}}
+
+
+{\ttfamily \#include $<$Sk\+Draw\+Looper.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sk_draw_looper_1_1_context_1_1_info}{Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_sk_draw_looper_1_1_context_a1f285065fd81eb673fbebc17444359c2}{next}} (\mbox{\hyperlink{struct_sk_draw_looper_1_1_context_1_1_info}{Info}} $\ast$, \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds state during a draw. Users call \mbox{\hyperlink{class_sk_draw_looper_1_1_context_a1f285065fd81eb673fbebc17444359c2}{next()}} until it returns false.
+
+Subclasses of \mbox{\hyperlink{class_sk_draw_looper}{Sk\+Draw\+Looper}} should create a subclass of this object to hold state specific to their subclass. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_draw_looper_1_1_context_a1f285065fd81eb673fbebc17444359c2}\label{class_sk_draw_looper_1_1_context_a1f285065fd81eb673fbebc17444359c2}} 
+\index{SkDrawLooper::Context@{SkDrawLooper::Context}!next@{next}}
+\index{next@{next}!SkDrawLooper::Context@{SkDrawLooper::Context}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily virtual bool Sk\+Draw\+Looper\+::\+Context\+::next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_draw_looper_1_1_context_1_1_info}{Info}} $\ast$}]{,  }\item[{\mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Called in a loop on objects returned by Sk\+Draw\+Looper\+::create\+Context(). Each time true is returned, the object is drawn (possibly with a modified canvas and/or paint). When false is finally returned, drawing for the object stops.
+
+On each call, the paint will be in its original state, but the canvas will be as it was following the previous call to \mbox{\hyperlink{class_sk_draw_looper_1_1_context_a1f285065fd81eb673fbebc17444359c2}{next()}} or create\+Context().
+
+The implementation must ensure that, when \mbox{\hyperlink{class_sk_draw_looper_1_1_context_a1f285065fd81eb673fbebc17444359c2}{next()}} finally returns false, the canvas has been restored to the state it was initially, before create\+Context() was first called. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Draw\+Looper.\+h\end{DoxyCompactItemize}

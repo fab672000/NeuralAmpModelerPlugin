@@ -1,0 +1,174 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_component_base}{}\doxysection{Steinberg\+::Vst\+::Component\+Base Class Reference}
+\label{class_steinberg_1_1_vst_1_1_component_base}\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+
+
+{\ttfamily \#include $<$vstcomponentbase.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::Component\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.765957cm]{class_steinberg_1_1_vst_1_1_component_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$ \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a51c54b325122905f257b3cd6d0160e8e}{get\+Host\+Context}} () const
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}} $\ast$ \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_ad632dd809210a416ab852a212e48a09c}{get\+Peer}} () const
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_message}{I\+Message}} $\ast$ \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a23c70f1727b26fd11f90e5c6cfe30495}{allocate\+Message}} () const
+\item 
+tresult \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a90dd326ae5987993e865d90ac64eb729}{send\+Message}} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_message}{I\+Message}} $\ast$message) const
+\item 
+tresult \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a3eadc69899cca12bdb080c9e0e2f6ea9}{send\+Text\+Message}} (const char8 $\ast$text) const
+\item 
+tresult \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a240ca73fd8ad7c06712b4e65b66685cf}{send\+Message\+ID}} (const char8 $\ast$message\+ID) const
+\item 
+virtual tresult \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_ab6e82790bddb33c9719bf6db68ec7dab}{receive\+Text}} (const char8 $\ast$text)
+\item 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_abe7665f03a0d049450fbf6a11ba1b12a}{initialize}} (\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$context) S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_afca393ed57fff201ef7ab3de97ff87af}{terminate}} () S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a93e8e336705e9731f47c229cbea3c160}{connect}} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}} $\ast$other) S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a4e7719954c43351323ed55b6d3d345f1}{disconnect}} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}} $\ast$other) S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\item 
+tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_a9c5435c1fc3098622d6af3b0ea25b74b}{notify}} (\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_message}{I\+Message}} $\ast$message) S\+M\+T\+G\+\_\+\+O\+V\+E\+R\+R\+I\+DE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a91213968a3900d70c3ad63b29ec46c9b}\label{class_steinberg_1_1_vst_1_1_component_base_a91213968a3900d70c3ad63b29ec46c9b}} 
+\mbox{\hyperlink{class_steinberg_1_1_i_ptr}{I\+Ptr}}$<$ \mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $>$ {\bfseries host\+Context}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a65f8ec72ed5ddbfdaa4f20cd27b591d1}\label{class_steinberg_1_1_vst_1_1_component_base_a65f8ec72ed5ddbfdaa4f20cd27b591d1}} 
+\mbox{\hyperlink{class_steinberg_1_1_i_ptr}{I\+Ptr}}$<$ \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}} $>$ {\bfseries peer\+Connection}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base class for V\+ST 3 \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component}{Component}} and Edit Controller. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a23c70f1727b26fd11f90e5c6cfe30495}\label{class_steinberg_1_1_vst_1_1_component_base_a23c70f1727b26fd11f90e5c6cfe30495}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!allocateMessage@{allocateMessage}}
+\index{allocateMessage@{allocateMessage}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{allocateMessage()}{allocateMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_message}{I\+Message}} $\ast$ Component\+Base\+::allocate\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Allocates a message instance (do not forget to release it). \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a93e8e336705e9731f47c229cbea3c160}\label{class_steinberg_1_1_vst_1_1_component_base_a93e8e336705e9731f47c229cbea3c160}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!connect@{connect}}
+\index{connect@{connect}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Component\+Base\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}} $\ast$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Connects this instance with another connection point. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point_ac61838faa9b886d2c75695a14c33751c}{Steinberg\+::\+Vst\+::\+I\+Connection\+Point}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a4e7719954c43351323ed55b6d3d345f1}\label{class_steinberg_1_1_vst_1_1_component_base_a4e7719954c43351323ed55b6d3d345f1}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Component\+Base\+::disconnect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}} $\ast$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Disconnects a given connection point from this. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point_a7093bc95ed4e2303fef5c848dd02c91e}{Steinberg\+::\+Vst\+::\+I\+Connection\+Point}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a51c54b325122905f257b3cd6d0160e8e}\label{class_steinberg_1_1_vst_1_1_component_base_a51c54b325122905f257b3cd6d0160e8e}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!getHostContext@{getHostContext}}
+\index{getHostContext@{getHostContext}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{getHostContext()}{getHostContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}}$\ast$ Steinberg\+::\+Vst\+::\+Component\+Base\+::get\+Host\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the host\+Context (set by the host during initialize call). \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_ad632dd809210a416ab852a212e48a09c}\label{class_steinberg_1_1_vst_1_1_component_base_ad632dd809210a416ab852a212e48a09c}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!getPeer@{getPeer}}
+\index{getPeer@{getPeer}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{getPeer()}{getPeer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point}{I\+Connection\+Point}}$\ast$ Steinberg\+::\+Vst\+::\+Component\+Base\+::get\+Peer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the peer for the messaging communication (you can only use \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point_a603aee7a0a35c85db4c4d773bd8f1910}{I\+Connection\+Point\+::notify}} for communicate between peers, do not try to cast peer\+Connection. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_abe7665f03a0d049450fbf6a11ba1b12a}\label{class_steinberg_1_1_vst_1_1_component_base_abe7665f03a0d049450fbf6a11ba1b12a}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!initialize@{initialize}}
+\index{initialize@{initialize}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Component\+Base\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The host passes a number of interfaces as context to initialize the plug-\/in class. 
+\begin{DoxyParams}{Parameters}
+{\em context,passed} & by the host, is mandatory and should implement \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_host_application}{I\+Host\+Application}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Extensive memory allocations etc. should be performed in this method rather than in the class\textquotesingle{} constructor! If the method does N\+OT return k\+Result\+Ok, the object is released immediately. In this case terminate is not called! 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base_afd5f48e0d7927e051b8264fa89f52c0f}{Steinberg\+::\+I\+Plugin\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_v_s_t3_controller_a4e32133b7bee1d1e5c9ca560b9468b4d}{I\+Plug\+V\+S\+T3\+Controller}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_a4acda68d12532c2443cf1289e74631ca}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}, and \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_single_component_effect_a1556619bb514d6ca22f81ebe81647b39}{Steinberg\+::\+Vst\+::\+Single\+Component\+Effect}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a9c5435c1fc3098622d6af3b0ea25b74b}\label{class_steinberg_1_1_vst_1_1_component_base_a9c5435c1fc3098622d6af3b0ea25b74b}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!notify@{notify}}
+\index{notify@{notify}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Component\+Base\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_message}{I\+Message}} $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Called when a message has been sent from the connection point to this. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_connection_point_a603aee7a0a35c85db4c4d773bd8f1910}{Steinberg\+::\+Vst\+::\+I\+Connection\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_plug_v_s_t3_controller_a432c1ce285c79122b7599f3de1f8f71c}{I\+Plug\+V\+S\+T3\+Controller}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_ab6e82790bddb33c9719bf6db68ec7dab}\label{class_steinberg_1_1_vst_1_1_component_base_ab6e82790bddb33c9719bf6db68ec7dab}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!receiveText@{receiveText}}
+\index{receiveText@{receiveText}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{receiveText()}{receiveText()}}
+{\footnotesize\ttfamily tresult Component\+Base\+::receive\+Text (\begin{DoxyParamCaption}\item[{const char8 $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Receives a simple text message from the peer (max 255 characters). Text is U\+T\+F-\/8 encoded. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a90dd326ae5987993e865d90ac64eb729}\label{class_steinberg_1_1_vst_1_1_component_base_a90dd326ae5987993e865d90ac64eb729}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily tresult Component\+Base\+::send\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_message}{I\+Message}} $\ast$}]{message }\end{DoxyParamCaption}) const}
+
+Sends the given message to the peer. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a240ca73fd8ad7c06712b4e65b66685cf}\label{class_steinberg_1_1_vst_1_1_component_base_a240ca73fd8ad7c06712b4e65b66685cf}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!sendMessageID@{sendMessageID}}
+\index{sendMessageID@{sendMessageID}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{sendMessageID()}{sendMessageID()}}
+{\footnotesize\ttfamily tresult Component\+Base\+::send\+Message\+ID (\begin{DoxyParamCaption}\item[{const char8 $\ast$}]{message\+ID }\end{DoxyParamCaption}) const}
+
+Sends a message with a given ID without any other payload. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_a3eadc69899cca12bdb080c9e0e2f6ea9}\label{class_steinberg_1_1_vst_1_1_component_base_a3eadc69899cca12bdb080c9e0e2f6ea9}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!sendTextMessage@{sendTextMessage}}
+\index{sendTextMessage@{sendTextMessage}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{sendTextMessage()}{sendTextMessage()}}
+{\footnotesize\ttfamily tresult Component\+Base\+::send\+Text\+Message (\begin{DoxyParamCaption}\item[{const char8 $\ast$}]{text }\end{DoxyParamCaption}) const}
+
+Sends a simple text message to the peer (max 255 characters). Text is interpreted as U\+T\+F-\/8. ~\newline
+ \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_component_base_afca393ed57fff201ef7ab3de97ff87af}\label{class_steinberg_1_1_vst_1_1_component_base_afca393ed57fff201ef7ab3de97ff87af}} 
+\index{Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}!terminate@{terminate}}
+\index{terminate@{terminate}!Steinberg::Vst::ComponentBase@{Steinberg::Vst::ComponentBase}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Component\+Base\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is called before the plug-\/in is unloaded and can be used for cleanups. You have to release all references to any host application interfaces. 
+
+Implements \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base_ac3354b9b4d4d3deeb2f24b5e7b4d53e6}{Steinberg\+::\+I\+Plugin\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_ex1_ae34238e8c045eef58cfcbc164cad0831}{Steinberg\+::\+Vst\+::\+Edit\+Controller\+Ex1}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_abb19fb91716a0b177da7b81899ab719b}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_single_component_effect_aa45a9d1cd2517189a94462f818ef16d4}{Steinberg\+::\+Vst\+::\+Single\+Component\+Effect}}, \mbox{\hyperlink{class_i_plug_v_s_t3_adacc6758450aea578f44c9b8bc6dabe5}{I\+Plug\+V\+S\+T3}}, and \mbox{\hyperlink{class_i_plug_v_s_t3_processor_a3ed07763386fa76464b80e5af6ac9c02}{I\+Plug\+V\+S\+T3\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/vstcomponentbase.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/public.\+sdk/source/vst/vstcomponentbase.\+cpp\end{DoxyCompactItemize}

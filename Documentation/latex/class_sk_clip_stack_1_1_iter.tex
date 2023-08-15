@@ -1,0 +1,69 @@
+\hypertarget{class_sk_clip_stack_1_1_iter}{}\doxysection{Sk\+Clip\+Stack\+::Iter Class Reference}
+\label{class_sk_clip_stack_1_1_iter}\index{SkClipStack::Iter@{SkClipStack::Iter}}
+Inheritance diagram for Sk\+Clip\+Stack\+::Iter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_clip_stack_1_1_iter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_aa3907d831c7a346fa1b794a1e0fc10e7}\label{class_sk_clip_stack_1_1_iter_aa3907d831c7a346fa1b794a1e0fc10e7}} 
+enum {\bfseries Iter\+Start} \{ {\bfseries k\+Bottom\+\_\+\+Iter\+Start} = Sk\+Deque\+::Iter\+::k\+Front\+\_\+\+Iter\+Start, 
+{\bfseries k\+Top\+\_\+\+Iter\+Start} = Sk\+Deque\+::Iter\+::k\+Back\+\_\+\+Iter\+Start
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_clip_stack_1_1_iter_ae3c2c02c45037a71d94c862dd6f18fa4}{Iter}} ()
+\item 
+\mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_ace87496ee78650ac53365d3b5dfc73a6}\label{class_sk_clip_stack_1_1_iter_ace87496ee78650ac53365d3b5dfc73a6}} 
+{\bfseries Iter} (const \mbox{\hyperlink{class_sk_clip_stack}{Sk\+Clip\+Stack}} \&stack, Iter\+Start start\+Loc)
+\item 
+const \mbox{\hyperlink{class_sk_clip_stack_1_1_element}{Element}} $\ast$ \mbox{\hyperlink{class_sk_clip_stack_1_1_iter_ad1bc0c8a8d186ac4712d4edbfc182407}{next}} ()
+\item 
+\mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_af750f05bad43016fa1a77f83c2c60025}\label{class_sk_clip_stack_1_1_iter_af750f05bad43016fa1a77f83c2c60025}} 
+const \mbox{\hyperlink{class_sk_clip_stack_1_1_element}{Element}} $\ast$ {\bfseries prev} ()
+\item 
+const \mbox{\hyperlink{class_sk_clip_stack_1_1_element}{Element}} $\ast$ \mbox{\hyperlink{class_sk_clip_stack_1_1_iter_a60cb4e85f2566ce2708a6a8ffd7a877d}{skip\+To\+Topmost}} (Sk\+Clip\+Op op)
+\item 
+void \mbox{\hyperlink{class_sk_clip_stack_1_1_iter_a3a45393b0d728f127e6273fc0e48c6fc}{reset}} (const \mbox{\hyperlink{class_sk_clip_stack}{Sk\+Clip\+Stack}} \&stack, Iter\+Start start\+Loc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_ae3c2c02c45037a71d94c862dd6f18fa4}\label{class_sk_clip_stack_1_1_iter_ae3c2c02c45037a71d94c862dd6f18fa4}} 
+\index{SkClipStack::Iter@{SkClipStack::Iter}!Iter@{Iter}}
+\index{Iter@{Iter}!SkClipStack::Iter@{SkClipStack::Iter}}
+\doxysubsubsection{\texorpdfstring{Iter()}{Iter()}}
+{\footnotesize\ttfamily Sk\+Clip\+Stack\+::\+Iter\+::\+Iter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates an uninitialized iterator. Must be \mbox{\hyperlink{class_sk_clip_stack_1_1_iter_a3a45393b0d728f127e6273fc0e48c6fc}{reset()}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_ad1bc0c8a8d186ac4712d4edbfc182407}\label{class_sk_clip_stack_1_1_iter_ad1bc0c8a8d186ac4712d4edbfc182407}} 
+\index{SkClipStack::Iter@{SkClipStack::Iter}!next@{next}}
+\index{next@{next}!SkClipStack::Iter@{SkClipStack::Iter}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_sk_clip_stack_1_1_element}{Sk\+Clip\+Stack\+::\+Element}} $\ast$ Sk\+Clip\+Stack\+::\+Iter\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the clip element for this iterator. If \mbox{\hyperlink{class_sk_clip_stack_1_1_iter_ad1bc0c8a8d186ac4712d4edbfc182407}{next()}}/prev() returns N\+U\+LL, then the iterator is done. \mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_a3a45393b0d728f127e6273fc0e48c6fc}\label{class_sk_clip_stack_1_1_iter_a3a45393b0d728f127e6273fc0e48c6fc}} 
+\index{SkClipStack::Iter@{SkClipStack::Iter}!reset@{reset}}
+\index{reset@{reset}!SkClipStack::Iter@{SkClipStack::Iter}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Sk\+Clip\+Stack\+::\+Iter\+::reset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_clip_stack}{Sk\+Clip\+Stack}} \&}]{stack,  }\item[{Iter\+Start}]{start\+Loc }\end{DoxyParamCaption})}
+
+Restarts the iterator on a clip stack. \mbox{\Hypertarget{class_sk_clip_stack_1_1_iter_a60cb4e85f2566ce2708a6a8ffd7a877d}\label{class_sk_clip_stack_1_1_iter_a60cb4e85f2566ce2708a6a8ffd7a877d}} 
+\index{SkClipStack::Iter@{SkClipStack::Iter}!skipToTopmost@{skipToTopmost}}
+\index{skipToTopmost@{skipToTopmost}!SkClipStack::Iter@{SkClipStack::Iter}}
+\doxysubsubsection{\texorpdfstring{skipToTopmost()}{skipToTopmost()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_sk_clip_stack_1_1_element}{Sk\+Clip\+Stack\+::\+Element}} $\ast$ Sk\+Clip\+Stack\+::\+Iter\+::skip\+To\+Topmost (\begin{DoxyParamCaption}\item[{Sk\+Clip\+Op}]{op }\end{DoxyParamCaption})}
+
+Moves the iterator to the topmost element with the specified Region\+Op and returns that element. If no clip element with that op is found, the first element is returned. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Clip\+Stack.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Clip\+Stack.\+cpp\end{DoxyCompactItemize}

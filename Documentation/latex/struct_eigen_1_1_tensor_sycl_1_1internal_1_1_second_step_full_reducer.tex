@@ -1,0 +1,58 @@
+\hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::Second\+Step\+Full\+Reducer$<$ Coeff\+Return\+Type, Op\+Type, Input\+Accessor, Output\+Accessor, Index, local\+\_\+range $>$ Struct Template Reference}
+\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer}\index{Eigen::TensorSycl::internal::SecondStepFullReducer$<$ CoeffReturnType, OpType, InputAccessor, OutputAccessor, Index, local\_range $>$@{Eigen::TensorSycl::internal::SecondStepFullReducer$<$ CoeffReturnType, OpType, InputAccessor, OutputAccessor, Index, local\_range $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a5690da81a66e5efd89220e165c66ad68}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a5690da81a66e5efd89220e165c66ad68}} 
+typedef cl\+::sycl\+::accessor$<$ Coeff\+Return\+Type, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Local\+Accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a4c20997b44f90bd73010b0894664152a}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a4c20997b44f90bd73010b0894664152a}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_op_definer}{Op\+Definer}}$<$ Op\+Type, Coeff\+Return\+Type, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}, true $>$ {\bfseries Op\+Def}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_acf8e886ac0174139eafb3e4decd533da}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_acf8e886ac0174139eafb3e4decd533da}} 
+typedef Op\+Def\+::type {\bfseries Op}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a5690da81a66e5efd89220e165c66ad68}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a5690da81a66e5efd89220e165c66ad68}} 
+typedef cl\+::sycl\+::accessor$<$ Coeff\+Return\+Type, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Local\+Accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a4c20997b44f90bd73010b0894664152a}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a4c20997b44f90bd73010b0894664152a}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_op_definer}{Op\+Definer}}$<$ Op\+Type, Coeff\+Return\+Type, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}, true $>$ {\bfseries Op\+Def}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_acf8e886ac0174139eafb3e4decd533da}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_acf8e886ac0174139eafb3e4decd533da}} 
+typedef Op\+Def\+::type {\bfseries Op}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a33e936776e39030c05bcea662ad2f521}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a33e936776e39030c05bcea662ad2f521}} 
+{\bfseries Second\+Step\+Full\+Reducer} (Local\+Accessor scratch\+\_\+, Input\+Accessor a\+I\+\_\+, Output\+Accessor out\+Acc\+\_\+, Op\+Type op\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a403fc6e7933b1f5bddb37e98eb19f867}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a403fc6e7933b1f5bddb37e98eb19f867}} 
+void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a33e936776e39030c05bcea662ad2f521}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a33e936776e39030c05bcea662ad2f521}} 
+{\bfseries Second\+Step\+Full\+Reducer} (Local\+Accessor scratch\+\_\+, Input\+Accessor a\+I\+\_\+, Output\+Accessor out\+Acc\+\_\+, Op\+Type op\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a9080ce621a300db12dfaaead259f452e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a9080ce621a300db12dfaaead259f452e}} 
+void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_ad114ca4ea9c5a93ec0844e580ce0207e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_ad114ca4ea9c5a93ec0844e580ce0207e}} 
+Local\+Accessor {\bfseries scratch}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_afec54de1126990b3504f024c360a5551}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_afec54de1126990b3504f024c360a5551}} 
+Input\+Accessor {\bfseries aI}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_acc3f38f1a9126c327528155497ac718c}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_acc3f38f1a9126c327528155497ac718c}} 
+Output\+Accessor {\bfseries out\+Acc}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a81099c7769d8ad043968cd6720d44a55}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_second_step_full_reducer_a81099c7769d8ad043968cd6720d44a55}} 
+Op {\bfseries op}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Reduction\+Sycl.\+h\end{DoxyCompactItemize}

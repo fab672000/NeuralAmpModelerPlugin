@@ -1,0 +1,682 @@
+\hypertarget{class_eigen_1_1_spline}{}\doxysection{Eigen\+::Spline$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1_spline}\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+
+
+A class representing multi-\/dimensional spline curves.  
+
+
+
+
+{\ttfamily \#include $<$Spline.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}{Dimension}} = Dim\+\_\+
+ \}
+\item 
+enum \{ \mbox{\hyperlink{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570a76a9f52389b0f9f9236ca2668ca0109f}{Degree}} = Degree\+\_\+
+ \}
+\item 
+enum \{ \mbox{\hyperlink{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}{Dimension}} = Dim\+\_\+
+ \}
+\item 
+enum \{ \mbox{\hyperlink{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570a76a9f52389b0f9f9236ca2668ca0109f}{Degree}} = Degree\+\_\+
+ \}
+\item 
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}\label{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}}
+\begin{DoxyCompactList}\small\item\em The point type the spline is representing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}\label{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store knot vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}\label{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}{Parameter\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}{Parameter\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store parameter vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}\label{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store non-\/zero basis functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}\label{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store the values of the basis function derivatives. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}\label{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}{Control\+Point\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}{Control\+Point\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type representing the spline\textquotesingle{}s control points. \end{DoxyCompactList}\item 
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}\label{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}}
+\begin{DoxyCompactList}\small\item\em The point type the spline is representing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}\label{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store knot vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}\label{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}{Parameter\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4807ced737f905c7a96a234dfb183258}{Parameter\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store parameter vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}\label{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store non-\/zero basis functions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}\label{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type used to store the values of the basis function derivatives. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}\label{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}{Control\+Point\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}{Control\+Point\+Vector\+Type}}
+\begin{DoxyCompactList}\small\item\em The data type representing the spline\textquotesingle{}s control points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a93eb998cff41b5884213f78aa9d6649a}\label{class_eigen_1_1_spline_a93eb998cff41b5884213f78aa9d6649a}} 
+\mbox{\hyperlink{class_eigen_1_1_spline_a93eb998cff41b5884213f78aa9d6649a}{Spline}} ()
+\begin{DoxyCompactList}\small\item\em Creates a (constant) zero spline. For Splines with dynamic degree, the resulting degree will be 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other\+Vector\+Type , typename Other\+Array\+Type $>$ }\\\mbox{\hyperlink{class_eigen_1_1_spline_a04202d6fa1b719bd7ce8c34d11e1e148}{Spline}} (const Other\+Vector\+Type \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}}, const Other\+Array\+Type \&\mbox{\hyperlink{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}{ctrls}})
+\begin{DoxyCompactList}\small\item\em Creates a spline from a knot vector and control points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Other\+Degree$>$ }\\\mbox{\hyperlink{class_eigen_1_1_spline_a5e16e295e48eb9b242937615c5894286}{Spline}} (const \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}, \mbox{\hyperlink{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}{Dimension}}, Other\+Degree $>$ \&spline)
+\begin{DoxyCompactList}\small\item\em Copy constructor for splines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}\label{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}} 
+const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}} () const
+\begin{DoxyCompactList}\small\item\em Returns the knots of the underlying spline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}\label{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}} 
+const \mbox{\hyperlink{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}{Control\+Point\+Vector\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}{ctrls}} () const
+\begin{DoxyCompactList}\small\item\em Returns the ctrls of the underlying spline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a15d8f85af634fc85d640369189d4083e}{operator()}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u) const
+\begin{DoxyCompactList}\small\item\em Returns the spline value at a given site $u$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline_a0d44b217fc9517d0f572e9b8e40b3df6}{derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order) const
+\begin{DoxyCompactList}\small\item\em Evaluation of spline derivatives of up-\/to given order. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Derivative\+Order$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}, Derivative\+Order $>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline_a401666a79915d8b1c336bd89557a7202}{derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order=Derivative\+Order) const
+\begin{DoxyCompactList}\small\item\em Evaluation of spline derivatives of up-\/to given order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_aeaec16e89270af47114e685289ff10a1}{basis\+Functions}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u) const
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero basis functions at the given site. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4efb72a9640724ccc934bf70adc1153c}{basis\+Function\+Derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order) const
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero spline basis function derivatives up to given order. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Derivative\+Order$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}, Derivative\+Order $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4bbd1e5972b459ef5e994611ad2a2fea}{basis\+Function\+Derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order=Derivative\+Order) const
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero spline basis function derivatives up to given order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}\label{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}} 
+Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the spline degree. \end{DoxyCompactList}\item 
+Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a8fa2ad1f7ddf1eaf83464a87cce49e9d}{span}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u) const
+\begin{DoxyCompactList}\small\item\em Returns the span within the knot vector in which u is falling. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a93eb998cff41b5884213f78aa9d6649a}\label{class_eigen_1_1_spline_a93eb998cff41b5884213f78aa9d6649a}} 
+\mbox{\hyperlink{class_eigen_1_1_spline_a93eb998cff41b5884213f78aa9d6649a}{Spline}} ()
+\begin{DoxyCompactList}\small\item\em Creates a (constant) zero spline. For Splines with dynamic degree, the resulting degree will be 0. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Other\+Vector\+Type , typename Other\+Array\+Type $>$ }\\\mbox{\hyperlink{class_eigen_1_1_spline_a04202d6fa1b719bd7ce8c34d11e1e148}{Spline}} (const Other\+Vector\+Type \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}}, const Other\+Array\+Type \&\mbox{\hyperlink{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}{ctrls}})
+\begin{DoxyCompactList}\small\item\em Creates a spline from a knot vector and control points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Other\+Degree$>$ }\\\mbox{\hyperlink{class_eigen_1_1_spline_a5e16e295e48eb9b242937615c5894286}{Spline}} (const \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}, \mbox{\hyperlink{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}{Dimension}}, Other\+Degree $>$ \&spline)
+\begin{DoxyCompactList}\small\item\em Copy constructor for splines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}\label{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}} 
+const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}} () const
+\begin{DoxyCompactList}\small\item\em Returns the knots of the underlying spline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}\label{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}} 
+const \mbox{\hyperlink{class_eigen_1_1_spline_a7ecc6b3079a98b11ff4843de7791f500}{Control\+Point\+Vector\+Type}} \& \mbox{\hyperlink{class_eigen_1_1_spline_a5d2ad0ae36a74b9ee6c47565fee46d5d}{ctrls}} () const
+\begin{DoxyCompactList}\small\item\em Returns the ctrls of the underlying spline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a59f4c270082b8c25c90fb90933afe5dc}{operator()}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u) const
+\begin{DoxyCompactList}\small\item\em Returns the spline value at a given site $u$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline_a878ac6159de3bb86fea49fb511c94218}{derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order) const
+\begin{DoxyCompactList}\small\item\em Evaluation of spline derivatives of up-\/to given order. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Derivative\+Order$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}, Derivative\+Order $>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline_a401666a79915d8b1c336bd89557a7202}{derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order=Derivative\+Order) const
+\begin{DoxyCompactList}\small\item\em Evaluation of spline derivatives of up-\/to given order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_ac14e706c438837f89e282ccd36fa274b}{basis\+Functions}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u) const
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero basis functions at the given site. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a62ec57b0b8490bb11ddc14de93091f31}{basis\+Function\+Derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order) const
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero spline basis function derivatives up to given order. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int Derivative\+Order$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}, Derivative\+Order $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4bbd1e5972b459ef5e994611ad2a2fea}{basis\+Function\+Derivatives}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index order=Derivative\+Order) const
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero spline basis function derivatives up to given order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}\label{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}} 
+Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}} () const
+\begin{DoxyCompactList}\small\item\em Returns the spline degree. \end{DoxyCompactList}\item 
+Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a8fa2ad1f7ddf1eaf83464a87cce49e9d}{span}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u) const
+\begin{DoxyCompactList}\small\item\em Returns the span within the knot vector in which u is falling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_a68fbc57ca471069789801fea000a0c90}\label{class_eigen_1_1_spline_a68fbc57ca471069789801fea000a0c90}} 
+static Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a68fbc57ca471069789801fea000a0c90}{Span}} (typename \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}}, const typename \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}})
+\begin{DoxyCompactList}\small\item\em Computes the span within the provided knot vector in which u is falling. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a56b8742737146a384adebea7fa86c096}{Basis\+Functions}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}}, const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}})
+\begin{DoxyCompactList}\small\item\em Returns the spline\textquotesingle{}s non-\/zero basis functions. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4868e047199219fa36dd5d0d34565df2}{Basis\+Function\+Derivatives}} (const \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, const Dense\+Index order, const Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}}, const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}})
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero spline basis function derivatives up to given order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_eigen_1_1_spline_ad2b706468b66d44ae2a76d64be84564f}\label{class_eigen_1_1_spline_ad2b706468b66d44ae2a76d64be84564f}} 
+static Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_ad2b706468b66d44ae2a76d64be84564f}{Span}} (typename \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}}, const typename \mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}})
+\begin{DoxyCompactList}\small\item\em Computes the span within the provided knot vector in which u is falling. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a56b8742737146a384adebea7fa86c096}{Basis\+Functions}} (\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}}, const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}})
+\begin{DoxyCompactList}\small\item\em Returns the spline\textquotesingle{}s non-\/zero basis functions. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline_a4868e047199219fa36dd5d0d34565df2}{Basis\+Function\+Derivatives}} (const \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}} u, const Dense\+Index order, const Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline_a099e9ac2cfbba7fc880e1e89081bd3cf}{degree}}, const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&\mbox{\hyperlink{class_eigen_1_1_spline_ae1a672f60c87840ad2efbea6afc2442e}{knots}})
+\begin{DoxyCompactList}\small\item\em Computes the non-\/zero spline basis function derivatives up to given order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Scalar\+\_\+, int Dim\+\_\+, int Degree\+\_\+$>$\newline
+class Eigen\+::\+Spline$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$}
+
+A class representing multi-\/dimensional spline curves. 
+
+The class represents B-\/splines with non-\/uniform knot vectors. Each control point of the B-\/spline is associated with a basis function \begin{align*} C(u) & = \sum_{i=0}^{n}N_{i,p}(u)P_i \end{align*}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\+\_\+} & The underlying data type (typically float or double) \\
+\hline
+{\em Dim\+\_\+} & The curve dimension (e.\+g. 2 or 3) \\
+\hline
+{\em Degree\+\_\+} & Per default set to Dynamic; could be set to the actual desired degree for optimization purposes (would result in stack allocation of several temporary variables). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}\label{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{Scalar}{Scalar}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}
+
+The spline curve\textquotesingle{}s scalar type. \mbox{\Hypertarget{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}\label{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{Scalar}{Scalar}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+typedef Scalar\+\_\+ \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}
+
+The spline curve\textquotesingle{}s scalar type. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_spline_acecdab377a53e41e27db51d464d89cfd}\label{class_eigen_1_1_spline_acecdab377a53e41e27db51d464d89cfd}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dimension@{Dimension}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Dimension@{Dimension}}}\mbox{\Hypertarget{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}\label{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}} 
+Dimension&The spline curve\textquotesingle{}s dimension. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4ba63a3e9bb8a801f25540296665c63e}\label{class_eigen_1_1_spline_a4ba63a3e9bb8a801f25540296665c63e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Degree@{Degree}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Degree@{Degree}}}\mbox{\Hypertarget{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570a76a9f52389b0f9f9236ca2668ca0109f}\label{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570a76a9f52389b0f9f9236ca2668ca0109f}} 
+Degree&The spline curve\textquotesingle{}s degree. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8e}\label{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dimension@{Dimension}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Dimension@{Dimension}}}\mbox{\Hypertarget{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}\label{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}} 
+Dimension&The spline curve\textquotesingle{}s dimension. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570}\label{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Degree@{Degree}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Degree@{Degree}}}\mbox{\Hypertarget{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570a76a9f52389b0f9f9236ca2668ca0109f}\label{class_eigen_1_1_spline_a3ffcc68573a5c4d5b3993cffd59c7570a76a9f52389b0f9f9236ca2668ca0109f}} 
+Degree&The spline curve\textquotesingle{}s degree. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a04202d6fa1b719bd7ce8c34d11e1e148}\label{class_eigen_1_1_spline_a04202d6fa1b719bd7ce8c34d11e1e148}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Spline@{Spline}}
+\index{Spline@{Spline}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{Spline()}{Spline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$typename Other\+Vector\+Type , typename Other\+Array\+Type $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} (\begin{DoxyParamCaption}\item[{const Other\+Vector\+Type \&}]{knots,  }\item[{const Other\+Array\+Type \&}]{ctrls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a spline from a knot vector and control points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em knots} & The spline\textquotesingle{}s knot vector. \\
+\hline
+{\em ctrls} & The spline\textquotesingle{}s control point vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a5e16e295e48eb9b242937615c5894286}\label{class_eigen_1_1_spline_a5e16e295e48eb9b242937615c5894286}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Spline@{Spline}}
+\index{Spline@{Spline}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{Spline()}{Spline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$int Other\+Degree$>$ \\
+\mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}, \mbox{\hyperlink{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}{Dimension}}, Other\+Degree $>$ \&}]{spline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor for splines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spline} & The input spline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a04202d6fa1b719bd7ce8c34d11e1e148}\label{class_eigen_1_1_spline_a04202d6fa1b719bd7ce8c34d11e1e148}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Spline@{Spline}}
+\index{Spline@{Spline}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{Spline()}{Spline()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$typename Other\+Vector\+Type , typename Other\+Array\+Type $>$ \\
+\mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} (\begin{DoxyParamCaption}\item[{const Other\+Vector\+Type \&}]{knots,  }\item[{const Other\+Array\+Type \&}]{ctrls }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a spline from a knot vector and control points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em knots} & The spline\textquotesingle{}s knot vector. \\
+\hline
+{\em ctrls} & The spline\textquotesingle{}s control point vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a5e16e295e48eb9b242937615c5894286}\label{class_eigen_1_1_spline_a5e16e295e48eb9b242937615c5894286}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!Spline@{Spline}}
+\index{Spline@{Spline}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{Spline()}{Spline()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$int Other\+Degree$>$ \\
+\mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}, \mbox{\hyperlink{class_eigen_1_1_spline_aaf936d5cc36f6a3ea6bf91e33f801a8ea482ff7b38b0a143cffcfdc9e643ed702}{Dimension}}, Other\+Degree $>$ \&}]{spline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor for splines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spline} & The input spline. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4868e047199219fa36dd5d0d34565df2}\label{class_eigen_1_1_spline_a4868e047199219fa36dd5d0d34565df2}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!BasisFunctionDerivatives@{BasisFunctionDerivatives}}
+\index{BasisFunctionDerivatives@{BasisFunctionDerivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{BasisFunctionDerivatives()}{BasisFunctionDerivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::Basis\+Function\+Derivatives (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{const Dense\+Index}]{order,  }\item[{const Dense\+Index}]{degree,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&}]{knots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the non-\/zero spline basis function derivatives up to given order. 
+
+The function computes \begin{align*} \frac{d^i}{du^i} N_{i,p}(u), \hdots, \frac{d^i}{du^i} N_{i+p+1,p}(u) \end{align*} with i ranging from 0 up to the specified order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis function derivatives are computed. \\
+\hline
+{\em order} & The order up to which the basis function derivatives are computes. \\
+\hline
+{\em degree} & The degree of the underlying spline \\
+\hline
+{\em knots} & The underlying spline\textquotesingle{}s knot vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4868e047199219fa36dd5d0d34565df2}\label{class_eigen_1_1_spline_a4868e047199219fa36dd5d0d34565df2}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!BasisFunctionDerivatives@{BasisFunctionDerivatives}}
+\index{BasisFunctionDerivatives@{BasisFunctionDerivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{BasisFunctionDerivatives()}{BasisFunctionDerivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::Basis\+Function\+Derivatives (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{const Dense\+Index}]{order,  }\item[{const Dense\+Index}]{degree,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&}]{knots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the non-\/zero spline basis function derivatives up to given order. 
+
+The function computes \begin{align*} \frac{d^i}{du^i} N_{i,p}(u), \hdots, \frac{d^i}{du^i} N_{i+p+1,p}(u) \end{align*} with i ranging from 0 up to the specified order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis function derivatives are computed. \\
+\hline
+{\em order} & The order up to which the basis function derivatives are computes. \\
+\hline
+{\em degree} & The degree of the underlying spline \\
+\hline
+{\em knots} & The underlying spline\textquotesingle{}s knot vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a62ec57b0b8490bb11ddc14de93091f31}\label{class_eigen_1_1_spline_a62ec57b0b8490bb11ddc14de93091f31}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!basisFunctionDerivatives@{basisFunctionDerivatives}}
+\index{basisFunctionDerivatives@{basisFunctionDerivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{basisFunctionDerivatives()}{basisFunctionDerivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::basis\+Function\+Derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order }\end{DoxyParamCaption}) const}
+
+
+
+Computes the non-\/zero spline basis function derivatives up to given order. 
+
+The function computes \begin{align*} \frac{d^i}{du^i} N_{i,p}(u), \hdots, \frac{d^i}{du^i} N_{i+p+1,p}(u) \end{align*} with i ranging from 0 up to the specified order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis function derivatives are computed. \\
+\hline
+{\em order} & The order up to which the basis function derivatives are computes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4efb72a9640724ccc934bf70adc1153c}\label{class_eigen_1_1_spline_a4efb72a9640724ccc934bf70adc1153c}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!basisFunctionDerivatives@{basisFunctionDerivatives}}
+\index{basisFunctionDerivatives@{basisFunctionDerivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{basisFunctionDerivatives()}{basisFunctionDerivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$, Derivative\+Order $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::basis\+Function\+Derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order }\end{DoxyParamCaption}) const}
+
+
+
+Computes the non-\/zero spline basis function derivatives up to given order. 
+
+The function computes \begin{align*} \frac{d^i}{du^i} N_{i,p}(u), \hdots, \frac{d^i}{du^i} N_{i+p+1,p}(u) \end{align*} with i ranging from 0 up to the specified order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis function derivatives are computed. \\
+\hline
+{\em order} & The order up to which the basis function derivatives are computes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4bbd1e5972b459ef5e994611ad2a2fea}\label{class_eigen_1_1_spline_a4bbd1e5972b459ef5e994611ad2a2fea}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!basisFunctionDerivatives@{basisFunctionDerivatives}}
+\index{basisFunctionDerivatives@{basisFunctionDerivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{basisFunctionDerivatives()}{basisFunctionDerivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$int Derivative\+Order$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}},Derivative\+Order$>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::basis\+Function\+Derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order = {\ttfamily DerivativeOrder} }\end{DoxyParamCaption}) const}
+
+
+
+Computes the non-\/zero spline basis function derivatives up to given order. 
+
+The function computes \begin{align*} \frac{d^i}{du^i} N_{i,p}(u), \hdots, \frac{d^i}{du^i} N_{i+p+1,p}(u) \end{align*} with i ranging from 0 up to the specified order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis function derivatives are computed. \\
+\hline
+{\em order} & The order up to which the basis function derivatives are computes. Using the template version of this function is more efficieent since temporary objects are allocated on the stack whenever this is possible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a4bbd1e5972b459ef5e994611ad2a2fea}\label{class_eigen_1_1_spline_a4bbd1e5972b459ef5e994611ad2a2fea}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!basisFunctionDerivatives@{basisFunctionDerivatives}}
+\index{basisFunctionDerivatives@{basisFunctionDerivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{basisFunctionDerivatives()}{basisFunctionDerivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$int Derivative\+Order$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}},Derivative\+Order$>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_ac09bd329bef9ad9037b64783c76dc0ed}{Basis\+Derivative\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::basis\+Function\+Derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order = {\ttfamily DerivativeOrder} }\end{DoxyParamCaption}) const}
+
+
+
+Computes the non-\/zero spline basis function derivatives up to given order. 
+
+The function computes \begin{align*} \frac{d^i}{du^i} N_{i,p}(u), \hdots, \frac{d^i}{du^i} N_{i+p+1,p}(u) \end{align*} with i ranging from 0 up to the specified order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis function derivatives are computed. \\
+\hline
+{\em order} & The order up to which the basis function derivatives are computes. Using the template version of this function is more efficieent since temporary objects are allocated on the stack whenever this is possible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_ac14e706c438837f89e282ccd36fa274b}\label{class_eigen_1_1_spline_ac14e706c438837f89e282ccd36fa274b}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!basisFunctions@{basisFunctions}}
+\index{basisFunctions@{basisFunctions}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{basisFunctions()}{basisFunctions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::basis\+Functions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Computes the non-\/zero basis functions at the given site. 
+
+Splines have local support and a point from their image is defined by exactly $p+1$ control points $P_i$ where $p$ is the spline degree.
+
+This function computes the $p+1$ non-\/zero basis function values for a given parameter value $u$. It returns \begin{align*} N_{i,p}(u), \hdots, N_{i+p+1,p}(u) \end{align*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis functions are computed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_aeaec16e89270af47114e685289ff10a1}\label{class_eigen_1_1_spline_aeaec16e89270af47114e685289ff10a1}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!basisFunctions@{basisFunctions}}
+\index{basisFunctions@{basisFunctions}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{basisFunctions()}{basisFunctions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::basis\+Functions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Computes the non-\/zero basis functions at the given site. 
+
+Splines have local support and a point from their image is defined by exactly $p+1$ control points $P_i$ where $p$ is the spline degree.
+
+This function computes the $p+1$ non-\/zero basis function values for a given parameter value $u$. It returns \begin{align*} N_{i,p}(u), \hdots, N_{i+p+1,p}(u) \end{align*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the non-\/zero basis functions are computed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a56b8742737146a384adebea7fa86c096}\label{class_eigen_1_1_spline_a56b8742737146a384adebea7fa86c096}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!BasisFunctions@{BasisFunctions}}
+\index{BasisFunctions@{BasisFunctions}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{BasisFunctions()}{BasisFunctions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::Basis\+Functions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{degree,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&}]{knots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the spline\textquotesingle{}s non-\/zero basis functions. 
+
+The function computes and returns \begin{align*} N_{i,p}(u), \hdots, N_{i+p+1,p}(u) \end{align*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The site at which the basis functions are computed. \\
+\hline
+{\em degree} & The degree of the underlying spline. \\
+\hline
+{\em knots} & The underlying spline\textquotesingle{}s knot vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a56b8742737146a384adebea7fa86c096}\label{class_eigen_1_1_spline_a56b8742737146a384adebea7fa86c096}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!BasisFunctions@{BasisFunctions}}
+\index{BasisFunctions@{BasisFunctions}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{BasisFunctions()}{BasisFunctions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+static \mbox{\hyperlink{class_eigen_1_1_spline_abe7f040ac7b8cc85a397e2fbc70bbe00}{Basis\+Vector\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::Basis\+Functions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{degree,  }\item[{const \mbox{\hyperlink{class_eigen_1_1_spline_a7dcb414ba9d2ff74031f5179d9844a4e}{Knot\+Vector\+Type}} \&}]{knots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the spline\textquotesingle{}s non-\/zero basis functions. 
+
+The function computes and returns \begin{align*} N_{i,p}(u), \hdots, N_{i+p+1,p}(u) \end{align*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The site at which the basis functions are computed. \\
+\hline
+{\em degree} & The degree of the underlying spline. \\
+\hline
+{\em knots} & The underlying spline\textquotesingle{}s knot vector. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a878ac6159de3bb86fea49fb511c94218}\label{class_eigen_1_1_spline_a878ac6159de3bb86fea49fb511c94218}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!derivatives@{derivatives}}
+\index{derivatives@{derivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{derivatives()}{derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order }\end{DoxyParamCaption}) const}
+
+
+
+Evaluation of spline derivatives of up-\/to given order. 
+
+The function returns \begin{align*} \frac{d^i}{du^i}C(u) & = \sum_{i=0}^{n} \frac{d^i}{du^i} N_{i,p}(u)P_i \end{align*} for i ranging between 0 and order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the spline derivative is evaluated. \\
+\hline
+{\em order} & The order up to which the derivatives are computed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a0d44b217fc9517d0f572e9b8e40b3df6}\label{class_eigen_1_1_spline_a0d44b217fc9517d0f572e9b8e40b3df6}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!derivatives@{derivatives}}
+\index{derivatives@{derivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{derivatives()}{derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$ \mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$, Derivative\+Order $>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order }\end{DoxyParamCaption}) const}
+
+
+
+Evaluation of spline derivatives of up-\/to given order. 
+
+The function returns \begin{align*} \frac{d^i}{du^i}C(u) & = \sum_{i=0}^{n} \frac{d^i}{du^i} N_{i,p}(u)P_i \end{align*} for i ranging between 0 and order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the spline derivative is evaluated. \\
+\hline
+{\em order} & The order up to which the derivatives are computed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a401666a79915d8b1c336bd89557a7202}\label{class_eigen_1_1_spline_a401666a79915d8b1c336bd89557a7202}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!derivatives@{derivatives}}
+\index{derivatives@{derivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{derivatives()}{derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$int Derivative\+Order$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}},Derivative\+Order$>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order = {\ttfamily DerivativeOrder} }\end{DoxyParamCaption}) const}
+
+
+
+Evaluation of spline derivatives of up-\/to given order. 
+
+The function returns \begin{align*} \frac{d^i}{du^i}C(u) & = \sum_{i=0}^{n} \frac{d^i}{du^i} N_{i,p}(u)P_i \end{align*} for i ranging between 0 and order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the spline derivative is evaluated. \\
+\hline
+{\em order} & The order up to which the derivatives are computed. Using the template version of this function is more efficieent since temporary objects are allocated on the stack whenever this is possible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a401666a79915d8b1c336bd89557a7202}\label{class_eigen_1_1_spline_a401666a79915d8b1c336bd89557a7202}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!derivatives@{derivatives}}
+\index{derivatives@{derivatives}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{derivatives()}{derivatives()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+template$<$int Derivative\+Order$>$ \\
+\mbox{\hyperlink{struct_eigen_1_1_spline_traits}{Spline\+Traits}}$<$\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}},Derivative\+Order$>$\+::Derivative\+Type \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::derivatives (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u,  }\item[{Dense\+Index}]{order = {\ttfamily DerivativeOrder} }\end{DoxyParamCaption}) const}
+
+
+
+Evaluation of spline derivatives of up-\/to given order. 
+
+The function returns \begin{align*} \frac{d^i}{du^i}C(u) & = \sum_{i=0}^{n} \frac{d^i}{du^i} N_{i,p}(u)P_i \end{align*} for i ranging between 0 and order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the spline derivative is evaluated. \\
+\hline
+{\em order} & The order up to which the derivatives are computed. Using the template version of this function is more efficieent since temporary objects are allocated on the stack whenever this is possible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a59f4c270082b8c25c90fb90933afe5dc}\label{class_eigen_1_1_spline_a59f4c270082b8c25c90fb90933afe5dc}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Returns the spline value at a given site $u$. 
+
+The function returns \begin{align*} C(u) & = \sum_{i=0}^{n}N_{i,p}P_i \end{align*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the spline is evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The spline value at the given location $u$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a15d8f85af634fc85d640369189d4083e}\label{class_eigen_1_1_spline_a15d8f85af634fc85d640369189d4083e}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+\mbox{\hyperlink{class_eigen_1_1_spline}{Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::\mbox{\hyperlink{class_eigen_1_1_spline_a93f2d23a7e85e61a5367a52a37f030ce}{Point\+Type}} \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Returns the spline value at a given site $u$. 
+
+The function returns \begin{align*} C(u) & = \sum_{i=0}^{n}N_{i,p}P_i \end{align*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Parameter $u \in [0;1]$ at which the spline is evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The spline value at the given location $u$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a8fa2ad1f7ddf1eaf83464a87cce49e9d}\label{class_eigen_1_1_spline_a8fa2ad1f7ddf1eaf83464a87cce49e9d}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!span@{span}}
+\index{span@{span}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{span()}{span()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::span (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Returns the span within the knot vector in which u is falling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The site for which the span is determined. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_spline_a8fa2ad1f7ddf1eaf83464a87cce49e9d}\label{class_eigen_1_1_spline_a8fa2ad1f7ddf1eaf83464a87cce49e9d}} 
+\index{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}!span@{span}}
+\index{span@{span}!Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$@{Eigen::Spline$<$ Scalar\_, Dim\_, Degree\_ $>$}}
+\doxysubsubsection{\texorpdfstring{span()}{span()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Scalar\+\_\+ , int Dim\+\_\+, int Degree\+\_\+$>$ \\
+Dense\+Index \mbox{\hyperlink{class_eigen_1_1_spline}{Eigen\+::\+Spline}}$<$ Scalar\+\_\+, Dim\+\_\+, Degree\+\_\+ $>$\+::span (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_spline_ad8de21b38f173d2bb607e6b2e0f26ce5}{Scalar}}}]{u }\end{DoxyParamCaption}) const}
+
+
+
+Returns the span within the knot vector in which u is falling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The site for which the span is determined. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/src/\+Splines/Spline.\+h\end{DoxyCompactItemize}

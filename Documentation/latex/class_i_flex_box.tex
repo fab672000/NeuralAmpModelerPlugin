@@ -1,0 +1,112 @@
+\hypertarget{class_i_flex_box}{}\doxysection{I\+Flex\+Box Class Reference}
+\label{class_i_flex_box}\index{IFlexBox@{IFlexBox}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Flex\+Box.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_flex_box_a5e6721a6b567693ab7bd1adb7e77789f}{Init}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, Y\+G\+Flex\+Direction direction=Y\+G\+Flex\+Direction\+Row, Y\+G\+Justify justify=Y\+G\+Justify\+Flex\+Start, Y\+G\+Wrap wrap=Y\+G\+Wrap\+No\+Wrap, float padding=0.f, float margin=0.f)
+\item 
+\mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} \mbox{\hyperlink{class_i_flex_box_a0b8c5f6b6ec5302cc1456c2ba3b88502}{Add\+Item}} (float width, float height, Y\+G\+Align align\+Self=Y\+G\+Align\+Auto, float grow=0.f, float shrink=1.f, float margin=0.f)
+\item 
+void \mbox{\hyperlink{class_i_flex_box_a8b0853ef0cadd45a04469a0074a73930}{Add\+Item}} (\mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} item)
+\item 
+void \mbox{\hyperlink{class_i_flex_box_a1dab1617e81763494e10cf2d5a7f059a}{Calc\+Layout}} (Y\+G\+Direction direction=Y\+G\+Direction\+L\+TR)
+\item 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \mbox{\hyperlink{class_i_flex_box_add466bc4c876109dbc24d887627e6a73}{Get\+Root\+Bounds}} () const
+\item 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \mbox{\hyperlink{class_i_flex_box_a44f7afa2b4be660a5a0fa986bfe1896b}{Get\+Item\+Bounds}} (int node\+Index) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_i_flex_box}{I\+Flex\+Box}} is a basic C++ helper for Yoga \href{https://yogalayout.com}{\texttt{ https\+://yogalayout.\+com}}. For advanced use, probably best just to use Yoga directly 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_flex_box_a0b8c5f6b6ec5302cc1456c2ba3b88502}\label{class_i_flex_box_a0b8c5f6b6ec5302cc1456c2ba3b88502}} 
+\index{IFlexBox@{IFlexBox}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!IFlexBox@{IFlexBox}}
+\doxysubsubsection{\texorpdfstring{AddItem()}{AddItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}} I\+Flex\+Box\+::\+Add\+Item (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height,  }\item[{Y\+G\+Align}]{align\+Self = {\ttfamily YGAlignAuto},  }\item[{float}]{grow = {\ttfamily 0.f},  }\item[{float}]{shrink = {\ttfamily 1.f},  }\item[{float}]{margin = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
+Add a flex item, with some parameters 
+\begin{DoxyParams}{Parameters}
+{\em width} & Postitive value sets width in pixels, negative value sets percentage or Y\+G\+Undefined for \char`\"{}auto\char`\"{} \href{https://yogalayout.com/docs/width-height}{\texttt{ https\+://yogalayout.\+com/docs/width-\/height}} \\
+\hline
+{\em height} & Postitive value sets height In pixels, negative value sets percentage or Y\+G\+Undefined for \char`\"{}auto\char`\"{} \href{https://yogalayout.com/docs/width-height}{\texttt{ https\+://yogalayout.\+com/docs/width-\/height}} \\
+\hline
+{\em align\+Self} & \href{https://yogalayout.com/docs/align-items}{\texttt{ https\+://yogalayout.\+com/docs/align-\/items}} \\
+\hline
+{\em grow} & \href{https://yogalayout.com/docs/flex}{\texttt{ https\+://yogalayout.\+com/docs/flex}} \\
+\hline
+{\em shrink} & \href{https://yogalayout.com/docs/flex}{\texttt{ https\+://yogalayout.\+com/docs/flex}} \\
+\hline
+{\em margin} & \href{https://yogalayout.com/docs/margins-paddings-borders}{\texttt{ https\+://yogalayout.\+com/docs/margins-\/paddings-\/borders}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Y\+G\+Node\+Ref The newly added Y\+G\+Node\+Ref for the item (owned by this class) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i_flex_box_a8b0853ef0cadd45a04469a0074a73930}\label{class_i_flex_box_a8b0853ef0cadd45a04469a0074a73930}} 
+\index{IFlexBox@{IFlexBox}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!IFlexBox@{IFlexBox}}
+\doxysubsubsection{\texorpdfstring{AddItem()}{AddItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+Flex\+Box\+::\+Add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_y_g_node}{Y\+G\+Node\+Ref}}}]{item }\end{DoxyParamCaption})}
+
+Add a flex item manually 
+\begin{DoxyParams}{Parameters}
+{\em item} & A new Y\+G\+Node\+Ref to add (owndership transferred) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_flex_box_a1dab1617e81763494e10cf2d5a7f059a}\label{class_i_flex_box_a1dab1617e81763494e10cf2d5a7f059a}} 
+\index{IFlexBox@{IFlexBox}!CalcLayout@{CalcLayout}}
+\index{CalcLayout@{CalcLayout}!IFlexBox@{IFlexBox}}
+\doxysubsubsection{\texorpdfstring{CalcLayout()}{CalcLayout()}}
+{\footnotesize\ttfamily void I\+Flex\+Box\+::\+Calc\+Layout (\begin{DoxyParamCaption}\item[{Y\+G\+Direction}]{direction = {\ttfamily YGDirectionLTR} }\end{DoxyParamCaption})}
+
+Calculate the layout, call after add all items 
+\begin{DoxyParams}{Parameters}
+{\em direction} & \href{https://yogalayout.com/docs/layout-direction}{\texttt{ https\+://yogalayout.\+com/docs/layout-\/direction}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_flex_box_a44f7afa2b4be660a5a0fa986bfe1896b}\label{class_i_flex_box_a44f7afa2b4be660a5a0fa986bfe1896b}} 
+\index{IFlexBox@{IFlexBox}!GetItemBounds@{GetItemBounds}}
+\index{GetItemBounds@{GetItemBounds}!IFlexBox@{IFlexBox}}
+\doxysubsubsection{\texorpdfstring{GetItemBounds()}{GetItemBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} I\+Flex\+Box\+::\+Get\+Item\+Bounds (\begin{DoxyParamCaption}\item[{int}]{node\+Index }\end{DoxyParamCaption}) const}
+
+Get the bounds for a particular flex item \mbox{\Hypertarget{class_i_flex_box_add466bc4c876109dbc24d887627e6a73}\label{class_i_flex_box_add466bc4c876109dbc24d887627e6a73}} 
+\index{IFlexBox@{IFlexBox}!GetRootBounds@{GetRootBounds}}
+\index{GetRootBounds@{GetRootBounds}!IFlexBox@{IFlexBox}}
+\doxysubsubsection{\texorpdfstring{GetRootBounds()}{GetRootBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} I\+Flex\+Box\+::\+Get\+Root\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get an \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} of the root node bounds \mbox{\Hypertarget{class_i_flex_box_a5e6721a6b567693ab7bd1adb7e77789f}\label{class_i_flex_box_a5e6721a6b567693ab7bd1adb7e77789f}} 
+\index{IFlexBox@{IFlexBox}!Init@{Init}}
+\index{Init@{Init}!IFlexBox@{IFlexBox}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void I\+Flex\+Box\+::\+Init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{r,  }\item[{Y\+G\+Flex\+Direction}]{direction = {\ttfamily YGFlexDirectionRow},  }\item[{Y\+G\+Justify}]{justify = {\ttfamily YGJustifyFlexStart},  }\item[{Y\+G\+Wrap}]{wrap = {\ttfamily YGWrapNoWrap},  }\item[{float}]{padding = {\ttfamily 0.f},  }\item[{float}]{margin = {\ttfamily 0.f} }\end{DoxyParamCaption})}
+
+Initialize the \mbox{\hyperlink{class_i_flex_box}{I\+Flex\+Box}} flex container 
+\begin{DoxyParams}{Parameters}
+{\em r} & The \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} bounds for the flex container \\
+\hline
+{\em direction} & \href{https://yogalayout.com/docs/flex-direction}{\texttt{ https\+://yogalayout.\+com/docs/flex-\/direction}} \\
+\hline
+{\em justify} & \href{https://yogalayout.com/docs/justify-content}{\texttt{ https\+://yogalayout.\+com/docs/justify-\/content}} \\
+\hline
+{\em wrap} & \href{https://yogalayout.com/docs/flex-wrap}{\texttt{ https\+://yogalayout.\+com/docs/flex-\/wrap}} \\
+\hline
+{\em padding} & \href{https://yogalayout.com/docs/margins-paddings-borders}{\texttt{ https\+://yogalayout.\+com/docs/margins-\/paddings-\/borders}} \\
+\hline
+{\em margin} & \href{https://yogalayout.com/docs/margins-paddings-borders}{\texttt{ https\+://yogalayout.\+com/docs/margins-\/paddings-\/borders}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Extras/I\+Graphics\+Flex\+Box.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Extras/I\+Graphics\+Flex\+Box.\+cpp\end{DoxyCompactItemize}

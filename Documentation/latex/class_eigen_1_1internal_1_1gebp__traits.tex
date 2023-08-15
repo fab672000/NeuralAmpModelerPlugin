@@ -1,0 +1,193 @@
+\hypertarget{class_eigen_1_1internal_1_1gebp__traits}{}\doxysection{Eigen\+::internal\+::gebp\+\_\+traits$<$ Lhs\+Scalar\+\_\+, Rhs\+Scalar\+\_\+, Conj\+Lhs\+\_\+, Conj\+Rhs\+\_\+, Arch, Packet\+Size\+\_\+ $>$ Class Template Reference}
+\label{class_eigen_1_1internal_1_1gebp__traits}\index{Eigen::internal::gebp\_traits$<$ LhsScalar\_, RhsScalar\_, ConjLhs\_, ConjRhs\_, Arch, PacketSize\_ $>$@{Eigen::internal::gebp\_traits$<$ LhsScalar\_, RhsScalar\_, ConjLhs\_, ConjRhs\_, Arch, PacketSize\_ $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a8d9b6105ee4fc39d4ce5dd3d715ff99f}\label{class_eigen_1_1internal_1_1gebp__traits_a8d9b6105ee4fc39d4ce5dd3d715ff99f}} 
+enum \{ \newline
+{\bfseries Conj\+Lhs} = Conj\+Lhs\+\_\+, 
+{\bfseries Conj\+Rhs} = Conj\+Rhs\+\_\+, 
+{\bfseries Vectorizable} = unpacket\+\_\+traits$<$Lhs\+Packet\+\_\+$>$\+::vectorizable \&\& unpacket\+\_\+traits$<$Rhs\+Packet\+\_\+$>$\+::vectorizable, 
+{\bfseries Lhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Lhs\+Packet\+\_\+$>$\+::size \+: 1, 
+\newline
+{\bfseries Rhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Rhs\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Res\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Res\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Number\+Of\+Registers} = E\+I\+G\+E\+N\+\_\+\+A\+R\+C\+H\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, 
+{\bfseries nr} = 4, 
+\newline
+{\bfseries default\+\_\+mr} = (plain\+\_\+enum\+\_\+min(16, Number\+Of\+Registers)/2/nr)$\ast$\+Lhs\+Packet\+Size, 
+{\bfseries mr} = default\+\_\+mr, 
+{\bfseries Lhs\+Progress} = Lhs\+Packet\+Size, 
+{\bfseries Rhs\+Progress} = 1
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_aa427d9da9f48f0e4cd9cadc1c0f8661d}\label{class_eigen_1_1internal_1_1gebp__traits_aa427d9da9f48f0e4cd9cadc1c0f8661d}} 
+enum \{ \newline
+{\bfseries Conj\+Lhs} = Conj\+Lhs\+\_\+, 
+{\bfseries Conj\+Rhs} = Conj\+Rhs\+\_\+, 
+{\bfseries Vectorizable} = unpacket\+\_\+traits$<$Lhs\+Packet\+\_\+$>$\+::vectorizable \&\& unpacket\+\_\+traits$<$Rhs\+Packet\+\_\+$>$\+::vectorizable, 
+{\bfseries Lhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Lhs\+Packet\+\_\+$>$\+::size \+: 1, 
+\newline
+{\bfseries Rhs\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Rhs\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Res\+Packet\+Size} = Vectorizable ? unpacket\+\_\+traits$<$Res\+Packet\+\_\+$>$\+::size \+: 1, 
+{\bfseries Number\+Of\+Registers} = E\+I\+G\+E\+N\+\_\+\+A\+R\+C\+H\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+R\+E\+G\+I\+S\+T\+E\+RS, 
+{\bfseries nr} = 4, 
+\newline
+{\bfseries default\+\_\+mr} = (plain\+\_\+enum\+\_\+min(16, Number\+Of\+Registers)/2/nr)$\ast$\+Lhs\+Packet\+Size, 
+{\bfseries mr} = default\+\_\+mr, 
+{\bfseries Lhs\+Progress} = Lhs\+Packet\+Size, 
+{\bfseries Rhs\+Progress} = 1
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a5e36a8e074853b6a4c7c4df60cbffbaa}\label{class_eigen_1_1internal_1_1gebp__traits_a5e36a8e074853b6a4c7c4df60cbffbaa}} 
+typedef Lhs\+Scalar\+\_\+ {\bfseries Lhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a2f12c051256249560ef57d29ba09a5e4}\label{class_eigen_1_1internal_1_1gebp__traits_a2f12c051256249560ef57d29ba09a5e4}} 
+typedef Rhs\+Scalar\+\_\+ {\bfseries Rhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_ad1c23e091514430008c0a9f629425ab4}\label{class_eigen_1_1internal_1_1gebp__traits_ad1c23e091514430008c0a9f629425ab4}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_scalar_binary_op_traits}{Scalar\+Binary\+Op\+Traits}}$<$ Lhs\+Scalar, Rhs\+Scalar $>$\+::Return\+Type {\bfseries Res\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a1b1efc28efc5d92ceede71b9072ac37f}\label{class_eigen_1_1internal_1_1gebp__traits_a1b1efc28efc5d92ceede71b9072ac37f}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Lhs\+Packet\+\_\+, Lhs\+Scalar $>$ {\bfseries Lhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a72c17515b1a1bd82d9f70a6f43ee3b2f}\label{class_eigen_1_1internal_1_1gebp__traits_a72c17515b1a1bd82d9f70a6f43ee3b2f}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Rhs\+Packet\+\_\+, Rhs\+Scalar $>$ {\bfseries Rhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a3fdd5574e94ba2764206f8eb7be3d076}\label{class_eigen_1_1internal_1_1gebp__traits_a3fdd5574e94ba2764206f8eb7be3d076}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Res\+Packet\+\_\+, Res\+Scalar $>$ {\bfseries Res\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a2e98e525689518222fce2f3e04b98959}\label{class_eigen_1_1internal_1_1gebp__traits_a2e98e525689518222fce2f3e04b98959}} 
+typedef Lhs\+Packet {\bfseries Lhs\+Packet4\+Packing}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a553d25538a22c049dead202b0f677d5d}\label{class_eigen_1_1internal_1_1gebp__traits_a553d25538a22c049dead202b0f677d5d}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Quad\+Packet}}$<$ Rhs\+Packet $>$ {\bfseries Rhs\+Packetx4}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a5ae535eda7e01f8a1c4124c5e16937a8}\label{class_eigen_1_1internal_1_1gebp__traits_a5ae535eda7e01f8a1c4124c5e16937a8}} 
+typedef Res\+Packet {\bfseries Acc\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a5e36a8e074853b6a4c7c4df60cbffbaa}\label{class_eigen_1_1internal_1_1gebp__traits_a5e36a8e074853b6a4c7c4df60cbffbaa}} 
+typedef Lhs\+Scalar\+\_\+ {\bfseries Lhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a2f12c051256249560ef57d29ba09a5e4}\label{class_eigen_1_1internal_1_1gebp__traits_a2f12c051256249560ef57d29ba09a5e4}} 
+typedef Rhs\+Scalar\+\_\+ {\bfseries Rhs\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_ad1c23e091514430008c0a9f629425ab4}\label{class_eigen_1_1internal_1_1gebp__traits_ad1c23e091514430008c0a9f629425ab4}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_scalar_binary_op_traits}{Scalar\+Binary\+Op\+Traits}}$<$ Lhs\+Scalar, Rhs\+Scalar $>$\+::Return\+Type {\bfseries Res\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a1b1efc28efc5d92ceede71b9072ac37f}\label{class_eigen_1_1internal_1_1gebp__traits_a1b1efc28efc5d92ceede71b9072ac37f}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Lhs\+Packet\+\_\+, Lhs\+Scalar $>$ {\bfseries Lhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a72c17515b1a1bd82d9f70a6f43ee3b2f}\label{class_eigen_1_1internal_1_1gebp__traits_a72c17515b1a1bd82d9f70a6f43ee3b2f}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Rhs\+Packet\+\_\+, Rhs\+Scalar $>$ {\bfseries Rhs\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a3fdd5574e94ba2764206f8eb7be3d076}\label{class_eigen_1_1internal_1_1gebp__traits_a3fdd5574e94ba2764206f8eb7be3d076}} 
+typedef std\+::conditional\+\_\+t$<$ Vectorizable, Res\+Packet\+\_\+, Res\+Scalar $>$ {\bfseries Res\+Packet}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a2e98e525689518222fce2f3e04b98959}\label{class_eigen_1_1internal_1_1gebp__traits_a2e98e525689518222fce2f3e04b98959}} 
+typedef Lhs\+Packet {\bfseries Lhs\+Packet4\+Packing}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a553d25538a22c049dead202b0f677d5d}\label{class_eigen_1_1internal_1_1gebp__traits_a553d25538a22c049dead202b0f677d5d}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Quad\+Packet}}$<$ Rhs\+Packet $>$ {\bfseries Rhs\+Packetx4}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a5ae535eda7e01f8a1c4124c5e16937a8}\label{class_eigen_1_1internal_1_1gebp__traits_a5ae535eda7e01f8a1c4124c5e16937a8}} 
+typedef Res\+Packet {\bfseries Acc\+Packet}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a211c6c6b236cd4d4983887818d063c5e}\label{class_eigen_1_1internal_1_1gebp__traits_a211c6c6b236cd4d4983887818d063c5e}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Lhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a9cd4ac9683aeee9449813c6539c31c40}\label{class_eigen_1_1internal_1_1gebp__traits_a9cd4ac9683aeee9449813c6539c31c40}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Rhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_af3ecc5f1e4143d170ed16709a3b7d8d2}\label{class_eigen_1_1internal_1_1gebp__traits_af3ecc5f1e4143d170ed16709a3b7d8d2}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Res, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_ac4e2b6faf390c7bd94d20166c4564570}\label{class_eigen_1_1internal_1_1gebp__traits_ac4e2b6faf390c7bd94d20166c4564570}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries init\+Acc} (Acc\+Packet \&p)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a31ff14997211aecac9681a2631177d9c}\label{class_eigen_1_1internal_1_1gebp__traits_a31ff14997211aecac9681a2631177d9c}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a3c1ea7cf08467a27e67aafb00fddb9b2}\label{class_eigen_1_1internal_1_1gebp__traits_a3c1ea7cf08467a27e67aafb00fddb9b2}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a473fe1464aaa504de9024fbf0e8573c0}\label{class_eigen_1_1internal_1_1gebp__traits_a473fe1464aaa504de9024fbf0e8573c0}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a7b3635ecbf5f7523509c36f5a04db7e2}\label{class_eigen_1_1internal_1_1gebp__traits_a7b3635ecbf5f7523509c36f5a04db7e2}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_ade7ee19c5c0fe3f44fda6adea1941d3d}\label{class_eigen_1_1internal_1_1gebp__traits_ade7ee19c5c0fe3f44fda6adea1941d3d}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs\+Quad} (const Rhs\+Scalar $\ast$b, Rhs\+Packet \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a4ad6d8a7c49dc7946128171137ec5d60}\label{class_eigen_1_1internal_1_1gebp__traits_a4ad6d8a7c49dc7946128171137ec5d60}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs} (const Lhs\+Scalar $\ast$a, Lhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a5e179f47901eed7760131822024824d4}\label{class_eigen_1_1internal_1_1gebp__traits_a5e179f47901eed7760131822024824d4}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs\+Unaligned} (const Lhs\+Scalar $\ast$a, Lhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_af79f2ebc0ed7d3773b0f23232c7964c1}\label{class_eigen_1_1internal_1_1gebp__traits_af79f2ebc0ed7d3773b0f23232c7964c1}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Rhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const Rhs\+Packet\+Type \&b, Acc\+Packet\+Type \&c, Rhs\+Packet\+Type \&tmp, const Lane\+Id\+Type \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a6ad01259428c14e001bbf6b1f300279d}\label{class_eigen_1_1internal_1_1gebp__traits_a6ad01259428c14e001bbf6b1f300279d}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&b, Acc\+Packet\+Type \&c, Rhs\+Packet \&tmp, const Lane\+Id\+Type \&lane) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a2f14531fef23bc9855e1bf57c40344f0}\label{class_eigen_1_1internal_1_1gebp__traits_a2f14531fef23bc9855e1bf57c40344f0}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries acc} (const Acc\+Packet \&c, const Res\+Packet \&alpha, Res\+Packet \&r) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a765a254a1fae02bf7e850d8319ba5cd7}\label{class_eigen_1_1internal_1_1gebp__traits_a765a254a1fae02bf7e850d8319ba5cd7}} 
+{\footnotesize template$<$typename Res\+Packet\+Half $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries acc} (const Res\+Packet\+Half \&c, const Res\+Packet\+Half \&alpha, Res\+Packet\+Half \&r) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a211c6c6b236cd4d4983887818d063c5e}\label{class_eigen_1_1internal_1_1gebp__traits_a211c6c6b236cd4d4983887818d063c5e}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Lhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a9cd4ac9683aeee9449813c6539c31c40}\label{class_eigen_1_1internal_1_1gebp__traits_a9cd4ac9683aeee9449813c6539c31c40}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Rhs, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_af3ecc5f1e4143d170ed16709a3b7d8d2}\label{class_eigen_1_1internal_1_1gebp__traits_af3ecc5f1e4143d170ed16709a3b7d8d2}} 
+{\bfseries P\+A\+C\+K\+E\+T\+\_\+\+D\+E\+C\+L\+\_\+\+C\+O\+N\+D\+\_\+\+P\+O\+S\+T\+F\+IX} (\+\_\+, Res, Packet\+Size\+\_\+)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_ac4e2b6faf390c7bd94d20166c4564570}\label{class_eigen_1_1internal_1_1gebp__traits_ac4e2b6faf390c7bd94d20166c4564570}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries init\+Acc} (Acc\+Packet \&p)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a31ff14997211aecac9681a2631177d9c}\label{class_eigen_1_1internal_1_1gebp__traits_a31ff14997211aecac9681a2631177d9c}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a3c1ea7cf08467a27e67aafb00fddb9b2}\label{class_eigen_1_1internal_1_1gebp__traits_a3c1ea7cf08467a27e67aafb00fddb9b2}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs} (const Rhs\+Scalar $\ast$b, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a473fe1464aaa504de9024fbf0e8573c0}\label{class_eigen_1_1internal_1_1gebp__traits_a473fe1464aaa504de9024fbf0e8573c0}} 
+{\footnotesize template$<$typename Rhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$b, Rhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a7b3635ecbf5f7523509c36f5a04db7e2}\label{class_eigen_1_1internal_1_1gebp__traits_a7b3635ecbf5f7523509c36f5a04db7e2}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries update\+Rhs} (const Rhs\+Scalar $\ast$, \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_ade7ee19c5c0fe3f44fda6adea1941d3d}\label{class_eigen_1_1internal_1_1gebp__traits_ade7ee19c5c0fe3f44fda6adea1941d3d}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Rhs\+Quad} (const Rhs\+Scalar $\ast$b, Rhs\+Packet \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a4ad6d8a7c49dc7946128171137ec5d60}\label{class_eigen_1_1internal_1_1gebp__traits_a4ad6d8a7c49dc7946128171137ec5d60}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs} (const Lhs\+Scalar $\ast$a, Lhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a5e179f47901eed7760131822024824d4}\label{class_eigen_1_1internal_1_1gebp__traits_a5e179f47901eed7760131822024824d4}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries load\+Lhs\+Unaligned} (const Lhs\+Scalar $\ast$a, Lhs\+Packet\+Type \&dest) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_af79f2ebc0ed7d3773b0f23232c7964c1}\label{class_eigen_1_1internal_1_1gebp__traits_af79f2ebc0ed7d3773b0f23232c7964c1}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Rhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const Rhs\+Packet\+Type \&b, Acc\+Packet\+Type \&c, Rhs\+Packet\+Type \&tmp, const Lane\+Id\+Type \&) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a6ad01259428c14e001bbf6b1f300279d}\label{class_eigen_1_1internal_1_1gebp__traits_a6ad01259428c14e001bbf6b1f300279d}} 
+{\footnotesize template$<$typename Lhs\+Packet\+Type , typename Acc\+Packet\+Type , typename Lane\+Id\+Type $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries madd} (const Lhs\+Packet\+Type \&a, const \mbox{\hyperlink{struct_eigen_1_1internal_1_1_quad_packet}{Rhs\+Packetx4}} \&b, Acc\+Packet\+Type \&c, Rhs\+Packet \&tmp, const Lane\+Id\+Type \&lane) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a2f14531fef23bc9855e1bf57c40344f0}\label{class_eigen_1_1internal_1_1gebp__traits_a2f14531fef23bc9855e1bf57c40344f0}} 
+E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries acc} (const Acc\+Packet \&c, const Res\+Packet \&alpha, Res\+Packet \&r) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1internal_1_1gebp__traits_a765a254a1fae02bf7e850d8319ba5cd7}\label{class_eigen_1_1internal_1_1gebp__traits_a765a254a1fae02bf7e850d8319ba5cd7}} 
+{\footnotesize template$<$typename Res\+Packet\+Half $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries acc} (const Res\+Packet\+Half \&c, const Res\+Packet\+Half \&alpha, Res\+Packet\+Half \&r) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/products/General\+Block\+Panel\+Kernel.\+h\end{DoxyCompactItemize}

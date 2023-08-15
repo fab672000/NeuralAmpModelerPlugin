@@ -1,0 +1,70 @@
+This folder contains a sample rate converter, or \char`\"{}resampler\char`\"{}. It is part of \href{https://github.com/google/oboe}{\texttt{ Oboe}} but has no dependencies on Oboe. So the contents of this folder can be used outside of Oboe.
+
+The converter is based on a sinc function that has been windowed by a hyperbolic cosine. We found this had fewer artifacts than the more traditional Kaiser window.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md197}{}\doxysection{Creating a Resampler}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md197}
+Include the \href{MultiChannelResampler.h}{\texttt{ main header}} for the resampler. \begin{DoxyVerb}#include "resampler/MultiChannelResampler.h"
+\end{DoxyVerb}
+
+
+Here is an example of creating a stereo resampler that will convert from 44100 to 48000 Hz. Only do this once, when you open your stream. Then use the sample resampler to process multiple buffers. \begin{DoxyVerb}MultiChannelResampler *resampler = MultiChannelResampler::make(
+        2, // channel count
+        44100, // input sampleRate
+        48000, // output sampleRate
+        MultiChannelResampler::Medium); // conversion quality
+\end{DoxyVerb}
+
+
+Possible values for quality include \{ Fastest, Low, Medium, High, Best \}. Higher quality levels will sound better but consume more C\+PU because they have more taps in the filter.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md198}{}\doxysection{Fractional Frame Counts}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md198}
+Note that the number of output frames generated for a given number of input frames can vary.
+
+For example, suppose you are converting from 44100 Hz to 48000 Hz and using an input buffer with 940 frames. If you calculate the number of output frames you get\+: \begin{DoxyVerb}940 * 48000 * 44100 = 1023.1292517...
+\end{DoxyVerb}
+
+
+You cannot generate a fractional number of frames. So the resampler will sometimes generate 1023 frames and sometimes 1024 frames. On average it will generate 1023.\+1292517 frames. The resampler stores the fraction internally and keeps track of when to consume or generate a frame.
+
+You can either use a fixed number of input frames or a fixed number of output frames. The other frame count will vary.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md199}{}\doxysection{Calling the Resampler with a fixed number of O\+U\+T\+P\+U\+T frames}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md199}
+In this example, suppose we have a fixed number of output frames and a variable number of input frames.
+
+Assume you start with these variables and a method that returns the next input frame\+: \begin{DoxyVerb}float *outputBuffer;     // multi-channel buffer to be filled
+int    numOutputFrames;  // number of frames of output
+\end{DoxyVerb}
+
+
+The resampler has a method is\+Write\+Needed() that tells you whether to write to or read from the resampler. \begin{DoxyVerb}int outputFramesLeft = numOutputFrames;
+while (outputFramesLeft > 0) {
+    if(resampler->isWriteNeeded()) {
+        const float *frame = getNextInputFrame(); // you provide this
+        resampler->writeNextFrame(frame);
+    } else {
+        resampler->readNextFrame(outputBuffer);
+        outputBuffer += channelCount;
+        outputFramesLeft--;
+    }
+}
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md200}{}\doxysection{Calling the Resampler with a fixed number of I\+N\+P\+U\+T frames}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md200}
+In this example, suppose we have a fixed number of input frames and a variable number of output frames.
+
+Assume you start with these variables\+: \begin{DoxyVerb}float *inputBuffer;     // multi-channel buffer to be consumed
+float *outputBuffer;    // multi-channel buffer to be filled
+int    numInputFrames;  // number of frames of input
+int    numOutputFrames = 0;
+int    channelCount;    // 1 for mono, 2 for stereo
+
+int inputFramesLeft = numInputFrames;
+while (inputFramesLeft > 0) {
+    if(resampler->isWriteNeeded()) {
+        resampler->writeNextFrame(inputBuffer);
+        inputBuffer += channelCount;
+        inputFramesLeft--;
+    } else {
+        resampler->readNextFrame(outputBuffer);
+        outputBuffer += channelCount;
+        numOutputFrames++;
+    }
+}
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md201}{}\doxysection{Deleting the Resampler}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_9d15522aa58eaf0c10ba7b97bb227992_autotoc_md201}
+When you are done, you should delete the Resampler to avoid a memory leak. \begin{DoxyVerb}delete resampler;
+\end{DoxyVerb}
+ 

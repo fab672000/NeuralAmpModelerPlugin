@@ -1,0 +1,130 @@
+\hypertarget{class_i_plug_w_a_m}{}\doxysection{I\+Plug\+W\+AM Class Reference}
+\label{class_i_plug_w_a_m}\index{IPlugWAM@{IPlugWAM}}
+
+
+{\ttfamily \#include $<$I\+Plug\+W\+A\+M.\+h$>$}
+
+Inheritance diagram for I\+Plug\+W\+AM\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_i_plug_w_a_m}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a7467562099e61fb469ddddc5621644c1}\label{class_i_plug_w_a_m_a7467562099e61fb469ddddc5621644c1}} 
+{\bfseries I\+Plug\+W\+AM} (const \mbox{\hyperlink{struct_instance_info}{Instance\+Info}} \&info, const \mbox{\hyperlink{struct_config}{Config}} \&\mbox{\hyperlink{structconfig__s}{config}})
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a5b62ee3aeff177456cd8295ecd6ff63f}\label{class_i_plug_w_a_m_a5b62ee3aeff177456cd8295ecd6ff63f}} 
+const char $\ast$ {\bfseries init} (uint32\+\_\+t bufsize, uint32\+\_\+t sr, void $\ast$p\+Desc) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a41059caac26e39edada15f2cf9ed8e70}\label{class_i_plug_w_a_m_a41059caac26e39edada15f2cf9ed8e70}} 
+void {\bfseries terminate} () override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_af0eeb8f26e1ba1efb77cda155eae3672}\label{class_i_plug_w_a_m_af0eeb8f26e1ba1efb77cda155eae3672}} 
+void {\bfseries resize} (uint32\+\_\+t bufsize) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_afa4d48ca8c6f45689fad1057326b627a}\label{class_i_plug_w_a_m_afa4d48ca8c6f45689fad1057326b627a}} 
+void {\bfseries on\+Process} (W\+A\+M\+::\+Audio\+Bus $\ast$p\+Audio, void $\ast$p\+Data) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a9b072ca24ddf7807af29159ce48353db}\label{class_i_plug_w_a_m_a9b072ca24ddf7807af29159ce48353db}} 
+void {\bfseries on\+Midi} (byte status, byte data1, byte data2) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_ab6ba609c3f0453576baae3faf700d676}\label{class_i_plug_w_a_m_ab6ba609c3f0453576baae3faf700d676}} 
+void {\bfseries on\+Sysex} (byte $\ast$p\+Data, uint32\+\_\+t size) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a9b15c271c7db5e3e25387ed743b0c303}\label{class_i_plug_w_a_m_a9b15c271c7db5e3e25387ed743b0c303}} 
+void {\bfseries on\+Message} (char $\ast$verb, char $\ast$res, double data) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_ac1c0bffbe5db8347e8919cf5b59f0401}\label{class_i_plug_w_a_m_ac1c0bffbe5db8347e8919cf5b59f0401}} 
+void {\bfseries on\+Message} (char $\ast$verb, char $\ast$res, char $\ast$data) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_abcae868b2da3dbf28e442140112f0ff2}\label{class_i_plug_w_a_m_abcae868b2da3dbf28e442140112f0ff2}} 
+void {\bfseries on\+Message} (char $\ast$verb, char $\ast$res, void $\ast$data, uint32\+\_\+t size) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_ac48bbb12f3d095864d3a81fb7c0985cd}\label{class_i_plug_w_a_m_ac48bbb12f3d095864d3a81fb7c0985cd}} 
+void {\bfseries on\+Param} (uint32\+\_\+t idparam, double value) override
+\item 
+void \mbox{\hyperlink{class_i_plug_w_a_m_aca74eaaee0212128d0dd69ebcc595487}{Set\+Latency}} (int samples) override
+\item 
+bool \mbox{\hyperlink{class_i_plug_w_a_m_a0ae41aa509f8f7bcc4dcb44a21816253}{Send\+Midi\+Msg}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg) override
+\item 
+bool \mbox{\hyperlink{class_i_plug_w_a_m_aa47fe866748000dc8899f5d263e25352}{Send\+Sys\+Ex}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_ab07ff9bdce4317831d7a6a43dae6ed39}\label{class_i_plug_w_a_m_ab07ff9bdce4317831d7a6a43dae6ed39}} 
+void {\bfseries Send\+Control\+Value\+From\+Delegate} (int ctrl\+Tag, double normalized\+Value) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a72fc7a896056186fde70de607a55f16b}\label{class_i_plug_w_a_m_a72fc7a896056186fde70de607a55f16b}} 
+void {\bfseries Send\+Control\+Msg\+From\+Delegate} (int ctrl\+Tag, int msg\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_af175878758db592ef3c1beda463fd1a0}\label{class_i_plug_w_a_m_af175878758db592ef3c1beda463fd1a0}} 
+void {\bfseries Send\+Parameter\+Value\+From\+Delegate} (int param\+Idx, double value, bool normalized) override
+\item 
+\mbox{\Hypertarget{class_i_plug_w_a_m_a00d31e2c9f5b5bec42b93f826b496171}\label{class_i_plug_w_a_m_a00d31e2c9f5b5bec42b93f826b496171}} 
+void {\bfseries Send\+Arbitrary\+Msg\+From\+Delegate} (int msg\+Tag, int data\+Size=0, const void $\ast$p\+Data=nullptr) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Web\+Audio\+Module (W\+AM) A\+PI base class. This is used for the \mbox{\hyperlink{class_d_s_p}{D\+SP}} processor side of a W\+AM, which is sandboxed and lives in the Audio\+Worklet\+Global\+Scope 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_plug_w_a_m_a0ae41aa509f8f7bcc4dcb44a21816253}\label{class_i_plug_w_a_m_a0ae41aa509f8f7bcc4dcb44a21816253}} 
+\index{IPlugWAM@{IPlugWAM}!SendMidiMsg@{SendMidiMsg}}
+\index{SendMidiMsg@{SendMidiMsg}!IPlugWAM@{IPlugWAM}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsg()}{SendMidiMsg()}}
+{\footnotesize\ttfamily bool I\+Plug\+W\+A\+M\+::\+Send\+Midi\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send a single M\+I\+DI message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_plug_processor_a4e9b417cee5b4baba70468cb15d927c3}{I\+Plug\+Processor}}.
+
+\mbox{\Hypertarget{class_i_plug_w_a_m_aa47fe866748000dc8899f5d263e25352}\label{class_i_plug_w_a_m_aa47fe866748000dc8899f5d263e25352}} 
+\index{IPlugWAM@{IPlugWAM}!SendSysEx@{SendSysEx}}
+\index{SendSysEx@{SendSysEx}!IPlugWAM@{IPlugWAM}}
+\doxysubsubsection{\texorpdfstring{SendSysEx()}{SendSysEx()}}
+{\footnotesize\ttfamily bool I\+Plug\+W\+A\+M\+::\+Send\+Sys\+Ex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send a single M\+I\+DI System Exclusive (Sys\+Ex) message // T\+O\+DO\+: info about what thread should this be called on or not called on! 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if successful 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_processor_a195e1f95d847cfb5d5cc665b2143d10a}{I\+Plug\+Processor}}.
+
+\mbox{\Hypertarget{class_i_plug_w_a_m_aca74eaaee0212128d0dd69ebcc595487}\label{class_i_plug_w_a_m_aca74eaaee0212128d0dd69ebcc595487}} 
+\index{IPlugWAM@{IPlugWAM}!SetLatency@{SetLatency}}
+\index{SetLatency@{SetLatency}!IPlugWAM@{IPlugWAM}}
+\doxysubsubsection{\texorpdfstring{SetLatency()}{SetLatency()}}
+{\footnotesize\ttfamily void I\+Plug\+W\+A\+M\+::\+Set\+Latency (\begin{DoxyParamCaption}\item[{int}]{latency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Call this if the latency of your plug-\/in changes after initialization (perhaps from \mbox{\hyperlink{class_i_plug_processor_af41a0640ec2c16542ad88c272eb22f27}{On\+Reset()}} ) This may not be supported by the host. The method is virtual because it\textquotesingle{}s overridden in A\+PI classes. 
+\begin{DoxyParams}{Parameters}
+{\em latency} & Latency in samples \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_plug_processor_a3c5c2a1b80ba384c50a2bb4888b63461}{I\+Plug\+Processor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+W\+E\+B/I\+Plug\+W\+A\+M.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+W\+E\+B/I\+Plug\+W\+A\+M.\+cpp\end{DoxyCompactItemize}

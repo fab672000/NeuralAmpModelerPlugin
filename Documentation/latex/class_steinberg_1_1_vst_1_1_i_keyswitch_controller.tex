@@ -1,0 +1,58 @@
+\hypertarget{class_steinberg_1_1_vst_1_1_i_keyswitch_controller}{}\doxysection{Steinberg\+::Vst\+::I\+Keyswitch\+Controller Class Reference}
+\label{class_steinberg_1_1_vst_1_1_i_keyswitch_controller}\index{Steinberg::Vst::IKeyswitchController@{Steinberg::Vst::IKeyswitchController}}
+
+
+{\ttfamily \#include $<$ivstnoteexpression.\+h$>$}
+
+Inheritance diagram for Steinberg\+::Vst\+::I\+Keyswitch\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_vst_1_1_i_keyswitch_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_aa507dfc9574438a3fe1ab0f33940447a}{get\+Keyswitch\+Count}} (int32 bus\+Index, int16 channel)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_af07fa1ab5119e1286f855fbb7b7cbdde}{get\+Keyswitch\+Info}} (int32 bus\+Index, int16 channel, int32 key\+Switch\+Index, \mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_keyswitch_info}{Keyswitch\+Info}} \&info)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_ac3b4daa1251fb1419113cf257377050b}\label{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_ac3b4daa1251fb1419113cf257377050b}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Extended plug-\/in interface \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}} for key switches support\+: \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_keyswitch_controller}{Vst\+::\+I\+Keyswitch\+Controller}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_i_edit_controller}{I\+Edit\+Controller}}\mbox{]}
+\item \mbox{[}released\+: 3.\+5.\+0\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+When a (instrument) plug-\/in supports such interface, the host could get from the plug-\/in the current set of used key switches (megatrig/articulation) for a given channel of a event bus and then automatically use them (like in Cubase 6) to create V\+ST Expression Map (allowing to associated symbol to a given articulation / key switch). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_aa507dfc9574438a3fe1ab0f33940447a}\label{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_aa507dfc9574438a3fe1ab0f33940447a}} 
+\index{Steinberg::Vst::IKeyswitchController@{Steinberg::Vst::IKeyswitchController}!getKeyswitchCount@{getKeyswitchCount}}
+\index{getKeyswitchCount@{getKeyswitchCount}!Steinberg::Vst::IKeyswitchController@{Steinberg::Vst::IKeyswitchController}}
+\doxysubsubsection{\texorpdfstring{getKeyswitchCount()}{getKeyswitchCount()}}
+{\footnotesize\ttfamily virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Keyswitch\+Controller\+::get\+Keyswitch\+Count (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns number of supported key switches for event bus index and channel. \mbox{\Hypertarget{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_af07fa1ab5119e1286f855fbb7b7cbdde}\label{class_steinberg_1_1_vst_1_1_i_keyswitch_controller_af07fa1ab5119e1286f855fbb7b7cbdde}} 
+\index{Steinberg::Vst::IKeyswitchController@{Steinberg::Vst::IKeyswitchController}!getKeyswitchInfo@{getKeyswitchInfo}}
+\index{getKeyswitchInfo@{getKeyswitchInfo}!Steinberg::Vst::IKeyswitchController@{Steinberg::Vst::IKeyswitchController}}
+\doxysubsubsection{\texorpdfstring{getKeyswitchInfo()}{getKeyswitchInfo()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+Vst\+::\+I\+Keyswitch\+Controller\+::get\+Keyswitch\+Info (\begin{DoxyParamCaption}\item[{int32}]{bus\+Index,  }\item[{int16}]{channel,  }\item[{int32}]{key\+Switch\+Index,  }\item[{\mbox{\hyperlink{struct_steinberg_1_1_vst_1_1_keyswitch_info}{Keyswitch\+Info}} \&}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns key switch info. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/vst/ivstnoteexpression.\+h\end{DoxyCompactItemize}

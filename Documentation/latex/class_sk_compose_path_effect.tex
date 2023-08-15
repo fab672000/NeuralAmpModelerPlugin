@@ -1,0 +1,57 @@
+\hypertarget{class_sk_compose_path_effect}{}\doxysection{Sk\+Compose\+Path\+Effect Class Reference}
+\label{class_sk_compose_path_effect}\index{SkComposePathEffect@{SkComposePathEffect}}
+Inheritance diagram for Sk\+Compose\+Path\+Effect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{class_sk_compose_path_effect}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_compose_path_effect_acfdd68773f0511cbc49fb16b65c2b2fd}\label{class_sk_compose_path_effect_acfdd68773f0511cbc49fb16b65c2b2fd}} 
+{\bfseries Sk\+Compose\+Path\+Effect} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ outer, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ inner)
+\item 
+bool \mbox{\hyperlink{class_sk_compose_path_effect_af723ed8ff88ca12789792d30e3205b2a}{on\+Filter\+Path}} (\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$dst, const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&src, \mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} $\ast$rec, const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$cull\+Rect, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&ctm) const override
+\item 
+\mbox{\Hypertarget{class_sk_compose_path_effect_af54730defc0aab00185cc3de344b1ff2}\label{class_sk_compose_path_effect_af54730defc0aab00185cc3de344b1ff2}} 
+bool {\bfseries compute\+Fast\+Bounds} (\mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$bounds) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ \mbox{\hyperlink{class_sk_compose_path_effect_a4f6d9940bc008e317e9cffafa8f88ca3}{Make}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ outer, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$ inner)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_compose_path_effect_a3ce5e15706c31dbe36ce97ebab99f98a}\label{class_sk_compose_path_effect_a3ce5e15706c31dbe36ce97ebab99f98a}} 
+class {\bfseries Sk\+Path\+Effect}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_compose_path_effect_a4f6d9940bc008e317e9cffafa8f88ca3}\label{class_sk_compose_path_effect_a4f6d9940bc008e317e9cffafa8f88ca3}} 
+\index{SkComposePathEffect@{SkComposePathEffect}!Make@{Make}}
+\index{Make@{Make}!SkComposePathEffect@{SkComposePathEffect}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}}$>$ Sk\+Compose\+Path\+Effect\+::\+Make (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$}]{outer,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_path_effect}{Sk\+Path\+Effect}} $>$}]{inner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Construct a path\+Effect whose effect is to apply first the inner path\+Effect and the the outer path\+Effect (e.\+g. outer(inner(path))) The reference counts for outer and inner are both incremented in the constructor, and decremented in the destructor. \mbox{\Hypertarget{class_sk_compose_path_effect_af723ed8ff88ca12789792d30e3205b2a}\label{class_sk_compose_path_effect_af723ed8ff88ca12789792d30e3205b2a}} 
+\index{SkComposePathEffect@{SkComposePathEffect}!onFilterPath@{onFilterPath}}
+\index{onFilterPath@{onFilterPath}!SkComposePathEffect@{SkComposePathEffect}}
+\doxysubsubsection{\texorpdfstring{onFilterPath()}{onFilterPath()}}
+{\footnotesize\ttfamily bool Sk\+Compose\+Path\+Effect\+::on\+Filter\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{,  }\item[{\mbox{\hyperlink{class_sk_stroke_rec}{Sk\+Stroke\+Rec}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} $\ast$}]{,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\hyperlink{struct_filter}{Filter}} the input path.
+
+The C\+TM parameter is provided for path effects that can use the information. The output of path effects must always be in the original (input) coordinate system, regardless of whether the path effect uses the C\+TM or not. 
+
+Implements \mbox{\hyperlink{class_sk_path_effect_base_ae3cef314f6a219c6d89ea4f1d13d335a}{Sk\+Path\+Effect\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Path\+Effect.\+cpp\end{DoxyCompactItemize}

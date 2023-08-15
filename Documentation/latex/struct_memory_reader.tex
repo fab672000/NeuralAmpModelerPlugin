@@ -1,0 +1,109 @@
+\hypertarget{struct_memory_reader}{}\doxysection{Memory\+Reader Struct Reference}
+\label{struct_memory_reader}\index{MemoryReader@{MemoryReader}}
+Inheritance diagram for Memory\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_memory_reader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{struct_memory_reader_a0f61d787fe10a17f8445ed2c16f41d7f}{check\+File}} (const std\+::string \&path\+\_\+name)
+\item 
+virtual void \mbox{\hyperlink{struct_memory_reader_a1ea26c93555f0e426916a60b319d75c8}{get\+Params\+File}} (const std\+::string \&path\+\_\+name, int \&\mbox{\hyperlink{classchannels}{channels}}, int \&length)
+\item 
+virtual void \mbox{\hyperlink{struct_memory_reader_a5b8f2cc553a6b44aa08d5f5916d7ca7d}{read\+File}} (\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$soundfile, const std\+::string \&path\+\_\+name, int part, int \&offset, int max\+\_\+chan)
+\item 
+\mbox{\Hypertarget{struct_memory_reader_aa8078e127b0944e605b48a2ae6fe2508}\label{struct_memory_reader_aa8078e127b0944e605b48a2ae6fe2508}} 
+{\bfseries Memory\+Reader} (const uint8\+\_\+t $\ast$start, const uint8\+\_\+t $\ast$end)
+\item 
+\mbox{\Hypertarget{struct_memory_reader_a75f62d72a4dd3ea0ce8456e52bde2989}\label{struct_memory_reader_a75f62d72a4dd3ea0ce8456e52bde2989}} 
+void {\bfseries read} (char $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, unsigned int size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_memory_reader_a429dc63d185f1f4f318a0e809fce9410}\label{struct_memory_reader_a429dc63d185f1f4f318a0e809fce9410}} 
+int {\bfseries f\+Pos}
+\item 
+\mbox{\Hypertarget{struct_memory_reader_ac21c59fc0fc8052247bef6060de05f9e}\label{struct_memory_reader_ac21c59fc0fc8052247bef6060de05f9e}} 
+const uint8\+\_\+t $\ast$ {\bfseries f\+Start}
+\item 
+\mbox{\Hypertarget{struct_memory_reader_af1ff6b97e9a7da50b7c3b922883a5d60}\label{struct_memory_reader_af1ff6b97e9a7da50b7c3b922883a5d60}} 
+const uint8\+\_\+t $\ast$ {\bfseries f\+End}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_memory_reader_a0f61d787fe10a17f8445ed2c16f41d7f}\label{struct_memory_reader_a0f61d787fe10a17f8445ed2c16f41d7f}} 
+\index{MemoryReader@{MemoryReader}!checkFile@{checkFile}}
+\index{checkFile@{checkFile}!MemoryReader@{MemoryReader}}
+\doxysubsubsection{\texorpdfstring{checkFile()}{checkFile()}}
+{\footnotesize\ttfamily virtual bool Memory\+Reader\+::check\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Check the availability of a sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the sound resource is available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soundfile_reader_a4b4b0911849d9b34b0a4982d10ac2ab8}{Soundfile\+Reader}}.
+
+\mbox{\Hypertarget{struct_memory_reader_a1ea26c93555f0e426916a60b319d75c8}\label{struct_memory_reader_a1ea26c93555f0e426916a60b319d75c8}} 
+\index{MemoryReader@{MemoryReader}!getParamsFile@{getParamsFile}}
+\index{getParamsFile@{getParamsFile}!MemoryReader@{MemoryReader}}
+\doxysubsubsection{\texorpdfstring{getParamsFile()}{getParamsFile()}}
+{\footnotesize\ttfamily virtual void Memory\+Reader\+::get\+Params\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+name,  }\item[{int \&}]{channels,  }\item[{int \&}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the channels and length values of the given sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way \\
+\hline
+{\em channels} & -\/ the channels value to be filled with the sound resource number of channels \\
+\hline
+{\em length} & -\/ the length value to be filled with the sound resource length in frames \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_soundfile_reader_a3da61bb7d5a0995a40bdf0d001e12726}{Soundfile\+Reader}}.
+
+\mbox{\Hypertarget{struct_memory_reader_a5b8f2cc553a6b44aa08d5f5916d7ca7d}\label{struct_memory_reader_a5b8f2cc553a6b44aa08d5f5916d7ca7d}} 
+\index{MemoryReader@{MemoryReader}!readFile@{readFile}}
+\index{readFile@{readFile}!MemoryReader@{MemoryReader}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily virtual void Memory\+Reader\+::read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$}]{soundfile,  }\item[{const std\+::string \&}]{path\+\_\+name,  }\item[{int}]{part,  }\item[{int \&}]{offset,  }\item[{int}]{max\+\_\+chan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Read one sound resource and fill the \textquotesingle{}soundfile\textquotesingle{} structure accordingly
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way \\
+\hline
+{\em part} & -\/ the part number to be filled in the soundfile \\
+\hline
+{\em offset} & -\/ the offset value to be incremented with the actual sound resource length in frames \\
+\hline
+{\em max\+\_\+chan} & -\/ the maximum number of mono channels to fill \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_soundfile_reader_a798737d8c006689627c258a133c9b674}{Soundfile\+Reader}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Memory\+Reader.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Wave\+Reader.\+h\end{DoxyCompactItemize}

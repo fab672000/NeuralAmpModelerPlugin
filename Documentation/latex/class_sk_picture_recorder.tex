@@ -1,0 +1,104 @@
+\hypertarget{class_sk_picture_recorder}{}\doxysection{Sk\+Picture\+Recorder Class Reference}
+\label{class_sk_picture_recorder}\index{SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_picture_recorder_a7fd2a00c612141096d1230f2421340a7}\label{class_sk_picture_recorder_a7fd2a00c612141096d1230f2421340a7}} 
+enum {\bfseries Finish\+Flags} 
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$ \mbox{\hyperlink{class_sk_picture_recorder_a197a4390057dac85b24c0fa35b905d06}{begin\+Recording}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&bounds, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_b_box_hierarchy}{Sk\+B\+Box\+Hierarchy}} $>$ bbh)
+\item 
+\mbox{\Hypertarget{class_sk_picture_recorder_ab612c497164e2e8b59835d507b87164c}\label{class_sk_picture_recorder_ab612c497164e2e8b59835d507b87164c}} 
+\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$ {\bfseries begin\+Recording} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&bounds, \mbox{\hyperlink{class_sk_b_b_h_factory}{Sk\+B\+B\+H\+Factory}} $\ast$bbh\+Factory=nullptr)
+\item 
+\mbox{\Hypertarget{class_sk_picture_recorder_ae681159b8a3cca097331107af45dfe37}\label{class_sk_picture_recorder_ae681159b8a3cca097331107af45dfe37}} 
+\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$ {\bfseries begin\+Recording} (Sk\+Scalar width, Sk\+Scalar height, \mbox{\hyperlink{class_sk_b_b_h_factory}{Sk\+B\+B\+H\+Factory}} $\ast$bbh\+Factory=nullptr)
+\item 
+\mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$ \mbox{\hyperlink{class_sk_picture_recorder_a8a18b21aaf7ee42c60981bee43c6b51e}{get\+Recording\+Canvas}} ()
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ \mbox{\hyperlink{class_sk_picture_recorder_af29b2cd1c248dbc76915285a8950792a}{finish\+Recording\+As\+Picture}} ()
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ \mbox{\hyperlink{class_sk_picture_recorder_a66dc42d20e49dd6fbb459855bbed593c}{finish\+Recording\+As\+Picture\+With\+Cull}} (const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&cull\+Rect)
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} $>$ \mbox{\hyperlink{class_sk_picture_recorder_af70b66d4f9c130506391d68e471cac37}{finish\+Recording\+As\+Drawable}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_picture_recorder_ac1e082cf14af4f4069ef4c936c18e0d6}{Sk\+Picture\+Recorder\+Replay\+Tester}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_picture_recorder_a197a4390057dac85b24c0fa35b905d06}\label{class_sk_picture_recorder_a197a4390057dac85b24c0fa35b905d06}} 
+\index{SkPictureRecorder@{SkPictureRecorder}!beginRecording@{beginRecording}}
+\index{beginRecording@{beginRecording}!SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsubsection{\texorpdfstring{beginRecording()}{beginRecording()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$ Sk\+Picture\+Recorder\+::begin\+Recording (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{bounds,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_b_box_hierarchy}{Sk\+B\+Box\+Hierarchy}} $>$}]{bbh }\end{DoxyParamCaption})}
+
+Returns the canvas that records the drawing commands. 
+\begin{DoxyParams}{Parameters}
+{\em bounds} & the cull rect used when recording this picture. Any drawing the falls outside of this rect is undefined, and may be drawn or it may not. \\
+\hline
+{\em bbh} & optional acceleration structure \\
+\hline
+{\em record\+Flags} & optional flags that control recording. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the canvas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_picture_recorder_af70b66d4f9c130506391d68e471cac37}\label{class_sk_picture_recorder_af70b66d4f9c130506391d68e471cac37}} 
+\index{SkPictureRecorder@{SkPictureRecorder}!finishRecordingAsDrawable@{finishRecordingAsDrawable}}
+\index{finishRecordingAsDrawable@{finishRecordingAsDrawable}!SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsubsection{\texorpdfstring{finishRecordingAsDrawable()}{finishRecordingAsDrawable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_drawable}{Sk\+Drawable}} $>$ Sk\+Picture\+Recorder\+::finish\+Recording\+As\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Signal that the caller is done recording. This invalidates the canvas returned by begin\+Recording/get\+Recording\+Canvas. Ownership of the object is passed to the caller, who must call unref() when they are done using it.
+
+Unlike \mbox{\hyperlink{class_sk_picture_recorder_af29b2cd1c248dbc76915285a8950792a}{finish\+Recording\+As\+Picture()}}, which returns an immutable picture, the returned drawable may contain live references to other drawables (if they were added to the recording canvas) and therefore this drawable will reflect the current state of those nested drawables anytime it is drawn or a new picture is snapped from it (by calling drawable-\/$>$new\+Picture\+Snapshot()). \mbox{\Hypertarget{class_sk_picture_recorder_af29b2cd1c248dbc76915285a8950792a}\label{class_sk_picture_recorder_af29b2cd1c248dbc76915285a8950792a}} 
+\index{SkPictureRecorder@{SkPictureRecorder}!finishRecordingAsPicture@{finishRecordingAsPicture}}
+\index{finishRecordingAsPicture@{finishRecordingAsPicture}!SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsubsection{\texorpdfstring{finishRecordingAsPicture()}{finishRecordingAsPicture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ Sk\+Picture\+Recorder\+::finish\+Recording\+As\+Picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Signal that the caller is done recording. This invalidates the canvas returned by begin\+Recording/get\+Recording\+Canvas. Ownership of the object is passed to the caller, who must call unref() when they are done using it.
+
+The returned picture is immutable. If during recording drawables were added to the canvas, these will have been \char`\"{}drawn\char`\"{} into a recording canvas, so that this resulting picture will reflect their current state, but will not contain a live reference to the drawables themselves. \mbox{\Hypertarget{class_sk_picture_recorder_a66dc42d20e49dd6fbb459855bbed593c}\label{class_sk_picture_recorder_a66dc42d20e49dd6fbb459855bbed593c}} 
+\index{SkPictureRecorder@{SkPictureRecorder}!finishRecordingAsPictureWithCull@{finishRecordingAsPictureWithCull}}
+\index{finishRecordingAsPictureWithCull@{finishRecordingAsPictureWithCull}!SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsubsection{\texorpdfstring{finishRecordingAsPictureWithCull()}{finishRecordingAsPictureWithCull()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ Sk\+Picture\+Recorder\+::finish\+Recording\+As\+Picture\+With\+Cull (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} \&}]{cull\+Rect }\end{DoxyParamCaption})}
+
+Signal that the caller is done recording, and update the cull rect to use for bounding box hierarchy (B\+BH) generation. The behavior is the same as calling \mbox{\hyperlink{class_sk_picture_recorder_af29b2cd1c248dbc76915285a8950792a}{finish\+Recording\+As\+Picture()}}, except that this method updates the cull rect initially passed into begin\+Recording. 
+\begin{DoxyParams}{Parameters}
+{\em cull\+Rect} & the new culling rectangle to use as the overall bound for B\+BH generation and subsequent culling operations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the picture containing the recorded content. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_picture_recorder_a8a18b21aaf7ee42c60981bee43c6b51e}\label{class_sk_picture_recorder_a8a18b21aaf7ee42c60981bee43c6b51e}} 
+\index{SkPictureRecorder@{SkPictureRecorder}!getRecordingCanvas@{getRecordingCanvas}}
+\index{getRecordingCanvas@{getRecordingCanvas}!SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsubsection{\texorpdfstring{getRecordingCanvas()}{getRecordingCanvas()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_canvas}{Sk\+Canvas}} $\ast$ Sk\+Picture\+Recorder\+::get\+Recording\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the recording canvas if one is active, or N\+U\+LL if recording is not active. This does not alter the refcnt on the canvas (if present). 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_sk_picture_recorder_ac1e082cf14af4f4069ef4c936c18e0d6}\label{class_sk_picture_recorder_ac1e082cf14af4f4069ef4c936c18e0d6}} 
+\index{SkPictureRecorder@{SkPictureRecorder}!SkPictureRecorderReplayTester@{SkPictureRecorderReplayTester}}
+\index{SkPictureRecorderReplayTester@{SkPictureRecorderReplayTester}!SkPictureRecorder@{SkPictureRecorder}}
+\doxysubsubsection{\texorpdfstring{SkPictureRecorderReplayTester}{SkPictureRecorderReplayTester}}
+{\footnotesize\ttfamily friend class Sk\+Picture\+Recorder\+Replay\+Tester\hspace{0.3cm}{\ttfamily [friend]}}
+
+Replay the current (partially recorded) operation stream into canvas. This call doesn\textquotesingle{}t close the current recording. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Picture\+Recorder.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Picture\+Recorder.\+cpp\end{DoxyCompactItemize}

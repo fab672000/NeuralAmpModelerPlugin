@@ -725,9 +725,13 @@ std::string NeuralAmpModeler::LoadPreset(const WDL_String& presetPath)
           
         }
       }
+      SavePreset(presetPath); // DEBUG only
+    } // if result != nullptr
+    else
+    {
+           return errorMessage;
     }
 
-    // SavePreset(presetPath); // DEBUG only
   }
   catch (std::exception& e)
   {

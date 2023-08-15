@@ -1,0 +1,44 @@
+\hypertarget{_a_a_x___push2_byte_struct_alignment_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/\+A\+A\+X\+\_\+\+Push2\+Byte\+Struct\+Alignment.h File Reference}
+\label{_a_a_x___push2_byte_struct_alignment_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/Interfaces/AAX\_Push2ByteStructAlignment.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/AAX\_SDK/Interfaces/AAX\_Push2ByteStructAlignment.h}}
+
+
+Set the struct alignment to 2-\/byte. This file will throw an error on platforms that do not support 2-\/byte alignment (i.\+e. TI D\+S\+Ps)  
+
+
+
+
+\doxysubsection{Detailed Description}
+Set the struct alignment to 2-\/byte. This file will throw an error on platforms that do not support 2-\/byte alignment (i.\+e. TI D\+S\+Ps) 
+
+When setting the alignment for a struct in order to match a particular environment (e.\+g. host/plug-\/in binary compatibility) the following macros are recommended\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{_a_a_x_8h_acbef7ed7d077bc9812cb56417e1ad325}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+ST}} \item \mbox{\hyperlink{_a_a_x_8h_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+LG}} \item \mbox{\hyperlink{_a_a_x_8h_a8aaaefcc3d87025e84d5ccb99b650a87}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+ET}}\end{DoxyItemize}
+\hypertarget{_a_a_x___push2_byte_struct_alignment_8h_AAX_Push2ByteStructAlignment_usagenotes}{}\doxysubsection{Usage notes}\label{_a_a_x___push2_byte_struct_alignment_8h_AAX_Push2ByteStructAlignment_usagenotes}
+\begin{DoxyItemize}
+\item Always follow an inclusion of this file with a matching inclusion of \mbox{\hyperlink{_a_a_x___pop_struct_alignment_8h}{A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h}}\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Do not place other file {\ttfamily \#include} after this file. For example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// HeaderFile1.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#include AAX\_Push2ByteStructAlignment.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#include HeaderFile2.h  // this file now has 2-\/byte alignment also!!}}
+\DoxyCodeLine{    \textcolor{comment}{// HeaderFile1.h definitions...}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#include AAX\_PopStructAlignment.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{// end HeaderFile1.h}}
+\end{DoxyCode}
+ This will cause problems if Header\+File2.\+h is included elsewhere without the 2-\/byte alignment which will manifest as hard to find run-\/time bugs. The proper usage is\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// HeaderFile1.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#include HeaderFile2.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#include AAX\_Push2ByteStructAlignment.h}}
+\DoxyCodeLine{        \textcolor{comment}{// HeaderFile1.h definitions...}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \#include AAX\_PopStructAlignment.h}}
+\DoxyCodeLine{\textcolor{preprocessor}{// end HeaderFile1.h}}
+\end{DoxyCode}
+\end{DoxyItemize}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_a_a_x___push4_byte_struct_alignment_8h}{A\+A\+X\+\_\+\+Push4\+Byte\+Struct\+Alignment.\+h}} 
+
+\mbox{\hyperlink{_a_a_x___push8_byte_struct_alignment_8h}{A\+A\+X\+\_\+\+Push8\+Byte\+Struct\+Alignment.\+h}} 
+
+\mbox{\hyperlink{_a_a_x___pop_struct_alignment_8h}{A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h}} 
+\end{DoxySeeAlso}

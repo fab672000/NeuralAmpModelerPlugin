@@ -1,0 +1,879 @@
+\hypertarget{class_eigen_1_1_sparse_matrix_base}{}\doxysection{Eigen\+::Sparse\+Matrix\+Base Class Reference}
+\label{class_eigen_1_1_sparse_matrix_base}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+
+
+Base class of any sparse matrices or sparse expressions.  
+
+
+
+
+{\ttfamily \#include $<$Sparse\+Matrix\+Base.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_const_self_adjoint_view_return_type}{Const\+Self\+Adjoint\+View\+Return\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_cwise_product_dense_return_type}{Cwise\+Product\+Dense\+Return\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_self_adjoint_view_return_type}{Self\+Adjoint\+View\+Return\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}} = internal\+::traits$<$Derived$>$\+::Rows\+At\+Compile\+Time, 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}} = internal\+::traits$<$Derived$>$\+::Cols\+At\+Compile\+Time, 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}{Size\+At\+Compile\+Time}} = (internal\+::size\+\_\+of\+\_\+xpr\+\_\+at\+\_\+compile\+\_\+time$<$Derived$>$\+::ret), 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Rows\+At\+Compile\+Time, 
+\newline
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Size\+At\+Compile\+Time} = internal\+::size\+\_\+at\+\_\+compile\+\_\+time(Max\+Rows\+At\+Compile\+Time, Max\+Cols\+At\+Compile\+Time), 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}{Is\+Vector\+At\+Compile\+Time}} = Rows\+At\+Compile\+Time == 1 $\vert$$\vert$ Cols\+At\+Compile\+Time == 1, 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea850e5f13bd33599b04e132fecc36d524}{Num\+Dimensions}} = int(Max\+Size\+At\+Compile\+Time) == 1 ? 0 \+: bool(Is\+Vector\+At\+Compile\+Time) ? 1 \+: 2, 
+\newline
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}{Flags}} = internal\+::traits$<$Derived$>$\+::Flags, 
+{\bfseries Is\+Row\+Major} = Flags\&Row\+Major\+Bit ? 1 \+: 0, 
+{\bfseries Inner\+Size\+At\+Compile\+Time}, 
+{\bfseries Has\+Direct\+Access\+\_\+} = (int(Flags)\&Direct\+Access\+Bit) ? 1 \+: 0
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}} = internal\+::traits$<$Derived$>$\+::Rows\+At\+Compile\+Time, 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}} = internal\+::traits$<$Derived$>$\+::Cols\+At\+Compile\+Time, 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}{Size\+At\+Compile\+Time}} = (internal\+::size\+\_\+of\+\_\+xpr\+\_\+at\+\_\+compile\+\_\+time$<$Derived$>$\+::ret), 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Rows\+At\+Compile\+Time, 
+\newline
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Size\+At\+Compile\+Time} = internal\+::size\+\_\+at\+\_\+compile\+\_\+time(Max\+Rows\+At\+Compile\+Time, Max\+Cols\+At\+Compile\+Time), 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}{Is\+Vector\+At\+Compile\+Time}} = Rows\+At\+Compile\+Time == 1 $\vert$$\vert$ Cols\+At\+Compile\+Time == 1, 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea850e5f13bd33599b04e132fecc36d524}{Num\+Dimensions}} = int(Max\+Size\+At\+Compile\+Time) == 1 ? 0 \+: bool(Is\+Vector\+At\+Compile\+Time) ? 1 \+: 2, 
+\newline
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}{Flags}} = internal\+::traits$<$Derived$>$\+::Flags, 
+{\bfseries Is\+Row\+Major} = Flags\&Row\+Major\+Bit ? 1 \+: 0, 
+{\bfseries Inner\+Size\+At\+Compile\+Time}, 
+{\bfseries Has\+Direct\+Access\+\_\+} = (int(Flags)\&Direct\+Access\+Bit) ? 1 \+: 0
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aae61fbdbea0fa35511fa75cd2a2a1a5c}\label{class_eigen_1_1_sparse_matrix_base_aae61fbdbea0fa35511fa75cd2a2a1a5c}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Scalar {\bfseries Scalar}
+\item 
+typedef Scalar \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}{value\+\_\+type}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_abca15199fc55efd37ae5316f502fe218}\label{class_eigen_1_1_sparse_matrix_base_abca15199fc55efd37ae5316f502fe218}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{internal\+::packet\+\_\+traits}}$<$ Scalar $>$\+::type {\bfseries Packet\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab06b2b608d163b10871ada126760e6f7}\label{class_eigen_1_1_sparse_matrix_base_ab06b2b608d163b10871ada126760e6f7}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_acc0de6a9f875c1fcc1bc0083361054dd}\label{class_eigen_1_1_sparse_matrix_base_acc0de6a9f875c1fcc1bc0083361054dd}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1add__const__on__value__type__if__arithmetic}{internal\+::add\+\_\+const\+\_\+on\+\_\+value\+\_\+type\+\_\+if\+\_\+arithmetic}}$<$ typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{internal\+::packet\+\_\+traits}}$<$ Scalar $>$\+::type $>$\+::type {\bfseries Packet\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa43dd47e73b0dc359a971bea54125ac7}\label{class_eigen_1_1_sparse_matrix_base_aa43dd47e73b0dc359a971bea54125ac7}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} {\bfseries Storage\+Base\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a58a6edb1bd0fd685100a8877f4d940aa}\label{class_eigen_1_1_sparse_matrix_base_a58a6edb1bd0fd685100a8877f4d940aa}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Index\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a4408b5dc156bc09bf1163f35852bff2a}\label{class_eigen_1_1_sparse_matrix_base_a4408b5dc156bc09bf1163f35852bff2a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Scalar\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aee923a75fc8186312d276a01341cd3ea}\label{class_eigen_1_1_sparse_matrix_base_aee923a75fc8186312d276a01341cd3ea}} 
+typedef std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, \mbox{\hyperlink{class_eigen_1_1_cwise_unary_op}{Cwise\+Unary\+Op}}$<$ \mbox{\hyperlink{struct_eigen_1_1internal_1_1scalar__conjugate__op}{internal\+::scalar\+\_\+conjugate\+\_\+op}}$<$ Scalar $>$, \mbox{\hyperlink{class_eigen_1_1_transpose}{Eigen\+::\+Transpose}}$<$ const Derived $>$ $>$, \mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose}}$<$ const Derived $>$ $>$ {\bfseries Adjoint\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a659b941369b87f5b5d4a4ddd2a084d53}\label{class_eigen_1_1_sparse_matrix_base_a659b941369b87f5b5d4a4ddd2a084d53}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose}}$<$ Derived $>$ {\bfseries Transpose\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_afbaebebd39e5e3c3a9a04bd3b55bb0a0}\label{class_eigen_1_1_sparse_matrix_base_afbaebebd39e5e3c3a9a04bd3b55bb0a0}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose}}$<$ const Derived $>$ {\bfseries Const\+Transpose\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_afd71c0e36e292ed080620c5a946357ee}\label{class_eigen_1_1_sparse_matrix_base_afd71c0e36e292ed080620c5a946357ee}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{Sparse\+Matrix}}$<$ Scalar, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}{Flags}} \&\mbox{\hyperlink{group__flags_gae4f56c2a60bbe4bd2e44c5b19cbe8762}{Row\+Major\+Bit}} ? \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13acfcde9cd8677c5f7caf6bd603666aae3}{Row\+Major}} \+:\mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} $>$ {\bfseries Plain\+Object}
+\item 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Real \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a571f9af0d207b31ac4b06f38c70b3d8f}\label{class_eigen_1_1_sparse_matrix_base_a571f9af0d207b31ac4b06f38c70b3d8f}} 
+typedef std\+::conditional\+\_\+t$<$ Has\+Direct\+Access\+\_\+, const Scalar \&, Scalar $>$ {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a695369d45c98e25bb9b4521184ffc884}\label{class_eigen_1_1_sparse_matrix_base_a695369d45c98e25bb9b4521184ffc884}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_cwise_nullary_op}{Cwise\+Nullary\+Op}}$<$ \mbox{\hyperlink{struct_eigen_1_1internal_1_1scalar__constant__op}{internal\+::scalar\+\_\+constant\+\_\+op}}$<$ Scalar $>$, \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}} $>$ $>$ {\bfseries Constant\+Return\+Type}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}} $>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}{Dense\+Matrix\+Type}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}), internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}})$>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}{Square\+Matrix\+Type}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a539dc8592b6580c84235690ed0aa32f0}\label{class_eigen_1_1_sparse_matrix_base_a539dc8592b6580c84235690ed0aa32f0}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Derived $>$ {\bfseries Base}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aae61fbdbea0fa35511fa75cd2a2a1a5c}\label{class_eigen_1_1_sparse_matrix_base_aae61fbdbea0fa35511fa75cd2a2a1a5c}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Scalar {\bfseries Scalar}
+\item 
+typedef Scalar \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}{value\+\_\+type}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_abca15199fc55efd37ae5316f502fe218}\label{class_eigen_1_1_sparse_matrix_base_abca15199fc55efd37ae5316f502fe218}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{internal\+::packet\+\_\+traits}}$<$ Scalar $>$\+::type {\bfseries Packet\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab06b2b608d163b10871ada126760e6f7}\label{class_eigen_1_1_sparse_matrix_base_ab06b2b608d163b10871ada126760e6f7}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Storage\+Kind {\bfseries Storage\+Kind}
+\item 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_acc0de6a9f875c1fcc1bc0083361054dd}\label{class_eigen_1_1_sparse_matrix_base_acc0de6a9f875c1fcc1bc0083361054dd}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1add__const__on__value__type__if__arithmetic}{internal\+::add\+\_\+const\+\_\+on\+\_\+value\+\_\+type\+\_\+if\+\_\+arithmetic}}$<$ typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{internal\+::packet\+\_\+traits}}$<$ Scalar $>$\+::type $>$\+::type {\bfseries Packet\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa43dd47e73b0dc359a971bea54125ac7}\label{class_eigen_1_1_sparse_matrix_base_aa43dd47e73b0dc359a971bea54125ac7}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} {\bfseries Storage\+Base\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a58a6edb1bd0fd685100a8877f4d940aa}\label{class_eigen_1_1_sparse_matrix_base_a58a6edb1bd0fd685100a8877f4d940aa}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Index\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a4408b5dc156bc09bf1163f35852bff2a}\label{class_eigen_1_1_sparse_matrix_base_a4408b5dc156bc09bf1163f35852bff2a}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, 1 $>$ {\bfseries Scalar\+Vector}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aee923a75fc8186312d276a01341cd3ea}\label{class_eigen_1_1_sparse_matrix_base_aee923a75fc8186312d276a01341cd3ea}} 
+typedef std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Is\+Complex, \mbox{\hyperlink{class_eigen_1_1_cwise_unary_op}{Cwise\+Unary\+Op}}$<$ \mbox{\hyperlink{struct_eigen_1_1internal_1_1scalar__conjugate__op}{internal\+::scalar\+\_\+conjugate\+\_\+op}}$<$ Scalar $>$, \mbox{\hyperlink{class_eigen_1_1_transpose}{Eigen\+::\+Transpose}}$<$ const Derived $>$ $>$, \mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose}}$<$ const Derived $>$ $>$ {\bfseries Adjoint\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a659b941369b87f5b5d4a4ddd2a084d53}\label{class_eigen_1_1_sparse_matrix_base_a659b941369b87f5b5d4a4ddd2a084d53}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose}}$<$ Derived $>$ {\bfseries Transpose\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_afbaebebd39e5e3c3a9a04bd3b55bb0a0}\label{class_eigen_1_1_sparse_matrix_base_afbaebebd39e5e3c3a9a04bd3b55bb0a0}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose}}$<$ const Derived $>$ {\bfseries Const\+Transpose\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_afd71c0e36e292ed080620c5a946357ee}\label{class_eigen_1_1_sparse_matrix_base_afd71c0e36e292ed080620c5a946357ee}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{Sparse\+Matrix}}$<$ Scalar, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}{Flags}} \&\mbox{\hyperlink{group__flags_gae4f56c2a60bbe4bd2e44c5b19cbe8762}{Row\+Major\+Bit}} ? \mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13acfcde9cd8677c5f7caf6bd603666aae3}{Row\+Major}} \+:\mbox{\hyperlink{group__enums_ggaacded1a18ae58b0f554751f6cdf9eb13a0cbd4bdd0abcfc0224c5fcb5e4f6669a}{Col\+Major}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} $>$ {\bfseries Plain\+Object}
+\item 
+typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::Real \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a571f9af0d207b31ac4b06f38c70b3d8f}\label{class_eigen_1_1_sparse_matrix_base_a571f9af0d207b31ac4b06f38c70b3d8f}} 
+typedef std\+::conditional\+\_\+t$<$ Has\+Direct\+Access\+\_\+, const Scalar \&, Scalar $>$ {\bfseries Coeff\+Return\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a695369d45c98e25bb9b4521184ffc884}\label{class_eigen_1_1_sparse_matrix_base_a695369d45c98e25bb9b4521184ffc884}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_cwise_nullary_op}{Cwise\+Nullary\+Op}}$<$ \mbox{\hyperlink{struct_eigen_1_1internal_1_1scalar__constant__op}{internal\+::scalar\+\_\+constant\+\_\+op}}$<$ Scalar $>$, \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}} $>$ $>$ {\bfseries Constant\+Return\+Type}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}} $>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}{Dense\+Matrix\+Type}}
+\item 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}), internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}})$>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}{Square\+Matrix\+Type}}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a539dc8592b6580c84235690ed0aa32f0}\label{class_eigen_1_1_sparse_matrix_base_a539dc8592b6580c84235690ed0aa32f0}} 
+typedef \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Derived $>$ {\bfseries Base}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a8dd8edc09b41d8fd24bb384c155f127b}\label{class_eigen_1_1_sparse_matrix_base_a8dd8edc09b41d8fd24bb384c155f127b}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator=} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab9aa80a066a57b787779466fa40a038a}\label{class_eigen_1_1_sparse_matrix_base_ab9aa80a066a57b787779466fa40a038a}} 
+const Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ace90eae87fe63c22b2260e57ec0592f0}\label{class_eigen_1_1_sparse_matrix_base_ace90eae87fe63c22b2260e57ec0592f0}} 
+Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a1cdff6c97842543adbb721e2ad6b54f7}\label{class_eigen_1_1_sparse_matrix_base_a1cdff6c97842543adbb721e2ad6b54f7}} 
+Derived \& {\bfseries const\+\_\+cast\+\_\+derived} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a37eaebb941ba412be98924d53bba2067}{size}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ac5284446fb5e4c873f4b93b325fd20b4}{is\+Vector}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a38fe4f8e107c8a368e7ff6f7f1713abf}{outer\+Size}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ae194084a73058aeeb400d287ee69aa85}{inner\+Size}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a434684b02bb721d2d456bdfcb9210b19}\label{class_eigen_1_1_sparse_matrix_base_a434684b02bb721d2d456bdfcb9210b19}} 
+bool {\bfseries is\+R\+Value} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab87c77027aff681892ab8024380decbf}\label{class_eigen_1_1_sparse_matrix_base_ab87c77027aff681892ab8024380decbf}} 
+Derived \& {\bfseries mark\+As\+R\+Value} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a85b9cf2473aa33aa22164334c307c342}\label{class_eigen_1_1_sparse_matrix_base_a85b9cf2473aa33aa22164334c307c342}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1_return_by_value}{Return\+By\+Value}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0e9a0c22d7e0acf07f1d4ac857860d7b}\label{class_eigen_1_1_sparse_matrix_base_a0e9a0c22d7e0acf07f1d4ac857860d7b}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa74cadfeede22a20d026710f6e0249b5}\label{class_eigen_1_1_sparse_matrix_base_aa74cadfeede22a20d026710f6e0249b5}} 
+Derived \& {\bfseries operator=} (const Derived \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ae2469b2dd2280a962a23b7718b31f1fb}\label{class_eigen_1_1_sparse_matrix_base_ae2469b2dd2280a962a23b7718b31f1fb}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a50ffcdef04e99c601059389c2f69ff53}\label{class_eigen_1_1_sparse_matrix_base_a50ffcdef04e99c601059389c2f69ff53}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a89f33d1d4ffec703497bab03f76f04d2}\label{class_eigen_1_1_sparse_matrix_base_a89f33d1d4ffec703497bab03f76f04d2}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa27a348a10b64d80eccc09ae01058a79}\label{class_eigen_1_1_sparse_matrix_base_aa27a348a10b64d80eccc09ae01058a79}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a550b1dc1ce8172b6220ccf4e02db2464}\label{class_eigen_1_1_sparse_matrix_base_a550b1dc1ce8172b6220ccf4e02db2464}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ade0023c8551b23f900d28485a21be84d}\label{class_eigen_1_1_sparse_matrix_base_ade0023c8551b23f900d28485a21be84d}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0cc915928fcac0a6b0cc71305bd8e182}\label{class_eigen_1_1_sparse_matrix_base_a0cc915928fcac0a6b0cc71305bd8e182}} 
+Derived \& {\bfseries operator$\ast$=} (const Scalar \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a79bb73a792b34d7a07d3051ee2b6225e}\label{class_eigen_1_1_sparse_matrix_base_a79bb73a792b34d7a07d3051ee2b6225e}} 
+Derived \& {\bfseries operator/=} (const Scalar \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0701863b287d2aa62fabd06960cbc291}\label{class_eigen_1_1_sparse_matrix_base_a0701863b287d2aa62fabd06960cbc291}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_cwise_product_dense_return_type}{Cwise\+Product\+Dense\+Return\+Type}}$<$ Other\+Derived $>$\+::Type {\bfseries cwise\+Product} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac0507f4a48d9c36d765611eaa8aea54a}\label{class_eigen_1_1_sparse_matrix_base_ac0507f4a48d9c36d765611eaa8aea54a}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived, Alias\+Free\+Product $>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a85d94dc3f045465a18e02cc1e3286f66}{operator$\ast$}} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_af1d4e8fa81c02a29418aa04a34959ea4}\label{class_eigen_1_1_sparse_matrix_base_af1d4e8fa81c02a29418aa04a34959ea4}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_sparse_symmetric_permutation_product}{Sparse\+Symmetric\+Permutation\+Product}}$<$ Derived, \mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda6bcb58be3b8b8ec84859ce0c5ac0aaec}{Upper}}$\vert$\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda891792b8ed394f7607ab16dd716f60e6}{Lower}} $>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a366885f979063ef6feb195a65ebc3b49}{twisted\+By}} (const \mbox{\hyperlink{class_eigen_1_1_permutation_matrix}{Permutation\+Matrix}}$<$ \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} $>$ \&perm) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad67e7bafd8a64f452bf10fd6a6b532d1}\label{class_eigen_1_1_sparse_matrix_base_ad67e7bafd8a64f452bf10fd6a6b532d1}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator$\ast$=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_acb5ccd99a5cfd320040034e758e8d996}\label{class_eigen_1_1_sparse_matrix_base_acb5ccd99a5cfd320040034e758e8d996}} 
+{\footnotesize template$<$int Mode$>$ }\\const \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ const Derived, Mode $>$ {\bfseries triangular\+View} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a2b1a382eaca3c1cde2e0c1d1e2031973}\label{class_eigen_1_1_sparse_matrix_base_a2b1a382eaca3c1cde2e0c1d1e2031973}} 
+{\footnotesize template$<$unsigned int Up\+Lo$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_const_self_adjoint_view_return_type}{Const\+Self\+Adjoint\+View\+Return\+Type}}$<$ Up\+Lo $>$\+::Type {\bfseries selfadjoint\+View} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab562fb80a1fb3136fb7caf3e4543da0e}\label{class_eigen_1_1_sparse_matrix_base_ab562fb80a1fb3136fb7caf3e4543da0e}} 
+{\footnotesize template$<$unsigned int Up\+Lo$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_self_adjoint_view_return_type}{Self\+Adjoint\+View\+Return\+Type}}$<$ Up\+Lo $>$\+::Type {\bfseries selfadjoint\+View} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_af92978a626be5f507e707c5cb08a2309}\label{class_eigen_1_1_sparse_matrix_base_af92978a626be5f507e707c5cb08a2309}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Scalar {\bfseries dot} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac91cfba3aa401f7ee8bdf0bbaf9d5cf7}\label{class_eigen_1_1_sparse_matrix_base_ac91cfba3aa401f7ee8bdf0bbaf9d5cf7}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Scalar {\bfseries dot} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a87bb275d53add9ede009b322cd6a5bb9}\label{class_eigen_1_1_sparse_matrix_base_a87bb275d53add9ede009b322cd6a5bb9}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} {\bfseries squared\+Norm} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a6a11f5d8a46bc31e99859e23626d24c2}\label{class_eigen_1_1_sparse_matrix_base_a6a11f5d8a46bc31e99859e23626d24c2}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} {\bfseries norm} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac2e972d5439e214ffed196fcb097e400}\label{class_eigen_1_1_sparse_matrix_base_ac2e972d5439e214ffed196fcb097e400}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} {\bfseries blue\+Norm} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a5f8f293f4639e8e575f2319d744f3a5d}\label{class_eigen_1_1_sparse_matrix_base_a5f8f293f4639e8e575f2319d744f3a5d}} 
+\mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose\+Return\+Type}} {\bfseries transpose} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a537453500b468b7b9283e12153e5b507}\label{class_eigen_1_1_sparse_matrix_base_a537453500b468b7b9283e12153e5b507}} 
+const \mbox{\hyperlink{class_eigen_1_1_transpose}{Const\+Transpose\+Return\+Type}} {\bfseries transpose} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a373e87f907294a02e4d19c74c51ccf08}\label{class_eigen_1_1_sparse_matrix_base_a373e87f907294a02e4d19c74c51ccf08}} 
+const Adjoint\+Return\+Type {\bfseries adjoint} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad4b075dbdf9dbb12a2cf385c0d1b45fc}\label{class_eigen_1_1_sparse_matrix_base_ad4b075dbdf9dbb12a2cf385c0d1b45fc}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}{Dense\+Matrix\+Type}} {\bfseries to\+Dense} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a6a1698fa83bedab3f76dfe5aab9403e8}\label{class_eigen_1_1_sparse_matrix_base_a6a1698fa83bedab3f76dfe5aab9403e8}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\bool {\bfseries is\+Approx} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} \&prec=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_add07b83635ac04ee4034a90978fe8812}\label{class_eigen_1_1_sparse_matrix_base_add07b83635ac04ee4034a90978fe8812}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\bool {\bfseries is\+Approx} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} \&prec=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const \mbox{\hyperlink{struct_eigen_1_1internal_1_1eval}{internal\+::eval}}$<$ Derived $>$\+::type \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ad64903381b0536a81f88e8ca96999c68}{eval}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a4f183bc0b1a2eb92d299966e32636d78}\label{class_eigen_1_1_sparse_matrix_base_a4f183bc0b1a2eb92d299966e32636d78}} 
+Scalar {\bfseries sum} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a97d165d3620914cbf7cbad9a0d46061f}\label{class_eigen_1_1_sparse_matrix_base_a97d165d3620914cbf7cbad9a0d46061f}} 
+const \mbox{\hyperlink{class_eigen_1_1_sparse_view}{Sparse\+View}}$<$ Derived $>$ {\bfseries pruned} (const Scalar \&reference=Scalar(0), const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} \&epsilon=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a8523de7f7d0a32821dfe641af46ad188}\label{class_eigen_1_1_sparse_matrix_base_a8523de7f7d0a32821dfe641af46ad188}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator=} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab9aa80a066a57b787779466fa40a038a}\label{class_eigen_1_1_sparse_matrix_base_ab9aa80a066a57b787779466fa40a038a}} 
+const Derived \& {\bfseries derived} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ace90eae87fe63c22b2260e57ec0592f0}\label{class_eigen_1_1_sparse_matrix_base_ace90eae87fe63c22b2260e57ec0592f0}} 
+Derived \& {\bfseries derived} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a1cdff6c97842543adbb721e2ad6b54f7}\label{class_eigen_1_1_sparse_matrix_base_a1cdff6c97842543adbb721e2ad6b54f7}} 
+Derived \& {\bfseries const\+\_\+cast\+\_\+derived} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a37eaebb941ba412be98924d53bba2067}{size}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ac5284446fb5e4c873f4b93b325fd20b4}{is\+Vector}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a38fe4f8e107c8a368e7ff6f7f1713abf}{outer\+Size}} () const
+\item 
+\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ae194084a73058aeeb400d287ee69aa85}{inner\+Size}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a434684b02bb721d2d456bdfcb9210b19}\label{class_eigen_1_1_sparse_matrix_base_a434684b02bb721d2d456bdfcb9210b19}} 
+bool {\bfseries is\+R\+Value} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab87c77027aff681892ab8024380decbf}\label{class_eigen_1_1_sparse_matrix_base_ab87c77027aff681892ab8024380decbf}} 
+Derived \& {\bfseries mark\+As\+R\+Value} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a8033a3a3428212c0887b59da8a8eb11d}\label{class_eigen_1_1_sparse_matrix_base_a8033a3a3428212c0887b59da8a8eb11d}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1_return_by_value}{Return\+By\+Value}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab32666b993a0d65a845c2b3af0644f35}\label{class_eigen_1_1_sparse_matrix_base_ab32666b993a0d65a845c2b3af0644f35}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa74cadfeede22a20d026710f6e0249b5}\label{class_eigen_1_1_sparse_matrix_base_aa74cadfeede22a20d026710f6e0249b5}} 
+Derived \& {\bfseries operator=} (const Derived \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ae2469b2dd2280a962a23b7718b31f1fb}\label{class_eigen_1_1_sparse_matrix_base_ae2469b2dd2280a962a23b7718b31f1fb}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a50ffcdef04e99c601059389c2f69ff53}\label{class_eigen_1_1_sparse_matrix_base_a50ffcdef04e99c601059389c2f69ff53}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_afd43d5af1e826810af17096452a54e44}\label{class_eigen_1_1_sparse_matrix_base_afd43d5af1e826810af17096452a54e44}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_afee6fbfc010294e9958f0ddc7abbec17}\label{class_eigen_1_1_sparse_matrix_base_afee6fbfc010294e9958f0ddc7abbec17}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a742a3c3ff1b552e549fd5d444f13d830}\label{class_eigen_1_1_sparse_matrix_base_a742a3c3ff1b552e549fd5d444f13d830}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_af4d9802c9a5b8c56a7136f33217914f1}\label{class_eigen_1_1_sparse_matrix_base_af4d9802c9a5b8c56a7136f33217914f1}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{struct_eigen_1_1_eigen_base}{Eigen\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0cc915928fcac0a6b0cc71305bd8e182}\label{class_eigen_1_1_sparse_matrix_base_a0cc915928fcac0a6b0cc71305bd8e182}} 
+Derived \& {\bfseries operator$\ast$=} (const Scalar \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ae00b52c29019fa7b4741d042b3fbc3e3}\label{class_eigen_1_1_sparse_matrix_base_ae00b52c29019fa7b4741d042b3fbc3e3}} 
+Derived \& {\bfseries operator/=} (const Scalar \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0701863b287d2aa62fabd06960cbc291}\label{class_eigen_1_1_sparse_matrix_base_a0701863b287d2aa62fabd06960cbc291}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_cwise_product_dense_return_type}{Cwise\+Product\+Dense\+Return\+Type}}$<$ Other\+Derived $>$\+::Type {\bfseries cwise\+Product} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac0507f4a48d9c36d765611eaa8aea54a}\label{class_eigen_1_1_sparse_matrix_base_ac0507f4a48d9c36d765611eaa8aea54a}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a1dd7e822a20cdb7c8ffcd90445f4cb8c}\label{class_eigen_1_1_sparse_matrix_base_a1dd7e822a20cdb7c8ffcd90445f4cb8c}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived, Alias\+Free\+Product $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_af1d4e8fa81c02a29418aa04a34959ea4}\label{class_eigen_1_1_sparse_matrix_base_af1d4e8fa81c02a29418aa04a34959ea4}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\hyperlink{class_eigen_1_1_sparse_symmetric_permutation_product}{Sparse\+Symmetric\+Permutation\+Product}}$<$ Derived, \mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda6bcb58be3b8b8ec84859ce0c5ac0aaec}{Upper}}$\vert$\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda891792b8ed394f7607ab16dd716f60e6}{Lower}} $>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a366885f979063ef6feb195a65ebc3b49}{twisted\+By}} (const \mbox{\hyperlink{class_eigen_1_1_permutation_matrix}{Permutation\+Matrix}}$<$ \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} $>$ \&perm) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad67e7bafd8a64f452bf10fd6a6b532d1}\label{class_eigen_1_1_sparse_matrix_base_ad67e7bafd8a64f452bf10fd6a6b532d1}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries operator$\ast$=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a148a265850603b5202cc76d656d64791}\label{class_eigen_1_1_sparse_matrix_base_a148a265850603b5202cc76d656d64791}} 
+{\footnotesize template$<$int Mode$>$ }\\const \mbox{\hyperlink{class_eigen_1_1_triangular_view}{Triangular\+View}}$<$ const Derived, Mode $>$ {\bfseries triangular\+View} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a2b1a382eaca3c1cde2e0c1d1e2031973}\label{class_eigen_1_1_sparse_matrix_base_a2b1a382eaca3c1cde2e0c1d1e2031973}} 
+{\footnotesize template$<$unsigned int Up\+Lo$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_const_self_adjoint_view_return_type}{Const\+Self\+Adjoint\+View\+Return\+Type}}$<$ Up\+Lo $>$\+::Type {\bfseries selfadjoint\+View} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab562fb80a1fb3136fb7caf3e4543da0e}\label{class_eigen_1_1_sparse_matrix_base_ab562fb80a1fb3136fb7caf3e4543da0e}} 
+{\footnotesize template$<$unsigned int Up\+Lo$>$ }\\\mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_self_adjoint_view_return_type}{Self\+Adjoint\+View\+Return\+Type}}$<$ Up\+Lo $>$\+::Type {\bfseries selfadjoint\+View} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_af92978a626be5f507e707c5cb08a2309}\label{class_eigen_1_1_sparse_matrix_base_af92978a626be5f507e707c5cb08a2309}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Scalar {\bfseries dot} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac91cfba3aa401f7ee8bdf0bbaf9d5cf7}\label{class_eigen_1_1_sparse_matrix_base_ac91cfba3aa401f7ee8bdf0bbaf9d5cf7}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Scalar {\bfseries dot} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad5b88db7e060a9ba7d29ae2e668ceb4f}\label{class_eigen_1_1_sparse_matrix_base_ad5b88db7e060a9ba7d29ae2e668ceb4f}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} {\bfseries squared\+Norm} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac6339594fd7f8fffb5c7255cc7c85196}\label{class_eigen_1_1_sparse_matrix_base_ac6339594fd7f8fffb5c7255cc7c85196}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} {\bfseries norm} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac93298a1181afe76a7c8606c1f33011b}\label{class_eigen_1_1_sparse_matrix_base_ac93298a1181afe76a7c8606c1f33011b}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} {\bfseries blue\+Norm} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a5f8f293f4639e8e575f2319d744f3a5d}\label{class_eigen_1_1_sparse_matrix_base_a5f8f293f4639e8e575f2319d744f3a5d}} 
+\mbox{\hyperlink{class_eigen_1_1_transpose}{Transpose\+Return\+Type}} {\bfseries transpose} ()
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a537453500b468b7b9283e12153e5b507}\label{class_eigen_1_1_sparse_matrix_base_a537453500b468b7b9283e12153e5b507}} 
+const \mbox{\hyperlink{class_eigen_1_1_transpose}{Const\+Transpose\+Return\+Type}} {\bfseries transpose} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a373e87f907294a02e4d19c74c51ccf08}\label{class_eigen_1_1_sparse_matrix_base_a373e87f907294a02e4d19c74c51ccf08}} 
+const Adjoint\+Return\+Type {\bfseries adjoint} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad4b075dbdf9dbb12a2cf385c0d1b45fc}\label{class_eigen_1_1_sparse_matrix_base_ad4b075dbdf9dbb12a2cf385c0d1b45fc}} 
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}{Dense\+Matrix\+Type}} {\bfseries to\+Dense} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a6a1698fa83bedab3f76dfe5aab9403e8}\label{class_eigen_1_1_sparse_matrix_base_a6a1698fa83bedab3f76dfe5aab9403e8}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\bool {\bfseries is\+Approx} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} \&prec=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_add07b83635ac04ee4034a90978fe8812}\label{class_eigen_1_1_sparse_matrix_base_add07b83635ac04ee4034a90978fe8812}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\bool {\bfseries is\+Approx} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} \&prec=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+const \mbox{\hyperlink{struct_eigen_1_1internal_1_1eval}{internal\+::eval}}$<$ Derived $>$\+::type \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ad64903381b0536a81f88e8ca96999c68}{eval}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa6ca6d91278061167c2020eb1b38881e}\label{class_eigen_1_1_sparse_matrix_base_aa6ca6d91278061167c2020eb1b38881e}} 
+Scalar {\bfseries sum} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a97d165d3620914cbf7cbad9a0d46061f}\label{class_eigen_1_1_sparse_matrix_base_a97d165d3620914cbf7cbad9a0d46061f}} 
+const \mbox{\hyperlink{class_eigen_1_1_sparse_view}{Sparse\+View}}$<$ Derived $>$ {\bfseries pruned} (const Scalar \&reference=Scalar(0), const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Real\+Scalar}} \&epsilon=\mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$ Scalar $>$\+::dummy\+\_\+precision()) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a6d2db4585386b6d4a043af6371c1a2ef}\label{class_eigen_1_1_sparse_matrix_base_a6d2db4585386b6d4a043af6371c1a2ef}} 
+{\footnotesize template$<$typename Derived $>$ }\\Derived \& {\bfseries operator=} (const Derived \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a56a21e8aab2d548029873c594739eb6d}\label{class_eigen_1_1_sparse_matrix_base_a56a21e8aab2d548029873c594739eb6d}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Derived \& {\bfseries operator-\/=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a78199a890fadeb689daec8cdefed07bc}\label{class_eigen_1_1_sparse_matrix_base_a78199a890fadeb689daec8cdefed07bc}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Derived \& {\bfseries operator+=} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a7e056fd780bc9fd6479df1cd9f1b07b1}\label{class_eigen_1_1_sparse_matrix_base_a7e056fd780bc9fd6479df1cd9f1b07b1}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Derived $>$\+::template \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_cwise_product_dense_return_type}{Cwise\+Product\+Dense\+Return\+Type}}$<$ Other\+Derived $>$\+::Type {\bfseries cwise\+Product} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_acc0fdc799ae2296afd4e5a0d6d047978}\label{class_eigen_1_1_sparse_matrix_base_acc0fdc799ae2296afd4e5a0d6d047978}} 
+{\footnotesize template$<$typename Derived $>$ }\\E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE Derived \& {\bfseries operator$\ast$=} (const Scalar \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac2cf1f2bc02e67bf07b2d5f54db2c652}\label{class_eigen_1_1_sparse_matrix_base_ac2cf1f2bc02e67bf07b2d5f54db2c652}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Scalar {\bfseries dot} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a6246bb6b056bb04a1a82187624f53868}\label{class_eigen_1_1_sparse_matrix_base_a6246bb6b056bb04a1a82187624f53868}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\\mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$ Derived $>$\+::Scalar {\bfseries dot} (const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&other) const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a4ccc6322ca6fd89c83587c6b1638f0c5}\label{class_eigen_1_1_sparse_matrix_base_a4ccc6322ca6fd89c83587c6b1638f0c5}} 
+{\footnotesize template$<$unsigned int Up\+Lo$>$ }\\\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Derived $>$\+::template \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_const_self_adjoint_view_return_type}{Const\+Self\+Adjoint\+View\+Return\+Type}}$<$ Up\+Lo $>$\+::Type {\bfseries selfadjoint\+View} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aad6f28052e75ec871684dfb182c81060}\label{class_eigen_1_1_sparse_matrix_base_aad6f28052e75ec871684dfb182c81060}} 
+{\footnotesize template$<$unsigned int Up\+Lo$>$ }\\\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Derived $>$\+::template \mbox{\hyperlink{struct_eigen_1_1_sparse_matrix_base_1_1_self_adjoint_view_return_type}{Self\+Adjoint\+View\+Return\+Type}}$<$ Up\+Lo $>$\+::Type {\bfseries selfadjoint\+View} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a659762484eec34cfb17873cb1dd13adf}\label{class_eigen_1_1_sparse_matrix_base_a659762484eec34cfb17873cb1dd13adf}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries assign} (const Other\+Derived \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aff29cf7ccd9fea021f6246caa564c6c6}\label{class_eigen_1_1_sparse_matrix_base_aff29cf7ccd9fea021f6246caa564c6c6}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\void {\bfseries assign\+Generic} (const Other\+Derived \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a659762484eec34cfb17873cb1dd13adf}\label{class_eigen_1_1_sparse_matrix_base_a659762484eec34cfb17873cb1dd13adf}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\Derived \& {\bfseries assign} (const Other\+Derived \&other)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aff29cf7ccd9fea021f6246caa564c6c6}\label{class_eigen_1_1_sparse_matrix_base_aff29cf7ccd9fea021f6246caa564c6c6}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\void {\bfseries assign\+Generic} (const Other\+Derived \&other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a18bffba9b82aa3fc6aff174dcb7a6882}\label{class_eigen_1_1_sparse_matrix_base_a18bffba9b82aa3fc6aff174dcb7a6882}} 
+static \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} {\bfseries convert\+\_\+index} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} idx)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a18bffba9b82aa3fc6aff174dcb7a6882}\label{class_eigen_1_1_sparse_matrix_base_a18bffba9b82aa3fc6aff174dcb7a6882}} 
+static \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} {\bfseries convert\+\_\+index} (const \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} idx)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a87f0c97317239ba96a0a708cc91113d9}\label{class_eigen_1_1_sparse_matrix_base_a87f0c97317239ba96a0a708cc91113d9}} 
+bool {\bfseries m\+\_\+is\+R\+Value}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a34261623108465eab7a7290ddee9d111}\label{class_eigen_1_1_sparse_matrix_base_a34261623108465eab7a7290ddee9d111}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} \&m)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0495c5eaa646bfac1a391579ec8f4a16}\label{class_eigen_1_1_sparse_matrix_base_a0495c5eaa646bfac1a391579ec8f4a16}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const friend \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Other\+Derived, Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&lhs, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} \&rhs)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aef9842b479ad45f95743b0e68dc66775}\label{class_eigen_1_1_sparse_matrix_base_aef9842b479ad45f95743b0e68dc66775}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const friend \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Other\+Derived, Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&lhs, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} \&rhs)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a34261623108465eab7a7290ddee9d111}\label{class_eigen_1_1_sparse_matrix_base_a34261623108465eab7a7290ddee9d111}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&s, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} \&m)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0495c5eaa646bfac1a391579ec8f4a16}\label{class_eigen_1_1_sparse_matrix_base_a0495c5eaa646bfac1a391579ec8f4a16}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const friend \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Other\+Derived, Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_diagonal_base}{Diagonal\+Base}}$<$ Other\+Derived $>$ \&lhs, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} \&rhs)
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aef9842b479ad45f95743b0e68dc66775}\label{class_eigen_1_1_sparse_matrix_base_aef9842b479ad45f95743b0e68dc66775}} 
+{\footnotesize template$<$typename Other\+Derived $>$ }\\const friend \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Other\+Derived, Derived $>$ {\bfseries operator$\ast$} (const \mbox{\hyperlink{class_eigen_1_1_matrix_base}{Matrix\+Base}}$<$ Other\+Derived $>$ \&lhs, const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class of any sparse matrices or sparse expressions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Derived} & is the derived type, e.\+g. a sparse matrix type, or an expression, etc.\\
+\hline
+\end{DoxyTemplParams}
+This class can be extended with the help of the plugin mechanism described on the page \mbox{\hyperlink{TopicCustomizing_Plugins}{Extending Matrix\+Base (and other classes)}} by defining the preprocessor symbol {\ttfamily E\+I\+G\+E\+N\+\_\+\+S\+P\+A\+R\+S\+E\+M\+A\+T\+R\+I\+X\+B\+A\+S\+E\+\_\+\+P\+L\+U\+G\+IN}. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}\label{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!DenseMatrixType@{DenseMatrixType}}
+\index{DenseMatrixType@{DenseMatrixType}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{DenseMatrixType}{DenseMatrixType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$Scalar,\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}},\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}$>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Dense\+Matrix\+Type}}}
+
+type of the equivalent dense matrix \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}\label{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!DenseMatrixType@{DenseMatrixType}}
+\index{DenseMatrixType@{DenseMatrixType}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{DenseMatrixType}{DenseMatrixType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$Scalar,\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}},\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}$>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a502ecff91241215c3a2cde0c8e822329}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Dense\+Matrix\+Type}}}
+
+type of the equivalent dense matrix \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}\label{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!RealScalar@{RealScalar}}
+\index{RealScalar@{RealScalar}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{RealScalar}{RealScalar}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+::Real \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Real\+Scalar}}}
+
+This is the \char`\"{}real scalar\char`\"{} type; if the {\itshape Scalar} type is already real numbers (e.\+g. int, float or double) then {\itshape Real\+Scalar} is just the same as {\itshape Scalar}. If {\itshape Scalar} is {\itshape std\+::complex$<$\+T$>$} then Real\+Scalar is {\itshape T}.
+
+\begin{DoxySeeAlso}{See also}
+class \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}\label{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!RealScalar@{RealScalar}}
+\index{RealScalar@{RealScalar}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{RealScalar}{RealScalar}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}}$<$Scalar$>$\+::Real \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_ab6d722bb30120f98ae183cf42303a5a4}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Real\+Scalar}}}
+
+This is the \char`\"{}real scalar\char`\"{} type; if the {\itshape Scalar} type is already real numbers (e.\+g. int, float or double) then {\itshape Real\+Scalar} is just the same as {\itshape Scalar}. If {\itshape Scalar} is {\itshape std\+::complex$<$\+T$>$} then Real\+Scalar is {\itshape T}.
+
+\begin{DoxySeeAlso}{See also}
+class \mbox{\hyperlink{struct_eigen_1_1_num_traits}{Num\+Traits}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}\label{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!SquareMatrixType@{SquareMatrixType}}
+\index{SquareMatrixType@{SquareMatrixType}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{SquareMatrixType}{SquareMatrixType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$Scalar, internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}), internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}})$>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Square\+Matrix\+Type}}}
+
+type of the equivalent square matrix \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}\label{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!SquareMatrixType@{SquareMatrixType}}
+\index{SquareMatrixType@{SquareMatrixType}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{SquareMatrixType}{SquareMatrixType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$Scalar, internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}), internal\+::max\+\_\+size\+\_\+prefer\+\_\+dynamic(\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}})$>$ \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a044b94ac6ea7bf4490ee9ae54ddad9d0}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Square\+Matrix\+Type}}}
+
+type of the equivalent square matrix \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}\label{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!StorageIndex@{StorageIndex}}
+\index{StorageIndex@{StorageIndex}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{StorageIndex}{StorageIndex}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$Derived$>$\+::\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Storage\+Index}}}
+
+The integer type used to {\bfseries{store}} indices within a \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{Sparse\+Matrix}}. For a {\ttfamily Sparse\+Matrix$<$\+Scalar,\+Options,\+Index\+Type$>$} it an alias of the third template parameter {\ttfamily Index\+Type}. \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}\label{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!StorageIndex@{StorageIndex}}
+\index{StorageIndex@{StorageIndex}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{StorageIndex}{StorageIndex}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_eigen_1_1internal_1_1traits}{internal\+::traits}}$<$Derived$>$\+::\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Eigen\+::\+Sparse\+Matrix\+Base\+::\+Storage\+Index}}}
+
+The integer type used to {\bfseries{store}} indices within a \mbox{\hyperlink{class_eigen_1_1_sparse_matrix}{Sparse\+Matrix}}. For a {\ttfamily Sparse\+Matrix$<$\+Scalar,\+Options,\+Index\+Type$>$} it an alias of the third template parameter {\ttfamily Index\+Type}. \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}\label{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef Scalar \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}{Eigen\+::\+Sparse\+Matrix\+Base\+::value\+\_\+type}}}
+
+The numeric type of the expression\textquotesingle{} coefficients, e.\+g. float, double, int or std\+::complex$<$float$>$, etc.
+
+It is an alias for the Scalar type \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}\label{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef Scalar \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_abf59e847d1277c2f5c04dabaeac299d6}{Eigen\+::\+Sparse\+Matrix\+Base\+::value\+\_\+type}}}
+
+The numeric type of the expression\textquotesingle{} coefficients, e.\+g. float, double, int or std\+::complex$<$float$>$, etc.
+
+It is an alias for the Scalar type 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_af0cf81688afee95853527411db972c3e}\label{class_eigen_1_1_sparse_matrix_base_af0cf81688afee95853527411db972c3e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RowsAtCompileTime@{RowsAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!RowsAtCompileTime@{RowsAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}} 
+Rows\+At\+Compile\+Time&The number of rows at compile-\/time. This is just a copy of the value provided by the {\itshape Derived} type. If a value is not known at compile-\/time, it is set to the {\itshape Dynamic} constant. \begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::rows(), Matrix\+Base\+::cols(), \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}{Size\+At\+Compile\+Time}} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ColsAtCompileTime@{ColsAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!ColsAtCompileTime@{ColsAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}} 
+Cols\+At\+Compile\+Time&The number of columns at compile-\/time. This is just a copy of the value provided by the {\itshape Derived} type. If a value is not known at compile-\/time, it is set to the {\itshape Dynamic} constant. \begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::rows(), Matrix\+Base\+::cols(), \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}{Size\+At\+Compile\+Time}} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAtCompileTime@{SizeAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!SizeAtCompileTime@{SizeAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}} 
+Size\+At\+Compile\+Time&This is equal to the number of coefficients, i.\+e. the number of rows times the number of columns, or to {\itshape Dynamic} if this is not known at compile-\/time. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsVectorAtCompileTime@{IsVectorAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!IsVectorAtCompileTime@{IsVectorAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}} 
+Is\+Vector\+At\+Compile\+Time&This is set to true if either the number of rows or the number of columns is known at compile-\/time to be equal to 1. Indeed, in that case, we are dealing with a column-\/vector (if there is only one column) or with a row-\/vector (if there is only one row). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NumDimensions@{NumDimensions}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!NumDimensions@{NumDimensions}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea850e5f13bd33599b04e132fecc36d524}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea850e5f13bd33599b04e132fecc36d524}} 
+Num\+Dimensions&This value is equal to Tensor\+::\+Num\+Dimensions, i.\+e. 0 for scalars, 1 for vectors, and 2 for matrices. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Flags@{Flags}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!Flags@{Flags}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}} 
+Flags&This stores expression \mbox{\hyperlink{group__flags}{Flags}} flags which may or may not be inherited by new expressions constructed from this one. See the \mbox{\hyperlink{group__flags}{list of flags}}. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1e}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RowsAtCompileTime@{RowsAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!RowsAtCompileTime@{RowsAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}} 
+Rows\+At\+Compile\+Time&The number of rows at compile-\/time. This is just a copy of the value provided by the {\itshape Derived} type. If a value is not known at compile-\/time, it is set to the {\itshape Dynamic} constant. \begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::rows(), Matrix\+Base\+::cols(), \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}{Size\+At\+Compile\+Time}} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ColsAtCompileTime@{ColsAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!ColsAtCompileTime@{ColsAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}} 
+Cols\+At\+Compile\+Time&The number of columns at compile-\/time. This is just a copy of the value provided by the {\itshape Derived} type. If a value is not known at compile-\/time, it is set to the {\itshape Dynamic} constant. \begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::rows(), Matrix\+Base\+::cols(), \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}{Size\+At\+Compile\+Time}} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SizeAtCompileTime@{SizeAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!SizeAtCompileTime@{SizeAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea110306ad3259b4b7c20f23bfaaa08847}} 
+Size\+At\+Compile\+Time&This is equal to the number of coefficients, i.\+e. the number of rows times the number of columns, or to {\itshape Dynamic} if this is not known at compile-\/time. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eaef4aace2ebd66df1f2265b969d19bb83}{Rows\+At\+Compile\+Time}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea86794305894223975bf37c5120c3595c}{Cols\+At\+Compile\+Time}} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsVectorAtCompileTime@{IsVectorAtCompileTime}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!IsVectorAtCompileTime@{IsVectorAtCompileTime}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}} 
+Is\+Vector\+At\+Compile\+Time&This is set to true if either the number of rows or the number of columns is known at compile-\/time to be equal to 1. Indeed, in that case, we are dealing with a column-\/vector (if there is only one column) or with a row-\/vector (if there is only one row). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NumDimensions@{NumDimensions}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!NumDimensions@{NumDimensions}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea850e5f13bd33599b04e132fecc36d524}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1ea850e5f13bd33599b04e132fecc36d524}} 
+Num\+Dimensions&This value is equal to Tensor\+::\+Num\+Dimensions, i.\+e. 0 for scalars, 1 for vectors, and 2 for matrices. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Flags@{Flags}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!Flags@{Flags}}}\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}\label{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eacccbc120b6dddc9e579dcaec9bf2322d}} 
+Flags&This stores expression \mbox{\hyperlink{group__flags}{Flags}} flags which may or may not be inherited by new expressions constructed from this one. See the \mbox{\hyperlink{group__flags}{list of flags}}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}\label{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!cols@{cols}}
+\index{cols@{cols}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of columns. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}\label{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!cols@{cols}}
+\index{cols@{cols}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of columns. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad64903381b0536a81f88e8ca96999c68}\label{class_eigen_1_1_sparse_matrix_base_ad64903381b0536a81f88e8ca96999c68}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!eval@{eval}}
+\index{eval@{eval}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_eigen_1_1internal_1_1eval}{internal\+::eval}}$<$Derived$>$\+::type Eigen\+::\+Sparse\+Matrix\+Base\+::eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the matrix or vector obtained by evaluating this expression.
+\end{DoxyReturn}
+Notice that in the case of a plain matrix or vector (not an expression) this function just returns a const reference, in order to avoid a useless copy. \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ad64903381b0536a81f88e8ca96999c68}\label{class_eigen_1_1_sparse_matrix_base_ad64903381b0536a81f88e8ca96999c68}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!eval@{eval}}
+\index{eval@{eval}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_eigen_1_1internal_1_1eval}{internal\+::eval}}$<$Derived$>$\+::type Eigen\+::\+Sparse\+Matrix\+Base\+::eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the matrix or vector obtained by evaluating this expression.
+\end{DoxyReturn}
+Notice that in the case of a plain matrix or vector (not an expression) this function just returns a const reference, in order to avoid a useless copy. \mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ae194084a73058aeeb400d287ee69aa85}\label{class_eigen_1_1_sparse_matrix_base_ae194084a73058aeeb400d287ee69aa85}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!innerSize@{innerSize}}
+\index{innerSize@{innerSize}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{innerSize()}{innerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::inner\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the size of the inner dimension according to the storage order, i.\+e., the number of rows for a columns major matrix, and the number of cols otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ae194084a73058aeeb400d287ee69aa85}\label{class_eigen_1_1_sparse_matrix_base_ae194084a73058aeeb400d287ee69aa85}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!innerSize@{innerSize}}
+\index{innerSize@{innerSize}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{innerSize()}{innerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::inner\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the size of the inner dimension according to the storage order, i.\+e., the number of rows for a columns major matrix, and the number of cols otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac5284446fb5e4c873f4b93b325fd20b4}\label{class_eigen_1_1_sparse_matrix_base_ac5284446fb5e4c873f4b93b325fd20b4}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!isVector@{isVector}}
+\index{isVector@{isVector}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{isVector()}{isVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Eigen\+::\+Sparse\+Matrix\+Base\+::is\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if either the number of rows or the number of columns is equal to 1. In other words, this function returns 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows}}()==1 || \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols}}()==1 }
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols()}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}{Is\+Vector\+At\+Compile\+Time}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_ac5284446fb5e4c873f4b93b325fd20b4}\label{class_eigen_1_1_sparse_matrix_base_ac5284446fb5e4c873f4b93b325fd20b4}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!isVector@{isVector}}
+\index{isVector@{isVector}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{isVector()}{isVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Eigen\+::\+Sparse\+Matrix\+Base\+::is\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if either the number of rows or the number of columns is equal to 1. In other words, this function returns 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows}}()==1 || \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols}}()==1 }
+\end{DoxyCode}
+ 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols()}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a212dcb9789e83a4e6ec96f0acba58d1eab3eb56a95c26c0fc6de6bb109079c56b}{Is\+Vector\+At\+Compile\+Time}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a85d94dc3f045465a18e02cc1e3286f66}\label{class_eigen_1_1_sparse_matrix_base_a85d94dc3f045465a18e02cc1e3286f66}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename Other\+Derived $>$ \\
+const \mbox{\hyperlink{class_eigen_1_1_product}{Product}}$<$ Derived, Other\+Derived, Alias\+Free\+Product $>$ Eigen\+::\+Sparse\+Matrix\+Base\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base}{Sparse\+Matrix\+Base}}$<$ Other\+Derived $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an expression of the product of two sparse matrices. By default a conservative product preserving the symbolic non zeros is performed. The automatic pruning of the small values can be achieved by calling the pruned() function in which case a totally different product algorithm is employed\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_eigen_1_1_matrix}{C}} = (A*\mbox{\hyperlink{class_eigen_1_1_matrix}{B}}).pruned();             \textcolor{comment}{// suppress numerical zeros (exact)}}
+\DoxyCodeLine{\mbox{\hyperlink{class_eigen_1_1_matrix}{C}} = (A*\mbox{\hyperlink{class_eigen_1_1_matrix}{B}}).pruned(ref);}
+\DoxyCodeLine{\mbox{\hyperlink{class_eigen_1_1_matrix}{C}} = (A*\mbox{\hyperlink{class_eigen_1_1_matrix}{B}}).pruned(ref,\mbox{\hyperlink{group__gtc__constants_ga2a1e57fc5592b69cfae84174cbfc9429}{epsilon}});}
+\end{DoxyCode}
+ where {\ttfamily ref} is a meaningful non zero reference value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a38fe4f8e107c8a368e7ff6f7f1713abf}\label{class_eigen_1_1_sparse_matrix_base_a38fe4f8e107c8a368e7ff6f7f1713abf}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!outerSize@{outerSize}}
+\index{outerSize@{outerSize}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{outerSize()}{outerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::outer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the size of the storage major dimension, i.\+e., the number of columns for a columns major matrix, and the number of rows otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a38fe4f8e107c8a368e7ff6f7f1713abf}\label{class_eigen_1_1_sparse_matrix_base_a38fe4f8e107c8a368e7ff6f7f1713abf}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!outerSize@{outerSize}}
+\index{outerSize@{outerSize}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{outerSize()}{outerSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::outer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the size of the storage major dimension, i.\+e., the number of columns for a columns major matrix, and the number of rows otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}\label{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!rows@{rows}}
+\index{rows@{rows}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of rows. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}\label{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!rows@{rows}}
+\index{rows@{rows}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of rows. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a37eaebb941ba412be98924d53bba2067}\label{class_eigen_1_1_sparse_matrix_base_a37eaebb941ba412be98924d53bba2067}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!size@{size}}
+\index{size@{size}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of coefficients, which is {\itshape \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}}$\ast$cols}(). 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a37eaebb941ba412be98924d53bba2067}\label{class_eigen_1_1_sparse_matrix_base_a37eaebb941ba412be98924d53bba2067}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!size@{size}}
+\index{size@{size}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} Eigen\+::\+Sparse\+Matrix\+Base\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of coefficients, which is {\itshape \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}}$\ast$cols}(). 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_aa03eb464159adaae99b379809a6f159e}{rows()}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_add4b0e8126a2705ba55fa5718d7cf9cc}{cols()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a366885f979063ef6feb195a65ebc3b49}\label{class_eigen_1_1_sparse_matrix_base_a366885f979063ef6feb195a65ebc3b49}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!twistedBy@{twistedBy}}
+\index{twistedBy@{twistedBy}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{twistedBy()}{twistedBy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_eigen_1_1_sparse_symmetric_permutation_product}{Sparse\+Symmetric\+Permutation\+Product}}$<$Derived,\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda6bcb58be3b8b8ec84859ce0c5ac0aaec}{Upper}}$\vert$\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda891792b8ed394f7607ab16dd716f60e6}{Lower}}$>$ Eigen\+::\+Sparse\+Matrix\+Base\+::twisted\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_permutation_matrix}{Permutation\+Matrix}}$<$ \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} $>$ \&}]{perm }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an expression of P \mbox{\hyperlink{struct_h}{H}} P$^\wedge$-\/1 where \mbox{\hyperlink{struct_h}{H}} is the matrix represented by {\ttfamily $\ast$this} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_sparse_matrix_base_a366885f979063ef6feb195a65ebc3b49}\label{class_eigen_1_1_sparse_matrix_base_a366885f979063ef6feb195a65ebc3b49}} 
+\index{Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}!twistedBy@{twistedBy}}
+\index{twistedBy@{twistedBy}!Eigen::SparseMatrixBase@{Eigen::SparseMatrixBase}}
+\doxysubsubsection{\texorpdfstring{twistedBy()}{twistedBy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_eigen_1_1_sparse_symmetric_permutation_product}{Sparse\+Symmetric\+Permutation\+Product}}$<$Derived,\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda6bcb58be3b8b8ec84859ce0c5ac0aaec}{Upper}}$\vert$\mbox{\hyperlink{group__enums_gga39e3366ff5554d731e7dc8bb642f83cda891792b8ed394f7607ab16dd716f60e6}{Lower}}$>$ Eigen\+::\+Sparse\+Matrix\+Base\+::twisted\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_eigen_1_1_permutation_matrix}{Permutation\+Matrix}}$<$ \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{namespace_eigen_ad81fa7195215a0ce30017dfac309f0b2}{Dynamic}}, \mbox{\hyperlink{class_eigen_1_1_sparse_matrix_base_a0fcbfc42cf85a978c92dfd4a0d0547d0}{Storage\+Index}} $>$ \&}]{perm }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+an expression of P \mbox{\hyperlink{struct_h}{H}} P$^\wedge$-\/1 where \mbox{\hyperlink{struct_h}{H}} is the matrix represented by {\ttfamily $\ast$this} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/util/Forward\+Declarations.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Matrix\+Base.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Assign.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Cwise\+Binary\+Op.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Cwise\+Unary\+Op.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Dot.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Fuzzy.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Product.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Redux.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Self\+Adjoint\+View.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Sparse\+Core/Sparse\+Triangular\+View.\+h\end{DoxyCompactItemize}

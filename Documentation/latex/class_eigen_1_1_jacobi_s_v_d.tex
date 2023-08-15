@@ -1,0 +1,735 @@
+\hypertarget{class_eigen_1_1_jacobi_s_v_d}{}\doxysection{Eigen\+::Jacobi\+S\+VD Class Reference}
+\label{class_eigen_1_1_jacobi_s_v_d}\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+
+
+Two-\/sided Jacobi S\+VD decomposition of a rectangular matrix.  
+
+
+
+
+{\ttfamily \#include $<$Jacobi\+S\+V\+D.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a6d10b0f10b041d5d63a89a2b8eca0350}\label{class_eigen_1_1_jacobi_s_v_d_a6d10b0f10b041d5d63a89a2b8eca0350}} 
+enum \{ \newline
+{\bfseries Options} = Options\+\_\+, 
+{\bfseries Q\+R\+Preconditioner} = internal\+::get\+\_\+qr\+\_\+preconditioner(Options), 
+{\bfseries Rows\+At\+Compile\+Time} = Base\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Base\+::Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Diag\+Size\+At\+Compile\+Time} = Base\+::Diag\+Size\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Base\+::Max\+Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Base\+::Max\+Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Diag\+Size\+At\+Compile\+Time} = Base\+::Max\+Diag\+Size\+At\+Compile\+Time, 
+\newline
+{\bfseries Matrix\+Options} = Base\+::Matrix\+Options
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a9f901025e6cf7a17d18ede52612ed4e9}\label{class_eigen_1_1_jacobi_s_v_d_a9f901025e6cf7a17d18ede52612ed4e9}} 
+enum \{ \newline
+{\bfseries Options} = Options\+\_\+, 
+{\bfseries Q\+R\+Preconditioner} = internal\+::get\+\_\+qr\+\_\+preconditioner(Options), 
+{\bfseries Rows\+At\+Compile\+Time} = Base\+::Rows\+At\+Compile\+Time, 
+{\bfseries Cols\+At\+Compile\+Time} = Base\+::Cols\+At\+Compile\+Time, 
+\newline
+{\bfseries Diag\+Size\+At\+Compile\+Time} = Base\+::Diag\+Size\+At\+Compile\+Time, 
+{\bfseries Max\+Rows\+At\+Compile\+Time} = Base\+::Max\+Rows\+At\+Compile\+Time, 
+{\bfseries Max\+Cols\+At\+Compile\+Time} = Base\+::Max\+Cols\+At\+Compile\+Time, 
+{\bfseries Max\+Diag\+Size\+At\+Compile\+Time} = Base\+::Max\+Diag\+Size\+At\+Compile\+Time, 
+\newline
+{\bfseries Matrix\+Options} = Base\+::Matrix\+Options
+ \}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a93b9c75eed7b25d2cbccd713426571f5}\label{class_eigen_1_1_jacobi_s_v_d_a93b9c75eed7b25d2cbccd713426571f5}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a68fe2bf8f121e63a5367f247dd2962ed}\label{class_eigen_1_1_jacobi_s_v_d_a68fe2bf8f121e63a5367f247dd2962ed}} 
+typedef Base\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aeb9633bab6df9bba337bca9b9ff467b6}\label{class_eigen_1_1_jacobi_s_v_d_aeb9633bab6df9bba337bca9b9ff467b6}} 
+typedef Base\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a82ccbe5a96d22b132e07d0d26380d810}\label{class_eigen_1_1_jacobi_s_v_d_a82ccbe5a96d22b132e07d0d26380d810}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_s_v_d_base_a4d9d6a2e6b3329c5cbca6372bc1d3bee}{Base\+::\+Index}} {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ad3ebdac688aa431b53602313ea693cf8}\label{class_eigen_1_1_jacobi_s_v_d_ad3ebdac688aa431b53602313ea693cf8}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Matrix\+U\+Type}} {\bfseries Matrix\+U\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_afbc102a484dfe8c3096861769fb29d66}\label{class_eigen_1_1_jacobi_s_v_d_afbc102a484dfe8c3096861769fb29d66}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Matrix\+V\+Type}} {\bfseries Matrix\+V\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4d71b7a25a66ba840e8a61fe33821bf0}\label{class_eigen_1_1_jacobi_s_v_d_a4d71b7a25a66ba840e8a61fe33821bf0}} 
+typedef Base\+::\+Singular\+Values\+Type {\bfseries Singular\+Values\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a6f66908418a403ca2f6d9c419178c6ce}\label{class_eigen_1_1_jacobi_s_v_d_a6f66908418a403ca2f6d9c419178c6ce}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, Diag\+Size\+At\+Compile\+Time, Diag\+Size\+At\+Compile\+Time, Matrix\+Options, Max\+Diag\+Size\+At\+Compile\+Time, Max\+Diag\+Size\+At\+Compile\+Time $>$ {\bfseries Work\+Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a93b9c75eed7b25d2cbccd713426571f5}\label{class_eigen_1_1_jacobi_s_v_d_a93b9c75eed7b25d2cbccd713426571f5}} 
+typedef Matrix\+Type\+\_\+ {\bfseries Matrix\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a68fe2bf8f121e63a5367f247dd2962ed}\label{class_eigen_1_1_jacobi_s_v_d_a68fe2bf8f121e63a5367f247dd2962ed}} 
+typedef Base\+::\+Scalar {\bfseries Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aeb9633bab6df9bba337bca9b9ff467b6}\label{class_eigen_1_1_jacobi_s_v_d_aeb9633bab6df9bba337bca9b9ff467b6}} 
+typedef Base\+::\+Real\+Scalar {\bfseries Real\+Scalar}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a82ccbe5a96d22b132e07d0d26380d810}\label{class_eigen_1_1_jacobi_s_v_d_a82ccbe5a96d22b132e07d0d26380d810}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_s_v_d_base_a4d9d6a2e6b3329c5cbca6372bc1d3bee}{Base\+::\+Index}} {\bfseries Index}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ad3ebdac688aa431b53602313ea693cf8}\label{class_eigen_1_1_jacobi_s_v_d_ad3ebdac688aa431b53602313ea693cf8}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Matrix\+U\+Type}} {\bfseries Matrix\+U\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_afbc102a484dfe8c3096861769fb29d66}\label{class_eigen_1_1_jacobi_s_v_d_afbc102a484dfe8c3096861769fb29d66}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Base\+::\+Matrix\+V\+Type}} {\bfseries Matrix\+V\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4d71b7a25a66ba840e8a61fe33821bf0}\label{class_eigen_1_1_jacobi_s_v_d_a4d71b7a25a66ba840e8a61fe33821bf0}} 
+typedef Base\+::\+Singular\+Values\+Type {\bfseries Singular\+Values\+Type}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a6f66908418a403ca2f6d9c419178c6ce}\label{class_eigen_1_1_jacobi_s_v_d_a6f66908418a403ca2f6d9c419178c6ce}} 
+typedef \mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix}}$<$ Scalar, Diag\+Size\+At\+Compile\+Time, Diag\+Size\+At\+Compile\+Time, Matrix\+Options, Max\+Diag\+Size\+At\+Compile\+Time, Max\+Diag\+Size\+At\+Compile\+Time $>$ {\bfseries Work\+Matrix\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}{Jacobi\+S\+VD}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_ae6789bb095bd79e6a16f9644a5545a57}{Jacobi\+S\+VD}} (Index rows, Index cols)
+\begin{DoxyCompactList}\small\item\em Default Constructor with memory preallocation. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a57ba197221577d82a15df49df6840f49}{Jacobi\+S\+VD}} (Index rows, Index cols, unsigned int computation\+Options)
+\begin{DoxyCompactList}\small\item\em Default Constructor with memory preallocation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a4037adbb99f62a19f46bdc7265755ae7}{Jacobi\+S\+VD}} (const Matrix\+Type \&matrix)
+\begin{DoxyCompactList}\small\item\em Constructor performing the decomposition of given matrix, using the custom options specified with the {\itshape Options} template paramter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a8033577cc9576cc4e9680339679bf6ed}{Jacobi\+S\+VD}} (const Matrix\+Type \&matrix, unsigned int computation\+Options)
+\begin{DoxyCompactList}\small\item\em Constructor performing the decomposition of given matrix using specified options for computing unitaries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} \& \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}{compute}} (const Matrix\+Type \&matrix)
+\begin{DoxyCompactList}\small\item\em Method performing the decomposition of given matrix. Computes Thin/\+Full unitaries U/V if specified using the {\itshape Options} template parameter or the class constructor. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} \& \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a57429db9d8ef2c3f64616f8df25716e2}{compute}} (const Matrix\+Type \&matrix, unsigned int computation\+Options)
+\begin{DoxyCompactList}\small\item\em Method performing the decomposition of given matrix, as specified by the {\ttfamily computation\+Options} parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}{Jacobi\+S\+VD}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_ae6789bb095bd79e6a16f9644a5545a57}{Jacobi\+S\+VD}} (Index rows, Index cols)
+\begin{DoxyCompactList}\small\item\em Default Constructor with memory preallocation. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a57ba197221577d82a15df49df6840f49}{Jacobi\+S\+VD}} (Index rows, Index cols, unsigned int computation\+Options)
+\begin{DoxyCompactList}\small\item\em Default Constructor with memory preallocation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a4037adbb99f62a19f46bdc7265755ae7}{Jacobi\+S\+VD}} (const Matrix\+Type \&matrix)
+\begin{DoxyCompactList}\small\item\em Constructor performing the decomposition of given matrix, using the custom options specified with the {\itshape Options} template paramter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a8033577cc9576cc4e9680339679bf6ed}{Jacobi\+S\+VD}} (const Matrix\+Type \&matrix, unsigned int computation\+Options)
+\begin{DoxyCompactList}\small\item\em Constructor performing the decomposition of given matrix using specified options for computing unitaries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} \& \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}{compute}} (const Matrix\+Type \&matrix)
+\begin{DoxyCompactList}\small\item\em Method performing the decomposition of given matrix. Computes Thin/\+Full unitaries U/V if specified using the {\itshape Options} template parameter or the class constructor. \end{DoxyCompactList}\item 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} \& \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a57429db9d8ef2c3f64616f8df25716e2}{compute}} (const Matrix\+Type \&matrix, unsigned int computation\+Options)
+\begin{DoxyCompactList}\small\item\em Method performing the decomposition of given matrix, as specified by the {\ttfamily computation\+Options} parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}{computeU}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}{computeU}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}{computeV}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}{computeV}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}\label{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}} 
+Index {\bfseries rows} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}\label{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}} 
+Index {\bfseries rows} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}\label{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}} 
+Index {\bfseries cols} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}\label{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}} 
+Index {\bfseries cols} () const
+\item 
+Index \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}{rank}} () const
+\item 
+Index \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}{rank}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}{computeU}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}{computeU}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}{computeV}} () const
+\item 
+bool \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}{computeV}} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}\label{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}} 
+Index {\bfseries rows} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}\label{class_eigen_1_1_jacobi_s_v_d_a0af81f8ee7afd61b326f051c4a07ecaf}} 
+Index {\bfseries rows} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}\label{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}} 
+Index {\bfseries cols} () const
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}\label{class_eigen_1_1_jacobi_s_v_d_aac482e9c6877aeab911908fe3cbbb87e}} 
+Index {\bfseries cols} () const
+\item 
+Index \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}{rank}} () const
+\item 
+Index \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}{rank}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a814c32f9e99e0200c893ddd27ee473e8}\label{class_eigen_1_1_jacobi_s_v_d_a814c32f9e99e0200c893ddd27ee473e8}} 
+{\bfseries E\+I\+G\+E\+N\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+A\+S\+S\+E\+RT} (!(Should\+Compute\+ThinU \&\&int(Q\+R\+Preconditioner)==int(\mbox{\hyperlink{group__enums_gga46eba0d5c621f590b8cf1b53af31d56ea566c44ba828dea7f5d2fb174d799d5d2}{Full\+Piv\+Householder\+Q\+R\+Preconditioner}})) \&\&!(Should\+Compute\+ThinU \&\&int(Q\+R\+Preconditioner)==int(\mbox{\hyperlink{group__enums_gga46eba0d5c621f590b8cf1b53af31d56ea566c44ba828dea7f5d2fb174d799d5d2}{Full\+Piv\+Householder\+Q\+R\+Preconditioner}})), \char`\"{}Jacobi\+S\+V\+D\+: can\textquotesingle{}t \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}{compute}} thin U or thin V with the \mbox{\hyperlink{class_eigen_1_1_full_piv_householder_q_r}{Full\+Piv\+Householder\+QR}} preconditioner. \char`\"{} \char`\"{}Use the \mbox{\hyperlink{class_eigen_1_1_col_piv_householder_q_r}{Col\+Piv\+Householder\+QR}} preconditioner instead.\char`\"{}) template$<$ typename Matrix\+Type\+\_\+\+\_\+
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a814c32f9e99e0200c893ddd27ee473e8}\label{class_eigen_1_1_jacobi_s_v_d_a814c32f9e99e0200c893ddd27ee473e8}} 
+{\bfseries E\+I\+G\+E\+N\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+A\+S\+S\+E\+RT} (!(Should\+Compute\+ThinU \&\&int(Q\+R\+Preconditioner)==int(\mbox{\hyperlink{group__enums_gga46eba0d5c621f590b8cf1b53af31d56ea566c44ba828dea7f5d2fb174d799d5d2}{Full\+Piv\+Householder\+Q\+R\+Preconditioner}})) \&\&!(Should\+Compute\+ThinU \&\&int(Q\+R\+Preconditioner)==int(\mbox{\hyperlink{group__enums_gga46eba0d5c621f590b8cf1b53af31d56ea566c44ba828dea7f5d2fb174d799d5d2}{Full\+Piv\+Householder\+Q\+R\+Preconditioner}})), \char`\"{}Jacobi\+S\+V\+D\+: can\textquotesingle{}t \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}{compute}} thin U or thin V with the \mbox{\hyperlink{class_eigen_1_1_full_piv_householder_q_r}{Full\+Piv\+Householder\+QR}} preconditioner. \char`\"{} \char`\"{}Use the \mbox{\hyperlink{class_eigen_1_1_col_piv_householder_q_r}{Col\+Piv\+Householder\+QR}} preconditioner instead.\char`\"{}) template$<$ typename Matrix\+Type\+\_\+\+\_\+
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a6c5c037bac4e5f843475e5f94e13d2c4}\label{class_eigen_1_1_jacobi_s_v_d_a6c5c037bac4e5f843475e5f94e13d2c4}} 
+int {\bfseries Options\+\_\+\+\_\+}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a31c56c796f000cab14d4008f84874e0c}\label{class_eigen_1_1_jacobi_s_v_d_a31c56c796f000cab14d4008f84874e0c}} 
+\mbox{\hyperlink{struct_eigen_1_1internal_1_1qr__preconditioner__impl}{internal\+::qr\+\_\+preconditioner\+\_\+impl}}$<$ Matrix\+Type, Options, Q\+R\+Preconditioner, internal\+::\+Precondition\+If\+More\+Cols\+Than\+Rows $>$ {\bfseries m\+\_\+qr\+\_\+precond\+\_\+morecols}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ac02ed27680567c4c7cf76a3ec94408d8}\label{class_eigen_1_1_jacobi_s_v_d_ac02ed27680567c4c7cf76a3ec94408d8}} 
+\mbox{\hyperlink{struct_eigen_1_1internal_1_1qr__preconditioner__impl}{internal\+::qr\+\_\+preconditioner\+\_\+impl}}$<$ Matrix\+Type, Options, Q\+R\+Preconditioner, internal\+::\+Precondition\+If\+More\+Rows\+Than\+Cols $>$ {\bfseries m\+\_\+qr\+\_\+precond\+\_\+morerows}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ac75b85f585f2861f1f2ea2197f9d403b}\label{class_eigen_1_1_jacobi_s_v_d_ac75b85f585f2861f1f2ea2197f9d403b}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Work\+Matrix\+Type}} {\bfseries m\+\_\+work\+Matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a302af93d3d6dca5c1b61f8acef9d5e85}\label{class_eigen_1_1_jacobi_s_v_d_a302af93d3d6dca5c1b61f8acef9d5e85}} 
+Matrix\+Type {\bfseries m\+\_\+scaled\+Matrix}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4dd40c15497b04b2a7d1051d8ea6dac0}\label{class_eigen_1_1_jacobi_s_v_d_a4dd40c15497b04b2a7d1051d8ea6dac0}} 
+Index {\bfseries m\+\_\+cols}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a560fc715815549949aba9d1693838099}\label{class_eigen_1_1_jacobi_s_v_d_a560fc715815549949aba9d1693838099}} 
+unsigned int {\bfseries m\+\_\+computation\+Options}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1317399bee2e787dee7e8d160afe0354}\label{class_eigen_1_1_jacobi_s_v_d_a1317399bee2e787dee7e8d160afe0354}} 
+bool {\bfseries m\+\_\+compute\+FullU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a306a72c2fb86548c6d245454ab2c771c}\label{class_eigen_1_1_jacobi_s_v_d_a306a72c2fb86548c6d245454ab2c771c}} 
+bool {\bfseries m\+\_\+compute\+FullV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ad9482e69f34d72577d112e6bd9ab1e24}\label{class_eigen_1_1_jacobi_s_v_d_ad9482e69f34d72577d112e6bd9ab1e24}} 
+bool {\bfseries m\+\_\+compute\+ThinU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aa38648daa5e75ae637c026b42879b5fc}\label{class_eigen_1_1_jacobi_s_v_d_aa38648daa5e75ae637c026b42879b5fc}} 
+bool {\bfseries m\+\_\+compute\+ThinV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a9f5b955679c9a10851ff6653de984678}\label{class_eigen_1_1_jacobi_s_v_d_a9f5b955679c9a10851ff6653de984678}} 
+Index {\bfseries m\+\_\+diag\+Size}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a9a44b140bbd3afb7f87e0b850afbd70b}\label{class_eigen_1_1_jacobi_s_v_d_a9a44b140bbd3afb7f87e0b850afbd70b}} 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} {\bfseries m\+\_\+info}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1fb5b4c5676d673f964ff004fef1eb3b}\label{class_eigen_1_1_jacobi_s_v_d_a1fb5b4c5676d673f964ff004fef1eb3b}} 
+bool {\bfseries m\+\_\+is\+Allocated}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a7ee4ced6f00889a2636c91d113c25f63}\label{class_eigen_1_1_jacobi_s_v_d_a7ee4ced6f00889a2636c91d113c25f63}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aaf685be548b32e1143fa0d8c9389f1fe}\label{class_eigen_1_1_jacobi_s_v_d_aaf685be548b32e1143fa0d8c9389f1fe}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix\+U\+Type}} {\bfseries m\+\_\+matrixU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a6d2aac007226a5c83d9f84ed6e6a81c8}\label{class_eigen_1_1_jacobi_s_v_d_a6d2aac007226a5c83d9f84ed6e6a81c8}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix\+V\+Type}} {\bfseries m\+\_\+matrixV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aeea089ea13a44e8d73972c088ddccebd}\label{class_eigen_1_1_jacobi_s_v_d_aeea089ea13a44e8d73972c088ddccebd}} 
+Index {\bfseries m\+\_\+nonzero\+Singular\+Values}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ae7f303ccb0d797107629356c58cf3ee9}\label{class_eigen_1_1_jacobi_s_v_d_ae7f303ccb0d797107629356c58cf3ee9}} 
+Real\+Scalar {\bfseries m\+\_\+prescribed\+Threshold}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_affa4c43629111dc590a1047f04eaf076}\label{class_eigen_1_1_jacobi_s_v_d_affa4c43629111dc590a1047f04eaf076}} 
+Index {\bfseries m\+\_\+rows}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_acddf27c8b6da5a61ade334251c0d4df9}\label{class_eigen_1_1_jacobi_s_v_d_acddf27c8b6da5a61ade334251c0d4df9}} 
+Singular\+Values\+Type {\bfseries m\+\_\+singular\+Values}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a976fcde7bf84a1a4a07b752131312c51}\label{class_eigen_1_1_jacobi_s_v_d_a976fcde7bf84a1a4a07b752131312c51}} 
+bool {\bfseries m\+\_\+use\+Prescribed\+Threshold}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4dd40c15497b04b2a7d1051d8ea6dac0}\label{class_eigen_1_1_jacobi_s_v_d_a4dd40c15497b04b2a7d1051d8ea6dac0}} 
+Index {\bfseries m\+\_\+cols}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a560fc715815549949aba9d1693838099}\label{class_eigen_1_1_jacobi_s_v_d_a560fc715815549949aba9d1693838099}} 
+unsigned int {\bfseries m\+\_\+computation\+Options}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1317399bee2e787dee7e8d160afe0354}\label{class_eigen_1_1_jacobi_s_v_d_a1317399bee2e787dee7e8d160afe0354}} 
+bool {\bfseries m\+\_\+compute\+FullU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a306a72c2fb86548c6d245454ab2c771c}\label{class_eigen_1_1_jacobi_s_v_d_a306a72c2fb86548c6d245454ab2c771c}} 
+bool {\bfseries m\+\_\+compute\+FullV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ad9482e69f34d72577d112e6bd9ab1e24}\label{class_eigen_1_1_jacobi_s_v_d_ad9482e69f34d72577d112e6bd9ab1e24}} 
+bool {\bfseries m\+\_\+compute\+ThinU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aa38648daa5e75ae637c026b42879b5fc}\label{class_eigen_1_1_jacobi_s_v_d_aa38648daa5e75ae637c026b42879b5fc}} 
+bool {\bfseries m\+\_\+compute\+ThinV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a9f5b955679c9a10851ff6653de984678}\label{class_eigen_1_1_jacobi_s_v_d_a9f5b955679c9a10851ff6653de984678}} 
+Index {\bfseries m\+\_\+diag\+Size}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a9a44b140bbd3afb7f87e0b850afbd70b}\label{class_eigen_1_1_jacobi_s_v_d_a9a44b140bbd3afb7f87e0b850afbd70b}} 
+\mbox{\hyperlink{group__enums_ga85fad7b87587764e5cf6b513a9e0ee5e}{Computation\+Info}} {\bfseries m\+\_\+info}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1fb5b4c5676d673f964ff004fef1eb3b}\label{class_eigen_1_1_jacobi_s_v_d_a1fb5b4c5676d673f964ff004fef1eb3b}} 
+bool {\bfseries m\+\_\+is\+Allocated}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a7ee4ced6f00889a2636c91d113c25f63}\label{class_eigen_1_1_jacobi_s_v_d_a7ee4ced6f00889a2636c91d113c25f63}} 
+bool {\bfseries m\+\_\+is\+Initialized}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aaf685be548b32e1143fa0d8c9389f1fe}\label{class_eigen_1_1_jacobi_s_v_d_aaf685be548b32e1143fa0d8c9389f1fe}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix\+U\+Type}} {\bfseries m\+\_\+matrixU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a6d2aac007226a5c83d9f84ed6e6a81c8}\label{class_eigen_1_1_jacobi_s_v_d_a6d2aac007226a5c83d9f84ed6e6a81c8}} 
+\mbox{\hyperlink{class_eigen_1_1_matrix}{Matrix\+V\+Type}} {\bfseries m\+\_\+matrixV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aeea089ea13a44e8d73972c088ddccebd}\label{class_eigen_1_1_jacobi_s_v_d_aeea089ea13a44e8d73972c088ddccebd}} 
+Index {\bfseries m\+\_\+nonzero\+Singular\+Values}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ae7f303ccb0d797107629356c58cf3ee9}\label{class_eigen_1_1_jacobi_s_v_d_ae7f303ccb0d797107629356c58cf3ee9}} 
+Real\+Scalar {\bfseries m\+\_\+prescribed\+Threshold}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_affa4c43629111dc590a1047f04eaf076}\label{class_eigen_1_1_jacobi_s_v_d_affa4c43629111dc590a1047f04eaf076}} 
+Index {\bfseries m\+\_\+rows}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_acddf27c8b6da5a61ade334251c0d4df9}\label{class_eigen_1_1_jacobi_s_v_d_acddf27c8b6da5a61ade334251c0d4df9}} 
+Singular\+Values\+Type {\bfseries m\+\_\+singular\+Values}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a976fcde7bf84a1a4a07b752131312c51}\label{class_eigen_1_1_jacobi_s_v_d_a976fcde7bf84a1a4a07b752131312c51}} 
+bool {\bfseries m\+\_\+use\+Prescribed\+Threshold}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_af2b08dcdc78130ffe3f96ffb31405d92}\label{class_eigen_1_1_jacobi_s_v_d_af2b08dcdc78130ffe3f96ffb31405d92}} 
+static constexpr bool {\bfseries Should\+Compute\+ThinU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1f787e28641df3f6ffc1905d9f9b08cf}\label{class_eigen_1_1_jacobi_s_v_d_a1f787e28641df3f6ffc1905d9f9b08cf}} 
+static constexpr bool {\bfseries Should\+Compute\+ThinV}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_af2b08dcdc78130ffe3f96ffb31405d92}\label{class_eigen_1_1_jacobi_s_v_d_af2b08dcdc78130ffe3f96ffb31405d92}} 
+static constexpr bool {\bfseries Should\+Compute\+ThinU}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1f787e28641df3f6ffc1905d9f9b08cf}\label{class_eigen_1_1_jacobi_s_v_d_a1f787e28641df3f6ffc1905d9f9b08cf}} 
+static constexpr bool {\bfseries Should\+Compute\+ThinV}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a1c31cbfa4ec8350c91ebde5d8617599f}\label{class_eigen_1_1_jacobi_s_v_d_a1c31cbfa4ec8350c91ebde5d8617599f}} 
+{\footnotesize template$<$typename Matrix\+Type\+\_\+\+\_\+ , int Options\+\_\+\+\_\+, int Q\+R\+Preconditioner\+\_\+, int Case\+\_\+, bool Do\+Anything\+\_\+$>$ }\\struct {\bfseries internal\+::qr\+\_\+preconditioner\+\_\+impl}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_acae302b53cb92300ae9582904643f015}\label{class_eigen_1_1_jacobi_s_v_d_acae302b53cb92300ae9582904643f015}} 
+{\footnotesize template$<$typename Matrix\+Type\+\_\+\+\_\+ , int Options\+\_\+\+\_\+, int Q\+R\+Preconditioner\+\_\+, int Case\+\_\+, bool Do\+Anything\+\_\+$>$ }\\struct {\bfseries internal\+::qr\+\_\+preconditioner\+\_\+impl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Two-\/sided Jacobi S\+VD decomposition of a rectangular matrix. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Matrix\+Type\+\_\+} & the type of the matrix of which we are computing the S\+VD decomposition \\
+\hline
+{\em Options} & this optional parameter allows one to specify the type of QR decomposition that will be used internally for the R-\/\+S\+VD step for non-\/square matrices. Additionally, it allows one to specify whether to compute thin or full unitaries {\itshape U} and {\itshape V}. See discussion of possible values below.\\
+\hline
+\end{DoxyTemplParams}
+S\+VD decomposition consists in decomposing any n-\/by-\/p matrix {\itshape A} as a product \[ A = U S V^* \] where {\itshape U} is a n-\/by-\/n unitary, {\itshape V} is a p-\/by-\/p unitary, and {\itshape S} is a n-\/by-\/p real positive matrix which is zero outside of its main diagonal; the diagonal entries of S are known as the {\itshape singular} {\itshape values} of {\itshape A} and the columns of {\itshape U} and {\itshape V} are known as the left and right {\itshape singular} {\itshape vectors} of {\itshape A} respectively.
+
+Singular values are always sorted in decreasing order.
+
+This \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} decomposition computes only the singular values by default. If you want {\itshape U} or {\itshape V}, you need to ask for them explicitly.
+
+You can ask for only {\itshape thin} {\itshape U} or {\itshape V} to be computed, meaning the following. In case of a rectangular n-\/by-\/p matrix, letting {\itshape m} be the smaller value among {\itshape n} and {\itshape p}, there are only {\itshape m} singular vectors; the remaining columns of {\itshape U} and {\itshape V} do not correspond to actual singular vectors. Asking for {\itshape thin} {\itshape U} or {\itshape V} means asking for only their {\itshape m} first columns to be formed. So {\itshape U} is then a n-\/by-\/m matrix, and {\itshape V} is then a p-\/by-\/m matrix. Notice that thin {\itshape U} and {\itshape V} are all you need for (least squares) solving.
+
+Here\textquotesingle{}s an example demonstrating basic usage\+: 
+\begin{DoxyCodeInclude}{0}
+\end{DoxyCodeInclude}
+ Output\+: 
+\begin{DoxyVerbInclude}
+\end{DoxyVerbInclude}
+
+
+This \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} class is a two-\/sided Jacobi R-\/\+S\+VD decomposition, ensuring optimal reliability and accuracy. The downside is that it\textquotesingle{}s slower than bidiagonalizing S\+VD algorithms for large square matrices; however its complexity is still $ O(n^2p) $ where {\itshape n} is the smaller dimension and {\itshape p} is the greater dimension, meaning that it is still of the same order of complexity as the faster bidiagonalizing R-\/\+S\+VD algorithms. In particular, like any R-\/\+S\+VD, it takes advantage of non-\/squareness in that its complexity is only linear in the greater dimension.
+
+If the input matrix has inf or nan coefficients, the result of the computation is undefined, but the computation is guaranteed to terminate in finite (and reasonable) time.
+
+The possible QR preconditioners that can be set with Options template parameter are\+: \begin{DoxyItemize}
+\item Col\+Piv\+Householder\+Q\+R\+Preconditioner is the default. In practice it\textquotesingle{}s very safe. It uses column-\/pivoting QR. \item Full\+Piv\+Householder\+Q\+R\+Preconditioner, is the safest and slowest. It uses full-\/pivoting QR. Contrary to other Q\+Rs, it doesn\textquotesingle{}t allow computing thin unitaries. \item Householder\+Q\+R\+Preconditioner is the fastest, and less safe and accurate than the pivoting variants. It uses non-\/pivoting QR. This is very similar in safety and accuracy to the bidiagonalization process used by bidiagonalizing S\+VD algorithms (since bidiagonalization is inherently non-\/pivoting). However the resulting S\+VD is still more reliable than bidiagonalizing S\+V\+Ds because the Jacobi-\/based iterarive process is more reliable than the optimized bidiagonal S\+VD iterations. \item No\+Q\+R\+Preconditioner allows not to use a QR preconditioner at all. This is useful if you know that you will only be computing \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} decompositions of square matrices. Non-\/square matrices require a QR preconditioner. Using this option will result in faster compilation and smaller executable code. It won\textquotesingle{}t significantly speed up computation, since \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}} is always checking if QR preconditioning is needed before applying it anyway.\end{DoxyItemize}
+One may also use the Options template parameter to specify how the unitaries should be computed. The options are \mbox{\hyperlink{group__enums_ggae3e239fb70022eb8747994cf5d68b4a9af8c742a1aa87773e165eae406c9ccaf8}{Compute\+ThinU}}, \mbox{\hyperlink{group__enums_ggae3e239fb70022eb8747994cf5d68b4a9a1055e53fa95c8ae04a07ebb72cfafd95}{Compute\+ThinV}}, \mbox{\hyperlink{group__enums_ggae3e239fb70022eb8747994cf5d68b4a9a2b4f91ca5859a4159dbfe8090043817f}{Compute\+FullU}}, \mbox{\hyperlink{group__enums_ggae3e239fb70022eb8747994cf5d68b4a9a52c6f7e80bbf9a42297c88f700245b51}{Compute\+FullV}}. It is not possible to request both the thin and full versions of a unitary. By default, unitaries will not be computed.
+
+You can set the Q\+R\+Preconditioner and unitary options together\+: \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}$<$Matrix\+Type, Col\+Piv\+Householder\+Q\+R\+Preconditioner $\vert$ Compute\+ThinU $\vert$ Compute\+FullV$>$
+
+\begin{DoxySeeAlso}{See also}
+Matrix\+Base\+::jacobi\+Svd() 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}\label{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor. 
+
+The default constructor is useful in cases in which the user intends to perform decompositions via \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}{Jacobi\+S\+V\+D\+::compute(const Matrix\+Type\&)}}. \mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ae6789bb095bd79e6a16f9644a5545a57}\label{class_eigen_1_1_jacobi_s_v_d_ae6789bb095bd79e6a16f9644a5545a57}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{Index}]{rows,  }\item[{Index}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor with memory preallocation. 
+
+Like the default constructor but with preallocation of the internal data according to the specified problem size and {\itshape Options} template parameter.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}{Jacobi\+S\+V\+D()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a57ba197221577d82a15df49df6840f49}\label{class_eigen_1_1_jacobi_s_v_d_a57ba197221577d82a15df49df6840f49}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{Index}]{rows,  }\item[{Index}]{cols,  }\item[{unsigned int}]{computation\+Options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor with memory preallocation. 
+
+Like the default constructor but with preallocation of the internal data according to the specified problem size.
+
+One {\bfseries{cannot}} request unitaries using both the {\itshape Options} template parameter and the constructor. If possible, prefer using the {\itshape Options} template parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em computation\+Options} & specify whether to compute Thin/\+Full unitaries U/V \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}{Jacobi\+S\+V\+D()}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000368}{Deprecated}}]Will be removed in the next major \mbox{\hyperlink{namespace_eigen}{Eigen}} version. Options should be specified in the {\itshape Options} template parameter. \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4037adbb99f62a19f46bdc7265755ae7}\label{class_eigen_1_1_jacobi_s_v_d_a4037adbb99f62a19f46bdc7265755ae7}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor performing the decomposition of given matrix, using the custom options specified with the {\itshape Options} template paramter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a8033577cc9576cc4e9680339679bf6ed}\label{class_eigen_1_1_jacobi_s_v_d_a8033577cc9576cc4e9680339679bf6ed}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix,  }\item[{unsigned int}]{computation\+Options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor performing the decomposition of given matrix using specified options for computing unitaries. 
+
+One {\bfseries{cannot}} request unitiaries using both the {\itshape Options} template parameter and the constructor. If possible, prefer using the {\itshape Options} template parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+{\em computation\+Options} & specify whether to compute Thin/\+Full unitaries U/V\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000369}{Deprecated}}]Will be removed in the next major \mbox{\hyperlink{namespace_eigen}{Eigen}} version. Options should be specified in the {\itshape Options} template parameter. \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}\label{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor. 
+
+The default constructor is useful in cases in which the user intends to perform decompositions via \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}{Jacobi\+S\+V\+D\+::compute(const Matrix\+Type\&)}}. \mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_ae6789bb095bd79e6a16f9644a5545a57}\label{class_eigen_1_1_jacobi_s_v_d_ae6789bb095bd79e6a16f9644a5545a57}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{Index}]{rows,  }\item[{Index}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor with memory preallocation. 
+
+Like the default constructor but with preallocation of the internal data according to the specified problem size and {\itshape Options} template parameter.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}{Jacobi\+S\+V\+D()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a57ba197221577d82a15df49df6840f49}\label{class_eigen_1_1_jacobi_s_v_d_a57ba197221577d82a15df49df6840f49}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{Index}]{rows,  }\item[{Index}]{cols,  }\item[{unsigned int}]{computation\+Options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default Constructor with memory preallocation. 
+
+Like the default constructor but with preallocation of the internal data according to the specified problem size.
+
+One {\bfseries{cannot}} request unitaries using both the {\itshape Options} template parameter and the constructor. If possible, prefer using the {\itshape Options} template parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em computation\+Options} & specify whether to compute Thin/\+Full unitaries U/V \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d_a580e7d880aec007fd56338ea1e180ea0}{Jacobi\+S\+V\+D()}}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000410}{Deprecated}}]Will be removed in the next major \mbox{\hyperlink{namespace_eigen}{Eigen}} version. Options should be specified in the {\itshape Options} template parameter. \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4037adbb99f62a19f46bdc7265755ae7}\label{class_eigen_1_1_jacobi_s_v_d_a4037adbb99f62a19f46bdc7265755ae7}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor performing the decomposition of given matrix, using the custom options specified with the {\itshape Options} template paramter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a8033577cc9576cc4e9680339679bf6ed}\label{class_eigen_1_1_jacobi_s_v_d_a8033577cc9576cc4e9680339679bf6ed}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!JacobiSVD@{JacobiSVD}}
+\index{JacobiSVD@{JacobiSVD}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{JacobiSVD()}{JacobiSVD()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily Eigen\+::\+Jacobi\+S\+V\+D\+::\+Jacobi\+S\+VD (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix,  }\item[{unsigned int}]{computation\+Options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor performing the decomposition of given matrix using specified options for computing unitaries. 
+
+One {\bfseries{cannot}} request unitiaries using both the {\itshape Options} template parameter and the constructor. If possible, prefer using the {\itshape Options} template parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+{\em computation\+Options} & specify whether to compute Thin/\+Full unitaries U/V\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000411}{Deprecated}}]Will be removed in the next major \mbox{\hyperlink{namespace_eigen}{Eigen}} version. Options should be specified in the {\itshape Options} template parameter. \end{DoxyRefDesc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}\label{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!compute@{compute}}
+\index{compute@{compute}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}\& Eigen\+::\+Jacobi\+S\+V\+D\+::compute (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method performing the decomposition of given matrix. Computes Thin/\+Full unitaries U/V if specified using the {\itshape Options} template parameter or the class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}\label{class_eigen_1_1_jacobi_s_v_d_aff0004d97d0c038141d47308a08ecd47}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!compute@{compute}}
+\index{compute@{compute}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}\& Eigen\+::\+Jacobi\+S\+V\+D\+::compute (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method performing the decomposition of given matrix. Computes Thin/\+Full unitaries U/V if specified using the {\itshape Options} template parameter or the class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a57429db9d8ef2c3f64616f8df25716e2}\label{class_eigen_1_1_jacobi_s_v_d_a57429db9d8ef2c3f64616f8df25716e2}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!compute@{compute}}
+\index{compute@{compute}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}\& Eigen\+::\+Jacobi\+S\+V\+D\+::compute (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix,  }\item[{unsigned int}]{computation\+Options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method performing the decomposition of given matrix, as specified by the {\ttfamily computation\+Options} parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+{\em computation\+Options} & specify whether to compute Thin/\+Full unitaries U/V\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000370}{Deprecated}}]Will be removed in the next major \mbox{\hyperlink{namespace_eigen}{Eigen}} version. Options should be specified in the {\itshape Options} template parameter. \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a57429db9d8ef2c3f64616f8df25716e2}\label{class_eigen_1_1_jacobi_s_v_d_a57429db9d8ef2c3f64616f8df25716e2}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!compute@{compute}}
+\index{compute@{compute}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily E\+I\+G\+E\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED \mbox{\hyperlink{class_eigen_1_1_jacobi_s_v_d}{Jacobi\+S\+VD}}\& Eigen\+::\+Jacobi\+S\+V\+D\+::compute (\begin{DoxyParamCaption}\item[{const Matrix\+Type \&}]{matrix,  }\item[{unsigned int}]{computation\+Options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method performing the decomposition of given matrix, as specified by the {\ttfamily computation\+Options} parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the matrix to decompose \\
+\hline
+{\em computation\+Options} & specify whether to compute Thin/\+Full unitaries U/V\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000412}{Deprecated}}]Will be removed in the next major \mbox{\hyperlink{namespace_eigen}{Eigen}} version. Options should be specified in the {\itshape Options} template parameter. \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}\label{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeU@{computeU}}
+\index{computeU@{computeU}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeU()}{computeU()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeU\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape U} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}\label{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeU@{computeU}}
+\index{computeU@{computeU}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeU()}{computeU()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeU\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape U} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}\label{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeU@{computeU}}
+\index{computeU@{computeU}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeU()}{computeU()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeU\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape U} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}\label{class_eigen_1_1_jacobi_s_v_d_a76570b604300f86ef0e75cbd424e8361}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeU@{computeU}}
+\index{computeU@{computeU}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeU()}{computeU()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeU\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape U} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}\label{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeV@{computeV}}
+\index{computeV@{computeV}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeV()}{computeV()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeV\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape V} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}\label{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeV@{computeV}}
+\index{computeV@{computeV}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeV()}{computeV()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeV\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape V} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}\label{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeV@{computeV}}
+\index{computeV@{computeV}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeV()}{computeV()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeV\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape V} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}\label{class_eigen_1_1_jacobi_s_v_d_a8086c8bc81a5aa731a869d5518df36e2}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!computeV@{computeV}}
+\index{computeV@{computeV}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{computeV()}{computeV()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Eigen\+::\+S\+V\+D\+Base\+::computeV\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape V} (full or thin) is asked for in this S\+VD decomposition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}\label{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!rank@{rank}}
+\index{rank@{rank}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{rank()}{rank()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Index Eigen\+::\+S\+V\+D\+Base\+::rank\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the rank of the matrix of which {\ttfamily $\ast$this} is the S\+VD.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method has to determine which singular values should be considered nonzero. For that, it uses the threshold value that you can control by calling set\+Threshold(const Real\+Scalar\&). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}\label{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!rank@{rank}}
+\index{rank@{rank}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{rank()}{rank()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Index Eigen\+::\+S\+V\+D\+Base\+::rank\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the rank of the matrix of which {\ttfamily $\ast$this} is the S\+VD.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method has to determine which singular values should be considered nonzero. For that, it uses the threshold value that you can control by calling set\+Threshold(const Real\+Scalar\&). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}\label{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!rank@{rank}}
+\index{rank@{rank}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{rank()}{rank()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Index Eigen\+::\+S\+V\+D\+Base\+::rank\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the rank of the matrix of which {\ttfamily $\ast$this} is the S\+VD.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method has to determine which singular values should be considered nonzero. For that, it uses the threshold value that you can control by calling set\+Threshold(const Real\+Scalar\&). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}\label{class_eigen_1_1_jacobi_s_v_d_a4b5d89feab668ff9b09ac18e4899df58}} 
+\index{Eigen::JacobiSVD@{Eigen::JacobiSVD}!rank@{rank}}
+\index{rank@{rank}!Eigen::JacobiSVD@{Eigen::JacobiSVD}}
+\doxysubsubsection{\texorpdfstring{rank()}{rank()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Index Eigen\+::\+S\+V\+D\+Base\+::rank\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the rank of the matrix of which {\ttfamily $\ast$this} is the S\+VD.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method has to determine which singular values should be considered nonzero. For that, it uses the threshold value that you can control by calling set\+Threshold(const Real\+Scalar\&). 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+Core/util/Forward\+Declarations.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/\+Eigen/src/\+S\+V\+D/Jacobi\+S\+V\+D.\+h\end{DoxyCompactItemize}

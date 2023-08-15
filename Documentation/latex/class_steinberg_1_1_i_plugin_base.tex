@@ -1,0 +1,72 @@
+\hypertarget{class_steinberg_1_1_i_plugin_base}{}\doxysection{Steinberg\+::I\+Plugin\+Base Class Reference}
+\label{class_steinberg_1_1_i_plugin_base}\index{Steinberg::IPluginBase@{Steinberg::IPluginBase}}
+
+
+{\ttfamily \#include $<$ipluginbase.\+h$>$}
+
+Inheritance diagram for Steinberg\+::I\+Plugin\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.382979cm]{class_steinberg_1_1_i_plugin_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base_afd5f48e0d7927e051b8264fa89f52c0f}{initialize}} (\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$context)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base_ac3354b9b4d4d3deeb2f24b5e7b4d53e6}{terminate}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_base_a960428d8b80deb8f956839be4ce4d81b}\label{class_steinberg_1_1_i_plugin_base_a960428d8b80deb8f956839be4ce4d81b}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic interface to a plug-\/in component\+: \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base}{I\+Plugin\+Base}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\item initialize/terminate the plug-\/in component
+\end{DoxyItemize}
+
+The host uses this interface to initialize and to terminate the plug-\/in component. The context that is passed to the initialize method contains any interface to the host that the plug-\/in will need to work. These interfaces can vary from category to category. A list of supported host context interfaces should be included in the documentation of a specific category. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_base_afd5f48e0d7927e051b8264fa89f52c0f}\label{class_steinberg_1_1_i_plugin_base_afd5f48e0d7927e051b8264fa89f52c0f}} 
+\index{Steinberg::IPluginBase@{Steinberg::IPluginBase}!initialize@{initialize}}
+\index{initialize@{initialize}!Steinberg::IPluginBase@{Steinberg::IPluginBase}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Plugin\+Base\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_steinberg_1_1_f_unknown}{F\+Unknown}} $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The host passes a number of interfaces as context to initialize the plug-\/in class. 
+\begin{DoxyParams}{Parameters}
+{\em context,passed} & by the host, is mandatory and should implement I\+Host\+Application \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Extensive memory allocations etc. should be performed in this method rather than in the class\textquotesingle{} constructor! If the method does N\+OT return k\+Result\+Ok, the object is released immediately. In this case terminate is not called! 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{class_i_plug_v_s_t3_controller_a4e32133b7bee1d1e5c9ca560b9468b4d}{I\+Plug\+V\+S\+T3\+Controller}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_a4acda68d12532c2443cf1289e74631ca}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_a51e1e38d105b532fcb40be066ffa03b7}{Steinberg\+::\+Vst\+::\+Component}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_abe7665f03a0d049450fbf6a11ba1b12a}{Steinberg\+::\+Vst\+::\+Component\+Base}}, and \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_single_component_effect_a1556619bb514d6ca22f81ebe81647b39}{Steinberg\+::\+Vst\+::\+Single\+Component\+Effect}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_base_ac3354b9b4d4d3deeb2f24b5e7b4d53e6}\label{class_steinberg_1_1_i_plugin_base_ac3354b9b4d4d3deeb2f24b5e7b4d53e6}} 
+\index{Steinberg::IPluginBase@{Steinberg::IPluginBase}!terminate@{terminate}}
+\index{terminate@{terminate}!Steinberg::IPluginBase@{Steinberg::IPluginBase}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Plugin\+Base\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+This function is called before the plug-\/in is unloaded and can be used for cleanups. You have to release all references to any host application interfaces. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_ex1_ae34238e8c045eef58cfcbc164cad0831}{Steinberg\+::\+Vst\+::\+Edit\+Controller\+Ex1}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_edit_controller_abb19fb91716a0b177da7b81899ab719b}{Steinberg\+::\+Vst\+::\+Edit\+Controller}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_ab51179b2c4c3e2a828392923e999132e}{Steinberg\+::\+Vst\+::\+Component}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_component_base_afca393ed57fff201ef7ab3de97ff87af}{Steinberg\+::\+Vst\+::\+Component\+Base}}, \mbox{\hyperlink{class_steinberg_1_1_vst_1_1_single_component_effect_aa45a9d1cd2517189a94462f818ef16d4}{Steinberg\+::\+Vst\+::\+Single\+Component\+Effect}}, \mbox{\hyperlink{class_i_plug_v_s_t3_adacc6758450aea578f44c9b8bc6dabe5}{I\+Plug\+V\+S\+T3}}, and \mbox{\hyperlink{class_i_plug_v_s_t3_processor_a3ed07763386fa76464b80e5af6ac9c02}{I\+Plug\+V\+S\+T3\+Processor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/base/ipluginbase.\+h\end{DoxyCompactItemize}

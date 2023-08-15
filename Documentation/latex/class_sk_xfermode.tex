@@ -1,0 +1,55 @@
+\hypertarget{class_sk_xfermode}{}\doxysection{Sk\+Xfermode Class Reference}
+\label{class_sk_xfermode}\index{SkXfermode@{SkXfermode}}
+Inheritance diagram for Sk\+Xfermode\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sk_xfermode}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_xfermode_a9953e1b79eebefe13eae2ff9718f468d}\label{class_sk_xfermode_a9953e1b79eebefe13eae2ff9718f468d}} 
+enum {\bfseries Src\+Color\+Opacity} \{ {\bfseries k\+Opaque\+\_\+\+Src\+Color\+Opacity} = 0, 
+{\bfseries k\+Transparent\+Black\+\_\+\+Src\+Color\+Opacity} = 1, 
+{\bfseries k\+Transparent\+Alpha\+\_\+\+Src\+Color\+Opacity} = 2, 
+{\bfseries k\+Unknown\+\_\+\+Src\+Color\+Opacity} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_xfermode_aff35f316d8631d843c4b5a338d8ffa16}\label{class_sk_xfermode_aff35f316d8631d843c4b5a338d8ffa16}} 
+virtual void {\bfseries xfer32} (\mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} dst\mbox{[}$\,$\mbox{]}, const \mbox{\hyperlink{_sk_color_8h_a9ec12bd74c4b63b5da802b419106b8ea}{Sk\+P\+M\+Color}} src\mbox{[}$\,$\mbox{]}, int count, const \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}} aa\mbox{[}$\,$\mbox{]}) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_xfermode}{Sk\+Xfermode}} $>$ \mbox{\hyperlink{class_sk_xfermode_ada8b314e4e2128c65a9f8da758afaa75}{Make}} (Sk\+Blend\+Mode)
+\item 
+static \mbox{\hyperlink{class_sk_xfermode}{Sk\+Xfermode}} $\ast$ \mbox{\hyperlink{class_sk_xfermode_a17bd3f42d6c2f8cf4c33e0248417c777}{Peek}} (Sk\+Blend\+Mode mode)
+\item 
+\mbox{\Hypertarget{class_sk_xfermode_a54a2b3d753eb2709c477cd89119884d2}\label{class_sk_xfermode_a54a2b3d753eb2709c477cd89119884d2}} 
+static bool {\bfseries Is\+Opaque} (Sk\+Blend\+Mode, Src\+Color\+Opacity)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_xfermode_ada8b314e4e2128c65a9f8da758afaa75}\label{class_sk_xfermode_ada8b314e4e2128c65a9f8da758afaa75}} 
+\index{SkXfermode@{SkXfermode}!Make@{Make}}
+\index{Make@{Make}!SkXfermode@{SkXfermode}}
+\doxysubsubsection{\texorpdfstring{Make()}{Make()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_xfermode}{Sk\+Xfermode}} $>$ Sk\+Xfermode\+::\+Make (\begin{DoxyParamCaption}\item[{Sk\+Blend\+Mode}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return an \mbox{\hyperlink{class_sk_xfermode}{Sk\+Xfermode}} object for the specified mode. \mbox{\Hypertarget{class_sk_xfermode_a17bd3f42d6c2f8cf4c33e0248417c777}\label{class_sk_xfermode_a17bd3f42d6c2f8cf4c33e0248417c777}} 
+\index{SkXfermode@{SkXfermode}!Peek@{Peek}}
+\index{Peek@{Peek}!SkXfermode@{SkXfermode}}
+\doxysubsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_sk_xfermode}{Sk\+Xfermode}}$\ast$ Sk\+Xfermode\+::\+Peek (\begin{DoxyParamCaption}\item[{Sk\+Blend\+Mode}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Skia maintains global xfermode objects corresponding to each Blend\+Mode. This returns a ptr to that global xfermode (or null if the mode is srcover). Thus the caller may use the returned ptr, but it should leave its refcnt untouched. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Xfermode\+Priv.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Xfermode.\+cpp\end{DoxyCompactItemize}

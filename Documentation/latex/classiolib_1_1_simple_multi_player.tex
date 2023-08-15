@@ -1,0 +1,663 @@
+\hypertarget{classiolib_1_1_simple_multi_player}{}\doxysection{iolib\+::Simple\+Multi\+Player Class Reference}
+\label{classiolib_1_1_simple_multi_player}\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+
+
+{\ttfamily \#include $<$Simple\+Multi\+Player.\+h$>$}
+
+Inheritance diagram for iolib\+::Simple\+Multi\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classiolib_1_1_simple_multi_player}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}{on\+Audio\+Ready}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a1c8ed2ea07e3b6cb7f7ea5a036371e9b}{on\+Error\+After\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af22f92132e9d6ab334587da2f6458f9a}{on\+Error\+Before\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}\label{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}} 
+void {\bfseries setup\+Audio\+Stream} (int32\+\_\+t channel\+Count, int32\+\_\+t sample\+Rate)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}\label{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}} 
+void {\bfseries teardown\+Audio\+Stream} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}\label{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}} 
+bool {\bfseries open\+Stream} ()
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source}} (\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$source, \mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$\mbox{\hyperlink{structbuffer}{buffer}})
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}{unload\+Sample\+Data}} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}\label{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}} 
+void {\bfseries trigger\+Down} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}\label{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}} 
+void {\bfseries trigger\+Up} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}\label{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}} 
+void {\bfseries reset\+All} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}\label{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}} 
+bool {\bfseries get\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}\label{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}} 
+void {\bfseries clear\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}\label{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}} 
+void {\bfseries set\+Pan} (int index, float pan)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}\label{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}} 
+float {\bfseries get\+Pan} (int index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}\label{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}} 
+void {\bfseries set\+Gain} (int index, float gain)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}\label{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}} 
+float {\bfseries get\+Gain} (int index)
+\item 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}{on\+Audio\+Ready}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}{on\+Error\+After\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}{on\+Error\+Before\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}\label{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}} 
+void {\bfseries setup\+Audio\+Stream} (int32\+\_\+t channel\+Count, int32\+\_\+t sample\+Rate)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}\label{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}} 
+void {\bfseries teardown\+Audio\+Stream} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}\label{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}} 
+bool {\bfseries open\+Stream} ()
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source}} (\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$source, \mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$\mbox{\hyperlink{structbuffer}{buffer}})
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}{unload\+Sample\+Data}} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}\label{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}} 
+void {\bfseries trigger\+Down} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}\label{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}} 
+void {\bfseries trigger\+Up} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}\label{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}} 
+void {\bfseries reset\+All} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}\label{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}} 
+bool {\bfseries get\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}\label{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}} 
+void {\bfseries clear\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}\label{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}} 
+void {\bfseries set\+Pan} (int index, float pan)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}\label{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}} 
+float {\bfseries get\+Pan} (int index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}\label{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}} 
+void {\bfseries set\+Gain} (int index, float gain)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}\label{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}} 
+float {\bfseries get\+Gain} (int index)
+\item 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}{on\+Audio\+Ready}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}{on\+Error\+After\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}{on\+Error\+Before\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}\label{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}} 
+void {\bfseries setup\+Audio\+Stream} (int32\+\_\+t channel\+Count, int32\+\_\+t sample\+Rate)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}\label{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}} 
+void {\bfseries teardown\+Audio\+Stream} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}\label{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}} 
+bool {\bfseries open\+Stream} ()
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source}} (\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$source, \mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$\mbox{\hyperlink{structbuffer}{buffer}})
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}{unload\+Sample\+Data}} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}\label{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}} 
+void {\bfseries trigger\+Down} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}\label{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}} 
+void {\bfseries trigger\+Up} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}\label{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}} 
+void {\bfseries reset\+All} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}\label{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}} 
+bool {\bfseries get\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}\label{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}} 
+void {\bfseries clear\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}\label{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}} 
+void {\bfseries set\+Pan} (int index, float pan)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}\label{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}} 
+float {\bfseries get\+Pan} (int index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}\label{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}} 
+void {\bfseries set\+Gain} (int index, float gain)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}\label{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}} 
+float {\bfseries get\+Gain} (int index)
+\item 
+\mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}{on\+Audio\+Ready}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, void $\ast$audio\+Data, int32\+\_\+t num\+Frames) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}{on\+Error\+After\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+virtual void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}{on\+Error\+Before\+Close}} (\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$oboe\+Stream, \mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}} error) override
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}\label{classiolib_1_1_simple_multi_player_a6bcf7b7412fe052118a8d95efa3dff03}} 
+void {\bfseries setup\+Audio\+Stream} (int32\+\_\+t channel\+Count, int32\+\_\+t sample\+Rate)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}\label{classiolib_1_1_simple_multi_player_ae01cff8ae3a0745a0698effb0fcc3296}} 
+void {\bfseries teardown\+Audio\+Stream} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}\label{classiolib_1_1_simple_multi_player_aec956588134d6f082a69d0c148a15b57}} 
+bool {\bfseries open\+Stream} ()
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source}} (\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$source, \mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$\mbox{\hyperlink{structbuffer}{buffer}})
+\item 
+void \mbox{\hyperlink{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}{unload\+Sample\+Data}} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}\label{classiolib_1_1_simple_multi_player_a7d18460f266a69072c224fece2834e3b}} 
+void {\bfseries trigger\+Down} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}\label{classiolib_1_1_simple_multi_player_a5f5076240eb3af5218aa67c9759166f9}} 
+void {\bfseries trigger\+Up} (int32\+\_\+t index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}\label{classiolib_1_1_simple_multi_player_a37381f9361c180f7695df6087b59b689}} 
+void {\bfseries reset\+All} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}\label{classiolib_1_1_simple_multi_player_ab5121a40e85a8a6708edab186bc7016c}} 
+bool {\bfseries get\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}\label{classiolib_1_1_simple_multi_player_a43e3661660b421c6443310f34984f180}} 
+void {\bfseries clear\+Output\+Reset} ()
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}\label{classiolib_1_1_simple_multi_player_a120984f22a2ee6b07e08af83bdcdbd69}} 
+void {\bfseries set\+Pan} (int index, float pan)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}\label{classiolib_1_1_simple_multi_player_af51543c82aec0369d9b463264485d035}} 
+float {\bfseries get\+Pan} (int index)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}\label{classiolib_1_1_simple_multi_player_affdf808acff5ca16830dfaf55ef7ee48}} 
+void {\bfseries set\+Gain} (int index, float gain)
+\item 
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}\label{classiolib_1_1_simple_multi_player_a36d1512f9b1c33d59e04d8cd261a8a00}} 
+float {\bfseries get\+Gain} (int index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple streaming player for multiple Sample\+Buffers. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}\label{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!addSampleSource@{addSampleSource}}
+\index{addSampleSource@{addSampleSource}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{addSampleSource()}{addSampleSource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::add\+Sample\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$}]{source,  }\item[{\mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Adds the Sample\+Source/\+Samplebuffer pair to the list of source channels. Transfers ownership of those objects so that they can be deleted/unloaded. The indexes associated with each source channel is the order in which they are added. \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}\label{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!addSampleSource@{addSampleSource}}
+\index{addSampleSource@{addSampleSource}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{addSampleSource()}{addSampleSource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::add\+Sample\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$}]{source,  }\item[{\mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Adds the Sample\+Source/\+Samplebuffer pair to the list of source channels. Transfers ownership of those objects so that they can be deleted/unloaded. The indexes associated with each source channel is the order in which they are added. \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}\label{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!addSampleSource@{addSampleSource}}
+\index{addSampleSource@{addSampleSource}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{addSampleSource()}{addSampleSource()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::add\+Sample\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$}]{source,  }\item[{\mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Adds the Sample\+Source/\+Samplebuffer pair to the list of source channels. Transfers ownership of those objects so that they can be deleted/unloaded. The indexes associated with each source channel is the order in which they are added. \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}\label{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!addSampleSource@{addSampleSource}}
+\index{addSampleSource@{addSampleSource}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{addSampleSource()}{addSampleSource()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::add\+Sample\+Source (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classiolib_1_1_sample_source}{Sample\+Source}} $\ast$}]{source,  }\item[{\mbox{\hyperlink{classiolib_1_1_sample_buffer}{Sample\+Buffer}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Adds the Sample\+Source/\+Samplebuffer pair to the list of source channels. Transfers ownership of those objects so that they can be deleted/unloaded. The indexes associated with each source channel is the order in which they are added. \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}\label{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onAudioReady@{onAudioReady}}
+\index{onAudioReady@{onAudioReady}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onAudioReady()}{onAudioReady()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} iolib\+::\+Simple\+Multi\+Player\+::on\+Audio\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{oboe\+Stream,  }\item[{void $\ast$}]{audio\+Data,  }\item[{int32\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+A buffer is ready for processing.
+
+For an output stream, this function should render and write num\+Frames of data in the stream\textquotesingle{}s current data format to the audio\+Data buffer.
+
+For an input stream, this function should read and process num\+Frames of data from the audio\+Data buffer.
+
+The audio data is passed through the buffer. So do N\+OT call read() or write() on the stream that is making the callback.
+
+Note that num\+Frames can vary unless Audio\+Stream\+Builder\+::set\+Frames\+Per\+Callback() is called.
+
+Also note that this callback function should be considered a \char`\"{}real-\/time\char`\"{} function. It must not do anything that could cause an unbounded delay because that can cause the audio to glitch or pop.
+
+These are things the function should N\+OT do\+: 
+\begin{DoxyItemize}
+\item allocate memory using, for example, malloc() or new 
+\item any file operations such as opening, closing, reading or writing 
+\item any network operations such as streaming 
+\item use any mutexes or other synchronization primitives 
+\item sleep 
+\item oboe\+Stream-\/$>$stop(), pause(), flush() or close() 
+\item oboe\+Stream-\/$>$read() 
+\item oboe\+Stream-\/$>$write() 
+\end{DoxyItemize}
+
+The following are OK to call from the data callback\+: 
+\begin{DoxyItemize}
+\item oboe\+Stream-\/$>$get$\ast$() 
+\item \mbox{\hyperlink{namespaceoboe_a0310f9ed27a82c4b9859beb938737096}{oboe\+::convert\+To\+Text()}} 
+\item oboe\+Stream-\/$>$set\+Buffer\+Size\+In\+Frames() 
+\end{DoxyItemize}
+
+If you need to move data, eg. M\+I\+DI commands, in or out of the callback function then we recommend the use of non-\/blocking techniques such as an atomic F\+I\+FO.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em audio\+Data} & buffer containing input data or a place to put output data \\
+\hline
+{\em num\+Frames} & number of frames to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data\+Callback\+Result\+::\+Continue or Data\+Callback\+Result\+::\+Stop 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_af3a7c44f0254abe6e5e5bb566e2317df}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}\label{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onAudioReady@{onAudioReady}}
+\index{onAudioReady@{onAudioReady}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onAudioReady()}{onAudioReady()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} iolib\+::\+Simple\+Multi\+Player\+::on\+Audio\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{oboe\+Stream,  }\item[{void $\ast$}]{audio\+Data,  }\item[{int32\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+A buffer is ready for processing.
+
+For an output stream, this function should render and write num\+Frames of data in the stream\textquotesingle{}s current data format to the audio\+Data buffer.
+
+For an input stream, this function should read and process num\+Frames of data from the audio\+Data buffer.
+
+The audio data is passed through the buffer. So do N\+OT call read() or write() on the stream that is making the callback.
+
+Note that num\+Frames can vary unless Audio\+Stream\+Builder\+::set\+Frames\+Per\+Callback() is called.
+
+Also note that this callback function should be considered a \char`\"{}real-\/time\char`\"{} function. It must not do anything that could cause an unbounded delay because that can cause the audio to glitch or pop.
+
+These are things the function should N\+OT do\+: 
+\begin{DoxyItemize}
+\item allocate memory using, for example, malloc() or new 
+\item any file operations such as opening, closing, reading or writing 
+\item any network operations such as streaming 
+\item use any mutexes or other synchronization primitives 
+\item sleep 
+\item oboe\+Stream-\/$>$stop(), pause(), flush() or close() 
+\item oboe\+Stream-\/$>$read() 
+\item oboe\+Stream-\/$>$write() 
+\end{DoxyItemize}
+
+The following are OK to call from the data callback\+: 
+\begin{DoxyItemize}
+\item oboe\+Stream-\/$>$get$\ast$() 
+\item \mbox{\hyperlink{namespaceoboe_a0310f9ed27a82c4b9859beb938737096}{oboe\+::convert\+To\+Text()}} 
+\item oboe\+Stream-\/$>$set\+Buffer\+Size\+In\+Frames() 
+\end{DoxyItemize}
+
+If you need to move data, eg. M\+I\+DI commands, in or out of the callback function then we recommend the use of non-\/blocking techniques such as an atomic F\+I\+FO.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em audio\+Data} & buffer containing input data or a place to put output data \\
+\hline
+{\em num\+Frames} & number of frames to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data\+Callback\+Result\+::\+Continue or Data\+Callback\+Result\+::\+Stop 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_af3a7c44f0254abe6e5e5bb566e2317df}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}\label{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onAudioReady@{onAudioReady}}
+\index{onAudioReady@{onAudioReady}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onAudioReady()}{onAudioReady()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{Data\+Callback\+Result}} iolib\+::\+Simple\+Multi\+Player\+::on\+Audio\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{oboe\+Stream,  }\item[{void $\ast$}]{audio\+Data,  }\item[{int32\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+A buffer is ready for processing.
+
+For an output stream, this function should render and write num\+Frames of data in the stream\textquotesingle{}s current data format to the audio\+Data buffer.
+
+For an input stream, this function should read and process num\+Frames of data from the audio\+Data buffer.
+
+The audio data is passed through the buffer. So do N\+OT call read() or write() on the stream that is making the callback.
+
+Note that num\+Frames can vary unless Audio\+Stream\+Builder\+::set\+Frames\+Per\+Callback() is called.
+
+Also note that this callback function should be considered a \char`\"{}real-\/time\char`\"{} function. It must not do anything that could cause an unbounded delay because that can cause the audio to glitch or pop.
+
+These are things the function should N\+OT do\+: 
+\begin{DoxyItemize}
+\item allocate memory using, for example, malloc() or new 
+\item any file operations such as opening, closing, reading or writing 
+\item any network operations such as streaming 
+\item use any mutexes or other synchronization primitives 
+\item sleep 
+\item oboe\+Stream-\/$>$stop(), pause(), flush() or close() 
+\item oboe\+Stream-\/$>$read() 
+\item oboe\+Stream-\/$>$write() 
+\end{DoxyItemize}
+
+The following are OK to call from the data callback\+: 
+\begin{DoxyItemize}
+\item oboe\+Stream-\/$>$get$\ast$() 
+\item \mbox{\hyperlink{namespaceoboe_a0310f9ed27a82c4b9859beb938737096}{oboe\+::convert\+To\+Text()}} 
+\item oboe\+Stream-\/$>$set\+Buffer\+Size\+In\+Frames() 
+\end{DoxyItemize}
+
+If you need to move data, eg. M\+I\+DI commands, in or out of the callback function then we recommend the use of non-\/blocking techniques such as an atomic F\+I\+FO.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em audio\+Data} & buffer containing input data or a place to put output data \\
+\hline
+{\em num\+Frames} & number of frames to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data\+Callback\+Result\+::\+Continue or Data\+Callback\+Result\+::\+Stop 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_af3a7c44f0254abe6e5e5bb566e2317df}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}\label{classiolib_1_1_simple_multi_player_a77099ac5b0bdaa17676ab4d4cb889e36}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onAudioReady@{onAudioReady}}
+\index{onAudioReady@{onAudioReady}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onAudioReady()}{onAudioReady()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceoboe_af85fc9910a287df6c5df0ed396bb75cd}{oboe\+::\+Data\+Callback\+Result}} iolib\+::\+Simple\+Multi\+Player\+::on\+Audio\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{oboe\+Stream,  }\item[{void $\ast$}]{audio\+Data,  }\item[{int32\+\_\+t}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+A buffer is ready for processing.
+
+For an output stream, this function should render and write num\+Frames of data in the stream\textquotesingle{}s current data format to the audio\+Data buffer.
+
+For an input stream, this function should read and process num\+Frames of data from the audio\+Data buffer.
+
+The audio data is passed through the buffer. So do N\+OT call read() or write() on the stream that is making the callback.
+
+Note that num\+Frames can vary unless Audio\+Stream\+Builder\+::set\+Frames\+Per\+Callback() is called.
+
+Also note that this callback function should be considered a \char`\"{}real-\/time\char`\"{} function. It must not do anything that could cause an unbounded delay because that can cause the audio to glitch or pop.
+
+These are things the function should N\+OT do\+: 
+\begin{DoxyItemize}
+\item allocate memory using, for example, malloc() or new 
+\item any file operations such as opening, closing, reading or writing 
+\item any network operations such as streaming 
+\item use any mutexes or other synchronization primitives 
+\item sleep 
+\item oboe\+Stream-\/$>$stop(), pause(), flush() or close() 
+\item oboe\+Stream-\/$>$read() 
+\item oboe\+Stream-\/$>$write() 
+\end{DoxyItemize}
+
+The following are OK to call from the data callback\+: 
+\begin{DoxyItemize}
+\item oboe\+Stream-\/$>$get$\ast$() 
+\item \mbox{\hyperlink{namespaceoboe_a0310f9ed27a82c4b9859beb938737096}{oboe\+::convert\+To\+Text()}} 
+\item oboe\+Stream-\/$>$set\+Buffer\+Size\+In\+Frames() 
+\end{DoxyItemize}
+
+If you need to move data, eg. M\+I\+DI commands, in or out of the callback function then we recommend the use of non-\/blocking techniques such as an atomic F\+I\+FO.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em audio\+Data} & buffer containing input data or a place to put output data \\
+\hline
+{\em num\+Frames} & number of frames to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data\+Callback\+Result\+::\+Continue or Data\+Callback\+Result\+::\+Stop 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_af3a7c44f0254abe6e5e5bb566e2317df}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_a1c8ed2ea07e3b6cb7f7ea5a036371e9b}\label{classiolib_1_1_simple_multi_player_a1c8ed2ea07e3b6cb7f7ea5a036371e9b}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorAfterClose@{onErrorAfterClose}}
+\index{onErrorAfterClose@{onErrorAfterClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorAfterClose()}{onErrorAfterClose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+After\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected. The underlying A\+Audio or Open\+SL ES stream will already be stopped A\+ND closed by Oboe. So the underlying stream cannot be referenced. But you can still query most parameters.
+
+This callback could be used to reopen a new stream on another device. You can safely delete the old Audio\+Stream in this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a57a1b21efc764e8bbf8d92008a993bfd}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}\label{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorAfterClose@{onErrorAfterClose}}
+\index{onErrorAfterClose@{onErrorAfterClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorAfterClose()}{onErrorAfterClose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+After\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected. The underlying A\+Audio or Open\+SL ES stream will already be stopped A\+ND closed by Oboe. So the underlying stream cannot be referenced. But you can still query most parameters.
+
+This callback could be used to reopen a new stream on another device. You can safely delete the old Audio\+Stream in this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a57a1b21efc764e8bbf8d92008a993bfd}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}\label{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorAfterClose@{onErrorAfterClose}}
+\index{onErrorAfterClose@{onErrorAfterClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorAfterClose()}{onErrorAfterClose()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+After\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected. The underlying A\+Audio or Open\+SL ES stream will already be stopped A\+ND closed by Oboe. So the underlying stream cannot be referenced. But you can still query most parameters.
+
+This callback could be used to reopen a new stream on another device. You can safely delete the old Audio\+Stream in this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a57a1b21efc764e8bbf8d92008a993bfd}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}\label{classiolib_1_1_simple_multi_player_af39bca192a24e3e13f24489cce3e7f44}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorAfterClose@{onErrorAfterClose}}
+\index{onErrorAfterClose@{onErrorAfterClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorAfterClose()}{onErrorAfterClose()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily virtual void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+After\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected. The underlying A\+Audio or Open\+SL ES stream will already be stopped A\+ND closed by Oboe. So the underlying stream cannot be referenced. But you can still query most parameters.
+
+This callback could be used to reopen a new stream on another device. You can safely delete the old Audio\+Stream in this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a57a1b21efc764e8bbf8d92008a993bfd}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}\label{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorBeforeClose@{onErrorBeforeClose}}
+\index{onErrorBeforeClose@{onErrorBeforeClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorBeforeClose()}{onErrorBeforeClose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily virtual void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+Before\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected.
+
+Note that this will be called on a different thread than the \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}{on\+Audio\+Ready()}} thread. This thread will be created by Oboe.
+
+The underlying stream will already be stopped by Oboe but not yet closed. So the stream can be queried.
+
+Do not close or delete the stream in this method because it will be closed after this method returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a77ceb641f941164d7b4d4c51c9a888b9}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}\label{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorBeforeClose@{onErrorBeforeClose}}
+\index{onErrorBeforeClose@{onErrorBeforeClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorBeforeClose()}{onErrorBeforeClose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily virtual void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+Before\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected.
+
+Note that this will be called on a different thread than the \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}{on\+Audio\+Ready()}} thread. This thread will be created by Oboe.
+
+The underlying stream will already be stopped by Oboe but not yet closed. So the stream can be queried.
+
+Do not close or delete the stream in this method because it will be closed after this method returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a77ceb641f941164d7b4d4c51c9a888b9}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}\label{classiolib_1_1_simple_multi_player_aa291e8d92eb3526f8a413e22dedbde8e}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorBeforeClose@{onErrorBeforeClose}}
+\index{onErrorBeforeClose@{onErrorBeforeClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorBeforeClose()}{onErrorBeforeClose()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily virtual void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+Before\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected.
+
+Note that this will be called on a different thread than the \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}{on\+Audio\+Ready()}} thread. This thread will be created by Oboe.
+
+The underlying stream will already be stopped by Oboe but not yet closed. So the stream can be queried.
+
+Do not close or delete the stream in this method because it will be closed after this method returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a77ceb641f941164d7b4d4c51c9a888b9}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_af22f92132e9d6ab334587da2f6458f9a}\label{classiolib_1_1_simple_multi_player_af22f92132e9d6ab334587da2f6458f9a}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!onErrorBeforeClose@{onErrorBeforeClose}}
+\index{onErrorBeforeClose@{onErrorBeforeClose}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{onErrorBeforeClose()}{onErrorBeforeClose()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::on\+Error\+Before\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoboe_1_1_audio_stream}{oboe\+::\+Audio\+Stream}} $\ast$}]{,  }\item[{\mbox{\hyperlink{namespaceoboe_a486512e787b609c80ba4436f23929af1}{oboe\+::\+Result}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This will be called when an error occurs on a stream or when the stream is disconnected.
+
+Note that this will be called on a different thread than the \mbox{\hyperlink{classiolib_1_1_simple_multi_player_a497379874d6e5d1aa47f5eb401e5eb12}{on\+Audio\+Ready()}} thread. This thread will be created by Oboe.
+
+The underlying stream will already be stopped by Oboe but not yet closed. So the stream can be queried.
+
+Do not close or delete the stream in this method because it will be closed after this method returns.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oboe\+Stream} & pointer to the associated stream \\
+\hline
+{\em error} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classoboe_1_1_audio_stream_callback_a77ceb641f941164d7b4d4c51c9a888b9}{oboe\+::\+Audio\+Stream\+Callback}}.
+
+\mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}\label{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!unloadSampleData@{unloadSampleData}}
+\index{unloadSampleData@{unloadSampleData}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{unloadSampleData()}{unloadSampleData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::unload\+Sample\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deallocates and deletes all added source/buffer (see \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source()}}). \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}\label{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!unloadSampleData@{unloadSampleData}}
+\index{unloadSampleData@{unloadSampleData}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{unloadSampleData()}{unloadSampleData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::unload\+Sample\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deallocates and deletes all added source/buffer (see \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source()}}). \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}\label{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!unloadSampleData@{unloadSampleData}}
+\index{unloadSampleData@{unloadSampleData}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{unloadSampleData()}{unloadSampleData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::unload\+Sample\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deallocates and deletes all added source/buffer (see \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source()}}). \mbox{\Hypertarget{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}\label{classiolib_1_1_simple_multi_player_ac17743acf2f8f7ac4b9984d4a74e7102}} 
+\index{iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}!unloadSampleData@{unloadSampleData}}
+\index{unloadSampleData@{unloadSampleData}!iolib::SimpleMultiPlayer@{iolib::SimpleMultiPlayer}}
+\doxysubsubsection{\texorpdfstring{unloadSampleData()}{unloadSampleData()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void iolib\+::\+Simple\+Multi\+Player\+::unload\+Sample\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Deallocates and deletes all added source/buffer (see \mbox{\hyperlink{classiolib_1_1_simple_multi_player_af99f2d029142d05d20b18ed960dd4fa2}{add\+Sample\+Source()}}). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/samples/iolib/src/main/cpp/player/Simple\+Multi\+Player.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/faust/android/app/oboe/samples/iolib/src/main/cpp/player/Simple\+Multi\+Player.\+cpp\end{DoxyCompactItemize}

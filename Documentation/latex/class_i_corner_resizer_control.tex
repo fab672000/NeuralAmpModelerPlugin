@@ -1,0 +1,134 @@
+\hypertarget{class_i_corner_resizer_control}{}\doxysection{I\+Corner\+Resizer\+Control Class Reference}
+\label{class_i_corner_resizer_control}\index{ICornerResizerControl@{ICornerResizerControl}}
+
+
+{\ttfamily \#include $<$I\+Corner\+Resizer\+Control.\+h$>$}
+
+Inheritance diagram for I\+Corner\+Resizer\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_corner_resizer_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_corner_resizer_control_a4fbe398b3af50b0b5a8683552a9ca8b4}\label{class_i_corner_resizer_control_a4fbe398b3af50b0b5a8683552a9ca8b4}} 
+{\bfseries I\+Corner\+Resizer\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&graphics\+Bounds, float size, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color=C\+O\+L\+O\+R\+\_\+\+T\+R\+A\+N\+S\+L\+U\+C\+E\+NT, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&mouse\+Over\+Colour=C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK, const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&drag\+Color=C\+O\+L\+O\+R\+\_\+\+B\+L\+A\+CK)
+\item 
+void \mbox{\hyperlink{class_i_corner_resizer_control_ae15268a80ad9107d0bf440be4ff73ae6}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_corner_resizer_control_a4eb571a24f6ac378c69e039f061390bc}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_corner_resizer_control_a7ffe5fadc4f1f769abcc7dd5eca87a5c}{On\+Mouse\+Dbl\+Click}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_corner_resizer_control_ae2aee703e9f12ccc9b285c5083c8fccc}{On\+Rescale}} () override
+\item 
+void \mbox{\hyperlink{class_i_corner_resizer_control_a01e183d47fe30f943914269f3e1d1346}{On\+Mouse\+Over}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_corner_resizer_control_a459c746fabbce3c66e908a4e77d1a9d3}{On\+Mouse\+Out}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A control for resizing the plug-\/in window by clicking and dragging in the bottom right-\/hand corner This can be added with \mbox{\hyperlink{class_i_graphics_a4faebebfe5235e2b0ccb07369b693685}{I\+Graphics\+::\+Attach\+Corner\+Resizer()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_corner_resizer_control_ae15268a80ad9107d0bf440be4ff73ae6}\label{class_i_corner_resizer_control_ae15268a80ad9107d0bf440be4ff73ae6}} 
+\index{ICornerResizerControl@{ICornerResizerControl}!Draw@{Draw}}
+\index{Draw@{Draw}!ICornerResizerControl@{ICornerResizerControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+Corner\+Resizer\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_corner_resizer_control_a7ffe5fadc4f1f769abcc7dd5eca87a5c}\label{class_i_corner_resizer_control_a7ffe5fadc4f1f769abcc7dd5eca87a5c}} 
+\index{ICornerResizerControl@{ICornerResizerControl}!OnMouseDblClick@{OnMouseDblClick}}
+\index{OnMouseDblClick@{OnMouseDblClick}!ICornerResizerControl@{ICornerResizerControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDblClick()}{OnMouseDblClick()}}
+{\footnotesize\ttfamily void I\+Corner\+Resizer\+Control\+::\+On\+Mouse\+Dbl\+Click (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse double click event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a82331ea6cbdead5fc2a7ce6df7c97d40}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_corner_resizer_control_a4eb571a24f6ac378c69e039f061390bc}\label{class_i_corner_resizer_control_a4eb571a24f6ac378c69e039f061390bc}} 
+\index{ICornerResizerControl@{ICornerResizerControl}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!ICornerResizerControl@{ICornerResizerControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+Corner\+Resizer\+Control\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_corner_resizer_control_a459c746fabbce3c66e908a4e77d1a9d3}\label{class_i_corner_resizer_control_a459c746fabbce3c66e908a4e77d1a9d3}} 
+\index{ICornerResizerControl@{ICornerResizerControl}!OnMouseOut@{OnMouseOut}}
+\index{OnMouseOut@{OnMouseOut}!ICornerResizerControl@{ICornerResizerControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseOut()}{OnMouseOut()}}
+{\footnotesize\ttfamily void I\+Corner\+Resizer\+Control\+::\+On\+Mouse\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseout event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a2897e1dbb1dc32428cea7bad93e3c97e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_corner_resizer_control_a01e183d47fe30f943914269f3e1d1346}\label{class_i_corner_resizer_control_a01e183d47fe30f943914269f3e1d1346}} 
+\index{ICornerResizerControl@{ICornerResizerControl}!OnMouseOver@{OnMouseOver}}
+\index{OnMouseOver@{OnMouseOver}!ICornerResizerControl@{ICornerResizerControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseOver()}{OnMouseOver()}}
+{\footnotesize\ttfamily void I\+Corner\+Resizer\+Control\+::\+On\+Mouse\+Over (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseover event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a39df22eddb4d9b0fd2f2504562556c49}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_corner_resizer_control_ae2aee703e9f12ccc9b285c5083c8fccc}\label{class_i_corner_resizer_control_ae2aee703e9f12ccc9b285c5083c8fccc}} 
+\index{ICornerResizerControl@{ICornerResizerControl}!OnRescale@{OnRescale}}
+\index{OnRescale@{OnRescale}!ICornerResizerControl@{ICornerResizerControl}}
+\doxysubsubsection{\texorpdfstring{OnRescale()}{OnRescale()}}
+{\footnotesize\ttfamily void I\+Corner\+Resizer\+Control\+::\+On\+Rescale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to do something when graphics is scaled globally (e.\+g. moves to different D\+PI screen) 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a57f6186624e970a5d6de172570aee111}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_corner_resizer_control_8h}{I\+Corner\+Resizer\+Control.\+h}}\end{DoxyCompactItemize}

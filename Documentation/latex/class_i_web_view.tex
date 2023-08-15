@@ -1,0 +1,135 @@
+\hypertarget{class_i_web_view}{}\doxysection{I\+Web\+View Class Reference}
+\label{class_i_web_view}\index{IWebView@{IWebView}}
+
+
+{\ttfamily \#include $<$I\+Plug\+Web\+View.\+h$>$}
+
+Inheritance diagram for I\+Web\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_web_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_web_view_a2a266c00018f70a4d9dd8aa231fcd9f0}\label{class_i_web_view_a2a266c00018f70a4d9dd8aa231fcd9f0}} 
+{\bfseries I\+Web\+View} (bool opaque=true)
+\item 
+\mbox{\Hypertarget{class_i_web_view_ace1fd0b677fc881674854106c0576678}\label{class_i_web_view_ace1fd0b677fc881674854106c0576678}} 
+void $\ast$ {\bfseries Open\+Web\+View} (void $\ast$p\+Parent, float x, float y, float w, float h, float scale=1.)
+\item 
+\mbox{\Hypertarget{class_i_web_view_a6df21c4d0c28a80f32fddb71603efbbf}\label{class_i_web_view_a6df21c4d0c28a80f32fddb71603efbbf}} 
+void {\bfseries Close\+Web\+View} ()
+\item 
+void \mbox{\hyperlink{class_i_web_view_a859888822a1398bfcd4ed1a47d615d9a}{Load\+H\+T\+ML}} (const char $\ast$html)
+\item 
+void \mbox{\hyperlink{class_i_web_view_a93815d7b912e43f200f267bc768b0692}{Load\+U\+RL}} (const char $\ast$url)
+\item 
+void \mbox{\hyperlink{class_i_web_view_a6e9cd7be0aac34e02fdc3ef2aad7e13e}{Load\+File}} (const char $\ast$file\+Name, const char $\ast$bundle\+ID=\char`\"{}\char`\"{})
+\item 
+void \mbox{\hyperlink{class_i_web_view_a1dfa5e4ab31ffe603decf350bfd89c24}{Evaluate\+Java\+Script}} (const char $\ast$script\+Str, completion\+Handler\+Func \mbox{\hyperlink{structfunc}{func}}=nullptr)
+\item 
+void \mbox{\hyperlink{class_i_web_view_a627b9ff490f0d3c5e4215aac1da1cd76}{Enable\+Scroll}} (bool enable)
+\item 
+void \mbox{\hyperlink{class_i_web_view_a957d2bc4d6a9535bfd2889d9d286dfba}{Set\+Web\+View\+Bounds}} (float x, float y, float w, float h, float scale=1.)
+\item 
+virtual void \mbox{\hyperlink{class_i_web_view_aa4184d0c34f9247187bec90ed73b6c2e}{On\+Web\+View\+Ready}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_web_view_a90df4019683392186171a7a32b0fe1d4}{On\+Web\+Content\+Loaded}} ()
+\item 
+virtual void \mbox{\hyperlink{class_i_web_view_ade38e7c591a4a5bf7b3807a548ee5d6f}{On\+Message\+From\+Web\+View}} (const char $\ast$json)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_i_web_view}{I\+Web\+View}} is a base interface for hosting a platform web view inside an I\+Plug plug-\/in\textquotesingle{}s \mbox{\hyperlink{class_u_i}{UI}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_web_view_a627b9ff490f0d3c5e4215aac1da1cd76}\label{class_i_web_view_a627b9ff490f0d3c5e4215aac1da1cd76}} 
+\index{IWebView@{IWebView}!EnableScroll@{EnableScroll}}
+\index{EnableScroll@{EnableScroll}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{EnableScroll()}{EnableScroll()}}
+{\footnotesize\ttfamily void I\+Web\+View\+::\+Enable\+Scroll (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+Enable scrolling on the webview. N\+O\+TE\+: currently only implemented for i\+OS \mbox{\Hypertarget{class_i_web_view_a1dfa5e4ab31ffe603decf350bfd89c24}\label{class_i_web_view_a1dfa5e4ab31ffe603decf350bfd89c24}} 
+\index{IWebView@{IWebView}!EvaluateJavaScript@{EvaluateJavaScript}}
+\index{EvaluateJavaScript@{EvaluateJavaScript}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{EvaluateJavaScript()}{EvaluateJavaScript()}}
+{\footnotesize\ttfamily void I\+Web\+View\+::\+Evaluate\+Java\+Script (\begin{DoxyParamCaption}\item[{const char $\ast$}]{script\+Str,  }\item[{completion\+Handler\+Func}]{func = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Runs some Java\+Script in the webview 
+\begin{DoxyParams}{Parameters}
+{\em script\+Str} & U\+T\+F8 encoded Java\+Script code to run \\
+\hline
+{\em func} & A function conforming to completion\+Handler\+Func that should be called on successful execution of the script \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_web_view_a6e9cd7be0aac34e02fdc3ef2aad7e13e}\label{class_i_web_view_a6e9cd7be0aac34e02fdc3ef2aad7e13e}} 
+\index{IWebView@{IWebView}!LoadFile@{LoadFile}}
+\index{LoadFile@{LoadFile}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{LoadFile()}{LoadFile()}}
+{\footnotesize\ttfamily void I\+Web\+View\+::\+Load\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const char $\ast$}]{bundle\+ID = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+Load a file on disk into the web view 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & On windows this should be an absolute path to the file you want to load. On mac\+O\+S/i\+OS it can just be the file name if the file is packaged into a subfolder \char`\"{}web\char`\"{} of the bundle resources \\
+\hline
+{\em bundle\+ID} & The N\+S\+Bundle\+ID of the mac\+O\+S/i\+OS bundle, not required on Windows \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i_web_view_a859888822a1398bfcd4ed1a47d615d9a}\label{class_i_web_view_a859888822a1398bfcd4ed1a47d615d9a}} 
+\index{IWebView@{IWebView}!LoadHTML@{LoadHTML}}
+\index{LoadHTML@{LoadHTML}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{LoadHTML()}{LoadHTML()}}
+{\footnotesize\ttfamily void I\+Web\+View\+::\+Load\+H\+T\+ML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{html }\end{DoxyParamCaption})}
+
+Load an H\+T\+ML string into the webview \mbox{\Hypertarget{class_i_web_view_a93815d7b912e43f200f267bc768b0692}\label{class_i_web_view_a93815d7b912e43f200f267bc768b0692}} 
+\index{IWebView@{IWebView}!LoadURL@{LoadURL}}
+\index{LoadURL@{LoadURL}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{LoadURL()}{LoadURL()}}
+{\footnotesize\ttfamily void I\+Web\+View\+::\+Load\+U\+RL (\begin{DoxyParamCaption}\item[{const char $\ast$}]{url }\end{DoxyParamCaption})}
+
+Instruct the webview to load an external U\+RL \mbox{\Hypertarget{class_i_web_view_ade38e7c591a4a5bf7b3807a548ee5d6f}\label{class_i_web_view_ade38e7c591a4a5bf7b3807a548ee5d6f}} 
+\index{IWebView@{IWebView}!OnMessageFromWebView@{OnMessageFromWebView}}
+\index{OnMessageFromWebView@{OnMessageFromWebView}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{OnMessageFromWebView()}{OnMessageFromWebView()}}
+{\footnotesize\ttfamily virtual void I\+Web\+View\+::\+On\+Message\+From\+Web\+View (\begin{DoxyParamCaption}\item[{const char $\ast$}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+When a script in the web view posts a message, it will arrive as a U\+T\+F8 json string here 
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_a1b5f3f92e632911b7260f83b32e40d0b}{Web\+View\+Editor\+Delegate}}, and \mbox{\hyperlink{class_i_web_view_control_a1f52d913da58f52b9b587837aacab1d0}{I\+Web\+View\+Control}}.
+
+\mbox{\Hypertarget{class_i_web_view_a90df4019683392186171a7a32b0fe1d4}\label{class_i_web_view_a90df4019683392186171a7a32b0fe1d4}} 
+\index{IWebView@{IWebView}!OnWebContentLoaded@{OnWebContentLoaded}}
+\index{OnWebContentLoaded@{OnWebContentLoaded}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{OnWebContentLoaded()}{OnWebContentLoaded()}}
+{\footnotesize\ttfamily virtual void I\+Web\+View\+::\+On\+Web\+Content\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called after navigation instructions have been exectued and e.\+g. a page has loaded 
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_abe9a81e8c2de3cf60f3158120e83e1bc}{Web\+View\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_web_view_aa4184d0c34f9247187bec90ed73b6c2e}\label{class_i_web_view_aa4184d0c34f9247187bec90ed73b6c2e}} 
+\index{IWebView@{IWebView}!OnWebViewReady@{OnWebViewReady}}
+\index{OnWebViewReady@{OnWebViewReady}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{OnWebViewReady()}{OnWebViewReady()}}
+{\footnotesize\ttfamily virtual void I\+Web\+View\+::\+On\+Web\+View\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Called when the web view is ready to receive navigation instructions 
+
+Reimplemented in \mbox{\hyperlink{class_web_view_editor_delegate_a870db6ef717e0ee47c3cf76e2a8e6b4d}{Web\+View\+Editor\+Delegate}}, and \mbox{\hyperlink{class_i_web_view_control_a160b9a90309a5a4f4c3c3e3db3f31fec}{I\+Web\+View\+Control}}.
+
+\mbox{\Hypertarget{class_i_web_view_a957d2bc4d6a9535bfd2889d9d286dfba}\label{class_i_web_view_a957d2bc4d6a9535bfd2889d9d286dfba}} 
+\index{IWebView@{IWebView}!SetWebViewBounds@{SetWebViewBounds}}
+\index{SetWebViewBounds@{SetWebViewBounds}!IWebView@{IWebView}}
+\doxysubsubsection{\texorpdfstring{SetWebViewBounds()}{SetWebViewBounds()}}
+{\footnotesize\ttfamily void I\+Web\+View\+::\+Set\+Web\+View\+Bounds (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{w,  }\item[{float}]{h,  }\item[{float}]{scale = {\ttfamily 1.} }\end{DoxyParamCaption})}
+
+Set the bounds of the webview in the parent window. xywh are specifed in relation to a 1\+:1 non retina screen. On Windows the screen scale is passed in. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+Extras/\+Web\+View/I\+Plug\+Web\+View.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+Extras/\+Web\+View/I\+Plug\+Web\+View.\+cpp\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+Extras/\+Web\+View/I\+Plug\+Web\+View.\+mm\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\hypertarget{struct_wave_reader}{}\doxysection{Wave\+Reader Struct Reference}
+\label{struct_wave_reader}\index{WaveReader@{WaveReader}}
+Inheritance diagram for Wave\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_wave_reader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_wave_reader_a794f2989ca85621df92223964ddc6cfc}{check\+File}} (const std\+::string \&path\+\_\+name)
+\item 
+void \mbox{\hyperlink{struct_wave_reader_ad0c63aadba68233e2efec40135066312}{get\+Params\+File}} (const std\+::string \&path\+\_\+name, int \&\mbox{\hyperlink{classchannels}{channels}}, int \&length)
+\item 
+void \mbox{\hyperlink{struct_wave_reader_acd96ee427cb6ce5b7a7a3f3f420b1d62}{read\+File}} (\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$soundfile, const std\+::string \&path\+\_\+name, int part, int \&offset, int max\+\_\+chan)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_wave_reader_a794f2989ca85621df92223964ddc6cfc}\label{struct_wave_reader_a794f2989ca85621df92223964ddc6cfc}} 
+\index{WaveReader@{WaveReader}!checkFile@{checkFile}}
+\index{checkFile@{checkFile}!WaveReader@{WaveReader}}
+\doxysubsubsection{\texorpdfstring{checkFile()}{checkFile()}}
+{\footnotesize\ttfamily bool Wave\+Reader\+::check\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Check the availability of a sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the sound resource is available, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_soundfile_reader_a4b4b0911849d9b34b0a4982d10ac2ab8}{Soundfile\+Reader}}.
+
+\mbox{\Hypertarget{struct_wave_reader_ad0c63aadba68233e2efec40135066312}\label{struct_wave_reader_ad0c63aadba68233e2efec40135066312}} 
+\index{WaveReader@{WaveReader}!getParamsFile@{getParamsFile}}
+\index{getParamsFile@{getParamsFile}!WaveReader@{WaveReader}}
+\doxysubsubsection{\texorpdfstring{getParamsFile()}{getParamsFile()}}
+{\footnotesize\ttfamily void Wave\+Reader\+::get\+Params\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path\+\_\+name,  }\item[{int \&}]{channels,  }\item[{int \&}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Get the channels and length values of the given sound resource.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way \\
+\hline
+{\em channels} & -\/ the channels value to be filled with the sound resource number of channels \\
+\hline
+{\em length} & -\/ the length value to be filled with the sound resource length in frames \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_soundfile_reader_a3da61bb7d5a0995a40bdf0d001e12726}{Soundfile\+Reader}}.
+
+\mbox{\Hypertarget{struct_wave_reader_acd96ee427cb6ce5b7a7a3f3f420b1d62}\label{struct_wave_reader_acd96ee427cb6ce5b7a7a3f3f420b1d62}} 
+\index{WaveReader@{WaveReader}!readFile@{readFile}}
+\index{readFile@{readFile}!WaveReader@{WaveReader}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily void Wave\+Reader\+::read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_soundfile}{Soundfile}} $\ast$}]{soundfile,  }\item[{const std\+::string \&}]{path\+\_\+name,  }\item[{int}]{part,  }\item[{int \&}]{offset,  }\item[{int}]{max\+\_\+chan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Read one sound resource and fill the \textquotesingle{}soundfile\textquotesingle{} structure accordingly
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+\_\+name} & -\/ the name of the file, or sound resource identified this way \\
+\hline
+{\em part} & -\/ the part number to be filled in the soundfile \\
+\hline
+{\em offset} & -\/ the offset value to be incremented with the actual sound resource length in frames \\
+\hline
+{\em max\+\_\+chan} & -\/ the maximum number of mono channels to fill \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_soundfile_reader_a798737d8c006689627c258a133c9b674}{Soundfile\+Reader}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/gui/Wave\+Reader.\+h\end{DoxyCompactItemize}

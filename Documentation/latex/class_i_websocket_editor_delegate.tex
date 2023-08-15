@@ -1,0 +1,224 @@
+\hypertarget{class_i_websocket_editor_delegate}{}\doxysection{I\+Websocket\+Editor\+Delegate Class Reference}
+\label{class_i_websocket_editor_delegate}\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+
+
+{\ttfamily \#include $<$I\+Websocket\+Editor\+Delegate.\+h$>$}
+
+Inheritance diagram for I\+Websocket\+Editor\+Delegate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_websocket_editor_delegate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_aee61a2315fd74931faf132941fdb5c1c}\label{class_i_websocket_editor_delegate_aee61a2315fd74931faf132941fdb5c1c}} 
+{\bfseries I\+Websocket\+Editor\+Delegate} (int n\+Params)
+\item 
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a41e16119ab9cfe8baa2c9e5ac642488a}\label{class_i_websocket_editor_delegate_a41e16119ab9cfe8baa2c9e5ac642488a}} 
+void {\bfseries On\+Websocket\+Ready} (int idx) override
+\item 
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a1a3294dc2ef1bf38e87d923d7182f5be}\label{class_i_websocket_editor_delegate_a1a3294dc2ef1bf38e87d923d7182f5be}} 
+bool {\bfseries On\+Websocket\+Text} (int idx, const char $\ast$p\+Str, size\+\_\+t data\+Size) override
+\item 
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a8f59d61258cc35db2910d87988b5d50f}\label{class_i_websocket_editor_delegate_a8f59d61258cc35db2910d87988b5d50f}} 
+bool {\bfseries On\+Websocket\+Data} (int idx, void $\ast$p\+Data, size\+\_\+t data\+Size) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_a981d00f84a265ec85addf2e15b171e7c}{Send\+Midi\+Msg\+From\+UI}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_a35c1a8b7a4a3a84c89a62ecde1edfebd}{Send\+Sysex\+Msg\+From\+UI}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_a0ee1a917b0094df480c9b3d195f54a9c}{Send\+Arbitrary\+Msg\+From\+UI}} (int msg\+Tag, int ctrl\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_acc4efa526327c3df0406d1de833f36bf}{Send\+Parameter\+Value\+From\+UI}} (int param\+Idx, double normalized\+Value) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_aabc9dbada6a7a3638969afdd10cba86d}{Send\+Control\+Value\+From\+Delegate}} (int ctrl\+Tag, double normalized\+Value) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_a0fafcd9b8fb93f7a2936904b7012a82f}{Send\+Control\+Msg\+From\+Delegate}} (int ctrl\+Tag, int msg\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_aa9c48a6891382c35c9709dc680e72b70}{Send\+Arbitrary\+Msg\+From\+Delegate}} (int msg\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_af944379ff1787433a3d968ec214e8500}{Send\+Midi\+Msg\+From\+Delegate}} (const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&msg) override
+\item 
+void \mbox{\hyperlink{class_i_websocket_editor_delegate_a4a6cd64f16a823d44e13af13bb3b36f4}{Send\+Sysex\+Msg\+From\+Delegate}} (const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&msg) override
+\item 
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a53e01f85efd2dd3ceace245a3016a05d}\label{class_i_websocket_editor_delegate_a53e01f85efd2dd3ceace245a3016a05d}} 
+void {\bfseries Process\+Websocket\+Queue} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a1132fbd6648d8b24db0302267750d526}\label{class_i_websocket_editor_delegate_a1132fbd6648d8b24db0302267750d526}} 
+static constexpr int {\bfseries M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+C\+L\+I\+E\+N\+TS} = 4
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} base class that embeds a websocket server ... 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_aa9c48a6891382c35c9709dc680e72b70}\label{class_i_websocket_editor_delegate_aa9c48a6891382c35c9709dc680e72b70}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendArbitraryMsgFromDelegate@{SendArbitraryMsgFromDelegate}}
+\index{SendArbitraryMsgFromDelegate@{SendArbitraryMsgFromDelegate}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendArbitraryMsgFromDelegate()}{SendArbitraryMsgFromDelegate()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Arbitrary\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Arbitrary\+Msg\+From\+Delegate (Abbreviation\+: S\+A\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send opaque data from a class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to the \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} connected to the user interface The message can be handled at the destination via \mbox{\hyperlink{class_i_editor_delegate_aa769b48fa0ecfd59a6ab45c19244a571}{I\+Editor\+Delegate\+::\+On\+Message()}} 
+\begin{DoxyParams}{Parameters}
+{\em msg\+Tag} & A unique tag to identify the message \\
+\hline
+{\em data\+Size} & The size in bytes of the data payload pointed to by p\+Data. Note\+: if this is nonzero, p\+Data must be valid. \\
+\hline
+{\em p\+Data} & Ptr to the opaque data payload for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_editor_delegate_ac25ccbe2f2ebda0366cc9a51f2eb3f5f}{I\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a0ee1a917b0094df480c9b3d195f54a9c}\label{class_i_websocket_editor_delegate_a0ee1a917b0094df480c9b3d195f54a9c}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendArbitraryMsgFromUI@{SendArbitraryMsgFromUI}}
+\index{SendArbitraryMsgFromUI@{SendArbitraryMsgFromUI}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendArbitraryMsgFromUI()}{SendArbitraryMsgFromUI()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Arbitrary\+Msg\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{ctrl\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Arbitrary\+Msg\+From\+UI (Abbreviation\+: S\+A\+M\+F\+UI) 
+\begin{DoxyParams}{Parameters}
+{\em msg\+Tag} & A unique tag to identify the message \\
+\hline
+{\em ctrl\+Tag} & A unique tag to identify the control that sent the message, if desired \\
+\hline
+{\em data\+Size} & The size in bytes of the data payload pointed to by p\+Data. Note\+: if this is nonzero, p\+Data must be valid. \\
+\hline
+{\em p\+Data} & Ptr to the opaque data payload for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_editor_delegate_aa5b4aa88ab199c88796c1df421c5f8c3}{I\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a0fafcd9b8fb93f7a2936904b7012a82f}\label{class_i_websocket_editor_delegate_a0fafcd9b8fb93f7a2936904b7012a82f}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendControlMsgFromDelegate@{SendControlMsgFromDelegate}}
+\index{SendControlMsgFromDelegate@{SendControlMsgFromDelegate}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendControlMsgFromDelegate()}{SendControlMsgFromDelegate()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Control\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{ctrl\+Tag,  }\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Control\+Msg\+From\+Delegate (Abbreviation\+: S\+C\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send opaque data from a class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to a specific control in the user interface. The message can be handled in the destination control via \mbox{\hyperlink{class_i_control_a850af818653722be3d3a72c9558ff6a6}{I\+Control\+::\+On\+Msg\+From\+Delegate}} 
+\begin{DoxyParams}{Parameters}
+{\em ctrl\+Tag} & A unique tag to identify the control that is the destination of the message \\
+\hline
+{\em msg\+Tag} & A unique tag to identify the message \\
+\hline
+{\em data\+Size} & The size in bytes of the data payload pointed to by p\+Data. Note\+: if this is nonzero, p\+Data must be valid. \\
+\hline
+{\em p\+Data} & Ptr to the opaque data payload for the message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_g_editor_delegate_ad03c176bac3611c3b5c14cd6458963e8}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_aabc9dbada6a7a3638969afdd10cba86d}\label{class_i_websocket_editor_delegate_aabc9dbada6a7a3638969afdd10cba86d}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendControlValueFromDelegate@{SendControlValueFromDelegate}}
+\index{SendControlValueFromDelegate@{SendControlValueFromDelegate}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendControlValueFromDelegate()}{SendControlValueFromDelegate()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Control\+Value\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{ctrl\+Tag,  }\item[{double}]{normalized\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Control\+Value\+From\+Delegate (Abbreviation\+: S\+C\+V\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. In \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} plug-\/ins, this method is used to update controls in the user interface from a class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}, when the control is not linked to a parameter. A typical use case would be a meter control. In On\+Idle() your plug-\/in would call this method to update the \mbox{\hyperlink{class_i_control}{I\+Control}}\textquotesingle{}s value. 
+\begin{DoxyParams}{Parameters}
+{\em ctrl\+Tag} & A tag for the control \\
+\hline
+{\em normalized\+Value} & The normalised value to set the control to. This will modify I\+Control\+::m\+Value; \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_g_editor_delegate_a60a3dfc2d4178c5ada397ec3e11c821b}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_af944379ff1787433a3d968ec214e8500}\label{class_i_websocket_editor_delegate_af944379ff1787433a3d968ec214e8500}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendMidiMsgFromDelegate@{SendMidiMsgFromDelegate}}
+\index{SendMidiMsgFromDelegate@{SendMidiMsgFromDelegate}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsgFromDelegate()}{SendMidiMsgFromDelegate()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Midi\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Midi\+Msg\+From\+Delegate (Abbreviation\+: S\+M\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send regular M\+I\+DI data from the class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to the user interface The message can be handled at the destination via \mbox{\hyperlink{class_i_editor_delegate_a49ff38d310445f482dd69dd32e49e4d3}{I\+Editor\+Delegate\+::\+On\+Midi\+Msg\+U\+I()}} 
+\begin{DoxyParams}{Parameters}
+{\em msg} & an \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} Containing the M\+I\+DI message to send to the user interface. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_g_editor_delegate_a651791fe19097b1003f0006bc6901505}{I\+G\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a981d00f84a265ec85addf2e15b171e7c}\label{class_i_websocket_editor_delegate_a981d00f84a265ec85addf2e15b171e7c}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendMidiMsgFromUI@{SendMidiMsgFromUI}}
+\index{SendMidiMsgFromUI@{SendMidiMsgFromUI}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendMidiMsgFromUI()}{SendMidiMsgFromUI()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Midi\+Msg\+From\+UI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_midi_msg}{I\+Midi\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Midi\+Msg\+From\+UI (Abbreviation\+: S\+M\+M\+F\+UI) This method should be used when sending a M\+I\+DI message from the \mbox{\hyperlink{class_u_i}{UI}}. For example clicking on a key in a virtual keyboard. Eventually the M\+I\+DI message can be handled in \mbox{\hyperlink{class_i_plug_processor_a3118afd2386fc7244ad4f7eeefcbb9b4}{I\+Plug\+Processor\+::\+Process\+Midi\+Msg()}}, from where it can be used to trigger sound and or forwarded to the A\+PI\textquotesingle{}s M\+I\+DI output. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The M\+I\+DI message to send. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_editor_delegate_a42747917c3106035b7265145e4bc624e}{I\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_acc4efa526327c3df0406d1de833f36bf}\label{class_i_websocket_editor_delegate_acc4efa526327c3df0406d1de833f36bf}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendParameterValueFromUI@{SendParameterValueFromUI}}
+\index{SendParameterValueFromUI@{SendParameterValueFromUI}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendParameterValueFromUI()}{SendParameterValueFromUI()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Parameter\+Value\+From\+UI (\begin{DoxyParamCaption}\item[{int}]{param\+Idx,  }\item[{double}]{normalized\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+S\+P\+V\+F\+UI Called by the \mbox{\hyperlink{class_u_i}{UI}} during a parameter change gesture, in order to notify the host of the new value (via a call in the A\+PI class) If you override this method you should call the base class implementation to make sure On\+Param\+Change\+UI gets triggered 
+\begin{DoxyParams}{Parameters}
+{\em param\+Idx} & The index of the parameter that is changing value \\
+\hline
+{\em normalized\+Value} & The new normalised value of the parameter \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_editor_delegate_a3380ddd2695a51657b30862487dc7cf7}{I\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a4a6cd64f16a823d44e13af13bb3b36f4}\label{class_i_websocket_editor_delegate_a4a6cd64f16a823d44e13af13bb3b36f4}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendSysexMsgFromDelegate@{SendSysexMsgFromDelegate}}
+\index{SendSysexMsgFromDelegate@{SendSysexMsgFromDelegate}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendSysexMsgFromDelegate()}{SendSysexMsgFromDelegate()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Sysex\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Sysex\+Msg\+From\+Delegate (Abbreviation\+: S\+S\+M\+FD) W\+A\+R\+N\+I\+NG\+: should not be called on the realtime audio thread. This method can be used to send Sys\+Ex data from the class implementing \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} to the user interface The message can be handled at the destination via \mbox{\hyperlink{class_i_editor_delegate_a0a19a1af6f13fe055054f742e01a3fc8}{I\+Editor\+Delegate\+::\+On\+Sysex\+Msg\+U\+I()}} 
+\begin{DoxyParams}{Parameters}
+{\em msg} & an \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} Containing the Sys\+Ex data to send to the user interface. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_editor_delegate_ae966860f91073870f13579cee83b7bbe}{I\+Editor\+Delegate}}.
+
+\mbox{\Hypertarget{class_i_websocket_editor_delegate_a35c1a8b7a4a3a84c89a62ecde1edfebd}\label{class_i_websocket_editor_delegate_a35c1a8b7a4a3a84c89a62ecde1edfebd}} 
+\index{IWebsocketEditorDelegate@{IWebsocketEditorDelegate}!SendSysexMsgFromUI@{SendSysexMsgFromUI}}
+\index{SendSysexMsgFromUI@{SendSysexMsgFromUI}!IWebsocketEditorDelegate@{IWebsocketEditorDelegate}}
+\doxysubsubsection{\texorpdfstring{SendSysexMsgFromUI()}{SendSysexMsgFromUI()}}
+{\footnotesize\ttfamily void I\+Websocket\+Editor\+Delegate\+::\+Send\+Sysex\+Msg\+From\+UI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sys_ex}{I\+Sys\+Ex}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Send\+Midi\+Msg\+From\+UI (Abbreviation\+: S\+S\+M\+F\+UI) If a plug-\/in can send Sysex data as a result of actions in the user interface, this method can be used. Unlike Send\+Midi\+Msg\+From\+UI, Sysex messages will not be received in I\+Plug\+Processor\+::\+Process\+Sysex() Since it is extremely unlikely that you would want to use Sysex to communicate between editor and processor \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000176}{Todo}}]is this correct? \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The Sysex message to send. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_editor_delegate_ab0a2c692543f2793bf68b3f24b20b8fa}{I\+Editor\+Delegate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+Extras/\+Web\+Socket/\mbox{\hyperlink{_i_websocket_editor_delegate_8h}{I\+Websocket\+Editor\+Delegate.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\+Extras/\+Web\+Socket/I\+Websocket\+Editor\+Delegate.\+cpp\end{DoxyCompactItemize}

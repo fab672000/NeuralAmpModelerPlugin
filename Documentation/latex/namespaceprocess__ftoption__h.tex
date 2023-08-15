@@ -1,0 +1,23 @@
+\hypertarget{namespaceprocess__ftoption__h}{}\doxysection{process\+\_\+ftoption\+\_\+h Namespace Reference}
+\label{namespaceprocess__ftoption__h}\index{process\_ftoption\_h@{process\_ftoption\_h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceprocess__ftoption__h_acec63bb04ea1c64378d60a54e72a9095}\label{namespaceprocess__ftoption__h_acec63bb04ea1c64378d60a54e72a9095}} 
+def {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Toggle settings in `ftoption.h` file based on command-line arguments.
+
+This script takes an `ftoption.h` file as input and rewrites
+`#define`/`#undef` lines in it based on `--enable=CONFIG_VARNAME` or
+`--disable=CONFIG_VARNAME` arguments passed to it, where `CONFIG_VARNAME` is
+configuration variable name, such as `FT_CONFIG_OPTION_USE_LZW`, that may
+appear in the file.
+
+Note that if one of `CONFIG_VARNAME` is not found in the input file, this
+script exits with an error message listing the missing variable names.
+\end{DoxyVerb}
+ 

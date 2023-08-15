@@ -1,0 +1,62 @@
+\hypertarget{class_steinberg_1_1_f_stream_size_holder}{}\doxysection{Steinberg\+::F\+Stream\+Size\+Holder Class Reference}
+\label{class_steinberg_1_1_f_stream_size_holder}\index{Steinberg::FStreamSizeHolder@{Steinberg::FStreamSizeHolder}}
+
+
+{\ttfamily \#include $<$fstreamer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_a6879dc32c6dabb3b9519298d56643dae}\label{class_steinberg_1_1_f_stream_size_holder_a6879dc32c6dabb3b9519298d56643dae}} 
+{\bfseries F\+Stream\+Size\+Holder} (\mbox{\hyperlink{class_steinberg_1_1_f_streamer}{F\+Streamer}} \&s)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_a69513eb944e899999de29f41304e16a8}\label{class_steinberg_1_1_f_stream_size_holder_a69513eb944e899999de29f41304e16a8}} 
+void \mbox{\hyperlink{class_steinberg_1_1_f_stream_size_holder_a69513eb944e899999de29f41304e16a8}{begin\+Write}} ()
+\begin{DoxyCompactList}\small\item\em remembers position and writes 0 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_aafecf28829dbda19f7fd114cee4b1355}\label{class_steinberg_1_1_f_stream_size_holder_aafecf28829dbda19f7fd114cee4b1355}} 
+int32 \mbox{\hyperlink{class_steinberg_1_1_f_stream_size_holder_aafecf28829dbda19f7fd114cee4b1355}{end\+Write}} ()
+\begin{DoxyCompactList}\small\item\em writes and returns size (since the start marker) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_ae3d81987ad0d34f552390e9d8aafe0ab}\label{class_steinberg_1_1_f_stream_size_holder_ae3d81987ad0d34f552390e9d8aafe0ab}} 
+int32 \mbox{\hyperlink{class_steinberg_1_1_f_stream_size_holder_ae3d81987ad0d34f552390e9d8aafe0ab}{begin\+Read}} ()
+\begin{DoxyCompactList}\small\item\em returns size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_a8e0cb941a3a6875960afa75cd853757a}\label{class_steinberg_1_1_f_stream_size_holder_a8e0cb941a3a6875960afa75cd853757a}} 
+void \mbox{\hyperlink{class_steinberg_1_1_f_stream_size_holder_a8e0cb941a3a6875960afa75cd853757a}{end\+Read}} ()
+\begin{DoxyCompactList}\small\item\em jump to end of chunk \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_add430f855b2847b363239b13755237fb}\label{class_steinberg_1_1_f_stream_size_holder_add430f855b2847b363239b13755237fb}} 
+\mbox{\hyperlink{class_steinberg_1_1_f_streamer}{F\+Streamer}} \& {\bfseries stream}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_f_stream_size_holder_a50a36f7d7ca5662e93e15a71ecfff8f2}\label{class_steinberg_1_1_f_stream_size_holder_a50a36f7d7ca5662e93e15a71ecfff8f2}} 
+int64 {\bfseries size\+Pos}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_steinberg_1_1_f_stream_size_holder}{F\+Stream\+Size\+Holder}} Declaration remembers size of stream chunk for backward compatibility.
+
+{\bfseries{Example\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{externalize (a)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    FStreamSizeHolder sizeHolder;}
+\DoxyCodeLine{    sizeHolder.beginWrite ();   \textcolor{comment}{// sets start mark, writes dummy size}}
+\DoxyCodeLine{    a << ....}
+\DoxyCodeLine{    sizeHolder.endWrite ();     \textcolor{comment}{// jumps to start mark, updates size, jumps back here}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{internalize (a)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    FStreamSizeHolder sizeHolder;}
+\DoxyCodeLine{    sizeHolder.beginRead ();    \textcolor{comment}{// reads size, mark}}
+\DoxyCodeLine{    a >> ....}
+\DoxyCodeLine{    sizeHolder.endRead ();      \textcolor{comment}{// jumps forward if new version has larger size}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fstreamer.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fstreamer.\+cpp\end{DoxyCompactItemize}

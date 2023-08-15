@@ -1,0 +1,183 @@
+\hypertarget{class_i_v_range_slider_control}{}\doxysection{I\+V\+Range\+Slider\+Control Class Reference}
+\label{class_i_v_range_slider_control}\index{IVRangeSliderControl@{IVRangeSliderControl}}
+
+
+{\ttfamily \#include $<$I\+Controls.\+h$>$}
+
+Inheritance diagram for I\+V\+Range\+Slider\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_v_range_slider_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_a2db665d65132708adfd2a8eddfe02a1a}\label{class_i_v_range_slider_control_a2db665d65132708adfd2a8eddfe02a1a}} 
+{\bfseries I\+V\+Range\+Slider\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const std\+::initializer\+\_\+list$<$ int $>$ \&params, const char $\ast$label=\char`\"{}\char`\"{}, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style=D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+Y\+LE, E\+Direction dir=E\+Direction\+::\+Vertical, bool only\+Handle=false, float handle\+Size=8.f, float track\+Size=2.f)
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_aa749be801c56ae551df41aa9446bf366}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_a09ec036a4437d2a8034977404fc5ccf5}\label{class_i_v_range_slider_control_a09ec036a4437d2a8034977404fc5ccf5}} 
+void {\bfseries Draw\+Track} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx) override
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_ac38f4391082f9dd45edcd9c6a65f9e35}{Draw\+Widget}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_a29ee3a7cdc4cbf0e6c7e37f80cb08578}{On\+Mouse\+Over}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_a9b87a3cae379b08b67eacc36ac53ebd2}{On\+Mouse\+Out}} () override
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_a2f6c00d61d1308aaab6e4794803e3804}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_aa34141a8fda4ffa9b98a5bc9de76ac09}{On\+Mouse\+Up}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_v_range_slider_control_a2ed468f2ba35781b3a9bfd956443231d}{On\+Mouse\+Drag}} (float x, float y, float dX, float dY, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_a68e54eede725cd911fb0962edbc1a174}\label{class_i_v_range_slider_control_a68e54eede725cd911fb0962edbc1a174}} 
+void {\bfseries Make\+Track\+Rects} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds) override
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_aa837b81b2627f293fadbe3fbc9b7675f}\label{class_i_v_range_slider_control_aa837b81b2627f293fadbe3fbc9b7675f}} 
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} {\bfseries Get\+Handle\+Bounds} (int track\+Idx)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_a19022958e95973e959a39f4611d31a21}\label{class_i_v_range_slider_control_a19022958e95973e959a39f4611d31a21}} 
+int {\bfseries m\+Mouse\+Over\+Handle} = -\/1
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_a05d514159477bc273bacaa91c956b034}\label{class_i_v_range_slider_control_a05d514159477bc273bacaa91c956b034}} 
+float {\bfseries m\+Handle\+Size}
+\item 
+\mbox{\Hypertarget{class_i_v_range_slider_control_a6e46a6bdf6777ac5c8dc8893144f5693}\label{class_i_v_range_slider_control_a6e46a6bdf6777ac5c8dc8893144f5693}} 
+bool {\bfseries m\+Mouse\+Is\+Down} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A vector range slider control, with two handles 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_v_range_slider_control_aa749be801c56ae551df41aa9446bf366}\label{class_i_v_range_slider_control_aa749be801c56ae551df41aa9446bf366}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!Draw@{Draw}}
+\index{Draw@{Draw}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_range_slider_control_ac38f4391082f9dd45edcd9c6a65f9e35}\label{class_i_v_range_slider_control_ac38f4391082f9dd45edcd9c6a65f9e35}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!DrawWidget@{DrawWidget}}
+\index{DrawWidget@{DrawWidget}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{DrawWidget()}{DrawWidget()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+Draw\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the I\+V\+Control main widget (override) 
+
+Reimplemented from \mbox{\hyperlink{class_i_vector_base_a4f5560428511e64ebc99836ee7f74e96}{I\+Vector\+Base}}.
+
+\mbox{\Hypertarget{class_i_v_range_slider_control_a2f6c00d61d1308aaab6e4794803e3804}\label{class_i_v_range_slider_control_a2f6c00d61d1308aaab6e4794803e3804}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_range_slider_control_a2ed468f2ba35781b3a9bfd956443231d}\label{class_i_v_range_slider_control_a2ed468f2ba35781b3a9bfd956443231d}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!OnMouseDrag@{OnMouseDrag}}
+\index{OnMouseDrag@{OnMouseDrag}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseDrag()}{OnMouseDrag()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+On\+Mouse\+Drag (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse drag event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em dX} & The X delta (difference) since the last event \\
+\hline
+{\em dY} & The Y delta (difference) since the last event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab5b2fc14c84159cd5e0af3386a2a12e5}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_range_slider_control_a9b87a3cae379b08b67eacc36ac53ebd2}\label{class_i_v_range_slider_control_a9b87a3cae379b08b67eacc36ac53ebd2}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!OnMouseOut@{OnMouseOut}}
+\index{OnMouseOut@{OnMouseOut}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseOut()}{OnMouseOut()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+On\+Mouse\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseout event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a2897e1dbb1dc32428cea7bad93e3c97e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_range_slider_control_a29ee3a7cdc4cbf0e6c7e37f80cb08578}\label{class_i_v_range_slider_control_a29ee3a7cdc4cbf0e6c7e37f80cb08578}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!OnMouseOver@{OnMouseOver}}
+\index{OnMouseOver@{OnMouseOver}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseOver()}{OnMouseOver()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+On\+Mouse\+Over (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouseover event on this control. Implementations should call base class, if you wish to use m\+Mouse\+Is\+Over. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a39df22eddb4d9b0fd2f2504562556c49}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_range_slider_control_aa34141a8fda4ffa9b98a5bc9de76ac09}\label{class_i_v_range_slider_control_aa34141a8fda4ffa9b98a5bc9de76ac09}} 
+\index{IVRangeSliderControl@{IVRangeSliderControl}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!IVRangeSliderControl@{IVRangeSliderControl}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void I\+V\+Range\+Slider\+Control\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse up event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a919eb7860ce5559e589f95ceb3309df7}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_controls_8h}{I\+Controls.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_controls_8cpp}{I\+Controls.\+cpp}}\end{DoxyCompactItemize}

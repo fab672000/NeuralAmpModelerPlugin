@@ -1,0 +1,58 @@
+\hypertarget{class_steinberg_1_1_i_plug_view_content_scale_support}{}\doxysection{Steinberg\+::I\+Plug\+View\+Content\+Scale\+Support Class Reference}
+\label{class_steinberg_1_1_i_plug_view_content_scale_support}\index{Steinberg::IPlugViewContentScaleSupport@{Steinberg::IPlugViewContentScaleSupport}}
+
+
+{\ttfamily \#include $<$iplugviewcontentscalesupport.\+h$>$}
+
+Inheritance diagram for Steinberg\+::I\+Plug\+View\+Content\+Scale\+Support\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_steinberg_1_1_i_plug_view_content_scale_support}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_plug_view_content_scale_support_a749036107195183d57004f7ec47da4c9}\label{class_steinberg_1_1_i_plug_view_content_scale_support_a749036107195183d57004f7ec47da4c9}} 
+typedef float {\bfseries Scale\+Factor}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_plug_view_content_scale_support_a7f51be18e67f8a9c711cd7a6763c83e0}\label{class_steinberg_1_1_i_plug_view_content_scale_support_a7f51be18e67f8a9c711cd7a6763c83e0}} 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI {\bfseries set\+Content\+Scale\+Factor} (Scale\+Factor factor)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_plug_view_content_scale_support_ade090d7bde2c474e6a2e2a1db3e4830e}\label{class_steinberg_1_1_i_plug_view_content_scale_support_ade090d7bde2c474e6a2e2a1db3e4830e}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plug-\/in view content scale support
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug impl\mbox{]}
+\item \mbox{[}extends \mbox{\hyperlink{class_steinberg_1_1_i_plug_view}{I\+Plug\+View}}\mbox{]}
+\item \mbox{[}released\+: 3.\+6.\+6\mbox{]}
+\item \mbox{[}optional\mbox{]}
+\end{DoxyItemize}
+
+This interface communicates the content scale factor from the host to the plug-\/in view on systems where plug-\/ins cannot get this information directly like Microsoft Windows.
+
+The host calls set\+Content\+Scale\+Factor directly before or after the plug-\/in view is attached and when the scale factor changes while the view is attached (system change or window moved to another screen with different scaling settings).
+
+The host may call set\+Content\+Scale\+Factor in a different context, for example\+: scaling the plug-\/in editor for better readability.
+
+When a plug-\/in handles this (by returning k\+Result\+True), it needs to scale the width and height of its view by the scale factor and inform the host via a \mbox{\hyperlink{class_steinberg_1_1_i_plug_frame_a5d20f1a8e68e38d9fd886c8cdab338fc}{I\+Plug\+Frame\+::resize\+View()}}. The host will then call \mbox{\hyperlink{class_steinberg_1_1_i_plug_view_a16b24ffce6c12f890ab854c7a7f77449}{I\+Plug\+View\+::on\+Size()}}.
+
+Note that the host is allowed to call set\+Content\+Scale\+Factor() at any time the \mbox{\hyperlink{class_steinberg_1_1_i_plug_view}{I\+Plug\+View}} is valid. If this happens before the \mbox{\hyperlink{class_steinberg_1_1_i_plug_frame}{I\+Plug\+Frame}} object is set on your view, make sure that when the host calls \mbox{\hyperlink{class_steinberg_1_1_i_plug_view_a7d4b424653a019f62ebd5632bfa7951b}{I\+Plug\+View\+::get\+Size()}} afterwards you return the size of your view for that new scale factor.
+
+It is recommended to implement this interface on Microsoft Windows to let the host know that the plug-\/in is able to render in different scalings. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/gui/iplugviewcontentscalesupport.\+h\end{DoxyCompactItemize}

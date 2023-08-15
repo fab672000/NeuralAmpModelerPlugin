@@ -1,0 +1,90 @@
+\hypertarget{class_gr_resource_key}{}\doxysection{Gr\+Resource\+Key Class Reference}
+\label{class_gr_resource_key}\index{GrResourceKey@{GrResourceKey}}
+
+
+{\ttfamily \#include $<$Gr\+Resource\+Key.\+h$>$}
+
+Inheritance diagram for Gr\+Resource\+Key\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gr_resource_key}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_gr_resource_key_1_1_builder}{Builder}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_acc9e309b82ba5de52d29fa6df04aa69a}\label{class_gr_resource_key_acc9e309b82ba5de52d29fa6df04aa69a}} 
+uint32\+\_\+t {\bfseries hash} () const
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_a1b076b1bc672331f7aa378e16300a7e3}\label{class_gr_resource_key_a1b076b1bc672331f7aa378e16300a7e3}} 
+size\+\_\+t {\bfseries size} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gr_resource_key_ad333462b7032b6dc2cac91209a66fdf7}{reset}} ()
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_ad7ec3fba61b9259e91246fae8cdd25e8}\label{class_gr_resource_key_ad7ec3fba61b9259e91246fae8cdd25e8}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_gr_resource_key}{Gr\+Resource\+Key}} \&that) const
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_a2619230ee2591e3ff0d7b0bce00e1db3}\label{class_gr_resource_key_a2619230ee2591e3ff0d7b0bce00e1db3}} 
+\mbox{\hyperlink{class_gr_resource_key}{Gr\+Resource\+Key}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_gr_resource_key}{Gr\+Resource\+Key}} \&that)
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_a7f2d3e96eacd83c69643427df86a175f}\label{class_gr_resource_key_a7f2d3e96eacd83c69643427df86a175f}} 
+bool {\bfseries is\+Valid} () const
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_ad784d8d34962b5d8c2e7ce09c5147b00}\label{class_gr_resource_key_ad784d8d34962b5d8c2e7ce09c5147b00}} 
+uint32\+\_\+t {\bfseries domain} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_gr_resource_key_aae4c1703586923e0968ef5e52568d72e}{data\+Size}} () const
+\item 
+const uint32\+\_\+t $\ast$ \mbox{\hyperlink{class_gr_resource_key_ab3e04c9465760f9a10843f3a0ae7ccd3}{data}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_a4ed8ba053b625ba448855a6f5b42de5f}\label{class_gr_resource_key_a4ed8ba053b625ba448855a6f5b42de5f}} 
+static const uint32\+\_\+t {\bfseries k\+Invalid\+Domain} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gr_resource_key_a6772ad209d0434b3048b319be8039a05}\label{class_gr_resource_key_a6772ad209d0434b3048b319be8039a05}} 
+class {\bfseries Test\+Resource}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all Gr\+Gpu\+Resource cache keys. There are two types of cache keys. Refer to the comments for each key type below. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gr_resource_key_ab3e04c9465760f9a10843f3a0ae7ccd3}\label{class_gr_resource_key_ab3e04c9465760f9a10843f3a0ae7ccd3}} 
+\index{GrResourceKey@{GrResourceKey}!data@{data}}
+\index{data@{data}!GrResourceKey@{GrResourceKey}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily const uint32\+\_\+t$\ast$ Gr\+Resource\+Key\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+ptr to the key data, excluding meta-\/data (hash, domain, etc). ~\newline
+ \mbox{\Hypertarget{class_gr_resource_key_aae4c1703586923e0968ef5e52568d72e}\label{class_gr_resource_key_aae4c1703586923e0968ef5e52568d72e}} 
+\index{GrResourceKey@{GrResourceKey}!dataSize@{dataSize}}
+\index{dataSize@{dataSize}!GrResourceKey@{GrResourceKey}}
+\doxysubsubsection{\texorpdfstring{dataSize()}{dataSize()}}
+{\footnotesize\ttfamily size\+\_\+t Gr\+Resource\+Key\+::data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+size of the key data, excluding meta-\/data (hash, domain, etc). ~\newline
+ \mbox{\Hypertarget{class_gr_resource_key_ad333462b7032b6dc2cac91209a66fdf7}\label{class_gr_resource_key_ad333462b7032b6dc2cac91209a66fdf7}} 
+\index{GrResourceKey@{GrResourceKey}!reset@{reset}}
+\index{reset@{reset}!GrResourceKey@{GrResourceKey}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Gr\+Resource\+Key\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Reset to an invalid key. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/private/Gr\+Resource\+Key.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,129 @@
+\hypertarget{classtime__bench}{}\doxysection{time\+\_\+bench Class Reference}
+\label{classtime__bench}\index{time\_bench@{time\_bench}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtime__bench_a600f27e33118d9d8d7c3b9c3ad466e49}\label{classtime__bench_a600f27e33118d9d8d7c3b9c3ad466e49}} 
+{\bfseries time\+\_\+bench} (int count, int skip)
+\item 
+\mbox{\Hypertarget{classtime__bench_aa2c204996c56e4e4eef4d0ba1049d4ea}\label{classtime__bench_aa2c204996c56e4e4eef4d0ba1049d4ea}} 
+void {\bfseries start\+Measure} ()
+\item 
+\mbox{\Hypertarget{classtime__bench_a7bd19c6c0b1386bb45c66d26731893eb}\label{classtime__bench_a7bd19c6c0b1386bb45c66d26731893eb}} 
+void {\bfseries stop\+Measure} ()
+\item 
+\mbox{\Hypertarget{classtime__bench_a81786ccc7e35b4cf71a66ce908c274ee}\label{classtime__bench_a81786ccc7e35b4cf71a66ce908c274ee}} 
+void {\bfseries open\+Measure} ()
+\item 
+\mbox{\Hypertarget{classtime__bench_aa39df9a276f058e02989ecac91d5edf1}\label{classtime__bench_aa39df9a276f058e02989ecac91d5edf1}} 
+void {\bfseries close\+Measure} ()
+\item 
+\mbox{\Hypertarget{classtime__bench_ae481b63eb9daf040a10f622834e29487}\label{classtime__bench_ae481b63eb9daf040a10f622834e29487}} 
+double {\bfseries measure\+Duration\+Usec} ()
+\item 
+double \mbox{\hyperlink{classtime__bench_aa833b3beef3dd04c790efb340369e47e}{get\+Stats}} (int bsize, int ichans, int ochans)
+\item 
+void \mbox{\hyperlink{classtime__bench_a8525262756464837187601582111a013}{print\+Stats}} (const char $\ast$applname, int bsize, int ichans, int ochans)
+\item 
+\mbox{\Hypertarget{classtime__bench_ae6a65f1259f6875ed4bd8edc7c926bca}\label{classtime__bench_ae6a65f1259f6875ed4bd8edc7c926bca}} 
+bool {\bfseries is\+Running} ()
+\item 
+\mbox{\Hypertarget{classtime__bench_a6740554ce57b047dac423344dce78f0c}\label{classtime__bench_a6740554ce57b047dac423344dce78f0c}} 
+int {\bfseries get\+Count} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint64 \mbox{\hyperlink{classtime__bench_a4fbee603aef1a0b79d39289b0096cbca}{rdtsc}} (void)
+\item 
+double \mbox{\hyperlink{classtime__bench_a0cfe51dd5358f87d11475fad5c381258}{rdtscpersec}} ()
+\item 
+double \mbox{\hyperlink{classtime__bench_ac0c40152ed7607f3171e60d844cb5262}{rdtsc2sec}} (uint64 clk)
+\item 
+\mbox{\Hypertarget{classtime__bench_a173acdea4fc687480396ec2e894d0b3a}\label{classtime__bench_a173acdea4fc687480396ec2e894d0b3a}} 
+double {\bfseries rdtsc2sec} (double clk)
+\item 
+double \mbox{\hyperlink{classtime__bench_af27c44cb936ee33199ca0f3b7b30dda5}{megapersec}} (int frames, int chans, uint64 clk)
+\item 
+uint64 \mbox{\hyperlink{classtime__bench_ad822bb4a46f0b1bb98d5c333756a7273}{mean\+Value}} (std\+::vector$<$ uint64 $>$\+::const\+\_\+iterator a, std\+::vector$<$ uint64 $>$\+::const\+\_\+iterator b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtime__bench_a887f02638b2e052cba193f2bccadac50}\label{classtime__bench_a887f02638b2e052cba193f2bccadac50}} 
+int {\bfseries f\+Measure}
+\item 
+\mbox{\Hypertarget{classtime__bench_a97ac3e7ac48500712d200a5a1d68867c}\label{classtime__bench_a97ac3e7ac48500712d200a5a1d68867c}} 
+int {\bfseries f\+Count}
+\item 
+\mbox{\Hypertarget{classtime__bench_a02cee702ef704b4b00db3edede66f977}\label{classtime__bench_a02cee702ef704b4b00db3edede66f977}} 
+int {\bfseries f\+Skip}
+\item 
+\mbox{\Hypertarget{classtime__bench_ab0d5ca090ef885f1a4cabf6fd8b77fed}\label{classtime__bench_ab0d5ca090ef885f1a4cabf6fd8b77fed}} 
+uint64 {\bfseries f\+First\+R\+D\+T\+SC}
+\item 
+\mbox{\Hypertarget{classtime__bench_a645a090c2fd61037024be0240c10d098}\label{classtime__bench_a645a090c2fd61037024be0240c10d098}} 
+uint64 {\bfseries f\+Last\+R\+D\+T\+SC}
+\item 
+\mbox{\Hypertarget{classtime__bench_ae504f484e1eaaf9d92e9afec6051367a}\label{classtime__bench_ae504f484e1eaaf9d92e9afec6051367a}} 
+uint64 $\ast$ {\bfseries f\+Starts}
+\item 
+\mbox{\Hypertarget{classtime__bench_a364e95c59cc7a7fa05c9ed0401f2361a}\label{classtime__bench_a364e95c59cc7a7fa05c9ed0401f2361a}} 
+uint64 $\ast$ {\bfseries f\+Stops}
+\item 
+\mbox{\Hypertarget{classtime__bench_a2fd7c87487e47b910cba52c35f0e3e86}\label{classtime__bench_a2fd7c87487e47b910cba52c35f0e3e86}} 
+struct timeval {\bfseries f\+Tv1}
+\item 
+\mbox{\Hypertarget{classtime__bench_ae4f7d9b2482c6238fda341c2a6b92b1f}\label{classtime__bench_ae4f7d9b2482c6238fda341c2a6b92b1f}} 
+struct timeval {\bfseries f\+Tv2}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtime__bench_aa833b3beef3dd04c790efb340369e47e}\label{classtime__bench_aa833b3beef3dd04c790efb340369e47e}} 
+\index{time\_bench@{time\_bench}!getStats@{getStats}}
+\index{getStats@{getStats}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{getStats()}{getStats()}}
+{\footnotesize\ttfamily double time\+\_\+bench\+::get\+Stats (\begin{DoxyParamCaption}\item[{int}]{bsize,  }\item[{int}]{ichans,  }\item[{int}]{ochans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns best estimation. \mbox{\Hypertarget{classtime__bench_ad822bb4a46f0b1bb98d5c333756a7273}\label{classtime__bench_ad822bb4a46f0b1bb98d5c333756a7273}} 
+\index{time\_bench@{time\_bench}!meanValue@{meanValue}}
+\index{meanValue@{meanValue}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{meanValue()}{meanValue()}}
+{\footnotesize\ttfamily uint64 time\+\_\+bench\+::mean\+Value (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint64 $>$\+::const\+\_\+iterator}]{a,  }\item[{std\+::vector$<$ uint64 $>$\+::const\+\_\+iterator}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Compute the mean value of a vector of measures \mbox{\Hypertarget{classtime__bench_af27c44cb936ee33199ca0f3b7b30dda5}\label{classtime__bench_af27c44cb936ee33199ca0f3b7b30dda5}} 
+\index{time\_bench@{time\_bench}!megapersec@{megapersec}}
+\index{megapersec@{megapersec}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{megapersec()}{megapersec()}}
+{\footnotesize\ttfamily double time\+\_\+bench\+::megapersec (\begin{DoxyParamCaption}\item[{int}]{frames,  }\item[{int}]{chans,  }\item[{uint64}]{clk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Converts R\+D\+T\+SC clocks into Megabytes/seconds according to the number of frames processed during the period, the number of channels and 4 bytes samples. \mbox{\Hypertarget{classtime__bench_a8525262756464837187601582111a013}\label{classtime__bench_a8525262756464837187601582111a013}} 
+\index{time\_bench@{time\_bench}!printStats@{printStats}}
+\index{printStats@{printStats}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{printStats()}{printStats()}}
+{\footnotesize\ttfamily void time\+\_\+bench\+::print\+Stats (\begin{DoxyParamCaption}\item[{const char $\ast$}]{applname,  }\item[{int}]{bsize,  }\item[{int}]{ichans,  }\item[{int}]{ochans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Print the median value (in Megabytes/second) of f\+Count throughputs measurements. \mbox{\Hypertarget{classtime__bench_a4fbee603aef1a0b79d39289b0096cbca}\label{classtime__bench_a4fbee603aef1a0b79d39289b0096cbca}} 
+\index{time\_bench@{time\_bench}!rdtsc@{rdtsc}}
+\index{rdtsc@{rdtsc}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{rdtsc()}{rdtsc()}}
+{\footnotesize\ttfamily uint64 time\+\_\+bench\+::rdtsc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Returns the number of clock cycles elapsed since the last reset of the processor \mbox{\Hypertarget{classtime__bench_ac0c40152ed7607f3171e60d844cb5262}\label{classtime__bench_ac0c40152ed7607f3171e60d844cb5262}} 
+\index{time\_bench@{time\_bench}!rdtsc2sec@{rdtsc2sec}}
+\index{rdtsc2sec@{rdtsc2sec}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{rdtsc2sec()}{rdtsc2sec()}}
+{\footnotesize\ttfamily double time\+\_\+bench\+::rdtsc2sec (\begin{DoxyParamCaption}\item[{uint64}]{clk }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Converts a duration, expressed in R\+D\+T\+SC clocks, into seconds \mbox{\Hypertarget{classtime__bench_a0cfe51dd5358f87d11475fad5c381258}\label{classtime__bench_a0cfe51dd5358f87d11475fad5c381258}} 
+\index{time\_bench@{time\_bench}!rdtscpersec@{rdtscpersec}}
+\index{rdtscpersec@{rdtscpersec}!time\_bench@{time\_bench}}
+\doxysubsubsection{\texorpdfstring{rdtscpersec()}{rdtscpersec()}}
+{\footnotesize\ttfamily double time\+\_\+bench\+::rdtscpersec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+return the number of R\+D\+T\+SC clocks per seconds 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/win/\+Faust/include/faust/dsp/dsp-\/bench.\+h\end{DoxyCompactItemize}

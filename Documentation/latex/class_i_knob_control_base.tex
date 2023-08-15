@@ -1,0 +1,162 @@
+\hypertarget{class_i_knob_control_base}{}\doxysection{I\+Knob\+Control\+Base Class Reference}
+\label{class_i_knob_control_base}\index{IKnobControlBase@{IKnobControlBase}}
+
+
+{\ttfamily \#include $<$I\+Control.\+h$>$}
+
+Inheritance diagram for I\+Knob\+Control\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_i_knob_control_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a644ac684218f01f578f2ca1afdefbbdf}\label{class_i_knob_control_base_a644ac684218f01f578f2ca1afdefbbdf}} 
+{\bfseries I\+Knob\+Control\+Base} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, int param\+Idx=k\+No\+Parameter, E\+Direction direction=E\+Direction\+::\+Vertical, double gearing=D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+A\+R\+I\+NG)
+\item 
+void \mbox{\hyperlink{class_i_knob_control_base_a34edcd84430b6d022d9336aaeb3d9718}{On\+Mouse\+Down}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_knob_control_base_aeceb58fef181bcc96a7947a19f615179}{On\+Mouse\+Up}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_knob_control_base_a4c8701f2f4f484f82ee16a7493cdb10e}{On\+Mouse\+Drag}} (float x, float y, float dX, float dY, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod) override
+\item 
+void \mbox{\hyperlink{class_i_knob_control_base_ad8332516d84a8295e460eea1749c38d9}{On\+Mouse\+Wheel}} (float x, float y, const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod, float d) override
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a8ac0faa0809e60739fef77891e232c53}\label{class_i_knob_control_base_a8ac0faa0809e60739fef77891e232c53}} 
+void {\bfseries Set\+Gearing} (double gearing)
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a1f7221849aa6513ad50d6c6d76a2e1ec}\label{class_i_knob_control_base_a1f7221849aa6513ad50d6c6d76a2e1ec}} 
+bool {\bfseries Is\+Fine\+Control} (const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&mod, bool wheel) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \mbox{\hyperlink{class_i_knob_control_base_aeeaa1f1e78aec956893826eebfa20cb1}{Get\+Knob\+Drag\+Bounds}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a4a4e66853bdc37ef592e66cd16e2b2b5}\label{class_i_knob_control_base_a4a4e66853bdc37ef592e66cd16e2b2b5}} 
+bool {\bfseries m\+Hide\+Cursor\+On\+Drag} = true
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a97a90548fafd3a65d1a9c89d21cde1cd}\label{class_i_knob_control_base_a97a90548fafd3a65d1a9c89d21cde1cd}} 
+E\+Direction {\bfseries m\+Direction}
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a11f79e0c5db890cf696a482ea1035d3e}\label{class_i_knob_control_base_a11f79e0c5db890cf696a482ea1035d3e}} 
+double {\bfseries m\+Gearing}
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_ac26998b86839f7aa5685adfd9bcf1472}\label{class_i_knob_control_base_ac26998b86839f7aa5685adfd9bcf1472}} 
+bool {\bfseries m\+Mouse\+Down} = false
+\item 
+\mbox{\Hypertarget{class_i_knob_control_base_a28e1eb749993e80568fe4be857eeb3ee}\label{class_i_knob_control_base_a28e1eb749993e80568fe4be857eeb3ee}} 
+double {\bfseries m\+Mouse\+Drag\+Value} = 0.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A base class for knob/dial controls, to handle mouse action and Sender. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_knob_control_base_aeeaa1f1e78aec956893826eebfa20cb1}\label{class_i_knob_control_base_aeeaa1f1e78aec956893826eebfa20cb1}} 
+\index{IKnobControlBase@{IKnobControlBase}!GetKnobDragBounds@{GetKnobDragBounds}}
+\index{GetKnobDragBounds@{GetKnobDragBounds}!IKnobControlBase@{IKnobControlBase}}
+\doxysubsubsection{\texorpdfstring{GetKnobDragBounds()}{GetKnobDragBounds()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} I\+Knob\+Control\+Base\+::\+Get\+Knob\+Drag\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Get the area for which mouse deltas will be used to calculate the amount dragging changes the control value. This is usually the area that contains the knob handle, can override if your control contains extra elements such as labels \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} The bounds over which mouse deltas will be used to calculate the amount dragging changes the control value 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_i_v_knob_control_ac87fbce4d26e21db285919655ebfbcc9}{I\+V\+Knob\+Control}}.
+
+\mbox{\Hypertarget{class_i_knob_control_base_a34edcd84430b6d022d9336aaeb3d9718}\label{class_i_knob_control_base_a34edcd84430b6d022d9336aaeb3d9718}} 
+\index{IKnobControlBase@{IKnobControlBase}!OnMouseDown@{OnMouseDown}}
+\index{OnMouseDown@{OnMouseDown}!IKnobControlBase@{IKnobControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseDown()}{OnMouseDown()}}
+{\footnotesize\ttfamily void I\+Knob\+Control\+Base\+::\+On\+Mouse\+Down (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse down event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a4bf75d9b7be5d293b801b65c8834295e}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_knob_control_base_a4c8701f2f4f484f82ee16a7493cdb10e}\label{class_i_knob_control_base_a4c8701f2f4f484f82ee16a7493cdb10e}} 
+\index{IKnobControlBase@{IKnobControlBase}!OnMouseDrag@{OnMouseDrag}}
+\index{OnMouseDrag@{OnMouseDrag}!IKnobControlBase@{IKnobControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseDrag()}{OnMouseDrag()}}
+{\footnotesize\ttfamily void I\+Knob\+Control\+Base\+::\+On\+Mouse\+Drag (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{dX,  }\item[{float}]{dY,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse drag event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em dX} & The X delta (difference) since the last event \\
+\hline
+{\em dY} & The Y delta (difference) since the last event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab5b2fc14c84159cd5e0af3386a2a12e5}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_knob_control_base_aeceb58fef181bcc96a7947a19f615179}\label{class_i_knob_control_base_aeceb58fef181bcc96a7947a19f615179}} 
+\index{IKnobControlBase@{IKnobControlBase}!OnMouseUp@{OnMouseUp}}
+\index{OnMouseUp@{OnMouseUp}!IKnobControlBase@{IKnobControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseUp()}{OnMouseUp()}}
+{\footnotesize\ttfamily void I\+Knob\+Control\+Base\+::\+On\+Mouse\+Up (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse up event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a919eb7860ce5559e589f95ceb3309df7}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_knob_control_base_ad8332516d84a8295e460eea1749c38d9}\label{class_i_knob_control_base_ad8332516d84a8295e460eea1749c38d9}} 
+\index{IKnobControlBase@{IKnobControlBase}!OnMouseWheel@{OnMouseWheel}}
+\index{OnMouseWheel@{OnMouseWheel}!IKnobControlBase@{IKnobControlBase}}
+\doxysubsubsection{\texorpdfstring{OnMouseWheel()}{OnMouseWheel()}}
+{\footnotesize\ttfamily void I\+Knob\+Control\+Base\+::\+On\+Mouse\+Wheel (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{const \mbox{\hyperlink{struct_i_mouse_mod}{I\+Mouse\+Mod}} \&}]{mod,  }\item[{float}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement this method to respond to a mouse wheel event on this control. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the mouse event \\
+\hline
+{\em y} & The Y coordinate of the mouse event \\
+\hline
+{\em mod} & A struct indicating which modifier keys are held for the event \\
+\hline
+{\em d} & The delta value (difference) since the last mouse wheel event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_control_ab79257a2b774c58eda9d3c4b5238abfb}{I\+Control}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\mbox{\hyperlink{_i_control_8h}{I\+Control.\+h}}\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Control.\+cpp\end{DoxyCompactItemize}

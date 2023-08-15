@@ -1,0 +1,42 @@
+\hypertarget{class_sk_message_bus}{}\doxysection{Sk\+Message\+Bus$<$ Message, I\+D\+Type, Allow\+Copyable\+Message $>$ Class Template Reference}
+\label{class_sk_message_bus}\index{SkMessageBus$<$ Message, IDType, AllowCopyableMessage $>$@{SkMessageBus$<$ Message, IDType, AllowCopyableMessage $>$}}
+
+
+{\ttfamily \#include $<$Sk\+Message\+Bus.\+h$>$}
+
+Inheritance diagram for Sk\+Message\+Bus$<$ Message, I\+D\+Type, Allow\+Copyable\+Message $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sk_message_bus}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_message_bus_1_1_inbox}{Inbox}}
+\item 
+struct \mbox{\hyperlink{struct_sk_message_bus_1_1is__sk__sp}{is\+\_\+sk\+\_\+sp}}
+\item 
+struct \mbox{\hyperlink{struct_sk_message_bus_1_1is__sk__sp_3_01sk__sp_3_01_t_01_4_01_4}{is\+\_\+sk\+\_\+sp$<$ sk\+\_\+sp$<$ T $>$ $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_message_bus_a753091fc0a4aba1bbb84b44006641de0}\label{class_sk_message_bus_a753091fc0a4aba1bbb84b44006641de0}} 
+static void {\bfseries Post} (Message m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Message, typename I\+D\+Type, bool Allow\+Copyable\+Message = true$>$\newline
+class Sk\+Message\+Bus$<$ Message, I\+D\+Type, Allow\+Copyable\+Message $>$}
+
+The following method must have a specialization for type \textquotesingle{}Message\textquotesingle{}\+: \begin{DoxyVerb}bool SkShouldPostMessageToBus(const Message&, IDType msgBusUniqueID)
+\end{DoxyVerb}
+
+
+We may want to consider providing a default template implementation, to avoid this requirement by sending to all inboxes when the specialization for type \textquotesingle{}Message\textquotesingle{} is not present. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Message\+Bus.\+h\end{DoxyCompactItemize}

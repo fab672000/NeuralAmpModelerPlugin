@@ -1,0 +1,1062 @@
+\hypertarget{class_sk_image}{}\doxysection{Sk\+Image Class Reference}
+\label{class_sk_image}\index{SkImage@{SkImage}}
+
+
+{\ttfamily \#include $<$Sk\+Image.\+h$>$}
+
+Inheritance diagram for Sk\+Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sk_image}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_image_a9cbdcb164b400d3e8c76a66f8cb51938}\label{class_sk_image_a9cbdcb164b400d3e8c76a66f8cb51938}} 
+enum {\bfseries Compression\+Type} \{ \newline
+{\bfseries k\+None}, 
+{\bfseries k\+E\+T\+C2\+\_\+\+R\+G\+B8\+\_\+\+U\+N\+O\+RM}, 
+{\bfseries k\+B\+C1\+\_\+\+R\+G\+B8\+\_\+\+U\+N\+O\+RM}, 
+{\bfseries k\+B\+C1\+\_\+\+R\+G\+B\+A8\+\_\+\+U\+N\+O\+RM}, 
+\newline
+{\bfseries k\+Last} = k\+B\+C1\+\_\+\+R\+G\+B\+A8\+\_\+\+U\+N\+O\+RM
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80}{Bit\+Depth}} \{ \mbox{\hyperlink{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80aeda0b712c7690a5c8921fa54baad333e}{Bit\+Depth\+::k\+U8}}, 
+\mbox{\hyperlink{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80a13a852aa20c7c1030c7d2588b5d799b6}{Bit\+Depth\+::k\+F16}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} \{ \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}, 
+\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457ac5235af520a9d4100474a57682f5fd40}{k\+Disallow\+\_\+\+Caching\+Hint}}
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_image_a69ac898f54af08d2754941b8381812f6}\label{class_sk_image_a69ac898f54af08d2754941b8381812f6}} 
+enum {\bfseries Rescale\+Gamma} \+: bool \{ {\bfseries k\+Src}, 
+{\bfseries k\+Linear}
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_image_a521c94448ba0f622f90b6d1059c29726}\label{class_sk_image_a521c94448ba0f622f90b6d1059c29726}} 
+enum {\bfseries Rescale\+Mode} \{ {\bfseries k\+Nearest}, 
+{\bfseries k\+Repeated\+Linear}, 
+{\bfseries k\+Repeated\+Cubic}
+ \}
+\item 
+enum \mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2b}{Legacy\+Bitmap\+Mode}} \{ \mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2ba5952c30313f63ad97fe83ca7808ae5b3}{k\+R\+O\+\_\+\+Legacy\+Bitmap\+Mode}}
+ \}
+\item 
+typedef void $\ast$ \mbox{\hyperlink{class_sk_image_a0859ee88414034a67372da1707198198}{Release\+Context}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{class_sk_image_a7e81872895a0a8101797214ff1d7aa85}{Raster\+Release\+Proc}}) (const void $\ast$pixels, \mbox{\hyperlink{class_sk_image_a0859ee88414034a67372da1707198198}{Release\+Context}})
+\item 
+\mbox{\Hypertarget{class_sk_image_a2a268166c90276dd0fa2af8b06b94181}\label{class_sk_image_a2a268166c90276dd0fa2af8b06b94181}} 
+using {\bfseries Cubic\+Resampler} = \mbox{\hyperlink{struct_sk_cubic_resampler}{Sk\+Cubic\+Resampler}}
+\item 
+using \mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}} = void $\ast$
+\item 
+using \mbox{\hyperlink{class_sk_image_af67794e0326cd09fe4be14423e2888e5}{Read\+Pixels\+Callback}} = void(\mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}}, std\+::unique\+\_\+ptr$<$ const \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} $>$)
+\item 
+typedef std\+::function$<$ void(\mbox{\hyperlink{class_gr_backend_texture}{Gr\+Backend\+Texture}})$>$ \mbox{\hyperlink{class_sk_image_a4f4047a8becd780628a14f92e1710019}{Backend\+Texture\+Release\+Proc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \& \mbox{\hyperlink{class_sk_image_a0c8ab681a163a68df48d9c0b792d279a}{image\+Info}} () const
+\item 
+int \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width}} () const
+\item 
+int \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height}} () const
+\item 
+\mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \mbox{\hyperlink{class_sk_image_a31af5228b3d39dc6a1845e4183d98fe6}{dimensions}} () const
+\item 
+\mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \mbox{\hyperlink{class_sk_image_ad28814f86c1c5835a8a6a24542ad725b}{bounds}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_image_a4423076408bb246f40ac570e4396274a}{unique\+ID}} () const
+\item 
+Sk\+Alpha\+Type \mbox{\hyperlink{class_sk_image_a492ee44531dc7bea743ea26c973b4e16}{alpha\+Type}} () const
+\item 
+Sk\+Color\+Type \mbox{\hyperlink{class_sk_image_a9edb0558497bcf40038ee32af22c032d}{color\+Type}} () const
+\item 
+\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $\ast$ \mbox{\hyperlink{class_sk_image_abaff790a0fa2a29824b3681d9f4a5857}{color\+Space}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ \mbox{\hyperlink{class_sk_image_a2144f49e872438e0da2ddb4b45ac49d3}{ref\+Color\+Space}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_image_a05bd6718b6b9937b8f5d98257f087e52}{is\+Alpha\+Only}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_image_abb4f153282e77984c8c44175a4b8d2de}{is\+Opaque}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ \mbox{\hyperlink{class_sk_image_a74353e5b80ca5efdaf51a11755149aba}{make\+Shader}} (Sk\+Tile\+Mode tmx, Sk\+Tile\+Mode tmy, const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$local\+Matrix=nullptr) const
+\item 
+\mbox{\Hypertarget{class_sk_image_ae660afe66fc35cd3db7c0a3f4d9309f6}\label{class_sk_image_ae660afe66fc35cd3db7c0a3f4d9309f6}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ {\bfseries make\+Shader} (Sk\+Tile\+Mode tmx, Sk\+Tile\+Mode tmy, const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&sampling, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&lm) const
+\item 
+\mbox{\Hypertarget{class_sk_image_afbacf6c58872fe81617ca58d1794fe54}\label{class_sk_image_afbacf6c58872fe81617ca58d1794fe54}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ {\bfseries make\+Shader} (const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&sampling, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} \&lm) const
+\item 
+\mbox{\Hypertarget{class_sk_image_a36f8746f544d968d2dd6b3a01f07032c}\label{class_sk_image_a36f8746f544d968d2dd6b3a01f07032c}} 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_shader}{Sk\+Shader}} $>$ {\bfseries make\+Shader} (const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&sampling, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$lm=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_a68a71097150c85af810f184610764e6b}{peek\+Pixels}} (\mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} $\ast$pixmap) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_a669fc1429f62ad069ebfd6586054316d}{is\+Texture\+Backed}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_sk_image_a9bb648c1c867d3ece532dbcde11c241b}{texture\+Size}} () const
+\item 
+bool \mbox{\hyperlink{class_sk_image_aa75ecc655f985f59ad8e734719979500}{is\+Valid}} (\mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$context) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_a4331a225066ba04c1181b1e57ae99ea8}{read\+Pixels}} (\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$context, const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&dst\+Info, void $\ast$dst\+Pixels, size\+\_\+t dst\+Row\+Bytes, int srcX, int srcY, \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} caching\+Hint=\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_a0415cbbc56442a3d0945241e790b74f8}{read\+Pixels}} (\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$context, const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&dst, int srcX, int srcY, \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} caching\+Hint=\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_ae710edc11df1748731d9d01e56530da9}{read\+Pixels}} (const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&dst\+Info, void $\ast$dst\+Pixels, size\+\_\+t dst\+Row\+Bytes, int srcX, int srcY, \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} caching\+Hint=\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}) const
+\item 
+\mbox{\Hypertarget{class_sk_image_a51036a7a2fc6c5e07b066197a583d50f}\label{class_sk_image_a51036a7a2fc6c5e07b066197a583d50f}} 
+bool {\bfseries read\+Pixels} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&dst, int srcX, int srcY, \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} caching\+Hint=\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}) const
+\item 
+void \mbox{\hyperlink{class_sk_image_aae8df887da7c625d25ac56c214cf6546}{async\+Rescale\+And\+Read\+Pixels}} (const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&info, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&src\+Rect, Rescale\+Gamma rescale\+Gamma, Rescale\+Mode rescale\+Mode, \mbox{\hyperlink{class_sk_image_af67794e0326cd09fe4be14423e2888e5}{Read\+Pixels\+Callback}} callback, \mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}} context) const
+\item 
+void \mbox{\hyperlink{class_sk_image_a27a75e3a37f53d7ec00386dc82b42333}{async\+Rescale\+And\+Read\+Pixels\+Y\+U\+V420}} (Sk\+Y\+U\+V\+Color\+Space yuv\+Color\+Space, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ dst\+Color\+Space, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&src\+Rect, const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&dst\+Size, Rescale\+Gamma rescale\+Gamma, Rescale\+Mode rescale\+Mode, \mbox{\hyperlink{class_sk_image_af67794e0326cd09fe4be14423e2888e5}{Read\+Pixels\+Callback}} callback, \mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}} context) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_af72f23301825f0361e3c200a60809f0f}{scale\+Pixels}} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&dst, const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&, \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} caching\+Hint=\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_sk_image_a65139d8aa83b1b7d06364ab959697f20}{encode\+To\+Data}} (Sk\+Encoded\+Image\+Format encoded\+Image\+Format, int quality) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_sk_image_af7caaa456b9496a5cea244bcfb8b4bc7}{encode\+To\+Data}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ \mbox{\hyperlink{class_sk_image_ad64463b20839923aed4c880c108ff5f7}{ref\+Encoded\+Data}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a02b229cde4f7f2b80e810157e2d98b9b}{make\+Subset}} (const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset, \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$direct=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_ae77231baa01a24c84b208267422a3f6c}{has\+Mipmaps}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a6f4d8a27101c9df98b8c0fa2f3400fed}{with\+Default\+Mipmaps}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a1960f02bd8afb0f04d5f0cc7d851b1ff}{make\+Non\+Texture\+Image}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a8573e218a2bf2443a35cb253df0238f4}{make\+Raster\+Image}} (\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}} caching\+Hint=\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457ac5235af520a9d4100474a57682f5fd40}{k\+Disallow\+\_\+\+Caching\+Hint}}) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_ab84b076c4bc2e8e979454b2ee866bb16}{make\+With\+Filter}} (\mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$context, const \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $\ast$filter, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&subset, const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&clip\+Bounds, \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} $\ast$out\+Subset, \mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} $\ast$offset) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_afb6f5cbb9af0125f14f428e958dabe58}{as\+Legacy\+Bitmap}} (\mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} $\ast$bitmap, \mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2b}{Legacy\+Bitmap\+Mode}} legacy\+Bitmap\+Mode=\mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2ba5952c30313f63ad97fe83ca7808ae5b3}{k\+R\+O\+\_\+\+Legacy\+Bitmap\+Mode}}) const
+\item 
+bool \mbox{\hyperlink{class_sk_image_a4adceff3864a48f01cf936210bd6e2b5}{is\+Lazy\+Generated}} () const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a064862f65bec0490db75db3aa87a493c}{make\+Color\+Space}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ target, \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$direct=nullptr) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a7ae0ce661d0a920a4139fe0138c5bb1f}{make\+Color\+Type\+And\+Color\+Space}} (Sk\+Color\+Type target\+Color\+Type, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ target\+Color\+Space, \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$direct=nullptr) const
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a30f799673ab8ee2abfa831809f7c3cc1}{reinterpret\+Color\+Space}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ new\+Color\+Space) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_adaa2328bc01322a3e2608378c56aecd3}{Make\+Raster\+Copy}} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&pixmap)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a89572373dd76f4e9d9cc4cafb05dd335}{Make\+Raster\+Data}} (const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&info, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ pixels, size\+\_\+t row\+Bytes)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a48204c348897c0fdffada3bf29a8a489}{Make\+From\+Raster}} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&pixmap, \mbox{\hyperlink{class_sk_image_a7e81872895a0a8101797214ff1d7aa85}{Raster\+Release\+Proc}} raster\+Release\+Proc, \mbox{\hyperlink{class_sk_image_a0859ee88414034a67372da1707198198}{Release\+Context}} release\+Context)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a40a1d374c86736efd70df4aa1b6e590d}{Make\+From\+Bitmap}} (const \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} \&bitmap)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_ac58b35ca9caa8e863458ad620d8ef289}{Make\+From\+Generator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_image_generator}{Sk\+Image\+Generator}} $>$ image\+Generator)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a5cdf4babd36b7f22dcc8b2d29bc31bea}{Make\+From\+Encoded}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ encoded)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_aefe8c80450915154ee8624d41755646e}{Make\+Raster\+From\+Compressed}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$ data, int \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width}}, int \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height}}, Compression\+Type type)
+\item 
+static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_image}{Sk\+Image}} $>$ \mbox{\hyperlink{class_sk_image_a1680db4809a9acda3ead013657ffaa8d}{Make\+From\+Picture}} (\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$ picture, const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&\mbox{\hyperlink{class_sk_image_a31af5228b3d39dc6a1845e4183d98fe6}{dimensions}}, const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$matrix, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$paint, \mbox{\hyperlink{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80}{Bit\+Depth}} bit\+Depth, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ \mbox{\hyperlink{class_sk_image_abaff790a0fa2a29824b3681d9f4a5857}{color\+Space}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_image_a0b31cefe1086ba1d00cdf7d4ca97f09a}\label{class_sk_image_a0b31cefe1086ba1d00cdf7d4ca97f09a}} 
+static constexpr int {\bfseries k\+Compression\+Type\+Count} = static\+\_\+cast$<$int$>$(Compression\+Type\+::k\+Last) + 1
+\item 
+\mbox{\Hypertarget{class_sk_image_aff2953262702094bf2c1b3d28a5804d6}\label{class_sk_image_aff2953262702094bf2c1b3d28a5804d6}} 
+static const Compression\+Type {\bfseries k\+E\+T\+C1\+\_\+\+Compression\+Type} = Compression\+Type\+::k\+E\+T\+C2\+\_\+\+R\+G\+B8\+\_\+\+U\+N\+O\+RM
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_image_a296968fded13e65f86cd5d49a600ada5}\label{class_sk_image_a296968fded13e65f86cd5d49a600ada5}} 
+class {\bfseries Sk\+Bitmap}
+\item 
+\mbox{\Hypertarget{class_sk_image_a6ca5bc7a8c2453786801ed985525581c}\label{class_sk_image_a6ca5bc7a8c2453786801ed985525581c}} 
+class {\bfseries Sk\+Image\+\_\+\+Base}
+\item 
+\mbox{\Hypertarget{class_sk_image_a396e60c77d3b195e31aef6276c36a287}\label{class_sk_image_a396e60c77d3b195e31aef6276c36a287}} 
+class {\bfseries Sk\+Mipmap\+Builder}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} describes a two dimensional array of pixels to draw. The pixels may be decoded in a raster bitmap, encoded in a \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} or compressed data stream, or located in G\+PU memory as a G\+PU texture.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} cannot be modified after it is created. \mbox{\hyperlink{class_sk_image}{Sk\+Image}} may allocate additional storage as needed; for instance, an encoded \mbox{\hyperlink{class_sk_image}{Sk\+Image}} may decode when drawn.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} width and height are greater than zero. Creating an \mbox{\hyperlink{class_sk_image}{Sk\+Image}} with zero width or height returns \mbox{\hyperlink{class_sk_image}{Sk\+Image}} equal to nullptr.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} may be created from \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}}, \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}}, \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}}, \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}}, encoded streams, G\+PU texture, Y\+U\+V\+\_\+\+Color\+Space data, or hardware buffer. Encoded streams supported include B\+MP, G\+IF, H\+E\+IF, I\+CO, J\+P\+EG, P\+NG, W\+B\+MP, WebP. Supported encoding details vary with platform. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_sk_image_a4f4047a8becd780628a14f92e1710019}\label{class_sk_image_a4f4047a8becd780628a14f92e1710019}} 
+\index{SkImage@{SkImage}!BackendTextureReleaseProc@{BackendTextureReleaseProc}}
+\index{BackendTextureReleaseProc@{BackendTextureReleaseProc}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{BackendTextureReleaseProc}{BackendTextureReleaseProc}}
+{\footnotesize\ttfamily typedef std\+::function$<$void(\mbox{\hyperlink{class_gr_backend_texture}{Gr\+Backend\+Texture}})$>$ \mbox{\hyperlink{class_sk_image_a4f4047a8becd780628a14f92e1710019}{Sk\+Image\+::\+Backend\+Texture\+Release\+Proc}}}
+
+Defines a callback function, taking one parameter of type \mbox{\hyperlink{class_gr_backend_texture}{Gr\+Backend\+Texture}} with no return value. Function is called when back-\/end texture is to be released. \mbox{\Hypertarget{class_sk_image_a7e81872895a0a8101797214ff1d7aa85}\label{class_sk_image_a7e81872895a0a8101797214ff1d7aa85}} 
+\index{SkImage@{SkImage}!RasterReleaseProc@{RasterReleaseProc}}
+\index{RasterReleaseProc@{RasterReleaseProc}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{RasterReleaseProc}{RasterReleaseProc}}
+{\footnotesize\ttfamily typedef void($\ast$ Sk\+Image\+::\+Raster\+Release\+Proc) (const void $\ast$pixels, \mbox{\hyperlink{class_sk_image_a0859ee88414034a67372da1707198198}{Release\+Context}})}
+
+Function called when \mbox{\hyperlink{class_sk_image}{Sk\+Image}} no longer shares pixels. Release\+Context is provided by caller when \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is created, and may be nullptr. \mbox{\Hypertarget{class_sk_image_af67794e0326cd09fe4be14423e2888e5}\label{class_sk_image_af67794e0326cd09fe4be14423e2888e5}} 
+\index{SkImage@{SkImage}!ReadPixelsCallback@{ReadPixelsCallback}}
+\index{ReadPixelsCallback@{ReadPixelsCallback}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{ReadPixelsCallback}{ReadPixelsCallback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_sk_image_af67794e0326cd09fe4be14423e2888e5}{Sk\+Image\+::\+Read\+Pixels\+Callback}} =  void(\mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}}, std\+::unique\+\_\+ptr$<$const \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}}$>$)}
+
+Client-\/provided callback to \mbox{\hyperlink{class_sk_image_aae8df887da7c625d25ac56c214cf6546}{async\+Rescale\+And\+Read\+Pixels()}} or \mbox{\hyperlink{class_sk_image_a27a75e3a37f53d7ec00386dc82b42333}{async\+Rescale\+And\+Read\+Pixels\+Y\+U\+V420()}} that is called when read result is ready or on failure. \mbox{\Hypertarget{class_sk_image_a452b82765705b4c34efa18731f236ec2}\label{class_sk_image_a452b82765705b4c34efa18731f236ec2}} 
+\index{SkImage@{SkImage}!ReadPixelsContext@{ReadPixelsContext}}
+\index{ReadPixelsContext@{ReadPixelsContext}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{ReadPixelsContext}{ReadPixelsContext}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Sk\+Image\+::\+Read\+Pixels\+Context}} =  void$\ast$}
+
+Client-\/provided context that is passed to client-\/provided Read\+Pixels\+Context. \mbox{\Hypertarget{class_sk_image_a0859ee88414034a67372da1707198198}\label{class_sk_image_a0859ee88414034a67372da1707198198}} 
+\index{SkImage@{SkImage}!ReleaseContext@{ReleaseContext}}
+\index{ReleaseContext@{ReleaseContext}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{ReleaseContext}{ReleaseContext}}
+{\footnotesize\ttfamily typedef void$\ast$ \mbox{\hyperlink{class_sk_image_a0859ee88414034a67372da1707198198}{Sk\+Image\+::\+Release\+Context}}}
+
+Caller data passed to Raster\+Release\+Proc; may be nullptr. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80}\label{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80}} 
+\index{SkImage@{SkImage}!BitDepth@{BitDepth}}
+\index{BitDepth@{BitDepth}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{BitDepth}{BitDepth}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80}{Sk\+Image\+::\+Bit\+Depth}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kU8@{kU8}!SkImage@{SkImage}}\index{SkImage@{SkImage}!kU8@{kU8}}}\mbox{\Hypertarget{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80aeda0b712c7690a5c8921fa54baad333e}\label{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80aeda0b712c7690a5c8921fa54baad333e}} 
+k\+U8&uses 8-\/bit unsigned int per color component \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kF16@{kF16}!SkImage@{SkImage}}\index{SkImage@{SkImage}!kF16@{kF16}}}\mbox{\Hypertarget{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80a13a852aa20c7c1030c7d2588b5d799b6}\label{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80a13a852aa20c7c1030c7d2588b5d799b6}} 
+k\+F16&uses 16-\/bit float per color component \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_sk_image_addfa46178be404588114f8ae0a2ba457}\label{class_sk_image_addfa46178be404588114f8ae0a2ba457}} 
+\index{SkImage@{SkImage}!CachingHint@{CachingHint}}
+\index{CachingHint@{CachingHint}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{CachingHint}{CachingHint}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Sk\+Image\+::\+Caching\+Hint}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAllow\_CachingHint@{kAllow\_CachingHint}!SkImage@{SkImage}}\index{SkImage@{SkImage}!kAllow\_CachingHint@{kAllow\_CachingHint}}}\mbox{\Hypertarget{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}\label{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}} 
+k\+Allow\+\_\+\+Caching\+Hint&allows internally caching decoded and copied pixels \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDisallow\_CachingHint@{kDisallow\_CachingHint}!SkImage@{SkImage}}\index{SkImage@{SkImage}!kDisallow\_CachingHint@{kDisallow\_CachingHint}}}\mbox{\Hypertarget{class_sk_image_addfa46178be404588114f8ae0a2ba457ac5235af520a9d4100474a57682f5fd40}\label{class_sk_image_addfa46178be404588114f8ae0a2ba457ac5235af520a9d4100474a57682f5fd40}} 
+k\+Disallow\+\_\+\+Caching\+Hint&disallows internally caching decoded and copied pixels \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2b}\label{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2b}} 
+\index{SkImage@{SkImage}!LegacyBitmapMode@{LegacyBitmapMode}}
+\index{LegacyBitmapMode@{LegacyBitmapMode}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{LegacyBitmapMode}{LegacyBitmapMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2b}{Sk\+Image\+::\+Legacy\+Bitmap\+Mode}}}
+
+Deprecated. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRO\_LegacyBitmapMode@{kRO\_LegacyBitmapMode}!SkImage@{SkImage}}\index{SkImage@{SkImage}!kRO\_LegacyBitmapMode@{kRO\_LegacyBitmapMode}}}\mbox{\Hypertarget{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2ba5952c30313f63ad97fe83ca7808ae5b3}\label{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2ba5952c30313f63ad97fe83ca7808ae5b3}} 
+k\+R\+O\+\_\+\+Legacy\+Bitmap\+Mode&returned bitmap is read-\/only and immutable \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_image_a492ee44531dc7bea743ea26c973b4e16}\label{class_sk_image_a492ee44531dc7bea743ea26c973b4e16}} 
+\index{SkImage@{SkImage}!alphaType@{alphaType}}
+\index{alphaType@{alphaType}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{alphaType()}{alphaType()}}
+{\footnotesize\ttfamily Sk\+Alpha\+Type Sk\+Image\+::alpha\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns Sk\+Alpha\+Type.
+
+Sk\+Alpha\+Type returned was a parameter to an \mbox{\hyperlink{class_sk_image}{Sk\+Image}} constructor, or was parsed from encoded data.
+
+\begin{DoxyReturn}{Returns}
+Sk\+Alpha\+Type in \mbox{\hyperlink{class_sk_image}{Sk\+Image}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_alphaType}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+alpha\+Type}} \mbox{\Hypertarget{class_sk_image_afb6f5cbb9af0125f14f428e958dabe58}\label{class_sk_image_afb6f5cbb9af0125f14f428e958dabe58}} 
+\index{SkImage@{SkImage}!asLegacyBitmap@{asLegacyBitmap}}
+\index{asLegacyBitmap@{asLegacyBitmap}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{asLegacyBitmap()}{asLegacyBitmap()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::as\+Legacy\+Bitmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} $\ast$}]{bitmap,  }\item[{\mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2b}{Legacy\+Bitmap\+Mode}}}]{legacy\+Bitmap\+Mode = {\ttfamily \mbox{\hyperlink{class_sk_image_affca9a1402debe4a4220e5e8bcbcda2ba5952c30313f63ad97fe83ca7808ae5b3}{k\+R\+O\+\_\+\+Legacy\+Bitmap\+Mode}}} }\end{DoxyParamCaption}) const}
+
+Deprecated. Creates raster \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} with same pixels as \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. If legacy\+Bitmap\+Mode is k\+R\+O\+\_\+\+Legacy\+Bitmap\+Mode, returned bitmap is read-\/only and immutable. Returns true if \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} is stored in bitmap. Returns false and resets bitmap if \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} write did not succeed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & storage for legacy \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} \\
+\hline
+{\em legacy\+Bitmap\+Mode} & bitmap is read-\/only and immutable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} was created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_aae8df887da7c625d25ac56c214cf6546}\label{class_sk_image_aae8df887da7c625d25ac56c214cf6546}} 
+\index{SkImage@{SkImage}!asyncRescaleAndReadPixels@{asyncRescaleAndReadPixels}}
+\index{asyncRescaleAndReadPixels@{asyncRescaleAndReadPixels}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{asyncRescaleAndReadPixels()}{asyncRescaleAndReadPixels()}}
+{\footnotesize\ttfamily void Sk\+Image\+::async\+Rescale\+And\+Read\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&}]{info,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{src\+Rect,  }\item[{Rescale\+Gamma}]{rescale\+Gamma,  }\item[{Rescale\+Mode}]{rescale\+Mode,  }\item[{\mbox{\hyperlink{class_sk_image_af67794e0326cd09fe4be14423e2888e5}{Read\+Pixels\+Callback}}}]{callback,  }\item[{\mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}}}]{context }\end{DoxyParamCaption}) const}
+
+Makes image pixel data available to caller, possibly asynchronously. It can also rescale the image pixels.
+
+Currently asynchronous reads are only supported on the G\+PU backend and only when the underlying 3D A\+PI supports transfer buffers and C\+P\+U/\+G\+PU synchronization primitives. In all other cases this operates synchronously.
+
+Data is read from the source sub-\/rectangle, is optionally converted to a linear gamma, is rescaled to the size indicated by \textquotesingle{}info\textquotesingle{}, is then converted to the color space, color type, and alpha type of \textquotesingle{}info\textquotesingle{}. A \textquotesingle{}src\+Rect\textquotesingle{} that is not contained by the bounds of the image causes failure.
+
+When the pixel data is ready the caller\textquotesingle{}s Read\+Pixels\+Callback is called with a \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} containing pixel data in the requested color type, alpha type, and color space. The \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} will have count() == 1. Upon failure the callback is called with nullptr for \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}}. For a G\+PU image this flushes work but a submit must occur to guarantee a finite time before the callback is called.
+
+The data is valid for the lifetime of \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} with the exception that if the \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is G\+P\+U-\/backed the data is immediately invalidated if the context is abandoned or destroyed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & info of the requested pixels \\
+\hline
+{\em src\+Rect} & subrectangle of image to read \\
+\hline
+{\em rescale\+Gamma} & controls whether rescaling is done in the image\textquotesingle{}s gamma or whether the source data is transformed to a linear gamma before rescaling. \\
+\hline
+{\em rescale\+Mode} & controls the technique (and cost) of the rescaling \\
+\hline
+{\em callback} & function to call with result of the read \\
+\hline
+{\em context} & passed to callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_image_a27a75e3a37f53d7ec00386dc82b42333}\label{class_sk_image_a27a75e3a37f53d7ec00386dc82b42333}} 
+\index{SkImage@{SkImage}!asyncRescaleAndReadPixelsYUV420@{asyncRescaleAndReadPixelsYUV420}}
+\index{asyncRescaleAndReadPixelsYUV420@{asyncRescaleAndReadPixelsYUV420}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{asyncRescaleAndReadPixelsYUV420()}{asyncRescaleAndReadPixelsYUV420()}}
+{\footnotesize\ttfamily void Sk\+Image\+::async\+Rescale\+And\+Read\+Pixels\+Y\+U\+V420 (\begin{DoxyParamCaption}\item[{Sk\+Y\+U\+V\+Color\+Space}]{yuv\+Color\+Space,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$}]{dst\+Color\+Space,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{src\+Rect,  }\item[{const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&}]{dst\+Size,  }\item[{Rescale\+Gamma}]{rescale\+Gamma,  }\item[{Rescale\+Mode}]{rescale\+Mode,  }\item[{\mbox{\hyperlink{class_sk_image_af67794e0326cd09fe4be14423e2888e5}{Read\+Pixels\+Callback}}}]{callback,  }\item[{\mbox{\hyperlink{class_sk_image_a452b82765705b4c34efa18731f236ec2}{Read\+Pixels\+Context}}}]{context }\end{DoxyParamCaption}) const}
+
+Similar to async\+Rescale\+And\+Read\+Pixels but performs an additional conversion to Y\+UV. The R\+G\+B-\/$>$Y\+UV conversion is controlled by \textquotesingle{}yuv\+Color\+Space\textquotesingle{}. The Y\+UV data is returned as three planes ordered y, u, v. The u and v planes are half the width and height of the resized rectangle. The y, u, and v values are single bytes. Currently this fails if \textquotesingle{}dst\+Size\textquotesingle{} width and height are not even. A \textquotesingle{}src\+Rect\textquotesingle{} that is not contained by the bounds of the image causes failure.
+
+When the pixel data is ready the caller\textquotesingle{}s Read\+Pixels\+Callback is called with a \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} containing the planar data. The \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} will have count() == 3. Upon failure the callback is called with nullptr for \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}}. For a G\+PU image this flushes work but a submit must occur to guarantee a finite time before the callback is called.
+
+The data is valid for the lifetime of \mbox{\hyperlink{class_sk_image_1_1_async_read_result}{Async\+Read\+Result}} with the exception that if the \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is G\+P\+U-\/backed the data is immediately invalidated if the context is abandoned or destroyed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em yuv\+Color\+Space} & The transformation from R\+GB to Y\+UV. Applied to the resized image after it is converted to dst\+Color\+Space. \\
+\hline
+{\em dst\+Color\+Space} & The color space to convert the resized image to, after rescaling. \\
+\hline
+{\em src\+Rect} & The portion of the image to rescale and convert to Y\+UV planes. \\
+\hline
+{\em dst\+Size} & The size to rescale src\+Rect to \\
+\hline
+{\em rescale\+Gamma} & controls whether rescaling is done in the image\textquotesingle{}s gamma or whether the source data is transformed to a linear gamma before rescaling. \\
+\hline
+{\em rescale\+Mode} & controls the technique (and cost) of the rescaling \\
+\hline
+{\em callback} & function to call with the planar read result \\
+\hline
+{\em context} & passed to callback \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_image_ad28814f86c1c5835a8a6a24542ad725b}\label{class_sk_image_ad28814f86c1c5835a8a6a24542ad725b}} 
+\index{SkImage@{SkImage}!bounds@{bounds}}
+\index{bounds@{bounds}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{bounds()}{bounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} Sk\+Image\+::bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \{ 0, 0, \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}}, \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} \}.
+
+\begin{DoxyReturn}{Returns}
+integral rectangle from origin to \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}} and \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_abaff790a0fa2a29824b3681d9f4a5857}\label{class_sk_image_abaff790a0fa2a29824b3681d9f4a5857}} 
+\index{SkImage@{SkImage}!colorSpace@{colorSpace}}
+\index{colorSpace@{colorSpace}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{colorSpace()}{colorSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}$\ast$ Sk\+Image\+::color\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}, the range of colors, associated with \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. The reference count of \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is unchanged. The returned \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is immutable.
+
+\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} returned was passed to an \mbox{\hyperlink{class_sk_image}{Sk\+Image}} constructor, or was parsed from encoded data. \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} returned may be ignored when \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is drawn, depending on the capabilities of the \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}} receiving the drawing.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} in \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_colorSpace}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+color\+Space}} \mbox{\Hypertarget{class_sk_image_a9edb0558497bcf40038ee32af22c032d}\label{class_sk_image_a9edb0558497bcf40038ee32af22c032d}} 
+\index{SkImage@{SkImage}!colorType@{colorType}}
+\index{colorType@{colorType}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{colorType()}{colorType()}}
+{\footnotesize\ttfamily Sk\+Color\+Type Sk\+Image\+::color\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns Sk\+Color\+Type if known; otherwise, returns k\+Unknown\+\_\+\+Sk\+Color\+Type.
+
+\begin{DoxyReturn}{Returns}
+Sk\+Color\+Type of \mbox{\hyperlink{class_sk_image}{Sk\+Image}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_colorType}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+color\+Type}} \mbox{\Hypertarget{class_sk_image_a31af5228b3d39dc6a1845e4183d98fe6}\label{class_sk_image_a31af5228b3d39dc6a1845e4183d98fe6}} 
+\index{SkImage@{SkImage}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{dimensions()}{dimensions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} Sk\+Image\+::dimensions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \{ \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}}, \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} \}.
+
+\begin{DoxyReturn}{Returns}
+integral size of \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}} and \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_af7caaa456b9496a5cea244bcfb8b4bc7}\label{class_sk_image_af7caaa456b9496a5cea244bcfb8b4bc7}} 
+\index{SkImage@{SkImage}!encodeToData@{encodeToData}}
+\index{encodeToData@{encodeToData}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{encodeToData()}{encodeToData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_data}{Sk\+Data}}$>$ Sk\+Image\+::encode\+To\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Encodes \mbox{\hyperlink{class_sk_image}{Sk\+Image}} pixels, returning result as \mbox{\hyperlink{class_sk_data}{Sk\+Data}}. Returns existing encoded data if present; otherwise, \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is encoded with Sk\+Encoded\+Image\+Format\+::k\+P\+NG. Skia must be built with S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+P\+NG to encode \mbox{\hyperlink{class_sk_image}{Sk\+Image}}.
+
+Returns nullptr if existing encoded data is missing or invalid, and encoding fails.
+
+\begin{DoxyReturn}{Returns}
+encoded \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_encodeToData_2}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+encode\+To\+Data\+\_\+2}} \mbox{\Hypertarget{class_sk_image_a65139d8aa83b1b7d06364ab959697f20}\label{class_sk_image_a65139d8aa83b1b7d06364ab959697f20}} 
+\index{SkImage@{SkImage}!encodeToData@{encodeToData}}
+\index{encodeToData@{encodeToData}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{encodeToData()}{encodeToData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_data}{Sk\+Data}}$>$ Sk\+Image\+::encode\+To\+Data (\begin{DoxyParamCaption}\item[{Sk\+Encoded\+Image\+Format}]{encoded\+Image\+Format,  }\item[{int}]{quality }\end{DoxyParamCaption}) const}
+
+Encodes \mbox{\hyperlink{class_sk_image}{Sk\+Image}} pixels, returning result as \mbox{\hyperlink{class_sk_data}{Sk\+Data}}.
+
+Returns nullptr if encoding fails, or if encoded\+Image\+Format is not supported.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} encoding in a format requires both building with one or more of\+: S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+J\+P\+EG, S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+P\+NG, S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+W\+E\+BP; and platform support for the encoded format.
+
+If S\+K\+\_\+\+B\+U\+I\+L\+D\+\_\+\+F\+O\+R\+\_\+\+M\+AC or S\+K\+\_\+\+B\+U\+I\+L\+D\+\_\+\+F\+O\+R\+\_\+\+I\+OS is defined, encoded\+Image\+Format can additionally be one of\+: Sk\+Encoded\+Image\+Format\+::k\+I\+CO, Sk\+Encoded\+Image\+Format\+::k\+B\+MP, Sk\+Encoded\+Image\+Format\+::k\+G\+IF.
+
+quality is a platform and format specific metric trading off size and encoding error. When used, quality equaling 100 encodes with the least error. quality may be ignored by the encoder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoded\+Image\+Format} & one of\+: Sk\+Encoded\+Image\+Format\+::k\+J\+P\+EG, Sk\+Encoded\+Image\+Format\+::k\+P\+NG, Sk\+Encoded\+Image\+Format\+::k\+W\+E\+BP \\
+\hline
+{\em quality} & encoder specific metric with 100 equaling best \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+encoded \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_encodeToData}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+encode\+To\+Data}} \mbox{\Hypertarget{class_sk_image_ae77231baa01a24c84b208267422a3f6c}\label{class_sk_image_ae77231baa01a24c84b208267422a3f6c}} 
+\index{SkImage@{SkImage}!hasMipmaps@{hasMipmaps}}
+\index{hasMipmaps@{hasMipmaps}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{hasMipmaps()}{hasMipmaps()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::has\+Mipmaps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if the image has mipmap levels. \mbox{\Hypertarget{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}\label{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}} 
+\index{SkImage@{SkImage}!height@{height}}
+\index{height@{height}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily int Sk\+Image\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns pixel row count.
+
+\begin{DoxyReturn}{Returns}
+pixel height in \mbox{\hyperlink{class_sk_image}{Sk\+Image}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a0c8ab681a163a68df48d9c0b792d279a}\label{class_sk_image_a0c8ab681a163a68df48d9c0b792d279a}} 
+\index{SkImage@{SkImage}!imageInfo@{imageInfo}}
+\index{imageInfo@{imageInfo}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{imageInfo()}{imageInfo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}\& Sk\+Image\+::image\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} describing the width, height, color type, alpha type, and color space of the \mbox{\hyperlink{class_sk_image}{Sk\+Image}}.
+
+\begin{DoxyReturn}{Returns}
+image info of \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a05bd6718b6b9937b8f5d98257f087e52}\label{class_sk_image_a05bd6718b6b9937b8f5d98257f087e52}} 
+\index{SkImage@{SkImage}!isAlphaOnly@{isAlphaOnly}}
+\index{isAlphaOnly@{isAlphaOnly}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{isAlphaOnly()}{isAlphaOnly()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::is\+Alpha\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} pixels represent transparency only. If true, each pixel is packed in 8 bits as defined by k\+Alpha\+\_\+8\+\_\+\+Sk\+Color\+Type.
+
+\begin{DoxyReturn}{Returns}
+true if pixels represent a transparency mask
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_isAlphaOnly}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+is\+Alpha\+Only}} \mbox{\Hypertarget{class_sk_image_a4adceff3864a48f01cf936210bd6e2b5}\label{class_sk_image_a4adceff3864a48f01cf936210bd6e2b5}} 
+\index{SkImage@{SkImage}!isLazyGenerated@{isLazyGenerated}}
+\index{isLazyGenerated@{isLazyGenerated}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{isLazyGenerated()}{isLazyGenerated()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::is\+Lazy\+Generated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is backed by an image-\/generator or other service that creates and caches its pixels or texture on-\/demand.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is created as needed
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_isLazyGenerated_a}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+is\+Lazy\+Generated\+\_\+a}} example\+: \href{https://fiddle.skia.org/c/@Image_isLazyGenerated_b}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+is\+Lazy\+Generated\+\_\+b}} \mbox{\Hypertarget{class_sk_image_abb4f153282e77984c8c44175a4b8d2de}\label{class_sk_image_abb4f153282e77984c8c44175a4b8d2de}} 
+\index{SkImage@{SkImage}!isOpaque@{isOpaque}}
+\index{isOpaque@{isOpaque}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{isOpaque()}{isOpaque()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::is\+Opaque (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if pixels ignore their alpha value and are treated as fully opaque.
+
+\begin{DoxyReturn}{Returns}
+true if Sk\+Alpha\+Type is k\+Opaque\+\_\+\+Sk\+Alpha\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a669fc1429f62ad069ebfd6586054316d}\label{class_sk_image_a669fc1429f62ad069ebfd6586054316d}} 
+\index{SkImage@{SkImage}!isTextureBacked@{isTextureBacked}}
+\index{isTextureBacked@{isTextureBacked}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{isTextureBacked()}{isTextureBacked()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::is\+Texture\+Backed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true the contents of \mbox{\hyperlink{class_sk_image}{Sk\+Image}} was created on or uploaded to G\+PU memory, and is available as a G\+PU texture.
+
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is a G\+PU texture
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_isTextureBacked}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+is\+Texture\+Backed}} \mbox{\Hypertarget{class_sk_image_aa75ecc655f985f59ad8e734719979500}\label{class_sk_image_aa75ecc655f985f59ad8e734719979500}} 
+\index{SkImage@{SkImage}!isValid@{isValid}}
+\index{isValid@{isValid}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::is\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$}]{context }\end{DoxyParamCaption}) const}
+
+Returns true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} can be drawn on either raster surface or G\+PU surface. If context is nullptr, tests if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} draws on raster surface; otherwise, tests if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} draws on G\+PU surface associated with context.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} backed by G\+PU texture may become invalid if associated context is invalid. lazy image may be invalid and may not draw to raster surface or G\+PU surface or both.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & G\+PU context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} can be drawn
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_isValid}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+is\+Valid}} \mbox{\Hypertarget{class_sk_image_a064862f65bec0490db75db3aa87a493c}\label{class_sk_image_a064862f65bec0490db75db3aa87a493c}} 
+\index{SkImage@{SkImage}!makeColorSpace@{makeColorSpace}}
+\index{makeColorSpace@{makeColorSpace}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeColorSpace()}{makeColorSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::make\+Color\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$}]{target,  }\item[{\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$}]{direct = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} in target \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}. Returns nullptr if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} could not be created.
+
+Returns original \mbox{\hyperlink{class_sk_image}{Sk\+Image}} if it is in target \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}. Otherwise, converts pixels from \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} to target \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \mbox{\hyperlink{class_sk_image_abaff790a0fa2a29824b3681d9f4a5857}{color\+Space()}} returns nullptr, \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is assumed to be s\+R\+GB.
+
+If this image is texture-\/backed, the context parameter is required and must match the context of the source image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} describing color range of returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em direct} & The \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} in play, if it exists \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}} in target \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_makeColorSpace}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+make\+Color\+Space}} \mbox{\Hypertarget{class_sk_image_a7ae0ce661d0a920a4139fe0138c5bb1f}\label{class_sk_image_a7ae0ce661d0a920a4139fe0138c5bb1f}} 
+\index{SkImage@{SkImage}!makeColorTypeAndColorSpace@{makeColorTypeAndColorSpace}}
+\index{makeColorTypeAndColorSpace@{makeColorTypeAndColorSpace}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeColorTypeAndColorSpace()}{makeColorTypeAndColorSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::make\+Color\+Type\+And\+Color\+Space (\begin{DoxyParamCaption}\item[{Sk\+Color\+Type}]{target\+Color\+Type,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$}]{target\+Color\+Space,  }\item[{\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$}]{direct = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Experimental. Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} in target Sk\+Color\+Type and \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}. Returns nullptr if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} could not be created.
+
+Returns original \mbox{\hyperlink{class_sk_image}{Sk\+Image}} if it is in target Sk\+Color\+Type and \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}.
+
+If this image is texture-\/backed, the context parameter is required and must match the context of the source image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Color\+Type} & Sk\+Color\+Type of returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em target\+Color\+Space} & \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} of returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em direct} & The \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} in play, if it exists \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}} in target Sk\+Color\+Type and \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a40a1d374c86736efd70df4aa1b6e590d}\label{class_sk_image_a40a1d374c86736efd70df4aa1b6e590d}} 
+\index{SkImage@{SkImage}!MakeFromBitmap@{MakeFromBitmap}}
+\index{MakeFromBitmap@{MakeFromBitmap}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeFromBitmap()}{MakeFromBitmap()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+From\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} \&}]{bitmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from bitmap, sharing or copying bitmap pixels. If the bitmap is marked immutable, and its pixel memory is shareable, it may be shared instead of copied.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} is returned if bitmap is valid. Valid \mbox{\hyperlink{class_sk_bitmap}{Sk\+Bitmap}} parameters include\+: dimensions are greater than zero; each dimension fits in 29 bits; Sk\+Color\+Type and Sk\+Alpha\+Type are valid, and Sk\+Color\+Type is not k\+Unknown\+\_\+\+Sk\+Color\+Type; row bytes are large enough to hold one row of pixels; pixel address is not nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}, row bytes, and pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_MakeFromBitmap}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+\+Make\+From\+Bitmap}} \mbox{\Hypertarget{class_sk_image_a5cdf4babd36b7f22dcc8b2d29bc31bea}\label{class_sk_image_a5cdf4babd36b7f22dcc8b2d29bc31bea}} 
+\index{SkImage@{SkImage}!MakeFromEncoded@{MakeFromEncoded}}
+\index{MakeFromEncoded@{MakeFromEncoded}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeFromEncoded()}{MakeFromEncoded()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+From\+Encoded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$}]{encoded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Return an image backed by the encoded data, but attempt to defer decoding until the image is actually used/drawn. This deferral allows the system to cache the result, either on the C\+PU or on the G\+PU, depending on where the image is drawn. If memory is low, the cache may be purged, causing the next draw of the image to have to re-\/decode.
+
+The subset parameter specifies a area within the decoded image to create the image from. If subset is null, then the entire image is returned.
+
+This is similar to Decode\+To\mbox{[}Raster,Texture\mbox{]}, but this method will attempt to defer the actual decode, while the Decode\+To... method explicitly decode and allocate the backend when the call is made.
+
+If the encoded format is not supported, or subset is outside of the bounds of the decoded image, nullptr is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoded} & the encoded data \\
+\hline
+{\em length} & the number of bytes of encoded data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_MakeFromEncoded}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+\+Make\+From\+Encoded}} \mbox{\Hypertarget{class_sk_image_ac58b35ca9caa8e863458ad620d8ef289}\label{class_sk_image_ac58b35ca9caa8e863458ad620d8ef289}} 
+\index{SkImage@{SkImage}!MakeFromGenerator@{MakeFromGenerator}}
+\index{MakeFromGenerator@{MakeFromGenerator}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeFromGenerator()}{MakeFromGenerator()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+From\+Generator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_sk_image_generator}{Sk\+Image\+Generator}} $>$}]{image\+Generator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from data returned by image\+Generator. Generated data is owned by \mbox{\hyperlink{class_sk_image}{Sk\+Image}} and may not be shared or accessed.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} is returned if generator data is valid. Valid data parameters vary by type of data and platform.
+
+image\+Generator may wrap \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} data, codec data, or custom data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Generator} & stock or custom routines to retrieve \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a1680db4809a9acda3ead013657ffaa8d}\label{class_sk_image_a1680db4809a9acda3ead013657ffaa8d}} 
+\index{SkImage@{SkImage}!MakeFromPicture@{MakeFromPicture}}
+\index{MakeFromPicture@{MakeFromPicture}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeFromPicture()}{MakeFromPicture()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+From\+Picture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_picture}{Sk\+Picture}} $>$}]{picture,  }\item[{const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&}]{dimensions,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$}]{matrix,  }\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$}]{paint,  }\item[{\mbox{\hyperlink{class_sk_image_a2b81bc9e0b3e39f3a284dbe587aabd80}{Bit\+Depth}}}]{bit\+Depth,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$}]{color\+Space }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from picture. Returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} width and height are set by dimensions. \mbox{\hyperlink{class_sk_image}{Sk\+Image}} draws picture with matrix and paint, set to bit\+Depth and color\+Space.
+
+If matrix is nullptr, draws with identity \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}}. If paint is nullptr, draws with default \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}}. color\+Space may be nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em picture} & stream of drawing commands \\
+\hline
+{\em dimensions} & width and height \\
+\hline
+{\em matrix} & \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} to rotate, scale, translate, and so on; may be nullptr \\
+\hline
+{\em paint} & \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} to apply transparency, filtering, and so on; may be nullptr \\
+\hline
+{\em bit\+Depth} & 8-\/bit integer or 16-\/bit float\+: per component \\
+\hline
+{\em color\+Space} & range of colors; may be nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a48204c348897c0fdffada3bf29a8a489}\label{class_sk_image_a48204c348897c0fdffada3bf29a8a489}} 
+\index{SkImage@{SkImage}!MakeFromRaster@{MakeFromRaster}}
+\index{MakeFromRaster@{MakeFromRaster}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeFromRaster()}{MakeFromRaster()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+From\+Raster (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{pixmap,  }\item[{\mbox{\hyperlink{class_sk_image_a7e81872895a0a8101797214ff1d7aa85}{Raster\+Release\+Proc}}}]{raster\+Release\+Proc,  }\item[{\mbox{\hyperlink{class_sk_image_a0859ee88414034a67372da1707198198}{Release\+Context}}}]{release\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from pixmap, sharing \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} pixels. Pixels must remain valid and unchanged until raster\+Release\+Proc is called. raster\+Release\+Proc is passed release\+Context when \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is deleted or no longer refers to pixmap pixels.
+
+Pass nullptr for raster\+Release\+Proc to share \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} without requiring a callback when \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is released. Pass nullptr for release\+Context if raster\+Release\+Proc does not require state.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} is returned if pixmap is valid. Valid \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} parameters include\+: dimensions are greater than zero; each dimension fits in 29 bits; Sk\+Color\+Type and Sk\+Alpha\+Type are valid, and Sk\+Color\+Type is not k\+Unknown\+\_\+\+Sk\+Color\+Type; row bytes are large enough to hold one row of pixels; pixel address is not nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}, pixel address, and row bytes \\
+\hline
+{\em raster\+Release\+Proc} & function called when pixels can be released; or nullptr \\
+\hline
+{\em release\+Context} & state passed to raster\+Release\+Proc; or nullptr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} sharing pixmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a1960f02bd8afb0f04d5f0cc7d851b1ff}\label{class_sk_image_a1960f02bd8afb0f04d5f0cc7d851b1ff}} 
+\index{SkImage@{SkImage}!makeNonTextureImage@{makeNonTextureImage}}
+\index{makeNonTextureImage@{makeNonTextureImage}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeNonTextureImage()}{makeNonTextureImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::make\+Non\+Texture\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns raster image or lazy image. Copies \mbox{\hyperlink{class_sk_image}{Sk\+Image}} backed by G\+PU texture into C\+PU memory if needed. Returns original \mbox{\hyperlink{class_sk_image}{Sk\+Image}} if decoded in raster bitmap, or if encoded in a stream.
+
+Returns nullptr if backed by G\+PU texture and copy fails.
+
+\begin{DoxyReturn}{Returns}
+raster image, lazy image, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_makeNonTextureImage}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+make\+Non\+Texture\+Image}} \mbox{\Hypertarget{class_sk_image_adaa2328bc01322a3e2608378c56aecd3}\label{class_sk_image_adaa2328bc01322a3e2608378c56aecd3}} 
+\index{SkImage@{SkImage}!MakeRasterCopy@{MakeRasterCopy}}
+\index{MakeRasterCopy@{MakeRasterCopy}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeRasterCopy()}{MakeRasterCopy()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+Raster\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{pixmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} and copy of pixels. Since pixels are copied, \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} pixels may be modified or deleted without affecting \mbox{\hyperlink{class_sk_image}{Sk\+Image}}.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} is returned if \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} is valid. Valid \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} parameters include\+: dimensions are greater than zero; each dimension fits in 29 bits; Sk\+Color\+Type and Sk\+Alpha\+Type are valid, and Sk\+Color\+Type is not k\+Unknown\+\_\+\+Sk\+Color\+Type; row bytes are large enough to hold one row of pixels; pixel address is not nullptr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}, pixel address, and row bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} pixels, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_MakeRasterCopy}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+\+Make\+Raster\+Copy}} \mbox{\Hypertarget{class_sk_image_a89572373dd76f4e9d9cc4cafb05dd335}\label{class_sk_image_a89572373dd76f4e9d9cc4cafb05dd335}} 
+\index{SkImage@{SkImage}!MakeRasterData@{MakeRasterData}}
+\index{MakeRasterData@{MakeRasterData}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeRasterData()}{MakeRasterData()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+Raster\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&}]{info,  }\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$}]{pixels,  }\item[{size\+\_\+t}]{row\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}, sharing pixels.
+
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} is returned if \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} is valid. Valid \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} parameters include\+: dimensions are greater than zero; each dimension fits in 29 bits; Sk\+Color\+Type and Sk\+Alpha\+Type are valid, and Sk\+Color\+Type is not k\+Unknown\+\_\+\+Sk\+Color\+Type; row\+Bytes are large enough to hold one row of pixels; pixels is not nullptr, and contains enough data for \mbox{\hyperlink{class_sk_image}{Sk\+Image}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & contains width, height, Sk\+Alpha\+Type, Sk\+Color\+Type, \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} \\
+\hline
+{\em pixels} & address or pixel storage \\
+\hline
+{\em row\+Bytes} & size of pixel row or larger \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_image}{Sk\+Image}} sharing pixels, or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_aefe8c80450915154ee8624d41755646e}\label{class_sk_image_aefe8c80450915154ee8624d41755646e}} 
+\index{SkImage@{SkImage}!MakeRasterFromCompressed@{MakeRasterFromCompressed}}
+\index{MakeRasterFromCompressed@{MakeRasterFromCompressed}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{MakeRasterFromCompressed()}{MakeRasterFromCompressed()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::\+Make\+Raster\+From\+Compressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_data}{Sk\+Data}} $>$}]{data,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{Compression\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a C\+P\+U-\/backed \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from compressed data.
+
+This method will decompress the compressed data and create an image wrapping it. Any mipmap levels present in the compressed data are discarded.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & compressed data to store in \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em width} & width of full \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em height} & height of full \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em type} & type of compression used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a8573e218a2bf2443a35cb253df0238f4}\label{class_sk_image_a8573e218a2bf2443a35cb253df0238f4}} 
+\index{SkImage@{SkImage}!makeRasterImage@{makeRasterImage}}
+\index{makeRasterImage@{makeRasterImage}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeRasterImage()}{makeRasterImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::make\+Raster\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}}}]{caching\+Hint = {\ttfamily \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457ac5235af520a9d4100474a57682f5fd40}{k\+Disallow\+\_\+\+Caching\+Hint}}} }\end{DoxyParamCaption}) const}
+
+Returns raster image. Copies \mbox{\hyperlink{class_sk_image}{Sk\+Image}} backed by G\+PU texture into C\+PU memory, or decodes \mbox{\hyperlink{class_sk_image}{Sk\+Image}} from lazy image. Returns original \mbox{\hyperlink{class_sk_image}{Sk\+Image}} if decoded in raster bitmap.
+
+Returns nullptr if copy, decode, or pixel read fails.
+
+If caching\+Hint is k\+Allow\+\_\+\+Caching\+Hint, pixels may be retained locally. If caching\+Hint is k\+Disallow\+\_\+\+Caching\+Hint, pixels are not added to the local cache.
+
+\begin{DoxyReturn}{Returns}
+raster image, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_makeRasterImage}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+make\+Raster\+Image}} \mbox{\Hypertarget{class_sk_image_a74353e5b80ca5efdaf51a11755149aba}\label{class_sk_image_a74353e5b80ca5efdaf51a11755149aba}} 
+\index{SkImage@{SkImage}!makeShader@{makeShader}}
+\index{makeShader@{makeShader}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeShader()}{makeShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_shader}{Sk\+Shader}}$>$ Sk\+Image\+::make\+Shader (\begin{DoxyParamCaption}\item[{Sk\+Tile\+Mode}]{tmx,  }\item[{Sk\+Tile\+Mode}]{tmy,  }\item[{const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&}]{,  }\item[{const \mbox{\hyperlink{class_sk_matrix}{Sk\+Matrix}} $\ast$}]{local\+Matrix = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Make a shader with the specified tiling and mipmap sampling. \mbox{\Hypertarget{class_sk_image_a02b229cde4f7f2b80e810157e2d98b9b}\label{class_sk_image_a02b229cde4f7f2b80e810157e2d98b9b}} 
+\index{SkImage@{SkImage}!makeSubset@{makeSubset}}
+\index{makeSubset@{makeSubset}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeSubset()}{makeSubset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::make\+Subset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{subset,  }\item[{\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$}]{direct = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Returns subset of this image.
+
+Returns nullptr if any of the following are true\+:
+\begin{DoxyItemize}
+\item Subset is empty
+\item Subset is not contained inside the image\textquotesingle{}s bounds
+\item Pixels in the image could not be read or copied
+\end{DoxyItemize}
+
+If this image is texture-\/backed, the context parameter is required and must match the context of the source image. If the context parameter is provided, and the image is raster-\/backed, the subset will be converted to texture-\/backed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em subset} & bounds of returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em context} & the \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} in play, if it exists \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the subsetted image, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_makeSubset}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+make\+Subset}} \mbox{\Hypertarget{class_sk_image_ab84b076c4bc2e8e979454b2ee866bb16}\label{class_sk_image_ab84b076c4bc2e8e979454b2ee866bb16}} 
+\index{SkImage@{SkImage}!makeWithFilter@{makeWithFilter}}
+\index{makeWithFilter@{makeWithFilter}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{makeWithFilter()}{makeWithFilter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::make\+With\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} $\ast$}]{context,  }\item[{const \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} $\ast$}]{filter,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{subset,  }\item[{const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} \&}]{clip\+Bounds,  }\item[{\mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} $\ast$}]{out\+Subset,  }\item[{\mbox{\hyperlink{struct_sk_i_point}{Sk\+I\+Point}} $\ast$}]{offset }\end{DoxyParamCaption}) const}
+
+Creates filtered \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. filter processes original \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, potentially changing color, position, and size. subset is the bounds of original \mbox{\hyperlink{class_sk_image}{Sk\+Image}} processed by filter. clip\+Bounds is the expected bounds of the filtered \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. out\+Subset is required storage for the actual bounds of the filtered \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. offset is required storage for translation of returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}}.
+
+Returns nullptr if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} could not be created or if the recording context provided doesn\textquotesingle{}t match the G\+PU context in which the image was created. If nullptr is returned, out\+Subset and offset are undefined.
+
+Useful for animation of \mbox{\hyperlink{class_sk_image_filter}{Sk\+Image\+Filter}} that varies size from frame to frame. Returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is created larger than required by filter so that G\+PU texture can be reused with different sized effects. out\+Subset describes the valid bounds of G\+PU texture returned. offset translates the returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} to keep subsequent animation frames aligned with respect to each other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & the \mbox{\hyperlink{class_gr_recording_context}{Gr\+Recording\+Context}} in play -\/ if it exists \\
+\hline
+{\em filter} & how \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is sampled when transformed \\
+\hline
+{\em subset} & bounds of \mbox{\hyperlink{class_sk_image}{Sk\+Image}} processed by filter \\
+\hline
+{\em clip\+Bounds} & expected bounds of filtered \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \\
+\hline
+{\em out\+Subset} & storage for returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} bounds \\
+\hline
+{\em offset} & storage for returned \mbox{\hyperlink{class_sk_image}{Sk\+Image}} translation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a68a71097150c85af810f184610764e6b}\label{class_sk_image_a68a71097150c85af810f184610764e6b}} 
+\index{SkImage@{SkImage}!peekPixels@{peekPixels}}
+\index{peekPixels@{peekPixels}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{peekPixels()}{peekPixels()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::peek\+Pixels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} $\ast$}]{pixmap }\end{DoxyParamCaption}) const}
+
+Copies \mbox{\hyperlink{class_sk_image}{Sk\+Image}} pixel address, row bytes, and \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} to pixmap, if address is available, and returns true. If pixel address is not available, return false and leave pixmap unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & storage for pixel state if pixels are readable; otherwise, ignored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} has direct access to pixels
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_peekPixels}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+peek\+Pixels}} \mbox{\Hypertarget{class_sk_image_ae710edc11df1748731d9d01e56530da9}\label{class_sk_image_ae710edc11df1748731d9d01e56530da9}} 
+\index{SkImage@{SkImage}!readPixels@{readPixels}}
+\index{readPixels@{readPixels}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{readPixels()}{readPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Sk\+Image\+::read\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&}]{dst\+Info,  }\item[{void $\ast$}]{dst\+Pixels,  }\item[{size\+\_\+t}]{dst\+Row\+Bytes,  }\item[{int}]{srcX,  }\item[{int}]{srcY,  }\item[{\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}}}]{caching\+Hint = {\ttfamily \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}} }\end{DoxyParamCaption}) const}
+
+Deprecated. Use the variants that accept a \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}}. \mbox{\Hypertarget{class_sk_image_a4331a225066ba04c1181b1e57ae99ea8}\label{class_sk_image_a4331a225066ba04c1181b1e57ae99ea8}} 
+\index{SkImage@{SkImage}!readPixels@{readPixels}}
+\index{readPixels@{readPixels}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{readPixels()}{readPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Sk\+Image\+::read\+Pixels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$}]{context,  }\item[{const \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}} \&}]{dst\+Info,  }\item[{void $\ast$}]{dst\+Pixels,  }\item[{size\+\_\+t}]{dst\+Row\+Bytes,  }\item[{int}]{srcX,  }\item[{int}]{srcY,  }\item[{\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}}}]{caching\+Hint = {\ttfamily \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}} }\end{DoxyParamCaption}) const}
+
+Copies \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} of pixels from \mbox{\hyperlink{class_sk_image}{Sk\+Image}} to dst\+Pixels. Copy starts at offset (srcX, srcY), and does not exceed \mbox{\hyperlink{class_sk_image}{Sk\+Image}} (\mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}}, \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}}).
+
+dst\+Info specifies width, height, Sk\+Color\+Type, Sk\+Alpha\+Type, and \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} of destination. dst\+Row\+Bytes specifies the gap from one destination row to the next. Returns true if pixels are copied. Returns false if\+:
+\begin{DoxyItemize}
+\item dst\+Info.\+addr() equals nullptr
+\item dst\+Row\+Bytes is less than dst\+Info.\+min\+Row\+Bytes()
+\item \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} is nullptr
+\end{DoxyItemize}
+
+Pixels are copied only if pixel conversion is possible. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Color\+Type is k\+Gray\+\_\+8\+\_\+\+Sk\+Color\+Type, or k\+Alpha\+\_\+8\+\_\+\+Sk\+Color\+Type; dst\+Info.\+color\+Type() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Color\+Type is k\+Gray\+\_\+8\+\_\+\+Sk\+Color\+Type, dst\+Info.\+color\+Space() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Alpha\+Type is k\+Opaque\+\_\+\+Sk\+Alpha\+Type, dst\+Info.\+alpha\+Type() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is nullptr, dst\+Info.\+color\+Space() must match. Returns false if pixel conversion is not possible.
+
+srcX and srcY may be negative to copy only top or left of source. Returns false if \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}} or \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} is zero or negative. Returns false if abs(src\+X) $>$= \mbox{\hyperlink{struct_image}{Image}} \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}}, or if abs(src\+Y) $>$= \mbox{\hyperlink{struct_image}{Image}} \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}}.
+
+If caching\+Hint is k\+Allow\+\_\+\+Caching\+Hint, pixels may be retained locally. If caching\+Hint is k\+Disallow\+\_\+\+Caching\+Hint, pixels are not added to the local cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & the \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} in play, if it exists \\
+\hline
+{\em dst\+Info} & destination width, height, Sk\+Color\+Type, Sk\+Alpha\+Type, \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} \\
+\hline
+{\em dst\+Pixels} & destination pixel storage \\
+\hline
+{\em dst\+Row\+Bytes} & destination row length \\
+\hline
+{\em srcX} & column index whose absolute value is less than \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}} \\
+\hline
+{\em srcY} & row index whose absolute value is less than \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} \\
+\hline
+{\em caching\+Hint} & whether the pixels should be cached locally \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if pixels are copied to dst\+Pixels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a0415cbbc56442a3d0945241e790b74f8}\label{class_sk_image_a0415cbbc56442a3d0945241e790b74f8}} 
+\index{SkImage@{SkImage}!readPixels@{readPixels}}
+\index{readPixels@{readPixels}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{readPixels()}{readPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Sk\+Image\+::read\+Pixels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} $\ast$}]{context,  }\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{dst,  }\item[{int}]{srcX,  }\item[{int}]{srcY,  }\item[{\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}}}]{caching\+Hint = {\ttfamily \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}} }\end{DoxyParamCaption}) const}
+
+Copies a \mbox{\hyperlink{struct_sk_rect}{Sk\+Rect}} of pixels from \mbox{\hyperlink{class_sk_image}{Sk\+Image}} to dst. Copy starts at (srcX, srcY), and does not exceed \mbox{\hyperlink{class_sk_image}{Sk\+Image}} (\mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}}, \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}}).
+
+dst specifies width, height, Sk\+Color\+Type, Sk\+Alpha\+Type, \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}, pixel storage, and row bytes of destination. dst.\+row\+Bytes() specifics the gap from one destination row to the next. Returns true if pixels are copied. Returns false if\+:
+\begin{DoxyItemize}
+\item dst pixel storage equals nullptr
+\item dst.\+row\+Bytes is less than \mbox{\hyperlink{struct_sk_image_info_a48bbcae20c25171cf36a719af8d8599d}{Sk\+Image\+Info\+::min\+Row\+Bytes}}
+\item \mbox{\hyperlink{class_sk_pixel_ref}{Sk\+Pixel\+Ref}} is nullptr
+\end{DoxyItemize}
+
+Pixels are copied only if pixel conversion is possible. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Color\+Type is k\+Gray\+\_\+8\+\_\+\+Sk\+Color\+Type, or k\+Alpha\+\_\+8\+\_\+\+Sk\+Color\+Type; dst.\+color\+Type() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Color\+Type is k\+Gray\+\_\+8\+\_\+\+Sk\+Color\+Type, dst.\+color\+Space() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Alpha\+Type is k\+Opaque\+\_\+\+Sk\+Alpha\+Type, dst.\+alpha\+Type() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is nullptr, dst.\+color\+Space() must match. Returns false if pixel conversion is not possible.
+
+srcX and srcY may be negative to copy only top or left of source. Returns false if \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}} or \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} is zero or negative. Returns false if abs(src\+X) $>$= \mbox{\hyperlink{struct_image}{Image}} \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}}, or if abs(src\+Y) $>$= \mbox{\hyperlink{struct_image}{Image}} \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}}.
+
+If caching\+Hint is k\+Allow\+\_\+\+Caching\+Hint, pixels may be retained locally. If caching\+Hint is k\+Disallow\+\_\+\+Caching\+Hint, pixels are not added to the local cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & the \mbox{\hyperlink{class_gr_direct_context}{Gr\+Direct\+Context}} in play, if it exists \\
+\hline
+{\em dst} & destination \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}}\+: \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}, pixels, row bytes \\
+\hline
+{\em srcX} & column index whose absolute value is less than \mbox{\hyperlink{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}{width()}} \\
+\hline
+{\em srcY} & row index whose absolute value is less than \mbox{\hyperlink{class_sk_image_acf6e13fd990402c3ef1169635ca4f98b}{height()}} \\
+\hline
+{\em caching\+Hint} & whether the pixels should be cached locallyZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if pixels are copied to dst 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a2144f49e872438e0da2ddb4b45ac49d3}\label{class_sk_image_a2144f49e872438e0da2ddb4b45ac49d3}} 
+\index{SkImage@{SkImage}!refColorSpace@{refColorSpace}}
+\index{refColorSpace@{refColorSpace}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{refColorSpace()}{refColorSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}$>$ Sk\+Image\+::ref\+Color\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a smart pointer to \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}, the range of colors, associated with \mbox{\hyperlink{class_sk_image}{Sk\+Image}}. The smart pointer tracks the number of objects sharing this \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} reference so the memory is released when the owners destruct.
+
+The returned \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is immutable.
+
+\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} returned was passed to an \mbox{\hyperlink{class_sk_image}{Sk\+Image}} constructor, or was parsed from encoded data. \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} returned may be ignored when \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is drawn, depending on the capabilities of the \mbox{\hyperlink{class_sk_surface}{Sk\+Surface}} receiving the drawing.
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} in \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr, wrapped in a smart pointer
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_refColorSpace}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+ref\+Color\+Space}} \mbox{\Hypertarget{class_sk_image_ad64463b20839923aed4c880c108ff5f7}\label{class_sk_image_ad64463b20839923aed4c880c108ff5f7}} 
+\index{SkImage@{SkImage}!refEncodedData@{refEncodedData}}
+\index{refEncodedData@{refEncodedData}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{refEncodedData()}{refEncodedData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_data}{Sk\+Data}}$>$ Sk\+Image\+::ref\+Encoded\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns encoded \mbox{\hyperlink{class_sk_image}{Sk\+Image}} pixels as \mbox{\hyperlink{class_sk_data}{Sk\+Data}}, if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} was created from supported encoded stream format. Platform support for formats vary and may require building with one or more of\+: S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+J\+P\+EG, S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+P\+NG, S\+K\+\_\+\+E\+N\+C\+O\+D\+E\+\_\+\+W\+E\+BP.
+
+Returns nullptr if \mbox{\hyperlink{class_sk_image}{Sk\+Image}} contents are not encoded.
+
+\begin{DoxyReturn}{Returns}
+encoded \mbox{\hyperlink{class_sk_image}{Sk\+Image}}, or nullptr
+\end{DoxyReturn}
+example\+: \href{https://fiddle.skia.org/c/@Image_refEncodedData}{\texttt{ https\+://fiddle.\+skia.\+org/c/@\+Image\+\_\+ref\+Encoded\+Data}} \mbox{\Hypertarget{class_sk_image_a30f799673ab8ee2abfa831809f7c3cc1}\label{class_sk_image_a30f799673ab8ee2abfa831809f7c3cc1}} 
+\index{SkImage@{SkImage}!reinterpretColorSpace@{reinterpretColorSpace}}
+\index{reinterpretColorSpace@{reinterpretColorSpace}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{reinterpretColorSpace()}{reinterpretColorSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::reinterpret\+Color\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$}]{new\+Color\+Space }\end{DoxyParamCaption}) const}
+
+Creates a new \mbox{\hyperlink{class_sk_image}{Sk\+Image}} identical to this one, but with a different \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}}. This does not convert the underlying pixel data, so the resulting image will draw differently. \mbox{\Hypertarget{class_sk_image_af72f23301825f0361e3c200a60809f0f}\label{class_sk_image_af72f23301825f0361e3c200a60809f0f}} 
+\index{SkImage@{SkImage}!scalePixels@{scalePixels}}
+\index{scalePixels@{scalePixels}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{scalePixels()}{scalePixels()}}
+{\footnotesize\ttfamily bool Sk\+Image\+::scale\+Pixels (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&}]{dst,  }\item[{const \mbox{\hyperlink{struct_sk_sampling_options}{Sk\+Sampling\+Options}} \&}]{,  }\item[{\mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457}{Caching\+Hint}}}]{caching\+Hint = {\ttfamily \mbox{\hyperlink{class_sk_image_addfa46178be404588114f8ae0a2ba457afaafe007f97e922746e26fb617eec43b}{k\+Allow\+\_\+\+Caching\+Hint}}} }\end{DoxyParamCaption}) const}
+
+Copies \mbox{\hyperlink{class_sk_image}{Sk\+Image}} to dst, scaling pixels to fit dst.\+width() and dst.\+height(), and converting pixels to match dst.\+color\+Type() and dst.\+alpha\+Type(). Returns true if pixels are copied. Returns false if dst.\+addr() is nullptr, or dst.\+row\+Bytes() is less than dst \mbox{\hyperlink{struct_sk_image_info_a48bbcae20c25171cf36a719af8d8599d}{Sk\+Image\+Info\+::min\+Row\+Bytes}}.
+
+Pixels are copied only if pixel conversion is possible. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Color\+Type is k\+Gray\+\_\+8\+\_\+\+Sk\+Color\+Type, or k\+Alpha\+\_\+8\+\_\+\+Sk\+Color\+Type; dst.\+color\+Type() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Color\+Type is k\+Gray\+\_\+8\+\_\+\+Sk\+Color\+Type, dst.\+color\+Space() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} Sk\+Alpha\+Type is k\+Opaque\+\_\+\+Sk\+Alpha\+Type, dst.\+alpha\+Type() must match. If \mbox{\hyperlink{class_sk_image}{Sk\+Image}} \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} is nullptr, dst.\+color\+Space() must match. Returns false if pixel conversion is not possible.
+
+If caching\+Hint is k\+Allow\+\_\+\+Caching\+Hint, pixels may be retained locally. If caching\+Hint is k\+Disallow\+\_\+\+Caching\+Hint, pixels are not added to the local cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & destination \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}}\+: \mbox{\hyperlink{struct_sk_image_info}{Sk\+Image\+Info}}, pixels, row bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if pixels are scaled to fit dst 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a9bb648c1c867d3ece532dbcde11c241b}\label{class_sk_image_a9bb648c1c867d3ece532dbcde11c241b}} 
+\index{SkImage@{SkImage}!textureSize@{textureSize}}
+\index{textureSize@{textureSize}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{textureSize()}{textureSize()}}
+{\footnotesize\ttfamily size\+\_\+t Sk\+Image\+::texture\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns an approximation of the amount of texture memory used by the image. Returns zero if the image is not texture backed or if the texture has an external format. \mbox{\Hypertarget{class_sk_image_a4423076408bb246f40ac570e4396274a}\label{class_sk_image_a4423076408bb246f40ac570e4396274a}} 
+\index{SkImage@{SkImage}!uniqueID@{uniqueID}}
+\index{uniqueID@{uniqueID}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{uniqueID()}{uniqueID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Image\+::unique\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns value unique to image. \mbox{\hyperlink{class_sk_image}{Sk\+Image}} contents cannot change after \mbox{\hyperlink{class_sk_image}{Sk\+Image}} is created. Any operation to create a new \mbox{\hyperlink{class_sk_image}{Sk\+Image}} will receive generate a new unique number.
+
+\begin{DoxyReturn}{Returns}
+unique identifier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}\label{class_sk_image_a68cbaed075dd20afbc95ff56043d0cda}} 
+\index{SkImage@{SkImage}!width@{width}}
+\index{width@{width}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily int Sk\+Image\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns pixel count in each row.
+
+\begin{DoxyReturn}{Returns}
+pixel width in \mbox{\hyperlink{class_sk_image}{Sk\+Image}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sk_image_a6f4d8a27101c9df98b8c0fa2f3400fed}\label{class_sk_image_a6f4d8a27101c9df98b8c0fa2f3400fed}} 
+\index{SkImage@{SkImage}!withDefaultMipmaps@{withDefaultMipmaps}}
+\index{withDefaultMipmaps@{withDefaultMipmaps}!SkImage@{SkImage}}
+\doxysubsubsection{\texorpdfstring{withDefaultMipmaps()}{withDefaultMipmaps()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$\mbox{\hyperlink{class_sk_image}{Sk\+Image}}$>$ Sk\+Image\+::with\+Default\+Mipmaps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns an image with the same \char`\"{}base\char`\"{} pixels as the this image, but with mipmap levels automatically generated and attached. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Image.\+h\end{DoxyCompactItemize}

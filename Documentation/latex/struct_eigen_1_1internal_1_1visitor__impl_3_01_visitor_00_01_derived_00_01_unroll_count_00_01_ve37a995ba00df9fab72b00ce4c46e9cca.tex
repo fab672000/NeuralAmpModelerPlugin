@@ -1,0 +1,43 @@
+\hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca}{}\doxysection{Eigen\+::internal\+::visitor\+\_\+impl$<$ Visitor, Derived, Unroll\+Count, Vectorize, true, Short\+Circuit\+Evaluation $>$ Struct Template Reference}
+\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca}\index{Eigen::internal::visitor\_impl$<$ Visitor, Derived, UnrollCount, Vectorize, true, ShortCircuitEvaluation $>$@{Eigen::internal::visitor\_impl$<$ Visitor, Derived, UnrollCount, Vectorize, true, ShortCircuitEvaluation $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a38bbb5920e89ffb766547461ae6bc7fc}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a38bbb5920e89ffb766547461ae6bc7fc}} 
+using {\bfseries Scalar} = typename Derived\+::\+Scalar
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a5c7e26373d9424c2e21d0feea72c6903}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a5c7e26373d9424c2e21d0feea72c6903}} 
+using {\bfseries Packet} = typename \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{packet\+\_\+traits}}$<$ Scalar $>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_af04a1d7e2d09feb6559b8c529915d1e8}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_af04a1d7e2d09feb6559b8c529915d1e8}} 
+static constexpr bool {\bfseries Can\+Vectorize} (int K)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a0b6352667bd34edc4e212bedd43f4587}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a0b6352667bd34edc4e212bedd43f4587}} 
+{\footnotesize template$<$int K = 0, bool Empty = (\+K == Unroll\+Count), std\+::enable\+\_\+if\+\_\+t$<$ Empty, bool $>$  = true$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries run} (const Derived \&, Visitor \&)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}} 
+{\footnotesize template$<$int K = 0, bool Empty = (\+K == Unroll\+Count), bool Initialize = (\+K == 0), bool Do\+Vector\+Op = Can\+Vectorize(\+K), std\+::enable\+\_\+if\+\_\+t$<$!\+Empty \&\&\+Initialize \&\&!\+Do\+Vector\+Op, bool $>$  = true$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries run} (const Derived \&mat, Visitor \&visitor)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}} 
+{\footnotesize template$<$int K = 0, bool Empty = (\+K == Unroll\+Count), bool Initialize = (\+K == 0), bool Do\+Vector\+Op = Can\+Vectorize(\+K), std\+::enable\+\_\+if\+\_\+t$<$!\+Empty \&\&!\+Initialize \&\&!\+Do\+Vector\+Op, bool $>$  = true$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries run} (const Derived \&mat, Visitor \&visitor)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}} 
+{\footnotesize template$<$int K = 0, bool Empty = (\+K == Unroll\+Count), bool Initialize = (\+K == 0), bool Do\+Vector\+Op = Can\+Vectorize(\+K), std\+::enable\+\_\+if\+\_\+t$<$!\+Empty \&\&\+Initialize \&\&\+Do\+Vector\+Op, bool $>$  = true$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries run} (const Derived \&mat, Visitor \&visitor)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a07630bdc323751078da38e65339bdca9}} 
+{\footnotesize template$<$int K = 0, bool Empty = (\+K == Unroll\+Count), bool Initialize = (\+K == 0), bool Do\+Vector\+Op = Can\+Vectorize(\+K), std\+::enable\+\_\+if\+\_\+t$<$!\+Empty \&\&!\+Initialize \&\&\+Do\+Vector\+Op, bool $>$  = true$>$ }\\static E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries run} (const Derived \&mat, Visitor \&visitor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a9790d4f7a2b76c1b043d2f51d6195abe}\label{struct_eigen_1_1internal_1_1visitor__impl_3_01_visitor_00_01_derived_00_01_unroll_count_00_01_ve37a995ba00df9fab72b00ce4c46e9cca_a9790d4f7a2b76c1b043d2f51d6195abe}} 
+static constexpr int {\bfseries Packet\+Size} = \mbox{\hyperlink{struct_eigen_1_1internal_1_1packet__traits}{packet\+\_\+traits}}$<$Scalar$>$\+::size
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/\+Neural\+Amp\+Modeler/\+Neural\+Amp\+Modeler\+Core/\+Dependencies/eigen/\+Eigen/src/\+Core/Visitor.\+h\end{DoxyCompactItemize}

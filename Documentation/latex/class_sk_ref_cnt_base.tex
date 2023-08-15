@@ -1,0 +1,75 @@
+\hypertarget{class_sk_ref_cnt_base}{}\doxysection{Sk\+Ref\+Cnt\+Base Class Reference}
+\label{class_sk_ref_cnt_base}\index{SkRefCntBase@{SkRefCntBase}}
+
+
+{\ttfamily \#include $<$Sk\+Ref\+Cnt.\+h$>$}
+
+Inheritance diagram for Sk\+Ref\+Cnt\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_sk_ref_cnt_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_ref_cnt_base_a5a774880256081e9e5cf33c8cf7ea9bc}{Sk\+Ref\+Cnt\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{class_sk_ref_cnt_base_ad0afdb3774d0e065874ecb0d0a288b83}{$\sim$\+Sk\+Ref\+Cnt\+Base}} ()
+\item 
+bool \mbox{\hyperlink{class_sk_ref_cnt_base_ae058eee2ac4793db6bd663e59a235ce7}{unique}} () const
+\item 
+void \mbox{\hyperlink{class_sk_ref_cnt_base_abbbd318b36c9e232c70488254e1f5e67}{ref}} () const
+\item 
+void \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_ref_cnt_base_a0db82db08de6df6df8e5b66c4f5c5a94}\label{class_sk_ref_cnt_base_a0db82db08de6df6df8e5b66c4f5c5a94}} 
+class {\bfseries Sk\+Weak\+Ref\+Cnt}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sk_ref_cnt_base}{Sk\+Ref\+Cnt\+Base}} is the base class for objects that may be shared by multiple objects. When an existing owner wants to share a reference, it calls \mbox{\hyperlink{class_sk_ref_cnt_base_abbbd318b36c9e232c70488254e1f5e67}{ref()}}. When an owner wants to release its reference, it calls \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref()}}. When the shared object\textquotesingle{}s reference count goes to zero as the result of an \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref()}} call, its (virtual) destructor is called. It is an error for the destructor to be called explicitly (or via the object going out of scope on the stack or calling delete) if get\+Ref\+Cnt() $>$ 1. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_ref_cnt_base_a5a774880256081e9e5cf33c8cf7ea9bc}\label{class_sk_ref_cnt_base_a5a774880256081e9e5cf33c8cf7ea9bc}} 
+\index{SkRefCntBase@{SkRefCntBase}!SkRefCntBase@{SkRefCntBase}}
+\index{SkRefCntBase@{SkRefCntBase}!SkRefCntBase@{SkRefCntBase}}
+\doxysubsubsection{\texorpdfstring{SkRefCntBase()}{SkRefCntBase()}}
+{\footnotesize\ttfamily Sk\+Ref\+Cnt\+Base\+::\+Sk\+Ref\+Cnt\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default construct, initializing the reference count to 1. \mbox{\Hypertarget{class_sk_ref_cnt_base_ad0afdb3774d0e065874ecb0d0a288b83}\label{class_sk_ref_cnt_base_ad0afdb3774d0e065874ecb0d0a288b83}} 
+\index{SkRefCntBase@{SkRefCntBase}!````~SkRefCntBase@{$\sim$SkRefCntBase}}
+\index{````~SkRefCntBase@{$\sim$SkRefCntBase}!SkRefCntBase@{SkRefCntBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$SkRefCntBase()}{~SkRefCntBase()}}
+{\footnotesize\ttfamily virtual Sk\+Ref\+Cnt\+Base\+::$\sim$\+Sk\+Ref\+Cnt\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destruct, asserting that the reference count is 1. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_ref_cnt_base_abbbd318b36c9e232c70488254e1f5e67}\label{class_sk_ref_cnt_base_abbbd318b36c9e232c70488254e1f5e67}} 
+\index{SkRefCntBase@{SkRefCntBase}!ref@{ref}}
+\index{ref@{ref}!SkRefCntBase@{SkRefCntBase}}
+\doxysubsubsection{\texorpdfstring{ref()}{ref()}}
+{\footnotesize\ttfamily void Sk\+Ref\+Cnt\+Base\+::ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Increment the reference count. Must be balanced by a call to \mbox{\hyperlink{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}{unref()}}. \mbox{\Hypertarget{class_sk_ref_cnt_base_ae058eee2ac4793db6bd663e59a235ce7}\label{class_sk_ref_cnt_base_ae058eee2ac4793db6bd663e59a235ce7}} 
+\index{SkRefCntBase@{SkRefCntBase}!unique@{unique}}
+\index{unique@{unique}!SkRefCntBase@{SkRefCntBase}}
+\doxysubsubsection{\texorpdfstring{unique()}{unique()}}
+{\footnotesize\ttfamily bool Sk\+Ref\+Cnt\+Base\+::unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+May return true if the caller is the only owner. Ensures that all previous owner\textquotesingle{}s actions are complete. \mbox{\Hypertarget{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}\label{class_sk_ref_cnt_base_afed65f99f91ef48a7892fafe4829d2f1}} 
+\index{SkRefCntBase@{SkRefCntBase}!unref@{unref}}
+\index{unref@{unref}!SkRefCntBase@{SkRefCntBase}}
+\doxysubsubsection{\texorpdfstring{unref()}{unref()}}
+{\footnotesize\ttfamily void Sk\+Ref\+Cnt\+Base\+::unref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Decrement the reference count. If the reference count is 1 before the decrement, then delete the object. Note that if this is the case, then the object needs to have been allocated via new, and not on the stack. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Ref\+Cnt.\+h\end{DoxyCompactItemize}

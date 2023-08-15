@@ -1,0 +1,53 @@
+\hypertarget{struct_steinberg_1_1_f_deleter}{}\doxysection{Steinberg\+::F\+Deleter$<$ T $>$ Struct Template Reference}
+\label{struct_steinberg_1_1_f_deleter}\index{Steinberg::FDeleter$<$ T $>$@{Steinberg::FDeleter$<$ T $>$}}
+
+
+{\ttfamily \#include $<$fcleanup.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_steinberg_1_1_f_deleter_a08676ad356798311e29d700c94b798fc}{F\+Deleter}} (\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$\+\_\+to\+Delete)
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_deleter_a9495d0a9023bd4aa709972de88fe9cbc}\label{struct_steinberg_1_1_f_deleter_a9495d0a9023bd4aa709972de88fe9cbc}} 
+\mbox{\hyperlink{struct_steinberg_1_1_f_deleter_a9495d0a9023bd4aa709972de88fe9cbc}{$\sim$\+F\+Deleter}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Calls delete on the at construction time passed pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_steinberg_1_1_f_deleter_ae7c2245253933e2e37a31c85411ba585}\label{struct_steinberg_1_1_f_deleter_ae7c2245253933e2e37a31c85411ba585}} 
+\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ \mbox{\hyperlink{struct_steinberg_1_1_f_deleter_ae7c2245253933e2e37a31c85411ba585}{to\+Delete}}
+\begin{DoxyCompactList}\small\item\em Remembers the object that is to be deleted during destruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+struct Steinberg\+::\+F\+Deleter$<$ T $>$}
+
+Template definition for classes that help guarding against memory leaks. A stack allocated object of this type automatically deletes an at construction time passed dynamically allocated single object when it reaches the end of its scope. ~\newline
+~\newline
+Intended usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{int}* pointerToInt = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{    \mbox{\hyperlink{struct_steinberg_1_1_f_deleter}{Steinberg::FDeleter<int>}} deleter (pointerToInt);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{// Do something with the variable behind pointerToInt.}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\} \textcolor{comment}{// No memory leak here, destructor of deleter cleans up the integer.}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_steinberg_1_1_f_deleter_a08676ad356798311e29d700c94b798fc}\label{struct_steinberg_1_1_f_deleter_a08676ad356798311e29d700c94b798fc}} 
+\index{Steinberg::FDeleter$<$ T $>$@{Steinberg::FDeleter$<$ T $>$}!FDeleter@{FDeleter}}
+\index{FDeleter@{FDeleter}!Steinberg::FDeleter$<$ T $>$@{Steinberg::FDeleter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FDeleter()}{FDeleter()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{struct_steinberg_1_1_f_deleter}{Steinberg\+::\+F\+Deleter}}$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::\mbox{\hyperlink{struct_steinberg_1_1_f_deleter}{F\+Deleter}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$}]{\+\_\+to\+Delete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor. \+\_\+to\+Delete is a pointer to the dynamically allocated object that is to be deleted when this \mbox{\hyperlink{struct_steinberg_1_1_f_deleter}{F\+Deleter}} object\textquotesingle{}s destructor is executed. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/base/source/fcleanup.\+h\end{DoxyCompactItemize}

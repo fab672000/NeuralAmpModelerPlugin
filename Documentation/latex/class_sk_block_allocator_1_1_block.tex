@@ -1,0 +1,61 @@
+\hypertarget{class_sk_block_allocator_1_1_block}{}\doxysection{Sk\+Block\+Allocator\+::Block Class Reference}
+\label{class_sk_block_allocator_1_1_block}\index{SkBlockAllocator::Block@{SkBlockAllocator::Block}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a44ae0603c246a41c4b208cf34dd50f93}\label{class_sk_block_allocator_1_1_block_a44ae0603c246a41c4b208cf34dd50f93}} 
+void {\bfseries operator delete} (void $\ast$p)
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a6b34c33dcf131a389cb1280a5f530d5e}\label{class_sk_block_allocator_1_1_block_a6b34c33dcf131a389cb1280a5f530d5e}} 
+{\footnotesize template$<$size\+\_\+t Align = 1, size\+\_\+t Padding = 0$>$ }\\int {\bfseries avail} () const
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a0ed925073e107938935f0bcb9c2f96c2}\label{class_sk_block_allocator_1_1_block_a0ed925073e107938935f0bcb9c2f96c2}} 
+{\footnotesize template$<$size\+\_\+t Align = 1, size\+\_\+t Padding = 0$>$ }\\int {\bfseries first\+Aligned\+Offset} () const
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a1d568c1cff1aa87e5d5a470ff8c21d5c}\label{class_sk_block_allocator_1_1_block_a1d568c1cff1aa87e5d5a470ff8c21d5c}} 
+void $\ast$ {\bfseries ptr} (int offset)
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a0b6afdf8c5180e51abbd0385eef2f8da}\label{class_sk_block_allocator_1_1_block_a0b6afdf8c5180e51abbd0385eef2f8da}} 
+const void $\ast$ {\bfseries ptr} (int offset) const
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a4977a069e972a2fdc2e1fca958e88645}\label{class_sk_block_allocator_1_1_block_a4977a069e972a2fdc2e1fca958e88645}} 
+int {\bfseries metadata} () const
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_aa84c781d89847d05e47dd4bf86e06942}\label{class_sk_block_allocator_1_1_block_aa84c781d89847d05e47dd4bf86e06942}} 
+void {\bfseries set\+Metadata} (int value)
+\item 
+bool \mbox{\hyperlink{class_sk_block_allocator_1_1_block_a63c9d1dd9a0cf309b8b54fad115659fa}{release}} (int start, int end)
+\item 
+bool \mbox{\hyperlink{class_sk_block_allocator_1_1_block_a7e621955675562f2b2977a738ebeab0f}{resize}} (int start, int end, int delta\+Bytes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a27a02fef1dcd4b05480f0f66f1471e38}\label{class_sk_block_allocator_1_1_block_a27a02fef1dcd4b05480f0f66f1471e38}} 
+class {\bfseries Sk\+Block\+Allocator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a63c9d1dd9a0cf309b8b54fad115659fa}\label{class_sk_block_allocator_1_1_block_a63c9d1dd9a0cf309b8b54fad115659fa}} 
+\index{SkBlockAllocator::Block@{SkBlockAllocator::Block}!release@{release}}
+\index{release@{release}!SkBlockAllocator::Block@{SkBlockAllocator::Block}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily bool Sk\+Block\+Allocator\+::\+Block\+::release (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Release the byte range between offset \textquotesingle{}start\textquotesingle{} (inclusive) and \textquotesingle{}end\textquotesingle{} (exclusive). This will return true if those bytes were successfully reclaimed, i.\+e. a subsequent allocation request could occupy the space. Regardless of return value, the provided byte range that \mbox{[}start, end) represents should not be used until it\textquotesingle{}s re-\/allocated with \mbox{\hyperlink{class_sk_block_allocator_a9d5238baa2e451f5ba69abb01a1c8a82}{allocate$<$...$>$()}}. \mbox{\Hypertarget{class_sk_block_allocator_1_1_block_a7e621955675562f2b2977a738ebeab0f}\label{class_sk_block_allocator_1_1_block_a7e621955675562f2b2977a738ebeab0f}} 
+\index{SkBlockAllocator::Block@{SkBlockAllocator::Block}!resize@{resize}}
+\index{resize@{resize}!SkBlockAllocator::Block@{SkBlockAllocator::Block}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily bool Sk\+Block\+Allocator\+::\+Block\+::resize (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end,  }\item[{int}]{delta\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resize a previously reserved byte range of offset \textquotesingle{}start\textquotesingle{} (inclusive) to \textquotesingle{}end\textquotesingle{} (exclusive). \textquotesingle{}delta\+Bytes\textquotesingle{} is the S\+I\+G\+N\+ED change to length of the reservation.
+
+When negative this means the reservation is shrunk and the new length is (end -\/ start -\/ $\vert$delta\+Bytes$\vert$). If this new length would be 0, the byte range can no longer be used (as if it were released instead). Asserts that it would not shrink the reservation below 0.
+
+If \textquotesingle{}delta\+Bytes\textquotesingle{} is positive, the allocator attempts to increase the length of the reservation. If \textquotesingle{}delta\+Bytes\textquotesingle{} is less than or equal to avail() and it was the last allocation in the block, it can be resized. If there is not enough available bytes to accommodate the increase in size, or another allocation is blocking the increase in size, then false will be returned and the reserved byte range is unmodified. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Block\+Allocator.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Block\+Allocator.\+cpp\end{DoxyCompactItemize}

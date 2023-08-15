@@ -1,0 +1,272 @@
+\hypertarget{class_eigen_1_1_euler_system}{}\doxysection{Eigen\+::Euler\+System$<$ \+\_\+\+Alpha\+Axis, \+\_\+\+Beta\+Axis, \+\_\+\+Gamma\+Axis $>$ Class Template Reference}
+\label{class_eigen_1_1_euler_system}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}
+
+
+Represents a fixed Euler rotation system.  
+
+
+
+
+{\ttfamily \#include $<$Euler\+System.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a54814e9f1958769932e1f1a2047701b8}{Alpha\+Axis\+Abs}} = internal\+::Abs$<$Alpha\+Axis$>$\+::value, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aaea3c35e3fd2cab857f0b37feaa80c05}{Beta\+Axis\+Abs}} = internal\+::Abs$<$Beta\+Axis$>$\+::value, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aef2019be264b8fb5dbd4a5ca4f118b29}{Gamma\+Axis\+Abs}} = internal\+::Abs$<$Gamma\+Axis$>$\+::value, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aac88718d0bd48e25e3e715af12342de7}{Is\+Alpha\+Opposite}} = (Alpha\+Axis $<$ 0) ? 1 \+: 0, 
+\newline
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a659596aeadc17ade7dff5b8740c04ca8}{Is\+Beta\+Opposite}} = (Beta\+Axis $<$ 0) ? 1 \+: 0, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a6779029ac21bd5102818c8ea8cf6c031}{Is\+Gamma\+Opposite}} = (Gamma\+Axis $<$ 0) ? 1 \+: 0, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a43734e3026d24162637bd4b09309529f}{Is\+Odd}} = ((Alpha\+Axis\+Abs)\%3 == (Beta\+Axis\+Abs -\/ 1)\%3) ? 0 \+: 1, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a7d962970ece2524efb5aa4317d89c17c}{Is\+Even}} = Is\+Odd ? 0 \+: 1, 
+\newline
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78ae4c717ae02bcec9247f5ef7d2d5d91fa}{Is\+Tait\+Bryan}} = ((unsigned)Alpha\+Axis\+Abs != (unsigned)Gamma\+Axis\+Abs) ? 1 \+: 0
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a54814e9f1958769932e1f1a2047701b8}{Alpha\+Axis\+Abs}} = internal\+::Abs$<$Alpha\+Axis$>$\+::value, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aaea3c35e3fd2cab857f0b37feaa80c05}{Beta\+Axis\+Abs}} = internal\+::Abs$<$Beta\+Axis$>$\+::value, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aef2019be264b8fb5dbd4a5ca4f118b29}{Gamma\+Axis\+Abs}} = internal\+::Abs$<$Gamma\+Axis$>$\+::value, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aac88718d0bd48e25e3e715af12342de7}{Is\+Alpha\+Opposite}} = (Alpha\+Axis $<$ 0) ? 1 \+: 0, 
+\newline
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a659596aeadc17ade7dff5b8740c04ca8}{Is\+Beta\+Opposite}} = (Beta\+Axis $<$ 0) ? 1 \+: 0, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a6779029ac21bd5102818c8ea8cf6c031}{Is\+Gamma\+Opposite}} = (Gamma\+Axis $<$ 0) ? 1 \+: 0, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a43734e3026d24162637bd4b09309529f}{Is\+Odd}} = ((Alpha\+Axis\+Abs)\%3 == (Beta\+Axis\+Abs -\/ 1)\%3) ? 0 \+: 1, 
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a7d962970ece2524efb5aa4317d89c17c}{Is\+Even}} = Is\+Odd ? 0 \+: 1, 
+\newline
+\mbox{\hyperlink{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78ae4c717ae02bcec9247f5ef7d2d5d91fa}{Is\+Tait\+Bryan}} = ((unsigned)Alpha\+Axis\+Abs != (unsigned)Gamma\+Axis\+Abs) ? 1 \+: 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_eigen_1_1_euler_system_a3f11c669d2db1494733ca98997c85746}{Alpha\+Axis}} = \+\_\+\+Alpha\+Axis
+\item 
+static constexpr int \mbox{\hyperlink{class_eigen_1_1_euler_system_a55cffd2246eb05aaf29f659aa4c3ea82}{Beta\+Axis}} = \+\_\+\+Beta\+Axis
+\item 
+static constexpr int \mbox{\hyperlink{class_eigen_1_1_euler_system_a701989f29c60f33254430a2b0dba2d96}{Gamma\+Axis}} = \+\_\+\+Gamma\+Axis
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_aaed3d87b19518ded2654aa3664123324}\label{class_eigen_1_1_euler_system_aaed3d87b19518ded2654aa3664123324}} 
+{\footnotesize template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ }\\class {\bfseries Eigen\+::\+Euler\+Angles}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_a0378b2801fcb8550bfc46a679e11ac92}\label{class_eigen_1_1_euler_system_a0378b2801fcb8550bfc46a679e11ac92}} 
+{\footnotesize template$<$typename System , typename Other , int Other\+Rows, int Other\+Cols$>$ }\\struct {\bfseries internal\+::eulerangles\+\_\+assign\+\_\+impl}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_a4edbfd80991b5318999dfd5bb29f9e9f}\label{class_eigen_1_1_euler_system_a4edbfd80991b5318999dfd5bb29f9e9f}} 
+{\footnotesize template$<$typename Scalar\+\_\+ , class \+\_\+\+System $>$ }\\class {\bfseries Eigen\+::\+Euler\+Angles}
+\item 
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_a4ac4e505560035a1889d08db560b4edc}\label{class_eigen_1_1_euler_system_a4ac4e505560035a1889d08db560b4edc}} 
+{\footnotesize template$<$typename System , typename Other , int Other\+Rows, int Other\+Cols$>$ }\\struct {\bfseries internal\+::eulerangles\+\_\+assign\+\_\+impl}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$int \+\_\+\+Alpha\+Axis, int \+\_\+\+Beta\+Axis, int \+\_\+\+Gamma\+Axis$>$\newline
+class Eigen\+::\+Euler\+System$<$ \+\_\+\+Alpha\+Axis, \+\_\+\+Beta\+Axis, \+\_\+\+Gamma\+Axis $>$}
+
+Represents a fixed Euler rotation system. 
+
+This meta-\/class goal is to represent the Euler system in compilation time, for \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}.
+
+You can use this class to get two things\+:
+\begin{DoxyItemize}
+\item Build an Euler system, and then pass it as a template parameter to \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}.
+\item Query some compile time data about an Euler system. (e.\+g. Whether it\textquotesingle{}s Tait-\/\+Bryan)
+\end{DoxyItemize}
+
+Euler rotation is a set of three rotation on fixed axes. (see \mbox{\hyperlink{class_euler_angles}{Euler\+Angles}}) This meta-\/class store constantly those signed axes. (see \mbox{\hyperlink{namespace_eigen_ae614aa7cdd687fb5c421a54f2ce5c361}{Euler\+Axis}})\hypertarget{class_eigen_1_1_euler_system_autotoc_md1557}{}\doxyparagraph{Types of Euler systems}\label{class_eigen_1_1_euler_system_autotoc_md1557}
+All and only valid 3 dimension Euler rotation over standard signed axes\{+X,+Y,+Z,-\/X,-\/Y,-\/Z\} are supported\+:
+\begin{DoxyItemize}
+\item all axes X, Y, Z in each valid order (see below what order is valid)
+\item rotation over the axis is supported both over the positive and negative directions.
+\item both Tait-\/\+Bryan and proper/classic Euler angles (i.\+e. the opposite).
+\end{DoxyItemize}
+
+Since \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} support both positive and negative directions, you may call this rotation distinction in other names\+:
+\begin{DoxyItemize}
+\item {\itshape right handed} or {\itshape left handed}
+\item {\itshape counterclockwise} or {\itshape clockwise}
+\end{DoxyItemize}
+
+Notice all axed combination are valid, and would trigger a static assertion. Same unsigned axes can\textquotesingle{}t be neighbors, e.\+g. \{X,X,Y\} is invalid. This yield two and only two classes\+:
+\begin{DoxyItemize}
+\item {\itshape Tait-\/\+Bryan} -\/ all unsigned axes are distinct, e.\+g. \{X,Y,Z\}
+\item {\itshape proper/classic Euler angles} -\/ The first and the third unsigned axes is equal, and the second is different, e.\+g. \{X,Y,X\}
+\end{DoxyItemize}\hypertarget{class_eigen_1_1_euler_system_autotoc_md1558}{}\doxyparagraph{Intrinsic vs extrinsic Euler systems}\label{class_eigen_1_1_euler_system_autotoc_md1558}
+Only intrinsic Euler systems are supported for simplicity. If you want to use extrinsic Euler systems, just use the equal intrinsic opposite order for axes and angles. I.\+e axes (A,B,C) becomes (C,B,A), and angles (a,b,c) becomes (c,b,a).\hypertarget{class_eigen_1_1_euler_system_autotoc_md1559}{}\doxyparagraph{Convenient user typedefs}\label{class_eigen_1_1_euler_system_autotoc_md1559}
+Convenient typedefs for \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} exist (only for positive axes Euler systems), in a form of \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}}\{A\}\{B\}\{C\}, e.\+g. Euler\+System\+X\+YZ.\hypertarget{class_eigen_1_1_euler_system_autotoc_md1560}{}\doxyparagraph{Additional reading}\label{class_eigen_1_1_euler_system_autotoc_md1560}
+More information about Euler angles\+: \href{https://en.wikipedia.org/wiki/Euler_angles}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Euler\+\_\+angles}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \+\_\+\+Alpha\+Axis} & the first fixed Euler\+Axis\\
+\hline
+{\em \+\_\+\+Beta\+Axis} & the second fixed Euler\+Axis\\
+\hline
+{\em \+\_\+\+Gamma\+Axis} & the third fixed Euler\+Axis\\
+\hline
+\end{DoxyTemplParams}
+This meta-\/class goal is to represent the Euler system in compilation time, for \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}.
+
+You can use this class to get two things\+:
+\begin{DoxyItemize}
+\item Build an Euler system, and then pass it as a template parameter to \mbox{\hyperlink{class_eigen_1_1_euler_angles}{Euler\+Angles}}.
+\item Query some compile time data about an Euler system. (e.\+g. Whether it\textquotesingle{}s Tait-\/\+Bryan)
+\end{DoxyItemize}
+
+Euler rotation is a set of three rotation on fixed axes. (see \mbox{\hyperlink{class_euler_angles}{Euler\+Angles}}) This meta-\/class store constantly those signed axes. (see \mbox{\hyperlink{namespace_eigen_ae614aa7cdd687fb5c421a54f2ce5c361}{Euler\+Axis}})\hypertarget{class_eigen_1_1_euler_system_autotoc_md1692}{}\doxyparagraph{Types of Euler systems}\label{class_eigen_1_1_euler_system_autotoc_md1692}
+All and only valid 3 dimension Euler rotation over standard signed axes\{+X,+Y,+Z,-\/X,-\/Y,-\/Z\} are supported\+:
+\begin{DoxyItemize}
+\item all axes X, Y, Z in each valid order (see below what order is valid)
+\item rotation over the axis is supported both over the positive and negative directions.
+\item both Tait-\/\+Bryan and proper/classic Euler angles (i.\+e. the opposite).
+\end{DoxyItemize}
+
+Since \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} support both positive and negative directions, you may call this rotation distinction in other names\+:
+\begin{DoxyItemize}
+\item {\itshape right handed} or {\itshape left handed}
+\item {\itshape counterclockwise} or {\itshape clockwise}
+\end{DoxyItemize}
+
+Notice all axed combination are valid, and would trigger a static assertion. Same unsigned axes can\textquotesingle{}t be neighbors, e.\+g. \{X,X,Y\} is invalid. This yield two and only two classes\+:
+\begin{DoxyItemize}
+\item {\itshape Tait-\/\+Bryan} -\/ all unsigned axes are distinct, e.\+g. \{X,Y,Z\}
+\item {\itshape proper/classic Euler angles} -\/ The first and the third unsigned axes is equal, and the second is different, e.\+g. \{X,Y,X\}
+\end{DoxyItemize}\hypertarget{class_eigen_1_1_euler_system_autotoc_md1693}{}\doxyparagraph{Intrinsic vs extrinsic Euler systems}\label{class_eigen_1_1_euler_system_autotoc_md1693}
+Only intrinsic Euler systems are supported for simplicity. If you want to use extrinsic Euler systems, just use the equal intrinsic opposite order for axes and angles. I.\+e axes (A,B,C) becomes (C,B,A), and angles (a,b,c) becomes (c,b,a).\hypertarget{class_eigen_1_1_euler_system_autotoc_md1694}{}\doxyparagraph{Convenient user typedefs}\label{class_eigen_1_1_euler_system_autotoc_md1694}
+Convenient typedefs for \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}} exist (only for positive axes Euler systems), in a form of \mbox{\hyperlink{class_eigen_1_1_euler_system}{Euler\+System}}\{A\}\{B\}\{C\}, e.\+g. Euler\+System\+X\+YZ.\hypertarget{class_eigen_1_1_euler_system_autotoc_md1695}{}\doxyparagraph{Additional reading}\label{class_eigen_1_1_euler_system_autotoc_md1695}
+More information about Euler angles\+: \href{https://en.wikipedia.org/wiki/Euler_angles}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Euler\+\_\+angles}}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \+\_\+\+Alpha\+Axis} & the first fixed Euler\+Axis\\
+\hline
+{\em \+\_\+\+Beta\+Axis} & the second fixed Euler\+Axis\\
+\hline
+{\em \+\_\+\+Gamma\+Axis} & the third fixed Euler\+Axis \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_ac03fb0e8e79445c5bfacfbb0382aeeb8}\label{class_eigen_1_1_euler_system_ac03fb0e8e79445c5bfacfbb0382aeeb8}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$int \+\_\+\+Alpha\+Axis, int \+\_\+\+Beta\+Axis, int \+\_\+\+Gamma\+Axis$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlphaAxisAbs@{AlphaAxisAbs}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!AlphaAxisAbs@{AlphaAxisAbs}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a54814e9f1958769932e1f1a2047701b8}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a54814e9f1958769932e1f1a2047701b8}} 
+Alpha\+Axis\+Abs&the first rotation axis unsigned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BetaAxisAbs@{BetaAxisAbs}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!BetaAxisAbs@{BetaAxisAbs}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aaea3c35e3fd2cab857f0b37feaa80c05}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aaea3c35e3fd2cab857f0b37feaa80c05}} 
+Beta\+Axis\+Abs&the second rotation axis unsigned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GammaAxisAbs@{GammaAxisAbs}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!GammaAxisAbs@{GammaAxisAbs}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aef2019be264b8fb5dbd4a5ca4f118b29}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aef2019be264b8fb5dbd4a5ca4f118b29}} 
+Gamma\+Axis\+Abs&the third rotation axis unsigned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsAlphaOpposite@{IsAlphaOpposite}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsAlphaOpposite@{IsAlphaOpposite}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aac88718d0bd48e25e3e715af12342de7}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aac88718d0bd48e25e3e715af12342de7}} 
+Is\+Alpha\+Opposite&whether alpha axis is negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsBetaOpposite@{IsBetaOpposite}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsBetaOpposite@{IsBetaOpposite}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a659596aeadc17ade7dff5b8740c04ca8}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a659596aeadc17ade7dff5b8740c04ca8}} 
+Is\+Beta\+Opposite&whether beta axis is negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsGammaOpposite@{IsGammaOpposite}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsGammaOpposite@{IsGammaOpposite}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a6779029ac21bd5102818c8ea8cf6c031}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a6779029ac21bd5102818c8ea8cf6c031}} 
+Is\+Gamma\+Opposite&whether gamma axis is negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsOdd@{IsOdd}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsOdd@{IsOdd}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a43734e3026d24162637bd4b09309529f}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a43734e3026d24162637bd4b09309529f}} 
+Is\+Odd&whether the Euler system is odd \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsEven@{IsEven}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsEven@{IsEven}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a7d962970ece2524efb5aa4317d89c17c}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a7d962970ece2524efb5aa4317d89c17c}} 
+Is\+Even&whether the Euler system is even \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsTaitBryan@{IsTaitBryan}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsTaitBryan@{IsTaitBryan}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78ae4c717ae02bcec9247f5ef7d2d5d91fa}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78ae4c717ae02bcec9247f5ef7d2d5d91fa}} 
+Is\+Tait\+Bryan&whether the Euler system is Tait-\/\+Bryan \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$int \+\_\+\+Alpha\+Axis, int \+\_\+\+Beta\+Axis, int \+\_\+\+Gamma\+Axis$>$ \\
+anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlphaAxisAbs@{AlphaAxisAbs}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!AlphaAxisAbs@{AlphaAxisAbs}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a54814e9f1958769932e1f1a2047701b8}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a54814e9f1958769932e1f1a2047701b8}} 
+Alpha\+Axis\+Abs&the first rotation axis unsigned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BetaAxisAbs@{BetaAxisAbs}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!BetaAxisAbs@{BetaAxisAbs}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aaea3c35e3fd2cab857f0b37feaa80c05}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aaea3c35e3fd2cab857f0b37feaa80c05}} 
+Beta\+Axis\+Abs&the second rotation axis unsigned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GammaAxisAbs@{GammaAxisAbs}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!GammaAxisAbs@{GammaAxisAbs}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aef2019be264b8fb5dbd4a5ca4f118b29}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aef2019be264b8fb5dbd4a5ca4f118b29}} 
+Gamma\+Axis\+Abs&the third rotation axis unsigned \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsAlphaOpposite@{IsAlphaOpposite}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsAlphaOpposite@{IsAlphaOpposite}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aac88718d0bd48e25e3e715af12342de7}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78aac88718d0bd48e25e3e715af12342de7}} 
+Is\+Alpha\+Opposite&whether alpha axis is negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsBetaOpposite@{IsBetaOpposite}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsBetaOpposite@{IsBetaOpposite}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a659596aeadc17ade7dff5b8740c04ca8}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a659596aeadc17ade7dff5b8740c04ca8}} 
+Is\+Beta\+Opposite&whether beta axis is negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsGammaOpposite@{IsGammaOpposite}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsGammaOpposite@{IsGammaOpposite}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a6779029ac21bd5102818c8ea8cf6c031}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a6779029ac21bd5102818c8ea8cf6c031}} 
+Is\+Gamma\+Opposite&whether gamma axis is negative \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsOdd@{IsOdd}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsOdd@{IsOdd}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a43734e3026d24162637bd4b09309529f}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a43734e3026d24162637bd4b09309529f}} 
+Is\+Odd&whether the Euler system is odd \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsEven@{IsEven}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsEven@{IsEven}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a7d962970ece2524efb5aa4317d89c17c}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78a7d962970ece2524efb5aa4317d89c17c}} 
+Is\+Even&whether the Euler system is even \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsTaitBryan@{IsTaitBryan}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!IsTaitBryan@{IsTaitBryan}}}\mbox{\Hypertarget{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78ae4c717ae02bcec9247f5ef7d2d5d91fa}\label{class_eigen_1_1_euler_system_a2f50c9036c66203b32cc3c04f23dec78ae4c717ae02bcec9247f5ef7d2d5d91fa}} 
+Is\+Tait\+Bryan&whether the Euler system is Tait-\/\+Bryan \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_eigen_1_1_euler_system_a3f11c669d2db1494733ca98997c85746}\label{class_eigen_1_1_euler_system_a3f11c669d2db1494733ca98997c85746}} 
+\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!AlphaAxis@{AlphaAxis}}
+\index{AlphaAxis@{AlphaAxis}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}
+\doxysubsubsection{\texorpdfstring{AlphaAxis}{AlphaAxis}}
+{\footnotesize\ttfamily template$<$int \+\_\+\+Alpha\+Axis, int \+\_\+\+Beta\+Axis, int \+\_\+\+Gamma\+Axis$>$ \\
+static constexpr int \mbox{\hyperlink{class_eigen_1_1_euler_system}{Eigen\+::\+Euler\+System}}$<$ \+\_\+\+Alpha\+Axis, \+\_\+\+Beta\+Axis, \+\_\+\+Gamma\+Axis $>$\+::Alpha\+Axis = \+\_\+\+Alpha\+Axis\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+The first rotation axis \mbox{\Hypertarget{class_eigen_1_1_euler_system_a55cffd2246eb05aaf29f659aa4c3ea82}\label{class_eigen_1_1_euler_system_a55cffd2246eb05aaf29f659aa4c3ea82}} 
+\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!BetaAxis@{BetaAxis}}
+\index{BetaAxis@{BetaAxis}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}
+\doxysubsubsection{\texorpdfstring{BetaAxis}{BetaAxis}}
+{\footnotesize\ttfamily template$<$int \+\_\+\+Alpha\+Axis, int \+\_\+\+Beta\+Axis, int \+\_\+\+Gamma\+Axis$>$ \\
+static constexpr int \mbox{\hyperlink{class_eigen_1_1_euler_system}{Eigen\+::\+Euler\+System}}$<$ \+\_\+\+Alpha\+Axis, \+\_\+\+Beta\+Axis, \+\_\+\+Gamma\+Axis $>$\+::Beta\+Axis = \+\_\+\+Beta\+Axis\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+The second rotation axis \mbox{\Hypertarget{class_eigen_1_1_euler_system_a701989f29c60f33254430a2b0dba2d96}\label{class_eigen_1_1_euler_system_a701989f29c60f33254430a2b0dba2d96}} 
+\index{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}!GammaAxis@{GammaAxis}}
+\index{GammaAxis@{GammaAxis}!Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$@{Eigen::EulerSystem$<$ \_AlphaAxis, \_BetaAxis, \_GammaAxis $>$}}
+\doxysubsubsection{\texorpdfstring{GammaAxis}{GammaAxis}}
+{\footnotesize\ttfamily template$<$int \+\_\+\+Alpha\+Axis, int \+\_\+\+Beta\+Axis, int \+\_\+\+Gamma\+Axis$>$ \\
+static constexpr int \mbox{\hyperlink{class_eigen_1_1_euler_system}{Eigen\+::\+Euler\+System}}$<$ \+\_\+\+Alpha\+Axis, \+\_\+\+Beta\+Axis, \+\_\+\+Gamma\+Axis $>$\+::Gamma\+Axis = \+\_\+\+Gamma\+Axis\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+The third rotation axis 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/src/\+Euler\+Angles/Euler\+System.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\hypertarget{class_sk_op_builder}{}\doxysection{Sk\+Op\+Builder Class Reference}
+\label{class_sk_op_builder}\index{SkOpBuilder@{SkOpBuilder}}
+
+
+{\ttfamily \#include $<$Sk\+Path\+Ops.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sk_op_builder_a5873ef4f14b6542447024a9917b267af}{add}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, Sk\+Path\+Op \+\_\+operator)
+\item 
+bool \mbox{\hyperlink{class_sk_op_builder_ade774eb6197bf35f34a60fc50c90b697}{resolve}} (\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Perform a series of path operations, optimized for unioning many paths together. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_op_builder_a5873ef4f14b6542447024a9917b267af}\label{class_sk_op_builder_a5873ef4f14b6542447024a9917b267af}} 
+\index{SkOpBuilder@{SkOpBuilder}!add@{add}}
+\index{add@{add}!SkOpBuilder@{SkOpBuilder}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Sk\+Op\+Builder\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{Sk\+Path\+Op}]{\+\_\+operator }\end{DoxyParamCaption})}
+
+Add one or more paths and their operand. The builder is empty before the first path is added, so the result of a single add is (empty\+Path OP path).
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The second operand. \\
+\hline
+{\em \+\_\+operator} & The operator to apply to the existing and supplied paths. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sk_op_builder_ade774eb6197bf35f34a60fc50c90b697}\label{class_sk_op_builder_ade774eb6197bf35f34a60fc50c90b697}} 
+\index{SkOpBuilder@{SkOpBuilder}!resolve@{resolve}}
+\index{resolve@{resolve}!SkOpBuilder@{SkOpBuilder}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily bool Sk\+Op\+Builder\+::resolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_path}{Sk\+Path}} $\ast$}]{result }\end{DoxyParamCaption})}
+
+Computes the sum of all paths and operands, and resets the builder to its initial state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & The product of the operands. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation succeeded. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/pathops/Sk\+Path\+Ops.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,57 @@
+\hypertarget{class_sk_contour_measure_iter}{}\doxysection{Sk\+Contour\+Measure\+Iter Class Reference}
+\label{class_sk_contour_measure_iter}\index{SkContourMeasureIter@{SkContourMeasureIter}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_contour_measure_iter_1_1_impl}{Impl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_contour_measure_iter_a5a6ead2a7887dcd42e8f96cc57d0326c}{Sk\+Contour\+Measure\+Iter}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, bool force\+Closed, Sk\+Scalar res\+Scale=1)
+\item 
+void \mbox{\hyperlink{class_sk_contour_measure_iter_a725306dc15e7c204611c3d3f451c5dc7}{reset}} (const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&path, bool force\+Closed, Sk\+Scalar res\+Scale=1)
+\item 
+\mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_contour_measure}{Sk\+Contour\+Measure}} $>$ \mbox{\hyperlink{class_sk_contour_measure_iter_aca36466f2b6d3a6c7c1dc74b8aa304ff}{next}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sk_contour_measure_iter_a5a6ead2a7887dcd42e8f96cc57d0326c}\label{class_sk_contour_measure_iter_a5a6ead2a7887dcd42e8f96cc57d0326c}} 
+\index{SkContourMeasureIter@{SkContourMeasureIter}!SkContourMeasureIter@{SkContourMeasureIter}}
+\index{SkContourMeasureIter@{SkContourMeasureIter}!SkContourMeasureIter@{SkContourMeasureIter}}
+\doxysubsubsection{\texorpdfstring{SkContourMeasureIter()}{SkContourMeasureIter()}}
+{\footnotesize\ttfamily Sk\+Contour\+Measure\+Iter\+::\+Sk\+Contour\+Measure\+Iter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{bool}]{force\+Closed,  }\item[{Sk\+Scalar}]{res\+Scale = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Initialize the Iter with a path. The parts of the path that are needed are copied, so the client is free to modify/delete the path after this call.
+
+res\+Scale controls the precision of the measure. values $>$ 1 increase the precision (and possibly slow down the computation). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_contour_measure_iter_aca36466f2b6d3a6c7c1dc74b8aa304ff}\label{class_sk_contour_measure_iter_aca36466f2b6d3a6c7c1dc74b8aa304ff}} 
+\index{SkContourMeasureIter@{SkContourMeasureIter}!next@{next}}
+\index{next@{next}!SkContourMeasureIter@{SkContourMeasureIter}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_contour_measure}{Sk\+Contour\+Measure}} $>$ Sk\+Contour\+Measure\+Iter\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Iterates through contours in path, returning a contour-\/measure object for each contour in the path. Returns null when it is done.
+
+This only returns non-\/zero length contours, where a contour is the segments between a k\+Move\+\_\+\+Verb and either ...
+\begin{DoxyItemize}
+\item the next k\+Move\+\_\+\+Verb
+\item k\+Close\+\_\+\+Verb (1 or more)
+\item k\+Done\+\_\+\+Verb If it encounters a zero-\/length contour, it is skipped. 
+\end{DoxyItemize}\mbox{\Hypertarget{class_sk_contour_measure_iter_a725306dc15e7c204611c3d3f451c5dc7}\label{class_sk_contour_measure_iter_a725306dc15e7c204611c3d3f451c5dc7}} 
+\index{SkContourMeasureIter@{SkContourMeasureIter}!reset@{reset}}
+\index{reset@{reset}!SkContourMeasureIter@{SkContourMeasureIter}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Sk\+Contour\+Measure\+Iter\+::reset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_sk_path}{Sk\+Path}} \&}]{path,  }\item[{bool}]{force\+Closed,  }\item[{Sk\+Scalar}]{res\+Scale = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Reset the Iter with a path. The parts of the path that are needed are copied, so the client is free to modify/delete the path after this call.
+
+Assign a new path, or null to have none. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/core/Sk\+Contour\+Measure.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Contour\+Measure.\+cpp\end{DoxyCompactItemize}

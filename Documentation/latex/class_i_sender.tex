@@ -1,0 +1,63 @@
+\hypertarget{class_i_sender}{}\doxysection{I\+Sender$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE, T $>$ Class Template Reference}
+\label{class_i_sender}\index{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}}
+
+
+{\ttfamily \#include $<$I\+Sender.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_sender_a92a9c820f01facfff1cb4af02a35911f}{Push\+Data}} (const \mbox{\hyperlink{struct_i_sender_data}{I\+Sender\+Data}}$<$ M\+A\+X\+NC, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ \&d)
+\item 
+void \mbox{\hyperlink{class_i_sender_ad61c80e910d77b335ee04174949355e6}{Transmit\+Data}} (\mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \&dlg)
+\item 
+void \mbox{\hyperlink{class_i_sender_a969329ff6714cfa7ed8429702146f499}{Transmit\+Data\+To\+Controls\+With\+Tags}} (\mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \&dlg, const std\+::initializer\+\_\+list$<$ int $>$ \&ctrl\+Tags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_sender_aed4e25d47ab3555cda2bc259e8aa1b1f}\label{class_i_sender_aed4e25d47ab3555cda2bc259e8aa1b1f}} 
+static constexpr int {\bfseries k\+Update\+Message} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$int M\+A\+X\+NC = 1, int Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE = 64, typename T = float$>$\newline
+class I\+Sender$<$ M\+A\+X\+N\+C, Q\+U\+E\+U\+E\+\_\+\+S\+I\+Z\+E, T $>$}
+
+\mbox{\hyperlink{class_i_sender}{I\+Sender}} is a utility class which can be used to defer data from the realtime audio processing and send it to the \mbox{\hyperlink{class_g_u_i}{G\+UI}} for visualization 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_sender_a92a9c820f01facfff1cb4af02a35911f}\label{class_i_sender_a92a9c820f01facfff1cb4af02a35911f}} 
+\index{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}!PushData@{PushData}}
+\index{PushData@{PushData}!ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}}
+\doxysubsubsection{\texorpdfstring{PushData()}{PushData()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1, int Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE = 64, typename T  = float$>$ \\
+void \mbox{\hyperlink{class_i_sender}{I\+Sender}}$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Push\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_sender_data}{I\+Sender\+Data}}$<$ M\+A\+X\+NC, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$ \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pushes a data element onto the queue. This can be called on the realtime audio thread. \mbox{\Hypertarget{class_i_sender_ad61c80e910d77b335ee04174949355e6}\label{class_i_sender_ad61c80e910d77b335ee04174949355e6}} 
+\index{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}!TransmitData@{TransmitData}}
+\index{TransmitData@{TransmitData}!ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}}
+\doxysubsubsection{\texorpdfstring{TransmitData()}{TransmitData()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1, int Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE = 64, typename T  = float$>$ \\
+void \mbox{\hyperlink{class_i_sender}{I\+Sender}}$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Transmit\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \&}]{dlg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pops elements off the queue and sends messages to controls. This must be called on the main thread -\/ typically in My\+Plugin\+::\+On\+Idle() \mbox{\Hypertarget{class_i_sender_a969329ff6714cfa7ed8429702146f499}\label{class_i_sender_a969329ff6714cfa7ed8429702146f499}} 
+\index{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}!TransmitDataToControlsWithTags@{TransmitDataToControlsWithTags}}
+\index{TransmitDataToControlsWithTags@{TransmitDataToControlsWithTags}!ISender$<$ MAXNC, QUEUE\_SIZE, T $>$@{ISender$<$ MAXNC, QUEUE\_SIZE, T $>$}}
+\doxysubsubsection{\texorpdfstring{TransmitDataToControlsWithTags()}{TransmitDataToControlsWithTags()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1, int Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE = 64, typename T  = float$>$ \\
+void \mbox{\hyperlink{class_i_sender}{I\+Sender}}$<$ M\+A\+X\+NC, Q\+U\+E\+U\+E\+\_\+\+S\+I\+ZE, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$\+::Transmit\+Data\+To\+Controls\+With\+Tags (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}} \&}]{dlg,  }\item[{const std\+::initializer\+\_\+list$<$ int $>$ \&}]{ctrl\+Tags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This variation can be used if you need to supply multiple controls with the same \mbox{\hyperlink{struct_i_sender_data}{I\+Sender\+Data}}, overrideing the tags in the data packet 
+\begin{DoxyParams}{Parameters}
+{\em dlg} & The editor delegate \\
+\hline
+{\em ctrl\+Tags} & A list of control tags that should receive the updates from this sender \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Plug/\mbox{\hyperlink{_i_sender_8h}{I\+Sender.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,100 @@
+\hypertarget{class_i_v_meter_control}{}\doxysection{I\+V\+Meter\+Control$<$ M\+A\+X\+NC $>$ Class Template Reference}
+\label{class_i_v_meter_control}\index{IVMeterControl$<$ MAXNC $>$@{IVMeterControl$<$ MAXNC $>$}}
+
+
+{\ttfamily \#include $<$I\+V\+Meter\+Control.\+h$>$}
+
+Inheritance diagram for I\+V\+Meter\+Control$<$ M\+A\+X\+NC $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_i_v_meter_control}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_af7a12685072bcfa5a212eff376d098c9}\label{class_i_v_meter_control_af7a12685072bcfa5a212eff376d098c9}} 
+enum {\bfseries E\+Response} \{ {\bfseries Linear}, 
+{\bfseries Log}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_a75888b83e8d5051fc4455fb6601640d0}\label{class_i_v_meter_control_a75888b83e8d5051fc4455fb6601640d0}} 
+{\bfseries I\+V\+Meter\+Control} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const char $\ast$label, const \mbox{\hyperlink{struct_i_v_style}{I\+V\+Style}} \&style=D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+Y\+LE, E\+Direction dir=E\+Direction\+::\+Vertical, std\+::initializer\+\_\+list$<$ const char $\ast$ $>$ track\+Names=\{\}, int total\+N\+Segs=0, E\+Response response=E\+Response\+::\+Linear, float low\+Range\+DB=-\/72.f, float high\+Range\+DB=12.f, std\+::initializer\+\_\+list$<$ int $>$ markers=\{0, -\/6, -\/12, -\/24, -\/48\})
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_ad20583824c888ea82adf9508c0aac953}\label{class_i_v_meter_control_ad20583824c888ea82adf9508c0aac953}} 
+void {\bfseries Set\+Response} (E\+Response response)
+\item 
+void \mbox{\hyperlink{class_i_v_meter_control_a6e19324a46a0a89ba22b463e2b73998c}{Draw}} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g) override
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_aae67c7ef119ee8369468ac90faf560fb}\label{class_i_v_meter_control_aae67c7ef119ee8369468ac90faf560fb}} 
+void {\bfseries Draw\+Peak} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&r, int ch\+Idx, bool above\+Base\+Value) override
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_ab70569d5b63d369d32c9fc41c8714e40}\label{class_i_v_meter_control_ab70569d5b63d369d32c9fc41c8714e40}} 
+void {\bfseries Draw\+Markers} (\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&g)
+\item 
+void \mbox{\hyperlink{class_i_v_meter_control_a998a684e72971c66f9d8d3debaab5871}{On\+Msg\+From\+Delegate}} (int msg\+Tag, int data\+Size, const void $\ast$p\+Data) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_a5ccdcd7766c388c9b953ca156e7d0f49}\label{class_i_v_meter_control_a5ccdcd7766c388c9b953ca156e7d0f49}} 
+float {\bfseries m\+High\+Range\+DB}
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_a594aec250e82ed739a3be80fcdc782be}\label{class_i_v_meter_control_a594aec250e82ed739a3be80fcdc782be}} 
+float {\bfseries m\+Low\+Range\+DB}
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_aa88a6a7de809b4b18bf9509205ba7183}\label{class_i_v_meter_control_aa88a6a7de809b4b18bf9509205ba7183}} 
+E\+Response {\bfseries m\+Response} = E\+Response\+::\+Linear
+\item 
+\mbox{\Hypertarget{class_i_v_meter_control_a121535d1ecfe7cd3a2bfa8e1b18eb448}\label{class_i_v_meter_control_a121535d1ecfe7cd3a2bfa8e1b18eb448}} 
+std\+::vector$<$ int $>$ {\bfseries m\+Markers}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$int M\+A\+X\+NC = 1$>$\newline
+class I\+V\+Meter\+Control$<$ M\+A\+X\+N\+C $>$}
+
+Vectorial multi-\/channel capable meter control, linear or log response 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_v_meter_control_a6e19324a46a0a89ba22b463e2b73998c}\label{class_i_v_meter_control_a6e19324a46a0a89ba22b463e2b73998c}} 
+\index{IVMeterControl$<$ MAXNC $>$@{IVMeterControl$<$ MAXNC $>$}!Draw@{Draw}}
+\index{Draw@{Draw}!IVMeterControl$<$ MAXNC $>$@{IVMeterControl$<$ MAXNC $>$}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1$>$ \\
+void \mbox{\hyperlink{class_i_v_meter_control}{I\+V\+Meter\+Control}}$<$ M\+A\+X\+NC $>$\+::Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} \&}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw the control to the graphics context. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The graphics context to which this control belongs. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control}}.
+
+\mbox{\Hypertarget{class_i_v_meter_control_a998a684e72971c66f9d8d3debaab5871}\label{class_i_v_meter_control_a998a684e72971c66f9d8d3debaab5871}} 
+\index{IVMeterControl$<$ MAXNC $>$@{IVMeterControl$<$ MAXNC $>$}!OnMsgFromDelegate@{OnMsgFromDelegate}}
+\index{OnMsgFromDelegate@{OnMsgFromDelegate}!IVMeterControl$<$ MAXNC $>$@{IVMeterControl$<$ MAXNC $>$}}
+\doxysubsubsection{\texorpdfstring{OnMsgFromDelegate()}{OnMsgFromDelegate()}}
+{\footnotesize\ttfamily template$<$int M\+A\+X\+NC = 1$>$ \\
+void \mbox{\hyperlink{class_i_v_meter_control}{I\+V\+Meter\+Control}}$<$ M\+A\+X\+NC $>$\+::On\+Msg\+From\+Delegate (\begin{DoxyParamCaption}\item[{int}]{msg\+Tag,  }\item[{int}]{data\+Size,  }\item[{const void $\ast$}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implement to receive messages sent to the control, see \mbox{\hyperlink{class_i_editor_delegate}{I\+Editor\+Delegate}}\+:Send\+Control\+Msg\+From\+Delegate() 
+
+Reimplemented from \mbox{\hyperlink{class_i_control_a850af818653722be3d3a72c9558ff6a6}{I\+Control}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_i_v_peak_avg_meter_control_aaf8aa2e50feffdd8ceddb327463f6e10}{I\+V\+Peak\+Avg\+Meter\+Control$<$$>$}}, and \mbox{\hyperlink{class_i_v_peak_avg_meter_control_aaf8aa2e50feffdd8ceddb327463f6e10}{I\+V\+Peak\+Avg\+Meter\+Control$<$ 1 $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Controls/\mbox{\hyperlink{_i_v_meter_control_8h}{I\+V\+Meter\+Control.\+h}}\end{DoxyCompactItemize}

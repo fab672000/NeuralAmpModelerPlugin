@@ -1,0 +1,95 @@
+Tech Notes Home\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md124}{}\doxysection{Assert in release\+Buffer()}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md124}
+There is a bug that can sometimes cause an assert in Client\+Proxy or Audio\+Track\+Shared\+::release\+Buffer() when headsets are connected or disconnected. The bug was originally reported at\+: \href{https://github.com/google/oboe/issues/535}{\texttt{ https\+://github.\+com/google/oboe/issues/535}}
+
+You will see signatures like this in the logcat\+: \begin{DoxyVerb}F AudioTrackShared: releaseBuffer: mUnreleased out of range, !(stepCount:96 <= mUnreleased:0 <= mFrameCount:480), BufferSizeInFrames:480
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md125}{}\doxysubsection{Platforms Affected}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md125}
+Android version 10 (Q) or earlier.
+
+Oboe version 1.\+4.\+0 or earlier when using Open\+S\+L\+ES with an O\+U\+T\+P\+UT stream callback.
+
+OR any version of Oboe if\+:
+\begin{DoxyItemize}
+\item Oboe is using using Open\+SL ES or a non-\/\+M\+M\+AP Legacy A\+Audio stream
+\item A\+ND you call stream-\/$>$get\+Frames\+Read() or stream-\/$>$get\+Timestamp(...) from inside an O\+U\+T\+P\+UT stream callback,
+\end{DoxyItemize}
+
+It does {\bfseries{not}} happen when Oboe uses A\+Audio M\+M\+AP because it does not call release\+Buffer().\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md126}{}\doxysubsection{Workarounds}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md126}
+
+\begin{DoxyEnumerate}
+\item Use Oboe 1.\+4.\+1 or later.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Do not call stream-\/$>$get\+Frames\+Read() or stream-\/$>$get\+Timestamp() from inside the callback of an O\+U\+T\+P\+UT stream. If you absolutely must, then call them at the beginning of your callback to reduce the probability of a crash.
+\end{DoxyEnumerate}
+
+Here is a \href{https://github.com/google/oboe/pull/863}{\texttt{ fix in Oboe 1.\+4.\+1}} that removed a call to get\+Position().\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md127}{}\doxysubsection{Root Cause}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md127}
+The sequence of events is\+:
+\begin{DoxyEnumerate}
+\item Audio\+Flinger Audio\+Track obtains a buffer from the audio device
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item user plugs in headphones, which invalidates the audio device
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item app is called (callback) to render audio using the buffer
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item the app or Oboe calls get\+Frames\+Read() or get\+Timestamp(), which calls down to Audio\+Track\+::get\+Position() or Audio\+Track\+::get\+Timestamp()
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item device routing change occurs because the audio device is \href{https://cs.android.com/android/platform/superproject/+/master:frameworks/av/media/libaudioclient/AudioTrack.cpp;l=1239;drc=48e98cf8dbd9fa212a0e129822929dc40e6c3898}{\texttt{ invalid}}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item callback ends by releasing the buffer back to a different device
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Audio\+Track\+Shared\+::release\+Buffer() checks to make sure the device matches the one in Obtain\+Buffer() and asserts if they do not match.
+\end{DoxyEnumerate}
+
+Oboe, before V1.\+4.\+1, would update the server position in its callback. This called get\+Position() in Open\+SL ES, which called Audio\+Track\+::get\+Position().
+
+The probability of the assert() is proportional to the time that the C\+PU spends between obtaining a buffer and calling restore\+Track\+\_\+l().
+
+This bug is tracked internally at\+: b/136268149\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md128}{}\doxysubsection{Reproduce the Bug}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md128}
+These steps will trigger the bug most of the time\+:
+
+
+\begin{DoxyEnumerate}
+\item Install Oboe\+Tester 1.\+5.\+22 or later, with Oboe $<$ 1.\+4.\+1
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Enter in a Terminal window\+: adb logcat $\vert$ grep release\+Buffer
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Launch Oboe\+Tester
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Click T\+E\+ST O\+U\+T\+P\+UT
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Select A\+PI\+: Open\+SL ES
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Click O\+P\+EN
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Click S\+T\+A\+RT, you should hear a tone
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Slide \char`\"{}\+Workload\char`\"{} fader slowly up until you hear bad glitches.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Plug in headphones.
+\end{DoxyEnumerate}
+
+You may see a message like this in the logcat\+: \begin{DoxyVerb}AudioTrackShared: releaseBuffer: mUnreleased out of range, !(stepCount:96 <= mUnreleased:0 <= mFrameCount:480), BufferSizeInFrames:480
+\end{DoxyVerb}
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md129}{}\doxysection{O\+E\+M Information}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_bd199a4574877eaee744d78a78d0a213_autotoc_md129}
+These patches are available in Q A\+O\+SP\+:
+\begin{DoxyEnumerate}
+\item \href{https://android-review.googlesource.com/c/platform/frameworks/av/+/1251871/}{\texttt{ Audio\+Track}}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item \href{https://android-review.googlesource.com/c/platform/frameworks/av/+/1251872/}{\texttt{ Audio\+Record}} 
+\end{DoxyEnumerate}

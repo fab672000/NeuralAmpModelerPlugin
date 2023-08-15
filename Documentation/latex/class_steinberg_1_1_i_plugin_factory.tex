@@ -1,0 +1,92 @@
+\hypertarget{class_steinberg_1_1_i_plugin_factory}{}\doxysection{Steinberg\+::I\+Plugin\+Factory Class Reference}
+\label{class_steinberg_1_1_i_plugin_factory}\index{Steinberg::IPluginFactory@{Steinberg::IPluginFactory}}
+
+
+{\ttfamily \#include $<$ipluginbase.\+h$>$}
+
+Inheritance diagram for Steinberg\+::I\+Plugin\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_steinberg_1_1_i_plugin_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory_a859fbbbe92da52864ad262ae7cb3038a}{get\+Factory\+Info}} (\mbox{\hyperlink{struct_steinberg_1_1_p_factory_info}{P\+Factory\+Info}} $\ast$info)=0
+\item 
+virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory_a768e4668a7c1dbef9f447d91bc4b1823}{count\+Classes}} ()=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory_a54ddab19869c369da736eb6eab0b868b}{get\+Class\+Info}} (int32 index, \mbox{\hyperlink{struct_steinberg_1_1_p_class_info}{P\+Class\+Info}} $\ast$info)=0
+\item 
+virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory_af942c8ae3fd8e64f796a59af6197078b}{create\+Instance}} (F\+I\+D\+String cid, F\+I\+D\+String \+\_\+iid, void $\ast$$\ast$obj)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_factory_aa276d0e87064da3f86456df0eac20a2b}\label{class_steinberg_1_1_i_plugin_factory_aa276d0e87064da3f86456df0eac20a2b}} 
+static const \mbox{\hyperlink{class_steinberg_1_1_f_u_i_d}{F\+U\+ID}} {\bfseries iid}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class factory that any plug-\/in defines for creating class instances\+: \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{I\+Plugin\+Factory}}
+
+
+\begin{DoxyItemize}
+\item \mbox{[}plug imp\mbox{]}
+\end{DoxyItemize}
+
+From the host\textquotesingle{}s point of view a plug-\/in module is a factory which can create a certain kind of object(s). The interface \mbox{\hyperlink{class_steinberg_1_1_i_plugin_factory}{I\+Plugin\+Factory}} provides methods to get information about the classes exported by the plug-\/in and a mechanism to create instances of these classes (that usually define the \mbox{\hyperlink{class_steinberg_1_1_i_plugin_base}{I\+Plugin\+Base}} interface).
+
+{\bfseries{ An implementation is provided in public.\+sdk/source/common/pluginfactory.cpp }} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__plugin_base_gaa903f8c774b3377b99d49c1decde354b}{Get\+Plugin\+Factory}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_factory_a768e4668a7c1dbef9f447d91bc4b1823}\label{class_steinberg_1_1_i_plugin_factory_a768e4668a7c1dbef9f447d91bc4b1823}} 
+\index{Steinberg::IPluginFactory@{Steinberg::IPluginFactory}!countClasses@{countClasses}}
+\index{countClasses@{countClasses}!Steinberg::IPluginFactory@{Steinberg::IPluginFactory}}
+\doxysubsubsection{\texorpdfstring{countClasses()}{countClasses()}}
+{\footnotesize\ttfamily virtual int32 P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Plugin\+Factory\+::count\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the number of exported classes by this factory. If you are using the \mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory}{C\+Plugin\+Factory}} implementation provided by the S\+DK, it returns the number of classes you registered with \mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory_af111a95bec8fd3e354ca210c0a82f297}{C\+Plugin\+Factory\+::register\+Class}}. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory_a5df10c5d245633e5643c0d02fad6c80c}{Steinberg\+::\+C\+Plugin\+Factory}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_factory_af942c8ae3fd8e64f796a59af6197078b}\label{class_steinberg_1_1_i_plugin_factory_af942c8ae3fd8e64f796a59af6197078b}} 
+\index{Steinberg::IPluginFactory@{Steinberg::IPluginFactory}!createInstance@{createInstance}}
+\index{createInstance@{createInstance}!Steinberg::IPluginFactory@{Steinberg::IPluginFactory}}
+\doxysubsubsection{\texorpdfstring{createInstance()}{createInstance()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Plugin\+Factory\+::create\+Instance (\begin{DoxyParamCaption}\item[{F\+I\+D\+String}]{cid,  }\item[{F\+I\+D\+String}]{\+\_\+iid,  }\item[{void $\ast$$\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create a new class instance. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory_ab549f02449c2bd9603da88aa1c30fbce}{Steinberg\+::\+C\+Plugin\+Factory}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_factory_a54ddab19869c369da736eb6eab0b868b}\label{class_steinberg_1_1_i_plugin_factory_a54ddab19869c369da736eb6eab0b868b}} 
+\index{Steinberg::IPluginFactory@{Steinberg::IPluginFactory}!getClassInfo@{getClassInfo}}
+\index{getClassInfo@{getClassInfo}!Steinberg::IPluginFactory@{Steinberg::IPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getClassInfo()}{getClassInfo()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Plugin\+Factory\+::get\+Class\+Info (\begin{DoxyParamCaption}\item[{int32}]{index,  }\item[{\mbox{\hyperlink{struct_steinberg_1_1_p_class_info}{P\+Class\+Info}} $\ast$}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Fill a \mbox{\hyperlink{struct_steinberg_1_1_p_class_info}{P\+Class\+Info}} structure with information about the class at the specified index. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory_aeb87d1f57214b6053ee979311922cde5}{Steinberg\+::\+C\+Plugin\+Factory}}.
+
+\mbox{\Hypertarget{class_steinberg_1_1_i_plugin_factory_a859fbbbe92da52864ad262ae7cb3038a}\label{class_steinberg_1_1_i_plugin_factory_a859fbbbe92da52864ad262ae7cb3038a}} 
+\index{Steinberg::IPluginFactory@{Steinberg::IPluginFactory}!getFactoryInfo@{getFactoryInfo}}
+\index{getFactoryInfo@{getFactoryInfo}!Steinberg::IPluginFactory@{Steinberg::IPluginFactory}}
+\doxysubsubsection{\texorpdfstring{getFactoryInfo()}{getFactoryInfo()}}
+{\footnotesize\ttfamily virtual tresult P\+L\+U\+G\+I\+N\+\_\+\+A\+PI Steinberg\+::\+I\+Plugin\+Factory\+::get\+Factory\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_steinberg_1_1_p_factory_info}{P\+Factory\+Info}} $\ast$}]{info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Fill a \mbox{\hyperlink{struct_steinberg_1_1_p_factory_info}{P\+Factory\+Info}} structure with information about the plug-\/in vendor. 
+
+Implemented in \mbox{\hyperlink{class_steinberg_1_1_c_plugin_factory_a4b5a4b37e007c75149bce0697fd57a69}{Steinberg\+::\+C\+Plugin\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/base/ipluginbase.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+Helper Class wrapping a V\+ST 3 plug-\/in to a A\+AX plug-\/in\hypertarget{_a_a_x_wrapper_AAXIntroduction}{}\doxysection{Introduction}\label{_a_a_x_wrapper_AAXIntroduction}
+The V\+ST 3 S\+DK comes with a helper class which wraps one V\+ST 3 Audio Processor and Edit Controller to a A\+AX plug-\/in. ~\newline
+\hypertarget{_a_a_x_wrapper_howtoAAX}{}\doxysection{How does it work?}\label{_a_a_x_wrapper_howtoAAX}
+
+\begin{DoxyItemize}
+\item Check the A\+Gain\+A\+AX example
+\item A\+AX S\+DK 2.\+3 or higher is expected in folder external.\+avid.\+aax (located at the same level than the folder public.\+sdk)
+\item here the step based on the Again\+A\+AX example\+:
+\begin{DoxyItemize}
+\item in the cpp file againaax.\+cpp you can define the plugin properties \+: IO audio, product ID, ...
+\item on Windows copy built linker output again\+\_\+aax.\+aaxplugin to \char`\"{}c\+:\textbackslash{}\+Program Files\textbackslash{}\+Common Files\textbackslash{}\+Avid\textbackslash{}\+Audio\textbackslash{}\+Plug-\/\+Ins\textbackslash{}again\+\_\+aax.\+aaxplugin\textbackslash{}\+Contents\textbackslash{}x64\char`\"{} (the debug build does this automatically, but needs appropriate access rights (Administrator rights of your visual))
+\item on O\+SX copy built bundle build/\+Debug/again.\+aaxplugin to \char`\"{}/\+Library/\+Application Support/\+Avid/\+Audio/\+Plug-\/\+Ins\char`\"{}
+\end{DoxyItemize}
+\item a developer version of Pro Tools is needed to load the plugin, the release version of Pro Tools requires plugins to be Pace-\/signed (P\+A\+CE Anti-\/\+Piracy Inc.\+: \href{https://www.ilok.com}{\texttt{ https\+://www.\+ilok.\+com}}) 
+\end{DoxyItemize}

@@ -1,0 +1,121 @@
+\hypertarget{ucat_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/third\+\_\+party/externals/icu/source/common/unicode/ucat.h File Reference}
+\label{ucat_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ucat.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/Build/src/skia/third\_party/externals/icu/source/common/unicode/ucat.h}}
+
+
+C A\+PI\+: Message Catalog Wrappers.  
+
+
+{\ttfamily \#include \char`\"{}unicode/utypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unicode/ures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}} U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucat_8h_a950e123add070667853034437bfd43e2}{u\+\_\+catopen}} (const char $\ast$name, const char $\ast$locale, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$ec)
+\item 
+\mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucat_8h_a1a2278bc6188971bd189d8c59f14c694}{u\+\_\+catclose}} (\mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}} catd)
+\item 
+const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$U\+\_\+\+E\+X\+P\+O\+R\+T2 \mbox{\hyperlink{ucat_8h_afdd2c0a17b1b8fed311158465f271dae}{u\+\_\+catgets}} (\mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}} catd, int32\+\_\+t set\+\_\+num, int32\+\_\+t msg\+\_\+num, const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$s, int32\+\_\+t $\ast$len, \mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$ec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} typedef \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}} $\ast$ \mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C A\+PI\+: Message Catalog Wrappers. 
+
+This C A\+PI provides look-\/alike functions that deliberately resemble the P\+O\+S\+IX catopen, catclose, and catgets functions. The underlying implementation is in terms of I\+CU resource bundles, rather than P\+O\+S\+IX message catalogs.
+
+The I\+CU resource bundles obey standard I\+CU inheritance policies. To facilitate this, sets and messages are flattened into one tier. This is done by creating resource bundle keys of the form $<$set\+\_\+num$>$\%$<$msg\+\_\+num$>$ where set\+\_\+num is the set number and msg\+\_\+num is the message number, formatted as decimal strings.
+
+Example\+: Consider a message catalog containing two sets\+:
+
+Set 1\+: Message 4 = \char`\"{}\+Good morning.\char`\"{} Message 5 = \char`\"{}\+Good afternoon.\char`\"{} Message 7 = \char`\"{}\+Good evening.\char`\"{} Message 8 = \char`\"{}\+Good night.\char`\"{} Set 4\+: Message 14 = \char`\"{}\+Please \char`\"{} Message 19 = \char`\"{}\+Thank you.\char`\"{} Message 20 = \char`\"{}\+Sincerely,\char`\"{}
+
+The I\+CU resource bundle source file would, assuming it is named \char`\"{}greet.\+txt\char`\"{}, would look like this\+:
+
+greet \{ 1\%4 \{ \char`\"{}\+Good morning.\char`\"{} \} 1\%5 \{ \char`\"{}\+Good afternoon.\char`\"{} \} 1\%7 \{ \char`\"{}\+Good evening.\char`\"{} \} 1\%8 \{ \char`\"{}\+Good night.\char`\"{} \}
+
+4\%14 \{ \char`\"{}\+Please \char`\"{} \} 4\%19 \{ \char`\"{}\+Thank you.\char`\"{} \} 4\%20 \{ \char`\"{}\+Sincerely,\char`\"{} \} \}
+
+The catgets function is commonly used in combination with functions like printf and strftime. I\+CU components like message format can be used instead, although they use a different format syntax. There is an I\+CU package, icuio, that provides some of the P\+O\+S\+I\+X-\/style formatting A\+PI. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ucat_8h_a1a2278bc6188971bd189d8c59f14c694}\label{ucat_8h_a1a2278bc6188971bd189d8c59f14c694}} 
+\index{ucat.h@{ucat.h}!u\_catclose@{u\_catclose}}
+\index{u\_catclose@{u\_catclose}!ucat.h@{ucat.h}}
+\doxysubsubsection{\texorpdfstring{u\_catclose()}{u\_catclose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} void U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+catclose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}}}]{catd }\end{DoxyParamCaption})}
+
+Close an I\+CU message catalog, given its descriptor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em catd} & a message catalog descriptor to be closed. May be N\+U\+LL, in which case no action is taken.\\
+\hline
+\end{DoxyParams}
+@stable I\+CU 2.\+6 \mbox{\Hypertarget{ucat_8h_afdd2c0a17b1b8fed311158465f271dae}\label{ucat_8h_afdd2c0a17b1b8fed311158465f271dae}} 
+\index{ucat.h@{ucat.h}!u\_catgets@{u\_catgets}}
+\index{u\_catgets@{u\_catgets}!ucat.h@{ucat.h}}
+\doxysubsubsection{\texorpdfstring{u\_catgets()}{u\_catgets()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}}$\ast$ U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+catgets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}}}]{catd,  }\item[{int32\+\_\+t}]{set\+\_\+num,  }\item[{int32\+\_\+t}]{msg\+\_\+num,  }\item[{const \mbox{\hyperlink{umachine_8h_a6bb9fad572d65b305324ef288165e2ac}{U\+Char}} $\ast$}]{s,  }\item[{int32\+\_\+t $\ast$}]{len,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Retrieve a localized string from an I\+CU message catalog.
+
+
+\begin{DoxyParams}{Parameters}
+{\em catd} & a message catalog descriptor returned by u\+\_\+catopen.\\
+\hline
+{\em set\+\_\+num} & the message catalog set number. Sets need not be numbered consecutively.\\
+\hline
+{\em msg\+\_\+num} & the message catalog message number within the set. Messages need not be numbered consecutively.\\
+\hline
+{\em s} & the default string. This is returned if the string specified by the set\+\_\+num and msg\+\_\+num is not found. It must be zero-\/terminated.\\
+\hline
+{\em len} & fill-\/in parameter to receive the length of the result. May be N\+U\+LL, in which case it is ignored.\\
+\hline
+{\em ec} & input/output error code. May be U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG or U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG. U\+\_\+\+M\+I\+S\+S\+I\+N\+G\+\_\+\+R\+E\+S\+O\+U\+R\+C\+E\+\_\+\+E\+R\+R\+OR indicates that the set\+\_\+num/msg\+\_\+num tuple does not specify a valid message string in this catalog.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a zero-\/terminated U\+Char array which lives in an internal buffer area, typically a memory mapped/\+D\+LL file. The caller must N\+OT delete this pointer. If the call is unsuccessful for any reason, then s is returned. This includes the situation in which ec indicates a failing error code upon entry to this function.
+\end{DoxyReturn}
+@stable I\+CU 2.\+6 \mbox{\Hypertarget{ucat_8h_a950e123add070667853034437bfd43e2}\label{ucat_8h_a950e123add070667853034437bfd43e2}} 
+\index{ucat.h@{ucat.h}!u\_catopen@{u\_catopen}}
+\index{u\_catopen@{u\_catopen}!ucat.h@{ucat.h}}
+\doxysubsubsection{\texorpdfstring{u\_catopen()}{u\_catopen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a676114b1a64bb7c2de15c919a00b28df}{U\+\_\+\+C\+A\+PI}} \mbox{\hyperlink{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}{u\+\_\+nl\+\_\+catd}} U\+\_\+\+E\+X\+P\+O\+R\+T2 u\+\_\+catopen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{locale,  }\item[{\mbox{\hyperlink{utypes_8h_a3343c1c8a8377277046774691c98d78c}{U\+Error\+Code}} $\ast$}]{ec }\end{DoxyParamCaption})}
+
+Open and return an I\+CU message catalog descriptor. The descriptor may be passed to \mbox{\hyperlink{ucat_8h_afdd2c0a17b1b8fed311158465f271dae}{u\+\_\+catgets()}} to retrieve localized strings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string containing the full path pointing to the directory where the resources reside followed by the package name e.\+g. \char`\"{}/usr/resource/my\+\_\+app/resources/guimessages\char`\"{} on a Unix system. If N\+U\+LL, I\+CU default data files will be used.\\
+\hline
+\end{DoxyParams}
+Unlike P\+O\+S\+IX, environment variables are not interpolated within the name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em locale} & the locale for which we want to open the resource. If N\+U\+LL, the default I\+CU locale will be used (see uloc\+\_\+get\+Default). If strlen(locale) == 0, the root locale will be used.\\
+\hline
+{\em ec} & input/output error code. Upon output, U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+F\+A\+L\+L\+B\+A\+C\+K\+\_\+\+W\+A\+R\+N\+I\+NG indicates that a fallback locale was used. For example, \textquotesingle{}de\+\_\+\+CH\textquotesingle{} was requested, but nothing was found there, so \textquotesingle{}de\textquotesingle{} was used. U\+\_\+\+U\+S\+I\+N\+G\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+A\+R\+N\+I\+NG indicates that the default locale data or root locale data was used; neither the requested locale nor any of its fallback locales were found.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a message catalog descriptor that may be passed to \mbox{\hyperlink{ucat_8h_afdd2c0a17b1b8fed311158465f271dae}{u\+\_\+catgets()}}. If the ec parameter indicates success, then the caller is responsible for calling \mbox{\hyperlink{ucat_8h_a1a2278bc6188971bd189d8c59f14c694}{u\+\_\+catclose()}} to close the message catalog. If the ec parameter indicates failure, then N\+U\+LL will be returned.
+\end{DoxyReturn}
+@stable I\+CU 2.\+6 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}\label{ucat_8h_a3858772e7bb5bafb4ee37c95963e55a4}} 
+\index{ucat.h@{ucat.h}!u\_nl\_catd@{u\_nl\_catd}}
+\index{u\_nl\_catd@{u\_nl\_catd}!ucat.h@{ucat.h}}
+\doxysubsubsection{\texorpdfstring{u\_nl\_catd}{u\_nl\_catd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{umachine_8h_a82c853d86803ab75c89267be54fbac6a}{U\+\_\+\+C\+D\+E\+C\+L\+\_\+\+B\+E\+G\+IN}} typedef \mbox{\hyperlink{ures_8h_a7391119e9274be9ba2e6892b48a2bbbe}{U\+Resource\+Bundle}}$\ast$ u\+\_\+nl\+\_\+catd}
+
+An I\+CU message catalog descriptor, analogous to nl\+\_\+catd.
+
+@stable I\+CU 2.\+6 

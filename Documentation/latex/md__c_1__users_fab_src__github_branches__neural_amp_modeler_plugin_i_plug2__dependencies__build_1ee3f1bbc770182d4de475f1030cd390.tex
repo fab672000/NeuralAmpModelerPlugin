@@ -1,0 +1,43 @@
+A list of important audio features, bugs, fixes and workarounds for various Android versions.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md364}{}\doxysubsection{10.\+0 Q -\/ A\+P\+I 29}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md364}
+
+\begin{DoxyItemize}
+\item Fixed\+: Setting capacity of Legacy input streams $<$ 4096 can prevent use of F\+A\+ST path. \href{https://github.com/google/oboe/issues/183}{\texttt{ https\+://github.\+com/google/oboe/issues/183}}. also ag/7116429
+\item Add Input\+Preset\+:Voice\+Performance for low latency recording.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md365}{}\doxysubsection{9.\+0 Pie -\/ A\+P\+I 28 (\+August 6, 2018)}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md365}
+
+\begin{DoxyItemize}
+\item A\+Audio adds support for set\+Usage(), set\+Session\+Id(), set\+Content\+Type(), set\+Input\+Preset() for builders.
+\item Regression bug\+: \mbox{[}A\+Audio\mbox{]} Headphone disconnect event not fired for M\+M\+AP streams. \href{https://github.com/google/oboe/issues/252}{\texttt{ https\+://github.\+com/google/oboe/issues/252}}
+\item A\+Audio input streams with L\+O\+W\+\_\+\+L\+A\+T\+E\+N\+CY will open a F\+A\+ST path using I\+N\+T16 and convert the data to F\+L\+O\+AT if needed. See\+: \href{https://github.com/google/oboe/issues/276}{\texttt{ https\+://github.\+com/google/oboe/issues/276}}
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md366}{}\doxysubsection{8.\+1 Oreo M\+R1 -\/ A\+P\+I 27}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md366}
+
+\begin{DoxyItemize}
+\item Oboe uses A\+Audio by default.
+\item A\+Audio M\+M\+AP data path enabled on \mbox{\hyperlink{struct_pixel}{Pixel}} devices. Performance\+Mode\+::\+Exclusive supported.
+\item Fixed\+: \mbox{[}A\+Audio\mbox{]} Ref\+Base issue
+\item Fixed\+: Requesting a stereo recording stream can result in sub-\/optimal latency.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md367}{}\doxysubsection{8.\+0 Oreo -\/ A\+P\+I 26 (\+August 21, 2017)}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md367}
+
+\begin{DoxyItemize}
+\item \href{https://developer.android.com/ndk/guides/audio/aaudio/aaudio}{\texttt{ A\+Audio A\+PI introduced}}
+\item Bug\+: Ref\+Base issue causes crash after stream closed. This why A\+Audio is not recommended for 8.\+0. Oboe will use Open\+SL ES for 8.\+0 and earlier. \href{https://github.com/google/oboe/issues/40}{\texttt{ https\+://github.\+com/google/oboe/issues/40}}
+\item Bug\+: Requesting a stereo recording stream can result in sub-\/optimal latency. \href{https://issuetracker.google.com/issues/68666622}{\texttt{ Details}}
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md368}{}\doxysubsection{7.\+1 Nougat M\+R1 -\/ A\+P\+I 25}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md368}
+
+\begin{DoxyItemize}
+\item Open\+SL adds supports for setting and querying of Performance\+Mode.
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md369}{}\doxysubsection{7.\+0 Nougat -\/ A\+P\+I 24 (\+August 22, 2016)}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md369}
+
+\begin{DoxyItemize}
+\item Open\+SL method {\ttfamily acquire\+Java\+Proxy} added, which allows the Java Audio\+Track object associated with playback to be obtained (which allows underrun count).
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md370}{}\doxysubsection{6.\+0 Marshmallow -\/ A\+P\+I 23 (\+October 5, 2015)}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md370}
+
+\begin{DoxyItemize}
+\item Floating point recording supported. But it does not allow a F\+A\+ST \char`\"{}low latency\char`\"{} path.
+\item \href{https://developer.android.com/reference/android/media/midi/package-summary}{\texttt{ M\+I\+DI A\+PI introduced}}
+\item Sound output is broken on the A\+PI 23 emulator
+\end{DoxyItemize}\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md371}{}\doxysubsection{5.\+0 Lollipop -\/ A\+P\+I 21 (\+November 12, 2014)}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_1ee3f1bbc770182d4de475f1030cd390_autotoc_md371}
+
+\begin{DoxyItemize}
+\item Floating point playback supported. 
+\end{DoxyItemize}

@@ -1,0 +1,43 @@
+\hypertarget{class_sk_named_factory_set}{}\doxysection{Sk\+Named\+Factory\+Set Class Reference}
+\label{class_sk_named_factory_set}\index{SkNamedFactorySet@{SkNamedFactorySet}}
+
+
+{\ttfamily \#include $<$Sk\+Ptr\+Recorder.\+h$>$}
+
+Inheritance diagram for Sk\+Named\+Factory\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sk_named_factory_set}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_sk_named_factory_set_aefea0cea89808b74c62bd02bdb8b0e49}{find}} (Sk\+Flattenable\+::\+Factory)
+\item 
+const char $\ast$ \mbox{\hyperlink{class_sk_named_factory_set_a92946f3e80225cd349567e43106906a6}{get\+Next\+Added\+Factory\+Name}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Similar to \mbox{\hyperlink{class_sk_factory_set}{Sk\+Factory\+Set}}, but only allows Factorys that have registered names. Also has a function to return the next added Factory\textquotesingle{}s name. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_named_factory_set_aefea0cea89808b74c62bd02bdb8b0e49}\label{class_sk_named_factory_set_aefea0cea89808b74c62bd02bdb8b0e49}} 
+\index{SkNamedFactorySet@{SkNamedFactorySet}!find@{find}}
+\index{find@{find}!SkNamedFactorySet@{SkNamedFactorySet}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily uint32\+\_\+t Sk\+Named\+Factory\+Set\+::find (\begin{DoxyParamCaption}\item[{Sk\+Flattenable\+::\+Factory}]{factory }\end{DoxyParamCaption})}
+
+Find the specified Factory in the set. If it is not already in the set, and has registered its name, add it to the set, and return its index. If the Factory has no registered name, return 0. \mbox{\Hypertarget{class_sk_named_factory_set_a92946f3e80225cd349567e43106906a6}\label{class_sk_named_factory_set_a92946f3e80225cd349567e43106906a6}} 
+\index{SkNamedFactorySet@{SkNamedFactorySet}!getNextAddedFactoryName@{getNextAddedFactoryName}}
+\index{getNextAddedFactoryName@{getNextAddedFactoryName}!SkNamedFactorySet@{SkNamedFactorySet}}
+\doxysubsubsection{\texorpdfstring{getNextAddedFactoryName()}{getNextAddedFactoryName()}}
+{\footnotesize\ttfamily const char $\ast$ Sk\+Named\+Factory\+Set\+::get\+Next\+Added\+Factory\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+If new Factorys have been added to the set, return the name of the first Factory added after the Factory name returned by the last call to this function. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Ptr\+Recorder.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Flattenable.\+cpp\end{DoxyCompactItemize}

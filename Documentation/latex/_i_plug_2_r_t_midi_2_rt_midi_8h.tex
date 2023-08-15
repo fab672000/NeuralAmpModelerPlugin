@@ -1,0 +1,64 @@
+\hypertarget{_i_plug_2_r_t_midi_2_rt_midi_8h}{}\doxysection{C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+R\+T\+Midi/\+Rt\+Midi.h File Reference}
+\label{_i_plug_2_r_t_midi_2_rt_midi_8h}\index{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/RTMidi/RtMidi.h@{C:/Users/fab/src/Github/branches/NeuralAmpModelerPlugin/iPlug2/Dependencies/IPlug/RTMidi/RtMidi.h}}
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_rt_midi_error}{Rt\+Midi\+Error}}
+\begin{DoxyCompactList}\small\item\em Exception handling class for \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}}
+\begin{DoxyCompactList}\small\item\em An abstract base class for realtime M\+I\+DI input/output. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_rt_midi_in}{Rt\+Midi\+In}}
+\begin{DoxyCompactList}\small\item\em A realtime M\+I\+DI input class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_rt_midi_out}{Rt\+Midi\+Out}}
+\begin{DoxyCompactList}\small\item\em A realtime M\+I\+DI output class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_midi_api}{Midi\+Api}}
+\item 
+class \mbox{\hyperlink{class_midi_in_api}{Midi\+In\+Api}}
+\item 
+struct \mbox{\hyperlink{struct_midi_in_api_1_1_midi_message}{Midi\+In\+Api\+::\+Midi\+Message}}
+\item 
+struct \mbox{\hyperlink{struct_midi_in_api_1_1_midi_queue}{Midi\+In\+Api\+::\+Midi\+Queue}}
+\item 
+struct \mbox{\hyperlink{struct_midi_in_api_1_1_rt_midi_in_data}{Midi\+In\+Api\+::\+Rt\+Midi\+In\+Data}}
+\item 
+class \mbox{\hyperlink{class_midi_out_api}{Midi\+Out\+Api}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_i_plug_2_r_t_midi_2_rt_midi_8h_a057c0c03a7417117ea498b48d49586cb}\label{_i_plug_2_r_t_midi_2_rt_midi_8h_a057c0c03a7417117ea498b48d49586cb}} 
+\#define {\bfseries R\+T\+M\+I\+D\+I\+\_\+\+D\+L\+L\+\_\+\+P\+U\+B\+L\+IC}
+\item 
+\mbox{\Hypertarget{_i_plug_2_r_t_midi_2_rt_midi_8h_a4164b6645e3a07cd574833d2a1d1fee4}\label{_i_plug_2_r_t_midi_2_rt_midi_8h_a4164b6645e3a07cd574833d2a1d1fee4}} 
+\#define {\bfseries R\+T\+M\+I\+D\+I\+\_\+\+V\+E\+R\+S\+I\+ON}~\char`\"{}4.\+0.\+0\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}{Rt\+Midi\+Error\+Callback}}) (\mbox{\hyperlink{class_rt_midi_error_a741314057cec5fb8c743c12f284905ee}{Rt\+Midi\+Error\+::\+Type}} type, const std\+::string \&error\+Text, void $\ast$user\+Data)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} error callback function prototype. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}\label{_i_plug_2_r_t_midi_2_rt_midi_8h_a57641d3490f722c3efb9ee1c640e36bb}} 
+\index{RtMidi.h@{RtMidi.h}!RtMidiErrorCallback@{RtMidiErrorCallback}}
+\index{RtMidiErrorCallback@{RtMidiErrorCallback}!RtMidi.h@{RtMidi.h}}
+\doxysubsubsection{\texorpdfstring{RtMidiErrorCallback}{RtMidiErrorCallback}}
+{\footnotesize\ttfamily typedef void($\ast$ Rt\+Midi\+Error\+Callback) (\mbox{\hyperlink{class_rt_midi_error_a741314057cec5fb8c743c12f284905ee}{Rt\+Midi\+Error\+::\+Type}} type, const std\+::string \&error\+Text, void $\ast$user\+Data)}
+
+
+
+\mbox{\hyperlink{class_rt_midi}{Rt\+Midi}} error callback function prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of error. \\
+\hline
+{\em error\+Text} & Error description.\\
+\hline
+\end{DoxyParams}
+Note that class behaviour is undefined after a critical error (not a warning) is reported. 

@@ -1,0 +1,57 @@
+\hypertarget{classskottie_1_1_property_observer}{}\doxysection{skottie\+::Property\+Observer Class Reference}
+\label{classskottie_1_1_property_observer}\index{skottie::PropertyObserver@{skottie::PropertyObserver}}
+
+
+{\ttfamily \#include $<$Skottie\+Property.\+h$>$}
+
+Inheritance diagram for skottie\+::Property\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classskottie_1_1_property_observer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_a3533898baef3f73658183814b60b62c1}\label{classskottie_1_1_property_observer_a3533898baef3f73658183814b60b62c1}} 
+enum {\bfseries Node\+Type} \{ {\bfseries C\+O\+M\+P\+O\+S\+I\+T\+I\+ON}, 
+{\bfseries L\+A\+Y\+ER}, 
+{\bfseries E\+F\+F\+E\+CT}, 
+{\bfseries O\+T\+H\+ER}
+ \}
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_ae54f0700b920fbabad1b02611a3f3a4b}\label{classskottie_1_1_property_observer_ae54f0700b920fbabad1b02611a3f3a4b}} 
+{\footnotesize template$<$typename T $>$ }\\using {\bfseries Lazy\+Handle} = std\+::function$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $>$()$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_ae7288a2b56183c3b8a7fae5d3702a740}\label{classskottie_1_1_property_observer_ae7288a2b56183c3b8a7fae5d3702a740}} 
+virtual void {\bfseries on\+Color\+Property} (const char node\+\_\+name\mbox{[}$\,$\mbox{]}, const Lazy\+Handle$<$ \mbox{\hyperlink{classskottie_1_1_property_handle}{Color\+Property\+Handle}} $>$ \&)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_a488042cf65eb232870f88411be93c973}\label{classskottie_1_1_property_observer_a488042cf65eb232870f88411be93c973}} 
+virtual void {\bfseries on\+Opacity\+Property} (const char node\+\_\+name\mbox{[}$\,$\mbox{]}, const Lazy\+Handle$<$ \mbox{\hyperlink{classskottie_1_1_property_handle}{Opacity\+Property\+Handle}} $>$ \&)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_a5cc610068c823a9ccbf4af6ec2e92dac}\label{classskottie_1_1_property_observer_a5cc610068c823a9ccbf4af6ec2e92dac}} 
+virtual void {\bfseries on\+Text\+Property} (const char node\+\_\+name\mbox{[}$\,$\mbox{]}, const Lazy\+Handle$<$ \mbox{\hyperlink{classskottie_1_1_property_handle}{Text\+Property\+Handle}} $>$ \&)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_a26f696a640dabea7a7f68391d63eb7cd}\label{classskottie_1_1_property_observer_a26f696a640dabea7a7f68391d63eb7cd}} 
+virtual void {\bfseries on\+Transform\+Property} (const char node\+\_\+name\mbox{[}$\,$\mbox{]}, const Lazy\+Handle$<$ \mbox{\hyperlink{classskottie_1_1_property_handle}{Transform\+Property\+Handle}} $>$ \&)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_a9c1d481c91d5bd615b107d143c856d1e}\label{classskottie_1_1_property_observer_a9c1d481c91d5bd615b107d143c856d1e}} 
+virtual void {\bfseries on\+Enter\+Node} (const char node\+\_\+name\mbox{[}$\,$\mbox{]}, Node\+Type node\+\_\+type)
+\item 
+\mbox{\Hypertarget{classskottie_1_1_property_observer_a3bace0d21bab986d512d8e2d3a9b0e67}\label{classskottie_1_1_property_observer_a3bace0d21bab986d512d8e2d3a9b0e67}} 
+virtual void {\bfseries on\+Leaving\+Node} (const char node\+\_\+name\mbox{[}$\,$\mbox{]}, Node\+Type node\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classskottie_1_1_property_observer}{Property\+Observer}} can be used to track and manipulate certain properties of \char`\"{}interesting\char`\"{} Lottie nodes.
+
+When registered with an animation builder, \mbox{\hyperlink{classskottie_1_1_property_observer}{Property\+Observer}} receives notifications for various properties of layer and shape nodes. The $\vert$node\+\_\+name$\vert$ argument corresponds to the name (\char`\"{}nm\char`\"{}) node property. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skottie/include/Skottie\+Property.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/modules/skottie/src/Skottie\+Property.\+cpp\end{DoxyCompactItemize}

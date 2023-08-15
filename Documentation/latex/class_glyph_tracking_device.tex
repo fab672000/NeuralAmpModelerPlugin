@@ -1,0 +1,43 @@
+\hypertarget{class_glyph_tracking_device}{}\doxysection{Glyph\+Tracking\+Device Class Reference}
+\label{class_glyph_tracking_device}\index{GlyphTrackingDevice@{GlyphTrackingDevice}}
+Inheritance diagram for Glyph\+Tracking\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_glyph_tracking_device}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_glyph_tracking_device_ae187b7f2f4ee124a8ffb1c8a4f3c2204}\label{class_glyph_tracking_device_ae187b7f2f4ee124a8ffb1c8a4f3c2204}} 
+{\bfseries Glyph\+Tracking\+Device} (const \mbox{\hyperlink{struct_sk_i_size}{Sk\+I\+Size}} \&dimensions, const \mbox{\hyperlink{class_sk_surface_props}{Sk\+Surface\+Props}} \&props, \mbox{\hyperlink{class_sk_strike_server_impl}{Sk\+Strike\+Server\+Impl}} $\ast$server, \mbox{\hyperlink{classsk__sp}{sk\+\_\+sp}}$<$ \mbox{\hyperlink{class_sk_color_space}{Sk\+Color\+Space}} $>$ color\+Space, bool D\+F\+T\+Support)
+\item 
+\mbox{\hyperlink{class_sk_base_device}{Sk\+Base\+Device}} $\ast$ \mbox{\hyperlink{class_glyph_tracking_device_a52d5571c314da67de9808c134b2f2d2f}{on\+Create\+Device}} (const \mbox{\hyperlink{struct_sk_base_device_1_1_create_info}{Create\+Info}} \&cinfo, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_glyph_tracking_device_ad50963c8eac780c92fe8fd1d8b4880ba}\label{class_glyph_tracking_device_ad50963c8eac780c92fe8fd1d8b4880ba}} 
+void {\bfseries on\+Draw\+Glyph\+Run\+List} (const \mbox{\hyperlink{class_sk_glyph_run_list}{Sk\+Glyph\+Run\+List}} \&glyph\+Run\+List, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&paint) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_glyph_tracking_device_a52d5571c314da67de9808c134b2f2d2f}\label{class_glyph_tracking_device_a52d5571c314da67de9808c134b2f2d2f}} 
+\index{GlyphTrackingDevice@{GlyphTrackingDevice}!onCreateDevice@{onCreateDevice}}
+\index{onCreateDevice@{onCreateDevice}!GlyphTrackingDevice@{GlyphTrackingDevice}}
+\doxysubsubsection{\texorpdfstring{onCreateDevice()}{onCreateDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_base_device}{Sk\+Base\+Device}}$\ast$ Glyph\+Tracking\+Device\+::on\+Create\+Device (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_sk_base_device_1_1_create_info}{Create\+Info}} \&}]{,  }\item[{const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Create a new device based on Create\+Info. If the paint is not null, then it represents a preview of how the new device will be composed with its creator device (this).
+
+The subclass may be handed this device in \mbox{\hyperlink{class_sk_no_pixels_device_a6f3be351dbea17b1be0380638bd78591}{draw\+Device()}}, so it must always return a device that it knows how to draw, and that it knows how to identify if it is not of the same subclass (since draw\+Device is passed a Sk\+Base\+Device$\ast$). If the subclass cannot fulfill that contract (e.\+g. P\+DF cannot support some settings on the paint) it should return N\+U\+LL, and the caller may then decide to explicitly create a bitmapdevice, knowing that later it could not call draw\+Device with it (but it could call draw\+Sprite or draw\+Bitmap). 
+
+Reimplemented from \mbox{\hyperlink{class_sk_base_device_a382ef6b94a8871d0b10cfc0f94acc78e}{Sk\+Base\+Device}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Remote\+Glyph\+Cache.\+cpp\end{DoxyCompactItemize}

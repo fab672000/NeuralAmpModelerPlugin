@@ -1,0 +1,142 @@
+\hypertarget{class_sk_layer_draw_looper}{}\doxysection{Sk\+Layer\+Draw\+Looper Class Reference}
+\label{class_sk_layer_draw_looper}\index{SkLayerDrawLooper@{SkLayerDrawLooper}}
+
+
+{\ttfamily \#include $<$Sk\+Layer\+Draw\+Looper.\+h$>$}
+
+Inheritance diagram for Sk\+Layer\+Draw\+Looper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_sk_layer_draw_looper}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_sk_layer_draw_looper_1_1_builder}{Builder}}
+\item 
+struct \mbox{\hyperlink{struct_sk_layer_draw_looper_1_1_layer_info}{Layer\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05e}{Bits}} \{ \newline
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea8af5d0436fe117fcc8d24fd15d95a7a4}{k\+Style\+\_\+\+Bit}} = 1 $<$$<$ 0, 
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea8253322bd622e9d85999ecee69db7d7c}{k\+Path\+Effect\+\_\+\+Bit}} = 1 $<$$<$ 2, 
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eab78e4e43fdea999e9a84ac336a31c44b}{k\+Mask\+Filter\+\_\+\+Bit}} = 1 $<$$<$ 3, 
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eafbbcd9b80662d83ba3eaaf5ab7a12566}{k\+Shader\+\_\+\+Bit}} = 1 $<$$<$ 4, 
+\newline
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eaa17011d3e8e4e6f799af8f1acc1c83b8}{k\+Color\+Filter\+\_\+\+Bit}} = 1 $<$$<$ 5, 
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea16f66714f96e22ada757f2133128a8b1}{k\+Xfermode\+\_\+\+Bit}} = 1 $<$$<$ 6, 
+\mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eac2afdff530f9b59d69b0dec2d828db9c}{k\+Entire\+Paint\+\_\+\+Bits}} = -\/1
+ \}
+\item 
+\mbox{\Hypertarget{class_sk_layer_draw_looper_acf687c4d510375c88dbc7eac316d5f8f}\label{class_sk_layer_draw_looper_acf687c4d510375c88dbc7eac316d5f8f}} 
+typedef int32\+\_\+t {\bfseries Bit\+Flags}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sk_draw_looper_1_1_context}{Sk\+Draw\+Looper\+::\+Context}} $\ast$ \mbox{\hyperlink{class_sk_layer_draw_looper_ad81c343c7d6530f5d5b456538a00cb92}{make\+Context}} (\mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$) const override
+\item 
+bool \mbox{\hyperlink{class_sk_layer_draw_looper_ae9cfc3c8e44b887bd6569a1bbd3888b2}{as\+A\+Blur\+Shadow}} (\mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}} $\ast$rec) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sk_layer_draw_looper_a1bedf3fbb4be4f95b127fed732703816}{flatten}} (\mbox{\hyperlink{class_sk_write_buffer}{Sk\+Write\+Buffer}} \&) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+D\+E\+P\+R\+E\+C\+A\+T\+ED\+: No longer supported by Skia. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05e}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05e}} 
+\index{SkLayerDrawLooper@{SkLayerDrawLooper}!Bits@{Bits}}
+\index{Bits@{Bits}!SkLayerDrawLooper@{SkLayerDrawLooper}}
+\doxysubsubsection{\texorpdfstring{Bits}{Bits}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05e}{Sk\+Layer\+Draw\+Looper\+::\+Bits}}}
+
+Bits specifies which aspects of the layer\textquotesingle{}s paint should replace the corresponding aspects on the draw\textquotesingle{}s paint. k\+Entire\+Paint\+\_\+\+Bits means use the layer\textquotesingle{}s paint completely. 0 means ignore the layer\textquotesingle{}s paint... except for f\+Color\+Mode, which is always applied. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kStyle\_Bit@{kStyle\_Bit}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kStyle\_Bit@{kStyle\_Bit}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea8af5d0436fe117fcc8d24fd15d95a7a4}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea8af5d0436fe117fcc8d24fd15d95a7a4}} 
+k\+Style\+\_\+\+Bit&use this layer\textquotesingle{}s Style/stroke settings \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPathEffect\_Bit@{kPathEffect\_Bit}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kPathEffect\_Bit@{kPathEffect\_Bit}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea8253322bd622e9d85999ecee69db7d7c}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea8253322bd622e9d85999ecee69db7d7c}} 
+k\+Path\+Effect\+\_\+\+Bit&use this layer\textquotesingle{}s patheffect \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kMaskFilter\_Bit@{kMaskFilter\_Bit}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kMaskFilter\_Bit@{kMaskFilter\_Bit}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eab78e4e43fdea999e9a84ac336a31c44b}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eab78e4e43fdea999e9a84ac336a31c44b}} 
+k\+Mask\+Filter\+\_\+\+Bit&use this layer\textquotesingle{}s maskfilter \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kShader\_Bit@{kShader\_Bit}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kShader\_Bit@{kShader\_Bit}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eafbbcd9b80662d83ba3eaaf5ab7a12566}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eafbbcd9b80662d83ba3eaaf5ab7a12566}} 
+k\+Shader\+\_\+\+Bit&use this layer\textquotesingle{}s shader \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kColorFilter\_Bit@{kColorFilter\_Bit}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kColorFilter\_Bit@{kColorFilter\_Bit}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eaa17011d3e8e4e6f799af8f1acc1c83b8}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eaa17011d3e8e4e6f799af8f1acc1c83b8}} 
+k\+Color\+Filter\+\_\+\+Bit&use this layer\textquotesingle{}s colorfilter \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kXfermode\_Bit@{kXfermode\_Bit}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kXfermode\_Bit@{kXfermode\_Bit}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea16f66714f96e22ada757f2133128a8b1}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05ea16f66714f96e22ada757f2133128a8b1}} 
+k\+Xfermode\+\_\+\+Bit&use this layer\textquotesingle{}s xfermode \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kEntirePaint\_Bits@{kEntirePaint\_Bits}!SkLayerDrawLooper@{SkLayerDrawLooper}}\index{SkLayerDrawLooper@{SkLayerDrawLooper}!kEntirePaint\_Bits@{kEntirePaint\_Bits}}}\mbox{\Hypertarget{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eac2afdff530f9b59d69b0dec2d828db9c}\label{class_sk_layer_draw_looper_ab3069c9896d04165d75692eca502e05eac2afdff530f9b59d69b0dec2d828db9c}} 
+k\+Entire\+Paint\+\_\+\+Bits&Use the layer\textquotesingle{}s paint entirely, with these exceptions\+:
+\begin{DoxyItemize}
+\item We never override the draw\textquotesingle{}s paint\textquotesingle{}s text\+\_\+encoding, since that is used to interpret the text/len parameters in draw\mbox{[}Pos\mbox{]}Text.
+\item Color is always computed using the \mbox{\hyperlink{struct_sk_layer_draw_looper_1_1_layer_info}{Layer\+Info}}\textquotesingle{}s f\+Color\+Mode. 
+\end{DoxyItemize}\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_layer_draw_looper_ae9cfc3c8e44b887bd6569a1bbd3888b2}\label{class_sk_layer_draw_looper_ae9cfc3c8e44b887bd6569a1bbd3888b2}} 
+\index{SkLayerDrawLooper@{SkLayerDrawLooper}!asABlurShadow@{asABlurShadow}}
+\index{asABlurShadow@{asABlurShadow}!SkLayerDrawLooper@{SkLayerDrawLooper}}
+\doxysubsubsection{\texorpdfstring{asABlurShadow()}{asABlurShadow()}}
+{\footnotesize\ttfamily bool Sk\+Layer\+Draw\+Looper\+::as\+A\+Blur\+Shadow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sk_draw_looper_1_1_blur_shadow_rec}{Blur\+Shadow\+Rec}} $\ast$}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If this looper can be interpreted as having two layers, such that
+\begin{DoxyEnumerate}
+\item The first layer (bottom most) just has a blur and translate
+\item The second layer has no modifications to either paint or canvas
+\item No other layers. then return true, and if not null, fill out the Blur\+Shadow\+Rec).
+\end{DoxyEnumerate}
+
+If any of the above are not met, return false and ignore the Blur\+Shadow\+Rec parameter. 
+
+Reimplemented from \mbox{\hyperlink{class_sk_draw_looper_a4db94843787afbf82c62f268ce5f7255}{Sk\+Draw\+Looper}}.
+
+\mbox{\Hypertarget{class_sk_layer_draw_looper_a1bedf3fbb4be4f95b127fed732703816}\label{class_sk_layer_draw_looper_a1bedf3fbb4be4f95b127fed732703816}} 
+\index{SkLayerDrawLooper@{SkLayerDrawLooper}!flatten@{flatten}}
+\index{flatten@{flatten}!SkLayerDrawLooper@{SkLayerDrawLooper}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily void Sk\+Layer\+Draw\+Looper\+::flatten (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_write_buffer}{Sk\+Write\+Buffer}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Override this if your subclass needs to record data that it will need to recreate itself from its Create\+Proc (returned by \mbox{\hyperlink{class_sk_flattenable_afe739ff6d2a6737b05dad084f523cd87}{get\+Factory()}}).
+
+D\+E\+P\+R\+E\+C\+A\+T\+ED public \+: will move to protected ... use serialize() instead 
+
+Reimplemented from \mbox{\hyperlink{class_sk_flattenable_a12ed60c16e646c9d2acdcb7c47bb5cd0}{Sk\+Flattenable}}.
+
+\mbox{\Hypertarget{class_sk_layer_draw_looper_ad81c343c7d6530f5d5b456538a00cb92}\label{class_sk_layer_draw_looper_ad81c343c7d6530f5d5b456538a00cb92}} 
+\index{SkLayerDrawLooper@{SkLayerDrawLooper}!makeContext@{makeContext}}
+\index{makeContext@{makeContext}!SkLayerDrawLooper@{SkLayerDrawLooper}}
+\doxysubsubsection{\texorpdfstring{makeContext()}{makeContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_sk_draw_looper_1_1_context}{Sk\+Draw\+Looper\+::\+Context}}$\ast$ Sk\+Layer\+Draw\+Looper\+::make\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_sk_arena_alloc}{Sk\+Arena\+Alloc}} $\ast$}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called right before something is being drawn. Returns a Context whose next() method should be called until it returns false. 
+
+Implements \mbox{\hyperlink{class_sk_draw_looper_ad835f1d5553a02b35caa96ec23ba105d}{Sk\+Draw\+Looper}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/effects/Sk\+Layer\+Draw\+Looper.\+h\end{DoxyCompactItemize}

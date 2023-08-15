@@ -1,0 +1,45 @@
+\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_035710b12b42503efd5b307260e14deb_autotoc_md267}{}\doxysection{Description}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_035710b12b42503efd5b307260e14deb_autotoc_md267}
+The flanger effect impresses uniformly spaced sweeping notches on the sound spectrum. It accomplishes this using a variable comb filter, which works by mixing the input sound with a variably delayed-\/and-\/scaled copy of the input. Unlike the phaser, the flanger notches are uniformly spaced on a linear frequency scale, and there can be many more of them at low cost.\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_035710b12b42503efd5b307260e14deb_autotoc_md268}{}\doxysection{Parameters}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_035710b12b42503efd5b307260e14deb_autotoc_md268}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \# }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Physical \mbox{\hyperlink{struct_control}{Control}}  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+I\+DI CC \# }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Physical \mbox{\hyperlink{struct_control}{Control}}  }\\\cline{1-4}
+\endhead
+{\bfseries{Enable}} &{\ttfamily C\+C-\/105} &Turn the effect on/off &switch{\ttfamily S\+W-\/4}  \\\cline{1-4}
+{\bfseries{Rate}} &{\ttfamily C\+C-\/2} &The Flanger Rate parameter sets the frequency of its \mbox{\hyperlink{class_l_f_o}{L\+FO}} in Hz &knob{\ttfamily H\+A\+D\+C-\/0}  \\\cline{1-4}
+{\bfseries{Depth}} &{\ttfamily C\+C-\/3} &Depth of spectral notches -\/ performable -\/ Depth = 0 means no effect, Depth = 1 means maximum effect (spectral-\/notch gains go all the way down to zero). &knob{\ttfamily H\+A\+D\+C-\/1}  \\\cline{1-4}
+{\bfseries{Feedback}} &{\ttfamily C\+C-\/4} &Gain applied to the output signal and then summed with the input signal -\/ performable &knob{\ttfamily H\+A\+D\+C-\/2}  \\\cline{1-4}
+\end{longtabu}
+{\bfseries{Delay}} $\vert$ {\ttfamily C\+C-\/50} $\vert$ Maximum Delay (in ms) used by the flanger -\/ the actual delay at any given time is between this value and zero. {\bfseries{Waveshape}} $\vert$ {\ttfamily C\+C-\/54} $\vert$ Various waveshapes, triangle, square ... {\bfseries{Invert}} $\vert$ {\ttfamily C\+C-\/49} $\vert$ Invert the phase\hypertarget{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_035710b12b42503efd5b307260e14deb_autotoc_md269}{}\doxysection{Building the Example}\label{md__c_1__users_fab_src__github_branches__neural_amp_modeler_plugin_i_plug2__dependencies__build_035710b12b42503efd5b307260e14deb_autotoc_md269}
+The faust code (.dsp) in this directory has been compiled using {\ttfamily faust2sam} into {\ttfamily flanger-\/sam}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\% faust2sam -\/midi flanger.dsp}
+\end{DoxyCode}
+
+
+The result of this compile is a zip file {\ttfamily flanger-\/sam.\+zip} which contains the following three files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily fast\+\_\+pow2.\+h}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+cpp}
+\item {\ttfamily sam\+Faust\+D\+S\+P.\+h}
+\end{DoxyItemize}
+
+These 3 files should be placed into the directory {\ttfamily sam\+\_\+baremetal\+\_\+framework\+\_\+core1/src/faust}
+
+In addition there is a header file that is common across all cores called {\ttfamily audio\+\_\+system\+\_\+config.\+h}. In this file the following pre-\/processor variables should be set in the following way. The example below indicates that a \mbox{\hyperlink{struct_faust}{Faust}} algorithm will only be running on Core1 and that Core2 will be simply passing audio to the codec.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE1           TRUE}
+\DoxyCodeLine{\#define USE\_FAUST\_ALGORITHM\_CORE2           FALSE}
+\end{DoxyCode}
+ 

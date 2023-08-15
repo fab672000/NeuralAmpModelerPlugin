@@ -1,0 +1,146 @@
+\hypertarget{class_steinberg_1_1_u_string}{}\doxysection{Steinberg\+::U\+String Class Reference}
+\label{class_steinberg_1_1_u_string}\index{Steinberg::UString@{Steinberg::UString}}
+
+
+{\ttfamily \#include $<$ustring.\+h$>$}
+
+Inheritance diagram for Steinberg\+::U\+String\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_steinberg_1_1_u_string}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_u_string_a5ebd6d758ebaf275e83424781dfb7749}{U\+String}} (char16 $\ast$\mbox{\hyperlink{structbuffer}{buffer}}, int32 size)
+\item 
+int32 \mbox{\hyperlink{class_steinberg_1_1_u_string_a1c47179807eb2af096b2770022bb6b93}{get\+Size}} () const
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_u_string_ab8659b14abbd20bea546e580986e0d13}{operator const char16 $\ast$}} () const
+\item 
+int32 \mbox{\hyperlink{class_steinberg_1_1_u_string_a481e12537a099d552418a04357559e11}{get\+Length}} () const
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& \mbox{\hyperlink{class_steinberg_1_1_u_string_a9783caf31b521ff4f1f4e53d793bdfbf}{assign}} (const char16 $\ast$src, int32 src\+Size=-\/1)
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& \mbox{\hyperlink{class_steinberg_1_1_u_string_a23f09113b10b3bdea394952c0b6fe88f}{append}} (const char16 $\ast$src, int32 src\+Size=-\/1)
+\item 
+const \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& \mbox{\hyperlink{class_steinberg_1_1_u_string_a61d0f6391f0b67429b7787501d76010f}{copy\+To}} (char16 $\ast$dst, int32 dst\+Size) const
+\item 
+\mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& \mbox{\hyperlink{class_steinberg_1_1_u_string_a86f97198a08c10057ad60ee85d176feb}{from\+Ascii}} (const char $\ast$src, int32 src\+Size=-\/1)
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_u_string_aaef8a323e844bffc6fc69efcdd2cdd9d}\label{class_steinberg_1_1_u_string_aaef8a323e844bffc6fc69efcdd2cdd9d}} 
+\mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& {\bfseries assign} (const char $\ast$src, int32 src\+Size=-\/1)
+\item 
+const \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& \mbox{\hyperlink{class_steinberg_1_1_u_string_a3ff7242eecd96775e97f2e9454d43ae1}{to\+Ascii}} (char $\ast$dst, int32 dst\+Size) const
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_u_string_a1161bde7e19cddf65d3562dadfd88a4a}{scan\+Int}} (int64 \&value) const
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_u_string_a0b6bd0009fb4fcfca671f04960de6b75}{print\+Int}} (int64 value)
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_u_string_a48ed5d1ee4e7875ffa3d65e6bfae62fe}{scan\+Float}} (double \&value) const
+\item 
+bool \mbox{\hyperlink{class_steinberg_1_1_u_string_ae9c63a4c97031a938c3047855a54277f}{print\+Float}} (double value, int32 precision=4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_u_string_a586b7904faddde26bced6b10f7b153db}\label{class_steinberg_1_1_u_string_a586b7904faddde26bced6b10f7b153db}} 
+char16 $\ast$ {\bfseries this\+Buffer}
+\item 
+\mbox{\Hypertarget{class_steinberg_1_1_u_string_a9816c280ef289cec4fd74c84eb490439}\label{class_steinberg_1_1_u_string_a9816c280ef289cec4fd74c84eb490439}} 
+int32 \mbox{\hyperlink{class_steinberg_1_1_u_string_a9816c280ef289cec4fd74c84eb490439}{this\+Size}}
+\begin{DoxyCompactList}\small\item\em size in code unit (not in byte!) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+U\+T\+F-\/16 string class without buffer management. Note\+: that some characters are encoded in 2 U\+T\+F16 code units (surrogate pair), this means that get\+Length returns the number of code unit, not the count of character! 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_u_string_a5ebd6d758ebaf275e83424781dfb7749}\label{class_steinberg_1_1_u_string_a5ebd6d758ebaf275e83424781dfb7749}} 
+\index{Steinberg::UString@{Steinberg::UString}!UString@{UString}}
+\index{UString@{UString}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{UString()}{UString()}}
+{\footnotesize\ttfamily Steinberg\+::\+U\+String\+::\+U\+String (\begin{DoxyParamCaption}\item[{char16 $\ast$}]{buffer,  }\item[{int32}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct from U\+T\+F-\/16 string, size is in code unit (count of char16) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_steinberg_1_1_u_string_a23f09113b10b3bdea394952c0b6fe88f}\label{class_steinberg_1_1_u_string_a23f09113b10b3bdea394952c0b6fe88f}} 
+\index{Steinberg::UString@{Steinberg::UString}!append@{append}}
+\index{append@{append}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& Steinberg\+::\+U\+String\+::append (\begin{DoxyParamCaption}\item[{const char16 $\ast$}]{src,  }\item[{int32}]{src\+Size = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Append U\+T\+F-\/16 buffer (src\+Size is in code unit (count of char16)). \mbox{\Hypertarget{class_steinberg_1_1_u_string_a9783caf31b521ff4f1f4e53d793bdfbf}\label{class_steinberg_1_1_u_string_a9783caf31b521ff4f1f4e53d793bdfbf}} 
+\index{Steinberg::UString@{Steinberg::UString}!assign@{assign}}
+\index{assign@{assign}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& Steinberg\+::\+U\+String\+::assign (\begin{DoxyParamCaption}\item[{const char16 $\ast$}]{src,  }\item[{int32}]{src\+Size = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Copy from U\+T\+F-\/16 buffer (src\+Size is in code unit (count of char16)). \mbox{\Hypertarget{class_steinberg_1_1_u_string_a61d0f6391f0b67429b7787501d76010f}\label{class_steinberg_1_1_u_string_a61d0f6391f0b67429b7787501d76010f}} 
+\index{Steinberg::UString@{Steinberg::UString}!copyTo@{copyTo}}
+\index{copyTo@{copyTo}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{copyTo()}{copyTo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& Steinberg\+::\+U\+String\+::copy\+To (\begin{DoxyParamCaption}\item[{char16 $\ast$}]{dst,  }\item[{int32}]{dst\+Size }\end{DoxyParamCaption}) const}
+
+Copy to U\+T\+F-\/16 buffer (dst\+Size is in code unit (count of char16)). \mbox{\Hypertarget{class_steinberg_1_1_u_string_a86f97198a08c10057ad60ee85d176feb}\label{class_steinberg_1_1_u_string_a86f97198a08c10057ad60ee85d176feb}} 
+\index{Steinberg::UString@{Steinberg::UString}!fromAscii@{fromAscii}}
+\index{fromAscii@{fromAscii}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{fromAscii()}{fromAscii()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& Steinberg\+::\+U\+String\+::from\+Ascii (\begin{DoxyParamCaption}\item[{const char $\ast$}]{src,  }\item[{int32}]{src\+Size = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Copy from A\+S\+C\+II string (src\+Size is in code unit (count of char16)). \mbox{\Hypertarget{class_steinberg_1_1_u_string_a481e12537a099d552418a04357559e11}\label{class_steinberg_1_1_u_string_a481e12537a099d552418a04357559e11}} 
+\index{Steinberg::UString@{Steinberg::UString}!getLength@{getLength}}
+\index{getLength@{getLength}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily int32 Steinberg\+::\+U\+String\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns length of string (in code unit). Note this is not the count of character! \mbox{\Hypertarget{class_steinberg_1_1_u_string_a1c47179807eb2af096b2770022bb6b93}\label{class_steinberg_1_1_u_string_a1c47179807eb2af096b2770022bb6b93}} 
+\index{Steinberg::UString@{Steinberg::UString}!getSize@{getSize}}
+\index{getSize@{getSize}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int32 Steinberg\+::\+U\+String\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns buffer size \mbox{\Hypertarget{class_steinberg_1_1_u_string_ab8659b14abbd20bea546e580986e0d13}\label{class_steinberg_1_1_u_string_ab8659b14abbd20bea546e580986e0d13}} 
+\index{Steinberg::UString@{Steinberg::UString}!operator const char16 $\ast$@{operator const char16 $\ast$}}
+\index{operator const char16 $\ast$@{operator const char16 $\ast$}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{operator const char16 $\ast$()}{operator const char16 *()}}
+{\footnotesize\ttfamily Steinberg\+::\+U\+String\+::operator const char16 $\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+cast to char16$\ast$ \mbox{\Hypertarget{class_steinberg_1_1_u_string_ae9c63a4c97031a938c3047855a54277f}\label{class_steinberg_1_1_u_string_ae9c63a4c97031a938c3047855a54277f}} 
+\index{Steinberg::UString@{Steinberg::UString}!printFloat@{printFloat}}
+\index{printFloat@{printFloat}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{printFloat()}{printFloat()}}
+{\footnotesize\ttfamily bool Steinberg\+::\+U\+String\+::print\+Float (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int32}]{precision = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+Print float to string. \mbox{\Hypertarget{class_steinberg_1_1_u_string_a0b6bd0009fb4fcfca671f04960de6b75}\label{class_steinberg_1_1_u_string_a0b6bd0009fb4fcfca671f04960de6b75}} 
+\index{Steinberg::UString@{Steinberg::UString}!printInt@{printInt}}
+\index{printInt@{printInt}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{printInt()}{printInt()}}
+{\footnotesize\ttfamily bool Steinberg\+::\+U\+String\+::print\+Int (\begin{DoxyParamCaption}\item[{int64}]{value }\end{DoxyParamCaption})}
+
+Print integer to string. \mbox{\Hypertarget{class_steinberg_1_1_u_string_a48ed5d1ee4e7875ffa3d65e6bfae62fe}\label{class_steinberg_1_1_u_string_a48ed5d1ee4e7875ffa3d65e6bfae62fe}} 
+\index{Steinberg::UString@{Steinberg::UString}!scanFloat@{scanFloat}}
+\index{scanFloat@{scanFloat}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{scanFloat()}{scanFloat()}}
+{\footnotesize\ttfamily bool Steinberg\+::\+U\+String\+::scan\+Float (\begin{DoxyParamCaption}\item[{double \&}]{value }\end{DoxyParamCaption}) const}
+
+Scan float from string. \mbox{\Hypertarget{class_steinberg_1_1_u_string_a1161bde7e19cddf65d3562dadfd88a4a}\label{class_steinberg_1_1_u_string_a1161bde7e19cddf65d3562dadfd88a4a}} 
+\index{Steinberg::UString@{Steinberg::UString}!scanInt@{scanInt}}
+\index{scanInt@{scanInt}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{scanInt()}{scanInt()}}
+{\footnotesize\ttfamily bool Steinberg\+::\+U\+String\+::scan\+Int (\begin{DoxyParamCaption}\item[{int64 \&}]{value }\end{DoxyParamCaption}) const}
+
+Scan integer from string. \mbox{\Hypertarget{class_steinberg_1_1_u_string_a3ff7242eecd96775e97f2e9454d43ae1}\label{class_steinberg_1_1_u_string_a3ff7242eecd96775e97f2e9454d43ae1}} 
+\index{Steinberg::UString@{Steinberg::UString}!toAscii@{toAscii}}
+\index{toAscii@{toAscii}!Steinberg::UString@{Steinberg::UString}}
+\doxysubsubsection{\texorpdfstring{toAscii()}{toAscii()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_steinberg_1_1_u_string}{U\+String}} \& Steinberg\+::\+U\+String\+::to\+Ascii (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{int32}]{dst\+Size }\end{DoxyParamCaption}) const}
+
+Copy to A\+S\+C\+II string. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/base/ustring.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+V\+S\+T3\+\_\+\+S\+D\+K/pluginterfaces/base/ustring.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\hypertarget{class_sk_r_g_b565___shader___blitter}{}\doxysection{Sk\+R\+G\+B565\+\_\+\+Shader\+\_\+\+Blitter Class Reference}
+\label{class_sk_r_g_b565___shader___blitter}\index{SkRGB565\_Shader\_Blitter@{SkRGB565\_Shader\_Blitter}}
+Inheritance diagram for Sk\+R\+G\+B565\+\_\+\+Shader\+\_\+\+Blitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_sk_r_g_b565___shader___blitter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_r_g_b565___shader___blitter_a21586fd740c7ccd08bcfcd7a10b7b71c}\label{class_sk_r_g_b565___shader___blitter_a21586fd740c7ccd08bcfcd7a10b7b71c}} 
+{\bfseries Sk\+R\+G\+B565\+\_\+\+Shader\+\_\+\+Blitter} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&device, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&, Sk\+Shader\+Base\+::\+Context $\ast$)
+\item 
+\mbox{\Hypertarget{class_sk_r_g_b565___shader___blitter_ab8b2ac8a6ae007826af41cc1c07434eb}\label{class_sk_r_g_b565___shader___blitter_ab8b2ac8a6ae007826af41cc1c07434eb}} 
+void \mbox{\hyperlink{class_sk_r_g_b565___shader___blitter_ab8b2ac8a6ae007826af41cc1c07434eb}{blitH}} (int x, int y, int width) override
+\begin{DoxyCompactList}\small\item\em Blit a horizontal run of one or more pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sk_r_g_b565___shader___blitter_afc42803631c5f6f90449d34832289b37}{blit\+AntiH}} (int x, int y, const \mbox{\hyperlink{_sk_color_8h_a918cf5a3a68406ac8107f6be48fb906e}{Sk\+Alpha}}\mbox{[}$\,$\mbox{]}, const int16\+\_\+t\mbox{[}$\,$\mbox{]}) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_r_g_b565___shader___blitter_a2683a7e1d18003ed9d3f4ab5e781fabc}\label{class_sk_r_g_b565___shader___blitter_a2683a7e1d18003ed9d3f4ab5e781fabc}} 
+static bool {\bfseries Supports} (const \mbox{\hyperlink{class_sk_pixmap}{Sk\+Pixmap}} \&device, const \mbox{\hyperlink{class_sk_paint}{Sk\+Paint}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sk_r_g_b565___shader___blitter_afc42803631c5f6f90449d34832289b37}\label{class_sk_r_g_b565___shader___blitter_afc42803631c5f6f90449d34832289b37}} 
+\index{SkRGB565\_Shader\_Blitter@{SkRGB565\_Shader\_Blitter}!blitAntiH@{blitAntiH}}
+\index{blitAntiH@{blitAntiH}!SkRGB565\_Shader\_Blitter@{SkRGB565\_Shader\_Blitter}}
+\doxysubsubsection{\texorpdfstring{blitAntiH()}{blitAntiH()}}
+{\footnotesize\ttfamily void Sk\+R\+G\+B565\+\_\+\+Shader\+\_\+\+Blitter\+::blit\+AntiH (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const}]{antialias\mbox{[}$\,$\mbox{]},  }\item[{const int16\+\_\+t}]{runs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Blit a horizontal run of antialiased pixels; runs\mbox{[}\mbox{]} is a {\itshape sparse} zero-\/terminated run-\/length encoding of spans of constant alpha values. The runs\mbox{[}\mbox{]} and antialias\mbox{[}\mbox{]} work together to represent long runs of pixels with the same alphas. The runs\mbox{[}\mbox{]} contains the number of pixels with the same alpha, and antialias\mbox{[}\mbox{]} contain the coverage value for that number of pixels. The runs\mbox{[}\mbox{]} (and antialias\mbox{[}\mbox{]}) are encoded in a clever way. The runs array is zero terminated, and has enough entries for each pixel plus one, in most cases some of the entries will not contain valid data. An entry in the runs array contains the number of pixels (np) that have the same alpha value. The next np value is found np entries away. For example, if runs\mbox{[}0\mbox{]} = 7, then the next valid entry will by at runs\mbox{[}7\mbox{]}. The runs array and antialias\mbox{[}\mbox{]} are coupled by index. So, if the np entry is at runs\mbox{[}45\mbox{]} = 12 then the alpha value can be found at antialias\mbox{[}45\mbox{]} = 0x88. This would mean to use an alpha value of 0x88 for the next 12 pixels starting at pixel 45. 
+
+Implements \mbox{\hyperlink{class_sk_blitter_a9690b92ca395a44e130e60ef057a0bbd}{Sk\+Blitter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Core\+Blitters.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Blitter\+\_\+\+R\+G\+B565.\+cpp\end{DoxyCompactItemize}

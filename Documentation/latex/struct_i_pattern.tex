@@ -1,0 +1,238 @@
+\hypertarget{struct_i_pattern}{}\doxysection{I\+Pattern Struct Reference}
+\label{struct_i_pattern}\index{IPattern@{IPattern}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Structs.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_i_pattern_ae71829b343792081e6fbf6e7b17c8833}{I\+Pattern}} (E\+Pattern\+Type type)
+\item 
+\mbox{\hyperlink{struct_i_pattern_a2c4de6967166a829bf7d21eb1ae8e5f8}{I\+Pattern}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color)
+\item 
+int \mbox{\hyperlink{struct_i_pattern_a2b61c9e1945ad938a6bc566a68d96348}{N\+Stops}} () const
+\item 
+const \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} \& \mbox{\hyperlink{struct_i_pattern_a801a0e74b09e52437ff7fb7b9badd376}{Get\+Stop}} (int idx) const
+\item 
+void \mbox{\hyperlink{struct_i_pattern_a6cfd2631c012cb8583a1035ee5a1bb27}{Add\+Stop}} (\mbox{\hyperlink{struct_i_color}{I\+Color}} color, float offset)
+\item 
+void \mbox{\hyperlink{struct_i_pattern_ada00eeacd0203d8cd504060e1eab7153}{Set\+Transform}} (float xx, float yx, float xy, float yy, float tx, float ty)
+\item 
+void \mbox{\hyperlink{struct_i_pattern_af81b978552d3912ccf514771e08082c3}{Set\+Transform}} (const \mbox{\hyperlink{struct_i_matrix}{I\+Matrix}} \&transform)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \mbox{\hyperlink{struct_i_pattern_a7d87f119ecd420d14b421d66c453c746}{Create\+Linear\+Gradient}} (float x1, float y1, float x2, float y2, const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&stops=\{\})
+\item 
+static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \mbox{\hyperlink{struct_i_pattern_ab77820cc737585c5cca9ce8156e1112b}{Create\+Linear\+Gradient}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, E\+Direction direction, const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&stops=\{\})
+\item 
+static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \mbox{\hyperlink{struct_i_pattern_ac6dafb58e144051cbff6f6541ea016a8}{Create\+Radial\+Gradient}} (float x1, float y1, float r, const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&stops=\{\})
+\item 
+static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \mbox{\hyperlink{struct_i_pattern_aa06a49ff658b38ab582379f839b32876}{Create\+Sweep\+Gradient}} (float x1, float y1, const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&stops=\{\}, float angle\+Start=0.f, float angle\+End=360.f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_i_pattern_a5c43695f24912003c97cd0b0995da432}\label{struct_i_pattern_a5c43695f24912003c97cd0b0995da432}} 
+E\+Pattern\+Type {\bfseries m\+Type}
+\item 
+\mbox{\Hypertarget{struct_i_pattern_a139b5c3401d6f20fee9483232c36ccf8}\label{struct_i_pattern_a139b5c3401d6f20fee9483232c36ccf8}} 
+E\+Pattern\+Extend {\bfseries m\+Extend}
+\item 
+\mbox{\Hypertarget{struct_i_pattern_a6ab9cacd1989356250634c6206545365}\label{struct_i_pattern_a6ab9cacd1989356250634c6206545365}} 
+\mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} {\bfseries m\+Stops} \mbox{[}16\mbox{]}
+\item 
+\mbox{\Hypertarget{struct_i_pattern_ae510e3ea330a320a6162fe94f872ff86}\label{struct_i_pattern_ae510e3ea330a320a6162fe94f872ff86}} 
+int {\bfseries m\+N\+Stops}
+\item 
+\mbox{\Hypertarget{struct_i_pattern_a6b6479fc97f3bad076161aa9cbea4e16}\label{struct_i_pattern_a6b6479fc97f3bad076161aa9cbea4e16}} 
+\mbox{\hyperlink{struct_i_matrix}{I\+Matrix}} {\bfseries m\+Transform}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to store pattern information for gradients 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_i_pattern_ae71829b343792081e6fbf6e7b17c8833}\label{struct_i_pattern_ae71829b343792081e6fbf6e7b17c8833}} 
+\index{IPattern@{IPattern}!IPattern@{IPattern}}
+\index{IPattern@{IPattern}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{IPattern()}{IPattern()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily I\+Pattern\+::\+I\+Pattern (\begin{DoxyParamCaption}\item[{E\+Pattern\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create an \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of pattern, one of E\+Pattern\+Type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_i_pattern_a2c4de6967166a829bf7d21eb1ae8e5f8}\label{struct_i_pattern_a2c4de6967166a829bf7d21eb1ae8e5f8}} 
+\index{IPattern@{IPattern}!IPattern@{IPattern}}
+\index{IPattern@{IPattern}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{IPattern()}{IPattern()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily I\+Pattern\+::\+I\+Pattern (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create an \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} with a solid color fill 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color for the single stop \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_pattern_a6cfd2631c012cb8583a1035ee5a1bb27}\label{struct_i_pattern_a6cfd2631c012cb8583a1035ee5a1bb27}} 
+\index{IPattern@{IPattern}!AddStop@{AddStop}}
+\index{AddStop@{AddStop}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{AddStop()}{AddStop()}}
+{\footnotesize\ttfamily void I\+Pattern\+::\+Add\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_color}{I\+Color}}}]{color,  }\item[{float}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Add an \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} to the \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\begin{DoxyParams}{Parameters}
+{\em color} & The \mbox{\hyperlink{struct_i_color}{I\+Color}} \\
+\hline
+{\em offset} & The offset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_i_pattern_ab77820cc737585c5cca9ce8156e1112b}\label{struct_i_pattern_ab77820cc737585c5cca9ce8156e1112b}} 
+\index{IPattern@{IPattern}!CreateLinearGradient@{CreateLinearGradient}}
+\index{CreateLinearGradient@{CreateLinearGradient}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{CreateLinearGradient()}{CreateLinearGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} I\+Pattern\+::\+Create\+Linear\+Gradient (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{E\+Direction}]{direction,  }\item[{const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&}]{stops = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a linear gradient \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} across a rectangular area 
+\begin{DoxyParams}{Parameters}
+{\em bounds} & The rectangular area \\
+\hline
+{\em direction} & If the gradient should be horizontal or vertical \\
+\hline
+{\em stops} & An initializer list of I\+Color\+Stops for the stops \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} The new \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_pattern_a7d87f119ecd420d14b421d66c453c746}\label{struct_i_pattern_a7d87f119ecd420d14b421d66c453c746}} 
+\index{IPattern@{IPattern}!CreateLinearGradient@{CreateLinearGradient}}
+\index{CreateLinearGradient@{CreateLinearGradient}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{CreateLinearGradient()}{CreateLinearGradient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} I\+Pattern\+::\+Create\+Linear\+Gradient (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&}]{stops = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a linear gradient \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\begin{DoxyParams}{Parameters}
+{\em x1} & The start x position \\
+\hline
+{\em y1} & The start y position \\
+\hline
+{\em x2} & The end x position \\
+\hline
+{\em y2} & The end y position \\
+\hline
+{\em stops} & An initializer list of I\+Color\+Stops for the stops \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} The new \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_pattern_ac6dafb58e144051cbff6f6541ea016a8}\label{struct_i_pattern_ac6dafb58e144051cbff6f6541ea016a8}} 
+\index{IPattern@{IPattern}!CreateRadialGradient@{CreateRadialGradient}}
+\index{CreateRadialGradient@{CreateRadialGradient}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{CreateRadialGradient()}{CreateRadialGradient()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} I\+Pattern\+::\+Create\+Radial\+Gradient (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{r,  }\item[{const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&}]{stops = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a radial gradient \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\begin{DoxyParams}{Parameters}
+{\em x1} & The x position of the centre \\
+\hline
+{\em y1} & The y position of the centre \\
+\hline
+{\em r} & The radius of the gradient \\
+\hline
+{\em stops} & An initializer list of I\+Color\+Stops for the stops \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} The new \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_pattern_aa06a49ff658b38ab582379f839b32876}\label{struct_i_pattern_aa06a49ff658b38ab582379f839b32876}} 
+\index{IPattern@{IPattern}!CreateSweepGradient@{CreateSweepGradient}}
+\index{CreateSweepGradient@{CreateSweepGradient}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{CreateSweepGradient()}{CreateSweepGradient()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} I\+Pattern\+::\+Create\+Sweep\+Gradient (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{const std\+::initializer\+\_\+list$<$ \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} $>$ \&}]{stops = {\ttfamily \{\}},  }\item[{float}]{angle\+Start = {\ttfamily 0.f},  }\item[{float}]{angle\+End = {\ttfamily 360.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Create a sweep gradient \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} (S\+K\+IA only) 
+\begin{DoxyParams}{Parameters}
+{\em x1} & The x position of the centre \\
+\hline
+{\em y1} & The y position of the centre \\
+\hline
+{\em stops} & An initializer list of I\+Color\+Stops for the stops \\
+\hline
+{\em angle\+Start} & the start angle of the sweep at in degrees clockwise where 0 is up \\
+\hline
+{\em angle\+End} & the end angle of the sweep at in degrees clockwise where 0 is up \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} The new \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_pattern_a801a0e74b09e52437ff7fb7b9badd376}\label{struct_i_pattern_a801a0e74b09e52437ff7fb7b9badd376}} 
+\index{IPattern@{IPattern}!GetStop@{GetStop}}
+\index{GetStop@{GetStop}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{GetStop()}{GetStop()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}}\& I\+Pattern\+::\+Get\+Stop (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}} at a particular index (will crash if out of bounds) 
+\begin{DoxyParams}{Parameters}
+{\em idx} & The index of the stop \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \mbox{\hyperlink{struct_i_color_stop}{I\+Color\+Stop}}\& The stop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_pattern_a2b61c9e1945ad938a6bc566a68d96348}\label{struct_i_pattern_a2b61c9e1945ad938a6bc566a68d96348}} 
+\index{IPattern@{IPattern}!NStops@{NStops}}
+\index{NStops@{NStops}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{NStops()}{NStops()}}
+{\footnotesize\ttfamily int I\+Pattern\+::\+N\+Stops (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+int The number of I\+Color\+Stops in the \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_i_pattern_af81b978552d3912ccf514771e08082c3}\label{struct_i_pattern_af81b978552d3912ccf514771e08082c3}} 
+\index{IPattern@{IPattern}!SetTransform@{SetTransform}}
+\index{SetTransform@{SetTransform}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{SetTransform()}{SetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+Pattern\+::\+Set\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_matrix}{I\+Matrix}} \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the affine transform for the \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} with an \mbox{\hyperlink{struct_i_matrix}{I\+Matrix}} 
+\begin{DoxyParams}{Parameters}
+{\em transform} & The affine transform matrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_i_pattern_ada00eeacd0203d8cd504060e1eab7153}\label{struct_i_pattern_ada00eeacd0203d8cd504060e1eab7153}} 
+\index{IPattern@{IPattern}!SetTransform@{SetTransform}}
+\index{SetTransform@{SetTransform}!IPattern@{IPattern}}
+\doxysubsubsection{\texorpdfstring{SetTransform()}{SetTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+Pattern\+::\+Set\+Transform (\begin{DoxyParamCaption}\item[{float}]{xx,  }\item[{float}]{yx,  }\item[{float}]{xy,  }\item[{float}]{yy,  }\item[{float}]{tx,  }\item[{float}]{ty }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the affine transform for the \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} with values 
+\begin{DoxyParams}{Parameters}
+{\em xx} & xx component of the affine transformation \\
+\hline
+{\em yx} & yx component of the affine transformation \\
+\hline
+{\em xy} & xy component of the affine transformation \\
+\hline
+{\em yy} & yy component of the affine transformation \\
+\hline
+{\em tx} & X translation component of the affine transformation \\
+\hline
+{\em ty} & Y translation component of the affine transformation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/I\+Graphics\+Structs.\+h\end{DoxyCompactItemize}

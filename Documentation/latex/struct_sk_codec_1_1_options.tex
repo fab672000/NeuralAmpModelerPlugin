@@ -1,0 +1,65 @@
+\hypertarget{struct_sk_codec_1_1_options}{}\doxysection{Sk\+Codec\+::Options Struct Reference}
+\label{struct_sk_codec_1_1_options}\index{SkCodec::Options@{SkCodec::Options}}
+
+
+{\ttfamily \#include $<$Sk\+Codec.\+h$>$}
+
+Inheritance diagram for Sk\+Codec\+::Options\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_sk_codec_1_1_options}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_sk_codec_1_1_options_a9d94f0355ace09c3c816da000ab4fa4a}\label{struct_sk_codec_1_1_options_a9d94f0355ace09c3c816da000ab4fa4a}} 
+\mbox{\hyperlink{class_sk_codec_a63868ae492c5effb2196d3f40f5b8ad8}{Zero\+Initialized}} {\bfseries f\+Zero\+Initialized}
+\item 
+const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}} $\ast$ \mbox{\hyperlink{struct_sk_codec_1_1_options_a436814806f9c5804e0b12063b9d0ec13}{f\+Subset}}
+\item 
+int \mbox{\hyperlink{struct_sk_codec_1_1_options_a6eac58f56ad434f8b945256a984a2b2d}{f\+Frame\+Index}}
+\item 
+int \mbox{\hyperlink{struct_sk_codec_1_1_options_aede4494df6aa38307cd5a95316337c7c}{f\+Prior\+Frame}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Additional options to pass to get\+Pixels. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_sk_codec_1_1_options_a6eac58f56ad434f8b945256a984a2b2d}\label{struct_sk_codec_1_1_options_a6eac58f56ad434f8b945256a984a2b2d}} 
+\index{SkCodec::Options@{SkCodec::Options}!fFrameIndex@{fFrameIndex}}
+\index{fFrameIndex@{fFrameIndex}!SkCodec::Options@{SkCodec::Options}}
+\doxysubsubsection{\texorpdfstring{fFrameIndex}{fFrameIndex}}
+{\footnotesize\ttfamily int Sk\+Codec\+::\+Options\+::f\+Frame\+Index}
+
+The frame to decode.
+
+Only meaningful for multi-\/frame images. \mbox{\Hypertarget{struct_sk_codec_1_1_options_aede4494df6aa38307cd5a95316337c7c}\label{struct_sk_codec_1_1_options_aede4494df6aa38307cd5a95316337c7c}} 
+\index{SkCodec::Options@{SkCodec::Options}!fPriorFrame@{fPriorFrame}}
+\index{fPriorFrame@{fPriorFrame}!SkCodec::Options@{SkCodec::Options}}
+\doxysubsubsection{\texorpdfstring{fPriorFrame}{fPriorFrame}}
+{\footnotesize\ttfamily int Sk\+Codec\+::\+Options\+::f\+Prior\+Frame}
+
+If not k\+No\+Frame, the dst already contains the prior frame at this index.
+
+Only meaningful for multi-\/frame images.
+
+If f\+Frame\+Index needs to be blended with a prior frame (as reported by get\+Frame\+Info\mbox{[}f\+Frame\+Index\mbox{]}.f\+Required\+Frame), the client can set this to any non-\/k\+Restore\+Previous frame in \mbox{[}f\+Required\+Frame, f\+Frame\+Index) to indicate that that frame is already in the dst. Options.\+f\+Zero\+Initialized is ignored in this case.
+
+If set to k\+No\+Frame, the codec will decode any necessary required frame(s) first. \mbox{\Hypertarget{struct_sk_codec_1_1_options_a436814806f9c5804e0b12063b9d0ec13}\label{struct_sk_codec_1_1_options_a436814806f9c5804e0b12063b9d0ec13}} 
+\index{SkCodec::Options@{SkCodec::Options}!fSubset@{fSubset}}
+\index{fSubset@{fSubset}!SkCodec::Options@{SkCodec::Options}}
+\doxysubsubsection{\texorpdfstring{fSubset}{fSubset}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_sk_i_rect}{Sk\+I\+Rect}}$\ast$ Sk\+Codec\+::\+Options\+::f\+Subset}
+
+If not N\+U\+LL, represents a subset of the original image to decode. Must be within the bounds returned by \mbox{\hyperlink{class_sk_codec_af08867a592789e9577ae2e7d3933d292}{get\+Info()}}. If the Encoded\+Format is Sk\+Encoded\+Image\+Format\+::k\+W\+E\+BP (the only one which currently supports subsets), the top and left values must be even.
+
+In get\+Pixels and incremental decode, we will attempt to decode the exact rectangular subset specified by f\+Subset.
+
+In a scanline decode, it does not make sense to specify a subset top or subset height, since the client already controls which rows to get and which rows to skip. During scanline decodes, we will require that the subset top be zero and the subset height be equal to the full height. We will, however, use the values of subset left and subset width to decode partial scanlines on calls to \mbox{\hyperlink{class_sk_codec_a05d129c55ba6889be63c790918a0e374}{get\+Scanlines()}}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/include/codec/Sk\+Codec.\+h\end{DoxyCompactItemize}

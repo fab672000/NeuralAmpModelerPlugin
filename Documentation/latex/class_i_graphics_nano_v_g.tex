@@ -1,0 +1,773 @@
+\hypertarget{class_i_graphics_nano_v_g}{}\doxysection{I\+Graphics\+Nano\+VG Class Reference}
+\label{class_i_graphics_nano_v_g}\index{IGraphicsNanoVG@{IGraphicsNanoVG}}
+
+
+{\ttfamily \#include $<$I\+Graphics\+Nano\+V\+G.\+h$>$}
+
+Inheritance diagram for I\+Graphics\+Nano\+VG\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_graphics_nano_v_g}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_graphics_nano_v_g_1_1_bitmap}{Bitmap}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ad78748e1dbfa5c4dcf972ed756f2ad89}\label{class_i_graphics_nano_v_g_ad78748e1dbfa5c4dcf972ed756f2ad89}} 
+{\bfseries I\+Graphics\+Nano\+VG} (\mbox{\hyperlink{class_i_g_editor_delegate}{I\+G\+Editor\+Delegate}} \&dlg, int w, int h, int fps, float scale)
+\item 
+const char $\ast$ \mbox{\hyperlink{class_i_graphics_nano_v_g_a028c55acbc1453f99906dec908909069}{Get\+Drawing\+A\+P\+I\+Str}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_aaddf2ad51039903dd21b0d2bcbcf913c}{Begin\+Frame}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_ab6468a0f3f84e18f8a7f88bb61b0de7f}{End\+Frame}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_aa31b81ffdd0c60e19c18dcfa836b9253}{On\+View\+Initialized}} (void $\ast$p\+Context) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a5fb91502ae0fde739f222ae22c105c02}{On\+View\+Destroyed}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a191e6644f4d7854b9a852ef772bacaf1}{Draw\+Resize}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_aff9afca0a24a33e4f34aa790bf2e89d6}{Draw\+Bitmap}} (const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&dest, int srcX, int srcY, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a6869ce59e10c0bb6cd3c5e270c439d78}{Draw\+Dotted\+Line}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color, float x1, float y1, float x2, float y2, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend, float thickness, float dash\+Len) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a36c7bff7e8865dcc75b878d9938c471b}{Draw\+Dotted\+Rect}} (const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&color, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend, float thickness, float dash\+Len) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a8c3cde2de2a57a908c8791abcdec7e56}{Draw\+Fast\+Drop\+Shadow}} (const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&inner\+Bounds, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&outer\+Bounds, float xy\+Drop=5.f, float roundness=0.f, float blur=10.f, \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend=nullptr) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a21bfa5c579a0cc70766ff60f72af5c97}{Path\+Clear}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a8962b809b433e00f1899c24559d47646}{Path\+Close}} () override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a56a77fde0c7302c45f475c5ddae1a8c8}{Path\+Arc}} (float cx, float cy, float r, float a1, float a2, E\+Winding winding) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a9707dceabbf3c35feba08736e2d3b7d0}{Path\+Move\+To}} (float x, float y) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a5bc540f7945059c7f5b9c0e5ad16c5fb}{Path\+Line\+To}} (float x, float y) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a6c4b9737df381e86abab540231558218}{Path\+Cubic\+Bezier\+To}} (float c1x, float c1y, float c2x, float c2y, float x2, float y2) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_abebcbdf22359cb6108dc50ccbdd418d1}{Path\+Quadratic\+Bezier\+To}} (float cx, float cy, float x2, float y2) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a454f95ac697d5391fa15d73030dce56f}{Path\+Set\+Winding}} (bool clockwise) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a52724181bac1c25a7ef8b845a547e362}{Path\+Stroke}} (const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&pattern, float thickness, const \mbox{\hyperlink{struct_i_stroke_options}{I\+Stroke\+Options}} \&options, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a3300cfbc3237debb0fb12cb40f8cc64e}{Path\+Fill}} (const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&pattern, const \mbox{\hyperlink{struct_i_fill_options}{I\+Fill\+Options}} \&options, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\item 
+\mbox{\hyperlink{struct_i_color}{I\+Color}} \mbox{\hyperlink{class_i_graphics_nano_v_g_a7273cf6122beb04f5b001947653297ae}{Get\+Point}} (int x, int y) override
+\item 
+void $\ast$ \mbox{\hyperlink{class_i_graphics_nano_v_g_af9cbfe07611e972f27e14b22205ec1ec}{Get\+Draw\+Context}} () override
+\item 
+\mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \mbox{\hyperlink{class_i_graphics_nano_v_g_a276e806e1b2391de94fbb98149de490c}{Load\+Bitmap}} (const char $\ast$name, int n\+States, bool frames\+Are\+Horizontal, int target\+Scale) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a4ea856f8baef511a0440b1a739ac5cc3}{Release\+Bitmap}} (const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_ab8e177ee0da1d5decc2ba1f34cbdda01}{Retain\+Bitmap}} (const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&bitmap, const char $\ast$cache\+Name) override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_nano_v_g_ad4291d4c78bf8b152f7b82f366bf8e98}{Bitmap\+Ext\+Supported}} (const char $\ast$ext) override
+\item 
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a1fd20eeda78ce331cb825203ca544045}\label{class_i_graphics_nano_v_g_a1fd20eeda78ce331cb825203ca544045}} 
+void {\bfseries Delete\+F\+BO} (N\+V\+Gframebuffer $\ast$p\+Buffer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_graphics_nano_v_g_a4b8f3acfbd5fe542305158c887dae138}{Load\+A\+P\+I\+Bitmap}} (const char $\ast$file\+Name\+Or\+Res\+ID, int scale, E\+Resource\+Location location, const char $\ast$ext) override
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_graphics_nano_v_g_ac0de63439edd3abefea775d52a33ad05}{Load\+A\+P\+I\+Bitmap}} (const char $\ast$name, const void $\ast$p\+Data, int data\+Size, int scale) override
+\item 
+\mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ \mbox{\hyperlink{class_i_graphics_nano_v_g_ab877056719c3593c5218026ef16b28e3}{Create\+A\+P\+I\+Bitmap}} (int width, int height, float scale, double draw\+Scale, bool cacheable=false) override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_nano_v_g_a7674eb1b2d7f0c79886297292183d8cf}{Load\+A\+P\+I\+Font}} (const char $\ast$font\+ID, const Platform\+Font\+Ptr \&font) override
+\item 
+int \mbox{\hyperlink{class_i_graphics_nano_v_g_ab82dfe3a35348c57f77c4c652ec57fbc}{Alpha\+Channel}} () const override
+\item 
+bool \mbox{\hyperlink{class_i_graphics_nano_v_g_afe417a35fb93481df9c3c54f3610ebfd}{Flipped\+Bitmap}} () const override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a353afc69453449ba46a6ed3a9fe30968}{Get\+Layer\+Bitmap\+Data}} (const \mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&layer, \mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&data) override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a05f3e9de20f9c654598f96eabdcf1012}{Apply\+Shadow\+Mask}} (\mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&layer, \mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&mask, const \mbox{\hyperlink{struct_i_shadow}{I\+Shadow}} \&shadow) override
+\item 
+float \mbox{\hyperlink{class_i_graphics_nano_v_g_ad51242368c659a2adc6f191d6a821636}{Do\+Measure\+Text}} (const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&text, const char $\ast$str, \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds) const override
+\item 
+void \mbox{\hyperlink{class_i_graphics_nano_v_g_a8bb214d04764c48b8b1efc0791ce9ac1}{Do\+Draw\+Text}} (const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&text, const char $\ast$str, const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&bounds, const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$p\+Blend) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_i_graphics}{I\+Graphics}} draw class using Nano\+VG ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ab82dfe3a35348c57f77c4c652ec57fbc}\label{class_i_graphics_nano_v_g_ab82dfe3a35348c57f77c4c652ec57fbc}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!AlphaChannel@{AlphaChannel}}
+\index{AlphaChannel@{AlphaChannel}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{AlphaChannel()}{AlphaChannel()}}
+{\footnotesize\ttfamily int I\+Graphics\+Nano\+V\+G\+::\+Alpha\+Channel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+int The index of the alpha component in a drawing backend\textquotesingle{}s pixel (R\+G\+BA or A\+R\+GB) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a42d34a154fd59b2b9ffdb818c358defc}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a05f3e9de20f9c654598f96eabdcf1012}\label{class_i_graphics_nano_v_g_a05f3e9de20f9c654598f96eabdcf1012}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!ApplyShadowMask@{ApplyShadowMask}}
+\index{ApplyShadowMask@{ApplyShadowMask}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{ApplyShadowMask()}{ApplyShadowMask()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Apply\+Shadow\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&}]{layer,  }\item[{\mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&}]{mask,  }\item[{const \mbox{\hyperlink{struct_i_shadow}{I\+Shadow}} \&}]{shadow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Implemented by a graphics backend to apply a calculated shadow mask to a layer, according to the shadow settings specified 
+\begin{DoxyParams}{Parameters}
+{\em layer} & The layer to apply the shadow to \\
+\hline
+{\em mask} & The mask of the shadow as raw bitmap data \\
+\hline
+{\em shadow} & The shadow specification \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a62bbfa473b05138994e220cf24afdf3f}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_aaddf2ad51039903dd21b0d2bcbcf913c}\label{class_i_graphics_nano_v_g_aaddf2ad51039903dd21b0d2bcbcf913c}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!BeginFrame@{BeginFrame}}
+\index{BeginFrame@{BeginFrame}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{BeginFrame()}{BeginFrame()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Begin\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called at the beginning of drawing. Call base implementation if overridden. 
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_af2a102272f5f0951a36c7ca32601cca1}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ad4291d4c78bf8b152f7b82f366bf8e98}\label{class_i_graphics_nano_v_g_ad4291d4c78bf8b152f7b82f366bf8e98}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!BitmapExtSupported@{BitmapExtSupported}}
+\index{BitmapExtSupported@{BitmapExtSupported}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{BitmapExtSupported()}{BitmapExtSupported()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Nano\+V\+G\+::\+Bitmap\+Ext\+Supported (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Checks a file extension and reports whether this drawing A\+PI supports loading that extension 
+
+Implements \mbox{\hyperlink{class_i_graphics_a7eb2eac86a838af6e6f85cd2242043d4}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ab877056719c3593c5218026ef16b28e3}\label{class_i_graphics_nano_v_g_ab877056719c3593c5218026ef16b28e3}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!CreateAPIBitmap@{CreateAPIBitmap}}
+\index{CreateAPIBitmap@{CreateAPIBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{CreateAPIBitmap()}{CreateAPIBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ I\+Graphics\+Nano\+V\+G\+::\+Create\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{float}]{scale,  }\item[{double}]{draw\+Scale,  }\item[{bool}]{cacheable = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Creates a new A\+PI bitmap, either in memory or as a G\+PU texture 
+\begin{DoxyParams}{Parameters}
+{\em width} & The desired width \\
+\hline
+{\em height} & The desired height \\
+\hline
+{\em scale} & The scale in relation to 1\+:1 pixels \\
+\hline
+{\em draw\+Scale} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000083}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em cacheable} & Used to make sure the underlying bitmap can be shared between plug-\/in instances \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+P\+I\+Bitmap$\ast$ The new A\+PI \mbox{\hyperlink{class_i_graphics_nano_v_g_1_1_bitmap}{Bitmap}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_af9c6805802f1c599313041a5a79f59b6}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a8bb214d04764c48b8b1efc0791ce9ac1}\label{class_i_graphics_nano_v_g_a8bb214d04764c48b8b1efc0791ce9ac1}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DoDrawText@{DoDrawText}}
+\index{DoDrawText@{DoDrawText}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DoDrawText()}{DoDrawText()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Do\+Draw\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&}]{text,  }\item[{const char $\ast$}]{str,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000097}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000098}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000099}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000100}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Blend} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000101}{Todo}}]\end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_abfee1fdc10a629de6ef03cad85ad5a65}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ad51242368c659a2adc6f191d6a821636}\label{class_i_graphics_nano_v_g_ad51242368c659a2adc6f191d6a821636}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DoMeasureText@{DoMeasureText}}
+\index{DoMeasureText@{DoMeasureText}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DoMeasureText()}{DoMeasureText()}}
+{\footnotesize\ttfamily float I\+Graphics\+Nano\+V\+G\+::\+Do\+Measure\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_text}{I\+Text}} \&}]{text,  }\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000093}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000094}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000095}{Todo}}]\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em bounds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000096}{Todo}}]\end{DoxyRefDesc}
+\begin{DoxyReturn}{Returns}
+The width of the text 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a056c8ae37821338c32091e6b228429a9}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_aff9afca0a24a33e4f34aa790bf2e89d6}\label{class_i_graphics_nano_v_g_aff9afca0a24a33e4f34aa790bf2e89d6}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DrawBitmap@{DrawBitmap}}
+\index{DrawBitmap@{DrawBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DrawBitmap()}{DrawBitmap()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Draw\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&}]{bitmap,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{int}]{srcX,  }\item[{int}]{srcY,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw a bitmap (raster) image to the graphics context 
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap image to draw to the graphics context \\
+\hline
+{\em bounds} & The rectangular region to draw the image in \\
+\hline
+{\em srcX} & The X offset in the source image to draw from \\
+\hline
+{\em srcY} & The Y offset in the source image to draw from \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_afea2763c96575af7140d644e4d748299}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a6869ce59e10c0bb6cd3c5e270c439d78}\label{class_i_graphics_nano_v_g_a6869ce59e10c0bb6cd3c5e270c439d78}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DrawDottedLine@{DrawDottedLine}}
+\index{DrawDottedLine@{DrawDottedLine}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DrawDottedLine()}{DrawDottedLine()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Draw\+Dotted\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color,  }\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend,  }\item[{float}]{thickness,  }\item[{float}]{dash\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw a dotted line to the graphics context 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to draw the shape with \\
+\hline
+{\em x1} & The X coordinate of the start of the line \\
+\hline
+{\em y1} & The Y coordinate of the start of the line \\
+\hline
+{\em x2} & The X coordinate of the end of the line \\
+\hline
+{\em y2} & The Y coordinate of the end of the line \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+{\em thickness} & Optional line thickness \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_ac5d09d2e80b62948a2f154fd739492b2}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a36c7bff7e8865dcc75b878d9938c471b}\label{class_i_graphics_nano_v_g_a36c7bff7e8865dcc75b878d9938c471b}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DrawDottedRect@{DrawDottedRect}}
+\index{DrawDottedRect@{DrawDottedRect}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DrawDottedRect()}{DrawDottedRect()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Draw\+Dotted\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_color}{I\+Color}} \&}]{color,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{bounds,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend,  }\item[{float}]{thickness,  }\item[{float}]{dash\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw a dotted rectangle to the graphics context 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to draw the shape with \\
+\hline
+{\em bounds} & The rectangular region to draw the shape in \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+{\em thickness} & Optional line thickness \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a331e896fe3f5a00a111df11c75d8ca3b}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a8c3cde2de2a57a908c8791abcdec7e56}\label{class_i_graphics_nano_v_g_a8c3cde2de2a57a908c8791abcdec7e56}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DrawFastDropShadow@{DrawFastDropShadow}}
+\index{DrawFastDropShadow@{DrawFastDropShadow}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DrawFastDropShadow()}{DrawFastDropShadow()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Draw\+Fast\+Drop\+Shadow (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{inner\+Bounds,  }\item[{const \mbox{\hyperlink{struct_i_r_e_c_t}{I\+R\+E\+CT}} \&}]{outer\+Bounds,  }\item[{float}]{xy\+Drop = {\ttfamily 5.f},  }\item[{float}]{roundness = {\ttfamily 0.f},  }\item[{float}]{blur = {\ttfamily 10.f},  }\item[{\mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Nano\+VG only 
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a716cb6f5934b0337b81eb3e0e39e796a}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a191e6644f4d7854b9a852ef772bacaf1}\label{class_i_graphics_nano_v_g_a191e6644f4d7854b9a852ef772bacaf1}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!DrawResize@{DrawResize}}
+\index{DrawResize@{DrawResize}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{DrawResize()}{DrawResize()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Draw\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000074}{Todo}}]\end{DoxyRefDesc}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ab6468a0f3f84e18f8a7f88bb61b0de7f}\label{class_i_graphics_nano_v_g_ab6468a0f3f84e18f8a7f88bb61b0de7f}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!EndFrame@{EndFrame}}
+\index{EndFrame@{EndFrame}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{EndFrame()}{EndFrame()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+End\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called by some drawing A\+PI classes to finally blit the draw bitmap onto the screen or perform other cleanup after drawing 
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a464ebf8919fb061181211ecbedf0b2da}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_afe417a35fb93481df9c3c54f3610ebfd}\label{class_i_graphics_nano_v_g_afe417a35fb93481df9c3c54f3610ebfd}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!FlippedBitmap@{FlippedBitmap}}
+\index{FlippedBitmap@{FlippedBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{FlippedBitmap()}{FlippedBitmap()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Nano\+V\+G\+::\+Flipped\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+bool {\ttfamily true} if the drawing backend flips images (e.\+g. Open\+GL) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_ab07c25e58a1fdfd6acce197bf0805ec0}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_af9cbfe07611e972f27e14b22205ec1ec}\label{class_i_graphics_nano_v_g_af9cbfe07611e972f27e14b22205ec1ec}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!GetDrawContext@{GetDrawContext}}
+\index{GetDrawContext@{GetDrawContext}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{GetDrawContext()}{GetDrawContext()}}
+{\footnotesize\ttfamily void$\ast$ I\+Graphics\+Nano\+V\+G\+::\+Get\+Draw\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Gets a void pointer to underlying drawing context, for the \mbox{\hyperlink{class_i_graphics}{I\+Graphics}} backend See draw class implementation headers (e.\+g. \mbox{\hyperlink{_i_graphics_nano_v_g_8h_source}{I\+Graphics\+Nano\+V\+G.\+h}}) for what you can cast the void pointer to 
+
+Implements \mbox{\hyperlink{class_i_graphics_ae2761ff1cedc86acf4b0a73a6634cbc4}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a028c55acbc1453f99906dec908909069}\label{class_i_graphics_nano_v_g_a028c55acbc1453f99906dec908909069}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!GetDrawingAPIStr@{GetDrawingAPIStr}}
+\index{GetDrawingAPIStr@{GetDrawingAPIStr}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{GetDrawingAPIStr()}{GetDrawingAPIStr()}}
+{\footnotesize\ttfamily const char $\ast$ I\+Graphics\+Nano\+V\+G\+::\+Get\+Drawing\+A\+P\+I\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+A C\+String representing the Drawing A\+PI in use e.\+g. \char`\"{}\+Nano\+V\+G\char`\"{} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_ab2d20e544f14c4a14fde3a3391936511}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a353afc69453449ba46a6ed3a9fe30968}\label{class_i_graphics_nano_v_g_a353afc69453449ba46a6ed3a9fe30968}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!GetLayerBitmapData@{GetLayerBitmapData}}
+\index{GetLayerBitmapData@{GetLayerBitmapData}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{GetLayerBitmapData()}{GetLayerBitmapData()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Get\+Layer\+Bitmap\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group___i_graphics_structs_ga9b7871899f7948866b57786e8dbf678b}{I\+Layer\+Ptr}} \&}]{layer,  }\item[{\mbox{\hyperlink{class_w_d_l___typed_buf}{Raw\+Bitmap\+Data}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Get the contents of a layer as Raw R\+G\+BA bitmap data N\+O\+TE\+: you should only call this within \mbox{\hyperlink{class_i_control_ab9d872edcc790c0506d5b90c07a968de}{I\+Control\+::\+Draw()}} 
+\begin{DoxyParams}{Parameters}
+{\em layer} & The layer to get the data from \\
+\hline
+{\em data} & The pixel data extracted from the layer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a8c93b8a237c99caf10a0281cc97e0327}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a7273cf6122beb04f5b001947653297ae}\label{class_i_graphics_nano_v_g_a7273cf6122beb04f5b001947653297ae}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_i_color}{I\+Color}} I\+Graphics\+Nano\+V\+G\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the color at an X, Y location in the graphics context 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the pixel \\
+\hline
+{\em y} & The Y coordinate of the pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{struct_i_color}{I\+Color}} specifiying the color of the pixel at x, y 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a1e1b75ade14fcae02d24262caa63757d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a4b8f3acfbd5fe542305158c887dae138}\label{class_i_graphics_nano_v_g_a4b8f3acfbd5fe542305158c887dae138}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!LoadAPIBitmap@{LoadAPIBitmap}}
+\index{LoadAPIBitmap@{LoadAPIBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{LoadAPIBitmap()}{LoadAPIBitmap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ I\+Graphics\+Nano\+V\+G\+::\+Load\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name\+Or\+Res\+ID,  }\item[{int}]{scale,  }\item[{E\+Resource\+Location}]{location,  }\item[{const char $\ast$}]{ext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Drawing A\+PI method to load a bitmap, called internally 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name\+Or\+Res\+ID} & A C\+String absolute path or resource ID \\
+\hline
+{\em scale} & Integer to identify the scale of the resource, for multi-\/scale bitmaps \\
+\hline
+{\em location} & Identifies the kind of resource location \\
+\hline
+{\em ext} & C\+String for the file extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+P\+I\+Bitmap$\ast$ Drawing A\+PI bitmap abstraction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a8df2d625ee7352532f79a45c85e78491}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ac0de63439edd3abefea775d52a33ad05}\label{class_i_graphics_nano_v_g_ac0de63439edd3abefea775d52a33ad05}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!LoadAPIBitmap@{LoadAPIBitmap}}
+\index{LoadAPIBitmap@{LoadAPIBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{LoadAPIBitmap()}{LoadAPIBitmap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_p_i_bitmap}{A\+P\+I\+Bitmap}} $\ast$ I\+Graphics\+Nano\+V\+G\+::\+Load\+A\+P\+I\+Bitmap (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const void $\ast$}]{p\+Data,  }\item[{int}]{data\+Size,  }\item[{int}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Drawing A\+PI method to load a bitmap from binary data, called internally 
+\begin{DoxyParams}{Parameters}
+{\em name} & C\+String for the name of the resource \\
+\hline
+{\em p\+Data} & Raw pointer to the binary data \\
+\hline
+{\em data\+Size} & Size of the data in bytes \\
+\hline
+{\em scale} & Integer to identify the scale of the resource, for multi-\/scale bitmaps \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A\+P\+I\+Bitmap$\ast$ Drawing A\+PI bitmap abstraction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_abbbe20e625e34cd74b752db6be018e41}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a7674eb1b2d7f0c79886297292183d8cf}\label{class_i_graphics_nano_v_g_a7674eb1b2d7f0c79886297292183d8cf}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!LoadAPIFont@{LoadAPIFont}}
+\index{LoadAPIFont@{LoadAPIFont}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{LoadAPIFont()}{LoadAPIFont()}}
+{\footnotesize\ttfamily bool I\+Graphics\+Nano\+V\+G\+::\+Load\+A\+P\+I\+Font (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font\+ID,  }\item[{const Platform\+Font\+Ptr \&}]{font }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Drawing A\+PI method to load a font from a Platform\+Font\+Ptr, called internally 
+\begin{DoxyParams}{Parameters}
+{\em font\+ID} & A C\+String that will be used to reference the font \\
+\hline
+{\em font} & Valid Platform\+Font\+Ptr, loaded via Load\+Platform\+Font \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool {\ttfamily true} if the font was loaded successfully 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_ab6cbb9c4ec9e06b0ba49bb04369f51d8}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a276e806e1b2391de94fbb98149de490c}\label{class_i_graphics_nano_v_g_a276e806e1b2391de94fbb98149de490c}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!LoadBitmap@{LoadBitmap}}
+\index{LoadBitmap@{LoadBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{LoadBitmap()}{LoadBitmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} I\+Graphics\+Nano\+V\+G\+::\+Load\+Bitmap (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name\+Or\+Res\+ID,  }\item[{int}]{n\+States,  }\item[{bool}]{frames\+Are\+Horizontal,  }\item[{int}]{target\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Load a bitmap image from disk or from windows resource 
+\begin{DoxyParams}{Parameters}
+{\em file\+Name\+Or\+Res\+ID} & C\+String file name or resource ID \\
+\hline
+{\em n\+States} & The number of states/frames in a multi-\/frame stacked bitmap \\
+\hline
+{\em frames\+Are\+Horizontal} & Set {\ttfamily true} if the frames in a bitmap are stacked horizontally \\
+\hline
+{\em target\+Scale} & Set {\ttfamily to} a number $>$ 0 to explicity load e.\+g. an @2x.\+png \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} representing the image 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_af213e9d5003c923f9b57ad10080ec2f3}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a5fb91502ae0fde739f222ae22c105c02}\label{class_i_graphics_nano_v_g_a5fb91502ae0fde739f222ae22c105c02}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!OnViewDestroyed@{OnViewDestroyed}}
+\index{OnViewDestroyed@{OnViewDestroyed}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{OnViewDestroyed()}{OnViewDestroyed()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+On\+View\+Destroyed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after a platform view is destroyed, so that drawing classes can e.\+g. free any resources 
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a5f0194539a63198b7b868ffb7f424ecd}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_aa31b81ffdd0c60e19c18dcfa836b9253}\label{class_i_graphics_nano_v_g_aa31b81ffdd0c60e19c18dcfa836b9253}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!OnViewInitialized@{OnViewInitialized}}
+\index{OnViewInitialized@{OnViewInitialized}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{OnViewInitialized()}{OnViewInitialized()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+On\+View\+Initialized (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Called after platform view initialization, so that drawing classes can e.\+g. create an Open\+GL context. 
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_aa5f2041fa51eac4d3b654748c3916e14}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a56a77fde0c7302c45f475c5ddae1a8c8}\label{class_i_graphics_nano_v_g_a56a77fde0c7302c45f475c5ddae1a8c8}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathArc@{PathArc}}
+\index{PathArc@{PathArc}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathArc()}{PathArc()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Arc (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{r,  }\item[{float}]{a1,  }\item[{float}]{a2,  }\item[{E\+Winding}]{winding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add an arc to the current path 
+\begin{DoxyParams}{Parameters}
+{\em cx} & The X coordinate of the centre of the circle on which the arc lies \\
+\hline
+{\em cy} & The Y coordinate of the centre of the circle on which the arc lies \\
+\hline
+{\em r} & The radius of the circle on which the arc lies \\
+\hline
+{\em a1} & the start angle of the arc at in degrees clockwise where 0 is up \\
+\hline
+{\em a2} & the end angle of the arc at in degrees clockwise where 0 is up \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_aafdafe42c5a776a8aeadd4c1aeb87bd9}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a21bfa5c579a0cc70766ff60f72af5c97}\label{class_i_graphics_nano_v_g_a21bfa5c579a0cc70766ff60f72af5c97}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathClear@{PathClear}}
+\index{PathClear@{PathClear}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathClear()}{PathClear()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Clear the stack of path drawing commands 
+
+Implements \mbox{\hyperlink{class_i_graphics_a1e8d0d9c4f7f680827abe7db265af82d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a8962b809b433e00f1899c24559d47646}\label{class_i_graphics_nano_v_g_a8962b809b433e00f1899c24559d47646}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathClose@{PathClose}}
+\index{PathClose@{PathClose}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathClose()}{PathClose()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close the path that is being specified. 
+
+Implements \mbox{\hyperlink{class_i_graphics_a24d5d28f2e0ccb1ecd64e59088c74f72}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a6c4b9737df381e86abab540231558218}\label{class_i_graphics_nano_v_g_a6c4b9737df381e86abab540231558218}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathCubicBezierTo@{PathCubicBezierTo}}
+\index{PathCubicBezierTo@{PathCubicBezierTo}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathCubicBezierTo()}{PathCubicBezierTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Cubic\+Bezier\+To (\begin{DoxyParamCaption}\item[{float}]{c1x,  }\item[{float}]{c1y,  }\item[{float}]{c2x,  }\item[{float}]{c2y,  }\item[{float}]{x2,  }\item[{float}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add a cubic bezier to the current path from the current point to the specified location 
+\begin{DoxyParams}{Parameters}
+{\em c1x} & \mbox{\hyperlink{struct_control}{Control}} point 1 X coordinate \\
+\hline
+{\em c1y} & \mbox{\hyperlink{struct_control}{Control}} point 1 Y coordinate \\
+\hline
+{\em c2x} & \mbox{\hyperlink{struct_control}{Control}} point 2 X coordinate \\
+\hline
+{\em c2y} & \mbox{\hyperlink{struct_control}{Control}} point 2 Y coordinate \\
+\hline
+{\em x2} & The X coordinate of the end of the line \\
+\hline
+{\em y2} & The Y coordinate of the end of the line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_aed5ddf9b2290dd9a6c5cfad5153adb4d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a3300cfbc3237debb0fb12cb40f8cc64e}\label{class_i_graphics_nano_v_g_a3300cfbc3237debb0fb12cb40f8cc64e}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathFill@{PathFill}}
+\index{PathFill@{PathFill}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathFill()}{PathFill()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Fill (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&}]{pattern,  }\item[{const \mbox{\hyperlink{struct_i_fill_options}{I\+Fill\+Options}} \&}]{options,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Fill the current current path 
+\begin{DoxyParams}{Parameters}
+{\em pattern} & The \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} to use, for e.\+g. color or gradient \\
+\hline
+{\em options} & Optional \mbox{\hyperlink{struct_i_fill_options}{I\+Fill\+Options}} to specify fill rule and preserve options \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a185b056c70c54319c85c72246cd79458}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a5bc540f7945059c7f5b9c0e5ad16c5fb}\label{class_i_graphics_nano_v_g_a5bc540f7945059c7f5b9c0e5ad16c5fb}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathLineTo@{PathLineTo}}
+\index{PathLineTo@{PathLineTo}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathLineTo()}{PathLineTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Line\+To (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add a line to the current path from the current point to the specified location 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate of the end of the line \\
+\hline
+{\em y} & The Y coordinate of the end of the line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_acd575e0411509a2fe05495ef05198a8d}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a9707dceabbf3c35feba08736e2d3b7d0}\label{class_i_graphics_nano_v_g_a9707dceabbf3c35feba08736e2d3b7d0}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathMoveTo@{PathMoveTo}}
+\index{PathMoveTo@{PathMoveTo}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathMoveTo()}{PathMoveTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Move\+To (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Move the current point in the current path 
+\begin{DoxyParams}{Parameters}
+{\em x} & The X coordinate \\
+\hline
+{\em y} & The Y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_aafa78e8658ed993d876cbb4d91397043}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_abebcbdf22359cb6108dc50ccbdd418d1}\label{class_i_graphics_nano_v_g_abebcbdf22359cb6108dc50ccbdd418d1}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathQuadraticBezierTo@{PathQuadraticBezierTo}}
+\index{PathQuadraticBezierTo@{PathQuadraticBezierTo}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathQuadraticBezierTo()}{PathQuadraticBezierTo()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Quadratic\+Bezier\+To (\begin{DoxyParamCaption}\item[{float}]{cx,  }\item[{float}]{cy,  }\item[{float}]{x2,  }\item[{float}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Add a quadratic bezier to the current path from the current point to the specified location 
+\begin{DoxyParams}{Parameters}
+{\em cx} & \mbox{\hyperlink{struct_control}{Control}} point X coordinate \\
+\hline
+{\em cy} & \mbox{\hyperlink{struct_control}{Control}} point Y coordinate \\
+\hline
+{\em x2} & The X coordinate of the end of the line \\
+\hline
+{\em y2} & The Y coordinate of the end of the line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_abd5b91fd7f7dd8784b4bf01fbf91da55}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a454f95ac697d5391fa15d73030dce56f}\label{class_i_graphics_nano_v_g_a454f95ac697d5391fa15d73030dce56f}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathSetWinding@{PathSetWinding}}
+\index{PathSetWinding@{PathSetWinding}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathSetWinding()}{PathSetWinding()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Set\+Winding (\begin{DoxyParamCaption}\item[{bool}]{clockwise }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Nano\+VG only. \href{https://github.com/memononen/nanovg/blob/master/src/nanovg.h\#L454}{\texttt{ https\+://github.\+com/memononen/nanovg/blob/master/src/nanovg.\+h\#\+L454}} 
+\begin{DoxyParams}{Parameters}
+{\em clockwise} & Should the path be wound clockwise \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a359a9ab892a12259767102c10b8bc415}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a52724181bac1c25a7ef8b845a547e362}\label{class_i_graphics_nano_v_g_a52724181bac1c25a7ef8b845a547e362}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!PathStroke@{PathStroke}}
+\index{PathStroke@{PathStroke}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{PathStroke()}{PathStroke()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Path\+Stroke (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} \&}]{pattern,  }\item[{float}]{thickness,  }\item[{const \mbox{\hyperlink{struct_i_stroke_options}{I\+Stroke\+Options}} \&}]{options,  }\item[{const \mbox{\hyperlink{struct_i_blend}{I\+Blend}} $\ast$}]{p\+Blend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Stroke the current current path 
+\begin{DoxyParams}{Parameters}
+{\em pattern} & The \mbox{\hyperlink{struct_i_pattern}{I\+Pattern}} to use, for e.\+g. color or gradient \\
+\hline
+{\em thickness} & The line thickness \\
+\hline
+{\em options} & Optional \mbox{\hyperlink{struct_i_stroke_options}{I\+Stroke\+Options}} to specify dash, join and path preserve options \\
+\hline
+{\em p\+Blend} & Optional blend method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_graphics_a5b28bcb1e3e7e72307ceee71ab7fbb5a}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_a4ea856f8baef511a0440b1a739ac5cc3}\label{class_i_graphics_nano_v_g_a4ea856f8baef511a0440b1a739ac5cc3}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!ReleaseBitmap@{ReleaseBitmap}}
+\index{ReleaseBitmap@{ReleaseBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{ReleaseBitmap()}{ReleaseBitmap()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Release\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&}]{bitmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Releases an \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} from the cache/static storage 
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap to release ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a3c4325453e5dc772e44fd390beafce33}{I\+Graphics}}.
+
+\mbox{\Hypertarget{class_i_graphics_nano_v_g_ab8e177ee0da1d5decc2ba1f34cbdda01}\label{class_i_graphics_nano_v_g_ab8e177ee0da1d5decc2ba1f34cbdda01}} 
+\index{IGraphicsNanoVG@{IGraphicsNanoVG}!RetainBitmap@{RetainBitmap}}
+\index{RetainBitmap@{RetainBitmap}!IGraphicsNanoVG@{IGraphicsNanoVG}}
+\doxysubsubsection{\texorpdfstring{RetainBitmap()}{RetainBitmap()}}
+{\footnotesize\ttfamily void I\+Graphics\+Nano\+V\+G\+::\+Retain\+Bitmap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} \&}]{bitmap,  }\item[{const char $\ast$}]{cache\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Adds an \mbox{\hyperlink{class_i_bitmap}{I\+Bitmap}} to the cache/static storage 
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap to cache \\
+\hline
+{\em cache\+Name} & The name by which this bitmap is identified int the cache \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_i_graphics_a27bd9abf9591fad9ddfc9a040a58564c}{I\+Graphics}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Drawing/I\+Graphics\+Nano\+V\+G.\+h\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+I\+Graphics/\+Drawing/I\+Graphics\+Nano\+V\+G.\+cpp\end{DoxyCompactItemize}

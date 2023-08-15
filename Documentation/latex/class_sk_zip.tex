@@ -1,0 +1,67 @@
+\hypertarget{class_sk_zip}{}\doxysection{Sk\+Zip$<$ Ts $>$ Class Template Reference}
+\label{class_sk_zip}\index{SkZip$<$ Ts $>$@{SkZip$<$ Ts $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_zip_a2f478172dced1ae35437a756c8b048ce}\label{class_sk_zip_a2f478172dced1ae35437a756c8b048ce}} 
+{\footnotesize template$<$typename U , typename T $>$ }\\using {\bfseries Can\+Convert\+To\+Const} = typename std\+::integral\+\_\+constant$<$ bool, std\+::is\+\_\+convertible$<$ U $\ast$, \mbox{\hyperlink{class_eigen_1_1_triplet}{T}} $\ast$ $>$\+::value \&\&sizeof(U)==sizeof(\mbox{\hyperlink{class_eigen_1_1_triplet}{T}})$>$\+::type
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sk_zip_ac699eb38b4137f85731aac45afa3429f}\label{class_sk_zip_ac699eb38b4137f85731aac45afa3429f}} 
+constexpr {\bfseries Sk\+Zip} (size\+\_\+t)=delete
+\item 
+\mbox{\Hypertarget{class_sk_zip_af224361274999a4ea67a2688b8263ae7}\label{class_sk_zip_af224361274999a4ea67a2688b8263ae7}} 
+constexpr {\bfseries Sk\+Zip} (size\+\_\+t size, Ts $\ast$... ts)
+\item 
+\mbox{\Hypertarget{class_sk_zip_a50b47434e2a4c19c04e2dbe65ad762f7}\label{class_sk_zip_a50b47434e2a4c19c04e2dbe65ad762f7}} 
+constexpr {\bfseries Sk\+Zip} (const \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}} \&that)=default
+\item 
+\mbox{\Hypertarget{class_sk_zip_a29707bfe577aecf18271d9eee3d356e4}\label{class_sk_zip_a29707bfe577aecf18271d9eee3d356e4}} 
+constexpr \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}} \&that)=default
+\item 
+\mbox{\Hypertarget{class_sk_zip_a2cd57f18839dfc29ff3024d065f17990}\label{class_sk_zip_a2cd57f18839dfc29ff3024d065f17990}} 
+{\footnotesize template$<$typename... Us, typename  = std\+::enable\+\_\+if$<$skstd\+::conjunction$<$\+Can\+Convert\+To\+Const$<$\+Us, Ts$>$...$>$\+::value$>$$>$ }\\constexpr {\bfseries Sk\+Zip} (const \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}}$<$ Us... $>$ \&that)
+\item 
+\mbox{\Hypertarget{class_sk_zip_a8b8cc1b55f49bd57164bb472950d0329}\label{class_sk_zip_a8b8cc1b55f49bd57164bb472950d0329}} 
+constexpr Return\+Tuple {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const
+\item 
+\mbox{\Hypertarget{class_sk_zip_a054bf1d198660fd2850bc13f8fd869a9}\label{class_sk_zip_a054bf1d198660fd2850bc13f8fd869a9}} 
+constexpr size\+\_\+t {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_a9e1f1af5a41d650fc2b39cde57c19a09}\label{class_sk_zip_a9e1f1af5a41d650fc2b39cde57c19a09}} 
+constexpr bool {\bfseries empty} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_af9bb2e2a2aed71061783322a1d73c366}\label{class_sk_zip_af9bb2e2a2aed71061783322a1d73c366}} 
+constexpr Return\+Tuple {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_aa62feb51d972ed9746a149dd9fce6d64}\label{class_sk_zip_aa62feb51d972ed9746a149dd9fce6d64}} 
+constexpr Return\+Tuple {\bfseries back} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_a5836d7ecf079b05603b65020fd3565e7}\label{class_sk_zip_a5836d7ecf079b05603b65020fd3565e7}} 
+constexpr Iterator {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_abaec530cbb23d42f6500ef5965799a4f}\label{class_sk_zip_abaec530cbb23d42f6500ef5965799a4f}} 
+constexpr Iterator {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_af279d9842d6a78dd09c6b78ebaf18793}\label{class_sk_zip_af279d9842d6a78dd09c6b78ebaf18793}} 
+{\footnotesize template$<$size\+\_\+t I$>$ }\\constexpr auto {\bfseries get} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_ab2142500264b714eeb407b6abd11178b}\label{class_sk_zip_ab2142500264b714eeb407b6abd11178b}} 
+constexpr std\+::tuple$<$ Ts $\ast$... $>$ {\bfseries data} () const
+\item 
+\mbox{\Hypertarget{class_sk_zip_a2e89b1841e6f1b4f4f219c4245dd8f4c}\label{class_sk_zip_a2e89b1841e6f1b4f4f219c4245dd8f4c}} 
+constexpr \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}} {\bfseries first} (size\+\_\+t n) const
+\item 
+\mbox{\Hypertarget{class_sk_zip_a04c1720c7890317decb35bb720a25b2b}\label{class_sk_zip_a04c1720c7890317decb35bb720a25b2b}} 
+constexpr \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}} {\bfseries last} (size\+\_\+t n) const
+\item 
+\mbox{\Hypertarget{class_sk_zip_a7f6fc5ca658971e400b6f5671efd9a3a}\label{class_sk_zip_a7f6fc5ca658971e400b6f5671efd9a3a}} 
+constexpr \mbox{\hyperlink{class_sk_zip}{Sk\+Zip}} {\bfseries subspan} (size\+\_\+t offset, size\+\_\+t count) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+Build/src/skia/src/core/Sk\+Zip.\+h\end{DoxyCompactItemize}

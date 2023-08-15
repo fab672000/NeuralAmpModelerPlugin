@@ -1,0 +1,85 @@
+\hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor}{}\doxysection{Eigen\+::Tensor\+Sycl\+::internal\+::Scan\+Kernel\+Functor$<$ Evaluator, Coeff\+Return\+Type, Out\+Accessor, Op, Index, stp $>$ Struct Template Reference}
+\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor}\index{Eigen::TensorSycl::internal::ScanKernelFunctor$<$ Evaluator, CoeffReturnType, OutAccessor, Op, Index, stp $>$@{Eigen::TensorSycl::internal::ScanKernelFunctor$<$ Evaluator, CoeffReturnType, OutAccessor, Op, Index, stp $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a521b4879374c9ddab1775412819ed98e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a521b4879374c9ddab1775412819ed98e}} 
+typedef cl\+::sycl\+::accessor$<$ Coeff\+Return\+Type, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Local\+Accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a521b4879374c9ddab1775412819ed98e}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a521b4879374c9ddab1775412819ed98e}} 
+typedef cl\+::sycl\+::accessor$<$ Coeff\+Return\+Type, 1, cl\+::sycl\+::access\+::mode\+::read\+\_\+write, cl\+::sycl\+::access\+::target\+::local $>$ {\bfseries Local\+Accessor}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a52bab9c88ca67333b1792e6f7fbd4194}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a52bab9c88ca67333b1792e6f7fbd4194}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Scan\+Kernel\+Functor} (Local\+Accessor scratch\+\_\+, const Evaluator dev\+\_\+eval\+\_\+, Out\+Accessor out\+\_\+accessor\+\_\+, Out\+Accessor temp\+\_\+accessor\+\_\+, const \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_parameters}{Scan\+Parameters}}$<$ \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} $>$ scan\+Parameters\+\_\+, Op accumulator\+\_\+, const bool inclusive\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a636cde0553b48541a2a9ba2e84f99953}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a636cde0553b48541a2a9ba2e84f99953}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Input $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst==scan\+\_\+step\+::first, Coeff\+Return\+Type $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries read} (const Input \&inpt, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} global\+\_\+id)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a5dde7a535077d8d7ed9dfa64754e8e11}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a5dde7a535077d8d7ed9dfa64754e8e11}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Input $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst !=scan\+\_\+step\+::first, Coeff\+Return\+Type $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries read} (const Input \&inpt, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} global\+\_\+id)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a17dd78dd3ddd0df4e3875362e3bb89da}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a17dd78dd3ddd0df4e3875362e3bb89da}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Inclusive\+Op $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst==scan\+\_\+step\+::first $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries first\+\_\+step\+\_\+inclusive\+\_\+\+Operation} (Inclusive\+Op inclusive\+\_\+op)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_ade9bb76a18dd250af2eb3a17b95cb948}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_ade9bb76a18dd250af2eb3a17b95cb948}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Inclusive\+Op $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst !=scan\+\_\+step\+::first $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries first\+\_\+step\+\_\+inclusive\+\_\+\+Operation} (Inclusive\+Op)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a8bdc3719579ab83a85fb42f404d24452}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a8bdc3719579ab83a85fb42f404d24452}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a52bab9c88ca67333b1792e6f7fbd4194}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a52bab9c88ca67333b1792e6f7fbd4194}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries Scan\+Kernel\+Functor} (Local\+Accessor scratch\+\_\+, const Evaluator dev\+\_\+eval\+\_\+, Out\+Accessor out\+\_\+accessor\+\_\+, Out\+Accessor temp\+\_\+accessor\+\_\+, const \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_parameters}{Scan\+Parameters}}$<$ \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} $>$ scan\+Parameters\+\_\+, Op accumulator\+\_\+, const bool inclusive\+\_\+)
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_ab4a16007490046bed21911096c700df8}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_ab4a16007490046bed21911096c700df8}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Input $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst==scan\+\_\+step\+::first, Coeff\+Return\+Type $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries read} (const Input \&inpt, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} global\+\_\+id) const
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a3c7860382dff96b6c6fa24d15811dfd4}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a3c7860382dff96b6c6fa24d15811dfd4}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Input $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst !=scan\+\_\+step\+::first, Coeff\+Return\+Type $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries read} (const Input \&inpt, \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} global\+\_\+id) const
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_abfdf750e13148afb3ef3f3b126437f45}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_abfdf750e13148afb3ef3f3b126437f45}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Inclusive\+Op $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst==scan\+\_\+step\+::first $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries first\+\_\+step\+\_\+inclusive\+\_\+\+Operation} (Inclusive\+Op inclusive\+\_\+op) const
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_aac59e77075143ca6c72e78ad3124da54}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_aac59e77075143ca6c72e78ad3124da54}} 
+{\footnotesize template$<$scan\+\_\+step sst = stp, typename Inclusive\+Op $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ sst !=scan\+\_\+step\+::first $>$ E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE {\bfseries first\+\_\+step\+\_\+inclusive\+\_\+\+Operation} (Inclusive\+Op) const
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a7241c228ccb8eb0bc9aec8b0a5c13227}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a7241c228ccb8eb0bc9aec8b0a5c13227}} 
+E\+I\+G\+E\+N\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+F\+U\+NC E\+I\+G\+E\+N\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+I\+N\+L\+I\+NE void {\bfseries operator()} (cl\+::sycl\+::nd\+\_\+item$<$ 1 $>$ item\+ID) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a6e2ac091063a98d76fbeba636bcde392}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a6e2ac091063a98d76fbeba636bcde392}} 
+Local\+Accessor {\bfseries scratch}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a4db63b04a4c004084853dea61ddc8297}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a4db63b04a4c004084853dea61ddc8297}} 
+Evaluator {\bfseries dev\+\_\+eval}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_ad7b875b25cf3e7046678092126afa664}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_ad7b875b25cf3e7046678092126afa664}} 
+Out\+Accessor {\bfseries out\+\_\+accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a3f828d486508c04861b386e3f09f5c51}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a3f828d486508c04861b386e3f09f5c51}} 
+Out\+Accessor {\bfseries temp\+\_\+accessor}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a9a1a1c5e72ae8e315ff18ba7806a4fa7}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a9a1a1c5e72ae8e315ff18ba7806a4fa7}} 
+const \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_parameters}{Scan\+Parameters}}$<$ \mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}} $>$ {\bfseries scan\+Parameters}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a24e695f85af78e5de7960c4286332ac2}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a24e695f85af78e5de7960c4286332ac2}} 
+Op {\bfseries accumulator}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_aca8084e0dcf4701e1442d26016d0e0fb}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_aca8084e0dcf4701e1442d26016d0e0fb}} 
+const bool {\bfseries inclusive}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a86f28291fa265672959d6382e7da1a2f}\label{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_kernel_functor_a86f28291fa265672959d6382e7da1a2f}} 
+static E\+I\+G\+E\+N\+\_\+\+C\+O\+N\+S\+T\+E\+X\+PR int {\bfseries Packet\+Size} = \mbox{\hyperlink{struct_eigen_1_1_tensor_sycl_1_1internal_1_1_scan_parameters}{Scan\+Parameters}}$<$\mbox{\hyperlink{namespace_eigen_a62e77e0933482dafde8fe197d9a2cfde}{Index}}$>$\+::Scan\+Per\+Thread / 2
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/eigen/unsupported/\+Eigen/\+C\+X\+X11/src/\+Tensor/Tensor\+Scan\+Sycl.\+h\end{DoxyCompactItemize}

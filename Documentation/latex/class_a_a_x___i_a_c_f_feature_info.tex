@@ -1,0 +1,81 @@
+\hypertarget{class_a_a_x___i_a_c_f_feature_info}{}\doxysection{A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info Class Reference}
+\label{class_a_a_x___i_a_c_f_feature_info}\index{AAX\_IACFFeatureInfo@{AAX\_IACFFeatureInfo}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info.\+h$>$}
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_a_x___i_a_c_f_feature_info}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_feature_info_a5973ec7e7dbb4cb566df58cfacdfcafd}{Support\+Level}} (\mbox{\hyperlink{_a_a_x___enums_8h_aca7bf42860665d5da66f4ac342e761b3}{A\+A\+X\+\_\+\+E\+Support\+Level}} $\ast$o\+Support\+Level) const =0
+\item 
+virtual A\+A\+X\+\_\+\+Result \mbox{\hyperlink{class_a_a_x___i_a_c_f_feature_info_a6ea3222257cdc9395ad5a766d4130df8}{Acquire\+Properties}} (\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$$\ast$out\+Properties)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Information about host support for a particular feature
+
+Acquired using \mbox{\hyperlink{class_a_a_x___i_a_c_f_description_host_ae4b0144bfdfdbd5881150c20eef1c48f}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Description\+Host\+::\+Acquire\+Feature\+Properties()}}
+
+This interface is shared between multiple features. The specific feature which this object represents is the feature whose ID was used in the call to acquire this interface.
+
+See the feature U\+ID documentation for which properties support additional property map data
+
+I\+ID\+: I\+I\+D\+\_\+\+I\+A\+A\+X\+Feature\+Info\+V1
+
+\begin{DoxyNote}{Note}
+Do not {\ttfamily Query\+Interface()} for I\+I\+D\+\_\+\+I\+A\+A\+X\+Feature\+Info\+V1 since this does not indicate which specific feature is being requested. Instead, use \mbox{\hyperlink{class_a_a_x___i_description_host_aa0d9e27d0207113f98c217d870bfa5e9}{A\+A\+X\+\_\+\+I\+Description\+Host\+::\+Acquire\+Feature\+Properties()}} 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_feature_info_a6ea3222257cdc9395ad5a766d4130df8}\label{class_a_a_x___i_a_c_f_feature_info_a6ea3222257cdc9395ad5a766d4130df8}} 
+\index{AAX\_IACFFeatureInfo@{AAX\_IACFFeatureInfo}!AcquireProperties@{AcquireProperties}}
+\index{AcquireProperties@{AcquireProperties}!AAX\_IACFFeatureInfo@{AAX\_IACFFeatureInfo}}
+\doxysubsubsection{\texorpdfstring{AcquireProperties()}{AcquireProperties()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info\+::\+Acquire\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_a_c_f_unknown}{I\+A\+C\+F\+Unknown}} $\ast$$\ast$}]{out\+Properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+
+
+{\ttfamily out\+Properties} must support \mbox{\hyperlink{class_a_a_x___i_a_c_f_property_map}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map}} const methods
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_feature_info_ab74a4576cd4e87baa01d046dfa0c752e}{A\+A\+X\+\_\+\+I\+Feature\+Info\+::\+Acquire\+Properties()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_a_a_x___i_a_c_f_feature_info_a5973ec7e7dbb4cb566df58cfacdfcafd}\label{class_a_a_x___i_a_c_f_feature_info_a5973ec7e7dbb4cb566df58cfacdfcafd}} 
+\index{AAX\_IACFFeatureInfo@{AAX\_IACFFeatureInfo}!SupportLevel@{SupportLevel}}
+\index{SupportLevel@{SupportLevel}!AAX\_IACFFeatureInfo@{AAX\_IACFFeatureInfo}}
+\doxysubsubsection{\texorpdfstring{SupportLevel()}{SupportLevel()}}
+{\footnotesize\ttfamily virtual A\+A\+X\+\_\+\+Result A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info\+::\+Support\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_a_a_x___enums_8h_aca7bf42860665d5da66f4ac342e761b3}{A\+A\+X\+\_\+\+E\+Support\+Level}} $\ast$}]{o\+Support\+Level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+
+
+Determine the level of support for this feature by the host
+
+\begin{DoxyNote}{Note}
+The host will not provide an underlying \mbox{\hyperlink{class_a_a_x___i_a_c_f_feature_info}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info}} interface for features which it does not recognize at all, resulting in a A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+O\+B\+J\+E\+CT error code
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_a_a_x___i_feature_info_a5f105b85ef855eb8c3da0ff06325b018}{A\+A\+X\+\_\+\+I\+Feature\+Info\+::\+Support\+Level()}}
+\end{DoxySeeAlso}
+Determine the level of support for this feature by the host
+
+\begin{DoxyNote}{Note}
+The host will not provide an underlying \mbox{\hyperlink{class_a_a_x___i_a_c_f_feature_info}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info}} interface for features which it does not recognize at all, resulting in a A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+O\+B\+J\+E\+CT error code 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fab/src/\+Github/branches/\+Neural\+Amp\+Modeler\+Plugin/i\+Plug2/\+Dependencies/\+I\+Plug/\+A\+A\+X\+\_\+\+S\+D\+K/\+Interfaces/A\+A\+X\+\_\+\+I\+A\+C\+F\+Feature\+Info.\+h\end{DoxyCompactItemize}
