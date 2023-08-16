@@ -672,17 +672,10 @@ std::string NeuralAmpModeler::SavePreset(const WDL_String& presetPath)
     {
       params.push_back(GetParam(i)->Value());
     }
-    NeuralAmpModelerPreset preset(
-      "Preset 1", "Test preset for NAM", mNAMPath.Get(), mIRPath.Get(), params);
+    NeuralAmpModelerPreset preset("Preset 1", "Test preset for NAM", mNAMPath.Get(), mIRPath.Get(), params);
     // Save preset using the NeuralAmpModelerPreset::Serialize method to presetPath location:
-    bool saveSuccess = preset.Serialize(presetPath, preset, errorMessage);
-
-    auto result = NeuralAmpModelerPreset::Serialize(presetPath, preset, errorMessage);
-    if (!result)
-    {
-      return errorMessage;
-    }
-    return "";
+    const auto result = preset.Serialize(presetPath, errorMessage);
+    return !result ? errorMessage : "";
   }
   catch (const std::exception& e)
   {

@@ -4,6 +4,7 @@
 #include <json.hpp>
 #include <wdlstring.h>
 
+
 NeuralAmpModelerPreset::NeuralAmpModelerPreset(std::string name, std::string desc, std::string ampPath,
                                                std::string irPath, std::vector<float> params)
 : _name(std::move(name))
@@ -36,8 +37,9 @@ const NeuralAmpModelerPreset* NeuralAmpModelerPreset::Deserialize(const WDL_Stri
     std::filesystem::path pAmpModel(ampModel);
     std::filesystem::path pAmpIR(ampIR);
 
-    if( pAmpModel.is_relative()) pAmpModel = pathDirectory / ampModel;
-    if( pAmpIR.is_relative()) pAmpIR = pathDirectory / ampIR;
+    if( pAmpModel.is_relative()) pAmpModel = absolute(pathDirectory / ampModel);
+    if( pAmpIR.is_relative()) pAmpIR = absolute(pathDirectory / ampIR);
+    // MAKE pAmpModel an absolute path
 
     if (j.find("params") != j.end())
     {
@@ -61,7 +63,7 @@ const NeuralAmpModelerPreset* NeuralAmpModelerPreset::Deserialize(const WDL_Stri
 
 // Generate a method that writes json parameters to a file using nlohmann::json using the same parameters as implemented
 // in LoadFrom()
-bool NeuralAmpModelerPreset::Serialize(const WDL_String& presetPath, const NeuralAmpModelerPreset& preset, std::string& errorMessage)
+bool NeuralAmpModelerPreset::Serialize(const NeuralAmpModelerPreset& preset, const WDL_String& presetPath, std::string& errorMessage)
 {
   // Create a json instance from the preset object
   try

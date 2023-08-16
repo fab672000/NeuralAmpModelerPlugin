@@ -16,16 +16,18 @@ public:
                          std::vector<float> params);
 
   static const NeuralAmpModelerPreset* Deserialize(const WDL_String& presetPath, std::string& errorMessage);
-  static bool  Serialize(const WDL_String& presetPath, const NeuralAmpModelerPreset& preset, std::string& errorMessage);
+  static bool  Serialize(const NeuralAmpModelerPreset& preset, const WDL_String& presetPath, std::string& errorMessage);
+  bool Serialize(const WDL_String& presetPath, std::string& errorMessage) const
+  {
+    return Serialize(*this, presetPath, errorMessage);
+  }
 
-  [[nodiscard]] const std::string& Name() const { return _name; }
-  [[nodiscard]] const std::string& Description() const { return _description; }
-  [[nodiscard]] const std::string& AmpPath() const { return _amp; }
-  [[nodiscard]] const std::string& IrPath() const { return _ir; }
-
-  [[nodiscard]] const std::vector<float>& Params() const { return _params; }
-
-  [[nodiscard]] uint32_t Version() const { return _version; }
+  const std::string& Name() const { return _name; }
+  const std::string& Description() const { return _description; }
+  const std::string& AmpPath() const { return _amp; }
+  const std::string& IrPath() const { return _ir; }
+  const std::vector<float>& Params() const { return _params; }
+  uint32_t Version() const { return _version; }
 
 protected:
   std::string _name;
