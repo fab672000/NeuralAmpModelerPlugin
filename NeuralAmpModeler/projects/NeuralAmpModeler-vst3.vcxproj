@@ -304,6 +304,8 @@
     <ClInclude Include="..\..\iPlug2\IGraphics\Platforms\IGraphicsMac_view.h" />
     <ClInclude Include="..\..\iPlug2\IGraphics\Platforms\IGraphicsWeb.h" />
     <ClInclude Include="..\..\iPlug2\IGraphics\Platforms\IGraphicsWin.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\LanczosResampler.h" />
+    <ClInclude Include="..\..\iPlug2\IPlug\Extras\NonIntegerResampler.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlugAPIBase.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlugConstants.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlugEditorDelegate.h" />
@@ -326,15 +328,21 @@
     <ClInclude Include="..\..\iPlug2\IPlug\VST3\IPlugVST3_Parameter.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\VST3\IPlugVST3_ProcessorBase.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\VST3\IPlugVST3_View.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\dsp.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ImpulseResponse.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\NoiseGate.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\RecursiveLinearFilter.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\Resample.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\LanczosResampler.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\heapbuf.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\ptrlist.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\wdltypes.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\ResamplingContainer.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\version.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\wav.h" />
     <ClInclude Include="..\Colors.h" />
     <ClInclude Include="..\NeuralAmpModeler.h" />
     <ClInclude Include="..\NeuralAmpModelerControls.h" />
-    <ClInclude Include="..\NeuralAmpModelerCore\dsp\dsp.h" />
-    <ClInclude Include="..\NeuralAmpModelerCore\dsp\ImpulseResponse.h" />
-    <ClInclude Include="..\NeuralAmpModelerCore\dsp\NoiseGate.h" />
-    <ClInclude Include="..\NeuralAmpModelerCore\dsp\RecursiveLinearFilter.h" />
-    <ClInclude Include="..\NeuralAmpModelerCore\dsp\Resample.h" />
-    <ClInclude Include="..\NeuralAmpModelerCore\dsp\wav.h" />
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\activations.h" />
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\convnet.h" />
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\dsp.h" />
@@ -343,6 +351,7 @@
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\version.h" />
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\wavenet.h" />
     <ClInclude Include="..\resources\resource.h" />
+    <ClInclude Include="..\ToneStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\iPlug2\Dependencies\IPlug\VST3_SDK\base\source\baseiids.cpp" />
@@ -403,19 +412,12 @@
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugTimer.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\VST3\IPlugVST3.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\VST3\IPlugVST3_ProcessorBase.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\dsp.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\ImpulseResponse.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\NoiseGate.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\RecursiveLinearFilter.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\wav.cpp" />
     <ClCompile Include="..\NeuralAmpModeler.cpp" />
-    <ClCompile Include="..\NeuralAmpModelerCore\dsp\dsp.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(RelativeDir)</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Tracer|Win32'">$(IntDir)%(RelativeDir)</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(RelativeDir)</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(RelativeDir)</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Tracer|x64'">$(IntDir)%(RelativeDir)</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(RelativeDir)</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\NeuralAmpModelerCore\dsp\ImpulseResponse.cpp" />
-    <ClCompile Include="..\NeuralAmpModelerCore\dsp\NoiseGate.cpp" />
-    <ClCompile Include="..\NeuralAmpModelerCore\dsp\RecursiveLinearFilter.cpp" />
-    <ClCompile Include="..\NeuralAmpModelerCore\dsp\wav.cpp" />
     <ClCompile Include="..\NeuralAmpModelerCore\NAM\activations.cpp" />
     <ClCompile Include="..\NeuralAmpModelerCore\NAM\convnet.cpp" />
     <ClCompile Include="..\NeuralAmpModelerCore\NAM\dsp.cpp">
@@ -430,6 +432,7 @@
     <ClCompile Include="..\NeuralAmpModelerCore\NAM\lstm.cpp" />
     <ClCompile Include="..\NeuralAmpModelerCore\NAM\util.cpp" />
     <ClCompile Include="..\NeuralAmpModelerCore\NAM\wavenet.cpp" />
+    <ClCompile Include="..\ToneStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resources\main.rc" />

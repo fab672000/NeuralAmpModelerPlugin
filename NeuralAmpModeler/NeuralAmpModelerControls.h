@@ -228,7 +228,7 @@ public:
 
       if (pItem)
       {
-        mSelectedIndex = mItems.Find(pItem);
+        mSelectedItemIndex = mItems.Find(pItem);
         LoadFileAtCurrentIndex();
       }
     }
@@ -240,10 +240,10 @@ public:
       const auto nItems = NItems();
       if (nItems == 0)
         return;
-      mSelectedIndex--;
+      mSelectedItemIndex--;
 
-      if (mSelectedIndex < 0)
-        mSelectedIndex = nItems - 1;
+      if (mSelectedItemIndex < 0)
+        mSelectedItemIndex = nItems - 1;
 
       LoadFileAtCurrentIndex();
     };
@@ -252,10 +252,10 @@ public:
       const auto nItems = NItems();
       if (nItems == 0)
         return;
-      mSelectedIndex++;
+      mSelectedItemIndex++;
 
-      if (mSelectedIndex >= nItems)
-        mSelectedIndex = 0;
+      if (mSelectedItemIndex >= nItems)
+        mSelectedItemIndex = 0;
 
       LoadFileAtCurrentIndex();
     };
@@ -304,7 +304,11 @@ public:
       else
       {
         CheckSelectedItem();
-        mMainMenu.SetChosenItemIdx(mSelectedIndex);
+
+        if (!mMainMenu.HasSubMenus())
+        {
+          mMainMenu.SetChosenItemIdx(mSelectedItemIndex);
+        }
         pCaller->GetUI()->CreatePopupMenu(*this, mMainMenu, pCaller->GetRECT());
       }
     };
@@ -333,7 +337,7 @@ public:
 
   void LoadFileAtCurrentIndex()
   {
-    if (mSelectedIndex > -1 && mSelectedIndex < NItems())
+    if (mSelectedItemIndex > -1 && mSelectedItemIndex < NItems())
     {
       WDL_String fileName, path;
       GetSelectedFile(fileName);
@@ -373,7 +377,7 @@ public:
   }
 
 private:
-  void SelectFirstFile() { mSelectedIndex = mFiles.GetSize() ? 0 : -1; }
+  void SelectFirstFile() { mSelectedItemIndex = mFiles.GetSize() ? 0 : -1; }
 
   void GetSelectedFileDirectory(WDL_String& path)
   {
@@ -429,40 +433,6 @@ public:
     g.DrawGrid(COLOR_BLACK, mTrackBounds.Get()[chIdx], 10, 2);
     g.FillRect(GetColor(kX3), r, &mBlend);
   }
-};
-
-const IText _WARNING_TEXT(DEFAULT_TEXT_SIZE + 3.f, COLOR_RED, "Roboto-Regular", EAlign::Near);
-
-class NAMSampleRateWarningControl : public ITextControl
-{
-public:
-  NAMSampleRateWarningControl(const IRECT& bounds)
-  : ITextControl(bounds, "", _WARNING_TEXT)
-  {
-    // Default to disabled so that we don't get a flash every time we open the UI.
-    SetDisabled(true);
-    SetSampleRate(48000.0);
-  }
-  void SetDisabled(bool disable) override
-  {
-    {
-      mBlend.mWeight = (disable ? mDisabledBlend : mEnabledBlend);
-      mDisabled = disable;
-      SetDirty(false);
-    }
-  }
-  // Adjust what's displayed according to the provided smalpe rate.
-  // Assumes that the given value is valid.
-  void SetSampleRate(const double sampleRate)
-  {
-    std::stringstream ss;
-    ss << "WARNING: NAM model expects sample rate " << static_cast<long>(std::round(sampleRate));
-    SetStr(ss.str().c_str());
-  }
-
-protected:
-  float mDisabledBlend = 0.0f; // when this is disabled, it's completely gone.
-  float mEnabledBlend = 1.0f; // Like normal
 };
 
 class NAMAboutBoxControl : public IContainerBase

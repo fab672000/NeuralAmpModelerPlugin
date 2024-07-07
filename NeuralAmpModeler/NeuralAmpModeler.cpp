@@ -1,5 +1,5 @@
 #include <algorithm> // std::clamp
-#include <cmath>
+#include <cmath> // pow
 #include <filesystem>
 #include <iostream>
 #include <utility>
@@ -53,19 +53,32 @@ const IVStyle style =
 const IVStyle titleStyle =
   DEFAULT_STYLE.WithValueText(IText(30, COLOR_WHITE, "Michroma-Regular")).WithDrawFrame(false).WithShadowOffset(2.f);
 
+EMsgBoxResult _ShowMessageBox(iplug::igraphics::IGraphics* pGraphics, const char* str, const char* caption,
+                              EMsgBoxType type)
+{
+#ifdef OS_MAC
+  // macOS is backwards?
+  return pGraphics->ShowMessageBox(caption, str, type);
+#else
+  return pGraphics->ShowMessageBox(str, caption, type);
+#endif
+}
+
+
 NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
 : Plugin(info, MakeConfig(kNumParams, kNumPresets))
 {
-  activations::Activation::enable_fast_tanh();
+  _InitToneStack();
+  nam::activations::Activation::enable_fast_tanh();
   GetParam(kInputLevel)->InitGain("Input", 0.0, -20.0, 20.0, 0.1);
   GetParam(kToneBass)->InitDouble("Bass", 5.0, 0.0, 10.0, 0.1);
   GetParam(kToneMid)->InitDouble("Middle", 5.0, 0.0, 10.0, 0.1);
   GetParam(kToneTreble)->InitDouble("Treble", 5.0, 0.0, 10.0, 0.1);
   GetParam(kOutputLevel)->InitGain("Output", 0.0, -40.0, 40.0, 0.1);
-  GetParam(kNoiseGateThreshold)->InitGain("Gate", -80.0, -100.0, 0.0, 0.1);
+  GetParam(kNoiseGateThreshold)->InitGain("Threshold", -80.0, -100.0, 0.0, 0.1);
   GetParam(kNoiseGateActive)->InitBool("NoiseGateActive", true);
   GetParam(kEQActive)->InitBool("ToneStack", true);
-  GetParam(kOutNorm)->InitBool("OutNorm", false);
+  GetParam(kOutNorm)->InitBool("OutNorm", true);
   GetParam(kIRToggle)->InitBool("IRToggle", true);
 
   mNoiseGateTrigger.AddListener(&mNoiseGateGain);
@@ -143,7 +156,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
       contentArea.GetFromBottom((2.0f * fileHeight)).GetFromTop(fileHeight).GetMidHPadded(fileWidth).GetVShifted(-1);
     const auto modelIconArea = modelArea.GetFromLeft(30).GetTranslated(-40, 10);
     const auto irArea = modelArea.GetVShifted(irYOffset);
-    const auto irSwitchArea = irArea.GetFromLeft(30).GetHShifted(-40).GetScaledAboutCentre(0.6);
+    const auto irSwitchArea = irArea.GetFromLeft(30.0f).GetHShifted(-40.0f).GetScaledAboutCentre(0.6f);
 
     // Areas for meters
     const auto inputMeterArea = contentArea.GetFromLeft(30).GetHShifted(-20).GetMidVPadded(100).GetVShifted(-25);
@@ -151,7 +164,6 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
 
     // Misc Areas
     const auto helpButtonArea = mainArea.GetFromTRHC(50, 50).GetCentredInside(20, 20);
-    const auto sampleRateWarningArea = inputMeterArea.GetFromBottom(16.f).GetTranslated(12.f, 16.f).GetFromLeft(300.f);
 
     // Model loader button
     auto loadModelCompletionHandler = [&](const WDL_String& fileName, const WDL_String& path) {
@@ -164,7 +176,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
         {
           std::stringstream ss;
           ss << "Failed to load NAM model. Message:\n\n" << msg;
-          GetUI()->ShowMessageBox(ss.str().c_str(), "Failed to load model!", kMB_OK);
+          _ShowMessageBox(GetUI(), ss.str().c_str(), "Failed to load model!", kMB_OK);
         }
         std::cout << "Loaded: " << fileName.Get() << std::endl;
       }
@@ -182,7 +194,7 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
           message << "Failed to load IR file " << fileName.Get() << ":\n";
           message << dsp::wav::GetMsgForLoadReturnCode(retCode);
 
-          GetUI()->ShowMessageBox(message.str().c_str(), "Failed to load IR!", kMB_OK);
+          _ShowMessageBox(GetUI(), message.str().c_str(), "Failed to load IR!", kMB_OK);
         }
       }
     };
@@ -208,7 +220,8 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
       new NAMFileBrowserControl(irArea, kMsgTagClearIR, defaultIRString.c_str(), "wav", loadIRCompletionHandler, style,
                                 fileSVG, crossSVG, leftArrowSVG, rightArrowSVG, fileBackgroundBitmap),
       kCtrlTagIRFileBrowser);
-    pGraphics->AttachControl(new NAMSwitchControl(ngToggleArea, kNoiseGateActive, " ", style, switchHandleBitmap));
+    pGraphics->AttachControl(
+      new NAMSwitchControl(ngToggleArea, kNoiseGateActive, "Noise Gate", style, switchHandleBitmap));
     pGraphics->AttachControl(new NAMSwitchControl(eqToggleArea, kEQActive, "EQ", style, switchHandleBitmap));
     pGraphics->AttachControl(
       new NAMSwitchControl(outNormToggleArea, kOutNorm, "Normalize", style, switchHandleBitmap), kCtrlTagOutNorm);
@@ -227,9 +240,6 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
     // The meters
     pGraphics->AttachControl(new NAMMeterControl(inputMeterArea, meterBackgroundBitmap, style), kCtrlTagInputMeter);
     pGraphics->AttachControl(new NAMMeterControl(outputMeterArea, meterBackgroundBitmap, style), kCtrlTagOutputMeter);
-
-    // A warning when NAM isn't being run in the right sample rate:
-    pGraphics->AttachControl(new NAMSampleRateWarningControl(sampleRateWarningArea), kCtrlTagSampleRateWarning);
 
     // Help/about box
     pGraphics->AttachControl(new NAMCircleButtonControl(
@@ -293,13 +303,15 @@ void NeuralAmpModeler::ProcessBlock(iplug::sample** inputs, iplug::sample** outp
 
   if (mModel != nullptr)
   {
-    mModel->SetNormalize(GetParam(kOutNorm)->Value());
-    // TODO remove input / output gains from here.
-    const double inputGain = 1.0;
-    const double outputGain = 1.0;
-    const int nChans = (int)numChannelsInternal;
-    mModel->process(triggerOutput, mOutputPointers, nChans, nFrames, inputGain, outputGain, mNAMParams);
+    // TODO multi-channel processing; Issue
+    // Make sure it's multi-threaded or else this won't perform well!
+    mModel->process(triggerOutput[0], mOutputPointers[0], nFrames);
     mModel->finalize_(nFrames);
+    // Normalize loudness
+    if (GetParam(kOutNorm)->Value())
+    {
+      _NormalizeModelOutput(mOutputPointers, numChannelsInternal, numFrames);
+    }
   }
   else
   {
@@ -309,38 +321,9 @@ void NeuralAmpModeler::ProcessBlock(iplug::sample** inputs, iplug::sample** outp
   sample** gateGainOutput =
     noiseGateActive ? mNoiseGateGain.Process(mOutputPointers, numChannelsInternal, numFrames) : mOutputPointers;
 
-  sample** toneStackOutPointers = gateGainOutput;
-  if (toneStackActive)
-  {
-    // Translate params from knob 0-10 to dB.
-    // Tuned ranges based on my ear. E.g. seems treble doesn't need nearly as
-    // much swing as bass can use.
-    const double bassGainDB = 4.0 * (GetParam(kToneBass)->Value() - 5.0); // +/- 20
-    const double midGainDB = 3.0 * (GetParam(kToneMid)->Value() - 5.0); // +/- 15
-    const double trebleGainDB = 2.0 * (GetParam(kToneTreble)->Value() - 5.0); // +/- 10
-
-    const double bassFrequency = 150.0;
-    const double midFrequency = 425.0;
-    const double trebleFrequency = 1800.0;
-    const double bassQuality = 0.707;
-    // Wider EQ on mid bump up to sound less honky.
-    const double midQuality = midGainDB < 0.0 ? 1.5 : 0.7;
-    const double trebleQuality = 0.707;
-
-    // Define filter parameters
-    recursive_linear_filter::BiquadParams bassParams(sampleRate, bassFrequency, bassQuality, bassGainDB);
-    recursive_linear_filter::BiquadParams midParams(sampleRate, midFrequency, midQuality, midGainDB);
-    recursive_linear_filter::BiquadParams trebleParams(sampleRate, trebleFrequency, trebleQuality, trebleGainDB);
-    // Apply tone stack
-    // Set parameters
-    mToneBass.SetParams(bassParams);
-    mToneMid.SetParams(midParams);
-    mToneTreble.SetParams(trebleParams);
-    sample** bassPointers = mToneBass.Process(gateGainOutput, numChannelsInternal, numFrames);
-    sample** midPointers = mToneMid.Process(bassPointers, numChannelsInternal, numFrames);
-    sample** treblePointers = mToneTreble.Process(midPointers, numChannelsInternal, numFrames);
-    toneStackOutPointers = treblePointers;
-  }
+  sample** toneStackOutPointers = (toneStackActive && mToneStack != nullptr)
+                                    ? mToneStack->Process(gateGainOutput, numChannelsInternal, numFrames)
+                                    : gateGainOutput;
 
   sample** irPointers = toneStackOutPointers;
   if (mIR != nullptr && GetParam(kIRToggle)->Value())
@@ -371,6 +354,8 @@ void NeuralAmpModeler::ProcessBlock(iplug::sample** inputs, iplug::sample** outp
 void NeuralAmpModeler::OnReset()
 {
   const auto sampleRate = GetSampleRate();
+  const int maxBlockSize = GetBlockSize();
+
   // Tail is because the HPF DC blocker has a decay.
   // 10 cycles should be enough to pass the VST3 tests checking tail behavior.
   // I'm ignoring the model & IR, but it's not the end of the world.
@@ -378,9 +363,9 @@ void NeuralAmpModeler::OnReset()
   SetTailSize(tailCycles * (int)(sampleRate / kDCBlockerFrequency));
   mInputSender.Reset(sampleRate);
   mOutputSender.Reset(sampleRate);
-  mCheckSampleRateWarning = true;
   // If there is a model or IR loaded, they need to be checked for resampling.
-  _ResampleModelAndIR();
+  _ResetModelAndIR(sampleRate, GetBlockSize());
+  mToneStack->Reset(sampleRate, maxBlockSize);
 }
 
 void NeuralAmpModeler::OnIdle()
@@ -395,14 +380,16 @@ void NeuralAmpModeler::OnIdle()
 
     mNewModelLoadedInDSP = false;
   }
-  if (mCheckSampleRateWarning)
-  {
-    _CheckSampleRateWarning();
-  }
 }
 
 bool NeuralAmpModeler::SerializeState(IByteChunk& chunk) const
 {
+  // If this isn't here when unserializing, then we know we're dealing with something before v0.8.0.
+  WDL_String header("###NeuralAmpModeler###"); // Don't change this!
+  chunk.PutStr(header.Get());
+  // Plugin version, so we can load legacy serialized states in the future!
+  WDL_String version(PLUG_VERSION_STR);
+  chunk.PutStr(version.Get());
   // Model directory (don't serialize the model itself; we'll just load it again
   // when we unserialize)
   chunk.PutStr(mNAMPath.Get());
@@ -412,7 +399,19 @@ bool NeuralAmpModeler::SerializeState(IByteChunk& chunk) const
 
 int NeuralAmpModeler::UnserializeState(const IByteChunk& chunk, int startPos)
 {
-  WDL_String dir;
+  WDL_String header;
+  startPos = chunk.GetStr(header, startPos);
+  // TODO: Handle legacy plugin serialized states.
+  // if strncmp (header.Get(), "###NeuralAmpModeler###")
+  //{
+  //  return UnserializeStateLegacy(header, startPos);  // (We'll assume 0.7.9).
+  //}
+  WDL_String version;
+  startPos = chunk.GetStr(version, startPos);
+  // Version-specific loading here if needed.
+  // ...
+
+  // Current version loading:
   startPos = chunk.GetStr(mNAMPath, startPos);
   startPos = chunk.GetStr(mIRPath, startPos);
   int retcode = UnserializeParams(chunk, startPos);
@@ -445,7 +444,17 @@ void NeuralAmpModeler::OnUIOpen()
 
   if (mModel != nullptr)
     GetUI()->GetControlWithTag(kCtrlTagOutNorm)->SetDisabled(!mModel->HasLoudness());
-  mCheckSampleRateWarning = true;
+}
+
+void NeuralAmpModeler::OnParamChange(int paramIdx)
+{
+  switch (paramIdx)
+  {
+    case kToneBass: mToneStack->SetParam("bass", GetParam(paramIdx)->Value()); break;
+    case kToneMid: mToneStack->SetParam("middle", GetParam(paramIdx)->Value()); break;
+    case kToneTreble: mToneStack->SetParam("treble", GetParam(paramIdx)->Value()); break;
+    default: break;
+  }
 }
 
 void NeuralAmpModeler::OnParamChangeUI(int paramIdx, EParamSource source)
@@ -522,7 +531,7 @@ void NeuralAmpModeler::_ApplyDSPStaging()
     mModel = nullptr;
     mNAMPath.Set("");
     mShouldRemoveModel = false;
-    mCheckSampleRateWarning = true;
+    SetLatency(0);
   }
   if (mShouldRemoveIR)
   {
@@ -537,32 +546,12 @@ void NeuralAmpModeler::_ApplyDSPStaging()
     mModel = std::move(mStagedModel);
     mStagedModel = nullptr;
     mNewModelLoadedInDSP = true;
-    mCheckSampleRateWarning = true;
+    SetLatency(mModel->GetLatency());
   }
   if (mStagedIR != nullptr)
   {
     mIR = std::move(mStagedIR);
     mStagedIR = nullptr;
-  }
-}
-
-void NeuralAmpModeler::_CheckSampleRateWarning()
-{
-  if (auto* pGraphics = GetUI())
-  {
-    auto* control = pGraphics->GetControlWithTag(kCtrlTagSampleRateWarning)->As<NAMSampleRateWarningControl>();
-    bool showWarning = false;
-    if (_HaveModel())
-    {
-      const auto pluginSampleRate = GetSampleRate();
-      const auto namSampleRateFromModel = mModel->GetExpectedSampleRate();
-      // Any model with "-1" is probably 48k
-      const auto namSampleRate = namSampleRateFromModel == -1.0 ? 48000.0 : namSampleRateFromModel;
-      control->SetSampleRate(namSampleRate);
-      showWarning = pluginSampleRate != namSampleRate;
-    }
-    control->SetDisabled(!showWarning);
-    mCheckSampleRateWarning = false;
   }
 }
 
@@ -592,11 +581,35 @@ void NeuralAmpModeler::_FallbackDSP(iplug::sample** inputs, iplug::sample** outp
       mOutputArray[c][s] = mInputArray[c][s];
 }
 
-void NeuralAmpModeler::_ResampleModelAndIR()
+void NeuralAmpModeler::_NormalizeModelOutput(iplug::sample** buffer, const size_t numChannels, const size_t numFrames)
 {
-  const auto sampleRate = GetSampleRate();
+  if (!mModel)
+    return;
+  if (!mModel->HasLoudness())
+    return;
+  const double loudness = mModel->GetLoudness();
+  const double targetLoudness = -18.0;
+  const double gain = pow(10.0, (targetLoudness - loudness) / 20.0);
+  for (size_t c = 0; c < numChannels; c++)
+  {
+    for (size_t f = 0; f < numFrames; f++)
+    {
+      buffer[c][f] *= gain;
+    }
+  }
+}
+
+void NeuralAmpModeler::_ResetModelAndIR(const double sampleRate, const int maxBlockSize)
+{
   // Model
-  // TODO
+  if (mStagedModel != nullptr)
+  {
+    mStagedModel->Reset(sampleRate, maxBlockSize);
+  }
+  else if (mModel != nullptr)
+  {
+    mModel->Reset(sampleRate, maxBlockSize);
+  }
 
   // IR
   if (mStagedIR != nullptr)
@@ -625,7 +638,10 @@ std::string NeuralAmpModeler::_StageModel(const WDL_String& modelPath)
   try
   {
     auto dspPath = std::filesystem::u8path(modelPath.Get());
-    mStagedModel = get_dsp(dspPath);
+    std::unique_ptr<nam::DSP> model = nam::get_dsp(dspPath);
+    std::unique_ptr<ResamplingNAM> temp = std::make_unique<ResamplingNAM>(std::move(model), GetSampleRate());
+    temp->Reset(GetSampleRate(), GetBlockSize());
+    mStagedModel = std::move(temp);
     mNAMPath = modelPath;
     SendControlMsgFromDelegate(kCtrlTagModelFileBrowser, kMsgTagLoadedModel, mNAMPath.GetLength(), mNAMPath.Get());
   }
@@ -696,6 +712,11 @@ size_t NeuralAmpModeler::_GetBufferNumFrames() const
   return mInputArray[0].size();
 }
 
+void NeuralAmpModeler::_InitToneStack()
+{
+  // If you want to customize the tone stack, then put it here!
+  mToneStack = std::make_unique<dsp::tone_stack::BasicNamToneStack>();
+}
 void NeuralAmpModeler::_PrepareBuffers(const size_t numChannels, const size_t numFrames)
 {
   const bool updateChannels = numChannels != _GetBufferNumChannels();
